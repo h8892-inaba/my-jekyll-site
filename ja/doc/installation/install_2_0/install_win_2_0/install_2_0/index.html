@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>インストール | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="インストール" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="インストール" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"インストール","image":"/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"/my-jekyll-site/ja/doc/installation/install_2_0/install_win_2_0/install_2_0/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000</a>
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/research_development/" >Research_and_Development</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+
+	  
+
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>インストール</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#必要なソフトウエアのインストール">必要なソフトウエアのインストール</a>
+    <ul>
+      <li><a href="#visual-studio">Visual Studio</a></li>
+      <li><a href="#python">Python</a></li>
+      <li><a href="#cmake">CMake</a></li>
+      <li><a href="#doxygen--graphviz">Doxygen &amp; Graphviz</a></li>
+      <li><a href="#jdk8">JDK8</a></li>
+    </ul>
+  </li>
+  <li><a href="#openrtm-aistのインストール">OpenRTM-aistのインストール</a>
+    <ul>
+      <li><a href="#インストーラのダウンロード">インストーラのダウンロード</a></li>
+      <li><a href="#インストール">インストール</a></li>
+      <li><a href="#visual-studioのバージョン指定">Visual Studioのバージョン指定</a></li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: インストール -->
+<p>#contents</p>
+
+<!-- ** インストールの準備 -->
+
+<!-- *** 32bit版と64bit版 -->
+<!--  -->
+<!-- 現状、ほとんどのWindowsは64bit版が利用されていますので、基本的には以下は 64bit を前提として説明します。 -->
+<!-- インストールしているWindowsが32bit版の場合は、OpenRTM-aistやその他のソフトウェアは32bit版をインストールする必要があります。 -->
+<!--  -->
+<!-- &color(red){''NOTE: 基本的にすべて64bit版のソフトウェアを使用してください。''}; -->
+
+<h2 id="必要なソフトウエアのインストール">必要なソフトウエアのインストール</h2>
+<p>OpenRTM-aistを利用するには、Python、CMake、Doxygen、Visual Studio等のソフトウェアのインストールが必要です。</p>
+
+<div align="right"><a href="windows10-logo.png"><img src="windows10-logo.png" width="10%; margin:50 50 50 50:w!px;" align="right" /></a></div>
+
+<h3 id="visual-studio">Visual Studio</h3>
+
+<p>C++版の開発だけでなく、Python版、Java版のRTCを作成した際に、インストーラをビルドするのにも必要です。
+以下のCommunity版（無料）をインストールするか、別途Visual Studio 2015/2017/2019/2022を入手してインストールしてください。</p>
+
+<ul>
+  <li><a href="https://visualstudio.microsoft.com/ja/downloads/?utm_source=mscom&amp;utm_campaign=msdocs">Microsoft <strong>Download Visual Studio 2022</strong></a></li>
+</ul>
+
+<p>現在動作確認できているVisual Studioの最新バージョンは2022です。　<br />
+C++の開発環境を入れ忘れることがよくあります。以下の説明を一読することをお勧めします。</p>
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022">Visual Studio Community 2022のインストール</a></li>
+</ul>
+
+<h3 id="python">Python</h3>
+
+<p>PythonはPython言語版のRTCの開発だけでなく、OpenRTM-aistの様々なツールでも使用していますので必ずインストールする必要があります。
+OpenRTM-aistがサポートしているPythonは 3.8, 3.9, 3.10, 3.11, 3.12 です。
+最新版をインストールすることをお勧めします。</p>
+
+<ul>
+  <li><a href="https://www.python.org/downloads/windows/">Python Releases for Windows</a>
+    <ul>
+      <li><a href="https://www.python.org/ftp/python/3.11.1/python-3.11.1-amd64.exe">python-3.11.1-amd64.exe (64bit版)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>インストールする際以下の点に注意してください。</p>
+<ul>
+  <li>Pythonのインストール先は、インストール時の選択 [Customize installation]に対応しています。</li>
+  <li>[Customize installation]でインストール先を指定する手順は、下記ページの解説をご覧ください。
+    <ul>
+      <li><a href="/my-jekyll-site/ja/doc/installation/lets_start#toc1">OpenRTM-aistを10分で始めよう！・Pythonのインストール</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="cmake">CMake</h3>
+<p>CMakeはWindowsやLinux等様々な環境でビルドに必要なファイル（Visual Studioのプロジェクトファイル、Linux上のMakefile等）を自動生成するために必要です。 <br />
+できるだけ最新版をインストールしてください。</p>
+
+<ul>
+  <li><a href="https://cmake.org/download/">CMake(3.11以上推奨)</a>
+    <ul>
+      <li><a href="https://github.com/Kitware/CMake/releases/download/v3.29.3/cmake-3.29.3-windows-x86_64.msi">cmake-3.29.3-windows-x86_64.msi (64bit版)</a></li>
+      <li>インストールする際、[Install Option]画面で[Add Cmake to the system PATH for all users]を選択することを推奨します。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="doxygen--graphviz">Doxygen &amp; Graphviz</h3>
+
+<p>Doxygenは、ソースコード等のコメントからドキュメントを自動生成するツールです。 <br />
+Graphvizは、Doxygenでドキュメントを生成する際に、クラス図等の図を生成するために必要とされるツールです。 <br />
+OpenRTM-aistでは、RTCBuilderでRTCの設計時に様々な設計情報を記入することができ、それらはソースコードのコメントとして出力されます。
+これをDoxygenで処理することで、RTCのキレイなドキュメントを生成することができます。 <br />
+できるだけ最新版をインストールしてください。</p>
+
+<ul>
+  <li><a href="https://doxygen.nl/download.html#latestsrc">Doxygen</a>
+    <ul>
+      <li><a href="https://www.doxygen.nl/files/doxygen-1.11.0-setup.exe">doxygen-1.11.0-setup.exe </a> (32bit, 64bitの別なし）</li>
+      <li>Microsoft Edge をお使いでダウンロードできない場合は、OpenRTM-aistの場合の解説をご覧ください。
+        <ul>
+          <li><a href="/my-jekyll-site/ja/doc/installation/lets_start#toc2">OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>&amp;aname(Graphviz);</p>
+<ul>
+  <li><a href="https://graphviz.gitlab.io/download/">Graphviz</a>
+    <ul>
+      <li><a href="https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/11.0.0/windows_10_cmake_Release_graphviz-install-11.0.0-win64.exe">windows_10_cmake_Release_graphviz-install-11.0.0-win64.exe</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>インストールの途中で[Install Options]としてsystem PATHをどうするかを聞かれますが、Add Graphviz to the system PATH for all usersを選択することを推奨します。
+上記WebページからWindows版のバイナリ実行形式ファイルをダウンロードして実行してインストールしてください。</p>
+
+<p>インストール後、コマンドプロンプトで dot -v を実行してプラグイン情報が表示されることを確認して下さい。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt;dot -v
+dot - graphviz version 11.0.0 (20240428.1522)
+libdir = "C:\Program Files\Graphviz\bin"
+Activated plugin library: gvplugin_dot_layout.dll
+Using layout: dot:dot_layout
+Activated plugin library: gvplugin_core.dll
+Using render: dot:core
+Using device: dot:dot:core
+The plugin configuration file:
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        C:\Program Files\Graphviz\bin\config6
+                was successfully loaded.
+    render      :  cairo dot dot_json fig gdiplus json json0 map mp pic pov ps svg svg_inline tk xdot xdot_json
+    layout      :  circo dot fdp neato nop nop1 nop2 osage patchwork sfdp twopi
+    textlayout  :  textlayout
+    device      :  bmp canon cmap cmapx cmapx_np dot dot_json emf emfplus eps fig gif gv imap imap_np ismap jpe jpeg jpg json json0 metafile mp pdf pic plain plain-ext png pov ps ps2 svg svg_inline svgz tif tiff tk xdot xdot1.2 xdot1.4 xdot_json
+    loadimage   :  (lib) bmp eps gif jpe jpeg jpg png ps svg
+</code></pre></div></div>
+
+<!-- 下記のように表示された場合、管理者でコマンドプロンプトを開き、dot -c を実行後に dot -v を実行すると上記のように表示されます。 -->
+<!-- >dot -v -->
+<!-- dot - graphviz version 3.0.0 (20220226.1711) -->
+<!-- There is no layout engine support for "dot" -->
+<!-- Perhaps "dot -c" needs to be run (with installer's privileges) to register the plugins? -->
+<!--  -->
+<!-- 管理者でコマンドプロンプトを開く方法は、Windows10の検索窓に cmd と入力し、検索結果の「コマンドプロンプト」を右クリックして「管理者として実行」を選択します。 -->
+
+<h3 id="jdk8">JDK8</h3>
+
+<p>Javaで開発される場合に必要となります。下記ページの解説をご覧ください。
+    - <a href="/my-jekyll-site/ja/node/6911">JDK8のインストール</a></p>
+
+<h2 id="openrtm-aistのインストール">OpenRTM-aistのインストール</h2>
+
+<p>上記のソフトウェアのインストールが完了したら、OpenRTM-aistのインストールを行います。</p>
+
+<h3 id="インストーラのダウンロード">インストーラのダウンロード</h3>
+
+<p>OpenRTM-aistのWindows版のインストーラ（msi形式）をダウンロードします。</p>
+
+<table class="table-alt">
+  <tr>
+    <th><a href="https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.2-RELEASE_x86_64.msi">OpenRTM-aist-2.0.2-RELEASE_x86_64.msi </a></th>
+    <th>MD5:a03eebe388dd4d63f4b91bf98afc5884</th>
+    <th>851MB</th>
+  </tr>
+</table>
+
+<p>Microsoft Edge をお使いでダウンロードできない場合は、下記ページの解説をご覧ください。</p>
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/lets_start#toc2">OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード</a></li>
+</ul>
+
+<p>このインストーラには、以下の内容が含まれています。</p>
+
+<ul>
+  <li>C++ 用開発環境
+    <ul>
+      <li>OpenCV 4.5.0</li>
+      <li>C++用過去バージョンのDLL (古いRTC実行時に必要)</li>
+    </ul>
+  </li>
+  <li>Python 用開発環境</li>
+  <li>Java 用開発環境</li>
+  <li>omniORB 4.3.2</li>
+  <li>OpenRTP (GUIツール、RTCBuilder，RTSystemEditor）
+    <ul>
+      <li>JRE8環境 (OpenRTPに必要）</li>
+    </ul>
+  </li>
+  <li>VCVerChanger (GUIツール）</li>
+  <li>rtshell (CUIツール）</li>
+</ul>
+
+<h3 id="インストール">インストール</h3>
+
+<p>インストール過程の詳細は、下記ページをご覧ください。</p>
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/lets_start#toc3">OpenRTM-aistを10分で始めよう！・OpenRTM-aistのインストール</a></li>
+</ul>
+
+<p>正しくインストールされているかどうかの確認として、サンプルコンポーネントを実行してみてください。</p>
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/lets_start#toc5">OpenRTM-aistを10分で始めよう！・サンプルコンポーネントを実行する</a></li>
+</ul>
+
+<p>インストーラが設定するシステム環境変数、インストールするファイル等の詳細は、下記ページをご覧ください。</p>
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/install_2_0/install_win_2_0/install_workcontent_2_0">OpenRTM-aistインストーラの作業内容</a></li>
+</ul>
+
+<h3 id="visual-studioのバージョン指定">Visual Studioのバージョン指定</h3>
+
+<p>インストールされているVisual Studioのバージョンに合わせて、システム環境変数<strong>RTM_VC_VERSION</strong>を設定しています。
+インストール後に変更する場合は、GUIツールを使って設定できます。使い方は <a href="/my-jekyll-site/ja/content/vc_version_changer/">VCVerChanger</a> のページをご覧ください。
+<br /></p>
+
+<table class="table-alt">
+  <tr>
+    <th>Visual Studioのバージョン</th>
+    <th>dシステム環境変数RTM_VC_VERSIONの指定値</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>2015、2017</td>
+    <td>vc14</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>2019、2022</td>
+    <td>vc16</td>
+    <td>初期設定</td>
+  </tr>
+</table>
+
+<p>※インストール後、Visual Studioのバージョンを変更しない場合でも、一度 <a href="/my-jekyll-site/ja/content/vc_version_changer/">VCVerChanger</a> でシステム環境変数の設定を確認してください。不要なパスが残っていた場合はこれを削除します。
+<br /></p>
+
+
+	</div>
+  </article>
+</section>
+
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>
