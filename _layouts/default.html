@@ -1,0 +1,50 @@
+---
+#layout: compress # enable only if needed
+---
+#{% assign repo_url = "https://github.com/hogehoge/hogehoge/blob/main" %}
+{% assign repo_url = "https://github.com/hogehoge/hogehoge/blob/main" %}
+
+<!DOCTYPE html>
+<html lang="{{ site.lang | slice: 0,2 | default: "en" }}">
+
+{% include head.html %}
+<!--- add harumi --->
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="{{ repo_url }}/{{ page.path }}" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="{{ site.repo_url }}/{{ page.path }}" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    {% include header.html %}
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      {{ content }}
+<p>
+  <a href="{{ repo_url }}{{ page.path }}" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+{% include slider_styles.html %}
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    {% include footer.html %}
+  </div>
+  {% include scripts.html %}
+</body>
+
+</html>

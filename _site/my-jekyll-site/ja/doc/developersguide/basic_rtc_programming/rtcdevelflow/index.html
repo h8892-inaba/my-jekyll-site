@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>RTCプログラミングの流れ | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="RTCプログラミングの流れ" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="RTCプログラミングの流れ" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"RTCプログラミングの流れ","image":"/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/rtcdevelflow/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000</a>
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/research_development/" >Research_and_Development</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+
+	  
+
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>RTCプログラミングの流れ</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#rtc-プログラミングの流れ">RTC プログラミングの流れ</a></li>
+  <li><a href="#rtc-プログラミングの基礎">RTC プログラミングの基礎</a>
+    <ul>
+      <li><a href="#main関数が無いプログラム">main関数が無いプログラム</a></li>
+      <li><a href="#コンポーネントライフサイクル">コンポーネント・ライフサイクル</a></li>
+      <li><a href="#実行コンテキスト">実行コンテキスト</a></li>
+      <li><a href="#rtc-の状態遷移">RTC の状態遷移</a>
+        <ul>
+          <li><a href="#スレッドの停止状態と実行状態">スレッドの停止状態と実行状態</a></li>
+          <li><a href="#アクティブ非アクティブ状態">アクティブ・非アクティブ状態</a></li>
+        </ul>
+      </li>
+      <li><a href="#アクションのまとめ">アクションのまとめ</a></li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Tilte: RTCプログラミングの流れ -->
+<p>#contents(4)
+#clear</p>
+
+<h2 id="rtc-プログラミングの流れ">RTC プログラミングの流れ</h2>
+<p>OpenRTM-aist は、コンポーネントを開発したいユーザー(コンポーネントデベロッパ) が持つ既存のソフトウエア資産、あるいは新たに作成したソフトウエアを容易に RTコンポーネント(RTC)化するためのフレームワークを提供します。
+コンポーネント作成の大まかな流れは下図のようになります。</p>
+
+<p><br /></p>
+<div align="center"><a href="ComponentDevelFlow.png"><img src="ComponentDevelFlow.png" width="70%;" /></a></div>
+<div align="center"><strong>RTコンポーネントの開発フロー</strong></div>
+<p><br /></p>
+
+<p>コンポーネントデベロッパーは、既存のソフトウエア資産のライブラリ関数・クラスライブラリ等をコンポーネントフレームワークに埋め込みコンポーネントを作成します。
+こうすることで、既存のソフトウエア資源をソフトウエア部品である RTコンポーネントとして作成しておき、様々な場面で再利用することができるようになります。
+作成された RTコンポーネントは、ネットワーク上の適切な場所に配置して、分散オブジェクトとしてネットワーク上の任意の場所から利用することができます。</p>
+
+<p>図に示すように、RTコンポーネントフレームワークに則って作成された RTコンポーネントは大きく分けて2つのバイナリファイルとして作成することができます。
+スタンドアロン RTコンポーネント (Standalone RT-Component) は、単一ファイルでそのまま実行できる実行形式のバイナリです。
+ローダブルモジュール RTコンポーネント (Loadable Module RT-Component) は動的にロード可能なローダブルモジュール形式のバイナリファイルです。 
+RTコンポーネントはこれらの2つの形式で作成、配布、実行することができます。</p>
+
+<h2 id="rtc-プログラミングの基礎">RTC プログラミングの基礎</h2>
+<p>通常のプログラミングと RTコンポーネントのプログラミングには、幾つかの大きな違いがあります。</p>
+
+<h3 id="main関数が無いプログラム">main関数が無いプログラム</h3>
+<p>RTコンポーネントのプログラムには通常のプログラムとは異なり、main関数がありません。
+代わりに1つの RTコンポーネントは、通常ある特別な基底クラスを継承した一つのクラスとして実装されます。</p>
+
+<p>RTコンポーネントにさせたい処理は、その基底クラスのメンバ関数(メソッド)をオーバーライドする形で記述します。
+例えば、初期化のような処理は、onInitialize という関数の中に記述します。あるいは、終了時に行いたい処理であれば、onFinalize という関数の中に記述します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ReturnCode_t MyComponent::onInitialize()
+ {
+   // 初期化処理など
+ }
+ ReturnCode_t MyComponent::onFinalize()
+ {
+   // 終了処理など
+ }
+</code></pre></div></div>
+
+<p>では、ここで書いた初期化処理や、終了処理はいつ実行されるのでしょうか？
+それを知るためには、RTコンポーネントのライフサイクルを知る必要があります。</p>
+
+<h3 id="コンポーネントライフサイクル">コンポーネント・ライフサイクル</h3>
+<p>ある RTコンポーネントが生まれてから死ぬまでの一連の流れのことを、コンポーネントのライフサイクルと呼びます。</p>
+
+<p>コンポーネントには基本的に</p>
+
+<ul>
+  <li>生成状態(Created)</li>
+  <li>活動状態(Alive)</li>
+  <li>終了状態</li>
+</ul>
+
+<p>の3つの状態を持ちます。
+(Alive状態は内部にさらに状態を持ちます(後述)。)</p>
+
+<p>コンポーネントは1つのクラスであることは上で述べました。
+従って、コンポーネントが生成されるということは、オブジェクト(インスタンス)が生成されることとほぼ同じです。
+通常、RTコンポーネントはマネージャ(RTCマネージャ)によって生成され、以後マネージャが RTコンポーネントのライフサイクルを管理します。</p>
+
+<p>具体的には、マネージャは RTコンポーネントのインスタンス生成後、上で述べた onInitialize関数をコールします。
+また、RTコンポーネントが終了するとき、マネージャは onFinalize関数をコールします。
+このように、RTコンポーネントのライフサイクルの中の特定のタイミングに割り当てられた処理(これをアクションと呼ぶ)毎に、必要な処理を記述することで、RTコンポーネントのプログラミングを行います。</p>
+<h3 id="実行コンテキスト">実行コンテキスト</h3>
+<p>通常プログラムを実行するとスレッドが割り当てられ、そのスレッドがプログラムとして記述された処理を実行します。
+ロボットを制御するプログラムでは、通常スレッドにより実行されるループ(制御ループや処理ループ)を持ち、センサーデータを処理したり、アクチュエーターを制御し続けます。
+こうした、何かを処理したり制御したりするための主たる処理を RTコンポーネントではコアロジックと呼びます。</p>
+
+<p>RTコンポーネントは、生成され Alive状態になると通常一つのスレッドが割り当てられ、RTコンポーネントとしてのメインの処理(コアロジック)を実行します。
+このスレッドを RTコンポーネントでは実行コンテキスト(ExecutionContext)と呼びます。
+実際には、実行コンテキストはスレッドそのものではなく、スレッドを抽象的に表現したもので実行周期や状態を持ちます。
+つまり、RTコンポーネントが生成されると実行コンテキストが RTコンポーネントに関連付けられ、コアロジックが駆動されることにより、RTコンポーネントが何らかの処理(例えばロボットを制御するなど)を行います。</p>
+
+<h3 id="rtc-の状態遷移">RTC の状態遷移</h3>
+<p>上で述べたように、RTコンポーネントは状態を持ち、その状態や遷移に割り当てられたアクションとして処理を記述します。
+下図は RTコンポーネントの状態遷移図(UMLのステートマシン図)を表しています。</p>
+
+<p><br /><br /></p>
+<div align="center"><a href="RTCStateMachine040.png"><img src="RTCStateMachine040.png" width="70%;" /></a></div>
+<div align="center"><strong>RTコンポーネントの状態遷移</strong></div>
+<p><br /><br /></p>
+
+<p>Created と Alive は RTコンポーネントの状態です。
+Alive状態の中にも幾つかの状態が存在しています。</p>
+
+<h4 id="スレッドの停止状態と実行状態">スレッドの停止状態と実行状態</h4>
+<p>まず、Alive状態内部の上部の Stopped と Running状態から見ていきます。</p>
+
+<p><br /><br /></p>
+<div align="center"><a href="RTCStateMachineStartStop.png"><img src="RTCStateMachineStartStop.png" width="70%;" /></a></div>
+<div align="center"><strong>スレッドの停止状態と実行状態</strong></div>
+<p><br /><br /></p>
+
+<p>これは、実行コンテキストをスレッドとして見たとき、スレッドが停止中(Stopped)か実行中(Running)かを表す状態です。</p>
+
+<p>停止状態(Stopped)にある実行コンテキストが startイベントを受け取ると、RTコンポーネントの onStartup を実行して実行状態(Running)に遷移します。
+逆に stopイベントにより、実行コンテキストは RTコンポーネントの onShutdown を実行して停止状態(Stopped)状態に遷移します。</p>
+
+<p>コアロジックのアクションは、実行状態(Running)状態のときのみ実行され、停止状態においては全てのアクションは実行されません。</p>
+
+<h4 id="アクティブ非アクティブ状態">アクティブ・非アクティブ状態</h4>
+<p>Alive状態内の下段はコアロジックのアクティブ(Active)・非アクティブ(Inactive)・エラー(Error)に関する状態遷移です。</p>
+
+<p>RTコンポーネント生成直後は、RTコンポーネントは非アクティブ状態(Inactive)にあります。
+RTコンポーネントをアクティブ化すると、RTコンポーネントのアクションである onActivate がコールされアクティブ状態に遷移します。
+アクティブ状態にいる間、通常 RTコンポーネントのアクション onExecute が繰り返し実行され続けます。
+通常はこの onExecute内で、RTコンポーネントのメインの処理を行います。
+例えば、センサからデータを読み込み他のコンポーネントへ送ったり、他のコンポーネントから受け取ったデータに基づきモータを制御したりといった、ロボットにおいて基本的な繰り返し処理は onExecute に記述することになるでしょう。</p>
+
+<p>RTコンポーネントは非アクティブ化されるか、エラーが発生するまでアクティブ状態に留まり続けます。
+非アクティブ化される場合は onDeactivate がコールされ、非アクティブ状態に遷移します。
+アクティブ状態の処理の中で何らかのエラーが発生した場合、RTコンポーネントのアクションである onAborting がコールされ、エラー状態(Error)に遷移します。</p>
+
+<p>エラー状態に遷移した場合、外部からリセットが行われるまでエラー状態に留まり続け onError がコールされ続けます。
+リセットが行われると、onReset がコールされます。
+onReset の処理が成功すれば非アクティブ状態(Inactive)に遷移し、再びアクティブ状態になることが出来ますが、onReset が失敗した場合は、エラー状態に留まり続けます。</p>
+
+<p><br /><br /></p>
+<div align="center"><a href="RTCStateMachineActiveInactive.png"><img src="RTCStateMachineActiveInactive.png" width="70%;" /></a></div>
+<div align="center"><strong>非アクティブ状態・アクティブ状態・エラー状態</strong></div>
+<p><br /><br /></p>
+
+<h3 id="アクションのまとめ">アクションのまとめ</h3>
+<p>RTコンポーネント開発者の主な仕事は、自分が作成しようとするコンポーネントでは、これまで述べてきた RTコンポーネントの各状態毎にどういった処理をすればよいのかを考え、それぞれのアクションに対応する関数を実装することです。
+つまり、自分が作成するコンポーネントに必要な<strong>on???</strong>という関数だけをオーバーライドし、関数の中身を記述すればいいのです。</p>
+
+<p>以下に、コンポーネントのアクションの関数と役割を示します。</p>
+<table class="table-alt">
+  <tr>
+    <td>onInitialize</td>
+    <td>初期化処理、コンポーネントライフサイクルの開始時に一度だけ呼ばれる。</td>
+  </tr>
+  <tr>
+    <td>onActivated</td>
+    <td>非アクティブ状態からアクティブ化されるとき1度だけ呼ばれる。</td>
+  </tr>
+  <tr>
+    <td>onExecute</td>
+    <td>アクティブ状態時に周期的に呼ばれる。</td>
+  </tr>
+  <tr>
+    <td>onDeactivated</td>
+    <td>アクティブ状態から非アクティブ化されるとき1度だけ呼ばれる。</td>
+  </tr>
+  <tr>
+    <td>onAborting</td>
+    <td>ERROR 状態に入る前に1度だけ呼ばれる。</td>
+  </tr>
+  <tr>
+    <td>onReset</td>
+    <td>エラー状態からリセットされ非アクティブ状態に移行するときに1度だけ呼ばれる。</td>
+  </tr>
+  <tr>
+    <td>onError</td>
+    <td>エラー状態にいる間周期的に呼ばれる。</td>
+  </tr>
+  <tr>
+    <td>onFinalize</td>
+    <td>コンポーネントライフサイクルの終了時に1度だけ呼ばれる。</td>
+  </tr>
+  <tr>
+    <td>onStateUpdate</td>
+    <td>onExecute の後毎回呼ばれる。</td>
+  </tr>
+  <tr>
+    <td>onRateChanged</td>
+    <td>ExecutionContext の rate が変更されたとき呼ばれる。</td>
+  </tr>
+  <tr>
+    <td>onStartup</td>
+    <td>ExecutionContext が実行を開始するとき1度だけ呼ばれる。</td>
+  </tr>
+  <tr>
+    <td>onShutdown</td>
+    <td>ExecutionContext が実行を停止するとき1度だけ呼ばれる。</td>
+  </tr>
+</table>
+
+
+	</div>
+  </article>
+</section>
+
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

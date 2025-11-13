@@ -1,0 +1,605 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Raspberry Pi の初期設定 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Raspberry Pi の初期設定" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/raspi_init_setting/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/raspi_init_setting/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Raspberry Pi の初期設定" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Raspberry Pi の初期設定","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/raspi_init_setting/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/installation/other/raspberrypi_casestudy/raspi_init_setting/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/installation/other/raspberrypi_casestudy/raspi_init_setting/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>Raspberry Pi の初期設定</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#raspberry-pi-の起動">Raspberry Pi の起動</a>
+    <ul>
+      <li><a href="#設定項目">設定項目</a></li>
+    </ul>
+  </li>
+  <li><a href="#無線lan-の設定">無線LAN の設定</a>
+    <ul>
+      <li><a href="#etcnetworkinterfaces-の編集">/etc/network/interfaces の編集</a></li>
+      <li><a href="#etcwpa_supplicantwpa_supplicantconf-の編集">/etc/wpa_supplicant/wpa_supplicant.conf の編集</a></li>
+    </ul>
+  </li>
+  <li><a href="#ホスト名でリモート接続する">ホスト名でリモート接続する</a>
+    <ul>
+      <li><a href="#ホスト名の設定">ホスト名の設定</a></li>
+      <li><a href="#avahi-daemon-のインストール">avahi-daemon のインストール</a></li>
+      <li><a href="#bonjour-のインストール-windowsのみ">Bonjour のインストール (Windowsのみ)</a>
+        <ul>
+          <li><a href="#bonjour-がうまく機能しない場合">Bonjour がうまく機能しない場合</a></li>
+        </ul>
+      </li>
+      <li><a href="#teraterm-のインストール">TeraTerm のインストール</a></li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: Raspberry Pi の初期設定 -->
+<!-- -*- pukiwiki-edit -*- -->
+<!-- * Raspberry Pi の初期設定 -->
+
+<p>#contents</p>
+
+<h2 id="raspberry-pi-の起動">Raspberry Pi の起動</h2>
+
+<p>Raspberry Pi に HDMIモニター、キーボード、ネットワークを接続してください。</p>
+
+<p>SDカードを挿入し Raspberry Pi に始めて電源を投入すると、各種ドライバの読み込み画面が表示された後、以下の設定画面 (raspi-config) が表示されます｡</p>
+
+<p>なお、後述の PiRT-Unit のシリアルコンソールから操作する場合、raspi-config は表示されません。
+以下のユーザー名、パスワードでログインして raspi-config コマンドを実行することで初期設定を行うことができます。</p>
+
+<ul>
+  <li>'’ID’ : pi</li>
+  <li><strong>パスワード</strong> : raspberry</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Debian GNU/Linux 7.0 rtunit0 ttyAMA0
+ 
+ rtunit0 login: pi
+ Password:
+ Last login: Sat Feb  9 03:40:44 UTC 2013 on ttyAMA0
+ Linux rtunit0 3.6.11+ #371 PREEMPT Thu Feb 7 16:31:35 GMT 2013 armv6l
+ 
+ The programs included with the Debian GNU/Linux system are free software;
+ the exact distribution terms for each program are described in the
+ individual files in /usr/share/doc/*/copyright.
+ 
+ Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+ permitted by applicable law. 
+ 
+ NOTICE: the software on this Raspberry Pi has not been fully configured. Please run 'sudo raspi-config'
+ $ raspi-config
+ 
+</code></pre></div></div>
+<div align="center"><a href="raspi-config2.png"><img src="raspi-config2.png" width="80%;" /></a></div>
+<div align="center"><strong>Raspberry Pi 初期設定画面</strong></div>
+
+<h3 id="設定項目">設定項目</h3>
+
+<p>各項目の内容を以下に示します。
+必要に応じて各項目の設定を行ってください｡</p>
+
+<!-- | ''[info]'' | 本ツールに関する情報を表示します｡ | -->
+<!-- | ''[expand_rootfs]'' | 使用する SDカードのパーティションを拡張します｡初期状態では、SDカードの先頭の2GBしか使用しないようになっています｡こちらの機能を使用することで全体を使用するように設定できます｡特に理由がなければ拡張を行ってください｡ | -->
+<!-- | ''[overscan]'' | 画面周囲に余白が必要な場合に設定します｡ | -->
+<!-- | ''[configure_keyboard]'' | 使用するキーボードの配列を設定します｡一般的な日本語キーボードを使用する場合は、[Generic 105-key (Intl) PC] → [Japanese] → [Japanese - Japanese(OADG109A)]を選択後、使用したいキー配列をしてください｡ | -->
+<!-- | ''[change_pass]'' | 初期設定ユーザー ｢pi｣ のパスワードを変更します｡ 利用者のわかりやすいパスワードに変更してください｡ | -->
+<!-- | ''[change_locale]'' | ロケール設定を行います｡必要に応じて [ja_JP.ECU-JP ECU-JP] などに設定してください｡| -->
+<!-- | ''[change-timezone]' | タイムゾーンの設定を行います｡日本国内で使用する場合は [Asia]-[Tokyo] を設定してください｡| -->
+<!-- | ''[memory_split]'' | 付属の GPU へのメモリー配分を指定します｡特に問題がない場合は、初期設定のままで構いません｡| -->
+<!-- | ''[ssh]'' | SSH 接続を有効にしたい場合には [Enable] に設定してください｡| -->
+<!-- | ''[boot_behaviour]'' | 起動時に X Windows のデスクトップを自動起動させた場合には [Yes] を設定してください｡| -->
+<!-- | ''[update]'' | 設定プログラム(raspi-config)自身のアップデートを行います｡| -->
+<table class="table-alt">
+  <tr>
+    <th>**1 Expand Filesystem**</th>
+    <th>使用する SD カードのパーティションを拡張します｡初期状態では、SD カードの全体を使用していないので、特に理由がなければ拡張を行ってください｡</th>
+  </tr>
+  <tr>
+    <td>**2 Change User Password**</td>
+    <td>初期設定ユーザー ｢pi｣ のパスワードを変更します｡ 利用者のわかりやすいパスワードに変更してください｡</td>
+  </tr>
+  <tr>
+    <td>**3 Enable Boot to Desktop/Scratch**</td>
+    <td>起動時の画面の設定で、デフォルトはコンソール利用となっています。GUI 利用に変更したい場合には設定します。</td>
+  </tr>
+  <tr>
+    <td>**4 Internationalisation Options**</td>
+    <td>「ロケール」、「タイムゾーン」、「キーボード配列」の設定です。</td>
+  </tr>
+  <tr>
+    <td>I1 Change Locale</td>
+    <td>ロケール設定を行います｡キーボード配列は必要に応じて [ja_JP.ECU-JP ECU-JP] などに設定してください｡　その際は日本語フォントのインストールが必要となるようです。</td>
+  </tr>
+  <tr>
+    <td>I2 Change Timezone</td>
+    <td>タイムゾーンの設定を行います｡日本国内で使用する場合は [Asia]-[Tokyo] を設定してください｡</td>
+  </tr>
+  <tr>
+    <td>I3 Change Keyboard Layout Set the keyboard layout to match your keyboard</td>
+    <td>キーボードの設定を行います。必要に応じて日本語キーボード等に設定して下さい。</td>
+  </tr>
+  <tr>
+    <td>**5 Enable Camera**</td>
+    <td>カメラモジュールを接続している場合に設定してください｡</td>
+  </tr>
+  <tr>
+    <td>**6 Add to Rastrack**</td>
+    <td>Rastrack への登録</td>
+  </tr>
+  <tr>
+    <td>**7 Overclock**</td>
+    <td>オーバークロック</td>
+  </tr>
+  <tr>
+    <td>**8 Advanced Options**</td>
+    <td>その他のオプション。ここでは PiRT-Unit の環境で必要な項目のみ取り上げます。</td>
+  </tr>
+  <tr>
+    <td>A6 SPI</td>
+    <td>SPIを利用する場合は、Enable に設定します。（デフォルトはDisable）</td>
+  </tr>
+  <tr>
+    <td>A7 I2C</td>
+    <td>I2Cを利用する場合は、Enable に設定します。（デフォルトはDisable）</td>
+  </tr>
+  <tr>
+    <td>**9 About raspi-config**</td>
+    <td>本ツールに関する情報を表示します｡</td>
+  </tr>
+</table>
+
+<p>上記の各項目を設定した後は、[Tab] キーにて [Finish] を選択して実行してください。
+Raspberry Pi 本体が再起動し、各種設定が有効となります。</p>
+
+<p>再起動後、コマンド入力待ち状態で、｢startx｣を実行すると Raspbian のデスクトップ画面が表示されます｡</p>
+
+<div align="center"><a href="raspberry_xwindow.png"><img src="raspberry_xwindow.png" width="70%;" /></a></div>
+<div align="center"><strong>Raspbian デスクトップ画面</strong></div>
+
+<!-- 必要に応じて、ターミナル画面から root のパスワードを設定してください｡ -->
+<!--  -->
+<!-- $ sudo sh -->
+<!-- # passwd -->
+
+<p>終了する場合は、以下のコマンドで停止した後、本体から電源を抜いてください｡</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo halt
+</code></pre></div></div>
+
+<h2 id="無線lan-の設定">無線LAN の設定</h2>
+
+<p>Raspberry Pi の USB に無線LANドングルを挿入し設定することで、Raspberry Pi を無線化できます。
+移動ロボットなどに搭載する際には便利です。</p>
+
+<h3 id="etcnetworkinterfaces-の編集">/etc/network/interfaces の編集</h3>
+
+<p>まず、/etc/network/interfaces を以下のように編集します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo vi /etc/network/interfaces
+</code></pre></div></div>
+
+<p>以下の2か所を書き換えます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> iface wlan0 inet manual
+         ↓
+ iface wlan0 inet dhcp
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+                      ↓
+ wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+</code></pre></div></div>
+
+<h3 id="etcwpa_supplicantwpa_supplicantconf-の編集">/etc/wpa_supplicant/wpa_supplicant.conf の編集</h3>
+
+<p>次に、無線LANの ESSID とキーを登録します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo bash
+ # cd /etc/wpa_supplicant
+ # wpa_passphrase ESSID pass &gt;&gt; wpa_supplicant.conf
+</code></pre></div></div>
+
+<p>SSID には無線LANの ESSID、pass には無線LANのキーを入力します。リダイレクトの際、<strong>&gt;</strong> ではなく <strong>»</strong> (追記)を使用するよう注意してください。
+結果は以下のようになっていると思います。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+ update_config=1
+ network={
+         ssid="OpenRTM"
+         #psk="4332221111"
+         psk=142914b76be167767055ff945898baaaf83c42b3ad3b99afb0ae531e8fb15e5e
+ }
+</code></pre></div></div>
+
+<p>無線LAN アクセスポイントの設定によっては、追加の設定が必要になるかもしれません。
+以下に、一例を示します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+ update_config=1
+ network={
+         ssid="OpenRTM"
+         proto=WPA2
+         key_mgmt=WPA-PSK
+         pairwise=TKIP CCMP
+         group=TKIP CCMP
+         #psk="4332221111"
+         psk=142914b76be167767055ff945898baaaf83c42b3ad3b99afb0ae531e8fb15e5e
+ }
+</code></pre></div></div>
+
+<p>最後に、インターフェースを初期化します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # ifdown wlan0
+ # ifup wlan0
+ Internet Systems Consortium DHCP Client 4.2.2
+ Copyright 2004-2011 Internet Systems Consortium.
+ All rights reserved.
+ For info, please visit https://www.isc.org/software/dhcp/
+  : 中略
+ DHCPREQUEST on wlan0 to 255.255.255.255 port 67
+ DHCPOFFER from 192.168.11.1
+ DHCPACK from 192.168.11.1
+ bound to 192.168.11.26 -- renewal in 34810 seconds.
+</code></pre></div></div>
+
+<p>ここで、無線LAN に接続できない場合、/etc/network/interfaces, /etc/wpa_supplicant/wpa_supplicant.conf の設定を見直してください。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
+ # ifconfig wlan0
+ wlan0     Link encap:Ethernet  HWaddr XX:XX:XX:XX:XX:XX
+           inet addr:192.168.11.26  Bcast:192.168.11.255  Mask:255.255.255.0
+           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+           RX packets:1218 errors:0 dropped:0 overruns:0 frame:0
+           TX packets:21 errors:0 dropped:0 overruns:0 carrier:0
+           collisions:0 txqueuelen:1000
+           RX bytes:250608 (244.7 KiB)  TX bytes:4506 (4.4 KiB)
+</code></pre></div></div>
+
+<p>無事、無線LAN wlan0 に IPアドレスが割り振られました。</p>
+
+<h2 id="ホスト名でリモート接続する">ホスト名でリモート接続する</h2>
+
+<p>Raspberry Pi に ssh でリモートログインで操作する場合、固定IPアドレスを割り振っていなければ、通常 Raspberry Pi の IPアドレスをコンソールで調べて接続する必要があります。</p>
+
+<p>そこで Bonjour互換の avahi というサービスをインストールします。
+Bonjour は Apple が提唱するネットワーク上のサービスを自動的に検索して利用できるようにするためのサービスです。
+avahi を使うと、DHCP で IPアドレスを割り振っている Raspberry Pi に対してもホスト名でアクセスすることができるようになります。</p>
+
+<h3 id="ホスト名の設定">ホスト名の設定</h3>
+
+<p>他のホスト名と衝突しないホスト名を選び設定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo vi /etc/hostname
+</code></pre></div></div>
+
+<p>/etc/hostname に1行目にホスト名を記載します。初期値は raspberrypi となっています。
+さらに、/etc/hosts の 127.0.1.1 raspberrypi となっている部分を上で決めた自分のホスト名に書き換えます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo vi /etc/hosts
+</code></pre></div></div>
+
+<h3 id="avahi-daemon-のインストール">avahi-daemon のインストール</h3>
+
+<p>以下のコマンドで avahi デーモンをインストールします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo apt-get update
+ $ sudo apt-get install avahi-daemon
+</code></pre></div></div>
+
+<p>自ホストに対してping を打ってみます。ホスト名の後に .local を付けた名前を使います。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ ping myhost.local
+</code></pre></div></div>
+
+<p>これで ping が返ってくれば、avahi がほぼ正しく設定されていることになります。</p>
+
+<h3 id="bonjour-のインストール-windowsのみ">Bonjour のインストール (Windowsのみ)</h3>
+
+<p>PC から avahi が設定された RaspberryPi にアクセスするためには、PC側にも avahi か Bonjour がインストールされている必要があります。</p>
+
+<p>Linux では、RaspberryPi と同様に avahi-daemon をインストールすれば使用できます。また
+Mac はデフォルトで Bonjour がインストールされているので、特に何もする必要がありません。</p>
+
+<p>Windows ではデフォルトでは Bonjour はインストールされていません。
+最も簡単に Bonjour を導入する方法は <a href="http://www.apple.com/jp/itunes/download/">iTunes</a> をインストールすることです。</p>
+
+<ul>
+  <li><a href="http://www.apple.com/jp/itunes/download/">iTunesダウンロード</a></li>
+</ul>
+
+<p>どうしても iTunes をインストールしたくない場合は、アーカイバアプリケーションなどで、ダウンロードした iTunesSetup.exe を展開すると BonjourSetup.exe を抽出することもできます。</p>
+
+<p>また、以下の Apple Bonjour 印刷サービスにも Bonjour が同梱されています。(iTunesに同梱されているものよりバージョンが若干古いようです。)</p>
+
+<ul>
+  <li><a href="http://www.apple.com/jp/support/bonjour/">Apple Bonjour</a>
+    <ul>
+      <li><a href="http://support.apple.com/kb/DL999">Bonjour 印刷サービス (v2.0.2.0)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>現在 Applie では Bonjour for Windows 単体としては配布は行なっていませんが、かつて配布していたものを再配布しているサイトも幾つかあります。(ただし、古いバージョンしか入手できないようです。)
+以下は Appleサイト以外の Bonjour ダウンロードサイトです。自己責任でご利用ください。</p>
+
+<ul>
+  <li><a href="http://www.download3k.com/Install-Bonjour.html">BonjourSetup.exe (v1.0.6.2)</a></li>
+  <li><a href="http://download.techworld.com/760/apple-bonjour-for-windows-106-64-bit/">Bonjour64Setup.exe (v1.0.6.2)</a></li>
+  <li><a href="https://developer.apple.com/downloads/index.action?q=Bonjour%20SDK%20for%20Windows">Apple Bonjour SDK (Apple developer へのログインが必要)</a></li>
+</ul>
+
+<h4 id="bonjour-がうまく機能しない場合">Bonjour がうまく機能しない場合</h4>
+
+<p>ファイヤウォールが動作している場合、Bonjour がうまく機能しないことがあります。
+その場合、UDPポート5353を開放するかファイヤウォールを OFF にしてください。</p>
+
+<ul>
+  <li><a href="http://support.apple.com/kb/TS2235?viewlocale=ja_JP">ファイアウォールの設定が原因で Bonjour for Windows が動作しない</a></li>
+</ul>
+
+<h3 id="teraterm-のインストール">TeraTerm のインストール</h3>
+
+<p>Windows から RaspberryPi に ssh 経由でログインするためには、ssh クライアントをインストールする必要があります。
+Windows で利用可能なクライアントは多数ありますが、ここでは Tera Term を紹介します。</p>
+
+<ul>
+  <li><a href="http://sourceforge.jp/projects/ttssh2/">Tera Term</a></li>
+</ul>
+
+<div align="center"><a href="teraterm_connect.png"><img src="teraterm_connect.png" width="60%;" /></a></div>
+<div align="center"><strong>TeraTermによる接続</strong></div>
+
+<p>TeraTerm をインストール後、起動すると接続ダイアログが現れるので、先ほど設定したホスト名+<strong>.local</strong> を「ホスト」のテキストボックスに入力しOKを押します。
+パスワードが変更されていなければ、</p>
+
+<ul>
+  <li>ID: pi</li>
+  <li>パスワード: raspberry</li>
+</ul>
+
+<p>でログインできます。</p>
+
+<p>なお、Linux や Mac はターミナルウインドウを開いて</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ ssh pi@myhost.local
+</code></pre></div></div>
+
+<p>のようにして接続します。</p>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/installation/other/raspberrypi_casestudy/raspi_init_setting/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

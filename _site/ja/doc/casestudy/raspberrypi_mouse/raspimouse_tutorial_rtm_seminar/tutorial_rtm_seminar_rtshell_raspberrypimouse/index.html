@@ -1,0 +1,486 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>チュートリアル(rtshell入門、Raspberry Pi Mouse) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="チュートリアル(rtshell入門、Raspberry Pi Mouse)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="チュートリアル(rtshell入門、Raspberry Pi Mouse)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"チュートリアル(rtshell入門、Raspberry Pi Mouse)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>チュートリアル(rtshell入門、Raspberry Pi Mouse)</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#はじめに">はじめに</a>
+    <ul>
+      <li><a href="#rtshell">rtshell</a></li>
+    </ul>
+  </li>
+  <li><a href="#rtシステム起動の自動化">RTシステム起動の自動化</a>
+    <ul>
+      <li><a href="#事前準備">事前準備</a></li>
+      <li><a href="#ポートの接続自動化">ポートの接続自動化</a></li>
+      <li><a href="#rtcのアクティブ化の自動処理">RTCのアクティブ化の自動処理</a></li>
+      <li><a href="#rtcの終了の自動化">RTCの終了の自動化</a></li>
+      <li><a href="#バッチファイルシェルスクリプトの作成">バッチファイル、シェルスクリプトの作成</a>
+        <ul>
+          <li><a href="#起動スクリプトの作成">起動スクリプトの作成</a></li>
+          <li><a href="#終了スクリプトの作成">終了スクリプトの作成</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!--  チュートリアル(rtshell入門、Raspberry Pi Mouse) -->
+
+<p>#contents</p>
+
+<h2 id="はじめに">はじめに</h2>
+<p>ここではシミュレータ上のRaspberry Piマウスを操作するRTシステムの起動、終了を自動化するバッチファイル、シェルスクリプトの作成方法について説明します。
+今まで実行ファイルをダブルクリックして起動したり、RTSystemEditorから操作してポートを接続したりしていたのが、スクリプトを実行するだけでシステムの起動に必要な処理を全て実行してくれます。</p>
+
+<p>この実習では<a href="/ja/node/6550">RTコンポーネントの作成入門</a>で作成したRobotControllerコンポーネントを使用します。</p>
+
+<p>RTCの起動とRTSystemEditor上での操作を自動化するバッチファイル、シェルスクリプトを作成する実習を行います。</p>
+
+<div align="center"><a href="rtshell1_tutorial.png"><img src="rtshell1_tutorial.png" width="50%;" /></a></div>
+
+<h3 id="rtshell">rtshell</h3>
+
+<p>rtshellはコマンドラインからRTCを操作するためのツールで、RTSystemEditorと同等の機能を持ちます。</p>
+
+<ul>
+  <li><a href="/ja/node/5014">rtshell によるRTシステムの管理</a></li>
+  <li><a href="https://openrtm.org/openrtm/sites/default/files/5620/rtshell.pdf">rtshell入門</a></li>
+</ul>
+
+<h2 id="rtシステム起動の自動化">RTシステム起動の自動化</h2>
+
+<p>シミュレータ上のRaspberryPiマウスをRobotControllerコンポーネントで制御するシステムの起動、終了手順は以下の通りです。</p>
+
+<ol>
+  <li>RaspberryPiMouseSimulatorコンポーネント、RobotControllerコンポーネントを起動する。</li>
+  <li>ポートをコネクタで接続する</li>
+  <li>RTCをアクティブ化する</li>
+  <li>RTCを終了する</li>
+</ol>
+
+<h3 id="事前準備">事前準備</h3>
+<p>この実習ではコマンドラインによる操作を行うため、コマンドプロンプト(Windows)、ターミナル(Ubuntu)を起動してください。</p>
+
+<ul>
+  <li><a href="https://pc-karuma.net/windows10-open-command-prompt-window/">Windows10 – コマンドプロンプトを起動する方法</a></li>
+  <li><a href="https://linuxfan.info/ubuntu-open-terminal-emulator">【Linux FAQ】Ubuntuで「端末」を開いて「コマンド」を実行するには？</a></li>
+</ul>
+
+<p>コマンドプロンプト、ターミナルを起動したら「<strong>rtls</strong>」と入力してください。
+<strong>‘rtls’ は、内部コマンドまたは外部コマンド、操作可能なプログラムまたはバッチ ファイルとして認識されていません。</strong>と表示された場合、PythonのScriptsフォルダ(例えば「C:\Python38\Scripts」)が環境変数Pathに設定されていません。
+Pythonをインストール場所を確認して環境変数を設定してください。</p>
+
+<ul>
+  <li><a href="https://gammasoft.jp/blog/python-install-location/">Pythonのインストール場所について（Windows）</a></li>
+  <li><a href="https://www.atmarkit.co.jp/ait/articles/1805/11/news035.html">Windows 10でPath環境変数を設定／編集する</a></li>
+</ul>
+
+<h3 id="ポートの接続自動化">ポートの接続自動化</h3>
+<p>データポートの接続を自動化する手順は以下の通りです。</p>
+
+<ul>
+  <li>RTSystemEditor(もしくはrtshellのrtconコマンド)でポートを接続する。</li>
+  <li>rtshellの<strong>rtcryo</strong>コマンドで接続情報をファイルに保存する。</li>
+  <li>再起動時にrtshellの<strong>rtresurrect</strong>コマンドで接続を復元する。</li>
+</ul>
+
+<p>前準備として接続情報を保存したXMLファイルを保存し、自動起動時にはrtresurrectコマンドで状態を復元します。</p>
+
+<p><strong>RobotControllerComp</strong>、<strong>RaspberryPiMouseSimulatorComp</strong>を起動後、RTSystemEditor上でポートを接続してください。</p>
+
+<p>現在の状態は以下のようになっています。</p>
+
+<div align="center"><a href="rtshell3_tutorial.png"><img src="rtshell3_tutorial.png" width="70%;" /></a></div>
+
+<p>接続後、以下のコマンドでXMLファイルを保存します。
+XMLファイルの保存場所は自分で分かる場所に変更してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtcryo -o C:\work\robotcontroller.xml localhost
+</code></pre></div></div>
+
+<p>次にrtresurrectコマンドを試してみます。
+まずは全てのコネクタを削除してください。
+RTSystemEditorでコネクタをクリックしてDeleteキーを押すか、右クリックしてDeleteを選択してください。</p>
+
+<div align="center"><a href="rtshell2_tutorial.png"><img src="rtshell2_tutorial.png" width="70%;" /></a></div>
+
+<p>現在は以下の状態になっています。</p>
+
+<div align="center"><a href="rtshell4_tutorial.png"><img src="rtshell4_tutorial.png" width="70%;" /></a></div>
+
+<p>以下のコマンドを入力してください。
+XMLファイルの場所は保存した場所に変更してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtresurrect C:\work\robotcontroller.xml
+</code></pre></div></div>
+
+<p>ポートが接続された状態に戻ったかを確認してください。
+現在は以下の状態になっているはずです。</p>
+
+<div align="center"><a href="rtshell3_tutorial.png"><img src="rtshell3_tutorial.png" width="70%;" /></a></div>
+
+<h3 id="rtcのアクティブ化の自動処理">RTCのアクティブ化の自動処理</h3>
+
+<p>rtshellの<strong>rtstart</strong>でRTCをアクティブ化します。
+以下のコマンドを入力してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtstart C:\work\robotcontroller.xml
+</code></pre></div></div>
+
+<p>現在は以下の状態になっており、シミュレータ上のRaspberryPiマウスが操作可能になっているはずです。</p>
+
+<div align="center"><a href="rtshell5_tutorial.png"><img src="rtshell5_tutorial.png" width="70%;" /></a></div>
+
+<p>次にRTCの非アクティブ化を試してみます。
+以下の<strong>rtstop</strong>コマンドを入力してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtstop C:\work\robotcontroller.xml
+</code></pre></div></div>
+
+<p>これでRTCが非アクティブ化されて以下の状態になっているはずです。</p>
+
+<div align="center"><a href="rtshell3_tutorial.png"><img src="rtshell3_tutorial.png" width="70%;" /></a></div>
+
+<h3 id="rtcの終了の自動化">RTCの終了の自動化</h3>
+
+<p>rtshellの<strong>rtexit</strong>でRTCを終了します。</p>
+
+<p>以下のコマンドを試してみてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtexit localhost/RaspberryPiMouseSimulator0.rtc
+ rtexit localhost/%COMPUTERNAME%.host_cxt/RobotController0.rtc
+</code></pre></div></div>
+
+<p>RTCはデフォルトの設定でホスト名.host_cxtのコンテキストの下にコンポーネントを登録します。</p>
+
+<div align="center"><a href="rtshell6_tutorial.png"><img src="rtshell6_tutorial.png" width="50%;" /></a></div>
+
+<p>※Ubuntuの場合は<strong>HOSTNAME=<code class="language-plaintext highlighter-rouge">hostname</code></strong>を追加して、<strong>%COMPUTERNAME%</strong>を<strong>${HOSTNAME}</strong>に変更してください。</p>
+
+<p>これでRTCが終了したはずです。</p>
+
+<h3 id="バッチファイルシェルスクリプトの作成">バッチファイル、シェルスクリプトの作成</h3>
+
+<p>RTシステムを起動、終了するバッチファイル、シェルスクリプトを作成します。</p>
+
+<p>Windowsの場合は以下のバッチファイルを作成してください。</p>
+
+<ul>
+  <li>robotcontroller_start.bat</li>
+  <li>robotcontroller_exit.bat</li>
+</ul>
+
+<p>バッチファイルの作成手順は以下の通りです。</p>
+
+<ul>
+  <li><a href="https://jj-blues.com/cms/wantto-howtomakebatforbeginer/">バッチファイルの作成方法：Windowsバッチファイルに初めて触れる方へ</a></li>
+</ul>
+
+<p>名前変更時に、エクスプローラーで拡張子を非表示にしている場合は注意してください。</p>
+
+<p>バッチファイルはメモ帳などで開いてください。</p>
+
+<p>Ubuntuの場合は以下のシェルスクリプトを作成してください。</p>
+
+<ul>
+  <li>robotcontroller_start.sh</li>
+  <li>robotcontroller_exit.sh</li>
+</ul>
+
+<h4 id="起動スクリプトの作成">起動スクリプトの作成</h4>
+
+<p>まずは<strong>robotcontroller_start.bat</strong>、<strong>robotcontroller_start.sh</strong>を編集します。</p>
+
+<p>robotcontroller_start.batをメモ帳などで開いて、RobotControllerComp、RaspberryPiMouseSimulatorCompを起動する手順をバッチファイル、シェルスクリプトに記述します。</p>
+
+<p>Windowsの場合は以下のコマンドを記述してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> start "" /d C:\workspace\RobotController\build\src\Release RobotControllerComp.exe
+ start "" /d C:\work\RTM_Tutorial\EXE RaspberryPiMouseSimulatorComp.exe
+ timeout 2
+</code></pre></div></div>
+
+<p>Ubuntuの場合は以下のコマンドを記述してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd ~/workspace/RobotController/build/src/
+ ./RobotControllerComp&amp;
+ cd ~/RasPiMouseSimulatorRTC/build
+ src/RaspberryPiMouseSimulatorComp&amp;
+ sleep 2
+</code></pre></div></div>
+
+<p>RobotControllerComp、RaspberryPiMouseSimulatorCompのパスは環境に合わせて変更してください。
+RTCが起動しないと後のコマンドが実行できないためtimeout、sleepコマンドで待機するようにしてあります。</p>
+
+<p>次にポートの接続、RTCのアクティブ化を実行するコマンドを記述してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtresurrect C:\work\robotcontroller.xml
+ rtstart C:\work\robotcontroller.xml
+</code></pre></div></div>
+
+<p>編集が終わったら、robotcontroller_start.bat、robotcontroller_start.shを実行してみてください。
+問題がなければRTCが自動起動してシミュレータが実行されているはずです。
+RTCが起動しない、ポートが接続されないなどの場合は、実行ファイルのパス、XMLファイルのパスを確認してください。</p>
+
+<h4 id="終了スクリプトの作成">終了スクリプトの作成</h4>
+
+<p>次に<strong>robotcontroller_exit.bat</strong>、<strong>robotcontroller_exit.sh</strong>を編集します。</p>
+
+<p>以下のコマンドを記述してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtexit localhost/RaspberryPiMouseSimulator0.rtc
+ rtexit localhost/%COMPUTERNAME%.host_cxt/RobotController0.rtc
+</code></pre></div></div>
+
+<p>Ubuntuの場合は以下のコマンドを記述してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> HOSTNAME=`hostname`
+ rtexit localhost/RaspberryPiMouseSimulator0.rtc
+ rtexit localhost/${HOSTNAME}.host_cxt/RobotController0.rtc
+</code></pre></div></div>
+
+<p>編集が終わったら、robotcontroller_exit.bat、robotcontroller_exit.shを実行してみてください。
+問題がなければ実行中のRTCが終了するはずです。</p>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

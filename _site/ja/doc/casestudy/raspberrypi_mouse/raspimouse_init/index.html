@@ -1,0 +1,349 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>初期設定等 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="初期設定等" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_init/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_init/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="初期設定等" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"初期設定等","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_init/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/casestudy/raspberrypi_mouse/raspimouse_init/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/casestudy/raspberrypi_mouse/raspimouse_init/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>初期設定等</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#raspbian">Raspbian</a></li>
+  <li><a href="#組み立て方">組み立て方</a></li>
+  <li><a href="#raspbian-起動">Raspbian 起動</a></li>
+  <li><a href="#デバイスドライバ">デバイスドライバ</a></li>
+  <li><a href="#openrtm-aist">OpenRTM-aist</a></li>
+  <li><a href="#c版">C++版</a></li>
+  <li><a href="#python版">Python版</a></li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: 初期設定等 -->
+<p>#contents</p>
+
+<h1 id="raspbian">Raspbian</h1>
+
+<p><a href="http://openrtm.org/openrtm/ja/content/raspberrypi_sdcard">このページ</a> の手順に従ってRaspbian を SDカードに書き込んでください。
+※フルキットに付属の SDカードを使用する場合はこの作業は不要です。</p>
+
+<h1 id="組み立て方">組み立て方</h1>
+<p>最初に Raspberry Pi に SDカードを挿入してください。一度組み立てると Raspberry Pi を取り外さない限り SDカードの交換はできません。</p>
+<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm2.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm2.png" width="70%;" /></a></div>
+<p>まずは Raspberry Pi をラズパイマウス本体に載せます。
+スペーサーに Raspberry Pi を付属のねじで留めてください。</p>
+<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm0.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm0.png" width="70%;" /></a></div>
+<p>最後に Raspberry Pi とラズパイマウス本体のピンヘッダに部品を取り付ければ完成です。</p>
+<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm1.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm1.png" width="70%;" /></a></div>
+
+<h1 id="raspbian-起動">Raspbian 起動</h1>
+
+<p>以下の作業は Rasbian を起動して行います。
+まずは Raspberry Pi にディスプレイ、マウス、キーボード、LANケーブルを接続してください。</p>
+
+<p>ラズパイマウスはバッテリー以外にも付属のケーブルでコンセントから電源をとれるのですが、ラズパイマウスに接続するコネクタの向きには注意してください。</p>
+
+<p>ラズパイマウスの電源スイッチは以下の位置にあります。</p>
+
+<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm8.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm8.png" width="70%;" /></a></div>
+
+<p>手前のスイッチがモーター電源で、内側のスイッチが Raspberry Pi の電源です。
+内側のスイッチを ON にしてください。</p>
+
+<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm9.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm9.png" width="70%;" /></a></div>
+
+<p>Raspbian が起動したらユーザー名が pi、パスワードが raspberry でログインできるはずなのでログインしてください。
+ログインできたら以下のコマンドで X-Window を起動してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> startx
+</code></pre></div></div>
+
+<h1 id="デバイスドライバ">デバイスドライバ</h1>
+
+<p>Raspbian 起動後、以下のコマンドでリポジトリをクローンしてください。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/rt-net/RaspberryPiMouse.git
+</code></pre></div></div>
+<p>※git がインストールされていない場合は以下のコマンドを入力してください。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt-get install git
+</code></pre></div></div>
+<p>そして以下のコマンドでカーネルのバージョンを確認してください。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> uname -r
+</code></pre></div></div>
+<p>仮に Raspberry Pi 2 model B のカーネルのバージョン 4.1.6-v7+ の場合は以下のコマンドでカーネルモジュールをロードしてください。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd RaspberryPiMouse/lib/Pi2B+/4.1.6-v7+/
+ sudo insmod rtmouse.ko
+</code></pre></div></div>
+
+<p>SPI 機能を有効にしていない場合は以下のコマンド、もしくは [Menu] &gt; [Preference] &gt; [Raspberry Pi Configuration] で表示される画面で設定してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  sudo raspi-config
+</code></pre></div></div>
+
+<p>上下キーで「Advanced Options」を選択後 Enter キーを押してください。
+次に A5 SPI を同じ手順で選択します。
+そして左右キーで Yes を選択して OK で Enter キーを押せば有効になります。
+元の画面に戻ったら
+左右キーで [Finish] を選択して終了してください。
+詳しくは <a href="http://www.raspberrypi-spy.co.uk/2014/08/enabling-the-spi-interface-on-the-raspberry-pi/">このページ</a> を参考にしてください。</p>
+
+<p>※フルキットに付属の SDカードを使用する場合はこの作業は不要です。</p>
+
+<h1 id="openrtm-aist">OpenRTM-aist</h1>
+
+<h1 id="c版">C++版</h1>
+
+<p>Raspbian に C++版 OpenRTM-aist のインストールには以下のコマンドを入力します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget http://svn.openrtm.org/OpenRTM-aist/tags/RELEASE_1_1_1/OpenRTM-aist/build/pkg_install_debian.sh
+ sudo sh pkg_install_debian.sh
+</code></pre></div></div>
+
+<p>詳しくは <a href="/ja/node/120">このページ</a> を参考にしてください。</p>
+
+<p>※母艦 PC の OS は Windows を想定しています。
+Windows に OpenRTM-aist をインストールする手順については <a href="/ja/node/999">このページ</a> を参考にしてください。
+Python版のサンプルコンポーネントも利用するので、Python版もインストールしてください。
+またサンプルの RTシステムで rtshell を使用するため、<a href="/ja/node/5013">このページ</a> を参考にしてインストールしてください。</p>
+
+<h1 id="python版">Python版</h1>
+<p>Python版のインストールには最初に以下のコマンドを入力してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget http://svn.openrtm.org/OpenRTM-aist-Python/tags/RELEASE_1_1_0/OpenRTM-aist-Python/installer/install_scripts/pkg_install_python_debian.sh
+ sudo sh pkg_install_python_debian.sh
+</code></pre></div></div>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/casestudy/raspberrypi_mouse/raspimouse_init/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

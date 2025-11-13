@@ -1,0 +1,406 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>シミュレーター利用方法 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="シミュレーター利用方法" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="シミュレーター利用方法" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"シミュレーター利用方法","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>シミュレーター利用方法</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#仕様">仕様</a></li>
+  <li><a href="#使用方法">使用方法</a>
+    <ul>
+      <li><a href="#データポート">データポート</a>
+        <ul>
+          <li><a href="#距離センサーのデータ出力">距離センサーのデータ出力</a></li>
+        </ul>
+      </li>
+      <li><a href="#コンフィギュレーションパラメーター">コンフィギュレーションパラメーター</a>
+        <ul>
+          <li><a href="#障害物の設定ファイル">障害物の設定ファイル</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: シミュレーター利用方法 -->
+<p>#contents</p>
+
+<p>このページでは Rapberry Pi マウスのシミュレーターRTC の仕様、利用方法について説明します。</p>
+<div align="center"><a href="raspimouse2.png"><img src="raspimouse2.png" width="70%;" /></a></div>
+
+<h1 id="仕様">仕様</h1>
+
+<div align="center"><a href="raspimouse.png"><img src="raspimouse.png" width="70%;" /></a></div>
+
+<table class="table-alt">
+  <tr>
+    <th colspan="3" style="text-align: center;">RaspberryPiMouseSimulator</th>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">InPort</td>
+  </tr>
+  <tr>
+    <td>名前</td>
+    <td>データ型</td>
+    <td>説明</td>
+  </tr>
+  <tr>
+    <td>target_velocity_in</td>
+    <td>RTC::TimedVelocity2D</td>
+    <td>目標速度</td>
+  </tr>
+  <tr>
+    <td>pose_update</td>
+    <td>RTC::TimedPose2D</td>
+    <td>現在位置の更新</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">OutPort</td>
+  </tr>
+  <tr>
+    <td>名前</td>
+    <td>データ型</td>
+    <td>説明</td>
+  </tr>
+  <tr>
+    <td>current_velocity_out</td>
+    <td>RTC::TimedVelocity2D</td>
+    <td>現在の速度</td>
+  </tr>
+  <tr>
+    <td>current_pose_out</td>
+    <td>RTC::TimedPose2D</td>
+    <td>現在位置</td>
+  </tr>
+  <tr>
+    <td>ir_sensor_out</td>
+    <td>RTC::TimedShortSeq</td>
+    <td>距離センサーから取得したデータを再現した値</td>
+  </tr>
+  <tr>
+    <td>ir_sensor_metre_out</td>
+    <td>RTC::TimedDoubleSeq</td>
+    <td>距離センサーで計測した距離</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">コンフィギュレーションパラメーター</td>
+  </tr>
+  <tr>
+    <td>名前</td>
+    <td>デフォルト値</td>
+    <td>説明</td>
+  </tr>
+  <tr>
+    <td>sampling_time</td>
+    <td>-1</td>
+    <td>シミュレーションの刻み幅。負の値に設定した場合は実行コンテキストの周期で設定</td>
+  </tr>
+  <tr>
+    <td>draw_time</td>
+    <td>0.01</td>
+    <td>描画の周期</td>
+  </tr>
+  <tr>
+    <td>sensor_param</td>
+    <td>1394,792,525,373,299,260,222,181,135,100,81,36,17,16</td>
+    <td>距離センサーのデータを生データに変換するパラメーター。0.01、0.02、0.03、0.04、0.05、0.06、0.07、0.08、0.09、0.10、0.15、0.20、0.25、0.30[m]に対応した値を設定</td>
+  </tr>
+  <tr>
+    <td>blocksConfigFile</td>
+    <td>None</td>
+    <td>障害物の配置設定ファイルの名前</td>
+  </tr>
+</table>
+
+<h1 id="使用方法">使用方法</h1>
+
+<p>以下からダウンロードできます。</p>
+
+<ul>
+  <li><a href="https://github.com/Nobu19800/RasPiMouseSimulatorRTC/archive/master.zip">ZIPファイル</a></li>
+</ul>
+
+<p><strong>RTミドルウェア講習会で使用するシミュレータは設定が異なっているため、講習会のページからダウンロードしてください。</strong></p>
+
+<p>展開したフォルダーの EXEフォルダー内に実行ファイル(RaspberryPiMouseSimulatorComp.exe)があります。
+この EXEファイルを実行すると RTC が起動します。</p>
+
+<h2 id="データポート">データポート</h2>
+<h3 id="距離センサーのデータ出力">距離センサーのデータ出力</h3>
+<p>ir_sensor_out、ir_sensor_metre_out と距離センサーのデータ出力を行うポートが2つありますが、RaspberryPiMouseRTC が距離センサーのデータを直接出力するようになっているため、ir_sensor_out ではシミュレーター上で計測した距離からセンサーのデータを再現して出力するようになっています。
+ir_sensor_metre_out はメートル単位で距離を出力します。</p>
+
+<h2 id="コンフィギュレーションパラメーター">コンフィギュレーションパラメーター</h2>
+<h3 id="障害物の設定ファイル">障害物の設定ファイル</h3>
+<p>blocksConfigFile というパラメーターで障害物の配置を設定する CSVファイルを指定できます。
+サンプルとして test.csv というファイルを用意してあります。</p>
+
+<p>このファイルに位置、角度、サイズを記述してください。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>位置(X)</th>
+    <th>位置(Y)</th>
+    <th>位置(Z)</th>
+    <th>長さ(L)</th>
+    <th>幅(W)</th>
+    <th>高さ(H)</th>
+    <th>角度(θ)</th>
+  </tr>
+  <tr>
+    <td>0.3</td>
+    <td>0.0</td>
+    <td>0.0</td>
+    <td>0.1</td>
+    <td>1.0</td>
+    <td>0.3</td>
+    <td>0.0</td>
+  </tr>
+</table>
+
+<div align="center"><a href="block1.png"><img src="block1.png" width="70%;" /></a></div>
+
+<div align="center"><a href="block2.png"><img src="block2.png" width="70%;" /></a></div>
+
+<p>ブロックは何個でも設定可能です。</p>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

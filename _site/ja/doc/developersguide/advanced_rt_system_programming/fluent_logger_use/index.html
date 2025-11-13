@@ -1,0 +1,1156 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Fluent Loggerによるログ収集 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Fluent Loggerによるログ収集" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_use/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_use/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Fluent Loggerによるログ収集" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Fluent Loggerによるログ収集","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_use/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_use/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_use/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>Fluent Loggerによるログ収集</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#c版">C++版</a>
+    <ul>
+      <li><a href="#windows">Windows</a>
+        <ul>
+          <li><a href="#fluent-bitのインストール">Fluent Bitのインストール</a></li>
+          <li><a href="#各種ライブラリのインストール">各種ライブラリのインストール</a></li>
+          <li><a href="#openrtm-aistのビルド">OpenRTM-aistのビルド</a></li>
+          <li><a href="#動作確認">動作確認</a>
+            <ul>
+              <li><a href="#rtcの起動">RTCの起動</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#ubuntu">Ubuntu</a>
+        <ul>
+          <li><a href="#fluent-bitのインストール-1">Fluent Bitのインストール</a></li>
+          <li><a href="#各種ライブラリのインストール-1">各種ライブラリのインストール</a></li>
+          <li><a href="#openrtm-aistのビルド-1">OpenRTM-aistのビルド</a></li>
+          <li><a href="#動作確認-1">動作確認</a>
+            <ul>
+              <li><a href="#rtcの起動-1">RTCの起動</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#python版">Python版</a>
+    <ul>
+      <li><a href="#fluent-logger-pythonのインストール">fluent-logger-pythonのインストール</a></li>
+      <li><a href="#動作確認-2">動作確認</a>
+        <ul>
+          <li><a href="#rtcの起動-2">RTCの起動</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#簡単な動作確認">簡単な動作確認</a></li>
+  <li><a href="#kibanaelasticsearchによるログ可視化">Kibana+Elasticsearchによるログ可視化</a>
+    <ul>
+      <li><a href="#elasticsearchのインストール">Elasticsearchのインストール</a></li>
+      <li><a href="#kibanaのインストール">Kibanaのインストール</a></li>
+      <li><a href="#動作確認-3">動作確認</a></li>
+      <li><a href="#pythonで動作確認">Pythonで動作確認</a></li>
+    </ul>
+  </li>
+  <li><a href="#c版-1">C++版</a>
+    <ul>
+      <li><a href="#windows-1">Windows</a>
+        <ul>
+          <li><a href="#fluent-bitのインストール-2">Fluent Bitのインストール</a></li>
+          <li><a href="#各種ライブラリのインストール-2">各種ライブラリのインストール</a></li>
+          <li><a href="#openrtm-aistのビルド-2">OpenRTM-aistのビルド</a></li>
+          <li><a href="#動作確認-4">動作確認</a>
+            <ul>
+              <li><a href="#rtcの起動-3">RTCの起動</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#ubuntu-1">Ubuntu</a>
+        <ul>
+          <li><a href="#fluent-bitのインストール-3">Fluent Bitのインストール</a></li>
+          <li><a href="#各種ライブラリのインストール-3">各種ライブラリのインストール</a></li>
+          <li><a href="#openrtm-aistのビルド-3">OpenRTM-aistのビルド</a></li>
+          <li><a href="#動作確認-5">動作確認</a>
+            <ul>
+              <li><a href="#rtcの起動-4">RTCの起動</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#python版-1">Python版</a>
+    <ul>
+      <li><a href="#fluent-logger-pythonのインストール-1">fluent-logger-pythonのインストール</a></li>
+      <li><a href="#動作確認-6">動作確認</a>
+        <ul>
+          <li><a href="#rtcの起動-5">RTCの起動</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#簡単な動作確認-1">簡単な動作確認</a></li>
+  <li><a href="#kibanaelasticsearchによるログ可視化-1">Kibana+Elasticsearchによるログ可視化</a>
+    <ul>
+      <li><a href="#elasticsearchのインストール-1">Elasticsearchのインストール</a></li>
+      <li><a href="#kibanaのインストール-1">Kibanaのインストール</a></li>
+      <li><a href="#動作確認-7">動作確認</a></li>
+      <li><a href="#pythonで動作確認-1">Pythonで動作確認</a></li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: Fluent Loggerによるログ収集 -->
+<p>#contents</p>
+
+<p>Fluentd、Fluent Bitはログの処理や転送を行うオープンソースのソフトウェアライブラリです。</p>
+
+<ul>
+  <li><a href="https://www.fluentd.org/">fluentd</a></li>
+  <li><a href="https://fluentbit.io/">fluentbit</a></li>
+</ul>
+
+<p>Fluentd、Fluent Bitはデータを収集するInputプラグイン、データを送信するOutputプラグインを設定できます。
+Fluentd、Fluent Bitの概要図は以下のようになっています。</p>
+
+<div align="center"><a href="fluentbit2.png"><img src="fluentbit2.png" width="80%;" /></a></div>
+
+<p>Inputは外部プロセスから受信、プロセス内部からのログ書き込み、CPU使用率やディスク使用率等を取得するなどで収集したデータをOutputに渡します。
+Outputは受け取ったデータを外部プロセスへ送信、ファイルへ書き込み、標準出力等します。
+Input、Outputはプラグインとして実装されており、プラグインを変更することでデータの収集方法や送信方法を変更できるため、以下のような様々なデータの収集方法、送信方法を選択できます。</p>
+
+<ul>
+  <li><a href="https://docs.fluentbit.io/manual/pipeline/inputs">Inputs - Fluent Bit: Official Manual</a></li>
+  <li><a href="https://docs.fluentbit.io/manual/pipeline/outputs">Outputs - Fluent Bit: Official Manual</a></li>
+</ul>
+
+<p>またInputからOutputにデータを渡す前にFilterでデータの変換、追加、除外等を実行できます。</p>
+
+<p>Inputにはタグが設定でき、Output、Filterにはマッチングルールを設定できます。
+Output、Filerはマッチングルールに一致したタグのデータを受け取ることができます。</p>
+
+<p>このページではOpenRTM-aistのFluent Loggerプラグインの使用方法を説明します。</p>
+
+<h2 id="c版">C++版</h2>
+
+<h3 id="windows">Windows</h3>
+<h4 id="fluent-bitのインストール">Fluent Bitのインストール</h4>
+
+<p>Fluent BitのビルドにBison/Flexが必要なため適当な場所に展開して環境変数PATHに設定します。</p>
+
+<ul>
+  <li>https://sourceforge.net/projects/winflexbison/</li>
+</ul>
+
+<p>set PATH=%WORKDIR%\win_flex_bison-2.5.24;%PATH%</p>
+
+<p>OpenSSLを適当な場所に展開してください。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/ssltransport_use">SSLTransportの使用方法</a></li>
+</ul>
+
+<p>Windows用に修正したFluent Bitのソースコードを適当な場所に展開してPowerShellでそのフォルダに移動してください。</p>
+
+<ul>
+  <li>https://github.com/Nobu19800/fluent-bit</li>
+</ul>
+
+<p>PowerShellで以下のコマンドを実行するとFluent Bitをビルドします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake -DFLB_RELEASE=On -DFLB_TRACE=Off -DFLB_SHARED_LIB=On -DFLB_EXAMPLES=Off  -DCMAKE_BUILD_TYPE=Release -DOPENSSL_ROOT_DIR=${OpenSSL_INSTALL_DIR} -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${FLUENTBIT_INSTALL_DIR}
+ cmake --build . --config Release
+ cmake --build . --target install --config Release
+</code></pre></div></div>
+
+<h4 id="各種ライブラリのインストール">各種ライブラリのインストール</h4>
+<p>以下のコマンドで必要なヘッダーファイルをコピーします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $FLUENTBIT_BUILD_DIR = "${FLUENTBIT_SOURCE_DIR}\build"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Copy-Item $FLUENTBIT_SOURCE_DIR\lib\monkey\include\monkey\mk_core\external -destination $FLUENTBIT_INSTALL_DIR\include\monkey\mk_core -recurs
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\monkey\mk_core\deps\libevent\include\event.h $FLUENTBIT_INSTALL_DIR\include
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\monkey\mk_core\deps\libevent\include\evutil.h $FLUENTBIT_INSTALL_DIR\include
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\monkey\mk_core\deps\libevent\include\event2 -destination $FLUENTBIT_INSTALL_DIR\include -recurs
+ Copy-Item $FLUENTBIT_BUILD_DIR\lib\monkey\mk_core\deps\libevent\include\event2\event-config.h $FLUENTBIT_INSTALL_DIR\include\event2
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\msgpack-*\include\msgpack.h $FLUENTBIT_INSTALL_DIR\include
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\msgpack-*\include\msgpack -destination $FLUENTBIT_INSTALL_DIR\include -recurs
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\mbedtls-*\include\mbedtls -destination $FLUENTBIT_INSTALL_DIR\include -recurs
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\c-ares-*\include\*.h $FLUENTBIT_INSTALL_DIR\include
+ Copy-Item $FLUENTBIT_BUILD_DIR\lib\c-ares-*\ares_build.h $FLUENTBIT_INSTALL_DIR\include
+ Copy-Item $FLUENTBIT_BUILD_DIR\lib\c-ares-*\ares_config.h $FLUENTBIT_INSTALL_DIR\include
+ Copy-Item $FLUENTBIT_BUILD_DIR\lib\c-ares-*\ares_config.h $FLUENTBIT_INSTALL_DIR\include
+ New-Item $FLUENTBIT_INSTALL_DIR\lib\fluent-bit -ItemType Directory
+ Copy-Item $FLUENTBIT_BUILD_DIR\library\Release\fluent-bit.lib $FLUENTBIT_INSTALL_DIR\lib\fluent-bit
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\cmetrics\include\cmetrics -destination $FLUENTBIT_INSTALL_DIR\include -recurs
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\cmetrics\include\prometheus_remote_write -destination $FLUENTBIT_INSTALL_DIR\include -recurs
+</code></pre></div></div>
+
+<h4 id="openrtm-aistのビルド">OpenRTM-aistのビルド</h4>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build">OpenRTM-aistのビルド手順</a></li>
+</ul>
+
+<p>CMake実行時に<strong>FLUENTBIT_ENABLE</strong>、<strong>FLUENTBIT_ROOT</strong>のオプションを設定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake -DORB_ROOT=$ORB_ROOT -DFLUENTBIT_ENABLE=ON -DFLUENTBIT_ROOT=$FLUENTBIT_INSTALL_DIR -DCMAKE_INSTALL_PREFIX=$OPENRTM_INSTALL_DIR
+</code></pre></div></div>
+
+<p>他の手順は通常のビルド手順と同じです。</p>
+
+<p>以下のコマンドでインストールしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake --build . --target install --config Release
+</code></pre></div></div>
+
+<h4 id="動作確認">動作確認</h4>
+
+<p>td-agent、もしくはtd-agent-bitをインストール、起動する必要があります。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_install">ログ収集ソフトウェアのインストール、起動手順</a></li>
+</ul>
+
+<h5 id="rtcの起動">RTCの起動</h5>
+
+<p>rtc.confで以下のように設定する。tagの名前は適宜変更する。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
+ logger.plugins: C:\\Program Files\\OpenRTM-aist\\logger\\2.0.0\\FluentBit.dll
+ logger.logstream.fluentd.output0.plugin: forward
+ logger.logstream.fluentd.output0.conf.match:*
+ 
+ logger.logstream.fluentd.input0.plugin: lib
+ logger.logstream.fluentd.input0.conf.tag: test.simpleio
+</code></pre></div></div>
+
+<p>RTCを実行するとログを送信する。</p>
+
+<p>またはOpenRTM-aistに含まれる<strong>rtc.fluentbit_stream.conf</strong>を使用して起動することもできます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ${OPENRTM_INSTALL_DIR}\2.0.0\Components\C++\Examples\vc16\ConsoleOutComp.exe -f ${OPENRTM_INSTALL_DIR}\2.0.0\ext\logger\rtc.fluentbit_stream.conf
+</code></pre></div></div>
+
+<h3 id="ubuntu">Ubuntu</h3>
+<h4 id="fluent-bitのインストール-1">Fluent Bitのインストール</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt install flex bison
+ wget https://github.com/fluent/fluent-bit/archive/v1.8.9.tar.gz
+ tar xf v1.8.9.tar.gz
+ cd fluent-bit-1.8.9/
+ sed  -i -e 's/jemalloc-5.2.1\/configure/jemalloc-5.2.1\/configure --disable-initial-exec-tls/g' CMakeLists.txt
+ cd build
+ cmake .. -DFLB_RELEASE=On -DFLB_TRACE=Off -DFLB_JEMALLOC=On -DFLB_TLS=On -DFLB_SHARED_LIB=On -DFLB_EXAMPLES=Off -DFLB_HTTP_SERVER=On -DFLB_IN_SYSTEMD=On -DFLB_OUT_KAFKA=Off
+ cmake --build . --config Release -- -j$(nproc)
+ sudo cmake --build . --target install
+</code></pre></div></div>
+
+<h4 id="各種ライブラリのインストール-1">各種ライブラリのインストール</h4>
+<p>以下のコマンドで必要なヘッダーファイルをコピーします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export FLUENTBIT_SOURCE_DIR=${WORKSPACE}/fluent-bit-1.8.9
+ export FLUENTBIT_BUILD_DIR = ${FLUENTBIT_SOURCE_DIR}/build
+ export FLUENTBIT_INSTALL_DIR=/usr/local
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir -p ${FLUENTBIT_INSTALL_DIR}/include/lib/flb_libco
+ cp -r ${FLUENTBIT_SOURCE_DIR}/lib/flb_libco/libco.h ${FLUENTBIT_INSTALL_DIR}/include/lib/flb_libco
+ cp -r ${FLUENTBIT_BUILD_DIR}/include/jemalloc ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_SOURCE_DIR}/lib/msgpack-*/include/* ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_SOURCE_DIR}/lib/monkey/include/monkey ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_SOURCE_DIR}/lib/mbedtls-*/include/mbedtls ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_SOURCE_DIR}/lib/c-ares-*/include/* ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_BUILD_DIR}/lib/c-ares-*/ares_build.h ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_BUILD_DIR}/lib/c-ares-*/ares_config.h ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_SOURCE_DIR}/lib/cmetrics/include/* ${FLUENTBIT_INSTALL_DIR}/include/
+ cp ${FLUENTBIT_SOURCE_DIR}/lib/flb_libco/libco.h ${FLUENTBIT_INSTALL_DIR}/include/
+</code></pre></div></div>
+
+<h4 id="openrtm-aistのビルド-1">OpenRTM-aistのビルド</h4>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build">OpenRTM-aistのビルド手順</a></li>
+</ul>
+
+<p>CMake実行時に<strong>FLUENTBIT_ENABLE</strong>、<strong>FLUENTBIT_ROOT</strong>のオプションを設定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake -DFLUENTBIT_ENABLE=ON -DFLUENTBIT_ROOT=${FLUENTBITINSTALLDIR} ..
+</code></pre></div></div>
+
+<p>他の手順は通常のビルド手順と同じです。</p>
+
+<p>以下のコマンドでインストールしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake --build . --target install
+</code></pre></div></div>
+
+<h4 id="動作確認-1">動作確認</h4>
+
+<p>td-agent、もしくはtd-agent-bitをインストール、起動する必要があります。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_install">ログ収集ソフトウェアのインストール、起動手順</a></li>
+</ul>
+
+<h5 id="rtcの起動-1">RTCの起動</h5>
+
+<p>rtc.confで以下のように設定する。tagの名前は適宜変更する。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> logger.plugins: /usr/local/lib/openrtm-2.0/logger/FluentBit.so
+ logger.logstream.fluentd.output0.plugin: forward
+ logger.logstream.fluentd.output0.conf.match:*
+ 
+ logger.logstream.fluentd.input0.plugin: lib
+ logger.logstream.fluentd.input0.tag: test.simpleio
+</code></pre></div></div>
+
+<p>RTCを実行するとログを送信する。</p>
+
+<p>動作しない場合は/etc/ssl/certsから壊れたリンクを削除する。</p>
+
+<p>またはOpenRTM-aistに含まれる<strong>rtc.fluentbit_stream.conf</strong>を使用して起動することもできます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/logger/rtc.fluentbit_stream.conf
+</code></pre></div></div>
+
+<h2 id="python版">Python版</h2>
+<p>Python版のFluent LoggerプラグインはForward Outputのみに対応しています。
+別にForward通信を受信するFluentd、Fluent Bitを起動して、処理して他のOutputプラグインで送信するという使い方ができます。</p>
+
+<h3 id="fluent-logger-pythonのインストール">fluent-logger-pythonのインストール</h3>
+<p>fluent-logger-pythonのインストールが必要です。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> pip install fluent-logger
+</code></pre></div></div>
+
+<!-- - https://github.com/fluent/fluent-logger-python/releases -->
+
+<!-- fluent-logger-python-0.9.3.zipを適当な場所に展開して以下のコマンドを実行してください。 -->
+
+<!-- python setup.py install -->
+
+<p>Ubuntuの場合はsudoで実行してください。</p>
+
+<h3 id="動作確認-2">動作確認</h3>
+<p>td-agent、もしくはtd-agent-bitをインストールする必要があります。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_install">ログ収集ソフトウェアのインストール、起動手順</a></li>
+</ul>
+
+<h4 id="rtcの起動-2">RTCの起動</h4>
+<p>rtc.confに以下のように記述してRTCを起動するとfluentdにログが送信されます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.load_path: C:\\Python37\\Lib\\site-packages\\OpenRTM_aist\\ext\\logger\\fluentlogger
+ logger.plugins: FluentLogger.py
+ logger.logstream.fluentd.output0.tag: test.simpleio
+</code></pre></div></div>
+
+<p><strong>manager.modules.load_path</strong>はOpenRTM-aistをインストールしたPythonのパスによって適宜変更してください。
+Ubuntuの場合は<strong>/usr/local/lib/python2.7/dist-packages/OpenRTM_aist/ext/logger/fluentlogger</strong>等になります。</p>
+
+<p>fluentdでログは以下のように表示される。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 2018-12-26 09:06:18.000000000 +0900 test.simpleio: {"message":"exit","time":"2018-12-26 09:06:18,841","name":"fluent.ec_worker","level":"TRACE"}
+</code></pre></div></div>
+
+<p>メッセージの内容、名前、ログを送信した時間、ログレベルが送信される。</p>
+
+<h2 id="簡単な動作確認">簡単な動作確認</h2>
+<p>OpenRTM-aistをビルド、インストールすると、Fluent Loggerプラグインの簡単な動作確認用の設定ファイルがインストールされます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> %RTM_ROOT%\ext\environment-setup.omniorb.vc16.bat
+ %RTM_ROOT%\Components\C++\Examples\vc16\ConsoleOutComp.exe -f %RTM_ROOT%\ext\logger\rtc.fluentbit_stream.conf
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> source ${OPENRTM_INSTALL_DIR}/etc/environment-setup.sh
+ ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/logger/rtc.fluentbit_stream.conf
+</code></pre></div></div>
+
+<h2 id="kibanaelasticsearchによるログ可視化">Kibana+Elasticsearchによるログ可視化</h2>
+
+<p><a href="https://www.elastic.co/jp/kibana/">Kibana</a>はElastic社の開発したデータ可視化ツールです。
+分析エンジン<a href="https://www.elastic.co/jp/elasticsearch/">ElasticSearch</a>と連携してWebブラウザ上でグラフなどのデータ可視化ができるようになります。</p>
+
+<p>OpenRTM-aistのFluent BitプラグインからElasticSearchにログを送信して、Kibanaでデータを可視化する手順を説明します。</p>
+
+<h3 id="elasticsearchのインストール">Elasticsearchのインストール</h3>
+<p>Ubuntu 18.04環境で以下のコマンドによりElasticsearchをインストールします。
+Ubuntu 18.04ではElasticsearchのバージョン次第で動作しない場合があるので、こちらで動作を確認した7.8.0をインストールします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+ add-apt-repository "deb https://artifacts.elastic.co/packages/7.x/apt stable main"
+ sudo apt update
+ sudo apt install elasticsearch=7.8.0
+ sudo systemctl daemon-reload
+ sudo systemctl enable elasticsearch.service
+</code></pre></div></div>
+
+<p><strong>/etc/elasticsearch/elasticsearch.yml</strong>を編集します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> network.bind_host: 0
+ discovery.seed_hosts: ["127.0.0.1", "[::1]"]
+</code></pre></div></div>
+
+<p>編集後にサービスを再起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo systemctl restart elasticsearch.service
+</code></pre></div></div>
+
+<p>メモリの不足で起動できない場合は<strong>/etc/elasticesearch/jvm.options</strong>を編集して調節してください。</p>
+
+<p>-Xms1g
+ -Xmx1g</p>
+
+<h3 id="kibanaのインストール">Kibanaのインストール</h3>
+<p>以下のコマンドでKibanaをインストールします。Elasticsearchと同じバージョンを指定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt install kibana=7.8.0
+ sudo systemctl daemon-reload
+ sudo systemctl enable kibana.service
+</code></pre></div></div>
+
+<p>また、<strong>/etc/kibana/kibana.yml</strong>に以下の行を追加します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> server.port: 5601
+ server.host: "0.0.0.0"
+</code></pre></div></div>
+
+<p><strong>server.host</strong>にNICに設定されたIPアドレスを指定してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> server.host: "192.168.11.2"
+</code></pre></div></div>
+
+<p>サービスを再起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo systemctl restart kibana.service
+</code></pre></div></div>
+
+<h3 id="動作確認-3">動作確認</h3>
+
+<p>以下のrtc.confを作成してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> logger.enable: YES
+ logger.log_level: INFO
+ 
+ 
+ logger.plugins: ${OPNRTM_INSTALL_DIR}/lib/openrtm-2.0/logger/FluentBit.so
+ 
+ logger.logstream.fluentd.input.plugin: lib
+ logger.logstream.fluentd.input.conf.tag: myRTCs_log
+ 
+ logger.logstream.fluentd.output0.plugin: es
+ logger.logstream.fluentd.output0.conf.match: *
+ logger.logstream.fluentd.output0.conf.host: 127.0.0.1
+ logger.logstream.fluentd.output0.conf.port: 9200
+ logger.logstream.fluentd.output0.conf.Index: fluentbit
+</code></pre></div></div>
+
+<p>${OPNRTM_INSTALL_DIR}はOpenRTM-aistをインストールしたパスに置き換えてください。
+<strong>host</strong>、<strong>port</strong>にElasticsearchのアドレスとポート番号を指定してください。
+<strong>Index</strong>や<strong>tag</strong>は任意の文字列を設定します。</p>
+
+<p>このrtc.confを指定してRTCを起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ./share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f rtc.conf
+</code></pre></div></div>
+
+<p>次にWebブラウザからKibanaにアクセスしてログを確認します。
+<strong>http://127.0.0.1:5601</strong>にアクセスしてください。別の端末からアクセスする場合はIPアドレスを変更してください。</p>
+
+<div align="center"><a href="kibana1.png"><img src="kibana1.png" width="50%;" /></a></div>
+
+<p>可視化するデータのインデックスパターンを設定します。今回の例ではrtc.confでIndexを<strong>fluentbit</strong>に指定しました。
+ページが開いたら左上をクリックして表示されたメニューからManagmentの<strong>Stack Management</strong>をクリックしてください。</p>
+
+<div align="center"><a href="kibana2.png"><img src="kibana2.png" width="60%;" /></a></div>
+
+<p>Stack Managementのページの左側の<strong>Index Patterns</strong>をクリックします。</p>
+
+<div align="center"><a href="kibana3.png"><img src="kibana3.png" width="60%;" /></a></div>
+
+<p>Index patternsのページの<strong>Create Index pattern</strong>ボタンを押します。</p>
+
+<div align="center"><a href="kibana4.png"><img src="kibana4.png" width="60%;" /></a></div>
+
+<p>Create index patternのページでIndex patternを<strong>fluentbit</strong>*に指定してNext stepボタンを押します。</p>
+
+<div align="center"><a href="kibana5.png"><img src="kibana5.png" width="60%;" /></a></div>
+
+<p>Step 2でTime Filter field nameは<strong>@timestamp</strong>のままCreate index patternボタンを押します。</p>
+
+<div align="center"><a href="kibana6.png"><img src="kibana6.png" width="60%;" /></a></div>
+
+<p>ここからはデータを確認します。
+ページ左上をクリックして、メニューからKibanaの<strong>Discover</strong>をクリックしてください。</p>
+
+<div align="center"><a href="kibana7.png"><img src="kibana7.png" width="60%;" /></a></div>
+
+<p>Discoverの画面で左側にインデックスパターンが表示されているため、インデックスパターンをクリックして先ほど設定した<strong>fluentbit</strong>*に切り替えます。</p>
+
+<div align="center"><a href="kibana8.png"><img src="kibana8.png" width="60%;" /></a></div>
+
+<p>これでログの一覧が確認できます。グラフなどで利用する手順についてはKibanaのマニュアルなどを参考にしてください。</p>
+
+<div align="center"><a href="kibana9.png"><img src="kibana9.png" width="50%;" /></a></div>
+
+<h3 id="pythonで動作確認">Pythonで動作確認</h3>
+<p>OpenRTM-aist Python版で動作確認する場合はElasticsearch Loggerプラグインを使用します。
+まずはelasticsearchのPythonライブラリ、ECSentbit:https://fluentbit.io/]]</p>
+
+<p>Fluentd、Fluent Bitはデータを収集するInputプラグイン、データを送信するOutputプラグインを設定できます。
+Fluentd、Fluent Bitの概要図は以下のようになっています。</p>
+
+<div align="center"><a href="fluentbit2.png"><img src="fluentbit2.png" width="80%;" /></a></div>
+
+<p>Inputは外部プロセスから受信、プロセス内部からのログ書き込み、CPU使用率やディスク使用率等を取得するなどで収集したデータをOutputに渡します。
+Outputは受け取ったデータを外部プロセスへ送信、ファイルへ書き込み、標準出力等します。
+Input、Outputはプラグインとして実装されており、プラグインを変更することでデータの収集方法や送信方法を変更できるため、以下のような様々なデータの収集方法、送信方法を選択できます。</p>
+
+<ul>
+  <li><a href="https://docs.fluentbit.io/manual/pipeline/inputs">Inputs - Fluent Bit: Official Manual</a></li>
+  <li><a href="https://docs.fluentbit.io/manual/pipeline/outputs">Outputs - Fluent Bit: Official Manual</a></li>
+</ul>
+
+<p>またInputからOutputにデータを渡す前にFilterでデータの変換、追加、除外等を実行できます。</p>
+
+<p>Inputにはタグが設定でき、Output、Filterにはマッチングルールを設定できます。
+Output、Filerはマッチングルールに一致したタグのデータを受け取ることができます。</p>
+
+<p>このページではOpenRTM-aistのFluent Loggerプラグインの使用方法を説明します。</p>
+
+<h2 id="c版-1">C++版</h2>
+
+<h3 id="windows-1">Windows</h3>
+<h4 id="fluent-bitのインストール-2">Fluent Bitのインストール</h4>
+
+<p>Fluent BitのビルドにBison/Flexが必要なため適当な場所に展開して環境変数PATHに設定します。</p>
+
+<ul>
+  <li>https://sourceforge.net/projects/winflexbison/</li>
+</ul>
+
+<p>set PATH=%WORKDIR%\win_flex_bison-2.5.24;%PATH%</p>
+
+<p>OpenSSLを適当な場所に展開してください。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/ssltransport_use">SSLTransportの使用方法</a></li>
+</ul>
+
+<p>Windows用に修正したFluent Bitのソースコードを適当な場所に展開してPowerShellでそのフォルダに移動してください。</p>
+
+<ul>
+  <li>https://github.com/Nobu19800/fluent-bit</li>
+</ul>
+
+<p>PowerShellで以下のコマンドを実行するとFluent Bitをビルドします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake -DFLB_RELEASE=On -DFLB_TRACE=Off -DFLB_SHARED_LIB=On -DFLB_EXAMPLES=Off  -DCMAKE_BUILD_TYPE=Release -DOPENSSL_ROOT_DIR=${OpenSSL_INSTALL_DIR} -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${FLUENTBIT_INSTALL_DIR}
+ cmake --build . --config Release
+ cmake --build . --target install --config Release
+</code></pre></div></div>
+
+<h4 id="各種ライブラリのインストール-2">各種ライブラリのインストール</h4>
+<p>以下のコマンドで必要なヘッダーファイルをコピーします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $FLUENTBIT_BUILD_DIR = "${FLUENTBIT_SOURCE_DIR}\build"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Copy-Item $FLUENTBIT_SOURCE_DIR\lib\monkey\include\monkey\mk_core\external -destination $FLUENTBIT_INSTALL_DIR\include\monkey\mk_core -recurs
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\monkey\mk_core\deps\libevent\include\event.h $FLUENTBIT_INSTALL_DIR\include
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\monkey\mk_core\deps\libevent\include\evutil.h $FLUENTBIT_INSTALL_DIR\include
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\monkey\mk_core\deps\libevent\include\event2 -destination $FLUENTBIT_INSTALL_DIR\include -recurs
+ Copy-Item $FLUENTBIT_BUILD_DIR\lib\monkey\mk_core\deps\libevent\include\event2\event-config.h $FLUENTBIT_INSTALL_DIR\include\event2
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\msgpack-*\include\msgpack.h $FLUENTBIT_INSTALL_DIR\include
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\msgpack-*\include\msgpack -destination $FLUENTBIT_INSTALL_DIR\include -recurs
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\mbedtls-*\include\mbedtls -destination $FLUENTBIT_INSTALL_DIR\include -recurs
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\c-ares-*\include\*.h $FLUENTBIT_INSTALL_DIR\include
+ Copy-Item $FLUENTBIT_BUILD_DIR\lib\c-ares-*\ares_build.h $FLUENTBIT_INSTALL_DIR\include
+ Copy-Item $FLUENTBIT_BUILD_DIR\lib\c-ares-*\ares_config.h $FLUENTBIT_INSTALL_DIR\include
+ Copy-Item $FLUENTBIT_BUILD_DIR\lib\c-ares-*\ares_config.h $FLUENTBIT_INSTALL_DIR\include
+ New-Item $FLUENTBIT_INSTALL_DIR\lib\fluent-bit -ItemType Directory
+ Copy-Item $FLUENTBIT_BUILD_DIR\library\Release\fluent-bit.lib $FLUENTBIT_INSTALL_DIR\lib\fluent-bit
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\cmetrics\include\cmetrics -destination $FLUENTBIT_INSTALL_DIR\include -recurs
+ Copy-Item $FLUENTBIT_SOURCE_DIR\lib\cmetrics\include\prometheus_remote_write -destination $FLUENTBIT_INSTALL_DIR\include -recurs
+</code></pre></div></div>
+
+<h4 id="openrtm-aistのビルド-2">OpenRTM-aistのビルド</h4>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build">OpenRTM-aistのビルド手順</a></li>
+</ul>
+
+<p>CMake実行時に<strong>FLUENTBIT_ENABLE</strong>、<strong>FLUENTBIT_ROOT</strong>のオプションを設定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake -DORB_ROOT=$ORB_ROOT -DFLUENTBIT_ENABLE=ON -DFLUENTBIT_ROOT=$FLUENTBIT_INSTALL_DIR -DCMAKE_INSTALL_PREFIX=$OPENRTM_INSTALL_DIR
+</code></pre></div></div>
+
+<p>他の手順は通常のビルド手順と同じです。</p>
+
+<p>以下のコマンドでインストールしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake --build . --target install --config Release
+</code></pre></div></div>
+
+<h4 id="動作確認-4">動作確認</h4>
+
+<p>td-agent、もしくはtd-agent-bitをインストール、起動する必要があります。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_install">ログ収集ソフトウェアのインストール、起動手順</a></li>
+</ul>
+
+<h5 id="rtcの起動-3">RTCの起動</h5>
+
+<p>rtc.confで以下のように設定する。tagの名前は適宜変更する。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
+ logger.plugins: C:\\Program Files\\OpenRTM-aist\\logger\\2.0.0\\FluentBit.dll
+ logger.logstream.fluentd.output0.plugin: forward
+ logger.logstream.fluentd.output0.conf.match:*
+ 
+ logger.logstream.fluentd.input0.plugin: lib
+ logger.logstream.fluentd.input0.conf.tag: test.simpleio
+</code></pre></div></div>
+
+<p>RTCを実行するとログを送信する。</p>
+
+<p>またはOpenRTM-aistに含まれる<strong>rtc.fluentbit_stream.conf</strong>を使用して起動することもできます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ${OPENRTM_INSTALL_DIR}\2.0.0\Components\C++\Examples\vc16\ConsoleOutComp.exe -f ${OPENRTM_INSTALL_DIR}\2.0.0\ext\logger\rtc.fluentbit_stream.conf
+</code></pre></div></div>
+
+<h3 id="ubuntu-1">Ubuntu</h3>
+<h4 id="fluent-bitのインストール-3">Fluent Bitのインストール</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt install flex bison
+ wget https://github.com/fluent/fluent-bit/archive/v1.8.9.tar.gz
+ tar xf v1.8.9.tar.gz
+ cd fluent-bit-1.8.9/
+ sed  -i -e 's/jemalloc-5.2.1\/configure/jemalloc-5.2.1\/configure --disable-initial-exec-tls/g' CMakeLists.txt
+ cd build
+ cmake .. -DFLB_RELEASE=On -DFLB_TRACE=Off -DFLB_JEMALLOC=On -DFLB_TLS=On -DFLB_SHARED_LIB=On -DFLB_EXAMPLES=Off -DFLB_HTTP_SERVER=On -DFLB_IN_SYSTEMD=On -DFLB_OUT_KAFKA=Off
+ cmake --build . --config Release -- -j$(nproc)
+ sudo cmake --build . --target install
+</code></pre></div></div>
+
+<h4 id="各種ライブラリのインストール-3">各種ライブラリのインストール</h4>
+<p>以下のコマンドで必要なヘッダーファイルをコピーします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export FLUENTBIT_SOURCE_DIR=${WORKSPACE}/fluent-bit-1.8.9
+ export FLUENTBIT_BUILD_DIR = ${FLUENTBIT_SOURCE_DIR}/build
+ export FLUENTBIT_INSTALL_DIR=/usr/local
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir -p ${FLUENTBIT_INSTALL_DIR}/include/lib/flb_libco
+ cp -r ${FLUENTBIT_SOURCE_DIR}/lib/flb_libco/libco.h ${FLUENTBIT_INSTALL_DIR}/include/lib/flb_libco
+ cp -r ${FLUENTBIT_BUILD_DIR}/include/jemalloc ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_SOURCE_DIR}/lib/msgpack-*/include/* ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_SOURCE_DIR}/lib/monkey/include/monkey ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_SOURCE_DIR}/lib/mbedtls-*/include/mbedtls ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_SOURCE_DIR}/lib/c-ares-*/include/* ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_BUILD_DIR}/lib/c-ares-*/ares_build.h ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_BUILD_DIR}/lib/c-ares-*/ares_config.h ${FLUENTBIT_INSTALL_DIR}/include/
+ cp -r ${FLUENTBIT_SOURCE_DIR}/lib/cmetrics/include/* ${FLUENTBIT_INSTALL_DIR}/include/
+ cp ${FLUENTBIT_SOURCE_DIR}/lib/flb_libco/libco.h ${FLUENTBIT_INSTALL_DIR}/include/
+</code></pre></div></div>
+
+<h4 id="openrtm-aistのビルド-3">OpenRTM-aistのビルド</h4>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build">OpenRTM-aistのビルド手順</a></li>
+</ul>
+
+<p>CMake実行時に<strong>FLUENTBIT_ENABLE</strong>、<strong>FLUENTBIT_ROOT</strong>のオプションを設定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake -DFLUENTBIT_ENABLE=ON -DFLUENTBIT_ROOT=${FLUENTBITINSTALLDIR} ..
+</code></pre></div></div>
+
+<p>他の手順は通常のビルド手順と同じです。</p>
+
+<p>以下のコマンドでインストールしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake --build . --target install
+</code></pre></div></div>
+
+<h4 id="動作確認-5">動作確認</h4>
+
+<p>td-agent、もしくはtd-agent-bitをインストール、起動する必要があります。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_install">ログ収集ソフトウェアのインストール、起動手順</a></li>
+</ul>
+
+<h5 id="rtcの起動-4">RTCの起動</h5>
+
+<p>rtc.confで以下のように設定する。tagの名前は適宜変更する。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> logger.plugins: /usr/local/lib/openrtm-2.0/logger/FluentBit.so
+ logger.logstream.fluentd.output0.plugin: forward
+ logger.logstream.fluentd.output0.conf.match:*
+ 
+ logger.logstream.fluentd.input0.plugin: lib
+ logger.logstream.fluentd.input0.tag: test.simpleio
+</code></pre></div></div>
+
+<p>RTCを実行するとログを送信する。</p>
+
+<p>動作しない場合は/etc/ssl/certsから壊れたリンクを削除する。</p>
+
+<p>またはOpenRTM-aistに含まれる<strong>rtc.fluentbit_stream.conf</strong>を使用して起動することもできます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/logger/rtc.fluentbit_stream.conf
+</code></pre></div></div>
+
+<h2 id="python版-1">Python版</h2>
+<p>Python版のFluent LoggerプラグインはForward Outputのみに対応しています。
+別にForward通信を受信するFluentd、Fluent Bitを起動して、処理して他のOutputプラグインで送信するという使い方ができます。</p>
+
+<h3 id="fluent-logger-pythonのインストール-1">fluent-logger-pythonのインストール</h3>
+<p>fluent-logger-pythonのインストールが必要です。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> pip install fluent-logger
+</code></pre></div></div>
+
+<!-- - https://github.com/fluent/fluent-logger-python/releases -->
+
+<!-- fluent-logger-python-0.9.3.zipを適当な場所に展開して以下のコマンドを実行してください。 -->
+
+<!-- python setup.py install -->
+
+<p>Ubuntuの場合はsudoで実行してください。</p>
+
+<h3 id="動作確認-6">動作確認</h3>
+<p>td-agent、もしくはtd-agent-bitをインストールする必要があります。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_install">ログ収集ソフトウェアのインストール、起動手順</a></li>
+</ul>
+
+<h4 id="rtcの起動-5">RTCの起動</h4>
+<p>rtc.confに以下のように記述してRTCを起動するとfluentdにログが送信されます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.load_path: C:\\Python37\\Lib\\site-packages\\OpenRTM_aist\\ext\\logger\\fluentlogger
+ logger.plugins: FluentLogger.py
+ logger.logstream.fluentd.output0.tag: test.simpleio
+</code></pre></div></div>
+
+<p><strong>manager.modules.load_path</strong>はOpenRTM-aistをインストールしたPythonのパスによって適宜変更してください。
+Ubuntuの場合は<strong>/usr/local/lib/python2.7/dist-packages/OpenRTM_aist/ext/logger/fluentlogger</strong>等になります。</p>
+
+<p>fluentdでログは以下のように表示される。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 2018-12-26 09:06:18.000000000 +0900 test.simpleio: {"message":"exit","time":"2018-12-26 09:06:18,841","name":"fluent.ec_worker","level":"TRACE"}
+</code></pre></div></div>
+
+<p>メッセージの内容、名前、ログを送信した時間、ログレベルが送信される。</p>
+
+<h2 id="簡単な動作確認-1">簡単な動作確認</h2>
+<p>OpenRTM-aistをビルド、インストールすると、Fluent Loggerプラグインの簡単な動作確認用の設定ファイルがインストールされます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> %RTM_ROOT%\ext\environment-setup.omniorb.vc16.bat
+ %RTM_ROOT%\Components\C++\Examples\vc16\ConsoleOutComp.exe -f %RTM_ROOT%\ext\logger\rtc.fluentbit_stream.conf
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> source ${OPENRTM_INSTALL_DIR}/etc/environment-setup.sh
+ ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/logger/rtc.fluentbit_stream.conf
+</code></pre></div></div>
+
+<h2 id="kibanaelasticsearchによるログ可視化-1">Kibana+Elasticsearchによるログ可視化</h2>
+
+<p><a href="https://www.elastic.co/jp/kibana/">Kibana</a>はElastic社の開発したデータ可視化ツールです。
+分析エンジン<a href="https://www.elastic.co/jp/elasticsearch/">ElasticSearch</a>と連携してWebブラウザ上でグラフなどのデータ可視化ができるようになります。</p>
+
+<p>OpenRTM-aistのFluent BitプラグインからElasticSearchにログを送信して、Kibanaでデータを可視化する手順を説明します。</p>
+
+<h3 id="elasticsearchのインストール-1">Elasticsearchのインストール</h3>
+<p>Ubuntu 18.04環境で以下のコマンドによりElasticsearchをインストールします。
+Ubuntu 18.04ではElasticsearchのバージョン次第で動作しない場合があるので、こちらで動作を確認した7.8.0をインストールします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+ add-apt-repository "deb https://artifacts.elastic.co/packages/7.x/apt stable main"
+ sudo apt update
+ sudo apt install elasticsearch=7.8.0
+ sudo systemctl daemon-reload
+ sudo systemctl enable elasticsearch.service
+</code></pre></div></div>
+
+<p><strong>/etc/elasticsearch/elasticsearch.yml</strong>を編集します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> network.bind_host: 0
+ discovery.seed_hosts: ["127.0.0.1", "[::1]"]
+</code></pre></div></div>
+
+<p>編集後にサービスを再起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo systemctl restart elasticsearch.service
+</code></pre></div></div>
+
+<p>メモリの不足で起動できない場合は<strong>/etc/elasticesearch/jvm.options</strong>を編集して調節してください。</p>
+
+<p>-Xms1g
+ -Xmx1g</p>
+
+<h3 id="kibanaのインストール-1">Kibanaのインストール</h3>
+<p>以下のコマンドでKibanaをインストールします。Elasticsearchと同じバージョンを指定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt install kibana=7.8.0
+ sudo systemctl daemon-reload
+ sudo systemctl enable kibana.service
+</code></pre></div></div>
+
+<p>また、<strong>/etc/kibana/kibana.yml</strong>に以下の行を追加します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> server.port: 5601
+ server.host: "0.0.0.0"
+</code></pre></div></div>
+
+<p><strong>server.host</strong>にNICに設定されたIPアドレスを指定してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> server.host: "192.168.11.2"
+</code></pre></div></div>
+
+<p>サービスを再起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo systemctl restart kibana.service
+</code></pre></div></div>
+
+<h3 id="動作確認-7">動作確認</h3>
+
+<p>以下のrtc.confを作成してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> logger.enable: YES
+ logger.log_level: INFO
+ 
+ 
+ logger.plugins: ${OPNRTM_INSTALL_DIR}/lib/openrtm-2.0/logger/FluentBit.so
+ 
+ logger.logstream.fluentd.input.plugin: lib
+ logger.logstream.fluentd.input.conf.tag: myRTCs_log
+ 
+ logger.logstream.fluentd.output0.plugin: es
+ logger.logstream.fluentd.output0.conf.match: *
+ logger.logstream.fluentd.output0.conf.host: 127.0.0.1
+ logger.logstream.fluentd.output0.conf.port: 9200
+ logger.logstream.fluentd.output0.conf.Index: fluentbit
+</code></pre></div></div>
+
+<p>${OPNRTM_INSTALL_DIR}はOpenRTM-aistをインストールしたパスに置き換えてください。
+<strong>host</strong>、<strong>port</strong>にElasticsearchのアドレスとポート番号を指定してください。
+<strong>Index</strong>や<strong>tag</strong>は任意の文字列を設定します。</p>
+
+<p>このrtc.confを指定してRTCを起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ./share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f rtc.conf
+</code></pre></div></div>
+
+<p>次にWebブラウザからKibanaにアクセスしてログを確認します。
+<strong>http://127.0.0.1:5601</strong>にアクセスしてください。別の端末からアクセスする場合はIPアドレスを変更してください。</p>
+
+<div align="center"><a href="kibana1.png"><img src="kibana1.png" width="50%;" /></a></div>
+
+<p>可視化するデータのインデックスパターンを設定します。今回の例ではrtc.confでIndexを<strong>fluentbit</strong>に指定しました。
+ページが開いたら左上をクリックして表示されたメニューからManagmentの<strong>Stack Management</strong>をクリックしてください。</p>
+
+<div align="center"><a href="kibana2.png"><img src="kibana2.png" width="60%;" /></a></div>
+
+<p>Stack Managementのページの左側の<strong>Index Patterns</strong>をクリックします。</p>
+
+<div align="center"><a href="kibana3.png"><img src="kibana3.png" width="60%;" /></a></div>
+
+<p>Index patternsのページの<strong>Create Index pattern</strong>ボタンを押します。</p>
+
+<div align="center"><a href="kibana4.png"><img src="kibana4.png" width="60%;" /></a></div>
+
+<p>Create index patternのページでIndex patternを<strong>fluentbit</strong>*に指定してNext stepボタンを押します。</p>
+
+<div align="center"><a href="kibana5.png"><img src="kibana5.png" width="60%;" /></a></div>
+
+<p>Step 2でTime Filter field nameは<strong>@timestamp</strong>のままCreate index patternボタンを押します。</p>
+
+<div align="center"><a href="kibana6.png"><img src="kibana6.png" width="60%;" /></a></div>
+
+<p>ここからはデータを確認します。
+ページ左上をクリックして、メニューからKibanaの<strong>Discover</strong>をクリックしてください。</p>
+
+<div align="center"><a href="kibana7.png"><img src="kibana7.png" width="60%;" /></a></div>
+
+<p>Discoverの画面で左側にインデックスパターンが表示されているため、インデックスパターンをクリックして先ほど設定した<strong>fluentbit</strong>*に切り替えます。</p>
+
+<div align="center"><a href="kibana8.png"><img src="kibana8.png" width="60%;" /></a></div>
+
+<p>これでログの一覧が確認できます。グラフなどで利用する手順についてはKibanaのマニュアルなどを参考にしてください。</p>
+
+<div align="center"><a href="kibana9.png"><img src="kibana9.png" width="50%;" /></a></div>
+
+<h3 id="pythonで動作確認-1">Pythonで動作確認</h3>
+<p>OpenRTM-aist Python版で動作確認する場合はElasticsearch Loggerプラグインを使用します。
+まずはelasticsearchのPythonライブラリ、ECSフォーマッタ をインストールします。elasticsearchのバージョンには注意してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> pip install elasticsearch==7.8.0
+ pip install ecs-logging
+</code></pre></div></div>
+
+<p>以下のようなrtc.confを用意して<strong>ESLogger.py</strong>をロードしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> logger.enable: YES
+ logger.log_level: PARANOID
+ 
+ logger.plugins: C:\\Python37\\Lib\\site-packages\\OpenRTM_aist\\ext\\logger\\eslogger\\ESLogger.py
+ 
+ logger.logstream.elasticsearch.output0.host: 127.0.0.1
+ logger.logstream.elasticsearch.output0.port: 9200
+ logger.logstream.elasticsearch.output0.index: fluentbit
+</code></pre></div></div>
+
+<p>接続先のElasticsearchサーバーのアドレス、ポート番号、データを登録するインデックスを指定してください。</p>
+
+<p>このrtc.confを指定してRTCを起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ConsoleOut.py -f rtc.conf
+</code></pre></div></div>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/developersguide/advanced_rt_system_programming/fluent_logger_use/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

@@ -1,0 +1,913 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>サービスポート (応用編) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="サービスポート (応用編)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rtc_programming/serviceport_adavanced/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rtc_programming/serviceport_adavanced/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="サービスポート (応用編)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"サービスポート (応用編)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rtc_programming/serviceport_adavanced/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/developersguide/advanced_rtc_programming/serviceport_adavanced/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/developersguide/advanced_rtc_programming/serviceport_adavanced/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>サービスポート (応用編)</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#idl-文法">IDL 文法</a>
+    <ul>
+      <li><a href="#構造体--オブジェクトリファレンス">構造体 / オブジェクトリファレンス</a></li>
+      <li><a href="#_var型">_var型</a>
+        <ul>
+          <li><a href="#変換コンストラクタt_ptr">変換コンストラクタ(T_ptr)</a></li>
+          <li><a href="#変換コンストラクタconst-t_var">変換コンストラクタ(const T_var&amp;)</a></li>
+          <li><a href="#変換コンストラクタconst-t_member">変換コンストラクタ(const T_member)</a></li>
+          <li><a href="#in引数と-in関数">in引数と in()関数</a></li>
+          <li><a href="#out引数と-out関数">out引数と out()関数</a></li>
+          <li><a href="#inout">inout()</a></li>
+          <li><a href="#_retn">_retn()</a></li>
+          <li><a href="#規則のまとめ">規則のまとめ</a></li>
+        </ul>
+      </li>
+      <li><a href="#_var型_ptr型の代入でのリファレンスカウント">_var型、_ptr型の代入でのリファレンスカウント</a>
+        <ul>
+          <li><a href="#_ptr型への_var型の代入">_ptr型への_var型の代入</a></li>
+          <li><a href="#_var型への_ptr型の代入">_var型への_ptr型の代入</a></li>
+          <li><a href="#_var型への_var型の代入">_var型への_var型の代入</a></li>
+        </ul>
+      </li>
+      <li><a href="#_narrowでのリファレンスカウント">_narrow()でのリファレンスカウント</a></li>
+      <li><a href="#規則">規則</a>
+        <ul>
+          <li><a href="#クライアント側">クライアント側</a></li>
+          <li><a href="#サーバー側">サーバー側</a></li>
+          <li><a href="#参考文献">参考文献</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#サービスコンシューマからサービスプロバイダの状態を取得する">サービスコンシューマからサービスプロバイダの状態を取得する</a></li>
+  <li><a href="#独自idlファイルの利用">独自IDLファイルの利用</a>
+    <ul>
+      <li><a href="#rtc-builderでプロジェクト作成">RTC Builderでプロジェクト作成</a></li>
+      <li><a href="#独自idlの作成">独自IDLの作成</a></li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: サービスポート (応用編) -->
+<p>#contents</p>
+
+<h2 id="idl-文法">IDL 文法</h2>
+<h3 id="構造体--オブジェクトリファレンス">構造体 / オブジェクトリファレンス</h3>
+
+<p>CORBA の構造体は、以下のように C++ の構造体 “struct” にマッピングされます。
+<!-- -*- IDL -*- --></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> struct Profile
+ {
+ 
+	short short_value;
+	long  long_value;
+  
+ };
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // -*- C++ -*-
+ struct Profile
+ {
+ 
+	CORBA::Short short_value;
+	CORBA::Long  long_value;
+ 
+ };
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> class Profile_var
+ {
+  
+ };
+</code></pre></div></div>
+
+<ul>
+  <li>固定長の構造体と可変長の構造体<br />
+下記に示す、構造体に可変長のメンバーが含まれていると、構造体は可変長データとみなされます。
+この場合、固定長の構造体とは異なる C++ コードが生成され、戻り値や out パラメーターにおける扱いが異なります。
+    <ul>
+      <li>制限付き文字列または無制限文字列</li>
+      <li>制限付きシーケンスまたは無制限シーケンス</li>
+      <li>可変長メンバーを含む構造体またはユニオン</li>
+      <li>可変長の要素型を持つ配列</li>
+      <li>可変長型へのtypedef</li>
+    </ul>
+  </li>
+</ul>
+
+<p>上記の一覧に型が該当しない場合、その型は固定長になります。</p>
+
+<ul>
+  <li>_var型 IDLコンパイラは IDLにおける構造体から、C++ の構造体と _var 型のクラスを自動的に生成します。 _var 型クラスはスマートポインタのように振る舞い、可変長の構造体として _var クラスを使用する場合、可変長のメンバーに割り当てられるメモリーは自動的に管理されます。 _var 型の変数(var1)から他の_var型の変数(var2)に代入が行われた場合には、そのポインタの所有権が var2 に移り、その後 var1 は初期化もしくは代入が行われるまで使用することはできません。
+<br /><br /></li>
+  <li>構造体がスコープの外に出ると，可変長のメンバーに関連付けられていたすべてのメモリーは自動的に解放されます。 ただし、すでに所有権を他に譲渡している_var型変数がスコープから出る場合、所有権を既に譲渡しているので、元のデータに対しては開放は行われません。
+<br /><br /></li>
+  <li>初期化もしくは代入された構造体に対して、再び初期化または代入が行われた場合、元のデータに関連付けられていたメモリーは自動的に解放されます。
+<br /><br /></li>
+  <li>可変長のメンバーにオブジェクトリファレンスが代入される場合は、必ずそのオブジェクトリファレンスのコピーが作成されます。可変長のメンバーにポインタが代入される場合、コピーは作成されません。</li>
+</ul>
+
+<h3 id="_var型">_var型</h3>
+<h4 id="変換コンストラクタt_ptr">変換コンストラクタ(T_ptr)</h4>
+
+<ul>
+  <li>実装例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> _CORBA_ObjRef_Var(T_ptr p) : pd_objref(p) {}
+</code></pre></div></div>
+
+<p>_ptr型のオブジェクト参照の所有権は_var型に移るため、参照カウントは増減しません。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> MyObject_ptr ptr = obj-&gt;get_myobject();
+ // ptr は適切なタイミングで release されなければならない
+ 
+ MyObject_var var(ptr); 
+ // 所有権は var に移ったため、ptr をリリースする必要はない
+ // var がスコープを抜けるなどして解体されると、参照カウントは release される
+ 
+</code></pre></div></div>
+<h4 id="変換コンストラクタconst-t_var">変換コンストラクタ(const T_var&amp;)</h4>
+<ul>
+  <li>実装例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Object_var(const T_var&amp; p) : pd_ref(T::_duplicate(p.pd_ref)) {}
+</code></pre></div></div>
+
+<p>代入元の_var型のオブジェクト参照の所有権はコピーされます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> MyObject_var var0 = obj-&gt;get_myobject();  // var0 は所有権を持つ
+ MyObject_var var1(var0);  // リファレンスカウントはインクリメントされ var1も所有権を持つ
+</code></pre></div></div>
+
+<h4 id="変換コンストラクタconst-t_member">変換コンストラクタ(const T_member)</h4>
+<ul>
+  <li>実装例</li>
+</ul>
+
+<h4 id="in引数と-in関数">in引数と in()関数</h4>
+<p>単純にオブジェクト参照の_ptr型ポインタを返します。所有権は移行されません。</p>
+
+<ul>
+  <li>実装例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> T_ptr  in() const { return pd_objref; }
+</code></pre></div></div>
+
+<p>通常、関数の in 引数にオブジェクト参照を渡す際に使用します。
+オブジェクト参照を与えられた側の関数は、所有権を持たないため関数内で release してはいけません。
+関数から戻ってきたあと、_var型変数に依然として所有権が保持されており、_var型変数の解体時にオブジェクトは release されます。</p>
+
+<p>オブジェクト参照を in 引数として受け取る関数を定義する場合は、_ptr型の引数として定義します。
+さらに、関数内では、そのオブジェクトのオペレーションを呼ぶだけで、release 等は行ってはいけません。
+また、関数内でオブジェクト参照をどこか(グローバル変数、static変数、オブジェクトのメンバー等)に保存したい場合は、所有権をコピーするため duplicate関数で複製する必要があります。</p>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void myfunc(MyObject_ptr obj)
+ {
+ 
+	obj-&gt;function();
+	CORBA::release(obj); // ×これはしてはいけない
+	m_obj = obj; // ×所有権を持っていない
+	m_obj = MyObject::duplicate(obj); // ○所有権を複製
+ 
+ }
+ 
+ {// 別のコンテキスト 
+ 
+	MyObject_var obj(hoge-&gt;get_object());
+	myfunc(obj.in()); // 所有権は移行されない
+ 
+ }
+ // スコープを抜けたので参照カウントがデクリメントされる
+</code></pre></div></div>
+
+<h4 id="out引数と-out関数">out引数と out()関数</h4>
+<p>現在所有している参照を release して、リファレンスのポインタを nil にセットして返します。
+すなわち、out()関数呼び出し以前にもしオブジェクト参照を保持している場合は、その所有権を放棄し参照は破棄されます。</p>
+
+<ul>
+  <li>実装例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> T_ptr&amp; out()
+ {
+	T_Helper::release(pd_objref);
+	pd_objref = T_Helper::_nil();
+	return pd_objref;
+ }
+</code></pre></div></div>
+
+<p>通常、関数の out引数にオブジェクト参照を渡す際に使用します。
+すなわち、関数から戻ってきたあと、この変数に新たにオブジェクト参照が保持されていることが期待されます。
+このとき、オブジェクト参照の所有権はこの変数に保持されていると考えます。
+out() で変数を渡された関数側では、何らかの形でオブジェクト参照を生成または複製して、引数に所有権を渡す必要があります。</p>
+
+<p>オブジェクト参照を out引数として受け取る関数を定義する場合は、_ptr型参照の引数として定義します。
+関数内では、引数は必ずnilオブジェクト参照であり、かつ通常何らかのオブジェクトを所有権を与えて代入することが期待されます。</p>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void myfunc(MyObject_ptr&amp; obj)
+ {
+	assert(CORBA::is_nil(obj)); // 必ず nil オブジェクトを指定する
+	obj-&gt;function(); // nil なのでオペレーションは呼べない
+ 
+	// m_obj は_var型のメンバ変数
+	obj = m_obj; // ×所有権を複製していない。
+	// return後、関数の外で勝手に release されるかもしれない。
+ 
+	obj = MyObject::duplicate(obj); // ○所有権を複製している。
+	// return後、関数の外で release されても、オブジェクト参照は解体されない。
+	return;
+ }
+ 
+ {// 別のコンテキスト
+	MyObject_var obj;
+	obj = get_object(); // △out変数として使うので渡す前には何も入れない方がよい
+	myfunc(obj.out());
+	// オブジェクトが代入され返ってきたはず
+	assert(!CORBA::is_nil(obj));
+	obj-&gt;function();
+ }
+ // スコープを抜けたので参照カウントがデクリメントされる。
+ 
+</code></pre></div></div>
+<h4 id="inout">inout()</h4>
+<p>リファレンスへのポインタの参照を返します。</p>
+
+<ul>
+  <li>実装
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> T_ptr&amp; inout()    { return pd_objref; }
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>通常、関数の inout引数にオブジェクト参照を渡す際に使用します。
+すなわち、関数内では何らかのオブジェクト参照が引数に入っていることが期待され、オブジェクトの所有権は関数側に移行します。
+また、関数は何らかのオブジェクト参照をこの引数に与えて返すことが期待され、引数すなわち呼び出し元の変数に所有権を与えます。
+関数内では引数にオブジェクト参照を新たにセットする場合は、まず release してから新たなオブジェクト参照を生成または複製して引数に所有権を渡す必要があります。</p>
+
+<p>オブジェクト参照を inout引数として取る関数は、設計の観点からあまり推奨されません。
+もし、inout引数として取る関数を定義する必要がある場合は、_ptr型参照の引数として定義します。</p>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void myfunc(MyObject_ptr&amp; obj)
+ {
+	if (!CORBA::is_nil(obj))
+	{
+		obj-&gt;function(); // obj が nil でなければオペレーションを呼ぶことができる。
+	}
+   
+	CORBA::release(obj); // releaseする責任はこの関数にある
+	/*
+	* この関数内で、obj に新たなオブジェクト参照がある場合に限り、
+	* 引数を受け取った直後に、_var変数に代入しておくことで、
+	* 関数終了時に自動的に参照カウントをデクリメント
+	* するテクニックを使用してもよい。
+	* MyObject_var deleter = obj;
+	*/
+  
+	// MyObject_var m_obj とする
+	obj = m_obj; // × 所有権を複製していない
+	// return 後、関数の外で release されるかもしれない。
+	obj = MyObject::_duplicate(m_obj); // ○ obj にも MyObject の所有権が与えられた
+	// return 後、関数の外で release されても、オブジェクト参照は解体されない。
+ }
+  
+ {// 別のコンテキスト
+	MyObject_var obj;
+	obj = get_object(); // obj は所有権を持っている
+	myfunc(obj); // 関数内で releae される
+	// obj の指すものは入れ替わっているかもしれない。
+ }
+ // スコープを抜けたので参照カウントがデクリメントされる。
+</code></pre></div></div>
+
+<h4 id="_retn">_retn()</h4>
+
+<p>現在持っているオブジェクト参照の所有権を放棄してポインタを返します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> T_ptr _retn()
+ {
+	T_ptr tmp = pd_objref;
+	pd_objref = T_Helper::_nil();
+	return tmp;
+ }
+</code></pre></div></div>
+
+<p>通常、関数の戻り値にオブジェクト参照を返す場合に使用されます。
+所有権は関数の呼び出し側に渡るので、呼び出し側ではオブジェクト参照を破棄する必要があります。
+従って、呼び出し側で release するか、_var型変数で受ける必要があります。</p>
+
+<p>逆に、戻り値でオブジェクト参照を返す場合、呼び出し側で release することにより参照カウントがデクリメントされるため、関数内では _duplicate() などで所有権を複製しておく必要があります。</p>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> MyObject_ptr myfunc()
+ {
+	MyObject_var ret;
+	ret = m_obj; // ×所有権がretに移ってしまう。
+	// return 後、関数の外で release されるかもしれない。
+ 
+	ret = MyObject::_duplicate(m_obj); // ○所有権の複製
+	// return 後、release が呼ばれても、m_obj は所有権を保持し続ける。
+ 
+	return ret._retn();
+ }
+ 
+ { // 別のコンテキスト
+
+	MyObject_var obj;
+	obj = myfunc(); // オブジェクトの所有権を取得
+	obj-&gt;function();
+ 
+	MyObject_ptr ptr;
+	ptr = myfunc(); //オブジェクトの所有権を取得
+	ptr-&gt;function();
+ 
+	CORBA::release(ptr); // 参照カウントをデクリメント
+ 
+  }
+  // スコープを抜けたので参照カウントがデクリメントされる
+</code></pre></div></div>
+
+<h4 id="規則のまとめ">規則のまとめ</h4>
+
+<table class="table-alt">
+  <tr>
+    <th>関数</th>
+    <th>型</th>
+    <th>release責任</th>
+    <th>関数内</th>
+  </tr>
+  <tr>
+    <td>in</td>
+    <td>T_ptr</td>
+    <td>呼出側</td>
+    <td>オペレーション呼出</td>
+  </tr>
+  <tr>
+    <td>out</td>
+    <td>T_ptr&amp;</td>
+    <td>呼出側</td>
+    <td>&#95;duplicate 代入</td>
+  </tr>
+  <tr>
+    <td>inout</td>
+    <td>T_ptr&amp;</td>
+    <td>in:関数, out:呼出側</td>
+    <td>release後, &#95;duplicate代入</td>
+  </tr>
+  <tr>
+    <td>&#95;retn</td>
+    <td>T_ptr</td>
+    <td>呼出側</td>
+    <td>&#95;duplicateしてreturn</td>
+  </tr>
+</table>
+
+<h3 id="_var型_ptr型の代入でのリファレンスカウント">_var型、_ptr型の代入でのリファレンスカウント</h3>
+<h4 id="_ptr型への_var型の代入">_ptr型への_var型の代入</h4>
+
+<p>ポインタへの代入。</p>
+
+<p>複製なし、解放せず。</p>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> { 
+	MyObject_var var;
+	var = myfunc(); // オブジェクトの所有権を取得
+ 
+	MyObject_ptr ptr
+	ptr = MyObject::_duplicate(var); //オブジェクトの所有権を取得(参照カウントのインクリメント)
+ 
+	// ptr = var;
+	// これは参照カウントエラーを引き起こす恐れがある。呼び出し後、ptrとvarは同じオブジェクト
+	// をさすであろうが、参照カウントの保守はなされな。varは、その対象オブジェクトの所持を維持
+	// する。また、ptrがそれが以前に指していたオブジェクトやプロキシへの唯一のポインタであった
+	// とすれば、メモリリークが生じる。
+ 
+	CORBA::release(ptr); // 参照カウントをデクリメント
+ }
+ // var に関しては、スコープを抜けたので参照カウントがデクリメントされる
+</code></pre></div></div>
+
+<h4 id="_var型への_ptr型の代入">_var型への_ptr型の代入</h4>
+
+<p>_var が保有しているオブジェクトに対して release() されるが、引数で渡された _ptr型のオブジェクトに対しては duplicate() されません。</p>
+
+<p>複製なし、解放あり。</p>
+
+<ul>
+  <li>実装(omniORB)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  inline T_var&amp; operator= (T_ptr p)
+ {
+	T_Helper::release(pd_objref);
+	pd_objref = p;
+	return *this;
+  }
+</code></pre></div></div>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> { 
+	MyObject_ptr ptr;
+	ptr = myfunc(); // オブジェクトの所有権を取得
+ 
+	MyObject_var obj;
+	obj = MyObject::_duplicate(ptr); //オブジェクトの所有権を取得(参照カウントのインクリメント)
+ 
+	CORBA::release(ptr); // 参照カウントをデクリメント
+ 
+ }
+ // objに関しては、スコープを抜けたので参照カウントがデクリメントされる
+</code></pre></div></div>
+
+<h4 id="_var型への_var型の代入">_var型への_var型の代入</h4>
+
+<p>_var が保有しているオブジェクトに対して release() がコールされ、
+かつ、引数で渡されたオブジェクトに対しても duplicate() がコールされる。</p>
+
+<p>複製あり、解放あり。</p>
+
+<ul>
+  <li>実装(omniORB)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  inline T_var&amp; operator= (const T_var&amp; p)
+ {
+	if( &amp;p != this )
+	{
+		T_Helper::duplicate(p.pd_objref);
+		T_Helper::release(pd_objref);
+		pd_objref = p.pd_objref;
+ 	}
+	return *this;
+  }
+</code></pre></div></div>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> { 
+	MyObject_var var1;
+	var1 = myfunc(); // オブジェクトの所有権を取得
+ 
+	MyObject_var var2;
+	var2 = var1; //オブジェクトの所有権を取得(参照カウントは自動でインクリメントされる)
+
+	} // var1, var2に関しては、スコープを抜けたので参照カウントがデクリメントされる
+</code></pre></div></div>
+
+<h3 id="_narrowでのリファレンスカウント">_narrow()でのリファレンスカウント</h3>
+
+<p>_narrow()処理の過程において、_narrow()の呼び出しが成功した場合、その対象オブジェクトのリファレンスカウントはインクリメントされますが、失敗した場合はインクリメントされません。</p>
+
+<p>デクリメントは行われない。</p>
+
+<ul>
+  <li>実装(RTCSK.cc)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::RTObject_ptr
+ RTC::RTObject::_narrow(::CORBA::Object_ptr obj)
+ {
+	if( !obj || obj-&gt;_NP_is_nil() || obj-&gt;_NP_is_pseudo() ) return _nil();
+	_ptr_type e = (_ptr_type) obj-&gt;_PR_getobj()-&gt;_realNarrow(_PD_repoId);
+	return e ? e : _nil();
+ }
+</code></pre></div></div>
+
+<ul>
+  <li>実装(omniObjRef.cc)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void*
+ omniObjRef::_realNarrow(const char* repoId)
+ {
+	// Attempt to narrow the reference using static type info.
+	void* target = _ptrToObjRef(repoId);
+ 
+	if( target )
+	{
+		if (!lid ||
+			(lid &amp;&amp; !lid-&gt;deactivated() &amp;&amp; lid-&gt;servant() &amp;&amp;
+	 		lid-&gt;servant()-&gt;_ptrToInterface(repoId)))
+		{
+ 		      omni::duplicateObjRef(this);
+    		}
+   		else
+		{
+      			omniObjRef* objref;
+      			omniIOR*    ior;
+
+			ior = pd_ior-&gt;duplicateNoLock();
+      		}
+ 
+		objref = omni::createObjRef(repoId,ior,1,0);
+	}
+	else
+	{
+
+    		if( _real_is_a(repoId) )
+		{
+			omniObjRef* objref;
+			omniIOR* ior;
+			{
+				ior = pd_ior-&gt;duplicateNoLock();
+			}
+			{
+				objref = omni::createObjRef(repoId,ior,1,_identity());
+			}
+ 		}
+ 	 }
+	return target;
+ }
+</code></pre></div></div>
+
+<h3 id="規則">規則</h3>
+
+<h4 id="クライアント側">クライアント側</h4>
+
+<p>クライアントが呼び出しからオブジェクト参照を受信するならば、そのクライアントはそのオブジェクト参照が不要となったときにはそれを開放しなくてはならない。</p>
+
+<p>(引用：　『CORBA分散オブジェクト　Orbixを用いて』　P.98 オブジェクト参照のためのメモリ管理)</p>
+
+<h4 id="サーバー側">サーバー側</h4>
+
+<p>呼び出し側に渡す参照の所有権は放棄される(つまり、その参照カウントは一つデクリメントされる。したがって、通常は、参照を返す前に適当な_duplicate()関数を呼び出すことになる)</p>
+
+<p>(引用：　『CORBA分散オブジェクト　Orbixを用いて』　P.98 オブジェクト参照のためのメモリ管理)</p>
+
+<h4 id="参考文献">参考文献</h4>
+<ul>
+  <li>『CORBA分散オブジェクト　Orbixを用いて』　著: ショーン・ベーカー　出版社: ピアソン・エデュケーション</li>
+</ul>
+
+<h2 id="サービスコンシューマからサービスプロバイダの状態を取得する">サービスコンシューマからサービスプロバイダの状態を取得する</h2>
+
+<p>コンシューマからプロバイダを呼び出す際には、サービスポートが接続されていて、かつ相手の RTC が Active 状態になっている必要があります。コンシューマは、コンシューマが接続されているか、相手の RTC がアクティブかどうかを以下の方法で確認することができます。</p>
+
+<p>CORBA コンシューマ型 (C++ では RTC::CorbaComsumer<T>) は以下の3つの状態を取ることができます。</T></p>
+
+<!-- You can also know the state of an RTC through service ports if -->
+<!-- the RTC has provided interfaces (provider) on it. -->
+<!-- RTC::CorbaComsumer<> can be three states: nil, inactive, active. -->
+
+<ul>
+  <li><strong>nil</strong>: コンシューマにプロバイダのオブジェクト参照がセットされていない(接続されていない)状態</li>
+  <li><strong>active</strong>: プロバイダのオブジェクト参照は割り当てられており、かつ相手のオブジェクトが活性化 (RTC も Active 状態) になっている状態</li>
+  <li><strong>inactive</strong>: プロバイダのオブジェクト参照は割り当てられているが、相手のオブジェクトが非活性化 (RTC は Inactive 状態) になっている状態</li>
+</ul>
+
+<p>プロバイダの状態と RTC の状態は連動しています。</p>
+<ul>
+  <li>参照: <a href="https://www.openrtm.org/OpenRTM-aist/documents/current/cxx/classreference_en/classRTC_1_1CorbaPort.html#a1b9efe804a293b2c38a9cbe3b5ba54a0">cxx/classreference_en/classRTC_1_1CorbaPort</a></li>
+</ul>
+
+<p>RTC::CorbaComsumer<T> が nil かどうかは、CORBA の標準関数：CORBA::is_nil() で確認することができます。
+さらに、オブジェクトがアクティブかどうかは、CORBA オブジェクトのメンバ関数、_non_existent() で確認することができます。</T></p>
+
+<p>こういった情報は CORBA のマニュアルやドキュメントから得ることができます。一番確実なのは OMG から入手できる CORBA の仕様書を読むことです。</p>
+
+<ul>
+  <li><a href="http://www.omg.org/spec/CORBA">CORBA 仕様書一覧</a></li>
+  <li><a href="http://www.omg.org/spec/CORBA/3.3/Interfaces/PDF">CORBA インターフェース仕様書(v3.3)</a></li>
+</ul>
+
+<p>しかしながら、これらの標準仕様書はページ数も多いので、例えば VisiBroker などの CORBA 製品のマニュアルを利用するとよいかもしれません。</p>
+
+<p>以上の情報から以下のようなサンプルコードが書けます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::ReturnCode_t MyServiceConsumer::onExecute(RTC::UniqueId ec_id)
+ {
+   try
+     {
+       if (CORBA::is_nil(m_myservice0._ptr()))
+         {
+           std::cout &lt;&lt; "[nil] object reference is not assigned." &lt;&lt; std::endl;
+         }
+       else
+         {
+           if (m_myservice0-&gt;_non_existent())
+             {
+               std::cout &lt;&lt; "[inactive] provider is inactive." &lt;&lt; std::endl;
+             }
+           else
+             {
+               std::cout &lt;&lt; "[active] provider is active." &lt;&lt; std::endl;
+             }
+         }
+     }
+   catch (...)
+     {
+       std::cout &lt;&lt; "Unknown exception." &lt;&lt; std::endl;
+     }
+   coil::sleep(1);
+   return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<p>このコードの onExecute 関数を OpenRTM-aist のサンプル SimpleService の MyServiceConsumer.cpp の oExecute 関数と入れ替えて MyServiceProviderComp とともに実行してみてください。
+MyServiceConsumerComp をアクティブ化すると、MyServiceProviderComp のサービスポートが接続されるまではコンシューマ (m_myserivce0) の状態は nil です。MyServiceProviderComp のポートを接続すると、inactive 状態になり、その後 MyServiceProvider をアクティブ化すると active 状態になります。</p>
+
+<p>以上のようにして、相手の RTC の状態をサービスポートを通して知ることもできます。</p>
+
+<h2 id="独自idlファイルの利用">独自IDLファイルの利用</h2>
+
+<h3 id="rtc-builderでプロジェクト作成">RTC Builderでプロジェクト作成</h3>
+
+<p>RTCBuilder でプロジェクトの作成を行います。</p>
+
+<p>「RTC Builder Project」のアイコンをクリックし、表示したウィンドウにプロジェクト名を入力し「終了」すると、左のウィンドウに生成したプロジェクトファイルが表示します。</p>
+<div align="center"><a href="sp_idl_0.png"><img src="sp_idl_0.png" width="80%;" /></a></div>
+<div align="center">「RTC Builder Project」ウィンドウを表示</div>
+
+<div align="center"><a href="sp_idl_00.png"><img src="sp_idl_00.png" width="50%;" /></a></div>
+<div align="center">idlフォルダーの確認</div>
+
+<p>そこに独自データ型を配置するidlフォルダーがあるので、idlファイルをドラッグ&amp;ドロップや[右クリック]&gt;[貼り付け]などで置いてください。</p>
+
+<p>ここではサンプルコンポーネントのSampleServiceコンポーネントが使用するIDLファイル（MyService.idl）を使います。
+IDLファイル（MyService.idl）の保存先は以下です。</p>
+<ul>
+  <li>Windows環境でパッケージをインストールした場合は[インストールディレクトリ\OpenRTM-aist\1.2.2\Components\Python\Examples\SimpleService\MyService.idl]です。
+<!-- -- ソースコードの場合は[./examples/SimpleService/MyService.idl]にあります。 --></li>
+</ul>
+
+<p>プロジェクトフォルダーは、RTCBuilder起動直後に表示する「ディレクトリをワークスペースとして選択」をデフォルトで進めた場合、[ c:\Users\ユーザ名\workspase ]フォルダー以下にあります。</p>
+
+<h3 id="独自idlの作成">独自IDLの作成</h3>
+
+<p>RTCBuilder で独自idlを使ったコンポーネントの作成を行います。</p>
+
+<p>サービスポート設定タブを開き、[Add Port]を選択しサービスポート（ServicePort）を定義します。</p>
+
+<p>[ Add Interface ] ボタンを２回クリックし[ Service Interface ] を表示・選択すると[ Service Interface Profile ]を表示します。</p>
+
+<div align="center"><a href="sp_idl_01_0.png"><img src="sp_idl_01_0.png" width="80%;" /></a></div>
+<div align="center">独自インターフェースを使う</div>
+
+<p>[Reload] をクリックするとidlフォルダー内のidlファイルが読み込まれ、 <strong>*インターフェース型</strong> のプルダウンで新たに定義した独自インターフェースを選択できます。</p>
+
+<p>その他、コンポーネント作成に必要な項目の設定が終わったら、基本タブに戻り、[コード生成] ボタンをクリックし、コードの生成を行います。</p>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/developersguide/advanced_rtc_programming/serviceport_adavanced/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

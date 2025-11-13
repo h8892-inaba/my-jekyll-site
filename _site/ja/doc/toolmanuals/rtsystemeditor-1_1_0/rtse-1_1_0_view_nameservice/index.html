@@ -1,0 +1,537 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ビュー（ネームサービスビュー編） | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="ビュー（ネームサービスビュー編）" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/toolmanuals/rtsystemeditor-1_1_0/rtse-1_1_0_view_nameservice/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/toolmanuals/rtsystemeditor-1_1_0/rtse-1_1_0_view_nameservice/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="ビュー（ネームサービスビュー編）" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"ビュー（ネームサービスビュー編）","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/toolmanuals/rtsystemeditor-1_1_0/rtse-1_1_0_view_nameservice/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/toolmanuals/rtsystemeditor-1_1_0/rtse-1_1_0_view_nameservice/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/toolmanuals/rtsystemeditor-1_1_0/rtse-1_1_0_view_nameservice/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>ビュー（ネームサービスビュー編）</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#機能概要">機能概要</a></li>
+  <li><a href="#ネームサービスビューの起動">ネームサービスビューの起動</a></li>
+  <li><a href="#ネームサーバーに接続するには">ネームサーバーに接続するには</a></li>
+  <li><a href="#ネームサーバーを画面から削除するには">ネームサーバーを画面から削除するには</a></li>
+  <li><a href="#ネームサーバーの内容を表示する">ネームサーバーの内容を表示する</a></li>
+  <li><a href="#ネームサービスビューの表示範囲を変更する">ネームサービスビューの表示範囲を変更する</a></li>
+  <li><a href="#ネームサービスビューの表示内容をフィルターする">ネームサービスビューの表示内容をフィルターする</a></li>
+  <li><a href="#ネームサービスからエントリを削除する">ネームサービスからエントリを削除する</a></li>
+  <li><a href="#ネームサービスへオブジェクトを登録する">ネームサービスへオブジェクトを登録する</a></li>
+  <li><a href="#ネームサービスへコンテキストを登録する">ネームサービスへコンテキストを登録する</a></li>
+  <li><a href="#ゾンビオブジェクトを削除する">ゾンビオブジェクトを削除する</a></li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: ビュー（ネームサービスビュー編） -->
+<p>#contents</p>
+
+<p>ここでは、ネームサービスビューについて解説します。
+<br /></p>
+
+<p>OpenRTM-aist では RTC を管理・公開するためにネームサービスが使用されており、ネームサービスビューでは、この内容を表示/編集することができます。
+<br /></p>
+
+<h3 id="機能概要">機能概要</h3>
+<p>ネームサービスビューは、RTC をリアルタイムにグラフィカル操作する機能を持っています。提供される機能の一覧は以下のとおりです。
+#clear</p>
+
+<div align="center"><strong>機能概要一覧</strong></div>
+<table class="table-alt">
+  <tr>
+    <th>No.</th>
+    <th>機能名称</th>
+    <th>機能概要</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>ネームサーバー接続/編集機能</td>
+    <td>ネームサーバーに接続し、登録されているコンポーネントをネームサービスビューにツリー形式で表示する。</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>コンポーネントプロファイル表示機能</td>
+    <td>選択したコンポーネントのプロファイル情報をプロパティビューに表示する。</td>
+  </tr>
+</table>
+
+<h3 id="ネームサービスビューの起動">ネームサービスビューの起動</h3>
+
+<div align="center"><a href="figNS3InitialOfNameServiceViewStart.png"><img src="figNS3InitialOfNameServiceViewStart.png" width="45%;" /></a></div>
+<div align="center"><strong>ビューの表示</strong></div>
+<p><br /></p>
+
+<p>メニューから[Window] &gt; [Show View] &gt; [Name Service View] を選択すると、ネームサービスビューが表示されます。
+<br /></p>
+
+<div align="center"><a href="figNS4InitialOfNameServiceViewStart.png"><img src="figNS4InitialOfNameServiceViewStart.png" width="45%;" /></a></div>
+<div align="center"><strong>ネームサービスビューの初期起動時画面</strong></div>
+<p><br /></p>
+
+<p>同様に Eclipse に標準で用意されている「プロパティ」ビューも表示します。
+<br /></p>
+
+<h3 id="ネームサーバーに接続するには">ネームサーバーに接続するには</h3>
+<p>ネームサーバーに接続するには、ネームサービスビューの上部に存在するボタンをクリックするか、コンテキストメニューにて [Add Name Service] を選択します。
+<br /></p>
+
+<div align="center"><a href="figNS7ConnectNameService.png"><img src="figNS7ConnectNameService.png" width="50%;" /></a></div>
+<div align="center"><strong>ネームサーバーに接続する</strong></div>
+<p><br /></p>
+
+<p>ネームサーバー接続ダイアログでは、IPアドレスおよびポート番号を入力します。（ポート番号が省略された場合には、設定画面で設定されたポート番号が使用されます。デフォルトのポート番号は2809番ポートです）
+<br /></p>
+
+<div align="center"><a href="figNS8NameServiceDialog.png"><img src="figNS8NameServiceDialog.png" width="50%;" /></a></div>
+<div align="center"><strong>ネームサーバーの接続ダイアログ</strong></div>
+<p><br /></p>
+
+<p><strong>※</strong>Eclipseの（再）起動時には最後に接続したアドレスへ自動的に接続します。存在しない場合には、ローカルホストの2809番ポートに接続を試みます。</p>
+
+<h3 id="ネームサーバーを画面から削除するには">ネームサーバーを画面から削除するには</h3>
+<p>接続しているネームサーバーを画面から削除するには、ネームサーバーを右クリックし [Delete from View] を選択します。
+<br /></p>
+
+<div align="center"><a href="figNS9DeletefromView.png"><img src="figNS9DeletefromView.png" width="50%;" /></a></div>
+<div align="center"><strong>ネームサーバーを画面から削除する</strong></div>
+<p><br /></p>
+
+<h3 id="ネームサーバーの内容を表示する">ネームサーバーの内容を表示する</h3>
+<p>接続したネームサーバーにコンポーネントが登録されていると、以下のように登録内容がツリー形式で表示されます。
+<br /></p>
+
+<div align="center"><a href="figNS10View.png"><img src="figNS10View.png" width="50%;" /></a></div>
+<p><br /></p>
+<div align="center"><strong>ネームサービスビュー</strong></div>
+<p><br /></p>
+
+<p>各アイコンの意味は以下のとおりです。</p>
+
+<div align="center"><strong>ネームサーバーアイコンの一覧</strong></div>
+<table class="table-alt">
+  <tr>
+    <td>№</td>
+    <td>アイコン</td>
+    <td>種類（KIND）</td>
+    <td>名前</td>
+  </tr>
+  <tr>
+    <td>1</td>
+<td><a href="IconHostCxt.png"><img src="IconHostCxt.png" width="30%;" /></a></td>
+<td>host_cxt</td>
+<td>ホストコンテキスト</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td><a href="IconMgrCxt.png"><img src="IconMgrCxt.png" width="30%;" /></a></td>
+<td>mgr_cxt</td>
+<td>ネージャコンテキスト</td>
+  </tr>
+  <tr>
+    <td>3</td>
+<td><a href="IconCateCxt.png"><img src="IconCateCxt.png" width="30%;" /></a></td>
+<td>cate_cxt</td>
+<td>カテゴリコンテキスト</td>
+  </tr>
+  <tr>
+    <td>4</td>
+<td><a href="IconModCxt.png"><img src="IconModCxt.png" width="30%;" /></a></td>
+<td>mod_cxt</td>
+<td>モジュールコンテキスト</td>
+  </tr>
+  <tr>
+    <td>5</td>
+<td><a href="IconElse.png"><img src="IconElse.png" width="30%;" /></a></td>
+<td>上記以外</td>
+<td>フォルダー（上記以外のコンテキスト）</td>
+  </tr>
+  <tr>
+    <td>6</td>
+<td><a href="IconRTC.png"><img src="IconRTC.png" width="30%;" /></a></td>
+<td>なし</td>
+<td>RTC</td>
+  </tr>
+  <tr>
+    <td>7</td>
+<td><a href="IconMgr.png"><img src="IconMgr.png" width="30%;" /></a></td>
+<td>なし</td>
+<td>マネージャ</td>
+  </tr>
+  <tr>
+    <td>8</td>
+<td><a href="IconObj.png"><img src="IconObj.png" width="30%;" /></a></td>
+<td>なし</td>
+<td>オブジェクト（RTC 以外のオブジェクト）</td>
+  </tr>
+  <tr>
+    <td>9</td>
+<td><a href="IconZombi.png"><img src="IconZombi.png" width="30%;" /></a></td>
+<td>なし</td>
+<td>ネームサーバーにエントリされてはいるが、実体のオブジェクトにアクセスできないゾンビオブジェクト</td>
+  </tr>
+</table>
+
+<p>ネームサービスビューは、接続先の各ネームサーバーを常に監視し、表示の同期・更新を行っています。（監視の周期は、設定画面の[[接続周期:]]で変更することができます）。
+また、明示的にネームサーバーの内容を再取得する場合にはリフレッシュを行うことができます。リフレッシュを行うには、ネームサービスビューの上部の [Refresh] ボタンをクリックするか、コンテキストメニューにて [Refresh] を選択します。
+<br /></p>
+
+<div align="center"><a href="figNS11Refresh.png"><img src="figNS11Refresh.png" width="50%;" /></a></div>
+<div align="center"><strong>リフレッシュ</strong></div>
+<p><br /></p>
+
+<h3 id="ネームサービスビューの表示範囲を変更する">ネームサービスビューの表示範囲を変更する</h3>
+<p>ネームサービスビューでは、RTC の数が多くなることによって操作する範囲が煩雑化するのを防ぐために、表示ルートの位置を移動する機能があります。<br />
+表示ルートを移動するには、移動する先を選択し、ネームサービスビューの上部の [Go Into] ボタンをクリックするか、コンテキストメニューにて [Go Into] を選択します。
+<br /></p>
+
+<div align="center"><a href="figNS12ChangeView.png"><img src="figNS12ChangeView.png" width="50%;" /></a></div>
+<div align="center"><strong>表示ルート変更</strong></div>
+<p><br /></p>
+
+<div align="center"><a href="figNS13ChangeView.png"><img src="figNS13ChangeView.png" width="50%;" /></a></div>
+<div align="center"><strong>表示ルート変更例</strong></div>
+<p><br /></p>
+
+<p>移動後は、[Go Back] で1階層上に上ることができます。また、[Go Home] で最上位の階層に戻ります。</p>
+
+<h3 id="ネームサービスビューの表示内容をフィルターする">ネームサービスビューの表示内容をフィルターする</h3>
+<p>ネームサービスビューでは、RTC の数が多くなることによって操作する範囲が煩雑化するのを防ぐための、もうひとつの方法として、フィルター（表示するエントリの種類を限定）する機能があります。<br />
+フィルタを行うには、ネームサービスビューの上部に存在する [Name Serviceview Filter] ボタンをクリックします。
+<br /></p>
+
+<div align="center"><a href="figNS14NameServiceFilter.png"><img src="figNS14NameServiceFilter.png" width="70%;" /></a></div>
+<div align="center"><strong>フィルターの指示</strong></div>
+<p><br /></p>
+
+<p>「Name Service Filters」ダイアログでは、非表示にするエントリの種類を、「Select elements to exclude from the view」欄から選択します。
+<br /></p>
+
+<div align="center"><a href="figNS15FilterDialog.png"><img src="figNS15FilterDialog.png" width="50%;" /></a></div>
+<div align="center"><strong>ネームサービスフィルタダイアログ</strong></div>
+<p><br /></p>
+
+<p>ネームサービスビューの表示から除外したい要素にチェックをつけると、ネームサービスビューに表示されなくなります。<br />
+「Naming object name」を有効にすると、オブジェクト名の条件に一致するものが非表示となります。<br />
+オブジェクト名の条件は前方一致と部分一致が選択できます。
+<br /></p>
+
+<div align="center"><a href="figNS16Filtering.png"><img src="figNS16Filtering.png" width="70%;" /></a></div>
+<div align="center"><strong>オブジェクト名によるフィルタリング</strong></div>
+<p><br /></p>
+
+<h3 id="ネームサービスからエントリを削除する">ネームサービスからエントリを削除する</h3>
+<p>ネームサービスビューでは、ネームサービスのネーミングオブジェクトのエントリを削除することができます。ネーミングオブジェクトを削除するには、コンテキストメニューにて [Delete From Name Service] ボタンをクリックします。
+<br /></p>
+
+<div align="center"><a href="figNS17DeleteFromNameService.png"><img src="figNS17DeleteFromNameService.png" width="70%;" /></a></div>
+<div align="center"><strong>ネームサービスから削除する</strong></div>
+<p><br /></p>
+
+<h3 id="ネームサービスへオブジェクトを登録する">ネームサービスへオブジェクトを登録する</h3>
+<p>ネームサービスビューで、ネームサービスにオブジェクトのエントリを登録することができます。<br />
+オブジェクトを登録するには、配下にオブジェクトを追加したいコンテキストおよびオブジェクトのコンテキストメニューから、[Add Object] を選択します。
+<br /></p>
+
+<div align="center"><a href="figNS18AddObject.png"><img src="figNS18AddObject.png" width="60%;" /></a></div>
+<div align="center"><strong>オブジェクトを追加する</strong></div>
+<p><br /></p>
+
+<div align="center"><a href="figNS19AddObjectDialog.png"><img src="figNS19AddObjectDialog.png" width="60%;" /></a></div>
+<div align="center"><strong>オブジェクト追加ダイアログ</strong></div>
+<p><br /></p>
+
+<p>「オブジェクトを追加」ダイアログでは、オブジェクトの名前(Name)、種類(Kind)、および IOR を指定します。</p>
+
+<h3 id="ネームサービスへコンテキストを登録する">ネームサービスへコンテキストを登録する</h3>
+<p>ネームサービスビューで、ネームサービスにコンテキストのエントリを登録することができます。<br />
+コンテキストを登録するには、配下にコンテキストを追加したいコンテキストのコンテキストメニューから、[Add Context] を選択します。
+<br /></p>
+
+<div align="center"><a href="figNS20AddContext.png"><img src="figNS20AddContext.png" width="50%;" /></a></div>
+<div align="center"><strong>コンテキストを追加する</strong></div>
+<p><br /></p>
+
+<div align="center"><a href="figNS21AddContextDialog.png"><img src="figNS21AddContextDialog.png" width="50%;" /></a></div>
+<div align="center"><strong>コンテキスト追加ダイアログ</strong></div>
+<p><br /></p>
+
+<p>「コンテキストを追加」ダイアログでは、コンテキストの名前(Name)、種類(Kind)を指定します。<br />
+種類(Kind)には以下のいずれかの値を選択します。</p>
+
+<div align="center"><strong>コンテキストの種類(kind)の一覧</strong></div>
+<table class="table-alt">
+  <tr>
+    <th>№</th>
+    <th>種類（Kind）</th>
+    <th>名前</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>host_cxt</td>
+    <td>ホストコンテキスト</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>mgr_cxt</td>
+    <td>マネージャコンテキスト</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>cate_cxt</td>
+    <td>カテゴリコンテキスト</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>mod_cxt</td>
+    <td>モジュールコンテキスト</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>上記以外を入力</td>
+    <td>フォルダー（上記以外のコンテキスト）</td>
+  </tr>
+</table>
+
+<h3 id="ゾンビオブジェクトを削除する">ゾンビオブジェクトを削除する</h3>
+<p>ネームサービスビューには、ゾンビオブジェクトを一括して削除する機能があります。ゾンビオブジェクトをすべて削除するには、ネームサービスビュー上部の [Kill All Zombies] ボタンをクリックします。
+<br /></p>
+
+<div align="center"><a href="figNS22KillAllZonbies.png"><img src="figNS22KillAllZonbies.png" width="50%;" /></a></div>
+<div align="center"><strong>ゾンビをクリア</strong></div>
+<p><br /></p>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/toolmanuals/rtsystemeditor-1_1_0/rtse-1_1_0_view_nameservice/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

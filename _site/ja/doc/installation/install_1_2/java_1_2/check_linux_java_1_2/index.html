@@ -1,0 +1,370 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>動作確認(Linux編) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="動作確認(Linux編)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/installation/install_1_2/java_1_2/check_linux_java_1_2/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/installation/install_1_2/java_1_2/check_linux_java_1_2/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="動作確認(Linux編)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"動作確認(Linux編)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/installation/install_1_2/java_1_2/check_linux_java_1_2/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/installation/install_1_2/java_1_2/check_linux_java_1_2/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/installation/install_1_2/java_1_2/check_linux_java_1_2/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>動作確認(Linux編)</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#サンプルコンポーネントセットsimpleio">サンプルコンポーネントセットSimpleIO</a></li>
+  <li><a href="#サンプルを使用したテスト">サンプルを使用したテスト</a>
+    <ul>
+      <li><a href="#ネームサーバー起動">ネームサーバー起動</a></li>
+      <li><a href="#consoleinの起動">ConsoleInの起動</a></li>
+      <li><a href="#consoleoutの起動">ConsoleOutの起動</a></li>
+      <li><a href="#エディタへの配置">エディタへの配置</a></li>
+      <li><a href="#接続とアクティブ化">接続とアクティブ化</a></li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: 動作確認(Linux編) -->
+<p>インストールが正常に終了したら、付属のサンプルで動作テストをします。サンプルは、通常は以下の場所にあります。</p>
+<ul>
+  <li>/usr/share/openrtm-1.2/components/java/
+<!-- -/opt/local/share/openrtm-1.1/examples (Mac OS X に MacPorts でインストールした場合) --></li>
+</ul>
+
+<p>ソースからビルドした場合は、ソースディレクトリ以下の</p>
+<ul>
+  <li>OpenRTM-aist-Java/jp.go.aist.rtm.RTC/bin/RTMExamples/<サンプルコンポーネントセット名></サンプルコンポーネントセット名></li>
+</ul>
+
+<p>にあります。</p>
+
+<p>サンプルコンポーネントセットSimpleIOを使って、OpenRTM-aistが正しくビルド・インストールされているかを確認します。</p>
+
+<p>#contents(5)</p>
+
+<h2 id="サンプルコンポーネントセットsimpleio">サンプルコンポーネントセットSimpleIO</h2>
+<p>RTコンポーネントConsoleIn、ConsoleOutからなるサンプルセットです。
+ConsoleInはコンソールから入力された数値をOutPortから出力するコンポーネント、ConsoleOutはInPortに入力された数値をコンソールに表示するコンポーネントです。
+これらは、最も簡単な(Simpleな)I/O(入出力)を例示するためのサンプルです。
+ConsoleInのOutPortからConsoleOutのInPortへ接続を構成し、これらの2つのコンポーネントをアクティブ化(Activate)することで動作します。</p>
+
+<p>以降、簡単のためサンプルは/usr/share/openrtm-1.2/components/java/SimpleIO以下にあるものとして説明を記述します。</p>
+
+<h2 id="サンプルを使用したテスト">サンプルを使用したテスト</h2>
+<h3 id="ネームサーバー起動">ネームサーバー起動</h3>
+<p>以下の手順に従ってRTSystemEditor、ネームサーバーを起動してください。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/install_1_2/start_openrtp_linux_1_2">OpenRTP起動手順</a></li>
+</ul>
+
+<h3 id="consoleinの起動">ConsoleInの起動</h3>
+
+<p>ターミナルを起動してConsoleInを起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sh /usr/share/openrtm-1.2/components/java/ConsoleIn.sh
+</code></pre></div></div>
+
+<p>自分でビルド・インストールした場合は、まず環境変数CLASSPATHの設定が必要です。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export CLASSPATH=.:${RTM_JAVA_ROOT}/jar/OpenRTM-aist-1.2.0.jar: \ 
+ ${RTM_JAVA_ROOT}/jar/commons-cli-1.1.jar: \ 
+ ${RTM_JAVA_ROOT}/jar/jna-4.2.2.jar:${RTM_JAVA_ROOT}/jar/jna-platform-4.2.2.jar: \ 
+ ${RTM_JAVA_ROOT}/bin
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ java RTMExamples.SimpleIO.ConsoleInComp
+</code></pre></div></div>
+
+<p>などとしてConsoleInを起動します。</p>
+
+<h3 id="consoleoutの起動">ConsoleOutの起動</h3>
+
+<p>別のターミナルを起動してConsoleOutを起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sh /usr/share/openrtm-1.2/components/java/ConsoleOut.sh
+</code></pre></div></div>
+
+<p>自分でビルド・インストールした場合は以下のコマンドで実行します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ java RTMExamples.SimpleIO.ConsoleOutComp
+</code></pre></div></div>
+
+<p>などとしてConsoleOutを起動します。</p>
+
+<h3 id="エディタへの配置">エディタへの配置</h3>
+
+<p>RTSystemEditorのツリー表示の[&gt;]をクリックすると、先ほど起動した2つのコンポーネントが登録されていることがわかります。</p>
+
+<div align="center"><a href="rtm10.png"><img src="rtm10.png" width="60%;" /></a></div>
+<div align="center"><strong>ConsoleInコンポーネントとConsoleOutコンポーネント</strong></div>
+
+<p>システムを編集するエディタを開きます。上部のエディタを[Open New System Editor]ボタン<a href="rtse_open_editor_icon_ja.png"><img src="rtse_open_editor_icon_ja.png" width="3%;" /></a> をクリックすると、中央のペインにエディタが開きます。</p>
+
+<p>左側のネームサービスビューに <a href="icon-rtce.png"><img src="icon-rtce.png" width="3%;" /></a> のアイコンで表示されているコンポーネント(2つ)を中央のエディタにドラッグアンドドロップします。</p>
+
+<div align="center"><a href="rtm11.png"><img src="rtm11.png" width="80%;" /></a></div>
+<div align="center"><strong>コンポーネントをエディタに配置</strong></div>
+
+<h3 id="接続とアクティブ化">接続とアクティブ化</h3>
+
+<p>ConsoleIn0コンポーネントの右側にはデータが出力されるOutPort <a href="rtse_outport_icon_n.png"><img src="rtse_outport_icon_n.png" width="3%;" /></a> 、ConsoleOut0コンポーネントの左側にはデータが入力される InPort <a href="rtse_inport_icon_n.png"><img src="rtse_inport_icon_n.png" width="3%;" /></a> がそれぞれついています。</p>
+
+<p>これらInPort/OutPort(まとめてデータポートと呼びます)を接続します。
+OutPortからInPort(またはInPortからOutPort)へドラッグランドドロップすると、図のようなダイアログが現れますので、デフォルト設定のまま[OK]ボタンをクリックします。</p>
+
+<div align="center"><a href="rtm13.png"><img src="rtm13.png" width="80%;" /></a></div>
+<div align="center"><strong>データポートの接続</strong></div>
+
+<div align="center"><a href="rtm12.png"><img src="rtm12.png" width="60%;" /></a></div>
+<div align="center"><strong>データポート接続ダイアログ</strong></div>
+
+<p>2つのコンポーネントの間に接続線が現れます。次に、エディタ上部メニューの[Activate Systems]ボタン <a href="rtm14.png"><img src="rtm14.png" width="3%;" /></a> をクリックし、これらのコンポーネントをアクティブ化します。
+アクティブ化されると、コンポーネントが緑色に変化します。</p>
+
+<div align="center"><a href="rtm15.png"><img src="rtm15.png" width="60%;" /></a></div>
+<div align="center"><strong>アクティブ化されたコンポーネント</strong></div>
+
+<p>コンポーネントがアクティブ化されるとConsoleInコンポーネント側では</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Please input number: 
+</code></pre></div></div>
+
+<p>というプロンプト表示に変わりますので、適当な数値(short intの範囲内:32767以下)を入力しEnterキーを押します。
+すると、ConsoleOut側では、入力した数値が表示され、ConsoleInコンポーネントからConsoleOutコンポーネントへデータが転送されたことがわかります。</p>
+
+<p>以上で、コンポーネントの基本動作の確認は終了です。</p>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/installation/install_1_2/java_1_2/check_linux_java_1_2/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

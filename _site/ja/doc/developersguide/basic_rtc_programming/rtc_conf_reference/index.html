@@ -1,0 +1,1848 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>rtc.conf設定項目一覧 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="rtc.conf設定項目一覧" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/rtc_conf_reference/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/rtc_conf_reference/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="rtc.conf設定項目一覧" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"rtc.conf設定項目一覧","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/rtc_conf_reference/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/developersguide/basic_rtc_programming/rtc_conf_reference/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/developersguide/basic_rtc_programming/rtc_conf_reference/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>rtc.conf設定項目一覧</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#一般的な設定">一般的な設定</a>
+    <ul>
+      <li><a href="#configversion">config.version</a></li>
+      <li><a href="#openrtmname">openrtm.name</a></li>
+      <li><a href="#openrtmversion">openrtm.version</a></li>
+    </ul>
+  </li>
+  <li><a href="#ネームサービスに関する設定">ネームサービスに関する設定</a>
+    <ul>
+      <li><a href="#namingenable">naming.enable</a></li>
+      <li><a href="#namingtype">naming.type</a></li>
+      <li><a href="#namingformats">naming.formats</a></li>
+      <li><a href="#namingupdateenable">naming.update.enable</a></li>
+      <li><a href="#namingupdateinterval">naming.update.interval</a></li>
+      <li><a href="#namingupdaterebind">naming.update.rebind</a></li>
+    </ul>
+  </li>
+  <li><a href="#ロガー関係の設定">ロガー関係の設定</a>
+    <ul>
+      <li><a href="#loggerenable">logger.enable</a></li>
+      <li><a href="#loggerfile_name">logger.file_name</a></li>
+      <li><a href="#loggerdate_format">logger.date_format</a></li>
+      <li><a href="#loggerlog_level">logger.log_level</a></li>
+      <li><a href="#loggerclock_type">logger.clock_type</a></li>
+      <li><a href="#loggerescape_sequence_enable">logger.escape_sequence_enable</a></li>
+    </ul>
+  </li>
+  <li><a href="#corbaに関する設定">CORBAに関する設定</a>
+    <ul>
+      <li><a href="#corbaargs">corba.args</a>
+        <ul>
+          <li><a href="#指定例1">指定例1</a></li>
+        </ul>
+      </li>
+      <li><a href="#corbaendpoint-非推奨">corba.endpoint [非推奨]</a></li>
+      <li><a href="#corbaendpoints">corba.endpoints</a></li>
+      <li><a href="#corbaendpoints_ipv4-readonly">corba.endpoints_ipv4: [readonly]</a></li>
+      <li><a href="#corbaendpoints_ipv6-readonly">corba.endpoints_ipv6: [readonly]</a></li>
+      <li><a href="#corbaendpoint_property">corba.endpoint_property</a></li>
+      <li><a href="#corbanameservers">corba.nameservers</a></li>
+      <li><a href="#corbanameservicereplace_endpoint">corba.nameservice.replace_endpoint</a></li>
+      <li><a href="#corbaalternate_iiop_addresses">corba.alternate_iiop_addresses</a></li>
+    </ul>
+  </li>
+  <li><a href="#manager-に関する設定">manager に関する設定</a>
+    <ul>
+      <li><a href="#mangername">manger.name</a></li>
+      <li><a href="#managerinstance_name">manager.instance_name</a></li>
+      <li><a href="#manager_naming_formats">manager_naming_formats</a></li>
+      <li><a href="#manageris_master">manager.is_master</a></li>
+      <li><a href="#managercorba_servant">manager.corba_servant</a></li>
+      <li><a href="#corbamaster_manager">corba.master_manager</a></li>
+      <li><a href="#managerupdate_master_managerenable">manager.update_master_manager.enable</a></li>
+      <li><a href="#managerupdate_master_managerinterval">manager.update_master_manager.interval</a></li>
+      <li><a href="#managercomponentsnaming_policy">manager.components.naming_policy</a></li>
+      <li><a href="#managercomponentsprecreate">manager.components.precreate</a></li>
+      <li><a href="#managercomponentspreconnect">manager.components.preconnect</a></li>
+      <li><a href="#managercomponentspreactivation">manager.components.preactivation</a></li>
+      <li><a href="#managercpu_affinity">manager.cpu_affinity</a></li>
+    </ul>
+  </li>
+  <li><a href="#マネージャのライフサイクルオプション">マネージャのライフサイクルオプション</a>
+    <ul>
+      <li><a href="#managershutdown_on_nortcs">manager.shutdown_on_nortcs:</a></li>
+      <li><a href="#managershutdown_auto">manager.shutdown_auto</a></li>
+      <li><a href="#managerauto_shutdown_duration">manager.auto_shutdown_duration</a></li>
+      <li><a href="#managertermination_waittime">manager.termination_waittime</a></li>
+    </ul>
+  </li>
+  <li><a href="#モジュール管理に関するオプション">モジュール管理に関するオプション</a>
+    <ul>
+      <li><a href="#managermodulesload_path">manager.modules.load_path</a></li>
+      <li><a href="#managermodulespreload">manager.modules.preload:</a></li>
+      <li><a href="#managermodulesabs_path_allowed">manager.modules.abs_path_allowed</a></li>
+      <li><a href="#managermodulessearch_auto">manager.modules.search_auto</a></li>
+      <li><a href="#managerpreloadmodules-none">manager.preload.modules: none</a></li>
+    </ul>
+  </li>
+  <li><a href="#マネージャの言語サポートオプション">マネージャの言語サポートオプション</a>
+    <ul>
+      <li><a href="#managersupported_languages">manager.supported_languages</a></li>
+      <li><a href="#managermoduleslangsuffixes">manager.modules.<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>.suffixes</a></li>
+      <li><a href="#managermoduleslangmanager_cmd">manager.modules.<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>.manager_cmd</a></li>
+      <li><a href="#managermoduleslangprofile_cmd">manager.modules.<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>.profile_cmd</a></li>
+      <li><a href="#managermoduleslangload_paths">manager.modules.<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>.load_paths</a></li>
+    </ul>
+  </li>
+  <li><a href="#タイマに関する設定">タイマに関する設定</a>
+    <ul>
+      <li><a href="#timerenable">timer.enable</a></li>
+      <li><a href="#timertick">timer.tick</a></li>
+    </ul>
+  </li>
+  <li><a href="#実行コンテキストオプション">実行コンテキストオプション</a>
+    <ul>
+      <li><a href="#exec_cxtperiodictype">exec_cxt.periodic.type</a></li>
+      <li><a href="#exec_cxtperiodicrate">exec_cxt.periodic.rate</a></li>
+      <li><a href="#exec_cxtsync_transition">exec_cxt.sync_transition</a></li>
+      <li><a href="#exec_cxtsync_activation">exec_cxt.sync_activation</a></li>
+      <li><a href="#exec_cxtsync_deactivation">exec_cxt.sync_deactivation</a></li>
+      <li><a href="#exec_cxtsync_reset">exec_cxt.sync_reset</a></li>
+      <li><a href="#exec_cxttransition_timeout">exec_cxt.transition_timeout</a></li>
+      <li><a href="#exec_cxtactivation_timeout">exec_cxt.activation_timeout</a></li>
+      <li><a href="#exec_cxtdeactivation_timeout">exec_cxt.deactivation_timeout</a></li>
+      <li><a href="#exec_cxtreset_timeout">exec_cxt.reset_timeout</a></li>
+    </ul>
+  </li>
+  <li><a href="#sdo-サービスオプション">SDO サービスオプション</a>
+    <ul>
+      <li><a href="#sdoserviceprovideravailable_services">sdo.service.provider.available_services</a></li>
+      <li><a href="#sdoserviceproviderenabled_services">sdo.service.provider.enabled_services</a></li>
+      <li><a href="#sdoserviceproviderproviding_services">sdo.service.provider.providing_services</a></li>
+      <li><a href="#sdoserviceconsumeravailable_services">sdo.service.consumer.available_services</a></li>
+      <li><a href="#sdoserviceconsumerenabled_services">sdo.service.consumer.enabled_services</a></li>
+    </ul>
+  </li>
+  <li><a href="#ローカルサービスオプション">ローカルサービスオプション</a>
+    <ul>
+      <li><a href="#managerlocal_servicemodules">manager.local_service.modules</a></li>
+      <li><a href="#managerlocal_serviceenabled_services">manager.local_service.enabled_services</a></li>
+    </ul>
+  </li>
+  <li><a href="#ポートの設定">ポートの設定</a>
+    <ul>
+      <li><a href="#allow_dup_connection">allow_dup_connection</a></li>
+      <li><a href="#fan_in">fan_in</a></li>
+      <li><a href="#fan_out">fan_out</a></li>
+      <li><a href="#bufferlength">buffer.length</a></li>
+      <li><a href="#bufferwritefull_policy">buffer.write.full_policy</a></li>
+      <li><a href="#bufferreadempty_policy">buffer.read.empty_policy</a></li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<p>#contents(3)</p>
+
+<h2 id="一般的な設定">一般的な設定</h2>
+
+<h3 id="configversion">config.version</h3>
+<p>コンフィギュレーションファイルのバージョン。</p>
+
+<p>このパラメータは内部的にセットされるコンフィギュレーションのバージョン。
+通常、OpenRTM-aistと同じバージョンである。rtc.confでセットする必要はなく、読み取り専用のパラメータ。
+このバージョンを読み取ることで、rtc.confとOpenRTM-aistのバージョンを知ることができる。</p>
+
+<ul>
+  <li>設定: 読み出し専用. 設定による影響なし.</li>
+  <li>デフォルト: 現在の OpenRTM-aist のバージョンと同じ.</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> config.version: 2.0
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="openrtmname">openrtm.name</h3>
+
+<p>このパラメーターは、内部で設定されているバージョンを含むOpenRTM-aistの名前である。
+読み取り専用のパラメータでありrtc.confで設定する必要はない。
+このパラメーターを読み取ることにより、OpenRTM-aistの名前とバージョンがわかる。</p>
+
+<ul>
+  <li>設定: 読み取り専用. 設定による影響なし.</li>
+  <li>デフォルト: 現在のバージョン付きの OpenRTM-aist の名称</li>
+  <li>例:
+openrtm.name: OpenRTM-aist-2.0.0</li>
+</ul>
+
+<h3 id="openrtmversion">openrtm.version</h3>
+<p>OpenRTM-aist のバージョン。</p>
+<ul>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> openrtm.version: 1.0.0
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="ネームサービスに関する設定">ネームサービスに関する設定</h2>
+
+<h3 id="namingenable">naming.enable</h3>
+
+<p>このオプションはネーミングサービスに関する機能の有効・無効を切り替える。
+YESを指定した場合、ネームサービスへRTCの参照を登録する。NOの場合、ネー
+ムサービスへのRTCの参照の登録は行われない。</p>
+
+<ul>
+  <li>指定: <strong>YES</strong> or <strong>NO</strong></li>
+  <li>デフォルト値: YES</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.is_master: NO
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="namingtype">naming.type</h3>
+
+<p>このオプションはネームサービスのタイプを指定する。現在のところはcorbaの
+みをサポートしている。</p>
+<ul>
+  <li>指定: ネームサービスのタイプ</li>
+  <li>デフォルト値: corba</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> naming.type: corba
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="namingformats">naming.formats</h3>
+
+<p>RTCをネームサーバに登録する際のフォーマットを指定する。以下の <strong>%</strong>で始
+まる指定子を利用することができる。名前階層のデリミタは <strong>/</strong> であり、名
+前と種類(kind)のデリミタは <strong>.</strong> である。</p>
+
+<table class="table-alt">
+  <tr>
+    <td>%n</td>
+    <td>RTCのインスタンス名</td>
+  </tr>
+  <tr>
+    <td>%t</td>
+    <td>RTCのタイプ名</td>
+  </tr>
+  <tr>
+    <td>%m</td>
+    <td>RTCのモジュール名</td>
+  </tr>
+  <tr>
+    <td>%v</td>
+    <td>RTCのバージョン</td>
+  </tr>
+  <tr>
+    <td>%V</td>
+    <td>RTCのベンダ名</td>
+  </tr>
+  <tr>
+    <td>%c</td>
+    <td>RTCのカテゴリ名</td>
+  </tr>
+  <tr>
+    <td>%h</td>
+    <td>ホスト名</td>
+  </tr>
+  <tr>
+    <td>%M</td>
+    <td>マネージャ名</td>
+  </tr>
+  <tr>
+    <td>%p</td>
+    <td>プロセスID</td>
+  </tr>
+</table>
+
+<ul>
+  <li>指定: /<name>.<kind>/<name>.<kind>/...</kind></name></kind></name></li>
+  <li>デフォルト値: %h.host_cxt/%n.mgr</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> naming.formats: %h.host/%n.rtc
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="namingupdateenable">naming.update.enable</h3>
+
+<p>RTCのネームサーバへの登録は通常インスタンス生成時に行われる。したがって、
+RTCの生成以降に起動されたネームサーバには、当該RTCの名前と参照は登録さ
+れない。このオプションを指定することで、定期的にネームサーバを確認し、
+ネームサーバの起動が確認された場合、改めて名前と参照を登録する。</p>
+
+<ul>
+  <li>指定: <strong>YES</strong> or <strong>NO</strong></li>
+  <li>デフォルト値: YES</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> naming.update.enable: YES
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="namingupdateinterval">naming.update.interval</h3>
+
+<p>naming.update.enable が YES の場合、ネームサーバの確認および再登録を行
+う周期を指定する。</p>
+
+<ul>
+  <li>指定: 登録周期を [s] で指定する。</li>
+  <li>デフォルト値: 10.0</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> naming.update.interval: 10.0
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="namingupdaterebind">naming.update.rebind</h3>
+
+<p>このオプションに YES を指定すると、すでに名前と参照が登録されているネー
+ムサーバ上で名前が削除されるなどした場合にもの、再度登録を行う。</p>
+
+<ul>
+  <li>指定: <strong>YES</strong> or <strong>NO</strong></li>
+  <li>デフォルト値: NO</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> naming.update.rebind: NO
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- Logger configurations -->
+
+<h2 id="ロガー関係の設定">ロガー関係の設定</h2>
+
+<h3 id="loggerenable">logger.enable</h3>
+
+<p>ロガーの有効化・無効化の指定。</p>
+
+<ul>
+  <li>指定: <strong>YES</strong> or <strong>NO</strong></li>
+  <li>デフォルト値: YES</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> logger.enable: YES
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="loggerfile_name">logger.file_name</h3>
+
+<p>ログファイル名の指定。カンマ区切りで複数のファイルへ出力することもでき
+る。プロセスIDを置き換える指定子 %p が利用可能。また、ファイル名
+<strong>stdout</strong> とするとログを標準出力する。</p>
+
+<ul>
+  <li>指定: パスを含むファイル名</li>
+  <li>デフォルト値: ./rtc%p.log</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> logger.file_name: /tmp/rtc%p.log
+ logger.file_name: /tmp/rtc%p.log, stdout
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="loggerdate_format">logger.date_format</h3>
+
+<p>ログに記載する日付・時刻のフォーマット指定。以下の strftime(3) に似た
+フォーマット指定子を利用可能。時刻を指定しない場合、<strong>No</strong> または
+<strong>Disable</strong> を指定する。</p>
+
+<table class="table-alt">
+  <tr>
+    <td>%a</td>
+    <td>abbreviated weekday name</td>
+  </tr>
+  <tr>
+    <td>%A</td>
+    <td>full weekday name</td>
+  </tr>
+  <tr>
+    <td>%b</td>
+    <td>abbreviated month name</td>
+  </tr>
+  <tr>
+    <td>%B</td>
+    <td>full month name</td>
+  </tr>
+  <tr>
+    <td>%c</td>
+    <td>the standard date and time string</td>
+  </tr>
+  <tr>
+    <td>%d</td>
+    <td>day of the month, as a number (1-31)</td>
+  </tr>
+  <tr>
+    <td>%H</td>
+    <td>hour, 24 hour format (0-23)</td>
+  </tr>
+  <tr>
+    <td>%I</td>
+    <td>hour, 12 hour format (1-12)</td>
+  </tr>
+  <tr>
+    <td>%j</td>
+    <td>day of the year, as a number (1-366)</td>
+  </tr>
+  <tr>
+    <td>%m</td>
+    <td>month as a number (1-12). <br /> Note: some versions of Microsoft Visual C++ may use values that range from 0-11.</td>
+  </tr>
+  <tr>
+    <td>%M</td>
+    <td>minute as a number (0-59)</td>
+  </tr>
+  <tr>
+    <td>%p</td>
+    <td>locale's equivalent of AM or PM</td>
+  </tr>
+  <tr>
+    <td>%S</td>
+    <td>second as a number (0-59)</td>
+  </tr>
+  <tr>
+    <td>%U</td>
+    <td>week of the year, sunday as the first day</td>
+  </tr>
+  <tr>
+    <td>%w</td>
+    <td>weekday as a decimal (0-6, sunday=0)</td>
+  </tr>
+  <tr>
+    <td>%W</td>
+    <td>week of the year, monday as the first day</td>
+  </tr>
+  <tr>
+    <td>%x</td>
+    <td>standard date string</td>
+  </tr>
+  <tr>
+    <td>%X</td>
+    <td>standard time string</td>
+  </tr>
+  <tr>
+    <td>%y</td>
+    <td>year in decimal, without the century (0-99)</td>
+  </tr>
+  <tr>
+    <td>%Y</td>
+    <td>year in decimal, with the century</td>
+  </tr>
+  <tr>
+    <td>%Z</td>
+    <td>time zone name</td>
+  </tr>
+  <tr>
+    <td>%%</td>
+    <td>a percent sign</td>
+  </tr>
+</table>
+
+<ul>
+  <li>指定: /<name>.<kind>/<name>.<kind>/...</kind></name></kind></name></li>
+  <li>デフォルト値: %b %d %H:%M:%S</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> logger.date_format: No
+ logger.date_format: Disable
+ logger.date_format: [%Y-%m-%dT%H.%M.%S%Z]     // W3C standard format
+ logger.date_format: [%b %d %H:%M:%S]          // Syslog format
+ logger.date_format: [%a %b %d %Y %H:%M:%S %Z] // RFC2822 format
+ logger.date_format: [%a %b %d %H:%M:%S %Z %Y] // data command format
+ logger.date_format: [%Y-%m-%d %H.%M.%S]
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="loggerlog_level">logger.log_level</h3>
+
+<p>以下のログレベルを指定可能。</p>
+
+<ul>
+  <li>SILENT</li>
+  <li>FATAL</li>
+  <li>ERROR</li>
+  <li>WARN</li>
+  <li>INFO</li>
+  <li>DEBUG</li>
+  <li>TRACE</li>
+  <li>VERBOSE</li>
+  <li>PARANOID</li>
+</ul>
+
+<p>各ログレベルを指定した際に実際にログに記録されるログメッセージのレベ
+ルは以下の通り。</p>
+
+<table class="table-alt">
+  <tr>
+    <td>SILENT</td>
+    <td>completely silent</td>
+  </tr>
+  <tr>
+    <td>FATAL</td>
+    <td>includes (FATAL)</td>
+  </tr>
+  <tr>
+    <td>ERROR</td>
+    <td>includes (FATAL, ERROR)</td>
+  </tr>
+  <tr>
+    <td>WARN</td>
+    <td>includes (FATAL, ERROR, WARN)</td>
+  </tr>
+  <tr>
+    <td>INFO</td>
+    <td>includes (FATAL, ERROR, WARN, INFO)</td>
+  </tr>
+  <tr>
+    <td>DEBUG</td>
+    <td>includes (FATAL, ERROR, WARN, INFO, DEBUG)</td>
+  </tr>
+  <tr>
+    <td>TRACE</td>
+    <td>includes (FATAL, ERROR, WARN, INFO, DEBUG, TRACE)</td>
+  </tr>
+  <tr>
+    <td>VERBOSE</td>
+    <td>includes (FATAL, ERROR, WARN, INFO, DEBUG, TRACE, VERBOSE)</td>
+  </tr>
+  <tr>
+    <td>PARANOID</td>
+    <td>includes (FATAL, ERROR, WARN, INFO, DEBUG, TRACE, VERBOSE, PARA)</td>
+  </tr>
+</table>
+
+<p><strong>TRACE</strong>, <strong>VERBOSE</strong>, <strong>PARANOID</strong> の各ログレベルは通常巨大なログファイルを生成します。<strong>PARANOID</strong>を指定すると、ログフォーマットが崩れる場合があります。</p>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>指定: (SILENT</td>
+          <td>FATAL</td>
+          <td>ERROR</td>
+          <td>WARN</td>
+          <td>INFO</td>
+          <td>DEBUG</td>
+          <td>TRACE</td>
+          <td>VERBOSE</td>
+          <td>PARANOID)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>デフォルト値: INFO</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> logger.log_level: DEBUG
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="loggerclock_type">logger.clock_type</h3>
+
+<p>logger.clock_type 　オプションはログメッセージのタイムスタンプに使用するクロックのタイプを指定します。
+現在以下の３種類のクロップタイプが使用可能です</p>
+
+<ul>
+  <li>system: system clock [default]</li>
+  <li>logical: logical clock</li>
+  <li>adjusted: adjusted clock</li>
+</ul>
+
+<p>論理時間クロック (logical time clock) を利用するには、プログラム中のどこかに以下のように指定してください。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> coil::ClockManager::instance().getClock("logical").settime()
+</code></pre></div></div>
+
+<ul>
+  <li>設定: system, logical, adjusted</li>
+  <li>デフォルト: system</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> logger.clock_type: system
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="loggerescape_sequence_enable">logger.escape_sequence_enable</h3>
+
+<p>このオプションはログ出力に色を付けるかどうかを指定する。logger.file_name: stdout と指定した場合、端末がエスケープシーケンスをサポートしていれば、ログ出力がカラーで表示される。ファイルへの出力に色を付けることはおすすめしない。</p>
+
+<ul>
+  <li>設定: YES or NO</li>
+  <li>デフォルト: NO</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> logger.escape_sequence_enable: NO
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="corbaに関する設定">CORBAに関する設定</h2>
+
+<h3 id="corbaargs">corba.args</h3>
+
+<p>CORBAに与える引数を指定する。CORBA は実装毎に異なるコマンドラインオプショ
+ンを持つ。通常コマンドライン引数は、CORBA の API である ORB_init() 関数
+に与えられるが、このオプションは指定された文字列をこの ORB_init() 関数
+に渡す。</p>
+
+<ul>
+  <li>指定: 文字列</li>
+  <li>デフォルト: 空文字列</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.args: -ORBInitialHost myhost -ORBInitialPort 8888
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="指定例1">指定例1</h4>
+
+<p>画像データなどをデータポートで送る際、1回に送信するデータサイズ約2MBを超える場合には注意が必要。
+omniORBでは、giop(General Inter-ORB Protocol)で扱えるサイズはデフォルトで”2097152B(2MB)”であり
+このサイズを超えるデータを送ろうとすると、giopの制限のため正しいデータを送ることができない。
+corba.args オプションを利用して、最大サイズを変更することが可能である。この指定は、OutPort、InPort両方にて指定する必要がある。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.args: -ORBgiopMaxMsgSize 3145728 # この行を追加
+                                        # Maxサイズを3Mに指定
+</code></pre></div></div>
+
+<p>なお、corba.args に指定する以外に、環境変数を以下のように指定することでこの制限を緩和することができる。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  export ORBgiopMaxMsgSize=3145728
+</code></pre></div></div>
+
+<ul>
+  <li>（参考）(omniORB configuration and API) http://omniorb.sourceforge.net/omni41/omniORB/omniORB004.html</li>
+</ul>
+
+<h3 id="corbaendpoint-非推奨">corba.endpoint [非推奨]</h3>
+
+<p>このプションは corba.endpoints に置き換えられた。非推奨。</p>
+
+<h3 id="corbaendpoints">corba.endpoints</h3>
+
+<p>CORBAにおいては、リモートのオブジェクトのIORと呼ばれる参照によりアクセ
+スするが、IORには当該オブジェクトが動作するノードのアドレスとポート番号
+が通常1セットのみ記述されている。OpenRTMが動作しているノードに2つ以上の
+ネットワークインターフェースが存在する場合、IORに含まれるノードのアドレ
+スとして意図しないアドレスが割り振られる場合がある。</p>
+
+<p>これを解消するために、本オプションでCORBAで利用するネットワークのアドレ
+スを指定することができる。<strong>ホストアドレス:ポート番号</strong> として指定するが、ポート番号は省略できる。</p>
+
+<p>ORBの実装によっては、IORに複数のアドレスを含めることができる。ただし、
+Java標準のCORBAであるJavaIDLにおいては、複数のアドレスを指定したIOR経由
+で当該オブジェクトにアクセスする場合、動作が遅くなるなど問題も報告され
+ているので注意が必要である。</p>
+
+<p><strong>アドレス:ポート</strong> の対を <strong>,(カンマ)</strong>で区切り複数指定することができ
+る。特別な文字列として <strong>all</strong> を指定することで、ノードのすべてのアドレ
+スをIORに含めることもできる。</p>
+
+<ul>
+  <li>指定: <host_addr>:<port>, <host_addr>:<port>, ... または all</port></host_addr></port></host_addr></li>
+  <li>デフォルト: 空文字</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.endpoints: 192.168.1.10:1111, 192.168.10.11:2222
+ corba.endpoints: 192.168.1.10, 192.168.10.11
+ corba.endpoints: all
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>corba.endpoints:</p>
+
+<h3 id="corbaendpoints_ipv4-readonly">corba.endpoints_ipv4: [readonly]</h3>
+
+<p>このパラメータは読み取り専用で、現在のプロセスが使用しているIPv4のエンドポイントがセットされます。
+このパラメータを読むことで、現在使用しているエンドポイントを知ることができます。</p>
+
+<ul>
+  <li>設定: 読み取り専用</li>
+  <li>デフォルト: なし</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.endpoints_ipv6: [readonly]
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="corbaendpoints_ipv6-readonly">corba.endpoints_ipv6: [readonly]</h3>
+
+<p>このパラメータは読み取り専用で、現在のプロセスが使用しているIPv6のエンドポイントがセットされます。
+このパラメータを読むことで、現在使用しているエンドポイントを知ることができます。</p>
+
+<ul>
+  <li>設定: 読み取り専用</li>
+  <li>デフォルト: なし</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.endpoints_ipv6: [readonly]
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="corbaendpoint_property">corba.endpoint_property</h3>
+
+<p>このプションは、利用可能なエンドポイントのうち何番目のアドレスをIPv4, IpV6のいずれかのアドレスとして利用するかどうかについて指定する。</p>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>設定: {ipv4</td>
+          <td>ipv6}(<number of="" endpoint="" address="">, ...),</number></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>デフォルト: なし</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.endpoint_property: ipv4
+ corba.endpoint_property: ipv4, ipv6(0)
+ corba.endpoint_property: ipv6
+ corba.endpoint_property: ipv4(0,1), ipv6(2,3)
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="corbanameservers">corba.nameservers</h3>
+
+<p>このプションはRTC等を登録するネームサーバを指定する。カンマ区切りで複数のネームサーバを指定することができる。指定したアドレスおよびポート番号にネームサーバがない場合でも特にエラーにはならず、存在するネームサーバにのみRTCの名前を登録する。
+ポート番号が省略された場合はデフォルトのポート番号 2809 が使われます。</p>
+
+<ul>
+  <li>指定: <host_addr>:<port>, <host_addr>:<port>, ...</port></host_addr></port></host_addr></li>
+  <li>デフォルト: localhost</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.nameservers: openrtm.aist.go.jp:9876
+ corba.nameservers: rtm0.aist.go.jp, rtm1.aist.go.jp, rtm2.aist.go.jp
+ corba.nameservers: localhost
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="corbanameservicereplace_endpoint">corba.nameservice.replace_endpoint</h3>
+
+<p>ノードに複数のNICが存在する場合、ネームサーバ上に登録されるRTCのIORに含
+まれるアドレスが、適切でない場合が存在する。例えば、あるノードが
+192.168.0.10と192.168.1.10という2つのアドレスを持ち、192.168.0.1 および
+192.168.1.1 に存在する2つのネームサーバ上に登録される場合、仮に
+192.168.0.10 が当該ノードでデフォルトで利用されるネットワークインター
+フェースだとすると、上記2つのネームサーバネームサーバに登録されるIORには、
+192.168.0.10 のみが含まれる。このとき、192.168.1.0 のネットワークではネームサーバ上のIORは到達不可能なアドレスが記載された無意味なものとなる。</p>
+
+<p>このオプションを指定すると、上記のケースのような場合、192.168.1.1 のネー
+ムサーバに登録されるIORのアドレスを 192.168.1.10 に置き換える。</p>
+
+<p>ただし、このオプション指定することによって、192.168.1.0 ネットワーク上
+の他のノードからは、当該RTCのプロファイル等を利用することはできるが、ポー
+トの接続等は行うことはできない。</p>
+
+<ul>
+  <li>指定: <strong>YES</strong> or <strong>NO</strong></li>
+  <li>デフォルト: NO</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.nameservice.replace_endpoint: NO
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="corbaalternate_iiop_addresses">corba.alternate_iiop_addresses</h3>
+
+<p>このオプションは、代替IIOPアドレスをIORプロファイルに追加します。
+IORにはサーバント(CORBAオブジェクトのサーバ)の追加のエンドポイント
+を含めることができます。これは、”corba.endpoints”オプションとほぼ
+同等ですが、実際にエンドポイントを作成しない点が異なります。
+(“corba.endpoints” オプションでは実際のエンドポイントを作ろうとし、
+できなければエラーが返されます。) このオプションは単に代替のIIOPエ
+ンドポイントアドレス情報をIORに追加します。</p>
+
+<p>このオプションは、RTCをNATやルータの内部に配置する場合に使用します。
+一般的には、プライベートネットワーク内のRTCはグローバルネットワー
+ク上のRTCを接続することはできません。しかしながら、NATやルータのポー
+トフォワーディングが適切に設定されていればグローバル側のRTCはプライ
+ベートネットワークのRTCに接続することが可能です。</p>
+
+<p>設定は以下のように行います。</p>
+
+<ol>
+  <li>NATやルータのポートフォワーディングを適切に設定します。
+    <ul>
+      <li>ここでは、グローバル側のポート2810をプライベート側のあるアドレ
+スの2810へ転送するように設定します。</li>
+    </ul>
+  </li>
+  <li>プライベート側のRTCのrtc.confを以下のように設定します。
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  corba.nameservers: my.global.nameserver.com &lt;- グローバル側のネームサーバを設定
+  corba.endpoints: :2810 &lt;- コンポーネントのポート番号
+  corba.alternate_iiop_addresses: w.x.y.z:2810 &lt;- ルータのグローバル側のIPアドレスとポート番号
+</code></pre></div>    </div>
+  </li>
+  <li>グローバル側のRTCとプライベート側のRTCを起動</li>
+</ol>
+
+<p>なお、RTSystemEditorでは、プライベート側のRTCへのアクセスが極端に
+遅くなる場合があります。これはJavaのIOR追加プロファイル機能の実装
+が十分でないため、プライベート側に到達するのに時間がかかるためと考
+えられます。rtshellなどを利用すると、接続にかかる時間を減らすこと
+ができます。また、RTSystemEditorやrtshellでの接続に時間がかかった
+場合でも、一旦接続したポート間の通信速度は通常とほとんど変わりませ
+ん。</p>
+
+<ul>
+  <li>指定: address:port</li>
+  <li>デフォルト: 未指定</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.alternate_iiop_addresses: addr:port
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="manager-に関する設定">manager に関する設定</h2>
+
+<h3 id="mangername">manger.name</h3>
+
+<p>managerの名前。マネージャがネームサーバで登録される際には、ここで設定した名前で登録される。
+この “manager.name” は、ストリング化されたCORBAオブジェクト名でマスター/スレーブマネージャーをグループ化するために使用されます。 “manager.name” が “manager” に設定され、マネージャーがマスターである場合、オブジェクト参照は次のように配置されます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corbaloc::&lt;hostname&gt;:2810/manager 
+</code></pre></div></div>
+
+<p>また、他のスレーブマネージャは以下のストリング化されたIORを持ちます。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corbaloc::&lt;hostname&gt;:&lt;port_number&gt;/manager
+</code></pre></div></div>
+
+<ul>
+  <li>指定: ネームサーバ等に登録可能な任意の名前</li>
+  <li>デフォルト値: manager</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.name: manager
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managerinstance_name">manager.instance_name</h3>
+
+<p>マネージャのインスタンス名。</p>
+
+<p>この “manager.instance_name” は、ネームサービス登録時のマネージャーの名前に使用されます。 通常、マスターマネージャーの参照は、”manager|mgr” という名前でネームサーバーに登録されます。 このオプションが “foobar” に設定されている場合、登録されたマースターマネージャー名は “foobar|mgr” になります。</p>
+<ul>
+  <li>設定: manager の任意の名称文字列</li>
+  <li>デフォルト: manager</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.instance_name: manager
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="manager_naming_formats">manager_naming_formats</h3>
+
+<p>マネージャをネームサーバに登録する際のフォーマットを指定する。以下の
+<strong>%</strong>で始まる指定子を利用することができる。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>指定子</th>
+    <th>意味</th>
+  </tr>
+  <tr>
+    <td>%n</td>
+    <td>マネージャ名</td>
+  </tr>
+  <tr>
+    <td>%h</td>
+    <td>ホスト名</td>
+  </tr>
+  <tr>
+    <td>%M</td>
+    <td>マネージャ名</td>
+  </tr>
+  <tr>
+    <td>%p</td>
+    <td>マネージャのプロセスID</td>
+  </tr>
+</table>
+
+<ul>
+  <li>指定: /<name>.<kind>/<name>.<kind>/...</kind></name></kind></name></li>
+  <li>デフォルト値: %h.host_cxt/%n.mgr</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.name: %h.host_cxt/%n.mgr
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="manageris_master">manager.is_master</h3>
+
+<p>当該プロセスをマスターマネージャにするかどうか？コマンドラインオプショ
+ン <strong>-d</strong> を指定すると、この値が NO に設定されていてもマスターマネージャ
+になる。</p>
+
+<ul>
+  <li>指定: <strong>YES</strong> or <strong>NO</strong></li>
+  <li>デフォルト値: NO</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.is_master: NO
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managercorba_servant">manager.corba_servant</h3>
+
+<p>マネージャのCORBAサーバントを起動するかどうかの設定。YES を設定すると、
+マネージャのCORBAサーバントが起動するため、リモートからマネージャの操作
+が可能になる。NO の場合には、CORBAサーバントが起動しないため、マネージャ
+のCORBA経由での操作はできなくなる。</p>
+
+<ul>
+  <li>指定: <strong>YES</strong> or <strong>NO</strong></li>
+  <li>デフォルト値: YES</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.corba_servant: YES
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="corbamaster_manager">corba.master_manager</h3>
+
+<p>マスターマネージャのアドレスとポート番号。マスターマネージャは、
+corbaloc 形式のURL指定でアクセス可能であるが、その際に使用するポート番
+号を指定する。また、スレーブマネージャは、ここで指定されたマスターマネー
+ジャを自身のマスターマネージャとして解釈、起動時にマスターマネージャに
+アクセスしネゴシエーションを行う。</p>
+
+<ul>
+  <li>指定: <host_name>:<port></port></host_name></li>
+  <li>デフォルト: localhost:2810</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.master_manager: localhost:2810
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managerupdate_master_managerenable">manager.update_master_manager.enable</h3>
+
+<p>スレーブマネージャへのマスターマネージャの登録の自動更新</p>
+
+<p>このオプションは、スレーブマネージャで有効です。 スレーブマネージャーは、自分自身をマスターマネージャーに登録する必要があります。 このオプションを “YES”に設定すると、スレーブマネージャーは定期的にマスターマネージャーに登録します。 「NO」を設定すると、スレーブマネージャは、起動時に一度だけマスタマネージャに登録されます。</p>
+
+<ul>
+  <li>設定: YES/NO (Read/Write)</li>
+  <li>デフォルト: YES</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.update_master_manager.enable:YES
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managerupdate_master_managerinterval">manager.update_master_manager.interval</h3>
+
+<p>スレーブマネージャのマスターマネージャへの登録更新周期</p>
+
+<p>このオプションは、corba.update_master_manager.enableに関連します。
+「corba.update_master_manager.enable」オプションがYESに設定されている場合、更新間隔はこのオプションによって設定されます。 デフォルトの間隔は10秒です。</p>
+<ul>
+  <li>設定: seconds (Read/Write)</li>
+  <li>デフォルト: 10.0</li>
+  <li>例:
+manager.update_master_manager.interval: 10.0</li>
+</ul>
+
+<h3 id="managercomponentsnaming_policy">manager.components.naming_policy</h3>
+
+<p>このオプションは、RTCの命名（番号付け）ポリシーを指定します。 RTCインスタンスが作成されると、コンポーネントタイプ名（type_name）に次のように増分番号が付けられた名前が割り当てられます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;type_name&gt; &lt;number&gt;
+ example: ConsoleOut0、ConsoleOut1、ConsoleOut2、...
+</code></pre></div></div>
+
+<p>デフォルトでは、同じプロセスの同じタイプのコンポーネントには0から順番に番号が付けられるため、異なるプロセスまたは異なるノード（コンピューター）で作成されたRTCは同じ名前を持つ場合があります。これらのRTCがネームサーバー（ns）に登録されると、同じパスと同じ名前のRTCが互いのオブジェクト参照を上書きし、目的のRTCにアクセスできなくなります。したがって、2つのポリシーが提供されます。各ノードに一意の番号を割り当てる「node_unique」とネームサーバーに一意の番号を割り当てる「ns_unique」です。</p>
+
+<p>デフォルトでは、次の3つのオプションを指定できます。</p>
+
+<ul>
+  <li>process_unique：プロセス内で一意の名前（番号）を指定します</li>
+  <li>node_unique：ノード内で一意の名前（番号）を指定します</li>
+  <li>ns_unique：ネームサーバーで一意の名前（番号）を指定します</li>
+</ul>
+
+<p>ポリシーはユーザーが拡張できます。</p>
+
+<ul>
+  <li>設定：読み取り/書き込み、{process_unique、node_unique、ns_unique}</li>
+  <li>デフォルト：process_unique</li>
+  <li>例：
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.components.naming_policy: process_unique
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managercomponentsprecreate">manager.components.precreate</h3>
+
+<p>事前のコンポーネント作成</p>
+
+<p>このオプションは、マネージャーのイベントループを開始する前に事前に作成するコンポーネントの名前（モジュール名）を指定します。 コンポーネントのファクトリーは、「manager.module.preload」オプションで登録するか、マネージャーに静的にリンクする必要があります。</p>
+
+<ul>
+  <li>設定: Read/Write, <component class="" name="">, ...</component></li>
+  <li>デフォルト: None</li>
+  <li>Example:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.components.precreate: ConsoleIn, ConsoleOut, SeqIn, SeqOut
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managercomponentspreconnect">manager.components.preconnect</h3>
+<p>&amp;aname(preconnect);</p>
+
+<p>事前の接続生成。このオプションは、マネージャーイベントループを開始する前に作成するコネクタを指定します。
+ターゲットコンポーネントとポートは、”manager.components.precreate” オプションを使用して事前に作成されている必要があります。
+ポートは、”<comp0>.<Port0>?port=<comp1>.<port1>＆<option_key>=<option_value>＆..." の形式で指定されます。
+dataflow_type または interface_type が指定されていない場合、"dataflow_type = push", "interface_type = corba_cdr" が自動的に指定されます。</option_value></option_key></port1></comp1></Port0></comp0></p>
+
+<ul>
+  <li>設定: <comp0>.<Port0>?port=<comp1>.<port1>&amp;<option_key>=<option_value>&amp;...</option_value></option_key></port1></comp1></Port0></comp0></li>
+  <li>デフォルト: none</li>
+  <li>Example:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.components.preconnect: ConsoleIn0.out?port=ConsoleOut0.in&amp; \ 
+                                                  dataflow_type=push&amp;interface_type=corba_cdr, \ 
+                                                  SeqIn0.octet?port=SeqOut0.octet&amp; \ 
+                                                  dataflow_type=push&amp;interface_type=direct
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managercomponentspreactivation">manager.components.preactivation</h3>
+<p>&amp;aname(preactivation);</p>
+
+<p>以前のコンポーネントのアクティブ化。このオプションは、マネージャーのイベントループを開始する前に、事前にアクティブにするコンポーネントの名前（モジュール名）を指定します。 ターゲットコンポーネントは、あらかじめ manager.components.precreate オプションで作成しておく必要があります。</p>
+
+<ul>
+  <li>設定: Read/Write, <component class="" name="">, ...</component></li>
+  <li>デフォルト: None</li>
+  <li>Example:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.components.preactivation: ConsoleIn0, ConsoleOut0
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managercpu_affinity">manager.cpu_affinity</h3>
+
+<p>このオプションは、マネージャのプロセスを特定のCPUにバインドする。
+オプション引数は、カンマで区切られた1つ以上のCPU IDでなければならない。
+CPU IDは0から始まり、最大値はCPUコア数-1となる。
+もし不正なCPU IDが指定された場合、このプロセスはすべてのCPUを利用するよう設定される。</p>
+
+<ul>
+  <li>指定: バインドするCPU IDをカンマ区切りで指定</li>
+  <li>デフォルト: なし</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.cpu_affinity: 0,1
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="マネージャのライフサイクルオプション">マネージャのライフサイクルオプション</h2>
+
+<h3 id="managershutdown_on_nortcs">manager.shutdown_on_nortcs:</h3>
+
+<p>プロセス上にRTCが一つもなくなった場合、すなわち同一プロセス上のRTCの最
+後の1つが終了した場合に、マネージャをシャットダウンし当該プロセスを終了
+させるかどうかを指定する。YES の場合には、RTCが一つもなくなった時点でプ
+ロセスが終了する。NOの場合は、RTCが一つもない状態でもマネージャ、プロセ
+スともに動き続ける。</p>
+
+<ul>
+  <li>指定: <strong>YES</strong> or <strong>NO</strong></li>
+  <li>デフォルト: YES</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.shutdown_on_nortcs: YES
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managershutdown_auto">manager.shutdown_auto</h3>
+
+<p>プロセス内のRTCの有無を一定時間ごとに調べ、RTCがない場合には、マネージャ
+およびプロセスをシャットダウンするかどうかを設定する。YESの場合、RTCが
+一つもなければ、マネージャおよびプロセスは自動的にシャットダウンされる。
+NOの場合、RTCが一つもなくともマネージャおよびプロセスが動作し続ける。</p>
+
+<p>manager.shutdown_on_nortcs との違いは、シャットダウンのトリガが、
+manager.shutdown_on_nortcs ではRTCの削除であるのに対して、
+manager.shutdown_auto は時間となっている点である。</p>
+<ul>
+  <li>指定: <strong>YES</strong> or <strong>NO</strong></li>
+  <li>デフォルト: YES</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.shutdown_auto: YES
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managerauto_shutdown_duration">manager.auto_shutdown_duration</h3>
+
+<p>プロセス内のRTCの有無調べる周期。単位は秒。上記の manager.shutdown_auto が
+YESに設定されている場合、このオプションで設定された周期でRTCの有無を確認
+しにいく。</p>
+
+<ul>
+  <li>指定: 数値 (単位[s])</li>
+  <li>デフォルト: 10.0</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.auto_shutdown_duration: 10.0
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managertermination_waittime">manager.termination_waittime</h3>
+
+<p>マネージャ終了ウェイト時間指定。 このオプションは、マネージャーへの終了要求から実際の終了スレッドが実行を開始するまでの時間を指定します。 単位は秒です。 通常、このオプションを指定または変更する必要はありません。 ただし、CORBAの終了処理が正常に終了する前に別の終了処理を実行して例外が発生した場合は、この時間を調整することで問題が解決する場合があります。</p>
+
+<ul>
+  <li>設定: Read/Write, duration [s]</li>
+  <li>デフォルト: 0.5</li>
+  <li>例:
+manager.termination_waittime: 0.5</li>
+</ul>
+
+<h2 id="モジュール管理に関するオプション">モジュール管理に関するオプション</h2>
+
+<h3 id="managermodulesload_path">manager.modules.load_path</h3>
+
+<p>マネージャはこのオプションで指定されたサーチパスリストからモジュールを
+探索する。パスはカンマ区切りで列挙する。パスのデリミタは、UNIXでもWindowsでも / である。</p>
+
+<ul>
+  <li>指定: /dir_name0/dir_name1/…, /dir_name0/dir_name1/…</li>
+  <li>デフォルト値: ./</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.load_path: C:/Program Files/OpenRTM-aist
+ manager.modules.load_path: /usr/lib, /usr/local/lib,       \
+                          /usr/local/lib/OpenRTM-aist/libs
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managermodulespreload">manager.modules.preload:</h3>
+
+<p>マネージャは起動時に予めローダブルモジュールをロードすることができる。
+このオプションで指定されたローダブルモジュール
+を、<strong>manager.modules.load_path</strong> で指定されたサーチパスから探し出す。
+もし、<strong>manager.modules.abs_path_allowed</strong> で YES が指定されていれば、
+ローダブルモジュールを絶対パスで指定することもできる。</p>
+
+<ul>
+  <li>指定: <module_name>.dll, <module_name>.dll, ...</module_name></module_name></li>
+  <li>デフォルト値: 空</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.preload: ConsoleIn.dll, ConsoleOut.dll
+ manager.modules.preload: ConsoleIn.so, ConsoleOut.so
+ manager.modules.abs_path_allowed: YES
+ manager.modules.preload: /usr/lib/OpenRTM-aist/ConsoleIn.so
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managermodulesabs_path_allowed">manager.modules.abs_path_allowed</h3>
+
+<p>モジュールの絶対パス指定許可フラグ。もしこのオプションがYESの場合、モジュールの接待パス指定が許可される。</p>
+
+<ul>
+  <li>指定: <strong>YES</strong> or <strong>NO</strong></li>
+  <li>デフォルト値: YES</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.abs_path_allowed: YES
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managermodulessearch_auto">manager.modules.search_auto</h3>
+
+<p>モジュールの自動検索機能を有効にする。
+このオプションは、RTCロード可能モジュールを自動的に検索するかどうかを指定します。 このオプションが “YES” に設定されている場合、RTCインスタンス化がマネージャーに要求されると、ターゲットRTCロード可能モジュール（DLLなど）が自動的に検索され、モジュール検索パスからロードされて、コンポーネントがインスタンス化されます。 NOの場合、ターゲットRTCのロード可能モジュールを事前にロードする必要があります。</p>
+
+<ul>
+  <li>設定: Read/Write, YES / NO</li>
+  <li>デフォルト: YES</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.search_auto: YES
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managerpreloadmodules-none">manager.preload.modules: none</h3>
+<p>CORBA初期化前にロードするモジュールリスト</p>
+
+<p>このオプションは、CORBAの初期化前にロードするモジュールを指定します。 一部の機能を実装するロード可能なモジュールは、CORBAの初期化前にロードする必要があり、そのようなモジュールはこのオプションで指定されます。 モジュールの指定方法はmanager.modules.preloadと同じです。</p>
+
+<ul>
+  <li>設定: <module_name>(.<extention>) (init_func_name), ...</extention></module_name></li>
+  <li>デフォルト: none</li>
+  <li>Example:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.preload.modules: SSLTransport.dll
+ manager.preload.modules: SSLTransport.py
+ manager.preload.modules: SSLTransport
+ manager.preload.modules: \
+ C:\\Python27\\Lib\\site-packages\\OpenRTM_aist\\ext\\SSLTransport
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- # -->
+<!-- # The following options are not implemented yet.  -->
+<!-- # -->
+<!-- # manager.modules.config_ext: -->
+<!-- # manager.modules.config_path: -->
+<!-- # manager.modules.detect_loadable: -->
+<!-- # manager.modules.init_func_suffix: -->
+<!-- # manager.modules.init_func_prefix: -->
+<!-- # manager.modules.download_allowed: -->
+<!-- # manager.modules.download_dir: -->
+<!-- # manager.modules.download_cleanup: -->
+<!-- # -->
+
+<h2 id="マネージャの言語サポートオプション">マネージャの言語サポートオプション</h2>
+
+<h3 id="managersupported_languages">manager.supported_languages</h3>
+
+<p>マスターマネージャは、リモートアプリケーションなどからの要求に応じて、
+スレーブマネージャおよびRTCを起動する。スレーブマネージャは、C++言語版
+だけでなく、Java版、Python版などの可能性もある。</p>
+
+<ul>
+  <li>指定: C++, Java, Python 等の言語をカンマ区切りで指定</li>
+  <li>デフォルト: C++, Java, Python3</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.supported_languages: C++, Python3, Java
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managermoduleslangsuffixes">manager.modules.<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>.suffixes</h3>
+
+<p>言語ごとのRTCモジュールの拡張子。
+このオプションは、ロード可能なモジュールRTCの拡張を指定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  manager.modules.&lt;lang&gt;.suffixes
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>の部分はmanager.supported_languagesで指定する必要があります。 “.”（ドット）は不要です。 C ++、Python / Python3、Java言語にはそれぞれ適切なデフォルトの拡張子が指定されているため、通常は設定は必要ありません。</p>
+
+<ul>
+  <li>指定: 共有オブジェクトの拡張子名</li>
+  <li>デフォルト:
+    <ul>
+      <li>Windows: dll</li>
+      <li>Linux等: so</li>
+      <li>Mac OS X: dylib</li>
+    </ul>
+  </li>
+  <li>例
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.C++.suffixes: dll
+ manager.modules.C++.suffixes: so
+ manager.modules.C++.suffixes: dylib
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managermoduleslangmanager_cmd">manager.modules.<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>.manager_cmd</h3>
+
+<p>言語ごとのマネージャプログラム名。
+このオプションは、各言語の実行可能マネージャーの名前を指定します。 マスターマネージャーがRTCのインスタンス化を要求されると、スレーブマネージャーが実行され、RTCがスレーブマネージャープロセスでインスタンス化されます。 C++版のRTCはC++版のマネージャ（rtcd）を使用し、Python版RTCはPython版マネージャ（rtcd_python）を使用します。 コマンド検索パスのデフォルトの実行可能ファイルは、C ++、Python / Python3、およびJava言語に対してそれぞれ指定されます。通常、設定は必要ありません。</p>
+
+<ul>
+  <li>指定: マネージャのコマンド名</li>
+  <li>デフォルト:
+    <ul>
+      <li>C++: rtcd</li>
+      <li>Python: rtcd_python</li>
+      <li>Java: rtc_java</li>
+    </ul>
+  </li>
+  <li>例
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.C++.manager_cmd: rtcd
+ manager.modules.Python.manager_cmd: rtcd_python
+ manager.modules.Java.manager_cmd: rtcd_java
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managermoduleslangprofile_cmd">manager.modules.<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>.profile_cmd</h3>
+
+<p>言語ごとのプロファイル取得コマンド名。
+このオプションは、RTCプロファイルを取得するコマンドであるプロファイル実行可能ファイルの名前を言語ごとに指定します。 既存のロード可能なモジュールからRTCを検索する場合、マスターマネージャーはプロファイルコマンドを実行して、ロード可能なモジュールから各コンポーネントのプロファイルを取得します。 C++版RTCはC++版プロファイルコマンド（rtcprof）を使用し、PythonバージョンRTCはPythonバージョンマネージャ（rtcprof_python）を使用します。 コマンド検索パスは、指定された実行可能ファイルに設定する必要があります。 C++、Python / Python3、およびJava言語にはそれぞれ適切なデフォルトの実行可能ファイルが指定されているため、通常は設定は必要ありません。</p>
+
+<ul>
+  <li>指定: プロファイル取得コマンド名</li>
+  <li>デフォルト:
+    <ul>
+      <li>C++: rtcprof</li>
+      <li>Python: rtcprof_python</li>
+      <li>Python3: rtcprof_python3</li>
+      <li>Java: rtc_java</li>
+    </ul>
+  </li>
+  <li>例
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.C++.profile_cmd: rtcprof
+ manager.modules.Python.profile_cmd: rtcprof_python
+ manager.modules.Java.profile_cmd: rtcprof_java
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="managermoduleslangload_paths">manager.modules.<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>.load_paths</h3>
+
+<p>言語ごとのRTCモジュールロードパス。
+このオプションは、各言語のロード可能なモジュールRTCのロードパスを指定します。 マスターマネージャーがどこかからRTCを検索する場合、指定されたロードパスが使用されます。</p>
+
+<ul>
+  <li>指定: RTCモジュールロードパス。</li>
+  <li>デフォルト:
+    <ul>
+      <li>C++: ./</li>
+      <li>Python: ./</li>
+      <li>Java: ./</li>
+    </ul>
+  </li>
+  <li>例
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.C++.load_paths: ./, /usr/share/openrtm-1.2/components/cxx
+ manager.modules.Python.load_paths: ./, /usr/share/openrtm-1.2/components/python
+ manager.modules.Python3.load_paths: ./, /usr/share/openrtm-1.2/components/python3
+ manager.modules.Java.load_paths: ./, /usr/share/openrtm-1.2/components/java
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- Timer configuration -->
+
+<h2 id="タイマに関する設定">タイマに関する設定</h2>
+
+<h3 id="timerenable">timer.enable</h3>
+
+<p>タイマ機能を有効/無効にする。タイマを無効にするとタイマを利用している機
+能、例えばネームサーバの定期的確認と再登録等が無効になる。</p>
+
+<ul>
+  <li>指定: <strong>YES</strong> or <strong>NO</strong></li>
+  <li>デフォルト値: YES</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> timer.enable: YES
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="timertick">timer.tick</h3>
+
+<p>タイマの精度を指定する。</p>
+
+<ul>
+  <li>指定: タイマの精度を [s] で指定する。</li>
+  <li>デフォルト値: 0.1 [s], (= 100ms)</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> timer.tick: 1.0
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="実行コンテキストオプション">実行コンテキストオプション</h2>
+
+<h3 id="exec_cxtperiodictype">exec_cxt.periodic.type</h3>
+
+<p>デフォルトの実行コンテキストのタイプ。
+デフォルトでは以下の実行コンテキストが指定可能。</p>
+
+<ul>
+  <li>PeridicExecutionContext: デフォルトのEC。最も一般的なECで指定しなければこのECが利用される。</li>
+  <li>ExtTrigExecutionContext:   外部トリガにより駆動されるEC。デフォルトで組み込み済み。</li>
+  <li>OpenHRPExecutionContext:  外部トリガにより並列的に駆動されるEC。デフォルトで組み込み済み。OpenHRP3と一緒に利用される。</li>
+  <li>SimulatorExecutionContext: 外部トリガにより並列的に駆動されるEC。デフォルトで組み込み済み。Choreonoidと一緒に利用される。</li>
+  <li>
+    <p>RTPreemptEC: （ソフト）リアルタイム実行コンテキスト。LinuxのRT-preemptiveカーネルと一緒に利用される。</p>
+  </li>
+  <li>指定: デフォルトの実行コンテキスト名</li>
+  <li>デフォルト値: PeriodicExecutionContext</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.periodic.type: PeriodicExecutionContext
+ exec_cxt.periodic.type: ArtExecutionContext
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="exec_cxtperiodicrate">exec_cxt.periodic.rate</h3>
+
+<p>デフォルトの実行コンテキストの周期。このオプションはシステム全体のECの周期を指定する。RTCが明示的にECの周期を指定しない場合、この周期が利用される。</p>
+
+<ul>
+  <li>指定: デフォルトの実行コンテキスト周期を [Hz] で指定する</li>
+  <li>デフォルト値: 1000</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.periodic.rate: 100
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="exec_cxtsync_transition">exec_cxt.sync_transition</h3>
+<h3 id="exec_cxtsync_activation">exec_cxt.sync_activation</h3>
+<h3 id="exec_cxtsync_deactivation">exec_cxt.sync_deactivation</h3>
+<h3 id="exec_cxtsync_reset">exec_cxt.sync_reset</h3>
+
+<p>RTCはアクティブ化、非アクティブ化、およびリセットにより、状態が遷移します。 一部の実行コンテキストは、メインロジックを異なるスレッドで実行します。 これらのフラグがYESに設定されている場合、アクティブ化、非アクティブ化、およびリセットは同期して実行されます。 つまり、これらのフラグがYESの場合、状態遷移の完了後にはアクティブ化/非アクティブ化/リセット操作の呼び出しから戻っていることが保証されます。</p>
+
+<p>“sync_transition” は、同期遷移フラグを他のすべての同期遷移フラグ (sync_activation / deactivation / resetting) に一括設定します。</p>
+
+<ul>
+  <li>設定: YES or NO</li>
+  <li>デフォルト：YES（デフォルト設定推奨）</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.sync_transition: YES
+ exec_cxt.sync_activation: YES
+ exec_cxt.sync_deactivation: YES
+ exec_cxt.sync_reset: YES
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="exec_cxttransition_timeout">exec_cxt.transition_timeout</h3>
+<h3 id="exec_cxtactivation_timeout">exec_cxt.activation_timeout</h3>
+<h3 id="exec_cxtdeactivation_timeout">exec_cxt.deactivation_timeout</h3>
+<h3 id="exec_cxtreset_timeout">exec_cxt.reset_timeout</h3>
+
+<p>動機遷移時のタイムアウト指定。
+動機遷移フラグがYESに設定されているとき、以下のタイムアウトの設定が有効になります。”timeout_transition” オプションが設定された場合、他の activation/deactivation/reset のタイムアウト値が一括で設定されます。</p>
+
+<ul>
+  <li>設定: Read/Write, seconds [s]</li>
+  <li>デフォルト：0.5 [s]</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.transition_timeout: 0.5
+ exec_cxt.activation_timeout: 0.5
+ exec_cxt.deactivation_timeout: 0.5
+ exec_cxt.reset_timeout: 0.5
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="sdo-サービスオプション">SDO サービスオプション</h2>
+
+<h3 id="sdoserviceprovideravailable_services">sdo.service.provider.available_services</h3>
+
+<p>このパラメータは現在利用可能なSDOサービス（プロバイダ）のリストが入る。</p>
+
+<ul>
+  <li>設定: 読み取り専用, <code class="language-plaintext highlighter-rouge">&lt;sdo service0&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;sdo service1&gt;</code>, …</li>
+  <li>デフォルト: None</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sdo.service.provider.available_services: &lt;利用可能なSDOサービス（プロバイダ）のリスト&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="sdoserviceproviderenabled_services">sdo.service.provider.enabled_services</h3>
+
+<p>このオプションは有効にSDOサービス（プロバイダ）を指定する。
+特定のサービスをサービス型名で指定するか、全てを有効にする場合は “ALL” を指定する。</p>
+
+<ul>
+  <li>設定: 読み書き, <code class="language-plaintext highlighter-rouge">&lt;sdo service0&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;sdo service1&gt;</code>, … または ALL</li>
+  <li>デフォルト: ALL</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sdo.service.provider.enabled_services: &lt;有効にするSDOサービスのリスト&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="sdoserviceproviderproviding_services">sdo.service.provider.providing_services</h3>
+
+<p>このオプションは現在インスタンス化され提供されているSDOサービス（プロバイダ）が入る。</p>
+
+<ul>
+  <li>設定: 読み取り専用, <code class="language-plaintext highlighter-rouge">&lt;sdo service0&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;sdo service1&gt;</code>, …</li>
+  <li>デフォルト: None</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sdo.service.provider.enabled_services: &lt;現在インスタンス化されているDOサービスのリスト&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="sdoserviceconsumeravailable_services">sdo.service.consumer.available_services</h3>
+
+<p>このパラメータは現在利用可能なSDOサービス（コンシューマ）のリストが入る。</p>
+
+<ul>
+  <li>設定: 読み取り専用, <code class="language-plaintext highlighter-rouge">&lt;sdo service0&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;sdo service1&gt;</code>, …</li>
+  <li>デフォルト: None</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sdo.service.consumer.available_services: &lt;利用可能なSDOサービス（コンシューマ）のリスト&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="sdoserviceconsumerenabled_services">sdo.service.consumer.enabled_services</h3>
+
+<p>このオプションは使用するSDOサービス（コンシューマ）を指定する。
+特定のサービスをサービス型名で指定するか、全てを有効にする場合は “ALL” を指定する。</p>
+
+<ul>
+  <li>設定: 読み書き, <code class="language-plaintext highlighter-rouge">&lt;sdo service0&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;sdo service1&gt;</code>, … または ALL</li>
+  <li>デフォルト: ALL</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sdo.service.consumer.enabled_services: &lt;有効にするSDOサービスのリスト&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="ローカルサービスオプション">ローカルサービスオプション</h2>
+
+<h3 id="managerlocal_servicemodules">manager.local_service.modules</h3>
+
+<p>ローカルサービスモジュールをロードする。
+同一プロセス内のRTCに対してユーザ定義のサービを提供するためにローカルサービスメカニズムが提供されています。
+コンポーネントは、ローカルサービスをマネージャから取得したり、使用したりすることができます。
+例えば、この仕組を利用すると、複数のRTC間で共通のリソースにアクセスしたりできます。</p>
+
+<p>ローカルサービスモジュールは、しばしばコンポーネントのロードやインスタンス化よりも前に初期化されなければいけません。
+そのため、ローカルサービスモジュールはこのオプションで指定して事前にロードと初期化を行う必要があります。</p>
+
+<ul>
+  <li>設定: Read/Write, モジュールロードパス</li>
+  <li>デフォルト：None</li>
+  <li>例:
+manager.local_service.modules: IEEE1394CameraService.so</li>
+</ul>
+
+<h3 id="managerlocal_serviceenabled_services">manager.local_service.enabled_services</h3>
+
+<p>有効にするローカルサービスを指定する。デフォルトではすべてのローカルサービスがアクティブ化および利用可能に設定されます。このオプションは有効にする特定のローカルサービスを指定します。</p>
+
+<ul>
+  <li>設定: Read/Write, 有効にするローカルサービス名</li>
+  <li>デフォルト：None</li>
+  <li>例:
+manager.local_service.enabled_services: IEEE1394CameraService</li>
+</ul>
+
+<h2 id="ポートの設定">ポートの設定</h2>
+
+<p>ポートの設定は以下の<strong>port.inport.dataport</strong>、<strong>port.{ポート型}.{ポート名}</strong>、<strong>{カテゴリ名}.{インスタンス名}.port.inport.{ポート名}.{設定項目}</strong>の文字列の後に項目名を指定することで設定できます。
+接続時のコネクタプロファイルで同じ設定をしている場合は、コネクタプロファイルの設定で上書きするのでrtc.confの設定は無効になります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.{ポート型}.dataport.{設定項目}: {設定値}
+ port.{ポート型}.{ポート名}.{設定項目}: {設定値}
+ {カテゴリ名}.{インスタンス名}.port.inport.{ポート名}.{設定項目}: {設定値}
+</code></pre></div></div>
+
+<h3 id="allow_dup_connection">allow_dup_connection</h3>
+<p>2つのポートの間で複数のコネクタを生成しないようにします。
+NO(不許可)にした場合、ポートAとポートBで接続した場合、もう一度connect関数を実行してポートAとポートBを接続しようとしてもPRECONDITION_NOT_METの値を返して接続失敗になります。</p>
+
+<ul>
+  <li>設定: 多重のコネクタを許可か不許可かの設定</li>
+  <li>デフォルト：NO</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.inport.in.allow_dup_connection: NO
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="fan_in">fan_in</h3>
+<p>InPortのコネクタの最大数を指定する。例えば100に設定すると、InPort Aと接続したポートの数が100以上になると、connect関数実行時にPRECONDITION_NOT_METを返して接続失敗になります。</p>
+
+<ul>
+  <li>設定: InPortのコネクタの最大数を設定</li>
+  <li>デフォルト：100</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.inport.in.fan_in: 100
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="fan_out">fan_out</h3>
+<p>OutPortのコネクタの最大数を指定する。例えば100に設定すると、OutPort Aと接続したポートの数が100以上になると、connect関数実行時にPRECONDITION_NOT_METを返して接続失敗になります。</p>
+
+<ul>
+  <li>設定: OutPortのコネクタの最大数を設定</li>
+  <li>デフォルト：100</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.outport.out.fan_out: 100
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="bufferlength">buffer.length</h3>
+<p>InPort、OutPortのリングバッファのバッファサイズを指定します。OutPortの場合はサブスクリプション型がNew、Periodic型の時に有効です。InPortは常に有効です。</p>
+
+<ul>
+  <li>設定: バッファサイズを設定</li>
+  <li>デフォルト：8</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.inport.in.buffer.length: 8
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="bufferwritefull_policy">buffer.write.full_policy</h3>
+<p>InPort、OutPortのリングバッファの上書き時のポリシーを指定します。OutPortの場合はサブスクリプション型がNew、Periodic型の時に有効です。InPortは常に有効です。</p>
+
+<ul>
+  <li>設定: 上書き時のポリシー</li>
+  <li>デフォルト：overwrite</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.inport.in.buffer.write.full_policy: block
+ port.inport.in.buffer.write.full_policy: do_nothing
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="bufferreadempty_policy">buffer.read.empty_policy</h3>
+<p>InPort、OutPortのリングバッファの読み込み時のポリシーを指定します。OutPortの場合はサブスクリプション型がNew、Periodic型の時に有効です。InPortは常に有効です。</p>
+
+<ul>
+  <li>設定: 読み込み時のポリシー</li>
+  <li>デフォルト：readback</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.inport.in.buffer.read.empty_policy: block
+ port.inport.in.buffer.read.empty_policy: do_nothing
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/developersguide/basic_rtc_programming/rtc_conf_reference/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

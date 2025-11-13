@@ -1,0 +1,714 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>LeapMotion で Choreonoid の制御 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="LeapMotion で Choreonoid の制御" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/leapmotion_choreonoid/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/leapmotion_choreonoid/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="LeapMotion で Choreonoid の制御" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"LeapMotion で Choreonoid の制御","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/casestudy/leapmotion_choreonoid/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/casestudy/leapmotion_choreonoid/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/casestudy/leapmotion_choreonoid/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>LeapMotion で Choreonoid の制御</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#リソースと事前準備">リソースと事前準備</a></li>
+  <li><a href="#デモシステム動作確認">デモシステム動作確認</a></li>
+  <li><a href="#サンプルコンポーネントの動作確認">サンプルコンポーネントの動作確認</a></li>
+  <li><a href="#自作コンポーネントを作る">自作コンポーネントを作る</a></li>
+  <li><a href="#別パソコンのコンポーネントを利用する場合">別パソコンのコンポーネントを利用する場合</a>
+    <ul>
+      <li><a href="#ネームサーバー接続確認">ネームサーバー接続確認</a></li>
+      <li><a href="#コンポーネント接続確認">コンポーネント接続確認</a></li>
+      <li><a href="#相手側の-leapmotion-コンポーネントを利用する">相手側の LeapMotion コンポーネントを利用する</a></li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: LeapMotion で Choreonoid の制御 -->
+<p>#contents</p>
+
+<p>このケーススタディでは、LeapMotion センサーを利用して Choreonoid シミュレーターで機動中の GRobo を制御します。まずは準備されたコンポーネント（デモシステム及びサンプルコンポーネント）で動作確認をします。それから、自作コンポーネントでシミュレーター上のロボットを制御します。
+<!--break--></p>
+<h2 id="リソースと事前準備">リソースと事前準備</h2>
+
+<p>以下のアーカイブをダウンロードし解凍してください。</p>
+
+<p><a href="http://openrtm.org/pub/OpenRTM-aist/ROBOMEC2015/part3_0/robomec2015_openrtm_tutorial_part3.zip">robomec2015_openrtm_tutorial_part3.zip</a> <span style="color:red;">2015/05/20更新</span>;</p>
+
+<p>アーカイブの内容にある主なるファイルは以下のとおりです。</p>
+
+<ul>
+  <li><strong>Demo/</strong>: デモシステムのコンポーネント及び Choreonoid
+    <ul>
+      <li><strong>rtc_handle.bat</strong>: デモシステムを機動するためのバッチファイル</li>
+    </ul>
+  </li>
+  <li><strong>src/</strong>: 準備されたコンポーネントのソース
+    <ul>
+      <li><strong>LeapMotion_RobotControl_Sample</strong>: サンプルコンポーネントのソース</li>
+    </ul>
+  </li>
+  <li><strong>LeapMotionGRoboControlSampleComp.exe</strong>: サンプルコンポーネントのバイナリー（x64、Visual Studio 2013用）</li>
+  <li><strong>online_tutorial/</strong>：この Webページ</li>
+</ul>
+
+<p><span style="color:red;">【必須】</span>;以下のページから「Windows Download」をクリックして、LeapMotion のドライバーをダウンロードしてインストールしてください。</p>
+
+<p>https://www.leapmotion.com/setup/windows</p>
+
+<h2 id="デモシステム動作確認">デモシステム動作確認</h2>
+
+<p>ここでは、デモシステムを機動し動作を確認します。以下の手順にしたがってデモシステムを起動させてください。</p>
+
+<ol>
+  <li>スタートメニューの「Start Naming Service」でネームサーバーを機動する（<a href="http://openrtm.org/openrtm/ja/content/openrtm-aist%E3%82%9210%E5%88%86%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%88%E3%81%86%EF%BC%81#toc2">OpenRTMのドキュメント</a>に参照してください）</li>
+  <li>スタートメニューから「RTSystemEditorRCP」または「OpenRTP 1.1.1」を起動する</li>
+  <li>Demo/rtc_handle.batを実行してデモシステムのランチャーを起動する</li>
+</ol>
+<div align="center"><a href="start_launcher.png"><img src="start_launcher.png" width="75%;" /></a></div>
+<div align="center"><a href="rtchandle_launcher.png"><img src="rtchandle_launcher.png" width="60%;" /></a></div>
+<ol>
+  <li>RtcHandle で以下のボタンをクリックしてコンポーネントを起動する</li>
+  <li>CNoid_G</li>
+  <li>RobotDemo</li>
+  <li>LeapRTC</li>
+  <li>LeapMotion</li>
+</ol>
+<div align="center"><a href="launch_demo_components.png"><img src="launch_demo_components.png" width="60%;" /></a></div>
+<div align="center"><a href="rtchandle_launched_components.png"><img src="rtchandle_launched_components.png" width="50%;" /></a></div>
+<ol>
+  <li>「getRtcList」をクリックする</li>
+</ol>
+<div align="center"><a href="rtchandle_getrtclist_button.png"><img src="rtchandle_getrtclist_button.png" width="60%;" /></a></div>
+<div align="center"><a href="rtchandle_getrtclist_result.png"><img src="rtchandle_getrtclist_result.png" width="60%;" /></a></div>
+<ol>
+  <li>「Load」をクリックして「LeapDemo.data」を選択する</li>
+</ol>
+<div align="center"><a href="rtchandle_load_button.png"><img src="rtchandle_load_button.png" width="60%;" /></a></div>
+<div align="center"><a href="rtchandle_load_button_after.png"><img src="rtchandle_load_button_after.png" width="60%;" /></a></div>
+<ol>
+  <li>「ConnectAll」ボタンをクリックしてコンポーネントを接続するとコンポーネントは自動的に以下のように接続される。</li>
+</ol>
+<div align="center"><a href="rtchandle_connectall_button.png"><img src="rtchandle_connectall_button.png" width="60%;" /></a></div>
+<div align="center"><a href="rtsysed_demo_connected.png"><img src="rtsysed_demo_connected.png" width="50%;" /></a></div>
+<ol>
+  <li>「ActivateAll」をクリックしてデモを起動してシステムを起動する</li>
+</ol>
+<div align="center"><a href="rtchandle_activateall_button.png"><img src="rtchandle_activateall_button.png" width="60%;" /></a></div>
+<div align="center"><a href="rtsysed_demo_activated.png"><img src="rtsysed_demo_activated.png" width="50%;" /></a></div>
+<ol>
+  <li><strong>LeapRTCCompのウィンドーが選択された状態で</strong> LeapMotionの上で手を動かすと、「LeapMotion」ウィンドーでデータが現れ、コマンドによってシミュレーター上のロボットが動く</li>
+</ol>
+<div align="center"><a href="demo_moving_robot.png"><img src="demo_moving_robot.png" width="50%;" /></a></div>
+
+<h2 id="サンプルコンポーネントの動作確認">サンプルコンポーネントの動作確認</h2>
+
+<p>ここでは、デモシステムの中でロボットを制御するコンポーネント「GRobotDemo」の代わりにサンプルコンポーネントを使って、シミュレーター上のロボットを制御します。</p>
+
+<p>以下の手順を始める前に、まずはデモシステムを上述の手順で起動してください。</p>
+
+<ol>
+  <li>「LeapMotionGRoboControlSampleComp」をコンパイルする</li>
+  <li>CMakeを起動する</li>
+  <li>CMake上で、サンプルコンポーネントのソースダイレクトリー（解凍された場所の<strong>src/LeapMotion_RobotControl_Sample</strong>）をソースコードとして指定する</li>
+</ol>
+<div align="center"><a href="cmake_select_source.png"><img src="cmake_select_source.png" width="60%;" /></a></div>
+<ol>
+  <li>CMake上で、buildディレクトリーを、ソースディレクトリーの中の「build」ディレクトリーに指定する</li>
+</ol>
+<div align="center"><a href="cmake_select_build.png"><img src="cmake_select_build.png" width="60%;" /></a></div>
+<ol>
+  <li>「Configure」ボタンをクリックする</li>
+</ol>
+<div align="center"><a href="cmake_configure_button.png"><img src="cmake_configure_button.png" width="60%;" /></a></div>
+<ol>
+  <li>Generatorを選択する。以下のは、Visual Studio 2013でx64用のバイナリーの場合である。自分がインストールした OpenRTM バージョンに合わせた Generator を選択する。</li>
+</ol>
+<div align="center"><a href="cmake_select_generator.png"><img src="cmake_select_generator.png" width="60%;" /></a></div>
+<ol>
+  <li>「Generate」ボタンをクリックしてプロジェクトを生成する</li>
+</ol>
+<div align="center"><a href="cmake_generate_button.png"><img src="cmake_generate_button.png" width="60%;" /></a></div>
+<ol>
+  <li>「src/LeapMotion_RobotControl_Sample/build」にある「LeapMotionGRoboControlSample.sln」をVisual Studioで開いて、「ALL_BUILD」を右クリックメニューし、コンパイルする</li>
+</ol>
+<div align="center"><a href="sample_component_project.png"><img src="sample_component_project.png" width="60%;" /></a></div>
+<div align="center"><a href="sample_component_compile.png"><img src="sample_component_compile.png" width="60%;" /></a></div>
+<ol>
+  <li>以下の用にコンポーネントのバイナリーができた</li>
+</ol>
+<div align="center"><a href="sample_component_binary.png"><img src="sample_component_binary.png" width="60%;" /></a></div>
+<ol>
+  <li>「LeapMotionGRoboControlSampleComp」を起動してロボットを制御する</li>
+  <li>LeapMotionGRoboControlSampleComp.exeを実行する</li>
+  <li>RTSystemEditorでGRobotDemoコンポーネントのコネクションを削除する</li>
+</ol>
+<div align="center"><a href="grobotdemo_delete_connections.png"><img src="grobotdemo_delete_connections.png" width="60%;" /></a></div>
+<ol>
+  <li>RTSystemEditorでLeapMotionGRoboControlSampleCompを以下の用につなげて、コンポーネントを activate する
+    - LeapMotionのeSEAT0.hands_outポートからLeapMotionGRoboControlSample0の.hand_positionsへ
+    - LeapMotionGRoboControlSample0.hand_positionsからRobotMotion0の.targetAngleへ</li>
+</ol>
+<div align="center"><a href="sample_component_connect.png"><img src="sample_component_connect.png" width="60%;" /></a></div>
+<ol>
+  <li><strong>LeapRTCCompのウィンドーが選択された状態で</strong>LeapMotionの上で手を動かすとシミュレーター上のロボットの手が自分の手に合って動く</li>
+</ol>
+<div align="center"><a href="sample_component_follow_hands.png"><img src="sample_component_follow_hands.png" width="60%;" /></a></div>
+
+<h2 id="自作コンポーネントを作る">自作コンポーネントを作る</h2>
+
+<p>ここでは、ロボット制御コンポーネントを作成する手順を説明します。まずは RTCBuilder を利用してソースのスタブを生成します。それから自由にソースを編集してLeapMotionからのデータに対してシミュレータ上のロボットを制御するアルゴリズムを実装します。</p>
+
+<ol>
+  <li>RTCBuilderを起動する</li>
+  <li>新しい RTCBuilder プロジェクトを作る（プロジェクト名、コンポーネント名などを自由に選択してください）</li>
+</ol>
+<div align="center"><a href="rtcbuilder_new_project.png"><img src="rtcbuilder_new_project.png" width="60%;" /></a></div>
+<div align="center"><a href="rtcbuilder_project_type.png"><img src="rtcbuilder_project_type.png" width="60%;" /></a></div>
+<ol>
+  <li>アクティビティで<strong>onActivated</strong>、<strong>onDeactivated</strong>及び<strong>onExecute</strong>を選択する</li>
+  <li>以下のデータポートを作成する</li>
+</ol>
+<table class="table-alt">
+  <tr>
+    <th>種類</th>
+    <th>ポート名</th>
+    <th>データ型</th>
+  </tr>
+  <tr>
+    <td>入力ポート</td>
+    <td>hand_positions</td>
+    <td>RTC::TimedFloatSeq</td>
+  </tr>
+  <tr>
+    <td>出力ポート</td>
+    <td>command</td>
+    <td>RTC::TimedString</td>
+  </tr>
+  <tr>
+    <td>出力ポート</td>
+    <td>target_angles</td>
+    <td>RTC::TimedShortSeq</td>
+  </tr>
+</table>
+
+<div align="center"><a href="rtcbuilder_create_ports.png"><img src="rtcbuilder_create_ports.png" width="60%;" /></a></div>
+<ol>
+  <li>サービスポートはないのでタブをスキップする</li>
+  <li>コンフィグレーションはないのでタブをスキップする</li>
+  <li>ソースコードの言語をC++に設定する</li>
+</ol>
+<div align="center"><a href="rtcbuilder_select_language.png"><img src="rtcbuilder_select_language.png" width="60%;" /></a></div>
+<ol>
+  <li>コンポーネントソースのスタブを生成する</li>
+</ol>
+<div align="center"><a href="rtcbuilder_generate_source.png"><img src="rtcbuilder_generate_source.png" width="60%;" /></a></div>
+
+<p>以上の準備ができたら、CMake と Visual Studio を利用してコンポーネントのソースを編集してコンパイルします。生成されたソースの中に「include/<コンポーネント名>/<コンポーネントト名>.h」「src/<コンポーネント名>.cpp」を開いて、以下の編集を行ってください。</コンポーネント名></コンポーネントト名></コンポーネント名></p>
+
+<p>ヘッダーファイルのクラス定義で以下のプライベート変数を追加してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  bool m_rightUp;
+  bool m_leftUp;
+</code></pre></div></div>
+
+<p>.cppファイルで、12行目で以下の関数を追加してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  double minmax(double a, double max, double min)
+  {
+    if (a &gt; max)
+    {
+      return max;
+    }
+    else if (min &gt; a)
+    {
+      return min;
+    }
+    return a;
+  }
+</code></pre></div></div>
+
+<p>.cppファイルで、コンストラクタで以下の行を追加してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  m_rightUp = false;
+  m_leftUp = false;
+</code></pre></div></div>
+
+<p>.cppファイルで、onExecute メソッドで以下のソースをペストしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  if (m_hand_positionsIn.isNew())
+  {
+    m_hand_positionsIn.read();
+    // Hand position data is received as an array of floats:
+    // [right_hand_x, right_hand_y, right_hand_z, left_hand_x, left_hand_y, left_hand_z]
+    // Where the x axis runs left to right across the LeapMotion sensor, the y axis is
+    // verticle, and the z axis is front to back across the LeapMotion sensor.
+    // So if you move your hand up and down above the sensor, the y axis will change.
+    // If you move your hand towards the screen, the z axis will change.
+    if (m_hand_positions.data.length() == 6)
+    {
+      // Calculate a command based on the hand positions
+      // Right hand
+      if (m_hand_positions.data[1] &gt; 15 &amp;&amp; !m_rightUp)
+      {
+        // Raise the hand
+        if (m_leftUp)
+        {
+          m_command.data = CORBA::string_dup("rightup2");
+        }
+        else
+        {
+          m_command.data = CORBA::string_dup("rightup1");
+        }
+        m_rightUp = true;
+        std::cout &lt;&lt; "Right hand up\n";
+        // Write the output port
+        m_commandOut.write();
+      }
+      else if (m_hand_positions.data[1] &lt; -15 &amp;&amp; m_rightUp)
+      {
+        // Lower the hand
+        if (m_leftUp)
+        {
+          m_command.data = CORBA::string_dup("rightdown2");
+        }
+        else
+        {
+          m_command.data = CORBA::string_dup("rightdown1");
+        }
+        m_rightUp = false;
+        std::cout &lt;&lt; "Right hand down\n";
+        // Write the output port
+        m_commandOut.write();
+      }
+  
+      // Left hand
+      if (m_hand_positions.data[4] &gt; 15 &amp;&amp; !m_leftUp)
+      {
+        // Raise the hand
+        if (m_rightUp)
+        {
+          m_command.data = CORBA::string_dup("leftup2");
+        }
+        else
+        {
+          m_command.data = CORBA::string_dup("leftup1");
+        }
+        m_leftUp = true;
+        std::cout &lt;&lt; "Left hand up\n";
+        // Write the output port
+        m_commandOut.write();
+      }
+      else if (m_hand_positions.data[4] &lt; -15 &amp;&amp; m_leftUp)
+      {
+        // Lower the hand
+        if (m_rightUp)
+        {
+          m_command.data = CORBA::string_dup("leftdown2");
+        }
+        else
+        {
+          m_command.data = CORBA::string_dup("leftdown1");
+        }
+        m_leftUp = false;
+        std::cout &lt;&lt; "Left hand down\n";
+        // Write the output port
+        m_commandOut.write();
+      }
+  
+      // Calculate joint angles for direct control based on the hand positions
+  
+      // Output target positions are published as an array of 6 pairs of short integers. Each pair is [joint index, angle]:
+      // [14, &lt;joint 14 angle&gt;, 15, &lt;joint 15 angle&gt;, ...]
+      m_target_angles.data.length(12);
+  
+      // Set joint numbers to be manipulated
+      m_target_angles.data[0] = 14;
+      m_target_angles.data[2] = 15;
+      m_target_angles.data[4] = 16;
+      m_target_angles.data[6] = 17;
+      m_target_angles.data[8] = 18;
+      m_target_angles.data[10] = 19;
+  
+      // Right hand position
+      m_target_angles.data[1] = minmax(m_hand_positions.data[1] * -10, 1500, -1500);
+      m_target_angles.data[3] = minmax(m_hand_positions.data[0] * -10, 200, -1500);
+      m_target_angles.data[5] = minmax((m_hand_positions.data[2] - 50) * 10, 200, -1300);
+  
+      // Left hand position
+      m_target_angles.data[7] = minmax(m_hand_positions.data[4] * 10, 1500, -1500);
+      m_target_angles.data[9] = minmax(m_hand_positions.data[3] * -10, 1500, -200);
+      m_target_angles.data[11] = minmax((m_hand_positions.data[5] - 50) * -10, 1300, -200);
+  
+      // Write the output port
+      m_target_anglesOut.write();
+      //std::cout &lt;&lt; "From hand positions:\nRight: (" &lt;&lt; m_hand_positions.data[0] &lt;&lt; ", " &lt;&lt; m_hand_positions.data[1] &lt;&lt;
+      //  ", " &lt;&lt; m_hand_positions.data[2] &lt;&lt; ")\t Left: (" &lt;&lt; m_hand_positions.data[3] &lt;&lt; ", " &lt;&lt; m_hand_positions.data[4] &lt;&lt;
+      //  ", " &lt;&lt; m_hand_positions.data[5] &lt;&lt; ")\nSetting joint positions:\n14: " &lt;&lt; m_target_angles.data[1] &lt;&lt;
+      //  ", 15: " &lt;&lt; m_target_angles.data[3] &lt;&lt; ", 16: " &lt;&lt; m_target_angles.data[5] &lt;&lt; ", 17: " &lt;&lt; m_target_angles.data[7] &lt;&lt;
+      //  ", 18: " &lt;&lt; m_target_angles.data[9] &lt;&lt; ", 19: " &lt;&lt; m_target_angles.data[11] &lt;&lt; "\n\n";
+    }
+  }
+  return RTC::RTC_OK;
+</code></pre></div></div>
+
+<p>サンプルコンポーネントと同じ手順でコンパイルしてください。</p>
+
+<p>コンパイルされたコンポーネントを LeapMotionGRoboControlSample0 と同じように利用できます。</p>
+
+<p>サンプルコンポーネントと同じ振る舞いができたら、以下の入出力データフォーマットを参照しながら、自作コンポーネントのソースを編集して振る舞いを変更してください。</p>
+
+<p>LeapMotionのeSEAT0.hands_out 出力ポート（自作コンポーネントのhand_positions入力ポートにくるデータ）のフォーマットは以下のようです。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [右手ｘ,右手y, 右手z, 左手x,左手y,左手z]
+</code></pre></div></div>
+
+<p>自作コンポーネントの command 出力ポートは以下のコマンドの一つを出力してロボットのポーズを制御します。</p>
+
+<ul>
+  <li>b_step</li>
+  <li>balance</li>
+  <li>bothdown</li>
+  <li>bothup</li>
+  <li>bow</li>
+  <li>bye</li>
+  <li>f01</li>
+  <li>f1</li>
+  <li>f_step</li>
+  <li>go_ahead</li>
+  <li>go_back</li>
+  <li>gymnastics</li>
+  <li>init</li>
+  <li>kick</li>
+  <li>l1</li>
+  <li>left_step</li>
+  <li>leftdown1</li>
+  <li>leftdown2</li>
+  <li>leftup1</li>
+  <li>leftup2</li>
+  <li>look_left</li>
+  <li>look_right</li>
+  <li>motion</li>
+  <li>muri</li>
+  <li>r1</li>
+  <li>rest</li>
+  <li>right_step</li>
+  <li>rightdown1</li>
+  <li>rightdown2</li>
+  <li>rightup1</li>
+  <li>rightup2</li>
+  <li>turn_l</li>
+  <li>turn_r</li>
+</ul>
+
+<p>自作コンポーネントの target_angles 出力ポートは、軸の位置を出力します。フォーマットは</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [軸番号, 位置, 軸番号, 位置, ...]
+</code></pre></div></div>
+
+<p>です。例えば、両腕の軸の位置を設定するために以下のデータを出力します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [14, &lt;位置&gt;, 15, &lt;位置&gt;, 16, &lt;位置&gt;, 17, &lt;位置&gt;, 18, &lt;位置&gt;, 19, &lt;位置&gt;]
+</code></pre></div></div>
+
+<h2 id="別パソコンのコンポーネントを利用する場合">別パソコンのコンポーネントを利用する場合</h2>
+
+<p>別のパソコンで機動中のコンポーネントを利用することはあります。このセクションでネットワーク越えコンポーネントの接続方法を説明します。</p>
+
+<p><span style="color:red;">以下の手順を行う前に、必ず Windows Firewall を無効にしてください。</span>;</p>
+
+<h3 id="ネームサーバー接続確認">ネームサーバー接続確認</h3>
+
+<p>まずは両パソコンの間でネットワークが接続されて、相手側のネームサーバーが見えるかどうかを確認します。</p>
+
+<ul>
+  <li>相手側のパソコンのIPを確認する。相手側のパソコンのコントロールパネルのネットワーク設定からコネクション情報を開く（以下はWindows 8の場合）</li>
+</ul>
+<div align="center"><a href="win8_network_settings.png"><img src="win8_network_settings.png" width="60%;" /></a></div>
+<ul>
+  <li>詳細バトンでIPアドレス情報を表示する</li>
+</ul>
+<div align="center"><a href="win8_adapter_status.png"><img src="win8_adapter_status.png" width="60%;" /></a></div>
+<div align="center"><a href="win8_adapter_address.png"><img src="win8_adapter_address.png" width="60%;" /></a></div>
+<ul>
+  <li>コマンドプロンプトからも確認できる（相手側のパソコンに実行する）</li>
+</ul>
+<div align="center"><a href="find_ip_address_windows.png"><img src="find_ip_address_windows.png" width="60%;" /></a></div>
+<ul>
+  <li>RTSystemEditorで相手側のネームサーバーに接続する。「ネームサーバを追加」バトンをクリックし、相手側のIPアドレスを入力する</li>
+</ul>
+<div align="center"><a href="rtsysed_add_nameserver_button.png"><img src="rtsysed_add_nameserver_button.png" width="50%;" /></a></div>
+<div align="center"><a href="rtsysed_add_nameserver_dialog.png"><img src="rtsysed_add_nameserver_dialog.png" width="50%;" /></a></div>
+<ul>
+  <li>成功の場合、以下の用にネームサーバリストに相手側のネームサーバーが追加される</li>
+</ul>
+<div align="center"><a href="rtsysed_added_nameserver.png"><img src="rtsysed_added_nameserver.png" width="50%;" /></a></div>
+
+<h3 id="コンポーネント接続確認">コンポーネント接続確認</h3>
+
+<p>ネームサーバーが見えるようになったら、コンポーネントが通信できるかどうかを確認します。</p>
+
+<ul>
+  <li>こちら側のパソコンで、スタートメニューから「Console<span style="color:red;">In</span>;Comp.exe」を実行する</li>
+  <li>相手側のパソコンで、スタートメニューから「Console<span style="color:red;">Out</span>;Comp.exe」を実行する</li>
+  <li>こちら側のパソコンの RTSystemEditor で ConsoleIn0（こちら側のネームサーバーから）と ConsoleOut0（相手側のネームサーバーから）を System Diagram に置き、ポートを接続する</li>
+</ul>
+<div align="center"><a href="rtsysed_connect_consolein_consoleout.png"><img src="rtsysed_connect_consolein_consoleout.png" width="75%;" /></a></div>
+<ul>
+  <li>成功の場合、こちら側の ConsoleInComp.exe ウィンドウで数字を入力すると、相手側の ConsoleOutComp.exe で表示される。</li>
+</ul>
+
+<p>相手側のコンポーネントが操作できない場合はあります。この場合は以下の手順を両パソコンに行ってください。CORBA の設定を変更します。</p>
+
+<ul>
+  <li>「C:/Program Files/OpenRTM-aist/1.1/examples/C++」（64 bitの場合）または 「C:/Program Files (x86)/OpenRTM-aist/1.1/examples/C++」（32 bitの場合）を Explorer で開く</li>
+  <li>「rtc.conf」をノートパッドで編集する</li>
+  <li>以下の行を追加する
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>corba.endpoint: &lt;IPアドレス&gt;
+</code></pre></div>    </div>
+  </li>
+  <li><span style="color:red;">注意：こちら側のパソコンでこちら側のIPアドレスを入力し、相手側のパソコンで相手側のIPアドレスを入力してください。</span>;</li>
+  <li>全コンポーネントを再起動すると RTSystemEditor で操作できるようになる</li>
+</ul>
+
+<h3 id="相手側の-leapmotion-コンポーネントを利用する">相手側の LeapMotion コンポーネントを利用する</h3>
+
+<p>以上の手順にしたがって相手側のコンポーネントとの接続ができたら、同じ手順で相手側の「LeapRTC0」コンポーネントをこちら側の RTSystemEditor で利用できます。</p>
+
+<p>RTSystemEditor上 で System Diagram に相手側の LeapRTC0 を置き、ポートを接続すると直接センサーをこちら側のパソコンにつながっているのと同じ様に動きます。</p>
+
+<p>RTSystemEditor でコンポーネントが操作できない場合は、前セクションの手順を行ってください。しかし、rtc.conf の場所は「robomec2015_openrtm_tutorial_part3/Demo/LeapMotion」と「robomec2015_openrtm_tutorial_part3/Demo/eSEAT」です。</p>
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/casestudy/leapmotion_choreonoid/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

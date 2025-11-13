@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SDO サービス編 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="SDO サービス編" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="SDO サービス編" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"SDO サービス編","image":"/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"/my-jekyll-site/ja/doc/developersguide/advanced_rtc_programming/sdo_service/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000</a>
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/research_development/" >Research_and_Development</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+
+	  
+
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>SDO サービス編</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#componentobserver-の例">ComponentObserver の例</a></li>
+  <li><a href="#実現方法">実現方法</a></li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: SDO サービス編 -->
+<!-- -*- pukiwiki-edit -*- -->
+<!-- * SDO サービス編 -->
+
+<p>#contents</p>
+
+<p>RTC には、サービスポート以外に、SDO サービスと呼ばれるサービスインターフェースを追加することができます。</p>
+
+<p>SDO は Super Distributed Object の略であり、OMG で標準化された分散コンポーネントの規格一つです。
+RTC の実態である RTObject は、実は SDO のオブジェクトを継承していて、RTC は SDO のオブジェクトの一種であると言えます。
+SDO では、コンポーネントの基本的なインターフェースが定義されています。
+SDO のコンポーネントが持つサービスインターフェースは、SDOService インターフェースと呼ばれ、インターフェース定義を継承することになっています。
+実は、RTC のポートや実行コンテキストも SDOService を継承しており、SDO サービスの一種となっています。</p>
+
+<p>サービスポートと SDO サービスの違いは何でしょうか？</p>
+
+<p>どちらも、RTC の外側に対してサービスを提供 (Provided) したり、外部のサービスを利用 (Required) するものです。
+大きな違いは、サービスポートは RTC の内部のロジック（RTC 開発者が実装するコアロジック）の詳細にアクセスするための（あるいは、コアロジックから外部のサービスにアクセスするための）インターフェースを提供するのに対して、SDO サービスは、RTC 自身、すなわちコアロジックを包含するコンポーネントの機能の詳細にアクセスする（コンポー
+ネントの機能から外部のサービスにアクセスする）インターフェースを提供します。</p>
+
+<ul>
+  <li><strong>サービスポート</strong>: RTC 内のコアロジックに対するサービス（から利用する）サービス</li>
+  <li><strong>SDOサービス</strong>: RTC のコンポーネントとしての機能に対する（から利用する）サービス</li>
+</ul>
+
+<p>SDO サービスの具体的な使われ方は以下のようなものです。</p>
+
+<h2 id="componentobserver-の例">ComponentObserver の例</h2>
+
+<p>例えば、OpenRTM の拡張機能として ComponentObserver と呼ばれるものがあります。これは、外部のツールなどが、コンポーネント (RTC) 自身に何らかの状態変化があった際に、ポーリングをしなくとも通知を受け取ることができる仕組みです。</p>
+
+<p>RTC の状態や、プロファイル、EC の状態、ポートの接続・切断を含む状態の変化、コンフィギュレーションの変更などに変更があった場合に、ツール等がその変更の通知を受け取ることができます。</p>
+
+<p>これらの状態変化は、RTC の get_component_profile()、EC の get_profile()関数などを周期的に呼ぶ（ポーリングする）ことで、外部から知ることは可能です。しかし、RTC の様々な変化を知るために、複数のツールや外部の RTC から get_xxx() などの多数の関数を周期的に呼ぶことは非効率であり、変化の見地も最悪ケースではポーリングの周期の分の遅延が発生します。</p>
+
+<p>ツールなどが、あらかじめコールバックオブジェクトをRTCに与えておき、変化があった場合にのみRTC側からそのオブジェクトの関数を即座に呼べば、遅延もなく変化が起きた場合にのみ関数がコールされるため効率的です。</p>
+
+<p>また、こうした機能は RTC のコアロジックとは関係なく、RTC のフレームワークそのものに関連するサービス機能です。したがって、このようなサービスインターフェースは SDO サービスとして実装することが適切です。</p>
+
+<p>なお、ComponentObserver のケースでは、RTC 側ではツールが提供するサービスオブジェクトの関数を呼ぶことで、その機能を実現します。すなわち、サービスの実装はツール側に存在し、RTC 側ではツールのサービスを利用することになります。したがって、このケースでは、RTC 側は SDO サービスのコンシューマ (Required インターフェース) を実装することとなります。</p>
+
+<p>逆に、RTC 側がサービスを提供し、ツールなど外部からそのサービスを利用するケースも考えられます。この場合は、SDOサービスのプロバイダ (Provided インターフェース) を実装することになります。</p>
+
+<h2 id="実現方法">実現方法</h2>
+
+<p>SDO サービスプロバイダ、SDO サービスコンシューマ共に、通常は共有オブジェクトの形で提供され、所定の方法で RTC のプロセスからロード、ファクトリへの登録、インスタンス化されてサービスの提供または利用が開始されます。</p>
+
+<p>SDO サービスは、1つのRTCに対して1種類につき1つの SDO サービスがインスタンス化され対応付けられます。プロセス単位であらかじめ定められたサービスがインスタンス化されます。</p>
+
+<p>rtc.conf に設定可能な SDO サービス関連のオプションは次のようになっています。</p>
+
+<table class="table-alt">
+  <tr>
+    <th colspan="2">SDO サービスプロバイダ関係の設定</th>
+  </tr>
+  <tr>
+    <td>sdo.service.provider.available_services</td>
+    <td>読み出しのみ。利用可能なサービスのリスト</td>
+  </tr>
+  <tr>
+    <td>sdo.service.provider.enabled_services</td>
+    <td>読み込まれた SDO サービスプロバイダのうち、有効にするもの。すべて有効の場合は ALL を指定</td>
+  </tr>
+  <tr>
+    <td>sdo.service.provider.providing_services</td>
+    <td>読み出しのみ。利用されている SDO サービスのリスト。</td>
+  </tr>
+  <tr>
+    <th colspan="3">SDO サービスコンシューマ関係の設定</th>
+  </tr>
+  <tr>
+    <td>sdo.service.consumer.available_services</td>
+    <td>読み出しのみ。利用可能な SDO サービスコンシューマのリスト。</td>
+  </tr>
+  <tr>
+    <td>sdo.service.consumer.enabled_services</td>
+    <td>読み込まれた SDO サービスコンシューマのうち、有効にするもの。すべて有効の場合は ALL を指定</td>
+  </tr>
+</table>
+
+<p>次節からは、SDO サービスの RTC 側でのプロバイダ、コンシューマの実装方法について説明します。</p>
+
+
+	</div>
+  </article>
+</section>
+
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

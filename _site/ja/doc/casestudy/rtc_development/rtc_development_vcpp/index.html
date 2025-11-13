@@ -1,0 +1,516 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>RTコンポーネント作成(VC++編) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="RTコンポーネント作成(VC++編)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_vcpp/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_vcpp/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="RTコンポーネント作成(VC++編)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"RTコンポーネント作成(VC++編)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_vcpp/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/casestudy/rtc_development/rtc_development_vcpp/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/casestudy/rtc_development/rtc_development_vcpp/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>RTコンポーネント作成(VC++編)</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#データポートのあるコンポーネント">データポートのあるコンポーネント</a>
+    <ul>
+      <li><a href="#コンポーネントの概要">コンポーネントの概要</a></li>
+      <li><a href="#mrcconvertor-の雛型を生成">MRCConvertor の雛型を生成</a>
+        <ul>
+          <li><a href="#作業用フォルダーの作成">作業用フォルダーの作成</a></li>
+          <li><a href="#cui版-rtc-template-編-genbat">CUI版 rtc-template 編 (gen.bat)</a></li>
+          <li><a href="#rtc-template-genbat-の実行">rtc-template (gen.bat) の実行</a></li>
+          <li><a href="#eclipse版-rtctemplate-編">Eclipse版 RtcTemplate 編</a></li>
+          <li><a href="#copypropsbat-の実行">copyprops.bat の実行</a></li>
+        </ul>
+      </li>
+      <li><a href="#mrcconvertor-の実装">MRCConvertor の実装</a>
+        <ul>
+          <li><a href="#visual-studio-の起動">Visual Studio の起動</a></li>
+          <li><a href="#ヘッダファイルの編集">ヘッダファイルの編集</a>
+            <ul>
+              <li><a href="#ヘッダファイルのインクルード">ヘッダファイルのインクルード</a></li>
+            </ul>
+          </li>
+          <li><a href="#ソースファイルの編集">ソースファイルの編集</a>
+            <ul>
+              <li><a href="#onexecute-の実装">onExecute() の実装</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#ビルド">ビルド</a></li>
+      <li><a href="#rtcconf-の作成">rtc.conf の作成</a></li>
+      <li><a href="#実行">実行</a>
+        <ul>
+          <li><a href="#ネームサーバーの起動">ネームサーバーの起動</a></li>
+          <li><a href="#mrcconvertorcompexe-の実行">MRCConvertorComp.exe の実行</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: RTコンポーネント作成(VC++編) -->
+<p>#contents</p>
+
+<h1 id="データポートのあるコンポーネント">データポートのあるコンポーネント</h1>
+
+<p>ここでは、データポートを2つ持つコンポーネント (MRCConvertor) を VC8 にて作成します。</p>
+
+<h2 id="コンポーネントの概要">コンポーネントの概要</h2>
+
+<p>入力デバイスからのデータを車輪2つの速度に変換し、OutPort から出力するコンポーネント。</p>
+
+<p>Joystick等の入力デバイスにて移動ロボット(前輪2、後輪1、前輪だけが駆動)を操作する際に、使用することができる。</p>
+
+<p>作成する RTC の仕様は以下のとおりです。</p>
+
+<ul>
+  <li>InPort
+    <ul>
+      <li>移動ロボットに対する速度 (TimedFloatSeq)</li>
+    </ul>
+  </li>
+  <li>OutPort
+    <ul>
+      <li>移動ロボットの車輪の速度 (TimedFloatSeq)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="mrcconvertor-の雛型を生成">MRCConvertor の雛型を生成</h2>
+
+<p>RtcTemplate にて雛型を生成します。</p>
+
+<h3 id="作業用フォルダーの作成">作業用フォルダーの作成</h3>
+<p>適当な場所に作業用フォルダーを作成します。</p>
+
+<p>今回は、フォルダー名をコンポーネント名 (MRCConvertor) と同じにします。</p>
+
+<ol>
+  <li>“マイコンピューター”をダブルクリック</li>
+  <li>作業用フォルダーを作成したいフォルダーへ移動</li>
+  <li>右クリックして [新規作成] &gt; [フォルダー] でフォルダーを作成</li>
+</ol>
+
+<h3 id="cui版-rtc-template-編-genbat">CUI版 rtc-template 編 (gen.bat)</h3>
+
+<p>rtc-template の実行を簡単にするために、下記のようなバッチファイルを先ほど作成した作業用フォルダーに作成します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtc-template.py -bcxx^
+  --module-name=MRCConvertor --module-desc="Convertor component for MobileRobot component"^
+  --module-version=1.0.0 --module-vendor=AIST --module-category=Category^
+  --module-comp-type=DataFlowComponent --module-act-type=PERIODIC^
+  --module-max-inst=1^
+  --inport=velFromInput:TimedFloatSeq^
+  --outport=velToWheel:TimedFloatSeq
+</code></pre></div></div>
+
+<h3 id="rtc-template-genbat-の実行">rtc-template (gen.bat) の実行</h3>
+
+<p>下記のように gen.bat ファイルを実行します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt;gen.bat
+  rtc-template.py -bcxx
+  --module-name=MRCConvertor
+  --module-desc="Convertor component for MobileRobot component"
+  --module-version=1.0.0 --module-vendor=AIST
+  --module-category=Category
+  --module-comp-type=DataFlowComponent --module-act-type=PERIODIC
+  --module-max-inst=1
+  --inport=velFromInput:TimedFloatSeq --outport=velToWheel:TimedFloatSeq
+
+   File "MRCConvertor.h" was generated.
+   File "MRCConvertor.cpp" was generated.
+   File "MRCConvertorComp.cpp" was generated.
+   File "Makefile.MRCConvertor" was generated.
+   File "MRCConvertorComp_vc8.vcproj" was generated.
+   File "MRCConvertor_vc8.vcproj" was generated.
+   File "MRCConvertorComp_vc9.vcproj" was generated.
+   File "MRCConvertor_vc9.vcproj" was generated.
+   File "MRCConvertor_vc8.sln" was generated.
+   File "MRCConvertor_vc9.sln" was generated.
+   File "copyprops.bat" was generated.
+   File "user_config.vsprops" was generated.
+   File "README.MRCConvertor" was generated.
+   File "MRCConvertor.yaml" was generated.
+</code></pre></div></div>
+
+<h3 id="eclipse版-rtctemplate-編">Eclipse版 RtcTemplate 編</h3>
+
+<p>Eclipse版 RtcTemplate での対応は下記のようになります。</p>
+
+<ul>
+  <li>Programing language selection: C++</li>
+  <li>Module definition
+    <ul>
+      <li>Module name: MRCConvertor</li>
+      <li>Module decription: Convertor component for MobileRobot component</li>
+      <li>Module version: 1.0.0</li>
+      <li>Module vender: AIST</li>
+      <li>Module category: Category</li>
+      <li>Component type: DataFlowComponent</li>
+      <li>Component’s activity type: PERIODIC</li>
+      <li>Number of maximum instance: 1</li>
+    </ul>
+  </li>
+  <li>InPort definition
+    <ul>
+      <li>Ports: Name:velFromInput Type:TimedFloatSeq</li>
+    </ul>
+  </li>
+  <li>OutPort definition
+    <ul>
+      <li>Ports: Name:velToWheel, Type:TimedFloatSeq</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="copypropsbat-の実行">copyprops.bat の実行</h3>
+
+<p>RtcTemplate 実行により、copyprops.bat ファイルが作業用フォルダーに生成されます。</p>
+
+<p>この copyprops.bat ファイルを用い、コンポーネントのビルドに必要な rtm_config.vsprops を作業フォルダーにコピーします。</p>
+
+<p>copyprops.bat ファイルをダブルクリックしてください。</p>
+
+<h2 id="mrcconvertor-の実装">MRCConvertor の実装</h2>
+
+<h3 id="visual-studio-の起動">Visual Studio の起動</h3>
+
+<p>MRCConvertorComp_vc8.vcproj をダブルクリックし、Visual Studio を起動します。</p>
+
+<h3 id="ヘッダファイルの編集">ヘッダファイルの編集</h3>
+
+<p>Visual Studio のソリューションエクスプローラーにて、MRCConvertorComp &gt; Header Files の順にクリックし、 MRCConvertor.h をダブルクリックします。</p>
+
+<h4 id="ヘッダファイルのインクルード">ヘッダファイルのインクルード</h4>
+<p>今回は、std::vector と math ライブラリを使用しますので、2つのヘッダファイルをインクルードします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include &lt;vector&gt;
+ // VC8 にて Math::M_PI を使用するため
+ #define _USE_MATH_DEFINES
+ #include &lt;math.h&gt;
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>“virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);”関数のコメントをはずします。</p>
+  </li>
+  <li>
+    <p>メンバー変数とメソッドの宣言~
+今回は、MobileRobot (前輪2、後輪1、前輪だけが駆動) の移動ベクトルを車輪速度に変換するためのメソッド convert()、変換に必要な係数 m_k を宣言します。</p>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> private:  float m_k;
+ 
+  /*!
+   * @brief InPortからのデータ(X、Y) をMobileRobot用の車輪速度データに変換する。
+   *        m_velFromInput.data[0]とm_velFromInput.data[1]だけを使用する。
+   */
+  std::vector&lt;float&gt; convert(float x, float y) {
+	float th = atan2(y,x);
+	float v  = m_k * hypot(x,y);
+	std::vector&lt;float&gt; ret_val;
+	ret_val.push_back(v * cos(th - (M_PI/4.0))); // left vel
+	ret_val.push_back(v * sin(th - (M_PI/4.0))); // right vel
+	return ret_val;
+  }
+</code></pre></div></div>
+
+<h3 id="ソースファイルの編集">ソースファイルの編集</h3>
+
+<p>Visual Studio のソリューションエクスプローラーにて、MRCConvertorComp &gt; Source Files の順にクリックし、 MRCConvertor.cpp をダブルクリックします。</p>
+
+<h4 id="onexecute-の実装">onExecute() の実装</h4>
+<p>onExecute() のコメントをはずし、以下のように実装します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /*!
+  * @brief InPort からのデータ (X、Y) を MobileRobot用の車輪速度データに変換し、
+  *        OutPort から出力する。
+  */
+
+ RTC::ReturnCode_t MRCConvertor::onExecute(RTC::UniqueId ec_id)
+ {
+   if (m_velFromInputIn.isNew()) {
+ 	m_velFromInputIn.read();
+ 	if (m_velFromInput.data.length() &gt; 2) {
+ 	  std::vector&lt;float&gt;  con_val = this-&gt;convert(m_velFromInput.data[0],m_velFromInput.data[1]);
+ 	  for (int i = 0; i &lt; 2; i++)
+ 		m_velToWheel.data[i] = con_val[i];
+ 	  m_velToWheelOut.write();
+ 	}
+   }
+   return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<p>ここで行われていることは、</p>
+
+<ol>
+  <li>m_velFromInputIn.isNew() にて InPort にデータが届いているかをチェックする。</li>
+  <li>新しいデータが届いていたら、m_velFromInputIn.read() で変数にデータを読み込む。</li>
+  <li>読み込んだデータを convert() にて車輪速度に変換する。</li>
+  <li>変換したデータを OutPort の変数にセットし、OutPort のバッファに書き込む。</li>
+</ol>
+
+<h2 id="ビルド">ビルド</h2>
+
+<p>Visual Studio のメニューから [ビルド] &gt; [ソリューションのビルド] をクリックしコンポーネントのビルドを行います。</p>
+
+<h2 id="rtcconf-の作成">rtc.conf の作成</h2>
+
+<p>エディタにて以下の内容を記述し、rtc.conf というファイル名で Debug あるいは Release フォルダーに保存します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.nameservers: localhost
+ naming.formats: %n.rtc
+</code></pre></div></div>
+
+<h2 id="実行">実行</h2>
+
+<p>ビルドにてエラーが無かった場合、Debug あるいは Release フォルダーに rtc.conf を作成し、MRCConvertorComp.exe を実行します。</p>
+
+<p>MRCConvertorComp.exe を実行する前に NamingService を起動してください。</p>
+<h3 id="ネームサーバーの起動">ネームサーバーの起動</h3>
+
+<p>＜OpenRTM-aist インストールフォルダー＞\bin\rtm-naming.batをダブルクリックしCORBAネームサーバーを起動します。</p>
+
+<h3 id="mrcconvertorcompexe-の実行">MRCConvertorComp.exe の実行</h3>
+
+<p>Debug あるいは Release フォルダーに移動し、MRCConvertorComp.exe を実行します。</p>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/casestudy/rtc_development/rtc_development_vcpp/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

@@ -1,0 +1,915 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>独自インターフェース型の実装手順(C++) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="独自インターフェース型の実装手順(C++)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/cpp/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/cpp/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="独自インターフェース型の実装手順(C++)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"独自インターフェース型の実装手順(C++)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/cpp/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/cpp/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/cpp/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>独自インターフェース型の実装手順(C++)</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#cmakeliststxtの作成">CMakeLists.txtの作成</a>
+    <ul>
+      <li><a href="#push型通信">Push型通信</a>
+        <ul>
+          <li><a href="#inportconsumerの実装">InPortConsumerの実装</a></li>
+          <li><a href="#inportproviderの実装">InPortProviderの実装</a></li>
+        </ul>
+      </li>
+      <li><a href="#pull型通信">Pull型通信</a>
+        <ul>
+          <li><a href="#inportconsumerの実装-1">InPortConsumerの実装</a></li>
+          <li><a href="#outportproviderの実装">OutPortProviderの実装</a></li>
+        </ul>
+      </li>
+      <li><a href="#独自インターフェースの登録">独自インターフェースの登録</a></li>
+      <li><a href="#動作確認">動作確認</a></li>
+      <li><a href="#接続時のオプションを設定">接続時のオプションを設定</a></li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: 独自インターフェース型の実装手順(C++) -->
+<p>#contents</p>
+
+<p>このページではC++で独自インターフェースを作成する手順を説明します。</p>
+
+<p>以下のソースコードのサンプルでは重要でない部分は省略しているため、詳細なソースコードは以下から取得してください。</p>
+
+<ul>
+  <li><a href="https://github.com/Nobu19800/openrtm_testinterface">https://github.com/Nobu19800/openrtm_testinterface</a></li>
+</ul>
+
+<h2 id="cmakeliststxtの作成">CMakeLists.txtの作成</h2>
+
+<p>ビルドのために以下のCMakeLists.txtを作成してください。
+OpenRTM-aistのライブラリの検出の設定が必要です。
+また、生成する動的ライブラリの名前を<strong>${target}.dll</strong>、<strong>${target}.so</strong>にする必要があります。
+Linux環境では先頭にlibを付けるので(libTestIF.so)、以下の例では先頭のlibを削除しています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake_minimum_required(VERSION 3.1)
+ 
+ set(target TestIF)
+ project(${target} CXX)
+ 
+ find_package(OpenRTM REQUIRED)
+ 
+ 
+ 
+ add_definitions(${OPENRTM_CFLAGS})
+ link_directories(${OPENRTM_LIBRARY_DIRS})
+ 
+ add_library(${target} SHARED ${target}.cpp TestInPortConsumer.cpp TestInPortConsumer.h TestInPortProvider.cpp TestInPortProvider.h TestOutPortConsumer.cpp TestOutPortConsumer.h 
+ TestOutPortProvider.cpp TestOutPortProvider.h)
+ target_link_libraries(${target} ${OPENRTM_LIBRARIES})
+ target_include_directories(${target} SYSTEM PRIVATE ${OPENRTM_INCLUDE_DIRS})
+ set_target_properties(${target} PROPERTIES PREFIX "")
+</code></pre></div></div>
+
+<p>ただし、Push型通信を実装する場合はTestInPortConsumer、TestInPortProviderが必要で、Pull型通信を実装する場合はTestOutPortConsumer、TestOutPortConsumerが必要なため、どちらかしか実装しない場合は不要なファイルの作成は不要です。</p>
+
+<h3 id="push型通信">Push型通信</h3>
+<p>Push型通信実装のためにTestInPortConsumer(InPortConsumer)、TestInPortProvider(InPortProvider)を実装します。</p>
+
+<h4 id="inportconsumerの実装">InPortConsumerの実装</h4>
+<p>まず以下のようなヘッダーファイル(TestInPortConsumer.h)、ソースファイル(TestInPortConsumer.cpp)を用意します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #ifndef TESTINPORTCONSUMER_H
+ #define TESTINPORTCONSUMER_H
+ 
+ #include &lt;rtm/InPortConsumer.h&gt;
+ 
+ class TestInPortConsumer
+
+    : public RTC::InPortConsumer
+
+ {
+ public:
+   TestInPortConsumer();
+   ~TestInPortConsumer() override;
+   void init(coil::Properties&amp; prop) override;
+   RTC::DataPortStatus put(RTC::ByteData&amp; data) override;
+   void publishInterfaceProfile(SDOPackage::NVList&amp; properties) override;
+   bool subscribeInterface(const SDOPackage::NVList&amp; properties) override;
+   void unsubscribeInterface(const SDOPackage::NVList&amp; properties) override;
+ };
+ 
+ #endif
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include "TestInPortConsumer.h"
+ 
+ TestInPortConsumer::TestInPortConsumer()
+ {
+ }
+ 
+ TestInPortConsumer::~TestInPortConsumer()
+ {
+ }
+ 
+ void TestInPortConsumer::init(coil::Properties&amp; prop)
+ {
+ }
+ 
+ RTC::DataPortStatus TestInPortConsumer::put(RTC::ByteData&amp; data)
+ {
+
+	return RTC::DataPortStatus::PORT_OK;
+
+ }
+ 
+ void TestInPortConsumer::publishInterfaceProfile(SDOPackage::NVList&amp; properties)
+ {
+ }
+ 
+ bool TestInPortConsumer::subscribeInterface(const SDOPackage::NVList&amp; properties)
+ {
+ 
+	return true;
+
+ }
+ 
+ void TestInPortConsumer::unsubscribeInterface(const SDOPackage::NVList&amp; properties)
+ {
+ }
+</code></pre></div></div>
+
+<p>今回はここにファイルの読み書きでデータを転送する独自インターフェースを実装します。</p>
+
+<p>まずコネクタの初期化時に<strong>init</strong>関数が呼ばれます。
+変数<strong>prop</strong>にはRTSystemEditor等で設定したコネクタの接続情報が格納されています。
+以下の例ではpropからtestif.filenameのパラメータを取得してファイル名に設定しています。
+init関数は複数回呼ばれる可能性があるので、その点は注意する必要があります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void TestInPortConsumer::init(coil::Properties&amp; prop)
+ {
+
+	if (prop.propertyNames().size() == 0)
+	{
+		return;
+	}
+
+	m_filename = prop.getProperty("testif.filename", "test.dat");
+
+ }
+</code></pre></div></div>
+
+<p>データの書き込み時には<strong>put</strong>関数が呼ばれます。
+変数<strong>data</strong>にはバイト列にシリアライズしたデータが格納されています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::DataPortStatus TestInPortConsumer::put(RTC::ByteData&amp; data)
+ {
+ 
+   std::ofstream fout;
+   fout.open(m_filename, std::ios::out | std::ios::binary | std::ios::trunc);
+ 
+   if (fout.fail())
+   {
+     return RTC::DataPortStatus::PORT_ERROR;
+   }
+   else
+   {
+     m_dataid += 1;
+     fout.write((const char*)&amp;m_dataid, sizeof(unsigned long));
+ 
+     const unsigned long size = data.getDataLength();
+     fout.write((const char*)&amp;size, sizeof(unsigned long));
+ 
+     if (size &gt; 0)
+     {
+       fout.write((const char*)data.getBuffer(), size);
+     }
+   }
+ 
+ 
+   return RTC::DataPortStatus::PORT_OK;
+ }
+</code></pre></div></div>
+
+<p>この例ではファイルにデータのID、データサイズ、バイト列データを書き込んでいます。
+変数dataの<strong>getDataLength</strong>関数でデータサイズ、<strong>getBuffer</strong>関数でバイト列データを取得して、取得したデータを何らかの方法でInPortProviderへ送信します。
+データの読み込みには他に<strong>readData</strong>関数を使う事ができます。</p>
+
+<p>その他の関数は基本的に実装の必要はありませんが、InPortProvider側で追加の情報を設定する場合は<strong>subscribeInterface</strong>関数でその情報の取得をする必要があります。
+<strong>unsubscribeInterface</strong>はコネクタ切断時に呼ばれるので、subscribeInterface関数での処理に関して何らかの終了処理が必要な場合は記述します。</p>
+
+<h4 id="inportproviderの実装">InPortProviderの実装</h4>
+
+<p>まず以下のようなヘッダーファイル(TestInPortProvider.h)、ソースファイル(TestInPortProvider.cpp)を用意します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #ifndef TESTINPORTPROVIDER_H
+ #define TESTINPORTPROVIDER_H
+ 
+ #include &lt;rtm/InPortProvider.h&gt;
+ #include &lt;thread&gt;
+ 
+ class TestInPortProvider
+ 
+    : public RTC::InPortProvider
+
+ {
+ public:
+   TestInPortProvider();
+   ~TestInPortProvider() override;
+   void init(coil::Properties&amp; prop) override;
+   void setBuffer(RTC::BufferBase&lt;RTC::ByteData&gt;* buffer) override;
+   void setListener(RTC::ConnectorInfo&amp; info,
+                             RTC::ConnectorListenersBase* listeners) override;
+   void setConnector(RTC::InPortConnector* connector) override;
+ private:
+   RTC::InPortConnector* m_connector;
+ };
+ 
+ #endif
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include "TestInPortProvider.h"
+ #include &lt;fstream&gt;
+ 
+ TestInPortProvider::TestInPortProvider() : m_connector(nullptr)
+ {
+   setInterfaceType("testif");
+ }
+ 
+ TestInPortProvider::~TestInPortProvider()
+ {
+ }
+ 
+ void TestInPortProvider::init(coil::Properties&amp; prop)
+ {
+ }
+ 
+ void TestInPortProvider::setBuffer(RTC::BufferBase&lt;RTC::ByteData&gt;* buffer)
+ {
+ }
+ 
+ void TestInPortProvider::setListener(RTC::ConnectorInfo&amp; info,
+   RTC::ConnectorListenersBase* listeners)
+ {
+ }
+ 
+ void TestInPortProvider::setConnector(RTC::InPortConnector* connector)
+ {
+   m_connector = connector;
+ }
+</code></pre></div></div>
+
+<p>ここに処理を追加していきます。
+今回の例では、<strong>init</strong>関数で指定ファイルが変更されているかをポーリングするスレッドを作成しています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void TestInPortProvider::init(coil::Properties&amp; prop)
+ {
+   if (prop.propertyNames().size() == 0)
+   {
+     return;
+   }
+ 
+   const std::string filename = prop.getProperty("testif.filename", "test.dat");
+ 
+   if (!m_running)
+   {
+     m_thread = std::thread([this, filename] {
+       this-&gt;m_running = true;
+       unsigned long lastid = 0;
+       while (this-&gt;m_running)
+       {
+         if (this-&gt;m_connector != nullptr)
+         {
+           std::ifstream fin(filename, std::ios::in | std::ios::binary);
+           if (!fin.fail())
+           {
+             unsigned long id = 0;
+             fin.read((char*)&amp;id, sizeof(unsigned long));
+ 
+             if (id != lastid)
+             {
+               lastid = id;
+               unsigned long size = 0;
+               fin.read((char*)&amp;size, sizeof(unsigned long));
+               if (size &gt; 0)
+               {
+                 RTC::ByteData data;
+                 data.setDataLength(size);
+                 fin.read((char*)data.getBuffer(), size);
+                 this-&gt;m_connector-&gt;write(data);
+               }
+             }
+           }
+         }
+       }
+       });
+   }
+ }
+</code></pre></div></div>
+
+<p>ファイルからデータを取得後に、m_connectorの<strong>write</strong>関数を呼び出してデータをInPortConnectorに渡しています。
+InPortConsumerのデータをファイルに書き込んで、InPortProviderでファイルからデータを読み込むというデータ転送を実装できました。</p>
+
+<h3 id="pull型通信">Pull型通信</h3>
+<p>Pull型通信実装のためにTestInPortConsumer(OutPortConsumer)、TestInPortProvider(OutPortProvider)を実装します。
+ただし、Push型通信のみを実装する場合はここは飛ばしてください。</p>
+
+<h4 id="inportconsumerの実装-1">InPortConsumerの実装</h4>
+<p>まず以下のようなヘッダーファイル(TestOutPortConsumer.h)、ソースファイル(TestOutPortConsumer.cpp)を用意します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #ifndef TESTOUTPORTCONSUMER_H
+ #define TESTOUTPORTCONSUMER_H
+ 
+ #include &lt;rtm/SystemLogger.h&gt;
+ #include &lt;rtm/OutPortConsumer.h&gt;
+ 
+ class TestOutPortConsumer
+  : public RTC::OutPortConsumer
+ {
+ public:
+   TestOutPortConsumer();
+   ~TestOutPortConsumer() override;
+   void init(coil::Properties&amp; prop) override;
+   void setBuffer(RTC::CdrBufferBase* buffer) override;
+   void setListener(RTC::ConnectorInfo&amp; info,
+     RTC::ConnectorListenersBase* listeners) override;
+   RTC::DataPortStatus get(RTC::ByteData&amp; data) override;
+   bool subscribeInterface(const SDOPackage::NVList&amp; properties) override;
+   void unsubscribeInterface(const SDOPackage::NVList&amp; properties) override;
+ };
+ 
+ #endif
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include "TestOutPortConsumer.h"
+ 
+ 
+ TestOutPortConsumer::TestOutPortConsumer()
+ {
+ }
+ 
+ TestOutPortConsumer::~TestOutPortConsumer()
+ {
+ }
+ 
+ void TestOutPortConsumer::init(coil::Properties&amp; prop)
+ {
+ }
+ 
+ void TestOutPortConsumer::setBuffer(RTC::CdrBufferBase* buffer)
+ {
+ }
+ 
+ void TestOutPortConsumer::setListener(RTC::ConnectorInfo&amp; info,
+   RTC::ConnectorListenersBase* listeners)
+ {
+ }
+ 
+ RTC::DataPortStatus TestOutPortConsumer::get(RTC::ByteData&amp; data)
+ {
+   return RTC::DataPortStatus::PORT_OK;
+ }
+ 
+ bool TestOutPortConsumer::subscribeInterface(const SDOPackage::NVList&amp; properties)
+ {
+   return true;
+ }
+ 
+ void TestOutPortConsumer::unsubscribeInterface(const SDOPackage::NVList&amp; properties)
+ {
+ }
+</code></pre></div></div>
+
+<p>今回の例では<strong>init</strong>関数で読み書きするファイル名を指定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void TestOutPortConsumer::init(coil::Properties&amp; prop)
+ {
+   if (prop.propertyNames().size() == 0)
+   {
+     return;
+   }
+ 
+   m_filename_in = prop.getProperty("testif.filename_in", "test_in.dat");
+   m_filename_out = prop.getProperty("testif.filename_out", "test_out.dat");
+ }
+</code></pre></div></div>
+
+<p>ここに処理を追加していきます。
+Pull型通信ではデータ読み込み時に<strong>get</strong>関数を呼びますが、以下の例ではファイルAに呼び出しのIDを書き込みます。
+次にファイルBからデータサイズとバイト列データを読み込んで変数dataに格納しています。
+データサイズを設定するには<strong>setDataLength</strong>関数を使用します。
+データの格納には<strong>getBuffer</strong>関数で取得したポインタのアドレスに書き込むか、<strong>writeData</strong>関数を使用します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::DataPortStatus TestOutPortConsumer::get(RTC::ByteData&amp; data)
+ {
+   std::ofstream fout;
+   fout.open(m_filename_out, std::ios::out | std::ios::binary | std::ios::trunc);
+ 
+   if (fout.fail())
+   {
+     return RTC::DataPortStatus::PORT_ERROR;
+   }
+   else
+   {
+     m_dataid += 1;
+     fout.write((const char*)&amp;m_dataid, sizeof(unsigned long));
+     fout.close();
+ 
+     for (int i = 0; i &lt; 100; i++)
+     {
+       std::ifstream fin(m_filename_in, std::ios::in | std::ios::binary);
+       if (!fin.fail())
+       {
+         unsigned long id = 0;
+         fin.read((char*)&amp;id, sizeof(unsigned long));
+ 
+         if (id == m_dataid)
+         {
+           unsigned long size = 0;
+           fin.read((char*)&amp;size, sizeof(unsigned long));
+           if (size &gt; 0)
+           {
+             data.setDataLength(size);
+             fin.read((char*)data.getBuffer(), size);
+             return RTC::DataPortStatus::PORT_OK;
+           }
+ 
+         }
+       }
+     }
+   }
+ 
+   return RTC::DataPortStatus::PORT_ERROR;
+ }
+</code></pre></div></div>
+
+<h4 id="outportproviderの実装">OutPortProviderの実装</h4>
+<p>まず以下のようなヘッダーファイル(TestOutPortProvider.h)、ソースファイル(TestOutPortProvider.cpp)を用意します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #ifndef TESTOUTPORTPROVIDER_H
+ #define TESTOUTPORTPROVIDER_H
+ 
+ #include &lt;rtm/OutPortProvider.h&gt;
+ 
+ class TestOutPortProvider
+  : public RTC::OutPortProvider
+ {
+ public:
+   TestOutPortProvider();
+   ~TestOutPortProvider() override;
+   void init(coil::Properties&amp; prop) override;
+   void setBuffer(RTC::CdrBufferBase* buffer) override;
+   void setListener(RTC::ConnectorInfo&amp; info,
+     RTC::ConnectorListenersBase* listeners) override;
+   void setConnector(RTC::OutPortConnector* connector) override;
+ private:
+   RTC::OutPortConnector* m_connector;
+ };
+ 
+ #endif
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include "TestOutPortProvider.h"
+ 
+ 
+ TestOutPortProvider::TestOutPortProvider() : m_connector(nullptr)
+ {
+   setInterfaceType("testif");
+ }
+ 
+ TestOutPortProvider::~TestOutPortProvider()
+ {
+ }
+ 
+ void TestOutPortProvider::init(coil::Properties&amp; prop)
+ {
+ }
+ 
+ void TestOutPortProvider::setBuffer(RTC::CdrBufferBase* buffer)
+ {
+ }
+ 
+ void TestOutPortProvider::setListener(RTC::ConnectorInfo&amp; info,
+   RTC::ConnectorListenersBase* listeners)
+ {
+ }
+ 
+ void TestOutPortProvider::setConnector(RTC::OutPortConnector* connector)
+ {
+   m_connector = connector;
+ }
+</code></pre></div></div>
+
+<p>ここに処理を追加していきます。
+以下の例では<strong>init</strong>関数でファイルが変更されたかをポーリングして、変更時に別のファイルにデータを書き込むスレッドを起動しています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void TestOutPortProvider::init(coil::Properties&amp; prop)
+ {
+   if (prop.propertyNames().size() == 0)
+   {
+     return;
+   }
+ 
+   const std::string filename_in = prop.getProperty("testif.filename_in", "test_in.dat");
+   const std::string filename_out = prop.getProperty("testif.filename_out", "test_out.dat");
+ 
+   if (!m_running)
+   {
+     m_thread = std::thread([this, filename_in, filename_out] {
+       this-&gt;m_running = true;
+       unsigned long lastid = 0;
+       while (this-&gt;m_running)
+       {
+         if (this-&gt;m_connector != nullptr)
+         {
+           std::ifstream fin(filename_out, std::ios::in | std::ios::binary);
+           if (!fin.fail())
+           {
+             unsigned long id = 0;
+             fin.read((char*)&amp;id, sizeof(unsigned long));
+             fin.close();
+ 
+             if (lastid != id)
+             {
+               std::ofstream fout;
+               fout.open(filename_in, std::ios::out | std::ios::binary | std::ios::trunc);
+               if (!fout.fail())
+               {
+                 fout.write((const char*)&amp;id, sizeof(unsigned long));
+ 
+                 RTC::ByteData data;
+                 m_connector-&gt;read(data);
+ 
+                 const unsigned long size = data.getDataLength();
+                 fout.write((const char*)&amp;size, sizeof(unsigned long));
+ 
+                 if (size &gt; 0)
+                 {
+                   fout.write((const char*)data.getBuffer(), size);
+                 }
+               }
+ 
+               lastid = id;
+             }
+           }
+         }
+       }
+     });
+   }
+ }
+</code></pre></div></div>
+
+<p>まずm_connectorの<strong>read</strong>関数を呼んでOutPortConnectorから転送するデータを取得します。
+getDataLength関数でデータサイズを取得、getBuffer関数でバイト列データを取得してファイルに書き込んでいます。</p>
+
+<p>これにより、OutPortConsumerでファイルAにデータのIDを書き込み後にOutPortProviderでファイルAからIDを読み込んで前回読み込んだデータのIDと一致しているかを判定します。
+新しいデータだと判定したらファイルBにデータを書き込んで、OutPortConsumerでファイルBが新しいデータかを判定してOutPortConnectorにデータを渡します。</p>
+
+<h3 id="独自インターフェースの登録">独自インターフェースの登録</h3>
+<p>ここまでに実装した独自インターフェースを使用可能にするためファクトリに登録します。
+以下の内容の<strong>TestIF.cpp</strong>を作成してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include "TestInPortConsumer.h"
+ #include "TestInPortProvider.h"
+ #include "TestOutPortConsumer.h"
+ #include "TestOutPortProvider.h"
+ #include &lt;rtm/Manager.h&gt;
+ 
+ extern "C"
+ {
+   DLL_EXPORT void TestIFInit(RTC::Manager* manager)
+   {
+      {
+        RTC::InPortProviderFactory&amp; factory(RTC::InPortProviderFactory::instance());
+        factory.addFactory("testif",
+                       ::coil::Creator&lt; ::RTC::InPortProvider,
+                                         TestInPortProvider&gt;,
+                       ::coil::Destructor&lt; ::RTC::InPortProvider,
+                                         TestInPortProvider&gt;);
+      }
+ 
+      {
+        RTC::InPortConsumerFactory&amp; factory(RTC::InPortConsumerFactory::instance());
+        factory.addFactory("testif",
+                       ::coil::Creator&lt; ::RTC::InPortConsumer,
+                                         TestInPortConsumer&gt;,
+                       ::coil::Destructor&lt; ::RTC::InPortConsumer,
+                                         TestInPortConsumer&gt;);
+      }
+ 
+      {
+        RTC::OutPortProviderFactory&amp; factory(RTC::OutPortProviderFactory::instance());
+        factory.addFactory("testif",
+                       ::coil::Creator&lt; ::RTC::OutPortProvider,
+                                         TestOutPortProvider&gt;,
+                       ::coil::Destructor&lt; ::RTC::OutPortProvider,
+                                         TestOutPortProvider&gt;);
+      }
+ 
+      {
+        RTC::OutPortConsumerFactory&amp; factory(RTC::OutPortConsumerFactory::instance());
+        factory.addFactory("testif",
+                       ::coil::Creator&lt; ::RTC::OutPortConsumer,
+                                        TestOutPortConsumer&gt;,
+                       ::coil::Destructor&lt; ::RTC::OutPortConsumer,
+                                         TestOutPortConsumer&gt;);
+      }
+   }
+ }
+</code></pre></div></div>
+
+<p><strong>InPortProviderFactory</strong>、<strong>InPortConsumerFactory</strong>、<strong>OutPortProviderFactory</strong>、<strong>OutPortConsumerFactory</strong>の<strong>addFactory</strong>関数で実装した独自インターフェースを登録しています。
+この例の場合、<strong>testif</strong>という名前をポート接続時に指定することで使用できます。
+Push型のみ、もしくはPull型通信のみの実装の場合は、必要なモジュールだけを登録してください。
+TestIFInit関数は動的ライブラリをロードする時に呼び出す関数です。〇〇.dllであれば<strong>〇〇Init</strong>というように、初期化関数は動的ライブラリの名前+Initにしてください。</p>
+<h3 id="動作確認">動作確認</h3>
+<p>ビルドして<strong>TestIF.dll</strong>、<strong>TestIF.so</strong>生成後に、以下のrtc.confを作成してください。
+${TestIF_DIR}にはTestIF.dll、TestIF.soのフォルダのパスを指定してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.load_path: ${TestIF_DIR}
+ manager.preload.modules: TestIF.dll
+</code></pre></div></div>
+
+<p>作成したrtc.confを指定してConsoleIn、ConsoleOutのサンプルコンポーネントを起動します。これでOpenRTM-aistがTestIF.dllをロードします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ConsoleIn -f rtc.conf
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ConsoleOut -f rtc.conf
+</code></pre></div></div>
+
+<p>RTSystemEditorでデータポートを接続しようとすると、以下のようにInterface Typeでtestifが選択可能になっています。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="if4.png"><img src="if4.png" width="70%;" /></a></div>
+
+<p><br /></p>
+
+<p>Interface Typeにtestifを選択して接続すると、実装したファイル読み書きによるデータ転送ができることが確認できます。</p>
+
+<p>Pull型通信を動作確認する場合について、Pull型通信ではInPortのisNew関数が使えず新規のデータが存在するかは確認できません。
+このため、ConsoleOutコンポーネントのisNew関数を実行している部分をコメントアウトして再ビルドする必要があります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   //if (m_inIn.isNew())
+</code></pre></div></div>
+
+<h3 id="接続時のオプションを設定">接続時のオプションを設定</h3>
+<p>今回の例ではtestif.filename、testif.filename_in、testif.filename_outというオプションで読み書きするファイル名を指定できるようにしましたが、これらをデータポートのプロファイルからオプションの情報を取得するように設定を追加できます。ただし、リリース版のOpenRTM-aist 2.0では使えない場合があるので、OpenRTM-aistをソースコードからビルドしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> static const char* const testifpush_option[] =
+ {
+   "filename.__value__", "test.dat",
+   "filename.__widget__", "text",
+   "filename.__constraint__", "none",
+   ""
+ };
+ 
+ extern "C"
+ {
+   DLL_EXPORT void TestIFInit(RTC::Manager* manager)
+   {
+      {
+        coil::Properties prop(testifpush_option);
+        RTC::InPortProviderFactory&amp; factory(RTC::InPortProviderFactory::instance());
+        factory.addFactory("testif",
+                      ::coil::Creator&lt; ::RTC::InPortProvider,
+                                        TestInPortProvider&gt;,
+                      ::coil::Destructor&lt; ::RTC::InPortProvider,
+                                        TestInPortProvider&gt;,
+                      prop);
+      }
+</code></pre></div></div>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/cpp/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

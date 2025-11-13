@@ -1,0 +1,349 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>システムエディタ（セーブ編） | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="システムエディタ（セーブ編）" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_save_load/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_save_load/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="システムエディタ（セーブ編）" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"システムエディタ（セーブ編）","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_save_load/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_save_load/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_save_load/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>システムエディタ（セーブ編）</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#システムエディタをセーブする">システムエディタをセーブする</a></li>
+  <li><a href="#セーブしたシステムエディタをオープンする">セーブしたシステムエディタをオープンする</a></li>
+  <li><a href="#セーブしたシステムをオープンおよび復元する">セーブしたシステムをオープンおよび復元する</a></li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: システムエディタ（セーブ編） -->
+<p>#contents</p>
+
+<p>システムエディタのセーブとオープンについて説明します。</p>
+
+<h3 id="システムエディタをセーブする">システムエディタをセーブする</h3>
+<p>システムエディタはセーブすることができます。セーブするには、メニューの [File] もしくはエディタを右クリックして「Save」を選択します。（「Save As…」では、セーブするファイルを任意選択することができます）
+<br /></p>
+
+<table class="table-alt">
+  <tr>
+<td><div align="center"><a href="SystemEditor_1401.jpg"><img src="SystemEditor_1401.jpg" width="90%;" /></a></div></td>
+<td><div align="center"><a href="SystemEditor_1402.jpg"><img src="SystemEditor_1402.jpg" width="90%;" /></a></div></td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>システムエディタのセーブ メニュー</strong></td>
+    <td style="text-align: center;"><strong>コンテキストメニュー</strong></td>
+  </tr>
+</table>
+<p><br /></p>
+
+<p>システムのセーブを選択すると、プロファイル情報ダイアログが開き、必要な項目を設定して [OK] ボタンをクリックすると、システムの情報がファイルにセーブされます。<br />
+<br /></p>
+
+<div align="center"><a href="SystemEditor_1403.jpg"><img src="SystemEditor_1403.jpg" width="70%;" /></a></div>
+<div align="center"><strong>プロファイル情報ダイアログ</strong></div>
+<p><br /></p>
+
+<div align="center"><strong>プロファイル情報の項目</strong></div>
+<table class="table-alt">
+  <tr>
+    <th>名前</th>
+    <th>形状</th>
+  </tr>
+  <tr>
+    <td>Vendor</td>
+    <td>ベンダ名。RTシステムの識別子を構成する要素。<br />必須項目。</td>
+  </tr>
+  <tr>
+    <td>System Name</td>
+    <td>システム名。RTシステムの識別子を構成する要素。<br />必須項目。</td>
+  </tr>
+  <tr>
+    <td>Version</td>
+    <td>システムのバージョン。RTシステムの識別子を構成する要素。<br />必須項目。</td>
+  </tr>
+  <tr>
+    <td>Path</td>
+    <td>システムをセーブするファイル名。<br />必須項目。</td>
+  </tr>
+  <tr>
+    <td>Update Log</td>
+    <td>バージョンの補足説明などを記述。</td>
+  </tr>
+  <tr>
+    <td>Required</td>
+    <td>RTシステムを動作させるのに必須の RTC にチェックをつける。</td>
+  </tr>
+</table>
+
+<h3 id="セーブしたシステムエディタをオープンする">セーブしたシステムエディタをオープンする</h3>
+<p>セーブしたシステムエディタをオープンするには、エディタを右クリックして「Open」を選択します。
+<br /></p>
+
+<div align="center"><a href="SystemEditor_1404.jpg"><img src="SystemEditor_1404.jpg" width="60%;" /></a></div>
+<div align="center"><strong>システムエディタをオープンする</strong></div>
+<p><br /></p>
+
+<p>オープン後は、 RT System Editor はリモートのシステムを正として最新の情報へと更新を行います。セーブ内容をシステムへ復元するには、次の節で説明する「Open and Restore…」を使用してください。
+<br /></p>
+
+<h3 id="セーブしたシステムをオープンおよび復元する">セーブしたシステムをオープンおよび復元する</h3>
+<p>セーブしたシステムエディタをオープンおよび復元するには、エディタを右クリックして「Open and Restore…」、もしくは「Open and Quick Restore…」を選択します。
+<br /></p>
+
+<div align="center"><a href="SystemEditor_1405.jpg"><img src="SystemEditor_1405.jpg" width="60%;" /></a></div>
+<div align="center"><strong>システムエディタをオープンおよび復元する</strong></div>
+<p><br /></p>
+
+<p>システムへ復元されるのは以下の内容です。</p>
+<ul>
+  <li>ポート間の接続（セーブ時のコネクタが存在しない場合）</li>
+  <li>コンフィグレーション情報~
+復元時には、コンポーネントのパスIDでネームサービスを検索してリモートのコンポーネントを取得します。<br />
+「Quick Restore」を選択した場合は、ネームサービスにアクセスする前に、プロファイルに保存された IOR にてリモートのコンポーネントの取得を試み、取得できなかった場合にネームサービスから検索を行います。<br />
+復元に失敗した場合には、エラー内容が表示されます。
+<br /></li>
+</ul>
+
+<div align="center"><a href="fig85ErrorMessageOfRestorationFailure.png"><img src="fig85ErrorMessageOfRestorationFailure.png" width="60%;" /></a></div>
+<div align="center"><strong>復元失敗のエラーメッセージ </strong></div>
+<p><br /></p>
+
+<p>また、RT System Editorはエラー発生時でも、できる限りの復元を試みます。
+<br />
+<br /></p>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_save_load/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

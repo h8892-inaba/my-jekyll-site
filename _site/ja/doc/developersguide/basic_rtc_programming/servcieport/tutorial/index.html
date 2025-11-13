@@ -1,0 +1,445 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>サービスポートの設定手順 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="サービスポートの設定手順" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/servcieport/tutorial/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/servcieport/tutorial/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="サービスポートの設定手順" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"サービスポートの設定手順","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/servcieport/tutorial/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/developersguide/basic_rtc_programming/servcieport/tutorial/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/developersguide/basic_rtc_programming/servcieport/tutorial/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>サービスポートの設定手順</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#idlファイルの作成">IDLファイルの作成</a></li>
+  <li><a href="#rtcの作成">RTCの作成</a>
+    <ul>
+      <li><a href="#required側のrtc作成">Required側のRTC作成</a></li>
+      <li><a href="#provided側のrtc作成">Provided側のRTC作成</a></li>
+    </ul>
+  </li>
+  <li><a href="#動作確認">動作確認</a></li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<p>#contents</p>
+
+<h2 id="idlファイルの作成">IDLファイルの作成</h2>
+
+<p>使用するIDLファイルを作成します。
+OpenRTM-aistのサンプルコンポーネントに付属しているMyService.idlを使用します。
+以下のコードをコピーして使用する場合は、行頭のスペースを削除してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> module SimpleService {
+ typedef sequence&lt;string&gt; EchoList;
+ typedef sequence&lt;float&gt; ValueList;
+ interface MyService
+ {
+   string echo(in string msg);
+   EchoList get_echo_history();
+   void set_value(in float value);
+   float get_value();
+   ValueList get_value_history();
+ };
+ };
+</code></pre></div></div>
+
+<h2 id="rtcの作成">RTCの作成</h2>
+
+<h3 id="required側のrtc作成">Required側のRTC作成</h3>
+
+<p>RTC Builderでモジュール名が<strong>MyServiceConsumer</strong>のRTCを作成してください。
+アクティビティはonExecuteを有効にしてください。</p>
+
+<p>次に、作成したIDLファイル(MyService.idl)をRTC Builderのパッケージエクスプローラーから、MyServiceConsumerの<strong>idl</strong>フォルダにドラッグアンドドロップして、ファイルをコピーします。</p>
+
+<div align="center"><a href="service1.png"><img src="service1.png" width="80%;" /></a></div>
+
+<p>サービスポートの設定で、Add Portボタンを押してサービスポート、Add Interfaceボタンを押してサービスインターフェースを追加します。</p>
+
+<p>今回は、ポート名をmyservice0、インターフェース名をMyService、方向をRequired、インターフェース型をSimpleService::MyServiceに設定します。</p>
+
+<div align="center"><a href="service2.png"><img src="service2.png" width="50%;" /></a></div>
+
+<p>RTCの仕様をまとめると、以下のようになっています。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>コンポーネント名</th>
+    <th>MyServiceConsumer</th>
+  </tr>
+  <tr>
+    <td>言語</td>
+    <td>C++</td>
+  </tr>
+  <tr>
+    <td>アクティビティ</td>
+    <td>onInitialize、onExecute</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>CENTER: Service</td>
+  </tr>
+  <tr>
+    <td>ポート名</td>
+    <td>myservice0</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>CENTER: Interface</td>
+  </tr>
+  <tr>
+    <td>インターフェース名</td>
+    <td>MyService</td>
+  </tr>
+  <tr>
+    <td>方向</td>
+    <td>Required</td>
+  </tr>
+  <tr>
+    <td>インターフェース型</td>
+    <td>SimpleService::MyService</td>
+  </tr>
+</table>
+
+<p>RTC Builderでコード生成して、onExecute関数を以下のように編集してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::ReturnCode_t MyServiceConsumer::onExecute(RTC::UniqueId /*ec_id*/)
+ {
+    try
+    {
+      std::cout &lt;&lt; m_MyService._ptr()-&gt;echo("test") &lt;&lt; std::endl;
+    }
+    catch (...)
+    {
+    }
+   return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<p>IDLファイルで定義したMyServiceインターフェースのecho関数を呼び出しています。
+サービスポートを接続すると、Provided側で実装したecho関数が呼ばれます。
+Provided側のRTCがアクティブ状態ではない場合、echo関数は例外を投げるためtry～catchで例外処理しています。例外処理をしなかった場合、RTCがError状態に遷移することがあります。</p>
+
+<p>後はビルドして実行ファイルを生成してください。</p>
+
+<h3 id="provided側のrtc作成">Provided側のRTC作成</h3>
+
+<p>RTC Builderで以下の仕様のRTCを作成してください。
+インターフェースの方向は<strong>Provided</strong>に設定してください。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>コンポーネント名</th>
+    <th>MyServiceProvider</th>
+  </tr>
+  <tr>
+    <td>言語</td>
+    <td>C++</td>
+  </tr>
+  <tr>
+    <td>アクティビティ</td>
+    <td>onInitialize</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>CENTER: Service</td>
+  </tr>
+  <tr>
+    <td>ポート名</td>
+    <td>myservice0</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>CENTER: Interface</td>
+  </tr>
+  <tr>
+    <td>インターフェース名</td>
+    <td>MyService</td>
+  </tr>
+  <tr>
+    <td>方向</td>
+    <td>Provided</td>
+  </tr>
+  <tr>
+    <td>インターフェース型</td>
+    <td>SimpleService::MyService</td>
+  </tr>
+</table>
+
+<p>コード生成したら、<strong>MyServiceSVC_impl.cpp</strong>の<strong>SimpleService_MyServiceSVC_impl::echo</strong>関数を編集します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include &lt;iostream&gt;
+ /*
+</code></pre></div></div>
+<ul>
+  <li>Methods corresponding to IDL attributes and operations
+  <em>/
+```
+ char</em> SimpleService_MyServiceSVC_impl::echo(const char* msg)
+ {
+   std::cout « msg « std::endl;</li>
+</ul>
+
+<p>return CORBA::string_dup(msg);
+ }
+```</p>
+
+<p>MyServiceConsumerのonExecute関数でecho関数を呼びましたが、サービスポート接続時にはSimpleService_MyServiceSVC_impl::echo関数が呼ばれます。
+戻り値の型が文字列(char*)の場合、CORBA::string_dup関数でmsgからメモリをコピーする必要があります。</p>
+
+<p>編集が完了したらビルドしてください。</p>
+
+<h2 id="動作確認">動作確認</h2>
+
+<p>以下のようにRT System Editorでポートを接続して、RTCをアクティブ化してください。</p>
+
+<div align="center"><a href="service3.png"><img src="service3.png" width="50%;" /></a></div>
+
+<p>ウィンドウにtestと連続して表示されていたら正常に動作しています。
+これはRequired側ではProvided側のecho関数を呼び出して文字列を渡しています。
+Provided側では、受け取った文字列を標準出力後に、Required側に返しています。
+最後にRequired側で返された文字列を標準出力しています。</p>
+
+<p>文字列以外のデータを利用する方法、Python、Java、Luaでの使用方法は以下のサンプルコンポーネントを参考にしてください。</p>
+
+<ul>
+  <li><a href="https://github.com/OpenRTM/OpenRTM-aist/tree/master/examples/SimpleService">C++サンプルコンポーネント</a></li>
+  <li><a href="https://github.com/OpenRTM/OpenRTM-aist-Python/tree/master/OpenRTM_aist/examples/SimpleService">Pythonサンプルコンポーネント</a></li>
+  <li><a href="https://github.com/OpenRTM/OpenRTM-aist-Java/tree/master/jp.go.aist.rtm.RTC/src/RTMExamples/SimpleService">Javaサンプルコンポーネント</a></li>
+  <li><a href="https://github.com/Nobu19800/RTM-Lua/tree/master/examples">Luaサンプルコンポーネント</a></li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/developersguide/basic_rtc_programming/servcieport/tutorial/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

@@ -1,0 +1,513 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>サンプルコンポーネントの実行 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="サンプルコンポーネントの実行" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/running_sample_comp/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/running_sample_comp/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="サンプルコンポーネントの実行" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"サンプルコンポーネントの実行","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/running_sample_comp/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/installation/other/raspberrypi_casestudy/running_sample_comp/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/installation/other/raspberrypi_casestudy/running_sample_comp/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>サンプルコンポーネントの実行</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#raspberry-pi-の-giop">Raspberry Pi の GIOP</a></li>
+  <li><a href="#ブレッドボード配線例">ブレッドボード配線例</a>
+    <ul>
+      <li><a href="#digitalin-rtc-用配線例">DigitalIn-RTC 用配線例</a></li>
+      <li><a href="#digitalout-rtc-用配線例">DigitalOut-RTC 用配線例</a></li>
+    </ul>
+  </li>
+  <li><a href="#コンポーネントのコンパイル">コンポーネントのコンパイル</a>
+    <ul>
+      <li><a href="#digitalin-rtc-のコンパイル">DigitalIn-RTC のコンパイル</a></li>
+      <li><a href="#digitalout-rtc-のコンパイル">DigitalOut-RTC のコンパイル</a></li>
+    </ul>
+  </li>
+  <li><a href="#コンポーネントの実行">コンポーネントの実行</a>
+    <ul>
+      <li><a href="#naming-serverの設定について">naming serverの設定について</a></li>
+      <li><a href="#raspberry-pi-uart通信コンポーネントの作成について">Raspberry pi UART通信コンポーネントの作成について</a></li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: サンプルコンポーネントの実行 -->
+<!-- * GPIOを利用したサンプル -->
+
+<p>#contents</p>
+
+<p>以下の例では、GPIO を用いて、スイッチの ON/OFF の検出と、LED の点灯を行うコンポーネント (DigitalIn-RTC、DigitalOut-RTC) を作成して Raspberry Pi の特徴である GPIO の利用について理解を深めます。
+サンプルコンポーネントのソースコードは以下からダウンロードできます。</p>
+
+<ul>
+  <li><a href="RaspberryPi_sample.zip">サンプルコンポーネントソース</a></li>
+</ul>
+
+<h2 id="raspberry-pi-の-giop">Raspberry Pi の GIOP</h2>
+
+<p>Raspberry Pi には GPIO端子があり、これを利用することで様々な外部デバイスを利用することができます。</p>
+
+<p>Raspberry Pi 本体に付属している GPIO のピンアサインを以下に示します｡</p>
+
+<div align="center"><a href="raspberrypi_gpio_pinassign.png"><img src="raspberrypi_gpio_pinassign.png" width="80%;" /></a></div>
+<div align="center"><strong>Raspberry Pi GPIO のピンアサイン</strong></div>
+
+<p>GPIO を使用する場合には、各ピンの位置に注意してください｡特に5V 端子を使用する場合、配線を誤ると Raspberry Pi 本体および SD カードを破壊してしまう危険がありますので、十分に注意してください｡</p>
+
+<h2 id="ブレッドボード配線例">ブレッドボード配線例</h2>
+
+<p>LED を点灯させる回路と、スイッチの ON/OFF を検出する回路を作成します。
+ブレッドボード等があれば簡単に回路を組めますが、ない場合でも部品点数が少ないのでリード線をはんだ付けするなどすれば比較的容易に回路を組むことができるでしょう。
+以下に、必要な部品のリストを示します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th colspan="2" style="text-align: center;">部品表</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">LED回路</td>
+  </tr>
+  <tr>
+    <td>LED</td>
+    <td>1個</td>
+  </tr>
+  <tr>
+    <td>抵抗</td>
+    <td>100Ω (茶黒茶金) ～330Ω (橙橙茶金)</td>
+  </tr>
+  <tr>
+    <td>リード線</td>
+    <td>若干</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">スイッチLED回路</td>
+  </tr>
+  <tr>
+    <td>LED</td>
+    <td>1個</td>
+  </tr>
+  <tr>
+    <td>抵抗</td>
+    <td>330Ω (橙橙茶金) ～1kΩ (茶黒赤金)</td>
+  </tr>
+  <tr>
+    <td>リード線</td>
+    <td>若干</td>
+  </tr>
+</table>
+
+<p>Raspberry Pi が1台の場合は、以下の LEDとスイッチ回路を同じ Raspberry Pi に接続します。
+もし、Raspberry Pi が2台あるなら、それぞれの Raspberry Pi に LED とスイッチを取り付けると面白いかもしれません。</p>
+
+<h3 id="digitalin-rtc-用配線例">DigitalIn-RTC 用配線例</h3>
+
+<p>DigitalIn-RTC は、データポートに入力された bool 値 (true/false) を指定された GPIO ポートに出力するコンポーネントです。GPIO ポートの出力値を観測するために、<strong>Ground</strong>ピンと<strong>GPIO 18</strong>ピンに LED と抵抗を接続し下図のような回路を作成します。</p>
+
+<div align="center"><a href="gpio_led_circuit.png"><img src="gpio_led_circuit.png" width="80%;" /></a></div>
+<div align="center"><strong>LED 接続回路図</strong></div>
+
+<p>ブレッドボードでこの回路を作成する場合はこのようになります。</p>
+
+<div align="center"><a href="3_rp2.png"><img src="3_rp2.png" width="80%;" /></a></div>
+<div align="center"><strong>ブレッドボードによる LED 回路配線例</strong></div>
+
+<h3 id="digitalout-rtc-用配線例">DigitalOut-RTC 用配線例</h3>
+
+<p>DigitalOut-RTC は、GPIO ポートに入力された bool 値 (true/false) をデータポートから出力するコンポーネントです｡
+GPIO に値を入力するために、<strong>Ground</strong>, <strong>3.3V Power</strong>, <strong>GPIO 17</strong>に抵抗とスイッチを接続して下図のような回路を作成します。</p>
+
+<div align="center"><a href="gpio_stiwch_circuit.png"><img src="gpio_stiwch_circuit.png" width="80%;" /></a></div>
+<div align="center"><strong>タクトスイッチ接続回路図</strong></div>
+
+<p>ブレッドボードでこの回路を作成する場合はこのようになります。</p>
+
+<div align="center"><a href="3_rp3.png"><img src="3_rp3.png" width="80%;" /></a></div>
+<div align="center"><strong>ブレッドボードによりスイッチ回路配線例</strong></div>
+
+<h2 id="コンポーネントのコンパイル">コンポーネントのコンパイル</h2>
+
+<p>ソースコードを以下から Raspberry Pi にダウンロードして、DigitalIn-RTC/DigitalOut-RTC コンポーネントをコンパイルします。</p>
+
+<ul>
+  <li><a href="RaspberryPi_sample.zip">サンプルコンポーネントソース</a></li>
+</ul>
+
+<h3 id="digitalin-rtc-のコンパイル">DigitalIn-RTC のコンパイル</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ unzip RaspberryPi_sample.zip
+ $ cd RaspberryPi_sample/DigitalInRPI/
+ $ vi CMakeLists.txt
+</code></pre></div></div>
+
+<p>ここで、CMakeLists.txt を書き換えて、ドキュメントの生成を抑制するよう設定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> option(BUILD_DOCUMENTATION "Build the documentation" OFF)
+  ↓
+ option(BUILD_DOCUMENTATION "Build the documentation" ON)
+ 
+ $ mkdir build
+ $ cd build
+ $ cmake ..
+ -- The C compiler identification is GNU 4.6.3
+ -- The CXX compiler identification is GNU 4.6.3
+   : 中略
+ -- Configuring done
+ -- Generating done
+ -- Build files have been written to: /home/pi/RaspberryPi_sample/DigitalInRPI/build
+</code></pre></div></div>
+
+<p>OpenRTM-aist が正しくインストールされていれば、問題なく configure が終了します。
+もし、OpenRTM や coil が無いなどでエラーが出た場合、OpenRTM-aist (C++版) が正しくインストールされていることを確認 (dpkg -l |grep openrtm 等) してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ make
+  : 中略
+ Scanning dependencies of target DigitalInComp
+ [ 66%] Building CXX object src/CMakeFiles/DigitalInComp.dir/DigitalInComp.cpp.o
+ [100%] Building CXX object src/CMakeFiles/DigitalInComp.dir/DigitalIn.cpp.o
+ Linking CXX executable DigitalInComp
+ [100%] Built target DigitalInComp
+ $
+</code></pre></div></div>
+
+<p>コンパイルされたコンポーネント DigitalInComp は src の下にあります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ ls src/
+ CMakeFiles  cmake_install.cmake  DigitalInComp  DigitalIn.so  Makefile
+</code></pre></div></div>
+
+<h3 id="digitalout-rtc-のコンパイル">DigitalOut-RTC のコンパイル</h3>
+
+<p>DigitalIn-RTC と同様にコンパイルします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ cd RaspberryPi_sample/DigitalOutRPI/
+ $ mkdir build
+ $ vi CMakeLists.txt
+</code></pre></div></div>
+
+<p>ここで、CMakeLists.txt を書き換えて、ドキュメントの生成を抑制するよう設定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> option(BUILD_DOCUMENTATION "Build the documentation" OFF)
+  ↓
+ option(BUILD_DOCUMENTATION "Build the documentation" ON)
+ 
+ $ mkdir build
+ $ cd build
+ $ cmake ..
+ -- The C compiler identification is GNU 4.6.3
+ -- The CXX compiler identification is GNU 4.6.3
+   : 中略
+ -- Configuring done
+ -- Generating done
+ -- Build files have been written to: /home/pi/RaspberryPi_sample/DigitalOutRPI/build
+</code></pre></div></div>
+<p>続いて make します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ make
+ -- OpenRTMConfig.cmake found.
+ -- Configrued by configuration mode.
+  : 中略
+ Scanning dependencies of target DigitalOutComp
+ [ 66%] Building CXX object src/CMakeFiles/DigitalOutComp.dir/DigitalOutComp.cpp.o
+ [100%] Building CXX object src/CMakeFiles/DigitalOutComp.dir/DigitalOut.cpp.o
+ Linking CXX executable DigitalOutComp
+ [100%] Built target DigitalOutComp
+ $
+</code></pre></div></div>
+
+<p>コンパイルされたコンポーネント DigitalOutComp は src の下にあります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ ls src/
+ CMakeFiles  cmake_install.cmake  DigitalOutComp  DigitalOut.so  Makefile
+</code></pre></div></div>
+
+<h2 id="コンポーネントの実行">コンポーネントの実行</h2>
+
+<p>各RTC が正常にコンパイルできたら、NameServer を起動後、各RTC を起動します｡</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtm-naming
+ $ sudo  /home/pi/RaspberryPi_sample/DigitalOutRPI/build/src/DigitalOutComp &amp;
+ $ sudo  /home/pi/RaspberryPi_sample/DigitalInRPI/build/src/DigitalInComp &amp;
+</code></pre></div></div>
+
+<p><strong><span style="color:red;">サンプルコンポーネントは GPIO を利用するので root 権限で実行する必要があります｡</span></strong></p>
+
+<p>PC上で RTSystemEditor を起動し、Raspberry Pi上の NameServewr に接続します｡
+各RTC を配置し、ポート間の接続を行った後、活性化(Activate)します｡</p>
+
+<div align="center"><a href="3_rp4.png"><img src="3_rp4.png" width="80%;" /></a></div>
+<div align="center"><strong>サンプル RTC の実行</strong></div>
+
+<p>各RTC が正常に起動すると、タクトスイッチの状態に応じて、LED が点灯/消灯するようになります｡</p>
+
+<hr />
+
+<h1 id="コメント">コメント</h1>
+
+<h3 id="naming-serverの設定について">naming serverの設定について</h3>
+
+<p>パーマリンク Submitted by SUZUKAWA yuichi on 火, 2013-04-23 00:53.</p>
+
+<table class="table-alt">
+ <tr>
+<td>
+早速、この方法で試してみたのですが、Naming Serverが立ち上がったのに、Eclips上に表示されなくて悩みました。
+
+力技で、Raspberry pi 側の naming serverのHost server名を192.168.0.X:100などのように設定して無理やりポート開きました。 通常だと、ローカルホストになるので「Raspberry pi：ポートナンバー」の様に表示されて、入れないです。
+
+</td>
+ </tr>
+ </table>
+
+<h3 id="raspberry-pi-uart通信コンポーネントの作成について">Raspberry pi UART通信コンポーネントの作成について</h3>
+
+<p>パーマリンク Submitted by SUZUKAWA yuichi on 火, 2013-04-23 01:02.</p>
+
+<table class="table-alt">
+ <tr>
+<td>
+追加ですが、簡単なUART通信のループバックコンポーネントを作ったらうまくいきました。
+
+プログラムは以下のサイト様を参考にさせて頂きました。
+
+ほぼ移植で動きます。
+
+参考サイト ・Chick Lab様 Raspberry Pi でシリアル通信 http://chicklab.blog84.fc2.com/blog-entry-46.html ・工作と小物のがらくた部屋様 http://junkroom2cyberrobotics.blogspot.jp/2013/03/raspberry-pi-uart.html
+
+</td>
+ </tr>
+ </table>
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/installation/other/raspberrypi_casestudy/running_sample_comp/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

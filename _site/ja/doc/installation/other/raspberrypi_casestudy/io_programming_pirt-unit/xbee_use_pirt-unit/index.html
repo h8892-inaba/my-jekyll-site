@@ -1,0 +1,436 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>PiRT-UnitによるXBeeモジュールの利用 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="PiRT-UnitによるXBeeモジュールの利用" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/xbee_use_pirt-unit/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/xbee_use_pirt-unit/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="PiRT-UnitによるXBeeモジュールの利用" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"PiRT-UnitによるXBeeモジュールの利用","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/xbee_use_pirt-unit/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/xbee_use_pirt-unit/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/xbee_use_pirt-unit/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>PiRT-UnitによるXBeeモジュールの利用</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#pirt-unitによるxbeeモジュールの利用">PiRT-UnitによるXBeeモジュールの利用</a>
+    <ul>
+      <li><a href="#xbeeとpcの接続">XBeeとPCの接続</a>
+        <ul>
+          <li><a href="#デバイスマネージャを開く-windows">デバイスマネージャを開く (Windows)</a></li>
+          <li><a href="#xbee-usbエクスプローラの接続">XBee-USBエクスプローラの接続</a></li>
+          <li><a href="#デバイスが認識されない場合">デバイスが認識されない場合</a></li>
+        </ul>
+      </li>
+      <li><a href="#xbeeモジュールの設定">XBeeモジュールの設定</a>
+        <ul>
+          <li><a href="#x-ctuのダウンロードインストール">X-CTUのダウンロード・インストール</a></li>
+          <li><a href="#x-ctuの起動">X-CTUの起動</a></li>
+          <li><a href="#ファームウエア設定情報の読み込み">ファームウエア設定情報の読み込み</a></li>
+          <li><a href="#routerからcoordinatorへの変更">RouterからCoordinatorへの変更</a></li>
+          <li><a href="#atとapiの違い">ATとAPIの違い</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#もしxbeeが全く応答しなくなったら">もしXBeeが全く応答しなくなったら</a></li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: PiRT-UnitによるXBeeモジュールの利用 -->
+<p>#contents</p>
+
+<h2 id="pirt-unitによるxbeeモジュールの利用">PiRT-UnitによるXBeeモジュールの利用</h2>
+
+<p>PiRT-UnitにはZigBeeモジュールXBeeを接続するためのコネクタがあります。
+RaspberryPiからシリアルデバイス経由で利用して、他のZigBeeモジュールとの通信に利用したり、シリアルコンソールを無線化するのにも利用できます。
+Raspbian Wheesyではデフォルトでシリアルコンソールに設定されています。
+この解説では、シリアルコンソールをXBeeで無線化する方法を説明します。</p>
+
+<h3 id="xbeeとpcの接続">XBeeとPCの接続</h3>
+
+<p>XBeeモジュールとPCを接続するにはXBee-USBエクスプローラを利用する必要があります。
+XBeeモジュール接続コネクタとUSBコネクタがついており、PCに接続してPCからXBeeの各種設定を行ったり、XBeeをシリアルポートとして利用することができます。</p>
+
+<p>XBee-USBエクスプローラは、様々なメーカーから発売されています。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>商品名</th>
+    <th>メーカー</th>
+    <th>価格</th>
+    <th>URL</th>
+  </tr>
+  <tr>
+    <td>AE-XBEE-USB</td>
+    <td>秋月電子通商</td>
+    <td>1,280円</td>
+    <td>http://akizukidenshi.com/catalog/g/gK-06188/</td>
+  </tr>
+  <tr>
+    <td>SFE-WRL-08687</td>
+    <td>Sparkfun <br /> Switch Science</td>
+    <td>2,619 円</td>
+    <td>http://www.switch-science.com/catalog/30/ <br /> http://strawberry-linux.com/catalog/items?code=18128 でも入手可能</td>
+  </tr>
+  <tr>
+    <td>SFE-WRL-09819</td>
+    <td>Sparkfun <br /> Switch Science</td>
+    <td>2,619 円</td>
+    <td>http://www.switch-science.com/catalog/344/</td>
+  </tr>
+</table>
+
+<div align="center"><a href="xbee-usb.png"><img src="xbee-usb.png" width="70%;" /></a></div>
+<div align="center"><strong>XBee-USBエクスプローラ (Sparkfun(左), 秋月電子通商(右))</strong></div>
+
+<h4 id="デバイスマネージャを開く-windows">デバイスマネージャを開く (Windows)</h4>
+
+<p>デバイスマネージャを開いてください。
+Windows7では、<strong>「コントロールパネル」→「システムとセキュリティ」→「システム」→「デバイスマネージャー」</strong>から開くことができます。
+デスクトップに「コンピュータ」がある場合、<strong>右クリック→「プロパティー(R)」→「デバイスマネージャー」</strong>から開くのが最も早いでしょう。</p>
+
+<h4 id="xbee-usbエクスプローラの接続">XBee-USBエクスプローラの接続</h4>
+
+<p>XBee-USBエクスプローラをPCのUSBポートに接続します。
+初めて接続する場合は、デバイスの認識とデバイスドライバのインストールでしばらく時間がかかります。
+デバイスドライバのインストールが終了すると、以下のようにデバイスマネージャにCOMポートとして現れます。
+この時、どのCOMポートに割り当てられたかを覚えておいてください。(下の例ではCOM8に割り当てられた。)</p>
+
+<div align="center"><a href="debice_manager_xbbcomport.png"><img src="debice_manager_xbbcomport.png" width="70%;" /></a></div>
+<div align="center"><strong>デバイスマネージャに現れたXBee-USBエクスプローラデバイス</strong></div>
+
+<h4 id="デバイスが認識されない場合">デバイスが認識されない場合</h4>
+
+<p>運悪くドライバが自動でインストールされない場合、FTDI社のチップ(FT232B等)を使ったXBee-USBエクスプローラの場合はFTDI者から直接ドライバをダウンロードしてインストールしてください。</p>
+
+<ul>
+  <li>FTDI社ドライバダウンロードサイト: http://www.ftdichip.com/Drivers/VCP.htm</li>
+</ul>
+
+<p>なお、秋月およびSparkfunのXBee-USBエクスプローラでは、Windows7はドライバのインストールは不要でした。</p>
+
+<h3 id="xbeeモジュールの設定">XBeeモジュールの設定</h3>
+
+<p>XBeeモジュールは大きく分けて親機と子機に分かれており、そのXBeeモジュールを親機にするか子機にするかはXBee-USBエクスプローラ経由でPCから設定します。</p>
+
+<p>一つのXBeeネットワーク内には必ず1台の親機”Coordinator”が必要で、親機に対して複数の子機がぶら下がる形になります。
+一方、購入直後のXBeeモジュールは子機”Router”に設定されており、初めてXBeeネットワークを構成する際には、どれか一つを親機”Coordinator”にしてあげる必要があります。</p>
+
+<p>XBeeモジュールを設定するには、DigiのWebページからX-CTUという設定ソフトウエアをダウンロードしPCにインストールする必要があります。</p>
+
+<h4 id="x-ctuのダウンロードインストール">X-CTUのダウンロード・インストール</h4>
+
+<p>DigiのX-CTUのダウンロードサイトへ行きます(更新等によるリンク切れがあった場合はMLなどでお知らせいただければ幸いです)。</p>
+
+<ul>
+  <li><a href="http://www.digi.com/support/productdetail?pid=3352">Digi X-CTU ダウンロードサイト</a></li>
+</ul>
+
+<p>ページの <strong>Diagnostics, Utilities and MIBs</strong> の項目をクリックすると、X-CTUのインストーラへのリンクが現れるので、クリックしてダウンロードします。(63MB程度あります。)</p>
+
+<div align="center"><a href="digi_xctu_webpage_xctu_link.png"><img src="digi_xctu_webpage_xctu_link.png" width="70%;" /></a></div>
+<div align="center"><strong>X-CTUインストーラのダウンロード</strong></div>
+
+<p>ダウンロードした実行ファイル <strong>40003002_C.exe</strong> (このファイル名はバージョンアップなどにより変更されるかもしれません) をクリックして実行すると、インストーラが開始されます。指示に従ってインストールを完了してください。</p>
+
+<div align="center"><a href="xctu_setup0.png"><img src="xctu_setup0.png" width="70%;" /></a></div>
+<div align="center"><strong>X-CTUインストーラの実行</strong></div>
+
+<p>最後に、frimwareのバージョンアップをするか聞いてくることがありますが、特に必要がなければスキップしてください。(結構時間がかかります。)</p>
+
+<h4 id="x-ctuの起動">X-CTUの起動</h4>
+
+<p>インストール完了後、X-CTUを起動します。起動後は以下のような画面が表示されます。</p>
+
+<div align="center"><a href="xctu0.png"><img src="xctu0.png" width="70%;" /></a></div>
+<div align="center"><strong>X-CTU起動後の画面</strong></div>
+
+<p>X-CTUの<strong>「PC-Settings」</strong>を選択します。
+タブ内の<strong>Select Com Port</strong>でXBee-USBエクスプローラデバイスが接続されているCOMポートを選択します。(この例ではCOM8です。)
+XBee-USBエクスプローラデバイスが接続されているCOMポートが不明な場合は、一旦デバイスをPCから取り外し、デバイスマネージャでなくなるCOMポートを観察するか、X-CTUを再度起動してなくなったCOMポートを見つけるなどして対応するCOMポートを特定してください。</p>
+
+<p><strong>Select Com Port</strong>で対象となるCOMポートを選択したら、右下の<strong>Test/Query</strong>ボタンを押してください。XBeeと通信を行い、以下のようにシリアルナンバーなどを表示します。</p>
+
+<div align="center"><a href="xctu1.png"><img src="xctu1.png" width="70%;" /></a></div>
+<div align="center"><strong>接続テスト</strong></div>
+
+<h4 id="ファームウエア設定情報の読み込み">ファームウエア設定情報の読み込み</h4>
+
+<p>次に接続されているXBeeが現在どのような設定になっているか、ファームウエアの情報を読み込みます。
+X-CTUの<strong>「Modem Configuration」</strong>タブをクリックし、下の<strong>Modem Parameter and Firmware</strong>のエリアの<strong>「Read」</strong>ボタンをクリックします。
+すると、XBeeとの通信が開始され、少し経つと以下のようにXBeeの設定情報が下のエリアにツリー表示されます。</p>
+
+<div align="center"><a href="xctu2.png"><img src="xctu2.png" width="70%;" /></a></div>
+<div align="center"><strong>ファームウエア設定情報の読み込み</strong></div>
+
+<p>また、<strong>「Modem」</strong>の部分にXBeeモジュールの種類、<strong>「Function Set」</strong>の部分にファームウェアの種類、「Version」にファームウェアのバージョンが表示されます。</p>
+
+<p><strong>「Function Set」</strong>の部分はおそらく <strong>ZIGBEE ROUTER AT</strong> となっているはずですが、これはこのXBeeモジュールが”Router”すなわち子機として設定されていることを意味します。</p>
+
+<h4 id="routerからcoordinatorへの変更">RouterからCoordinatorへの変更</h4>
+
+<p>ここで子機”Router”を親機”Coordinator”に変更してみます。
+親機すなわり<strong>「Coordinator」</strong>に変更するために、プルダウンメニューから<strong>ZIGBEE COORDINATOR AT</strong>を選択します。</p>
+
+<div align="center"><a href="xctu3.png"><img src="xctu3.png" width="70%;" /></a></div>
+<div align="center"><strong>ファームウエア ZIGBEE COORDINATOR AT への変更</strong></div>
+
+<p><strong>「Write」</strong>ボタンを押すとXBeeへの書き込みが開始されます。1から2分程度で書き込みが終了します。</p>
+
+<div align="center"><a href="xctu6.png"><img src="xctu6.png" width="70%;" /></a></div>
+<div align="center"><strong>ファームウエアの書き込み</strong></div>
+
+<h4 id="atとapiの違い">ATとAPIの違い</h4>
+
+<p>先ほどのファームウエアの選択時に、<strong>ZIGBEE COORDINATOR AT</strong> のほかに <strong>ZIGBEE COORDINATOR API</strong> というファームウエアがあったことに気付かれたかもしれません。
+<strong>AT</strong> とつくものは、ATコマンドでXBeeの設定を行うタイプのファームウエアで、一方<strong>API</strong>とつくものは、API経由でXBeeの設定を行うタイプのファームウエアを意味します。</p>
+
+<h2 id="もしxbeeが全く応答しなくなったら">もしXBeeが全く応答しなくなったら</h2>
+
+<p>もしXBeeが全く応答しなくなったら、強制的にファームウエアを上書きし出荷状態に戻します。
+以下の手順に従って、工場出荷状態に戻してください。</p>
+
+<ol>
+  <li>XBee-USBエクスプローラデバイスからXBeeを外す</li>
+  <li>その状態でXBee-USBエクスプローラデバイスをPCに接続する</li>
+  <li>X-CTUを起動</li>
+  <li>“Modem Configuration”タブをクリック</li>
+  <li>“Always update firmware” チェックボックスをクリック</li>
+  <li>適切な”Modem”タイプを選択</li>
+  <li>適切な”Function Set”を選択</li>
+  <li>“Write”をクリック。しばらくすると、エラーダイアログが出るので、XBeeをXBee-USBエクスプローラデバイスに挿入</li>
+  <li>ファームウエアの書き込みが始まる</li>
+</ol>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/xbee_use_pirt-unit/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

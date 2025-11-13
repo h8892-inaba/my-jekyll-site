@@ -1,0 +1,380 @@
+#
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Mac OS X への MacPorts によるインストール | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Mac OS X への MacPorts によるインストール" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/installation/install_1_1/cpp_1_1/install_mac_1_1/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/installation/install_1_1/cpp_1_1/install_mac_1_1/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Mac OS X への MacPorts によるインストール" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Mac OS X への MacPorts によるインストール","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/installation/install_1_1/cpp_1_1/install_mac_1_1/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000123</a>
+
+<body>
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/main/ja/doc/installation/install_1_1/cpp_1_1/install_mac_1_1/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_1
+  </a>
+
+  <a href="/ja/doc/installation/install_1_1/cpp_1_1/install_mac_1_1/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_2
+  </a>
+</p>
+
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発Research_and_Development</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>Mac OS X への MacPorts によるインストール</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#macports">MacPorts</a>
+    <ul>
+      <li><a href="#macports-のインストール">MacPorts のインストール</a></li>
+    </ul>
+  </li>
+  <li><a href="#openrtm-aist-ports-によるインストール">OpenRTM-aist ports によるインストール</a>
+    <ul>
+      <li><a href="#インストールの詳細">インストールの詳細</a></li>
+    </ul>
+  </li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Title: Mac OS X への MacPorts によるインストール -->
+<div align="right"><a href="osx_logo2.png"><img src="osx_logo2.png" width="15%;" align="right" /></a></div>
+
+<p>C++版 OpenRTM-aist は Mac OS X 用のパッケージ管理ステム MacPorts で利用可能な ports が提供されています。
+MacPorts への対応およびそのバージョンは、予告なしに変更または停止されることがありますので、予めご了承ください。</p>
+
+<p>#contents</p>
+
+<h2 id="macports">MacPorts</h2>
+
+<p>MacPorts は Mac OS X 上で利用可能なオープンソースのパッケージ管理システムです。
+MacPorts は FreeBSD の ports というパッケージ管理システムと同様に、ports と呼ばれるパッケージをビルドするためのレシピに基づき、自動でソースのダウンロード、パッチの適用、コンパイル、インストールまでを行ってくれるシステムです。
+Mac OS X 用のパッケージ管理システムとしては他に Fink があります。</p>
+
+<ul>
+  <li><a href="http://www.macports.org/">The MacPorts Project Official Homepage</a></li>
+</ul>
+
+<h3 id="macports-のインストール">MacPorts のインストール</h3>
+
+<p>MacPorts を利用するには、Apple の Xcodeおよび、X11 環境を予めインストールする必要があります。
+Xcode および X11 は Mac OS X のインストールCD からインストールすることもできます。
+詳細は、上記 MacPorts の Webページを参照してください。</p>
+
+<p>MacPorts 自体は dmg パッケージ形式になっており、自分の Mac の OS のバージョンに合わせた dmg パッケージをダウンロード、インストールすることで簡単にインストールすることができます。
+dmg パケージは MacPorts の Webページ、または下記リンクからダウンロードできます。</p>
+
+<ul>
+  <li><a href="http://distfiles.macports.org/MacPorts/MacPorts-1.9.1-10.6-SnowLeopard.dmg">for Snow Leopard</a></li>
+  <li><a href="http://distfiles.macports.org/MacPorts/MacPorts-1.9.1-10.5-Leopard.dmg">for Leoperd</a></li>
+  <li><a href="http://distfiles.macports.org/MacPorts/MacPorts-1.9.1-10.4-Tiger.dmg">for Tiger</a></li>
+</ul>
+
+<h2 id="openrtm-aist-ports-によるインストール">OpenRTM-aist ports によるインストール</h2>
+
+<p>Portfile のダウンロード、展開、ビルドを一括でおこなうスクリプトが以下に用意されています。</p>
+
+<ul>
+  <li><a href="http://www.openrtm.org/pub/MacOSX/macports/ports.tgz">Portfile</a></li>
+  <li><a href="http://www.openrtm.org/pub/MacOSX/macports/port_install.sh">インストールスクリプト</a>: ports.tgz のダウンロード、OpenRTM-aistのビルド・インストールまで自動で行います。</li>
+</ul>
+
+<p>適当なディレクトリーで、以下のようにスクリプトを実行します。実行は一般ユーザーで構いません。ただし、途中で当該ユーザーのパスワードを聞かれることがあります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sh port_install100_mac.sh
+ sh port_install.sh
+ file:///Users/n-ando/ports/
+ Getting Portfile from:  http://www.openrtm.org/pub/MacOSX/macports//ports.tgz
+ --2010-07-27 23:21:06--  http://www.openrtm.org/pub/MacOSX/macports//ports.tgz
+ Resolving www.openrtm.org (www.openrtm.org)... 182.48.18.55
+ Connecting to www.openrtm.org (www.openrtm.org)|182.48.18.55|:80... connected.
+ HTTP request sent, awaiting response... 200 OK
+ Length: 3600 (3.5K) [application/x-gzip]
+ Saving to: `ports.tgz.1'
+ 
+ 100%[================================================&gt;] 3,600       --.-K/s   in 0.002s
+ 
+ 2010-07-27 23:21:06 (2.02 MB/s) - `ports.tgz' saved [3600/3600]
+ 
+ x ports/
+ x ports/devel/
+ x ports/PortIndex
+ x ports/PortIndex.quick
+ x ports/devel/OpenRTM-aist/
+ x ports/devel/OpenRTM-aist/Portfile
+ x ports/devel/OpenRTM-aist/files/
+ x ports/devel/OpenRTM-aist/Portfile~
+ x ports/devel/OpenRTM-aist/files/patch-src-lib-rtm-InPortConsumer.h
+ x ports/devel/OpenRTM-aist/files/patch-src-lib-coil-posix-coil-UUID.cpp
+ x ports/devel/OpenRTM-aist/files/patch-src-lib-coil-posix-coil-Routing.cpp
+ x ports/devel/OpenRTM-aist/files/patch-examples-SimpleService-Makefile.in
+ x ports/devel/OpenRTM-aist/files/patch-examples-Composite-Makefile.in
+ x ports/devel/OpenRTM-aist/files/patch-examples-ConfigSample-Makefile.in
+ x ports/devel/OpenRTM-aist/files/patch-examples-SeqIO-Makefile.in
+ x ports/devel/OpenRTM-aist/files/patch-examples-SimpleIO-Makefile.in
+ x ports/devel/OpenRTM-aist/files/patch-src-lib-rtm-idl-Makefile.in
+ Creating port index in /Users/n-ando/ports
+ Adding port devel/OpenRTM-aist
+ 
+ Total number of ports parsed:   1
+ Ports successfully parsed:      1
+ Ports failed:                   0
+ Up-to-date ports skipped:       0
+  
+ Adding local ports repository entry to sources.conf
+ # A password may be required for sudo. Input your password.
+ Password:
+ Installing OpemRTM-aist...it may take several minutes.
+ # A password may be required for sudo. Input your password.
+ ---&gt;  Computing dependencies for OpenRTM-aist
+ ---&gt;  Fetching OpenRTM-aist
+ ---&gt;  Verifying checksum(s) for OpenRTM-aist
+ ---&gt;  Extracting OpenRTM-aist
+ ---&gt;  Applying patches to OpenRTM-aist
+ ---&gt;  Configuring OpenRTM-aist
+ ---&gt;  Building OpenRTM-aist
+ ---&gt;  Staging OpenRTM-aist into destroot
+ ---&gt;  Installing OpenRTM-aist @1.0.0_2
+ ---&gt;  Activating OpenRTM-aist @1.0.0_2
+ ---&gt;  Cleaning OpenRTM-aist
+ Cleaning local ports repository entry in sources.conf
+ # A password may be required for sudo. Input your password.
+ Password:
+ $
+</code></pre></div></div>
+
+<p>ports は、依存関係を自動的に解決し、ビルドに必要なパッケージが入っていない場合には自動でそのパッケージのビルドも行いますので、多少時間がかかる場合があります。</p>
+
+<h3 id="インストールの詳細">インストールの詳細</h3>
+
+<p>詳細は一括インストールシェルスクリプト port_installXXX_mac.sh に書いてあります。インストール手順は、おおよそ以下のようになっています。</p>
+
+<ul>
+  <li>Portfile をダウンロードする</li>
+  <li>Portfile を展開する</li>
+  <li>sources.conf に展開した Portfile の場所を追記する</li>
+  <li>port コマンドでビルド・インストールする</li>
+</ul>
+
+<p>MacPorts では、port コマンドでインストールするよう指定されたパッケージを、設定ファイル sources.conf に記載されている特定の場所以下から探し出して、Porrtfile に従いソースをダウンロードしビルドを行います。</p>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+  <a href="https://github.com/hogehoge/hogehoge/blob/mainja/doc/installation/install_1_1/cpp_1_1/install_mac_1_1/index.md" target="_blank">
+    ✏️ Edit this page on GitHub_test1
+  </a>
+</p>
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>
