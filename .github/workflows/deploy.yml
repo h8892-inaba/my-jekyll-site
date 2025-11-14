@@ -1,10 +1,8 @@
-mkdir -p .github/workflows                             # ワークフローフォルダ作成
-cat > .github/workflows/deploy.yml <<'EOF'
 name: Build & Deploy Jekyll to Pages
 
-on:
+'on':
   push:
-    branches: [ site ]     # ← ソース用ブランチ名。'main'にしたければここをmainへ
+    branches: [ site ]   # ← デプロイ元ブランチ
   workflow_dispatch:
 
 permissions:
@@ -13,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -28,25 +26,22 @@ jobs:
           bundler-cache: true
 
       - name: Install deps
-        run: bundle install --jobs 4 --retry 3   # Gemfileに基づいて依存解決
+        run: bundle install --jobs 4 --retry 3
 
       - name: Build
-        run: bundle exec jekyll build --trace    # _site を生成
+        run: bundle exec jekyll build --trace
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site                            # Pagesへ渡す成果物
+          path: _site
 
   deploy:
     needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4           # Pagesに反映
-EOF
-# 上：'site'ブランチにpushで自動ビルド＆公開
-
+        uses: actions/deploy-pages@v4
