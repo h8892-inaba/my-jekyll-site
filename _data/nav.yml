@@ -2,18 +2,28 @@
 header:
   - title: "Home"
     url: "/"
+    description: "test_top_page"
+    children_etc: "hogehoge"
   - title: "Download"
     url: "/ja/download/"
+    description: "test_dl_page"
   - title: "Documentation"
     url: "/ja/doc/"
+    description: "test_doc_page"
     children:
-      - title: "test1-about"
-        url: "/ja/doc/aboutopenrtm/"
-      - title: "test2-case"
-        url: "/ja/doc/casestudy/"
+      - title: "OpenRTM-aistとは？"
+        url: "/ja/doc/aboutopenrtm/rtmiddleware/"
+        description: "OpenRTM-aistとは？"
+      - title: "OpenRTM-aistを10分で始めよう！"
+        url: "/ja/doc/installation/lets_start/"
+        description: "OpenRTM-aistを10分で始めよう！"
   - title: "Community"
     url: "/ja/community/"
-  - title: "研究開発Research_and_Development"
+    children:
+      - title: "講習会"
+        url: "/ja/tutorials/"
+        description: "講習会"
+  - title: "Research_and_Development"
     url: "/ja/doc/aboutopenrtm/researchanddevel"
   - title: "Press"
     url: "/ja/publication"
@@ -25,8 +35,15 @@ header:
     url: "/manual_md1/"
   - title: "harumi"
     url: "/harumi/"
-  - title: "harumi2"
-    url: "/harumi2/"
+    children:
+      - title: "harumi1"
+        url: "/harumi1/"
+        description: "harumi1111"
+      - title: "harumi2"
+        url: "/harumi2/"
+        description: "harumi2222"
+
+
 
     #
     #  - title: "Community"

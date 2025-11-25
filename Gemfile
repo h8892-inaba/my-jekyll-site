@@ -5,4 +5,3 @@ gemspec
 
 gem 'jekyll-toc'
 
-#gem "lone-wolf-theme"

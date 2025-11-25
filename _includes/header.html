@@ -11,18 +11,37 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
         <!-- TODO add theme version dropdown here -->
-        {%- for link in site.data.nav.header -%}
+        <!-- {%- for link in site.data.nav.header -%}
           {%- if link.url contains '://' -%}
             {%- assign url = link.url -%}
           {%- else -%}
             {%- assign url = link.url | relative_url -%}
-          {%- endif -%}
+	    {%- endif -%} -->
         <li class="nav-item">
-          <a class="nav-link" href="{{ url }}" {% if link.description %} title="{{ link.description }}"
+          <a class="nav-link" href="{{ url }}" {% if link.description %} title="{{ link.description}}"
             {% endif %}>{{ link.title }}</a>
+	  {% if link.children %}
+		{% for child in link.children %}
+			{% if child.title %}
+				{% for grand in link.children %}
+				<a href="{{ site.baseurl}}/{{grand.url}}">{{ grand.title }}</a>
+					{% endfor %}>
+			{% endif %}
+		{% endfor %}
+	  {% endif %}
+	  <!-- add nav code -->
+
+	  <!-- {% if item.children %}
+          <ul class="dropdown">
+            {% for child in item.children %}
+              <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+            {% endfor %}
+          </ul>
+	  {% endif %}-->
+
         </li>
 
-        {%- endfor -%}
+	<!-- {%- endfor -%}-->
       </ul>
       {% if site.search == true %}
         {%- include search-providers/search_form.html -%}
