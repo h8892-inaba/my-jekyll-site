@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ "/assets/css/hover-dropdown.css" | relative_url }}">
 <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
   <nav class="container">
     <!-- site home -->
@@ -17,17 +18,23 @@
           {%- else -%}
             {%- assign url = link.url | relative_url -%}
 	    {%- endif -%} -->
-        <li class="nav-item">
+        <!-- li class="nav-item">
           <a class="nav-link" href="{{ url }}" {% if link.description %} title="{{ link.description}}"
-            {% endif %}>{{ link.title }}</a>
+            {% endif %}>{{ link.title }}</a-->
+    <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="{{ link.url | relative_url }}" data-toggle="dropdown">
+    {{ link.title }}
+  </a>
 	  {% if link.children %}
+	  <div class="dropdown-menu">
 		{% for child in link.children %}
 			{% if child.title %}
 				{% for grand in link.children %}
 				<a href="{{ site.baseurl}}/{{grand.url}}">{{ grand.title }}</a>
-					{% endfor %}>
+				{% endfor %}>
 			{% endif %}
 		{% endfor %}
+	  </div>
 	  {% endif %}
 	  <!-- add nav code -->
 
@@ -38,7 +45,6 @@
             {% endfor %}
           </ul>
 	  {% endif %}-->
-
         </li>
 
 	<!-- {%- endfor -%}-->
