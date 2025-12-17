@@ -22,19 +22,21 @@
           <a class="nav-link" href="{{ url }}" {% if link.description %} title="{{ link.description}}"
             {% endif %}>{{ link.title }}</a-->
     <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="{{ link.url | relative_url }}" data-toggle="dropdown">
-    {{ link.title }}
+  <!-- a class="nav-link dropdown-toggle" href="{{ link.url | relative_url }}" data-toggle="dropdown"-->
+  <a class="nav-link" href="{{ link.url | relative_url }}">
+    {{ link.title }}-haru
   </a>
 	  {% if link.children %}
-	  <div class="dropdown-menu">
 		{% for child in link.children %}
+		  <ul class="dropdown-menu">
 			{% if child.title %}
 				{% for grand in link.children %}
-				<a href="{{ site.baseurl}}/{{grand.url}}">{{ grand.title }}</a>
-				{% endfor %}>
+				<li><a href="{{ site.baseurl | grand.url}}">{{ grand.title }}</a></li>
+				<!-- li><a href="{{ site.baseurl}}/{{grand.url}}">{{ grand.title }}</a></li-->
+				{% endfor %}
 			{% endif %}
+		</ul>
 		{% endfor %}
-	  </div>
 	  {% endif %}
 	  <!-- add nav code -->
 
