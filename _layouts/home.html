@@ -8,7 +8,6 @@ layout: default
 
 {% include slider_styles.html %}
 
-  <a>fooo-----000</a>
 <div class="home-page">
   <!-- home page header -->
   <!-- 
@@ -20,13 +19,13 @@ layout: default
         {%- include home-action-btn.html action_btn=action_btn dropdown=dropdown dropdown_items=dropdown_items -%}
       {%- endif -%}
     </div>
-  </section>
-      --->
-      {% include slider_scripts.html %}
-  <a>fooo-----003</a>
+	  </section>
+      <a>hoge------0000</a>
   <!-- home page features -->
   <section class="home-page-features">
     <div class="container">
+	    <br>
+	  {% include sidebar_search_hoge.html %}
       {% if page.feature_rows %}
       <div class="row">
         {% for f_row in page.feature_rows %}
@@ -66,7 +65,6 @@ layout: default
       {% endif%}
     </div>
   </section>
-
   <!-- home page article -->
   <section class="home-page-article">
     <div class="container">

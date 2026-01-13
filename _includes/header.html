@@ -24,7 +24,7 @@
     <li class="nav-item dropdown">
   <!-- a class="nav-link dropdown-toggle" href="{{ link.url | relative_url }}" data-toggle="dropdown"-->
   <a class="nav-link" href="{{ link.url | relative_url }}">
-    {{ link.title }}-haru
+    {{ link.title }}
   </a>
 	  {% if link.children %}
 		{% for child in link.children %}
@@ -32,28 +32,16 @@
 			{% if child.title %}
 				{% for grand in link.children %}
 				<li><a href="{{ site.baseurl | grand.url}}">{{ grand.title }}</a></li>
-				<!-- li><a href="{{ site.baseurl}}/{{grand.url}}">{{ grand.title }}</a></li-->
 				{% endfor %}
 			{% endif %}
 		</ul>
 		{% endfor %}
 	  {% endif %}
-	  <!-- add nav code -->
 
-	  <!-- {% if item.children %}
-          <ul class="dropdown">
-            {% for child in item.children %}
-              <li><a href="{{ child.url }}">{{ child.title }}</a></li>
-            {% endfor %}
-          </ul>
-	  {% endif %}-->
         </li>
 
 	<!-- {%- endfor -%}-->
       </ul>
-      {% if site.search == true %}
-        {%- include search-providers/search_form.html -%}
-      {% endif %}
     </div>
   </nav>
 </header>

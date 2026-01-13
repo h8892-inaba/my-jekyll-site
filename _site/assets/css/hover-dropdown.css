@@ -6,6 +6,7 @@
     display: block;
     visibility: visible;
     opacity: 1;
+    overflow: visible;  /* add harumi 0108 */
   }
 
   /* 矢印の向き（任意） */

@@ -53,7 +53,7 @@ atom_feed:
   path: # blank (default) uses feed.xml
 
 # site search settings
-search: # true, false (default)
+search: true # true, false (default)
 search_full_content: # true, false (default)
 search_provider: # google
 

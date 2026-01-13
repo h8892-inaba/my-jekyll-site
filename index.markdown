@@ -14,20 +14,60 @@ excerpt: "OpenRTM-aist | The power to connect"
 feature_rows:
   - title: "ROBOMECH2025"
     excerpt: "ROBOMECH2025申し込み開始しました"
-    url: "/community/event/ROBOMECH2025/"
-    img_path: "feature_rows/nedo-06.png"
+    url: "/ja/community/event/ROBOMECH2025/"
+    img_path: "feature_rows/contest2025_news.png"
     img_alt: "ROBOMECH2025"
   - title: "OpenRTM-aist 2.0.2 RELEASE"
     excerpt: "OpenRTM-aist 2.0.2 をリリースしました"
-    url: "/download/"
-    img_path: "feature_rows/rosnews.png"
+    url: "/ja/download/"
+    img_path: "feature_rows/contest2025_news_.png"
     img_alt: "RELEASE"
   - title: "OpenRTM-aistを10分で始めよう！"
     excerpt: "Let's start openrtm-aist!"
-    url: "/doc/installation/lets_start"
+    url: "/ja/doc/installation/lets_start"
     img_alt: "Only 10 min !?"
+    img_path: "feature_rows/10min-startup_ja.png"
 
 ---
+
+<script>
+  if (!window.__sidebarSearchInitialized) {
+    window.__sidebarSearchInitialized = true;
+
+    const input = document.getElementById('sidebar-search-input');
+    const results = document.getElementById('sidebar-results');
+
+    SimpleJekyllSearch({
+      searchInput: input,
+      resultsContainer: results,
+      json: '{{ "/search.json" | relative_url }}',
+      searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+      noResultsText: '<li class="no-results">見つかりませんでした</li>',
+      limit: 10
+    });
+
+    // 入力に応じて表示/非表示を切り替え
+    const toggle = () => {
+      const has = results.children.length > 0 && input.value.trim().length > 0;
+      results.classList.toggle('has-results', has);
+      if (!has) results.classList.remove('has-results');
+    };
+
+    input.addEventListener('input', () => setTimeout(toggle, 0));
+    input.addEventListener('focus', () => setTimeout(toggle, 0));
+
+    // 外をクリックしたら閉じる
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-search')) results.classList.remove('has-results');
+    });
+
+    // Escで閉じる
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') results.classList.remove('has-results');
+    });
+  }
+</script>
+
 
 
 <a href="/howto_code">howto_code</a>
