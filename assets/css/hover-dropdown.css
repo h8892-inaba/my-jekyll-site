@@ -20,6 +20,8 @@
   /* 余計なズレを防ぐ（BootstrapのJS挙動を上書き） */
   .navbar .dropdown-menu {
     margin-top: 0;
+    position: absolute; /* 念のため */
+    z-index: 200000;
   }
 }
 
