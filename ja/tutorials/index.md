@@ -50,7 +50,7 @@ OpenRTM-aistを使ってコンポーネントの作り方を習得するため�
 - [JapanRobotWeek2018 RTM講習会](./japan-robot-week2018)
 - [RTミドルウェアサマーキャンプ2018](./summercamp2018)
 - [ROBOMECH2018 RTミドルウエア講習会(2018年6月3日)](./robomech2018)
-- [11/29 iREX2017 （国際ロボット展） RTM講習会](/.irex2017)
+- [11/29 iREX2017 （国際ロボット展） RTM講習会](./irex2017)
 - [11/28 人工知能学会RTM講習会](./171128_jsai)
 - [11/7,8 高度ポリテクセンター](./polytech2017)
 - [RTミドルウェアサマーキャンプ2017](./summercamp2017)

@@ -13,10 +13,10 @@ header:
     url: "/ja/doc/"
     description: "test_doc_page"
     children:
-      - title: "OpenRTM-aistとは？"
+      - title: " OpenRTM-aistとは？"
         url: "/ja/doc/aboutopenrtm/rtmiddleware/"
         description: "OpenRTM-aistとは？"
-      - title: "インストール"
+      - title: " インストール"
         url: "/ja/doc/installation/"
         description: "インストール"
       - title: "ツール"

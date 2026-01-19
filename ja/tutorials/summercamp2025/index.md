@@ -3,7 +3,6 @@ layout: page
 title: サマーキャンプ2025
 ---
 
-init
 <div align="center"><a href="summercamp2025_slider.png"><img src="summercamp2025_slider.png" width="80%;"></a></div>
 
 #contents
