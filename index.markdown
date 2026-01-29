@@ -30,7 +30,7 @@ feature_rows:
 
 ---
 
-<script>
+<!--script>
   if (!window.__sidebarSearchInitialized) {
     window.__sidebarSearchInitialized = true;
 
@@ -66,12 +66,14 @@ feature_rows:
       if (e.key === 'Escape') results.classList.remove('has-results');
     });
   }
-</script>
+</script-->
+
+hogehoge---0011
 
 
+### [how to code]({{ site.baseurl }}/howto_code)
+### [manual_md1]({{ site.baseurl }}/manual_md1)
 
-<a href="/howto_code">howto_code</a>
-<a href="/manual_md1">manual_md1</a>
 
 # News...
 

@@ -31,7 +31,7 @@
 		  <ul class="dropdown-menu">
 			{% if child.title %}
 				{% for grand in link.children %}
-				<li><a href="{{ site.baseurl | grand.url}}">{{ grand.title }}</a></li>
+				<li><a href="{{site.baseurl}}{{grand.url}}">{{ grand.title }}</a></li>
 				{% endfor %}
 			{% endif %}
 		</ul>

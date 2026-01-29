@@ -1,11 +1,10 @@
 ---
 layout: page
-title: 
+title: 11/7-8 高度ポリテクセンター
 ---
 
-init
 <!-- #ref(dl_logo_wrob.jpg,60%,right,margin=10,around,url=http://biz.nikkan.co.jp/eve/s-robot/index.html) -->
-<div align="right"><a href="http://biz.nikkan.co.jp/eve/s-robot/index.html"><img src="DSC_0025.png" width="50%; margin:10px;" align="right"></a></div>
+<div align="right"><a href="http://biz.nikkan.co.jp/eve/s-robot/index.html"><img src="DSC_0025.png" width="30%; margin:10px;" align="right"></a></div>
 
 
 #contents(4)
@@ -30,21 +29,16 @@ init
 
 <table class="table-alt">
   <tr>
-    <th>CENTER:100</th>
-    <th>LEFT:500</th>
-    <th>c</th>
-  </tr>
-  <tr>
-    <td>></td>
+    <td></td>
     <td>CENTER: **11月7日（火）**</td>
   </tr>
   <tr>
     <td>10:00 -11:00</td>
-    <td>**１．コース概要**<br>　（１）ロボットシステムプログラミングの現状 <br>　（２）ロボットOS・ミドルウェア <br>　（３）RTミドルウェア(RTM)を用いたロボット開発 <br> **資料:** <div align="center"><a href="171107-01.pdf"><img src="171107-01.pdf" width="100;"></a></div>;</td>
+    <td>**１．コース概要**<br>　（１）ロボットシステムプログラミングの現状 <br>　（２）ロボットOS・ミドルウェア <br>　（３）RTミドルウェア(RTM)を用いたロボット開発 <br> **資料:** <a href="171107-01.pdf">171107-01.pdf</a></td>
   </tr>
   <tr>
     <td>11:00 -12:00 <br> 13:00-14:00</td>
-    <td>**２．プログラミングの基礎** <br>　（１）プログラミングの基礎 <br>　（２）Linuxでのプログラミング <br>　（３）Windowsでのプログラミング <br> <br> **サンプルコード:** <div align="center"><a href="arm2dof_ver001.zip"><img src="arm2dof_ver001.zip" width="100;"></a></div>; <br> **資料:** <div align="center"><a href="171107-02.pdf"><img src="171107-02.pdf" width="100;"></a></div>;</td>
+    <td>**２．プログラミングの基礎** <br>　（１）プログラミングの基礎 <br>　（２）Linuxでのプログラミング <br>　（３）Windowsでのプログラミング <br> <br> **サンプルコード:** <a href="arm2dof_ver001.zip">arm2dof_ver001.zip</a> <br> **資料:** <a href="171107-02.pdf">171107-02.pdf</a></td>
   </tr>
   <tr>
     <td>12:00 -13:00</td>
@@ -52,23 +46,18 @@ init
   </tr>
   <tr>
     <td>14:00 -16:30</td>
-    <td>**３．RTMによるプログラミング** <br> （１）RTコンポーネントの設計 <br> （２）RTコンポーネントの実装 <br> （３）テスト	<br> <a href="/ja/node/6057">チュートリアル（画像処理コンポーネントの作成 Windows編）</a> <br> <a href="/ja/node/6058">チュートリアル（画像処理コンポーネントの作成 Linux編）</a> <br> **資料:** <div align="center"><a href="171107-03.pdf"><img src="171107-03.pdf" width="100;"></a></div>;</td>
+    <td>**３．RTMによるプログラミング** <br> （１）RTコンポーネントの設計 <br> （２）RTコンポーネントの実装 <br> （３）テスト	<br> <a href="/ja/node/6057">チュートリアル（画像処理コンポーネントの作成 Windows編）</a> <br> <a href="/ja/node/6058">チュートリアル（画像処理コンポーネントの作成 Linux編）</a> <br> **資料:** <a href="171107-03.pdf">171107-03.pdf</a></td>
   </tr>
 </table>
 
 <table class="table-alt">
   <tr>
-    <th>CENTER:100</th>
-    <th>LEFT:500</th>
-    <th>c</th>
-  </tr>
-  <tr>
-    <td>></td>
+    <td></td>
     <td>CENTER: **11月8日（水）**</td>
   </tr>
   <tr>
     <td>10:00 -12:00</td>
-    <td>**４．ロボットの運動学と制御の基礎** <br>　（１）ロボットと運動学 <br>　（２）ロボットと制御 <br> **資料:** <div align="center"><a href="171108-04.pdf"><img src="171108-04.pdf" width="100;"></a></div>; <br> **プログラム1:** <div align="center"><a href="arm2dof.zip"><img src="arm2dof.zip" width="100;"></a></div>; <br> **プログラム2:** <div align="center"><a href="joystick.zip"><img src="joystick.zip" width="100;"></a></div>; <br>  **解答:' <div align="center"><a href="171108-06.pdf"><img src="171108-06.pdf" width="100;"></a></div>; <br> **プログラム1(解答):** <div align="center"><a href="arm2dof.ans_.zip"><img src="arm2dof.ans_.zip" width="100;"></a></div>; <br> **プログラム2(解答):'' <div align="center"><a href="joystick.ans_.zip"><img src="joystick.ans_.zip" width="100;"></a></div>;</td>
+    <td>**４．ロボットの運動学と制御の基礎** <br>　（１）ロボットと運動学 <br>　（２）ロボットと制御 <br> **資料:** <a href="171108-04.pdf">171108-04.pdf</a> <br> **プログラム1:** <a href="arm2dof.zip">arm2dof.zip</a> <br> **プログラム2:** <a href="joystick.zip">joystick.zip</a> <br>  **解答:** <a href="171108-06.pdf">171108-06.pdf</a> <br> **プログラム1(解答):** <a href="arm2dof.ans_.zip">arm2dof.ans_.zip</a> <br> **プログラム2(解答):** <a href="joystick.ans_.zip">joystick.ans_.zip</a></td>
   </tr>
   <tr>
     <td>12:00 -13:00</td>
@@ -76,7 +65,7 @@ init
   </tr>
   <tr>
     <td>13:00 -16:30</td>
-    <td>**５．総合演習** <br>　（１）ロボットシステムの設計 <br> 　（２）ロボット制御プログラムの作成 <br> <a href="/ja/node/6310">チュートリアル（Raspberry Pi Mouseシミュレータ、Windows編）</a>  <br> <a href="/ja/node/6042">チュートリアル（RaspberryPiマウス）</a> <br> **資料:** <div align="center"><a href="171108-05.pdf"><img src="171108-05.pdf" width="100;"></a></div>;</td>
+    <td>**５．総合演習** <br>　（１）ロボットシステムの設計 <br> 　（２）ロボット制御プログラムの作成 <br> <a href="/ja/node/6310">チュートリアル（Raspberry Pi Mouseシミュレータ、Windows編）</a>  <br> <a href="/ja/node/6042">チュートリアル（RaspberryPiマウス）</a> <br> **資料:** <a href="171108-05.pdf">171108-05.pdf</a></td>
   </tr>
 </table>
 
@@ -137,26 +126,33 @@ RaspberryPiを利用しているので、実機上で開発したり、容易に
 ### １．コース概要
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/68436966 -->
+{% include slideshare.html src="https://www.slideshare.net/slideshow/embed_code/key/bY2CPKP5ncm33L" %}
+
 
 ### ２．プログラミングの基礎 
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/68437439 -->
+{% include slideshare.html src="https://www.slideshare.net/slideshow/embed_code/key/ILliI7zg6VTQiy" %}
 
 
 ### ３．RTMによるプログラミング
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/68437448 -->
+{% include slideshare.html src="https://www.slideshare.net/slideshow/embed_code/key/dVtbEa3vP05czw" %}
 
 ### ４．ロボットの運動学と制御の基礎
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/68437436 -->
+{% include slideshare.html src="https://www.slideshare.net/slideshow/embed_code/key/9Q1DEO9bmtX5xd" %}
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/68610156 -->
+{% include slideshare.html src="https://www.slideshare.net/slideshow/embed_code/key/3bGVUl1hIBJtm6" %}
 
 
 ### ５．総合演習
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/68437454 -->
+{% include slideshare.html src="https://www.slideshare.net/slideshow/embed_code/key/rQEMftWXojYwnh" %}
 
 
 <!-- ** コースの様子 -->

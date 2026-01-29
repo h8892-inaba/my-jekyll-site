@@ -5,18 +5,14 @@ header:
   - title: "Download"
     url: "/ja/download/"
     description: "test_dl_page"
-    children:
-      - title: "Tutorials"
-        url: "/ja/tutorials/"
-        description: "講習会"
   - title: "Documentation"
     url: "/ja/doc/"
     description: "test_doc_page"
     children:
-      - title: " OpenRTM-aistとは？"
+      - title: "OpenRTM-aistとは？"
         url: "/ja/doc/aboutopenrtm/rtmiddleware/"
         description: "OpenRTM-aistとは？"
-      - title: " インストール"
+      - title: "インストール"
         url: "/ja/doc/installation/"
         description: "インストール"
       - title: "ツール"
@@ -35,7 +31,7 @@ header:
         url: "/ja/doc/corba/"
         description: "CORBA"
       - title: "よくある質問"
-        url: "/ja/doc/faq/"
+        url: "/ja/faq/"
         description: "よくある質問"
       - title: "過去文書"
         url: "/ja/doc/old_document/"
@@ -64,16 +60,16 @@ header:
     url: "/ja/search_1/"
   - title: "Manual_MD"
     url: "/manual_md1/"
-  - title: "harumi"
-    url: "/harumi/"
     children:
+      - title: "harumi"
+        url: "/harumi/"
+        description: "test"
       - title: "harumi1"
         url: "/harumi1/"
-        description: "harumi1111"
+        description: "test1"
       - title: "harumi2"
         url: "/harumi2/"
-        description: "harumi2222"
-
+        description: "test2"
 
 
     #

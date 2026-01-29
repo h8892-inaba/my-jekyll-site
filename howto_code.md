@@ -4,29 +4,7 @@
 
 #assets/rtm_images/rtm_logo.png
 
-layout: home
-
-permalink: /howto_code
-
-title: "OpenRTM-aist"
-excerpt: "OpenRTM-aist | The power to connect"
-
-feature_rows:
-  - title: "ROBOMECH2025"
-    excerpt: "ROBOMECH2025申し込み開始しました"
-    url: "/community/event/ROBOMECH2025/"
-    img_path: "feature_rows/nedo-06.png"
-    img_alt: "ROBOMECH2025"
-  - title: "OpenRTM-aist 2.0.2 RELEASE"
-    excerpt: "OpenRTM-aist 2.0.2 をリリースしました"
-    url: "/download/"
-    img_path: "feature_rows/rosnews.png"
-    img_alt: "RELEASE"
-  - title: "OpenRTM-aistを10分で始めよう！"
-    excerpt: "Let's start openrtm-aist!"
-    url: "/doc/installation/lets_start"
-    img_alt: "Only 10 min !?"
-
+layout: page
 ---
 
 
@@ -87,14 +65,28 @@ puts 'The best way to log and share programmers knowledge.'
 |hogehoge|ff|1|
 
 
+# slideshareを表示する
+
+{% include slideshare.html
+   src="https://www.slideshare.net/slideshow/embed_code/key/rQEMftWXojYwnh"
+%}
+
+{% raw %}
+```liquid
+{% include slideshare.html
+   src="https://www.slideshare.net/slideshow/embed_code/key/XXXX"
+%}
+```
+{% endraw %}
+
+# youtubeを表示する
 
 
-<a href="/download/download/">download</a>
-<a href="/download/openrtp">openrtp</a>
-<a href="/test_1">test_inaba_link</a>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uPMIyC22--M" frameborder="0" allowfullscreen></iframe>
 
-[最終成果報告会](/final_report)
-[最終成果報告会](/final_report/final_report)
+```
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uPMIyC22--M" frameborder="0" allowfullscreen></iframe>
+```
 
 - [harumi2](/harumi2)
 - [harumi2](/harumi2/harumi2)
