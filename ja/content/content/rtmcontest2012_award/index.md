@@ -36,9 +36,10 @@ RTミドルウエア賞　（最優秀賞）（副賞10万円）　（1件）
 [ビュートローバー RTC-BT](http://www.vstone.co.jp/products/beauto_rover_rtc/)　1台提供 <br>
 RTMの初心者向けに、学習・開発をサポートするようなコンポーネント・ツールに対して表彰します。
 
+
 ### やっぱ、カメラたくさんで賞３【提供：[株式会社ビュープラス](http://www.viewplus.co.jp/)】
 
-<div align="center"><a href="http://www.viewplus.co.jp/product/camera/fireflymv/main.jpg"><img src="http://www.viewplus.co.jp/product/camera/fireflymv/main.jpg" width="50%;" align="center"></a></div>
+<!-- div align="center"><a href="http://www.viewplus.co.jp/product/camera/fireflymv/main.jpg"><img src="http://www.viewplus.co.jp/product/camera/fireflymv/main.jpg" width="50%;" align="center"></a></div-->
 
 [高性能 USB2.0 非圧縮カラーカメラ(SDK,cableを含む）FMVU-13S2C-CS](http://www.viewplus.co.jp/product/camera/fireflymv.html) 2台提供<br>
 知能化に不可欠なカメラを、手軽に，かつ，うまく使ってもらいたい。

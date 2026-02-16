@@ -53,8 +53,7 @@ SI2012の申込方法、申込および原稿〆切および具体的な開催�
 ## プログラム
 <table class="table-alt">
   <tr>
-    <td>></td>
-    <td>第G室　第1スロット</td>
+    <td colspan="2">第G室　第1スロット</td>
   </tr>
   <tr>
     <td>1G1-2</td>
@@ -77,8 +76,7 @@ SI2012の申込方法、申込および原稿〆切および具体的な開催�
     <td><a href="http://www.openrtm.org/openrtm/ja/node/5204">CHLACを用いて歩行と停止とを見分けられる機能のOpenRTMモジュール化</a></td>
   </tr>
   <tr>
-    <td>></td>
-    <td>第G室　第2スロット</td>
+    <td colspan="2">第G室　第2スロット</td>
   </tr>
   <tr>
     <td>1G2-1</td>
@@ -105,8 +103,7 @@ SI2012の申込方法、申込および原稿〆切および具体的な開催�
     <td><a href="http://www.openrtm.org/openrtm/ja/node/5197">クワッドロータを制御するRTコンポーネント群</a></td>
   </tr>
   <tr>
-    <td>></td>
-    <td>第G室　第3スロット</td>
+    <td colspan="2">第G室　第3スロット</td>
   </tr>
   <tr>
     <td>1G3-1</td>
@@ -173,7 +170,7 @@ SI2012の申込方法、申込および原稿〆切および具体的な開催�
 が必要となります。特に、SI2012への参加には参加登録料が必要となりますことを予めご了承ください。また、SI2012の会場(福岡国際会議場)にてプレゼンテーションを行うことが求められます。
 
 概要説明のスライドダウンロード
-<div align="center"><a href="RTMContestCatalog2012.ppt"><img src="RTMContestCatalog2012.ppt" width="60%;"></a></div>;
+- <a href="./RTMContestCatalog2012.ppt"></a>
 
 
 ### OpenRTM-aist Webサイトへの作品の登録

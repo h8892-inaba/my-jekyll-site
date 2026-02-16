@@ -40,11 +40,12 @@ SICE システムインテグレーション部会学術講演会において毎
 - [RTミドルウエアコンテスト2014](./rtmcontest2014)
   - [投稿作品の紹介ページ](/contests/2014)(no_link)
 - [RTミドルウエアコンテスト2013](./rtmcontest2013)
+  - [励賞一覧](./rtmcontest2013_award)
   - [投稿作品の紹介ページ](/contests/2013)(no_link)
 - [RTミドルウエアコンテスト2012](./rtmcontest2012)
   - [励賞一覧](./rtmcontest2012_award)
   - [投稿作品の紹介ページ](/contests/2012)(no_link)
-- RTミドルウエアコンテスト2011
+- RTミドルウエアコンテスト2011(html)
 <!-- -[[RTミドルウエアコンテスト2011:http://www.openrtm.org/rt/RTMcontest/2011/rtmcontest.html]] -->
   - [投稿作品の紹介ページ](http://www.openrtm.org/openrtm/contests/2011)(no_link)
 - RTミドルウエアコンテスト2010
