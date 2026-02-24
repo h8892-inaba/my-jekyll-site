@@ -45,20 +45,15 @@ SICE システムインテグレーション部会学術講演会において毎
 - [RTミドルウエアコンテスト2012](./rtmcontest2012)
   - [励賞一覧](./rtmcontest2012_award)
   - [投稿作品の紹介ページ](/contests/2012)(no_link)
-- RTミドルウエアコンテスト2011(html)
-<!-- -[[RTミドルウエアコンテスト2011:http://www.openrtm.org/rt/RTMcontest/2011/rtmcontest.html]] -->
+- [RTミドルウエアコンテスト2011](./rtmcontest2011)
   - [投稿作品の紹介ページ](http://www.openrtm.org/openrtm/contests/2011)(no_link)
-- RTミドルウエアコンテスト2010
-<!-- -[[RTミドルウエアコンテスト2010:http://www.openrtm.org/rt/RTMcontest/2010/rtmcontest.html]] -->
+- [RTミドルウエアコンテスト2010](./rtmcontest2010)
   - [投稿作品の紹介ページ](http://www.openrtm.org/openrtm/contests/2010)(no_link)(no_link)
-- RTミドルウエアコンテスト2009
-<!-- -[[RTミドルウエアコンテスト2009:http://www.openrtm.org/rt/RTMcontest/2009/rtmcontest.html]] -->
+- [RTミドルウエアコンテスト2009](./rtmcontest2009)
   - [投稿作品の紹介ページ](http://www.openrtm.org/openrtm/contests/2009)(no_link)
-- RTミドルウエアコンテスト2008
-<!-- -[[RTミドルウエアコンテスト2008:http://www.openrtm.org/rt/RTMcontest/2008/rtmcontest.html]] -->
+- [RTミドルウエアコンテスト2008](./rtmcontest2008/)
   - [投稿作品の紹介ページ](http://www.openrtm.org/openrtm/contests/2008)(no_link)
-- RTミドルウエアコンテスト2007
-<!-- -[[RTミドルウエアコンテスト2007:http://www.openrtm.org/rt/RTMcontest/2007/rtmcontest.html]] -->
+- [RTミドルウエアコンテスト2007](./rtmcontest2007/)
   - [投稿作品の紹介ページ](http://www.openrtm.org/openrtm/contests/2007)(no_link)
 
 
