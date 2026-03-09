@@ -60,7 +60,7 @@ puts 'The best way to log and share programmers knowledge.'
 `puts 'Qiita'` と書くことでインライン表示することも可能です。
 
 
-|<img src="/harumi2/image.png" width="30%">|<img src="/harumi2/image.png" width="30%">|<img src="/harumi2/image.png" width="30%">|
+|<img src="{{ site.baseurl }}/harumi2/image.png" width="30%">|<img src="{{ site.baseurl }}/harumi2/image.png" width="30%">|<img src="{{ site.baseurl }}/harumi2/image.png" width="30%">|
 |:---|:---:|---:|
 |hogehoge|ff|1|
 
@@ -88,18 +88,18 @@ puts 'The best way to log and share programmers knowledge.'
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uPMIyC22--M" frameborder="0" allowfullscreen></iframe>
 ```
 
-- [harumi2](/harumi2)
-- [harumi2](/harumi2/harumi2)
+- [harumi2]({{ site.baseurl }}/harumi2)
+- [harumi2]({{ site.baseurl }}/harumi2/harumi2)
 
-- [test1](/test1)
-- [/test1/test](/test1/test)
+- [test1]({{ site.baseurl }}/test1)
+- [/test1/test]({{ site.baseurl }}/test1/test)
 
-- [/harumi](/harumi)
-- [/harumi/harumi](/harumi/harumi)
+- [/harumi]({{ site.baseurl }}/harumi)
+- [/harumi/harumi]({{ site.baseurl }}/harumi/harumi)
 
-- [/harumi3](/harumi3)
-- [/harumi3_1](/harumi3/harumi3_1)
-- [/harumi3/harumi3](/harumi3/harumi3)
+- [/harumi3]({{ site.baseurl }}/harumi3)
+- [/harumi3_1]({{ site.baseurl }}/harumi3/harumi3_1)
+- [/harumi3/harumi3]({{ site.baseurl }}/harumi3/harumi3)
 
 
 <table class="table-alt">
@@ -117,8 +117,8 @@ puts 'The best way to log and share programmers knowledge.'
 
 
 
-![hoge](/harumi2/inage.png)
-<div align="center"><a href="/harumi2"><img src="/harumi2/image.png" width="30%"></a></div>
+![hoge]({{ site.baseurl }}/harumi2/image.png)
+<div align="center"><a href="{{ site.baseurl }}/harumi2"><img src="{{ site.baseurl }}/harumi2/image.png" width="30%"></a></div>
 <br/>
 
 

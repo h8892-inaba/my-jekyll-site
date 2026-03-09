@@ -77,15 +77,29 @@ hogehoge---0011
 
 # News...
 
+<ul>
+  {% for post in site.posts %}
+<hr>
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+    </li>
+  {% endfor %}
+<hr>
+</ul>
+
+
 <hr>
 {% for post in site.posts limit: 3 %}
   <article>
     <li>
+      <!--a href="{{ post.url }}"-->
       <a href="{{ post.url }}">
         <img src="{{post.image}}" alt="hogee" height="50" />
         <br>{{ post.title }} ({{post.date | date: "%B %-d, %Y"}})
       </a>
       <a>
+        test_news0301
         <br>{{ post.excerpt }}
       </a>
     </li>
