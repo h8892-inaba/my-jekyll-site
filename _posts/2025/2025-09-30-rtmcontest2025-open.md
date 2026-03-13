@@ -16,7 +16,7 @@ image_dir: assets/post_image/2025/2025-09-30_rtmcontest2025_open/
 image_alt: RTMcontest2025_alt
 image_caption: RTMcontest2025_cap
 
-permalink: 2025-09-30-rtmcontest2025-open
+permalink: ja/2025-09-30-rtmcontest2025-open
 
 toc: true
 ---
@@ -26,4 +26,4 @@ toc: true
 計測自動制御学会(SICE)のシステムインテグレーション部門講演会 (SI2025) の特別セッションとして開催を予定しております。
 ログイン後、以下のページのウェブフォームから受付できます。
 
-- [RTMcontest2025]({{ site.baseurl }}/ja/content/contest/rtmcontest2025)
+- [RTMcontest2025]({{ site.baseurl }}/ja/content/content/rtmcontest2025/)
