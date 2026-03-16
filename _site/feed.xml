@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/my-jekyll-site/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/my-jekyll-site/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2026-03-13T07:54:24+00:00</updated><id>http://localhost:4000/my-jekyll-site/feed.xml</id><title type="html">OpenRTM-aist</title><subtitle>The power to connect</subtitle><author><name>mani_d2</name></author><entry><title type="html">RTミドルウエアコンテスト2025が開催されました</title><link href="http://localhost:4000/my-jekyll-site/2025-12-11-rtmcontest2025" rel="alternate" type="text/html" title="RTミドルウエアコンテスト2025が開催されました" /><published>2025-12-11T00:00:00+00:00</published><updated>2025-12-11T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/rtmcontest2025</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2025-12-11-rtmcontest2025"><![CDATA[<h2 id="rtミドルウエアコンテスト2025が開催されました">RTミドルウエアコンテスト2025が開催されました</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/my-jekyll-site/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/my-jekyll-site/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2026-03-16T01:32:07+00:00</updated><id>http://localhost:4000/my-jekyll-site/feed.xml</id><title type="html">OpenRTM-aist</title><subtitle>The power to connect</subtitle><author><name>mani_d2</name></author><entry><title type="html">RTミドルウエアコンテスト2025が開催されました</title><link href="http://localhost:4000/my-jekyll-site/2025-12-11-rtmcontest2025" rel="alternate" type="text/html" title="RTミドルウエアコンテスト2025が開催されました" /><published>2025-12-11T00:00:00+00:00</published><updated>2025-12-11T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/rtmcontest2025</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2025-12-11-rtmcontest2025"><![CDATA[<h2 id="rtミドルウエアコンテスト2025が開催されました">RTミドルウエアコンテスト2025が開催されました</h2>
 <p>計測自動制御学会(SICE)システムインテグレーション部門講演会 (SI2025)の特別セッションとして、RTミドルウエアコンテスト2025が開催されました</p>
 
 <p>今年は4件の応募があり、熱い成果発表が行われました。最優秀賞1件と10件の奨励賞が授与されました。審査結果は以下の通りです。</p>
@@ -238,23 +238,7 @@
 ログイン後、以下のページのウェブフォームから受付できます。</p>
 <ul>
   <li><a href="/my-jekyll-site/ja/tutorial/robomech2025">ROBOMECH2025</a></li>
-</ul>]]></content><author><name>mani_d2</name></author><category term="event" /><summary type="html"><![CDATA[ROBOMECH2025]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/robomech2025_news.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/robomech2025_news.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/my-jekyll-site/jekyll/update/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-03-11T05:17:23+00:00</published><updated>2025-03-11T05:17:23+00:00</updated><id>http://localhost:4000/my-jekyll-site/jekyll/update/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/jekyll/update/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
-
-<p>Jekyll requires blog post files to be named according to the following format:</p>
-
-<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
-
-<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
-
-<p>Jekyll also offers powerful support for code snippets:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
-
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>mani_d2</name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Ubuntu 24.04用のパッケージをリリースしました</title><link href="http://localhost:4000/my-jekyll-site/2024-07-22-pkg-release" rel="alternate" type="text/html" title="Ubuntu 24.04用のパッケージをリリースしました" /><published>2024-12-23T00:00:00+00:00</published><updated>2024-12-23T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/pkg-release</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2024-07-22-pkg-release"><![CDATA[<p>Ubuntu24.04(amd64, arm64)用OpenRTM-aist 2.0.2 をリリースしました。</p>
+</ul>]]></content><author><name>mani_d2</name></author><category term="event" /><summary type="html"><![CDATA[ROBOMECH2025]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/robomech2025_news.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/robomech2025_news.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Ubuntu 24.04用のパッケージをリリースしました</title><link href="http://localhost:4000/my-jekyll-site/2024-07-22-pkg-release" rel="alternate" type="text/html" title="Ubuntu 24.04用のパッケージをリリースしました" /><published>2024-12-23T00:00:00+00:00</published><updated>2024-12-23T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/pkg-release</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2024-07-22-pkg-release"><![CDATA[<p>Ubuntu24.04(amd64, arm64)用OpenRTM-aist 2.0.2 をリリースしました。</p>
 
 <!--break-->
 
@@ -449,4 +433,20 @@
 <br />
 <br />
 <br />
-<br /></p>]]></content><author><name>mani_d2</name></author><category term="event" /><summary type="html"><![CDATA[RTMcontest2024]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2024/2024-12-23_rtmcontest2024/rtmaaward2024_news.jpg" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2024/2024-12-23_rtmcontest2024/rtmaaward2024_news.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<br /></p>]]></content><author><name>mani_d2</name></author><category term="event" /><summary type="html"><![CDATA[RTMcontest2024]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2024/2024-12-23_rtmcontest2024/rtmaaward2024_news.jpg" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2024/2024-12-23_rtmcontest2024/rtmaaward2024_news.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">OpenRTM-aist 2.0.2 をリリースしました</title><link href="http://localhost:4000/my-jekyll-site/2024-06-07-openrtm-aist_2_0_2_release" rel="alternate" type="text/html" title="OpenRTM-aist 2.0.2 をリリースしました" /><published>2024-06-07T00:00:00+00:00</published><updated>2024-06-07T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/openrtm-aist_2_0_2_release</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2024-06-07-openrtm-aist_2_0_2_release"><![CDATA[<p>最新版 OpenRTM-aist 2.0.2 をリリースしました。</p>
+
+<!--break-->
+
+<ul>
+  <li>リリースノート</li>
+  <li><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v2.0.2">C++</a></li>
+  <li><a href="https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v2.0.2">Python</a></li>
+  <li><a href="https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v2.0.2">Java</a></li>
+  <li><a href="https://github.com/OpenRTM/OpenRTP-aist/releases/tag/v2.0.2">tools (OpenRTP) </a></li>
+</ul>
+
+<p>Windows用インストーラ(msi)、Linux用インストールスクリプトについては、下記ダウンロードページをご覧ください。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/download/">ダウンロードページ</a></li>
+</ul>]]></content><author><name>mani_d2</name></author><category term="release" /><summary type="html"><![CDATA[Release OpenRTM-aist 2.0.2]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2024/202release_news.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2024/202release_news.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

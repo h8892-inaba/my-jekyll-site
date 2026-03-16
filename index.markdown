@@ -81,6 +81,7 @@ hogehoge---0011
   {% for post in site.posts %}
 <hr>
     <li>
+      <img src="{{post.image}}" alt="hogee" height="50" />
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       <small>{{ post.date | date: "%Y-%m-%d" }}</small>
     </li>
