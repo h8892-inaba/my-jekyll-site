@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "日本機械学会ロボティクスメカトロニクス部門「技術業績賞」を受賞しました"
-excerpt: ""
+# excerpt: ""
 date:   2020-05-28
 categories: award
+lang: ja
 
 #※使っていない変数
 #slug: 2025-12-11-rtmcontest2025

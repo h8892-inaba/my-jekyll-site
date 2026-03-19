@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "第5回RTミドルウェア普及貢献賞の授賞式が行われました"
-excerpt: "第5回RTM普及貢献賞授賞式が行われました"
+# excerpt: "第5回RTM普及貢献賞授賞式が行われました"
 date:   2019-12-18
 categories: award
+lang: ja
 
 #※使っていない変数
 #slug: 2021-12-11-rtmcontest2021

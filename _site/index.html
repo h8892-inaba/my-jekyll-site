@@ -620,443 +620,151 @@
   <section class="home-page-article">
     <div class="container">
       <article>
-        <!--script>
-  if (!window.__sidebarSearchInitialized) {
-    window.__sidebarSearchInitialized = true;
-
-    const input = document.getElementById('sidebar-search-input');
-    const results = document.getElementById('sidebar-results');
-
-    SimpleJekyllSearch({
-      searchInput: input,
-      resultsContainer: results,
-      json: '/my-jekyll-site/search.json',
-      searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
-      noResultsText: '<li class="no-results">見つかりませんでした</li>',
-      limit: 10
-    });
-
-    // 入力に応じて表示/非表示を切り替え
-    const toggle = () => {
-      const has = results.children.length > 0 && input.value.trim().length > 0;
-      results.classList.toggle('has-results', has);
-      if (!has) results.classList.remove('has-results');
-    };
-
-    input.addEventListener('input', () => setTimeout(toggle, 0));
-    input.addEventListener('focus', () => setTimeout(toggle, 0));
-
-    // 外をクリックしたら閉じる
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.nav-search')) results.classList.remove('has-results');
-    });
-
-    // Escで閉じる
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') results.classList.remove('has-results');
-    });
-  }
-</script-->
-
-<p>hogehoge—0011</p>
-
-<h3 id="how-to-code"><a href="/my-jekyll-site/howto_code">how to code</a></h3>
+        <h3 id="how-to-code"><a href="/my-jekyll-site/howto_code">how to code</a></h3>
 <h3 id="manual_md1"><a href="/my-jekyll-site/manual_md1">manual_md1</a></h3>
 
 <h1 id="news">News…</h1>
 
-<ul>
+<div class="news-grid">
   
-<hr />
-    <li>
-      <img src="assets/post_image/2025/2025-12-11_rtmcontest2025/contest2025_news_.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2025-12-11-rtmcontest2025">RTミドルウエアコンテスト2025が開催されました</a>
-      <small>2025-12-11</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2025/2025-09-30_rtmcontest2025_open/contest2025_news.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/ja/2025-09-30-rtmcontest2025-open">RTミドルウエアコンテスト2025の申込みを受付開始しました</a>
-      <small>2025-09-30</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/logo.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2025-09-11-20250911_gpg_pubkey_ja">GPG公開鍵を更新しました</a>
-      <small>2025-09-11</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2025/sc2025_news.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2025-09-01-rt_summercamp2025_report">RTミドルウエアサマーキャンプ2025が行われました</a>
-      <small>2025-09-01</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2025/summercamp2025_news.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2025-06-02-rt_summercamp2025_open">サマーキャンプ2025の参加受付を開始しました</a>
-      <small>2025-09-01</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2025/robomech2025_news_end.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2025-09-06-robomech2025_report">ROBOMECH2025 RTミドルウェア講習会を開催しました</a>
-      <small>2025-06-09</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2025/robomech2025_news.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2025-04-02-robomech2025_open">ROBOMECH2025 申し込み開始しました</a>
-      <small>2025-04-02</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2024/2024-12-23_rtmcontest2024/rtmaaward2024_news.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2024-12-23-rtmcontest2024">RTミドルウエアコンテスト2024が開催されました</a>
-      <small>2024-12-23</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2024/ubuntu_logo.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2024-07-22-pkg-release">Ubuntu 24.04用のパッケージをリリースしました</a>
-      <small>2024-12-23</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2024/202release_news.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2024-06-07-openrtm-aist_2_0_2_release">OpenRTM-aist 2.0.2 をリリースしました</a>
-      <small>2024-06-07</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2024/robomech2024_news.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2024-05-08-robomech2024-open">ROBOMECH2024申し込み開始しました</a>
-      <small>2024-05-08</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2023/2023-12-14-rtmcontest2023/RTM_award.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2023-12-14-rtmcontest2023">RTミドルウエアコンテスト2023が開催されました</a>
-      <small>2023-12-14</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2023/contest2023_news.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2023-10-10-rtmcontest2023-open">RTミドルウエアコンテスト2023の申込みを受付開始しました。</a>
-      <small>2023-10-10</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2023/rtmsummercamp2023_05.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2023-08-29-rtmsummercamp2023">RTミドルウエアサマーキャンプ2023が行われました</a>
-      <small>2023-08-29</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2023/summercamp_s.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2023-10-10-rtmcontest2023-open">RTミドルウエアコンテスト2023の申込みを受付開始しました。</a>
-      <small>2023-07-25</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2023/ubuntu_logo.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2023-05-10-pkg-release">Ubuntu 22.04用のパッケージをリリースしました</a>
-      <small>2023-05-10</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2023/logo.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2023-04-20-openrtm-aist_2_0_1-1_release">Windows版 OpenRTM-aist 2.0.1-1 リリース</a>
-      <small>2023-04-20</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2023/RELEASE201_1080.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2023-01-24-openrtm-aist_2_0_1_release">OpenRTM-aist 2.0.1 をリリースしました</a>
-      <small>2023-01-24</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2022/2022-12-14-rtmcontest2022_ja/contest2022_news_banner.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2023-12-14-rtmcontest2023">RTミドルウエアコンテスト2022が開催されました</a>
-      <small>2022-12-14</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2022/Raspberry_Pi_Logo.svg_.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2022-11-07-pkg-release">Raspberry Pi OS用OpenRTM-aist 2.0.0パッケージをリリースしました</a>
-      <small>2022-11-07</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2022/rtmsummercamp2022.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2022-08-29-summercamp2022">RTミドルウエアサマーキャンプ2022が行われました</a>
-      <small>2022-08-29</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2022/contest2022_news2.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2022-08-01-rtmcontest2022-open">RTMコンテスト2022の申込みを受付開始しました</a>
-      <small>2022-08-01</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2022/RELEASE200_1080.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2022-06-05-openrtm-aist_2_0_0_release">OpenRTM-aist 2.0.0 をリリースしました</a>
-      <small>2022-06-05</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2022/mech2022_news.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2022-06-01-robomech2022_ja">ROBOMECH2022を開催しました</a>
-      <small>2022-06-01</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2021/2021-12-16-rtmcontest2021_ja/con2021_news_.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2021-12-16-rtmcontest2021">RTミドルウエアコンテスト2021が開催されました</a>
-      <small>2021-12-16</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2021/summercamp_news.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2021-08-30-summercamp2021">RTミドルウエアサマーキャンプ2021が行われました</a>
-      <small>2021-08-30</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2021/contest2021_news.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2021-08-01-rtmcontest2021-open">RTMコンテスト2021の申込みを受付開始しました</a>
-      <small>2021-08-01</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2021/20210606-s.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2021-06-07-robomech2021_ja">ROBOMECH2021を開催しました</a>
-      <small>2021-06-07</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2021/robomech2021_news.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2021-03-01-rtmcontest2021-open">RTMコンテスト2021の申込みを受付開始しました</a>
-      <small>2021-03-01</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2020/2020-12-14-rtmcontest2020_ja/contest2020_xs.jpeg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2020-12-14-rtmcontest2020">RTミドルウエアコンテスト2020が開催されました</a>
-      <small>2020-12-14</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2020/logo.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2020-11-05-si2020_ja">SI2020 「NEDO特別講座：ロボット共通プラットフォーム講習会」を開催します.</a>
-      <small>2020-11-05</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2020/signas_1.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2020-11-01-SIGNAS-open">OpenRTM-aistを利用した搬送ロボットTHK株式会社「SIGNAS」受注開始</a>
-      <small>2020-11-01</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2020/680px-Homebrew_logo.svg_.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2020-10-30-homebrew_package">MacOS用パッケージ群を公開しました</a>
-      <small>2020-10-30</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2020/rtmcontest2020_xs.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2020-10-20-rt_contest2020">RTMコンテスト2020のプログラムを公開しました</a>
-      <small>2020-10-20</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2020/rtc-Fukushima-logo.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2010-10-08-aizututorial_notice_ja">RTC-Library-FUKUSHIMAでOpenRTM用拡張モジュールがリリースされました</a>
-      <small>2020-10-08</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2020/sice2020release_xs.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2020-09-24-sice2020">SICE 2020 RTM講習会をオンラインで開催しました</a>
-      <small>2020-09-24</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2020/sc_news_icon.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2020-08-31-rt_summercamp2020">RTミドルウエアサマーキャンプ2020が行われました</a>
-      <small>2020-08-31</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2020/122release_xs.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2020-08-26-openrtm-aist_1_2_2_release">OpenRTM-aist-1.2.2 をリリースしました</a>
-      <small>2020-08-26</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2020/rmd_logo.gif" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2022-05-28-award-jsme-rmd">日本機械学会ロボティクスメカトロニクス部門「技術業績賞」を受賞しました</a>
-      <small>2020-05-28</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2020/raspimouse2_xs.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2020-05-27-robomech2020">ROBOMECH2020　RTM講習会をオンラインで開催しました</a>
-      <small>2020-05-27</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2019/20191218_icon.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2019-12-18-irex2019">iREX2019 （国際ロボット展） RTM講習会が行われました</a>
-      <small>2019-12-18</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2019/2019-12-18-business_award/2019aw_icon.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2019-12-18-business_award">第5回RTミドルウェア普及貢献賞の授賞式が行われました</a>
-      <small>2019-12-18</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2019/20191212_icon.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2019-12-14-si2019">SI2019 RTミドルウエア講習会が行われました</a>
-      <small>2019-12-14</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2019/2019-12-12-rtmcontest2019/contest2019_icon.webp" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2019-12-12-rtmcontest2019">RTミドルウエアコンテスト2019が開催されました</a>
-      <small>2019-12-12</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2019/logo.png" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2019-11-27-openrtm-aist_1_2_1_release">OpenRTM-aist-1.2.1 をリリースしました</a>
-      <small>2019-11-27</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2019/camp2019.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2019-08-08-rt_summercamp2019">RTミドルウエアサマーキャンプ2019が行われました</a>
-      <small>2019-08-08</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2019/bootcamp_waseda_2019_icon.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2019-07-11-bootcamp_waseda_2019">早稲田大学でRTミドルウェア講習会が行われました</a>
-      <small>2019-07-11</small>
-    </li>
-  
-<hr />
-    <li>
-      <img src="assets/post_image/2019/robomec2019_icon.jpg" alt="hogee" height="50" />
-      <a href="/my-jekyll-site/2019-06-05-robomech2019">ROBOMECH2019 RTミドルウェア講習会が行われました</a>
-      <small>2019-06-05</small>
-    </li>
-  
-<hr />
-</ul>
-
-<hr />
-
-<article>
-    <li>
-      <!--a href="/2025-12-11-rtmcontest2025"-->
-      <a href="/2025-12-11-rtmcontest2025">
-        <img src="assets/post_image/2025/2025-12-11_rtmcontest2025/contest2025_news_.png" alt="hogee" height="50" />
-        <br />RTミドルウエアコンテスト2025が開催されました (December 11, 2025)
+    <article class="news-item">
+      <a href="/my-jekyll-site/2025-12-11-rtmcontest2025">
+        
+          <div class="news-thumb">
+          <img src="/my-jekyll-site/assets/post_image/2025/2025-12-11_rtmcontest2025/contest2025_news_.png" alt="" />
+          </div>
+        
+        <h3>RTミドルウエアコンテスト2025が開催されました</h3>
       </a>
-      <a>
-        test_news0301
-        <br />RTMcontest2025
+     <p class="date">2025.12.11</p>
+     <p class="top-news__excerpt">
+              RTミドルウエアコンテスト2025が開催されました
+
+計測自動制御学会(SICE)システムインテグレーション部門講演会 (SI2025)の特別セッションとして、RTミドルウエアコンテスト2025...
+     </p>
+     <div class="news-more-wrap">
+      <a class="news-more" href="/my-jekyll-site/2025-12-11-rtmcontest2025">続きを読む</a>
+    </div>
+    </article>
+  
+    <article class="news-item">
+      <a href="/my-jekyll-site/2025-09-30-rtmcontest2025-open">
+        
+          <div class="news-thumb">
+          <img src="/my-jekyll-site/assets/post_image/2025/contest2025_news.png" alt="" />
+          </div>
+        
+        <h3>RTミドルウエアコンテスト2025の申込みを受付開始しました</h3>
       </a>
-    </li>
-  </article>
+     <p class="date">2025.09.30</p>
+     <p class="top-news__excerpt">
+              今年もRTMコンテスト2025の申込みを受付中です。
+
+計測自動制御学会(SICE)のシステムインテグレーション部門講演会 (SI2025) の特別セッションとして開催を予定しております。
+
+
+     </p>
+     <div class="news-more-wrap">
+      <a class="news-more" href="/my-jekyll-site/2025-09-30-rtmcontest2025-open">続きを読む</a>
+    </div>
+    </article>
+  
+    <article class="news-item">
+      <a href="/my-jekyll-site/2025-09-11-20250911_gpg_pubkey_ja">
+        
+          <div class="news-thumb">
+          <img src="/my-jekyll-site/assets/post_image/logo.png" alt="" />
+          </div>
+        
+        <h3>GPG公開鍵を更新しました</h3>
+      </a>
+     <p class="date">2025.09.11</p>
+     <p class="top-news__excerpt">
+              Linux の deb パッケージ署名に使用している GPG 公開鍵を更新しました。　
+
+
+     </p>
+     <div class="news-more-wrap">
+      <a class="news-more" href="/my-jekyll-site/2025-09-11-20250911_gpg_pubkey_ja">続きを読む</a>
+    </div>
+    </article>
+  
+    <article class="news-item">
+      <a href="/my-jekyll-site/2025-09-01-rt_summercamp2025_report">
+        
+          <div class="news-thumb">
+          <img src="/my-jekyll-site/assets/post_image/2025/sc2025_news.png" alt="" />
+          </div>
+        
+        <h3>RTミドルウエアサマーキャンプ2025が行われました</h3>
+      </a>
+     <p class="date">2025.09.01</p>
+     <p class="top-news__excerpt">
+              RTミドルウエアサマーキャンプ2024が、8月25日（月）～ 8月29日（金）　に行われました。
+
+
+  
+    '’日時:’’ 2024年８月25日（月）～ 8月29日（金）
+  
+  
+ ...
+     </p>
+     <div class="news-more-wrap">
+      <a class="news-more" href="/my-jekyll-site/2025-09-01-rt_summercamp2025_report">続きを読む</a>
+    </div>
+    </article>
+  
+    <article class="news-item">
+      <a href="/my-jekyll-site/2025-06-02-rt_summercamp2025_open">
+        
+          <div class="news-thumb">
+          <img src="/my-jekyll-site/assets/post_image/2025/summercamp2025_news.png" alt="" />
+          </div>
+        
+        <h3>サマーキャンプ2025の参加受付を開始しました</h3>
+      </a>
+     <p class="date">2025.09.01</p>
+     <p class="top-news__excerpt">
+              サマーキャンプ2025の参加受付を開始しました。
+
+RTミドルウエアサマーキャンプを8月25日から29日の5日間、産総研つくばセンター（およびオンラインのハイブリッド）にて開催いたします。
+
+
+...
+     </p>
+     <div class="news-more-wrap">
+      <a class="news-more" href="/my-jekyll-site/2025-06-02-rt_summercamp2025_open">続きを読む</a>
+    </div>
+    </article>
+  
+    <article class="news-item">
+      <a href="/my-jekyll-site/2025-09-06-robomech2025_report">
+        
+          <div class="news-thumb">
+          <img src="/my-jekyll-site/assets/post_image/2025/robomech2025_news_end.png" alt="" />
+          </div>
+        
+        <h3>ROBOMECH2025 RTミドルウェア講習会を開催しました</h3>
+      </a>
+     <p class="date">2025.06.09</p>
+     <p class="top-news__excerpt">
+              2025年6月4日(水) ROBOMECH2025 RTミドルウエア講習会を札幌コンベンションセンター にて開催いたしました。
+
+以下のページで、使用した講義資料やオンライン開催の様子を公開して...
+     </p>
+     <div class="news-more-wrap">
+      <a class="news-more" href="/my-jekyll-site/2025-09-06-robomech2025_report">続きを読む</a>
+    </div>
+    </article>
+  
+</div>
+<p><br /></p>
+<div class="news-more-wrap">
+  <a class="news-more" href="/my-jekyll-site/ja/news/">その他のnews</a>
+</div>
 <hr />
 
-<article>
-    <li>
-      <!--a href="/ja/2025-09-30-rtmcontest2025-open"-->
-      <a href="/ja/2025-09-30-rtmcontest2025-open">
-        <img src="assets/post_image/2025/2025-09-30_rtmcontest2025_open/contest2025_news.png" alt="hogee" height="50" />
-        <br />RTミドルウエアコンテスト2025の申込みを受付開始しました (September 30, 2025)
-      </a>
-      <a>
-        test_news0301
-        <br />RTMcontest2025
-      </a>
-    </li>
-  </article>
-<hr />
-
-<article>
-    <li>
-      <!--a href="/2025-09-11-20250911_gpg_pubkey_ja"-->
-      <a href="/2025-09-11-20250911_gpg_pubkey_ja">
-        <img src="assets/post_image/logo.png" alt="hogee" height="50" />
-        <br />GPG公開鍵を更新しました (September 11, 2025)
-      </a>
-      <a>
-        test_news0301
-        <br />update gpg_pubkey
-      </a>
-    </li>
-  </article>
-<hr />
-
-<h1 id="news-1">News…</h1>
-
-<p>inaba-test show list for post  auther=sharathdt</p>
-
+<!-- /section -->
 
       </article>
     </div>

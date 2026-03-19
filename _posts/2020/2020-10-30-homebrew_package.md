@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "MacOS用パッケージ群を公開しました"
-excerpt: "MacOS用パッケージ群公開"
+# excerpt: "MacOS用パッケージ群公開"
 date:   2020-10-30
 categories: release
+lang: ja
 
 #※使っていない変数
 #slug: 2021-12-11-rtmcontest2021

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "タイトル"
-excerpt: "概要"
+#excerpt: "概要"
 date:   2019-0-
 categories: event release award
 

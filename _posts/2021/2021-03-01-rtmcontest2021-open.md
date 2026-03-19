@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "RTMコンテスト2021の申込みを受付開始しました"
-excerpt: "RTMcontest2021"
+# excerpt: "RTMcontest2021"
 date:   2021-03-01
 categories: event
+lang: ja
 
 #※使っていない変数
 #slug: 2021-12-11-rtmcontest2021

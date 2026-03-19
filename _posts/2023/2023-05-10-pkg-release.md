@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "Ubuntu 22.04用のパッケージをリリースしました"
-excerpt: "Release pkg for Ubuntu 22.04"
+# excerpt: "Release pkg for Ubuntu 22.04"
 date:   2023-05-10
 categories: release
+lang: ja
 
 #※使っていない変数
 #slug: 2025-12-11-rtmcontest2025

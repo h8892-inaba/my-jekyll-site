@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "RTC-Library-FUKUSHIMAでOpenRTM用拡張モジュールがリリースされました"
-excerpt: "OpenRTM用拡張モジュールがリリース"
+# excerpt: "OpenRTM用拡張モジュールがリリース"
 date:   2020-10-08
 categories: release
+lang: ja
 
 #※使っていない変数
 #slug: 2021-12-11-rtmcontest2021

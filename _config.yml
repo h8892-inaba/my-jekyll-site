@@ -122,6 +122,8 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
+    #excerpt_separator: <!--more-->
+excerpt_separator: <!--break-->
 
 # Sass/SCSS
 sass:
@@ -189,3 +191,4 @@ defaults:
 #  min_level: 2
 #  max_level: 3
 #  list_class: toc-content
+#  excerpt_separator: "<!--more-->"

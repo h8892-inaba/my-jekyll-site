@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "GPG公開鍵を更新しました"
-excerpt: "update gpg_pubkey"
+# excerpt: "update gpg_pubkey"
 date:   2025-09-11
 categories: release
+lang: ja
 #categories: event release
 
 #※使っていない変数
@@ -26,6 +27,7 @@ toc: true
 Linux の deb パッケージ署名に使用している GPG 公開鍵を更新しました。　
 
 <!--break-->
+<!--more-->
 
 
 apt update 実行時に以下のような警告が表示される場合は、公開鍵を更新してください。

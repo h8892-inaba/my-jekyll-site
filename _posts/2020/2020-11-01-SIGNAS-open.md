@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "OpenRTM-aistを利用した搬送ロボットTHK株式会社「SIGNAS」受注開始"
-excerpt: "THK株式会社「SIGNAS」受注開始"
+# excerpt: "THK株式会社「SIGNAS」受注開始"
 date:   2020-11-01
 categories: release
+lang: ja
 
 #※使っていない変数
 #slug: 2021-12-11-rtmcontest2021

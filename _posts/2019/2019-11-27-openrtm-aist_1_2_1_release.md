@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "OpenRTM-aist-1.2.1 をリリースしました"
-excerpt: "OpenRTM-aist-1.2.1リリース"
+# excerpt: "OpenRTM-aist-1.2.1リリース"
 date:   2019-11-27
 categories: release
+lang: ja
 
 #※使っていない変数
 #slug: 2021-12-11-rtmcontest2021

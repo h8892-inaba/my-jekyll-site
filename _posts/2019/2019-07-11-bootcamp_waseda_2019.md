@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "早稲田大学でRTミドルウェア講習会が行われました"
-excerpt: "早稲田大学でRTミドルウェア講習会"
+# excerpt: "早稲田大学でRTミドルウェア講習会"
 date:   2019-07-11
 categories: event
+lang: ja
 
 #※使っていない変数
 #slug: 2021-12-11-rtmcontest2021

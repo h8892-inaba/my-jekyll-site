@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "Windows版 OpenRTM-aist 2.0.1-1 リリース"
-excerpt: "Release OpenRTM-aist 2.0.1-1"
+# excerpt: "Release OpenRTM-aist 2.0.1-1"
 date:   2023-04-20
 categories: release
+lang: ja
 
 #※使っていない変数
 #slug: 2025-12-11-rtmcontest2025
