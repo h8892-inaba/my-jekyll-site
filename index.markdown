@@ -35,7 +35,7 @@ feature_rows:
 ### [how to code]({{ site.baseurl }}/howto_code)
 ### [manual_md1]({{ site.baseurl }}/manual_md1)
 
-# News...
+# News
 
 <div class="news-grid">
   {% for post in site.posts limit: 6 %}
@@ -46,9 +46,14 @@ feature_rows:
           <img src="{{ post.image | relative_url }}" alt="">
           </div>
         {% endif %}
-        <h3>{{ post.title }}</h3>
       </a>
-     <p class="date">{{ post.date | date: "%Y.%m.%d" }}</p>
+     <span class="news-date-wrap">
+     <span class="news-date-day">{{ post.date | date: "%-d" }}</span>
+     <span class="news-date">{{ post.date | date: " %b , %Y" }}</span>
+     </span>
+     <h3 class="news-title">
+     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+     </h3>
      <p class="top-news__excerpt">
               {{ post.excerpt | strip_html | truncate: 100 }}
      </p>

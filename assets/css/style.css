@@ -131,7 +131,53 @@
 }
 
 .news-more:hover {
-  background-color: #c9541f;  /* hoverで少し暗く */
+/* background-color: #c9541f;  /* hoverで少し暗く */
+ background-color: #dc143c;  /* hoverで少し暗く */
+}
+
+.news-title a {
+  color: #dc6226;        /* ←好きな色に変更 */
+  text-decoration: none; /* 下線消す（任意） */
+}
+
+.news-title a:hover {
+  color: #db2525;        /* ホバー時の色 */
+  text-decoration: underline;
+}
+
+.news-date-wrap {
+  display: block;
+  /*display: inline-block;*/
+  border-bottom: 1px solid #ccc;  /* ←下線 */
+  /*padding-bottom: 2px;            /* ←文字との間隔調整 */
+  padding-top: 15px; 
+}
+
+.news-date-day {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2.2em;
+  height: 1.8em;
+
+  background-color: #aaaaaa;
+  color: #fff;
+
+  /*font-family: "MS P Gothic";*/
+  font-family: "Helvetica";
+  font-size: 20pt;
+  font-weight: bold;
+/*  border-radius: 6px;*/
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.news-date {
+  font-size: 15pt;
+  justify-content: center;
+  /*font-size: 0.85rem;*/
+  padding-right: 3px; 
+  padding-left: 3px; 
 }
 
 /*.news-more {
