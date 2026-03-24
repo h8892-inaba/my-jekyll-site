@@ -51,9 +51,9 @@ feature_rows:
      <span class="news-date-day">{{ post.date | date: "%-d" }}</span>
      <span class="news-date">{{ post.date | date: " %b , %Y" }}</span>
      </span>
-     <h3 class="news-title">
+     <h4 class="news-title">
      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-     </h3>
+     </h4>
      <p class="top-news__excerpt">
               {{ post.excerpt | strip_html | truncate: 100 }}
      </p>
