@@ -11,25 +11,58 @@ permalink: /
 title: "OpenRTM-aist"
 excerpt: "OpenRTM-aist | The power to connect"
 
-feature_rows:
-  - title: "OpenRTM-aistとは？"
-    excerpt: "ロボットシステムをコンポーネント思考開発するためのソフトウェアプラットフォームです。"
-    url: "/ja/doc/aboutopenrtm/rtmiddleware/"
-    img_path: "feature_rows/contest2025_news.png"
-    img_alt: "What's OpenRTM-aist?"
-  - title: "OpenRTM-aist 2.0.2 RELEASE"
-    excerpt: "OpenRTM-aist 2.0.2 をリリースしました"
-    url: "/ja/download/"
-    img_path: "feature_rows/202release_news.png"
-    img_alt: "RELEASE"
-  - title: "10分で始めよう！"
-    excerpt: "インストール、サンプルの起動・接続、RTSystemEditor・rtshellを使った基本的動作確認の入門ガイド"
-    url: "/ja/doc/installation/lets_start"
-    img_alt: "Only 10 min !?"
-    img_path: "feature_rows/10min_test.png"
+#feature_rows:
+#  - title: "OpenRTM-aistとは？"
+#    excerpt: "ロボットシステムをコンポーネント思考開発するためのソフトウェアプラットフォームです。"
+#    url: "/ja/doc/aboutopenrtm/rtmiddleware/"
+#    img_path: "feature_rows/contest2025_news.png"
+#    img_alt: "What's OpenRTM-aist?"
+#  - title: "OpenRTM-aist 2.0.2 RELEASE"
+#    excerpt: "OpenRTM-aist 2.0.2 をリリースしました"
+#    url: "/ja/download/"
+#    img_path: "feature_rows/202release_news.png"
+#    img_alt: "RELEASE"
+#  - title: "10分で始めよう！"
+#    excerpt: "インストール、サンプルの起動・接続、RTSystemEditor・rtshellを使った基本的動作確認の入門ガイド"
+#    url: "/ja/doc/installation/lets_start"
+#    img_alt: "Only 10 min !?"
+#    img_path: "feature_rows/10min_test.png"
 
+swiper_images:
+  - src: /assets/images/swiper/10min-startup_ja.png
+    link: /ja/doc/installation/lets_start
+  - src: /assets/images/swiper/202release.png
+    link: /ja/download
+  - src: /assets/images/swiper/contest2025_2.png
+    link: /ja/content/content/rtmcontest2025/
+  - src: /assets/images/swiper/what_is_openrtm_ja2.jpg
+    link: /ja/doc/aboutopenrtm/rtmiddleware
 ---
 
+<hr>
+{% include top-swiper.html %}
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  new Swiper('.top-swiper', {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+});
+</script>
+<hr>
 
 
 ### [how to code]({{ site.baseurl }}/howto_code)

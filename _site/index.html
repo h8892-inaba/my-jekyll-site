@@ -490,17 +490,12 @@
 <!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
 <!-- v1.8 -->
 
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
 
 <div class="home-page">
-  <!-- home page header -->
-  <!-- 
-  <section class="home-page-header">
-    <div class="container text-center">
-      <h1 class="animated fadeInDownBig">OpenRTM-aist</h1>
-      <p class="lead">OpenRTM-aist | The power to connect</p></div>
-	  </section>
-      <a>hoge------0000</a>
-  <!-- home page features -->
   <section class="home-page-features">
     <div class="container">
 	    <br>
@@ -538,89 +533,117 @@
 
 
       
-      <div class="row">
-        
-        <!-- TODO use animate.css to animate on hover -->
-        <div class="col-md-4 p-0">
-          <div class="card border-0 m-3">
-            
-
-            
-
-            <div class="shadow-sm rounded-top">
-              
-                <img class="img-fluid rounded-top" src="/my-jekyll-site/assets/images/feature_rows/contest2025_news.png" alt="What's OpenRTM-aist?">
-              
-            </div>
-
-            <div class="card-body bg-light border border-light border-top-0 rounded-bottom">
-              <a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">
-                <h2 class="m-0">
-                  OpenRTM...
-                </h2>
-              </a>
-              <p class="card-text">ロボットシステムをコンポーネント思考開発するためのソフトウェアプラットフォームです。</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- TODO use animate.css to animate on hover -->
-        <div class="col-md-4 p-0">
-          <div class="card border-0 m-3">
-            
-
-            
-
-            <div class="shadow-sm rounded-top">
-              
-                <img class="img-fluid rounded-top" src="/my-jekyll-site/assets/images/feature_rows/202release_news.png" alt="RELEASE">
-              
-            </div>
-
-            <div class="card-body bg-light border border-light border-top-0 rounded-bottom">
-              <a href="/my-jekyll-site/ja/download/">
-                <h2 class="m-0">
-                  OpenRTM...
-                </h2>
-              </a>
-              <p class="card-text">OpenRTM-aist 2.0.2 をリリースしました</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- TODO use animate.css to animate on hover -->
-        <div class="col-md-4 p-0">
-          <div class="card border-0 m-3">
-            
-
-            
-
-            <div class="shadow-sm rounded-top">
-              
-                <img class="img-fluid rounded-top" src="/my-jekyll-site/assets/images/feature_rows/10min_test.png" alt="Only 10 min !?">
-              
-            </div>
-
-            <div class="card-body bg-light border border-light border-top-0 rounded-bottom">
-              <a href="/my-jekyll-site/ja/doc/installation/lets_start">
-                <h2 class="m-0">
-                  10分で始めよう！
-                </h2>
-              </a>
-              <p class="card-text">インストール、サンプルの起動・接続、RTSystemEditor・rtshellを使った基本的動作確認の入門ガイド</p>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-      
     </div>
   </section>
   <!-- home page article -->
   <section class="home-page-article">
     <div class="container">
       <article>
-        <h3 id="how-to-code"><a href="/my-jekyll-site/howto_code">how to code</a></h3>
+        <hr />
+
+<!-- div class="top-swiper swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="/my-jekyll-site/assets/images/top/slide1.jpg" alt="スライド1">
+    </div>
+    <div class="swiper-slide">
+      <img src="/my-jekyll-site/assets/images/top/slide2.jpg" alt="スライド2">
+    </div>
+    <div class="swiper-slide">
+      <img src="/my-jekyll-site/assets/images/top/slide3.jpg" alt="スライド3">
+    </div>
+  </div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
+</div -->
+
+<div class="top-swiper swiper">
+  <div class="swiper-wrapper">
+	  
+	    <div class="swiper-slide">
+	      
+	        <a href="/my-jekyll-site/ja/doc/installation/lets_start">
+	          <img src="/my-jekyll-site/assets/images/swiper/10min-startup_ja.png" alt="" />
+	        </a>
+	      
+	    </div>
+	  
+	    <div class="swiper-slide">
+	      
+	        <a href="/my-jekyll-site/ja/download">
+	          <img src="/my-jekyll-site/assets/images/swiper/202release.png" alt="" />
+	        </a>
+	      
+	    </div>
+	  
+	    <div class="swiper-slide">
+	      
+	        <a href="/my-jekyll-site/ja/content/content/rtmcontest2025/">
+	          <img src="/my-jekyll-site/assets/images/swiper/contest2025_2.png" alt="" />
+	        </a>
+	      
+	    </div>
+	  
+	    <div class="swiper-slide">
+	      
+	        <a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware">
+	          <img src="/my-jekyll-site/assets/images/swiper/what_is_openrtm_ja2.jpg" alt="" />
+	        </a>
+	      
+	    </div>
+	  
+<!--    
+      <div class="swiper-slide">
+        <img src="/my-jekyll-site/%7B%22src%22=%3E%22/assets/images/swiper/10min-startup_ja.png%22,%20%22link%22=%3E%22/ja/doc/installation/lets_start%22%7D" alt="スライド1">
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="/my-jekyll-site/%7B%22src%22=%3E%22/assets/images/swiper/202release.png%22,%20%22link%22=%3E%22/ja/download%22%7D" alt="スライド2">
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="/my-jekyll-site/%7B%22src%22=%3E%22/assets/images/swiper/contest2025_2.png%22,%20%22link%22=%3E%22/ja/content/content/rtmcontest2025/%22%7D" alt="スライド3">
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="/my-jekyll-site/%7B%22src%22=%3E%22/assets/images/swiper/what_is_openrtm_ja2.jpg%22,%20%22link%22=%3E%22/ja/doc/aboutopenrtm/rtmiddleware%22%7D" alt="スライド4">
+      </div>
+    
+-->
+  </div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  new Swiper('.top-swiper', {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+});
+</script>
+
+<hr />
+
+<h3 id="how-to-code"><a href="/my-jekyll-site/howto_code">how to code</a></h3>
 <h3 id="manual_md1"><a href="/my-jekyll-site/manual_md1">manual_md1</a></h3>
 
 <h1 id="news">News</h1>
