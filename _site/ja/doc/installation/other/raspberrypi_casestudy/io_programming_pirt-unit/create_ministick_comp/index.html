@@ -493,41 +493,592 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/create_ministick_comp/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#ministickコンポーネントの作成">Ministickコンポーネントの作成</a></li>
-  <li><a href="#ministick-sensorとpirt-unitの接続">Ministick sensorとPiRT-Unitの接続</a>
-    <ul>
-      <li><a href="#サンプルプログラム">サンプルプログラム</a></li>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#ministickコンポーネントの作成">Ministickコンポーネントの作成</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ministick-sensorとpirt-unitの接続">Ministick sensorとPiRT-Unitの接続</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#サンプルプログラム">サンプルプログラム</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#ジョイスティックコンポーネントの仕様">ジョイスティックコンポーネントの仕様</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#実装">実装</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#spiモジュールの初期化">SPIモジュールの初期化</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#get_adc-関数の追加">get_adc 関数の追加</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#x-yの位置車輪速度変換関数">X-Yの位置→車輪速度変換関数</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#車輪速度速度ベクトル変換関数">車輪速度→速度ベクトル変換関数</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#キャリブレーション">キャリブレーション</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#onexecuteの実装">onExecuteの実装</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#テスト">テスト</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-pythonに付属のサンプルと接続">OpenRTM-aist-Pythonに付属のサンプルと接続</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#kobukiと接続">Kobukiと接続</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#トラブルシューティング">トラブルシューティング</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#ministickがニュートラル状態でもロボットが動く">Ministickがニュートラル状態でもロボットが動く</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#permission-deniedエラー">Permission deniedエラー</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#ジョイスティックコンポーネントの仕様">ジョイスティックコンポーネントの仕様</a></li>
-  <li><a href="#実装">実装</a>
-    <ul>
-      <li><a href="#spiモジュールの初期化">SPIモジュールの初期化</a></li>
-      <li><a href="#get_adc-関数の追加">get_adc 関数の追加</a></li>
-      <li><a href="#x-yの位置車輪速度変換関数">X-Yの位置→車輪速度変換関数</a></li>
-      <li><a href="#車輪速度速度ベクトル変換関数">車輪速度→速度ベクトル変換関数</a></li>
-      <li><a href="#キャリブレーション">キャリブレーション</a></li>
-      <li><a href="#onexecuteの実装">onExecuteの実装</a></li>
-    </ul>
-  </li>
-  <li><a href="#テスト">テスト</a>
-    <ul>
-      <li><a href="#openrtm-aist-pythonに付属のサンプルと接続">OpenRTM-aist-Pythonに付属のサンプルと接続</a></li>
-      <li><a href="#kobukiと接続">Kobukiと接続</a></li>
-    </ul>
-  </li>
-  <li><a href="#トラブルシューティング">トラブルシューティング</a>
-    <ul>
-      <li><a href="#ministickがニュートラル状態でもロボットが動く">Ministickがニュートラル状態でもロボットが動く</a></li>
-      <li><a href="#permission-deniedエラー">Permission deniedエラー</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: Ministickコンポーネントの作成 -->

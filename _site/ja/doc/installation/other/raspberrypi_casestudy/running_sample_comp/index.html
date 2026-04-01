@@ -493,31 +493,412 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/other/raspberrypi_casestudy/running_sample_comp/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#raspberry-pi-の-giop">Raspberry Pi の GIOP</a></li>
-  <li><a href="#ブレッドボード配線例">ブレッドボード配線例</a>
-    <ul>
-      <li><a href="#digitalin-rtc-用配線例">DigitalIn-RTC 用配線例</a></li>
-      <li><a href="#digitalout-rtc-用配線例">DigitalOut-RTC 用配線例</a></li>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#raspberry-pi-の-giop">Raspberry Pi の GIOP</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ブレッドボード配線例">ブレッドボード配線例</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#digitalin-rtc-用配線例">DigitalIn-RTC 用配線例</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#digitalout-rtc-用配線例">DigitalOut-RTC 用配線例</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#コンポーネントのコンパイル">コンポーネントのコンパイル</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#digitalin-rtc-のコンパイル">DigitalIn-RTC のコンパイル</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#digitalout-rtc-のコンパイル">DigitalOut-RTC のコンパイル</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#コンポーネントの実行">コンポーネントの実行</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#naming-serverの設定について">naming serverの設定について</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#raspberry-pi-uart通信コンポーネントの作成について">Raspberry pi UART通信コンポーネントの作成について</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#コンポーネントのコンパイル">コンポーネントのコンパイル</a>
-    <ul>
-      <li><a href="#digitalin-rtc-のコンパイル">DigitalIn-RTC のコンパイル</a></li>
-      <li><a href="#digitalout-rtc-のコンパイル">DigitalOut-RTC のコンパイル</a></li>
-    </ul>
-  </li>
-  <li><a href="#コンポーネントの実行">コンポーネントの実行</a>
-    <ul>
-      <li><a href="#naming-serverの設定について">naming serverの設定について</a></li>
-      <li><a href="#raspberry-pi-uart通信コンポーネントの作成について">Raspberry pi UART通信コンポーネントの作成について</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: サンプルコンポーネントの実行 -->

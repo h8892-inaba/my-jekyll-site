@@ -493,55 +493,729 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/casestudy/rtc_development/rtc_development_java/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#概要">概要</a>
-    <ul>
-      <li><a href="#openrtm-aist-java-概要">OpenRTM-aist-Java 概要</a></li>
-      <li><a href="#対象">対象</a></li>
-      <li><a href="#動作環境">動作環境</a></li>
-    </ul>
-  </li>
-  <li><a href="#java版rtコンポーネントの開発について">Java版RTコンポーネントの開発について</a>
-    <ul>
-      <li><a href="#gui-を用いた場合の-rtコンポーネントの開発手順">GUI を用いた場合の RTコンポーネントの開発手順</a>
-        <ul>
-          <li><a href="#rtctemplate-と-jdt-の連携">RtcTemplate と JDT の連携</a></li>
-          <li><a href="#rtctemplate-を利用したスケルトンコードの生成">RtcTemplate を利用したスケルトン・コードの生成</a></li>
-          <li><a href="#eclipseを用いたビルド">Eclipseを用いたビルド</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#openrtm-aist-java-概要">OpenRTM-aist-Java 概要</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#対象">対象</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#動作環境">動作環境</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#gui-を用いた場合の-rtコンポーネントの開発手順">GUI を用いた場合の RTコンポーネントの開発手順</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#rtctemplate-と-jdt-の連携">RtcTemplate と JDT の連携</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtctemplate-を利用したスケルトンコードの生成">RtcTemplate を利用したスケルトン・コードの生成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#eclipseを用いたビルド">Eclipseを用いたビルド</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#作成した-rtコンポーネントの実行">作成した RTコンポーネントの実行</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#java版-rtコンポーネントの構成">Java版 RTコンポーネントの構成</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#java版-rtコンポーネントと-c版コンポーネントの相違点">Java版 RTコンポーネントと C++版コンポーネントの相違点</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#データポート">データポート</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サービスポート">サービスポート</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンフィギュレーション">コンフィギュレーション</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#java版-rtコンポーネントの起動時の振る舞い">Java版 RTコンポーネントの起動時の振る舞い</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#idl用データ型と-java言語データ型の対応関係">IDL用データ型と Java言語データ型の対応関係</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#tips">Tips</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#eclipse-の自動起動の設定方法について">Eclipse の自動起動の設定方法について</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#謝辞">謝辞</h2</a>
+        
       </li>
-      <li><a href="#作成した-rtコンポーネントの実行">作成した RTコンポーネントの実行</a></li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#java版-rtコンポーネントの詳細">Java版 RTコンポーネントの詳細</a>
-    <ul>
-      <li><a href="#java版-rtコンポーネントの構成">Java版 RTコンポーネントの構成</a></li>
-      <li><a href="#java版-rtコンポーネントと-c版コンポーネントの相違点">Java版 RTコンポーネントと C++版コンポーネントの相違点</a>
-        <ul>
-          <li><a href="#データポート">データポート</a></li>
-          <li><a href="#サービスポート">サービスポート</a></li>
-          <li><a href="#コンフィギュレーション">コンフィギュレーション</a></li>
-        </ul>
-      </li>
-      <li><a href="#java版-rtコンポーネントの起動時の振る舞い">Java版 RTコンポーネントの起動時の振る舞い</a></li>
-      <li><a href="#idl用データ型と-java言語データ型の対応関係">IDL用データ型と Java言語データ型の対応関係</a></li>
-    </ul>
-  </li>
-  <li><a href="#その他">その他</a>
-    <ul>
-      <li><a href="#tips">Tips</a>
-        <ul>
-          <li><a href="#eclipse-の自動起動の設定方法について">Eclipse の自動起動の設定方法について</a></li>
-        </ul>
-      </li>
-      <li><a href="#謝辞">謝辞</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<p>init

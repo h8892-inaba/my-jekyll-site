@@ -493,49 +493,620 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/casestudy/rtc_development/rtc_development_vcpp/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#データポートのあるコンポーネント">データポートのあるコンポーネント</a>
-    <ul>
-      <li><a href="#コンポーネントの概要">コンポーネントの概要</a></li>
-      <li><a href="#mrcconvertor-の雛型を生成">MRCConvertor の雛型を生成</a>
-        <ul>
-          <li><a href="#作業用フォルダーの作成">作業用フォルダーの作成</a></li>
-          <li><a href="#cui版-rtc-template-編-genbat">CUI版 rtc-template 編 (gen.bat)</a></li>
-          <li><a href="#rtc-template-genbat-の実行">rtc-template (gen.bat) の実行</a></li>
-          <li><a href="#eclipse版-rtctemplate-編">Eclipse版 RtcTemplate 編</a></li>
-          <li><a href="#copypropsbat-の実行">copyprops.bat の実行</a></li>
-        </ul>
-      </li>
-      <li><a href="#mrcconvertor-の実装">MRCConvertor の実装</a>
-        <ul>
-          <li><a href="#visual-studio-の起動">Visual Studio の起動</a></li>
-          <li><a href="#ヘッダファイルの編集">ヘッダファイルの編集</a>
-            <ul>
-              <li><a href="#ヘッダファイルのインクルード">ヘッダファイルのインクルード</a></li>
-            </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#コンポーネントの概要">コンポーネントの概要</h2</a>
+            
           </li>
-          <li><a href="#ソースファイルの編集">ソースファイルの編集</a>
-            <ul>
-              <li><a href="#onexecute-の実装">onExecute() の実装</a></li>
-            </ul>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#mrcconvertor-の雛型を生成">MRCConvertor の雛型を生成</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#作業用フォルダーの作成">作業用フォルダーの作成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#cui版-rtc-template-編-genbat">CUI版 rtc-template 編 (gen.bat)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtc-template-genbat-の実行">rtc-template (gen.bat) の実行</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#eclipse版-rtctemplate-編">Eclipse版 RtcTemplate 編</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#copypropsbat-の実行">copyprops.bat の実行</h3</a>
+</li>
+          </ul>
+              </details>
+            
           </li>
-        </ul>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#mrcconvertor-の実装">MRCConvertor の実装</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#visual-studio-の起動">Visual Studio の起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ヘッダファイルの編集">ヘッダファイルの編集</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ソースファイルの編集">ソースファイルの編集</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#ビルド">ビルド</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#rtcconf-の作成">rtc.conf の作成</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#実行">実行</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#ネームサーバーの起動">ネームサーバーの起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#mrcconvertorcompexe-の実行">MRCConvertorComp.exe の実行</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
-      <li><a href="#ビルド">ビルド</a></li>
-      <li><a href="#rtcconf-の作成">rtc.conf の作成</a></li>
-      <li><a href="#実行">実行</a>
-        <ul>
-          <li><a href="#ネームサーバーの起動">ネームサーバーの起動</a></li>
-          <li><a href="#mrcconvertorcompexe-の実行">MRCConvertorComp.exe の実行</a></li>
-        </ul>
-      </li>
+    
+
+  
     </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: RTコンポーネント作成(VC++編) -->

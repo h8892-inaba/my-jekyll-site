@@ -493,28 +493,467 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/install_1_2/python_1_2/ubuntu_python_1_2/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#一括インストールスクリプト">一括インストールスクリプト</a></li>
-  <li><a href="#openrtpのインストール">OpenRTPのインストール</a></li>
-  <li><a href="#jdk8のインストール">JDK8のインストール</a></li>
-  <li><a href="#rtshellのインストール">rtshellのインストール</a></li>
-  <li><a href="#インストールの確認">インストールの確認</a></li>
-  <li><a href="#パッケージの詳細">パッケージの詳細</a>
-    <ul>
-      <li><a href="#openrtm-aist">openrtm-aist</a></li>
-      <li><a href="#openrtm-aist-dev">openrtm-aist-dev</a></li>
-      <li><a href="#openrtm-aist-python3">openrtm-aist-python3</a></li>
-      <li><a href="#openrtm-aist-python3-example">openrtm-aist-python3-example</a></li>
-      <li><a href="#openrtm-aist-python3-doc">openrtm-aist-python3-doc</a></li>
-      <li><a href="#openrtp">openrtp</a></li>
-      <li><a href="#rtshell">rtshell</a></li>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#一括インストールスクリプト">一括インストールスクリプト</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#openrtpのインストール">OpenRTPのインストール</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#jdk8のインストール">JDK8のインストール</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#rtshellのインストール">rtshellのインストール</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#インストールの確認">インストールの確認</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#パッケージの詳細">パッケージの詳細</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist">openrtm-aist</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-dev">openrtm-aist-dev</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-python3">openrtm-aist-python3</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-python3-example">openrtm-aist-python3-example</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-python3-doc">openrtm-aist-python3-doc</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtp">openrtp</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtshell">rtshell</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
     </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: Ubuntu/Debianへのインストール -->

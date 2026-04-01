@@ -493,55 +493,638 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/install_1_1/cpp_1_1/install_qnx_1_1/qnx_build_proc_1_2/openrtm_cpp_cmake_run/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#windowsomniorb">Windows+omniORB</a>
-    <ul>
-      <li><a href="#openrtm-aistのビルドインストール">OpenRTM-aistのビルド、インストール</a></li>
-      <li><a href="#openrtm-aist-pythonのビルドインストール">OpenRTM-aist-Pythonのビルド、インストール</a></li>
-      <li><a href="#rtshellrtctreertsprofileのビルドインストール">rtshell、rtctree、rtsprofileのビルド、インストール</a></li>
-    </ul>
-  </li>
-  <li><a href="#windowstao">Windows+TAO</a>
-    <ul>
-      <li><a href="#openrtm-aistのビルドインストール-1">OpenRTM-aistのビルド、インストール</a></li>
-    </ul>
-  </li>
-  <li><a href="#windows共通">Windows共通</a>
-    <ul>
-      <li><a href="#環境変数の設定">環境変数の設定</a></li>
-      <li><a href="#rtcのビルド">RTCのビルド</a>
-        <ul>
-          <li><a href="#環境変数設定スクリプト">環境変数設定スクリプト</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#windowsomniorb">Windows+omniORB</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aistのビルドインストール">OpenRTM-aistのビルド、インストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-pythonのビルドインストール">OpenRTM-aist-Pythonのビルド、インストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtshellrtctreertsprofileのビルドインストール">rtshell、rtctree、rtsprofileのビルド、インストール</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#windowstao">Windows+TAO</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aistのビルドインストール-1">OpenRTM-aistのビルド、インストール</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#windows共通">Windows共通</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#環境変数の設定">環境変数の設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtcのビルド">RTCのビルド</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ubuntuomniorb">Ubuntu+omniORB</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-pythonのビルドインストール-1">OpenRTM-aist-Pythonのビルド、インストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtshellrtctreertsprofileのビルドインストール-1">rtshell、rtctree、rtsprofileのビルド、インストール</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ubuntutao">Ubuntu+TAO</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aistのビルドインストール-2">OpenRTM-aistのビルド、インストール</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#ubuntu共通">Ubuntu共通</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#環境変数の設定-1">環境変数の設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtcのビルド-1">RTCのビルド</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#ubuntuomniorb">Ubuntu+omniORB</a>
-    <ul>
-      <li><a href="#openrtm-aist-pythonのビルドインストール-1">OpenRTM-aist-Pythonのビルド、インストール</a></li>
-      <li><a href="#rtshellrtctreertsprofileのビルドインストール-1">rtshell、rtctree、rtsprofileのビルド、インストール</a></li>
-    </ul>
-  </li>
-  <li><a href="#ubuntutao">Ubuntu+TAO</a>
-    <ul>
-      <li><a href="#openrtm-aistのビルドインストール-2">OpenRTM-aistのビルド、インストール</a></li>
-    </ul>
-  </li>
-  <li><a href="#ubuntu共通">Ubuntu共通</a>
-    <ul>
-      <li><a href="#環境変数の設定-1">環境変数の設定</a>
-        <ul>
-          <li><a href="#環境変数設定スクリプト-1">環境変数設定スクリプト</a></li>
-        </ul>
-      </li>
-      <li><a href="#rtcのビルド-1">RTCのビルド</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: OpenRTM-aistのビルド、動作確認手順 -->

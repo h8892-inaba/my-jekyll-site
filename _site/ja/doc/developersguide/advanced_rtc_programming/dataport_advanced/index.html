@@ -493,43 +493,521 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/advanced_rtc_programming/dataport_advanced/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#データ型の利用">データ型の利用</a>
-    <ul>
-      <li><a href="#独自データ型idlファイルの作成">独自データ型IDLファイルの作成</a></li>
-      <li><a href="#rtc-builderでプロジェクト作成">RTC Builderでプロジェクト作成</a></li>
-      <li><a href="#データポートの作成">データポートの作成</a></li>
-    </ul>
-  </li>
-  <li><a href="#データポートコネクタのコールバックの利用">データポート、コネクタのコールバックの利用</a>
-    <ul>
-      <li><a href="#inport-のコールバック">InPort のコールバック</a></li>
-      <li><a href="#outport-のコールバック">OutPort のコールバック</a></li>
-      <li><a href="#コネクタバッファのコールバック">コネクタ・バッファのコールバック</a>
-        <ul>
-          <li><a href="#コネクタ">コネクタ</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#データ型の利用">データ型の利用</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#独自データ型idlファイルの作成">独自データ型IDLファイルの作成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtc-builderでプロジェクト作成">RTC Builderでプロジェクト作成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#データポートの作成">データポートの作成</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#データポートコネクタのコールバックの利用">データポート、コネクタのコールバックの利用</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#inport-のコールバック">InPort のコールバック</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#outport-のコールバック">OutPort のコールバック</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コネクタバッファのコールバック">コネクタ・バッファのコールバック</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ポートのコールバック">ポートのコールバック</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#独自データポートインターフェースの作成">独自データポートインターフェースの作成</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#プロバイダクラス-inporttestprovider">プロバイダクラス (InPortTestProvider)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンシューマクラス-inporttestconsumer">コンシューマクラス (InPortTestConsumer)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#プロバイダコンシューマ登録関数-inporttestinterfaceinit">プロバイダ、コンシューマ登録関数 (InPortTestInterfaceInit)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#確認手順">確認手順</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
-      <li><a href="#ポートのコールバック">ポートのコールバック</a>
-        <ul>
-          <li><a href="#ステータス">ステータス</a></li>
-        </ul>
-      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#独自データポートインターフェースの作成">独自データポートインターフェースの作成</a>
-    <ul>
-      <li><a href="#プロバイダクラス-inporttestprovider">プロバイダクラス (InPortTestProvider)</a></li>
-      <li><a href="#コンシューマクラス-inporttestconsumer">コンシューマクラス (InPortTestConsumer)</a></li>
-      <li><a href="#プロバイダコンシューマ登録関数-inporttestinterfaceinit">プロバイダ、コンシューマ登録関数 (InPortTestInterfaceInit)</a></li>
-      <li><a href="#確認手順">確認手順</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: データポート (応用編) -->

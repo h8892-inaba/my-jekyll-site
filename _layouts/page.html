@@ -9,11 +9,8 @@ layout: default
    <a href="{{ repo_url }}/{{ page.path }}" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
-
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          {% include toc.html html=content %}
-        </div>
+  <!-- add Content on page by inaba-->
+          {% include toc_page.html  content=content %}
   <article>
 	<div>
 		{{ content }}

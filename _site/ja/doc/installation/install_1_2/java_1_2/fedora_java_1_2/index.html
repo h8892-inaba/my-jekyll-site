@@ -493,33 +493,514 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/install_1_2/java_1_2/fedora_java_1_2/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#一括インストールスクリプト">一括インストール・スクリプト</a></li>
-  <li><a href="#openrtpのインストール">OpenRTPのインストール</a></li>
-  <li><a href="#yumを使う方法">yumを使う方法</a>
-    <ul>
-      <li><a href="#etcyumreposdopenrtmrepoの作成">/etc/yum.repos.d/openrtm.repoの作成</a></li>
-      <li><a href="#yumによるインストール">yumによるインストール</a></li>
-      <li><a href="#環境変数の設定">環境変数の設定</a></li>
-      <li><a href="#jdk8について">JDK8について</a></li>
-      <li><a href="#インストールの確認">インストールの確認</a></li>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#一括インストールスクリプト">一括インストール・スクリプト</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#openrtpのインストール">OpenRTPのインストール</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#yumを使う方法">yumを使う方法</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#etcyumreposdopenrtmrepoの作成">/etc/yum.repos.d/openrtm.repoの作成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#yumによるインストール">yumによるインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#環境変数の設定">環境変数の設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#jdk8について">JDK8について</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#インストールの確認">インストールの確認</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#パッケージの詳細">パッケージの詳細</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist">openrtm-aist</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-devel">OpenRTM-aist-devel</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-java">OpenRTM-aist-Java</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-java-example">OpenRTM-aist-Java-example</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-java-doc">OpenRTM-aist-Java-doc</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtp">openrtp</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#パッケージの詳細">パッケージの詳細</a>
-    <ul>
-      <li><a href="#openrtm-aist">openrtm-aist</a></li>
-      <li><a href="#openrtm-aist-devel">OpenRTM-aist-devel</a></li>
-      <li><a href="#openrtm-aist-java">OpenRTM-aist-Java</a></li>
-      <li><a href="#openrtm-aist-java-example">OpenRTM-aist-Java-example</a></li>
-      <li><a href="#openrtm-aist-java-doc">OpenRTM-aist-Java-doc</a></li>
-      <li><a href="#openrtp">openrtp</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: Fedoraへのインストール -->

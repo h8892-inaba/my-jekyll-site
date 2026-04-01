@@ -493,41 +493,588 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_opencv_raspberrypimouse/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#はじめに">はじめに</a></li>
-  <li><a href="#作成するrtコンポーネント">作成するRTコンポーネント</a></li>
-  <li><a href="#houghcircles関数について">HoughCircles関数について</a></li>
-  <li><a href="#rtcの概要">RTCの概要</a></li>
-  <li><a href="#rtcの作成">RTCの作成</a>
-    <ul>
-      <li><a href="#rtcbuilderによるひな型コード生成">RTCBuilderによるひな型コード生成</a></li>
-    </ul>
-  </li>
-  <li><a href="#rtccameraimage型について">RTC::CameraImage型について</a></li>
-  <li><a href="#ファイル編集">ファイル編集</a>
-    <ul>
-      <li><a href="#srccmakeliststxtの編集">src/CMakeLists.txtの編集</a></li>
-      <li><a href="#includecircletrackingcircletrackingh">include/CircleTracking/CircleTracking.h</a></li>
-      <li><a href="#srccircletrackingcpp">src/CircleTracking.cpp</a></li>
-    </ul>
-  </li>
-  <li><a href="#rtシステムの構築動作確認">RTシステムの構築、動作確認</a>
-    <ul>
-      <li><a href="#事前準備">事前準備</a></li>
-      <li><a href="#動作確認">動作確認</a>
-        <ul>
-          <li><a href="#rtcの起動">RTCの起動</a></li>
-          <li><a href="#rtシステムの構築">RTシステムの構築</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#はじめに">はじめに</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#作成するrtコンポーネント">作成するRTコンポーネント</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#houghcircles関数について">HoughCircles関数について</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#rtcの概要">RTCの概要</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#rtcの作成">RTCの作成</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#rtcbuilderによるひな型コード生成">RTCBuilderによるひな型コード生成</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#rtccameraimage型について">RTC::CameraImage型について</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ファイル編集">ファイル編集</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#srccmakeliststxtの編集">src/CMakeLists.txtの編集</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#includecircletrackingcircletrackingh">include/CircleTracking/CircleTracking.h</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#srccircletrackingcpp">src/CircleTracking.cpp</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#rtシステムの構築動作確認">RTシステムの構築、動作確認</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#事前準備">事前準備</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#動作確認">動作確認</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#raspberry-piに接続したusbカメラを使う">Raspberry Piに接続したUSBカメラを使う</h2</a>
+        
       </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#raspberry-piに接続したusbカメラを使う">Raspberry Piに接続したUSBカメラを使う</a></li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- チュートリアル(画像処理実習) -->

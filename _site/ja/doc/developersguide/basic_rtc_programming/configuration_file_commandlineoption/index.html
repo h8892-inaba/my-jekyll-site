@@ -493,39 +493,446 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/basic_rtc_programming/configuration_file_commandlineoption/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#設定ファイル---rtcconf-">設定ファイル  ( rtc.conf )</a>
-    <ul>
-      <li><a href="#rtcconf-の配置場所">rtc.conf の配置場所</a>
-        <ul>
-          <li><a href="#linuxunixの場合">Linux/Unixの場合</a></li>
-          <li><a href="#windowsの場合">Windowsの場合</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#設定ファイル---rtcconf-">設定ファイル  ( rtc.conf )</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#rtcconf-の配置場所">rtc.conf の配置場所</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#主な設定項目">主な設定項目</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#コマンドラインオプション">コマンドラインオプション</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#-a-マネージャサービスoff">-a: マネージャサービスOFF</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#-f-設定ファイル指定">-f: 設定ファイル指定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#-o-オプション指定">-o: オプション指定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#-p-ポート番号指定">-p: ポート番号指定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#-d-マスターマネージャ指定">-d: マスターマネージャ指定</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
-      <li><a href="#主な設定項目">主な設定項目</a>
-        <ul>
-          <li><a href="#ネームサービスに関する設定">ネームサービスに関する設定</a></li>
-          <li><a href="#ログ出力に関する設定">ログ出力に関する設定</a></li>
-          <li><a href="#実行コンテキストに関する設定">実行コンテキストに関する設定</a></li>
-          <li><a href="#その他の設定">その他の設定</a></li>
-        </ul>
-      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#コマンドラインオプション">コマンドラインオプション</a>
-    <ul>
-      <li><a href="#-a-マネージャサービスoff">-a: マネージャサービスOFF</a></li>
-      <li><a href="#-f-設定ファイル指定">-f: 設定ファイル指定</a></li>
-      <li><a href="#-o-オプション指定">-o: オプション指定</a></li>
-      <li><a href="#-p-ポート番号指定">-p: ポート番号指定</a></li>
-      <li><a href="#-d-マスターマネージャ指定">-d: マスターマネージャ指定</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: 設定ファイルとコマンドラインオプション (基礎編) -->

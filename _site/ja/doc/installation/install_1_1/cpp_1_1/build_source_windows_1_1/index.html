@@ -493,36 +493,424 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/install_1_1/cpp_1_1/build_source_windows_1_1/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#windows-用ソースコード">Windows 用ソースコード</a>
-    <ul>
-      <li><a href="#ソースコードの構成">ソースコードの構成</a></li>
-    </ul>
-  </li>
-  <li><a href="#ビルド環境">ビルド環境</a>
-    <ul>
-      <li><a href="#visual-cvisual-studio">Visual C++/Visual Studio</a></li>
-      <li><a href="#omniorb">omniORB</a>
-        <ul>
-          <li><a href="#環境変数-omni_root">環境変数: OMNI_ROOT</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#windows-用ソースコード">Windows 用ソースコード</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#ソースコードの構成">ソースコードの構成</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ビルド環境">ビルド環境</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#visual-cvisual-studio">Visual C++/Visual Studio</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#omniorb">omniORB</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#wix">WiX</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#python">Python</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ソースパッケージの取得">ソースパッケージの取得</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#バッチファイルの修正">バッチファイルの修正</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#ビルド">ビルド</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#インストール">インストール</h2</a>
+        
       </li>
-      <li><a href="#wix">WiX</a></li>
-      <li><a href="#python">Python</a></li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#ソースパッケージの取得">ソースパッケージの取得</a>
-    <ul>
-      <li><a href="#バッチファイルの修正">バッチファイルの修正</a></li>
-    </ul>
-  </li>
-  <li><a href="#ビルド">ビルド</a></li>
-  <li><a href="#インストール">インストール</a></li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: ソースからのビルド (Windows編) -->

@@ -493,25 +493,405 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/faq/faq_rtc_creation/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#サービスポートを持つ-rtc-を-eclipse-でビルドするとエラーが表示される">サービスポートを持つ RTC を Eclipse でビルドするとエラーが表示される</a></li>
-  <li><a href="#rtc-がシステムエディタ上に表示されない">RTC がシステムエディタ上に表示されない</a></li>
-  <li><a href="#データポートで約2mb以上のデータを送りたい">データポートで約2MB以上のデータを送りたい</a></li>
-  <li><a href="#raspberry-pi-との接続時にipアドレスが割り当てられない">Raspberry Pi との接続時に、IPアドレスが割り当てられない</a></li>
-  <li><a href="#raspberry-pi-上のデータポートと-pc上のデータポートを接続すると接続エラーになる">Raspberry Pi 上のデータポートと PC上のデータポートを接続すると接続エラーになる</a></li>
-  <li><a href="#raspberry-pi-に接続した場合に-rtc-と通信できなくなる">Raspberry Pi に接続した場合に RTC と通信できなくなる</a></li>
-  <li><a href="#raspberry-pi-側のサービスに-consoleout-が表示されない">Raspberry Pi 側のサービスに ConsoleOut が表示されない</a></li>
-  <li><a href="#pcにネットワークインターフェースが2つ以上ある場合rtsystemeditor-で接続できない反応しなくなるなどの問題がある">PCにネットワークインターフェースが2つ以上ある場合、RTSystemEditor で接続できない、反応しなくなるなどの問題がある</a></li>
-  <li><a href="#rtコンポーネントのインスタンス命名規則について">RTコンポーネントのインスタンス命名規則について</a></li>
-  <li><a href="#標準以外のデータ型を-inport--outport-で使うには">標準以外のデータ型を InPort / OutPort で使うには</a></li>
-  <li><a href="#新規-java-プロジェクトが-jdk616準拠として作成できない">新規 Java プロジェクトが JDK6(1.6)準拠として作成できない</a></li>
-  <li><a href="#任意のフォルダーにクラスパスを設定して-ant-ビルドを行う方法は">任意のフォルダーにクラスパスを設定して Ant ビルドを行う方法は？</a></li>
-  <li><a href="#java-で-ant-を使ってコマンドラインからビルドするときに例外が表示される">Java で Ant を使ってコマンドラインからビルドするときに例外が表示される</a></li>
-</ul>
-        </div>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#サービスポートを持つ-rtc-を-eclipse-でビルドするとエラーが表示される">サービスポートを持つ RTC を Eclipse でビルドするとエラーが表示される</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#rtc-がシステムエディタ上に表示されない">RTC がシステムエディタ上に表示されない</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#データポートで約2mb以上のデータを送りたい">データポートで約2MB以上のデータを送りたい</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#raspberry-pi-との接続時にipアドレスが割り当てられない">Raspberry Pi との接続時に、IPアドレスが割り当てられない</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#raspberry-pi-上のデータポートと-pc上のデータポートを接続すると接続エラーになる">Raspberry Pi 上のデータポートと PC上のデータポートを接続すると接続エラーになる</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#raspberry-pi-に接続した場合に-rtc-と通信できなくなる">Raspberry Pi に接続した場合に RTC と通信できなくなる</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#raspberry-pi-側のサービスに-consoleout-が表示されない">Raspberry Pi 側のサービスに ConsoleOut が表示されない</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#pcにネットワークインターフェースが2つ以上ある場合rtsystemeditor-で接続できない反応しなくなるなどの問題がある">PCにネットワークインターフェースが2つ以上ある場合、RTSystemEditor で接続できない、反応しなくなるなどの問題がある</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#rtコンポーネントのインスタンス命名規則について">RTコンポーネントのインスタンス命名規則について</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#標準以外のデータ型を-inport--outport-で使うには">標準以外のデータ型を InPort / OutPort で使うには</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#新規-java-プロジェクトが-jdk616準拠として作成できない">新規 Java プロジェクトが JDK6(1.6)準拠として作成できない</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#任意のフォルダーにクラスパスを設定して-ant-ビルドを行う方法は">任意のフォルダーにクラスパスを設定して Ant ビルドを行う方法は？</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#java-で-ant-を使ってコマンドラインからビルドするときに例外が表示される">Java で Ant を使ってコマンドラインからビルドするときに例外が表示される</h3</a>
+          </li>
+        
+      
+    
+
+    
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Adoc/faq/faq_rtc_creation -->

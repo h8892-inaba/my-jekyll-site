@@ -493,35 +493,463 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/install_1_1/cpp_1_1/install_ubuntu_1_1/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#一括インストールスクリプトを使う方法">一括インストール・スクリプトを使う方法</a></li>
-  <li><a href="#apt-get-を使う方法">apt-get を使う方法</a>
-    <ul>
-      <li><a href="#sourcelist-の編集">source.list の編集</a></li>
-      <li><a href="#apt-get-によるインストール">apt-get によるインストール</a></li>
-      <li><a href="#launchpadppa-のパッケージ">Launchpad/PPA のパッケージ</a>
-        <ul>
-          <li><a href="#ppa-パッケージのインストール">PPA パッケージのインストール</a></li>
-          <li><a href="#openrtm-aist-の-ppaリポジトリ構成">OpenRTM-aist の PPAリポジトリ構成</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#一括インストールスクリプトを使う方法">一括インストール・スクリプトを使う方法</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#apt-get-を使う方法">apt-get を使う方法</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#sourcelist-の編集">source.list の編集</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#apt-get-によるインストール">apt-get によるインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#launchpadppa-のパッケージ">Launchpad/PPA のパッケージ</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#インストールの確認">インストールの確認</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#パッケージの詳細">パッケージの詳細</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist">openrtm-aist</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-dev">openrtm-aist-dev</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-example">openrtm-aist-example</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-doc">openrtm-aist-doc</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#履歴">履歴</h2</a>
+        
       </li>
-      <li><a href="#インストールの確認">インストールの確認</a></li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#パッケージの詳細">パッケージの詳細</a>
-    <ul>
-      <li><a href="#openrtm-aist">openrtm-aist</a></li>
-      <li><a href="#openrtm-aist-dev">openrtm-aist-dev</a></li>
-      <li><a href="#openrtm-aist-example">openrtm-aist-example</a></li>
-      <li><a href="#openrtm-aist-doc">openrtm-aist-doc</a></li>
-    </ul>
-  </li>
-  <li><a href="#履歴">履歴</a></li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: Ubuntu/Debianへのインストール -->

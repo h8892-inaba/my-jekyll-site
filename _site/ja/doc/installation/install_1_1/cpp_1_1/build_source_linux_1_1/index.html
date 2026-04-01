@@ -493,31 +493,442 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/install_1_1/cpp_1_1/build_source_linux_1_1/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#配布ソースのビルド">配布ソースのビルド</a>
-    <ul>
-      <li><a href="#対応-os-およびディストリビューション">対応 OS およびディストリビューション</a></li>
-      <li><a href="#依存ライブラリ">依存ライブラリ</a></li>
-      <li><a href="#ソースのダウンロード">ソースのダウンロード</a></li>
-      <li><a href="#ソースコードの展開">ソースコードの展開</a></li>
-      <li><a href="#ビルド">ビルド</a></li>
-      <li><a href="#make">make</a></li>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#配布ソースのビルド">配布ソースのビルド</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#対応-os-およびディストリビューション">対応 OS およびディストリビューション</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#依存ライブラリ">依存ライブラリ</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ソースのダウンロード">ソースのダウンロード</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ソースコードの展開">ソースコードの展開</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ビルド">ビルド</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#make">make</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#リポジトリのソースのビルド">リポジトリのソースのビルド</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#必要なツール">必要なツール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ソースのチェックアウト">ソースのチェックアウト</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#autogenshの実行">autogen.shの実行</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#configure--ビルド">configure &amp; ビルド</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#make-dist">make dist</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#リポジトリのソースのビルド">リポジトリのソースのビルド</a>
-    <ul>
-      <li><a href="#必要なツール">必要なツール</a></li>
-      <li><a href="#ソースのチェックアウト">ソースのチェックアウト</a></li>
-      <li><a href="#autogenshの実行">autogen.shの実行</a></li>
-      <li><a href="#configure--ビルド">configure &amp; ビルド</a></li>
-      <li><a href="#make-dist">make dist</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: ソースからのビルド (Linux編) -->

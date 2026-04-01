@@ -493,31 +493,449 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/install_1_1/java_1_1/install_linux_java_1_1/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#openrtm-aist-javaのインストール">OpenRTM-aist-Javaのインストール</a>
-    <ul>
-      <li><a href="#動作条件-anamejyouken">動作条件 &amp;aname(jyouken);</a></li>
-      <li><a href="#インストールの流れ概要">インストールの流れ（概要）</a></li>
-      <li><a href="#java-のインストール">Java のインストール</a></li>
-      <li><a href="#インストールの実行">インストールの実行</a></li>
-      <li><a href="#インストールの確認">インストールの確認</a></li>
-      <li><a href="#zipファイルのダウンロードと解凍">zipファイルのダウンロードと解凍</a></li>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#openrtm-aist-javaのインストール">OpenRTM-aist-Javaのインストール</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#動作条件-anamejyouken">動作条件 &amp;aname(jyouken);</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#インストールの流れ概要">インストールの流れ（概要）</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#java-のインストール">Java のインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#インストールの実行">インストールの実行</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#インストールの確認">インストールの確認</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#zipファイルのダウンロードと解凍">zipファイルのダウンロードと解凍</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#環境変数の設定">環境変数の設定</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#zip-ファイルを解凍して展開される内容">zip ファイルを解凍して展開される内容</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#jar">jar</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#examples">examples</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#javadoc">JavaDoc</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#javadocen">JavaDocEn</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#環境変数の設定">環境変数の設定</a></li>
-  <li><a href="#zip-ファイルを解凍して展開される内容">zip ファイルを解凍して展開される内容</a>
-    <ul>
-      <li><a href="#jar">jar</a></li>
-      <li><a href="#examples">examples</a></li>
-      <li><a href="#javadoc">JavaDoc</a></li>
-      <li><a href="#javadocen">JavaDocEn</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: Linuxへのインストール -->

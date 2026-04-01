@@ -493,35 +493,385 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/other/raspberrypi_casestudy/raspi_init_setting/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#raspberry-pi-の起動">Raspberry Pi の起動</a>
-    <ul>
-      <li><a href="#設定項目">設定項目</a></li>
-    </ul>
-  </li>
-  <li><a href="#無線lan-の設定">無線LAN の設定</a>
-    <ul>
-      <li><a href="#etcnetworkinterfaces-の編集">/etc/network/interfaces の編集</a></li>
-      <li><a href="#etcwpa_supplicantwpa_supplicantconf-の編集">/etc/wpa_supplicant/wpa_supplicant.conf の編集</a></li>
-    </ul>
-  </li>
-  <li><a href="#ホスト名でリモート接続する">ホスト名でリモート接続する</a>
-    <ul>
-      <li><a href="#ホスト名の設定">ホスト名の設定</a></li>
-      <li><a href="#avahi-daemon-のインストール">avahi-daemon のインストール</a></li>
-      <li><a href="#bonjour-のインストール-windowsのみ">Bonjour のインストール (Windowsのみ)</a>
-        <ul>
-          <li><a href="#bonjour-がうまく機能しない場合">Bonjour がうまく機能しない場合</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#raspberry-pi-の起動">Raspberry Pi の起動</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#設定項目">設定項目</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#無線lan-の設定">無線LAN の設定</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#etcnetworkinterfaces-の編集">/etc/network/interfaces の編集</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#etcwpa_supplicantwpa_supplicantconf-の編集">/etc/wpa_supplicant/wpa_supplicant.conf の編集</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#ホスト名でリモート接続する">ホスト名でリモート接続する</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#ホスト名の設定">ホスト名の設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#avahi-daemon-のインストール">avahi-daemon のインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#bonjour-のインストール-windowsのみ">Bonjour のインストール (Windowsのみ)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#teraterm-のインストール">TeraTerm のインストール</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
-      <li><a href="#teraterm-のインストール">TeraTerm のインストール</a></li>
+    
+
+  
     </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: Raspberry Pi の初期設定 -->

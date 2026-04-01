@@ -493,24 +493,354 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/toolmanuals/rtcbuilder-1_1_0/cpack_deb_creation_rtcb_1_1_0/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#はじめに">はじめに</a></li>
-  <li><a href="#doxygen-ドキュメントを含めない場合の作成手順">doxygen ドキュメントを含めない場合の作成手順</a></li>
-  <li><a href="#doxygen-ドキュメントを含める場合の作成手順">doxygen ドキュメントを含める場合の作成手順</a></li>
-  <li><a href="#deb-パッケージの保存場所ファイル名">deb パッケージの保存場所、ファイル名</a></li>
-  <li><a href="#deb-パッケージの確認方法">deb パッケージの確認方法</a></li>
-  <li><a href="#deb-パッケージのインストールアンインストール">deb パッケージのインストール・アンインストール</a>
-    <ul>
-      <li><a href="#インストール">インストール</a></li>
-      <li><a href="#アンインストール">アンインストール</a></li>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#はじめに">はじめに</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#doxygen-ドキュメントを含めない場合の作成手順">doxygen ドキュメントを含めない場合の作成手順</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#doxygen-ドキュメントを含める場合の作成手順">doxygen ドキュメントを含める場合の作成手順</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#deb-パッケージの保存場所ファイル名">deb パッケージの保存場所、ファイル名</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#deb-パッケージの確認方法">deb パッケージの確認方法</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#deb-パッケージのインストールアンインストール">deb パッケージのインストール・アンインストール</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#インストール">インストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#アンインストール">アンインストール</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#サービスポートを持つ-python-rtc-の-idl-コンパイル処理">サービスポートを持つ Python RTC の IDL コンパイル処理</h2</a>
+        
+      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#サービスポートを持つ-python-rtc-の-idl-コンパイル処理">サービスポートを持つ Python RTC の IDL コンパイル処理</a></li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: CPack で deb 作成 （Linux） -->

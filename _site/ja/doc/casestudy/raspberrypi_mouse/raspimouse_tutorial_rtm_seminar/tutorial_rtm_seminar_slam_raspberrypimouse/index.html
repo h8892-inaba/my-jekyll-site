@@ -493,40 +493,528 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_slam_raspberrypimouse/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#はじめに">はじめに</a></li>
-  <li><a href="#事前準備">事前準備</a>
-    <ul>
-      <li><a href="#lidarの取り付け">LiDARの取り付け</a>
-        <ul>
-          <li><a href="#専用lidarマウント">専用LiDARマウント</a></li>
-          <li><a href="#マルチlidarマウント">マルチLiDARマウント</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#はじめに">はじめに</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#事前準備">事前準備</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#lidarの取り付け">LiDARの取り付け</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#slamによるナビゲーション地図生成システム">SLAMによるナビゲーション地図生成システム</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#mapperシステムの起動raspberry-pi">Mapperシステムの起動(Raspberry Pi)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#navigationmanagerの起動pc">NavigationManagerの起動(PC)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ポートの接続rtcのアクティブ化">ポートの接続、RTCのアクティブ化</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#地図作成">地図作成</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#ナビゲーション経路計画システムの実行">ナビゲーション(経路計画)システムの実行</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#pathplanシステムの起動raspberry-pi">PathPlanシステムの起動(Raspberry Pi)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#navigationmanagermapserverの起動pc">NavigationManager、MapServerの起動(PC)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ポートの接続rtcのアクティブ化-1">ポートの接続、RTCのアクティブ化</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#経路生成">経路生成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#経路追従">経路追従</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#slamによるナビゲーション地図生成システム">SLAMによるナビゲーション地図生成システム</a>
-    <ul>
-      <li><a href="#mapperシステムの起動raspberry-pi">Mapperシステムの起動(Raspberry Pi)</a></li>
-      <li><a href="#navigationmanagerの起動pc">NavigationManagerの起動(PC)</a></li>
-      <li><a href="#ポートの接続rtcのアクティブ化">ポートの接続、RTCのアクティブ化</a></li>
-      <li><a href="#地図作成">地図作成</a></li>
-    </ul>
-  </li>
-  <li><a href="#ナビゲーション経路計画システムの実行">ナビゲーション(経路計画)システムの実行</a>
-    <ul>
-      <li><a href="#pathplanシステムの起動raspberry-pi">PathPlanシステムの起動(Raspberry Pi)</a></li>
-      <li><a href="#navigationmanagermapserverの起動pc">NavigationManager、MapServerの起動(PC)</a></li>
-      <li><a href="#ポートの接続rtcのアクティブ化-1">ポートの接続、RTCのアクティブ化</a></li>
-      <li><a href="#経路生成">経路生成</a></li>
-      <li><a href="#経路追従">経路追従</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<p>init

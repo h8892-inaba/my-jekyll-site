@@ -493,69 +493,935 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/old_documents/armadillo240/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#作業の流れ">作業の流れ</a></li>
-  <li><a href="#クロス開発環境の構築">クロス開発環境の構築</a>
-    <ul>
-      <li><a href="#atde2-と-vmware-のダウンロード">ATDE2 と VMware のダウンロード</a></li>
-      <li><a href="#atde2-と-vmwareの起動">ATDE2 と VMwareの起動</a></li>
-      <li><a href="#atde2-開発環境の整備">ATDE2 開発環境の整備</a></li>
-    </ul>
-  </li>
-  <li><a href="#openrtm-aist-のクロスコンパイル">OpenRTM-aist のクロスコンパイル</a>
-    <ul>
-      <li><a href="#openrtm-aist-のビルド">OpenRTM-aist のビルド</a></li>
-      <li><a href="#openrtm-aist-のインストール">OpenRTM-aist のインストール</a></li>
-    </ul>
-  </li>
-  <li><a href="#rtコンポーネントのクロス開発">RTコンポーネントのクロス開発</a>
-    <ul>
-      <li><a href="#rtコンポーネントのクロス開発する">RTコンポーネントのクロス開発する</a></li>
-      <li><a href="#rtc-template-で-simpleio-の-rtコンポーネントを生成する">rtc-template で SimpleIO の RTコンポーネントを生成する。</a></li>
-      <li><a href="#rtコンポーネントのビルド">RTコンポーネントのビルド</a></li>
-    </ul>
-  </li>
-  <li><a href="#rtコンポーネントの実行">RTコンポーネントの実行</a>
-    <ul>
-      <li><a href="#usbメモリーの準備">USBメモリーの準備</a></li>
-      <li><a href="#usbメモリーのディレクトリー構造">USBメモリーのディレクトリー構造</a></li>
-      <li><a href="#armadillo240-で実行ファイルを起動anamestart240">Armadillo240 で実行ファイルを起動&amp;aname(start240);</a>
-        <ul>
-          <li><a href="#atde2上から-minicom-で操作する">ATDE2上から minicom で操作する</a></li>
-          <li><a href="#windows-から端末エミュレーター-teraterm-で操作する">Windows から端末エミュレーター (teraterm) で操作する</a></li>
-          <li><a href="#共通の操作">共通の操作</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#作業の流れ">作業の流れ</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#クロス開発環境の構築">クロス開発環境の構築</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#atde2-と-vmware-のダウンロード">ATDE2 と VMware のダウンロード</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#atde2-と-vmwareの起動">ATDE2 と VMwareの起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#atde2-開発環境の整備">ATDE2 開発環境の整備</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#openrtm-aist-のクロスコンパイル">OpenRTM-aist のクロスコンパイル</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-のビルド">OpenRTM-aist のビルド</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-のインストール">OpenRTM-aist のインストール</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#rtコンポーネントのクロス開発">RTコンポーネントのクロス開発</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#rtコンポーネントのクロス開発する">RTコンポーネントのクロス開発する</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtc-template-で-simpleio-の-rtコンポーネントを生成する">rtc-template で SimpleIO の RTコンポーネントを生成する。</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtコンポーネントのビルド">RTコンポーネントのビルド</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#rtコンポーネントの実行">RTコンポーネントの実行</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#usbメモリーの準備">USBメモリーの準備</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#usbメモリーのディレクトリー構造">USBメモリーのディレクトリー構造</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#armadillo240-で実行ファイルを起動anamestart240">Armadillo240 で実行ファイルを起動&amp;aname(start240);</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#armadillo240-のイメージファイルを作成する">Armadillo240 のイメージファイルを作成する</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#開発環境の整備">開発環境の整備</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#atmark-distのビルドと設定">atmark-distのビルドと設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#イメージファイルを-armadillo240-にダウンロードする">イメージファイルを Armadillo240 にダウンロードする</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#windows上からダウンロードする">Windows上からダウンロードする</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#rtコンポーネントの実行確認">RTコンポーネントの実行・確認</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#応用例">応用例</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#armadillo--urg-センサ-ー">Armadillo + URG センサ ー</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#armadillo240-のイメージファイルを作成する">Armadillo240 のイメージファイルを作成する</a>
-    <ul>
-      <li><a href="#開発環境の整備">開発環境の整備</a></li>
-      <li><a href="#atmark-distのビルドと設定">atmark-distのビルドと設定</a>
-        <ul>
-          <li><a href="#rtコンポーネントの起動の仕組み">RTコンポーネントの起動の仕組み</a></li>
-          <li><a href="#atmark-distビルド">atmark-distビルド</a></li>
-        </ul>
-      </li>
-      <li><a href="#イメージファイルを-armadillo240-にダウンロードする">イメージファイルを Armadillo240 にダウンロードする</a>
-        <ul>
-          <li><a href="#atde2上からダウンロードする">ATDE2上からダウンロードする</a></li>
-        </ul>
-      </li>
-      <li><a href="#windows上からダウンロードする">Windows上からダウンロードする</a></li>
-    </ul>
-  </li>
-  <li><a href="#rtコンポーネントの実行確認">RTコンポーネントの実行・確認</a></li>
-  <li><a href="#応用例">応用例</a>
-    <ul>
-      <li><a href="#armadillo--urg-センサ-ー">Armadillo + URG センサ ー</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: Armadillo240へのインストール -->

@@ -493,49 +493,606 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#電池無線lansdカードのセット">電池・無線LAN・SDカードのセット</a>
-    <ul>
-      <li><a href="#電池">電池</a></li>
-      <li><a href="#無線lan">無線LAN</a></li>
-      <li><a href="#sdカードの挿入">SDカードの挿入</a></li>
-    </ul>
-  </li>
-  <li><a href="#ev3dev-の起動">ev3dev の起動</a></li>
-  <li><a href="#ssh-ログイン">ssh ログイン</a>
-    <ul>
-      <li><a href="#ネットワークへの接続">ネットワークへの接続</a></li>
-      <li><a href="#usbケーブルでの接続">USBケーブルでの接続</a>
-        <ul>
-          <li><a href="#テザリングの設定">テザリングの設定</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#電池無線lansdカードのセット">電池・無線LAN・SDカードのセット</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#電池">電池</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#無線lan">無線LAN</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#sdカードの挿入">SDカードの挿入</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#ev3dev-の起動">ev3dev の起動</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ssh-ログイン">ssh ログイン</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#ネットワークへの接続">ネットワークへの接続</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#usbケーブルでの接続">USBケーブルでの接続</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ログイン">ログイン</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#teraterm-のインストール参考">TeraTerm のインストール(参考)</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#設定">設定</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#無線lanの設定">無線LANの設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#etcwpa_supplicantwpa_supplicantconf-の編集">/etc/wpa_supplicant/wpa_supplicant.conf の編集</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ホスト名でリモート接続する">ホスト名でリモート接続する</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#avahi-daemon-のインストール">avahi-daemon のインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#bonjour-のインストール-windowsのみ">Bonjour のインストール (Windowsのみ)</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
-      <li><a href="#ログイン">ログイン</a></li>
-      <li><a href="#teraterm-のインストール参考">TeraTerm のインストール(参考)</a></li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#設定">設定</a>
-    <ul>
-      <li><a href="#無線lanの設定">無線LANの設定</a></li>
-      <li><a href="#etcwpa_supplicantwpa_supplicantconf-の編集">/etc/wpa_supplicant/wpa_supplicant.conf の編集</a></li>
-      <li><a href="#ホスト名でリモート接続する">ホスト名でリモート接続する</a>
-        <ul>
-          <li><a href="#ホスト名の設定">ホスト名の設定</a></li>
-        </ul>
-      </li>
-      <li><a href="#avahi-daemon-のインストール">avahi-daemon のインストール</a></li>
-      <li><a href="#bonjour-のインストール-windowsのみ">Bonjour のインストール (Windowsのみ)</a>
-        <ul>
-          <li><a href="#bonjour-がうまく機能しない場合">Bonjour がうまく機能しない場合</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: EV3 および ev3dev の初期設定 -->

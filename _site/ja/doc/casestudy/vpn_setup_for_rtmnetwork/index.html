@@ -493,43 +493,639 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/casestudy/vpn_setup_for_rtmnetwork/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#vpn-サーバーの設定-linux">VPN サーバーの設定 (Linux)</a>
-    <ul>
-      <li><a href="#pptpd-のインストール">pptpd のインストール</a></li>
-      <li><a href="#pptpdconfの設定">pptpd.confの設定</a></li>
-      <li><a href="#ネットワーク構成">ネットワーク構成</a></li>
-      <li><a href="#etcpppchap-secretsの設定">/etc/ppp/chap-secretsの設定</a></li>
-      <li><a href="#サーバーの再起動">サーバーの再起動</a></li>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#vpn-サーバーの設定-linux">VPN サーバーの設定 (Linux)</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#pptpd-のインストール">pptpd のインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#pptpdconfの設定">pptpd.confの設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ネットワーク構成">ネットワーク構成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#etcpppchap-secretsの設定">/etc/ppp/chap-secretsの設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サーバーの再起動">サーバーの再起動</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#vpn-クライアントの設定linux">VPN クライアントの設定(Linux)</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#エントリの作成">エントリの作成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サーバーへの接続">サーバーへの接続</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ルーティングの設定">ルーティングの設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#vpn-の切断">VPN の切断</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#vpn-クライアントの設定windows">VPN クライアントの設定(Windows)</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#vpn-設定ウィザード">VPN 設定ウィザード</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ルーティングの設定-1">ルーティングの設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#vpnの接続切断">VPNの接続・切断</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#rtc等の設定">RTC等の設定</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#ネームサーバー">ネームサーバー</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtcの設定-rtcconf">RTCの設定 (rtc.conf)</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#パフォーマンス">パフォーマンス</h2</a>
+        
+      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#vpn-クライアントの設定linux">VPN クライアントの設定(Linux)</a>
-    <ul>
-      <li><a href="#エントリの作成">エントリの作成</a></li>
-      <li><a href="#サーバーへの接続">サーバーへの接続</a></li>
-      <li><a href="#ルーティングの設定">ルーティングの設定</a></li>
-      <li><a href="#vpn-の切断">VPN の切断</a></li>
-    </ul>
-  </li>
-  <li><a href="#vpn-クライアントの設定windows">VPN クライアントの設定(Windows)</a>
-    <ul>
-      <li><a href="#vpn-設定ウィザード">VPN 設定ウィザード</a></li>
-      <li><a href="#ルーティングの設定-1">ルーティングの設定</a></li>
-      <li><a href="#vpnの接続切断">VPNの接続・切断</a></li>
-    </ul>
-  </li>
-  <li><a href="#rtc等の設定">RTC等の設定</a>
-    <ul>
-      <li><a href="#ネームサーバー">ネームサーバー</a></li>
-      <li><a href="#rtcの設定-rtcconf">RTCの設定 (rtc.conf)</a></li>
-    </ul>
-  </li>
-  <li><a href="#パフォーマンス">パフォーマンス</a></li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: VPNを利用したRTMネットワーク設定方法 -->

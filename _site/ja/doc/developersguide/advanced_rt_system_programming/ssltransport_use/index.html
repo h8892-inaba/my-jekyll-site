@@ -493,42 +493,523 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/advanced_rt_system_programming/ssltransport_use/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#概要">概要</a></li>
-  <li><a href="#c">C++</a>
-    <ul>
-      <li><a href="#windows">Windows</a>
-        <ul>
-          <li><a href="#openrtm-aistのビルドとインストール">OpenRTM-aistのビルドとインストール</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#概要">概要</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#c">C++</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#windows">Windows</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ubuntu">Ubuntu</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#python">Python</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aistのビルドとインストール-2">OpenRTM-aistのビルドとインストール</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#動作確認">動作確認</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#ネームサーバー起動">ネームサーバー起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtc起動">RTC起動</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#マネージャ起動時のポート接続rtcのアクティブ化">マネージャ起動時のポート接続、RTCのアクティブ化</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#rtshellによる操作">rtshellによる操作</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#秘密鍵証明書の生成">秘密鍵、証明書の生成</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#簡単な動作確認">簡単な動作確認</h2</a>
+        
       </li>
-      <li><a href="#ubuntu">Ubuntu</a>
-        <ul>
-          <li><a href="#openrtm-aistのビルドとインストール-1">OpenRTM-aistのビルドとインストール</a></li>
-        </ul>
-      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#python">Python</a>
-    <ul>
-      <li><a href="#openrtm-aistのビルドとインストール-2">OpenRTM-aistのビルドとインストール</a></li>
-    </ul>
-  </li>
-  <li><a href="#動作確認">動作確認</a>
-    <ul>
-      <li><a href="#ネームサーバー起動">ネームサーバー起動</a></li>
-      <li><a href="#rtc起動">RTC起動</a></li>
-    </ul>
-  </li>
-  <li><a href="#マネージャ起動時のポート接続rtcのアクティブ化">マネージャ起動時のポート接続、RTCのアクティブ化</a></li>
-  <li><a href="#rtshellによる操作">rtshellによる操作</a></li>
-  <li><a href="#秘密鍵証明書の生成">秘密鍵、証明書の生成</a></li>
-  <li><a href="#簡単な動作確認">簡単な動作確認</a></li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: SSLTransportの使用方法 -->

@@ -493,29 +493,357 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/install_1_1/cpp_1_1/build_source_windows_runtime_1_1/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#openrtm-aist-のビルド">OpenRTM-aist のビルド</a>
-    <ul>
-      <li><a href="#openrtm-aist-のソースコードの入手">OpenRTM-aist のソースコードの入手</a></li>
-      <li><a href="#omniorbの入手">omniORBの入手</a></li>
-      <li><a href="#各種ファイルの編集">各種ファイルの編集</a>
-        <ul>
-          <li><a href="#buildbat">build.bat</a></li>
-          <li><a href="#librtc_vcvcxprojlibcoil_vcvcxprojlibrtcskel_vcvcxproj">libRTC_vc<strong>.vcxproj、libcoil_vc</strong>.vcxproj、libRTCSkel_vc**.vcxproj</a></li>
-          <li><a href="#rtm_configprops">rtm_config.props</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#openrtm-aist-のビルド">OpenRTM-aist のビルド</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-のソースコードの入手">OpenRTM-aist のソースコードの入手</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#omniorbの入手">omniORBの入手</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#各種ファイルの編集">各種ファイルの編集</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ビルド">ビルド</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtmconfigcmakeの編集">OpenRTMConfig.cmakeの編集</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#rtcのビルド">RTCのビルド</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#エラーの原因について">エラーの原因について</h2</a>
+        
       </li>
-      <li><a href="#ビルド">ビルド</a></li>
-      <li><a href="#openrtmconfigcmakeの編集">OpenRTMConfig.cmakeの編集</a></li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#rtcのビルド">RTCのビルド</a></li>
-  <li><a href="#エラーの原因について">エラーの原因について</a></li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: ソースからのビルド (Windows編、ランタイムライブラリ/MT・/MTd指定) -->

@@ -493,42 +493,479 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/other/raspberrypi_casestudy/install_development_env/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#openrtm-aist-のインストール">OpenRTM-aist のインストール</a>
-    <ul>
-      <li><a href="#サンプルコンポーネントの実行">サンプルコンポーネントの実行</a>
-        <ul>
-          <li><a href="#raspberry-pi上で-consoleout-の実行">Raspberry Pi上で ConsoleOut の実行</a></li>
-          <li><a href="#pc側での-consolein-の実行">PC側での ConsoleIn の実行</a></li>
-          <li><a href="#rtsystemeditor-により接続">RTSystemEditor により接続</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#openrtm-aist-のインストール">OpenRTM-aist のインストール</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#サンプルコンポーネントの実行">サンプルコンポーネントの実行</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#トラブルシューティング">トラブルシューティング</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#cmake-のインストール">CMake のインストール</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#doxygen-のインストールについて">Doxygen のインストールについて</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#ドキュメントを生成しない方法">ドキュメントを生成しない方法</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#doxygen-のインストール">Doxygen のインストール</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#subversiongit-のインストール">Subversion/Git のインストール</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#コンパイルのテスト">コンパイルのテスト</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#ソースコードのチェックアウト">ソースコードのチェックアウト</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
-      <li><a href="#トラブルシューティング">トラブルシューティング</a>
-        <ul>
-          <li><a href="#raspberry-pi側のサービスのしたに-consoleout-が表示されない">Raspberry Pi側のサービスのしたに ConsoleOut が表示されない</a></li>
-          <li><a href="#rtsystemeditor-で接続できない反応がなくなる等">RTSystemEditor で接続できない、反応がなくなる等</a></li>
-        </ul>
-      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#cmake-のインストール">CMake のインストール</a></li>
-  <li><a href="#doxygen-のインストールについて">Doxygen のインストールについて</a>
-    <ul>
-      <li><a href="#ドキュメントを生成しない方法">ドキュメントを生成しない方法</a></li>
-      <li><a href="#doxygen-のインストール">Doxygen のインストール</a></li>
-    </ul>
-  </li>
-  <li><a href="#subversiongit-のインストール">Subversion/Git のインストール</a></li>
-  <li><a href="#コンパイルのテスト">コンパイルのテスト</a>
-    <ul>
-      <li><a href="#ソースコードのチェックアウト">ソースコードのチェックアウト</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: 開発環境のインストール -->

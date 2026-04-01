@@ -493,56 +493,957 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/advanced_rt_system_programming/mastermanager_slavemanager/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#概要">概要</a>
-    <ul>
-      <li><a href="#マネージャ">マネージャ</a></li>
-      <li><a href="#マスターマネージャスレーブマネージャ">マスターマネージャ、スレーブマネージャ</a></li>
-    </ul>
-  </li>
-  <li><a href="#api">API</a>
-    <ul>
-      <li><a href="#load_module">load_module</a></li>
-      <li><a href="#unload_module">unload_module</a></li>
-      <li><a href="#get_loadable_modules">get_loadable_modules</a></li>
-      <li><a href="#get_loaded_modules">get_loaded_modules</a></li>
-      <li><a href="#get_factory_profiles">get_factory_profiles</a></li>
-      <li><a href="#create_component">create_component</a>
-        <ul>
-          <li><a href="#マネージャの動作について">マネージャの動作について</a>
-            <ul>
-              <li><a href="#スレーブマネージャ名を指定した場合に指定のスレーブマネージャが起動していない場合">スレーブマネージャ名を指定した場合に指定のスレーブマネージャが起動していない場合</a></li>
-              <li><a href="#スレーブマネージャ名を指定しない場合">スレーブマネージャ名を指定しない場合</a></li>
-              <li><a href="#同一コンポーネント名のrtcがロード可能な場合">同一コンポーネント名のRTCがロード可能な場合</a></li>
-            </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#概要">概要</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#マネージャ">マネージャ</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#マスターマネージャスレーブマネージャ">マスターマネージャ、スレーブマネージャ</h3</a>
+</li>
+          </ul>
+              </details>
+            
           </li>
-        </ul>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#api">API</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#load_module">load_module</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#unload_module">unload_module</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#get_loadable_modules">get_loadable_modules</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#get_loaded_modules">get_loaded_modules</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#get_factory_profiles">get_factory_profiles</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#create_component">create_component</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#delete_component">delete_component</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#get_components">get_components</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#get_component_profiles">get_component_profiles</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#get_components_by_name">get_components_by_name</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#get_profile">get_profile</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#get_configuration">get_configuration</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#set_configuration">set_configuration</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#is_master">is_master</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#get_master_managers">get_master_managers</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#add_master_manager">add_master_manager</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#remove_master_manager">remove_master_manager</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#get_slave_managers">get_slave_managers</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#add_slave_manager">add_slave_manager</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#remove_slave_manager">remove_slave_manager</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#fork">fork</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#shutdown">shutdown</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#restart">restart</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#get_service">get_service</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
-      <li><a href="#delete_component">delete_component</a></li>
-      <li><a href="#get_components">get_components</a></li>
-      <li><a href="#get_component_profiles">get_component_profiles</a></li>
-      <li><a href="#get_components_by_name">get_components_by_name</a></li>
-      <li><a href="#get_profile">get_profile</a></li>
-      <li><a href="#get_configuration">get_configuration</a></li>
-      <li><a href="#set_configuration">set_configuration</a></li>
-      <li><a href="#is_master">is_master</a></li>
-      <li><a href="#get_master_managers">get_master_managers</a></li>
-      <li><a href="#add_master_manager">add_master_manager</a></li>
-      <li><a href="#remove_master_manager">remove_master_manager</a></li>
-      <li><a href="#get_slave_managers">get_slave_managers</a></li>
-      <li><a href="#add_slave_manager">add_slave_manager</a></li>
-      <li><a href="#remove_slave_manager">remove_slave_manager</a></li>
-      <li><a href="#fork">fork</a></li>
-      <li><a href="#shutdown">shutdown</a></li>
-      <li><a href="#restart">restart</a></li>
-      <li><a href="#get_service">get_service</a></li>
+    
+
+  
     </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: マスターマネージャ、スレーブマネージャ -->

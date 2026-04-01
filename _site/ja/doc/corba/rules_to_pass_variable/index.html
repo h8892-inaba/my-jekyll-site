@@ -493,43 +493,480 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/corba/rules_to_pass_variable/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#構造体オブジェクトリファレンス">構造体・/オブジェクトリファレンス</a>
-    <ul>
-      <li><a href="#_var-型">_var 型</a>
-        <ul>
-          <li><a href="#変換コンストラクタt_ptr">変換コンストラクタ(T_ptr)</a></li>
-          <li><a href="#変換コンストラクタconst-t_var">変換コンストラクタ(const T_var&amp;)</a></li>
-          <li><a href="#変換コンストラクタconst-t_member">変換コンストラクタ(const T_member)</a></li>
-          <li><a href="#in引数とin関数">in引数とin()関数</a></li>
-          <li><a href="#out引数と-out関数">out引数と out()関数</a></li>
-          <li><a href="#inout">inout()</a></li>
-          <li><a href="#_retn">_retn()</a></li>
-          <li><a href="#規則のまとめ">規則のまとめ</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#構造体オブジェクトリファレンス">構造体・/オブジェクトリファレンス</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#_var-型">_var 型</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#_var型_ptr型の代入でのリファレンスカウント">_var型,_ptr型の代入でのリファレンスカウント</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#_narrowでのリファレンスカウント">_narrow()でのリファレンスカウント</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#規則">規則</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
-      <li><a href="#_var型_ptr型の代入でのリファレンスカウント">_var型,_ptr型の代入でのリファレンスカウント</a>
-        <ul>
-          <li><a href="#_ptr型への_var型の代入">_ptr型への_var型の代入</a></li>
-          <li><a href="#_var型への_ptr型の代入">_var型への_ptr型の代入</a></li>
-          <li><a href="#_var型への_var型の代入">_var型への_var型の代入</a></li>
-        </ul>
-      </li>
-      <li><a href="#_narrowでのリファレンスカウント">_narrow()でのリファレンスカウント</a></li>
-      <li><a href="#規則">規則</a>
-        <ul>
-          <li><a href="#クライアント側">クライアント側</a></li>
-          <li><a href="#サーバー側">サーバー側</a></li>
-          <li><a href="#参考文献">参考文献</a></li>
-        </ul>
-      </li>
+    
+
+  
     </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: 変数受渡規則 -->

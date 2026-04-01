@@ -493,33 +493,402 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/basic_rtc_programming/servcieport/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#サービスポートとは">サービスポートとは</a></li>
-  <li><a href="#サービスポートとインターフェース">サービスポートとインターフェース</a>
-    <ul>
-      <li><a href="#サービスポート">サービスポート</a></li>
-      <li><a href="#インターフェース定義">インターフェース定義</a></li>
-      <li><a href="#idl-コンパイル">IDL コンパイル</a></li>
-    </ul>
-  </li>
-  <li><a href="#サービスポートの実装">サービスポートの実装</a>
-    <ul>
-      <li><a href="#idl-定義">IDL 定義</a></li>
-      <li><a href="#rtcbuilder-による設計">RTCBuilder による設計</a></li>
-      <li><a href="#サービスプロバイダの実装">サービスプロバイダの実装</a>
-        <ul>
-          <li><a href="#echo関数の実装">echo()関数の実装</a></li>
-          <li><a href="#set_value-get_value-と-get_value_history">set_value(), get_value() と get_value_history()</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#サービスポートとは">サービスポートとは</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#サービスポートとインターフェース">サービスポートとインターフェース</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#サービスポート">サービスポート</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#インターフェース定義">インターフェース定義</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#idl-コンパイル">IDL コンパイル</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#サービスポートの実装">サービスポートの実装</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#idl-定義">IDL 定義</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtcbuilder-による設計">RTCBuilder による設計</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サービスプロバイダの実装">サービスプロバイダの実装</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サービスコンシューマの実装">サービスコンシューマの実装</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
-      <li><a href="#サービスコンシューマの実装">サービスコンシューマの実装</a></li>
+    
+
+  
     </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: サービスポート (基礎編) -->

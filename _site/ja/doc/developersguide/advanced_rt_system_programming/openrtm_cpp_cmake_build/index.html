@@ -493,40 +493,688 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#windows--omniorb">Windows + omniORB</a></li>
-  <li><a href="#windows--tao">Windows + TAO</a></li>
-  <li><a href="#windows-10-iot--omniorb">Windows 10 IoT + omniORB</a></li>
-  <li><a href="#ubuntu--omniorb">Ubuntu + omniORB</a></li>
-  <li><a href="#ubuntu--tao">Ubuntu + TAO</a></li>
-  <li><a href="#vxworks--omniorb">VxWorks + omniORB</a>
-    <ul>
-      <li><a href="#omniorb">omniORB</a></li>
-      <li><a href="#openrtm-aist">OpenRTM-aist</a></li>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#windows--omniorb">Windows + omniORB</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#windows--tao">Windows + TAO</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#windows-10-iot--omniorb">Windows 10 IoT + omniORB</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#ubuntu--omniorb">Ubuntu + omniORB</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#ubuntu--tao">Ubuntu + TAO</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#vxworks--omniorb">VxWorks + omniORB</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#omniorb">omniORB</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist">OpenRTM-aist</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#vxworks--orbexpress">VxWorks + ORBexpress</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#qnx-65--omniorb">QNX 6.5 + omniORB</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#pkgsrc">pkgsrc</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#libuuid">libuuid</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#omniorb-1">omniORB</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-1">OpenRTM-aist</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#qnx-70--omniorb">QNX 7.0 + omniORB</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#libuuid-1">libuuid</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#omniorb-2">omniORB</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-2">OpenRTM-aist</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#vmwareイメージの入手">VMWareイメージの入手</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#vxworks--orbexpress">VxWorks + ORBexpress</a></li>
-  <li><a href="#qnx-65--omniorb">QNX 6.5 + omniORB</a>
-    <ul>
-      <li><a href="#pkgsrc">pkgsrc</a></li>
-      <li><a href="#libuuid">libuuid</a></li>
-      <li><a href="#omniorb-1">omniORB</a></li>
-      <li><a href="#openrtm-aist-1">OpenRTM-aist</a></li>
-    </ul>
-  </li>
-  <li><a href="#qnx-70--omniorb">QNX 7.0 + omniORB</a>
-    <ul>
-      <li><a href="#libuuid-1">libuuid</a></li>
-      <li><a href="#omniorb-2">omniORB</a></li>
-      <li><a href="#openrtm-aist-2">OpenRTM-aist</a></li>
-      <li><a href="#vmwareイメージの入手">VMWareイメージの入手</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: OpenRTM-aist(C++版)のCMakeによるビルド手順 -->

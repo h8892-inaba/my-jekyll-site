@@ -493,36 +493,412 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/other/raspberrypi_casestudy/control_mobilerobot_kabuki/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#raspberry-pi-と-kobuki-の接続">Raspberry Pi と Kobuki の接続</a>
-    <ul>
-      <li><a href="#電源">電源</a></li>
-      <li><a href="#usb">USB</a></li>
-      <li><a href="#接続">接続</a></li>
-    </ul>
-  </li>
-  <li><a href="#kobukiaist-rtコンポーネントのコンパイル">KobukiAIST RTコンポーネントのコンパイル</a></li>
-  <li><a href="#kobukiaist-コンポーネントの自動起動">KobukiAIST コンポーネントの自動起動</a></li>
-  <li><a href="#kobuki-コンポーネントの操作">Kobuki コンポーネントの操作</a>
-    <ul>
-      <li><a href="#tkjoystick-による操作">TkJoystick による操作</a>
-        <ul>
-          <li><a href="#ヒント">ヒント</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#raspberry-pi-と-kobuki-の接続">Raspberry Pi と Kobuki の接続</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#電源">電源</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#usb">USB</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#接続">接続</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#kobukiaist-rtコンポーネントのコンパイル">KobukiAIST RTコンポーネントのコンパイル</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#kobukiaist-コンポーネントの自動起動">KobukiAIST コンポーネントの自動起動</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#kobuki-コンポーネントの操作">Kobuki コンポーネントの操作</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#tkjoystick-による操作">TkJoystick による操作</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#自律的に移動させる">自律的に移動させる</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#解答">解答</h2</a>
+        
       </li>
-      <li><a href="#自律的に移動させる">自律的に移動させる</a>
-        <ul>
-          <li><a href="#ヒント-1">ヒント</a></li>
-        </ul>
-      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#解答">解答</a></li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: 移動ロボットKobukiの制御 -->

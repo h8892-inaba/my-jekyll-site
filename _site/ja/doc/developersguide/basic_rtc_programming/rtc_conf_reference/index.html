@@ -493,144 +493,2876 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/basic_rtc_programming/rtc_conf_reference/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#一般的な設定">一般的な設定</a>
-    <ul>
-      <li><a href="#configversion">config.version</a></li>
-      <li><a href="#openrtmname">openrtm.name</a></li>
-      <li><a href="#openrtmversion">openrtm.version</a></li>
-    </ul>
-  </li>
-  <li><a href="#ネームサービスに関する設定">ネームサービスに関する設定</a>
-    <ul>
-      <li><a href="#namingenable">naming.enable</a></li>
-      <li><a href="#namingtype">naming.type</a></li>
-      <li><a href="#namingformats">naming.formats</a></li>
-      <li><a href="#namingupdateenable">naming.update.enable</a></li>
-      <li><a href="#namingupdateinterval">naming.update.interval</a></li>
-      <li><a href="#namingupdaterebind">naming.update.rebind</a></li>
-    </ul>
-  </li>
-  <li><a href="#ロガー関係の設定">ロガー関係の設定</a>
-    <ul>
-      <li><a href="#loggerenable">logger.enable</a></li>
-      <li><a href="#loggerfile_name">logger.file_name</a></li>
-      <li><a href="#loggerdate_format">logger.date_format</a></li>
-      <li><a href="#loggerlog_level">logger.log_level</a></li>
-      <li><a href="#loggerclock_type">logger.clock_type</a></li>
-      <li><a href="#loggerescape_sequence_enable">logger.escape_sequence_enable</a></li>
-    </ul>
-  </li>
-  <li><a href="#corbaに関する設定">CORBAに関する設定</a>
-    <ul>
-      <li><a href="#corbaargs">corba.args</a>
-        <ul>
-          <li><a href="#指定例1">指定例1</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#一般的な設定">一般的な設定</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#configversion">config.version</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtmname">openrtm.name</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtmversion">openrtm.version</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ネームサービスに関する設定">ネームサービスに関する設定</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#namingenable">naming.enable</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#namingtype">naming.type</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#namingformats">naming.formats</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#namingupdateenable">naming.update.enable</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#namingupdateinterval">naming.update.interval</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#namingupdaterebind">naming.update.rebind</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ロガー関係の設定">ロガー関係の設定</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#loggerenable">logger.enable</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#loggerfile_name">logger.file_name</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#loggerdate_format">logger.date_format</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#loggerlog_level">logger.log_level</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#loggerclock_type">logger.clock_type</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#loggerescape_sequence_enable">logger.escape_sequence_enable</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#corbaに関する設定">CORBAに関する設定</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#corbaargs">corba.args</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#corbaendpoint-非推奨">corba.endpoint [非推奨]</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#corbaendpoints">corba.endpoints</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#corbaendpoints_ipv4-readonly">corba.endpoints_ipv4: [readonly]</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#corbaendpoints_ipv6-readonly">corba.endpoints_ipv6: [readonly]</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#corbaendpoint_property">corba.endpoint_property</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#corbanameservers">corba.nameservers</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#corbanameservicereplace_endpoint">corba.nameservice.replace_endpoint</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#corbaalternate_iiop_addresses">corba.alternate_iiop_addresses</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#manager-に関する設定">manager に関する設定</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#mangername">manger.name</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managerinstance_name">manager.instance_name</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#manager_naming_formats">manager_naming_formats</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#manageris_master">manager.is_master</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managercorba_servant">manager.corba_servant</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#corbamaster_manager">corba.master_manager</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managerupdate_master_managerenable">manager.update_master_manager.enable</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managerupdate_master_managerinterval">manager.update_master_manager.interval</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managercomponentsnaming_policy">manager.components.naming_policy</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managercomponentsprecreate">manager.components.precreate</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managercomponentspreconnect">manager.components.preconnect</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managercomponentspreactivation">manager.components.preactivation</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managercpu_affinity">manager.cpu_affinity</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#マネージャのライフサイクルオプション">マネージャのライフサイクルオプション</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#managershutdown_on_nortcs">manager.shutdown_on_nortcs:</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managershutdown_auto">manager.shutdown_auto</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managerauto_shutdown_duration">manager.auto_shutdown_duration</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managertermination_waittime">manager.termination_waittime</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#モジュール管理に関するオプション">モジュール管理に関するオプション</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#managermodulesload_path">manager.modules.load_path</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managermodulespreload">manager.modules.preload:</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managermodulesabs_path_allowed">manager.modules.abs_path_allowed</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managermodulessearch_auto">manager.modules.search_auto</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managerpreloadmodules-none">manager.preload.modules: none</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#マネージャの言語サポートオプション">マネージャの言語サポートオプション</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#managersupported_languages">manager.supported_languages</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managermoduleslangsuffixes">manager.modules.<code class="language-plaintext highlighter-rouge"</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managermoduleslangmanager_cmd">manager.modules.<code class="language-plaintext highlighter-rouge"</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managermoduleslangprofile_cmd">manager.modules.<code class="language-plaintext highlighter-rouge"</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managermoduleslangload_paths">manager.modules.<code class="language-plaintext highlighter-rouge"</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#タイマに関する設定">タイマに関する設定</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#timerenable">timer.enable</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#timertick">timer.tick</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#実行コンテキストオプション">実行コンテキストオプション</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtperiodictype">exec_cxt.periodic.type</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtperiodicrate">exec_cxt.periodic.rate</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_transition">exec_cxt.sync_transition</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_activation">exec_cxt.sync_activation</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_deactivation">exec_cxt.sync_deactivation</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_reset">exec_cxt.sync_reset</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxttransition_timeout">exec_cxt.transition_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtactivation_timeout">exec_cxt.activation_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtdeactivation_timeout">exec_cxt.deactivation_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtreset_timeout">exec_cxt.reset_timeout</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#sdo-サービスオプション">SDO サービスオプション</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#sdoserviceprovideravailable_services">sdo.service.provider.available_services</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#sdoserviceproviderenabled_services">sdo.service.provider.enabled_services</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#sdoserviceproviderproviding_services">sdo.service.provider.providing_services</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#sdoserviceconsumeravailable_services">sdo.service.consumer.available_services</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#sdoserviceconsumerenabled_services">sdo.service.consumer.enabled_services</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ローカルサービスオプション">ローカルサービスオプション</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#managerlocal_servicemodules">manager.local_service.modules</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#managerlocal_serviceenabled_services">manager.local_service.enabled_services</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#ポートの設定">ポートの設定</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#allow_dup_connection">allow_dup_connection</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#fan_in">fan_in</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#fan_out">fan_out</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#bufferlength">buffer.length</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#bufferwritefull_policy">buffer.write.full_policy</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#bufferreadempty_policy">buffer.read.empty_policy</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
-      <li><a href="#corbaendpoint-非推奨">corba.endpoint [非推奨]</a></li>
-      <li><a href="#corbaendpoints">corba.endpoints</a></li>
-      <li><a href="#corbaendpoints_ipv4-readonly">corba.endpoints_ipv4: [readonly]</a></li>
-      <li><a href="#corbaendpoints_ipv6-readonly">corba.endpoints_ipv6: [readonly]</a></li>
-      <li><a href="#corbaendpoint_property">corba.endpoint_property</a></li>
-      <li><a href="#corbanameservers">corba.nameservers</a></li>
-      <li><a href="#corbanameservicereplace_endpoint">corba.nameservice.replace_endpoint</a></li>
-      <li><a href="#corbaalternate_iiop_addresses">corba.alternate_iiop_addresses</a></li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#manager-に関する設定">manager に関する設定</a>
-    <ul>
-      <li><a href="#mangername">manger.name</a></li>
-      <li><a href="#managerinstance_name">manager.instance_name</a></li>
-      <li><a href="#manager_naming_formats">manager_naming_formats</a></li>
-      <li><a href="#manageris_master">manager.is_master</a></li>
-      <li><a href="#managercorba_servant">manager.corba_servant</a></li>
-      <li><a href="#corbamaster_manager">corba.master_manager</a></li>
-      <li><a href="#managerupdate_master_managerenable">manager.update_master_manager.enable</a></li>
-      <li><a href="#managerupdate_master_managerinterval">manager.update_master_manager.interval</a></li>
-      <li><a href="#managercomponentsnaming_policy">manager.components.naming_policy</a></li>
-      <li><a href="#managercomponentsprecreate">manager.components.precreate</a></li>
-      <li><a href="#managercomponentspreconnect">manager.components.preconnect</a></li>
-      <li><a href="#managercomponentspreactivation">manager.components.preactivation</a></li>
-      <li><a href="#managercpu_affinity">manager.cpu_affinity</a></li>
-    </ul>
-  </li>
-  <li><a href="#マネージャのライフサイクルオプション">マネージャのライフサイクルオプション</a>
-    <ul>
-      <li><a href="#managershutdown_on_nortcs">manager.shutdown_on_nortcs:</a></li>
-      <li><a href="#managershutdown_auto">manager.shutdown_auto</a></li>
-      <li><a href="#managerauto_shutdown_duration">manager.auto_shutdown_duration</a></li>
-      <li><a href="#managertermination_waittime">manager.termination_waittime</a></li>
-    </ul>
-  </li>
-  <li><a href="#モジュール管理に関するオプション">モジュール管理に関するオプション</a>
-    <ul>
-      <li><a href="#managermodulesload_path">manager.modules.load_path</a></li>
-      <li><a href="#managermodulespreload">manager.modules.preload:</a></li>
-      <li><a href="#managermodulesabs_path_allowed">manager.modules.abs_path_allowed</a></li>
-      <li><a href="#managermodulessearch_auto">manager.modules.search_auto</a></li>
-      <li><a href="#managerpreloadmodules-none">manager.preload.modules: none</a></li>
-    </ul>
-  </li>
-  <li><a href="#マネージャの言語サポートオプション">マネージャの言語サポートオプション</a>
-    <ul>
-      <li><a href="#managersupported_languages">manager.supported_languages</a></li>
-      <li><a href="#managermoduleslangsuffixes">manager.modules.<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>.suffixes</a></li>
-      <li><a href="#managermoduleslangmanager_cmd">manager.modules.<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>.manager_cmd</a></li>
-      <li><a href="#managermoduleslangprofile_cmd">manager.modules.<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>.profile_cmd</a></li>
-      <li><a href="#managermoduleslangload_paths">manager.modules.<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>.load_paths</a></li>
-    </ul>
-  </li>
-  <li><a href="#タイマに関する設定">タイマに関する設定</a>
-    <ul>
-      <li><a href="#timerenable">timer.enable</a></li>
-      <li><a href="#timertick">timer.tick</a></li>
-    </ul>
-  </li>
-  <li><a href="#実行コンテキストオプション">実行コンテキストオプション</a>
-    <ul>
-      <li><a href="#exec_cxtperiodictype">exec_cxt.periodic.type</a></li>
-      <li><a href="#exec_cxtperiodicrate">exec_cxt.periodic.rate</a></li>
-      <li><a href="#exec_cxtsync_transition">exec_cxt.sync_transition</a></li>
-      <li><a href="#exec_cxtsync_activation">exec_cxt.sync_activation</a></li>
-      <li><a href="#exec_cxtsync_deactivation">exec_cxt.sync_deactivation</a></li>
-      <li><a href="#exec_cxtsync_reset">exec_cxt.sync_reset</a></li>
-      <li><a href="#exec_cxttransition_timeout">exec_cxt.transition_timeout</a></li>
-      <li><a href="#exec_cxtactivation_timeout">exec_cxt.activation_timeout</a></li>
-      <li><a href="#exec_cxtdeactivation_timeout">exec_cxt.deactivation_timeout</a></li>
-      <li><a href="#exec_cxtreset_timeout">exec_cxt.reset_timeout</a></li>
-    </ul>
-  </li>
-  <li><a href="#sdo-サービスオプション">SDO サービスオプション</a>
-    <ul>
-      <li><a href="#sdoserviceprovideravailable_services">sdo.service.provider.available_services</a></li>
-      <li><a href="#sdoserviceproviderenabled_services">sdo.service.provider.enabled_services</a></li>
-      <li><a href="#sdoserviceproviderproviding_services">sdo.service.provider.providing_services</a></li>
-      <li><a href="#sdoserviceconsumeravailable_services">sdo.service.consumer.available_services</a></li>
-      <li><a href="#sdoserviceconsumerenabled_services">sdo.service.consumer.enabled_services</a></li>
-    </ul>
-  </li>
-  <li><a href="#ローカルサービスオプション">ローカルサービスオプション</a>
-    <ul>
-      <li><a href="#managerlocal_servicemodules">manager.local_service.modules</a></li>
-      <li><a href="#managerlocal_serviceenabled_services">manager.local_service.enabled_services</a></li>
-    </ul>
-  </li>
-  <li><a href="#ポートの設定">ポートの設定</a>
-    <ul>
-      <li><a href="#allow_dup_connection">allow_dup_connection</a></li>
-      <li><a href="#fan_in">fan_in</a></li>
-      <li><a href="#fan_out">fan_out</a></li>
-      <li><a href="#bufferlength">buffer.length</a></li>
-      <li><a href="#bufferwritefull_policy">buffer.write.full_policy</a></li>
-      <li><a href="#bufferreadempty_policy">buffer.read.empty_policy</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<p>#contents(3)</p>

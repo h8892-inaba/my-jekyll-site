@@ -493,53 +493,586 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/basic_rtc_programming/dataport/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#データポートとは">データポートとは</a></li>
-  <li><a href="#変数の型">変数の型</a>
-    <ul>
-      <li><a href="#基本型">基本型</a></li>
-      <li><a href="#少し複雑なデータ型">少し複雑なデータ型</a></li>
-      <li><a href="#独自のデータ型">独自のデータ型</a></li>
-    </ul>
-  </li>
-  <li><a href="#データポートの接続">データポートの接続</a>
-    <ul>
-      <li><a href="#コネクタ">コネクタ</a></li>
-      <li><a href="#インターフェース型">インターフェース型</a></li>
-      <li><a href="#データフロー型">データフロー型</a></li>
-      <li><a href="#サブスクリプション型">サブスクリプション型</a>
-        <ul>
-          <li><a href="#サブスクリプション型まとめ">サブスクリプション型まとめ</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#データポートとは">データポートとは</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#変数の型">変数の型</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#基本型">基本型</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#少し複雑なデータ型">少し複雑なデータ型</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#独自のデータ型">独自のデータ型</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#データポートの接続">データポートの接続</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#コネクタ">コネクタ</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#インターフェース型">インターフェース型</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#データフロー型">データフロー型</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サブスクリプション型">サブスクリプション型</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#データ送信ポリシー">データ送信ポリシー</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#inport-プログラミング">InPort プログラミング</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#inport-オブジェクト">InPort オブジェクト</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#outport">OutPort</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#outport-オブジェクト">OutPort オブジェクト</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#データポートのまとめ">データポートのまとめ</h2</a>
+        
       </li>
-      <li><a href="#データ送信ポリシー">データ送信ポリシー</a></li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#inport-プログラミング">InPort プログラミング</a>
-    <ul>
-      <li><a href="#inport-オブジェクト">InPort オブジェクト</a></li>
-    </ul>
-  </li>
-  <li><a href="#outport">OutPort</a>
-    <ul>
-      <li><a href="#outport-オブジェクト">OutPort オブジェクト</a></li>
-    </ul>
-  </li>
-  <li><a href="#データポートのまとめ">データポートのまとめ</a></li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: データポート (基礎編) -->
 <!-- -*- pukiwiki-edit -*- -->
 <!-- *データポート(基本編) -->
+<!-- #contents -->
 
-<p>#contents</p>
-
-<!-- ------------------------------------------------------------ -->
 <h2 id="データポートとは">データポートとは</h2>
 
 <p>データポートは主に連続的なデータを RTC 間でやりとるするためのポートです。

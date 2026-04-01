@@ -212,18 +212,41 @@ text-align: right;
   object-fit: contain;
 }
 
-/*
-.top-swiper .swiper-slide {
-  width: 100%;
-  height: 360px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f5f5f5; /* 余白の色 */
+.page-toc {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid #a3c1cc; /*5a6a70; /* ddd;*/
+  background: #f8f8f8;
 }
 
-/*.top-swiper .swiper-slide img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}*/
+.page-toc-title {
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.page-toc-list{
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.page-toc-list,
+.page-toc-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.page-toc-list .toc-item {
+  margin: 0.35rem 0;
+}
+
+.page-toc-list .toc-h2 {
+  margin-left: 0;
+}
+
+.page-toc-list .toc-h3 {
+  margin-left: 1rem;
+}
+
+.page-toc-list .toc-h4 {
+  margin-left: 2rem;
+}

@@ -493,33 +493,398 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/common/install_jdk8/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#jdk8配布元">JDK8配布元</a>
-    <ul>
-      <li><a href="#oracle">Oracle</a></li>
-      <li><a href="#openjdk">OpenJDK</a></li>
-      <li><a href="#adopt-open-jdk">Adopt Open JDK</a></li>
-      <li><a href="#amazon-open-jdk">Amazon Open JDK</a></li>
-    </ul>
-  </li>
-  <li><a href="#linux環境でのインストール">Linux環境でのインストール</a>
-    <ul>
-      <li><a href="#リポジトリからのパッケージ入手">リポジトリからのパッケージ入手</a>
-        <ul>
-          <li><a href="#ubuntudebianraspbian">Ubuntu/Debian/Raspbian</a></li>
-          <li><a href="#fedora">Fedora</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#jdk8配布元">JDK8配布元</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#oracle">Oracle</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openjdk">OpenJDK</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#adopt-open-jdk">Adopt Open JDK</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#amazon-open-jdk">Amazon Open JDK</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#linux環境でのインストール">Linux環境でのインストール</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#リポジトリからのパッケージ入手">リポジトリからのパッケージ入手</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#リポジトリからのパッケージ入手以外の方法">リポジトリからのパッケージ入手以外の方法</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#既にjdk8以外がインストールされている場合">既にJDK8以外がインストールされている場合</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#windows環境へのインストール">Windows環境へのインストール</h2</a>
+        
       </li>
-      <li><a href="#リポジトリからのパッケージ入手以外の方法">リポジトリからのパッケージ入手以外の方法</a></li>
-      <li><a href="#既にjdk8以外がインストールされている場合">既にJDK8以外がインストールされている場合</a></li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#windows環境へのインストール">Windows環境へのインストール</a></li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: JDK8のインストール -->

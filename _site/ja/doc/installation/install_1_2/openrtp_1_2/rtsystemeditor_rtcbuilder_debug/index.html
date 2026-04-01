@@ -493,33 +493,407 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/install_1_2/openrtp_1_2/rtsystemeditor_rtcbuilder_debug/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#必要なソフトウエアの入手">必要なソフトウエアの入手</a>
-    <ul>
-      <li><a href="#eclipse">eclipse</a></li>
-      <li><a href="#jdk">JDK</a></li>
-      <li><a href="#rtsystemeditorrtcbuilderのソースコード">RTSystemEditor、RTCBuilderのソースコード</a></li>
-    </ul>
-  </li>
-  <li><a href="#ビルド">ビルド</a>
-    <ul>
-      <li><a href="#jreの設定">JREの設定</a></li>
-      <li><a href="#コンパイラー準拠レベルの設定">コンパイラー準拠レベルの設定</a></li>
-      <li><a href="#rtsystemeditorrtcbuilderプロジェクトのインポート">RTSystemEditor、RTCBuilderプロジェクトのインポート</a></li>
-      <li><a href="#idlコンパイル">IDLコンパイル</a>
-        <ul>
-          <li><a href="#antビルドで文字化けする場合">Antビルドで文字化けする場合</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#必要なソフトウエアの入手">必要なソフトウエアの入手</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#eclipse">eclipse</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#jdk">JDK</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtsystemeditorrtcbuilderのソースコード">RTSystemEditor、RTCBuilderのソースコード</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ビルド">ビルド</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#jreの設定">JREの設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンパイラー準拠レベルの設定">コンパイラー準拠レベルの設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtsystemeditorrtcbuilderプロジェクトのインポート">RTSystemEditor、RTCBuilderプロジェクトのインポート</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#idlコンパイル">IDLコンパイル</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#クラスパスの修正">クラスパスの修正</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#デバッグ実行">デバッグ実行</h2</a>
+        
       </li>
-      <li><a href="#クラスパスの修正">クラスパスの修正</a></li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#デバッグ実行">デバッグ実行</a></li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: RTSystemEditor、RTCBuilderのデバッグ -->

@@ -493,35 +493,364 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/toolmanuals/rtc_builder-1_2_0/cpack_package_creation_rtcb_1_2_0/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#はじめに">はじめに</a></li>
-  <li><a href="#事前準備">事前準備</a>
-    <ul>
-      <li><a href="#windows-環境">Windows 環境</a>
-        <ul>
-          <li><a href="#wix-toolset-のインストール">WiX Toolset のインストール</a></li>
-          <li><a href="#graphviz-のインストール">Graphviz のインストール</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#はじめに">はじめに</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#事前準備">事前準備</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#windows-環境">Windows 環境</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#linux-環境">Linux 環境</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#windowslinux-での共通設定">Windows/Linux での共通設定</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#インストーラーパッケージ名">インストーラーパッケージ名</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#インストール先ディレクトリーの指定">インストール先ディレクトリーの指定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#パッケージメンテナー情報">パッケージメンテナー情報</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
-      <li><a href="#linux-環境">Linux 環境</a>
-        <ul>
-          <li><a href="#一括インストール">一括インストール</a></li>
-        </ul>
-      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#windowslinux-での共通設定">Windows/Linux での共通設定</a>
-    <ul>
-      <li><a href="#インストーラーパッケージ名">インストーラーパッケージ名</a></li>
-      <li><a href="#インストール先ディレクトリーの指定">インストール先ディレクトリーの指定</a></li>
-      <li><a href="#パッケージメンテナー情報">パッケージメンテナー情報</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: CPack を使ったパッケージ作成（Windows/Linux での共通設定） -->

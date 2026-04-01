@@ -493,56 +493,950 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/casestudy/rtc_development/opencv_camera_image_type_use/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#はじめに">はじめに</a>
-    <ul>
-      <li><a href="#opencv-とは">OpenCV とは</a></li>
-      <li><a href="#作成する-rtコンポーネント">作成する RTコンポーネント</a></li>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#opencv-とは">OpenCV とは</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#作成する-rtコンポーネント">作成する RTコンポーネント</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#cvflip-関数について">cvFlip 関数について</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#コンポーネントの概要">コンポーネントの概要</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#動作環境開発環境">動作環境・開発環境</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#flip-コンポーネントの雛型の生成">Flip コンポーネントの雛型の生成</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#rtcbuilder-の起動">RTCBuilder の起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtcbuilder用-プロジェクトの作成">RTCBuilder用 プロジェクトの作成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtc-プロファイルエディタの起動">RTC プロファイルエディタの起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンポーネントのプロファイル情報入力とコードの生成">コンポーネントのプロファイル情報入力とコードの生成</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#アクティビティ処理の実装">アクティビティ処理の実装</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#opencv用-ユーザープロパティシートのコピー">OpenCV用 ユーザープロパティシートのコピー</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#copypropsbat-の実行">copyprops.bat の実行</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ヘッダファイルの編集">ヘッダファイルの編集</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ソースファイルの編集">ソースファイルの編集</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ビルドの実行">ビルドの実行</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#flip-コンポーネントの動作確認">Flip コンポーネントの動作確認</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#nameservice-の起動">NameService の起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtcconfの作成">rtc.confの作成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#flip-コンポーネントの起動">Flip コンポーネントの起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#usbcameraaqcuireusbcameramonitor-コンポーネントの起動">USBCameraAqcuire、USBCameraMonitor コンポーネントの起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンポーネントの接続">コンポーネントの接続</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンポーネントの-activate">コンポーネントの Activate</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#動作確認">動作確認</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#flip-コンポーネントのソースファイル">Flip コンポーネントのソースファイル</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#flip-コンポーネントのヘッダファイル">Flip コンポーネントのヘッダファイル</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#flip-コンポーネントのビルド済みパッケージ">Flip コンポーネントのビルド済みパッケージ</h2</a>
+        
+      </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#opencv-ライブリの-rtコンポーネント化-flipコンポーネント">OpenCV ライブリの RTコンポーネント化 (Flipコンポーネント)</a>
-    <ul>
-      <li><a href="#cvflip-関数について">cvFlip 関数について</a></li>
-      <li><a href="#コンポーネントの概要">コンポーネントの概要</a></li>
-      <li><a href="#動作環境開発環境">動作環境・開発環境</a></li>
-      <li><a href="#flip-コンポーネントの雛型の生成">Flip コンポーネントの雛型の生成</a>
-        <ul>
-          <li><a href="#rtcbuilder-の起動">RTCBuilder の起動</a></li>
-          <li><a href="#rtcbuilder用-プロジェクトの作成">RTCBuilder用 プロジェクトの作成</a></li>
-          <li><a href="#rtc-プロファイルエディタの起動">RTC プロファイルエディタの起動</a></li>
-          <li><a href="#コンポーネントのプロファイル情報入力とコードの生成">コンポーネントのプロファイル情報入力とコードの生成</a></li>
-        </ul>
-      </li>
-      <li><a href="#アクティビティ処理の実装">アクティビティ処理の実装</a>
-        <ul>
-          <li><a href="#opencv用-ユーザープロパティシートのコピー">OpenCV用 ユーザープロパティシートのコピー</a></li>
-          <li><a href="#copypropsbat-の実行">copyprops.bat の実行</a></li>
-          <li><a href="#ヘッダファイルの編集">ヘッダファイルの編集</a></li>
-          <li><a href="#ソースファイルの編集">ソースファイルの編集</a></li>
-          <li><a href="#ビルドの実行">ビルドの実行</a></li>
-        </ul>
-      </li>
-      <li><a href="#flip-コンポーネントの動作確認">Flip コンポーネントの動作確認</a>
-        <ul>
-          <li><a href="#nameservice-の起動">NameService の起動</a></li>
-          <li><a href="#rtcconfの作成">rtc.confの作成</a></li>
-          <li><a href="#flip-コンポーネントの起動">Flip コンポーネントの起動</a></li>
-          <li><a href="#usbcameraaqcuireusbcameramonitor-コンポーネントの起動">USBCameraAqcuire、USBCameraMonitor コンポーネントの起動</a></li>
-          <li><a href="#コンポーネントの接続">コンポーネントの接続</a></li>
-          <li><a href="#コンポーネントの-activate">コンポーネントの Activate</a></li>
-          <li><a href="#動作確認">動作確認</a></li>
-        </ul>
-      </li>
-      <li><a href="#flip-コンポーネントのソースファイル">Flip コンポーネントのソースファイル</a></li>
-      <li><a href="#flip-コンポーネントのヘッダファイル">Flip コンポーネントのヘッダファイル</a></li>
-      <li><a href="#flip-コンポーネントのビルド済みパッケージ">Flip コンポーネントのビルド済みパッケージ</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: RTコンポーネント作成(OpenCV編 CameraImage型の使用) -->

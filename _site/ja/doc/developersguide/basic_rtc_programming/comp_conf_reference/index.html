@@ -493,61 +493,930 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/basic_rtc_programming/comp_conf_reference/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#基本設定">基本設定</a>
-    <ul>
-      <li><a href="#basic-profile">Basic Profile</a></li>
-    </ul>
-  </li>
-  <li><a href="#実行コンテキストオプション">実行コンテキストオプション</a>
-    <ul>
-      <li><a href="#exec_cxtperiodictype">exec_cxt.periodic.type</a></li>
-      <li><a href="#exec_cxtperiodicrate">exec_cxt.periodic.rate</a></li>
-      <li><a href="#exec_cxtsync_transition">exec_cxt.sync_transition</a></li>
-      <li><a href="#exec_cxtsync_activation">exec_cxt.sync_activation</a></li>
-      <li><a href="#exec_cxtsync_deactivation">exec_cxt.sync_deactivation</a></li>
-      <li><a href="#exec_cxtsync_reset">exec_cxt.sync_reset</a></li>
-      <li><a href="#exec_cxttransition_timeout">exec_cxt.transition_timeout</a></li>
-      <li><a href="#exec_cxtactivation_timeout">exec_cxt.activation_timeout</a></li>
-      <li><a href="#exec_cxtdeactivation_timeout">exec_cxt.deactivation_timeout</a></li>
-      <li><a href="#exec_cxtreset_timeout">exec_cxt.reset_timeout</a></li>
-      <li><a href="#exec_cxtcpu_affinity">exec_cxt.cpu_affinity</a></li>
-      <li><a href="#execution_contexts">execution_contexts</a></li>
-      <li><a href="#ecrate">ec.<EC name="">.rate</EC></a></li>
-      <li><a href="#ecsynch_transition">ec.<EC name="">.synch_transition</EC></a></li>
-      <li><a href="#ectransition_timeout">ec.<EC name="">.transition_timeout</EC></a></li>
-    </ul>
-  </li>
-  <li><a href="#ポート設定">ポート設定</a>
-    <ul>
-      <li><a href="#inport-オプション">InPort オプション</a></li>
-      <li><a href="#outport-オプション">OutPort オプション</a></li>
-      <li><a href="#サービスポートオプション">サービスポートオプション</a></li>
-    </ul>
-  </li>
-  <li><a href="#rtsystemeditorのコンフィギュレーションセットgui設定">RTSystemEditorのコンフィギュレーションセットGUI設定</a>
-    <ul>
-      <li><a href="#利用可能なウィジェット-widget-の一覧">利用可能なウィジェット [<u>widget</u>] の一覧</a>
-        <ul>
-          <li><a href="#書式">書式</a></li>
-          <li><a href="#書式詳細">書式詳細</a></li>
-          <li><a href="#例">例</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#基本設定">基本設定</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#basic-profile">Basic Profile</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#実行コンテキストオプション">実行コンテキストオプション</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtperiodictype">exec_cxt.periodic.type</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtperiodicrate">exec_cxt.periodic.rate</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_transition">exec_cxt.sync_transition</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_activation">exec_cxt.sync_activation</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_deactivation">exec_cxt.sync_deactivation</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_reset">exec_cxt.sync_reset</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxttransition_timeout">exec_cxt.transition_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtactivation_timeout">exec_cxt.activation_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtdeactivation_timeout">exec_cxt.deactivation_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtreset_timeout">exec_cxt.reset_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtcpu_affinity">exec_cxt.cpu_affinity</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#execution_contexts">execution_contexts</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ecrate">ec.<EC name=""</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ecsynch_transition">ec.<EC name=""</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ectransition_timeout">ec.<EC name=""</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ポート設定">ポート設定</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#inport-オプション">InPort オプション</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#outport-オプション">OutPort オプション</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サービスポートオプション">サービスポートオプション</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#rtsystemeditorのコンフィギュレーションセットgui設定">RTSystemEditorのコンフィギュレーションセットGUI設定</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#利用可能なウィジェット-widget-の一覧">利用可能なウィジェット [<u</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#利用可能な制約条件-constraints-の一覧">利用可能な制約条件 [<u</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
-      <li><a href="#利用可能な制約条件-constraints-の一覧">利用可能な制約条件 [<u>constraints</u>] の一覧</a>
-        <ul>
-          <li><a href="#書式-1">書式</a></li>
-          <li><a href="#書式詳細-1">書式詳細</a></li>
-          <li><a href="#制約指定例">制約指定例</a></li>
-        </ul>
-      </li>
+    
+
+  
     </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<p>#contents(3)</p>

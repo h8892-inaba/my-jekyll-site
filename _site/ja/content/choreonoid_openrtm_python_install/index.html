@@ -493,35 +493,442 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/content/choreonoid_openrtm_python_install/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#動作環境">動作環境</a></li>
-  <li><a href="#インストール手順windows">インストール手順(Windows)</a>
-    <ul>
-      <li><a href="#python">Python</a></li>
-      <li><a href="#choreonoid">Choreonoid</a></li>
-      <li><a href="#ソースコードからビルドする場合">ソースコードからビルドする場合</a></li>
-    </ul>
-  </li>
-  <li><a href="#インストール手順ubuntu">インストール手順(Ubuntu)</a>
-    <ul>
-      <li><a href="#ダウンロード">ダウンロード</a></li>
-      <li><a href="#インストール">インストール</a>
-        <ul>
-          <li><a href="#依存ライブラリ">依存ライブラリ</a></li>
-          <li><a href="#openrtm-aist">OpenRTM-aist</a></li>
-          <li><a href="#openrtm-aist-python">OpenRTM-aist-Python</a></li>
-          <li><a href="#choreonoid-1">Choreonoid</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#動作環境">動作環境</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#インストール手順windows">インストール手順(Windows)</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#python">Python</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#choreonoid">Choreonoid</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ソースコードからビルドする場合">ソースコードからビルドする場合</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#インストール手順ubuntu">インストール手順(Ubuntu)</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#ダウンロード">ダウンロード</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#インストール">インストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#動作確認に必要なソフトウェアのインストール">動作確認に必要なソフトウェアのインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#追記">追記</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
-      <li><a href="#動作確認に必要なソフトウェアのインストール">動作確認に必要なソフトウェアのインストール</a></li>
-      <li><a href="#追記">追記</a></li>
+    
+
+  
     </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<p>#contents</p>

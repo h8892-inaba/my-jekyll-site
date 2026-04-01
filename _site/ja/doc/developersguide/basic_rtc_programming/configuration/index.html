@@ -493,66 +493,969 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/basic_rtc_programming/configuration/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#コンフィギュレーションとは">コンフィギュレーションとは</a></li>
-  <li><a href="#コンフィギュレーションの仕組み">コンフィギュレーションの仕組み</a></li>
-  <li><a href="#パラメーターを定義する">パラメーターを定義する</a>
-    <ul>
-      <li><a href="#rtcbuilderによる定義">RTCBuilderによる定義</a></li>
-      <li><a href="#rtc-templateによる定義">rtc-templateによる定義</a></li>
-      <li><a href="#手動による定義">手動による定義</a>
-        <ul>
-          <li><a href="#コンフィギュレーションパラメーター以下パラメーターの用途名称型を決める">コンフィギュレーションパラメーター(以下パラメーター)の用途、名称、型を決める</a></li>
-          <li><a href="#パラメーターの変数をコンポーネントのヘッダprivateprotectedに宣言する">パラメーターの変数をコンポーネントのヘッダ(private/protected)に宣言する</a></li>
-          <li><a href="#コンポーネントの実装ファイルのstatic変数_specにパラメーターの宣言とデフォルト値を追加する">コンポーネントの実装ファイルのstatic変数<コンポーネント名>_spec[]にパラメーターの宣言とデフォルト値を追加する</コンポーネント名></a></li>
-          <li><a href="#各変数を初期化子で初期化する">各変数を初期化子で初期化する</a></li>
-          <li><a href="#bindparameter関数でパラメーターと変数をバインドする">bindParameter()関数でパラメーターと変数をバインドする</a></li>
-        </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#コンフィギュレーションとは">コンフィギュレーションとは</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#コンフィギュレーションの仕組み">コンフィギュレーションの仕組み</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#パラメーターを定義する">パラメーターを定義する</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#rtcbuilderによる定義">RTCBuilderによる定義</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtc-templateによる定義">rtc-templateによる定義</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#手動による定義">手動による定義</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#パラメーターを使う">パラメーターを使う</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#変数が使用できるコールバック関数">変数が使用できるコールバック関数</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#変数は読み出し専用">変数は読み出し専用</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#値が正しいか常にチェックする">値が正しいか常にチェックする</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#パラメーターを設定する">パラメーターを設定する</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#コンポーネント設定ファイル">コンポーネント設定ファイル</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンフィギュレーションセットの設定">コンフィギュレーションセットの設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#アクティブコンフィギュレーションセットの指定">アクティブコンフィギュレーションセットの指定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンフィギュレーションセットの設定-1">コンフィギュレーションセットの設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#拡張機能">拡張機能</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#変換関数について">変換関数について</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#何をパラメーターにするか">何をパラメーターにするか？</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#更新頻度">更新頻度</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#更新のタイミング">更新のタイミング</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#データかパラメーターか">データかパラメーターか？</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サービスかパラメーターか">サービスかパラメーターか？</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#まとめ">まとめ</h2</a>
+        
       </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#パラメーターを使う">パラメーターを使う</a>
-    <ul>
-      <li><a href="#変数が使用できるコールバック関数">変数が使用できるコールバック関数</a></li>
-      <li><a href="#変数は読み出し専用">変数は読み出し専用</a></li>
-      <li><a href="#値が正しいか常にチェックする">値が正しいか常にチェックする</a></li>
-    </ul>
-  </li>
-  <li><a href="#パラメーターを設定する">パラメーターを設定する</a>
-    <ul>
-      <li><a href="#コンポーネント設定ファイル">コンポーネント設定ファイル</a></li>
-      <li><a href="#コンフィギュレーションセットの設定">コンフィギュレーションセットの設定</a></li>
-      <li><a href="#アクティブコンフィギュレーションセットの指定">アクティブコンフィギュレーションセットの指定</a></li>
-      <li><a href="#コンフィギュレーションセットの設定-1">コンフィギュレーションセットの設定</a></li>
-      <li><a href="#拡張機能">拡張機能</a>
-        <ul>
-          <li><a href="#conf_-widget_-設定">conf._ widget_ 設定</a></li>
-          <li><a href="#conf__onstraints_の設定">conf.__onstraints_の設定</a></li>
-        </ul>
-      </li>
-      <li><a href="#変換関数について">変換関数について</a>
-        <ul>
-          <li><a href="#cの場合の変換関数">C++の場合の変換関数</a></li>
-          <li><a href="#javaの場合の変換関数">Javaの場合の変換関数</a></li>
-          <li><a href="#pythonの場合の変換関数">Pythonの場合の変換関数</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#何をパラメーターにするか">何をパラメーターにするか？</a>
-    <ul>
-      <li><a href="#更新頻度">更新頻度</a></li>
-      <li><a href="#更新のタイミング">更新のタイミング</a></li>
-      <li><a href="#データかパラメーターか">データかパラメーターか？</a></li>
-      <li><a href="#サービスかパラメーターか">サービスかパラメーターか？</a></li>
-    </ul>
-  </li>
-  <li><a href="#まとめ">まとめ</a></li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: コンフィギュレーション(基礎編) -->

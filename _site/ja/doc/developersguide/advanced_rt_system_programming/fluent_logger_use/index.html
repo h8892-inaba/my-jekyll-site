@@ -493,106 +493,1255 @@
    <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_use/index.md" target="_blank">
     ✏️ Edit this page on GitHub
   </a>
+  <!-- add Content on page by inaba-->
+          
 
-  <h3>Contents</h3>
-  <div class="blog-post-toc m-1">
-          <ul>
-  <li><a href="#c版">C++版</a>
-    <ul>
-      <li><a href="#windows">Windows</a>
-        <ul>
-          <li><a href="#fluent-bitのインストール">Fluent Bitのインストール</a></li>
-          <li><a href="#各種ライブラリのインストール">各種ライブラリのインストール</a></li>
-          <li><a href="#openrtm-aistのビルド">OpenRTM-aistのビルド</a></li>
-          <li><a href="#動作確認">動作確認</a>
-            <ul>
-              <li><a href="#rtcの起動">RTCの起動</a></li>
-            </ul>
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#c版">C++版</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#windows">Windows</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ubuntu">Ubuntu</h3</a>
+</li>
+          </ul>
+              </details>
+            
           </li>
-        </ul>
-      </li>
-      <li><a href="#ubuntu">Ubuntu</a>
-        <ul>
-          <li><a href="#fluent-bitのインストール-1">Fluent Bitのインストール</a></li>
-          <li><a href="#各種ライブラリのインストール-1">各種ライブラリのインストール</a></li>
-          <li><a href="#openrtm-aistのビルド-1">OpenRTM-aistのビルド</a></li>
-          <li><a href="#動作確認-1">動作確認</a>
-            <ul>
-              <li><a href="#rtcの起動-1">RTCの起動</a></li>
-            </ul>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#python版">Python版</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#fluent-logger-pythonのインストール">fluent-logger-pythonのインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#動作確認-2">動作確認</h3</a>
+</li>
+          </ul>
+              </details>
+            
           </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#python版">Python版</a>
-    <ul>
-      <li><a href="#fluent-logger-pythonのインストール">fluent-logger-pythonのインストール</a></li>
-      <li><a href="#動作確認-2">動作確認</a>
-        <ul>
-          <li><a href="#rtcの起動-2">RTCの起動</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#簡単な動作確認">簡単な動作確認</a></li>
-  <li><a href="#kibanaelasticsearchによるログ可視化">Kibana+Elasticsearchによるログ可視化</a>
-    <ul>
-      <li><a href="#elasticsearchのインストール">Elasticsearchのインストール</a></li>
-      <li><a href="#kibanaのインストール">Kibanaのインストール</a></li>
-      <li><a href="#動作確認-3">動作確認</a></li>
-      <li><a href="#pythonで動作確認">Pythonで動作確認</a></li>
-    </ul>
-  </li>
-  <li><a href="#c版-1">C++版</a>
-    <ul>
-      <li><a href="#windows-1">Windows</a>
-        <ul>
-          <li><a href="#fluent-bitのインストール-2">Fluent Bitのインストール</a></li>
-          <li><a href="#各種ライブラリのインストール-2">各種ライブラリのインストール</a></li>
-          <li><a href="#openrtm-aistのビルド-2">OpenRTM-aistのビルド</a></li>
-          <li><a href="#動作確認-4">動作確認</a>
-            <ul>
-              <li><a href="#rtcの起動-3">RTCの起動</a></li>
-            </ul>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#簡単な動作確認">簡単な動作確認</h2</a>
+            
           </li>
-        </ul>
-      </li>
-      <li><a href="#ubuntu-1">Ubuntu</a>
-        <ul>
-          <li><a href="#fluent-bitのインストール-3">Fluent Bitのインストール</a></li>
-          <li><a href="#各種ライブラリのインストール-3">各種ライブラリのインストール</a></li>
-          <li><a href="#openrtm-aistのビルド-3">OpenRTM-aistのビルド</a></li>
-          <li><a href="#動作確認-5">動作確認</a>
-            <ul>
-              <li><a href="#rtcの起動-4">RTCの起動</a></li>
-            </ul>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#kibanaelasticsearchによるログ可視化">Kibana+Elasticsearchによるログ可視化</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#elasticsearchのインストール">Elasticsearchのインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#kibanaのインストール">Kibanaのインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#動作確認-3">動作確認</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#pythonで動作確認">Pythonで動作確認</h3</a>
+</li>
+          </ul>
+              </details>
+            
           </li>
-        </ul>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#c版-1">C++版</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#windows-1">Windows</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ubuntu-1">Ubuntu</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#python版-1">Python版</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#fluent-logger-pythonのインストール-1">fluent-logger-pythonのインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#動作確認-6">動作確認</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#簡単な動作確認-1">簡単な動作確認</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#kibanaelasticsearchによるログ可視化-1">Kibana+Elasticsearchによるログ可視化</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#elasticsearchのインストール-1">Elasticsearchのインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#kibanaのインストール-1">Kibanaのインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#動作確認-7">動作確認</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#pythonで動作確認-1">Pythonで動作確認</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
       </li>
+    
+
+  
     </ul>
-  </li>
-  <li><a href="#python版-1">Python版</a>
-    <ul>
-      <li><a href="#fluent-logger-pythonのインストール-1">fluent-logger-pythonのインストール</a></li>
-      <li><a href="#動作確認-6">動作確認</a>
-        <ul>
-          <li><a href="#rtcの起動-5">RTCの起動</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#簡単な動作確認-1">簡単な動作確認</a></li>
-  <li><a href="#kibanaelasticsearchによるログ可視化-1">Kibana+Elasticsearchによるログ可視化</a>
-    <ul>
-      <li><a href="#elasticsearchのインストール-1">Elasticsearchのインストール</a></li>
-      <li><a href="#kibanaのインストール-1">Kibanaのインストール</a></li>
-      <li><a href="#動作確認-7">動作確認</a></li>
-      <li><a href="#pythonで動作確認-1">Pythonで動作確認</a></li>
-    </ul>
-  </li>
-</ul>
-        </div>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
   <article>
 	<div>
 		<!-- Title: Fluent Loggerによるログ収集 -->
