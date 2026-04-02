@@ -1,7 +1,7 @@
 # header links
 header:
-  - title: "Home"
-    url: "/"
+  #  - title: "Home"
+  #    url: "/"
   - title: "Download"
     url: "/ja/download/"
     description: "test_dl_page"
@@ -59,20 +59,20 @@ header:
     url: "/ja/project/"
   - title: "Hardware"
     url: "/ja/hardware/"
-  - title: "search"
-    url: "/ja/search_1/"
-  - title: "Manual_MD"
-    url: "/manual_md1/"
-    children:
-      - title: "harumi"
-        url: "/harumi/"
-        description: "test"
-      - title: "harumi1"
-        url: "/harumi1/"
-        description: "test1"
-      - title: "harumi2"
-        url: "/harumi2/"
-        description: "test2"
+      #  - title: "search"
+      #    url: "/ja/search_1/"
+      #  - title: "Manual_MD"
+      #    url: "/manual_md1/"
+      #    children:
+      #      - title: "harumi"
+      #        url: "/harumi/"
+      #        description: "test"
+      #      - title: "harumi1"
+      #        url: "/harumi1/"
+      #        description: "test1"
+      #      - title: "harumi2"
+      #        url: "/harumi2/"
+      #        description: "test2"
 
 
     #
