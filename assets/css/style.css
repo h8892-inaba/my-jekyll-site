@@ -21,10 +21,18 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: #fff;
+  background: #ff0000;/*#fff; change 0402*/
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   min-width: 150px;
   z-index: 1000;
+}
+
+/* Documentation ドロップダウンの背景を Community と同じにする */
+.dropdown-menu {
+  min-width: 190px;
+  background-color: #fff;   /* Communityと同じ色 */
+  border: 1px solid #ddd;   /* 枠線も揃える */
+  padding: 8px 10px; /* add 0402*/
 }
 
 .dropdown-content li a {
@@ -251,7 +259,7 @@ text-align: right;
   margin-left: 2rem;
 }
 /* add for logo title nav-bar */
-.site-header-custom .container {
+/*.site-header-custom .container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -259,11 +267,11 @@ text-align: right;
 
 .site-header-top {
   width: 30%;
-  /*width: 100%;*/
+  width: 100%;
   padding: 0.5rem 0 0.25rem;
 }
-
-.site-header-bottom {
+*/
+/*.site-header-bottom {
   width: 100%;
 }
 
@@ -289,4 +297,63 @@ text-align: right;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+}*/
+
+/* add 0402*/
+/* ┌────────────────────────────┐*/
+/* │  [ロゴ]  OpenRTM-aist      │ ← 上段*/
+/* │  Home  Docs  About ...     │ ← 下段*/
+/* └────────────────────────────┘*/
+
+/* ===== ヘッダー全体 ===== */
+.site-header .container {
+  display: flex;
+  flex-direction: column;   /* ← 縦並びにする */
+}
+
+/* ===== 1段目 ===== */
+.site-header-top {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0 0.3rem;
+}
+
+/* ロゴ + サイト名 */
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+}
+
+/* ロゴサイズ（ここで自由に変更） */
+.site-brand-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+/* サイト名 */
+.site-brand-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* ===== 2段目 ===== */
+.site-header-bottom {
+  width: 100%;
+}
+
+/* ナビ横並び */
+.site-header-bottom .navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* 余白調整（任意） */
+.site-header-bottom .nav-link {
+  padding: 0.4rem 0.8rem;
 }
