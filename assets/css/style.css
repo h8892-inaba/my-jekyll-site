@@ -357,3 +357,13 @@ text-align: right;
 .site-header-bottom .nav-link {
   padding: 0.4rem 0.8rem;
 }
+/* header for 2 段*/
+header.navbar > .container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+header.navbar .navbar-collapse {
+  width: 100%;
+}
