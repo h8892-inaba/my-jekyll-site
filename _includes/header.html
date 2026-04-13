@@ -1,3 +1,6 @@
+{% assign current_lang = page.lang | default: site.default_lang | default: "ja" %}
+{% assign nav_items = site.data.nav.[current_lang] %}
+
 <link rel="stylesheet" href="{{ "/assets/css/hover-dropdown.css" | relative_url }}">
 
 <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
@@ -6,7 +9,7 @@
     <a class="navbar-brand" href="{{ '/' | absolute_url }}">
 	    <img src="{{ site.logo | relative_url }}" alt="{{ site.title }} logo" >
 	    <!-- height="32" width="32" class="site-brand-logo"-->
-	    <span class="site-brand-text">{{ site.title }}</span><!--add here -->
+	    <span class="site-brand-text">{{ site.title }}--{{ current_lang }}</span><!--add here -->
     </a>
     </div>
 
@@ -18,8 +21,7 @@
 
     <div class="collapse navbar-collapse" id="navbarColor01">
 	    <ul class="navbar-nav"><!--del 0402  mr-auto">
-        <!-- TODO add theme version dropdown here -->
-        <!-- {%- for link in site.data.nav.header -%}
+	  {%- for link in nav_items.header -%}
           {%- if link.url contains '://' -%}
             {%- assign url = link.url -%}
           {%- else -%}
@@ -50,6 +52,10 @@
 	<!-- {%- endfor -%}-->
       </ul>
     </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>hogehogehoge-----</a>
+	{% include lang-switch.html %}
   </nav>
   </div>
 </header>

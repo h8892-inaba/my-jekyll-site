@@ -1,0 +1,1975 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>OpenRTM-aist | The power to connect</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="OpenRTM-aist" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_java/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_java/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="OpenRTM-aist" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"OpenRTM-aist","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_java/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">
+        <!-- TODO add theme version dropdown here -->
+        <!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/"  title="test_dl_page"
+            >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/"  title="test_doc_page"
+            >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >Research_and_Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    Research_and_Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1></h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/casestudy/rtc_development/rtc_development_java/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#openrtm-aist-java-概要">OpenRTM-aist-Java 概要</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#対象">対象</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#動作環境">動作環境</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#gui-を用いた場合の-rtコンポーネントの開発手順">GUI を用いた場合の RTコンポーネントの開発手順</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#rtctemplate-と-jdt-の連携">RtcTemplate と JDT の連携</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtctemplate-を利用したスケルトンコードの生成">RtcTemplate を利用したスケルトン・コードの生成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#eclipseを用いたビルド">Eclipseを用いたビルド</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#作成した-rtコンポーネントの実行">作成した RTコンポーネントの実行</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#java版-rtコンポーネントの構成">Java版 RTコンポーネントの構成</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#java版-rtコンポーネントと-c版コンポーネントの相違点">Java版 RTコンポーネントと C++版コンポーネントの相違点</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#データポート">データポート</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サービスポート">サービスポート</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンフィギュレーション">コンフィギュレーション</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#java版-rtコンポーネントの起動時の振る舞い">Java版 RTコンポーネントの起動時の振る舞い</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#idl用データ型と-java言語データ型の対応関係">IDL用データ型と Java言語データ型の対応関係</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#tips">Tips</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#eclipse-の自動起動の設定方法について">Eclipse の自動起動の設定方法について</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#謝辞">謝辞</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<p>init
+<!-- Title: RTコンポーネント作成(Java版) -->
+#contents</p>
+
+<h1 id="概要">概要</h1>
+<h2 id="openrtm-aist-java-概要">OpenRTM-aist-Java 概要</h2>
+<p>　OpenRTM-aist とは、独立行政法人産業技術総合研究所・知能システム研究部門・タスクインテリジェンス研究グループが実装・配布・メンテナンスを行っている RTミドルウェアの実装例です。RTミドルウェアおよび OpenRTM-aist は、ロボットの様々な機能要素を RTコンポーネントと呼ばれる部品単位に分割し、これらを自由に組み合わせることで多様なロボットシステムの構築を可能にするためのソフトウェアプラットフォームです。現在 OMG (Object Management Group) にて仕様策定中のロボット用ミドルウェア仕様(The Robotic Technology Component Specification)にも準拠しています。<br /> OpenRTM-aist-Java は、これまで C++言語向けに提供されていた OpenRTM-aist を Java言語に移植したものです。C++版 OpenRTM-aist互換のインターフェースを有し、Java言語を使用して開発した RTコンポーネントと C++言語を利用して開発した RTコンポーネントの相互運用が可能としています。<br /></p>
+<h2 id="対象">対象</h2>
+<p>　本ドキュメントは、OpenRTM-aist-Java を利用して、Java言語版 RTコンポーネントを開発する方法について説明しています。なお、本ドキュメントでは Java言語については基本知識を既に持っている方を対象としています。<br /></p>
+<h2 id="動作環境">動作環境</h2>
+<p>　OpenRTM-aist-Java の動作に必要な環境は以下のとおりです。<br /></p>
+
+<p><br /></p>
+
+<div align="center"><strong>表 1-1 動作環境</strong></div>
+<table class="table-alt">
+  <tr style="text-align: center;">
+    <th>環境</th>
+    <th>備考</th>
+  </tr>
+  <tr>
+    <td><a href="http://java.sun.com/javase/downloads/index_jdk5.jsp">Java Development Kit 5.0 (JDK 5) </a><br />(http://java.sun.com/products/archive/j2se/5.0_14/index.html )</td>
+    <td>注意：Java1.4 では動作しません.</td>
+  </tr>
+</table>
+<p><br />
+<br />
+　OpenRTM-aist-Java のインストール方法の詳細につきましては、<a href="/ja/node/804">「OpenRTM-aist-Java インストールマニュアル(UNIX)」</a>あるいは<a href="/ja/node/807">「OpenRTM-aist-Java インストールマニュアル(Windows)」</a>を参照してください。特に、次のことを確認してから以下の作業に移ってください。</p>
+<ul>
+  <li>「java -version」を実行したときのバージョンが上記 JDKと一致すること
+<!-- ---環境変数 JAVA_HOME に上記JDKのインストールフォルダーが設定されていること --></li>
+  <li>環境変数 RTM_JAVA_ROOT に OpenRTM-aist-Java のライブラリへのパス（ベースパス）が設定されていること
+<!-- ---<JAVA_HOME>\jre\lib\ext\にOpenRTM-aist-0.4.x.jarとcommons-cli-1.1.jar が存在すること --></li>
+  <li>
+    <RTM_JAVA_ROOT>で設定されるパスの直下のディレクトリー「jar」内にライブラリファイル OpenRTM-aist-0.4.x.jar と commons-cli-1.1.jar が存在すること（クラスパスとして設定するため）**※**
+:　**※** [こちら ](/ja/node/6426#Antbuild)を参考に独自のクラスパスの設定も可能です。|
+
+</RTM_JAVA_ROOT>
+  </li>
+</ul>
+<p><br /></p>
+
+<p><strong>◆参考:</strong></p>
+<ul>
+  <li><a href="/ja/node/805/"> JDK 5 インストール方法（UNIX） </a>、<a href="/ja/node/807"> JDK 5 インストール方法（Windows） </a></li>
+  <li><a href="/ja/node/804#hensu"> システム環境変数の設定方法（UNIX）</a>、<a href="/ja/node/807#javazip"> システム環境変数の設定方法（Windows） </a>
+<!-- --[[OpenRTM-aist-Java-0.4 のインストール（UNIX） >/ja/node/659#instjava04]][[OpenRTM-aist-Java-0.4のインストール（Windows） >/ja/node/666#instjava04]] -->
+<!-- --[[FAQ: 「java -version」がインストールした JDK とは違うバージョンとなります（Windows） >/ja/node/1190#JDKver]] --></li>
+  <li><a href="/ja/node/6425#javafedora">FAQ: Javaをインストールする際の FedoraCore での対応 </a></li>
+  <li><a href="/ja/node/6426#Antbuild">FAQ: 任意のフォルダーにクラスパスを設定してAnt ビルドを行う方法は？ </a>
+<br /></li>
+</ul>
+
+<p>&amp;aname(javacomp);</p>
+<h1 id="java版rtコンポーネントの開発について">Java版RTコンポーネントの開発について</h1>
+<p>　ここでは、Java版 RTコンポーネントの開発を行う場合の手順をご紹介します。サンプルとして以下のような仕様のコンポーネントを取り上げます。<br /></p>
+<div align="center"><strong>表 2-1 サンプルコンポーネントの仕様</strong><br /><br /></div>
+
+<table class="table-alt">
+  <tr>
+    <td colspan="2" style="text-align: center;"><strong>基本プロファイル</strong></td>
+  </tr>
+  <tr>
+    <td>コンポーネント名</td>
+    <td>sample</td>
+  </tr>
+  <tr>
+    <td>説明</td>
+    <td>SampleComponent</td>
+  </tr>
+  <tr>
+    <td>バージョン</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td>ベンダ</td>
+    <td>AIST</td>
+  </tr>
+  <tr>
+    <td>カテゴリ</td>
+    <td>example</td>
+  </tr>
+  <tr>
+    <td>コンポーネントの型</td>
+    <td>DataFlowComponent</td>
+  </tr>
+  <tr>
+    <td>アクティビティタイプ</td>
+    <td>SPORADIC</td>
+  </tr>
+  <tr>
+    <td>最大インスタンス数</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;"><strong>データInPort</strong></td>
+  </tr>
+  <tr>
+    <td>名称</td>
+    <td>in</td>
+  </tr>
+  <tr>
+    <td>型</td>
+    <td>TimedLong</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;"><strong>サービスProvider</strong></td>
+  </tr>
+  <tr>
+    <td>IDLパス</td>
+    <td>IDLs/MyService.idl  <strong>※</strong></td>
+  </tr>
+  <tr>
+    <td>ポート名</td>
+    <td>MySvcPort</td>
+  </tr>
+  <tr>
+    <td>サービス名</td>
+    <td>myservice0</td>
+  </tr>
+  <tr>
+    <td>サービス型</td>
+    <td>MyService</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;"><strong>コンフィギュレーションパラメーター</strong></td>
+  </tr>
+  <tr>
+    <td>名称</td>
+    <td>multiply</td>
+  </tr>
+  <tr>
+    <td>型</td>
+    <td>int</td>
+  </tr>
+  <tr>
+    <td>デフォルト値</td>
+    <td>1</td>
+  </tr>
+</table>
+
+<p><br />
+<strong>※</strong> MyService.idl は適当なエディタを用いて以下のような IDL ファイルを作成します。また、上の表中の「IDLパス」はMyService.idl のパスを記述します。Windowsの場合は、この「IDLパス」が MyService.idl へのフルパスでなければなりません。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> typedef sequence&lt;string&gt; EchoList;
+ typedef sequence&lt;float&gt; ValueList;
+ interface MyService
+ {
+   string echo(in string msg);
+   EchoList get_echo_history();
+   void set_value(in float value);
+   float get_value();
+   ValueList get_value_history();
+ };
+</code></pre></div></div>
+<div align="center"><strong>MyService.idl</strong></div>
+<p><br />
+なお、上記 MyService.idl は OpenRTM-aist-0.4-Java に付属するサンプルの「examples/Java/RTMExamples/SimpleService」ディレクトリー内にあるものと同一です。
+<br />
+<br /></p>
+
+<h2 id="gui-を用いた場合の-rtコンポーネントの開発手順">GUI を用いた場合の RTコンポーネントの開発手順</h2>
+<p>　GUI ツールである RtcTemlate を用いて、RTコンポーネントを開発手順を説明します。RtcTemplate の詳細については<a href="/node/">RtcLink・RtcTemplateのインストール</a>および<a href="/node/">RtcTemplate</a>を参照してください。</p>
+<h3 id="rtctemplate-と-jdt-の連携">RtcTemplate と JDT の連携</h3>
+<ul>
+  <li><strong>Eclipse を「新規」に開く</strong><br />
+　RTコンポーネントの開発は、統合開発環境 Eclipse のプロジェクトから行うことも可能です。新しいワークスペースを指定して [OK] ボタンをクリックします。Eclipse が起動します。（このとき「ようこそ」という画面が表示される場合がありますが、これは閉じます。）<br /></li>
+</ul>
+
+<div align="center"><a href="CheckedWorkSpace2.png"><img src="CheckedWorkSpace2.png" width="60%;" /></a></div>
+<div align="center"><strong>図 2-2 新規の Workspace を指定</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Java プロジェクトファイルの作成</strong><br />
+　上部メニューから [ファイル] &gt; [新規] &gt; [プロジェクト] を選択します。<br /></li>
+</ul>
+<div align="center"><a href="MakeProjectForBulid1.png"><img src="MakeProjectForBulid1.png" width="60%;" /></a></div>
+<div align="center"><strong>図 2-3 ビルド用プロジェクトの作成　１</strong></div>
+<p><br /></p>
+
+<p>　｢新規プロジェクト｣ウィザード内で｢Javaプロジェクト｣を選択し、[次へ] ボタンをクリックします。|<br /></p>
+<div align="center"><a href="MakeProjectForBulid2.png"><img src="MakeProjectForBulid2.png" width="60%;" /></a></div>
+<div align="center"><strong>図 2-4 ビルド用プロジェクトの作成　２</strong></div>
+<p><br /></p>
+
+<p>　｢新規プロジェクト｣ウィザードの次のステップで、作成する｢プロジェクト名｣を入力します。｢JDK準拠｣グループ内の設定が｢5.0｣以上（あるいは1.5以上）となっていることを確認した上で、[次へ] ボタンをクリックします（<strong>図 2-5</strong>）。一方、環境によっては「JDK準拠」フレームであるところが「JRE」フレームとなっており、プルダウンメニューから JDK5（あるいはJDK1.5）が選択できない場合があります（<strong>図 2-5</strong>‘）。その場合は、<a href="/ja/node/159#errorjavaJDK">こちら </a>を参照してJDKを選択できるようにします。|<br /></p>
+<div align="center"><a href="MakeProjectForBulid3.png"><img src="MakeProjectForBulid3.png" width="60%;" /></a></div>
+<div align="center"><strong>図 2-5 ビルド用プロジェクトの作成　３</strong></div>
+<p><br /></p>
+
+<div align="center"><a href="PullDownMenu_Default.png"><img src="PullDownMenu_Default.png" width="60%;" /></a></div>
+<!-- #ref(http://openrtm.a01.aist.go.jp/~chbi/PullDownMenu_Default.png,nolink,center) -->
+<div align="center"><strong>図 2-5' 環境によっては JDK を選択できない</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>参考：</strong>
+    <ul>
+      <li>→ <a href="/ja/node/159#errorjavaJDK">FAQ: Q. 新規 Java プロジェクトが JDK5 (1.5) 準拠として作成できない </a>|
+<br />
+<br />
+<br /></li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>　表示された｢新規 Java プロジェクト｣画面において、生成するプロジェクトの各種設定を行い [終了] ボタンをクリックします。</td>
+    </tr>
+  </tbody>
+</table>
+
+<div align="center"><a href="ProjectSettings.png"><img src="ProjectSettings.png" width="60%;" /></a></div>
+<div align="center"><strong>図 2-6 プロジェクトの各種設定をして終了</strong></div>
+
+<table>
+  <tbody>
+    <tr>
+      <td>　指定したプロジェクトが生成され、｢パッケージ・エクスプローラービュー｣内に表示されます。</td>
+    </tr>
+  </tbody>
+</table>
+
+<div align="center"><a href="PackageExplorerView.png"><img src="PackageExplorerView.png" width="60%;" /></a></div>
+
+<div align="center"><strong>図 2-7 パッケージエクスプローラビューの表示例</strong></div>
+<p><br />
+<br /></p>
+<ul>
+  <li><strong>自動ビルドを無効に</strong><br />
+　Eclipse のメニューバーの [プロジェクト] &gt; [自動的にビルド] がオンになっている場合は、チェックをはずし無効にしておいた方がいいでしょう。
+<br />
+<br /></li>
+</ul>
+
+<p><strong>※</strong> プロジェクトの作成時の各種オプション、設定など Eclipse に関する詳細は、<a href="http://www.eclipse.org/">Eclipse のサイト</a>などを参照してください。<br /><br />
+<br />
+<br /></p>
+<h3 id="rtctemplate-を利用したスケルトンコードの生成">RtcTemplate を利用したスケルトン・コードの生成</h3>
+<ul>
+  <li><strong>GUI版RtcTemplate エディタの起動</strong>
+　RtcTemplate のエディタ画面を起動します。</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>参考：</strong>
+    <ul>
+      <li>→　<a href="/ja/node/737#startTemplate">RtcTemplate を直接起動する</a>
+<strong>※</strong> RtcTemplate の使用方法等につきましては、<a href="/node">RtcTemplate</a>を参照してください。
+<br />
+<br /></li>
+    </ul>
+  </li>
+  <li><strong>RtcTemplate エディタで設定項目を編集</strong>
+　GUI版の RtcTemplate を使用して<a href="#javacomp">表2-1&gt;#javacomp</a>の仕様を持つ RTコンポーネントのスケルトン・コードを生成させる場合の設定を以下に示します。
+<br /></li>
+</ul>
+
+<div align="center"><a href="GUIrtc-templateSetting1.png"><img src="GUIrtc-templateSetting1.png" width="60%;" /></a></div>
+
+<div align="center"><a href="GUIrtc-templateSetting2.png"><img src="GUIrtc-templateSetting2.png" width="60%;" /></a></div>
+<div align="center"><strong>図 2-8 GUI RtcTemplateの設定</strong></div>
+<p><br />
+<br />
+<strong>注</strong> ：Windowsの場合、上記 ｢Output directory｣ や「IDL path: 」などはフルパスで記述すること。
+<br />
+<br /></p>
+
+<ul>
+  <li><strong>[Generate] ボタンでコードを生成</strong><br />
+　[Generate] ボタンをクリックし、コード生成を実行する。このとき必ず、RtcTemplate エディタ最下段の ｢Output directory｣ 欄に、先に生成したプロジェクトのディレクトリーを指定すること（<strong>※</strong> 図 2-8では「temp」となっている）。</li>
+</ul>
+
+<p><br /></p>
+
+<div><a href="GenCode.png"><img src="GenCode.png" width="70%;" align="center" /></a></div>
+<p><br /></p>
+<div align="center"><strong>図 2-9 コードを生成</strong></div>
+<p><br /></p>
+
+<ul>
+  <li><strong>生成された各種ファイルがプロジェクトに追加</strong></li>
+</ul>
+
+<p>　｢Output directory｣として指定したディレクトリーに以下のファイルが生成されます。</p>
+<ul>
+  <li>Sample.java　・・・・・・・・・・・・・・・・・・・　Component Profile、初期化処理などを定義したクラス</li>
+  <li>Sampleimpl.java　・・・・・・・・・・・・・・・　RTコンポーネント本体クラス</li>
+  <li>SampleComp.java　・・・・・・・・・・・・・　RTコンポーネント起動用クラス</li>
+  <li>MyServiceSVC_impl.java　・・・・・・・  サービス実装クラス</li>
+  <li>build_Sample.xml　・・・・・・・・・・・・・・  RTコンポーネント　ビルドファイル</li>
+  <li>README.Sample　・・・・・・・・・・・・・・　 Read Meファイル</li>
+</ul>
+
+<p><br />
+　｢Output directory｣欄にプロジェクトのディレクトリーを指定することにより、生成された各種ファイルがプロジェクトへ（自動的に）追加されることになります。</p>
+
+<div align="center"><a href="Done.png"><img src="Done.png" width="70%;" /></a></div>
+<div align="center"><strong>図 2-10 各種ファイルの追加</strong></div>
+<p><br /></p>
+
+<p><strong>※</strong> コード生成が完了しても生成されたファイルの内容がプロジェクトの｢パッケージ・エクスプローラ｣に反映されていない場合があります。対象プロジェクトを右クリックして表示されるコンテキストメニュー内から [更新] を選択して、情報の更新を行うことができます。</p>
+<div align="center"><a href="UpdateProject.png"><img src="UpdateProject.png" width="50%;" /></a></div>
+<div align="center"><strong>図 2-11 プロジェクト表示の更新</strong></div>
+<p><br /></p>
+
+<p><strong>※</strong> サービスポートを定義している RTコンポーネントの場合、Rtctemplate が生成したファイルだけではエラーが表示されます。これは該当するファイルが、IDL ファイルから自動生成されるクラスを利用しているためです。これらのクラスはビルド実行時に自動生成されます。<br /><br />
+<br /></p>
+
+<p><strong>※</strong>クラスパスが有効となる場所に、OpenRTM-aist-Java がインストールされていない場合、エラーが表示されます。この場合、プロジェクトのプロパティから OpenRTM-aist-Java のインストールフォルダー（ディレクトリー）を指定してください。
+<br /></p>
+
+<div align="center"><a href="ProjectContextMenu.png"><img src="ProjectContextMenu.png" width="50%;" /></a></div>
+<div align="center"><strong>図 2-12 プロジェクトを右クリック</strong></div>
+
+<p><br /></p>
+
+<div align="center"><a href="ProjectProperty.png"><img src="ProjectProperty.png" width="50%;" /></a></div>
+<div align="center"><strong>図 2-13 OpenRTM-aist-Javaへのパスを追加</strong></div>
+<p><br /></p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>IDLファイルを｢Output directory｣に追加</strong><br />
+　RtcTemplate エディタ上の「IDL path:」で指定したIDLファイルを、生成されたJavaソースコードが配置される｢Output directory｣に手動でコピーします。
+<br /></li>
+</ul>
+
+<p><br /></p>
+<h3 id="eclipseを用いたビルド">Eclipseを用いたビルド</h3>
+
+<ul>
+  <li><strong>Antビルド</strong>~
+　パッケージ・エクスプローラー内の build_Sample.xml を右クリックし、表示されるコンテキストメニュー中から [実行] &gt; [Antビルド] を選択することで、対象 RTコンポーネントのビルドを行うことが可能です。自作の jar ライブラリ等を使う必要があったり、OpenRTM-aist を違う場所にインストールしたなどの事情でクラスパスを任意の場所に設定してビルドするには<a href="/ja/node/159#Antbuild">こちら </a>を参照してください。<br /></li>
+</ul>
+
+<div align="center"><a href="BuildProject.png"><img src="BuildProject.png" width="70%;" /></a></div>
+<div align="center"><strong>図 2-14 プロジェクトのビルド</strong></div>
+<p><br /></p>
+
+<div align="center"><a href="BuildProject-consoleview.png"><img src="BuildProject-consoleview.png" width="70%;" /></a></div>
+<div align="center"><strong>図 2-15 ビルド実行時のコンソール画面</strong><br /></div>
+<p><br /></p>
+
+<p>ビルドが成功すると、プロジェクト内の｢classes｣ディレクトリーに classファイルが生成されます。<br /><br />
+<br />
+<br /></p>
+<ul>
+  <li><strong>参考</strong>
+    <ul>
+      <li><a href="/ja/node/159#Antbuild"><strong>FAQ</strong>:Q. 任意のフォルダーにクラスパスを設定して Ant ビルドを行う方法は？ </a>|
+<br />
+<br />
+<br /></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="作成した-rtコンポーネントの実行">作成した RTコンポーネントの実行</h2>
+
+<ul>
+  <li><strong>rtc.confの作成</strong><br />
+　プロジェクト内の｢classes｣に以下のような内容のファイル <strong>rtc.conf</strong> を作成しておきます。</li>
+</ul>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.nameservers: localhost
+ naming.formats: %n.rtc
+</code></pre></div></div>
+<div align="center"><strong>rtc.conf</strong></div>
+<p><br /></p>
+
+<p>なお、上記 <strong>rtc.conf</strong> は OpenRTM-aist-0.4-Java に付属しているサンプルの「examples/Java/RTMExamples/SimpleService」ディレクトリー内にあるものと同一です。
+<br />
+<br /></p>
+<ul>
+  <li><strong>ネームサーバーと RtcLink の起動</strong>~
+　OpenRTM-aist-0.4-Java に付属のツールで「bin」ディレクトリー内にある start-orbd.vbs をダブルクリック（Windows）し、あるいは、start-orbd.sh を実行（UNIX）し、ネームサーバーを起動しておきます。また、<a href="/node/">RtcLink</a>を起動しておきます。
+    <ul>
+      <li>参考：
+        <ul>
+          <li><a href="/ja/node/660#samplecomponent"> ネームサーバの起動(UNIX) </a>、<a href="/ja/node/667#javasample"> ネームサーバの起動(Windows) </a></li>
+          <li><a href="/node/">RtcLink の起動 &gt;RtcLink#startRtcLink</a>
+<br />
+<br /></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>RTコンポーネントの実行</strong><br />
+　コマンドプロンプトあるいはターミナルを起動して、前述｢classes｣ディレクトリーをカレントとします。
+<!-- > java SampleComp --></p>
+
+    <ul>
+      <li><strong>UNIX系システムの場合</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ java -classpath .:$RTM_JAVA_ROOT/jar/OpenRTM-aist-0.4.1.jar:$RTM_JAVA_ROOT/jar/commons-cli-1.1.jar SampleComp
+
+ あるいは、たとえば bash の場合などは、上記コマンドを分割して、
+ 
+ $ export CLASSPATH=.:$RTM_JAVA_ROOT/jar/OpenRTM-aist-0.4.1.jar:$RTM_JAVA_ROOT/jar/commons-cli-1.1.jar
+ $ java SampleComp
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Windows系システムの場合</strong></li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt; java -classpath ".;%RTM_JAVA_ROOT%\jar\OpenRTM-aist-0.4.1.jar;%RTM_JAVA_ROOT%\jar\commons-cli-1.1.jar" SampleComp
+ 
+ あるいは、上記コマンドを分割して、
+ 
+ &gt; set CLASSPATH=.;%RTM_JAVA_ROOT%\jar\OpenRTM-aist-0.4.1.jar;%RTM_JAVA_ROOT%\jar\commons-cli-1.1.jar
+ &gt; java SampleComp
+</code></pre></div></div>
+<p>というコマンドを実行すれば、RtcLink上に RTコンポーネントがあらわれます。</p>
+
+<p><br />
+<br /></p>
+
+<div align="center"><a href="JavaSampleOnRtcLink.png"><img src="JavaSampleOnRtcLink.png" width="70%;" /></a></div>
+<div align="center"><strong>図 2-16 Sample コンポーネントを実行に成功したときの RtcLink の状態</strong></div>
+<p><br /></p>
+
+<p><br /></p>
+<h1 id="java版-rtコンポーネントの詳細">Java版 RTコンポーネントの詳細</h1>
+<h2 id="java版-rtコンポーネントの構成">Java版 RTコンポーネントの構成</h2>
+<p>Java版 RTコンポーネントのソースファイルと、各ファイル内で実行している概略機能との関係を図3-1に示します。また、比較のために C++版 RTコンポーネントおよび OpenRTM-aist-0.3用 Java版 RTコンポーネントの構成も併せて示します。<br /></p>
+<div align="center"><a href="InnerRTcomponents.png"><img src="InnerRTcomponents.png" width="70%;" /></a></div>
+<div align="center"><strong>図3-1 RTコンポーネントの構成</strong></div>
+<p><br /></p>
+
+<p>既存の C++版 RTコンポーネントと Java版 RTコンポーネントを比較した場合、以下の点が異なります。<br /></p>
+<ul>
+  <li>RTコンポーネント機能の実体の分離
+Java版 RTコンポーネントでは、起動処理の関係などから、RTコンポーネント機能の実体をXXXImplクラス (図3-1中では&lt;Sample&gt;Impl.java) 側へ移動しております。これに伴い、元々の RTコンポーネントクラス(図3-1中では&lt;Sample&gt;.java)側では Component Profile 定義と、各種コンポーネント生成用処理のみが残った形となっております。<br /></li>
+  <li>コールバック関数のインターフェース化
+C++版 RTコンポーネントにてコールバック関数として定義されていた部分が、Java版 RTコンポーネントではインターフェース化されています。<br />
+    <ul>
+      <li>ModuleInitProc：コンポーネント起動クラス起動用インターフェース</li>
+      <li>RtcNewFunc：RTコンポーネント生成用インターフェース</li>
+      <li>RtcDeleteFunc：RTコンポーネント破棄用インターフェース</li>
+    </ul>
+  </li>
+</ul>
+
+<p>この修正に伴い、コンポーネント起動用クラスは上記インターフェースの実装を行う必要がございます。
+<br />
+<br /></p>
+
+<h2 id="java版-rtコンポーネントと-c版コンポーネントの相違点">Java版 RTコンポーネントと C++版コンポーネントの相違点</h2>
+
+<h3 id="データポート">データポート</h3>
+<p>OpenRTM-aist-Java では、データの受け渡しを行うためにホルダクラス(DataRefクラス)を追加しています。そのため、データポートの定義および利用方法が以下のように変更されております。<br />
+<br /></p>
+
+<div align="center"><a href="java_dataport.png"><img src="java_dataport.png" width="70%;" /></a></div>
+
+<p><br />　データポート使用方法につきましては、｢SeqIO｣｢SimpleIO｣のサンプルをご参照ください。
+<br /><br /></p>
+
+<h3 id="サービスポート">サービスポート</h3>
+
+<p>　OpenRTM-aist-Java では、サービスポートを使用するための補助変数(/<サービス名>Base)を追加しております。このため、サービスポートの定義、利用方法が以下のように変更されております。詳細につきましては、｢SimpleService｣のサンプルをご覧ください。<br />
+<br /></サービス名></p>
+
+<div align="center"><a href="java_serviceport.png"><img src="java_serviceport.png" width="70%;" /></a></div>
+
+<h3 id="コンフィギュレーション">コンフィギュレーション</h3>
+
+<p>データポートの場合と同様、コンフィギュレーションを利用する場合もデータの受け渡しのためにホルダクラスを利用しています。このため、コンフィギュレーション・データの定義、利用方法が以下のように変更されております。<br />
+<br /></p>
+
+<div align="center"><a href="java_config.png"><img src="java_config.png" width="70%;" /></a></div>
+
+<p>コンフィギュレーション・データの使用方法につきましては、｢ConfigSample｣のサンプルをご参照ください。<br />
+OpenRTM-aist-Javaで、コンフィギュレーション・データ用ホルダとして用意しているホルダクラスの種類とデータ型の関係を表3-1に示します。<br /></p>
+<div align="center"><strong>表 3-1 コンフィギュレーション・データ用ホルダ型対応関係</strong><br /><br /></div>
+<table class="table-alt">
+  <tr>
+    <th>データ型</th>
+    <th>ホルダ・クラス</th>
+  </tr>
+  <tr>
+    <td>short</td>
+    <td>jp.go.aist.rtm.RTC.util.ShortHolder</td>
+  </tr>
+  <tr>
+    <td>int</td>
+    <td>jp.go.aist.rtm.RTC.util.IntegerHolder</td>
+  </tr>
+  <tr>
+    <td>long</td>
+    <td>jp.go.aist.rtm.RTC.util.LongHolder</td>
+  </tr>
+  <tr>
+    <td>float</td>
+    <td>jp.go.aist.rtm.RTC.util.FloatHolder</td>
+  </tr>
+  <tr>
+    <td>double</td>
+    <td>jp.go.aist.rtm.RTC.util.DoubleHolder</td>
+  </tr>
+  <tr>
+    <td>byte</td>
+    <td>jp.go.aist.rtm.RTC.util.ByteHolder</td>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td>jp.go.aist.rtm.RTC.util.StringHolder</td>
+  </tr>
+</table>
+
+<p><br />
+C++版 OpenRTM-aist と同様に、OpenRTM-aist-Java におきましてもユーザーが定義した任意の型についてコンフィグレーション・データ用ホルダを作成することができます。<br />
+コンフィギュレーション・データ用のホルダを実装する場合は、jp.go.aist.rtm.RTC.util.ValueHolder の stringFrom メソッドを実装し、implements節に Serializable インターフェースを追加する必要があります。<br />jp.go.aist.rtm.RTC.util.ValueHolder の stringFrom メソッドは、引数で渡された文字列から対象データ型に変換するためのメソッドです。<br />
+コンフィグレーション・データ用ホルダにつきましては｢ConfigSample｣サンプル内の VectorHolder クラスをご参照ください。<br /></p>
+
+<h2 id="java版-rtコンポーネントの起動時の振る舞い">Java版 RTコンポーネントの起動時の振る舞い</h2>
+<p>C++版 RTコンポーネントの起動時の振る舞いを以下に示します。コンポーネント起動時の振る舞いについては、Java版 RTコンポーネントも基本的には同様な振る舞いとなっておりますが、RTコンポーネント機能の実体が XXXImpl クラスに分離された関係から、コンポーネント生成時、コンポーネント初期化時のメッセージの送信先はXXXクラスへと変更となっております。<br /></p>
+
+<div align="center"><a href="JavaRTcomponent1.png"><img src="JavaRTcomponent1.png" width="70%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><a href="JavaRTcomponent2.png"><img src="JavaRTcomponent2.png" width="70%;" /></a></div>
+<p><br /></p>
+
+<h2 id="idl用データ型と-java言語データ型の対応関係">IDL用データ型と Java言語データ型の対応関係</h2>
+<p>CORBA IDL用データ型と Java言語データ型の対応関係を表3-2に示します。<br /></p>
+<div align="center"><strong>表 3-2 データ型対応関係</strong></div>
+<table class="table-alt">
+  <tr style="text-align: center;">
+    <th>CORBA IDL</th>
+    <th>Java言語</th>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td>short</td>
+    <td>short</td>
+  </tr>
+  <tr>
+    <td>long</td>
+    <td>int</td>
+  </tr>
+  <tr>
+    <td>float</td>
+    <td>float</td>
+  </tr>
+  <tr>
+    <td>double</td>
+    <td>double</td>
+  </tr>
+  <tr>
+    <td>long long</td>
+    <td>long</td>
+  </tr>
+  <tr>
+    <td>long double</td>
+    <td>double</td>
+  </tr>
+  <tr>
+    <td>char</td>
+    <td>char</td>
+  </tr>
+  <tr>
+    <td>wchar</td>
+    <td>char</td>
+  </tr>
+  <tr>
+    <td>octet</td>
+    <td>byte</td>
+  </tr>
+  <tr>
+    <td>unsigned short</td>
+    <td>short</td>
+  </tr>
+  <tr>
+    <td>unsigned long</td>
+    <td>int</td>
+  </tr>
+  <tr>
+    <td>unsigned long long</td>
+    <td>long</td>
+  </tr>
+  <tr>
+    <td>boolean</td>
+    <td>boolean</td>
+  </tr>
+  <tr>
+    <td>string</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>wstring</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>any</td>
+    <td>org.omg.CORBA.Any</td>
+  </tr>
+  <tr>
+    <td>void</td>
+    <td>void</td>
+  </tr>
+</table>
+
+<h1 id="その他">その他</h1>
+
+<h2 id="tips">Tips</h2>
+<h3 id="eclipse-の自動起動の設定方法について">Eclipse の自動起動の設定方法について</h3>
+<ul>
+  <li>Windows の場合
+    <ul>
+      <li>１．Eclipse プロジェクトのディレクトリーの中から｢.project｣ファイルを選択して右クリックします。表示されたコンテキストメニュー内から [プロパティ] を選択します。~
+※選択する Eclipse プロジェクトは任意のプロジェクトで構いません。</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="SelectProject.png"><img src="SelectProject.png" width="50%;" /></a></div>
+<div align="center"><strong>｢.project｣ファイルを選択</strong></div>
+
+<ul>
+  <li>２．表示された｢プロパティ｣画面の｢全般｣タブ内、中段にある｢プログラム｣行右側の [変更] ボタンをクリックします。</li>
+</ul>
+<div align="center"><a href="Property.png"><img src="Property.png" width="50%;" /></a></div>
+<div align="center"><strong>アプリケーションの関連付けの変更</strong></div>
+
+<ul>
+  <li>３．表示された｢ファイルを開くプログラムの選択｣画面下側にある [参照] ボタンをクリックします。</li>
+</ul>
+<div align="center"><a href="SelectApplication.png"><img src="SelectApplication.png" width="50%;" /></a></div>
+<div align="center"><strong>Eclipseを選択</strong></div>
+
+<ul>
+  <li>４．ファイル選択画面が表示されるので、自動起動を行う Eclipse がインストールされているディレクトリー内から｢eclipse.exe｣を選択します。</li>
+  <li>５．｢ファイルを開くプログラムの選択｣画面、｢プロパティ｣ を [OK] ボタンをクリックして閉じます。
+<br />
+以上の設定を行うことで、｢.project｣ファイルをダブルクリックすることで指定した Eclipse を自動起動することが可能となります。<br />
+<br />
+<strong>※</strong> 複数の Eclipse をインストールしている場合、ダブルクリック動作では上記操作で指定したバージョンの Eclipse が常に起動されますのでご注意ください。<br />
+<strong>※</strong> ダブルクリックを行ったプロジェクトが、起動対象 Eclipse に設定された workspace 内に含まれない場合、起動された Eclipse のパッケージ・エクスプローラー内に表示されません。この場合は、対象プロジェクトを workspace 内にインポートするか、workspace の設定を変更してください。
+<br />
+<br /></li>
+  <li><strong>Linuxの場合</strong>
+    <ul>
+      <li>data オプションにて workspace を指定して Eclipse を起動することが可能です。
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt; eclipse -data /home/devel/OpenRTM/workspace
+</code></pre></div>        </div>
+        <p>対象プロジェクトが含まれている workspace を指定してください。
+<br />
+<br /></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="謝辞">謝辞</h2>
+<p>　OpenRTM-aist-Java は、以下のライブラリを使用して開発されました。これらのプロジェクトの開発と設計にかかわった方々に感謝します。<br /></p>
+<ul>
+  <li>Apache Commons CLI 1.1<br /></li>
+</ul>
+
+<p>This product includes software developed by The Apache Software Foundation (http://www.apache.org/ ).</p>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+</p>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

@@ -1,0 +1,878 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Eclipse について | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Eclipse について" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/installation/install_1_1/openrtm_eclipse_tools_1_1/about_eclipse_1_1/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/installation/install_1_1/openrtm_eclipse_tools_1_1/about_eclipse_1_1/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Eclipse について" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Eclipse について","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/installation/install_1_1/openrtm_eclipse_tools_1_1/about_eclipse_1_1/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">
+        <!-- TODO add theme version dropdown here -->
+        <!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/"  title="test_dl_page"
+            >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/"  title="test_doc_page"
+            >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >Research_and_Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    Research_and_Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Eclipse について</h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/install_1_1/openrtm_eclipse_tools_1_1/about_eclipse_1_1/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#java-実行環境-jre-のインストール">Java 実行環境 (JRE) のインストール</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#eclipse-のインストール">Eclipse のインストール</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#eclipse-の日本語化">Eclipse の日本語化</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#プラグインのインストール">プラグインのインストール</h3</a>
+          </li>
+        
+      
+    
+
+    
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: Eclipse について -->
+<div align="left"><a href="eclipse_logo.png"><img src="eclipse_logo.png" width="15%;" align="left" /></a></div>
+<p>#contents
+<a href="http://www.eclipse.org/">Eclipse</a> は Eclipse Foundation が開発するオープンソースのJava 言語およびその他の言語のための統合開発環境を構築するためのフレームワークです。
+Eclipse の基本部分は plug-in を実行するためのプラットフォームで、 様々な開発環境は多くのplug-in の集合体として構築されます。
+デフォルトで付属するJava の開発環境自体もplug-inとして実現され、 plug-in を追加することで様々な言語の開発環境として容易に拡張することができます。
+#clear
+Eclipse の特徴として、</p>
+<ul>
+  <li>plug-in 機構により容易に拡張可能であり、plug-in 同士の連携も可能である。</li>
+  <li>Rich Client Platform (RCP) と呼ばれる仕組みにより、 plug-in をスタンドアロン化することが容易にできる。</li>
+  <li>Java で実装されているため、多くのプラットフォームで動作する。</li>
+</ul>
+
+<p>等が挙げられます。
+こうした Eclipse の特徴が、ロボット用統合開発環境を構築する上で有用であると判断し、Eclipse を RTミドルウエアのツールのためのプラットフォームとして選択しました。</p>
+
+<p>RTCBuilder と RTSystemEditor を利用するには Eclipse をインストールする必要があります。
+Eclipse のインストール方法に関しては、</p>
+<ul>
+  <li><a href="http://eclipsewiki.net/eclipse/:http://eclipsewiki.net/eclipse/">http://eclipsewiki.net/eclipse/:http://eclipsewiki.net/eclipse/</a></li>
+</ul>
+
+<p>などが参考になります。</p>
+
+<p>&amp;aname(jre_install);</p>
+<h3 id="java-実行環境-jre-のインストール">Java 実行環境 (JRE) のインストール</h3>
+<p>Eclipse は Java アプリケーションですので、Oracle の Java 実行環境<a href="https://www.java.com/ja/download/manual.jsp">(JRE: Java Runtime Environment)</a> をインストールする必要があります。
+すでに、JDK（Java 開発環境、ただし、<strong>1.6以上</strong>）がインストールされている環境では JRE のインストールは必要ありません。（RTCBuilder で、Java のコードを生成させる場合には JRE でなく JDK が必要となります。）</p>
+<ul>
+  <li><a href="https://www.java.com/ja/download/manual.jsp">JRE ダウンロード</a>
+<!-- -[[JRE (Windows) オンラインインストーラ:http://javadl.sun.com/webapps/download/AutoDL?BundleId=11145]] -->
+<!-- -[[JRE (Windows) オフラインインストーラー:http://javadl.sun.com/webapps/download/AutoDL?BundleId=11193]] --></li>
+</ul>
+
+<p>ダウンロード後はインストーラーの指示に従ってインストールしてください。</p>
+
+<p><br />
+** JDK インストール**
+⇒　<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">Java Development Kit 7</a>
+<!-- ⇒　[[Java Development Kit 6:http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u30-download-1377139.html]]~ --></p>
+
+<p><br /></p>
+
+<p><strong>参考：</strong>
+→　<span style="color:red;"><strong>cool!</strong></span>; <a href="/ja/node/248#rtclinksunjava">UNIX系環境で簡易に Oracle の Java(JRE) を Eclipse に適用する方法 </a></p>
+
+<p>&amp;aname(eclipse_install);</p>
+<h3 id="eclipse-のインストール">Eclipse のインストール</h3>
+<p>Eclipse の<a href="http://www.eclipse.org/downloads/index.php">ダウンロードサイト</a> からそれぞれのプラットフォームに対応した Eclipse のアーカイブを<span style="color:default;">ダウンロード</span>;、インストールしてください。
+なお、RTCBuilder と RTSystemEditor の推奨環境は Eclipse3.4.2 です。</p>
+
+<ul>
+  <li><a href="http://archive.eclipse.org/eclipse/downloads/drops/R-3.4.2-200902111700/eclipse-SDK-3.4.2-win32.zip">Eclipse 3.4.2 (Windows版)</a></li>
+  <li><a href="http://archive.eclipse.org/eclipse/downloads/drops/R-3.4.2-200902111700/download.php?dropFile=eclipse-SDK-3.4.2-linux-gtk.tar.gz">Eclipse 3.4.2 (Linux版 x86/GTK 2)</a></li>
+  <li><a href="http://archive.eclipse.org/eclipse/downloads/drops/R-3.4.2-200902111700/download.php?dropFile=eclipse-SDK-3.4.2-linux-motif.tar.gz">Eclipse 3.4.2 (Linux版 x86/Motif Test版)</a></li>
+</ul>
+
+<!-- Eclipse は以下の Ring サーバーでもミラーされていますので、こちらからも[[ダウンロード>http://www.ring.gr.jp/pub/misc/eclipse/downloads/drops/]]できるでしょう。 -->
+<!-- -[[Ring Server Project>http://www.ring.gr.jp/pub/misc/eclipse/downloads/drops/]] -->
+<!-- -[[AIST Ring Server>http://ring.aist.go.jp/pub/misc/eclipse/downloads/drops/]] -->
+<!-- -[[RIKEN Ring Server>http://ring.riken.go.jp/pub/misc/eclipse/downloads/drops/]] -->
+<ul>
+  <li><a href="http://archive.eclipse.org/eclipse/downloads/">参考 eclipse project archived downloads  </a>(過去のバージョンのアーカイブ)</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>参考</strong>
+→ <a href="/ja/node/248#eclipse"><strong>FAQ:</strong> Eclipse の起動方法 </a></p>
+
+<ul>
+  <li>Ubuntu8.04、Ubuntu9.10 で Linux 用 Eclipse3.4.2 が動作しない不具合が報告されています。
+    <ul>
+      <li>Ubuntu8.04では、<strong>apt-get install xulrunner-1.9</strong> として xulrunninerをアップデートしてください。</li>
+      <li>Ubuntu9.10では、以下の方法を利用するか、Eclipse3.3 もしくは 3.5 をご利用ください。
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ su
+ # vi /etc/apt/source.list
+1行追加 → deb http://jp.archive.ubuntu.com/ubuntu/ jaunty main restricted
+ # apt-get update
+ # apt-get install xulrunner-1.9
+ # dpkg -l |grep xulrunner-1.9
+ ii  xulrunner-1.9                        1.9.0.8+nobinonly-0ubuntu2                 XUL +  XPCOM application runner
+ ii  xulrunner-1.9.1                      1.9.1.7+nobinonly-0ubuntu0.9.10.1          XUL + XPCOM application runner
+ ii  xulrunner-1.9.1-gnome-support        1.9.1.7+nobinonly-0ubuntu0.9.10.1          Support for GNOME in xulrunner-1.9.1 applica
+ 一応、1.9.1と1.9 が共存
+ # exit
+ $ export GDK_NATIVE_WINDOWS=1
+ $ ./eclipse
+</code></pre></div>        </div>
+        <p>また、xulrunner-1.9.1.8 で動作するという報告もあります。1.9.1.8 にアップデートして、以下のようなシェルスクリプトを用意して起動するとよいでしょう。</p>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #/bin/sh
+ export GDK_NATIVE_WINDOWS=1
+ ./eclipse -vmargs -Dorg.eclipse.swt.browser.XULRunnerPath=/usr/lib/xulrunner-1.9.1.8/xulrunner
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="eclipse-の日本語化">Eclipse の日本語化</h3>
+<p>この時点では Eclipse は日本語化されていません。もし、 日本語化したい場合は以下の Eclipse の日本語化のページを参考にしてください。
+<!-- -[[Eclipse日本語化:http://eclipsewiki.net/eclipse/?%C6%FC%CB%DC%B8%EC%B2%BD]] --></p>
+<ul>
+  <li><a href="https://mag.osdn.jp/08/10/20/0936240">Eclipse日本語化</a></li>
+</ul>
+
+<p>簡単な手順は, 以下の通りです.</p>
+
+<ol>
+  <li>Eclipse のバージョンに合ったファイルを下記サイトからダウンロードします。~
+<a href="http://www.igapyon.jp/blanco/nlpack/eclipse/">Eclipse 日本語化言語パック (サードパーティ版)</a>
+<!-- --[[NLpack1-eclipse-SDK-3.1.1-win32.zip:http://www.ring.gr.jp/pub/misc/eclipse/downloads/drops/L-3.1.1_Language_Packs-200510051300/NLpack1-eclipse-SDK-3.1.1-win32.zip]] -->
+<!-- --[[NLpack1-eclipse-SDK-3.2-win32.zip:http://www.ring.gr.jp/pub/misc/eclipse/downloads/drops/L-3.2_Language_Packs-200607121700/NLpack1-eclipse-SDK-3.2-win32.zip]] --></li>
+  <li>解凍してできた eclipse フォルダー内の features、 plugins をeclipse本体があるフォルダーにコピーします。</li>
+  <li>eclipse を再起動します。
+<br /></li>
+</ol>
+
+<p>参考：
+　→ <a href="/ja/node/248#eclipse"><strong>FAQ:</strong> Eclipseの起動方法 </a></p>
+
+<h3 id="プラグインのインストール">プラグインのインストール</h3>
+<p>RTCBuilder と RTSystemEditor  は下記の Eclipse プラグインを使用しています。</p>
+<ul>
+  <li><a href="http://www.eclipse.org/modeling/emf/">EMF (Eclipse Modeling Framework)</a></li>
+  <li><a href="http://www.eclipse.org/gef/">GEF (Graphical Editing Framework)</a></li>
+  <li><a href="http://www.eclipse.org/modeling/mdt/?project=xsd#xsd">XSD (XML Schema Infoset Model)</a></li>
+  <li><a href="http://www.eclipse.org/modeling/emf/?project=sdo">SDO (EMF Service Data Objects)</a></li>
+  <li><a href="http://www.eclipse.org/projects/project_summary.php?projectid=eclipse.jdt">JDT (Eclipse Java development tools)</a></li>
+</ul>
+
+<p>以下の手順で、これらのプラグインをインストールしてください。</p>
+
+<ol>
+  <li>Eclipse のメニューから [ヘルプ] &gt; [ソフトウエア更新] を選択します。</li>
+  <li>このような ソフトウェア更新およびアドイン ウィンドウ が表示されますので、「使用可能なソフトウェア」タブを選択します。</li>
+</ol>
+<div align="center"><a href="eclipse_update_ja.png"><img src="eclipse_update_ja.png" width="60%;" /></a></div>
+<ol>
+  <li>Genymede Update Site を展開してプラグインを選択します。</li>
+</ol>
+<div align="center"><a href="eclipse_plugin_GEF_JDT_ja.png"><img src="eclipse_plugin_GEF_JDT_ja.png" width="60%;" /></a></div>
+<div align="center"><a href="eclipse_plugin_EMF_SDO_ja.png"><img src="eclipse_plugin_EMF_SDO_ja.png" width="60%;" /></a></div>
+<ol>
+  <li>[インストール]をクリックします。</li>
+</ol>
+<div align="center"><a href="eclipse_plugin2_ja.png"><img src="eclipse_plugin2_ja.png" width="60%;" /></a></div>
+<ol>
+  <li>これで、これらのプラグインが自動的にダウンロードされて、インストールされます。</li>
+</ol>
+
+<p>インストール後 Eclipse を一旦終了します。</p>
+
+<!-- +Software Updates の Available Software タブの Managed Sites... を開き、Export で Site 一覧を保存する -->
+<!-- +Eclipse を終了し、<eclipse_home>\configuration\.settings フォルダーを開き以下の2ファイルを削除 -->
+<!-- --org.eclipse.equinox.p2.artifact.repository.prefs -->
+<!-- --org.eclipse.equinox.p2.metadata.repository.prefs -->
+<!-- +Eclipse を起動し Site 一覧を Import -->
+<!-- +Reflesh -->
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+</p>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

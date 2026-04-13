@@ -1,0 +1,1247 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>OpenRTM-aist | The power to connect</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="OpenRTM-aist" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="OpenRTM-aist" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"OpenRTM-aist","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist--ja</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>hogehogehoge-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1> <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#インストールの準備">インストールの準備</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#32bit版と64bit版">32bit版と64bit版</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#必要なソフトウエアのインストール">必要なソフトウエアのインストール</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#openrtm-aistのインストール">OpenRTM-aistのインストール</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#インストーラのダウンロード">インストーラのダウンロード</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#インストール">インストール</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#インストーラーの作業内容">インストーラーの作業内容</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#インストールされるファイル">インストールされるファイル</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: Windowsへのインストール -->
+<div align="right"><a href="windows10-logo.png"><img src="windows10-logo.png" width="15%; margin:30 30 30 30px;" align="right" /></a></div>
+<p>#contents</p>
+
+<h2 id="インストールの準備">インストールの準備</h2>
+
+<h3 id="32bit版と64bit版">32bit版と64bit版</h3>
+
+<p>現状、ほとんどのWindowsは64bit版が利用されていますので、基本的には以下は 64bit を前提として説明します。
+インストールしているWindowsが32bit版の場合は、OpenRTM-aistやその他のソフトウェアは32bit版をインストールする必要があります。</p>
+
+<p><span style="color:red;"><strong>NOTE: 基本的にすべて64bit版のソフトウェアを使用してください。</strong></span>;</p>
+
+<!-- MSIインストーラーによるOpenRTM-aistのインストール手順については下記のページに記載。 -->
+<!-- - [[OpenRTM-aist 1.2系のインストール(Windows、MSIインストーラー使用):/ja/node/6652]] -->
+
+<h3 id="必要なソフトウエアのインストール">必要なソフトウエアのインストール</h3>
+<p>OpenRTM-aistを利用するには、Python、CMake、Doxygen、Visual Studio等のソフトウェアのインストールが必要です。</p>
+
+<h4 id="visual-studio">Visual Studio</h4>
+
+<p>C++版の開発だけでなく、Python版、Java版のRTCを作成した際に、インストーラをビルドするのにも必要です。
+以下のCommunity版（無料）をインストールするか、別途Visual Studio 2010/2012/2013/2015/2017/2019を入手してインストールしてください。</p>
+
+<ul>
+  <li><a href="https://visualstudio.microsoft.com/ja/downloads/?utm_source=mscom&amp;utm_campaign=msdocs">Microsoft <strong>Download Visual Studio 2019</strong></a>
+    <ul>
+      <li>C++の開発環境を入れ忘れることがよくあります。以下の説明を一読することをお勧めします。</li>
+      <li><a href="./visual_studio_1_2/visual_studio_2022">OpenRTM.org <strong>Visual Studioのインストール方法</strong></a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="python">Python</h4>
+<p><span style="color:red;"><strong>NOTE:</strong> Python2.7は2020年4月にサポートが終了しました。使用は推奨されていません。</span>;
+<span style="color:gray;">OpenRTM-aist-1.2.2でもPython2.7は一応利用することはできます。</span>;</p>
+
+<p>PythonはPython言語版のRTCの開発だけでなく、OpenRTM-aistの様々なツールでも使用していますので必ずインストールする必要があります。
+2020年11月現在、サポートが提供されているPythonは 3.6, 3.8, 3.7, 3.9 (2020年10月リリース) ですが、OpenRTM-aistがサポートしているのは 3.6～3.8 までです。
+最新版をインストールすることをお勧めします。</p>
+
+<ul>
+  <li><a href="https://www.python.org/downloads/windows/">Python 3.8</a>
+    <ul>
+      <li><a href="https://www.python.org/ftp/python/3.8.5/python-3.8.5-amd64.exe">python-3.8.5-amd64.exe (64bit版)</a></li>
+      <li>できるだけ最新版をインストールしてください。</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="cmake">CMake</h4>
+<p>CMakeはWindowsやLinux等様々な環境でビルドに必要なファイル（Visual Studioのプロジェクトファイル、Linux上のMakefile等）を自動生成するために必要です。</p>
+
+<ul>
+  <li><a href="https://cmake.org/download/">CMake(3.11以上推奨)</a>
+    <ul>
+      <li><a href="https://github.com/Kitware/CMake/releases/download/v3.18.1/cmake-3.18.1-win64-x64.msi">cmake-3.18.1-win64-x64.msi (64bit版)</a></li>
+      <li>できるだけ最新版をインストールしてください。</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="doxygen--graphviz">Doxygen &amp; Graphviz</h4>
+
+<p>Doxygenは、ソースコード等のコメントからドキュメントを自動生成するツールです。
+Graphvizは、Doxygenでドキュメントを生成する際に、クラス図等の図を生成するために必要とされるツールです。
+OpenRTM-aistでは、RTCBuilderでRTCの設計時に様々な設計情報を記入することができ、それらはソースコードのコメントとして出力されます。
+これをDoxygenで処理することで、RTCのキレイなドキュメントを生成することができます。</p>
+
+<ul>
+  <li><a href="http://www.doxygen.nl/download.html">Doxygen</a>
+    <ul>
+      <li><a href="http://doxygen.nl/files/doxygen-1.8.19-setup.exe">doxygen-1.8.19-setup.exe</a> (32bit, 64bitの別なし）</li>
+      <li>できるだけ最新版をインストールしてください。</li>
+    </ul>
+  </li>
+</ul>
+
+<p>&amp;aname(Graphviz);</p>
+<ul>
+  <li><a href="https://graphviz.gitlab.io/download/">Graphviz</a>
+    <ul>
+      <li><a href="https://www2.graphviz.org/Packages/stable/windows/10/cmake/Release/x64/graphviz-install-2.44.1-win64.exe">graphviz-install-2.44.1-win64.exe:</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>インストールの途中で[Install Options]としてsystem PATHをどうするかを聞かれますが、Add CMake to the system PATH for all usersを選択することを推奨します。
+上記WebページからWindows版のバイナリ実行形式ファイルをダウンロードして実行してインストールしてください。</p>
+
+<p>インストール後、コマンドプロンプトで dot -v を実行してプラグイン情報が表示されることを確認して下さい。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt;dot -v
+
+ dot - graphviz version 2.44.1 (20200629.0846)
+ libdir = "C:\Program Files\Graphviz 2.44.1\bin"
+ Activated plugin library: gvplugin_dot_layout.dll
+ Using layout: dot:dot_layout
+ Activated plugin library: gvplugin_core.dll
+ Using render: dot:core
+ Using device: dot:dot:core
+ The plugin configuration file:
+        C:\Program Files\Graphviz 2.44.1\bin\config6
+                was successfully loaded.
+    render      :  cairo dot dot_json fig gdiplus json json0 map mp pic ps svg tk vml xdot xdot_json
+    layout      :  circo dot fdp neato nop nop1 nop2 osage patchwork sfdp twopi
+    textlayout  :  textlayout
+    device      :  bmp canon cmap cmapx cmapx_np dot dot_json emf emfplus eps fig gif gv imap imap_np ismap jpe jpeg jpg json 
+                      json0 metafile mp pdf pic plain plain-ext png ps ps2 svg tif tiff tk vml xdot xdot1.2 xdot1.4 xdot_json
+    loadimage   :  (lib) bmp eps gif jpe jpeg jpg png ps svg
+</code></pre></div></div>
+
+<p>下記のように表示された場合、管理者でコマンドプロンプトを開き、dot -c を実行後に dot -v を実行すると上記のように表示されます。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt;dot -v
+
+ dot - graphviz version 2.44.1 (20200629.0846)
+ There is no layout engine support for "dot"
+ Perhaps "dot -c" needs to be run (with installer's privileges) to register the plugins?
+</code></pre></div></div>
+
+<p>管理者でコマンドプロンプトを開く方法は、Windows10の検索窓に cmd と入力し、検索結果の「コマンドプロンプト」を右クリックして「管理者として実行」を選択します。</p>
+
+<h2 id="openrtm-aistのインストール">OpenRTM-aistのインストール</h2>
+
+<p>上記のソフトウェアのインストールが完了したら、OpenRTM-aistのインストールを行います。</p>
+
+<h3 id="インストーラのダウンロード">インストーラのダウンロード</h3>
+
+<p>OpenRTM-aistのWindows版のインストーラ（msi形式）を以下のページからダウンロードします。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/download">OpenRTM-aist-1.2.2-RELEASE</a>
+    <ul>
+      <li><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi">OpenRTM-aist-1.2.2-RELEASE_x86_64.msi (64bit版)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>このインストーラには、以下の内容が含まれています。</p>
+
+<ul>
+  <li>C++ 用開発環境
+    <ul>
+      <li>C++用過去バージョンのDLL (古いRTC実行時に必要)</li>
+    </ul>
+  </li>
+  <li>Python 用開発環境</li>
+  <li>Java 用開発環境</li>
+  <li>OpenRTP (GUIツール、RTCBUilder，RTSystemEditor）
+    <ul>
+      <li>JRE8環境 (OpenRTPに必要）</li>
+    </ul>
+  </li>
+  <li>rtshell (CUIツール）</li>
+</ul>
+
+<p>したがって、ファイルサイズが1GB近くあり、ダウンロードに多少時間がかかります。ご注意ください。</p>
+
+<h3 id="インストール">インストール</h3>
+
+<p>msiファイルが正しくダウンロードされたら、ファイルをダブルクリックしてインストールを開始してください。
+以下のようなインストーラが起動しますので <strong>「次へ」</strong> をクリックして進みます。</p>
+
+<div align="center"><a href="openrtm122_inst_01.png"><img src="openrtm122_inst_01.png" width="60%; margin:10 10 10 10px;" /></a></div>
+
+<p>使用許諾契約書が表示されますので、<strong>ソフトウェアライセンス条項に同意します</strong> にチェックを入れます。
+なお、OpenRTM-aist は LGPLｖ３、OpenRTPはEPL v1.0 ライセンスです。</p>
+
+<div align="center"><a href="openrtm122_inst_02.png"><img src="openrtm122_inst_02.png" width="60%; margin:10 10 10 10px;" /></a></div>
+
+<p>ユーザアカウントごとにインストールするか、すべてのユーザが使えるようにインストールするか選択します。
+現在インストールを行っているアカウントが管理者権限があれば、<strong>「すべてのユーザにインストール」</strong> を推奨します。</p>
+
+<div align="center"><a href="openrtm122_inst_03.png"><img src="openrtm122_inst_03.png" width="60%; margin:10 10 10 10px;" /></a></div>
+
+<p>使用しているVisual Studioのバージョンを選択します。</p>
+
+<div align="center"><a href="openrtm122_inst_04.png"><img src="openrtm122_inst_04.png" width="60%; margin:10 10 10 10px;" /></a></div>
+
+<p>セットアップの種類を選択します。<strong>「標準」</strong>と<strong>「完全」</strong>は同じで、すべての項目をインストールします。通常か <strong>「標準」</strong> を選択します。</p>
+
+<div align="center"><a href="openrtm122_inst_05.png"><img src="openrtm122_inst_05.png" width="60%; margin:10 10 10 10px;" /></a></div>
+
+<p><strong>「カスタム」</strong> をクリックすると、インストールする項目を選択できます。特定の言語のみインストールしたい場合などはこちらを選択します。</p>
+
+<div align="center"><a href="openrtm122_inst_06.png"><img src="openrtm122_inst_06.png" width="60%; margin:10 10 10 10px;" /></a></div>
+
+<p>インストールを開始すると、以下のようなダイアログが出ます。<strong>「はい」</strong> をクリックして先へ進んでください。</p>
+
+<div align="center"><a href="openrtm122_inst_08.png"><img src="openrtm122_inst_08.png" width="60%; margin:10 10 10 10px;" /></a></div>
+
+<p>すべてインストールが完了すると以下の画面となります。<strong>「完了」</strong> を押してウインドウを閉じてください。
+以上でインストールは完了です。正しくインストールされているかどうかは、<a href="/my-jekyll-site/ja/doc/installation/lets_start121">「OpenRTMを10分で始めよう・サンプルコンポーネント」</a> などを見ながらサンプルコンポーネントを実行するなどして確認してください。</p>
+
+<p><br /></p>
+
+<h2 id="インストーラーの作業内容">インストーラーの作業内容</h2>
+
+<p>インストーラーは以下の作業内容に従ってファイルのコピー、システム設定を行います。
+インストール、アンインストールが正しく行われているかの確認する際の参考のために以下に記しておきます。</p>
+
+<ul>
+  <li>インストールディレクトリ(デフォルトはC:\Program Files)下に各種ファイルをコピー</li>
+  <li>スタートメニュー以下にOpenRTM-aistフォルダーを作成し各種ショートカットを設定</li>
+  <li>環境変数の設定</li>
+  <li>64bit用MSI利用時の設定</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTM_BASE=C:\Program Files\OpenRTM-aist\\
+ RTM_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\\
+ RTM_VC_VERSION= //ここにはユーザーが指定したVisual StudioにのっとったVCのバージョンを指定するテキストが入ります
+ RTM_JAVA_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\\
+ OMNI_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\omniORB\4.2.3_%RTM_VC_VERSION%\\
+ OpenCV_DIR=C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\\
+ OpenRTM_DIR=C:\Program Files\OpenRTM-aist\1.2.1\cmake\\
+</code></pre></div></div>
+
+<ul>
+  <li>PATHへの追加設定(64bit用MSI利用時の設定)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> C:\Program Files\OpenRTM-aist\1.2.1\bin\%RTM_VC_VERSION%\\
+ C:\Program Files\OpenRTM-aist\1.2.1\omniORB\4.2.1_%RTM_VC_VERSION%\bin\x86_win32\\
+ C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\%RTM_VC_VERSION%\bin\\
+</code></pre></div></div>
+
+<ul>
+  <li>32bit用MSI利用時の設定</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTM_BASE=C:\Program Files (x86)\OpenRTM-aist\\
+ RTM_ROOT=C:\Program Files (x86)\OpenRTM-aist\1.2.1\\
+ RTM_VC_VERSION= //ここにはユーザーが指定したVisual StudioにのっとったVCのバージョンを指定するテキストが入ります
+ RTM_JAVA_ROOT=C:\Program Files (x86)\OpenRTM-aist\1.2.1\\
+ OMNI_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\omniORB\4.2.3_%RTM_VC_VERSION%\\
+ OpenCV_DIR=C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\\
+ OpenRTM_DIR=C:\Program Files\OpenRTM-aist\1.2.1\cmake\\
+</code></pre></div></div>
+
+<ul>
+  <li>PATHへの追加設定</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> C:\Program Files (x86)\OpenRTM-aist\1.2.1\bin\%RTM_VC_VERSION%\\
+ C:\Program Files(x86)\OpenRTM-aist\1.2.1\omniORB\4.2.3_%RTM_VC_VERSION%\bin\x86_win32\\
+ C:\Program Files(x86)\OpenRTM-aist\1.2.1\OpenCV3.4\x86\%RTM_VC_VERSION%\bin\\
+</code></pre></div></div>
+
+<!--  -->
+<!-- インストール環境の設定を確認するスクリプトを提供しています。スクリプトの使い方、確認できる内容について下記ページで解説しています。 -->
+<!--  -->
+<!-- - http://openrtm.org/openrtm/ja/content/rtm-install-check-script -->
+<!--  -->
+<h2 id="インストールされるファイル">インストールされるファイル</h2>
+<p>ファイルは以下のような構造でインストールされます。<br />
+<!-- 上記のインストール環境の設定を確認する[[スクリプト:/ja/node/6092]]を実行すると、treeコマンドによるOpenRTM-aist下のディレクトリ構造をログファイルに保存しますので、詳細を確認できます。  --></p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;install_dir&gt;</code></p>
+<ul>
+  <li>OpenRTM-aist
+    <ul>
+      <li>1.x.x  :旧バージョンのランタイム</li>
+      <li>1.2.1
+        <ul>
+          <li>bin: dll、lib各種コマンド</li>
+          <li>cmake: OpenRTMConfig.cmake</li>
+          <li>coil: coilヘッダファイル</li>
+          <li>Components
+            <ul>
+              <li>C++
+                <ul>
+                  <li>Examples: C++サンプルコンポーネント</li>
+                  <li>OpenCV: OpenCVのC++サンプルコンポーネント</li>
+                </ul>
+              </li>
+              <li>Java: Java サンプルコンポーネント</li>
+              <li>Python: Python サンプルコンポーネント</li>
+            </ul>
+          </li>
+          <li>etc: rtc.confサンプル</li>
+          <li>jar: jarファイル</li>
+          <li>jre: OpenJDK JRE</li>
+          <li>omniORB</li>
+          <li>OpenCV3.4</li>
+          <li>rtm: OpenRTM-aistヘッダファイル
+            <ul>
+              <li>ext: 拡張モジュール用ファイル</li>
+              <li>idl: OpenRTM-aistIDLファイル</li>
+            </ul>
+          </li>
+          <li>util
+            <ul>
+              <li>ExcelControlpy: PythonベースのMicrosoft Office用RTC</li>
+              <li>OpenRTP: RTCBuilderとRTSystemEditorツール</li>
+              <li>PowerPointControlpy: Microsoft Office PowerPoint用RTC</li>
+              <li>python_dist: pythonベースツール共通ライブラリ</li>
+              <li>RTCDT: PythonベースRTCの開発を支援するツール</li>
+              <li>rtc-template: RTCBuilderと似た機能を提供する古いツール</li>
+              <li>RTSystemEditor: RTSystem Editorのみのファイル</li>
+              <li>VCVerChanger: 使用しているVisual Studioのバージョンを指定するツール</li>
+              <li>WordContrlpy: PythonベースMicrosoft Office Word用RTC</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

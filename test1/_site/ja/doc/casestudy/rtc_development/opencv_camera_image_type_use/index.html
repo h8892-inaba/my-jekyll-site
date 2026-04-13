@@ -1,0 +1,2488 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>RTコンポーネント作成(OpenCV編 CameraImage型の使用) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="RTコンポーネント作成(OpenCV編 CameraImage型の使用)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/rtc_development/opencv_camera_image_type_use/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/rtc_development/opencv_camera_image_type_use/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="RTコンポーネント作成(OpenCV編 CameraImage型の使用)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"RTコンポーネント作成(OpenCV編 CameraImage型の使用)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/casestudy/rtc_development/opencv_camera_image_type_use/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">
+        <!-- TODO add theme version dropdown here -->
+        <!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/"  title="test_dl_page"
+            >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/"  title="test_doc_page"
+            >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >Research_and_Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    Research_and_Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>RTコンポーネント作成(OpenCV編 CameraImage型の使用)</h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/casestudy/rtc_development/opencv_camera_image_type_use/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#opencv-とは">OpenCV とは</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#作成する-rtコンポーネント">作成する RTコンポーネント</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#cvflip-関数について">cvFlip 関数について</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#コンポーネントの概要">コンポーネントの概要</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#動作環境開発環境">動作環境・開発環境</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#flip-コンポーネントの雛型の生成">Flip コンポーネントの雛型の生成</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#rtcbuilder-の起動">RTCBuilder の起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtcbuilder用-プロジェクトの作成">RTCBuilder用 プロジェクトの作成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtc-プロファイルエディタの起動">RTC プロファイルエディタの起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンポーネントのプロファイル情報入力とコードの生成">コンポーネントのプロファイル情報入力とコードの生成</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#アクティビティ処理の実装">アクティビティ処理の実装</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#opencv用-ユーザープロパティシートのコピー">OpenCV用 ユーザープロパティシートのコピー</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#copypropsbat-の実行">copyprops.bat の実行</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ヘッダファイルの編集">ヘッダファイルの編集</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ソースファイルの編集">ソースファイルの編集</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ビルドの実行">ビルドの実行</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#flip-コンポーネントの動作確認">Flip コンポーネントの動作確認</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#nameservice-の起動">NameService の起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtcconfの作成">rtc.confの作成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#flip-コンポーネントの起動">Flip コンポーネントの起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#usbcameraaqcuireusbcameramonitor-コンポーネントの起動">USBCameraAqcuire、USBCameraMonitor コンポーネントの起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンポーネントの接続">コンポーネントの接続</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンポーネントの-activate">コンポーネントの Activate</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#動作確認">動作確認</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#flip-コンポーネントのソースファイル">Flip コンポーネントのソースファイル</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#flip-コンポーネントのヘッダファイル">Flip コンポーネントのヘッダファイル</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#flip-コンポーネントのビルド済みパッケージ">Flip コンポーネントのビルド済みパッケージ</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: RTコンポーネント作成(OpenCV編 CameraImage型の使用) -->
+<p>#contents</p>
+
+<h1 id="はじめに">はじめに</h1>
+<p>ここでは、OpenCV ライブラリを VC９ にて RTコンポーネント化する手順を紹介します。</p>
+
+<h2 id="opencv-とは">OpenCV とは</h2>
+
+<p><a href="http://opencv.jp/">OpenCV</a> とはインテルが開発・公開しているオープンソースのコンピュータービジョン向けライブラリです。</p>
+
+<p><a href="http://ja.wikipedia.org/wiki/OpenCV">Wikipedia</a> より抜粋。</p>
+
+<h2 id="作成する-rtコンポーネント">作成する RTコンポーネント</h2>
+
+<ul>
+  <li>Flip コンポーネント: OpenCV ライブラリのうち、cvFlip() 関数を用いて画像の反転を行う RTコンポーネント。</li>
+</ul>
+
+<h1 id="opencv-ライブリの-rtコンポーネント化-flipコンポーネント">OpenCV ライブリの RTコンポーネント化 (Flipコンポーネント)</h1>
+
+<p>ここでは、OpenCV ライブラリのうち、画像の反転を行う cvFlip() を VC９ にて RTコンポーネント化します。</p>
+
+<p>以下は、作業の流れです。</p>
+
+<ul>
+  <li>cvFlip 関数について</li>
+  <li>コンポーネントの概要</li>
+  <li>動作環境・開発環境</li>
+  <li>Flip コンポーネントの雛型の生成</li>
+  <li>アクティビティ処理の実装</li>
+  <li>コンポーネントの動作確認</li>
+</ul>
+
+<h2 id="cvflip-関数について">cvFlip 関数について</h2>
+
+<p>cvFlip 関数は、2次元配列を垂直、水平、または両軸で反転します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void cvFlip(IplImage* src, IplImage* dst=NULL, int flip_mode=0);
+ #define cvMirror cvFlip
+  
+ src       入力配列
+ dst       出力配列。もし dst = NULL であれば、src が上書きされます。
+ flip_mode 配列の反転方法の指定内容:
+ 　flip_mode = 0: X軸周りでの反転(上下反転)
+ 　flip_mode &gt; 0: Y軸周りでの反転(左右反転)
+ 　flip_mode &lt; 0: 両軸周りでの反転(上下左右反転)
+</code></pre></div></div>
+
+<h2 id="コンポーネントの概要">コンポーネントの概要</h2>
+
+<p>InPort からの入力画像を反転し OutPort から出力するコンポーネント。</p>
+
+<p><br />
+反転の対象軸は、RTC のコンフィギュレーション機能を使用して flipMode という名前のパラメーターで指定します。</p>
+
+<p>flipMode は、反転したい方向に応じて下記のように指定してください。</p>
+
+<ul>
+  <li>
+    <p>上下反転したい場合、0</p>
+  </li>
+  <li>
+    <p>左右反転したい場合、1</p>
+  </li>
+  <li>
+    <p>上下左右反転したい場合、-1</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p>作成する RTC の仕様は以下のとおりです。</p>
+
+<ul>
+  <li>InPort
+    <ul>
+      <li>キャプチャーされた画像データ (CameraImage)</li>
+    </ul>
+  </li>
+  <li>OutPort
+    <ul>
+      <li>反転した画像データ (CameraImage)</li>
+    </ul>
+  </li>
+  <li>Configuration
+    <ul>
+      <li>反転方法の指定 (int)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>※ CameraImage型は、OpenRTM-aist の InterfaceDataTypes.idl にて下記のように定義されているデータ型です。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   struct CameraImage
+     {
+         /// Time stamp.
+         Time tm;
+         /// Image pixel width.
+         unsigned short width;
+         /// Image pixel height.
+         unsigned short height;
+         /// Bits per pixel.
+         unsigned short bpp;
+         /// Image format (e.g. bitmap, jpeg, etc.).
+         string format;
+         /// Scale factor for images, such as disparity maps,
+         /// where the integer pixel value should be divided
+         /// by this factor to get the real pixel value.
+         double fDiv;
+         /// Raw pixel data.
+         sequence&lt;octet&gt; pixels;
+     };
+</code></pre></div></div>
+
+<p><br />
+図1は、それぞれの flipMode での画像処理のイメージ図です。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="cvFlip_and_FlipRTC.png"><img src="cvFlip_and_FlipRTC.png" width="70%;" /></a></div>
+<div align="center"><strong>図1. Flip コンポーネントの flipMode の指定パターン</strong></div>
+<p><br /></p>
+
+<h2 id="動作環境開発環境">動作環境・開発環境</h2>
+<ul>
+  <li>OS: Windows XP SP3</li>
+  <li>
+    <p>コンパイラ: <a href="http://www.microsoft.com/japan/msdn/vstudio/express/default.aspx">Visual C++ 2008 Express Edition 日本語版</a></p>
+  </li>
+  <li><a href="http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.1/OpenCV-2.1.0-win32-vs2008.exe/download">OpenCV2.1(VC2008用)</a></li>
+  <li>
+    <p><a href="http://www.openrtm.org/pub/Windows/OpenRTM-aist/cxx/OpenRTM-aist-1.0.0-RELEASE_vc9_100212.msi">OpenRTM-aist-1.0.0-RELEASE(C++版), Win32 VC2008</a></p>
+  </li>
+  <li><a href="http://www.openrtm.org/pub/OpenRTM-aist/components/OpenCV/OpenCV-RTC-0.0.1.msi">OpenCV用RTC群(Win32用インストーラ)</a></li>
+  <li>
+    <p><a href="http://www.openrtm.org/pub/OpenRTM-aist/components/OpenCV/OpenCV_RTC_0.0.1.tar.gz">OpenCV用RTC群(ソースコード)</a></p>
+  </li>
+  <li>RTSystemEditor 1.0</li>
+  <li>RTCBuilder 1.0
+    <ul>
+      <li><a href="http://www.openrtm.org/pub/OpenRTM-aist/tools/1.0.0/eclipse342_rtmtools100release_win32_ja.zip">Eclipse3.4.2+RTSE(1.0.0-RELEASE)+RTCB(1.0.0-RELEASE)Windows用全部入り</a></li>
+    </ul>
+  </li>
+  <li><a href="http://www.forest.impress.co.jp/lib/arc/archive/archiver/lhaplus.html">解凍ツール(Lhaplus)</a></li>
+</ul>
+
+<h2 id="flip-コンポーネントの雛型の生成">Flip コンポーネントの雛型の生成</h2>
+
+<p>Flip コンポーネントの雛型の生成は、RTCBuilder を用いて行います。</p>
+
+<h3 id="rtcbuilder-の起動">RTCBuilder の起動</h3>
+
+<p>新規ワークスペースを指定して Eclipse を起動すると、以下のような「ようこそ」画面が表示されます。
+<br /></p>
+
+<div align="center"><a href="fig1-1EclipseInit.png"><img src="fig1-1EclipseInit.png" width="70%;" /></a></div>
+<!-- CENTER:''図 1-1 Eclipseの初期起動時の画面'' -->
+<div align="center"><strong>図2. Eclipseの初期起動時の画面</strong></div>
+<p><br />
+この「ようこそ」画面左上の「X」をクリックして画面を閉じると、以下の画面が表示されます。
+右上の [Open Perspective] ボタンをクリックし、プルダウンの「Other…」を選択します。
+<br /></p>
+
+<div align="center"><a href="fig2-2PerspectiveSwitch.png"><img src="fig2-2PerspectiveSwitch.png" width="70%;" /></a></div>
+<!-- CENTER:''図 2-2 パースペクティブの切り替え'' -->
+<div align="center"><strong>図3. パースペクティブの切り替え</strong></div>
+<p><br />
+「RTC Builder」を選択し、[OK] ボタンをクリックします。
+<br /></p>
+
+<div align="center"><a href="fig2-3PerspectiveSelection.png"><img src="fig2-3PerspectiveSelection.png" width="50%;" /></a></div>
+<!-- CENTER:''図 2-3　パースペクティブの選択'' -->
+<div align="center"><strong>図4. パースペクティブの選択</strong></div>
+<p><br />
+RTCBuilder が起動します。
+<br /></p>
+
+<div align="center"><a href="NewRTCBEditor.png"><img src="NewRTCBEditor.png" width="70%;" /></a></div>
+<!-- CENTER:''図 2-4 RTC Builderの初期起動時画面'' -->
+<div align="center"><strong>図5. RTC Builderの初期起動時画面</strong></div>
+<p><br /></p>
+
+<h3 id="rtcbuilder用-プロジェクトの作成">RTCBuilder用 プロジェクトの作成</h3>
+<p>まず最初に，RT コンポーネントを作成するための Eclipse プロジェクトを作成します。
+画面上部のメニューから [ファイル] &gt; [新規] &gt; [プロジェクト] を選択します。
+<br /></p>
+
+<div align="center"><a href="fig2-5CreateProject.png"><img src="fig2-5CreateProject.png" width="70%;" /></a></div>
+<!-- CENTER:''図 2-5 RTC Builder 用プロジェクトの作成　１'' -->
+<div align="center"><strong>図6. RTC Builder 用プロジェクトの作成　１</strong></div>
+<p><br />
+表示された｢新規プロジェクト｣画面において、[その他] &gt; [RTC ビルダ] を選択し、[次へ] をクリックします。
+<br /></p>
+
+<div align="center"><a href="fig2-6CreateProject2.png"><img src="fig2-6CreateProject2.png" width="50%;" /></a></div>
+<!-- CENTER:''図 2-6 RTC Builder 用プロジェクトの作成　２'' -->
+<div align="center"><strong>図7. RTC Builder 用プロジェクトの作成　２</strong></div>
+<p><br />
+｢プロジェクト名｣欄に作成するプロジェクト名を入力して [完了] をクリックします。
+<br /></p>
+
+<div align="center"><a href="RT-Component-BuilderProject.png"><img src="RT-Component-BuilderProject.png" width="50%;" /></a></div>
+<!-- CENTER:''図 2-7 RTC Builder 用プロジェクトの作成　３'' -->
+<div align="center"><strong>図8. RTC Builder 用プロジェクトの作成　３</strong></div>
+<p><br />
+指定した名称のプロジェクトが生成され、パッケージエクスプローラー内に追加されます。
+<br /></p>
+
+<div align="center"><a href="PackageExplolrer.png"><img src="PackageExplolrer.png" width="50%;" /></a></div>
+<!-- CENTER:''図 2-8 RTC Builder 用プロジェクトの作成　４'' -->
+<div align="center"><strong>図9. RTC Builder 用プロジェクトの作成　４</strong></div>
+<p><br />
+生成したプロジェクト内には、デフォルト値が設定された RTC プロファイル XML(RTC.xml) が自動的に生成されます。</p>
+
+<h3 id="rtc-プロファイルエディタの起動">RTC プロファイルエディタの起動</h3>
+<p>RTC プロファイルエディタを開くには、ツールバーの｢ [Open New RtcBuilder Editor] ボタンをクリックするか、メニューから [ファイル] &gt; [Open New Builder Editor] を選択します。
+<br /></p>
+
+<div align="center"><a href="Open_RTCBuilder.png"><img src="Open_RTCBuilder.png" width="50%;" /></a></div>
+<!-- CENTER:''図 2-9 ツールバーから Open New RtcBuilder Editor'' -->
+<div align="center"><strong>図10. ツールバーから Open New RtcBuilder Editor</strong></div>
+<p><br />
+<br /></p>
+
+<div align="center"><a href="fig2-10FileMenuOpenNewBuilder.png"><img src="fig2-10FileMenuOpenNewBuilder.png" width="30%;" /></a></div>
+<!-- CENTER:''図 2-10 File メニューから Open New Builder Editor'' -->
+<div align="center"><strong>図11. File メニューから Open New Builder Editor</strong></div>
+<p><br /></p>
+
+<h3 id="コンポーネントのプロファイル情報入力とコードの生成">コンポーネントのプロファイル情報入力とコードの生成</h3>
+
+<ol>
+  <li>「基本」タブを選択し、基本情報を入力します。</li>
+</ol>
+
+<p><br /></p>
+<ul>
+  <li>モジュール名: Flip</li>
+  <li>モジュール概要: Flip image component</li>
+  <li>バージョン: 1.0.0</li>
+  <li>ベンダ名: AIST</li>
+  <li>モジュールカテゴリ: Category</li>
+  <li>コンポーネント型: STATIC</li>
+  <li>アクティビティ型: PERIODIC</li>
+  <li>コンポーネント種類: DataFlowComponent</li>
+  <li>最大インスタンス数: 1</li>
+  <li>実行型: PeriodicExecutionContext</li>
+  <li>実行周期: 0.0 (<span style="color:RED;">図13では1.0となってますが,0.0として下さい.</span>;)
+<br /></li>
+  <li>Output Project: Flip</li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="Basic.png"><img src="Basic.png" width="70%;" /></a></div>
+<div align="center"><strong>図13. 基本情報の入力</strong></div>
+<p><br /></p>
+
+<ol>
+  <li>「アクティビティ」タブを選択し、使用するアクションコールバックを指定します。</li>
+</ol>
+
+<p>Flip コンポーネントでは、onActivated()、onDeactivated()、onExecute()コ ールバックを使用します。
+図14のように①の onAtivated をクリック後に ②のラジオボタンの [ON] にチェックを入れます。onDeactivated、onExecute についても同様の操作を行います。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="Activity.png"><img src="Activity.png" width="70%;" /></a></div>
+<div align="center"><strong>図14. アクティビティコールバックの選択</strong></div>
+<p><br /></p>
+
+<ol>
+  <li>「データポート」タブを選択し、データポートの情報を入力します。</li>
+</ol>
+
+<p><br /></p>
+<ul>
+  <li>InPort Profile:
+    <ul>
+      <li>ポート名: originalImage</li>
+      <li>データ型: CameraImage</li>
+      <li>変数名:  originalImage</li>
+      <li>表示位置: left
+<br /></li>
+    </ul>
+  </li>
+  <li>OutPort Profile:
+    <ul>
+      <li>ポート名: flippedImage</li>
+      <li>データ型: CameraImage</li>
+      <li>変数名:  flippedImage</li>
+      <li>表示位置: right</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="DataPort.png"><img src="DataPort.png" width="70%;" /></a></div>
+<div align="center"><strong>図15. データポート情報の入力</strong></div>
+<p><br /></p>
+
+<p>4.　「コンフィギュレーション」タブを選択し、Configuration の情報を入力します。</p>
+
+<p>ラジオボタンでコンフィギュレーションの変更を行います。</p>
+
+<p><br /></p>
+<ul>
+  <li>flipMode
+    <ul>
+      <li>名称: flipMode</li>
+      <li>データ型: int</li>
+      <li>デフォルト値: 1</li>
+      <li>変数名: flipMode</li>
+      <li>制約条件: (-1, 0, 1) <span style="color:RED;">※ (-1: 上下左右反転, 0: 上下反転, 1: 左右反転)</span>;</li>
+      <li>Widget: radio</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="Configuration.png"><img src="Configuration.png" width="70%;" /></a></div>
+<div align="center"><strong>図16. コンフィグレーション情報の入力</strong></div>
+<p><br /></p>
+
+<p>5.　「言語・環境」タブを選択し、プログラミング言語を選択します。</p>
+
+<p>今回は、C++(言語)を選択します。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="Language.png"><img src="Language.png" width="70%;" /></a></div>
+<div align="center"><strong>図17. プログラミング言語の選択</strong></div>
+<p><br /></p>
+
+<p>6.　「基本」タブにある [コード生成] ボタンをクリックし、コンポーネントの雛型を生成します。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="Generate.png"><img src="Generate.png" width="70%;" /></a></div>
+<div align="center"><strong>図18. 雛型の生成(Generate)</strong></div>
+<p><br /></p>
+
+<p><span style="color:Red;">※ 生成されるコード群は、Eclipse 起動時に指定したワークスペースフォルダーの中に生成されます。現在のワークスペースは、[ファイル] &gt; [ワークスペースの切り替え] で確認することができます。</span>;</p>
+
+<h2 id="アクティビティ処理の実装">アクティビティ処理の実装</h2>
+
+<p>Flip コンポーネントでは、InPort から受け取った画像を画像保存用バッファに保存し、その保存した画像を OpenCV の cvFlip() 関数にて変換します。その後、変換された画像を OutPort から送信します。
+<br /></p>
+
+<p><br />
+onActivated()、onExecute()、onDeactivated() での処理内容を図19に示します。
+<br /></p>
+
+<div align="center"><a href="FlipRTC_State.png"><img src="FlipRTC_State.png" width="50%;" /></a></div>
+<div align="center"><strong>図19. アクティビティ処理の概要</strong></div>
+<p><br /></p>
+
+<p>onExecute() での処理を図20に示します。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="FlipRTC.png"><img src="FlipRTC.png" width="50%;" /></a></div>
+<div align="center"><strong>図20. onExucete()での処理内容</strong></div>
+<p><br /></p>
+
+<h3 id="opencv用-ユーザープロパティシートのコピー">OpenCV用 ユーザープロパティシートのコピー</h3>
+<p>プロパティシートとは、コンパイルに必要な種々のオプション（インクルードパス、ライブラリロードバス、ライブラリ）やマクロを記述した VC の設定ファイルの一種です。
+RTCBuilder や rtc-template で生成した VC用のプロジェクトでは、VC のプロパティシートを使用して各種オプションを与えています。また、ユーザーが追加でオプションを追加できるように、ユーザー定義のプロパティシートもインクルードするようになっています。</p>
+<ul>
+  <li>rtm_config.vsprop：OpenRTM に関する情報を含むプロパティシート。インストールされている OpenRTM-aist に依存するファイルであるため、copyprops.bat を使用して OpenRTM のシステムディレクトリーからカレントのプロジェクトへコピーします。</li>
+  <li>user_config.vsprops：ユーザー定義のプロパティシート。デフォルトは空です。使い方は、ソースコード：OpenRTM-aist/win32/OpenRTM-aist/example/USBCamera の中に入っているuser_config.vsprops (OpenCV用の設定)を参考にしてください。</li>
+</ul>
+
+<p>以下の内容を user_config.vsprops というファイル名で保存し、Flip フォルダーにコピーしてください。</p>
+
+<p>もしくは、下記より vsprops ファイルをダウンロードし、Flip フォルダーに保存してください。</p>
+
+<p><br />
+<a href="http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2010/user_config.vsprops">user_config.vsprops</a></p>
+
+<p>※　既に Flip フォルダーには user_config.vsprops ファイルが存在していますが、上書きして構いません。</p>
+
+<p><br /></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;?xml version="1.0" encoding="shift_jis"?&gt;
+ &lt;VisualStudioPropertySheet
+ 	ProjectType="Visual C++"
+ 	Version="8.00"
+ 	Name="OpenCV21"
+ 	&gt;
+ 	&lt;Tool
+ 		Name="VCCLCompilerTool"
+ 		AdditionalIncludeDirectories="$(cv_includes)"
+ 	/&gt;
+ 	&lt;Tool
+ 		Name="VCLinkerTool"
+ 		AdditionalLibraryDirectories="$(cv_libdir)"
+ 	/&gt;
+ 	&lt;UserMacro
+ 		Name="user_lib"
+ 		Value="$(cv_lib)"
+ 	/&gt;
+ 	&lt;UserMacro
+ 		Name="user_libd"
+ 		Value="$(cv_libd)"
+ 	/&gt;
+ 	&lt;UserMacro
+ 		Name="cv_root"
+ 		Value="C:\OpenCV2.1"
+ 	/&gt;
+ 	&lt;UserMacro
+ 		Name="cv_includes"
+ 		Value="&amp;quot;$(cv_root)\include\opencv&amp;quot;"
+ 	/&gt;
+ 	&lt;UserMacro
+ 		Name="cv_libdir"
+ 		Value="&amp;quot;$(cv_root)\lib&amp;quot;"
+ 	/&gt;
+ 	&lt;UserMacro
+ 		Name="cv_bin"
+ 		Value="$(cv_root)\bin"
+ 	/&gt;
+ 	&lt;UserMacro
+ 		Name="cv_lib"
+ 		Value="cv210.lib cvaux210.lib highgui210.lib cxcore210.lib"
+ 	/&gt;
+ 	&lt;UserMacro
+ 		Name="cv_libd"
+ 		Value="cv210d.lib cvaux210d.lib highgui210d.lib cxcore210d.lib"
+ 	/&gt;
+ &lt;/VisualStudioPropertySheet&gt;
+</code></pre></div></div>
+
+<h3 id="copypropsbat-の実行">copyprops.bat の実行</h3>
+
+<p>copyprops.batというファイルを実行することで、rtm_config.vspropsというファイルがコピーされます。</p>
+
+<p>rtm_config.vspropsファイルは、RTコンポーネントをVC++でビルドするために必要なインクルードパスやリンクするライブラリ等が記述されたファイルです。</p>
+
+<h3 id="ヘッダファイルの編集">ヘッダファイルの編集</h3>
+
+<ul>
+  <li>OpenCV のライブラリを使用するため、OpenCV のインクルードファイルをインクルードします。</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> //OpenCV 用インクルードファイルのインクルード
+ #include&lt;cv.h&gt;
+ #include&lt;cxcore.h&gt;
+ #include&lt;highgui.h&gt;
+</code></pre></div></div>
+
+<ul>
+  <li>この cvFlip コンポーネントでは、画像領域の確保、Flip 処理、確保した画像領域の解放のそれぞれの処理を行います。これらの処理は、それぞれ onActivated()、onDeactivated()、onExecute() のコールバック関数にて行います。</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   /***
+    *
+    * The activated action (Active state entry action)
+    * former rtc_active_entry()
+    *
+    * @param ec_id target ExecutionContext Id
+    *
+    * @return RTC::ReturnCode_t
+    * 
+    * 
+    */
+   virtual RTC::ReturnCode_t onActivated(RTC::UniqueId ec_id);
+ 
+   /***
+    *
+    * The deactivated action (Active state exit action)
+    * former rtc_active_exit()
+    *
+    * @param ec_id target ExecutionContext Id
+    *
+    * @return RTC::ReturnCode_t
+    * 
+    * 
+    */
+   virtual RTC::ReturnCode_t onDeactivated(RTC::UniqueId ec_id);
+ 
+   /***
+    *
+    * The execution action that is invoked periodically
+    * former rtc_active_do()
+    *
+    * @param ec_id target ExecutionContext Id
+    *
+    * @return RTC::ReturnCode_t
+    * 
+    * 
+    */
+   virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);
+</code></pre></div></div>
+
+<ul>
+  <li>反転した画像の保存用にメンバー変数を追加します。</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   IplImage* m_imageBuff;
+   IplImage* m_flipImageBuff;
+</code></pre></div></div>
+
+<h3 id="ソースファイルの編集">ソースファイルの編集</h3>
+
+<p>下記のように、onActivated()、onDeactivated()、onExecute() を実装します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::ReturnCode_t Flip::onActivated(RTC::UniqueId ec_id)
+ {
+   // イメージ用メモリーの初期化
+   m_imageBuff = NULL;
+   m_flipImageBuff = NULL;
+ 
+   // OutPort の画面サイズの初期化
+   m_flippedImage.width = 0;
+   m_flippedImage.height = 0;
+  
+   return RTC::RTC_OK;
+ }
+ 
+ 
+ RTC::ReturnCode_t Flip::onDeactivated(RTC::UniqueId ec_id)
+ {
+   if(m_imageBuff != NULL)
+   {
+     // イメージ用メモリーの解放
+     cvReleaseImage(&amp;m_imageBuff);
+     cvReleaseImage(&amp;m_flipImageBuff);
+   }
+ 
+   return RTC::RTC_OK;
+ }
+ 
+ 
+ RTC::ReturnCode_t Flip::onExecute(RTC::UniqueId ec_id)
+ {
+   // 新しいデータのチェック
+   if (m_originalImageIn.isNew()) {
+     // InPort データの読み込み
+     m_originalImageIn.read();
+ 
+     // InPort と OutPort の画面サイズ処理およびイメージ用メモリーの確保
+     if( m_originalImage.width != m_flippedImage.width || m_originalImage.height != m_flippedImage.height)
+       {
+ 	m_flippedImage.width = m_originalImage.width;
+ 	m_flippedImage.height = m_originalImage.height;
+ 
+ 	// InPort のイメージサイズが変更された場合
+ 	if(m_imageBuff != NULL)
+ 	  {
+ 	    cvReleaseImage(&amp;m_imageBuff);
+ 	    cvReleaseImage(&amp;m_flipImageBuff);
+ 	  }
+ 
+ 	// イメージ用メモリーの確保
+ 	m_imageBuff = cvCreateImage(cvSize(m_originalImage.width, m_originalImage.height), IPL_DEPTH_8U, 3);
+ 	m_flipImageBuff = cvCreateImage(cvSize(m_originalImage.width, m_originalImage.height), IPL_DEPTH_8U, 3);
+       }
+ 
+     // InPort の画像データを IplImage の imageData にコピー
+     memcpy(m_imageBuff-&gt;imageData,(void *)&amp;(m_originalImage.pixels[0]),m_originalImage.pixels.length());
+ 
+     // InPort からの画像データを反転する。 m_flipMode 0: X軸周り, 1: Y軸周り, -1: 両方の軸周り
+     cvFlip(m_imageBuff, m_flipImageBuff, m_flipMode);
+ 
+     // 画像データのサイズ取得
+     int len = m_flipImageBuff-&gt;nChannels * m_flipImageBuff-&gt;width * m_flipImageBuff-&gt;height;
+     m_flippedImage.pixels.length(len);
+ 
+     // 反転した画像データを OutPort にコピー
+     memcpy((void *)&amp;(m_flippedImage.pixels[0]),m_flipImageBuff-&gt;imageData,len);
+ 
+     // 反転した画像データを OutPort から出力する。
+     m_flippedImageOut.write();
+   }
+ 
+   return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<h3 id="ビルドの実行">ビルドの実行</h3>
+
+<p>Flip_vc9.sln ファイルをダブルクリックし、Visual C++ 2008 を起動します。</p>
+
+<p>Visual C++ 2008 の起動後、図21のようにし、コンポーネントのビルドを行います。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="VC++_build.png"><img src="VC++_build.png" width="70%;" /></a></div>
+<div align="center"><strong>図21. ビルドの実行</strong></div>
+<p><br /></p>
+
+<h2 id="flip-コンポーネントの動作確認">Flip コンポーネントの動作確認</h2>
+
+<p>ここでは、「OpenCV用RTC群 (Win32用インストーラ)」にてインストールした USBCameraAqcuireComp コンポーネントと、USBCameraMonitorCom コンポーネント、それと、今回作成した Flip コンポーネントを接続し動作確認を行います。</p>
+
+<h3 id="nameservice-の起動">NameService の起動</h3>
+
+<p>omniORB のネームサービスを起動します。</p>
+
+<p><br />
+[スタート] &gt; [すべてのプログラム] &gt; [OpenRTM-aist] &gt; [C++] &gt; [tools] の順に辿り、「Start Naming Service」をクリックしてください。</p>
+
+<p>&amp;color(RED){※ 「Star Naming Service」をクリックしても omniNames が起動されない場合は、フルコンピューター名が14文字以内に設定されているかを確認してください。</p>
+
+<h3 id="rtcconfの作成">rtc.confの作成</h3>
+
+<p>RTコンポーネントでは、ネームサーバーのアドレスやネームサーバーへの登録フォーマットなどの情報を rtc.conf というファイルで指定する必要があります。</p>
+
+<p>下記の内容を rtc.conf というファイル名で保存し、Flip\FlipComp\Debug(もしくは、Release)フォルダーに置いて下さい。</p>
+
+<p><span style="color:RED;">※ Eclipse 起動時に workspace をデフォルトのままにしていた場合、Flip フォルダーのパスは、</span>;</p>
+
+<p><span style="color:RED;">   C:\Documents and Settings&lt;ログインユーザー名&gt;\workspace　となります。</span>;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.nameservers: localhost
+ naming.formats: %n.rtc
+</code></pre></div></div>
+
+<h3 id="flip-コンポーネントの起動">Flip コンポーネントの起動</h3>
+
+<p>Flip コンポーネントを起動します。</p>
+
+<p>先程 rtc.conf ファイルを置いたフォルダーにある、FlipComp.exe ファイルを実行して下さい。</p>
+
+<h3 id="usbcameraaqcuireusbcameramonitor-コンポーネントの起動">USBCameraAqcuire、USBCameraMonitor コンポーネントの起動</h3>
+
+<p>USB カメラのキャプチャ画像を OutPort から出力する USBCameraAqcuireComp コンポーネントと、InPort で受け取った画像を画面に表示する USBCameraMonitorComp コンポーネントを起動します。</p>
+
+<p>これら２つのコンポーネントは、下記の手順にて起動できます。</p>
+
+<p>[スタート] &gt; [すべてのプログラム] &gt; [OpenRTM-aist] &gt; [components] &gt; [C++] &gt; [OpenCV] を選択し、「USBCameraAqcuireComp」と「USBCameraMonitorComp」をそれぞれクリックして実行します。</p>
+
+<h3 id="コンポーネントの接続">コンポーネントの接続</h3>
+
+<p>図22のように、RTSystemEditor にて USBCameraAqcuireComp、Flip、USBCameraMonitorComp コンポーネントを接続します。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="RTSE_Connect.png"><img src="RTSE_Connect.png" width="70%;" /></a></div>
+<div align="center"><strong>図22. コンポーネントの接続</strong></div>
+<p><br /></p>
+
+<h3 id="コンポーネントの-activate">コンポーネントの Activate</h3>
+
+<p>RTSystemEditor の上部にあります「ALL」というアイコンをクリックし、全てのコンポーネントをアクティベートします。</p>
+
+<p>正常にアクティベートされた場合、図23のように黄緑色でコンポーネントが表示されます。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="RTSE_Activate.png"><img src="RTSE_Activate.png" width="70%;" /></a></div>
+<div align="center"><strong>図23. コンポーネントのアクティベート</strong></div>
+<p><br /></p>
+
+<h3 id="動作確認">動作確認</h3>
+
+<p>図24のようにコンフィギュレーションビューにてコンフィギュレーションを変更することができます。</p>
+
+<p>Flip コンポーネントのコンフィギュレーションパラメーター「flipMode」を「0」や「-1」などに変更し、画像の反転が行われるかを確認してください。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="RTSE_Configuration.png"><img src="RTSE_Configuration.png" width="70%;" /></a></div>
+<div align="center"><strong>図24. コンフィギュレーションパラメーターの変更</strong></div>
+<p><br /></p>
+
+<h2 id="flip-コンポーネントのソースファイル">Flip コンポーネントのソースファイル</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // -*- C++ -*-
+ /*!
+  * @file  Flip.cpp
+  * @brief Flip image component
+  * @date $Date$
+  *
+  * $Id$
+  */
+ 
+ #include "Flip.h"
+ 
+ // Module specification
+ static const char* flip_spec[] =
+   {
+     "implementation_id", "Flip",
+     "type_name",         "Flip",
+     "description",       "Flip image component",
+     "version",           "1.0.0",
+     "vendor",            "AIST",
+     "category",          "Category",
+     "activity_type",     "PERIODIC",
+     "kind",              "DataFlowComponent",
+     "max_instance",      "1",
+     "language",          "C++",
+     "lang_type",         "compile",
+     // Configuration variables
+     "conf.default.flipMode", "1",
+     // Widget
+     "conf.__widget__.flipMode", "radio",
+     // Constraints
+     "conf.__constraints__.flip_mode", "(-1,0,1)",
+     ""
+   };
+ 
+ /*!
+  * @brief constructor
+  * @param manager Maneger Object
+  */
+ Flip::Flip(RTC::Manager* manager)
+   : RTC::DataFlowComponentBase(manager),
+     m_originalImageIn("originalImage", m_originalImage),
+     m_flippedImageOut("flippedImage", m_flippedImage)
+ {
+ }
+ 
+ /*!
+  * @brief destructor
+  */
+ Flip::~Flip()
+ {
+ }
+ 
+ 
+ RTC::ReturnCode_t Flip::onInitialize()
+ {
+   // Registration: InPort/OutPort/Service
+   // Set InPort buffers
+   addInPort("originalImage", m_originalImageIn);
+   
+   // Set OutPort buffer
+   addOutPort("flippedImage", m_flippedImageOut);
+   
+   // Bind variables and configuration variable
+   bindParameter("flipMode", m_flipMode, "1");
+ 
+   return RTC::RTC_OK;
+ }
+ 
+ 
+ RTC::ReturnCode_t Flip::onActivated(RTC::UniqueId ec_id)
+ {
+   // イメージ用メモリーの初期化
+   m_imageBuff = NULL;
+   m_flipImageBuff = NULL;
+ 
+   // OutPort の画面サイズの初期化
+   m_flippedImage.width = 0;
+   m_flippedImage.height = 0;
+  
+   return RTC::RTC_OK;
+ }
+ 
+ 
+ RTC::ReturnCode_t Flip::onDeactivated(RTC::UniqueId ec_id)
+ {
+   if(m_imageBuff != NULL)
+   {
+     // イメージ用メモリーの解放
+     cvReleaseImage(&amp;m_imageBuff);
+     cvReleaseImage(&amp;m_flipImageBuff);
+   }
+ 
+   return RTC::RTC_OK;
+ }
+ 
+ 
+ RTC::ReturnCode_t Flip::onExecute(RTC::UniqueId ec_id)
+ {
+   // 新しいデータのチェック
+   if (m_originalImageIn.isNew()) {
+     // InPort データの読み込み
+     m_originalImageIn.read();
+ 
+     // InPort と OutPort の画面サイズ処理およびイメージ用メモリーの確保
+     if( m_originalImage.width != m_flippedImage.width || m_originalImage.height != m_flippedImage.height)
+       {
+ 	m_flippedImage.width = m_originalImage.width;
+ 	m_flippedImage.height = m_originalImage.height;
+ 
+ 	// InPort のイメージサイズが変更された場合
+ 	if(m_imageBuff != NULL)
+ 	  {
+ 	    cvReleaseImage(&amp;m_imageBuff);
+ 	    cvReleaseImage(&amp;m_flipImageBuff);
+ 	  }
+ 
+ 	// イメージ用メモリーの確保
+ 	m_imageBuff = cvCreateImage(cvSize(m_originalImage.width, m_originalImage.height), IPL_DEPTH_8U, 3);
+ 	m_flipImageBuff = cvCreateImage(cvSize(m_originalImage.width, m_originalImage.height), IPL_DEPTH_8U, 3);
+       }
+ 
+     // InPort の画像データを IplImage の imageData にコピー
+     memcpy(m_imageBuff-&gt;imageData,(void *)&amp;(m_originalImage.pixels[0]),m_originalImage.pixels.length());
+ 
+     // InPort からの画像データを反転する。 m_flipMode 0: X軸周り, 1: Y軸周り, -1: 両方の軸周り
+     cvFlip(m_imageBuff, m_flipImageBuff, m_flipMode);
+ 
+     // 画像データのサイズ取得
+     int len = m_flipImageBuff-&gt;nChannels * m_flipImageBuff-&gt;width * m_flipImageBuff-&gt;height;
+     m_flippedImage.pixels.length(len);
+ 
+     // 反転した画像データを OutPortにコピー
+     memcpy((void *)&amp;(m_flippedImage.pixels[0]),m_flipImageBuff-&gt;imageData,len);
+ 
+     // 反転した画像データを OutPortから出力する。
+     m_flippedImageOut.write();
+   }
+ 
+   return RTC::RTC_OK;
+ }
+ 
+ 
+ extern "C"
+ {
+  
+   void FlipInit(RTC::Manager* manager)
+   {
+     coil::Properties profile(flip_spec);
+     manager-&gt;registerFactory(profile,
+                              RTC::Create&lt;Flip&gt;,
+                              RTC::Delete&lt;Flip&gt;);
+   }
+   
+ };
+</code></pre></div></div>
+
+<h2 id="flip-コンポーネントのヘッダファイル">Flip コンポーネントのヘッダファイル</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // -*- C++ -*-
+ /*!
+  * @file  Flip.h
+  * @brief Flip image component
+  * @date  $Date$
+  *
+  * $Id$
+  */
+ 
+ #ifndef FLIP_H
+ #define FLIP_H
+ 
+ #include &lt;rtm/Manager.h&gt;
+ #include &lt;rtm/DataFlowComponentBase.h&gt;
+ #include &lt;rtm/CorbaPort.h&gt;
+ #include &lt;rtm/DataInPort.h&gt;
+ #include &lt;rtm/DataOutPort.h&gt;
+ #include &lt;rtm/idl/BasicDataTypeSkel.h&gt;
+ #include &lt;rtm/idl/ExtendedDataTypesSkel.h&gt;
+ #include &lt;rtm/idl/InterfaceDataTypesSkel.h&gt;
+ 
+ //OpenCV 用インクルードファイルのインクルード
+ #include&lt;cv.h&gt;
+ #include&lt;cxcore.h&gt;
+ #include&lt;highgui.h&gt;
+ 
+ using namespace RTC;
+ 
+ /*!
+  * @class Flip
+  * @brief Flip image component
+  *
+  */
+ class Flip
+   : public RTC::DataFlowComponentBase
+ {
+  public:
+   /*!
+    * @brief constructor
+    * @param manager Maneger Object
+    */
+   Flip(RTC::Manager* manager);
+ 
+   /*!
+    * @brief destructor
+    */
+   ~Flip();
+ 
+   /***
+    *
+    * The initialize action (on CREATED-&gt;ALIVE transition)
+    * formaer rtc_init_entry() 
+    *
+    * @return RTC::ReturnCode_t
+    * 
+    * 
+    */
+    virtual RTC::ReturnCode_t onInitialize();
+ 
+   /***
+    *
+    * The activated action (Active state entry action)
+    * former rtc_active_entry()
+    *
+    * @param ec_id target ExecutionContext Id
+    *
+    * @return RTC::ReturnCode_t
+    * 
+    * 
+    */
+    virtual RTC::ReturnCode_t onActivated(RTC::UniqueId ec_id);
+ 
+   /***
+    *
+    * The deactivated action (Active state exit action)
+    * former rtc_active_exit()
+    *
+    * @param ec_id target ExecutionContext Id
+    *
+    * @return RTC::ReturnCode_t
+    * 
+    * 
+    */
+    virtual RTC::ReturnCode_t onDeactivated(RTC::UniqueId ec_id);
+ 
+   /***
+    *
+    * The execution action that is invoked periodically
+    * former rtc_active_do()
+    *
+    * @param ec_id target ExecutionContext Id
+    *
+    * @return RTC::ReturnCode_t
+    * 
+    * 
+    */
+    virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);
+ 
+  protected:
+   // Configuration variable declaration
+   /*!
+    * 
+    * - Name:  flipMode
+    * - DefaultValue: 1
+    */
+   int m_flipMode;
+ 
+   // DataInPort declaration
+   CameraImage m_originalImage;
+ 
+   /*!
+    */
+   InPort&lt;CameraImage&gt; m_originalImageIn;
+   
+   // DataOutPort declaration
+   CameraImage m_flippedImage;
+ 
+   /*!
+    */
+   OutPort&lt;CameraImage&gt; m_flippedImageOut;
+ 
+  private:
+   // 処理画像用バッファ
+   IplImage* m_imageBuff;
+   IplImage* m_flipImageBuff;
+ };
+ 
+ 
+ extern "C"
+ {
+   DLL_EXPORT void FlipInit(RTC::Manager* manager);
+ };
+ 
+ #endif // FLIP_H
+</code></pre></div></div>
+
+<h2 id="flip-コンポーネントのビルド済みパッケージ">Flip コンポーネントのビルド済みパッケージ</h2>
+
+<p>ビルド済みパッケージを下記からダウンロードできます。</p>
+
+<p>拡張子を”zip_“としてますので、”zip”にリネームしてから解凍してください。</p>
+
+<ul>
+  <li><a href="http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2010/Flip.zip_">ビルド済みパッケージ</a></li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+</p>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

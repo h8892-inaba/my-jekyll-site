@@ -1,0 +1,1622 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ROBOMECH2021オンライン講習会 (2021年6月6日(日)) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="ROBOMECH2021オンライン講習会 (2021年6月6日(日))" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/tutorials/robomech2021/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/tutorials/robomech2021/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="ROBOMECH2021オンライン講習会 (2021年6月6日(日))" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"ROBOMECH2021オンライン講習会 (2021年6月6日(日))","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/tutorials/robomech2021/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">
+        <!-- TODO add theme version dropdown here -->
+        <!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/"  title="test_dl_page"
+            >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/"  title="test_doc_page"
+            >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >Research_and_Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    Research_and_Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>ROBOMECH2021オンライン講習会 (2021年6月6日(日))</h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/tutorials/robomech2021/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#robomech2021オンライン講習会">ROBOMECH2021オンライン講習会</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#日時場所">日時・場所</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#過去の講習会">過去の講習会</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#プログラム">プログラム</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#使用する小型移動ロボット実機">使用する小型移動ロボット実機</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#講義資料">講義資料</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#第1部">第1部</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#事前準備">事前準備</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#pcおよびzoom接続可能なデバイス">PCおよびZoom接続可能なデバイス</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#資料">資料</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#インストールするソフトウェア">インストールするソフトウェア</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#オンライン開催での注意事項">オンライン開催での注意事項</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#講習会の様子">講習会の様子</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- #ref(https://robomech.org/2020/wp-content/uploads/2019/09/head000.jpg,left,100%,margin=10,url=/ja/tutorial/robomech2020) -->
+<!-- #ref(robomech2019_title.png,left,60%,margin=10,url=/ja/tutorial/robomech2019) -->
+
+<p>#contents</p>
+
+<h2 id="robomech2021オンライン講習会">ROBOMECH2021オンライン講習会</h2>
+
+<p>2021年6月6日(日)にオンラインで講習会を開催しました。</p>
+
+<!-- ROBOMECH2020の現地開催中止に伴い、本講座のオンラインでの開催を決定いたしました。 -->
+<!-- 参加登録は下記フォームからお申し込みください。参加登録には当Webページのユーザ登録が必要です。 -->
+<!-- 詳しいプログラムは準備中です。もう少々お待ちください。 -->
+<!-- また、PCの貸し出しを検討しております。もう少々お待ちください。 -->
+
+<!-- ROBOMECH2020の現地開催中止に伴い、本講座も現地開催中止を決定いたしました。 -->
+<!-- 現在テレビ会議での開催の可否を検討しております。もう少々お待ちください。 -->
+
+<!-- 毎年恒例となりました、ROBOMECHでのRTミドルウエア講習会を今年も開催いたします。 -->
+
+<!-- 新型コロナウイルス感染拡大防止の観点から、2021年6月6日(日)ROBOMECH2021 RTミドルウエア講習会をオンラインで開催いたします。 -->
+
+<!-- RTミドルウエアはロボットシステムの構築を効率化するソフトウエアプラットフォームです。RTコンポーネントと呼ばれるモジュール化されたソフトウエアを多数組わせてロボットシステムを構築するため、システムの変更、拡張がしやすいだけでなく、既存のソフトウエア資産をの継承や他人が作ったコンポーネントとの組み合わせも容易になります。講習会では、RTミドルウエアの概要、RTコンポーネントの作成方法について解説します。受講者には各自PCをご準備いただき、実習形式で実際にRTコンポーネントを作成、既存のコンポーネントなどと組み合わせて簡単なシステムを構築していただきます。本講習会を受講することで、RTコンポーネント設計方法、実装の仕方、システムの作り方をマスターすることができます。 -->
+
+<h2 id="日時場所">日時・場所</h2>
+<!-- -''主催'': 国立研究開発法人 産業技術総合研究所 -->
+<ul>
+  <li><strong>主催</strong>: 一般社団法人 日本機械学会 ロボティクス・メカトロニクス部門
+<!-- -''主催'': (公社)計測自動制御学会システムインテグレーション部門 RTシステムインテグレーション部会 -->
+<!-- -''協賛'': ROBOMECH2021, (公社)計測自動制御学会システムインテグレーション部門 --></li>
+  <li><strong>日時</strong>: 2021年6月6日(日) ROBOMECH2021チュートリアルとして開催<br /> 
+<!-- [[ROBOMECH2021チュートリアルとして開催:https://robomech.org/2021/workshop-tutorial/]] -->
+<!-- -''場所'': [[大阪南港ATCホール:https://atchall.com/]] (予定) -->
+<!-- --アクセス: [[交通アクセス:https://atchall.com/access]] -->
+    <ul>
+      <li>詳細は<a href="https://robomech.org/2021/">ROBOMECH2021 Webページ</a>をご覧ください。
+<!-- - Slack参加リンク（講習会中のみ掲示): https://join.slack.com/t/openrtm-users/shared_invite/zt-6024yig0-OjDk6yXSsDo8SX6NOuv5yA --></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- -ROBOMECH2020の現地開催中止に伴い、本講座のオンラインでの開催を決定いたしました。 -->
+<ul>
+  <li><strong>聴講料</strong>: 無料
+    <ul>
+      <li><span style="color:red;">必須ではありませんが可能な限りROBOMECH2021への参加登録をお願いします。</span>;</li>
+    </ul>
+  </li>
+  <li><strong>定員</strong>: 20名</li>
+  <li><strong>参加者数</strong>: 14名（スタッフ３名）
+<!-- -- 以下の機材の貸し出しを行っております。ご希望の方は参加登録時にお申込みください。 -->
+<!-- -- Lidar付きRaspberryPi Mouseは先着8名まで &color(red){受付終了しました。}; -->
+<!-- -- 通常版RaspberryPi Mouseは先着12名まで &color(red){受付終了しました。}; -->
+<!-- -- いずれも先着順となりますので、ご希望に添えない場合もございます。予めご了承ください。 --></li>
+</ul>
+
+<!-- -''定員'': 第1部50名, 実習（第2, 3部）20名程度を予定しております。定員になり次第申し込みは終了させていただきます。 -->
+<!-- 第1部10名, 実習（第2, 3部）30名程度を予定しております。定員になり次第申し込みは終了させていただきます。第1部のみご参加の方は申し込み不要です。// -->
+<!-- -''参加者'': 1部10名、実習（第2部）8名（+講師・スタッフ3名） -->
+<!-- - ''参加登録'': &color(red){第1部のみの聴講は申込不要。}; -->
+<!-- -''参加登録'':  -->
+<!-- - [[参加登録フォームはこちら:https://goo.gl/forms/vDW0jAmboChrlhkC2]] -->
+<!-- -- 参加登録には当Webページのユーザ登録が必要です。[[ユーザ登録はこちら:/openrtm/ja/user/register]] -->
+<!-- -- [[メーリングリスト:http://www.openrtm.org/mailman/listinfo/openrtm-users]]への登録をお勧めします。必須ではありませんが、Webでご案内する事前準備についてはメーリングリストにてお知らせします。 -->
+<!-- -- 講習会のみの参加の場合ROBOMECH2019への参加登録は不要です。 -->
+<!-- -- なお、登録の際に問題が生じた場合は、 [[こちら（robomech2017@openrtm.org）:mailto:robomech2017@openrtm.org]] までお問い合わせください。 -->
+
+<!-- &br; -->
+<!-- #ref(robomech2016_button.png,left,url=#entry) -->
+
+<h2 id="過去の講習会">過去の講習会</h2>
+
+<p>こちらから、過去の講習会の資料および写真などがご覧いただけます。</p>
+
+<ul>
+  <li><a href="../robomech2020">ROBOMECH2020</a></li>
+  <li><a href="../robomech2019">ROBOMECH2019</a></li>
+  <li><a href="../robomech2018">ROBOMECH2018</a></li>
+  <li><a href="../robomech2017">ROBOMECH2017</a></li>
+</ul>
+
+<h2 id="プログラム">プログラム</h2>
+<!-- 準備中です。 -->
+<!-- オンライン開催に伴い、一部プログラムが変更になりました。 -->
+
+<table class="table-alt">
+  <tr>
+    <td>11:00 -11:50</td>
+    <td>**第1部：OpenRTM-aistおよびRTコンポーネントプログラミングの概要**<br />  **担当**：安藤慶昭 氏 (産総研) <br /> **概要**： RTミドルウェア(OpenRTM-aist)はロボットシステムをコンポーネント指向で構築するソフトウェアプラットフォームです。RTミドルウェアを利用することで、既存のコンポーネントを再利用し、モジュール指向の柔軟なロボットシステムを構築することができます。RTミドルウエアについて、その概要およびRTコンポーネントの機能やプログラミングの流れについて説明します。<br />**講義資料**:<a href="200527-01.pdf">200527-01.pdf</a></td>
+  </tr>
+  <tr>
+    <td>11:50 -12:00</td>
+    <td>質疑応答・意見交換</td>
+  </tr>
+  <tr>
+    <td>12:00 -12:10</td>
+    <td>実習に必要なソフトウェアのインストールの確認</td>
+  </tr>
+  <tr>
+    <td>12:10 -13:10</td>
+    <td>休憩</td>
+  </tr>
+  <tr>
+    <td>13:10 -15:00</td>
+    <td>第2部：RTコンポーネントの作成入門 <br /> - 担当：宮本 信彦 氏(産総研) <br /> - 概要：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br /> <a href="/ja/node/6550">チュートリアル(第2部、Windows)</a> <br /> <a href="/ja/node/6551">チュートリアル(第2部、Ubuntu)</a> <br />**講義資料**:<a href="RTコンポーネント作成入門.pdf">RTコンポーネント作成入門.pdf</a></td>
+  </tr>
+  <tr>
+    <td>15:00 -16:00</td>
+    <td>第3部：rtshell入門 <br /> - 担当：宮本 信彦 氏(産総研) <br /> - 概要：RTシステムの起動、終了を自動化するスクリプトファイルの作成方法を解説します。 <br /> <a href="/ja/node/7097">チュートリアル(第3部)</a> <br />**講義資料**:<a href="rtshell入門.pdf">rtshell入門.pdf</a></td>
+  </tr>
+  <tr>
+    <td>16:00 -17:00</td>
+    <td>第4部：RTコンポーネント作成入門-Ⅱ(希望者のみ) <br /> - 担当：宮本 信彦 氏(産総研) <br /> - 概要：OpenRTM-aistを利用して移動ロボット実機を制御するプログラムを作成します。希望者にRaspberry Piマウスを貸し出します。希望する場合は申し込みフォームに郵便番号・住所・受取担当者を入力してください。<br /> <a href="/ja/node/6550#realrobot">チュートリアル(第4部、Windows)</a>  <br /> <a href="/ja/node/6551#realrobot">チュートリアル(第4部、Ubuntu)</a><br /> <a href="/ja/node/7098">チュートリアル(SLAM実習)</a> <br />**講義資料**:<a href="SLAM実習.pdf">SLAM実習.pdf</a></td>
+  </tr>
+</table>
+
+<h3 id="使用する小型移動ロボット実機">使用する小型移動ロボット実機</h3>
+
+<h4 id="raspberrypi-mouse-通常版">RaspberryPi Mouse 通常版</h4>
+
+<div align="center"><a href="https://www.rt-shop.jp/blog/wp-content/uploads/2020/03/img_raspimouse01-765x800.png"><img src="https://www.rt-shop.jp/blog/wp-content/uploads/2020/03/img_raspimouse01-765x800.png" width="45%;" /></a></div>
+
+<h4 id="raspberrypi-mouse-lidar付き">RaspberryPi Mouse LiDAR付き</h4>
+
+<div align="center"><a href="https://rt-net.jp/mobility/wp-content/uploads/2019/12/23b47429c42d672e7f94ae0a3c9c9d6c.png"><img src="https://rt-net.jp/mobility/wp-content/uploads/2019/12/23b47429c42d672e7f94ae0a3c9c9d6c.png" width="50%;" /></a></div>
+
+<p><br /></p>
+
+<h2 id="講義資料">講義資料</h2>
+<h3 id="第1部">第1部</h3>
+<nowiki>
+[video:slideshare.net/?id=249150493&amp;doc=200606-01-210608010949]
+
+
+</nowiki>
+
+<!-- *** 第2部 -->
+
+<!-- *** 参考資料 -->
+
+<!-- - [[Raspberry Pi Mouse 活用事例:/ja/node/6005]] -->
+
+<h2 id="事前準備">事前準備</h2>
+
+<h3 id="pcおよびzoom接続可能なデバイス">PCおよびZoom接続可能なデバイス</h3>
+
+<p>第2部ではプログラミング実習を行うため、Windows PC（ノートPC、デスクトップ（ただし無線LANインターフェースが必要））の用意をお願いします。
+また、ロボット実機貸与を希望される方は、演習で使用するPCとは別に、Zoom接続可能なデバイスをご用意ください。</p>
+
+<ul>
+  <li>Windows PC (ノートPC、デスクトップ何れも可）
+    <ul>
+      <li>LinuxがインストールされたPCでも実習は可能ですが、説明は基本的にWindowsベースで進めさせていただきます。</li>
+    </ul>
+  </li>
+  <li>実機を使った実習を希望される方
+    <ul>
+      <li>Zoom接続可能なデバイス (スマホ、タブレット、PC等）</li>
+    </ul>
+  </li>
+</ul>
+
+<p>実機を使用した演習では、ノートPCと実機（RaspberryPi Mouse）を無線LAN経由で1対1接続させるため、インターネットアクセスができなくなります。
+このため、Zoomに接続可能なデバイス（スマホ、タブレット、PC）を別途ご用意いただくことをおすすめいたします。
+なお、実機との接続は一時的なものですので、不便ですがノートPCのみでも受講は可能です。</p>
+
+<h3 id="資料">資料</h3>
+<p>以下のZIPファイルをダウンロードして<a href="https://forest.watch.impress.co.jp/library/software/lhaplus/">Lhaplus</a>等で展開してください。</p>
+
+<ul>
+  <li><a href="https://github.com/OpenRTM/RTM_Tutorial/releases/download/online_0.3/RTM_Tutorial.zip">RTM_Tutorial.zip</a></li>
+</ul>
+
+<p>&amp;aname(install);</p>
+
+<h3 id="インストールするソフトウェア">インストールするソフトウェア</h3>
+<h4 id="windowsの場合">Windowsの場合</h4>
+<p>以下のソフトウェアをインストールしてください。リンクが切れている場合は、最新バージョンをインストールしてください。
+なお、Windowsが64bit版の場合はそれぞれ64bit版のものを、32bit版の場合は32bit版のものをダウンロードします。</p>
+
+<ul>
+  <li><a href="/ja/node/6650">Visual Studio 2019</a>
+    <ul>
+      <li>Visual C++がインストールされているかは必ず確認してください。</li>
+    </ul>
+  </li>
+  <li><a href="https://www.python.org/downloads/windows/">Python 3.8</a>(Python 3.9はOpenRTM-aistが未対応のため不可)
+    <ul>
+      <li><a href="https://www.python.org/ftp/python/3.8.10/python-3.8.10-amd64.exe">python-3.8.10-amd64.exe (64bit版)</a>
+<!-- -- [[python-3.8.10.exe (32bit版):https://www.python.org/ftp/python/3.8.10/python-3.8.10.exe]] --></li>
+    </ul>
+  </li>
+  <li><a href="https://cmake.org/download/">CMake</a>
+    <ul>
+      <li><a href="https://github.com/Kitware/CMake/releases/download/v3.20.2/cmake-3.20.2-windows-x86_64.msi">cmake-3.20.2-windows-x86_64.msi (64bit版)</a>
+<!-- -- [[cmake-3.20.2-windows-i386.msi (32bit版):https://github.com/Kitware/CMake/releases/download/v3.20.2/cmake-3.20.2-windows-i386.msi]] --></li>
+    </ul>
+  </li>
+  <li><a href="http://www.doxygen.nl/download.html">Doxygen</a> 
+<!-- (32bit, 64bitの別なし） -->
+    <ul>
+      <li><a href="https://doxygen.nl/files/doxygen-1.9.1-setup.exe">doxygen-1.9.1-setup.exe</a></li>
+    </ul>
+  </li>
+  <li><a href="https://openrtm.org/openrtm/ja/download">OpenRTM-aist-1.2.2-RELEASE</a>
+    <ul>
+      <li><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi">OpenRTM-aist-1.2.2-RELEASE_x86_64.msi (64bit版)</a>
+<!-- -- [[OpenRTM-aist-1.2.2-RELEASE_x86.msi (32bit版):https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86.msi]] --></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="ubuntuの場合">Ubuntuの場合</h4>
+
+<h5 id="openrtm-aist">OpenRTM-aist</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ wget https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh
+ $ sudo sh pkg_install_ubuntu.sh -l all --yes
+</code></pre></div></div>
+
+<h5 id="jdk">JDK</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # Ubuntu 18.04、18.10、20.04の場合
+ $ sudo apt-get install openjdk-8-jdk
+ # Ubuntu 16.04の場合
+ $ sudo apt-get install default-jdk
+</code></pre></div></div>
+
+<p>Ubuntu 18.04、18.10、20.04の場合は以下のコマンドでjava8に切り替えます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo update-alternatives --config java
+</code></pre></div></div>
+
+<h5 id="git">Git</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo apt-get install git
+</code></pre></div></div>
+
+<h5 id="premakeraspberrypimousesimulator-に必要">Premake(RaspberryPiMouseSimulator に必要)</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo apt-get install premake4
+</code></pre></div></div>
+
+<h5 id="glutraspberrypimousesimulator-に必要">GLUT(RaspberryPiMouseSimulator に必要)</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo apt-get install freeglut3-dev
+</code></pre></div></div>
+
+<h5 id="raspberrypimousesimulator-コンポーネント">RaspberryPiMouseSimulator コンポーネント</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial/master/script/install_raspimouse_simulator.sh
+ $ sh install_raspimouse_simulator.sh
+</code></pre></div></div>
+
+<h5 id="codeblocks任意">Code::Blocks(任意)</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo apt-get install codeblocks
+</code></pre></div></div>
+
+<h5 id="cmake-gui任意">cmake-gui(任意)</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo apt-get install cmake-qt-gui
+</code></pre></div></div>
+
+<h3 id="オンライン開催での注意事項">オンライン開催での注意事項</h3>
+<p>今回のRTミドルウェア講習会はZoomを使用してオンラインで開催します。
+以下の受講者用マニュアルをご一読ください。</p>
+
+<ul>
+  <li><a href="https://nobu19800.github.io/RTM_Tutorial_Zoom/audience_manual.html">受講者用マニュアル</a>
+<br /></li>
+</ul>
+
+<!-- &aname(entry); -->
+<!-- **講習会申し込み方法 -->
+<!-- 準備中です。 -->
+<!-- connpassから参加申し込みを行ってください。 -->
+<!-- - https://connpass.com/event/176130/ -->
+<!-- ※5月15日以前にこのページの申し込みフォームから申し込みを行った場合については、既に申し込みを受理しているため再度connpassから申し込みを行う必要はありません。 -->
+<!-- connpassのアカウントがない場合は、以下の手順に従って下記フォームから講習会へお申し込みください。 -->
+<!-- #ref(registration_scheme.png,60%,left,nolink) -->
+<!-- #ref(reg_flow.png,60%,left,nolink) -->
+<!-- &br; -->
+<!-- &color(red){このサイトにログイン後、下方に参加登録フォームが現れます。}; -->
+
+<!-- + ''ユーザ登録:'' 参加登録するまえに当Webページのユーザ登録をお願いします。[[ユーザ登録はこちら:http://openrtm.org/openrtm/ja/user/register]] -->
+<!-- -- 当Webサイトにログイン済みの方は名前の欄にユーザ名が出ますが、氏名に書き換えてください。 -->
+<!-- + ''ログイン:'' ユーザ登録後 openrtm.org のサイトにログインします。 -->
+<!-- + ''参加登録:'' 下記の登録フォームに必要事項を記入し登録してください。 -->
+<!-- -- 申し込み内容はコースも含めて5日前まで変更できます。 -->
+<!-- -- フォーム送信後、確認メールをお送りいたします。1日たっても確認メールが届かない場合は、[[こちら（robomech2017@openrtm.org）:mailto:robomech2017@openrtm.org]] までお問い合わせください。 -->
+
+<!-- &color(red){定員に達しましたので申し込みを締め切らせていただきました。ありがとうございました。なお、見学だけであれば参加可能ですので、当日、会場までお越しください。}; -->
+<!-- &color(red){第1部のみの聴講は申込不要です。}; -->
+
+<!-- ** 講義資料 -->
+<!-- *** 第1部（その１） OpenRTM-aistおよびRTコンポーネントプログラミングの概要 -->
+<!-- - [[第1部（その１） 講義資料(PDF):/sites/default/files/6707/190605-01.pdf]] -->
+
+<!-- <nowiki> -->
+<!-- [video:https://www.slideshare.net/149148327] -->
+<!-- </nowiki> -->
+
+<!-- *** 第2部 RTコンポーネントの作成入門 -->
+<!-- - [[第2部 講義資料(PDF):/sites/default/files/6707/190605-02.pdf]] -->
+
+<!-- <nowiki> -->
+<!-- [video:https://www.slideshare.net/149148524] -->
+<!-- </nowiki> -->
+
+<!-- *** 第3部 RTシステム構築実習 -->
+<!-- - [[第3部 講義資料(PDF):/sites/default/files/6707/190605-03.pdf]] -->
+
+<!-- <nowiki> -->
+<!-- [video:https://www.slideshare.net/149148614] -->
+<!-- </nowiki> -->
+
+<!-- **** 第4部 RTミドルウェア応用実習  -->
+<!-- - [[第4部 講義資料(PDF):/sites/default/files/6707/190605-04.pdf]] -->
+
+<!-- <nowiki> -->
+<!-- [video:https://www.slideshare.net/149148646] -->
+<!-- </nowiki> -->
+
+<h2 id="講習会の様子">講習会の様子</h2>
+<div align="center"><a href="20210606_all.jpg"><img src="20210606_all.jpg" width="50%;" /></a></div>
+<!-- #br -->
+
+<!-- #ref(20190605_2.jpg,center,nolink) -->
+<!-- #br -->
+
+<!-- #ref(20190605_3.jpg,center,nolink) -->
+<!-- #br -->
+
+<!-- #ref(20170510-03.jpg,center,20%,nolink) -->
+<!-- #br -->
+
+<!-- #ref(20170510-08.jpg,center,16%,nolink) -->
+<!-- #br -->
+
+<!-- #ref(20170510-06.jpg,center,16%,nolink) -->
+<!-- #br -->
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+</p>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

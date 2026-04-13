@@ -1,0 +1,1539 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>変数受渡規則 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="変数受渡規則" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/corba/rules_to_pass_variable/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/corba/rules_to_pass_variable/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="変数受渡規則" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"変数受渡規則","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/corba/rules_to_pass_variable/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">
+        <!-- TODO add theme version dropdown here -->
+        <!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/"  title="test_dl_page"
+            >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/"  title="test_doc_page"
+            >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >Research_and_Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    Research_and_Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>変数受渡規則</h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/corba/rules_to_pass_variable/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#構造体オブジェクトリファレンス">構造体・/オブジェクトリファレンス</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#_var-型">_var 型</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#_var型_ptr型の代入でのリファレンスカウント">_var型,_ptr型の代入でのリファレンスカウント</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#_narrowでのリファレンスカウント">_narrow()でのリファレンスカウント</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#規則">規則</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: 変数受渡規則 -->
+<p>#contents
+#clear</p>
+<h2 id="構造体オブジェクトリファレンス">構造体・/オブジェクトリファレンス</h2>
+
+<p>CORBA の構造体は C++ において、構造体 “struct” にマッピングされる。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // -*- IDL -*-
+ struct Profile {
+   short short_value;
+   long  long_value;
+ };
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // -*- C++ -*-
+ struct Profile {
+   CORBA::Short short_value;
+   CORBA::Long  long_value;
+ };
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> class Profile_var {
+   
+ };
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>固定長の構造体</p>
+  </li>
+  <li>
+    <p>可変長の構造体</p>
+  </li>
+</ul>
+
+<p>構造体に可変長のメンバー (string、wstring、sequence (可変長メンバを持つ struct、可変長メンバを持つ union) が含まれていると、構造体は可変長データとみなされます。
+この場合、固定長の構造体とは異なる C++ コードが生成され、戻り値や outパラメータにおける扱いが異なります。</p>
+
+<ul>
+  <li>
+    <p>_var型
+IDL コンパイラは IDL における構造体から、C++ の構造体と _var 型のクラスを自動的に生成します。
+_var 型クラスはスマートポインタのように振る舞い、可変長の構造体として _var クラスを使用する場合、可変長のメンバーに割り当てられるメモリーは自動的に管理されます。</p>
+  </li>
+  <li>_var 型の変数(例えば var1)から他の_var型の変数(var2)に代入が行われた場合には、そのポインタの所有権が var2 に移り、その後 var1 は初期化もしくは代入が行われるまで、使用することはできません。</li>
+  <li>構造体がスコープの外に出ると，可変長のメンバーに関連付けられていたすべてのメモリは自動的に解放されます。 ただし、すでに所有権を他に譲渡している_var型変数がスコープから出る場合、元のデータに対しては開放は行われません。(所有権を既に譲渡しているので。)</li>
+  <li>初期化もしくは代入された構造体に対して，再び初期化または代入が行われた場合，元のデータに関連付けられていたメモリは自動的に解放されます。</li>
+  <li>可変長のメンバーにオブジェクトリファレンスが代入される場合は，必ずそのオブジェクトリファレンスのコピーが作成されます。可変長のメンバーにポインタが代入される場合，コピーは作成されません。</li>
+</ul>
+
+<h3 id="_var-型">_var 型</h3>
+<h4 id="変換コンストラクタt_ptr">変換コンストラクタ(T_ptr)</h4>
+
+<ul>
+  <li>実装例
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_CORBA_ObjRef_Var(T_ptr p) : pd_objref(p) {}
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>_ptr型のオブジェクト参照の所有権は_var型に移るため、参照カウントの増減はない。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> MyObject_ptr ptr = obj-&gt;get_myobject();
+ // ptr は適切なタイミングでreleaseされなければならない
+ MyObject_var var(ptr);
+ // 所有権は var に移ったため、ptr をリリースする必要はない
+ // var がスコープを抜けるなどして解体されるとき参照カウントはデクリメントされる
+ 
+</code></pre></div></div>
+<h4 id="変換コンストラクタconst-t_var">変換コンストラクタ(const T_var&amp;)</h4>
+<ul>
+  <li>実装例
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Object_var(const T_var&amp; p) : pd_ref(T::_duplicate(p.pd_ref)) {}
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>代入元の_var型のオブジェクト参照の所有権はコピーされる。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> MyObject_var var0 = obj-&gt;get_myobject();
+ // var0 は所有権をもつ
+ MyObject_var var1(var0);
+ // リファレンスカウントはインクリメントされ var1も所有権を持つ
+</code></pre></div></div>
+
+<h4 id="変換コンストラクタconst-t_member">変換コンストラクタ(const T_member)</h4>
+<ul>
+  <li>実装例</li>
+</ul>
+
+<h4 id="in引数とin関数">in引数とin()関数</h4>
+<p>単純にオブジェクト参照の_ptr型ポインタを返す。
+所有権の移動は起こらない。</p>
+
+<ul>
+  <li>実装例
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> T_ptr  in() const { return pd_objref; }
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>通常、関数の<strong>in</strong>引数にオブジェクト参照を渡す際に使用する。
+オブジェクト参照を与えられた側の関数は、所有権を持たないため関数内で<strong>release</strong>してはいけない。
+関数から戻ってきたあと、_var型変数に依然として所有権が保持されており、_var型変数の解体時にオブジェクトは<strong>release</strong>される。</p>
+
+<p>オブジェクト参照を<strong>in</strong>引数として受け取る関数を定義する場合は、_ptr型の引数として定義する。さらに、関数内では、そのオブジェクトのオペレーションを呼ぶだけで、<strong>release</strong>等は行ってはいけない。
+また、関数内でオブジェクト参照をどこか(グローバル変数、static 変数、オブジェクトのメンバー等)に保存したい場合は、所有権をコピーするため duplicate関数で複製する必要がある。</p>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void myfunc(MyObject_ptr obj)
+ {
+   obj-&gt;function();
+   CORBA::release(obj); // ×これはしてはいけない
+   m_obj = obj; // ×所有権を持っていない
+   m_obj = MyObject::duplicate(obj); // ○所有権を複製
+ }
+ 
+ {// 別のコンテキスト 
+   MyObject_var obj(hoge-&gt;get_object());
+   myfunc(obj.in()); // 所有権の移行は起こらない
+ }
+ // スコープを抜けたので参照カウントがデクリメントされる
+</code></pre></div></div>
+
+<h4 id="out引数と-out関数">out引数と out()関数</h4>
+<p>現在所有している参照を<strong>release</strong>(参照カウントをデクリメント)して、リファレンスのポインタをnilにセットして返す。
+すなわち、<strong>out()</strong>関数呼び出し以前にもしオブジェクト参照を保持している場合はその所有権を放棄し参照は破棄される。</p>
+
+<ul>
+  <li>実装例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> T_ptr&amp; out() {
+    T_Helper::release(pd_objref);
+    pd_objref = T_Helper::_nil();
+    return pd_objref;
+ }
+</code></pre></div></div>
+
+<p>通常、関数の<strong>out</strong>引数にオブジェクト参照を渡す際に使用する。すなわち、関数から戻ってきたあと、この変数に新たにオブジェクト参照が保持されていることが期待される。
+このとき、オブジェクト参照の所有権はこの変数に保持されていると考える。
+<strong>out()</strong>で変数を渡された関数側では、何らかの形でオブジェクト参照を生成または複製して、引数に所有権を渡す必要がある。</p>
+
+<p>オブジェクト参照を<strong>out</strong>引数として受け取る関数を定義する場合は、_ptr型参照の引数として定義する。関数内では、引数は必ずnilオブジェクト参照であり、かつ通常何らかのオブジェクトを所有権を与えて代入することが期待される。</p>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void myfunc(MyObject_ptr&amp; obj)
+ {
+   assert(CORBA::is_nil(obj)); // 必ずnilオブジェクト
+   obj-&gt;function(); // nilなのでオペレーションは呼べない
+ 
+   // m_obj は_var型のメンバ変数
+   obj = m_obj; // ×所有権を複製していない。
+   // return後、関数の外で勝手に release されるかもしれない。
+ 
+   obj = MyObject::duplicate(obj); // ○所有権を複製している。
+   // return後、関数の外で release されても、オブジェクト参照は解体されない。
+   return;
+ }
+ 
+ {// 別のコンテキスト
+   MyObject_var obj;
+   obj = get_object(); // △out変数として使うので渡す前には何も入れない方がよい
+   myfunc(obj.out());
+   // オブジェクトが代入され返ってきたはず
+   assert(!CORBA::is_nil(obj));
+   obj-&gt;function();
+ }
+ // スコープを抜けたので参照カウントがデクリメントされる。
+ 
+</code></pre></div></div>
+
+<h4 id="inout">inout()</h4>
+<p>リファレンスへのポインタの参照を返す。</p>
+
+<ul>
+  <li>実装</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> T_ptr&amp; inout()    { return pd_objref; }
+</code></pre></div></div>
+
+<p>通常、関数の<strong>inout</strong>引数にオブジェクト参照を渡す際に使用する。
+すなわち、関数内では何らかのオブジェクト参照が引数に入っていることが期待され、オブジェクトの所有権は関数側に移る。また、関数は何らかのオブジェクト参照をこの引数に与えて返すことが期待され、引数すなわち呼び出し元の変数に所有権を与える。
+関数内では引数にオブジェクト参照を新たにセットする場合は、まず<strong>release</strong>してから新たなオブジェクト参照を生成または複製して引数に所有権を渡す必要がある。</p>
+
+<p>オブジェクト参照を<strong>inout</strong>引数として取る関数は、設計の観点からあまり推奨されない。もし、<strong>inout</strong>引数として取る関数を定義する必要がある場合は、_ptr型参照の引数として定義する。</p>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void myfunc(MyObject_ptr&amp; obj)
+ {
+   if (!CORBA::is_nil(obj))
+   {
+     obj-&gt;function(); // obj がnilでなければオペレーションを呼ぶことができる。
+   }
+ 
+   CORBA::release(obj); // releaseする責任はこの関数にある
+   /*
+    * この関数内で、obj に新たなオブジェクト参照がある場合に限り、
+    * 引数を受け取った直後に、_var変数に代入しておくことで、
+    * 関数終了時に自動的に参照カウントをデクリメント
+    * するテクニックを使用してもよい。
+    * MyObject_var deleter = obj;
+    */
+ 
+   // MyObject_var m_obj とする
+   obj = m_obj; // × 所有権を複製していない
+   // return 後、関数の外でreleaseされるかもしれない。
+   obj = MyObject::_duplicate(m_obj); // ○ obj にもMyObjectの所有権が与えられた
+   // return 後、関数の外でreleaseされても、オブジェクト参照は解体されない。
+ }
+ 
+ {// 別のコンテキスト
+   MyObject_var obj;
+   obj = get_object(); // obj は所有権を持っている
+   myfunc(obj); // 関数内で releae される
+   // obj の指すものは入れ替わっているかもしれない。
+ }
+ // スコープを抜けたので参照カウントがデクリメントされる。
+</code></pre></div></div>
+
+<h4 id="_retn">_retn()</h4>
+<p>現在持っているオブジェクト参照の所有権を放棄してポインタを返す。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> T_ptr _retn() {
+    T_ptr tmp = pd_objref;
+    pd_objref = T_Helper::_nil();
+    return tmp;
+ }
+</code></pre></div></div>
+
+<p>通常、関数の戻り値にオブジェクト参照を返す場合に使用される。
+所有権は関数の呼び出し側に渡るので、呼び出し側ではオブジェクト参照を破棄する責任がある。したがって、呼び出し側で release するか、_var型変数で受ける必要がある。</p>
+
+<p>逆に、戻り値でオブジェクト参照を返す場合、呼び出し側では必ず release により参照カウントがデクリメントされるため、関数内では_duplicate()などで所有権を複製しておく必要がある。</p>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> MyObject_ptr myfunc()
+ {
+   MyObject_var ret;
+   ret = m_obj; // ×所有権がretに移ってしまう。
+   // return 後、関数の外でreleaseされるかもしれない。
+ 
+   ret = MyObject::_duplicate(m_obj); // ○所有権の複製
+   // return 後、releaseが呼ばれても、m_obj は所有権を保持し続ける。
+ 
+   return ret._retn();
+ }
+ 
+ { // 別のコンテキスト
+   MyObject_var obj;
+   obj = myfunc(); // オブジェクトの所有権を取得
+   obj-&gt;function();
+ 
+   MyObject_ptr ptr;
+   ptr = myfunc(); //オブジェクトの所有権を取得
+   ptr-&gt;function();
+ 
+   CORBA::release(ptr); // 参照カウントをデクリメント
+  }
+  // スコープを抜けたので参照カウントがデクリメントされる
+</code></pre></div></div>
+
+<h4 id="規則のまとめ">規則のまとめ</h4>
+
+<table class="table-alt">
+  <tr>
+    <th>関数</th>
+    <th>型</th>
+    <th>release責任</th>
+    <th>関数内</th>
+  </tr>
+  <tr>
+    <td>in</td>
+    <td>T_ptr</td>
+    <td>呼出側</td>
+    <td>オペレーション呼出</td>
+  </tr>
+  <tr>
+    <td>out</td>
+    <td>T_ptr&amp;</td>
+    <td>呼出側</td>
+    <td>_duplicate 代入</td>
+  </tr>
+  <tr>
+    <td>inout</td>
+    <td>T_ptr&amp;</td>
+    <td>in:関数, out:呼出側</td>
+    <td>release後, _duplicate代入</td>
+  </tr>
+  <tr>
+    <td>_retn</td>
+    <td>T_ptr</td>
+    <td>呼出側</td>
+    <td>_duplicateしてreturn</td>
+  </tr>
+</table>
+
+<h3 id="_var型_ptr型の代入でのリファレンスカウント">_var型,_ptr型の代入でのリファレンスカウント</h3>
+<h4 id="_ptr型への_var型の代入">_ptr型への_var型の代入</h4>
+
+<p>ポインタへの代入。</p>
+
+<p>複製なし、解放せず。</p>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> { 
+  MyObject_var var;
+  var = myfunc(); // オブジェクトの所有権を取得
+ 
+  MyObject_ptr ptr
+  ptr = MyObject::_duplicate(var); //オブジェクトの所有権を取得(参照カウントのインクリメント)
+ 
+  // ptr = var;
+  // これは参照カウントエラーを引き起こす恐れがある。呼び出し後、ptrとvarは同じオブジェクト
+  // をさすであろうが、参照カウントの保守はなされな。varは、その対象オブジェクトの所持を維持
+  // する。また、ptrがそれが以前に指していたオブジェクトやプロキシへの唯一のポインタであった
+  // とすれば、メモリリークが生じる。
+ 
+  CORBA::release(ptr); // 参照カウントをデクリメント
+ }
+ // var に関しては、スコープを抜けたので参照カウントがデクリメントされる
+</code></pre></div></div>
+
+<h4 id="_var型への_ptr型の代入">_var型への_ptr型の代入</h4>
+
+<p>_var が保有しているオブジェクトに対して release() されるが、
+引数で渡された _ptr型のオブジェクトに対しては duplicate() されない。</p>
+
+<p>複製なし、解放あり。</p>
+
+<ul>
+  <li>実装(omniORB)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  inline T_var&amp; operator= (T_ptr p) {
+    T_Helper::release(pd_objref);
+    pd_objref = p;
+    return *this;
+  }
+</code></pre></div></div>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> { 
+  MyObject_ptr ptr;
+  ptr = myfunc(); // オブジェクトの所有権を取得
+ 
+  MyObject_var obj;
+  obj = MyObject::_duplicate(ptr); //オブジェクトの所有権を取得(参照カウントのインクリメント)
+ 
+  CORBA::release(ptr); // 参照カウントをデクリメント
+ }
+ // objに関しては、スコープを抜けたので参照カウントがデクリメントされる
+</code></pre></div></div>
+
+<h4 id="_var型への_var型の代入">_var型への_var型の代入</h4>
+
+<p>_var が保有しているオブジェクトに対して release() がコールされ、
+かつ、引数で渡されたオブジェクトに対しても duplicate() がコールされる。</p>
+
+<p>複製あり、解放あり。</p>
+
+<ul>
+  <li>実装(omniORB)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  inline T_var&amp; operator= (const T_var&amp; p) {
+    if( &amp;p != this ) {
+      T_Helper::duplicate(p.pd_objref);
+      T_Helper::release(pd_objref);
+      pd_objref = p.pd_objref;
+    }
+    return *this;
+  }
+</code></pre></div></div>
+
+<ul>
+  <li>使用例</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> { 
+  MyObject_var var1;
+  var1 = myfunc(); // オブジェクトの所有権を取得
+ 
+  MyObject_var var2;
+  var2 = var1; //オブジェクトの所有権を取得(参照カウントは自動でインクリメントされる)
+ 
+  } // var1, var2に関しては、スコープを抜けたので参照カウントがデクリメントされる
+</code></pre></div></div>
+
+<h3 id="_narrowでのリファレンスカウント">_narrow()でのリファレンスカウント</h3>
+
+<p>_narrow()処理の過程において、_narrow()の呼び出しが成功した場合、その対象オブジェクトのリファレンスカウントはインクリメントされるが、失敗した場合はインクリメントされない。</p>
+
+<p>デクリメントは行われない。</p>
+
+<ul>
+  <li>実装(RTCSK.cc)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::RTObject_ptr
+ RTC::RTObject::_narrow(::CORBA::Object_ptr obj)
+ {
+   if( !obj || obj-&gt;_NP_is_nil() || obj-&gt;_NP_is_pseudo() ) return _nil();
+   _ptr_type e = (_ptr_type) obj-&gt;_PR_getobj()-&gt;_realNarrow(_PD_repoId);
+   return e ? e : _nil();
+ }
+</code></pre></div></div>
+
+<ul>
+  <li>実装(omniObjRef.cc)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void*
+ omniObjRef::_realNarrow(const char* repoId)
+ {
+  // Attempt to narrow the reference using static type info.
+  void* target = _ptrToObjRef(repoId);
+ 
+  if( target ) {
+    if (!lid ||
+	(lid &amp;&amp; !lid-&gt;deactivated() &amp;&amp; lid-&gt;servant() &amp;&amp;
+	 lid-&gt;servant()-&gt;_ptrToInterface(repoId))) {
+ 
+      omni::duplicateObjRef(this);
+    }
+    else {
+      omniObjRef* objref;
+      omniIOR*    ior;
+ 
+      {
+	ior = pd_ior-&gt;duplicateNoLock();
+      }
+ 
+      {
+	objref = omni::createObjRef(repoId,ior,1,0);
+      }
+    }
+  }
+  else {
+    if( _real_is_a(repoId) ) {
+      omniObjRef* objref;
+      omniIOR* ior;
+ 
+      {
+	ior = pd_ior-&gt;duplicateNoLock();
+      }
+ 
+      {
+	objref = omni::createObjRef(repoId,ior,1,_identity());
+      }
+ 
+      }
+    }
+  }
+  return target;
+ }
+</code></pre></div></div>
+
+<h3 id="規則">規則</h3>
+
+<h4 id="クライアント側">クライアント側</h4>
+
+<p>クライアントが呼び出しからオブジェクト参照を受信するならば、そのクライアントはそのオブジェクト参照が不要となったときにはそれを開放しなくてはならない。</p>
+
+<p>(引用：　『CORBA分散オブジェクト　Orbixを用いて』　P.98 オブジェクト参照のためのメモリ管理)</p>
+
+<h4 id="サーバー側">サーバー側</h4>
+
+<p>呼び出し側に渡す参照の所有権は放棄される(つまり、その参照カウントは一つデクリメントされる。したがって、通常は、参照を返す前に適当な_duplicate()関数を呼び出すことになる)</p>
+
+<p>(引用：　『CORBA分散オブジェクト　Orbixを用いて』　P.98 オブジェクト参照のためのメモリ管理)</p>
+
+<h4 id="参考文献">参考文献</h4>
+<ul>
+  <li>『CORBA分散オブジェクト　Orbixを用いて』　著: ショーン・ベーカー　出版社: ピアソン・エデュケーション</li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+</p>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

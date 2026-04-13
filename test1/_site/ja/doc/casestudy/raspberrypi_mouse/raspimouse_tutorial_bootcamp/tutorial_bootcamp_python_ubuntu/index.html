@@ -1,0 +1,2485 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>チュートリアル(Raspberry Pi Mouse、Python、Ubuntu、強化月間用) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="チュートリアル(Raspberry Pi Mouse、Python、Ubuntu、強化月間用)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_python_ubuntu/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_python_ubuntu/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="チュートリアル(Raspberry Pi Mouse、Python、Ubuntu、強化月間用)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"チュートリアル(Raspberry Pi Mouse、Python、Ubuntu、強化月間用)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_python_ubuntu/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">
+        <!-- TODO add theme version dropdown here -->
+        <!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/"  title="test_dl_page"
+            >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/"  title="test_doc_page"
+            >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >Research_and_Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    Research_and_Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>チュートリアル(Raspberry Pi Mouse、Python、Ubuntu、強化月間用)</h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_python_ubuntu/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#はじめに">はじめに</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#資料のダウンロード">資料のダウンロード</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#作成する-rtコンポーネント">作成する RTコンポーネント</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#robotcontroller-コンポーネントの作成">RobotController コンポーネントの作成</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#作成手順">作成手順</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#動作環境開発環境">動作環境・開発環境</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンポーネントの仕様">コンポーネントの仕様</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#robotcontroller-コンポーネントのひな型コードの生成">RobotController コンポーネントのひな型コードの生成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ソースコードの編集">ソースコードの編集</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#robotcontroller-コンポーネントの動作確認">RobotController コンポーネントの動作確認</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#nameservice-の起動">NameService の起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#robotcontroller-コンポーネントの起動">RobotController コンポーネントの起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#シミュレーターコンポーネントの起動">シミュレーターコンポーネントの起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンポーネントの接続">コンポーネントの接続</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンポーネントの-activate">コンポーネントの Activate</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#動作確認">動作確認</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#実機での動作確認">実機での動作確認</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#電源を投入する">電源を投入する</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#アクセスポイントに接続">アクセスポイントに接続</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#raspberry-pi上のネームサーバーrtc起動">Raspberry Pi上のネームサーバー、RTC起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ネームサーバー追加">ネームサーバー追加</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ポートの接続">ポートの接続</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#モーターの電源を投入する">モーターの電源を投入する</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#アクティブ化">アクティブ化</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: チュートリアル(Raspberry Pi Mouse、Python、Ubuntu、強化月間用) -->
+<p>#contents</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>このページではシミュレーター上の Raspberry Pi マウスを操作するためのコンポーネントの作成手順を説明します。</p>
+
+<div align="center"><a href="raspimouse2.png"><img src="raspimouse2.png" width="70%;" /></a></div>
+
+<h2 id="資料のダウンロード">資料のダウンロード</h2>
+
+<p>まずは資料をダウンロードしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/OpenRTM/RTM_Tutorial_RaspberryPiMouse_Python
+</code></pre></div></div>
+
+<p>インターネットに接続できない環境で講習会を実施している場合がありますので、その場合は配布のUSBメモリーに入れてあります。</p>
+
+<h3 id="作成する-rtコンポーネント">作成する RTコンポーネント</h3>
+
+<ul>
+  <li>RobotController コンポーネント</li>
+</ul>
+
+<p>RaspberryPiMouseSimulator コンポーネントと接続してシミュレーター上のロボットを操作するためのコンポーネントです。</p>
+
+<h2 id="robotcontroller-コンポーネントの作成">RobotController コンポーネントの作成</h2>
+
+<p>GUI(スライダー)によりシミュレーター上のロボットの操作を行い、センサー値が一定以上の時には自動的に停止するコンポーネントの作成を行います。</p>
+
+<div align="center"><a href="robotcomp.png"><img src="robotcomp.png" width="80%;" /></a></div>
+
+<h3 id="作成手順">作成手順</h3>
+<p>作成手順は以下の通りです。</p>
+
+<ul>
+  <li>開発環境の確認</li>
+  <li>コンポーネントの仕様を決める</li>
+  <li>RTC Builder によるソースコードのひな型コードの作成</li>
+  <li>ソースコードの編集</li>
+  <li>コンポーネントの動作確認</li>
+</ul>
+
+<h3 id="動作環境開発環境">動作環境・開発環境</h3>
+<p>Linux (ここでは Ubuntu 16.04 を仮定) 上に開発環境を構築します。</p>
+
+<h4 id="openrtm-aistのインストール">OpenRTM-aistのインストール</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ wget https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh
+ $ pkg_install_ubuntu.sh -l all --yes
+</code></pre></div></div>
+
+<h4 id="jdkのインストール">JDKのインストール</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # Ubuntu 18.04、18.10の場合
+ $ sudo apt-get install openjdk-8-jdk
+ # Ubuntu 16.04の場合
+ $ sudo apt-get install default-jdk
+</code></pre></div></div>
+
+<p>Ubuntu 18.04、18.10の場合は以下のコマンドでjava8に切り替えます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo update-alternatives --config java
+</code></pre></div></div>
+
+<p><span style="color:red;">openrtp起動後、RTSystemEditor でネームサーバに接続できない場合があります。その場合、/etc/hosts の localhost の行に自ホスト名を追記してください。</span>;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ hostname
+ ubuntu1804 ← ホスト名は ubuntu1804
+ $ sudo vi /etc/hosts
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 127.0.0.1       localhost
+ を以下のように変更
+ 127.0.0.1       localhost ubuntu1804
+</code></pre></div></div>
+
+<h4 id="python用エディタのインストール">Python用エディタのインストール</h4>
+<p>Visual Studio Code、PyDev等のエディタをインストールしてください。</p>
+
+<h4 id="gitのインストール">gitのインストール</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo apt-get install git
+</code></pre></div></div>
+
+<h4 id="cmakeのインストール">cmakeのインストール</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo apt-get install cmake
+</code></pre></div></div>
+
+<h4 id="premakeglutのインストール">Premake、GLUTのインストール</h4>
+<p>ODEのビルドに必要です。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo apt-get install premake4 freeglut3-dev
+</code></pre></div></div>
+
+<h4 id="raspberrypimousesimulator-コンポーネント">RaspberryPiMouseSimulator コンポーネント</h4>
+<p>シミュレーターコンポーネントについては手動でビルドを行います。
+以下のコマンドを入力してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial/master/script/install_raspimouse_simulator.sh
+ $ sudo sh install_raspimouse_simulator.sh
+</code></pre></div></div>
+
+<p>インターネットに接続できない環境で講習会を実施している場合がありますので、その場合は配布の USBメモリー内のスクリプトを起動してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo sh install_raspimouse_simulator_usb.sh
+</code></pre></div></div>
+
+<h3 id="コンポーネントの仕様">コンポーネントの仕様</h3>
+
+<p>RobotController は目標速度を出力するアウトポート、センサー値を入力するインポート、目標速度や停止するセンサー値を設定するコンフィギュレーションパラメーターを持っています。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>コンポーネント名称</th>
+    <th>RobotController</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">InPort</td>
+  </tr>
+  <tr>
+    <td>ポート名</td>
+    <td>in</td>
+  </tr>
+  <tr>
+    <td>型</td>
+    <td>TimedShortSeq</td>
+  </tr>
+  <tr>
+    <td>説明</td>
+    <td>センサー値</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">OutPort</td>
+  </tr>
+  <tr>
+    <td>ポート名</td>
+    <td>out</td>
+  </tr>
+  <tr>
+    <td>型</td>
+    <td>TimedVelocity2D</td>
+  </tr>
+  <tr>
+    <td>説明</td>
+    <td>目標速度</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">Configuration</td>
+  </tr>
+  <tr>
+    <td>パラメーター名</td>
+    <td>speed_x</td>
+  </tr>
+  <tr>
+    <td>型</td>
+    <td>double</td>
+  </tr>
+  <tr>
+    <td>デフォルト値</td>
+    <td>0.0</td>
+  </tr>
+  <tr>
+    <td>制約</td>
+    <td>-1.5&lt;x&lt;1.5</td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td>slider</td>
+  </tr>
+  <tr>
+    <td>Step</td>
+    <td>0.01</td>
+  </tr>
+  <tr>
+    <td>説明</td>
+    <td>直進速度の設定</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">Configuration</td>
+  </tr>
+  <tr>
+    <td>パラメーター名</td>
+    <td>speed_r</td>
+  </tr>
+  <tr>
+    <td>型</td>
+    <td>double</td>
+  </tr>
+  <tr>
+    <td>デフォルト値</td>
+    <td>0.0</td>
+  </tr>
+  <tr>
+    <td>制約</td>
+    <td>-2.0&lt;x&lt;2.0</td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td>slider</td>
+  </tr>
+  <tr>
+    <td>Step</td>
+    <td>0.01</td>
+  </tr>
+  <tr>
+    <td>説明</td>
+    <td>回転速度の設定</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">Configuration</td>
+  </tr>
+  <tr>
+    <td>パラメーター名</td>
+    <td>stop_d</td>
+  </tr>
+  <tr>
+    <td>型</td>
+    <td>int</td>
+  </tr>
+  <tr>
+    <td>デフォルト値</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>説明</td>
+    <td>停止するセンサー値の設定</td>
+  </tr>
+</table>
+
+<h4 id="timedvelocity2d-型について">TimedVelocity2D 型について</h4>
+<p>2次元平面上の移動ロボットの移動速度を格納するデータ型である TimedVelocity2D 型を使用します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     struct Velocity2D
+     {
+         /// Velocity along the x axis in metres per second.
+         double vx;
+         /// Velocity along the y axis in metres per second.
+         double vy;
+         /// Yaw velocity in radians per second.
+         double va;
+     };
+ 
+ 
+     struct TimedVelocity2D
+     {
+         Time tm;
+         Velocity2D data;
+     };
+</code></pre></div></div>
+
+<p>このデータ型にはX軸方向の速度<strong>vx</strong>、Y軸方向の速度<strong>vy</strong>、Z軸周りの回転速度<strong>va</strong>が格納できます。</p>
+
+<p><strong>vx</strong>、<strong>vy</strong>、<strong>va</strong>はロボット中心座標系での速度を表しています。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="tu_ev3_20.png"><img src="tu_ev3_20.png" width="50%;" /></a></div>
+<p><br /></p>
+
+<p><strong>vx</strong>はX方向の速度、<strong>vy</strong>はY方向の速度、<strong>va</strong>はZ軸周りの角速度です。</p>
+
+<p>Raspberry Piマウスのように2個の車輪が左右に取り付けられているロボットの場合、横滑りしないと仮定すると<strong>vy</strong>は0になります。</p>
+
+<p>直進速度<strong>vx</strong>、回転速度<strong>va</strong>を指定することでロボットの操作を行います。</p>
+
+<h4 id="距離センサーのデータについて">距離センサーのデータについて</h4>
+<p>Raspberry Pi マウスの距離センサーのデータは物体との距離が近づくほど大きな値を出力するようになっています。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="rpm14_graph.png"><img src="rpm14_graph.png" width="70%;" /></a></div>
+<p><br /></p>
+
+<table class="table-alt">
+  <tr>
+    <th>デバイスファイルから取得した数値</th>
+    <th>実際の距離[m]</th>
+  </tr>
+  <tr>
+    <td>1394</td>
+    <td>0.01</td>
+  </tr>
+  <tr>
+    <td>792</td>
+    <td>0.02</td>
+  </tr>
+  <tr>
+    <td>525</td>
+    <td>0.03</td>
+  </tr>
+  <tr>
+    <td>373</td>
+    <td>0.04</td>
+  </tr>
+  <tr>
+    <td>299</td>
+    <td>0.05</td>
+  </tr>
+  <tr>
+    <td>260</td>
+    <td>0.06</td>
+  </tr>
+  <tr>
+    <td>222</td>
+    <td>0.07</td>
+  </tr>
+  <tr>
+    <td>181</td>
+    <td>0.08</td>
+  </tr>
+  <tr>
+    <td>135</td>
+    <td>0.09</td>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>0.10</td>
+  </tr>
+  <tr>
+    <td>81</td>
+    <td>0.15</td>
+  </tr>
+  <tr>
+    <td>36</td>
+    <td>0.20</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>0.25</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>0.30</td>
+  </tr>
+</table>
+
+<p>シミュレーターではこの値を再現して出力しています。
+RobotController コンポーネントではこの値が一定以上の時に自動的に停止する処理を実装します。</p>
+
+<h3 id="robotcontroller-コンポーネントのひな型コードの生成">RobotController コンポーネントのひな型コードの生成</h3>
+
+<p>RobotController コンポーネントのひな型コードの生成は、RTCBuilder を用いて行います。</p>
+
+<h4 id="rtcbuilder-の起動">RTCBuilder の起動</h4>
+<p>Eclipse では、各種作業を行うフォルダーを「ワークスペース」(Work Space)とよび、原則としてすべての生成物はこのフォルダーの下に保存されます。
+ワークスペースはアクセスできるフォルダーであれば、どこに作っても構いませんが、このチュートリアルでは以下のワークスペースを仮定します。</p>
+
+<ul>
+  <li>/home/ユーザー名/workspace</li>
+</ul>
+
+<p>まずは Eclipse を起動します。
+OpenRTP を展開したディレクトリーに移動して以下のコマンドを入力します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ ./openrtp
+</code></pre></div></div>
+
+<p>最初にワークスペースの場所を尋ねられますので、上記のワークスペースを指定してください。</p>
+
+<div align="center"><a href="workspace_ubuntu.png"><img src="workspace_ubuntu.png" width="80%;" /></a></div>
+
+<p>すると、以下のような Welcome ページが表示されます。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="install41.png"><img src="install41.png" width="60%;" /></a></div>
+<div align="center"><strong>Eclipse の初期起動時の画面</strong></div>
+
+<p>Welcome ページはいまは必要ないので左上の「×」ボタンをクリックして閉じてください。</p>
+
+<p>右上の [Open Perspective] ボタンをクリックしてください。</p>
+
+<div align="center"><a href="install42.png"><img src="install42.png" width="60%;" /></a></div>
+<div align="center"><strong>パースペクティブの切り替え</strong></div>
+
+<p>「RTC Builder」を選択することで、RTCBuilderが起動します。メニューバーに「カナヅチとRT」の RTCBuilder のアイコンが現れます。</p>
+
+<div align="center"><a href="install43.png"><img src="install43.png" width="40%;" /></a></div>
+<div align="center"><strong>パースペクティブの選択</strong></div>
+
+<h4 id="新規プロジェクトの作成">新規プロジェクトの作成</h4>
+
+<p>RobotController コンポーネントを作成するために、RTC Builder で新規プロジェクトを作成する必要があります。</p>
+
+<p>左上の [Open New RTCBuilder Editor] のアイコンをクリックしてください。</p>
+
+<div align="center"><a href="CreateProject_0.png"><img src="CreateProject_0.png" width="60%;" /></a></div>
+<div align="center"><strong>RTC Builder 用プロジェクトの作成</strong></div>
+
+<p>｢プロジェクト名｣欄に作成するプロジェクト名 (ここでは <strong>RobotController</strong>) を入力して [終了] をクリックします。</p>
+
+<div align="center"><a href="RT-Component-BuilderProject_1.png"><img src="RT-Component-BuilderProject_1.png" width="60%;" /></a></div>
+
+<p>指定した名称のプロジェクトが生成され、パッケージエクスプローラ内に追加されます。</p>
+
+<div align="center"><a href="PackageExplolrer_1.png"><img src="PackageExplolrer_1.png" width="60%;" /></a></div>
+
+<p>生成したプロジェクト内には、デフォルト値が設定された RTC プロファイル XML(RTC.xml) が自動的に生成されます。</p>
+
+<h4 id="rtc-プロファイルエディタの起動">RTC プロファイルエディタの起動</h4>
+
+<p>RTC.xmlが生成された時点で、このプロジェクトに関連付けられているワークスペースとして RTCBuilder のエディタが開くはずです。
+もし起動しない場合はパッケージエクスプローラーの RTC.xml をダブルクリックしてください。</p>
+
+<div align="center"><a href="Open_RTCBuilder_0.png"><img src="Open_RTCBuilder_0.png" width="40%;" /></a></div>
+
+<h4 id="プロファイル情報入力とコードの生成">プロファイル情報入力とコードの生成</h4>
+
+<p>まず、いちばん左の「基本」タブを選択し、基本情報を入力します。先ほど決めた RobotController コンポーネントの仕様(名前)の他に、概要やバージョン等を入力してください。
+ラベルが赤字の項目は必須項目です。その他はデフォルトで構いません。</p>
+
+<ul>
+  <li>モジュール名: RobotController</li>
+  <li>モジュール概要: 任意(Robot Controller component)</li>
+  <li>バージョン: 任意(1.0.0)</li>
+  <li>ベンダ名: 任意</li>
+  <li>モジュールカテゴリ: 任意(Controller)</li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="Basic_1.png"><img src="Basic_1.png" width="50%;" /></a></div>
+<div align="center"><strong>基本情報の入力</strong></div>
+<p><br /></p>
+
+<p>次に、「アクティビティ」タブを選択し、使用するアクションコールバックを指定します。</p>
+
+<p>RobotController コンポーネントでは、onActivated()、onDeactivated()、onExecute() コールバックを使用します。下図のように①の onAtivated をクリック後に②のラジオボタンにて [ON] にチェックを入れます。
+onDeactivated、onExecute についても同様の手順を行います。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="Activity_1.png"><img src="Activity_1.png" width="90%;" /></a></div>
+<div align="center"><strong>アクティビティコールバックの選択</strong></div>
+<p><br /></p>
+
+<p>さらに、「データポート」タブを選択し、データポートの情報を入力します。
+先ほど決めた仕様を元に以下のように入力します。なお、変数名や表示位置はオプションで、そのままで結構です。</p>
+
+<p><br /></p>
+
+<ul>
+  <li>InPort Profile:
+    <ul>
+      <li>ポート名: in</li>
+      <li>データ型: TimedShortSeq</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>OutPort Profile:
+    <ul>
+      <li>ポート名: out</li>
+      <li>データ型: TimedVelocity2D</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="DataPort_1.png"><img src="DataPort_1.png" width="50%;" /></a></div>
+<div align="center"><strong>データポート情報の入力</strong></div>
+<p><br /></p>
+
+<p>次に、「コンフィギュレーション」タブを選択し、先ほど決めた仕様を元に、Configuration の情報を入力します。
+制約条件および Widget とは、RTSystemEditor でコンポーネントのコンフィギュレーションパラメーターを表示する際に、スライダー、スピンボタン、ラジオボタンなど、GUI で値の変更を行うためのものです。</p>
+
+<p>直進速度 speed_x、回転速度 speed_r はスライダーのより操作できるようにします。</p>
+
+<p><br /></p>
+
+<ul>
+  <li>speed_x
+    <ul>
+      <li>名称: speed_x</li>
+      <li>データ型: double</li>
+      <li>デフォルト値: 0.0</li>
+      <li>制約条件: -1.5&lt;x&lt;1.5</li>
+      <li>Widget: slider</li>
+      <li>Step: 0.01</li>
+    </ul>
+  </li>
+  <li>speed_r
+    <ul>
+      <li>名称: speed_r</li>
+      <li>データ型: double</li>
+      <li>デフォルト値: 0.0</li>
+      <li>制約条件: -2.0&lt;x&lt;2.0</li>
+      <li>Widget: slider</li>
+      <li>Step: 0.01</li>
+    </ul>
+  </li>
+  <li>stop_d
+    <ul>
+      <li>名称: stop_d</li>
+      <li>データ型: int</li>
+      <li>デフォルト値: 30</li>
+      <li>Widget: text</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="Configuration_1.png"><img src="Configuration_1.png" width="50%;" /></a></div>
+<div align="center"><strong>コンフィグレーション情報の入力</strong></div>
+<p><br /></p>
+
+<p>次に、「言語・環境」タブを選択し、プログラミング言語を選択します。
+ここでは、C++(言語) を選択します。なお、言語・環境はデフォルト等が設定されておらず、指定し忘れるとコード生成時にエラーになりますので、必ず言語の指定を行うようにしてください。</p>
+
+<div align="center"><a href="Language_1.png"><img src="Language_1.png" width="80%;" /></a></div>
+<div align="center"><strong>プログラミング言語の選択</strong></div>
+<p><br /></p>
+
+<p>最後に、「基本」タブにある [コード生成] ボタンをクリックし、コンポーネントのひな型コードを生成します。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="Generate_1.png"><img src="Generate_1.png" width="80%;" /></a></div>
+<div align="center"><strong>ひな型コードの生成(Generate)</strong></div>
+<p><br /></p>
+
+<p>&amp;color(red){※ 生成されるコード群は、eclipse起動時に指定したワークスペースフォルダーの中に生成されます。
+現在のワークスペースは、[ファイル] &gt; [ワークスペースの切り替え…] で確認することができます。};</p>
+
+<h3 id="ソースコードの編集">ソースコードの編集</h3>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;ワークスペースディレクトリー&gt;/RobotController/RobotController.py</code>をPython用エディタで開いて編集してください。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="idle_1.png"><img src="idle_1.png" width="80%;" /></a></div>
+
+<p><br /></p>
+
+<h4 id="変数初期化部分の修正">変数初期化部分の修正</h4>
+<p>OpenRTM-aist 1.1.2のRTC Builderを使用している場合は、変数初期化部分を修正する必要があります。(OpenRTM-aist 1.2.0では修正される予定です)</p>
+
+<p>まずは、<u>init</u>関数の<strong>self._d_in</strong>変数初期化部分を修正してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 	def __init__(self, manager):
+ 		OpenRTM_aist.DataFlowComponentBase.__init__(self, manager)
+ 
+ 		#in_arg = [None] * ((len(RTC._d_TimedShortSeq) - 4) / 2)　←削除
+ 		#self._d_in = RTC.TimedShortSeq(*in_arg)　←削除
+ 		#以下の行を追加
+ 		self._d_in = RTC.TimedShortSeq(RTC.Time(0,0),[])
+</code></pre></div></div>
+
+<p>次に<strong>self._d_out</strong> 変数初期化部分を修正してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 		#out_arg = [None] * ((len(RTC._d_TimedVelocity2D) - 4) / 2)　←削除
+ 		#self._d_out = RTC.TimedVelocity2D(*out_arg)　←削除
+ 		#以下の行を追加
+ 		self._d_out = RTC.TimedVelocity2D(RTC.Time(0,0),RTC.Velocity2D(0.0,0.0,0.0))
+</code></pre></div></div>
+
+<p>これで完了です。</p>
+
+<h4 id="アクティビティ処理の実装">アクティビティ処理の実装</h4>
+
+<p>RobotController コンポーネントでは、コンフィギュレーションパラメーター(speed_x、speed_y)をスライダーで操作しその値を目標速度としてアウトポート(out)から出力します。
+インポート(in) から入力された値を変数に格納して、その値が一定以上の場合は停止するようにします。</p>
+
+<p><br />
+onActivated()、onExecute()、onDeactivated() での処理内容を下図に示します。
+<br /></p>
+
+<div align="center"><a href="RCRTC_State_1.png"><img src="RCRTC_State_1.png" width="70%;" /></a></div>
+<div align="center"><strong>アクティビティ処理の概要</strong></div>
+<p><br /></p>
+
+<p>下記のように、onActivated()、onDeactivated()、onExecute() を実装します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 	def onActivated(self, ec_id):
+ 		#センサー値初期化
+ 		self.sensor_data = [0,0,0,0]
+ 		return RTC.RTC_OK
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 	def onDeactivated(self, ec_id):
+ 		#ロボットを停止する
+ 		self._d_out.data.vx = 0
+ 		self._d_out.data.va = 0
+ 		self._outOut.write()
+ 		return RTC.RTC_OK
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 	def onExecute(self, ec_id):
+ 		#入力データの存在確認
+ 		if self._inIn.isNew():
+ 			data = self._inIn.read()
+ 			#この時点で入力データがm_inに格納される
+ 			#入力データを別変数に格納
+ 			self.sensor_data = data.data[:]
+ 		#前進するときのみ停止するかを判定
+ 		if self._speed_x[0] &gt; 0:
+ 			for d in self.sensor_data:
+ 				#センサ値が設定値以上か判定
+ 				if d &gt; self._stop_d[0]:
+ 					#センサ値が設定値以上の場合は停止
+ 					self._d_out.data.vx = 0
+ 					self._d_out.data.va = 0
+ 					self._outOut.write()
+ 					return RTC.RTC_OK
+ 				
+ 		#設定値以上の値のセンサが無い場合はコンフィギュレーションパラメータの値で操作
+ 		self._d_out.data.vx = self._speed_x[0]
+ 		self._d_out.data.va = self._speed_r[0]
+ 		self._outOut.write()
+ 				
+ 		return RTC.RTC_OK
+</code></pre></div></div>
+
+<h2 id="robotcontroller-コンポーネントの動作確認">RobotController コンポーネントの動作確認</h2>
+<p>作成した RobotController をシミュレーターコンポーネントと接続して動作確認を行います。</p>
+
+<p>以下より RaspberryPiMouseSimulator コンポーネントをダウンロードしてください。</p>
+
+<ul>
+  <li><a href="https://github.com/Nobu19800/RTM_Tutorial_JSAI2017/archive/master.zip">RTM_Tutorial_2017</a></li>
+</ul>
+
+<p>インターネットに接続できない環境で講習会を実施している場合がありますので、その場合は配布のUSBメモリーに入れてあります。</p>
+
+<h3 id="nameservice-の起動">NameService の起動</h3>
+
+<p>コンポーネントの参照を登録するためのネームサービスを起動します。</p>
+
+<p><br /></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtm-naming
+</code></pre></div></div>
+
+<h3 id="robotcontroller-コンポーネントの起動">RobotController コンポーネントの起動</h3>
+
+<p>RobotController コンポーネントを起動します。</p>
+
+<p>RobotController\build\srcフォルダーの RobotControllerComp ファイルを実行してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ RobotControllerComp
+</code></pre></div></div>
+
+<h3 id="シミュレーターコンポーネントの起動">シミュレーターコンポーネントの起動</h3>
+
+<p>RaspberryPiMouseSimulator コンポーネントをインストールしたディレクトリーに移動後、下記のコマンドにて起動できます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ src/RaspberryPiMouseSimulatorComp
+</code></pre></div></div>
+
+<h3 id="コンポーネントの接続">コンポーネントの接続</h3>
+
+<p>下図のように、RTSystemEditorにて
+RobotController コンポーネント、RaspberryPiMouseSimulator コンポーネントを接続します。</p>
+
+<div align="center"><a href="RTSE_Connect_1.png"><img src="RTSE_Connect_1.png" width="70%;" /></a></div>
+<div align="center"><strong>コンポーネントの接続</strong></div>
+
+<h3 id="コンポーネントの-activate">コンポーネントの Activate</h3>
+
+<p>RTSystemEditor の上部にあります [All Activate] というアイコンをクリックし、全てのコンポーネントをアクティブ化します。
+正常にアクティベートされた場合、下図のように黄緑色でコンポーネントが表示されます。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="RTSE_Activate_1.png"><img src="RTSE_Activate_1.png" width="70%;" /></a></div>
+<div align="center"><strong>コンポーネントのアクティブ化</strong></div>
+<p><br /></p>
+
+<h3 id="動作確認">動作確認</h3>
+
+<p>下図のようにコンフィギュレーションビューの [編集] ボタンからコンフィギュレーションを変更することができます。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="RTSE_Configuration_10.png"><img src="RTSE_Configuration_10.png" width="70%;" /></a></div>
+<p><br /></p>
+
+<p>スライダーを操作してシミュレーター上の Raspberry Pi マウスの操作ができるかを確認してください。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="RTSE_Configuration_1.png"><img src="RTSE_Configuration_1.png" width="70%;" /></a></div>
+<div align="center"><strong>コンフィギュレーションパラメーターの変更</strong></div>
+<p><br /></p>
+
+<h2 id="実機での動作確認">実機での動作確認</h2>
+<p>講習会で Raspberry Pi マウス実機を用意している場合は実機での動作確認が可能です。</p>
+
+<p>手順は以下の通りです。</p>
+
+<ul>
+  <li>Raspberry Pi マウスの電源を投入する</li>
+  <li>Raspberry Pi マウスのアクセスポイントに接続</li>
+  <li>ポートの接続</li>
+  <li>コンポーネントのアクティブ化</li>
+</ul>
+
+<h3 id="電源を投入する">電源を投入する</h3>
+
+<p>Raspberry PiマウスにはRaspberry Piの電源スイッチとモーターの電源スイッチの2つがあります。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="rpm8_raspi.png"><img src="rpm8_raspi.png" width="40%;" /></a></div>
+
+<p><br /></p>
+
+<p>内側の電源スイッチをオンにするとRaspberry Piが起動します。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="rpm9_raspi.png"><img src="rpm9_raspi.png" width="40%;" /></a></div>
+
+<p><br /></p>
+
+<h4 id="電源を切る場合">電源を切る場合</h4>
+
+<p>Raspberry Piの電源を切る場合は、電源スイッチから直接オフにはしないようにしてください。
+3つ並んだボタンの中央のボタンを数秒押すとシャットダウンが始まります。
+10秒程度でRaspbianのシャットダウンが終了するため、その後に電源スイッチをオフにしてください。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="rpm8.png"><img src="rpm8.png" width="40%;" /></a></div>
+<p><br /></p>
+
+<h3 id="アクセスポイントに接続">アクセスポイントに接続</h3>
+
+<p>SSID、パスワードは Rasoberry Pi マウスに貼り付けたシールに記載してあるので、その SSID に接続してください。</p>
+
+<p>※ネットワークが切り替わった場合にネームサーバーへのコンポーネントの登録やポートの接続が失敗する場合があるのでOpenRTP、ネームサーバ、コンポーネントを一旦全て終了してください。
+ネットワーク切り替え後に起動した場合には問題ないので、終了させる必要はありません。</p>
+
+<p>OpenRTPを終了するには右上の×を押して終了してください。システムダイアグラムを保存するかどうか聞かれますが、Don’t Saveを選択してください。</p>
+
+<div align="center"><a href="rtse0150.png"><img src="rtse0150.png" width="60%;" /></a></div>
+
+<p><strong>openrtp</strong>コマンドを実行してOpenRTPを起動してください。</p>
+
+<p>RT System Editor上でネームサーバーを再起動するには「ネームサービスを起動」ボタンを再度クリックします。</p>
+
+<div align="center"><a href="rtse400.png"><img src="rtse400.png" width="60%;" /></a></div>
+
+<h3 id="raspberry-pi上のネームサーバーrtc起動">Raspberry Pi上のネームサーバー、RTC起動</h3>
+<p><strong>※この作業は以下のLiDAR付Raspberry Piマウスで必要な作業です。LiDAR無しのRaspberry Piマウスの場合は次の作業へ進んでください。</strong></p>
+
+<div align="center"><a href="https://rt-net.jp/mobility/wp-content/uploads/2019/12/23b47429c42d672e7f94ae0a3c9c9d6c.png"><img src="https://rt-net.jp/mobility/wp-content/uploads/2019/12/23b47429c42d672e7f94ae0a3c9c9d6c.png" width="100%;" /></a></div>
+
+<p>Edge、Chrome、Firefox等のWEBブラウザで<strong>192.168.11.1</strong>のアドレスにアクセスしてください。</p>
+
+<div align="center"><a href="slam40.png"><img src="slam40.png" width="50%;" /></a></div>
+
+<p>するとRaspberryPiMouse with OpenRTM-aistの画面が表示されます。</p>
+
+<p>まずはネームサーバーを起動するため、<strong>Start NameServer</strong>ボタンを押してください。</p>
+
+<div align="center"><a href="slam42.png"><img src="slam42.png" width="50%;" /></a></div>
+
+<p><strong>RaspberryPiMouseRTC</strong>の<strong>Start</strong>を押してください。</p>
+
+<div align="center"><a href="slam41.png"><img src="slam41.png" width="50%;" /></a></div>
+
+<p>元の画面に戻らない場合は<strong>Back to the top page.</strong>をクリックしてください。</p>
+
+<div align="center"><a href="slam43.png"><img src="slam43.png" width="50%;" /></a></div>
+
+<p>これで完了です。</p>
+
+<h3 id="ネームサーバー追加">ネームサーバー追加</h3>
+
+<p>続いてRTシステムエディタの [ネームサーバー追加] ボタンで <span style="color:red;">192.168.11.1</span>; を追加してください。</p>
+
+<p><br /></p>
+
+<div align="center"><div align="center"><a href="tutorial_raspimouse0.png"><img src="tutorial_raspimouse0.png" width="50%;" /></a></div>;  <div align="center"><a href="tutorial_raspimouse1.png"><img src="tutorial_raspimouse1.png" width="40%;" /></a></div>;</div>
+<p><br />
+<br /></p>
+
+<p>すると以下の2つの RTC が見えるようになります。</p>
+
+<div align="center"><a href="tutorial_raspimouse2.png"><img src="tutorial_raspimouse2.png" width="60%;" /></a></div>
+
+<ul>
+  <li><a href="/ja/node/6015#toc0">RaspberryPiMouseRTC</a></li>
+  <li><a href="/ja/node/6015#toc1">RaspberryPiMouseController_DistanceSensor</a></li>
+</ul>
+
+<p>RaspberryPiMouseRTC は名城大学のロボットシステムデザイン研究室で開発されているラズパイマウス制御用の RTコンポーネントです。</p>
+
+<h3 id="ポートの接続">ポートの接続</h3>
+
+<p>RTシステムエディタで RaspberryPiMouseRTC、RobotController コンポーネントを以下のように接続します。</p>
+
+<div align="center"><a href="tutorial_raspimouse41.png"><img src="tutorial_raspimouse41.png" width="70%;" /></a></div>
+
+<h3 id="モーターの電源を投入する">モーターの電源を投入する</h3>
+<p>動作の前に、モーターの電源スイッチをオンにしてください。
+モーターの電源はこまめに切るようにしてください。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="rpm10_raspi.png"><img src="rpm10_raspi.png" width="40%;" /></a></div>
+
+<p><br /></p>
+
+<h3 id="アクティブ化">アクティブ化</h3>
+<p>そして RTC をアクティブ化すると Raspberry Pi マウスの操作ができるようになります。</p>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+</p>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

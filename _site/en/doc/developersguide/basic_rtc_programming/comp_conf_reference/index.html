@@ -1,0 +1,1842 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>OpenRTM-aist | The power to connect</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="OpenRTM-aist" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/developersguide/basic_rtc_programming/comp_conf_reference/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/developersguide/basic_rtc_programming/comp_conf_reference/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="OpenRTM-aist" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"OpenRTM-aist","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/developersguide/basic_rtc_programming/comp_conf_reference/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist--ja</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>hogehogehoge-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/comp_conf_reference/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1> <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/comp_conf_reference/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/developersguide/basic_rtc_programming/comp_conf_reference/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#基本設定">基本設定</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#basic-profile">Basic Profile</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#実行コンテキストオプション">実行コンテキストオプション</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtperiodictype">exec_cxt.periodic.type</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtperiodicrate">exec_cxt.periodic.rate</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_transition">exec_cxt.sync_transition</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_activation">exec_cxt.sync_activation</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_deactivation">exec_cxt.sync_deactivation</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_reset">exec_cxt.sync_reset</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxttransition_timeout">exec_cxt.transition_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtactivation_timeout">exec_cxt.activation_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtdeactivation_timeout">exec_cxt.deactivation_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtreset_timeout">exec_cxt.reset_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtcpu_affinity">exec_cxt.cpu_affinity</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#execution_contexts">execution_contexts</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ecrate">ec.<EC name=""</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ecsynch_transition">ec.<EC name=""</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ectransition_timeout">ec.<EC name=""</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ポート設定">ポート設定</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#inport-オプション">InPort オプション</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#outport-オプション">OutPort オプション</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サービスポートオプション">サービスポートオプション</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#rtsystemeditorのコンフィギュレーションセットgui設定">RTSystemEditorのコンフィギュレーションセットGUI設定</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#利用可能なウィジェット-widget-の一覧">利用可能なウィジェット [<u</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#利用可能な制約条件-constraints-の一覧">利用可能な制約条件 [<u</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<p>#contents(3)</p>
+
+<p>このドキュメントではコンポーネントごとの設定を行うファイルの設定項目を説明します。
+このファイル名称は任意の名前をつけることができますが、便宜上 component.conf とします。
+component.conf は以下のように rtc.conf 内でコンポーネントのカテゴリ名とコンポーネント名やインスタンス名をキーとするオプションで指定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;コンポーネントカテゴリ名&gt;.&lt;コンポーネント名&gt;.config_file: &lt;任意のファイル名&gt;.conf
+ or
+ &lt;コンポーネントカテゴリ名&gt;.&lt;コンポーネントインスタンス名&gt;.config_file: &lt;任意のファイル名&gt;.conf
+</code></pre></div></div>
+
+<p>サンプルに含まれる ConsoleIn コンポーネントを例にして、実際の指定方法を示します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> example.ConsoleIn.config_file: consolein.conf ← ConsoleInコンポーネント全体の設定
+ example.ConsoleIn0.config_file: consolein0.conf ← 0番目のインスタンスの設定
+ example.ConsoleIn1.config_file: consolein1.conf ← 1番目のインスタンスの設定
+ example.ConsoleIn2.config_file: consolein2.conf ← 2番目のインスタンスの設定
+</code></pre></div></div>
+
+<!-- ============================================================ -->
+<h2 id="基本設定">基本設定</h2>
+<!-- ============================================================ -->
+
+<h3 id="basic-profile">Basic Profile</h3>
+<p>RTCのBasic Profile (RTCBuilderの基本タブで設定する項目) の以下の項目は、component.conf で値を上書きすることができます。</p>
+
+<ul>
+  <li>implementation_id</li>
+  <li>type_name</li>
+  <li>description</li>
+  <li>version</li>
+  <li>vendor</li>
+  <li>category</li>
+  <li>activity_type</li>
+  <li>max_instance</li>
+  <li>language</li>
+  <li>lang_type</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="実行コンテキストオプション">実行コンテキストオプション</h2>
+<!-- ============================================================ -->
+
+<h3 id="exec_cxtperiodictype">exec_cxt.periodic.type</h3>
+
+<p>Periodic型ExecutionContextの指定。
+使用するECの型を指定します。以下の方が利用できます。</p>
+
+<ul>
+  <li>PeriodicExecutionContext: デフォルト。OpenRTMライブラリに埋め込み。</li>
+  <li>ExtTrigExecutionContext:   外部トリガEC。OpenRTMライブラリに埋め込み。</li>
+  <li>SynchExtTriggerEC: 同期型外部トリガEC。OpenRTMライブラリに埋め込み。通常OpenHRP3とともに使用される。</li>
+  <li>RTPreemptEC:               Linux RTプリエンプティブパッチカーネルのリアルタイム実行コンテキスト。</li>
+</ul>
+
+<p>その他のEC</p>
+
+<ul>
+  <li>SimulatorExecutionContext: 並列型外部トリガEC。ChoreonoidのOpenRTMPluginに内蔵されており、Choreonoid内で自動的に使用される。</li>
+  <li>
+    <p>ArtExecutionContext:       ARTLinux用リアルタイムEC。廃止予定。(http://sourceforge.net/projects/art-linux/)</p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>設定: (PeriodicExecutionContext</td>
+          <td>ExTrigExecutionContext</td>
+          <td>SynchExtTriggerEC</td>
+          <td>RTPreemptEC)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>デフォルト: PeriodicExecutionContext</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.periodic.type: PeriodicExecutionContext
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="exec_cxtperiodicrate">exec_cxt.periodic.rate</h3>
+
+<p>ExecutionContextの実行周期
+<!-- The execution cycle of ExecutionContext --></p>
+
+<p>このオプションはRTC特有のECの周期を指定します。このECの実行周期は、元のRTCのデフォルトのECレートを上書きします。</p>
+
+<ul>
+  <li>設定: Read/Write, period [Hz]</li>
+  <li>デフォルト: 1000 [Hz]</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.periodic.rate: 1000
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="exec_cxtsync_transition">exec_cxt.sync_transition</h3>
+<h3 id="exec_cxtsync_activation">exec_cxt.sync_activation</h3>
+<h3 id="exec_cxtsync_deactivation">exec_cxt.sync_deactivation</h3>
+<h3 id="exec_cxtsync_reset">exec_cxt.sync_reset</h3>
+
+<p>状態遷移モードの指定。
+RTCはアクティブ化、非アクティブ化、およびリセットにより状態が遷移します。
+一部の実行コンテキストは、メインロジックを異なるスレッドで実行します。
+これらのフラグが YES に設定されている場合、アクティブ化、非アクティブ化、およびリセットは同期して実行されます。
+つまり、これらのフラグが YES の場合、状態遷移の完了後にアクティブ化/非アクティブ化/リセット処理から返ります。</p>
+
+<p>“synchronous_transition” は、同期遷移フラグを他のすべての同期遷移フラグに設定します（synchronous_activation / deactivation / resetting)。</p>
+
+<ul>
+  <li>設定: YES/NO</li>
+  <li>デフォルト: YES</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.sync_transition: YES
+ exec_cxt.sync_activation: YES
+ exec_cxt.sync_deactivation: YES
+ exec_cxt.sync_reset: YES
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="exec_cxttransition_timeout">exec_cxt.transition_timeout</h3>
+<h3 id="exec_cxtactivation_timeout">exec_cxt.activation_timeout</h3>
+<h3 id="exec_cxtdeactivation_timeout">exec_cxt.deactivation_timeout</h3>
+<h3 id="exec_cxtreset_timeout">exec_cxt.reset_timeout</h3>
+
+<p>同期遷移時のタイムアウト時間。
+同期遷移フラグをYESに設定すると、タイムアウト設定が利用可能になります。 
+“transition_timeout” が設定されている場合、値はアクティブ化/非アクティブ化およびリセットの他のすべてのタイムアウトに設定されます</p>
+
+<ul>
+  <li>設定: タイムアウト時間 [s]</li>
+  <li>デフォルト: 0.5 [s]</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.transition_timeout: 0.5
+ exec_cxt.activation_timeout: 0.5
+ exec_cxt.deactivation_timeout: 0.5
+ exec_cxt.reset_timeout: 0.5
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="exec_cxtcpu_affinity">exec_cxt.cpu_affinity</h3>
+
+<p>ECのCPU affinity (割当)の設定。
+このオプションは、ECを特定のCPUにバインドします。 オプションは、CPU IDを識別するために、1つ以上のコンマ区切りの番号でなければなりません。 CPU IDは0から始まり、最大数はCPUコアの数-1です。 無効なCPU IDを指定すると、すべてのCPUがECに使用されます。</p>
+
+<ul>
+  <li>設定: CPU番号</li>
+  <li>デフォルト: なし</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.cpu_affinity: 0
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="execution_contexts">execution_contexts</h3>
+
+<p>実行コンテキストの指定。
+RTCは、0個以上の実行コンテキストにアタッチできます。 
+“execution_contexts” オプションは、RTC固有にアタッチするECとその名前を指定します。
+オプションが指定されていない場合、ECに関連する内部グローバルオプションまたはrtc.confオプションが使用されます。 
+Noneを指定すると、ECは作成されません。
+指定可能なECの種類は、”exec_cxt.type” で指定できるものと同じです。
+また、ECの種類を指定すると同時に、その名前も指定することができます。
+名前は、ECの周期などを指定するオプションのキーとしてに利用されます。</p>
+
+<ul>
+  <li>設定: None or <EC0>,<EC1>,...
+</EC1></EC0>    <ul>
+      <li>&lt;EC?&gt;: ECtype(ECname)</li>
+    </ul>
+  </li>
+  <li>デフォルト: None</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> execution_contexts: PeriodicExecutionContext(pec1000Hz), \
+                             PeriodicExecutionContext(pec500Hz)
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="ecrate">ec.<EC name="">.rate</EC></h3>
+<h3 id="ecsynch_transition">ec.<EC name="">.synch_transition</EC></h3>
+<h3 id="ectransition_timeout">ec.<EC name="">.transition_timeout</EC></h3>
+
+<p>EC 特有の設定。
+各ECは独自のコンフィグレーションを持つことができます。 
+ECタイプ名またはECインスタンス名を使用して、個々の構成を指定できます。 
+接続されたECは、<ECタイプ名>（<ECインスタンス名>）のような "execution_context" オプションで指定されます。
+EC固有のオプションは、次のように指定できます。</ECインスタンス名></ECタイプ名></p>
+
+<ul>
+  <li>設定: ec.<EC type="" name="">.<option> or ec.<EC instance="" name="">.<option></option></EC></option></EC></li>
+  <li>デフォルト: なし</li>
+  <li>例:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ec.PeriodicExecutionContext.sync_transition: NO
+ ec.pec1000Hz.rate: 1000
+ ec.pec1000Hz.synch_transition: YES
+ ec.pec1000Hz.transition_timeout: 0.5
+ ec.pec500Hz.rate: 500
+ ec.pec500Hz.synch_activation: YES
+ ec.pec500Hz.synch_deactivation: NO
+ ec.pec500Hz.synch_reset: YES
+ ec.pec500Hz.activation_timeout: 0.5
+ ec.pec500Hz.reset_timeout: 0.5
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- End of Execution context settings -->
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<h2 id="ポート設定">ポート設定</h2>
+<!-- Port configurations -->
+<!-- ============================================================ -->
+
+<h3 id="inport-オプション">InPort オプション</h3>
+
+<ul>
+  <li>書式
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.inport.&lt;port_name&gt;.* -&gt; InPortBase.init() の引数に渡される
+ port.inport.dataport.*    -&gt; InPortBase.init() の引数に渡される
+</code></pre></div>    </div>
+  </li>
+  <li>例
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.inport.dataport.provider_types: corba_cdr, direct, shm_memory
+ port.inport.dataport.consumer_types: corba_cdr, direct, shm_memory
+ port.inport.dataport.connection_limit: 1
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="outport-オプション">OutPort オプション</h3>
+
+<ul>
+  <li>書式
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.outport.&lt;port_name&gt;.* -&gt; OutPortBase.init() の引数に渡される
+ port.outport.&lt;port_name&gt;.* -&gt; OutPortBase.init() の引数に渡される
+</code></pre></div>    </div>
+  </li>
+  <li>例
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.inport.dataport.provider_types: corba_cdr, direct, shm_memory
+ port.inport.dataport.consumer_types: corba_cdr, direct, shm_memory
+ port.inport.dataport.connection_limit: 1
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="サービスポートオプション">サービスポートオプション</h3>
+<ul>
+  <li>書式
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.corbaport.&lt;port_name&gt;.* -&gt; CorbaPortBase.init() の引数に渡される
+ port.corba.* -&gt; CorbaPortBase.init() の引数に渡される 
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- End of Port configurations -->
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<h2 id="rtsystemeditorのコンフィギュレーションセットgui設定">RTSystemEditorのコンフィギュレーションセットGUI設定</h2>
+
+<p>コンフィギュレーションパラメータは、RTSystemEditorのコンフィギュレーションセット設定ダイアログのGUIウィジェットから操作可能です。
+通常、RTCBuilderでRTCを設計する場合、各パラメーターに割り当てるGUIウィジェットの種類を指定できますが、component.confからGUIウィジェットの割り当てを指定することもできます。</p>
+
+<ul>
+  <li>例
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> conf.[configuration_set_name].[parameter_name]:
+ conf.__widget__.[parameter_name]: GUI control type for RTSystemEditor
+ conf.__constraint__.[parameter_name]: Constraints for the value
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="利用可能なウィジェット-widget-の一覧">利用可能なウィジェット [<u>widget</u>] の一覧</h3>
+
+<h4 id="書式">書式</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> conf.__widget__.[widget_name]: [widget_type].[widget_option]
+</code></pre></div></div>
+
+<h4 id="書式詳細">書式詳細</h4>
+<ul>
+  <li>
+    <ul>
+      <li>text:          テキストボックス (デフォルト)</li>
+      <li>slider.<step>: 水平スライダー。<step> はスライダーのステップ単位。範囲制約オプション（後述）が必要。</step></step></li>
+      <li>spin:          スピンボタン。範囲制約オプション（後述）が必要。</li>
+      <li>radio:         ラジオボタン。列挙型制約オプション（後述）が必要。</li>
+      <li>checkbox:      チェックボックス。列挙型制約オプションが必要。パラメータはカンマ区切りのリストを解釈可能でなければならない。</li>
+      <li>ordered_list:   順序付きリスト。列挙型制約オプションが必要。パラメータはカンマ付きリストを解釈可能でなければならない。このコントロールでは、リストの中に列挙型の要素が1つ以上現れる。</li>
+    </ul>
+  </li>
+  <li></li>
+  <li></li>
+</ul>
+
+<h4 id="例">例</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> conf.__widget__.int_param0: slider.10
+ conf.__widget__.int_param1: spin
+ conf.__widget__.double_param0: slider.10
+ conf.__widget__.double_param1: text
+ conf.__widget__.str_param0: radio
+ conf.__widget__.vector_param0: checkbox
+ conf.__widget__.vector_param1: ordered_list
+</code></pre></div></div>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="利用可能な制約条件-constraints-の一覧">利用可能な制約条件 [<u>constraints</u>] の一覧</h3>
+<!-- GUI control constraint options [__constraints__]: -->
+
+<h4 id="書式-1">書式</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> conf.__constraints__.[parameter_name]:
+</code></pre></div></div>
+
+<h4 id="書式詳細-1">書式詳細</h4>
+<ul>
+  <li>なし:（空白）</li>
+  <li>即値: 100 (制約値)</li>
+  <li>範囲: &lt;, &gt;, &lt;=, &gt;= および変数 “x” が利用可能</li>
+  <li>列挙値:  (enum0, enum1, …)</li>
+  <li>配列: <constraints0>, <constraints1>, ... for only array value</constraints1></constraints0></li>
+  <li>ハッシュ値: {key0: value0, key1:, value0, …}</li>
+</ul>
+
+<h4 id="制約指定例">制約指定例</h4>
+<ul>
+  <li>制約なし              : (blank)</li>
+  <li>即値                     : 100 (read only)</li>
+  <li>100 以上                : x &gt;= 100</li>
+  <li>100 以下                : x &lt;= 100</li>
+  <li>100 より大きい       : x &gt; 100</li>
+  <li>100 未満                : x &lt; 0</li>
+  <li>100 以上 200 以下: 100 &lt;= x &lt;= 200</li>
+  <li>100 より大きく 200 、未満 : 100 &lt; x &lt; 200</li>
+  <li>列挙型制約                : (9600, 19200, 115200)</li>
+  <li>配列                      : x &lt; 1, x &lt; 10, x &gt; 100</li>
+  <li>
+    <p>ハッシュ                 : {key0: 100&lt;x&lt;200, key1: x&gt;=100}</p>
+  </li>
+  <li>例
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> conf.__constraints__.int_param0: 0&lt;=x&lt;=150
+ conf.__constraints__.int_param1: 0&lt;=x&lt;=1000
+ conf.__constraints__.double_param0: 0&lt;=x&lt;=100
+ conf.__constraints__.double_param1:
+ conf.__constraints__.str_param0: (default,mode0,mode1)
+ conf.__constraints__.vector_param0: (dog,monkey,pheasant,cat)
+ conf.__constraints__.vector_param1: (pita,gora,switch)
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

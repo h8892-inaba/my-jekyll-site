@@ -1,0 +1,2227 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>データポート (応用編) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="データポート (応用編)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rtc_programming/dataport_advanced/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rtc_programming/dataport_advanced/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="データポート (応用編)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"データポート (応用編)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rtc_programming/dataport_advanced/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">
+        <!-- TODO add theme version dropdown here -->
+        <!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/"  title="test_dl_page"
+            >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/"  title="test_doc_page"
+            >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >Research_and_Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    Research_and_Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>データポート (応用編)</h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/advanced_rtc_programming/dataport_advanced/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#データ型の利用">データ型の利用</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#独自データ型idlファイルの作成">独自データ型IDLファイルの作成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtc-builderでプロジェクト作成">RTC Builderでプロジェクト作成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#データポートの作成">データポートの作成</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#データポートコネクタのコールバックの利用">データポート、コネクタのコールバックの利用</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#inport-のコールバック">InPort のコールバック</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#outport-のコールバック">OutPort のコールバック</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コネクタバッファのコールバック">コネクタ・バッファのコールバック</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ポートのコールバック">ポートのコールバック</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#独自データポートインターフェースの作成">独自データポートインターフェースの作成</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#プロバイダクラス-inporttestprovider">プロバイダクラス (InPortTestProvider)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンシューマクラス-inporttestconsumer">コンシューマクラス (InPortTestConsumer)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#プロバイダコンシューマ登録関数-inporttestinterfaceinit">プロバイダ、コンシューマ登録関数 (InPortTestInterfaceInit)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#確認手順">確認手順</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: データポート (応用編) -->
+<!-- -*- pukiwiki-edit -*- -->
+<!-- *データポート(応用編) -->
+
+<p>#contents</p>
+
+<p>データポート(基本編)では、データポートの基本的な使い方について説明しました。応用編では、もう少し踏み込んだ使い方について解説します。</p>
+
+<!-- ------------------------------------------------------------ -->
+<!-- inaba **独自データ型の利用 -->
+<h2 id="データ型の利用">データ型の利用</h2>
+
+<p>データポートでは、事前に定義されたデータ型 (例: TimedLong、TimedDouble 等) 以外に、自分で定義したデータ型を使用することもできます。
+ただし、自分で新たなデータ型を作る前に、既に似たようなデータ型が定義されていないか確認して、その中に必要なデータ型がない場合にのみ新たなデータ型を定義することをお勧めします。</p>
+
+<p>OpenRTM-aist では、以下の IDLファイルでデータポートに使用するデータ型が定義されています。</p>
+
+<ul>
+  <li>BasicDataType.idl</li>
+  <li>ExtendedDataTypes.idl</li>
+  <li>InterfaceDataTypes.idl</li>
+</ul>
+
+<p>保存場所は以下のとおりです。これを IDL ディレクトリーと呼びます。</p>
+<ul>
+  <li>UNIX の場合： {prefix}/include/rtm/idl,{prefix}/include/openrtm-x.y/rtm/idl　( {prefix} は /usr/, /usr/local/, /opt/local/ など )</li>
+  <li>Windows の場合： {ProgramFiles}/OpenRTM-aist/x.y/rtm/idl など。( {Program Files} は C:/ProgramFiles, C:/Program Files (x86)など)</li>
+</ul>
+
+<!-- (場所は UNIXなら {prefix}/include/rtm/idl,{prefix}/include/openrtm-x.y/rtm/idl, Windowsなら {ProgramFiles}/OpenRTM-aist/x.y/rtm/idl など。{prefix}はインストールprefix(/usr/, /usr/local/, /opt/local/ など), {Program Files} は C:/ProgramFiles, C:/Program Files (x86)などです。これを IDL ディレクトリーと呼びます。) -->
+
+<!-- inaba*** IDLファイルの作成 -->
+<h3 id="独自データ型idlファイルの作成">独自データ型IDLファイルの作成</h3>
+
+<p>データ型を定義する IDLファイルを作成します。データ型は struct キーワードで定義します。以下の基本型や、文字列型、シーケンス型が利用できます。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>型</th>
+    <th>意味</th>
+    <th>宣言例</th>
+  </tr>
+  <tr>
+    <td>short</td>
+    <td>short型整数</td>
+    <td>short shortVariable;</td>
+  </tr>
+  <tr>
+    <td>long</td>
+    <td>long型整数</td>
+    <td>long longVariable;</td>
+  </tr>
+  <tr>
+    <td>unsinged short</td>
+    <td>short型整数</td>
+    <td>unsigned short ushortVariable;</td>
+  </tr>
+  <tr>
+    <td>unsigned long</td>
+    <td>long型整数</td>
+    <td>unsigned long ulongVariable;</td>
+  </tr>
+  <tr>
+    <td>float</td>
+    <td>単精度浮動小数点</td>
+    <td>float floatVariable;</td>
+  </tr>
+  <tr>
+    <td>double</td>
+    <td>倍精度浮動小数点数</td>
+    <td>double doubleVariable;</td>
+  </tr>
+  <tr>
+    <td>char</td>
+    <td>文字型</td>
+    <td>char charVariable;</td>
+  </tr>
+  <tr>
+    <td>wchar</td>
+    <td>wchar文字型</td>
+    <td>char charVariable;</td>
+  </tr>
+  <tr>
+    <td>boolean</td>
+    <td>bool型</td>
+    <td>bool shortVariable;</td>
+  </tr>
+  <tr>
+    <td>octet</td>
+    <td>octet型</td>
+    <td>octet octetVariable;</td>
+  </tr>
+  <tr>
+    <td>longlong</td>
+    <td>longlong型整数</td>
+    <td>longlong longlongVariable;</td>
+  </tr>
+  <tr>
+    <td>ulonglong</td>
+    <td>unsinged longlong型整数</td>
+    <td>ulonglong ulonglongVariable;</td>
+  </tr>
+  <tr>
+    <td>sequence &lt;T&gt;</td>
+    <td>シーケンス型</td>
+    <td>sequence &lt;double&gt; doubleSeqVariable;</td>
+  </tr>
+</table>
+
+<p>ここでは、MyDataType.idl に MyData というデータ型を定義することにします。
+表示のためにスペースを前方に入れていますが、これは実際にIDLファイルを使用する上で不要のため削除してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // @file MyDataType.idl
+ #include "BasicDataType.idl"
+ 
+ module MyModule
+ {
+  struct MyData
+  {
+    RTC::Time tm;
+    short shortVariable;
+    long longVariable;
+    sequence&lt;double&gt; data;
+  };
+ };
+</code></pre></div></div>
+
+<p>2行目に</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include "BasicDataType.idl"
+</code></pre></div></div>
+<p>とあるのは、MyData 型の一番最初のフィールド tm (RTC::Time 型) を利用するために必要です。
+特に理由がない場合、独自データ型でも、一番初めのフィールドはタイムスタンプを格納するために RTC::Time tm; と宣言してください。
+また、module MyModule はネームスペースの指定です。データ型を定義する際は必ず適当なネームスペースを定義しその中でデータ型を定義してください。</p>
+
+<!-- inaba 上記内容のファイルを、C:\UserDefTypeフォルダーに作成します。 -->
+
+<!-- 3行目はダミーの interface 定義です。これは RTCBuilder で読み込ませるために必要です。(RTCBuilderの将来のバージョンではこれは不要になるかもしれません。) -->
+<!--  -->
+<!-- interface dummy {}; -->
+
+<!-- *** IDLファイルのコピー -->
+<!--  -->
+<!-- BasicDataType.idl など OpenRTM-aist で定義されている IDLファイルをインクルードする場合は、上記 BasicDataType.idl などが入っているディレクトリーからユーザー定義の IDLファイルが格納されているフォルダーに IDLファイルをコピーします。 -->
+<!-- （BasicDataType.idlをC:\UserDefTypeにコピー） -->
+<!--  -->
+<!-- BasicDataType.idl 保存場所の例は以下のとおりです。 -->
+<!-- - UNIX の場合： {prefix}/include/rtm/idl,{prefix}/include/openrtm-x.y/rtm/idl　( {prefix} は /usr/, /usr/local/, /opt/local/ など ) -->
+<!-- - Windows の場合： {ProgramFiles}/OpenRTM-aist/x.y/rtm/idl など。( {Program Files} は C:/ProgramFiles, C:/Program Files (x86)など) -->
+
+<!-- inaba *** RTCBuilder での確認 -->
+
+<!-- &color(red){※ 新規プロジェクトを作成する際には、”デフォルト・ロケーションの使用(D)”のチェックを外し、先程作成したフォルダー(C:\UserDefType)を指定します。}; -->
+
+<!-- #ref(data_port_01.png,100%,center) -->
+<!-- CENTER: ロケーションに「UserDefType」 指定 -->
+
+<!-- inaba RTCBuilder で以下のことを確認します。 -->
+
+<!-- inaba データポート設定タブを開き、''Detail'' の ''*データ型'' のプルダウンをクリックし、MyData があるかどうか確認します。 -->
+
+<!-- inaba #ref(data_port_03.png,100%,center) -->
+<!-- inaba CENTER: Detail のデータ型 -->
+
+<!-- inaba もし見つからなければ以下のことを確認します。 -->
+
+<!-- - MyData.idl が BasicDataType.idl などが入っているディレクトリーにコピーされているか？ -->
+<!-- inaba - Eclipse の [ウィンドウ] > [設定] > [RTCBUilder] > [データ型: IDLFile Directories] にユーザー定義の IDLファイルが入っているディレクトリー(C:\UserDefType)が設定されているかを確認します。設定されていなければ、MyDataType.idl が入っているディレクトリーを「新規」から追加し、Eclipse を再起動します。 -->
+
+<!-- inaba #ref(data_port_02.png,100%,center) -->
+<!-- inaba CENTER: MyData が表示されていない場合 -->
+
+<h3 id="rtc-builderでプロジェクト作成">RTC Builderでプロジェクト作成</h3>
+
+<p>RTCBuilder でプロジェクトの作成を行います。</p>
+
+<p>「RTC Builder Project」のアイコンをクリックし、表示したウィンドウにプロジェクト名を入力し「終了」すると、左のウィンドウに生成したプロジェクトファイルが表示します。</p>
+<div align="center"><a href="idl_00000.png"><img src="idl_00000.png" width="80%;" /></a></div>
+<div align="center">「RTC Builder Project」ウィンドウを表示</div>
+
+<div align="center"><a href="idl_002.png"><img src="idl_002.png" width="40%;" /></a></div>
+<div align="center">idlフォルダーの確認</div>
+
+<p>そこに独自データ型を配置するidlフォルダーがあるので独自データ型のIDLファイル（MyDataType.idl）を、ドラッグ&amp;ドロップや[右クリック]&gt;[貼り付け]などで置いてください。</p>
+
+<p>プロジェクトフォルダーは、RTCBuilder起動直後に表示する「ディレクトリをワークスペースとして選択」をデフォルトで進めた場合、[ c:\Users\ユーザ名\workspase ]フォルダー以下にあります。</p>
+
+<!-- idlディレクトリ下に独自データ型のIDLファイル（MyDataType.idl）を置いてください。 -->
+
+<h3 id="データポートの作成">データポートの作成</h3>
+
+<p>RTCBuilder で独自データ型のidlを使ったコンポーネントの作成を行います。</p>
+
+<p>データポート設定タブを開き、データポート（InPort/OutPort）を定義します。</p>
+
+<p>作成したデータポートで独自データ型を使いたい場合、[Reload] をクリックするとidlフォルダーのMyDataType.idlが読み込まれ、 <strong>*データ型</strong> のプルダウンで新たに定義した  MyData を選択できます。</p>
+
+<div align="center"><a href="idl_000.png"><img src="idl_000.png" width="50%;" /></a></div>
+<div align="center">[Reload] をクリック、MyData のデータ型を選択</div>
+
+<!-- inaba RTCBuilder でコンポーネントの作成を行います。 -->
+<!-- inaba データポート設定タブでは、新たに定義した MyData 型が選択できるようになっているので、新規データポート (InPort もしくは OutPort) を作成、データポート名とデータ型を設定します。 -->
+
+<!-- inaba #ref(data_port_03.png,100%,center) -->
+<!-- inaba CENTER: MyData のデータ型 -->
+<!-- inaba CENTER: Detail のデータ型 -->
+
+<p>その他、コンポーネント作成に必要な項目の設定が終わったら、基本タブに戻り、[コード生成] ボタンをクリックし、コードの生成を行います。</p>
+
+<!-- *** プロジェクトディレクトリーへの IDL のコピー -->
+<!--  -->
+<!-- コード生成によってできたプロジェクトのディレクトリーへ先ほどの MyDataType.idl をコピーします。 -->
+
+<!-- *** Windows での作業 -->
+
+<!-- Windows では、プロジェクトディレクトリー内にある IDLファイルを自動的にコンパイルするようになっていますので、RTコンポーネントを試しに1度コンパイルします。 -->
+<!-- すると、MyDataTypeSkel.h や MyDataTypeSkel.cpp などのファイルが生成されます。 -->
+<!-- ただし、MyData を宣言したヘッダファイルがインクルードされていないので、コンポーネントのコンパイルには失敗するはずです。 -->
+
+<!-- *** Linux での作業 -->
+<!-- Makefile.<コンポーネント名> 中の SKEL_OBJ にオブジェクトファイルを指定します。(既に以下のような記述がある場合は不要。) -->
+
+<!-- STUB_OBJ = MyDataTypeStub.o -->
+
+<!-- こうすることで、MydataType のスタブオブジェクトがコンポーネントにリンクされます。 -->
+<!-- また、MyDataType.idl から MyDataTypeStub.h と MyDataTypeStub.cpp を生成するための以下の行を追加します。(既に以下のような記述がある場合は不要。) -->
+
+<!-- MyDataTypeStub.cpp : MyDatatype.idl -->
+<!-- $(IDLC) $(IDLFLAGS) $< -->
+<!-- $(WRAPPER) $(WRAPPER_FLAGS) --idl-file=$< -->
+<!-- MyDataTypeStub.h : MyDatatype.idl -->
+<!-- $(IDLC) $(IDLFLAGS) $< -->
+<!-- $(WRAPPER) $(WRAPPER_FLAGS) --idl-file=$< -->
+<!-- MyDataTypeStub.o: MyDataTypeStub.cpp MyDataTypeStub.h -->
+<!-- $(CXX) $(CXXFLAGS) -c -o $@ $< -->
+
+<!-- これらにより、MyDatatype.idl から MyDataTypeStub.cpp MyDataTypeStub.h が作成され、MyDataTypeStub.cpp MyDataTypeStub.h から MyDataTypeStub.o が作成されます。 -->
+
+<!-- *** ヘッダの編集 -->
+<!--  -->
+<!-- コンポーネントのヘッダファイル (コンポーネント名が MyComponent の場合 MyComponent.h) をエディタで開き、以下のように MyDataTypeStub.h をインクルードします。 -->
+<!--  -->
+<!-- // Service Consumer stub headers -->
+<!-- // <rtc-template block="consumer_stub_h"> -->
+<!-- #include <MyDatatypeStub.h> -->
+<!--  -->
+<!-- // </rtc-template> -->
+
+<!-- *** ビルド -->
+
+<!-- ここまで終了したら、再度ビルドしてみます。 -->
+<!-- エラーなどなくビルドが終了するはずです。 -->
+
+<!-- ------------------------------------------------------------ -->
+<h2 id="データポートコネクタのコールバックの利用">データポート、コネクタのコールバックの利用</h2>
+
+<p>InPort は isNew() でデータの到着の有無を確認して、read() で読みだす、あるいは OutPort は write() でデータを送り出す、ということについてはすでに述べました。</p>
+
+<p>例えば、InPort はデータが来てから、onExecute() 等などの関数内で、isNew() を呼び read() を呼び出すまでデータを取得することはできません。
+onExecute() の周期が非常に速かったとしても、データが InPort に到着するタイミングと、実際に処理が行われるタイミングは非同期に行われます。</p>
+
+<p>データが到着してすぐに、すなわち同期的に処理を行いたい場合にはどうすればよいのでしょうか。これを実現する方法として、OpenRTM-aist ではデータポートやコネクタの種々の処理のタイミングで呼び出されるコールバックを定義しています。</p>
+
+<p>コールバックには大きく分けて、1) InPort、2) OutPort、3) コネクタ、4) ポート の4種類のコールバックが用意されています。</p>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="inport-のコールバック">InPort のコールバック</h3>
+
+<p>InPort には、以下の2種類のコールバックが用意されています。
+これらは rtm/PortCallback.h において定義されています。</p>
+
+<table class="table-alt">
+  <tr>
+    <td>OnRead</td>
+    <td>InPort の read() が呼び出された際にコールされる InPort::setOnRead() 関数でセット。</td>
+  </tr>
+  <tr>
+    <td>OnReadConvert</td>
+    <td>InPort の read() が呼び出された際にデータを変換するためにコールされる。InPort::setOnReadConvert() 関数でセット。</td>
+  </tr>
+</table>
+
+<p>OnRead コールバックは read() が呼び出されたときに、OnReadConvert は read() が呼び出されたとき、呼び出し元にある種の変換を施したデータを返すために使用するコールバックです。</p>
+
+<p>それぞれのコールバックは、rtm/PortCallback.h で定義されているそれぞれのファンクタの基底クラスを継承することにより実装します。</p>
+
+<blockquote>
+  <p>ファンクタとは、オブジェクトを通常の関数と同じような文法で呼び出し可能にするもので、C++ であれば operator() をオーバーロードをすることで実現することができる。C言語では呼び出し元に関数ポインタを与えることでコールバックを実現するが、関数ポインタのみでは、コールバック自体に状態変数を与えることは難しい。ファンクタはそれ自身がオブジェクトであるため、状態変数を持たせることができ、その上、C言語の関数同様の呼び出しが可能になる。</p>
+</blockquote>
+
+<p>以下にそれぞれの実装例を示します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include &lt;rtm/Portcallback.h&gt;
+ 
+ template &lt;class T&gt;
+ class MyOnRead
+  : public RTC::OnRead&lt;T&gt;
+ {
+ public:
+   MyOnRead(std::ostream&amp; os) : m_os(os) {};
+   virtual void operator()()
+   {
+     m_os      &lt;&lt; "read() 関数が呼ばれました。" &lt;&lt; std::endl;
+     std::cout &lt;&lt; "read() 関数が呼ばれました。" &lt;&lt; std::endl;
+   }
+ private:
+   std::ostream&amp; m_os;
+ };
+ 
+ template &lt;class T&gt; 
+ class MyOnReadConvert
+  : public RTC::OnReadConvert&lt;T&gt;
+ {
+ public:
+   virtual T operator()(const T&amp; value)
+   {
+     T tmp;
+     tmp.data = value.data * value.data;
+     return tmp;
+   }
+ };
+</code></pre></div></div>
+
+<p>OnRead を継承した MyOnRead ファンクタでは、コンストラクタで出力ストリーム std::ostream を渡しています。どこかでオープンしたファイル出力ストリーム std::ofstream 等を渡すことを意図しています。
+ファンクタの実体である operator()() では、出力ストリームと標準出力に対して、文字列を出力しています。このように、ファンクタでは、予めコンストラクタなどで状態変数を渡すことで、他のオブジェクトに対する呼び出しも実現することができます。</p>
+
+<p>一方 OnReadConvert<T> を継承した MyOnReadConvert は operator()(constT&amp;) のみを実装しています。この関数の引数には、read() が呼ばれたときにInPort 変数に読みだされる前のデータが渡されます。
+この関数内で何らかの処理を行い return で返したデータは InPort 変数に書き込まれます。この例では、データ型に data というメンバがあり、かつ乗算演算子が定義されているという前提で自乗を計算して返しています。
+適切なメンバがない変数型を使用すればコンパイルエラーになります。</T></p>
+
+<p>さて、このファンクタを実際にコンポーネントに組み込んでみましょう。InPort を使用しているサンプルとして、ここでは OpenRTM-aist に含まれているサンプルである ConsoleOut を利用します。ConsoleOut は OpenRTM-aist のソースを展開すると、</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> OpenRTM-aist-&lt;version&gt;/examples/SimpleIO/
+</code></pre></div></div>
+
+<p>の下に、また Linux 等でパッケージ等からインストールすると、</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/OpenRTM-aist/examples/src/
+</code></pre></div></div>
+
+<p>の下にソースコードがあります。</p>
+
+<p>まず、上記のクラス定義を、ConsoleOut.h に記述します。クラス定義は、本来別のソースに記述した方が良いのですが、ファンクタクラスは、このコンポーネント内でしか使用せず、内容も短いものですので、こういう場合はヘッダ内で実装も含めて定義しても構わないでしょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // ConsoleOut.h
+ 
+   中略
+ // Service Consumer stub headers
+ // &lt;rtc-template block="consumer_stub_h"&gt;
+ 
+ // &lt;/rtc-template&gt;
+ 
+ using namespace RTC; 
+ 
+ // ここから追加分
+ template &lt;class T&gt;
+ class MyOnRead
+ 
+  : public RTC::OnRead&lt;T&gt;
+ {
+ public:
+   MyOnRead(std::ostream&amp; os) : m_os(os) {};
+   virtual void operator()()
+   {
+     m_os      &lt;&lt; "read() 関数が呼ばれました。" &lt;&lt; std::endl;
+     std::cout &lt;&lt; "read() 関数が呼ばれました。" &lt;&lt; std::endl;
+   }
+ private:
+   std::ostream&amp; m_os;
+ };
+ 
+ template &lt;class T&gt; 
+ class MyOnReadConvert
+ 
+  : public RTC::OnReadConvert&lt;T&gt;
+ 
+ {
+ public:
+   virtual T operator()(const T&amp; value)
+   {
+     T tmp;
+     tmp.data = value.data * value.data;
+     return tmp;
+   }
+ };
+ // ここまで追加分
+ 
+ class ConsoleOut
+ 
+   : public RTC::DataFlowComponentBase
+ 
+ {
+ 
+   中略
+ 
+  protected:
+   // DataInPort declaration
+   // &lt;rtc-template block="inport_declare"&gt;
+   TimedLong m_in;
+   InPort&lt;TimedLong&gt; m_inIn;
+ 
+   中略
+ 
+  private:
+   //ここから追加分
+   MyOnRead&lt;TimedLong&gt;* m_onread;
+   MyOnReadConvert&lt;TimedLong&gt;* m_onreadconv;
+   //ここまで追加分
+ };
+</code></pre></div></div>
+
+<p>まず、ConsoleOut クラスの宣言の前に、コールバックファンクタ MyOnRead とMyOnReadConvert を宣言します。
+これらのクラスのポインタ変数をメンバとして持たせるために、private の部分に、それぞれのポインタ変数を宣言します。
+このとき、MyOnRead/MyOnReadConvert ともに、クラステンプレートの型引数にこのコンポーネントの InPort の型と同じ、TimedLong を与えていることに注意してください。</p>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="outport-のコールバック">OutPort のコールバック</h3>
+
+<p>OutPort には、以下の2種類のコールバックが用意されています。
+これらは rtm/PortCallback.h において定義されています。</p>
+
+<table class="table-alt">
+  <tr>
+    <td>OnWrite</td>
+    <td>OutPort の write() が呼び出された際にコールされる OutPort::setOnWrite() 関数でセット。</td>
+  </tr>
+  <tr>
+    <td>OnWriteConvert</td>
+    <td>OutPort の write() が呼び出された際にデータを変換するためにコールされる。OutPort::setOnWriteConvert() 関数でセット。</td>
+  </tr>
+</table>
+
+<p>OnWrite コールバックは write() が呼び出された際に、OnWriteConvert はwrite() が呼び出された際に、ある種の変換を施したデータを送信するために使用するコールバックです。</p>
+
+<p>それぞれのコールバックは、InPort と同様 rtm/PortCallback.h で定義されているそれぞれのファンクタの基底クラスを継承することにより実装します。</p>
+
+<p>以下にそれぞれの実装例を示します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include &lt;rtm/Portcallback.h&gt;
+ 
+ template &lt;class T&gt;
+ class MyOnWrite
+ 
+  : public RTC::OnWrite&lt;T&gt;
+ 
+ {
+ public:
+   MyOnWrite(std::ostream&amp; os) : m_os(os) {};
+   virtual void operator()()
+   {
+     m_os      &lt;&lt; "write() 関数が呼ばれました。" &lt;&lt; std::endl;
+     std::cout &lt;&lt; "write() 関数が呼ばれました。" &lt;&lt; std::endl;
+   }
+ private:
+   std::ostream&amp; m_os;
+ };
+ 
+ template &lt;class T&gt; 
+ class MyOnWriteConvert
+ 
+  : public RTC::OnWriteConvert&lt;T&gt;
+ 
+ {
+ public:
+   virtual T operator()(const T&amp; value)
+   {
+     T tmp;
+     tmp.data = 2 * value.data;
+     return tmp;
+   }
+ };
+</code></pre></div></div>
+
+<p>コールバック用のファンクタの書き方は、InPort の OnRead/OnReadConvert とほぼ同じです。OnWrite を継承した MyOnWrite ファンクタでは、コンストラクタで出力ストリーム std::ostream を渡しています。
+どこかでオープンしたファイル出力ストリーム std::ofstream 等を渡すことを意図しています。ファンクタの実体である operator() では、出力ストリームと標準出力に対して、文字列を出力しています。
+このように、ファンクタでは、予めコンストラクタなどで状態変数を渡すことで、他のオブジェクトに対する呼び出しも実現することができます。</p>
+
+<p>一方 OnReadConvert<T> を継承した MyOnReadConvert は operator()(constT&amp;) のみを実装しています。この関数の引数には、read() を呼んだときに InPort 変数に読みだされる前のデータが渡されます。この関数内で何らかの処理を行い return で返したデータは InPort 変数に書き込まれます。
+この例では、データ型に data というメンバがあり、かつ乗算演算子が定義されているという前提で自乗を計算して返しています。適切なメンバがない変数型を使用すればコンパイルエラーになります。</T></p>
+
+<h3 id="コネクタバッファのコールバック">コネクタ・バッファのコールバック</h3>
+
+<h4 id="コネクタ">コネクタ</h4>
+
+<p>コネクタはバッファおよび通信路を抽象化したオブジェクトです。図に示すように、OutPort と InPort の間に存在し、OutPort からは write() 関数によりデータの書き込み、InPort からは read() 関数によりデータの読み出しが行われます。
+コネクタは、データがどのような手段で OutPort から InPort へ伝送されるかを抽象化し隠蔽します。</p>
+
+<p>OutPort はコネクタ内のバッファに対して、</p>
+<ul>
+  <li>書き込み</li>
+  <li>各種制御 (読み戻し、未読データへのアクセス等)</li>
+  <li>バッファフル状態の通知およびタイムアウトの通知を行う(または通知を受ける)ことができます。</li>
+  <li>データの読み出し</li>
+  <li>各種制御(読み戻し、未読データへのアクセス等)</li>
+  <li>バッファエンプティ状態の通知およびタイムアウト通知を行う(または通知を受ける)ことができます。</li>
+</ul>
+
+<p>OutPort は複数の InPort へ接続することができますが、一つの接続につき、一つのコネクタが生成されます。(実際には InPort も複数の接続を同時に持つこともできますが、データを区別する方法がないので、通常は用いません。) 
+つまり、接続が3つあれば、コネクタが3つ存在し、それぞれに対して書き込みのステータスが存在することになります。</p>
+
+<p>また、これらの機能のために、OutPort/InPort 一対に対して、それぞれ一つコネクタが存在する必要があることがわかります。
+さらに、コネクタをサブスクリプション型に対応した実装レベルでモデル化するにあたり、パブリッシャと呼ばれる非同期通信のためのオブジェクトを導入しました。</p>
+
+<p>データポートは接続が確立されると、1つの接続につき1つのコネクタオブジェクトを生成します。コネクタは、OutPort と InPort をつなぐデータストリームの抽象チャネルです。</p>
+
+<table class="table-alt">
+  <tr>
+    <td>ON_BUFFER_WRITE</td>
+    <td>バッファ書き込み時</td>
+  </tr>
+  <tr>
+    <td>ON_BUFFER_FULL</td>
+    <td>バッファフル時</td>
+  </tr>
+  <tr>
+    <td>ON_BUFFER_WRITE_TIMEOUT</td>
+    <td>バッファ書き込みタイムアウト時</td>
+  </tr>
+  <tr>
+    <td>ON_BUFFER_OVERWRITE</td>
+    <td>バッファ上書き時</td>
+  </tr>
+  <tr>
+    <td>ON_BUFFER_READ</td>
+    <td>バッファ読み出し時</td>
+  </tr>
+  <tr>
+    <td>ON_SEND</td>
+    <td>InProtへの送信時</td>
+  </tr>
+  <tr>
+    <td>ON_RECEIVED</td>
+    <td>InProtへの送信完了時</td>
+  </tr>
+  <tr>
+    <td>ON_RECEIVER_FULL</td>
+    <td>InProt側バッファフル時</td>
+  </tr>
+  <tr>
+    <td>ON_RECEIVER_TIMEOUT</td>
+    <td>InProt側バッファタイムアウト時</td>
+  </tr>
+  <tr>
+    <td>ON_RECEIVER_ERROR</td>
+    <td>InProt側エラー時</td>
+  </tr>
+</table>
+
+<table class="table-alt">
+  <tr>
+    <td>ON_BUFFER_EMPTY</td>
+    <td>バッファが空の場合</td>
+  </tr>
+  <tr>
+    <td>ON_BUFFER_READTIMEOUT</td>
+    <td>バッファが空でタイムアウトした場合</td>
+  </tr>
+  <tr>
+    <td>ON_SENDER_EMPTY</td>
+    <td>OutPort側バッファが空</td>
+  </tr>
+  <tr>
+    <td>ON_SENDER_TIMEOUT</td>
+    <td>OutPort側タイムアウト時</td>
+  </tr>
+  <tr>
+    <td>ON_SENDER_ERROR</td>
+    <td>OutPort側エラー時</td>
+  </tr>
+  <tr>
+    <td>ON_CONNECT</td>
+    <td>接続確立時</td>
+  </tr>
+  <tr>
+    <td>ON_DISCONNECT</td>
+    <td>接続切断時</td>
+  </tr>
+</table>
+
+<h3 id="ポートのコールバック">ポートのコールバック</h3>
+<h4 id="ステータス">ステータス</h4>
+<p>データポートは、データの送受信を行った際に、ステータスを返します。
+ステータスは、rtm/DataPortStatus.h で定義されています。</p>
+
+<table class="table-alt">
+  <tr>
+    <td>PORT_OK</td>
+    <td>正常終了</td>
+  </tr>
+  <tr>
+    <td>PORT_ERROR</td>
+    <td>異常終了</td>
+  </tr>
+  <tr>
+    <td>BUFFER_ERROR</td>
+    <td>バッファエラー</td>
+  </tr>
+  <tr>
+    <td>BUFFER_FULL</td>
+    <td>バッファフル</td>
+  </tr>
+  <tr>
+    <td>BUFFER_EMPTY</td>
+    <td>バッファエンプティ</td>
+  </tr>
+  <tr>
+    <td>BUFFER_TIMEOUT</td>
+    <td>バッファタイムアウト</td>
+  </tr>
+  <tr>
+    <td>SEND_FULL</td>
+    <td>データを送信したが相手側がバッファフル状態</td>
+  </tr>
+  <tr>
+    <td>SEND_TIMEOUT</td>
+    <td>データを送信したが相手側がタイムアウトした</td>
+  </tr>
+  <tr>
+    <td>RECV_EMPTY</td>
+    <td>データを送信したがデータが空状態</td>
+  </tr>
+  <tr>
+    <td>RECV_TIMEOUT</td>
+    <td>データを受信しようとしたがタイムアウトした</td>
+  </tr>
+  <tr>
+    <td>INVALID_ARGS</td>
+    <td>不正な引数</td>
+  </tr>
+  <tr>
+    <td>PRECONDITION_NOT_MET</td>
+    <td>事前条件を満たしていない</td>
+  </tr>
+  <tr>
+    <td>CONNECTION_LOST</td>
+    <td>接続が切断された</td>
+  </tr>
+  <tr>
+    <td>UNKNOWN_ERROR</td>
+    <td>不明なエラー</td>
+  </tr>
+</table>
+
+<p>データポートのデータ経路上のエラー発生個所から呼び出し側へエラー情報を伝えるためにこのエラーコードを使用します。
+主に、伝送路上のエラー、伝送先のエラーなどが考えられますが、各部分で発生するエラーを以下に示します。
+<br /></p>
+
+<ul>
+  <li>Push 型
+    <ul>
+      <li>InPortConsumer と Publisher/Activity 間で発生するリターンコード
+<br />
+PORT_OK, PORT_ERROR, SEND_FULL, SEND_TIMEOUT, CONNECTION_LOST, UNKNOWN_ERROR</li>
+      <li>Activity と OutPort の Buffer/Connector 間で発生するリターンコード
+<br />
+PORT_OK, PORT_ERROR, BUFFER_ERROR, BUFFER_FULL, BUFFER_TIMEOUT, UNKNOWN_ERROR</li>
+    </ul>
+  </li>
+  <li>Pull 型
+    <ul>
+      <li>Activity と InPort の間で発生するリターンコード
+<br />
+PORT_OK, PORT_ERROR, RECV_EMPTY, RECV_TIMEOUT, CONNETION_LOST, UNKNOWN_ERROR</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="独自データポートインターフェースの作成">独自データポートインターフェースの作成</h2>
+<p>独自データポートインターフェースの作成例を示します。</p>
+
+<p>以下の関数、クラスの定義が必要です。</p>
+
+<ul>
+  <li>プロバイダクラス (InPortTestProvider)</li>
+  <li>コンシューマクラス (InPortTestConsumer)</li>
+  <li>プロバイダ、コンシューマ登録関数 (InPortTestInterfaceInit)</li>
+</ul>
+
+<h3 id="プロバイダクラス-inporttestprovider">プロバイダクラス (InPortTestProvider)</h3>
+<p>データポートインターフェース(Push型)のプロバイダクラスです。
+コンシューマ側で put関数を呼び出した際に、何らかの方法によりプロバイダ側にデータを転送する必要があります。
+このサンプルではコンシューマ側の put関数呼び出し時にファイルにデータを書き込み、プロバイダ側でファイルからデータを読み込むことでデータの転送を行っています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> //InPortTestProvider.cpp
+ 
+ #include "InPortTestProvider.h"
+ #ifdef WIN32
+ #pragma warning( disable : 4290 )
+ #endif
+ 
+ namespace RTC
+ {
+   InPortTestProvider::InPortTestProvider(void)
+ 
+	  : m_buffer(0), m_running(true), m_filename("data.dat")
+ 
+  {
+    setInterfaceType("test");
+    activate();
+  }
+  
+  InPortTestProvider::~InPortTestProvider(void)
+  {
+	  m_running = false;
+	  wait();
+  }
+ 
+  //プロバイダ生成時に呼び出される関数
+  //コネクタプロファイル、ポートのプロパティの情報を受け取る
+  void InPortTestProvider::init(coil::Properties&amp; prop)
+  {
+  }
+ 
+  void InPortTestProvider::
+  setBuffer(BufferBase&lt;cdrMemoryStream&gt;* buffer)
+  {
+    m_buffer = buffer;
+  }
+ 
+  void InPortTestProvider::setListener(ConnectorInfo&amp; info, ConnectorListeners* listeners)
+  {
+    m_profile = info;
+    m_listeners = listeners;
+  }
+ 
+  void InPortTestProvider::setConnector(InPortConnector* connector)
+  {
+    m_connector = connector;
+  }
+ 
+  //別スレッドにより実行される関数
+  //周期的にファイルからデータを読み込んでバッファに書き込む
+  //この関数はこのサンプルでは必要ですが、独自インターフェースを作成するうえで
+  //必須ではありません
+  int InPortTestProvider::svc()
+  {
+     coil::sleep(1);
+     while (m_running)
+     {
+ 
+	  std::ifstream  fin;
+	  fin.open(m_filename, std::ios::in | std::ios::binary);
+ 
+          if (fin)
+          {
+               while (!fin.eof())
+               {
+                    int data_size = 0;
+                    fin.read((char*)&amp;data_size, sizeof(int));
+                    if (data_size &gt; 0)
+                    {
+                        CORBA::OctetSeq data;
+                        data.length(data_size);
+                        fin.read((char*)&amp;data[0], data_size);
+ 
+                        //cdrMemoryStream型変数にデータを格納してバッファに書き込む
+                        //以下の記述方法はomniORB特有なため、TAOやORBexpressに対応する場合は
+                        //分ける必要がある
+                        cdrMemoryStream cdr;
+                        //エンディアンの設定を行う
+                        bool endian_type = m_connector-&gt;isLittleEndian();
+                        cdr.setByteSwapFlag(endian_type);
+                        //データを書き込む
+                        cdr.put_octet_array(&amp;(data[0]), data.length());
+                        //バッファに書き込む
+                        m_buffer-&gt;write(cdr);
+                    }
+               }
+               fin.close();
+ 
+	  }
+ 
+     }
+     return 0;
+  }
+ 
+  //コネクタ接続時に呼び出される関数
+  //この関数はコンシューマ側のsubscribeInterface関数よりも前に呼び出される
+  //このため、publishInterface関数で設定した情報をコンシューマ側のsubscribeInterface関数で
+  //取得することができる
+  //何か問題があった時はfalseを返してコネクタを切断する
+  bool InPortTestProvider::
+ 
+	  publishInterface(SDOPackage::NVList&amp; properties)
+ 
+   {
+        //データを書き込むファイル名の情報を格納する
+        CORBA_SeqUtil::
+                  push_back(properties,
+                  NVUtil::newNV("dataport.test.filename", m_filename.c_str()));
+ 
+	return true;
+ 
+   }
+ };
+ 
+ extern "C"
+ {
+     //この関数をモジュールロード時に呼び出す必要がある
+    void InPortTestProviderInit(void)
+    {
+         RTC::InPortProviderFactory&amp; factory(RTC::InPortProviderFactory::instance());
+         factory.addFactory("test",
+ 
+                       ::coil::Creator&lt; ::RTC::InPortProvider,
+                                        ::RTC::InPortTestProvider&gt;,
+                       ::coil::Destructor&lt; ::RTC::InPortProvider,
+                                           ::RTC::InPortTestProvider&gt;);
+ 
+     }
+ };
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>データポートインターフェース(Push型)のコンシューマクラスです。InPortProvider を継承する必要があります。
+Taskクラスの継承はこのサンプル独自のものなので必須ではありません。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> //InPortTestProvider.h
+ 
+ #ifndef RTC_INPORTTESTPROVIDER_H
+ #define RTC_INPORTTESTPROVIDER_H
+ #include &lt;rtm/BufferBase.h&gt;
+ #include &lt;rtm/InPortProvider.h&gt;
+ #include &lt;rtm/CORBA_SeqUtil.h&gt;
+ #include &lt;rtm/Manager.h&gt;
+ #include &lt;rtm/ConnectorListener.h&gt;
+ #include &lt;rtm/ConnectorBase.h&gt;
+ #include &lt;fstream&gt;
+ #ifdef WIN32
+ #pragma warning( disable : 4290 )
+ #endif
+ 
+ namespace RTC
+ {
+    class InPortTestProvider
+ 
+      : public InPortProvider,
+	public coil::Task
+ 
+    {
+    public:
+       InPortTestProvider(void);
+       virtual ~InPortTestProvider(void);
+       virtual void init(coil::Properties&amp; prop);
+       virtual void setBuffer(BufferBase&lt;cdrMemoryStream&gt;* buffer);
+       virtual void setListener(ConnectorInfo&amp; info,
+                             ConnectorListeners* listeners);
+       virtual void setConnector(InPortConnector* connector);
+       virtual bool publishInterface(SDOPackage::NVList&amp; properties);
+       virtual int svc();
+ 
+  private:
+      CdrBufferBase* m_buffer;
+      ConnectorListeners* m_listeners;
+      ConnectorInfo m_profile;
+      InPortConnector* m_connector;
+      bool m_running;
+      std::string m_filename;
+   }; 
+ };
+ 
+ extern "C"
+ {
+ 
+	DLL_EXPORT void InPortTestProviderInit(void);
+ 
+ };
+ 
+ #ifdef WIN32
+ #pragma warning( default : 4290 )
+ #endif
+ #endif
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="コンシューマクラス-inporttestconsumer">コンシューマクラス (InPortTestConsumer)</h3>
+<p>データポートインターフェース(Push型)のコンシューマクラスです。Push型の場合は InPort側にコンシューマ、OutPort側にプロバイダを生成します。
+コンシューマ側で put関数を呼び出した際に、何らかの方法によりプロバイダ側にデータを転送する必要があります。
+このサンプルではコンシューマ側の put関数呼び出し時にファイルにデータを書き込み、プロバイダ側でファイルからデータを読み込むことでデータの転送を行っています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> //InPortTestConsumer.cpp
+ 
+ #include &lt;rtm/NVUtil.h&gt;
+ #include "InPortTestConsumer.h"
+ 
+ namespace RTC
+ {
+    InPortTestConsumer::InPortTestConsumer(void)
+ 
+    : rtclog("InPortTestConsumer")
+ 
+    {
+    }
+  
+    InPortTestConsumer::~InPortTestConsumer(void)
+    {
+       RTC_PARANOID(("~InPortTestConsumer()"));
+    }
+ 
+    //コネクタプロファイル、ポートのプロパティの情報を受け取る
+    void InPortTestConsumer::init(coil::Properties&amp; prop)
+    {
+       m_properties = prop;
+    }
+  
+    //データ転送時に呼び出される関数
+    //put関数内でプロバイダ側にデータを転送する処理を記述する
+    InPortConsumer::ReturnCode InPortTestConsumer::
+ 
+	  put(const cdrMemoryStream&amp; data)
+ 
+    {
+         RTC_PARANOID(("put()"));
+ 
+         //このサンプルでは、コンシュマー側でファイルにデータを書き込んで、プロバイダ側で
+         //ファイル内のデータを読み込むことにしている
+         //バイナリファイルを開く
+         m_file.open(m_filename, std::ios::out | std::ios::binary | std::ios::trunc);
+         //データサイズと生データをファイルに書き込む
+         int data_size = data.bufSize();	
+         m_file.write((char*)&amp;data_size, sizeof(int));
+         m_file.write((char*)data.bufPtr(), data_size);
+         //ファイルを閉じる
+         m_file.close();
+ 
+         return PORT_OK;
+      }
+ 
+      //コネクタ接続時に呼び出される関数
+      //この関数はプロバイダ側のpublishInterface関数よりも後に呼び出される
+      //このため、プロバイダ側のpublishInterface関数で設定した情報を取得することができる
+      //return: 何か問題があった時はfalseを返してコネクタを切断する
+ 
+      bool InPortTestConsumer::
+      subscribeInterface(const SDOPackage::NVList&amp; properties)
+      {
+          //プロバイダ側で設定したファイル名を取得する
+          CORBA::Long index = NVUtil::find_index(properties,
+                                          "dataport.test.filename");
+          const char* filename(0);
+          properties[index].value &gt;&gt;= filename;
+ 
+          //取得したファイル名のファイルを開く
+          m_filename = filename;
+          m_file.open(m_filename, std::ios::out | std::ios::binary | std::ios::trunc);
+          m_file.close();
+  
+         return true;
+     }
+  
+     //コネクタ切断時に呼び出される関数
+     void InPortTestConsumer::
+     unsubscribeInterface(const SDOPackage::NVList&amp; properties)
+     {
+     }
+ 
+     void InPortTestConsumer::publishInterfaceProfile(SDOPackage::NVList&amp; properties)
+     {
+     }
+ };
+ 
+ extern "C"
+ { 
+     //コンシューマ登録関数
+     //この関数をモジュールロード時に呼び出す必要がある
+     void InPortTestConsumerInit(void)
+    {
+        RTC::InPortConsumerFactory&amp; factory(RTC::InPortConsumerFactory::instance());
+        factory.addFactory("test",
+ 
+                       ::coil::Creator&lt; ::RTC::InPortConsumer,
+                                        ::RTC::InPortTestConsumer&gt;,
+                       ::coil::Destructor&lt; ::RTC::InPortConsumer,
+                                           ::RTC::InPortTestConsumer&gt;);
+ 
+     }
+ };
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>データポートインターフェース(Push型)のコンシューマクラスです。InPortConsumer を継承する必要があります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> //InPortTestConsumer.h
+ 
+ #ifndef RTC_INPORTTESTCONSUMER_H
+ #define RTC_INPORTTESTCONSUMER_H
+ #include &lt;rtm/InPortConsumer.h&gt;
+ #include &lt;rtm/Manager.h&gt;
+ #include &lt;fstream&gt;
+ 
+ namespace RTC
+ {
+     class InPortTestConsumer
+ 
+       : public InPortConsumer
+ 
+    {
+       public:
+        DATAPORTSTATUS_ENUM
+        InPortTestConsumer(void);
+        virtual ~InPortTestConsumer(void);
+        virtual void init(coil::Properties&amp; prop);
+        virtual ReturnCode put(const cdrMemoryStream&amp; data);
+        virtual void publishInterfaceProfile(SDOPackage::NVList&amp; properties);
+        virtual bool subscribeInterface(const SDOPackage::NVList&amp; properties);
+        virtual void unsubscribeInterface(const SDOPackage::NVList&amp; properties);
+ 
+      private:
+        mutable Logger rtclog;
+        coil::Properties m_properties;
+        std::ofstream  m_file;
+        std::string m_filename;
+   };
+ };
+ 
+ extern "C"
+ {
+ 
+	DLL_EXPORT void InPortTestConsumerInit(void);
+ 
+ };
+ #endif
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="プロバイダコンシューマ登録関数-inporttestinterfaceinit">プロバイダ、コンシューマ登録関数 (InPortTestInterfaceInit)</h3>
+<p>OpenRTM-aist のマネージャは「XXX.dll」というダイナミックリンクライブラリをロードした場合に「XXXInit」関数を呼び出します。
+このサンプルの場合は「InPortTestInterface.dll」をロードして、以下の「InPortTestInterfaceInit」関数を呼び出します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> //InPortTestInterface.cpp
+ 
+ #include "InPortTestConsumer.h"
+ #include "InPortTestProvider.h"
+ 
+ extern "C"
+ {
+ 
+	DLL_EXPORT void InPortTestInterfaceInit(RTC::Manager* manager)
+	{
+		InPortTestProviderInit();
+		InPortTestConsumerInit();
+	}
+ 
+ };
+</code></pre></div></div>
+
+<h3 id="確認手順">確認手順</h3>
+<ol>
+  <li>OpenRTM-aistがインストールされている環境を用意します。<br />
+<br /></li>
+  <li>ビルドのために CMake設定ファイル (CMakeLists.txt) を作成します。<br />
+以下は、独自インターフェースのサンプルをビルドするための CMake設定ファイルです。</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> //OpenRTM-aistのライブラリを見つけるための記述
+ 
+ cmake_minimum_required (VERSION 2.6)
+ 
+ find_package(OpenRTM HINTS /usr/lib64/openrtm-1.1/cmake)
+ if(${OpenRTM_FOUND})
+   MESSAGE(STATUS "OpenRTM configuration Found")
+ else(${OpenRTM_FOUND})
+   message(STATUS "Use cmake/Modules/FindOpenRTM.cmake in the project")
+   list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/Modules)
+   find_package(OpenRTM REQUIRED)
+ endif(${OpenRTM_FOUND})
+ 
+ if (DEFINED OPENRTM_INCLUDE_DIRS)
+   string(REGEX REPLACE "-I" ";"
+     OPENRTM_INCLUDE_DIRS "${OPENRTM_INCLUDE_DIRS}")
+   string(REGEX REPLACE " ;" ";"
+     OPENRTM_INCLUDE_DIRS "${OPENRTM_INCLUDE_DIRS}")
+ endif (DEFINED OPENRTM_INCLUDE_DIRS)
+ 
+ if (DEFINED OPENRTM_LIBRARY_DIRS)
+   string(REGEX REPLACE "-L" ";"
+     OPENRTM_LIBRARY_DIRS "${OPENRTM_LIBRARY_DIRS}")
+   string(REGEX REPLACE " ;" ";"
+     OPENRTM_LIBRARY_DIRS "${OPENRTM_LIBRARY_DIRS}")
+ endif (DEFINED OPENRTM_LIBRARY_DIRS)
+ 
+ if (DEFINED OPENRTM_LIBRARIES)
+   string(REGEX REPLACE "-l" ";"
+     OPENRTM_LIBRARIES "${OPENRTM_LIBRARIES}")
+   string(REGEX REPLACE " ;" ";"
+     OPENRTM_LIBRARIES "${OPENRTM_LIBRARIES}")
+ endif (DEFINED OPENRTM_LIBRARIES)
+ 
+ include_directories(${OPENRTM_INCLUDE_DIRS})
+ include_directories(${OMNIORB_INCLUDE_DIRS})
+ add_definitions(${OPENRTM_CFLAGS})
+ add_definitions(${OMNIORB_CFLAGS})
+ 
+ link_directories(${OPENRTM_LIBRARY_DIRS})
+ link_directories(${OMNIORB_LIBRARY_DIRS})
+ 
+ //プロジェクト名設定
+ project (InPortTestInterface)
+ 
+ //動的ライブラリを作成する
+ add_library(InPortTestInterface SHARED InPortTestProvider.cpp InPortTestConsumer.cpp InPortTestProvider.h InPortTestConsumer.h InPortTestInterface.cpp)
+ 
+ //リンクするライブラリの設定
+ target_link_libraries(InPortTestInterface ${OPENRTM_LIBRARIES})
+</code></pre></div></div>
+
+<ol>
+  <li>CMake により Visual Studio のプロジェクトファイルを生成します。
+<br />
+<br /></li>
+  <li>Visual Studio でビルドします。<br />
+ビルド後に、Debugフォルダーに InPortTestInterface.dll が生成されます。
+<br />
+<br /></li>
+  <li>rtc.conf を作成します<br />
+rtc.conf を作成して、Manager 起動時にロードするモジュールで InPortTestInterface.dll を指定します。</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.preload: InPortTestInterface.dll
+</code></pre></div></div>
+
+<p>InPortTestInterface.dll が、RTC を実行するディレクトリーと異なる場合は、別途モジュール探索パスを設定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.load_path: C:¥workspace¥InPortTestInterface¥build¥Debug
+</code></pre></div></div>
+<p><br /></p>
+
+<ol>
+  <li>上記の rtc.conf を読み込んで RTCを 起動します。<br />
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ConsoleInComp.exe -f ../rtc.conf
+</code></pre></div>    </div>
+    <p><br /></p>
+  </li>
+  <li>ポート接続時にInterface Typeに「test」を指定する。<br />
+RTSystemEditor上から Interface Type を指定できます。</li>
+</ol>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+</p>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

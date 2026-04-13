@@ -2,7 +2,7 @@
 
 layout: page
 title: "Project"
-permalink: /project/
+permalink: /ja/project/
 
 ---
 

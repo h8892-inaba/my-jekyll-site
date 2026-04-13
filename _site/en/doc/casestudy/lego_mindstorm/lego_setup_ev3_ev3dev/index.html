@@ -1,0 +1,1585 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>EV3 および ev3dev の初期設定 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="EV3 および ev3dev の初期設定" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="EV3 および ev3dev の初期設定" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"EV3 および ev3dev の初期設定","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist--ja</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>hogehogehoge-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>EV3 および ev3dev の初期設定 <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#電池無線lansdカードのセット">電池・無線LAN・SDカードのセット</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#電池">電池</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#無線lan">無線LAN</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#sdカードの挿入">SDカードの挿入</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#ev3dev-の起動">ev3dev の起動</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ssh-ログイン">ssh ログイン</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#ネットワークへの接続">ネットワークへの接続</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#usbケーブルでの接続">USBケーブルでの接続</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ログイン">ログイン</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#teraterm-のインストール参考">TeraTerm のインストール(参考)</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#設定">設定</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#無線lanの設定">無線LANの設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#etcwpa_supplicantwpa_supplicantconf-の編集">/etc/wpa_supplicant/wpa_supplicant.conf の編集</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ホスト名でリモート接続する">ホスト名でリモート接続する</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#avahi-daemon-のインストール">avahi-daemon のインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#bonjour-のインストール-windowsのみ">Bonjour のインストール (Windowsのみ)</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: EV3 および ev3dev の初期設定 -->
+<!-- -*- pukiwiki-edit -*- -->
+<!-- * EV3 および ev3dev の初期設定 -->
+
+<p>#contents</p>
+
+<h2 id="電池無線lansdカードのセット">電池・無線LAN・SDカードのセット</h2>
+
+<h3 id="電池">電池</h3>
+
+<p>EV3 は単3電池6本、または専用のバッテリーパックで動作します。単3電池6本、もしくは専用のバッテリーをセットしてください。</p>
+
+<div align="center"><a href="EV3_with_AAAbattery.png"><img src="EV3_with_AAAbattery.png" width="40%;" /></a></div>
+<div align="center"><strong>単3電池</strong></div>
+
+<div align="center"><a href="EV3_with_battery.png"><img src="EV3_with_battery.png" width="40%;" /></a></div>
+<div align="center"><strong>EV3専用バッテリーパック</strong></div>
+
+<h3 id="無線lan">無線LAN</h3>
+
+<p>USB接続の無線LANインターフェースをを用意します。EV3 は PCと有線接続して、PC経由でインターネットに接続することもできますが、ここでは無線LAN接続を前提として説明します。</p>
+
+<p>最近の無線LANドングルであれば、大抵のものが使用可能なはずですが、一例として以下の無線LANドングルは動作確認ができています。</p>
+
+<ul>
+  <li>BUFFALO WLI-UC-GNM2 Wireless LAN Adapter</li>
+  <li>BUFFALO WLI-UC-GN Wireless LAN Adapter</li>
+  <li>PLANEX GW-USMicro300</li>
+</ul>
+
+<div align="center"><a href="wlan_dongle.png"><img src="wlan_dongle.png" width="60%;" /></a></div>
+<div align="center"><strong>無線LANドングルの例</strong></div>
+
+<p>その他の接続方法に関しては、ev3dev の Webページをご覧ください。</p>
+
+<ul>
+  <li><a href="http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/">Bluetooth経由でのネット接続</a></li>
+  <li><a href="http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/">USB経由での接続</a></li>
+  <li><a href="http://www.ev3dev.org/docs/tutorials/using-bluetooth-tethering/">Bluetoothによるテザリング接続</a></li>
+  <li><a href="http://www.ev3dev.org/docs/tutorials/using-usb-tethering/">USBによるテザリング接続</a></li>
+</ul>
+
+<h3 id="sdカードの挿入">SDカードの挿入</h3>
+
+<p>無線LANドングルと共に、EV3 のコントローラの側面に ev3dev イメージを書き込んだ SDカードを以下のように挿入してください。</p>
+
+<div align="center"><a href="ev3_wlan_sdcard.png"><img src="ev3_wlan_sdcard.png" width="60%;" /></a></div>
+<div align="center"><strong>EV3の側面に、無線LANドングルと SDカードを挿入</strong></div>
+
+<h2 id="ev3dev-の起動">ev3dev の起動</h2>
+
+<p>SDカードを挿入し、電源ボタン（十字キーボタンの中央の濃いグレーのボタン）を押して EV3 に電源を投入すると、以下のような起動画面が表示され、十字キーのあたりの LED が点滅します。</p>
+
+<div align="center"><a href="ev3dev_screen_booting.png"><img src="ev3dev_screen_booting.png" width="60%;" /></a></div>
+<div align="center"><strong>ev3dev 起動画面</strong></div>
+
+<p>暫く(1分前後)して起動が完了すると、以下のような初期画面が表示されます。</p>
+
+<div align="center"><a href="ev3dev_screen.png"><img src="ev3dev_screen.png" width="60%;" /></a></div>
+<div align="center"><strong>起動直後の画面</strong></div>
+
+<h2 id="ssh-ログイン">ssh ログイン</h2>
+
+<h3 id="ネットワークへの接続">ネットワークへの接続</h3>
+
+<p>起動直後の EV3 は、まだネットワークにつながっていません。
+初期画面の状態から、十字キーで、<strong>Wireless and Networks</strong> を選択し、決定ボタン（中央の濃いグレーのボタン）を押します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+                       V [8.12&gt;
+ ------------------------------
+  File Brower                &gt;
+  Device Browser             &gt;
+ [Wireless and Networks      &gt; ]
+  Battery                    &gt;
+  About                      &gt;
+ ------------------------------
+</code></pre></div></div>
+
+<p>選択すると、以下のような画面になります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+      Wireless and Network
+ ------------------------------
+        Status: Offline
+ ------------------------------
+ Bluetooth                    &gt;
+ USB                          &gt;
+ Wifi                         &gt;
+ All Network Connections      &gt;
+ Tethering                    &gt;
+ Offline Mode                □
+ ------------------------------
+
+</code></pre></div></div>
+
+<p><strong>WiFi</strong> を選択すると、以下の画面に遷移します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+           WiFi
+ ------------------------------
+ Powered                      □
+ Start Scan
+            Networks
+ ------------------------------
+ [* MyWirelessNetwork   ?? ]
+
+ ------------------------------
+</code></pre></div></div>
+
+<p>Powered を選択し、電源をONにし、スキャンして現れた SSID のうち接続したい ID を選択します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+      MyWirelessNetwork
+ ------------------------------
+ Status:                 Online
+ Signal                     83%
+ Security        WPA/2 PSK, WPS
+ IP Address:
+ [    Connect   ]
+ [      Network Connection     ]
+</code></pre></div></div>
+
+<p><strong>Connect</strong> を選択し決定ボタンを押すと、KEYを入力するダイアログが現れます。再度、決定ボタンを押すと、以下のようなキーボードが現れるので、KEY を入力します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [_                           ]
+ [ABC] [abc] [123] [!@# ] [INS]
+ [Q][W][E][R][T][Y][U][I][O][P]
+ [A][S][D][F][G][H][J][K][L][ ]
+ [ ][Z][X][C][V][B][N][M][ ][ ]
+ [ Accept ]          [ Cancel ]
+</code></pre></div></div>
+
+<p>KEY を入力後、Accept を選択し決定ボタンを押すと、先どのダイアログに KEY が入力された状態で表示されるので、再度 <strong>Accept</strong> を押します。
+暫くすると、指定した無線LANアクセスポイントにつながるはずです。何度か戻るボタン（画面の左下のボタン）を押すと初期画面に戻ります。
+左上に割り当てらえた IPアドレスが表示されているはずです。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> --------------------------
+ 192.168.11.3          V [8.12&gt;
+ --------------------------
+  File Brower                &gt;
+  Device Browser             &gt;
+ [Wireless and Networks      &gt; ]
+  Battery                    &gt;
+  About                      &gt;
+  
+ --------------------------
+
+</code></pre></div></div>
+
+<h3 id="usbケーブルでの接続">USBケーブルでの接続</h3>
+
+<p>無線LANが何らかの理由で使用できない場合は USBケーブルで接続することもできます。</p>
+
+<p>EV3 と PCを付属の USBケーブルで接続してください。</p>
+
+<div align="center"><a href="s_DSC00467.JPG"><img src="s_DSC00467.JPG" width="40%;" /></a></div>
+
+<p>ev3dev の初期画面で Wireless and Networks を選択してください。
+次に All Network Connections を選択します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+      Wireless and Network
+ ------------------------------
+        Status: Offline
+ ------------------------------
+ Bluetooth                    &gt;
+ Wifi                         &gt;
+ All Network Connections      &gt; ]
+ Tethering                    &gt;
+ Offline Mode                □
+ ------------------------------
+</code></pre></div></div>
+
+<p>Wiredを選択します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+      All Network Connections
+ ------------------------------
+ Wired                        ψ ]
+ ------------------------------
+</code></pre></div></div>
+
+<p>Connectを選択すると接続します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+             Wired
+ ------------------------------
+        Status: Offline
+ ------------------------------
+ Connect                        ]
+ Connect automatically       □
+ IPv4                         &gt;
+ DNS                          &gt;
+ ENET                         &gt;
+ ------------------------------
+</code></pre></div></div>
+
+<h4 id="テザリングの設定">テザリングの設定</h4>
+<p>EV3 で USBテザリングの設定を行う手順を説明します。
+まず ev3dev の初期画面で Wireless and Networks を選択してください。</p>
+
+<p>次に Tehering を選択します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+      Wireless and Network
+ ------------------------------
+        Status: Offline
+ ------------------------------
+ Bluetooth                    &gt;
+ Wifi                         &gt;
+ All Network Connections      &gt;
+ Tethering                    &gt; ]
+ Offline Mode                □
+ ------------------------------
+</code></pre></div></div>
+
+<p>Gadget をオンにすれば完了です。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+           Tethering
+ ------------------------------
+ Bluetooth                   □
+ Gadget                      ■
+ Network Info                 &gt;
+ ------------------------------
+</code></pre></div></div>
+
+<h3 id="ログイン">ログイン</h3>
+
+<p>EV3 に割り当てられた IPアドレスに sshで接続します。デフォルトでは、ev3dev は以下の ID とパスワードが設定されています。</p>
+
+<table class="table-alt">
+  <tr>
+    <td>ID</td>
+    <td>robot</td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td>maker</td>
+  </tr>
+</table>
+
+<p>Windows では、TeraTerm などのターミナルソフトウェアを利用します。
+Linux などでは、ターミナル画面から、</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ ssh robot@&lt;IPアドレス&gt;
+</code></pre></div></div>
+
+<p>として、ログインします。ログインすると、以下のような画面が表示されるはずです。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>              _____     _
+    _____   _|___ /  __| | _____   __
+   / _ \ \ / / |_ \ / _` |/ _ \ \ / /
+  |  __/\ V / ___) | (_| |  __/\ V /
+   \___| \_/ |____/ \__,_|\___| \_/
+
+ Debian jessie on LEGO MINDSTORMS EV3!
+ 
+ The programs included with the Debian GNU/Linux system are free software;
+ the exact distribution terms for each program are described in the
+ individual files in /usr/share/doc/*/copyright.
+ 
+ Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+ permitted by applicable law.
+ Last login: Tue Aug  4 01:34:12 2015 from openrtm.org
+ root@ev3dev:~#
+</code></pre></div></div>
+
+<h3 id="teraterm-のインストール参考">TeraTerm のインストール(参考)</h3>
+
+<p>Windows から EV3 に ssh 経由でログインするためには、ssh クライアントをインストールする必要があります。
+Windows で利用可能なクライアントは多数ありますが、ここでは Tera Term を紹介します。</p>
+
+<ul>
+  <li><a href="http://sourceforge.jp/projects/ttssh2/">Tera Term</a></li>
+</ul>
+
+<p>こちらから、TeraTerm をダウンロード、インストールしてください。</p>
+
+<div align="center"><a href="teraterm_connect.png"><img src="teraterm_connect.png" width="60%;" /></a></div>
+<div align="center"><strong>TeraTerm による接続</strong></div>
+
+<p>TeraTerm をインストール後、起動すると接続ダイアログが現れるので、先ほど設定したホスト名+<strong>.local</strong> を「ホスト」のテキストボックスに入力しOKを押します。</p>
+
+<h2 id="設定">設定</h2>
+
+<h3 id="無線lanの設定">無線LANの設定</h3>
+
+<p>上記で行ったEV3 の無線LAN設定は、再起動すると消えてしまいます。起動後に自動で無線LAN に接続するためには、EV3 にログインして無線LANの接続設定を行う必要があります。</p>
+
+<h3 id="etcwpa_supplicantwpa_supplicantconf-の編集">/etc/wpa_supplicant/wpa_supplicant.conf の編集</h3>
+
+<p>次に、無線LAN の ESSID とキーを登録します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # cd /etc/wpa_supplicant
+ # wpa_passphrase ESSID pass &gt;&gt; wpa_supplicant.conf
+</code></pre></div></div>
+
+<p>SSID には無線LANの ESSID、pass には無線LANのキーを入力します。リダイレクトの際、<strong>&gt;</strong> ではなく <strong>»</strong> (追記)を使用するよう注意してください。
+結果は以下のようになっていると思います。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+ update_config=1
+ network={
+         ssid="OpenRTM"
+         #psk="4332221111"
+         psk=142914b76be167767055ff945898baaaf83c42b3ad3b99afb0ae531e8fb15e5e
+ }
+</code></pre></div></div>
+
+<p>通常は、これだけで接続できるはずです。ただし、無線LANアクセスポイントの設定によっては、追加の設定が必要になるかもしれません。
+以下に、一例を示します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+ update_config=1
+ network={
+         ssid="OpenRTM"
+         proto=WPA2
+         key_mgmt=WPA-PSK
+         pairwise=TKIP CCMP
+         group=TKIP CCMP
+         #psk="4332221111"
+         psk=142914b76be167767055ff945898baaaf83c42b3ad3b99afb0ae531e8fb15e5e
+ }
+</code></pre></div></div>
+
+<p>最後に、インターフェースを初期化します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # ifdown wlan0 ; ifup wlan0
+ Internet Systems Consortium DHCP Client 4.2.2
+ Copyright 2004-2011 Internet Systems Consortium.
+ All rights reserved.
+ For info, please visit https://www.isc.org/software/dhcp/
+  : 中略
+ DHCPREQUEST on wlan0 to 255.255.255.255 port 67
+ DHCPOFFER from 192.168.11.1
+ DHCPACK from 192.168.11.1
+ bound to 192.168.11.26 -- renewal in 34810 seconds.
+</code></pre></div></div>
+
+<p>実際には、いったん無線LANインターフェースがOFFになるので、このような表示は見えません。また、場合によっては、ssh 接続が切断される可能性があるので、その場合は、再度接続してみてください。</p>
+
+<p>最後に、設定が正しく行われているか確認するため、再起動してみます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # reboot
+</code></pre></div></div>
+
+<p>EV3 がシャットダウンされ、再び起動画面が表示されます。しばらくすると、初期画面が表示され、設定が正しく行われていれば、画面の左上に IPアドレスが表示されるはずです。</p>
+
+<h3 id="ホスト名でリモート接続する">ホスト名でリモート接続する</h3>
+
+<p>EV3 に ssh でリモートログインで操作する場合、上記のように無線LAN接続後、画面左上に表示される IPアドレスにssh接続することができます。
+IPアドレスは DHCP で割り当てられているので、接続の度に代わる可能性があり、そのたびに異なる IPアドレスで接続しなければならないので不便です。</p>
+
+<p>ev3dev には avahi という Bonjour互換のサービスがインストールしてあります。
+Bonjour は Apple が提唱するネットワーク上のサービスを自動的に検索して利用できるようにするためのサービスです。
+avahiを使うと、DHCP で IPアドレスを割り振っている EV3 に対してもホスト名でアクセスすることができるようになります。</p>
+
+<h4 id="ホスト名の設定">ホスト名の設定</h4>
+
+<p>ev3dev ではデフォルトで <strong>ev3dev</strong> というホスト名が設定してあります。他の avahi や Bonjour がインストールしてあるマシンからは、<strong>ev3dev.local</strong> という <strong>.local</strong> がついたホスト名でアクセスできます。</p>
+
+<p>EV3 が複数台ネットワーク上にある場合には、他のホスト名と衝突しないホスト名を選び設定する必要があります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo vi /etc/hostname
+</code></pre></div></div>
+
+<p>/etc/hostname の1行目にホスト名を記載します。デフォルトでは ev3dev となっていますので、好みの名前に設定してください。
+。</p>
+<h3 id="avahi-daemon-のインストール">avahi-daemon のインストール</h3>
+
+<p>Linux ホストから EV3 へアクセスする場合、avahiというサービスをインストールする必要があります。
+最近のLinuxディストリビューションでは、たいていデフォルトでこのサービスがインストールされていますが、もしインストールされていない場合は、以下のように avahi デーモンをインストールします。(debian系のディストリビューションの場合)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo apt-get update
+ $ sudo apt-get install avahi-daemon
+</code></pre></div></div>
+
+<p>EV に対して ping を打ってみます。ホスト名の後に .local を付けた名前を使います。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ ping ev3dev.local
+</code></pre></div></div>
+
+<p>これで ping が返ってくれば、avahi がほぼ正しく設定されていることになります。</p>
+
+<h3 id="bonjour-のインストール-windowsのみ">Bonjour のインストール (Windowsのみ)</h3>
+
+<p>PC から EV3 にアクセスするためには、PC側にも avahi か Bonjour がインストールされている必要があります。</p>
+
+<p>Windows ではデフォルトでは Bonjour はインストールされていません。
+最も簡単に Bonjour を導入する方法は <a href="http://www.apple.com/jp/itunes/download/">iTunes</a> をインストールすることです。</p>
+
+<ul>
+  <li><a href="http://www.apple.com/jp/itunes/download/">iTunesダウンロード</a></li>
+</ul>
+
+<p>どうしても iTunes をインストールしたくない場合は、アーカイバアプリケーションなどで、ダウンロードした iTunesSetup.exe を展開すると BonjourSetup.exe を抽出することもできます。</p>
+
+<p>また、以下の Apple Bonjour 印刷サービスにも Bonjour が同梱されています。(iTunesに同梱されているものよりバージョンが若干古いようです。)</p>
+
+<ul>
+  <li><a href="http://www.apple.com/jp/support/bonjour/">Apple Bonjour</a>
+    <ul>
+      <li><a href="http://support.apple.com/kb/DL999">Bonjour 印刷サービス (v2.0.2.0)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>現在 Applie では Bonjour for Windows 単体としては配布は行なっていませんが、かつて配布していたものを再配布しているサイトも幾つかあります。(ただし、古いバージョンしか入手できないようです。)
+以下は Appleサイト以外の Bonjourダウンロードサイトです。自己責任でご利用ください。</p>
+
+<ul>
+  <li><a href="http://www.download3k.com/Install-Bonjour.html">BonjourSetup.exe (v1.0.6.2)</a></li>
+  <li><a href="http://download.techworld.com/760/apple-bonjour-for-windows-106-64-bit/">Bonjour64Setup.exe (v1.0.6.2)</a></li>
+  <li><a href="https://developer.apple.com/downloads/index.action?q=Bonjour%20SDK%20for%20Windows">Apple Bonjour SDK (Apple developer へのログインが必要)</a></li>
+</ul>
+
+<h4 id="bonjour-がうまく機能しない場合">Bonjour がうまく機能しない場合</h4>
+
+<p>ファイヤウォールが動作している場合、Bonjour がうまく機能しないことがあります。
+その場合、UDPポート5353を開放するかファイヤウォールをOFFにしてください。</p>
+
+<ul>
+  <li><a href="http://support.apple.com/kb/TS2235?viewlocale=ja_JP">ファイアウォールの設定が原因で Bonjour for Windows が動作しない</a></li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

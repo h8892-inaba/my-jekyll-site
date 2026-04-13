@@ -1,0 +1,1482 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>rtctreeモジュール | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="rtctreeモジュール" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtshell/rtctree/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtshell/rtctree/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="rtctreeモジュール" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"rtctreeモジュール","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtshell/rtctree/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist--ja</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>hogehogehoge-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtshell/rtctree/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>rtctreeモジュール <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtshell/rtctree/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/toolmanuals/rtshell/rtctree/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#概要">概要</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#必要条件">必要条件</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#インストール">インストール</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#環境変数">環境変数</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#rtc-ツリー">RTC ツリー</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#ツリーの構築">ツリーの構築</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#パス">パス</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ヘルパー関数">ヘルパー関数</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#apiのスタイル">APIのスタイル</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#リポジトリ">リポジトリ</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#より詳細なドキュメンテーションとサンプル">より詳細なドキュメンテーションとサンプル</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#changelog">Changelog</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#30">3.0</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#20">2.0</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: rtctreeモジュール -->
+<p>#contents</p>
+
+<p>rtctree は Python で RTコンポーネントの管理をするためのライブラリです。</p>
+
+<h2 id="概要">概要</h2>
+
+<p>rtctree は簡単な API で RTコンポーネントの管理をするための Python用のライブラリです。開発者は CORBA の API を知らなくとも、他のプログラムから、RTコンポーネントのシステムを管理することができます。
+コンポーネントを activate したり deactivate したり、コンポーネント間の接続を行うことが可能です。</p>
+
+<p>このソフトウエアは NEDO (独立行政法人 新エネルギー・産業技術総合開発機構) の次世代ロボット知能化技術開発プロジェクトの支援により、独立行政法人産業技術総合研究所によって開発されています。</p>
+
+<h2 id="必要条件">必要条件</h2>
+
+<ul>
+  <li>ominorb-py 及び omniidl と omniidl用の Python モジュールが必要となります。</li>
+  <li>Python 2.5 以下では存在しない機能を使うので、Python 2.6 以上が必要となります。</li>
+  <li>Ubuntu 9.04 を使っていたら、手動で Python 2.6 をインストールすることが必要となります。そのため、Ubuntu 9.04 以上をおすすめします。</li>
+</ul>
+
+<h2 id="インストール">インストール</h2>
+
+<p>インストールはいくつかの方法が利用可能です。</p>
+
+<ul>
+  <li>リポジトリ（参照：以下の<a href="#repo">リポジトリ</a>）またはソースアーカイブからダウンロード後、適当なディレクトリーで解凍し、インストールする：
+    <ol>
+      <li>ソースを展開する。
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ cd /home/blurgle/src/
+ $ tar -xvzf rtctree-2.0.0.tar.gz
+</code></pre></div>        </div>
+      </li>
+      <li>setup.pyを実行する。
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ python setup.py install
+</code></pre></div>        </div>
+      </li>
+      <li>必要に応じて、環境変数を設定します。これはデフォルトで設定されていますが、設定されていない場合は自分で設定する必要があります。Windows上では、Python の site-packages ディレクトリーが <strong>PYTHONPATH</strong> 環境変数に、Python スクリプトのディレクトリが <strong>PATH</strong> 環境変数に設定されていることを確認してください。通常、これらは <strong>C:\Python26\Lib\site-packages\</strong> と <strong>C:\Python26\Scripts\</strong> です（Pythonが<strong>C:\Python26\</strong>にインストールされた場合）。</li>
+    </ol>
+  </li>
+  <li>Windows ではインストーラーの使用を推奨します。setup.py を利用すれば結果より容易に設定することができます。ただし、環境によってはさらに環境変数の設定が必要な場合があります。</li>
+</ul>
+
+<h2 id="環境変数">環境変数</h2>
+
+<p>以下の環境変数が使われます。</p>
+
+<table class="table-alt">
+  <tr>
+    <td><strong>RTCTREE_ORB_ARGS</strong></td>
+    <td>ORB作成時に与えるセミコロンで区切られた引数のリスト。設定することは必要となりません。</td>
+  </tr>
+  <tr>
+    <td><strong>RTCTREE_NAMESERVERS</strong></td>
+    <td>セミコロンで区切った RTC ツリーのためのネームサーバーのアドレスのリスト。この変数に書いたサーバーはツリーに追加します。設定することは必要となりません。</td>
+  </tr>
+</table>
+
+<p>普通の場合、RTCTREE_ORB_ARGS を設定することは必要となりません。RTCTREE_NAMESERVERS を設定したら、rtctree を使うときにもっと便利となります。例えば、Bash シェルでしたら：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ export RTCTREE_NAMESERVERS=localhost;192.168.0.1:65346;example.com
+</code></pre></div></div>
+
+<h2 id="rtc-ツリー">RTC ツリー</h2>
+
+<p>ライブラリの主要部分は RTC ツリーです。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> import rtctree.tree
+ tree = rtctree.tree.RTCTree()
+</code></pre></div></div>
+<p>これはネーミングコンテキスト、コンポーネントおよびマネージャを取得するためにネームサーバ〜を検索して作成したファイルシステムのようなツリーです。通常のファイルシステムを扱う場合とまったく同じように扱うことができます。ツリーはすべての既知のネームサーバーに登録されたネーミングコンテキスト、マネージャ、およびコンポーネントをツリー構造で表します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> \  
+ |-+localhost
+ | |-+naming_context
+ | | |--ConsoleIn0.rtc&lt;/td&gt;
+ | | |--ConsoleOut0.rtc&lt;/td&gt;
+ | |
+ | |--another_naming_context&lt;/td&gt;
+ | |--Sensor0.rtc&lt;/td&gt;
+ | 
+ |-+192.168.0.5&lt;/td&gt;
+   |--Motor0.rtc&lt;/td&gt;
+   |--Controller0.rtc&lt;/td&gt;
+</code></pre></div></div>
+
+<p>ツリー内の各ディレクトリーは、通常のネーミングコンテキストまたはネームサーバーのルートコンテキストです。ネームサーバーのルートコンテキストは <strong>NameServer</strong> クラスで示します。また、ネーミングコンテクストは <strong>‘Directory’</strong> クラスで示し、マネージャは <strong>Manager</strong> クラスで示します。</p>
+
+<p>ネームサーバーは、ルートディレクトリーからのディレクトリーとして扱われます。その下はファイルとサブディレクトリーです。サブディレクトリーはルートコンテクストの下のネーミングコンテクスト及びマネージャを示します。</p>
+
+<p>ファイルはコンポーネントとマネージャです。コンポーネントは Componentクラスで示します。</p>
+
+<p>コンポーネントオブジェクトが表しているコンポーネントに関するさまざまな情報を格納します。コンポーネントを activate や deactivate したり、コンポーネントのポートを管理したり、ポートを接続したり、構成設定を設定したりができます。</p>
+
+<p>マネージャで新しいコンポーネントインスタンスを作ったり、コンポーネントを消したりことができます。</p>
+
+<p>ツリー内のすべてのノードにも、それらが表すオブジェクトには、CORBA オブジェクトの参照を格納します。このオブジェクトにアクセスすることで、IDL のメソッドを呼び出すことができます。もし現在 rtctree で実現不可能な機能があったとしても、この CORBA オブジェクトを利用し IDL メソッドを直接的に呼び出すことができます。</p>
+
+<h3 id="ツリーの構築">ツリーの構築</h3>
+
+<p>ツリーのファクトリ関数の引数（<strong>create_tree()</strong>）は、ツリーを構築するための解析対象となるネームサーバーを指定します。詳しくは当該関数のドキュメンテーションに参照してください。一般的に、ネームサーバーのアドレスのリストまたはパスのリストを渡してツリーを構築することができます。環境変数 <strong>RTCTREE_NAMESERVERS</strong> もチェックされます。</p>
+
+<h3 id="パス">パス</h3>
+
+<p>ツリー内のノードはパスで指定されます。パスはストリングのリストです。一つ右のレベルは、左のものより1レベル深くなります。絶対パスは、ツリーオブジェクトを指定するために必要となります。もしパスがノード以下に存在する場合、ノードからの相対パス指定も可能です。</p>
+
+<p>これらのパス文字列は、ファイルシステムパス指定と似ています。ツリーのルートは<code class="language-plaintext highlighter-rouge">/</code>で示します（Windowsの場合は<code class="language-plaintext highlighter-rouge">\</code>）。最初のレベルはネームサーバーのアドレスです。その下のレベルはコンポーネント、マネージャ及びネーミングコンテクスト（ディレクトリーとしてしめす）です。<strong>parse_path</strong>と言う関数は文字列のパスを RTC ツリー用のパスに変更します。</p>
+
+<p>例えば、以下のパス：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /localhost/naming_context/ConsoleIn0.rtc
+</code></pre></div></div>
+<p>は<strong>localhost</strong>上で起動しているネームサーバーの<strong>naming_context</strong>の下に登録された <strong>ConsoleIn0.rtc</strong> と言うコンポーネントを示します。ツリーからそのコンポーネントのオブジェクトを取得したい時、パスを <strong>parse_path</strong> で Python のリストに変更する必要があります。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ['/', 'localhost', 'naming_context', 'ConsoleIn0.rtc']
+</code></pre></div></div>
+
+<h3 id="ヘルパー関数">ヘルパー関数</h3>
+
+<p>以下は RTCTree クラス及びさまざまなノードクラスのためのヘルパー関数です。以下はすべての API を示しているわけではありません。Doxygen で記述されたAPIのドキュメンテーションを参照してください。例は rtcshell のソースを参照してください。</p>
+
+<table class="table-alt">
+  <tr>
+    <td><strong>RTCTree.has_path</strong></td>
+    <td>ツリーのパスがあるかどうかをチェックします。コンポーネントの存在をチェックするには、この関数を使うと便利です。</td>
+  </tr>
+  <tr>
+    <td><strong>RTCTree.get_node</strong></td>
+    <td>ツリーからノードを取得します。コンポーネント、ディレクトリなどを取得するためにこの関数を使ってください。</td>
+  </tr>
+  <tr>
+    <td><strong>RTCTree.is_component</strong></td>
+    <td>パスはコンポーネントを指しているかどうかを調べます。ノードクラスは<strong>is_component</strong>という同じ機能のプロパティーを持っています。<strong>is_directory</strong>、<strong>is_manager</strong>及び<strong>is_nameserver</strong>という関数およびプロパティーもあります。</td>
+  </tr>
+  <tr>
+    <td><strong>RTCTree.iterate()</strong></td>
+    <td>ツリーのすべてのノードに同じ関数を実行します。すべての結果はリストとして返されます。例はrtcshellの<strong>rtls</strong>を参照してください。</td>
+  </tr>
+</table>
+
+<p><br /></p>
+<table class="table-alt">
+  <tr>
+    <td><strong>Node.children</strong></td>
+    <td>ノードのすべての子ノード。例：ディレクトリーの下のコンポーネントのリストを取得するために利用することができます。</td>
+  </tr>
+  <tr>
+    <td><strong>Node.full_path</strong></td>
+    <td>ツリーのルートからこのノードまでのパス。</td>
+  </tr>
+  <tr>
+    <td><strong>Node.name</strong></td>
+    <td>ノードの名前。例：ディレクトリの名前。</td>
+  </tr>
+  <tr>
+    <td><strong>Node.parent_name</strong></td>
+    <td>ノードの親の名前。</td>
+  </tr>
+  <tr>
+    <td><strong>Node.root</strong></td>
+    <td>このノードのツリーのルートノード。返されたオブジェクトでツリーのほとんどすべての機能ができます。</td>
+  </tr>
+</table>
+
+<p><br /></p>
+
+<table class="table-alt">
+  <tr>
+    <td><strong>Component.activate_in_ec()</strong></td>
+    <td>コンポーネントをactivateします。通常は ec_index は 0 で構いません。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.deactivate_in_ec()</strong></td>
+    <td>コンポーネントをdeactivateします。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.reset_in_ec()</strong></td>
+    <td>コンポーネントをresetします。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.state_in_ec()</strong></td>
+    <td>あるexecution contextでコンポーネントのステートを得ます。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.alive</strong></td>
+    <td>コンポーネントがaliveかどうかをチェックします。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.owned_ecs</strong></td>
+    <td>コンポーネントが持っているexecution contextのリストです。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.participating_ecs</strong></td>
+    <td>コンポーネントが使っているexecution contextのリストです。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.state</strong></td>
+    <td>コンポーネントのステートです。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.state_string</strong></td>
+    <td>文字列にしたコンポーネントのステートです。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.disconnect_all()</strong></td>
+    <td>コンポーネントのすべてのポートのすべての接続を切断します。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.get_port_by_name()</strong></td>
+    <td>コンポーネントのポートを名前で探す。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.ports</strong></td>
+    <td>コンポーネントのポートのリストです。入力ポート、出力ポート、及びサービスポートのリストが含まれ、かつ現在接続状態のポートのリストも取得できます。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.object</strong></td>
+    <td>コンポーネントのCORBAの**LightweightRTObject**オブジェクトです。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.activate_conf_set</strong></td>
+    <td>コンフィグレーションセットをactivateします。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.set_conf_set_value</strong></td>
+    <td>コンフィグレーションセットの変数を設定します。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.active_conf_set</strong></td>
+    <td>現在のactiveコンフィグレーションセットです。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.active_conf_set_name</strong></td>
+    <td>現在のactiveコンフィグレーションセットの名前です。</td>
+  </tr>
+  <tr>
+    <td><strong>Component.conf_sets</strong></td>
+    <td>コンフィグレーションセットのリストです。</td>
+  </tr>
+</table>
+
+<p><br /></p>
+<table class="table-alt">
+  <tr>
+    <td><strong>Port.connect()</strong></td>
+    <td>このポートを別のポートに接続します。</td>
+  </tr>
+  <tr>
+    <td><strong>Port.disconnect_all()</strong></td>
+    <td>このポートのすべての接続を切断します。</td>
+  </tr>
+  <tr>
+    <td><strong>Port.get_connection_by_dest()</strong></td>
+    <td>このポートの接続を他のポートで探します。</td>
+  </tr>
+  <tr>
+    <td><strong>Port.get_connection_by_name()</strong></td>
+    <td>このポートの接続を名前で探します。</td>
+  </tr>
+  <tr>
+    <td><strong>Port.connections</strong></td>
+    <td>このポートの接続リストです。</td>
+  </tr>
+  <tr>
+    <td><strong>Port.is_connected</strong></td>
+    <td>このポートは接続の状態かどうかをチェックします。</td>
+  </tr>
+  <tr>
+    <td><strong>Port.name</strong></td>
+    <td>ポートの名前です。</td>
+  </tr>
+  <tr>
+    <td><strong>Port.objecti</strong></td>
+    <td>このポートのCORBAの<strong>PortService</strong>オブジェクトです。</td>
+  </tr>
+  <tr>
+    <td><strong>Port.name</strong></td>
+    <td>ポートのオーナー（通常は<strong>Component</strong>オブジェクト）です。</td>
+  </tr>
+  <tr>
+    <td><strong>Port.porttype</strong></td>
+    <td>ポートの種類（<strong>DataInPort</strong>、<strong>DataOutPort</strong>及び<strong>CorbaPort</strong>）。</td>
+  </tr>
+</table>
+
+<table class="table-alt">
+  <tr>
+    <td><strong>Connection.disconnect()</strong></td>
+    <td>この接続を切断します。</td>
+  </tr>
+  <tr>
+    <td><strong>Connection.ports</strong></td>
+    <td>この接続のソースや目的ポートのリストです。</td>
+  </tr>
+</table>
+<p><br /></p>
+<table class="table-alt">
+  <tr>
+    <td><strong>ConfigurationSet.has_param()</strong></td>
+    <td>このセットに変数があるかどうかをチェックします。</td>
+  </tr>
+  <tr>
+    <td><strong>ConfigurationSet.set_param()</strong></td>
+    <td>このセットの変数を設定します。</td>
+  </tr>
+</table>
+<p><br /></p>
+<table class="table-alt">
+  <tr>
+    <td><strong>ExecutionContext.activate_component()</strong></td>
+    <td>このexecution contextでコンポーネントをactivateします。</td>
+  </tr>
+  <tr>
+    <td><strong>ExecutionContext.deactivate_component()</strong></td>
+    <td>このexecution contextでコンポーネントをdeactivateします。</td>
+  </tr>
+  <tr>
+    <td><strong>ExecutionContext.reset_component()</strong></td>
+    <td>このexecution contextでコンポーネントをresetします。</td>
+  </tr>
+  <tr>
+    <td><strong>ExecutionContext.get_component_state()</strong></td>
+    <td>このexecution contextの中のコンポーネントのステートをとります。</td>
+  </tr>
+  <tr>
+    <td><strong>ExecutionContext.running</strong></td>
+    <td>このexecution contextは起動しているかどうかをチェックします。</td>
+  </tr>
+</table>
+<p><br /></p>
+<table class="table-alt">
+  <tr>
+    <td><strong>Manager.create_component()</strong></td>
+    <td>新しいコンポーネントインスタンスを作ります。</td>
+  </tr>
+  <tr>
+    <td><strong>Manager.delete_component()</strong></td>
+    <td>コンポーネントインスタンスを削除します。</td>
+  </tr>
+</table>
+
+<p><br /></p>
+<table class="table-alt">
+  <tr>
+    <td><strong>dict_to_nvlist()</strong></td>
+    <td>PythonのdictをCORBAのnamevalueリストに変更します。</td>
+  </tr>
+  <tr>
+    <td><strong>nvlist_to_dict()</strong></td>
+    <td>CORBAのnamevalueリストをPythonのdictに変更します。</td>
+  </tr>
+</table>
+
+<h2 id="apiのスタイル">APIのスタイル</h2>
+
+<p>rtctreeはPythonの標準スタイルに従います。<a href="http://www.python.org/dev/peps/pep-0008/">PEP8</a>に参照してください。</p>
+
+<p>最も重要な点は、プライベートな内部API関数はアンダースコア（「_」）で始まることです。アンダースコアで始まる関数はクラス外から証すべきではありません。もし使用した場合には、未定義の振る舞いを引き起こす可能性があります。アンダースコアで始まらず、docstringがある関数だけを使ってください。</p>
+
+<p>&amp;aname(repo);
+<a name="repo"></a></p>
+<h2 id="リポジトリ">リポジトリ</h2>
+
+<p>最新版のソースは<a href="http://github.com/gbiggs/rtctree">githubでGitのリポジトリ</a>にあります。「Download source」をクリックしてダウンロードをすることができます。「git clone」を使うこともできます。パッチを送りたがったら、この方法がおすすめします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ git clone git://github.com/gbiggs/rtctree.git
+</code></pre></div></div>
+
+<h2 id="より詳細なドキュメンテーションとサンプル">より詳細なドキュメンテーションとサンプル</h2>
+
+<p>より詳細なドキュメンテーションはDoxygenで記述されたドキュメンテーションを参照してください。</p>
+
+<p>サンプルは<a href="https://github.com/OpenRTM/rtshell">rtshellのソース</a>を参照してください。これらはRTSystemEditorで実現可能なことをrtctreeで行う方法のほぼ全てを示しています。</p>
+
+<h2 id="changelog">Changelog</h2>
+
+<h3 id="30">3.0</h3>
+<ul>
+  <li>例外を警告にしました。</li>
+  <li>ゾンビの扱いを改善しました。</li>
+  <li>ゾンビ検出マネージャ。</li>
+  <li>コンポジットコンポーネントの情報を得るAPIを追加しました。</li>
+  <li>ポートからIDによってコネクションを得るAPIを追加しました。</li>
+  <li>ORBを渡すAPIを追加しました。</li>
+  <li>パスフォーマッタを追加しました。</li>
+  <li>例外を読みやすく表示するようにしました。</li>
+  <li>パフォーマンスの向上</li>
+  <li>解析するパスを制限する機能を追加しました。</li>
+  <li>ゾンビノードを追加しました。</li>
+  <li>コンポーネントを終了するAPIを追加しました。</li>
+  <li>create_rtctree()関数を削除しました。RTCTree()を使ってください。</li>
+  <li>remove_node()APIを追加しました。</li>
+  <li>node.full_path をリストに変更し、node.full_path_str を追加しました。</li>
+</ul>
+
+<h3 id="20">2.0</h3>
+
+<ul>
+  <li>実行コンテキストに関してより多くの情報を解析するようにしました。</li>
+  <li>ORBオブジェクトを外部から与えられるようにしました。</li>
+  <li>reparse_connections()関数をpublicにしました。</li>
+  <li>ノードで使用されているORBを取得するための新しいAPIを追加しました。</li>
+  <li>コンテキストから名前をアンバインドするための新しいAPIを追加しました。</li>
+  <li>より多くのCORBAオブジェクトへのアクセスを可能にしました。</li>
+  <li>ゾンビの認識効率が向上しました。</li>
+  <li>未知なCORBAオブジェクトの扱い方を修正しました。</li>
+  <li>オーナーが未知なポートの扱い方を修正しました。</li>
+  <li>rtctreeオブジェクトをスレッドセーフにするためのロックを追加しました。</li>
+  <li>ツリーのオブジェクトを再ロードするためのAPIを追加しました。</li>
+  <li>適切なinheritence取り扱いのために<u>init</u>関数を修正しました。</li>
+  <li>特定のECの中のコンポーネントの状態を得るための新しいAPIを追加しました。</li>
+  <li>特定のECの中のコンポーネントの状態を更新するための新しいAPIを追加しました。</li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

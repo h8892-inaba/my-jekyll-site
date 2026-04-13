@@ -5,7 +5,8 @@ layout: default
 {% assign repo_url = "https://github.com//h8892-inaba/my-jekyll-site/blob/site" %}
 
 <section class="container">
-  <h1>{{ page.title }}</h1>
+  <h1>{{ page.title }} {% include lang-switch.html %}
+  </h1>
    <a href="{{ repo_url }}/{{ page.path }}" target="_blank">
     ✏️ Edit this page on GitHub
   </a>

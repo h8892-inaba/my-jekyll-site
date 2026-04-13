@@ -1,0 +1,1857 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>OpenRTM-aist(C++版)のCMakeによるビルド手順 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="OpenRTM-aist(C++版)のCMakeによるビルド手順" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="OpenRTM-aist(C++版)のCMakeによるビルド手順" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"OpenRTM-aist(C++版)のCMakeによるビルド手順","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist--ja</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>hogehogehoge-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>OpenRTM-aist(C++版)のCMakeによるビルド手順 <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#windows--omniorb">Windows + omniORB</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#windows--tao">Windows + TAO</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#windows-10-iot--omniorb">Windows 10 IoT + omniORB</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#ubuntu--omniorb">Ubuntu + omniORB</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#ubuntu--tao">Ubuntu + TAO</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#vxworks--omniorb">VxWorks + omniORB</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#omniorb">omniORB</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist">OpenRTM-aist</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#vxworks--orbexpress">VxWorks + ORBexpress</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#qnx-65--omniorb">QNX 6.5 + omniORB</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#pkgsrc">pkgsrc</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#libuuid">libuuid</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#omniorb-1">omniORB</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-1">OpenRTM-aist</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#qnx-70--omniorb">QNX 7.0 + omniORB</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#libuuid-1">libuuid</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#omniorb-2">omniORB</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-2">OpenRTM-aist</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#vmwareイメージの入手">VMWareイメージの入手</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: OpenRTM-aist(C++版)のCMakeによるビルド手順 -->
+<p>#contents</p>
+
+<h2 id="windows--omniorb">Windows + omniORB</h2>
+
+<p>&amp;aname(windowsomniorb);</p>
+
+<p>以下から OpenRTM-aist のソースコードを入手してください。</p>
+
+<ul>
+  <li><a href="https://github.com/OpenRTM/OpenRTM-aist">https://github.com/OpenRTM/OpenRTM-aist</a></li>
+</ul>
+
+<p>以下からビルド済みの omniORB を入手してください。</p>
+
+<ul>
+  <li><a href="https://openrtm.org/pub/omniORB/win32/">https://openrtm.org/pub/omniORB/win32/</a></li>
+</ul>
+
+<p>チェックアウトしたフォルダー(OpenRTM-aist)に移動して以下のコマンドを実行してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir build
+ cd build
+ cmake -DORB_ROOT=C:/workspace/omniORB-4.2.3-win64-vc141 -G "Visual Studio 16 2019" -DCMAKE_INSTALL_PREFIX=C:/workspace/openrtminstall ..
+ cmake --build . --config Release
+ cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<table class="table-alt">
+  <tr>
+    <th>変数名</th>
+    <th>意味</th>
+    <th>設定できる値</th>
+  </tr>
+  <tr>
+    <td>CORBA</td>
+    <td>CORBA のライブラリー</td>
+    <td>omniORB</td>
+  </tr>
+</table>
+
+<h2 id="windows--tao">Windows + TAO</h2>
+
+<p>以下から OpenRTM-aist のソースコードを入手してください。</p>
+
+<ul>
+  <li><a href="https://github.com/OpenRTM/OpenRTM-aist">https://github.com/OpenRTM/OpenRTM-aist</a></li>
+</ul>
+
+<p>以下の手順でTAOをビルドします。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/install_1_1/cpp_1_1/install_qnx_1_1/qnx_build_proc_1_2/tao_buildn#windows">TAOのビルド</a></li>
+</ul>
+
+<p>チェックアウトしたフォルダー(OpenRTM-aist)に移動して以下のコマンドを実行してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir build
+ cd build
+ cmake -DORB_ROOT=C:/workspace/ACE_wrappers -DCORBA=TAO -G "Visual Studio 16 2019" -DCMAKE_INSTALL_PREFIX=C:/workspace/openrtminstall ..
+ set PATH=%PATH%;C:\workspace\ACE_wrappers\lib;
+ cmake --build . --config Release
+ cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<h2 id="windows-10-iot--omniorb">Windows 10 IoT + omniORB</h2>
+<p>omniORBのWindows 10 IoT用のビルド済みバイナリファイルは現在のところ配布していないため、自力でビルドする必要があります。
+Cygwinのインストールが必要です。</p>
+
+<ul>
+  <li><a href="https://www.cygwin.com/">https://www.cygwin.com/</a></li>
+</ul>
+
+<p>omniORBのソースコードを入手してください。</p>
+
+<ul>
+  <li><a href="https://sourceforge.net/projects/omniorb/files/omniORB/omniORB-4.2.2/">https://sourceforge.net/projects/omniorb/files/omniORB/omniORB-4.2.2/</a></li>
+</ul>
+
+<p>omniORB-4.2.2.tar.bz2を適当な場所に展開してください。</p>
+
+<p>最初にARM+Windows用の修正パッチを適用します。
+以下から修正パッチを入手してください。</p>
+
+<ul>
+  <li><a href="http://svn.openrtm.org/omniORB/trunk/windows/omniORB-4.2.2-windows-iot.patch">http://svn.openrtm.org/omniORB/trunk/windows/omniORB-4.2.2-windows-iot.patch</a></li>
+</ul>
+
+<p>Cygwin上で以下のコマンドを実行してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> patch -p1 -d omniORB-4.2.2 &lt; omniORB-4.2.2-windows-iot.patch
+</code></pre></div></div>
+
+<p>omniORB-4.2.2.tar.bz2を展開したフォルダの<strong>mk/platforms/arm_win32_vs_14.mk</strong>を編集します。
+使用するVisual Studioのバージョンが違う場合は合ったものを選択してください。
+以下のようにPythonのディレクトリを指定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> PYTHON = /cygdrive/c/Python27/python
+</code></pre></div></div>
+
+<p>次に<strong>config/config.mk</strong>を編集します。
+以下のように対応したmkファイルを指定します。
+Visual Studioのバージョンが違う場合は適宜対応してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> platform = arm_win32_vs_14
+</code></pre></div></div>
+
+<p>クロスコンパイルを行うため、idlコンパイラなどの実行ファイルは開発環境で動作可能なものを用意します。</p>
+
+<p>以下からx86用にビルドした omniORB のバイナリを入手してください。</p>
+
+<ul>
+  <li><a href="http://openrtm.org/pub/omniORB/win32/omniORB-4.2.2/">http://openrtm.org/pub/omniORB/win32/omniORB-4.2.2/</a></li>
+</ul>
+
+<p>zipファイルを展開したフォルダの<strong>bin/x86_win32</strong>の中身を、omniORB-4.2.2.tar.bz2を展開したフォルダの<strong>bin/x86_win32</strong>にコピーしてください。</p>
+
+<p>omniORB-4.2.2.tar.bz2を展開したディレクトリに移動して、以下のコマンドを実行してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> set PATH=C:\cygwin64\bin;%PATH%;
+ call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_arm
+ cd src
+ make export
+</code></pre></div></div>
+
+<p>これで<strong>bin/ARM_win32</strong>に実行ファイルが、<strong>lib/ARM_win32</strong>にライブラリが生成されます。
+vcvarsall.batについてはVisual Studioのバージョンにあったものを使用してください。
+Visual Studio 2017の場合は<strong>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat</strong>となります。</p>
+
+<p>OpenRTM-aistのビルドは通常とほとんど同じです。
+cmakeのオプションとして<strong>Visual Studio 14 2015 ARM</strong>というようにARM用のコンパイラを指定してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir build
+ cd build
+ cmake -DORB_ROOT=C:/workspace/omniORB-4.2.2 -G "Visual Studio 14 2015" -A ARM -DCMAKE_INSTALL_PREFIX=C:/workspace/openrtminstall ..
+ cmake --build . --config Release
+ cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<p>Visual StudioにARM用コンパイラがインストールされていないとビルドできません。
+ARM用コンパイラをインストールしていない場合は、<strong>Visual Studio Installer</strong>を起動して<strong>ARM用Visual Studio C++コンパイラとライブラリ</strong>‘をインストールしてください。</p>
+
+<p><br />
+<br /></p>
+
+<div align="center"><a href="arm1.png"><img src="arm1.png" width="50%;" /></a></div>
+<p><br />
+<br /></p>
+
+<h2 id="ubuntu--omniorb">Ubuntu + omniORB</h2>
+
+<p>&amp;aname(ubuntuomniorb);</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt install libomniorb4-dev omniidl omniorb-nameserver
+ git clone https://github.com/OpenRTM/OpenRTM-aist
+ cd OpenRTM-aist/
+ mkdir build
+ cd build/
+ cmake -DCMAKE_BUILD_TYPE=Release ..
+ cmake --build . --config Release -- -j$(nproc)
+ sudo cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<table class="table-alt">
+  <tr>
+    <td>変数名</td>
+    <td>意味</td>
+    <td>設定できる値</td>
+  </tr>
+  <tr>
+    <td>CORBA</td>
+    <td>CORBA のライブラリー</td>
+    <td>omniORB</td>
+  </tr>
+</table>
+
+<h2 id="ubuntu--tao">Ubuntu + TAO</h2>
+
+<p>以下の手順でTAOをビルドします。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/install_1_1/cpp_1_1/install_qnx_1_1/qnx_build_proc_1_2/tao_buildn#ubuntu">TAOのビルド</a></li>
+</ul>
+
+<p>以下のコマンドでOpenRTM-aistをビルドしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/OpenRTM/OpenRTM-aist
+ cd OpenRTM-aist/
+ mkdir build
+ cd build
+ cmake -DCORBA=TAO -DCMAKE_BUILD_TYPE=Release ..
+ cmake --build . --config Release -- -j$(nproc)
+ sudo cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<h2 id="vxworks--omniorb">VxWorks + omniORB</h2>
+<p>事前にWind River Workbenchのホームディレクトリを指定する必要があります。
+Wind River Workbenchをインストールしたディレクトリを<strong>WIND_HOME</strong>という変数に設定してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export WIND_HOME=/home/openrtm/WindRiver
+</code></pre></div></div>
+
+<p>OpenRTM-aistのビルドの前に、omniORBのビルドを行う必要があります。</p>
+
+<h3 id="omniorb">omniORB</h3>
+<p>omniORBのソースコードを入手してください。</p>
+
+<ul>
+  <li><a href="http://omniorb.sourceforge.net/">http://omniorb.sourceforge.net/</a></li>
+</ul>
+
+<p>omniORBのVxWorks対応パッチを入手してください。</p>
+
+<ul>
+  <li><a href="http://svn.openrtm.org/omniORB/trunk/vxworks/omniORB-4.2.2-vxworks.patch">http://svn.openrtm.org/omniORB/trunk/vxworks/omniORB-4.2.2-vxworks.patch</a></li>
+</ul>
+
+<p>以下のコマンドでビルドを実行します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget https://jaist.dl.sourceforge.net/project/omniorb/omniORB/omniORB-4.2.2/omniORB-4.2.2.tar.bz2
+ tar xf omniORB-4.2.2.tar.bz2
+ wget http://svn.openrtm.org/omniORB/trunk/vxworks/omniORB-4.2.2-vxworks.patch
+ patch -p1 -d omniORB-4.2.2 &lt; omniORB-4.2.2-vxworks.patch
+ cd omniORB-4.2.2
+ mkdir build
+ cd build
+ ../configure
+ make
+ cd ..
+ sed -i '1s/^/platform = ${VXWORKS_PLATFORM}\n/' config/config.mk
+ cd src
+ make export
+</code></pre></div></div>
+
+<p>ただし、VXWORKS_PLATFORMには動作環境に合ったものを入力するようにしてください。</p>
+<table class="table-alt">
+  <tr>
+    <th>VXWORKS_PLATFORM</th>
+    <th>CPU</th>
+    <th>VxWorksのバージョン</th>
+    <th>実装方法</th>
+  </tr>
+  <tr>
+    <td>powerpc_vxWorks_kernel_6.6</td>
+    <td>PowerPC</td>
+    <td>6.6</td>
+    <td>カーネルモジュール</td>
+  </tr>
+  <tr>
+    <td>powerpc_vxWorks_RTP_6.6</td>
+    <td>PowerPC</td>
+    <td>6.6</td>
+    <td>RTP</td>
+  </tr>
+  <tr>
+    <td>powerpc_vxWorks_kernel_6.9</td>
+    <td>PowerPC</td>
+    <td>6.9</td>
+    <td>カーネルモジュール</td>
+  </tr>
+  <tr>
+    <td>powerpc_vxWorks_RTP_6.9</td>
+    <td>PowerPC</td>
+    <td>6.9</td>
+    <td>RTP</td>
+  </tr>
+  <tr>
+    <td>simlinux_vxWorks_kernel_6.6</td>
+    <td>Linux上のシミュレータ</td>
+    <td>6.6</td>
+    <td>カーネルモジュール</td>
+  </tr>
+  <tr>
+    <td>simpentium_vxWorks_RTP_6.6</td>
+    <td>Linux上のシミュレータ</td>
+    <td>6.6</td>
+    <td>RTP</td>
+  </tr>
+  <tr>
+    <td>simlinux_vxWorks_kernel_6.9</td>
+    <td>Linux上のシミュレータ</td>
+    <td>6.9</td>
+    <td>カーネルモジュール</td>
+  </tr>
+  <tr>
+    <td>simpentium_vxWorks_RTP_6.9</td>
+    <td>Linux上のシミュレータ</td>
+    <td>6.9</td>
+    <td>RTP</td>
+  </tr>
+</table>
+
+<h3 id="openrtm-aist">OpenRTM-aist</h3>
+
+<p>以下のコマンドを入力してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/OpenRTM/OpenRTM-aist
+ cd OpenRTM-aist/
+ mkdir build
+ cd build/
+ cmake -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE} -DVX_VERSION=${VX_VERSION} -DORB_ROOT=${ORB_ROOT} -DOMNI_VERSION=42 -DCORBA=omniORB -DVX_CPU_FAMILY=${ARCH} ..
+ make
+</code></pre></div></div>
+
+<p>ただし、TOOLCHAIN_FILE、VX_VERSION 、ORB_ROOT、ARCHには以下の設定をしてください。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>TOOLCHAIN_FILE</th>
+    <th>VxWorks 6.6(カーネルモジュール、PowerPC)の場合は**../Toolchain-vxworks6.6-Linux.cmake**、それ以外の場合は**../Toolchain-vxworks6.cmake**</th>
+  </tr>
+  <tr>
+    <td>VX_VERSION</td>
+    <td>**vxworks-6.6**か**vxworks-6.9**</td>
+  </tr>
+  <tr>
+    <td>ORB_ROOT</td>
+    <td>omniORBのディレクトリ(例：/home/openrtm/omniORB-4.2.2)</td>
+  </tr>
+  <tr>
+    <td>VX_CPU_FAMILY</td>
+    <td>**ppc**(PowerPC)、**simlinux**(カーネルモジュール、シミュレータ)、**simpentium**(RTP、シミュレータ)</td>
+  </tr>
+</table>
+
+<p>RTPの場合はcmakeコマンドに<strong>-DRTP=ON</strong>を追加する必要があります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE} -DVX_VERSION=${VX_VERSION} -DORB_ROOT=${ORB_ROOT} -DOMNI_VERSION=42 -DCORBA=omniORB -DVX_CPU_FAMILY=${ARCH} -DRTP=ON ..
+ cmake --build . --config Release
+</code></pre></div></div>
+
+<h2 id="vxworks--orbexpress">VxWorks + ORBexpress</h2>
+<p>※現在のところ対応環境はVxWorks 6.6、PowerPCのみです。</p>
+
+<p>以下のコマンドを入力してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/OpenRTM/OpenRTM-aist
+ cd OpenRTM-aist/
+ mkdir build
+ cd build/
+ cmake -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE} -DORB_ROOT=${ORB_ROOT} -DCORBA=ORBexpress ..
+ make
+</code></pre></div></div>
+
+<p>TOOLCHAIN_FILE、ORB_ROOTには以下の設定をしてください。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>TOOLCHAIN_FILE</th>
+    <th>カーネルモジュールの場合は**../Toolchain-vxworks6.6-Linux.cmake**、RTPの場合は**../Toolchain-vxworks6.cmake**</th>
+  </tr>
+  <tr>
+    <td>ORB_ROOT</td>
+    <td>ORBexpressのディレクトリ(例：/home/openrtm/OIS/ORBexpress/RT_2.8.4_PATCH_KC1)</td>
+  </tr>
+</table>
+
+<h2 id="qnx-65--omniorb">QNX 6.5 + omniORB</h2>
+<p>VMWare上のQNX 6.5でビルドします。
+以下のページからISOイメージを入手してください。</p>
+
+<ul>
+  <li><a href="http://www.qnx.com/download/group.html?programid=16780">http://www.qnx.com/download/group.html?programid=16780</a></li>
+</ul>
+
+<h3 id="pkgsrc">pkgsrc</h3>
+<p>まずはパッケージ管理システムpkgsrcをインストールします。
+以下のコマンドでソースコードを入手してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> svn checkout --username ユーザ名 --password パスワード http://community.qnx.com/svn/repos/pkgsrc/HEAD_650/pkgsrc
+</code></pre></div></div>
+
+<p>ユーザー名、パスワードはQNXのアカウントのメールアドレス、パスワードを設定してください。</p>
+
+<p>次に以下のコマンドでインストールします。
+コマンドはsuで実行してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> (cd pkgsrc/bootstrap &amp;&amp; ./bootstrap)
+ (cd pkgsrc/misc/figlet &amp;&amp; ../../bootstrap/work/bin/bmake install)
+</code></pre></div></div>
+
+<p>環境変数PKG_PATHを設定しておいてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export PKG_PATH=ftp://ftp.netbsd.org/pub/pkgsrc/packages/QNX/i386/6.5.0_head_20110826/All/
+</code></pre></div></div>
+
+<h3 id="libuuid">libuuid</h3>
+<p>まずはlibuuidのビルドをします。
+libuuid-1.0.3.tar.gzをダウンロードしてQNXに転送してください。</p>
+
+<ul>
+  <li><a href="https://sourceforge.net/projects/libuuid/files/">https://sourceforge.net/projects/libuuid/files/</a></li>
+</ul>
+
+<p>ファイルを展開してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> tar xf libuuid-1.0.3.tar.gz
+</code></pre></div></div>
+
+<p>libuuidのビルドにはsys/syscall.h、bits/syscall.h、asm/unistd.h、asm/unistd_32.h(もしくはasm/unistd_64.h)が必要になります。
+ファイルを入手してlibuuid-1.0.3の下にコピーしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> libuuid-1.0.3
+    |-sys
+    | |-syscall.h
+    |-bits
+    | |-syscall.h
+    |-asm
+    | |-unistd.h
+    | |-unistd_32.h(もしくはunistd_64.h)
+    |-(省略)
+</code></pre></div></div>
+
+<p>以下のコマンドでビルド、インストールしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd libuuid-1.0.3
+ ./configure
+ make
+ make install
+ cd ..
+</code></pre></div></div>
+
+<h3 id="omniorb-1">omniORB</h3>
+<p>まずはomniORB-4.2.3.tar.bz2を入手してQNXに転送してください。</p>
+
+<ul>
+  <li><a href="https://sourceforge.net/projects/omniorb/files/omniORB/">https://sourceforge.net/projects/omniorb/files/omniORB/</a></li>
+</ul>
+
+<p>ファイルを展開してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> tar xf omniORB-4.2.3.tar.bz2
+</code></pre></div></div>
+
+<p>以下のファイルについて変更が必要です。</p>
+
+<ul>
+  <li>configure</li>
+  <li>/beforeauto.mk.in</li>
+</ul>
+
+<p>まずconfigureについては2箇所の変更が必要です。
+以下の<em>-</em>-nto-qnx)の行を追加してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> case "$host" in
+   *-*-linux-*)   plat_name="Linux";    plat_def="&lt;u&gt;linux&lt;/u&gt;";    os_v="2";;
+   *-*-nto-qnx)   plat_name="Linux";    plat_def="&lt;u&gt;linux&lt;/u&gt;";    os_v="2";;
+</code></pre></div></div>
+
+<p>以下のx86-pc-*)の部分を追加してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> case "$host" in
+   i?86-*)   proc_name="x86Processor";     proc_def="__x86__";;
+   x86-pc-*) proc_name="x86Processor"; proc_def="__x86__";;
+</code></pre></div></div>
+
+<p>mk/beforeauto.mk.inは以下の部分を変更してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #OMNITHREAD_LIB += -lpthread #削除
+ OMNITHREAD_LIB += -lsocket #追加
+</code></pre></div></div>
+
+<p>以下のコマンドでビルドします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ./configure
+ make
+ make install
+ cd ..
+</code></pre></div></div>
+
+<h3 id="openrtm-aist-1">OpenRTM-aist</h3>
+<p>OpenRTM-aistのビルドにはcmake、pkg-config、Python 2.7が必要です。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/pkg/sbin/pkg_add -v pkg-config-0.25nb1
+ /usr/pkg/sbin/pkg_add -v cmake-2.8.5
+ /usr/pkg/sbin/pkg_add -v python27-2.7.2
+</code></pre></div></div>
+
+<p>環境変数PKG_CONFIG_PATHを設定してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/
+</code></pre></div></div>
+
+<p>OpenRTM-aistのソースコードを入手してQNXに転送してください。</p>
+
+<p>OpenRTM-aistのディレクトリに移動して以下のコマンドを実行します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir build
+ cd build/
+ ln -s /usr/pkg/bin/python2.7 ./python
+ export PATH=$PWD:$PATH
+ cmake -DCORBA=omniORB ..
+ cmake --build . --config Release -- -j$(nproc)
+ cmake --build . --target install
+</code></pre></div></div>
+
+<h2 id="qnx-70--omniorb">QNX 7.0 + omniORB</h2>
+<p>Ubuntu上にQNX Software Development Platform 7.0をインストールしてビルドします。
+まずはQNX Software Centerをインストールしてください。</p>
+
+<ul>
+  <li><a href="http://www.qnx.com/download/group.html?programid=29178">http://www.qnx.com/download/group.html?programid=29178</a></li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt-get install libgtk2.0-0:i386
+ chmod a+x qnx-setup-201808201144-lin.run
+ ./qnx-setup-201808201144-lin.run
+</code></pre></div></div>
+
+<p>QNX Software Centerを起動してAdd InstallationからQNX Software Development Platformをインストールしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /home/openrtm/qnx/qnxsoftwarecenter/qnxsoftwarecenter
+</code></pre></div></div>
+
+<div align="center"><a href="qnx9.png"><img src="qnx9.png" width="80%;" /></a></div>
+
+<h3 id="libuuid-1">libuuid</h3>
+<p>まずはlibuuidのビルドをします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget https://jaist.dl.sourceforge.net/project/libuuid/libuuid-1.0.3.tar.gz
+ tar xf libuuid-1.0.3.tar.gz
+</code></pre></div></div>
+
+<p>libuuidのビルドにはsys/syscall.h、bits/syscall.h、asm/unistd.h、asm/unistd_32.h(もしくはasm/unistd_64.h)が必要になります。
+ファイルを入手してlibuuid-1.0.3の下にコピーしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd libuuid-1.0.3
+ mkdir sys
+ cp /usr/include/x86_64-linux-gnu/sys/syscall.h sys
+ mkdir asm
+ cp /usr/include/x86_64-linux-gnu/asm/unistd.h asm
+ cp /usr/include/x86_64-linux-gnu/asm/unistd_64.h asm
+ mkdir bits
+ cp /usr/include/x86_64-linux-gnu/bits/syscall.h bits
+</code></pre></div></div>
+
+<p>QNXクロスコンパイル環境設定のためにスクリプトを実行します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> source ~/qnx700/qnxsdp-env.sh
+</code></pre></div></div>
+
+<p>以下のコマンドでビルドします。
+qnx700のパスは適宜変更してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ./configure --prefix=/home/openrtm/qnx700/target/qnx7/usr/ CC="qcc -V5.4.0,gcc_ntox86_64_gpp" CXX="q++ -V5.4.0,gcc_ntox86_64_gpp" AR=ntox86_64-ar RANLIB=ntox86_64-ranlib --host=x86_64-unknown-linux-gnu
+ make
+ make install
+ cd ..
+</code></pre></div></div>
+
+<h3 id="omniorb-2">omniORB</h3>
+<p>まずはomniORBのソースコードを入手してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget https://jaist.dl.sourceforge.net/project/omniorb/omniORB/omniORB-4.2.3/omniORB-4.2.3.tar.bz2
+ tar xf omniORB-4.2.3.tar.bz2 
+ cd omniORB-4.2.3
+</code></pre></div></div>
+
+<p>Ubuntu上でomniidlをビルドする必要があります。
+qnxsdp-env.shを実行していない環境でomniORBのビルドを行いインストールしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ./configure
+ make
+ make install
+</code></pre></div></div>
+
+<p>QNXでビルドするために</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #OMNITHREAD_LIB += -lpthread
+ OMNITHREAD_LIB += -lsocket
+</code></pre></div></div>
+
+<p>以下のコマンドでビルドしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> make clean
+ ./configure --prefix=/home/openrtm/qnx700/target/qnx7/usr/  CC="qcc -V5.4.0,gcc_ntox86_64_gpp" CXX="q++ -V5.4.0,gcc_ntox86_64_gpp" AR=ntox86_64-ar RANLIB=ntox86_64-ranlib --host=x86_64-unknown-linux-gnu
+ make
+ make install
+</code></pre></div></div>
+
+<h3 id="openrtm-aist-2">OpenRTM-aist</h3>
+
+<p>omniORB、uuidをpkg-configで検出するために環境変数PKG_CONFIG_PATHを設定してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export PKG_CONFIG_PATH=/home/openrtm/qnx700/target/qnx7/usr/lib/pkgconfig
+</code></pre></div></div>
+
+<p>以下のコマンドでビルドします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/OpenRTM/OpenRTM-aist
+ cd OpenRTM-aist/
+ mkdir build
+ cd build
+ cmake -DCORBA=omniORB -DCMAKE_TOOLCHAIN_FILE=../Toolchain-QNX7.cmake -DCMAKE_INSTALL_PREFIX=/home/openrtm/qnx700/target/qnx7/usr/ ..
+ cmake --build . --config Release -- -j$(nproc)
+</code></pre></div></div>
+
+<h3 id="vmwareイメージの入手">VMWareイメージの入手</h3>
+<p>VMWare用のイメージを入手するためには、QNX Software Centerでファイルをダウンロードします。</p>
+
+<div align="center"><a href="qnx10.png"><img src="qnx10.png" width="80%;" /></a></div>
+
+<p>QNX Software Development Platform-&gt;Reference Images-&gt;QNX SDP 7.0 x86-64 virtual machine for VMWareをインストールしてください。</p>
+
+<div align="center"><a href="qnx.png"><img src="qnx.png" width="80%;" /></a></div>
+
+<p>インストールしたQNX_SDP.vmxをVMwareで開くと仮想マシンが起動します。</p>
+
+<hr />
+
+<ul>
+  <li><a href="./cmake_option/">CMakeのオプション一覧</a></li>
+  <li><a href="./omniorb_build/">omniORBのビルド</a></li>
+  <li><a href="./tao_build">TAOのビルド</a></li>
+  <li><a href="/my-jekyll-site/ja/doc/installation/install_1_1/cpp_1_1/install_qnx_1_1/qnx_build_proc_1_2/openrtm_cpp_cmake_run/">OpenRTM-aistのビルド、動作確認手順</a></li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

@@ -1,0 +1,1053 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>サンプルコンポーネントの実行 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="サンプルコンポーネントの実行" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_samplec_exec/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_samplec_exec/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="サンプルコンポーネントの実行" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"サンプルコンポーネントの実行","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_samplec_exec/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top">
+<!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo">
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav">
+<!--del 0402  mr-auto">
+        <!-- TODO add theme version dropdown here -->
+        <!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/"  title="test_dl_page"
+            >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/"  title="test_doc_page"
+            >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >Research_and_Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    Research_and_Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>サンプルコンポーネントの実行</h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/casestudy/lego_mindstorm/lego_samplec_exec/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#openrtm-aist%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">OpenRTM-aistのインストール</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#sourceslist-%E3%81%AE%E7%B7%A8%E9%9B%86">sources.list の編集
+</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">OpenRTM-aist パッケージのインストール
+</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#openrtm-aist%E3%81%AE%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE%E5%AE%9F%E8%A1%8C">OpenRTM-aistのサンプルの実行
+            </a></summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#consolein-consoleout-c">ConsoleIn-ConsoleOut (C++)
+</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#consolein-consoleout-python">ConsoleIn-ConsoleOut (Python)
+</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: サンプルコンポーネントの実行 -->
+<!-- -*- pukiwiki-edit -*- -->
+<!-- * サンプルコンポーネントの実行 -->
+<p>#contents</p>
+
+<h2 id="openrtm-aistのインストール">OpenRTM-aistのインストール</h2>
+
+<p>上述のリンクから ev3dev のイメージで EV3 を起動した場合、すでに OpenRTM-aist (C++、Python版) がインストールされています。
+その場合は、以下の OpenRTM-aist のインストールはスキップして、サンプルコンポーネントの実行から進めてください。</p>
+
+<p>自分で ev3dev.org からイメージをダウンロードした場合は、OpenRTM-aist のパッケージを apt-get 等でインストールします。</p>
+
+<h3 id="sourceslist-の編集">sources.list の編集</h3>
+
+<p>openrtm.org をパッケージリポジトリとして追加するために、/etc/sources.list を編集します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # vi /etc/apt/sources.list
+</code></pre></div></div>
+
+<p>のように、vi で /etc/apt/sources.list を開き、</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> deb http://ftp.debian.org/debian jessie main contrib non-free
+ deb http://ev3dev.org/debian jessie main
+ deb http://openrtm.org/pub/Linux/debian jessie main ← この行を追加
+</code></pre></div></div>
+
+<p>この例のように、最下行に openrtm.org のリポジトリを追加します。</p>
+
+<p>その後、</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # apt-get update
+</code></pre></div></div>
+<p>として、パッケージリポジトリのデーターベースを更新します。
+EV3は遅いので、パッケージデータベースの更新もかなり時間がかかります。</p>
+
+<h3 id="openrtm-aist-パッケージのインストール">OpenRTM-aist パッケージのインストール</h3>
+
+<p>以上で、openrtm.org のパッケージリポジトリにアクセスできるようになりましたので、以下のようにしてパッケージをインストールします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # apt-get install libomniorb4-dev omniidl
+ # apt-get install openrtm-aist openrtm-aist-dev openrtm-aist-example python-yaml
+ # apt-get install gcc g++ make uuid-dev
+ # apt-get install python-omniorb
+ # apt-get install openrtm-aist-python openrtm-aist-python-example
+</code></pre></div></div>
+
+<p>パッケージのインストールにもかなりの時間がかかりますので気長に待ちます。途中でバッテリーが切れないように、アダプタに接続したまま作業することをお勧めします。</p>
+
+<h2 id="openrtm-aistのサンプルの実行">OpenRTM-aistのサンプルの実行</h2>
+
+<h3 id="consolein-consoleout-c">ConsoleIn-ConsoleOut (C++)</h3>
+
+<p>C++のサンプルコンポーネントを動作させて、OpenRTM-aistが正しくインストールできているかどうかを確認します。</p>
+
+<p>EV3上で ConsoleIn を実行したうえで、PC上で ConsoleOut を実行して相互に接続し、PCから入力した数字が EV3上で表示できるかどうかを確認してみます。</p>
+
+<h4 id="consolein-の起動">ConsoleIn の起動</h4>
+<p>まず、EV3上で、ネームサービスと ConsoleIn を起動します。
+omniorb-nameserver というパッケージがインストールされているはずですので、すでにシステムのサービスとして起動していますが、ネットワークがらみのトラブルを避けるためにも、rtm-naming というコマンドで起動させた方が良いでしょう。</p>
+
+<p>Windows などでは TeraTerm などのターミナルソフトウェア、Linux ではコンソールから EV3 に ssh でログインします。</p>
+
+<p>ログインしたら、まず rtm-naming を起動します。途中で既存のネームサーバを落とすかどうか聞いてきますので <strong>y</strong> と答えて進みます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>              _____     _
+    _____   _|___ /  __| | _____   __
+   / _ \ \ / / |_ \ / _` |/ _ \ \ / /
+  |  __/\ V / ___) | (_| |  __/\ V /
+   \___| \_/ |____/ \__,_|\___| \_/
+ 
+ Debian jessie on LEGO MINDSTORMS EV3!
+ ：中略
+ # rtm-naming
+ Starting omniORB omniNames: ev3dev:2809
+ omniORB: Failed to bind to address 0.0.0.0 port 2809. Address in use?
+ omniORB: Error: Unable to create an endpoint of this description: giop:tcp::2809
+ ：中略
+ and start omniNames by rtm-naming? (y/N)y ← yを入力
+ Stopping omniNames by /etc/init.d/omniorb4-nameserver.
+ [ ok ] Stopping omniorb4-nameserver (via systemctl): omniorb4-nameserver.servic.
+ Starting omniORB omniNames: ev3dev:2809
+ 
+ Wed Aug  5 11:04:01 2015:
+ 
+ Starting omniNames for the first time.
+ Wrote initial log file.
+ Read log file successfully.
+ Root context is IOR:010000002b00000049444c3a6f6d672e6f72672f436f734e616d696e672f4e616d696e67436f6e746578744578743a312e30000001000000000000007400000001010200100000003139322e3136382e3132382e31303400f90a00000b0000004e616d6553657276696365000300000000000000080000000100000000545441010000001c000000010000000100010001000000010001050901010001000000090101000354544108000000a1edc1550100028f
+ Checkpointing Phase 1: Prepare.
+ Checkpointing Phase 2: Commit.
+ Checkpointing completed.
+ omniNames properly started
+ root@ev3dev:~#
+</code></pre></div></div>
+
+<p>次に、ConsoleInComp を起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> root@ev3dev:~# /usr/share/openrtm-1.1/example/ConsoleInComp
+ Creating a component: "ConsoleIn"....succeed.
+ =================================================
+  Component Profile
+ -------------------------------------------------
+ InstanceID:     ConsoleIn0
+ ：中略
+ port.outport.dataport:
+ =================================================
+ =================================================
+ Port0 (name): ConsoleIn0.out
+ -------------------------------------------------
+ - properties -
+ port.port_type: DataOutPort
+ dataport.data_type: IDL:RTC/TimedLong:1.0
+ dataport.subscription_type: flush,new,periodic
+ dataport.dataflow_type: push,pull
+ dataport.interface_type: corba_cdr
+ -------------------------------------------------
+</code></pre></div></div>
+
+<div align="center"><a href="ConsoleIn_cxx.png"><img src="ConsoleIn_cxx.png" width="60%;"></a></div>
+<div align="center"><strong>EV3上で実行されたConsoleInComp</strong></div>
+
+<h4 id="consoleout-の起動">ConsoleOut の起動</h4>
+
+<p>PC上で ConsoleOut を起動します。Windowsであれば、ネームサーバ、RTSystemEditor、ConsoleIn をそれぞれ以下のように起動します。</p>
+
+<ul>
+  <li>ネームサーバの起動
+    <ul>
+      <li>「スタート」&gt;「OpenRTM-aist x.y」&gt;「Tools」&gt;「Start C++ Naming Service」</li>
+    </ul>
+  </li>
+  <li>RTSystemEditorの起動
+    <ul>
+      <li>「スタート」&gt;「OpenRTM-aist x.y」&gt;「Tools」&gt;「RTSystemEditor」</li>
+    </ul>
+  </li>
+  <li>ConsoleInの起動
+    <ul>
+      <li>「スタート」&gt;「OpenRTM-aist x.y」&gt;「C++」&gt;「Components」&gt;「Examples」&gt;「ConsoleOutComp.exe」</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Linux であれば、ネームサービス、eclipse、ConsoleInComp を以下のように起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtm-naming
+ $ &lt;eclipseの起動&gt; &amp;
+ $ /usr/share/openrtm-1.1/example/ConsoleOutComp
+ ：中略
+ naming.names: ubuntu1404.host_cxt/ConsoleOut0.rtc
+ config_file:
+ port.inport.dataport:
+ port.inport.in:
+ =================================================
+ =================================================
+ Port0 (name): ConsoleOut0.in
+ -------------------------------------------------
+ - properties -
+ port.port_type: DataInPort
+ dataport.data_type: IDL:RTC/TimedLong:1.0
+ dataport.subscription_type: Any
+ dataport.dataflow_type: push,pull
+ dataport.interface_type: corba_cdr
+ -------------------------------------------------
+
+</code></pre></div></div>
+
+<p>OpenRTP (eclipse) または、RTSystemEditotr (RPC版) から、EV3 で起動したネームサーバと PC で起動したネームサーバーにそれぞれ接続します。</p>
+
+<p>それぞれのネームサーバに ConsoleIn (EV3のネームサーバー) と ConsoleOut (PC側のネームサーバー) が現れるはずので、それぞれエディタにドラッグアンドドロップして、InPort と OutPort を接続、Activate します。</p>
+
+<div align="center"><a href="ConsoleInOut_rtse01.png"><img src="ConsoleInOut_rtse01.png" width="80%;"></a></div>
+<div align="center"><strong>RTSystemEditor上でConsoleInとConsoleOutを接続</strong></div>
+
+<p>ConsoleIn の方から数値を入力し、ConsoleOut の方で表示されれば、テストは成功です。</p>
+
+<h3 id="consolein-consoleout-python">ConsoleIn-ConsoleOut (Python)</h3>
+
+<p>今度は、上記とは逆に、ConsoleIn を PC で、ConsoleOut を EV3 上で実行し接続してみます。</p>
+
+<p>PC上では、以下のように ConsoleOut を起動します。。</p>
+
+<ul>
+  <li>ConsoleOutの起動
+    <ul>
+      <li>「スタート」&gt;「OpenRTM-aist x.y」&gt;「Python」&gt;「Components」&gt;「Examples」&gt;「ConsoleOutComp.exe」</li>
+    </ul>
+  </li>
+</ul>
+
+<div align="center"><a href="ConsoleIn_py.png"><img src="ConsoleIn_py.png" width="60%;"></a></div>
+<div align="center"><strong>PC上で実行した ConsoleIn (Python版)</strong></div>
+
+<p>次に、EV3上で、以下のように ConsoleOut.py を起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # python /usr/share/openrtm-1.1/example/python/SimpleIO/ConsoleOut.py
+ ------------------------------
+ Listener:        ON_CONNECT
+ Profile::name:   ConsoleIn0.out_ConsoleOut0.in
+ Profile::id:     246bf2c0-3b68-11e5-91a9-005056c00008
+ ------------------------------
+</code></pre></div></div>
+
+<div align="center"><a href="ConsoleOut_py.png"><img src="ConsoleOut_py.png" width="60%;"></a></div>
+<div align="center"><strong>EV3 で実行した ConsoleOut (Python版)</strong></div>
+
+<p>RTSystemEditor上で、ConsoleIn と ConsoleOut を接続し、Activate します。
+ConsoleIn側で数値を入力し、ConsoleOut側で表示されれば、テストは成功です。</p>
+
+<div align="center"><a href="ConsoleInOutpy_rtse01.png"><img src="ConsoleInOutpy_rtse01.png" width="60%;"></a></div>
+<div align="center"><strong>RTSystemEditor上で ConsoleIn と ConsoleOut を接続</strong></div>
+
+<p>その他の組み合わせとして、C++ と Python のコンポーネントを起動して接続してみる、他のサンプルコンポーネントを起動して通信させてみるなど試してみてください。</p>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+</p>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright © OpenRTM-aist, 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

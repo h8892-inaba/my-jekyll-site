@@ -1,0 +1,1690 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>サービスポート (基礎編) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="サービスポート (基礎編)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/developersguide/basic_rtc_programming/servcieport/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/developersguide/basic_rtc_programming/servcieport/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="サービスポート (基礎編)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"サービスポート (基礎編)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/developersguide/basic_rtc_programming/servcieport/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist--ja</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>hogehogehoge-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/servcieport/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>サービスポート (基礎編) <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/servcieport/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/developersguide/basic_rtc_programming/servcieport/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#サービスポートとは">サービスポートとは</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#サービスポートとインターフェース">サービスポートとインターフェース</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#サービスポート">サービスポート</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#インターフェース定義">インターフェース定義</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#idl-コンパイル">IDL コンパイル</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#サービスポートの実装">サービスポートの実装</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#idl-定義">IDL 定義</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtcbuilder-による設計">RTCBuilder による設計</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サービスプロバイダの実装">サービスプロバイダの実装</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サービスコンシューマの実装">サービスコンシューマの実装</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: サービスポート (基礎編) -->
+<p>#contents</p>
+
+<p>このページでは、サービスポートの概要について説明しています。
+簡単なサービスポートの設定手順については、以下のページに記載してあります。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/servcieport/tutorial">サービスポートの設定手順</a></li>
+</ul>
+
+<h2 id="サービスポートとは">サービスポートとは</h2>
+
+<p>ロボットシステムをコンポーネント指向で構築するためには、コンポーネント間のデータ通信だけでは十分ではなく、コマンドレベル(あるいは関数レベル)のコンポーネント間通信が必要になってきます。
+例えば、ロボットアームを制御するマニピュレータコンポーネントの場合、手先の位置や速度などは、上位のアプリケーションやコンポーネントからデータポートで送られるべきデータです。</p>
+
+<p>一方、ロボットアームの各種設定、座標系の設定、制御パラメーターの設定、動作モードの設定、などをデータポートで行うのは適切とは言えず、オブジェクト指向的にいえば、マニピュレータオブジェクトに対して、
+setCoordinationSystem()、setParameter()、setMode() などの関数が用意されていて、これらの関数を必要に応じて適切なタイミングで呼ぶのが自然といえます。</p>
+
+<div align="center"><a href="serviceport_example_ja.png"><img src="serviceport_example_ja.png" width="40%;" /></a></div>
+<div align="center"><strong>サービスポートの例</strong></div>
+
+<p>サービスポートはこのようなコマンドレベルのコンポーネント間のやり取りを行うための仕組みを提供します。</p>
+
+<p>一般にサービスとは、機能的に関連のあるひとまとまりのコマンド (関数、メソッド、オペレーションなどとも呼ばれます) 群であり、OpenRTM-aistにおいては、この機能を提供する側をサービスプロバイダ(インターフェース)、機能を利用する側をサービスコンシューマ(インターフェース)と呼びます。</p>
+
+<p>なお、UML等の規約においては、サービスプロバイダを Provided Interface、またサービスコンシューマを Required Interface などと呼び、それぞれ下図のような記号 (ロリポップ (lollipop) 、ソケット (socket) ) で表します。
+これは、一般的な用語および記述法なので覚えておいた方がよいでしょう。呼ぶあるいは呼ばれる方向でいえば、呼ばれるものがプロバイダ (Provided Interface) であり、呼ぶものがコンシューマ (Required Interface) という見方もできます。</p>
+
+<div align="center"><a href="provider_and_consumer_ja.png"><img src="provider_and_consumer_ja.png" width="40%;" /></a></div>
+<div align="center"><strong>プロバイダとコンシューマ</strong></div>
+
+<ul>
+  <li>プロバイダ (Provided Interface): 呼ばれる側、サービスを提供する側</li>
+  <li>コンシューマ (Required Interface): 呼ぶ側、サービスを利用する側</li>
+</ul>
+
+<p>プロバイダおよびコンシューマをまとめてインターフェースまたは、サービスインターフェースと呼び、これらサービスインターフェースを持つポートをサービスポートと呼びます。</p>
+
+<h2 id="サービスポートとインターフェース">サービスポートとインターフェース</h2>
+
+<p>サービスインターフェースとサービスポートの関係について詳しく説明します。</p>
+
+<div align="center"><a href="component_port_interface_ja.png"><img src="component_port_interface_ja.png" width="40%;" /></a></div>
+<div align="center"><strong>コンポーネント、ポート、インターフェース</strong></div>
+
+<p>ポートとはコンポーネントに付属し、コンポーネント間の接続の端点となる部分を指します。コンポーネント間の接続とは、コンポーネントに付属するポート間で接続に関する調停が行われ、何らかの相互作用 (データやコマンドのやり取り) が行える状態にすることを意味します。</p>
+
+<p>ポート自体はデータやコマンドのやり取りに対して、何の機能も提供しません。実際にコマンドのやり取りを行うのはサービスインターフェース (プロバイダとコンシューマ) になります。
+一般的にポートには機能的に関連のある任意の数の任意の方向のインターフェースを付加することができます。これにより、コマンドのやり取りを一方向だけでなく双方向にすることもできます。</p>
+
+<p>コンシューマとプロバイダは、ポートが接続されたときに、ある条件に基づいて接続され、コンシューマからプロバイダの機能を呼び出すことが可能になります。
+コンシューマとプロバイダを接続するためには、両者の<strong>型</strong>が同じ、または互換性がある必要があります。</p>
+
+<p>同じ型である、とは同一のインターフェース定義を持つことであり、互換性があるとは、プロバイダのインターフェースがコンシューマのインターフェースのサブクラスの一つである、(逆にいえば、コンシューマのインターフェースがプロバイダのインターフェースのスーパークラスの一つである)ということになります。</p>
+
+<h3 id="サービスポート">サービスポート</h3>
+
+<p>RTコンポーネントはデータポート同様、任意の数のサービスポートを持つことができます。また、サービスポートには、任意の種類、数のプロバイダまたはコンシューマを付加することができます。</p>
+
+<p>以下は、OpenRTM-aistのサンプルコンポーネント MyServiceProvider から抜粋したポートとプロバイダの登録のためのコードです。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::ReturnCode_t MyServiceProvider::onInitialize()
+ {
+   // Set service provider to Ports
+   m_MyServicePort.registerProvider("myservice0", "MyService", m_myservice0);
+   
+   // Set CORBA Service Ports
+   addPort(m_MyServicePort);
+   
+   return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<p>m_MyServicePort.registerProvider() でプロバイダをサービスポートオブジェクト m_MyServicePort に登録しています。第3引数が実体であるプロバイダオブジェクトです。
+次に、コンポーネントのフレームワーククラスである RTObjectクラスのaddPort() 関数で、ポートをコンポーネントに登録しています。</p>
+
+<p>同様に、サンプルコンポーネント MyServiceConsumer から抜粋したコードを示します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::ReturnCode_t MyServiceConsumer::onInitialize()
+ {
+   // Set service consumers to Ports
+   m_MyServicePort.registerConsumer("myservice0", "MyService", m_myservice0);
+   
+   // Set CORBA Service Ports
+   addPort(m_MyServicePort);
+ 
+   return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<p>プロバイダの場合とほとんど同じで、m_MyServicePort.registerConsumer() 関数でコンシューマをポートに登録し、そのポートを addPort() 関数でコンポーネントに登録しています。</p>
+
+<p>以上、特に説明もなしに、それぞれ m_myservice0 というオブジェクトが、プロバイダ、またはコンシューマであるとしてコード例を示しましたが、以下、これらのインターフェースがどのように定義され、オブジェクトがどのように実装されるかを説明していきます。</p>
+
+<h3 id="インターフェース定義">インターフェース定義</h3>
+
+<p>インターフェースとは何でしょうか？ C++であれば、純粋仮想クラスをインターフェースと呼んだりしますし、Java は言語レベルで interface キーワードが用意されています。</p>
+
+<p>OpenRTM-aist には、言語や OS に依存しない、ネットワーク透過であるといった特徴がありますが、これは CORBA と呼ばれる分散オブジェクトミドルウエアを利用することにより実現されています。
+CORBAは、国際標準化団体OMGで標準化されている分散オブジェクトミドルウエアで、標準に従って、多くの会社や団体、個人などが多様な実装を提供しています。</p>
+
+<p>OpenRTM-aistでは、インターフェースは IDL と呼ばれる CORBA のインターフェース定義言語によって定義します。この IDL は言語に依存しないインターフェース定義方法を提供し、また IDL コンパイラと呼ばれるスタブやスケルトンを生成ツールを利用することで、各種言語に対応したコードが自動的に生成されます。スタブとは、リモートのオブジェクトを呼び出すためのプロキシオブジェクトのためのコードであり、スケルトンとは、プロバイダを実装するためのベースとなるコードです。</p>
+
+<p>これら自動生成されるコードのおかげで、異なる言語同士の呼び出しもシームレスに行うことができます。例えば、C++で実装されたプロバイダを、Python や Java 等で容易に呼び出すことができるのです。</p>
+
+<p>以下は、OpenRTM-aist のサンプルで使用されている IDL 定義です。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> module SimpleService {
+   typedef sequence&lt;string&gt; EchoList;
+   typedef sequence&lt;float&gt; ValueList;
+   interface MyService
+   {
+     string echo(in string msg);
+     EchoList get_echo_history();
+     void set_value(in float value);
+     float get_value();
+     ValueList get_value_history();
+   };
+ };
+</code></pre></div></div>
+
+<p>module とは C++ で言うところの名前空間のようなもので、これによりインターフェース名を修飾し衝突を防ぐことができます。</p>
+
+<p>C言語等と同様に typedef キーワードがあります。上の例では、sequence と呼ばれる動的配列型を定義しています。
+一つは、string (文字列型) 型のリストとして、EchoList 型、もうひとつは float 型のリストとして ValueList 型を定義しています。
+特に sequence 型は、typedef せずに、定義中で直接使うことができないので、このように予め typedef しておく必要があります。</p>
+
+<p>次に interface で始まる部分が実際のインターフェースの定義になります。
+MyService インターフェースには、5つの関数 (IDLではオペレーションと呼びます) が定義されています。
+ほとんどは、C言語やJavaなどと同じような定義ですが、IDL では引数が入力であるか出力であるかを明確にするために、引数宣言の前に、<strong>in</strong>, <strong>out</strong> または <strong>inout</strong> の修飾子が付きます。</p>
+
+<h3 id="idl-コンパイル">IDL コンパイル</h3>
+
+<p>図に、IDL 定義から IDL コンパイル、プロバイダの実装およびスタブの利用の流れを示します。</p>
+
+<div align="center"><a href="idlcompile_stub_skel_ja.png"><img src="idlcompile_stub_skel_ja.png" width="40%;" /></a></div>
+<div align="center"><strong>IDLコンパイルとスタブ、スケルトン</strong></div>
+
+<p>定義された IDL を IDL コンパイラに与えてコンパイルを行うと、通常スタブとスケルトン (またはサーバーとクライアントという呼び方をする場合もある) のためのコードが生成されます。</p>
+
+<p>クライアント、すなわちサービスを利用する側は、スタブコードをインクルードするなどして、スタブとしてい定義されているプロキシ(代理)オブジェクトを利用して、リモートにある、サーバーの機能にアクセスします。以下に C++ でのコード例を示します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> MyService_var mysvobj = &lt;何からの方法でリモートオブジェクトの参照を取得&gt;
+ Retval retval = mysvobj-&gt;myoperation(argument);
+</code></pre></div></div>
+
+<p>MyService_var というのが、プロキシオブジェクトのための宣言です。
+mysvobjにリモートオブジェクトの参照を何らかの形で代入すると、その下で行われている myoperation() 関数の呼び出しは、実際にはリモートに存在するオブジェクトにおいて行われます。
+このMyService_var クラスが定義されているのがスタブにあたります。</p>
+
+<p>一方、上記の方法によって実際に呼ばれるサーバー側のオブジェクトは、以下のようにスケルトンクラスを継承して以下のように実装されます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> class MyServiceSVC_impl
+</code></pre></div></div>
+<p>: public virtual MyService,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     public virtual PortableServer::RefCountServantBase
+ {
+ public:
+    MyServiceSVC_impl() {};
+    virtual ~MyServiceSVC_impl() {};
+    Retval myoperation(ArgType argument)
+    {
+      return do_ something(argument);
+    }
+ };
+</code></pre></div></div>
+
+<p>さらに、ここで定義されたサーバントクラスをインスタンス化し、CORBA オブジェクトとしてアクティベートすることで、リモートからオペレーションを呼び出すことができます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // CORBAのORB等を起動するためのいろいろなおまじない
+ MyServiceSVC_impl mysvc;
+ POA-&gt;activate_object(id, mysvc);
+</code></pre></div></div>
+
+<p>IDL を定義して、コンパイルすることで、分散オブジェクトを定義し利用するのに必要な大半のコードが自動的に生成されます。
+ただし、上記の「何らかの方法でリモートオブジェクトの参照を取得」したり、「CORBA の ORB を起動するためのいろいろなおまじない」といったものは、CORBA を直接利用する場合には依然としてコーディングする必要がある部分であり、これらは CORBA を利用するうえでも理解が難しかったり、煩雑な作業が必要となる部分です。</p>
+
+<p>しかしながら、OpenRTM-aist を利用すれば、こうした CORBA の様々な呼び出しの大半は隠蔽され、実装者はクライアントの呼び出し、サーバントの実装にのみ集中することができます。以下では、サーバントを実装しプロバイダとしてコンポーネントに登録する方法、コンシューマとしてプロバイダを利用する方法について詳しく見ていきます。</p>
+
+<h2 id="サービスポートの実装">サービスポートの実装</h2>
+
+<p>サービスポートの実装に当たっては、RTCBuilder を利用するのが便利です。
+自分でサービスポート、プロバイダおよびコンシューマを実装することもできますが、CORBA や IDL コンパイラに精通している必要がありますし、Makefile やコードの様々な部分を書き換える必要がありますのであまりお勧めできません。</p>
+
+<p>RTCBuilder の詳細な使い方は、RTCBuilder のマニュアルを参照してください。</p>
+
+<h3 id="idl-定義">IDL 定義</h3>
+
+<p>サービスポートを利用するには、利用するインターフェースを予め IDL で定義するか、既存の IDL ファイルを適当なディレクトリーに配置しておく必要があります。</p>
+
+<p>IDL の定義方法については、ここでは詳細は述べませんが、おおよそ以下のようなフォーマットで定義することができ、C言語や Java に慣れた読者であれば、比較的容易に定義できるでしょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // 名前空間のためにモジュールを定義することができる。
+ // モジュール定義は積極的に利用することが推奨される。
+ module &lt;モジュール名&gt;
+ {
+   // 構造体を定義することができる。
+   struct MyStruct // 構造体名
+   {
+     short x; // int型は short と longの み利用可能
+     short y;
+     long  a;
+     long  b;
+     double dval; // 浮動小数点型は float と double のみ利用可能
+     float fval;
+     string strval; // 文字列のために string が利用可能
+   };
+ 
+   // 動的配列 sequence 型は予め typedef する必要がある
+   typedef sequence&lt;double&gt; DvalueList;
+   typedef sequence&lt;MyStruct&gt; MyStructList; // 任意の構造体もsequence型にできる
+ 
+   // インターフェース定義
+   interface MyInterface // インターフェース名
+   {
+     void op1(); // 戻り値なし、引数なしの場合
+ 
+     // NG: 大文字・小文字を区別しない言語では以下の定義が問題になるため IDLではエラーになる
+     // short op2(in MuStruct mystruct);
+     short op2(in MyStruct mydata); // 引数は {in, out, inout} で方向を指定
+ 
+     oneway void op3(); // 戻り値なしのオペレーションは onway キーワードが利用可能
+ 
+     void op4(in short inshort, out short outshort, inout short ioshort);
+ 
+     void op5(MyInterface myif); // MyInterface 自身を引数に利用することも可能
+   };
+ 
+   // 同一の IDL ファイルに複数の interface を定義することも可能
+   interface YourInterface
+   {
+     void op1();
+   };
+ };
+</code></pre></div></div>
+
+<h3 id="rtcbuilder-による設計">RTCBuilder による設計</h3>
+
+<p>上のように IDL で定義したインターフェースを、これから開発する RTコンポーネントのサービスポートのプロバイダ、もしくはコンシューマとして用いるためには、コンポーネントのコードジェネレータである RTCBuilder でサービスポートを設計し、その際にこの IDL 定義を与えてやる必要があります。</p>
+
+<p>RTCBuilder の新規プロジェクトを作成し、パースペクティブを開きます。各種プロファイル(コンポーネントの名称やカテゴリ名)等、必要な設定を行った後、サービスポートタブを開くと、次のような画面が表示されます。</p>
+
+<div align="center"><a href="rtcbuilder_serviceport_tab1_ja.png"><img src="rtcbuilder_serviceport_tab1_ja.png" width="40%;" /></a></div>
+<div align="center"><strong>サービスポート設計タブ</strong></div>
+
+<p>まず、[Add Port] ボタンをクリックし、サービスポートを一つ追加します。そうすると、sv_name というサービスポートが一つ追加され、下の BuildView のコンポーネントの箱に、小さな正方形のポートが一つ追加されます。RTCBuilder のエディタ左のポートリストの sv_name をクリックすると、右側に<strong>RT-Component Service Port Profile</strong>が表示されるので、ポート名を適当な名前 (ここでは<strong>MyServiceProviderPort</strong>) に変更します。</p>
+
+<div align="center"><a href="rtcbuilder_serviceport_tab2_ja.png"><img src="rtcbuilder_serviceport_tab2_ja.png" width="40%;" /></a></div>
+<div align="center"><strong>サービスポートの追加</strong></div>
+
+<p>エディタ左のポートリストの MyServiceProviderPort をクリックし、[Add Interface] ボタンをクリックすると、MyServiceProviderPort にインターフェース <strong>if_name</strong> が一つ追加されますので、先ほどと同様にエディタ左の<strong>if_name</strong>をクリックし、<strong>RT-Component Service Port Interface Profile</strong>上で<strong>if_name</strong>を適当な名前 (ここでは MyServiceProvider) に変更します。下の BuildeView では、正方形のポートにロリポップが追加され、プロバイダ (Provided Interface) がポートに付加されたことが視覚的に分かります。</p>
+
+<div align="center"><a href="rtcbuilder_serviceport_tab3_ja.png"><img src="rtcbuilder_serviceport_tab3_ja.png" width="40%;" /></a></div>
+<div align="center"><strong>サービスインターフェース(プロバイダ)の追加</strong></div>
+
+<p>エディタ右側の Interface Profile では、インターフェースのプロファイルを設定します。例えば<strong>方向</strong>のドロップダウンリストでは、対象のインターフェースがプロバイダ (Provided) かコンシューマ (Required) かを指定します。</p>
+
+<div align="center"><a href="rtcbuilder_direction_ddown_ja.png"><img src="rtcbuilder_direction_ddown_ja.png" width="70%;" /></a></div>
+<div align="center"><strong>サービスインターフェースの「方向」の設定</strong></div>
+
+<p>ここではプロバイダを追加しようとしているので、Provided のままにします。このほか、インスタンス名、変数名なども指定できますが、必須ではありません。インスタンス名は、接続時にプロバイダとコンシューマのインスタンス名が同じなら、対応関係を指定しなくてもポートの接続を自動的に行う場合に利用されます。</p>
+
+<div align="center"><a href="serviceif_autoconnection_ja.png"><img src="serviceif_autoconnection_ja.png" width="50%;" /></a></div>
+<div align="center"><strong>サービスインターフェースのインスタンス名と自動接続</strong></div>
+
+<p>ただし、インスタンス名が異なっていても、接続時に任意のインターフェース同士を接続できるので、入力は必須ではありません。
+また、変数名はコードを生成した際にプロバイダオブジェクトを代入する変数名を指定するための項目ですが、これもインターフェース名から自動的に生成されるので、入力は任意Ωです。</p>
+
+<p>次に IDL の指定と、インターフェース型の指定を行います。上で定義したような IDL を適当なディレクトリに配置し、IDL ファイル指定ボックス横の [Browse] ボタンをクリックし、対象となる IDL を指定します。すると、指定された IDL で定義されたインターフェースが、その下のインターフェース型のドロップダウンリストに現れます。このドロップダウンリストで、このポートに付加したインターフェース名を選択します。IDL ファイルに文法エラーなどがある場合には、ドロップダウンリストに希望するインターフェースが現れません。再度 IDL ファイルの定義をチェックしてください。</p>
+
+<div align="center"><a href="rtcbuilder_interfacetype_ddwon_ja.png"><img src="rtcbuilder_interfacetype_ddwon_ja.png" width="70%;" /></a></div>
+<div align="center"><strong>インターフェース型の選択</strong></div>
+
+<p>なお、上述の<strong>方向</strong>ドロップダウンリストで <strong>Required</strong>を指定すると、このインターフェースはコンシューマになります。
+以下は別のコンポーネント<strong>MyServiceConsumer</strong> のサービスポートとインターフェースの設定画面の例です。</p>
+
+<div align="center"><a href="rtcbuilder_serviceport_tab4_ja.png"><img src="rtcbuilder_serviceport_tab4_ja.png" width="40%;" /></a></div>
+<div align="center"><strong>サービスインターフェース(コンシューマ)の追加</strong></div>
+
+<p>エディタ下の BuildView においてポートにソケットが追加されて、コンシューマ (Required interface) がポートに付加されたことが視覚的に分かります。</p>
+
+<h3 id="サービスプロバイダの実装">サービスプロバイダの実装</h3>
+
+<p>プロバイダというのは文字通り、サービスをプロバイド(提供)するためのインターフェースです。したがって、IDL で定義したインターフェースを持つサービスの中身を実装する必要があります。</p>
+
+<p>プロバイダインターフェースを持つコンポーネントを RTCBuilder で設計した場合、コード生成を行うと、コンポーネントのソースのひな形とともに、例えばC++の場合には、<サービスインターフェース名>SVC_impl.cpp と <サービスインターフェース名>SVC_impl.h という、プロバイダの実装コードのひな形も生成されます。</サービスインターフェース名></サービスインターフェース名></p>
+
+<div align="center"><a href="rtcbuilder_svcimpl_cxxsrc_ja.png"><img src="rtcbuilder_svcimpl_cxxsrc_ja.png" width="40%;" /></a></div>
+<div align="center"><strong>サービスプロバイダ実装ファイル (C++,Python,Java)</strong></div>
+
+<p>以下に、各言語で生成されるプロバイダの実装のひな形コードのファイル名を示します。</p>
+
+<p>hogehogehoge</p>
+
+<div align="center"><a href="rtcbuilder_svcimpl_pysrc_ja.png"><img src="rtcbuilder_svcimpl_pysrc_ja.png" width="40%;" /></a></div>
+<div align="center"><strong>サービスプロバイダ実装ファイル (Python)</strong></div>
+
+<div align="center"><a href="rtcbuilder_svcimpl_javasrc_ja.png"><img src="rtcbuilder_svcimpl_javasrc_ja.png" width="40%;" /></a></div>
+<div align="center"><strong>サービスプロバイダ実装ファイル (Java)</strong></div>
+
+<p>これらの実装のひな形には、IDLで定義されたインターフェースに相当するクラスがあらかじめ定義されています。</p>
+
+<p>ここでは、C++での実装方法を例にとり、IDLで定義されたオペレーションのいくつかを実装していきます。</p>
+
+<h4 id="echo関数の実装">echo()関数の実装</h4>
+
+<p>はじめに、echo() メンバ関数を見てみます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /*
+  * Methods corresponding to IDL attributes and operations
+  */
+
+ char* MyServiceSVC_impl::echo(const char* msg)
+ {
+   // Please insert your code here and remove the following warning pragma
+ #ifndef WIN32
+   #warning "Code missing in function &lt;char* MyServiceSVC_impl::echo(const char* msg)&gt;"
+ #endif
+   return 0;
+ }
+</code></pre></div></div>
+
+<p>#warning プリプロセッサディレクティブがありますが、これは gcc でコンパイルした際にこの関数が実装されていないことを警告するためのものですので、#ifndefごと削除します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> char* MyServiceSVC_impl::echo(const char* msg)
+ {
+   return msg;
+ }
+</code></pre></div></div>
+
+<p>また、この関数は、echo() 関数の引数に与えられた文字列を、単に呼び出し側に返すだけの機能を提供するとします。したがって、以下のように実装すればよいように思えます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> char* MyServiceSVC_impl::echo(const char* msg)
+ {
+   return msg;
+ }
+</code></pre></div></div>
+
+<p>しかし、これはコンパイル時にエラーになります。const char* を char* に渡しているためです。また、CORBA のオブジェクトの実装方法としても間違っています。CORBAでは、return で返されるオブジェクトは、ORB (Object Request Broker、リモートオブジェクトの呼び出し部分を司る部分、CORBAのコア) によって解体されるというルールがあるためです。(return時にはオブジェクトの所有権を放棄する、とも言います。)</p>
+
+<p>したがって、return には、別途領域を確保し、msg の内容をコピーした文字列を返す必要があります。これに従えば、以下のように実装すればよいように思うかもしれません。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> char* MyServiceSVC_impl::echo(const char* msg)
+ {
+   char* msgcopy;
+   msgcopy = malloc(strlen(msg));
+   strncpy(msgcopy, msg, strlen(msg));
+   return msgcopy;
+ }
+</code></pre></div></div>
+
+<p>ここでは、malloc で領域を確保していますが、ORB は free で領域を解体するのか、delete で解体するのかはわかりません。
+実は、CORBA ではオブジェクト(構造体や配列、またその複合型等も含む)や文字列を扱うための方法が別途定められていて、それに従って関数の引数を受け取ったり、返したりする必要があるのです。</p>
+
+<p>CORBA で定められた方法に従うと、echo() 関数は以下のように実装する必要があります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> char* MyServiceSVC_impl::echo(const char* msg)
+ {
+   CORBA::String_var msgcopy = CORBA::string_dup(msg);
+   return msgcopy._retn();
+ }
+</code></pre></div></div>
+
+<p>関数内の1行目では、CORBA の文字列クラス CORBA::String のスマートポインタである CORBA::String_var 型を宣言しています。String_var 型はいわゆる所有権を管理するためのスマートポインタで STL の auto_ptr に似ています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> CORBA::String_var msgcopy = CORBA::string_dup(msg);
+</code></pre></div></div>
+
+<p>この String_var 型の変数 msgcopy に引数の msg に格納されている文字列をコピーしているのが CORBA::string_dup() 関数です。この関数では引数に与えられた文字列を格納するのに十分なメモリー領域を確保し、その領域に引数の文字列をコピーしています。</p>
+
+<p>次の行では、return で呼び出し元に msgcopy 内の文字列を返しつつ、オブジェクトの所有権を放棄、return 側に所有権を移譲しています。下図に示すように ORB では、return で返された文字列を、ネットワーク上の呼び出し元に送信してから、文字列オブジェクトを解放します。</p>
+
+<div align="center"><a href="serviceport_orb_and_provider_ja.png"><img src="serviceport_orb_and_provider_ja.png" width="50%;" /></a></div>
+<div align="center"><strong>ORBとオペレーション呼び出し、メモリ管理の関係</strong></div>
+
+<p>このルールをよく理解すると、msgcopy オブジェクトが echo() 関数内で使用されていないことから、echo() 関数の実装は最終的には以下のようにも書くこともできます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> char* MyServiceSVC_impl::echo(const char* msg)
+ {
+   return CORBA::string_dup(msg);
+ }
+</code></pre></div></div>
+
+<p>CORBA::string_dup() 関数で文字列領域の確保と内容のコピーを行ったうえで、その所有権を直に呼び出し元に与えていることになります。</p>
+
+<p>このように、サービスプロバイダは CORBA のオブジェクトですので、その実装方法は通常の C++ の実装とは少し違ったやり方で行う必要があります。
+特に、関数の引数および返り値の受け渡し規則は、少し複雑なように見えます。ただし、上記のように、オブジェクトの所有権という考え方を念頭において考えると、引数をどのように受け取るべきなのか、あるいは返り値をどのように返すべきなのかが自ずと明らかになります。
+詳細については、Appendix や他の CORBA の参考書等を参考にしてください。</p>
+
+<h4 id="set_value-get_value-と-get_value_history">set_value(), get_value() と get_value_history()</h4>
+
+<p>次は、set_value() 関数, get_value() 関数および get_value_list() 関数を同時に実装していきます。
+これらの関数は、set_value() で設定されたfloat型の値を保存しておき、get_value()でその値を返すという単純なものです。
+また、get_value_history() では、今までにセットされた値の履歴を保存しておき、履歴をリストとして返すというものです。</p>
+
+<p>まず、値を保存しておく変数を用意します。現在の値は MyServiceSVC_impl クラスに CORBA::Float 型 の private メンバーとして用意します。
+一方、get_value_history() では、戻り値にSimpleService::ValueList という CORBA のシーケンス型が使われているので、これをメンバー変数として持つようにします。
+これらの変数宣言を MyServiceSVC_impl.h の MyServiceSVC_impl クラス定義の最後の方に以下のように追加します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> class MyServiceSVC_impl
+</code></pre></div></div>
+<p>: public virtual POA_SimpleService::MyService,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    public virtual PortableServer::RefCountServantBase
+ {
+</code></pre></div></div>
+<p>: (中略)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> private:
+   CORBA::Float m_value; // この行を追加する
+   SimpleService::ValueList m_valueList; // この行を追加する
+   };
+</code></pre></div></div>
+
+<p>変数の初期化も忘れずに行います。MyServiceSVC_impl.cpp のコンストラクタ
+で、m_value は 0.0に、m_valueList は長さ0に初期化しておきます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> MyServiceSVC_impl::MyServiceSVC_impl()
+</code></pre></div></div>
+<p>: m_value(0.0), m_valueList(0)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {
+   // Please add extra constructor code here.
+ }
+</code></pre></div></div>
+
+<p>次に、set_value() 関数を実装します。引数に与えられた数値をメンバ変数 m_value に代入するとともに、m_valueListにも追加します。
+CORBA のシーケンス型は、動的配列型で、[]オペレータとともに、length()、length(CORBA::ULong) の関数を利用することができます。length() 関数は、現在の配列の長さを返し、length(CORBA::ULong) 関数は現在の配列の長さを設定します。
+実装は以下のようになります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void MyServiceSVC_impl::set_value(CORBA::Float value)
+   throw (CORBA::SystemException)
+ {
+   m_value = value; // 現在値
+ 
+   CORBA::ULong len(m_valueList.length()); // 配列の長さを取得
+   m_valueList.length(len + 1); // 配列の長さを1つ増やす
+   m_valueList[len] = value; // 配列の最後尾にvalueを追加
+ 
+   return;
+ }
+</code></pre></div></div>
+
+<p>echo() 関数とは異なり、CORBA::Long 型は C++のlong int と等価で、オブジェクトの所有権、領域確保や廃棄等は考える必要はありません。
+したがって、上記のように単純な代入で構いません。また、配列型は、2種類の length() 関数と []オペレータを利用して、配列の長さを1つ増やして最後尾に引数の値を代入しています。
+なお、OpenRTM-aistでは、CORBA のシーケンス型を STL の vector に近い形で利用するための関数テンプレートを提供しており、それを使うと、</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> void MyServiceSVC_impl::set_value(CORBA::Float value)
+   throw (CORBA::SystemException)
+ {
+   m_value = value; // 現在値
+   CORBA_SeqUitl::push_back(m_valueList, value);
+ 
+   return;
+ }
+</code></pre></div></div>
+
+<p>のように書くことができます。CORBA_SeqUtil.h では、 for_each()、find()、push_back()、insert()、front()、back()、erase()、clear() といった関数が定義されています。</p>
+
+<p>get_value() は以下のようになります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> CORBA::Float MyServiceSVC_impl::get_value()
+   throw (CORBA::SystemException)
+ {
+   return m_value;
+ }
+</code></pre></div></div>
+
+<p>保存された値を return で呼び出し元に返すだけです。ここでも、先ほどの echo() の例とは異なり、CORBA::Float がプリミティブ型なので所有権等を考慮する必要はありません。</p>
+
+<p>最後に、get_value_history() の実装を見ていきます。値の履歴が格納された m_valueList を返せばいいだけのように思えますが、先ほどの述べた所有権と領域の解放の問題があるため、以下のように実装する必要があります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> SimpleService::ValueList* MyServiceSVC_impl::get_value_history()
+   throw (CORBA::SystemException)
+ {
+   SimpleService::ValueList_var vl;
+   vl = new SimpleService::ValueList(m_valueList);
+   return vl._retn();
+ }
+</code></pre></div></div>
+
+<p>関数内1行目では、シーケンス型オブジェクトのためのスマートポインタである、SimpleService::valueList_var 型の変数を宣言しています。さらに次の行で、このスマートポインタに対して、コピーコンストラクタを呼び出してそのポインタを代入しています。
+これにより、領域の確保と、値のコピーが同時に行われます。最後に、vl._retn() で、vl が保持しているシーケンス型のオブジェクトの所有権を放棄して、return 側にオブジェクトを渡しています。</p>
+
+<p>そして、vl は関数内で使用されていないので、以下のように書くこともできます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> SimpleService::ValueList* MyServiceSVC_impl::get_value_history()
+   throw (CORBA::SystemException)
+ {
+   return new SimpleService::ValueList(m_valueList);
+ }
+</code></pre></div></div>
+
+<p>以上、プロバイダの実装についてみてきましたが、プロバイダがいわゆる CORBA オブジェクトであるので、使用する型、変数の受け渡しの仕方など、CORBA のルールに従って実装しなければなりません。
+はじめは煩わしく感じるかもしれませんが、プリミティブ型については従来通りの実装、複雑なオブジェクトについてはメモリーの確保と解放がどこで行われるか、所有権はどちらにあるかを理解すると、どのように実装するべきなのか理解できると思います。</p>
+
+<h3 id="サービスコンシューマの実装">サービスコンシューマの実装</h3>
+
+<p>コンシューマでは、上で実装したサービスプロバイダを呼び出し、その機能を利用することになります。コンシューマを持つコンポーネントのひな形コードを RTCBuilder で生成した場合には、プロバイダの場合とは異なり特別なファイルは生成されません。</p>
+
+<p>その代わり、コンポーネントのヘッダに以下のようなプロバイダのプレースホルダであるコンシューマオブジェクトが宣言されます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      : (中略)
+   // Consumer declaration
+   // &lt;rtc-template block="consumer_declare"&gt;
+   /*!
+    */
+   RTC::CorbaConsumer&lt;SimpleService::MyService&gt; m_MyServiceConsumer;
+ 
+   // &lt;/rtc-template&gt;
+ 
+  private:
+      : (中略)
+</code></pre></div></div>
+
+<p>これは、RTC::CorbaConsumer クラステンプレートに型引数 SimpleService::MyService を与えて、MyService 型のコンシューマを宣言していることになります。
+また、実装ファイルの方では、onInitialize() 関数において、コンシューマのポートへの登録と、ポートのコンポーネントへの登録が行われていることが確認できます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::ReturnCode_t MyServiceConsumer::onInitialize()
+ {
+   : (中略)   
+  // Set service consumers to Ports
+   m_MyServiceConsumerPortPort.registerConsumer("MyServiceConsumer",
+                                                "SimpleService::MyService",
+                                                m_MyServiceConsumer);
+  
+   // Set CORBA Service Ports
+   addPort(m_MyServiceConsumerPortPort);
+   // &lt;/rtc-template&gt;
+ 
+   return RTC::RTC_OK;
+ }
+ 
+</code></pre></div></div>
+
+<p>ヘッダで宣言されていた m_MyServiceConsumer 変数が、registerConsumer() メンバ関数によってポートに登録されていることが分かります。
+第1引数では、このコンシューマの「インスタンス変数」が、第2引数ではコンシューマの「インターフェース型」が、そして第3引数ではコンシューマのインスタンスである m_MyServiceConsumer 変数がそれぞれ与えられています。
+これによって、コンシューマがインスタンス名、型名ともにポートに関連付けられていることになります。</p>
+
+<p>コンシューマ m_MyServiceConsumer は上でも述べたように、プロバイダのプレースホルダになっています。
+C++では、オブジェクトへのポインタのように扱うことができます。</p>
+
+<p>MyService インターフェースでは、string 型 (CORBAのstring型) 引数を一つ取る echo() オペレーションが定義されていました。
+したがって、例えば以下のように echo() 関数を呼び出すことができます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> m_MyServiceConsumer-&gt;echo("Hello World");
+</code></pre></div></div>
+
+<p>C++ では上のようにポインタ、Java や Python では参照のように、オペレーションを呼び出すことができるのです。</p>
+
+<p>さて、ここで勘の良い方は、ポインタまたは参照の指す先は一体どうなっているんだとお思いでしょう。C++等でも、例えば以下のようなコードは segmentation fault で即座に落ちます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> class A {
+ public:
+   const char* echo(const char* msg) {
+     std::cout &lt;&lt; msg &lt;&lt; std::endl;
+     return msg;
+   }
+ };
+ 
+ int main (void) {
+   A* a;
+   a-&gt;echo("Hello World!!");
+ }
+</code></pre></div></div>
+
+<p>a は null ポインタですので、何もオブジェクトを指していません。これと同様に、上の m_MyServiceConsumer も、コンポーネントの起動直後には、いかなるオブジェクトも指していませんので、当然オペレーションを呼び出すことができません。
+上記の class A の場合では、</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> int main (void) {
+   A* a;
+   a = new A();
+   a-&gt;echo("Hello World!!");
+ }
+</code></pre></div></div>
+
+<p>オブジェクトを new で生成して、変数 a に代入してあげれば a はその時点であるオブジェクトを指し示す正当なポインタですので、class Aのメンバ関数である echo() を呼ぶことができます。</p>
+
+<p>しかしながら、コンポーネント内のコンシューマが呼び出したいのは、ネットワーク上のどこかにあるオブジェクトのオペレーションです。
+したがって、m_MyServiceConsumer が指し示すのはリモートオブジェクトの参照 (CORBAオブジェクト参照(リファレンス)) です。</p>
+
+<p>実は下図に示すように、コンシューマはそのポートがプロバイダを持つポートと接続されるときに、対応するオブジェクト参照を受け取ります。
+接続によりコンシューマは正当なオブジェクトを指すことになり、こうして初めてオペレーションを呼び出すことができるのです。</p>
+
+<p>hogehogee</p>
+
+<div align="center"><a href="serviceport_connection_and_reference_ja.png"><img src="serviceport_connection_and_reference_ja.png" width="40%;" /></a></div>
+<div align="center"><strong>サービスポートの接続とオブジェクト(参照)リファレンス</strong></div>
+
+<p>接続後は(相手のポートに適当なプロバイダが存在すれば)コンシューマのオペレーションを呼び出すことができますが、接続していない場合、または有効な参照がセットされていない場合は、コンシューマオブジェクトは例外を投げます。
+そして、コンシューマを利用する場合、いつ接続が行われるか、またいつ接続が切断されるかは分かりませんので、常にこの例外を捕捉して適切に処理する必要があります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> try
+ {
+   m_MyServiceConsumer-&gt;echo("Hello World!!");
+ }
+ catch (CORBA::SystemException &amp;e)
+ {
+   // 例外捕捉時の処理
+      std::cout &lt;&lt; "ポートが接続されていません"" &lt;&lt; std::endl;
+ }
+ catch (...)
+ {
+   // その他の例外
+ }
+</code></pre></div></div>
+
+<p>なお、onExecute() メンバ関数内で例外が発生し、関数内部で捕捉されなかっ
+た場合、RTC はエラー状態へ遷移します。</p>
+
+<p>以上を踏まえて、MyServiceConsumer コンポーネント実装します。この例では、onExecute() でユーザーからの入力待ちを行い、各オペレーションに対応したコマンドを受け取り、コマンドに応じてリモートのプロバイダのオペレーションを呼び出し結果を返すといった簡単なものです。</p>
+
+<p>では、まずユーザーに利用できるコマンドを提示する部分からみていきます。</p>
+
+<p>RTC::ReturnCode_t MyServiceConsumer::onExecute(RTC::UniqueId ec_id)
+{</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  try
+    {
+      std::cout &lt;&lt; std::endl;
+      std::cout &lt;&lt; "Command list: " &lt;&lt; std::endl;
+      std::cout &lt;&lt; " echo [msg]       : echo message." &lt;&lt; std::endl;
+      std::cout &lt;&lt; " set_value [value]: set value." &lt;&lt; std::endl;
+      std::cout &lt;&lt; " get_value        : get current value." &lt;&lt; std::endl;
+      std::cout &lt;&lt; " get_echo_history : get input messsage history." &lt;&lt; std::endl;
+      std::cout &lt;&lt; " get_value_history: get input value history." &lt;&lt; std::endl;
+      std::cout &lt;&lt; "&gt; ";
+      
+      std::string args;
+      std::string::size_type pos;
+      std::vector&lt;std::string&gt; argv;
+      std::getline(std::cin, args);
+</code></pre></div></div>
+
+<p>まず、上で述べたようにコンシューマが発する例外を捕捉するためにtry節で囲みます。
+利用可能なコマンドリストを表示して、ユーザの入力をgetline()関数で受け取っています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      
+      pos = args.find_first_of(" ");
+      if (pos != std::string::npos)
+        {
+          argv.push_back(args.substr(0, pos));
+          argv.push_back(args.substr(++pos));
+        }
+      else
+        {
+          argv.push_back(args);
+        }
+</code></pre></div></div>
+
+<p>これらのコマンドのうち、引数を取るものは echo と set_value だけで、かつこれらのコマンドは引数を一つだけとります。
+受け取った文字列を最初の空白で分割し、argv[0] = コマンド、argv[1] = 引数として string の vector に格納します。
+echo, set_value コマンドでは argv[1] を引数として利用し、他のコマンドでは単純に無視することにします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        
+      if (argv[0] == "echo" &amp;&amp; argv.size() &gt; 1)
+        {
+          CORBA::String_var retmsg;
+          retmsg = m_myservice0-&gt;echo(argv[1].c_str());
+          std::cout &lt;&lt; "echo return: " &lt;&lt; retmsg &lt;&lt; std::endl;
+          return RTC::RTC_OK;
+        }
+</code></pre></div></div>
+
+<p>echo コマンドの実装です。argv[0] が  <strong>echo</strong> の場合、argv[1] を引数にして echo() 関数を呼び出します。
+echo() のCORBAのstring型の戻り値を受け取るための変数として、retmsg を宣言しています。
+echo() の戻り値の所有権はこちら側にあるので、受け取った後に適切に領域を解放する必要があるのですが、String_var 型のスマートポインタを利用すると、不要になった時点で適切に領域解放を行ってくれます。
+戻り値を表示して、return RTC::RTC_OK としてonExecute() 関数を抜けています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        
+      if (argv[0] == "set_value" &amp;&amp; argv.size() &gt; 1)
+        {
+          CORBA::Float val(atof(argv[1].c_str()));
+          m_myservice0-&gt;set_value(val);
+          std::cout &lt;&lt; "Set remote value: " &lt;&lt; val &lt;&lt; std::endl;
+          return RTC::RTC_OK;
+        }
+</code></pre></div></div>
+
+<p>set_value コマンドの実装です。引数 argv[1] の文字列を CORBA::Float 型に変換して、set_value() オペレーションの引数に与えています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        
+      if (argv[0] == "get_value")
+        {
+          std::cout &lt;&lt; "Current remote value: "
+                    &lt;&lt; m_myservice0-&gt;get_value() &lt;&lt; std::endl;
+          return RTC::RTC_OK;
+        }
+</code></pre></div></div>
+
+<p>get_value コマンドは set_value コマンドで設定した値を取得します。
+get_value() オペレーションは、戻り値が CORBA::Float で値渡しのためオブジェクトの所有権などは特に考えなくとも構いません。
+ここでは、戻り値をそのまま std::cout でコンソールに表示させています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      if (argv[0] == "get_echo_history")
+        {
+          EchoList_var elist = m_myservice0-&gt;get_echo_history();
+          for (CORBA::ULong i(0), len(elist.length(); i &lt;len; ++i)
+          {
+            std::cout &lt;&lt; elist[i] &lt;&lt; std::endl;
+          }
+          return RTC::RTC_OK;
+        }
+</code></pre></div></div>
+
+<p>get_echo_history コマンドでは、get_echo_history() の結果を受け取り、それまで echo コマンドで引数に与えられた文字列のリストを返しています。
+get_echo_history() 関数の戻り値は CORBA のシーケンス型である EchoListです。
+シーケンス型についてもスマートポインタである _var 型が定義されていますので、これを利用します。
+配列の長さを取得するための length() 関数が利用できるので、長さを調べて for 文ですべての要素を表示しています。
+シーケンス型の_var型では、上記のように[]オペレータを利用して C言語の配列のように各要素にアクセスできます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      if (argv[0] == "get_value_history")
+        {
+          ValueList_var vlist = m_myservice0-&gt;get_value_history();
+          for (CORBA::ULong i(0), len(vlist.length()); i &lt; len; ++i)
+          {
+            std::cout &lt;&lt; vlist[i] &lt;&lt; std::endl;
+          }
+          return RTC::RTC_OK;
+        }
+</code></pre></div></div>
+
+<p>最後に、get_value_history コマンドです。get_value_history() オペレーションを呼び出し、これまで設定された値のリストを表示します。
+get_value_hitory() 関数の戻り値は CORBA::Float のシーケンス型の ValueList です。要素は CORBA::Float のためオブジェクトの所有権等といったことは考えなくてもよいのですが、シーケンス型はそれ自身オブジェクトですので、所有権を考慮しなければならないのでここでは _var 型の変数で受け取っています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> std::cout &lt;&lt; "Invalid command or argument(s)." &lt;&lt; std::endl;
+     }
+   catch (CORBA::SystemException &amp;e)
+     {
+       std::cout &lt;&lt; "No service connected." &lt;&lt; std::endl;
+     }
+   return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<p>最後に、上のどれにも当てはまらなかったコマンドの場合に、メッセージを出しています。また、コンシューマに参照がセットされていない場合の例外を含めて捕捉するための catch 節があります。</p>
+
+<p>以上、コンシューマによるオペレーションの呼び方について簡単な例を交えて説明しました。
+コンシューマを利用する際には、必ずしもオブジェクト参照がセットされているとは限らないので、必ず例外を捕捉し対処することと、各オペレーションの呼び出しが、CORBA のルールに基づいて行われることに留意してください。</p>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

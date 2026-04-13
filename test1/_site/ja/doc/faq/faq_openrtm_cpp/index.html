@@ -1,0 +1,1483 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>OpenRTM-aist (C++版) に関する FAQ | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="OpenRTM-aist (C++版) に関する FAQ" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/faq/faq_openrtm_cpp/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/faq/faq_openrtm_cpp/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="OpenRTM-aist (C++版) に関する FAQ" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"OpenRTM-aist (C++版) に関する FAQ","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/faq/faq_openrtm_cpp/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">
+        <!-- TODO add theme version dropdown here -->
+        <!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/"  title="test_dl_page"
+            >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/"  title="test_doc_page"
+            >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >Research_and_Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    Research_and_Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>OpenRTM-aist (C++版) に関する FAQ</h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/faq/faq_openrtm_cpp/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#windows">Windows</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#cmakeに失敗する">CMakeに失敗する</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ネームサーバーのコンソール画面が開かない">ネームサーバーのコンソール画面が開かない</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サンプルコンポーネントが起動しない">サンプルコンポーネントが起動しない</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サンプルコンポーネントを起動させるとランタイムエラーで終了する">サンプルコンポーネントを起動させると、ランタイムエラーで終了する</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#cmake-実行時にコンパイラが見つからない">CMake 実行時にコンパイラが見つからない</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtp-実行時に-xxxdll-が存在しないというエラーが表示される">OpenRTP 実行時に xxx.dll が存在しないというエラーが表示される</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#このアプリケーションの構成が正しくないためアプリケーションを開始できませんでした-が表示される">「このアプリケーションの構成が正しくないため、アプリケーションを開始できませんでした。…」 が表示される</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#アプリケーションエラーアプリケーションを正しく初期化できませんでしたが表示される">アプリケーションエラー「アプリケーションを正しく初期化できませんでした。…」が表示される</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtm-namingbat-を実行するとアプリケーションエラーが発生する">rtm-naming.bat を実行するとアプリケーションエラーが発生する</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtm-naming-が実行できない">rtm-naming が実行できない</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#unix">UNIX</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#configure-を実行したがエラーが出て終了する">configure を実行したがエラーが出て終了する</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#make-を実行してもビルドが完了しないまたは-make-の実行エラーが表示される">make を実行してもビルドが完了しない。または make の実行エラーが表示される</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サンプルプログラムの-simpleio-を実行する-runsh-が実行できない">サンプルプログラムの SimpleIO を実行する run.sh が実行できない</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#サンプルプログラムの-simpleio-を起動したが正常に動作しない">サンプルプログラムの SimpleIO を起動したが、正常に動作しない</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: OpenRTM-aist (C++版) に関する FAQ -->
+<p>#contents(3)</p>
+
+<h2 id="windows">Windows</h2>
+
+<h3 id="cmakeに失敗する">CMakeに失敗する</h3>
+
+<ul>
+  <li>原因1:アーキテクチャを合わせていない可能性があります。</li>
+</ul>
+
+<p>アーキテクチャを合わせていない可能性があります。
+OpenRTM は 32bit をインストールしているのに、CMake でコンパイラを 64bit に指定しているなど、アーキテクチャを合わせていない可能性があります。
+アーキテクチャを合わせてから実行する必要があります。</p>
+
+<p><br /></p>
+
+<ul>
+  <li>原因2：CMake のバージョンが古い可能性があります。
+OpenRTM で対応している CMake および VisualStudio のバージョンをインストールして実行してください。
+<br />
+<br /></li>
+</ul>
+
+<h3 id="ネームサーバーのコンソール画面が開かない">ネームサーバーのコンソール画面が開かない</h3>
+<ul>
+  <li>原因1：omniORB がインストールされていない</li>
+</ul>
+
+<p>openrtm.org が提供する msi インストーラーには omniORB が含まれていますが、手動でインストールした場合には、omniORB が入っていない場合も考えられますので、omniORB がインストールされているか確認してください。</p>
+
+<p><br /></p>
+
+<ul>
+  <li>原因2：環境変数 OMNI_ROOT が設定されていない
+「Start Naming Service」は %RTM_ROOT%\bin\rtm-naming.bat にあるバッチファイルからネームサーバー (omniNames.exe) を起動します。 この際、omniNames.exe を参照するために環境変数 OMNI_NAMES を利用しています。 
+通常インストーラーで OpenRTM-aist をインストールした場合には、OMNI_ROOT 環境変数が自動で設定されますが、何らかの理由で環境変数が無効になったり、手動でインストールした場合は、環境変数が設定されていないことがあります。</li>
+</ul>
+
+<p>環境変数 OMNI_ROOT が設定されていることを確認してください<br />
+環境変数は、</p>
+<ul>
+  <li>[コントロールパネル] &gt; [システム] &gt; [詳細設定]タブ &gt; [環境変数]</li>
+  <li>[マイコンピューター] を右クリック、[プロパティ] &gt; [詳細設定] タブ &gt; [環境変数] などから参照・編集することができます。</li>
+</ul>
+
+<p>原因3：ユーザー名が2バイト文字の場合、ログを出力するフォルダーを適切に設定できずに omniNames.exe の起動に失敗している
+環境変数 TEMP を2バイト文字を含まない場所に設定することで改善する場合があります。
+適当なテンポラリフォルダー (以下のケースでは C:\temp) を作成し、そこを環境変数 TEMP が指すように、rtm-naming.bat の先頭部分で以下のように設定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> set cosnames="omninames"
+ set orb="omniORB"
+ set port=%1
+ rem set OMNIORB_USEHOSTNAME=localhost
+ set PATH=%PATH%;%OMNI_ROOT%\bin\x86_win32
+ set TEMP=C:\temp
+</code></pre></div></div>
+
+<p>また、稀なケースですが、ホスト名やアドレスの設定の問題で、起動できないことがあります。
+その場合、利用している PC の IPアドレス を omniNames.exe に設定する必要があります。
+環境変数 OMNIORB_USEHOSTNAME を以下のように設定します (以下は自ホストの IPアドレスが 192.168.0.11 の場合の例)。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> set cosnames="omninames"
+ set orb="omniORB"
+ set port=%1
+ set OMNIORB_USEHOSTNAME=192.168.0.11
+ set PATH=%PATH%;%OMNI_ROOT%\bin\x86_win32
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h3 id="サンプルコンポーネントが起動しない">サンプルコンポーネントが起動しない</h3>
+<p>rtc.conf の設定に問題があります。rtc.conf の設定を以下のように設定し直して確認してください。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.nameservers: localhost
+</code></pre></div></div>
+<p>例えば、corba.endpoint/corba.endpoints などの設定が現在実行中の PC のホストアドレスとミスマッチを起こしている場合は、CORBA が異常終了します。
+<br />
+<br /></p>
+
+<h3 id="サンプルコンポーネントを起動させるとランタイムエラーで終了する">サンプルコンポーネントを起動させると、ランタイムエラーで終了する</h3>
+<p>ライブラリー等が適切にインストールされていない、設定されていない等の原因でラインタイムエラーが表示される場合があります。
+PCを再起動する または OpenRTM-aist をすべてアンインストールし、再インストールすることで改善される場合があります。
+<br />
+<br /></p>
+
+<p>&amp;aname(cmakecompilererrro);</p>
+<h3 id="cmake-実行時にコンパイラが見つからない">CMake 実行時にコンパイラが見つからない</h3>
+
+<p>CMake 実行時に以下のエラーが発生する。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> No CMAKE_CXX_COMPILER could be found. 
+</code></pre></div></div>
+
+<p>まずは、&lt;プロジェクトディレクトリー&gt;/&lt;buildディレクトリー&gt;/CMakeFiles/CMakeError.log を確認してください。</p>
+
+<p>:原因1：間違ったコンパイラを指定した</p>
+
+<p>CMake を実行 (Configure) する際に、コンパイラをしてします。インストールされている Visual Studio とは異なるコンパイラを指定した場合には、コンパイラが見つからず、<strong>No CMAKE_CXX_COMPILER could be found.</strong> のようなエラーが発生します。</p>
+
+<p>CMakeError.log を見ると、以下のように、コンパイラチェック開始直後にエラーが発生します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Microsoft (R) Build Engine バージョン 4.6.1586.0
+ [Microsoft .NET Framework、バージョン 4.0.30319.42000]
+ Copyright (C) Microsoft Corporation. All rights reserved.
+ 
+ 2017/04/08 10:47:04 にビルドを開始しました。
+ ノード 1 上のプロジェクト
+ "C:\workspace\Flip\build\CMakeFiles\3.7.2\CompilerIdC\CompilerIdC.vcxproj"
+ (既定のターゲット)。
+ C:\workspace\Flip\build\CMakeFiles\3.7.2\CompilerIdC\CompilerIdC.vcxproj(18,3): 
+ error MSB4019: 
+ インポートされたプロジェクト 
+ "C:\Microsoft.Cpp.Default.props" が見つかりませんでした。&lt;Import&gt; 
+ 宣言のパスが正しいかどうか、およびファイルがディスクに存在しているかどうかを
+ 確認してください。
+ プロジェクト
+ "C:\workspace\Flip\build\CMakeFiles\3.7.2\CompilerIdC\CompilerIdC.vcxproj"
+ (既定のターゲット) のビルドが終了しました -- 失敗。
+ 
+ ビルドに失敗しました。
+ 
+ "C:\workspace\Flip\build\CMakeFiles\3.7.2\CompilerIdC\CompilerIdC.vcxproj"
+ (既定のターゲット) (1) -&gt;
+  C:\workspace\Flip\build\CMakeFiles\3.7.2\CompilerIdC\CompilerIdC.vcxproj(18,3):
+ error MSB4019: インポートされたプロジェクト 
+ "C:\Microsoft.Cpp.Default.props" が見つかりませんでした。
+ &lt;Import&gt; 宣言のパスが正しいかどうか、およびファイルがディスクに存在しているかどうかを
+ 確認してください。
+  
+     0 個の警告
+     1 エラー
+ 
+ 経過時間 00:00:00.50
+</code></pre></div></div>
+
+<ul>
+  <li>対応方法：正しいコンパイラを指定します。</li>
+</ul>
+
+<ol>
+  <li>インストールされている OpenRTM を確認
+    <ul>
+      <li>→ 32bitか、64bitか？</li>
+    </ul>
+  </li>
+  <li>インストールされている Visual Studio を確認
+    <ul>
+      <li>→ Visual Studio 2008 (VC9), 2010 (VC10), 2012 (VC11), 2013 (VC12), 2015 (VC14), 2017 (VC15)</li>
+    </ul>
+  </li>
+  <li>CMake のキャッシュを削除
+    <ul>
+      <li>コンパイラの指定を変更する際には必ずキャッシュを削除する必要があります。</li>
+    </ul>
+  </li>
+  <li>CMake Configure で正しいコンパイラを指定
+    <ul>
+      <li>32bit/64bit はインストールされている OpenRTM に合わせる</li>
+    </ul>
+    <ul>
+      <li>32bit は無印 (例: Visual Studio 10 2010)</li>
+      <li>64bit はWin64 (例： Visual Studio 10 2010 Win64)</li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>原因2：Visual C++ がインストールされていない
+Visual Studio インストール時に、C++コンパイラを含む Visual C++ がインストールされていない場合があります。</p>
+  </li>
+  <li>
+    <p>対応方法：Visual C++ をインストールします
+再度インストーラーを（手元になければダウンロードしてから）起動し、[変更] からインストールを行います。
+インストールをカスタマイズするを選択して、インストール対象に Visual C++ が含まれていることを確認してからインストールを行います。</p>
+  </li>
+</ul>
+
+<p>この原因の場合も、CMakeError.log の出力内容は（原因1）と同じです。</p>
+
+<ul>
+  <li>原因3：rc.exe が実行できない
+まれに、インストールされているコンパイラを CMake 実行時に正しく指定しているのにもかかわらず、<strong>No CMAKE_CXX_COMPILER could be found.</strong> のようなエラーが発生することがあります。
+原因の一つとして、複数のバージョンの Visual Studio をインストール・アンインストール等を行った際に、まれにツールチェーンの設定に不整合が生じ、以下のようなエラー <strong>rc.exeが実行できない</strong> が発生することがあります。</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe
+ /c /nologo /W0 /WX- /Od /D _MBCS /Gm- /EHsc /RTC1
+ /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb"
+ /Gd /TC /errorReport:queue CMakeCCompilerId.c
+   CMakeCCompilerId.c
+ Link:
+ C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe
+ /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO
+ kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib
+ shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST
+ /MANIFESTUAC:"level='asInvoker' uiAccess='false'"
+ /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1
+ /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib"
+ /MACHINE:X64 Debug\CMakeCCompilerId.obj
+ LINK : fatal error LNK1158: 'rc.exe' を実行できません。
+ [C:\workspace\Flip\build\CMakeFiles\3.7.2\CompilerIdC\CompilerIdC.vcxproj]
+ プロジェクト "C:\workspace\Flip\build\CMakeFiles\3.7.2\CompilerIdC\CompilerIdC.vcxproj"
+ (既定のターゲット) のビルドが終了しました -- 失敗。
+ 
+ ビルドに失敗しました。
+</code></pre></div></div>
+
+<ul>
+  <li>対応方法：rc.exe と rcdll.dll をコピーする
+これに対する対処方法としては、rc.exe と rcdll.dll を対象コンパイラのツールディレクトリーにコピーする方法があります。</li>
+</ul>
+
+<ol>
+  <li>rc.exe, rcdll.dll を探す
+    <ul>
+      <li>エクスプローラーを開き <strong>C:\Program Files</strong> (または <strong>C:\Program Files (x86)</strong>) を開き rc.exe を検索する。rcdll.dll は同じディレクトリーにあるはずなので探すのは rc.exe のみでよい。</li>
+      <li>通常は <strong>C:\Program Files (x86)\Windows Kits</strong> の下にいくつかの rc.exe が見つかるが x86 というディレクトリー下にあるものが対象。</li>
+      <li>検索結果にて対象の rc.exe を右クリックし<strong>「ファイルの場所を開く」</strong>を選択</li>
+    </ul>
+  </li>
+  <li>コンパイラのツールディレクトリーを開く
+    <ul>
+      <li>別のエクスプローラーを開き、ツールの bin ディレクトリーを開く</li>
+      <li>上のログの例では、<strong>C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe</strong> から、ツールのディレクトリーが <strong>C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin</strong> (binディレクトリーが対象、x86?amd64は無視してよい)  であることがわかる。</li>
+    </ul>
+  </li>
+  <li>rc.exe, rcdll.dll をコピーする
+    <ul>
+      <li>1.で開いたエクスプローラーから rc.exe、rcdll.dll を2.で開いたツールディレクトリーにコピーする
+<br />
+<br /></li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h3 id="openrtp-実行時に-xxxdll-が存在しないというエラーが表示される">OpenRTP 実行時に xxx.dll が存在しないというエラーが表示される</h3>
+<ul>
+  <li>原因1：
+    <ul>
+      <li>Windows10 のみの現象の可能性があります。</li>
+      <li>RTM_VC_VERSION が正しく環境変数に設定されていない可能性があります。</li>
+    </ul>
+  </li>
+  <li>対処方法：
+OpenRTM インストール後に PCを再起動して、環境変数に RTM_VC_VERSION が正しく設定されているかを確認してください。
+<br />
+<br /></li>
+</ul>
+
+<p>&amp;aname(errorapplication);</p>
+<h3 id="このアプリケーションの構成が正しくないためアプリケーションを開始できませんでした-が表示される">「このアプリケーションの構成が正しくないため、アプリケーションを開始できませんでした。…」 が表示される</h3>
+<p>サンプルの RTコンポーネントなどを起動しようとして、xxxComp.exe を実行すると、上記のようなエラーが出る場合があります。
+このエラーは起動環境上に VC++ライブラリーのランタイムコンポーネントがないために起こります。
+VC++関連の開発環境（Microsoft Visual Studio,Visual C++ Expressなど）をインストールしていない環境では OpenRTM-aist (C++版) を動作させることはできませんので、必ず VC++関連の開発環境をインストールしてください。~
+<br />
+<br /></p>
+
+<p>&amp;aname(errorinit);</p>
+<h3 id="アプリケーションエラーアプリケーションを正しく初期化できませんでしたが表示される">アプリケーションエラー「アプリケーションを正しく初期化できませんでした。…」が表示される</h3>
+<p>ネームサーバー起動しようとして、rtm-naming.bat を実行すると、上記のようなエラーが出る場合があります。
+このエラーは、起動環境上に VC++ライブラリーのランタイムコンポーネントがないために起こります。
+VC++関連の開発環境（Microsoft Visual Studio 、Visual C++  Expressなど）をインストールしていない環境では OpenRTM-aist (C++版) を動作させることはできませんので、必ず VC++関連の開発環境をインストールしてください。
+<br />
+<br /></p>
+
+<h4 id="vc関係のライブラリーがインストールされていない">VC++関係のライブラリーがインストールされていない</h4>
+<p>Visual Studio 等のアプリケーションのインストールを行ってください。
+<br />
+<br /></p>
+
+<h3 id="rtm-namingbat-を実行するとアプリケーションエラーが発生する">rtm-naming.bat を実行するとアプリケーションエラーが発生する</h3>
+<p>VC++関係のライブラリーがインストールされていない可能性が考えるので、インストールを行ってください。
+<br />
+<br /></p>
+
+<h3 id="rtm-naming-が実行できない">rtm-naming が実行できない</h3>
+<p>rtm-naming.bat を実行しても黒い窓（コマンドプロンプト画面）が一瞬開いて閉じてしまう。</p>
+
+<ul>
+  <li>原因1：omniORB がインストールされていない
+    <ul>
+      <li>対処方法：ダウンロードページから omniORB をダウンロードしインストールしてください。<br />
+rtm-naming.bat 内では通常 omniORB のネームサーバー<strong>omniNames.exe</strong>を実行します。~
+omniORB がインストールされていないと<strong>omniNames.exe</strong>もインストールされないので、ネームサーバーを実行できません。~
+<br /></li>
+    </ul>
+  </li>
+  <li>原因2：log ディレクトリーのパス中に2バイト文字が含まれている
+    <ul>
+      <li>対処方法：r tm-naming.bat 内では通常 omniORB のネームサーバー<strong>omniNames.exe</strong>を以下のように実行します。~
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> omniNames.exe -start 2809 -logdir %TEMP%
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>通常環境変数 %TEMP% はユーザーのテンポラリディレクトリー</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> C:\Documents and Settings\ユーザー名\Local Settings\Temp
+</code></pre></div></div>
+
+<p>を指します。ここで、<strong>ユーザー名</strong>が日本語の場合、omniNames がログファイルを正しく作成できないため、実行できずに終了します。~
+対応策としては、以下の3つが考えられます。</p>
+<ul>
+  <li>日本語のユーザー名を使用しない
+    <ul>
+      <li>日本語を使用しないユーザーを新たに作り、その環境で実行する。</li>
+    </ul>
+  </li>
+  <li>rtm-naming.bat を書き換える
+    <ul>
+      <li><strong>C</strong>: \Program Files\OpenRTM-aist[バージョン番号]\bin**の下にある rtm-naming.bat の中の以下の部分 ~</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> %cosnames% -start %port% -logdir %TEMP%\ 
+</code></pre></div></div>
+<p>を~</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> %cosnames% -start %port% -logdir [パスに日本語を含まないログディレクトリー]
+</code></pre></div></div>
+<p>のように書き換えます。~
+<strong>パスに日本語を含まないログディレクトリー</strong>は自分に書き込みの権限があるディレクトリーで、安全な場所にしてください。たとえば、C:\tmp など。</p>
+
+<ul>
+  <li>Java版の orbd を使用する
+    <ul>
+      <li>OpenRTM-aist の Java版と JDK をインストールすると、スタートメニューの Java版 の examples の中に <strong>start-orbd.vbs</strong> が現れます。これは、JDK に付属する CORBA ネームサーバーを起動するスクリプトです。~
+このネームサーバーには、omniNames のような日本語のパスの問題は存在しないので、これを使用することでユーザー名が日本語でも、ネームサーバーを起動できます。
+<br /></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="unix">UNIX</h2>
+<h3 id="configure-を実行したがエラーが出て終了する">configure を実行したがエラーが出て終了する</h3>
+<p>configure のエラーの大半は、必要なパッケージが見つからないときに出ます。エラーが出た場合には、必要なパッケージがインストールされているか、autoconf が見つけられるディレクトリーにヘッダ、ライブラリーがインストールされているかを確認してください。
+<br />
+<br /></p>
+
+<h3 id="make-を実行してもビルドが完了しないまたは-make-の実行エラーが表示される">make を実行してもビルドが完了しない。または make の実行エラーが表示される</h3>
+<p>パッケージのインストールまたは OpenRTM-aist (C++版)のビルドが不完全な可能性があります。もう一度パッケージの自動インストーラーを起動して、パッケージのインストールからやり直してください。
+パッケージのインストール中の処理画面に何らかのエラーメッセージが表示された場合、該当するパッケージだけを手動でインストールするなどしてから configure を実行してください。
+configure を実行してエラーメッセージが表示されないことを確認してから、再度 make を実行してビルドを完了させてください。
+<br />
+<br /></p>
+
+<h3 id="サンプルプログラムの-simpleio-を実行する-runsh-が実行できない">サンプルプログラムの SimpleIO を実行する run.sh が実行できない</h3>
+<p>run.sh に実行ビットが立っていない可能性があります。下記のように実行ビットを立てて実行するか、直接シェルに渡して実行してください。~</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt; ls -al run.sh
+ -rw-r--r--  1 n-ando  n-ando  1146  4 27 15:12 run.sh
+ &gt; chmod 755 run.sh
+ &gt; ./run.sh
+</code></pre></div></div>
+<p>もしくは</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt; sh run.sh
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h3 id="サンプルプログラムの-simpleio-を起動したが正常に動作しない">サンプルプログラムの SimpleIO を起動したが、正常に動作しない</h3>
+<p>SimpleIO の実行スクリプト run.sh では、ターミナルウィンドウを kterm，xterm，gnome-terminal のいずれかに仮定しております。
+このため、これ以外のターミナルウィンドウを使用している場合は、run.sh を適宜書き換えてから実行してください。~
+<br /></p>
+
+
+	</div>
+  </article>
+</section>
+
+<p>
+</p>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

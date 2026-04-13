@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>独自実行コンテキストの作成手順 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="独自実行コンテキストの作成手順" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="独自実行コンテキストの作成手順" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"独自実行コンテキストの作成手順","image":"/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<a>hogeee---000</a>
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="container">
+    <!-- site home -->
+    <a class="navbar-brand" href="/my-jekyll-site/">
+      <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" height="32" width="32">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <!-- TODO add theme version dropdown here --><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/" >Home</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >Download</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >Documentation</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >Community</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/research_development/" >Research_and_Development</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >Project</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/hardware/" >Hardware</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/manual_md1/" >Manual_MD</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi/" >harumi</a>
+
+	  
+
+        </li><li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/harumi2/" >harumi2</a>
+
+	  
+
+        </li></ul>
+      
+    </div>
+  </nav>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+<a>hogeee---001</a>
+      <section class="container">
+  <h1>独自実行コンテキストの作成手順</h1>
+  <h3>Contents</h3>
+  <div class="blog-post-toc m-1">
+          <ul>
+  <li><a href="#ビルド手順">ビルド手順</a>
+    <ul>
+      <li><a href="#windows">Windows</a>
+        <ul>
+          <li><a href="#openrtm-aistのビルドとインストール">OpenRTM-aistのビルドとインストール</a></li>
+          <li><a href="#choreonoidのビルドとインストール">Choreonoidのビルドとインストール</a></li>
+          <li><a href="#openrtmプラグインのビルドとインストール">OpenRTMプラグインのビルドとインストール</a></li>
+          <li><a href="#openrtm-pythonプラグインのビルドとインストール">OpenRTM Pythonプラグインのビルドとインストール</a></li>
+          <li><a href="#必要なファイル一式をまとめる">必要なファイル一式をまとめる</a></li>
+        </ul>
+      </li>
+      <li><a href="#ubuntu">Ubuntu</a>
+        <ul>
+          <li><a href="#openrtm-aistのビルドとインストール-1">OpenRTM-aistのビルドとインストール</a></li>
+          <li><a href="#choreonoidのビルドとインストール-1">Choreonoidのビルドとインストール</a></li>
+          <li><a href="#openrtmプラグインのビルドとインストール-1">OpenRTMプラグインのビルドとインストール</a></li>
+          <li><a href="#openrtm-pythonプラグインのビルドとインストール-1">OpenRTM Pythonプラグインのビルドとインストール</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#使用方法">使用方法</a></li>
+</ul>
+        </div>
+  <article>
+	<div>
+		<!-- Choreonoid OpenRTMプラグインの利用方法 -->
+<p>#contents
+Choreonoidはオープンソースのロボット用シミュレーションソフトウェアです。
+拡張性が高く、物理エンジン、通信機能、スクリプティング機能、制御アルゴリズム等をC++プラグインとして追加できます。</p>
+
+<ul>
+  <li><a href="https://choreonoid.org/ja/">Choreonoid ホームページ</a></li>
+</ul>
+
+<p>Choreonoid用OpenRTMプラグインはChoreonoid上でRTCを起動し、シミュレータ上のオブジェクトのトルクや速度、ビジョンセンサやレーザーレンジセンサ等の入出力をポートの入出力と関連付けたRTCを作成できます。
+これにより外部のRTCとChoreonoidの入出力が連携し、RTCの再利用によるシミュレータ実行の効率化、シミュレータ環境から実機環境へシームレスに移行できます。</p>
+
+<div align="center"><a href="choreonoid1_1.png"><img src="choreonoid1_1.png" width="80%;" /></a></div>
+
+<p>このページではOpenRTMプラグインのインストール手順について説明します。</p>
+
+<h2 id="ビルド手順">ビルド手順</h2>
+<p>OpenRTMプラグインは現在OpenRTM-aist 1.2.2以前のバージョンのサポートを終了しています。
+OpenRTM-aist 2.0.0以上のバージョンのインストールが必要です。</p>
+
+<h3 id="windows">Windows</h3>
+<h4 id="openrtm-aistのビルドとインストール">OpenRTM-aistのビルドとインストール</h4>
+
+<p>OpenRTM-aist+omniORBを以下の手順でビルド、インストールしてください。
+※インストーラーでOpenRTM-aistをインストールしている場合は不要。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build#windowsomniorb">OpenRTM-aist(C++版)のCMakeによるビルド手順</a></li>
+</ul>
+
+<p>ただし、CMake実行時にOpenRTM-aistのインストールフォルダは指定してそこにインストールするようにしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> set OPENRTM_INSTALL_DIR=C:/work/openrtm_install
+ set OMNIORB_SOURCE_DIR=C:/workspace/omniORB-4.2.5-x64-vc14-py310
+ cmake .. -DORB_ROOT=%OMNIORB_SOURCE_DIR% -DCMAKE_INSTALL_PREFIX=%OPENRTM_INSTALL_DIR%
+ cmake --build . --config Release
+ cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<p>またOpenSSLのヘッダーファイル、ライブラリを適当な場所に展開してください。</p>
+
+<ul>
+  <li>https://openrtm.org/pub/OpenSSL/1.1.0/</li>
+</ul>
+
+<h4 id="choreonoidのビルドとインストール">Choreonoidのビルドとインストール</h4>
+
+<p>Choreonoidを以下の手順でビルド、インストールしてください。</p>
+
+<ul>
+  <li><a href="https://choreonoid.org/ja/documents/latest/install/build-windows.html">ソースコードからのビルドとインストール (Windows編)</a></li>
+</ul>
+
+<p>CMake、Boost、Qtのバージョンには注意してください。</p>
+
+<ul>
+  <li>CMakeのバージョンが古い場合、Boostをライブラリを検出できない場合があります。できるだけ最新版をインストールしてください。</li>
+  <li>Boostはデフォルトの設定で<strong>C:\local\boost_1<em>77_0**のようなフォルダにインストールされますが、CMakeは**C:\local\boost</em>{バージョン番号}</strong>からBoostを探すため、古いバージョンがすでに<em>*C:\local*</em>以下にインストールされている場合にそちらを検出する事があるので注意してください。</li>
+</ul>
+
+<p>OpenRTMプラグインの使用のためにはCORBAプラグインのビルドに、ヘッダーファイルなどの各種ファイルをインストールが必要です。
+また、OpenRTM Pythonプラグインの使用のためにはPythonプラグインのビルドが必要です。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>設定項目</th>
+    <th>内容</th>
+    <th>設定例</th>
+  </tr>
+  <tr>
+    <td>ENABLE_CORBA</td>
+    <td>CORBA通信機能の有効化、無効化</td>
+    <td>ON</td>
+  </tr>
+  <tr>
+    <td>BUILD_CORBA_PLUGIN</td>
+    <td>CORBAプラグインのビルドの有無</td>
+    <td>ON</td>
+  </tr>
+  <tr>
+    <td>CHOREONOID_OMNIORB_DIR</td>
+    <td>omniORBのインストールフォルダのパス</td>
+    <td>**'C:/work/openrtm_install/2.0.0/omniORB/4.2.5_vc16**'</td>
+  </tr>
+  <tr>
+    <td>INSTALL_SDK</td>
+    <td>ヘッダーファイルなどの各種ファイルをインストールするか</td>
+    <td>ON</td>
+  </tr>
+  <tr>
+    <td>ENABLE_PYTHON</td>
+    <td>Pythonスクリプティング機能、およびPythonプラグインのビルドの有無</td>
+    <td>ON</td>
+  </tr>
+  <tr>
+    <td>CMAKE_INSTALL_PREFIX</td>
+    <td>Choreonoidのインストールフォルダ</td>
+    <td>**'C:/work/choreonoid_install**'</td>
+  </tr>
+</table>
+
+<p><strong>CHOREONOID_OMNIORB_DIR</strong>については環境変数OMNI_ROOTを設定していると自動でomniORBを検出しますが、Choreonoidが生成するCMakeコンフィグファイルの問題でOpenRTMプラグインのビルドでエラーが発生することがあるので必ず手動でパスを設定してください。
+またPythonプラグインのビルドのため、Pythonをインストールしてください。</p>
+
+<p>コマンドでは以下のように入力できます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> set CHOREONOID_INSTALL_DIR=C:/work/choreonoid_install
+ Invoke-WebRequest -Uri https://github.com/choreonoid/choreonoid/archive/refs/tags/v1.7.0.zip -OutFile choreonoid-1.7.0.zip
+ Expand-Archive -Path choreonoid-1.7.0.zip -DestinationPath .
+ Rename-Item choreonoid-1.7.0 choreonoid
+ cd choreonoid
+ mkdir build
+ cd build
+ cmake .. -DENABLE_CORBA=ON -DBUILD_CORBA_PLUGIN=ON -DINSTALL_SDK=ON -DCHOREONOID_OMNIORB_DIR=%OPENRTM_INSTALL_DIR%/2.0.0/omniORB/4.2.5_vc16 -DENABLE_PYTHON=ON -DCMAKE_INSTALL_PREFIX=%CHOREONOID_INSTALL_DIR%
+ cmake --build . --config Release
+ cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<p>※<a href="https://github.com/choreonoid/choreonoid">choreonoidのリポジトリ</a>のmasterブランチのソースコードに不具合があり、WindowsでのCorbaPluginのビルドでエラーが発生します。masterブランチのソースコードを使う場合、<strong>src/CorbaPlugin/CorbaPlugin.cpp</strong>の以下の部分を修正してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> nameServerProcess.start(QString("\"") + command.c_str() + "\""); //修正前
+ 
+ nameServerProcess.start(QString("\"") + command.c_str() + "\"", QStringList()); //修正後
+</code></pre></div></div>
+
+<p>※OpenRTM-aistをインストーラーでインストールした場合はCHOREONOID_OMNIORB_DIRオプションの設定は不要です。</p>
+
+<h4 id="openrtmプラグインのビルドとインストール">OpenRTMプラグインのビルドとインストール</h4>
+
+<p>OpenRTMプラグインのソースコードは以下から入手できます。</p>
+
+<ul>
+  <li><a href="https://github.com/OpenRTM/choreonoid-openrtm">choreonoid-openrtm</a></li>
+</ul>
+
+<p>Choreonoidと同様、CMake実行後にVisual Studioでビルドします。</p>
+
+<p>CMakeでは以下の項目を設定します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>設定項目</th>
+    <th>内容</th>
+    <th>設定例</th>
+  </tr>
+  <tr>
+    <td>Choreonoid_DIR</td>
+    <td>ChoreonoidのCMakeコンフィグファイルがインストールされたフォルダ</td>
+    <td>**'C:/work/choreonoid_install/share/choreonoid/cmake**'</td>
+  </tr>
+  <tr>
+    <td>OpenRTM_DIR</td>
+    <td>OpenRTM-aistのCMakeコンフィグファイルがインストールされたフォルダ</td>
+    <td>**'C:/work/openrtm_install/2.0.0/cmake**'</td>
+  </tr>
+</table>
+
+<p>以下のコマンドを実行することでビルド、インストールができます。
+生成したOpenRTMプラグインはChoreonoidのインストールフォルダにコピーされます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/OpenRTM/choreonoid-openrtm
+ cd choreonoid-openrtm
+ mkdir build
+ cd build
+ cmake .. -DChoreonoid_DIR=%CHOREONOID_INSTALL_DIR%/share/choreonoid/cmake -DOpenRTM_DIR=%OPENRTM_INSTALL_DIR%/2.0.0/cmake
+ cmake --build . --config Release
+ cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<p>※OpenRTM-aistをインストーラーでインストールした場合はOpenRTM_DIRオプションの設定は不要です。</p>
+
+<h4 id="openrtm-pythonプラグインのビルドとインストール">OpenRTM Pythonプラグインのビルドとインストール</h4>
+
+<p>OpenRTMプラグインのソースコードは以下から入手できます。</p>
+
+<ul>
+  <li><a href="https://github.com/Nobu19800/OpenRTMPythonPlugin">OpenRTMPythonPlugin</a></li>
+</ul>
+
+<p>CMakeの設定項目はOpenRTMプラグインと同じです。</p>
+
+<p>以下のコマンドを実行することでビルド、インストールができます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/Nobu19800/OpenRTMPythonPlugin
+ cd OpenRTMPythonPlugin
+ mkdir build
+ cd build
+ cmake .. -DChoreonoid_DIR=%CHOREONOID_INSTALL_DIR%/share/choreonoid/cmake -DOpenRTM_DIR=%OPENRTM_INSTALL_DIR%/2.0.0/cmake
+ cmake --build . --config Release
+ cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<p>※OpenRTM-aistをインストーラーでインストールした場合はOpenRTM_DIRオプションの設定は不要です。</p>
+
+<h4 id="必要なファイル一式をまとめる">必要なファイル一式をまとめる</h4>
+
+<p>Choreonoidをビルド、インストールすると、基本的には必要なファイルはインストール先にコピーされます。
+ただし、Pythonプラグインをビルドする場合は、対応するバージョンのPythonがインストールされている必要があります。</p>
+
+<p>このため、対応するバージョンのPythonがインストールされていない場合は、以下のページのように組み込み用Pythonを同梱する必要があります。</p>
+
+<ul>
+  <li><a href="https://qiita.com/hirohiro77/items/377dfc0a264acb3db222">WindowsでPython3.7の実行環境を手早く作る方法</a></li>
+</ul>
+
+<p>まずは、対応するバージョンの<strong>python-3.x.y-embed-amd64</strong>をダウンロードしてください。</p>
+
+<ul>
+  <li>https://www.python.org/ftp/python/</li>
+</ul>
+
+<p>次に必要なライブラリをインストールします。
+Choreonoidはnumpyが必要なためインストールします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> python -m pip install numpy
+</code></pre></div></div>
+
+<p>また、Choreonoid Pythonプラグインのサンプルプログラムを実行するためにPySDL2が必要なためインストールします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> python -m pip install pysdl2 pysdl2-dll
+</code></pre></div></div>
+
+<p>omniORB、OpenRTM-aistをインストールする必要があるため、以下のファイル、フォルダを<strong>python-3.x.y-embed-amd64/Lib/site-packages</strong>以下のコピーしてください。</p>
+
+<ul>
+  <li>CosNaming</li>
+  <li>omniidl</li>
+  <li>omniidl_be</li>
+  <li>omniORB</li>
+  <li>OpenRTM_aist</li>
+  <li>OpenRTM-aist.pth</li>
+  <li>CORBA.py</li>
+  <li>CosNaming_idl.py</li>
+  <li>CosNaming__POA</li>
+  <li>PortableServer.py</li>
+  <li>PortableServer__POA.py</li>
+  <li>_omnicodesets.pyd</li>
+  <li>_omniConnMgmt.pyd</li>
+  <li>_omnihttpCrypto.pyd</li>
+  <li>_omnihttpTP.pyd</li>
+  <li>_omnipy.pyd</li>
+  <li>_omnisslTP.pyd</li>
+</ul>
+
+<h3 id="ubuntu">Ubuntu</h3>
+<h4 id="openrtm-aistのビルドとインストール-1">OpenRTM-aistのビルドとインストール</h4>
+
+<p>OpenRTM-aist+omniORBを以下の手順でビルド、インストールしてください。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build#ubuntuomniorb">OpenRTM-aist(C++版)のCMakeによるビルド手順</a></li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export OPENRTM_INSTALL_PATH=~/work/openrtm_install
+ git clone https://github.com/OpenRTM/OpenRTM-aist
+ cd OpenRTM-aist/
+ mkdir build
+ cd build/
+ git clone 
+ cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$OPENRTM_INSTALL_PATH
+ cmake --build . --config Release
+ sudo cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<h4 id="choreonoidのビルドとインストール-1">Choreonoidのビルドとインストール</h4>
+
+<p>Choreonoidを以下の手順でビルド、インストールしてください。</p>
+
+<ul>
+  <li><a href="https://choreonoid.org/ja/documents/latest/install/build-windows.html">ソースコードからのビルドとインストール (Windows編)</a></li>
+</ul>
+
+<p>CMake、Boost、Qtのバージョンには注意してください。</p>
+
+<ul>
+  <li>CMakeのバージョンが古い場合、Boostをライブラリを検出できない場合があります。できるだけ最新版をインストールしてください。</li>
+  <li>Boostはデフォルトの設定で<strong>C:\local\boost_1<em>77_0**のようなフォルダにインストールされますが、CMakeは**C:\local\boost</em>{バージョン番号}</strong>からBoostを探すため、古いバージョンがすでに<em>*C:\local*</em>以下にインストールされている場合にそちらを検出する事があるので注意してください。</li>
+</ul>
+
+<p>OpenRTMプラグインの使用のためにはCORBAプラグインのビルドに、ヘッダーファイルなどの各種ファイルをインストールが必要です。
+また、OpenRTM Pythonプラグインの使用のためにはPythonプラグインのビルドが必要です。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>設定項目</th>
+    <th>内容</th>
+    <th>設定例</th>
+  </tr>
+  <tr>
+    <td>ENABLE_CORBA</td>
+    <td>CORBA通信機能の有効化、無効化</td>
+    <td>ON</td>
+  </tr>
+  <tr>
+    <td>BUILD_CORBA_PLUGIN</td>
+    <td>CORBAプラグインのビルドの有無</td>
+    <td>ON</td>
+  </tr>
+  <tr>
+    <td>INSTALL_SDK</td>
+    <td>ヘッダーファイルなどの各種ファイルをインストールするか</td>
+    <td>ON</td>
+  </tr>
+  <tr>
+    <td>ENABLE_PYTHON</td>
+    <td>Pythonスクリプティング機能、およびPythonプラグインのビルドの有無</td>
+    <td>ON</td>
+  </tr>
+  <tr>
+    <td>CMAKE_INSTALL_PREFIX</td>
+    <td>Choreonoidのインストールフォルダ</td>
+    <td>'/work/choreonoid_install'</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export CHOREONOID_INSTALL_DIR=~/work/choreonoid_install
+ git clone https://github.com/choreonoid/choreonoid
+ cd choreonoid
+ mkdir build
+ cd build
+ cmake .. -DENABLE_CORBA=ON -DBUILD_CORBA_PLUGIN=ON -DINSTALL_SDK=ON  -DENABLE_PYTHON=ON -DCMAKE_INSTALL_PREFIX=$CHOREONOID_INSTALL_DIR
+ cmake --build . --config Release
+ cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<h4 id="openrtmプラグインのビルドとインストール-1">OpenRTMプラグインのビルドとインストール</h4>
+
+<p>OpenRTMプラグインのソースコードは以下から入手できます。</p>
+
+<ul>
+  <li><a href="https://github.com/OpenRTM/choreonoid-openrtm">choreonoid-openrtm</a></li>
+</ul>
+
+<p>CMakeでは以下の項目を設定します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>設定項目</th>
+    <th>内容</th>
+    <th>設定例</th>
+  </tr>
+  <tr>
+    <td>Choreonoid_DIR</td>
+    <td>ChoreonoidのCMakeコンフィグファイルがインストールされたフォルダ</td>
+    <td>`/work/choreonoid_install/share/choreonoid/cmake`</td>
+  </tr>
+  <tr>
+    <td>OpenRTM_DIR</td>
+    <td>OpenRTM-aistのCMakeコンフィグファイルがインストールされたフォルダ</td>
+    <td>`/work/openrtm_install/lib/openrtm-2.0/cmake`</td>
+  </tr>
+</table>
+
+<p>以下のコマンドを実行することでビルド、インストールができます。
+生成したOpenRTMプラグインはChoreonoidのインストールフォルダにコピーされます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/OpenRTM/choreonoid-openrtm
+ cd choreonoid-openrtm
+ mkdir build
+ cd build
+ cmake .. -DChoreonoid_DIR=$CHOREONOID_INSTALL_DIR/share/choreonoid/cmake -DOpenRTM_DIR=$OPENRTM_INSTALL_PATH/lib/openrtm-2.0/cmake
+ cmake --build . --config Release
+ cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<h4 id="openrtm-pythonプラグインのビルドとインストール-1">OpenRTM Pythonプラグインのビルドとインストール</h4>
+
+<p>OpenRTMプラグインのソースコードは以下から入手できます。</p>
+
+<ul>
+  <li><a href="https://github.com/Nobu19800/OpenRTMPythonPlugin">OpenRTMPythonPlugin</a></li>
+</ul>
+
+<p>CMakeの設定項目はOpenRTMプラグインと同じです。</p>
+
+<p>以下のコマンドを実行することでビルド、インストールができます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/Nobu19800/OpenRTMPythonPlugin
+ cd OpenRTMPythonPlugin
+ mkdir build
+ cd build
+ cmake .. -DChoreonoid_DIR=$CHOREONOID_INSTALL_DIR/share/choreonoid/cmake -DOpenRTM_DIR=$OPENRTM_INSTALL_PATH/lib/openrtm-2.0/cmake
+ cmake --build . --config Release
+ cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<h2 id="使用方法">使用方法</h2>
+
+<p>使用方法については以下のページを参考にしてください。</p>
+
+<ul>
+  <li><a href="https://choreonoid.org/ja/documents/1.7/openrtm/index.html">OpenRTMプラグイン</a></li>
+  <li><a href="/my-jekyll-site/ja/content/choreonoid_openrtm_python_manual">Choreonoid用OpenRTM連携プラグイン Python版 マニュアル</a></li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<a>hogeee---002</a>
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+<a>hogeee---003</a>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong>OpenRTM-aist</strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic">I am awesome</p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>GitHub</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>LinkedIn</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Twitter</strong>
+                            
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            
+                            <strong>Instagram</strong>
+                            
+                        </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/sitemap.xml"><i class="fas fa-sitemap"></i>Sitemap</a>
+                        </li>
+                        
+                        <li class="list-inline-item">
+                            <a href="/my-jekyll-site/feed.xml"><i class="fas fa-fw fa-rss-square"></i>RSS</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; OpenRTM-aist, 2025. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

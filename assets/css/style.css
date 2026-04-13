@@ -367,3 +367,17 @@ header.navbar > .container {
 header.navbar .navbar-collapse {
   width: 100%;
 }
+/* lang-switch  css  */
+.lang-switch {
+  display: inline-flex;   /* ←ここ重要 */
+  align-items: center;
+  margin-left: 0.5rem;    /* タイトルとの間隔 */
+}
+
+.lang-link img {
+  display: inline-block;  /* block → inline-block に変更 */
+  width: 32px;
+  height: auto;
+  vertical-align: middle;
+}
+

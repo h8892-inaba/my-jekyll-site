@@ -357,7 +357,7 @@ text-align: right;
 .site-header-bottom .nav-link {
   padding: 0.4rem 0.8rem;
 }
-/* for nav*/
+/* header for 2 段*/
 header.navbar > .container {
   display: flex !important;
   flex-direction: column !important;
@@ -367,3 +367,17 @@ header.navbar > .container {
 header.navbar .navbar-collapse {
   width: 100%;
 }
+/* lang-switch  css  */
+.lang-switch {
+  display: inline-flex;   /* ←ここ重要 */
+  align-items: center;
+  margin-left: 0.5rem;    /* タイトルとの間隔 */
+}
+
+.lang-link img {
+  display: inline-block;  /* block → inline-block に変更 */
+  width: 32px;
+  height: auto;
+  vertical-align: middle;
+}
+

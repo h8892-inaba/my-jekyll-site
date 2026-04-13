@@ -18,7 +18,7 @@ for filename in os.listdir("."):
                 if i + 1 < len(lines) and re.match(r'^lang:\s*', lines[i + 1]):
                     continue
 
-                new_lines.append("lang: ja\n")
+                new_lines.append("lang: en\n")
                 inserted = True
 
         # 上書き保存

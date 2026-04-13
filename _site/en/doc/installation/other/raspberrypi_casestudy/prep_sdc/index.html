@@ -1,0 +1,1049 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SDカードの準備 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="SDカードの準備" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/prep_sdc/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/prep_sdc/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="SDカードの準備" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"SDカードの準備","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/prep_sdc/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist--ja</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>hogehogehoge-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/prep_sdc/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>SDカードの準備 <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/prep_sdc/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/installation/other/raspberrypi_casestudy/prep_sdc/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#はじめに">はじめに</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#sdカードの容量">SDカードの容量</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#イメージのダウンロード">イメージのダウンロード</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#イメージの書き込み">イメージの書き込み</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#イメージの書き込み-windows">イメージの書き込み (Windows)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#イメージの書き込み-linux">イメージの書き込み (Linux)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#イメージの書き込み-mac-os-x">イメージの書き込み (Mac OS X)</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: SDカードの準備 -->
+<!-- -*- pukiwiki-edit -*- -->
+<p>#contents</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>ここでは、Raspberry Pi用 RTC(以下、RPI RTC)を動作させるための実行環境のインストールについて説明します。</p>
+
+<p>なお、以下のインストール手順は、Windows 環境を前提としています｡
+Windows 環境以外をご使用の方は以下のサイトなどをご参照ください｡</p>
+
+<ul>
+  <li><a href="http://elinux.org/RPi_Easy_SD_Card_Setup">http://elinux.org/RPi_Easy_SD_Card_Setup</a></li>
+</ul>
+
+<p>ここでは、Raspberry Pi オフィシャルサイトから OSイメージをダウンロードし、各種セットアップについて説明します。
+Raspberry Pi上で OpenRTM を使用できるようにするまでの大まかな手順は以下の通りです。</p>
+
+<ul>
+  <li>SDカードに OSイメージを書き込む</li>
+  <li>OSの基本的なセットアップ</li>
+  <li>OpenRTM-aist のインストール</li>
+  <li>コンポーネントの実行テスト</li>
+</ul>
+
+<p>なお、OpenRTM-aist のインストールや、Kobuki コンポーネントがすでにインストールされたイメージをこちらに用意していますので、以下の手順はスキップすることができます。</p>
+
+<ul>
+  <li>OpenRTM-aist のインストール(未)</li>
+  <li>Kobuki コンポーネントのインストール(未)</li>
+  <li>PiRT-Unit用セットアップ(未)</li>
+</ul>
+
+<h2 id="sdカードの容量">SDカードの容量</h2>
+
+<p>使用する SDカードは最低 <strong>2GB</strong> 必要ですが、実際の使用では <strong>4GB以上が必要</strong> になります。必ず4GB以上の SDカードを用意してください。</p>
+
+<h2 id="イメージのダウンロード">イメージのダウンロード</h2>
+
+<p>以下のサイトから、Raspberry Pi用 OS Raspbian “wheezy”をダウンロードします｡
+Raspbian は Debian ベースのRaspberryPi用 Linux ディストリビューションです。
+<!-- wheezyには armhf と armel の二つのタイプがありますが、''armhf'' を使用してください。 --></p>
+
+<ul>
+  <li>Raspbian Wheezy: <a href="http://www.raspberrypi.org/downloads">http://www.raspberrypi.org/downloads</a></li>
+</ul>
+
+<div align="center"><a href="raspbian_download_site2.png"><img src="raspbian_download_site2.png" width="80%;" /></a></div>
+<div align="center"><strong>Raspbian のダウンロード</strong></div>
+
+<p>ダウンロードしたファイル YYYY-MM-DD-wheezy-raspbian.zip を展開してください。
+YYYY-MM-DD-wheezy-raspbian.img という2GB位のファイルが展開されているはずです。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ ls -al 
+ total 4752840
+ drwxr-xr-x  4 n-ando  staff         136  5 18 13:30 .
+ drwxr-xr-x  9 n-ando  staff         306  5 18 13:30 ..
+</code></pre></div></div>
+<p>-rw-r–r–  1 n-ando  staff  1939865600  2  9 12:44 2013-02-09-wheezy-raspbian.img
+ -rwxr-xr-x  1 n-ando  staff   493587826  5  7 21:08 2013-02-09-wheezy-raspbian.zip</p>
+
+<p>うまく展開できない場合、ダウンロードに失敗しファイルが壊れている可能性があります。壊れたファイルを削除して、再度ダウンロードしてみてください。</p>
+
+<h2 id="イメージの書き込み">イメージの書き込み</h2>
+
+<p>展開された yyyy-mm-dd-hweezy-raspbian.img はイメージファイルといい、Raspbian が起動するディスクの状態をディスクの最初から最後まで1バイトづつ抜き出したものです。
+<span style="color:red;">このファイルをSDカードに単純にコピーしても使用することはできません！！</span>;</p>
+
+<p>以下に説明する方法で SDカードに書き込んでください。</p>
+
+<h3 id="イメージの書き込み-windows">イメージの書き込み (Windows)</h3>
+
+<p>Windows では Win32DiskImager というツールを使用することでイメージの書き込みができます。
+以下のサイトからイメージデータ書き込みツール Win32DiskImager のバイナリをダウンロードします｡</p>
+
+<ul>
+  <li>Win32DiskImager: <a href="http://sourceforge.jp/projects/sfnet_win32diskimager/">http://sourceforge.jp/projects/sfnet_win32diskimager/</a></li>
+</ul>
+
+<div align="center"><a href="win32diskimager_site.png"><img src="win32diskimager_site.png" width="80%;" /></a></div>
+<div align="center"><strong>Win32DiskImager のダウンロード</strong></div>
+
+<p>ダウンロードしたファイル (win32diskimager-vX.X-binary.zip ) を解凍します｡</p>
+
+<p><span style="color:red;">※Win32DiskImager は、2バイト文字に対応していないため、YYYY-MM-DD-wheezy-raspbian.zip は途中のパス名に全角文字や空白が含まれていない場所に解凍してください｡</span>;</p>
+
+<p>Raspberry Pi で使用する SDカードをPCに挿入し、Win32DiskImager を起動します｡</p>
+
+<p><span style="color:red;">※SDカードはドライブとして認識されている必要があるので、事前に FAT32 形式でフォーマットしておいてください｡</span>;</p>
+
+<p>｢Image File｣に解凍したRaspbian のイメージファイル (YYYY-MM-DD-wheezy-raspbian.img)、｢Drive｣に SDカードのドライブを指定し、｢Write｣ ボタンをクリックします｡</p>
+
+<div align="center"><a href="win32diskimager.png"><img src="win32diskimager.png" width="80%;" /></a></div>
+<div align="center"><strong>イメージデータの書き込み</strong></div>
+
+<p>以上で SDカードの準備は終了です｡
+書き込みが終了したら、SDカードを Raspberry Pi に設置し、電源を投入します。</p>
+
+<h3 id="イメージの書き込み-linux">イメージの書き込み (Linux)</h3>
+
+<p>Linux では ddコマンドを利用してイメージの読み書きができます。
+ddコマンドは UNIX系の OSなら大抵デフォルトでインストールされています。</p>
+
+<p>SDカードを差し込んでから、 dmesg コマンドでカーネルのメッセージを確認します。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ dmesg
+   : 中略
+ [333478.822170] sd 3:0:0:0: [sdb] Assuming drive cache: write through
+ [333478.822174]  sdb: sdb1 sdb2
+ [333478.839563] sd 3:0:0:0: [sdb] Assuming drive cache: write through
+ [333478.839567] sd 3:0:0:0: [sdb] Attached SCSI removable disk
+ [333479.094873] EXT4-fs (sdb2): mounted filesystem with ordered data mode
+ [333527.658195] usb 1-1: USB disconnect, address 2
+</code></pre></div></div>
+
+<p>このメッセージから SDカードのデバイス名を確認します。この例では sdb が SDカードのデバイス名のようです。/dev/ の下を見てみます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ls -al /dev/sd*
+ brw-rw---- 1 root disk 8,  0 May  7 17:28 /dev/sda
+ brw-rw---- 1 root disk 8,  1 May  7 17:28 /dev/sda1
+ brw-rw---- 1 root disk 8,  2 May  7 17:28 /dev/sda2
+ brw-rw---- 1 root disk 8,  5 May  7 17:28 /dev/sda5
+ brw-rw---- 1 root disk 8, 16 May 18 14:19 /dev/sdb
+ brw-rw---- 1 root disk 8, 17 May 18 14:19 /dev/sdb1
+ brw-rw---- 1 root disk 8, 32 May 18 14:19 /dev/sdc
+</code></pre></div></div>
+
+<p>sda は大抵システムディスクなので、<strong>絶対</strong>に触ってはいけません。</p>
+
+<p>ディストリビューションによっては、SDカード内にマウント可能なファイルシステムがある場合自動でマウントするケースもあるようです。
+その場合、ディスクをアンマウントしてください。(Ubuntuではデスクトップにマウントしたファイルシステムのフォルダーが現れるので右クリックで取り外してください。それ以外は umount コマンドでアンマウントします。)</p>
+
+<div align="center"><a href="ubuntu_adcard_mount.png"><img src="ubuntu_adcard_mount.png" width="50%;" /></a></div>
+<div align="center"><strong>Ubuntu上でマウントされた SDカード(右クリックメニューで取り外すことができる)</strong></div>
+
+<p><strong>dd if=イメージファイル of=SDカードのデバイスファイル bs=1M</strong> のようにコマンドを入力し実行します。
+ただし、デバイスファイルへの書き込みは管理者(root)権限が必要ですので、sudo を使用してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ unzip  2013-02-09-wheezy-raspbian.zip
+ Archive:  2013-02-09-wheezy-raspbian.zip
+   inflating: 2013-02-09-wheezy-raspbian.img
+ $ sudo dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdb bs=1M
+ 1850+0 records in
+ 1850+0 records out
+ 1939865600 bytes (1.9 GB) copied, 201.543 s, 9.6 MB/s
+</code></pre></div></div>
+
+<p>実行中は別のターミナルなどで、iostat コマンドを実行して書き込みが正しく行われているかどうか見ることができます。
+(最近のディストリビューションではデフォルトでインストールされていないことがあります。debian/ubuntu では apt-get install sysstat で iostat コマンドが使えるようになります。)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ iostat -mx 1
+  avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+            0.00    0.00    0.00   50.25    0.00   49.75
+ 
+ Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+ sda               0.00     0.00    0.00    1.00     0.00     0.00     8.00     0.00    0.00   0.00   0.00
+ sdb               0.00  1856.00    0.00   78.00     0.00     9.14   240.00   143.40 1855.85  12.82 100.00
+</code></pre></div></div>
+
+<p>sdb の項目を見ると 9.14MB/sの書き込み速度が出ていることがわかります。
+class 6 の SDカードなら 6MB/sec, class 10の SDカードなら 10MB/sec 程度の速度が出ていれば、問題なく書き込まれていると考えてよいでしょう。
+書き込みが終了すると、ディストリビューションによっては自動でマウントされる場合があります。その場合、アンマウントしてからSDカードを抜いてください。</p>
+
+<h3 id="イメージの書き込み-mac-os-x">イメージの書き込み (Mac OS X)</h3>
+
+<p>Mac OS Xも Linux と同様 ddコマンドを利用して書き込みます。
+ただし、Mac では SDカードを挿入すると自動的にマウントされてしまい、マウント中は ddコマンドで SDカードに書き込むことができないので、アンマウント (OSから取り外す) する必要があります。</p>
+
+<p>SDカードを差し込むと Finder に図のように SDカードのアイコンが現れます。
+アンマウントするつもりで<strong>イジェクトボタンを押さないよう</strong>気を付けてください。</p>
+
+<div align="center"><a href="sdcard_mac.png"><img src="sdcard_mac.png" width="60%;" /></a></div>
+<div align="center"><strong>Mac にマウントされた SDカード</strong></div>
+
+<p>SDカードのボリューム名はここでは <strong>Untitled</strong> です。ボリューム名を覚えておきます。
+コマンドプロンプトから df コマンドを入力すると以下のように表示されます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ df -k
+ Filesystem                        1024-blocks      Used Available Capacity   iused    ifree %iused  Mounted on
+ /dev/disk0s2                        500000000 437664508  62079492    88% 109480125 15519873   88%   /
+ devfs                                     194       194         0   100%       679        0  100%   /dev
+ map -hosts                                  0         0         0   100%         0        0  100%   /net
+ map auto_home                               0         0         0   100%         0        0  100%   /home
+ /dev/disk1s1                            57288     18992     38296    34%       512        0  100%   /Volumes/Untitled
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 一番下 ''/Volumes/Untitled'' とあるのが先ほどの SDカードのマウントポイントです。一番左の SDカードのデバイス名 /dev/disk1s1 を覚えておきます。
+</code></pre></div></div>
+<p>このSDカードを一旦アンマウント します。diskutil というコマンドを使用し **diskutil umount <マウントポイント>** のように入力します。</マウントポイント></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ diskutil umount /Volumes/Untitled
+ Volume (null) on disk1s1 unmounted
+ $ df -k
+ Filesystem                        1024-blocks      Used Available Capacity   iused    ifree %iused  Mounted on
+ /dev/disk0s2                        500000000 437664716  62079284    88% 109480177 15519821   88%   /
+ devfs                                     194       194         0   100%       679        0  100%   /dev
+ map -hosts                                  0         0         0   100%         0        0  100%   /net
+ map auto_home                               0         0         0   100%         0        0  100%   /home
+</code></pre></div></div>
+
+<p>先ほどの /Volumes/Untitled が消えて、SDカードがアンマウントされていることがわかります。
+次にddコマンドを使用してイメージを書き込みます。
+<strong>dd if=イメージファイル of=/dev/rdisk1 bs=1m</strong> のように入力します。
+of=/dev/rdisk1 は先ほど覚えたデバイスファイル /dev/disk1s1 のうち後ろの <strong>s1</strong> を取り、さらにdiskの前に raw deviceであることを示す <strong>r</strong> を付けたデバイス名です。</p>
+
+<p>このコマンドはデバイスファイルにアクセスするので管理者 (root) でなければ実行できません。sudoを使用して以下のように実行します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo dd if=2013-02-09-wheezy-raspbian.img of=/dev/rdisk1 bs=1m
+ 1850+0 records in
+ 1850+0 records out
+ 1939865600 bytes transferred in 302.377337 secs (6415380 bytes/sec)
+ $
+</code></pre></div></div>
+
+<p>書き込み中は、「アクティビティモニタ」で「ディスクの動作」を見ることで書き込みが正しく行われているかどうかわかります。
+class 6 の SDカードなら 6MB/sec, class 10の SDカードなら 10MB/sec 程度の速度が出ていれば、問題なく書き込まれていると考えてよいでしょう。</p>
+
+<p>書き込みが終了すると、自動的に再度マウントされますので、今度は Finder のイジェクトボタンを押して SDカードを抜きます。</p>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

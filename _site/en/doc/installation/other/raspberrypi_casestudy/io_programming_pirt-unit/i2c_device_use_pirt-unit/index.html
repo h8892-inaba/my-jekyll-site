@@ -1,0 +1,1415 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>PiRT-UnitによるI2Cデバイスの利用 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="PiRT-UnitによるI2Cデバイスの利用" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/i2c_device_use_pirt-unit/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/i2c_device_use_pirt-unit/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="PiRT-UnitによるI2Cデバイスの利用" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"PiRT-UnitによるI2Cデバイスの利用","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/i2c_device_use_pirt-unit/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist--ja</span><!--add here -->
+    </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>hogehogehoge-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/i2c_device_use_pirt-unit/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>PiRT-UnitによるI2Cデバイスの利用 <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/i2c_device_use_pirt-unit/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/i2c_device_use_pirt-unit/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#はじめに">はじめに</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#必要なもの">必要なもの</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#i2cアイスクエアシーとは">I2C(アイ・スクエア・シー)とは</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#準備">準備</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#システム設定">システム設定</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#i2c-tools-のインストール">i2c-tools のインストール</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#配線">配線</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#動作確認">動作確認</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#デバイスアドレスの確認">デバイスアドレスの確認</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#デバイスの制御テスト">デバイスの制御テスト</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#c言語によるデバイス操作">C言語によるデバイス操作</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#プログラム">プログラム</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#rtコンポーネント化のためのヒント">RTコンポーネント化のためのヒント</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: PiRT-UnitによるI2Cデバイスの利用 -->
+<p>#contents</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Raspberry Pi上に存在する GPIO ピンのうちのI2C用ピン(2本)を用いると、複数の I2C デバイスを操作することができます。
+ここでは、I2C を利用するためのセットアップ、C言語によるプログラム記述の実例、RTコンポーネント化するためのヒントを示します。</p>
+
+<h3 id="必要なもの">必要なもの</h3>
+
+<ul>
+  <li>OpenRTM-aist の C++版がインストールされた Raspberry Pi</li>
+  <li>I2C デバイスを配線するための資材（ブレッドボード、ケーブル、抵抗、他）</li>
+  <li>I2C デバイス（秋月、ストロベリーリナックス、スイッチサイエンス等で入手）</li>
+  <li>ネットワーク(インターネット、apt-get するため）</li>
+</ul>
+
+<p>このドキュメントでは、I2C デバイスとして、</p>
+<ul>
+  <li><a href="http://strawberry-linux.com/catalog/items?code=12114">LSM303DLHC（3軸地磁気＋加速度センサ）</a></li>
+  <li><a href="http://strawberry-linux.com/catalog/items?code=12120">L3GD20（3軸ジャイロセンサ）</a></li>
+  <li><a href="http://akizukidenshi.com/catalog/g/gI-00233/">RTC-8564NB（リアルタイムクロック）</a></li>
+  <li><a href="http://strawberry-linux.com/catalog/items?code=12103">MPL115A2（大気圧センサ）</a></li>
+</ul>
+
+<p>を取り上げます。</p>
+
+<h2 id="i2cアイスクエアシーとは">I2C(アイ・スクエア・シー)とは</h2>
+
+<p>I2C は2線を用いるシリアルバス通信の一種です。クロック線のエッジを用いてデータ線上で値の授受行い、バス上にある複数デバイスを制御することができます。
+バス上にはマスターとスレーブがあり、規格では複数のマスター／スレーブの存在を許しているようですが、実際には単一マスター／複数スレーブによる使用が簡単です。
+マイコンなどから利用する場合は、マスターによるクロック信号の送信と、データの通信プロトコル実装などを考慮して実装しなければなりませんが、Raspberry Pi を用いると既存のライブラリを使用して非常に簡単に I2C デバイスを利用することができます。</p>
+
+<p>Raspberry Pi の GPIOポート(26pin)のうち、もともと I2C 通信専用に設定されている GPIO が2本存在します。（下図参照）
+GPIO 0 が I2C のデータ用ポート、GPIO 1 が I2C のクロック用ポートとしてあらかじめ設定されており、これらを利用することで簡単に I2C 通信を行うことができます。</p>
+
+<div align="center"><a href="raspberry_gpio.png"><img src="raspberry_gpio.png" width="80%;" /></a></div>
+<div align="center"><strong>Raspberry PiのGPIOポート、GPIO0 (I2C SDA), GPIO1 (I2C SCL)</strong></div>
+
+<p>この2本のポートを用いて I2C デバイスを直接接続するだけで、クロック線のドライブ・通信プロトコルの解釈などはすべて Raspberry Pi上の Linux で行われます。
+ユーザーはデバイスファイル (/dev/i2c-*) の読み書きを行うことでデバイスからのデータ取得／デバイスへのデータ出力を実現できます。</p>
+
+<p>複数のデバイスの接続はバス接続（下図）で実現することができます。
+デバイス間の調停も Raspberry Pi側である程度は行うことになっています。
+なお、上記GPIO 0、GPIO 1ポートは Raspberry Pi 基板上でプルアップ抵抗によりプルアップされていますので、別途プルアップする必要はありません。</p>
+
+<div align="center"><a href="i2c_devices.png"><img src="i2c_devices.png" width="80%;" /></a></div>
+<div align="center"><strong>I2Cバス接続</strong></div>
+
+<h2 id="準備">準備</h2>
+
+<h3 id="システム設定">システム設定</h3>
+
+<p>Raspberry Pi で I2C 通信を使うためにはいくつのかの設定ファイルを変更する必要があります。
+ファイルは root 権限で編集してください。</p>
+
+<h4 id="etcmodules-の編集">/etc/modules の編集</h4>
+<p>/etc/modules に以下の一行を追加します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> i2c-dev
+</code></pre></div></div>
+
+<p>これにより、/dev/i2c-* が有効になります。</p>
+
+<h4 id="etcmodprobedraspi-blacklistconf-の編集">/etc/modprobe.d/raspi-blacklist.conf の編集</h4>
+
+<p>/etc/modprobe.d/raspi-blacklist.conf の以下の一行をコメントアウトします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # blacklist i2c-bcm2708
+</code></pre></div></div>
+
+<p>以上の変更が終了したら、変更を反映するために再起動してください。</p>
+
+<h3 id="i2c-tools-のインストール">i2c-tools のインストール</h3>
+
+<p>i2c-tools はコマンドラインから I2C デバイスへアクセスするためのツールです。
+実際に開発する際には、コマンドラインから I2C デバイスの動作を確認したいことがたびたびありますので、事前に i2c-tools をインストールしておいてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt-get install i2c-tools
+</code></pre></div></div>
+
+<p>として、インストールします。</p>
+
+<h2 id="配線">配線</h2>
+
+<p>上記のブロック図では、I2C デバイスは SDA、SCL の2線のみが配線されていましたが、実際には当然各デバイスに電源を供給してあげる必要があります。
+それほど消費電力の大きくない I2C デバイスであれば、Raspberry Pi の GPIO ピンヘッダ 26pin のうち、2,3pin(5V)、1,17pin(3.3V)からでている電源を利用することができます。
+I2C デバイスの説明書・データシートを参照した上で、5V ないし 3.3V のうち適切な電源を供給するようにしてください。
+また、PiRT-Unit には I2C用の4ピンのコネクタが付属しており、SDA、SCL、3.3V、GND が配線可能です。</p>
+
+<p>今回用いる I2C デバイスはすべて 3.3V で動作するため、Raspberry Pi の 1,17pin(3.3V)から各デバイスに電源を供給します。
+以下にブレッドボード上に上記の4つのデバイスを配置した際の配線図を示します。</p>
+
+<div align="center"><a href="i2c_devices_circuit.png"><img src="i2c_devices_circuit.png" width="80%;" /></a></div>
+<div align="center"><strong>I2CデバイスとRaspberryPiの接続</strong></div>
+
+<p>配線の際にはデバイスの説明書／データシートをよく読んで間違いのないよう配線してください。配線を間違うとデバイスが認識されないだけでなく、場合によってはデバイスが破壊される可能性もあります。</p>
+
+<p>デバイスの種類によっては、使用方法によって適宜ジャンパが必要なものや、I2Cの2本の信号線以外に割り込み、リセット信号などをが必要なものもあります。その場合は、Raspberry Pi の GPIO ピンを適宜利用し、プログラム側から制御する必要があります。</p>
+
+<h2 id="動作確認">動作確認</h2>
+
+<h3 id="デバイスアドレスの確認">デバイスアドレスの確認</h3>
+
+<p>上記の配線が完了したら、Raspberry Pi上から i2c-tools を利用してデバイスを操作することができます。
+まずは、<strong>i2cdetect</strong> コマンドで、I2C バスに接続されているすべてのデバイスのアドレスを確認してみましょう。以下のようにタイプすると、下図のような表示が現れます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo i2cdetect 1
+</code></pre></div></div>
+
+<div align="center"><a href="i2c_i2ctools_i2cdetect.png"><img src="i2c_i2ctools_i2cdetect.png" width="80%;" /></a></div>
+<div align="center"><strong>I2CデバイスとRaspberryPiの接続</strong></div>
+
+<p>図では4個のデバイスが存在していることが確認できます。<strong>-(マイナス)</strong>以外に16進数の数字が表示されていますが、それぞれが各デバイスのアドレスを表しています。内訳は、</p>
+
+<ul>
+  <li>0x19：LSM303DLHCの加速度センサー</li>
+  <li>0x1e：LSM303DLHCの地磁気センサー</li>
+  <li>0x51：RTC-8564NB（リアルタイムクロック）</li>
+  <li>0x6a：L3GD20（ジャイロセンサー）</li>
+</ul>
+
+<p>となっています。このコマンドと各デバイスの説明書／データシートを突き合わせることで、Raspberry Pi が I2C デバイスを認識できているかを確認することができます。
+なお、Raspberry Pi のリビジョンによって、コマンドの後ろに入れるバス番号が0の場合と1の場合がありますので注意してください。</p>
+
+<h3 id="デバイスの制御テスト">デバイスの制御テスト</h3>
+
+<p>デバイスに実際にデータを書き込むには <strong>i2cset</strong> コマンドを、デバイスからデータを読み込むには<strong>i2cget</strong>コマンドを使用します。（下図参照）</p>
+
+<div align="center"><a href="i2c_i2ctest.png"><img src="i2c_i2ctest.png" width="60%;" /></a></div>
+<div align="center"><strong>i2ctestコマンドによるI2Cデバイスの制御の様子</strong></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // LSM303DLHCの地磁気センサーへアクセス
+ $ sudo i2cset -y 1 0x1e 0x00 0x14
+ $ sudo i2cset -y 1 0x1e 0x01 0x20
+ $ sudo i2cset -y 1 0x1e 0x02 0x00
+ $ sudo i2cget -y 1 0x1e 0x32
+ $ sudo i2cget -y 1 0x1e 0x31
+ $ sudo i2cget -y 1 0x1e 0x03
+ $ sudo i2cget -y 1 0x1e 0x04
+ $ sudo i2cget -y 1 0x1e 0x05
+ $ sudo i2cget -y 1 0x1e 0x06
+ $ sudo i2cget -y 1 0x1e 0x07
+ $ sudo i2cget -y 1 0x1e 0x08
+ $ sudo i2cget -y 1 0x1e 0x09
+ // LSM303DLHCの加速度センサーへアクセス
+ $ sudo i2cset -y 1 0x19 0x20 0x27
+ $ sudo i2cget -y 1 0x19 0x28
+ $ sudo i2cget -y 1 0x19 0x29
+ $ sudo i2cget -y 1 0x19 0x2a
+ $ sudo i2cget -y 1 0x1e 0x2b
+ $ sudo i2cget -y 1 0x1e 0x2c
+ $ sudo i2cget -y 1 0x1e 0x2d
+</code></pre></div></div>
+
+<p>この例では、LSM303DLHCの説明書に従って、まず地磁気センサを動作させるために0x1eのアドレスのデバイスに対して内部レジスタ0x00～0x02に所定の数値を書き込み、内部レジスタ0x31～32、0x03～0x09を読み出しています。
+その後、LSM303DLHCの加速度センサを動作させるため、0x19のアドレスのデバイスに対して内部レジスタ0x20に所定の数値を書き込み、0x28～0x2dまでの数値を読み込んでいます。</p>
+
+<p>i2c-toolsのコマンド群はルート権限でのみ実行可能であるのでsudoを使用するか、sudo bashとしてrootになって実行する必要がありますので注意してください。</p>
+
+<h2 id="c言語によるデバイス操作">C言語によるデバイス操作</h2>
+
+<p>プログラムからこれらのデバイスにアクセスするには、デバイスファイル (/dev/i2c-0 または /dev/i2c-1) をオープンし、読み書きすることでデバイスのレジスタ操作および値の読み出しを行います。</p>
+
+<p>ただし、I2Cデバイスの種類によっては特有の初期化シーケンスを持っていたり、デバイスのデータの読み書きに一定の手順を要求するものがあります。各デバイスの説明書やデータシートを確認しながらプログラムを作成する必要があります。
+（インターネット上には、RaspberryPi／AVRマイコン／ArduinoなどからのI2Cデバイスの制御方法に関する情報が色々あるようですので、そちらも参考にしてください。）</p>
+
+<p>以下に、L3GD20デジタル3軸ジャイロセンサモジュールを用いたサンプルプログラムを掲載します。</p>
+
+<p>このモジュールはI2CおよびSPIでの通信が可能なセンサモジュールで、I2Cデバイスとして利用する場合、アドレスを0x6a、0x6bの2種類から選択可能です。ここではアドレスを0x6aとして使用しています。</p>
+
+<p>内部レジスタは、</p>
+<table class="table-alt">
+  <tr>
+    <th>0x0f</th>
+    <th>常に0xd4を出力</th>
+  </tr>
+  <tr>
+    <td>0x20</td>
+    <td>0x0fを書き込むことで動作開始</td>
+  </tr>
+  <tr>
+    <td>0x28～2d</td>
+    <td>3軸ジャイロデータが格納される</td>
+  </tr>
+</table>
+
+<p>このほか、検出レンジ、サンプリングレート等の設定も可能ですが、ここでは触れません。</p>
+
+<h3 id="プログラム">プログラム</h3>
+
+<p>以下にプログラムを示します。
+なお、こちらからダウンロードすることもできます。また、I2CセンサをRTコンポーネント化した、データ取得コンポーネントおよびディスプレイコンポーネントもサンプルとして示します。</p>
+
+<ul>
+  <li>ジャイロL3GD20テストプログラム: <a href="i2c_gyrotest.c">i2c_gyrotest.c</a></li>
+  <li>I2Cセンサデータ取得コンポーネント: <a href="Pi_I2CSensor.zip">Pi_I2CSensor.zip</a></li>
+  <li>I2Cセンサディスプレイコンポーネント: <a href="Pi_SensorDataOutPut.zip">Pi_SensorDataOutPut.zip</a></li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include &lt;stdio.h&gt;
+ #include &lt;stdlib.h&gt;
+ #include &lt;time.h&gt;
+ #include &lt;unistd.h&gt;
+ 
+ #include &lt;linux/i2c-dev.h&gt; // I2C用インクルード
+ #include &lt;fcntl.h&gt;
+ #include &lt;sys/ioctl.h&gt;
+ 
+ #include &lt;wiringPi.h&gt; // delay関数用にインクルード
+ 
+ // プロトタイプ宣言
+ void L3GD20_readData(int *gyrodata, int fd);
+ void L3GD20_write(unsigned char address, unsigned char data, int fd);
+ unsigned char L3GD20_read(unsigned char address, int fd);
+ void L3GD20_init(int fd);
+ 
+ int main(int argc, char **argv)
+ {
+ 	int i2c_fd;       // デバイスファイル用ファイルディスクリプタ
+    // char *i2cFileName = "/dev/i2c-0"; // I2Cデバイスファイル名
+ 	char *i2cFileName = "/dev/i2c-1"; // RaspberryPiのリビジョンに合わせて変更
+ 	int i2cAddress = 0x6a;   // L3GD20のI2Cアドレス
+ 	int gyroData[3]; // ジャイロ3軸（x,y,z）データ格納用
+ 	
+ 	printf("i2c Gyro(L3GD20) test program\n");
+ 	delay(500);
+    // I2Cデバイスファイルをオープン
+ 	if ((i2c_fd = open(i2cFileName, O_RDWR)) &lt; 0) 
+ 	{
+ 		printf("Faild to open i2c port\n");
+ 		exit(1);
+ 	}
+ 	// L3GD20用にセット
+ 	if (ioctl(i2c_fd, I2C_SLAVE, i2cAddress) &lt; 0) 
+ 	{
+ 		printf("Unable to get bus access to talk to slave\n");
+ 		exit(1);
+ 	}
+ 	//デバイス初期化
+ 	L3GD20_init(i2c_fd);
+ 	
+ 	// 1秒ごとに20回ジャイロデータを取得、表示
+ 	int i;
+ 	for(i=0; i&lt;20; i++){
+ 		// デバイスからデータ取得
+ 		L3GD20_readData(gyroData, rtc); 
+ 		// 取得したデータを校正して表示、1秒待ち
+ 		printf("x, y, z : %5.2f, %5.2f, %5.2f\n",
+               (float)gyroData[0]*0.00875,(float)gyroData[1]*0.00875,
+               (float)gyroData[2]*0.00875);
+ 		delay(1000); 
+ 	}
+ 	return;
+ }
+ 
+ // L3GD20用 1バイト書き込みルーチン：addressで示すレジスタにdataを書き込む
+ void L3GD20_write(unsigned char address, unsigned char data, int fd)
+ {
+ 	unsigned char buf[2];
+ 	buf[0] = address;
+ 	buf[1] = data;
+    if((write(fd,buf,2))!=2){
+ 		printf("Error writing to i2c slave\n");
+ 		exit(1);
+    }
+ 	return;
+ }
+   
+ // L3GD20用 1バイト読み出しルーチン： addressで示すレジスタの値を読み出す
+ // 戻り値がレジスタ値
+ unsigned char L3GD20_read(unsigned char address, int fd)
+ {
+ 	unsigned char buf[1];
+ 	buf[0] = address;
+ 	if((write(fd,buf,1))!= 1){ // addressを一度書き込む所に注意
+ 		printf("Error writing to i2c slave\n");
+ 		exit(1);}
+ 	if(read(fd,buf,1)!=1){
+ 		printf("Error reading from i2c slave\n");
+ 		exit(1);}
+ 	return buf[0];
+ }
+ 
+ // L3GD20用 ジャイロデータ読み出しルーチン：
+ // 整数値配列へのポインタを使ってデータを受け渡す
+ void L3GD20_readData(int *gyrodata, int fd)
+ {
+ 	unsigned char data[6];
+ 	// センサから3軸に対して2バイトずつデータを読み出す
+ 	int i;
+ 	for(i=0; i&lt;6; i++){
+ 		data[i]=L3GD20_read(0x28+i,fd);
+ 	}
+ 	// 各数値を32bit幅の整数に整形する
+ 	// センサの数値精度が16bit・2の補数表現での出力のため、シフトで加工
+ 	gyrodata[0]=((int)data[1]&lt;&lt;24|(int)data[0]&lt;&lt;16)&gt;&gt;16;
+ 	gyrodata[1]=((int)data[3]&lt;&lt;24|(int)data[2]&lt;&lt;16)&gt;&gt;16;
+ 	gyrodata[2]=((int)data[5]&lt;&lt;24|(int)data[4]&lt;&lt;16)&gt;&gt;16;
+ 	return;
+ }
+ 
+ // L3GD20用 ジャイロデータイニシャライズルーチン
+ void L3GD20_init(int fd)
+ {
+ 	unsigned char Data;
+ 	printf("L3GD20 init seq. start\n");
+ 	// L3GD20 動作確認
+ 	// L3GD20の0x0fレジスタは常に0xd4にセットされているため動作確認ができる
+ 	Data = L3GD20_read(0x0f,fd);
+ 	if(Data != 0xd4){
+ 		printf("L3GD20 is not working\n");
+ 		exit(1);}
+ 	delay(10);
+ 	// レジスタへの書き込みチェックとイニシャライズを同時に行う
+ 	printf("read OK, Now writing check...\n");
+ 	// 0x20レジスタに0x0fを書き込むことで動作させる
+ 	L3GD20_write(0x20, 0x0f, fd);
+ 	// 0x20レジスタに実際に0x0fが書かれたか確認
+ 	Data = L3GD20_read(0x20,fd); if(Data != 0x0f){
+ 		printf("Writing miss\n");
+ 		exit(1);
+ 	} 
+ 	printf("Writing OK\n");
+ 	delay(10); 	
+ 	return;
+ }
+</code></pre></div></div>
+
+<h2 id="rtコンポーネント化のためのヒント">RTコンポーネント化のためのヒント</h2>
+
+<p>RaspberryPi上でI2Cデバイスにアクセスするプログラムは以上のように記述することができます。上記のコードをRTコンポーネント化する場合には、例えば初期化部分をRTコンポーネントの<strong>onInitialize</strong>または<strong>onActivated</strong>に実装、デバイスからデータを取得して表示するルーチンを <strong>onExecute</strong> に実装し、OutPortから出力するようにすれば、センサデータを出力するコンポーネントが出来上がります。</p>
+
+<p>実行コンテキストの周期は、I2Cデバイスおよびバスの速度と、バスに接続されているI2Cデバイスの数、それぞれのI2Cデバイスのサンプリングレートなどから決める必要があります。</p>
+
+<p>複数のデバイスをI2C接続した状態でこれらをコンポーネント化する場合、各デバイス間でデータの読み書きのスケジューリングを考慮する必要があります。
+実現手法として考えられるのは、</p>
+<ul>
+  <li>すべてのI2Cデバイスを一つのコンポーネントとして取り扱う</li>
+  <li>I2Cバスへのアクセスを単一コンポーネントにまかせ、個別デバイスからポート間通信でデータを取得する</li>
+  <li>ロックなどの排他制御を共有オブジェクトなどを使って実装する
+などが考えられますが、それぞれ一長一短があるので状況に応じて選択するのがよいでしょう。</li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>
