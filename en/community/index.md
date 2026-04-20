@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Community"
-permalink: /ja/community/
 ---
 
 top_comm_dir 

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "RTC開発の流れ"
-#permalink: /doc/aboutopenrtm/rtc_developmentflow
 ---
 
 <!-- Title: RTC開発の流れ -->

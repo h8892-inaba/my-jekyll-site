@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "SDO サービス編"
-#permalink: /ja/doc/
 ---
 <!-- Title: SDO サービス編 -->
 <!-- -*- pukiwiki-edit -*- -->

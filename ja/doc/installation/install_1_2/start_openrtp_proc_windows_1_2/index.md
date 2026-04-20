@@ -1,7 +1,6 @@
 ---
 layout: page
 title: OpenRTPの起動手順(1.2系、Windows)
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: OpenRTPの起動手順(1.2系、Windows) -->

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "omniORBのビルド"
-#permalink: /ja/doc/
 ---
 <!-- Title: omniORBのビルド -->
 #contents

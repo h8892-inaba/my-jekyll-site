@@ -1,9 +1,6 @@
 ---
-
 layout: page
 title: "Project"
-permalink: /ja/project/
-
 ---
 
 ここでは、オフィシャルリリースのソフトウエアだけでなく、ユーザーが作成した様々なコンポーネントやツールを探すことができます。

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "TkMotorComp/SliderComp"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: TkMotorComp/SliderComp -->

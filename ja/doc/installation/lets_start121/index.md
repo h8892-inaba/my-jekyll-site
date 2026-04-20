@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "OpenRTM-aistを10分で始めよう！(1.2系)"
-#permalink: /doc/installtion/
 ---
 <!-- Title: OpenRTM-aistを10分で始めよう！ -->
 #contents

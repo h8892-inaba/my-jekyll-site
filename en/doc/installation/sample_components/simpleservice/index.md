@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "SimpleService"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: SimpleService -->

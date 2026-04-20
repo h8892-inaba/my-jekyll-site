@@ -5,10 +5,9 @@
 #assets/rtm_images/rtm_logo.png
 
 layout: home
-lang: en
-permalink: /en/
 
-title: "Home ja"
+lang: en
+title: "Home"
 excerpt: "OpenRTM-aist | The power to connect"
 
 swiper_images:
@@ -22,8 +21,18 @@ swiper_images:
     link: /ja/doc/aboutopenrtm/rtmiddleware
 ---
 
+{%- assign current_lang = site.default_lang | default: 'ja' -%}
+
+{%- if page.url contains '/ja/' -%}
+  {%- assign current_lang = 'ja' -%}
+{%- elsif page.url contains '/en/' -%}
+  {%- assign current_lang = 'en' -%}
+{%- endif -%}
+
+
 <hr>
 {% include top-swiper.html %}
+
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script>

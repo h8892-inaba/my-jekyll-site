@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "OpenSplice通信機能の利用"
-#permalink: /ja/doc/
 ---
 <!-- Title: OpenSplice通信機能の利用 -->
 #contents

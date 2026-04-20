@@ -2,7 +2,6 @@
 layout: page
 title: "FSMコンポーネント作成手順"
 
-#permalink: /ja/doc/
 ---
 <!-- Title: FSMコンポーネント作成手順 -->
 ## RTCBuilderでのコード生成

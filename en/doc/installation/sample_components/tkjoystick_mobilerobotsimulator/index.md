@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "TkJoyStick/TkMobileRobotSimulator"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: TkJoyStick/TkMobileRobotSimulator -->

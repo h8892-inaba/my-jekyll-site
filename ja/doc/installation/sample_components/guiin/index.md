@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "GUIIn"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: GUIIn -->

@@ -1,4 +1,12 @@
-{% assign current_lang = page.lang | default: site.default_lang | default: "ja" %}
+
+{%- assign current_lang = site.default_lang | default: 'ja' -%}
+
+{%- if page.url contains '/ja/' -%}
+  {%- assign current_lang = 'ja' -%}
+{%- elsif page.url contains '/en/' -%}
+  {%- assign current_lang = 'en' -%}
+{%- endif -%}
+
 {% assign nav_items = site.data.nav.[current_lang] %}
 
 <link rel="stylesheet" href="{{ "/assets/css/hover-dropdown.css" | relative_url }}">
@@ -9,8 +17,9 @@
     <a class="navbar-brand" href="{{ '/' | absolute_url }}">
 	    <img src="{{ site.logo | relative_url }}" alt="{{ site.title }} logo" >
 	    <!-- height="32" width="32" class="site-brand-logo"-->
-	    <span class="site-brand-text">{{ site.title }}--{{ current_lang }}</span><!--add here -->
+	    <span class="site-brand-text">{{ site.title }}</span><!--add here -->
     </a>
+    <font color="white">{{site.description}}</font>
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
@@ -51,10 +60,11 @@
 
 	<!-- {%- endfor -%}-->
       </ul>
+				<li><a>{% include lang-switch.html %}</a></li>
     </div>
   </nav>
     <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
-	    <a>hogehogehoge-----</a>
+	    <a>foo-----</a>
 	{% include lang-switch.html %}
   </nav>
   </div>

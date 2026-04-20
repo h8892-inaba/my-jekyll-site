@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Chromakey"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: Chromakey -->

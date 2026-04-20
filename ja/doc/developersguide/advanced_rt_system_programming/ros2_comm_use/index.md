@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "ROS2通信機能の利用"
-#permalink: /ja/doc/
 ---
 
 <!-- ROS2通信機能の利用 -->

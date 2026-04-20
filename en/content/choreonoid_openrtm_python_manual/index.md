@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Choreonoid用OpenRTM連携プラグイン Python版 マニュアル"
-#permalink: /ja/doc/
 ---
 
 #contents

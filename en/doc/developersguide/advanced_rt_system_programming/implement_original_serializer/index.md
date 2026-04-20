@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "独自シリアライザの実装手順"
-#permalink: /ja/doc/
 ---
 
 <!-- Title: 独自シリアライザの実装手順 -->

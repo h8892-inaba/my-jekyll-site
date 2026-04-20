@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "RTSystemEditor-1.2.0"
-#permalink: /doc/installtion/
 ---
 <!-- Title: RTSystemEditor-1.2.0 -->
 ## RTSystemEditorとは

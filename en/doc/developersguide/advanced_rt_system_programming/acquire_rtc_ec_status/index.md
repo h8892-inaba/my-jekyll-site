@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "RTC（EC）の状態を取得する"
-#permalink: /ja/doc/
 ---
 
 <!-- Title: RTC（EC）の状態を取得する -->

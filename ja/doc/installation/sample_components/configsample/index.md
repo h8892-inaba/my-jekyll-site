@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "ConfigSample"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: ConfigSample -->

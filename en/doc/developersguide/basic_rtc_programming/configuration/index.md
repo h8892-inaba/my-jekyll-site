@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "コンフィギュレーション(基礎編) "
-#permalink: /ja/doc/
 ---
 <!-- Title: コンフィギュレーション(基礎編) -->
 

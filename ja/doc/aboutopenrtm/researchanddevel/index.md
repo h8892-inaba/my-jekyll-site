@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "研究開発"
-#permalink: /doc/aboutopenrtm/researchanddevel
 ---
 
 <!-- Title: 研究開発 -->

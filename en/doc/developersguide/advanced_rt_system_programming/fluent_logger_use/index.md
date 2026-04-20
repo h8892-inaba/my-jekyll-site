@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Fluent Loggerによるログ収集"
-#permalink: /ja/doc/
 ---
 
 <!-- Title: Fluent Loggerによるログ収集 -->

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "DDS通信機能の利用"
-#permalink: /ja/doc/
 ---
 
 <!-- Title: DDS通信機能の利用 -->

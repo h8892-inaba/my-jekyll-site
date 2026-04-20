@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "OpenCVCamera/CameraViewerとシンプルOpenCVサンプル"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: OpenCVCamera/CameraViewerとシンプルOpenCVサンプル -->

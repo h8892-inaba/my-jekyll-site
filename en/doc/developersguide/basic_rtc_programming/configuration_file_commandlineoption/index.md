@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "設定ファイルとコマンドラインオプション (基礎編)"
-#permalink: /ja/doc/
 ---
 <!-- Title: 設定ファイルとコマンドラインオプション (基礎編) -->
 #contents

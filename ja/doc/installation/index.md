@@ -1,7 +1,6 @@
 ---
 layout: page
-title: "hogehogeインストール"
-#permalink: /doc/installtion/
+title: "インストール"
 ---
 <!-- Title インストール -->
 

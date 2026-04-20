@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "SSM通信機能の利用"
-#permalink: /ja/doc/
 ---
 
 <!-- Title: SSM通信機能の利用 -->

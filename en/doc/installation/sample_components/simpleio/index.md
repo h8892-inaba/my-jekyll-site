@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "SimpleIO"
-#permalink: /doc/installtion/
 ---
 <!-- Title: SimpleIO -->
 

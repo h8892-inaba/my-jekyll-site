@@ -1,9 +1,6 @@
 ---
-
 layout: page
 title: "一括インストールスクリプト"
-
-#permalink: /doc/installtion/
 
 ---
 

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "ライセンス"
-#permalink: /doc/aboutopenrtm/license
 ---
 
 <!-- Title: ライセンス -->

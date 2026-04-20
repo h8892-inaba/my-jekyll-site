@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "サービスポート (基礎編)"
-#permalink: /ja/doc/
 ---
 
 <!-- Title: サービスポート (基礎編) -->

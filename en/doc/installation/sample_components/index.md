@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "OpenRTM付属のサンプルについて"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: OpenRTM-aist付属のサンプルについて -->

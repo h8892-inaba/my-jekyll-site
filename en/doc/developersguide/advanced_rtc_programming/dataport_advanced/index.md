@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "データポート (応用編)"
-#permalink: /ja/doc/
 ---
 
 <!-- Title: データポート (応用編) -->

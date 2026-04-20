@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "RTコンポーネントアーキテクチャ"
-#permalink: /doc/aboutopenrtm/rtc_architecture
 ---
 
 <!-- Title: RTコンポーネントアーキテクチャ -->

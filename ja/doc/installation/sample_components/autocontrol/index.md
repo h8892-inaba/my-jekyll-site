@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Autocontrol"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: Autocontrol -->

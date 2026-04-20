@@ -1,7 +1,6 @@
 ---
 layout: page
-title: ""
-#permalink: /doc/installtion/
+title: "opencv_sample_code_build_prock"
 ---
 
 init

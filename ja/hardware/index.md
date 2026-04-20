@@ -2,7 +2,6 @@
 
 layout: page
 title: "Hardware"
-permalink: /ja/hardware/
 
 ---
 RTコンポーネントとして利用可能なハードウエアに関する情報。

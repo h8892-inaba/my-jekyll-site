@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "SubtractCaptureImage"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: SubtractCaptureImage -->

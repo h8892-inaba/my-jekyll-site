@@ -4,7 +4,6 @@ title: "データポート (基礎編)"
 toc: true
 toc_levels: "h2,h3"
 #toc: false
-#permalink: /ja/doc/
 ---
 <!-- Title: データポート (基礎編) -->
 <!-- -*- pukiwiki-edit -*- -->

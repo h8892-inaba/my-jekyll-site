@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "マスターマネージャ、スレーブマネージャ"
-#permalink: /ja/doc/
 ---
 
 <!-- Title: マスターマネージャ、スレーブマネージャ -->

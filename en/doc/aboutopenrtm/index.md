@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "OpenRTM-aistとは？"
-#permalink: /ja/doc/
 ---
 <!-- Title: OpenRTM-aistとは？ -->
 <div align="right"><img src="piping_rtm_logo2.png" width="30%;" align="right"></div>

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "RTC操作関数(CORBA_RTCUtil)利用マニュアル"
-#permalink: /ja/doc/
 ---
 
 #contents

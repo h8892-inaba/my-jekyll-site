@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "TAOのビルド"
-#permalink: /ja/doc/
 ---
 <!-- Title: TAOのビルド -->
 #contents

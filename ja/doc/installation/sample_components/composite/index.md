@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Composite"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: Composite -->

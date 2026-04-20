@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "RTCプログラミングの流れ"
-#permalink: /ja/doc/
 ---
 
 <!-- Tilte: RTCプログラミングの流れ -->

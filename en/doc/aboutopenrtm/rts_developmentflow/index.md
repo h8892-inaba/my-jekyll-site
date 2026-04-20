@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "RTシステム開発の流れ"
-#permalink: /doc/aboutopenrtm/rts_developmentflow
 ---
 
 <!-- Title: RTシステム開発の流れ -->

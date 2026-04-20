@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "TkCalibGUI"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: TkCalibGUI -->

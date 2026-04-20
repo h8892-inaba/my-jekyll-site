@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "ROBOMECH2025"
-#permalink: /ROBOMECH2025/
 ---
 
 # ROBOMECH2025

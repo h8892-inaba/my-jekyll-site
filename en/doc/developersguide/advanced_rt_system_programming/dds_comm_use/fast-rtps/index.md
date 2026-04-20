@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Fast DDS通信機能の利用"
-#permalink: /ja/doc/
 ---
 
 <!-- Title: Fast DDS通信機能の利用 -->

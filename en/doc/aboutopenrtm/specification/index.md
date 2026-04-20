@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "OpenRTM-aist 諸元"
-#permalink: /doc/aboutopenrtm/specification
 ---
 <!-- Title: OpenRTM-aist 諸元 -->
 #contents

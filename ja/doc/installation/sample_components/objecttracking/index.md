@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "ObjectTracking"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: ObjectTracking -->

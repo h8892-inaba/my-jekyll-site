@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "コンフィギュレーション (応用編)"
-#permalink: /ja/doc/
 ---
 <!-- Title: コンフィギュレーション (応用編) -->
 #contents

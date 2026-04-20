@@ -6,9 +6,7 @@
 
 layout: home
 
-permalink: /ja/
-
-title: "Home ja"
+title: "ホーム"
 excerpt: "OpenRTM-aist | The power to connect"
 
 swiper_images:

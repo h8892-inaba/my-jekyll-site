@@ -1,7 +1,6 @@
 ---
 layout: page
-title: ""
-#permalink: /ja/doc/
+title: "comp_conf_reference"
 ---
 #contents(3)
 

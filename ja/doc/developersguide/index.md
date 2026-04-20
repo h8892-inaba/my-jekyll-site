@@ -1,7 +1,6 @@
 ---
 layout: page
 title: " デベロッパーズガイド"
-#permalink: /ja/doc/
 ---
 
 <!-- Title: デベロッパーズガイド -->

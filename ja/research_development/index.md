@@ -2,7 +2,6 @@
 
 layout: page
 title: "Research_Development"
-permalink: /ja/research_development/
 
 ---
 

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "ImageSubtraction"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: ImageSubtraction -->

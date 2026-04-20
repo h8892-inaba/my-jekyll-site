@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "TAO関連の設定"
-#permalink: /ja/doc/
 ---
 
 <!-- Title: TAO関連の設定 -->

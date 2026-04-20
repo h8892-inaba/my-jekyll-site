@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "rtc.conf設定項目一覧"
-#permalink: /ja/doc/
 ---
 
 #contents(3)

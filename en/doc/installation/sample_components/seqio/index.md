@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "SeqIO"
-#permalink: /doc/installtion/
 ---
 
 <!-- **SeqIO -->

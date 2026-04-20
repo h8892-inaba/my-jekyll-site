@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "ExtTrigger"
-#permalink: /doc/installtion/
 ---
 <!-- Title: ExtTrigger -->
 

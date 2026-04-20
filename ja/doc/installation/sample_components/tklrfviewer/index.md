@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "tkLRFViewer"
-#permalink: /doc/installtion/
 ---
 
 <!-- Title: tkLRFViewer -->

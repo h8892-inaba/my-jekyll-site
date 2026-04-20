@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "SSLTransportの使用方法"
-#permalink: /ja/doc/
 ---
 
 <!-- Title: SSLTransportの使用方法 -->

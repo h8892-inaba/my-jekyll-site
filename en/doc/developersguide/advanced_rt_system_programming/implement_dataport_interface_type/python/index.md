@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "独自インターフェース型の実装手順(Python)"
-#permalink: /ja/doc/
 ---
 
 <!-- Title: 独自インターフェース型の実装手順(Python) -->

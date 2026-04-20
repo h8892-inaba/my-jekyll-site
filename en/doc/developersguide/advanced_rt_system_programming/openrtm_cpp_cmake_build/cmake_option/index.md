@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "CMakeのオプション一覧"
-#permalink: /ja/doc/
 ---
 <!-- Title: CMakeのオプション一覧 -->
 #contents

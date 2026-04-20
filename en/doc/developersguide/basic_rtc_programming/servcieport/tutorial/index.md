@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "サービスポートの設定手順"
-#permalink: /ja/doc/
 ---
 
 #contents

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "独自ロガーの実装方法"
-#permalink: /ja/doc/
 ---
 <!-- Title: 独自ロガーの実装方法 -->
 #contents
