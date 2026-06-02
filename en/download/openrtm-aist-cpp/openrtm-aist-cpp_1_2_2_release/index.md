@@ -1,28 +1,27 @@
 ---
 layout: page
-title: OpenRTM-aist C++ 1.2.1-RELEASE
+title: OpenRTM-aist C++ 1.2.2-RELEASE
 ---
 
 <!-- Title: OpenRTM-aist C++ 1.2.1-RELEASE -->
-<div align="right"><a href="cpp_logo.png"><img src="cpp_logo.png" width="15%;" align="right"></a></div>
+<div align="left"><a href="cpp_logo.png"><img src="cpp_logo.png" width="15%;" align="right"></a></div>
 #contents(4)
 
 
-<br>
-インストール手順については以下のページを参照してください。
+Please refer to the following page for the installation procedure.
 
-- [OpenRTM-aist(C++版)1.2系のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2)
+<!-- - OpenRTM-aist (C++ version) 1.2 Family installation -->
+- [Let's start OpenRTM-aist in 10 minutes!]({{ site.baseurl }}/en/doc/installation/lets_start/)
 
-## パッケージ
-### Windowsインストーラー
-msiファイルは800MBのサイズがあります。ダウンロードを数分で行うためにはある程度高速な回線(50Mbps以上)を用いてください。
+## Package
+### Windows Installer
+The msi file is 800MB in size. Use a high-speed line (50Mbps or more) to download in minutes.
 
-#### 64bit用
-
+#### For 64bit
 <table class="table-alt">
   <tr>
-    <td>Windows用インストーラー<br> (OpenRTM-aist、C++、Python、<br>Java版、および OpenRTP、<br> rtshell(4.2.2)含む)<br>(Visual Studio 2012、2013、<br> 2015、2017、2019 共通)</td>
-    <td><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi">OpenRTM-aist-1.2.2-RELEASE_x86_64.msi</a> <br>MD5:3275df2f82252e6c6a33249ce2170563</td>
+    <td>Windows Installer <br> (including OpenRTM-aist, C++, Python, <br> Java version and OpenRTP, <br> rtshell (4.2.2)) <br> (Visual Studio 2012, 2013, <br> 2015, 2017, 2019)</td>
+    <td><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi">OpenRTM-aist-1.2.2-RELEASE_x86_64.msi</a> <br> MD5:3275df2f82252e6c6a33249ce2170563</td>
     <td>2020/08/26</td>
   </tr>
   <tr>
@@ -52,15 +51,16 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
   </tr>
 </table>
 
-- <span style="color:red;">※Pythonは、"3.8"、"3.7"、"3.6"のいずれかのバージョンをインストールしてください。</span>;
-- Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[doxygen](http://www.doxygen.nl/index.html)のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
-<!-- -&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiファイルを用いてインストールしている場合は対応不要です。}; -->
 
-#### 32bit用
+- <span style="color:red;">* Install Python version "3.8", "3.7", or "3.6". </span>;
+<!-- - &color (red){* Please delete the old rtshell beforehand. However, if the OpenRTM-aist 1.1.2 version is installed using the msi file, no action is required. }; -->
+- The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [doxygen](http://www.doxygen.nl/index.html) and download and install the latest "doxygen-X.X.X-setup.exe".
 
+
+#### For 32bit
 <table class="table-alt">
   <tr>
-    <td>Windows用インストーラー<br> (OpenRTM-aist、C++、Python、<br>Java版、およびOpenRTP、<br>rtshell(4.2.2)含む)<br>(Visual Studio 2012、2013、<br>2015、2017、2019共通)</td>
+    <td>Installer for Windows<br> (OpenRTM-aist、C++、Python、<br>Java version, and OpenRTP、<br>including rtshell(4.2.2))<br>(Visual Studio 2012、2013、<br>2015、2017、2019)</td>
     <td><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86.msi">OpenRTM-aist-1.2.2-RELEASE_x86.msi</a> <br>MD5:5e3f29853dedf0bf5af69675657a5c04</td>
     <td>2020/08/26</td>
   </tr>
@@ -92,190 +92,98 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
 </table>
 
 
-- <span style="color:red;">※Pythonは、"3.8"、"3.7"、"3.6"のいずれかのバージョンをインストールしてください。</span>;
-<!-- -&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiファイルを用いてインストールしている場合は対応不要です。}; -->
-- Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[doxygen](http://www.doxygen.nl/index.html)のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
+- <span style="color:red;">※Please install one of the version of Python "3.8", "3.7" or "3.6".</span>;
+- The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [[doxygen: http: //www.doxygen.nl/index.html]] and download and install the latest "doxygen-X.X.X-setup.exe".
 
+For installation, [Start OpenRTM-aist in 10 minutes!]({{ site.baseurl }}/en/doc/installation/lets_start/) page for instructions. 
 
-インストールについては、[OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/lets_start)のページで手順を紹介しています。<br>
+##### Confirm installation
+It is recommended that you confirm that you can create a Visual C++ project before the workshop.
 
-#### Visual Studioのバージョン指定
+First, start Visual Studio and click "File"-> "New"-> "Project". <br>
+Select ** Visual C++ ** for the template and select ** Empty project **.
 
-インストールされているVisual Studioのバージョンに合わせて、システム環境変数**RTM_VC_VERSION**を設定しています。
-インストール後に変更する場合は、GUIツールを使って設定できます。使い方は[VCVerChanger]({{ site.baseurl }}/ja/content/vc_version_changer)のページで解説しています。
-<br>
-
-<table class="table-alt">
-  <tr>
-    <td>Visual Studioのバージョン</td>
-    <td>システム環境変数RTM_VC_VERSIONの指定値</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>2012</td>
-    <td>vc11</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>2013</td>
-    <td>vc12</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>2015、2017、2019</td>
-    <td>vc14</td>
-    <td>初期設定</td>
-  </tr>
-</table>
-
-
-- <span style="color:red;">※インストール後、Visual Studioのバージョンを変更しない場合でも、一度[VCVerChanger]({{ site.baseurl }}/ja/content/vc_version_changer)でシステム環境変数の設定を確認してください。不要なパスが残っていた場合はこれを削除します。</span>;
-<br>
-
-
-&aname(vc2013_install);
-#### Visual Studioのダウンロード・インストール
-
-MicrosoftのダウンロードページからVisual Studio Community 2019をダウンロードできます。
-- https://visualstudio.microsoft.com/ja/downloads/
-
-インストールについては、[Visual Studio Community 2019インストール方法]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)のページで手順を紹介しています。<br>
-
-<!-- Microsoftのダウンロードページでは、Visual Studioの最新バージョンしかダウンロードできません。&br; -->
-<!-- サポート対象の別バージョンの Visual Studioをダウンロード・インストールしたい方は、無償プログラムの &br; -->
-<!-- 「Visual Studio Dev Essential」への登録が必要です。下記サイトの手順に従って登録してください。 -->
-<!-- - https://blogs.msdn.microsoft.com/ayatokura/2016/12/20/vsdevessential/ -->
-<!--  -->
-<!-- vc2013 のインストール方法を紹介します。 -->
-<!--  -->
-<!-- - Visual Studio Dev Essential 画面を開き、左端にある「Visual sutdio Community」の[Download]をクリックします -->
-<!-- - 検索窓に「Visual Studio Express 2013 for Windows Desktop with Update 5」と入力して検索してください -->
-<!-- - インストーラーのデフォルト言語は[English]となっていますが、[Japanese]を選択可能です -->
-<!-- - EXE の webインストーラーをダウンロードしてインストールしてください -->
-
-
-
-
-##### インストールの確認
-
-講習会前などには、Visual C++のプロジェクトが作成できるかを確認を推奨します。
-
-まずはVisual Studioを起動し、「ファイル」→「新規作成」→「プロジェクト」をクリックしてください。<br>
-テンプレートに**Visual C++**を選択して、**空のプロジェクト**を選択してください。
 
 <br>
 
 <div align="center"><a href="vc2017.png"><img src="vc2017.png" width="70%;"></a></div>
 <br>
 
+After entering the project name and clicking OK, a Visual C++ project is created.
 
-プロジェクト名を入力後にOKをクリックするとVisual C++のプロジェクトが生成されます。
+If you cannot select ** Visual C++ **, install "Desktop development with C++" according to the procedure of [How to install Visual Studio Community 2019]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022/).
 
+Also, when using other than Visual Studio 2019, it is recommended to confirm that you can create a Visual C++ project just in case.
 
-**Visual C++**を選択できない場合は、[Visual Studio Community 2019のインストール方法]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)の手順に従って「C++によるデスクトップ開発」をインストールしてください。
+#### How to use the old version runtime of C++ version
+The old version runtime is installed under the OpenRTM-aist directory as 1.0.0 (only for 32bit), 1.1.0, 1.1.1, 1.1.2, 1.2.0, 1.2.1.
+Use the system environment variable "RTM_BASE" through the path.
 
+Example) The 1.1.1 version vc12 runtime path can be specified as "%RTM_BASE%\1.1.1\vc12\bin".
 
-またVisual Studio 2019以外を使用の場合にも、念のためにVisual C++のプロジェクトが作成できるかの確認することを推奨します。
+#### How to handle when OpenRTP / RTSystemEditor is reduced in high resolution (HiDPI) mode such as Windows10
+If you use a high resolution mode such as Windows 10, Eclipse icons etc. may be displayed in a reduced size. The following FAQ explains the solution.
+- [On Windows10, etc., in high resolution mode, icons are too small and hard to see]({{ site.baseurl }}/en/doc/faq/faq_rtp_tools)
 
-
-#### C++版の旧バージョンランタイム利用方法
-
-旧バージョンのランタイムは、OpenRTM-aistディレクトリ下に、1.0.0（32bit用のみ）、1.1.0、1.1.1、1.1.2、1.2.0、1.2.1としてインストールされます。
-**RTM_BASE**というシステム環境変数を使いパスを通してお使いください。
-
-例）1.1.1版 vc12のランタイムのパスは、「%RTM_BASE%\1.1.1\vc12\bin」で指定できます。
-
-#### Windows10などの高解像度(HiDPI)モードでOpenRTP/RTSystemEditorが縮小表示される場合の対処方法
-
-Windows10などの高解像度モードを利用すると、Eclipseのアイコンなどが縮小表示される場合があります。以下のFAQで解決方法を説明しています。
-- [Windows10 などで、高解像度モードのときにアイコンなどが小さすぎて見にくくなる]({{ site.baseurl }}/ja/content/tool_trouble_shooting_ja)
-
-
-<!-- **** インストール環境の設定を確認する方法 -->
-<!--  -->
-<!-- windows_installer_test.batスクリプトで確認できます。使い方は下記ページで解説しています。 -->
-<!-- #br -->
-<!-- [[windows_installer_test.batの利用方法:/ja/content/rtm-install-check-script]] -->
-<!--  -->
-
-<!-- - 1.1.2版を「標準」インストールすると、C++版だけでなく、Python版、Java版、rtshell もインストールされますので、 -->
-<!-- これらの古いバージョンをインストールされている場合は、あらかじめ全てアンインストールしてください。 -->
-
-<br>
-### Linuxパッケージ
-
-<!-- Linuxパッケージは順次提供される予定です。ソースからのビルドの仕方は以下を参考にしてください。 -->
-
-現在のところ、以下のディストリビューション・バージョンでパッケージを提供しています。<br>
-以下で配布しているインストールスクリプトを利用すれば、必要なパッケージを一括でインストールできます。
-
+### Linux package
+We currently offer packages in the following distribution versions: <br>
+You can use the installation script distributed below to install the required packages at once.
 
 <table class="table-alt">
   <tr>
-    <th>ディストリビューション・バージョン</th>
-    <th>一括インストールスクリプト(右クリックでURLを入手)</th>
+    <th>Distribution version</th>
+    <th>Bulk installation script (right click to get URL)</th>
   </tr>
   <tr>
-    <td>Ubuntu 16.04 (xenial) i386/amd64 <br> Ubuntu 18.04 (bionic) amd64 <br> Ubuntu 20.04 (focal) amd64 <br></td>
-    <td><a href="https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh">pkg_install_ubuntu.sh </a></td>
+    <td>Ubuntu 16.04 (xenial) i386 / amd64 <br> Ubuntu 18.04 (bionic) amd64 <br> Ubuntu 20.04 (focal) amd64 <br></td>
+    <td><a href="https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh">pkg_install_ubuntu.sh</a></td>
   </tr>
   <tr>
     <td>Raspbian Buster</td>
-    <td><a href="https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_raspbian.sh">pkg_install_raspbian.sh </a></td>
+    <td><a href="https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_raspbian.sh">pkg_install_raspbian.sh</a></td>
   </tr>
 </table>
-<!-- | Debian  8.0  (jessie) i386/amd64 &br; Debian  9.0  (stretch) i386/amd64| [[pkg_install_debian.sh >https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_debian.sh]] | -->
-<!-- | Fedora 27 i686/x86_64 &br; Fedora 28 i686/x86_64 &br; Fedora 29 i686/x86_64| [[pkg_install_fedora.sh >https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_fedora.sh]] | -->
 
-<!-- ※Fedora用一括インストール・スクリプトはOpenRTM-aist 1.2.0版以降対応予定です。 -->
+By specifying options, you can now install packages that meet your needs. <br>
+<span style="color:red;">※You can install the old version "1.2.1". You can also downgrade from "1.2.2" to "1.2.1".</span>; <br>
+Please refer to [Bulk installation script]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script/) for installation method, options and package types.
 
+If you have already installed 1.2.1-RELEASE, you can update it.
 
-
-オプションを指定することで、目的に合わせたパッケージをインストールできるようになりました。　<br>
-<span style="color:red;">※古いバージョンである「1.2.1」をインストールすることができます。「1.2.2」から「1.2.1」へのダウングレードもできます。</span>; <br>
-インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)をご確認ください。
-
-
-1.2.1-RELEASEを既にインストールしている場合はアップデートが可能です。
-
-Ubuntu / Debianの場合
+Ubuntu / Debian
 
 ```
  $ sudo apt update
  $ sudo apt upgrade
 ```
 
-<!-- Fedora　の場合 -->
-<!--  -->
-<!-- # dnf update -->
-
-ダウンロード方法・インストール方法については、[OpenRTM-aist(C++版)1.2系のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2)をご覧くだい。
+Please see [Let's start OpenRTM-aist in 10 minutes!]({{ site.baseurl }}/en/doc/installation/lets_start/) for download method and installation method.
 
 &aname(src);
-## ソースコード
+## Source code
 
 <table class="table-alt">
   <tr>
-    <td>C++版ソースコード</td>
+    <td>C++ source code</td>
     <td><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2.tar.gz">OpenRTM-aist-1.2.2.tar.gz</a> <br>MD5:e5ac7fbf4a78283064bc4730db086d9a</td>
     <td>2020/08/26</td>
   </tr>
   <tr>
-    <td>C++版Windows専用ソース</td>
+    <td>C++ version Windows only source</td>
     <td><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-win32.zip">OpenRTM-aist-1.2.2-win32.zip</a> <br>MD5:5e5655b65524255fcb72adb14125a9a7</td>
     <td>2020/08/26</td>
   </tr>
 </table>
 
-### ソースからのビルド
+### Build from source
 
-ソースからビルドする方法については、[ソースからのビルド(Windows編)]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/build_source_windows_1_2)または[ソースからのビルド(Linux編)]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/build_source_linux_1_2)をご覧くだい。
+For details on how to build from source, see [Building from Source (Windows)]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/build_source_windows_1_2) or [Building from Source (Linux)]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/build_source_linux_1_2) .
 
-### deb/rpmパッケージ作成
+### Create deb / rpm package
 
-1.1から上記のソースコードからのUbuntu、Debian用debパッケージ、Fedora用rpmパッケージの作成が正式にサポートされました。
+From 1.1, the creation of deb packages for Ubuntu and Debian and rpm packages for Fedora from the above source code is officially supported.
 
-以下の手順でパッケージを作成できます。パッケージ作成に当たっては、一括インストールスクリプト（pkg_install_***.sh）を利用して必要なパッケージをあらかじめインストールしておいてください。
+You can create a package by following the steps below. When creating a package, use the bulk installation script (pkg_install_***.sh) to install the necessary packages in advance.
 
 ```
  $ tar xvzf OpenRTM-aist-1.2.2-RELEASE.tar.gz
@@ -285,33 +193,19 @@ Ubuntu / Debianの場合
  $ make
 ```
 
-パッケージはpacakgesディレクトリ内に作成されます。
+Packages are created in the pacakges directory.
 
-<span style="color:red;">※UbuntuやDebianにてdebパッケージを作成する場合は"dpkg-dev build-essential debhelper devscripts"、Fedoraにてrpmパッケージを作成する場合は"rpm-build createrepo"といったツールをあらかじめインストールしておく必要があります。</span>;
-これらは、[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)を-cオプションで実行すればインストールされます。
+<span style="color:red;">* Install tools such as "dpkg-dev build-essential debhelper devscripts" when creating deb packages on Ubuntu and Debian, and "rpm-build createrepo" before creating rpm packages on Fedora. Must be kept. </span>;
+These can be installed by executing [Bulk installation script]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script/) with the -c option.
 
-<!-- &br; -->
-<!-- ***MacPorts -->
-<!-- MacPorts 用 Portfile が利用可能です。あらかじめ Xcode および MacPorts をインストールした上でご利用ください。 -->
-<!-- - [[Portfile (ports.tgz) :http://www.openrtm.org/pub/MacOSX/macports/ports.tgz]] -->
-<!-- - [[インストールスクリプト (port_install.sh) :http://www.openrtm.org/pub/MacOSX/macports/port_install.sh]]: ports.tgz のダウンロード、OpenRTM-aist のビルド・インストールまで自動で行います。 -->
+## Release notes
+OpenRTM-aist Official Website can use source code, Windows installer, Linux package, etc. in dual license system which can be selected from LGPL license or individual contract with AIST.
+- [1.2.2-RELEASE](https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v1.2.2)
 
-<!-- ** ツール -->
-
-<!-- インストーラーのオプションで OpenRTP を選択していれば、インストールする必要はありません。 -->
-<!-- ツールを別途インストールする方法については、　[[OpenRTP 1.1.0-RC5:/ja/node/5778]] をご覧ください。 -->
-
-<br>
-## リリースノート
-OpenRTM-aist Official Websiteからソースコード、Windowsインストーラー、Linux用パッケージなどがLGPLライセンスもしくは産総研との個別契約のうち一つから選択するデュアルライセンス方式で利用可能です。
-
-- [1.2.2-RELEASE ](https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v1.2.2)
-
-
-### 対応(ビルド検証済)OS
-    - Ubuntu 16.04 i386、 amd64
-    - Ubuntu 18.04 amd64
-    - Ubuntu 20.04 amd64
-    - Raspbian Buster armhf
-    - Windows-10 (32/64bit)
+### Supported (build verified) OS
+- Ubuntu 16.04 i386, amd64
+- Ubuntu 18.04 amd64
+- Ubuntu 20.04 amd64
+- Raspbian Buster armhf
+- Windows-10 (32 / 64bit)
 

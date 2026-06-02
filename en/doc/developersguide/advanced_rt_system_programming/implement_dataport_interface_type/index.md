@@ -2,6 +2,7 @@
 layout: page
 title: "データポートの独自インターフェース型の実装手順"
 ---
+-------jp page!!-------
 
 <!-- Title: データポートの独自インターフェース型の実装手順 -->
 #contents
@@ -50,3 +51,4 @@ OutPort側でOutPortProviderがOutPortConnectorのread関数を呼んでデー�
 - [独自インターフェース型の実装手順(C++)]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/cpp/)
 - [独自インターフェース型の実装手順(Python)]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/)
 - [独自インターフェース型の実装手順(Java)]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/java/)
+-------jp page!!-------

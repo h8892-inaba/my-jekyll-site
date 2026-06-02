@@ -4,6 +4,7 @@ layout: page
 Title: ソースからのビルド（C++版）
 
 ---
+-------jp page!!-------
 
 <!-- Title: ソースからのビルド（C++版） -->
 
@@ -250,3 +251,4 @@ OpenRTM-aistは Release/Debug 両ビルドをしています。omniORBのバイ�
 
 
 
+-------jp page!!-------

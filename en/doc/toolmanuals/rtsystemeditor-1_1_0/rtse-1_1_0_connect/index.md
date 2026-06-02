@@ -2,6 +2,7 @@
 layout: page
 title: システムエディタ（ポート間の接続 編）
 ---
+-------jp page!!-------
 
 <!-- Title: システムエディタ（ポート間の接続 編） -->
 #contents
@@ -204,3 +205,4 @@ title: システムエディタ（ポート間の接続 編）
 また余りなく（PortInterfaceProfile はそれぞれのポートに複数存在する）すべての PortInterfaceProfile がマッチングすることを指しています。
 <br>
 
+-------jp page!!-------

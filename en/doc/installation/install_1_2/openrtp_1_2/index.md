@@ -2,6 +2,7 @@
 layout: page
 title: OpenRTP 1.2系のインストール
 ---
+-------jp page!!-------
 <!-- Title: OpenRTP 1.2系のインストール -->
 <div align="left"><a href="eclipse_logo.png"><img src="eclipse_logo.png" width="15%;" align="left"></a></div>
 
@@ -15,3 +16,4 @@ RTCBuilderとRTSystemEditorは、Eclipse統合開発環境のプラグインと�
 - [RTCBuilderのインストール](./rtcbuilder)
 - [RTSystemEditorのインストール](./rtsystemeditor)
 - [RTSystemEditor、RTCBuilderのデバッグ](./rtsystemeditor_rtcbuilder_debug)
+-------jp page!!-------

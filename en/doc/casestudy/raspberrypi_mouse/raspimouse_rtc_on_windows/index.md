@@ -2,6 +2,7 @@
 layout: page
 title: ラズパイマウス用 RTC のインストール(Windows)
 ---
+-------jp page!!-------
 
 <!-- Title: ラズパイマウス用 RTC のインストール(Windows) -->
 #contents
@@ -76,3 +77,4 @@ RTC の起動、RTシステムの復元を自動化するためのスクリプ�
   </tr>
 </table>
 
+-------jp page!!-------

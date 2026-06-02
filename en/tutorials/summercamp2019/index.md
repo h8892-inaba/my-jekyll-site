@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェアサマーキャンプ2019
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><a href="summercamp2019_title3.png"><img src="summercamp2019_title3.png" width="100%;"></a></div>
 
@@ -576,3 +581,4 @@ title: RTミドルウェアサマーキャンプ2019
 <!-- (at)を＠におきかえてください．~ -->
 
 
+<!-- -------jp page!!------- -->

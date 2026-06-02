@@ -1,6 +1,7 @@
 ---
 layout: page
 ---
+-------jp page!!-------
 <!-- Title: インストール -->
 
 <div align="right"><a href="ubuntu_logo2.png"><img src="ubuntu_logo2.png" width="100;" align="right"></a></div>
@@ -217,3 +218,4 @@ rtshellも OpenRTM-aist-Python1.2.2 に対してインストールし直され�
 ```
 
 
+-------jp page!!-------

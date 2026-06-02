@@ -3,85 +3,46 @@ layout: page
 title: OpenRTM-aist-Python-1.0.0-RELEASE
 ---
 <!-- Title: OpenRTM-aist-Python-1.0.0-RELEASE -->
-<div align="left"><a href="python-logo.png"><img src="python-logo.png" width="15%;" align="left"></a></div>
 #contents
-#clear
-<br>
-<br>
-<br>
+<div align="left"><a href="python-logo.png"><img src="python-logo.png" width="15%;" align="left"></a></div>
 
-## 注意事項
+## Important notice
 
-バージョン0.4系をインストール済みの環境に1.0系をインストールする場合は、一度0.4系を削除してから1.0系のインストールを行ってください。
-0.4系をアンインストールした後に0.4系の残骸が残っている場合がございますので、残骸が残っている場合は手動でOpenRTMフォルダの削除を行って下さい。
+If you already have version 0.4.x installed, it must be uninstalled prior to installing version 1.x. Even after uninstalling 0.4.x, some files may remain. The folder containing these must be removed manually:
 
-- 削除するフォルダ
-  - Windows環境の場合:
+- Windows:
 ```
  C:\Python[24,25,26]\Lib\site-packages\OpenRTM
 ```
-  - Linux環境の場合:
+- Linux:
 ```
   /usr/lib/python[2.4,2.5,2.6]/site-packages/OpenRTM
 ```
 
-&aname(source);
-## ソースコード
+## &aname(source){Source code};
 <table class="table-alt">
   <tr>
-    <td>Python版ソースコード</td>
+    <td>Python source code</td>
     <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.0/OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz">OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz</a> <br> MD5:dd11ef6a2e6277fa095e0fbd3210a2a5</td>
     <td>10/05/07</td>
   </tr>
   <tr>
-    <td>Python版ソースコード(Win32)</td>
+    <td>Python source code (Windows)</td>
     <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.0/OpenRTM-aist-Python-1.0.0-RELEASE.zip">OpenRTM-aist-Python-1.0.0-RELEASE.zip</a> <br> MD5:371b427288cb0f69ab3dcf71d8eda169</td>
     <td>10/05/07</td>
   </tr>
 </table>
 
-<span style="color:red;">※ OpenRTM-aist-Python-1.0.0には以下のバグがありますので、1.0.1をインストールされることをお勧めします。</span>;
+## Packages
+### &aname(winpkg){Windows installer (For Python 2.4, 2.5 and 2.6)};
 
-- OpenRTM-aist-Python-1.0.0-RELEASEバグ情報
-  - InPortCorbaCdrConsumer.put(),OutPortCorbaCdrConsumer.get()での_narrow処理の問題(ML 01304)
-  - examples/*/run.py内のrtm-naming.pyのパス修正
-  - rtcd_pythonでのコマンドライン引数のパーシングの問題(ML 01527)
-  - example/ExtTriggerでExtTrigExecutionContextが正常に動作しない問題(ML 01587)
+To install using OpenRTM-aist-Python-1.0.0.msi, Python version 2.4, 2.5 or 2.6 is necessary. The OpenRTM-aist-Python-1.0.0.msi installer will detect the installed Python versions and install OpenRTM-aist and omniORBpy into each of them. There is no need to install omniORBpy separately.
 
 <table class="table-alt">
   <tr>
-    <td>Python版ソースコード</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.1/OpenRTM-aist-Python-1.0.1.tar.gz">OpenRTM-aist-Python-1.0.1.tar.gz</a> <br> MD5:00cde340c2903f455b62f1e64d5c968d</td>
-    <td>11/02/23</td>
-  </tr>
-  <tr>
-    <td>Python版ソースコード(Win32)</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.1/OpenRTM-aist-Python-1.0.1.zip">OpenRTM-aist-Python-1.0.1.zip</a> <br> MD5:8ed1fc66b6b49f605103fc61d1e9b750</td>
-    <td>11/02/23</td>
-  </tr>
-</table>
-
-
-<br>
-## パッケージ
-&aname(winpkg);
-### Windowsインストーラ (Python 2.4,2.5,2.6 共通)
-
-OpenRTM-aist-Python-1.0.0.msiを使用してOpenRTM-aist-Pythonをインストールする場合、Pythonのバージョン2.4、2.5、2.6のいずれかが必要です。
-OpenRTM-aist-Python-1.0.0.msiでは、インストールされているPythonのバージョンを検出し、それぞれにOpenRTM-aist-Python-1.0.0とomniORBpyをインストールします。別途omniORBpyをインストールする必要はありません。
-
-<span style="color:red;">※ OpenRTM-aist-Python-1.0.0にはバグがありますので、1.0.1をインストールされることをお勧めします。</span>;
-
-<table class="table-alt">
-  <tr>
-    <td>Windows用インストーラ</td>
+    <td>Windows installer</td>
     <td><a href="http://www.openrtm.org/pub/Windows/OpenRTM-aist/python/OpenRTM-aist-Python-1.0.0.msi">OpenRTM-aist-Python-1.0.0.msi</a> <br> MD5:4afe4de69c9b56086fc97e9697334a36</td>
     <td>10/05/07</td>
-  </tr>
-  <tr>
-    <td>Windows用インストーラ</td>
-    <td><a href="http://www.openrtm.org/pub/Windows/OpenRTM-aist/python/OpenRTM-aist-Python-1.0.1.msi">OpenRTM-aist-Python-1.0.1.msi</a> <br> MD5:ad9653ab2a07a4247b7b4ad0cf069002</td>
-    <td>11/02/23</td>
   </tr>
   <tr>
     <td>Python-2.4.4</td>
@@ -100,81 +61,74 @@ OpenRTM-aist-Python-1.0.0.msiでは、インストールされているPythonの
   </tr>
 </table>
 
-<br>
-&aname(linuxpkg);
-### Linuxパッケージ
-Vine Linux, Fedora, Ubuntu, Debianの各ディストリビューション用のパッケージを www.openrtm.org 上のリポジトリサーバにて配布しています。
-詳細は、以下のドキュメントを参照してください。
+### &aname(linuxpkg){Linux packages};
 
-- [Vine Linuxへのインストール](/ja/node/1187)
-- [Fedoraへのインストール](/ja/node/1186)
-- [Ubuntu/Debianへのインストール](/ja/node/1182)
+Openrtm.org provides repositories containing packages for Debian, Fedora, Ubuntu and Vine Linux. Please see the following pages for details.
 
+- [Fedora](/en/node/1310)
+- [Ubuntu/Debian](/en/node/1309)
+- [Vine Linux](/en/node/1311)
 
 <table class="table-alt">
   <tr>
-    <th>ディストリビューション</th>
-    <th>対応バージョン</th>
-    <th>一括インストールスクリプト</th>
+    <td>Distribution</td>
+    <td>Supported versions</td>
+    <td>Install script</td>
   </tr>
   <tr>
     <td>Vine Linux</td>
-    <td>4.0, 4.2(i386のみ), 5.0 (i386, x86_64)</td>
-    <td><a href="http://svn.openrtm.org/OpenRTM-aist-Python/trunk/OpenRTM-aist-Python/installer/install_scripts/pkg_install_python_vine.sh">pkg_install_python_vine.sh </a></td>
+    <td>4.0, 4.2(i386 only), 5.0 (i386, x86_64)</td>
+    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/install_scripts/pkg_install_python_vine.sh">pkg_install_python_vine.sh </a></td>
   </tr>
   <tr>
     <td>Fedora</td>
-    <td>11, 12 (共にi386/x86_64)</td>
-    <td><a href="http://svn.openrtm.org/OpenRTM-aist-Python/trunk/OpenRTM-aist-Python/installer/install_scripts/pkg_install_python_fedora.sh">pkg_install_python_fedora.sh </a></td>
+    <td>11, 12 (i386/x86_64)</td>
+    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/install_scripts/pkg_install_python_fedora.sh">pkg_install_python_fedora.sh </a></td>
   </tr>
   <tr>
     <td>Ubuntu</td>
-    <td>8.04, 8.10, 9.04, 9.10, 10.04 (共にi386/x86_64)</td>
-    <td><a href="http://svn.openrtm.org/OpenRTM-aist-Python/trunk/OpenRTM-aist-Python/installer/install_scripts/pkg_install_python_ubuntu.sh">pkg_install_python_ubuntu.sh </a></td>
+    <td>8.04, 8.10, 9.04, 9.10, 10.04 (i386/x86_64)</td>
+    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/install_scripts/pkg_install_python_ubuntu.sh">pkg_install_python_ubuntu.sh </a></td>
   </tr>
   <tr>
     <td>Debian</td>
-    <td>3.1 (i386), 4.0, 5.0 (共にi386, x86_64)</td>
-    <td><a href="http://svn.openrtm.org/OpenRTM-aist-Python/trunk/OpenRTM-aist-Python/installer/install_scripts/pkg_install_python_debian.sh">pkg_install_python_debian.sh </a></td>
+    <td>3.1 (i386), 4.0, 5.0 (i386, x86_64)</td>
+    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/install_scripts/pkg_install_python_debian.sh">pkg_install_python_debian.sh </a></td>
   </tr>
 </table>
 
+## Release notes: 1.0.0-RELEASE&aname(note);
 
-<br>
-&aname(note);
-## リリースノート: 1.0.0-RELEASE
+1.0.0, the newest version of OpenRTM-aist for Python, was released on the 7th of May 2010. This release conforms with the OMG RTC Specification version 1.0 released in April, 2008.
 
-RTミドルウエア：OpenRTM-aist のPython言語版最新バージョン 1.0.0 を5月7日にリリースいたしました。今回のリリースでは、2008年4月に公式な国際標準となった OMG RTC Specification version 1.0 へ正式に準拠いたしました。
+Source code, Windows installers, and Linux packages are available from the OpenRTM-aist official website under the Eclipse Public License (EPL) or a separate commercial license purchased from the National Institute of Advanced Science and Technology.
 
-OpenRTM-aist Official Website からソースコード、Windowsインストーラ、Linux用パッケージ等が EPL (Eclipse Public License) ライセンスもしくは産総研との個別契約のうち一つから選択するデュアルライセンス方式で利用可能です。
+Prior releases required installing many tools to create the build environment. This release includes installers, particularly for Windows, that combine all tools and necessary libraries, such as omniORBpy, into one. It is simple to install the entire OpenRTM-aist environment with a single action.
 
-これまでは、実行・開発環境を構築するには、いくつかのパッケージをインストールする必要がありましたが、今回のリリースでは、特にWindows用には、omniORBpyやツール等を含むインストーラを提供することにより、どなたでもすぐにサンプルを実行して試用可能となりました。ぜひお試しください。
-
-- [OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz](http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.0/OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz) -- 2010.05.07リリース
-  - OMG RTC Specification v1.0 準拠
-  - 新データポート導入 (corba_cdrインターフェース型)
-    - push型・pull型データフローの導入
-    - サブスクリプション型の導入
-    - 送信ポリシの導入
-    - バッファリングポリシとタイムアウトの導入
-  - 雑多なバグフィックス
-  - コンフィギュレーション機能の充実
-    - rtc.conf新オプションの導入 
+- [OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz](http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.0/OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz) -- released 2010.05.07
+  - Compliant with the OMG RTC specification version 1.0.
+  - New data port has been introduced. 
+    - Push/pull data flow types are supported.
+    - Subscription types have been implemented.
+    - Publisher policies have been implemented.
+    - Buffering policy and time-out functionality have been implemented.
+  - Miscellaneous bug fixes.
+  - Completed configuration system.
+    - New options in rtc.conf.
     - より多くの項目を設定可能に
-  - ManagerのCORBAサービス化(試験的) 
-    - マスタ、スレーブマネージャ方式 
-    - マスタマネージャのINS(Interoperable naming service)対応 
-    - コンポーネントのリモート管理機能の導入 
-  - Windows版 インストーラの提供
-    - omniORBpyの同梱
-    - RTSystemEditor (RCP版) の同梱
+  - Manager CORBA service has been implemented (experimental). 
+    - Master-slave managers.
+    - The Interoperable Naming Service (INS) CORBA object is supported.
+    - Remote management of components.
+  - Windows installer.
+    - Includes omniORBpy.
+    - Includes RTSystemEditor (RCP version).
 
-  - 動作条件
-  - サポートするPythonバージョン
+  - Supported version of Python
     - 2.4
     - 2.5
     - 2.6
-  - 動作確認済みOS
+  - Supported operating systems (verified).
     - Debian4.0-i386
     - Debian5.0-i386
     - Fedora release 11 (Leonidas)-i386

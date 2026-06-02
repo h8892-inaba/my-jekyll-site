@@ -2,6 +2,7 @@
 layout: page
 title: ラズパイマウス用 RTC のインストール(Raspbian)
 ---
+-------jp page!!-------
 
 <!-- Title: ラズパイマウス用 RTC のインストール(Raspbian) -->
 #contents
@@ -299,3 +300,4 @@ RaspberryPiMouseRTC は名城大学のロボットシステムデザイン研究
 これで RaspberryPiMouseRTSystem_script_Raspbian の Component フォルダー内に各 RTC がインストールされます。
 ※キャリブレーション用ソフトウェアはインストールされないので、手動でインストールしてください。
 
+-------jp page!!-------

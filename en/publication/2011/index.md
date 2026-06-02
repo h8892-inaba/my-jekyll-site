@@ -1,13 +1,13 @@
 ---
 layout: page
-title: 論文 (2011年)
+title: Paper (2011)
 ---
-## 論文誌
+## Journal
 
 1. Noriaki ANDO, Shinji KURIHARA, Geoffrey BIGGS, Takeshi SAKAMOTO, Hiroyuki NAKAMOTO, "Software Deployment Infrastructure for Component Based RT-Systems", Journal of Robotics and Mechatronics, Vol.23, No.3, pp.350-359, 2011.06 &ref(JRM_Vol23_No3_ Jun_2011_pp.350-359.pdf, [PDF]);
 1. 安藤 慶昭, "OMG における Robotic Technology Component（RTC）および関連仕様の標準化動向", 日本ロボット学会誌, Vol.29, No.4, pp.333-336, 2011.05, ONLINE ISSN: 1884-7145, PRINT ISSN: 0289-1824
 
-## 国内学会
+## Domestic Conference
 
 1. 姜 榮煥, 栗原 眞二, 韓 相勲, 金 泰成, 安藤 慶昭, "OpenRTM-aist とTECS (TOPPERS Embedded Component System) の連携", 日本機械学会 ロボティクス・メカトロニクス講演会2011, p.2P1-K13, 2011.06, 岡山県岡山市 [[PDF](ROBOMEC2011_2P1-K13_KAN.pdf)]
 1. Geoffrey BIGGS, Noriaki ANDO, Tetsuo KOTOKU, "Erlang に基づいたRTミドルウェア用コンポーネントマネージャ", 日本機械学会 ロボティクス・メカトロニクス講演会2011, p.2P1-L02, 2011.06, 岡山県岡山市 [[PDF](ROBOMEC2011_2P1-L02_Goeff.pdf)]
@@ -20,18 +20,20 @@ title: 論文 (2011年)
 
 
 
-## 受賞
+## Award
 
-1. SI2011優秀講演賞、「OpenRTM-aistによるビジョンシステムフレームワーク」, 第12回計測自動制御学会システムインテグレーション部門講演会、安藤慶昭, Steffen Wittmeier, Michael Jantsch, Alois Knoll, 2011/12/25
+1. SI2011 Excellent Presentation Award, “Vision System Framework Using OpenRTM-aist,” Proceedings of the 12th SICE System Integration Division Conference, Yoshiaki Ando, Steffen Wittmeier, Michael Jantsch, Alois Knoll, December 25, 2011.
 
-## 論文公開規定について 
-本ページでは、各学会の論文公開規定に従って可能な限り論文原稿の公開を行っております。
 
-- [ロボット学会](http://www.rsj.or.jp/data_rules/L-02.pdf)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [日本機械学会](http://www.jsme.or.jp/conrule.htm)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [計測自動制御学会](http://www.sice.jp/)
-  - 転載（使用）許諾願をSICE事務局へ提出し許諾を受ければ可能。[[転載許可証](tensai_kyoka_201311.pdf)]
+## About the Paper Publication Policy
 
+On this page, we publish paper manuscripts as much as possible in accordance with the publication policies of each academic society.
+
+- [Robotics Society of Japan](http://www.rsj.or.jp/data_rules/L-02.pdf)
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
+- [Japan Society of Mechanical Engineers](http://www.jsme.or.jp/conrule.htm)
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
+- [The Society of Instrument and Control Engineers](http://www.sice.jp/)
+ - Publication is possible if a reprint (reuse) permission request is submitted to the SICE office and approval is obtained. [Reprint Permission Certificate](tensai_k
+yoka_201311.pdf)
 

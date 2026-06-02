@@ -2,6 +2,7 @@
 layout: page
 title: Mindstorm NXT 設定
 ---
+-------jp page!!-------
 
 init
 <!-- Title: Mindstorm NXT 設定 -->
@@ -122,3 +123,4 @@ PCDevlistNXT.png
 
 
 
+-------jp page!!-------

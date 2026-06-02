@@ -1,31 +1,38 @@
 ---
 layout: page
-title: 第57回計測自動制御学会北海道支部学術講演会 特別講演 (2025年3月7日)
+title: The 57th SICE Hokkaido Branch Academic Conference Special Lecture (March 7, 2025)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
 
-## 第57回計測自動制御学会北海道支部学術講演会 特別講演 (2025年3月7日)
+## The 57th SICE Hokkaido Branch Academic Conference Special Lecture (March 7, 2025)
 
-### 概要
-- 日時：令和7年3月7日(金)，8日(土)
-- 会場：公立はこだて未来大学大学（R791教室）およびZOOMでのハイブリッド開催
-- 主催：計測自動制御学会北海道支部
-- 共催：日本ロボット学会北海道ロボット技術研究専門委員会
-- 協賛：情報処理学会，精密工学会，電気学会，日本機械学会，日本知能情報ファジィ学会　各北海道支部
-- Webページ: [https://www.sice.or.jp/org/hokkaido/2025.html](https://www.sice.or.jp/org/hokkaido/2025.html)
+### Overview
+- Date: March 7 (Fri.) and 8 (Sat.), 2025
+- Venue: Future University Hakodate (Room R791) and hybrid online via Zoom
+- Organizer: SICE Hokkaido Branch
+- Co-organizer: RSJ Hokkaido Robotics Technology Research Committee
+- Sponsors: IPSJ, JSPE, IEEJ, JSME, SOFT > Hokkaido Branches
+- Web page: [https://www.sice.or.jp/org/hokkaido/2025.html](https://www.sice.or.jp/org/hokkaido/2025.html)
 
-### 特別講演
-- 日時：2025年3月7日(金)　13:00-14:00
-- 会場：公立はこだて未来大学大学（R791教室）およびZOOMでのハイブリッド開催
-- 講師：安藤慶昭　氏（産業技術総合研究所）
-- 講演題目：「システムインテグレーションとロボットミドルウェア」
-- 概要：システムインテグレーション技術は、技術の実用化・社会実装において極めて重要な役割を果たします。 特にロボット技術は、多様な要素技術を統合するという点でシステムインテグレーション技術そのものであり、 近年は統合基盤としてロボットミドルウェアが広く活用されるようになっています。 本講演では、SICE SI部門が目指すシステムインテグレーション技術の体系化についても触れ、 ロボットミドルウェアを通してシステムインテグレーション技術の本質を概観します。
+### Special Lecture
+- Date: Friday, March 7, 2025, 13:00–14:00
+- Venue: Future University Hakodate (Room R791) and hybrid online via Zoom
+- Lecturer: Yoshiaki Ando (National Institute of Advanced Industrial Science and Technology (AIST))
+- Lecture Title: “System Integration and Robot Middleware”
+- Abstract: System integration technology plays an extremely important > role in the practical application and social implementation of technologies. In particular, robotics technology itself is system
+integration technology in the sense that it integrates diverse elemental technologies, and in recent years robot middleware has become widely
+used as an integration platform. This lecture will also touch on the systematization of system integration > technology pursued by the SICE SI Division, and provide an overview of the essence of system integration
+technology through robot middleware.
+
 
 - [slideshare](http://www.slideshare.net/276357975)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/276357975 -->
-
-
 

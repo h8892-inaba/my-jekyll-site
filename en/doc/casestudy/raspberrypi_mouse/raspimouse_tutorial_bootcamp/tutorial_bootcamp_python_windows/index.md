@@ -2,6 +2,7 @@
 layout: page
 title: チュートリアル(Raspberry Pi Mouse、Python、Windows、強化月間用)
 ---
+-------jp page!!-------
 
 <!-- Title: チュートリアル(Raspberry Pi Mouse、Python、Windows、強化月間用) -->
 #contents
@@ -862,3 +863,4 @@ RTシステムエディタで RaspberryPiMouseRTC、RobotController コンポー
 
 
 
+-------jp page!!-------

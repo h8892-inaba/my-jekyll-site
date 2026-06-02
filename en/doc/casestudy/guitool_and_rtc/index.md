@@ -2,6 +2,7 @@
 layout: page
 title: GUI ツールキットとRTCの連携
 ---
+-------jp page!!-------
 
 <!-- Title: GUI ツールキットとRTCの連携 -->
 #contents
@@ -107,3 +108,4 @@ GUI ツールキットの中には、mainスレッドから呼ばなければな
 [TkMobileRobotSimulator.py](http://svn.openrtm.org/OpenRTM-aist-Python/trunk/OpenRTM-aist-Python/OpenRTM_aist/examples/MobileRobotCanvas/TkMobileRobotSimulator.py)
 
 
+-------jp page!!-------

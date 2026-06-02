@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェア強化月間(第1弾)：早稲田大学・RTミドルウェア講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="bootcamp_waseda2014.jpg" width="75%;" align="center"></div>
 
@@ -156,3 +161,4 @@ RTミドルウェア強化月間として、早稲田大学西早稲田キャン
 <br>
 
 <!-- #ref(160705-04.JPG,center,nolink) -->
+<!-- -------jp page!!------- -->

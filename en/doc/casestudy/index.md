@@ -2,6 +2,7 @@
 layout: page
 title: 
 ---
+-------jp page!!-------
 
 init
 <!-- Title: ケーススタディ -->
@@ -53,3 +54,4 @@ init
 <!-- -[[画像処理コンポーネントの作成 (OpenRTM-aist-1.1-RELEASE, rtmtools-1.1.0-RC3, CMake, VC2010):/ja/node/5022]] -->
 <!-- -[[画像処理コンポーネントの作成 (OpenRTM-aist-1.1, CMake, Linux Ubuntu 14.04):/ja/node/430]] -->
 <!-- -[[画像処理コンポーネントの作成 (OpenRTM-aist-1.1, CMake, VC2010):http://www.openrtm.org/openrtm/ja/node/4625]] -->
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: Ubuntu/Debianへのインストール
 ---
+-------jp page!!-------
 
 <!-- Title: Ubuntu/Debianへのインストール -->
 <div align="right"><a href="ubuntu_logo2.png"><img src="ubuntu_logo2.png" width="100;" align="right"></a></div>
@@ -405,3 +406,4 @@ openrtm-aist-doc には、日本語と英語のクラスリファレンス、IDL
 - 2010-07-26 23:24:55 +0900: 初期バージョン
 - 2012-07-06 01:34:30 +0900: PPAを利用したインストールについて追加
 - 2015-02-20 17:00:00 +0900: 1.1.1版リリースに合わせて修正
+-------jp page!!-------

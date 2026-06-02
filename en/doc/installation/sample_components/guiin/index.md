@@ -2,6 +2,7 @@
 layout: page
 title: "GUIIn"
 ---
+-------jp page!!-------
 
 <!-- Title: GUIIn -->
 #contents
@@ -35,3 +36,4 @@ GUIInコンポーネントのGUI画面でチェックを入れたコントロー
 
 
 
+-------jp page!!-------

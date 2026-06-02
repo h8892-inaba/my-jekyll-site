@@ -2,6 +2,11 @@
 layout: page
 title: 産総研講習会(2007年5月23日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -94,3 +99,4 @@ title: 産総研講習会(2007年5月23日)
 
 <div align="center"><a href="070523-04.png"><img src="070523-04.png" width="60%;"></a></div>
 
+<!-- -------jp page!!------- -->

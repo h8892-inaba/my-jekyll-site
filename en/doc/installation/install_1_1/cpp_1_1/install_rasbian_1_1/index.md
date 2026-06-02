@@ -2,6 +2,7 @@
 layout: page
 title: Raspberry Pi (Rasbian) へのインストール
 ---
+-------jp page!!-------
 
 
 <!-- Title: Raspberry Pi (Rasbian) へのインストール -->
@@ -365,3 +366,4 @@ openrtm-aist-doc には、日本語と英語のクラスリファレンス、IDL
 
 - 2015-02-17 15:43:30 +0900: 「パッケージの詳細」のディレクトリーの修正
 - 2012-12-26 15:43:30 +0900: Raspberry Pi (Raspbian) へのインストール、新規作成
+-------jp page!!-------

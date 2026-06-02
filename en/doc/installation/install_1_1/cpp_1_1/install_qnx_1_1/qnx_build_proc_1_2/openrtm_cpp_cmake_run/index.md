@@ -2,6 +2,7 @@
 layout: page
 title: "OpenRTM-aistのビルド、動作確認手順"
 ---
+-------jp page!!-------
 <!-- Title: OpenRTM-aistのビルド、動作確認手順 -->
 #contents
 
@@ -368,3 +369,4 @@ Pythonのホームフォルダ(**C:\Python37**等)にインストールした場
 
 
 
+-------jp page!!-------

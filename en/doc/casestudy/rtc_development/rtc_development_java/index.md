@@ -2,6 +2,7 @@
 layout: page
 title: 
 ---
+-------jp page!!-------
 
 init
 <!-- Title: RTコンポーネント作成(Java版) -->
@@ -613,3 +614,4 @@ CORBA IDL用データ型と Java言語データ型の対応関係を表3-2に示
 
 This product includes software developed by The Apache Software Foundation (http://www.apache.org/ ).
 
+-------jp page!!-------

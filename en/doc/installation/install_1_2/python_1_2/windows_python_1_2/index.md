@@ -2,6 +2,7 @@
 layout: page
 title: Windowsへのインストール
 ---
+-------jp page!!-------
 
 <!-- Title Windowsへのインストール -->
 #contents
@@ -116,3 +117,4 @@ RTCの開発にはCMake、Doxygen、Visual Studioのインストールが必要�
             + WordContrlpy: PythonベースMicrosoft Office Word用RTC
 
 ```
+-------jp page!!-------

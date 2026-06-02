@@ -2,6 +2,7 @@
 layout: page
 title: 玄箱PROへのインストール
 ---
+-------jp page!!-------
 
 <!-- Title: 玄箱PROへのインストール -->
 #contents
@@ -140,3 +141,4 @@ OpenRTM-aist-0.4.0のソース展開後, rootになりbuildディレクトリの
 - [山下康成の”ハックしよう”](http://www.yamasita.jp/)
 
 
+-------jp page!!-------

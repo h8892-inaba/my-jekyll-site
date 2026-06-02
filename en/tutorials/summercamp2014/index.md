@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェアサマーキャンプ2014
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="summercamp2014_banner.png" width="90%;"></div>
 
@@ -625,3 +630,4 @@ RTコンポーネントの再利用性を高めていく上で有用なツール
 <br>
 
 &aname(comment);
+<!-- -------jp page!!------- -->

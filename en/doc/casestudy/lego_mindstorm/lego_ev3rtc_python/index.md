@@ -2,6 +2,7 @@
 layout: page
 title: EV3用RTCの作成 (Python編)
 ---
+-------jp page!!-------
 
 init
 <!-- Title: EV3用RTCの作成 (Python編) -->
@@ -277,3 +278,4 @@ Educator Vehicle の車輪の直径 (2r)、トレッド (2d) はそれぞれ
 
 
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: LeapMotion で Choreonoid の制御
 ---
+-------jp page!!-------
 
 <!-- Title: LeapMotion で Choreonoid の制御 -->
 #contents
@@ -398,3 +399,4 @@ LeapMotionのeSEAT0.hands_out 出力ポート（自作コンポーネントのha
 RTSystemEditor上 で System Diagram に相手側の LeapRTC0 を置き、ポートを接続すると直接センサーをこちら側のパソコンにつながっているのと同じ様に動きます。
 
 RTSystemEditor でコンポーネントが操作できない場合は、前セクションの手順を行ってください。しかし、rtc.conf の場所は「robomec2015_openrtm_tutorial_part3/Demo/LeapMotion」と「robomec2015_openrtm_tutorial_part3/Demo/eSEAT」です。
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: "OpenCVCamera/CameraViewerとシンプルOpenCVサンプル"
 ---
+-------jp page!!-------
 
 <!-- Title: OpenCVCamera/CameraViewerとシンプルOpenCVサンプル -->
 #contents
@@ -129,3 +130,4 @@ OpenCVのRTサンプルコンポーネントを間に接続し、画像データ
 
 
 
+-------jp page!!-------

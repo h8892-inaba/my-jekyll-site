@@ -2,6 +2,7 @@
 layout: page
 title: OpenRTM-aist1.2系のインストール(Windows、MSIインストーラー使用)
 ---
+-------jp page!!-------
 
 <!-- Title: OpenRTM-aist1.2系のインストール(Windows、MSIインストーラー使用) -->
 <div align="right"><a href="windows10-logo.png"><img src="windows10-logo.png" width="15%; margin:30 30 30 30px;" align="right"></a></div>
@@ -25,3 +26,4 @@ OpenRTM-aistのインストール前に必ずPythonをインストールする�
 
 
 
+-------jp page!!-------

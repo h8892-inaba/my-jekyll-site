@@ -2,6 +2,11 @@
 layout: page
 title: サイエンスキャンプ(2010年8月25日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 #clear
@@ -170,3 +175,4 @@ title: サイエンスキャンプ(2010年8月25日)
 これ等をインストールした後、以下のドキュメントに従ってロボットを動かします。
 - [RTコンポーネント作成(NXTway編)](/ja/node/268)
 
+<!-- -------jp page!!------- -->

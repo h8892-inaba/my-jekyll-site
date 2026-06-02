@@ -2,6 +2,7 @@
 layout: page
 title: RTコンポーネント作成(OpenCV編 for RTCB-RC1)
 ---
+-------jp page!!-------
 
 <!-- Title: RTコンポーネント作成(OpenCV編 for RTCB-RC1) -->
 #contents
@@ -1643,3 +1644,4 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
  
 - [ビルド済みパッケージ(No Link)](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2009/ObjectTracking.zip_)
 
+-------jp page!!-------

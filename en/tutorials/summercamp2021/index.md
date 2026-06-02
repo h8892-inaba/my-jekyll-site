@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェアサマーキャンプ2021
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><a href="summercamp2021.jpg"><img src="summercamp2021.jpg" width="100%;"></a></div>
 
@@ -643,3 +648,4 @@ summercamp(at)aist.go.jp~
 (at)を＠におきかえてください．~
 
 
+<!-- -------jp page!!------- -->

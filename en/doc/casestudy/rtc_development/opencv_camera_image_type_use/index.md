@@ -2,6 +2,7 @@
 layout: page
 title: RTコンポーネント作成(OpenCV編 CameraImage型の使用)
 ---
+-------jp page!!-------
 
 <!-- Title: RTコンポーネント作成(OpenCV編 CameraImage型の使用) -->
 #contents
@@ -936,3 +937,4 @@ Flip コンポーネントのコンフィギュレーションパラメーター
 - [ビルド済みパッケージ](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2010/Flip.zip_)
 
 
+-------jp page!!-------

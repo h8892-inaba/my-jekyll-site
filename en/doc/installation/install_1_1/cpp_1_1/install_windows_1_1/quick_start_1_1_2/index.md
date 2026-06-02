@@ -2,6 +2,7 @@
 layout: page
 title: 10分で始めよう！
 ---
+-------jp page!!-------
 
 init
 https://openrtm.org/openrtm/ja/node/6026/
@@ -413,3 +414,4 @@ RTシステムエディタを見てみると、RTC がアクティブ化され�
 
 <br>
 <br>
+-------jp page!!-------

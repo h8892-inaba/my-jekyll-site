@@ -2,6 +2,7 @@
 layout: page
 title: "サービスポートの設定手順"
 ---
+-------jp page!!-------
 
 #contents
 
@@ -199,3 +200,4 @@ Provided側では、受け取った文字列を標準出力後に、Required側�
 - [Javaサンプルコンポーネント](https://github.com/OpenRTM/OpenRTM-aist-Java/tree/master/jp.go.aist.rtm.RTC/src/RTMExamples/SimpleService)
 - [Luaサンプルコンポーネント](https://github.com/Nobu19800/RTM-Lua/tree/master/examples)
 
+-------jp page!!-------

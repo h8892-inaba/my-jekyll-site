@@ -2,6 +2,7 @@
 layout: page
 title: OpenRTPの起動手順(1.2系、Linux)
 ---
+-------jp page!!-------
 
 <!-- Title: OpenRTPの起動手順(1.2系、Linux) -->
 #contents
@@ -87,3 +88,4 @@ Raspbianのような小さな構成のシステムの場合、openrtp自体が�
 
 
 
+-------jp page!!-------

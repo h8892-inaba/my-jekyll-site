@@ -2,6 +2,7 @@
 layout: page
 title: "Autocontrol"
 ---
+-------jp page!!-------
 
 <!-- Title: Autocontrol -->
 
@@ -36,3 +37,4 @@ Autocntrol, SeqOutとSeqInの対応するポートをRTSystemEditor上で接続�
   7. パラメータ値を変更します。このシステム構成例では、[velocity]を10.0、[turn_velocity]を1.0、[distance_to_env]を5.0に設定するのが分かりやすい設定値の例です。
   8. SeqOutのコンソール画面に表示されるfloatの4番目のデータ値と、SeqInのコンソール画面のSequence Dataの2つの値に注目してください。SeqOutの値が[distance_to_env]の値と比較され、SeqInのコンソール画面に[turn_vel]、- [turn_vel]か、[velocity]、[velocity]の値として出力されているのを確認してください。それぞれConfigurationパラメータを変化させて、入出力の関係がどのようになるかを見てみるのも良いでしょう。
 
+-------jp page!!-------

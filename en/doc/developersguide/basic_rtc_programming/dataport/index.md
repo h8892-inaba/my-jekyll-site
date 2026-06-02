@@ -5,6 +5,7 @@ toc: true
 toc_levels: "h2,h3"
 #toc: false
 ---
+-------jp page!!-------
 <!-- Title: データポート (基礎編) -->
 <!-- -*- pukiwiki-edit -*- -->
 <!-- *データポート(基本編) -->
@@ -528,3 +529,4 @@ OutPort で主に使用する関数は write() と getStatusList() になりま�
 データポートの宣言は、RTCBuilder や rtc-template で行ってくれますが、実際にどのようにデータを与えるのか、あるいは利用するのかについてはコンポーネント開発者が記述する必要があります。
 ただし、簡単に使用するだけであれば、InPort では、isNew() と read() 関数だけ、OutPort では、write() と getStatusList() 関数だけ覚えておけば十分でしょう。
 
+-------jp page!!-------

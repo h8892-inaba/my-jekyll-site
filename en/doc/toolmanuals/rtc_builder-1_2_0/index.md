@@ -2,6 +2,7 @@
 layout: page
 title: RTCBuilder-1.2.0
 ---
+-------jp page!!-------
 <!-- // Title: RTCBuilder-1.2.0-->
 
 ##RTCBuilder-1.2.0 とは
@@ -26,3 +27,4 @@ RTCBuilderは、OpenRTM-aist に含まれる開発ツールの１つであり、
 - [CPack で rpm 作成 （Linux）](./cpack_rpm_creation_rtcb_1_2_0)
 - [その他](./other_rtcb_1_2_0)
 - [言語プラグインの追加手順](./lang_plugin_rtcb_1_2_0)
+-------jp page!!-------

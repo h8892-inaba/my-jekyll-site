@@ -2,6 +2,7 @@
 layout: page
 title: RTSystemEditor のインストール
 ---
+-------jp page!!-------
 
 <!-- Title: RTSystemEditor のインストール -->
 #contents
@@ -257,3 +258,4 @@ RTSystemEditor の起動が確認できましたら、一旦、Eclipse を終了
 
 
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: IOのテスト
 ---
+-------jp page!!-------
 
 <!-- Title: IOのテスト -->
 #contents
@@ -219,3 +220,4 @@ i2c_test.py
 ## XBeeのテスト
 
 
+-------jp page!!-------

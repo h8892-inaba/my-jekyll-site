@@ -2,6 +2,7 @@
 layout: page
 title: その他
 ---
+-------jp page!!-------
 
 <!-- Title: その他 -->
 #contents
@@ -16,3 +17,4 @@ Copyright 2001-2006 The Apache Software Foundation
 This product includes software developed by
 [The Apache Software Foundation](http://www.apache.org/).
 
+-------jp page!!-------

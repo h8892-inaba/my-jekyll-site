@@ -2,6 +2,7 @@
 layout: page
 title: " デベロッパーズガイド"
 ---
+-------jp page!!-------
 <!-- Title: シリアライザ名とROS/ROS2メッセージ型 -->
 #contents
 
@@ -137,3 +138,4 @@ ROS,ROS2通信機能を使用する場合、以下のROS/ROS2メッセージ型�
 
 
 
+-------jp page!!-------

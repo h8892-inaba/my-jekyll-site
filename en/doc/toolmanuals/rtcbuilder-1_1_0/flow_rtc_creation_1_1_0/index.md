@@ -2,6 +2,7 @@
 layout: page
 title: 概要・RTC作成の流れ
 ---
+-------jp page!!-------
 
 init
 <!-- Title: 概要・RTC作成の流れ -->
@@ -84,3 +85,4 @@ C++ 言語で RTC を作成する場合、以下のツールが必要となり�
 RTCBuilder は、OpenRTM-aist を対象に開発されたものです。その他の RTC プラットフォームに対する動作は想定しておりません。
 
 
+-------jp page!!-------

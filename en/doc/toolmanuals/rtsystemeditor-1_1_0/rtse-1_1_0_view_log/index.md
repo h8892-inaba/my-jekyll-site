@@ -2,6 +2,7 @@
 layout: page
 title: ビュー（ログビュー編）
 ---
+-------jp page!!-------
 
 <!-- Title: ビュー（ログビュー編） -->
 <!-- #contents -->
@@ -51,3 +52,4 @@ title: ビュー（ログビュー編）
 <div align="center"><strong>ログ表示のフィルタリング</strong></div>
 <br>
 
+-------jp page!!-------

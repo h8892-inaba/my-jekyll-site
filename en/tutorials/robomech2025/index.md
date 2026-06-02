@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMECH2025講習会 (2025年6月4日(水))
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="left"><img src="robomech2025_slider2.png" width="80%; margin:10px;" align="left"></div>
 <!-- #ref(robomech2019_title.png,left,60%,margin=10,url=/ja/tutorial/robomech2019) -->
@@ -315,3 +320,4 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 <div align="center"><a href="robomech2025_05.JPEG"><img src="robomech2025_05.JPEG" width="50%;"></a></div>
 <br>
 
+<!-- -------jp page!!------- -->

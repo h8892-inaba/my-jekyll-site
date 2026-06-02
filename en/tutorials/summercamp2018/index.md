@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェアサマーキャンプ2018
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><a href="summercamp2018_title.png"><img src="summercamp2018_title.png" width="60%;"></a></div>
 
@@ -599,3 +604,4 @@ summercamp(at)aist.go.jp~
 (at)を＠におきかえてください．~
 
 
+<!-- -------jp page!!------- -->

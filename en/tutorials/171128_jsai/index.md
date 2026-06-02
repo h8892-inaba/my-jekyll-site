@@ -2,6 +2,11 @@
 layout: page
 title: 第12回AIツール入門講座（人工知能学会） RTM講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="right"><a href="http://www.ai-gakkai.or.jp/wp-content/uploads/2016/09/jsai_logo_base_outlined_fix.png"><img src="http://www.ai-gakkai.or.jp/wp-content/uploads/2016/09/jsai_logo_base_outlined_fix.png" width="15%; margin:10px;" align="right"></a></div>
 
@@ -225,3 +230,4 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 
 <!-- #ref(151202-05.jpg,center,nolink) -->
 <!-- #br -->
+<!-- -------jp page!!------- -->

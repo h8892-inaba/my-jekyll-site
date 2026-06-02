@@ -2,6 +2,7 @@
 layout: page
 title: "SimpleIO"
 ---
+-------jp page!!-------
 <!-- Title: SimpleIO -->
 
 #contents
@@ -69,3 +70,4 @@ ConsoleInの画面から数字を入力してください。そうするとConso
 
 
 
+-------jp page!!-------

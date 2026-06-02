@@ -2,6 +2,7 @@
 layout: page
 title: RTSystemEditor、RTCBuilderのデバッグ
 ---
+-------jp page!!-------
 
 <!-- Title: RTSystemEditor、RTCBuilderのデバッグ -->
 #contents
@@ -111,3 +112,4 @@ Antビルドで文字化けする場合は、[実行]→[外部ツール]→[外
 
 <div align="center"><a href="plugin3_1_ja.png"><img src="plugin3_1_ja.png" width="60%;"></a></div>
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: Processing 活用事例
 ---
+-------jp page!!-------
 
 #contents
 
@@ -362,3 +363,4 @@ draw関数でInPortのデータの読み込みとグラフの描画更新処理�
   plot.endDraw();
  }
 ```
+-------jp page!!-------

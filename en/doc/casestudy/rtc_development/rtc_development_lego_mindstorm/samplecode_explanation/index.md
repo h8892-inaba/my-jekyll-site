@@ -2,6 +2,7 @@
 layout: page
 title: サンプルコードの説明
 ---
+-------jp page!!-------
 
 <!-- Title: サンプルコードの説明 -->
 #contents
@@ -382,3 +383,4 @@ setOnWrite() により、InPort へデータが書き込まれた際に、CallBa
 
 
 
+-------jp page!!-------

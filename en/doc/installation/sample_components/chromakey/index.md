@@ -2,6 +2,7 @@
 layout: page
 title: "Chromakey"
 ---
+-------jp page!!-------
 
 <!-- Title: Chromakey -->
 
@@ -64,3 +65,4 @@ lower_blue、uppder_blue、lower_green、upper_green、lower_red、upper_redの�
 <div align="center"><strong>クロマキー合成出力画像</strong></div>
 
 
+-------jp page!!-------

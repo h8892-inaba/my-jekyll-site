@@ -3,6 +3,8 @@ layout: page
 title: RTミドルウェアコンテスト2018
 ---
 
+No English version available.
+
 <!-- div align="left"><img src="contest2018comp.png" width="80%;" align="center"></div-->
 
 <br>

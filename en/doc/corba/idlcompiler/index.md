@@ -2,6 +2,7 @@
 layout: page
 title: IDLコンパイラ
 ---
+-------jp page!!-------
 
 <!-- Title: IDLコンパイラ -->
 <!-- *IDL コンパイラに関して  -->
@@ -173,3 +174,4 @@ struct の中に Object reference のシーケンスを入れるとスケルト�
  };
 ```
 
+-------jp page!!-------

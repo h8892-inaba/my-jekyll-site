@@ -2,6 +2,7 @@
 layout: page
 title: チュートリアル(SLAM実習)
 ---
+-------jp page!!-------
 
 init
 <!-- チュートリアル(SLAM実習) -->
@@ -364,3 +365,4 @@ NavigationManagerのGUIの地図上の目標位置となる場所をクリック
 
 <div align="center"><a href="slam27.png"><img src="slam27.png" width="50%;"></a></div>
 
+-------jp page!!-------

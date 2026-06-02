@@ -2,6 +2,7 @@
 layout: page
 title:  PiRT-Unitを利用したIOプログラミング
 ---
+-------jp page!!-------
 
 <!-- Title: PiRT-Unitを利用したIOプログラミング -->
 #contents
@@ -86,3 +87,4 @@ PiRT-Unit からは、AD (4ch)、DA (2ch)、PWM (1ch)、I2C (1ch)、RS232C/XBee 
 - [PiRT-UnitによるXBeeモジュールの利用](./xbee_use_pirt-unit)
 - [PiRT-UnitによるI2Cデバイスの利用](./i2c_device_use_pirt-unit)
 
+-------jp page!!-------

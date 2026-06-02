@@ -2,8 +2,6 @@
 layout: page
 title: OpenRTM-aist C++ 1.1.0-RC3
 ---
-
-<!-- OpenRTM-aist C++ 1.1.0-RC3 -->
 <div align="right"><a href="cpp_logo.png"><img src="cpp_logo.png" width="15%;" align="right"></a></div>
 #contents
 
@@ -35,7 +33,7 @@ title: OpenRTM-aist C++ 1.1.0-RC3
 ### Windowsインストーラ
 <table class="table-alt">
   <tr>
-    <th colspan="3">Visual Studio 2008 用</th>
+    <td colspan="3" style="text-align: center;">Visual Studio 2008 用</td>
   </tr>
   <tr>
     <td>Windowsインストーラ</td>
@@ -53,7 +51,7 @@ title: OpenRTM-aist C++ 1.1.0-RC3
     <td><a href="http://pyyaml.org/">pyyaml.org</a></td>
   </tr>
   <tr>
-    <th colspan="3">Visual Studio 2010 用</th>
+    <td colspan="3" style="text-align: center;">Visual Studio 2010 用</td>
   </tr>
   <tr>
     <td>Windowsインストーラ</td>
@@ -85,7 +83,7 @@ title: OpenRTM-aist C++ 1.1.0-RC3
 
 LinuxパッケージはRELEASE版で提供される予定です。ソースからのビルドの仕方は以下を参考にしてください。
 
-- [ソースからのビルド](/ja/node/788)
+- [ソースからのビルド]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/build_source_linux_1_1)
 
 なお、1.1から上記配布ソースからのUbuntu, Debian 用debパッケージ、Fedora, Vine用 rpmパッケージの作成が正式にサポートされました。
 以下の手順でパッケージを作成することができます。パッケージ作成に当たっては、以下のインストールスクリプトを利用して必要なパッケージを予めインストールしておいてください。
@@ -111,9 +109,9 @@ LinuxパッケージはRELEASE版で提供される予定です。ソースか�
 
 <table class="table-alt">
   <tr>
-    <th>ディストリビューション</th>
-    <th>対応バージョン</th>
-    <th>一括インストールスクリプト</th>
+    <td>ディストリビューション</td>
+    <td>対応バージョン</td>
+    <td>一括インストールスクリプト</td>
   </tr>
   <tr>
     <td>Vine Linux</td>
@@ -149,7 +147,7 @@ LinuxパッケージはRELEASE版で提供される予定です。ソースか�
 ## ツール
 <table class="table-alt">
   <tr>
-    <th colspan="3">Eclipse-3.4.2 [Ganymede SR2]</th>
+    <td colspan="3" style="text-align: center;">Eclipse-3.4.2 [Ganymede SR2]</td>
   </tr>
   <tr>
     <td>Eclipse3.4.2+RTSE+RTCB<br>**Windows用全部入り**</td>

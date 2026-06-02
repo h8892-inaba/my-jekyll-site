@@ -2,6 +2,7 @@
 layout: page
 title: rtdis
 ---
+-------jp page!!-------
 
 <!-- Title: rtdis -->
 
@@ -101,3 +102,4 @@ RTコンポーネントのポートを示す場合、パスの後にコロン（
  $ rtdis -i con1 /localhost/ConsoleIn0.rtc
 ```
 
+-------jp page!!-------

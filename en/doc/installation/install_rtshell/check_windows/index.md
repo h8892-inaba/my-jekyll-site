@@ -2,6 +2,7 @@
 layout: page
 title: 動作確認(Windows編)
 ---
+-------jp page!!-------
 
 <!-- Title: 動作確認(Windows編) -->
 
@@ -119,3 +120,4 @@ C:\Program Files\OpenRTM-aist\1.2.<span style="color:blue;">x</span>;\Components
 と入力し、コンソールが閉じることを確認してください。
 
 
+-------jp page!!-------

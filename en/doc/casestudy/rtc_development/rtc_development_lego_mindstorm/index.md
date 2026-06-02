@@ -2,6 +2,7 @@
 layout: page
 title: LEGO Mindstorm NXT RTコンポーネント
 ---
+-------jp page!!-------
 
 <!-- Title: LEGO Mindstorm NXT RTコンポーネント -->
 LEGO Mindstorm NXT (以下NXT) は3つのモーターと4種類のセンサー、これらを制御するためのインテリジェントブロックNXTから構成される、ロボットを作ることができる LEGOブロックです。
@@ -23,3 +24,4 @@ NXT を RTコンポーネント化することで、既存の RTコンポーネ�
 - [NXT RTC 動作確認](./nxt_rtc_test)
 
 
+-------jp page!!-------

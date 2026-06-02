@@ -2,6 +2,7 @@
 layout: page
 title: OpenRTM-aist (Python版) に関する FAQ
 ---
+-------jp page!!-------
 
 <!-- Title: OpenRTM-aist (Python版) に関する FAQ -->
 #contents(3)
@@ -111,3 +112,4 @@ WINDOWS\system32フォルダー内に msvcp71.dll がないために発生する
 ```
 <br>
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: RTミドルウェアコンテスト2022
 ---
+No English version available.
 
 <!-- #ref(contest2021_title.png,80%,left,nolink) -->
 

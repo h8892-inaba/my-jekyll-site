@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェアサマーキャンプ2017
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><a href="summercamp_logo2017.png"><img src="summercamp_logo2017.png" width="50%;"></a></div>
 
@@ -664,3 +669,4 @@ summercamp2017(at)openrtm.org~
 <div align="center"><a href="sc2017_11.JPG"><img src="sc2017_11.JPG" width="60%;"></a></div>
 <br>
 
+<!-- -------jp page!!------- -->

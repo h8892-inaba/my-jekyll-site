@@ -2,6 +2,7 @@
 layout: page
 title: QNXでのビルド手順(OpenRTM-aist 1.2)
 ---
+-------jp page!!-------
 
 <!-- Title: QNXでのビルド手順(OpenRTM-aist 1.2) -->
 #contents
@@ -67,3 +68,4 @@ src/ext/local_service/Makefile.amは以下のようにサブディレクトリ�
  make
  make install
 ```
+-------jp page!!-------

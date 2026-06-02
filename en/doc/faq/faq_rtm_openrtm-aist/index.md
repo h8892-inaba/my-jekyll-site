@@ -2,6 +2,7 @@
 layout: page
 title: RTミドルウェア / OpenRTM-aist について
 ---
+-------jp page!!-------
 
 <!-- Title: RTミドルウェア / OpenRTM-aist について -->
 #contents
@@ -51,3 +52,4 @@ OpenRTM-aist は、LGPL(GNU Lesser General Public License) および産総研と
 作成者が個別にライセンスを設定することができます。
 ただし、コンポーネントの再利用を促進するという我々の趣旨に賛同いただける方は、ソースコードレベルで作成したコンポーネントをオープンにしていただければ幸いです。
 
+-------jp page!!-------

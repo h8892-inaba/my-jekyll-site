@@ -2,6 +2,11 @@
 layout: page
 title:  ロボティクスシンポジア
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -55,3 +60,4 @@ RTミドルウエアユーザの顔を合わせた情報交換を行うための
 
   - 参加登録は[こちら](http://robosym2010.sakura.ne.jp/registration.html)から
 
+<!-- -------jp page!!------- -->

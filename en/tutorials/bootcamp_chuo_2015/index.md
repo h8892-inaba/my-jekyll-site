@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェア強化月間2015 in 中央大学・RTミドルウェア講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="bootcamp_chuo2014.jpg" width="75%;"></div>
 
@@ -138,3 +143,4 @@ $ sudo dpkg -i imageprocessing-1.1.0.deb
 <div align="center"><a href="150724-01.jpg"><img src="150724-01.jpg" width="60%;"></a></div>
 <br>
 
+<!-- -------jp page!!------- -->

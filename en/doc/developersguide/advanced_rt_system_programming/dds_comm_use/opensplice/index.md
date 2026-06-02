@@ -2,6 +2,7 @@
 layout: page
 title: "OpenSplice通信機能の利用"
 ---
+-------jp page!!-------
 <!-- Title: OpenSplice通信機能の利用 -->
 #contents
 
@@ -1565,3 +1566,4 @@ OpenSpliceのコンフィギュレーションファイルは環境変数**${OSP
 ```
 
 
+-------jp page!!-------

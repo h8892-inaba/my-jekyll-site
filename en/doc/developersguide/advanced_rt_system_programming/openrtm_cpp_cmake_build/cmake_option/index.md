@@ -2,6 +2,7 @@
 layout: page
 title: "CMakeのオプション一覧"
 ---
+-------jp page!!-------
 <!-- Title: CMakeのオプション一覧 -->
 #contents
 
@@ -155,3 +156,4 @@ EXTLIB_ENABLEがONになっている必要がある。
 FASTRTPS_ENABLEがONになっている必要があるため、FastRTPSTransportのビルドは必須。
 
 
+-------jp page!!-------

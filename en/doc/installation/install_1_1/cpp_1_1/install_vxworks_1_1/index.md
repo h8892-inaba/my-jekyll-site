@@ -2,6 +2,7 @@
 layout: page
 title: VxWorksへのインストール
 ---
+-------jp page!!-------
 
 <!-- Title: VxWorksへのインストール -->
 #contents
@@ -318,3 +319,4 @@ CMakeのオプションには以下を指定してください。
 - [OpenRTM-aist動作確認(VxWorks、RTP、シミュレータ利用の場合)](./test_vxworks_rtp_simulator)
 - [OpenRTM-aist動作確認(VxWorks、カーネルモジュール、PowerPC搭載ボード利用の場合)](./test_vxworks_km_ppcboard)
 - [OpenRTM-aist動作確認(VxWorks、RTP、PowerPC搭載ボード利用の場合)](./test_vxworks_rtp_ppcboard)
+-------jp page!!-------

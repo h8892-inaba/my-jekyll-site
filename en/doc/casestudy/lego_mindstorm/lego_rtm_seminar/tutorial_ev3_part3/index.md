@@ -2,6 +2,7 @@
 layout: page
 title: チュートリアル(EV3、第3部)
 ---
+-------jp page!!-------
 
 <!-- Title: チュートリアル(EV3、第3部) -->
 #contents
@@ -163,3 +164,4 @@ EducatorVehicleRTCの**sound**という名前のインポートに文字列(Time
 
 - 各種センサの利用(カラーセンサ、超音波センサ、ジャイロセンサ)
 
+-------jp page!!-------

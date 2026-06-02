@@ -2,6 +2,7 @@
 layout: page
 title: RTコンポーネントの作成
 ---
+-------jp page!!-------
 
 
 hogehoge
@@ -17,3 +18,4 @@ hogehoge
 - [RTコンポーネントのクロス開発(Armadillo240)]()
 
 
+-------jp page!!-------

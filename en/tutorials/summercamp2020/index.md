@@ -2,6 +2,11 @@
 layout: page
 title: 
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 init
 <div align="center"><a href="summerccamp2020_2.png"><img src="summerccamp2020_2.png" width="100%;"></a></div>
@@ -613,3 +618,4 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 <!-- (at)を＠におきかえてください．~ -->
 
 
+<!-- -------jp page!!------- -->

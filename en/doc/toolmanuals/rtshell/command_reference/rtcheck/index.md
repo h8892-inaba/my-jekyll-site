@@ -2,6 +2,7 @@
 layout: page
 title: rtcheck
 ---
+-------jp page!!-------
 
 <!-- Title: rtcheck -->
 
@@ -95,3 +96,4 @@ RTコンポーネントのポートを示す場合、パスの後にコロン（
  $ rtcheck sys.rtsys --dry-run
 ```
 
+-------jp page!!-------

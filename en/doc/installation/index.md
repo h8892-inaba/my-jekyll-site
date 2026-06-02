@@ -2,6 +2,7 @@
 layout: page
 title: "インストール"
 ---
+-------jp page!!-------
 <!-- Title インストール -->
 
 
@@ -37,3 +38,4 @@ title: "インストール"
 ### その他
 - [Raspberry Piへのインストール]({{ site.baseurl }}/ja/doc/installation/other/raspberrypi_casestudy)
 
+-------jp page!!-------

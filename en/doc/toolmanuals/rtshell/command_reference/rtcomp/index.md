@@ -2,6 +2,7 @@
 layout: page
 title: rtcomp
 ---
+-------jp page!!-------
 <!-- Title: rtcomp -->
 
 ## 書式
@@ -89,3 +90,4 @@ RTコンポーネントのポートを示す場合、パスの後にコロン（
 
 
 
+-------jp page!!-------

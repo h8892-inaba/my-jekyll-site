@@ -3,6 +3,8 @@ layout: page
 title: RTミドルウエアコンテスト2015奨励賞
 ---
 
+No English version available.
+
 # RTミドルウエアコンテスト2015奨励賞（2015年12月14日現在）
 
 #contents

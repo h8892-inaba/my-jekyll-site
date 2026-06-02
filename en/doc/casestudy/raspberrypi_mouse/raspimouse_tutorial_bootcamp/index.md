@@ -2,6 +2,7 @@
 layout: page
 title: チュートリアル(Raspberry Pi Mouse、強化月間用)
 ---
+-------jp page!!-------
 
 <!-- チュートリアル(Raspberry Pi Mouse、強化月間用) -->
 
@@ -10,3 +11,4 @@ title: チュートリアル(Raspberry Pi Mouse、強化月間用)
 - [チュートリアル(Raspberry Pi Mouse、Python、Windows、強化月間用)](./tutorial_bootcamp_python_windows)
 - [チュートリアル(Raspberry Pi Mouse、Python、Ubuntu、強化月間用)](./tutorial_bootcamp_python_ubuntu)
 
+-------jp page!!-------

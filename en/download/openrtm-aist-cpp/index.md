@@ -1,45 +1,41 @@
 ---
 layout: page
-title: OpenRTM-aist (C++版)
+title: OpenRTM-aist (C++)
 ---
-<!-- Title: OpenRTM-aist (C++版) -->
-<div align="right"><a href="/node/116"><img src="cpp_logo.png" width="10%;" align="right"></a></div>
-C++ 言語で RTコンポーネントを作成するためのライブラリです。Linux、Windows、Mac OS X、FreeBSD に対応しています。
-ソースコード、Windows 用インストーラー、各種Linuxパッケージ、MacPorts がダウンロードできます。
 
-- [1.2.2-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release)
-- [1.2.1-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_1_release)
-<!-- -[[1.2.0-RELEASE:/ja/node/6570]] -->
-- [1.1.2-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release)
+<!-- Title: OpenRTM-aist(C++) -->
+<div align="right"><img src="cpp_logo.png" width="10%;" align="right"></div>
 
+Component framework and libraries for RTC development by C++. It supports Linux, Windows, Mac OS X and FreeBSD. Source code, Windows msi installer, packages for various Linux distributions and MacPorts are available.
 
-1.0.x と 1.1.x には互換性があります。ただし、コンポーネント同士の接続には RTSystemEditor の1.1系のツールが必要になります。
+- [1.2.2-RELEASE]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release)
+- [1.2.1-RELEASE]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_1_release)
+- [1.1.2-RELEASE]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release)
+- [1.1.1-RELEASE]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_1_release)
+- [1.1.0-RELEASE]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_0_release)
+- [1.0.0-RELEASE]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_0_0_release)
+
 <!--break-->
-### ソースコードリポジトリ
+### Source code repository
 - [trunk](http://svn.openrtm.org/OpenRTM-aist/trunk)
 - [RELENG_1_0](http://svn.openrtm.org/OpenRTM-aist/branches/RELENG_1_0)
 - [RELENG_1_1](http://svn.openrtm.org/OpenRTM-aist/branches/RELENG_1_1)
-- [svn/RELENG_1_2](https://github.com/OpenRTM/OpenRTM-aist/tree/svn/RELENG_1_2)
 
-### リポジトリステータス
-- [statsvn](http://www.openrtm.org/svnstat/cxx)
+Components compiled with 1.0.0 cannot connect to components compiled with 0.4.x. We recommend you move to 1.0 after the Python and Java 1.0-series releases.
 
-### バグトラッキング
-- [redmine](http://redmine.openrtm.org/projects/openrtm-aist-cxx)
+### Bug tracking
+- [redmine](http://www.openrtm.org/redmine/projects/openrtm-aist-cxx)
 
-### 旧バージョン
-1.x系と0.4系はインターフェースレベルの互換性がないため接続できません。
+### Old Version
 
-#### 1.1.x
-- [1.1.1-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_1_release)
-- [1.1.0-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_0_release)
-- [1.1.0-RC3]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_0_rc3)
-- [1.1.0-RC2]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_0_rc2)
-- [1.1.0-RC1]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_0_rc1)
+- [1.1.0-RC3]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_0_rc3)
+- [1.1.0-RC2]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_0_rc2)
+- [1.1.0-RC1]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_0_rc1)
+- [1.0.0-RC1]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_0_0_rc1)
 
-#### 1.0.x
-- [1.0.2-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_0_2_release)
-- [1.0.0-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_0_0_release)
-- [1.0.0-RC1]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_0_0_rc1)
-
-
+<!-- - [0.4.2-RELEASE](/en/)
+- [0.4.2-RC2](/en/)
+- [0.4.1-RELEASE](/en/)
+- [0.4.0-RELEASE](/en/)
+- [0.4.0-RC2](/en/)
+-->

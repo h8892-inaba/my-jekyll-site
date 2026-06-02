@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェア強化月間（第2弾）早稲田大学・RTミドルウェア講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><a href="bootcamp_waseda2014.jpg"><img src="bootcamp_waseda2014.jpg" width="75%;"></a></div>
 
@@ -103,3 +108,4 @@ title: RTミドルウェア強化月間（第2弾）早稲田大学・RTミド�
 <!-- - 参加登録するまえに当Webページのユーザ登録をお願いします。[[ユーザ登録はこちら:http://openrtm.org/openrtm/ja/user/register]] -->
 <!-- - 当Webサイトにログイン済みの方は&color(red){名前の欄のユーザ名を氏名に書き換えてください};。 -->
 <!-- - フォーム送信後、確認メールをお送りいたします。1日たっても確認メールが届かない場合は、[[こちら（support@openrtm.org）:mailto:support@openrtm.org]] までお問い合わせください。 -->
+<!-- -------jp page!!------- -->

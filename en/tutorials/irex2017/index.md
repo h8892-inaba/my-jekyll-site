@@ -2,6 +2,11 @@
 layout: page
 title: iREX2017 （国際ロボット展） RTM講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <!-- #ref(http://biz.nikkan.co.jp/eve/irex/_images/_common/logo-irex.jpg,1150%,right,margin=10,around) -->
 <!-- 国際ロボット展のサイトにアクセスできないため一時的にコメントアウト -->
@@ -247,3 +252,4 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 
 <div align="center"><a href="171130-5.jpg"><img src="171130-5.jpg" width="60%;"></a></div>
 <br>
+<!-- -------jp page!!------- -->

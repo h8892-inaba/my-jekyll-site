@@ -2,6 +2,7 @@
 layout: page
 title: RTCBuilderのインストール
 ---
+-------jp page!!-------
 
 <!-- Title: RTCBuilderのインストール -->
 #contents
@@ -131,3 +132,4 @@ Eclipseを起動し、メニューから[ウインドウ]>[パースペクティ
 参考：[**FAQ:**Eclipseの起動方法]({{ site.baseurl }}/ja/doc/faq/faq_rtp_tools#eclipse)
 
 
+-------jp page!!-------

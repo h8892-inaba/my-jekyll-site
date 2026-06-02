@@ -2,6 +2,7 @@
 layout: page
 title: "SeqIO"
 ---
+-------jp page!!-------
 
 <!-- **SeqIO -->
 #contents
@@ -73,3 +74,4 @@ SeqOutとSeqInの対応するポートをRTSystemEditor上で接続してくだ�
 
 
 
+-------jp page!!-------

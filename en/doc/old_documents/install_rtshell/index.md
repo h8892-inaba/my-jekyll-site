@@ -2,6 +2,7 @@
 layout: page
 title: 
 ---
+-------jp page!!-------
 
 init
 #contents
@@ -137,3 +138,4 @@ PATH 環境変数に以下のような二つのパスを追加すると動きま
   C:\Python26
   C:\Python26\Scripts
 ```
+-------jp page!!-------

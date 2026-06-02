@@ -2,6 +2,7 @@
 layout: page
 title: 
 ---
+-------jp page!!-------
 
 <!-- Title: Fedoraへのインストール -->
 Java版OpenRTM-aistはFedora Linuxで利用可能なRPMパッケージが提供されています。
@@ -313,3 +314,4 @@ openrtpでは大量のファイルがインストールされるため、ここ�
 と入力して各自での確認をしてください。
 
 
+-------jp page!!-------

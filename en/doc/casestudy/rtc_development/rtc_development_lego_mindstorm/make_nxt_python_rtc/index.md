@@ -2,6 +2,7 @@
 layout: page
 title: NXT Python Facade クラス
 ---
+-------jp page!!-------
 
 <!-- Title: NXT Python RTC 化 -->
 以上で、PC から Python を使用して NXT を制御する準備が整いました。
@@ -65,3 +66,4 @@ outb(xxx);         // I/O への直アクセス
 のように、「InPortから値を読んで処理」する関数の呼び出しと、「何らかの処理により値を取得し OutPort から出力」する関数の呼び出しのみからなる、「抽象レベルの高い」コードにするべきです。
 
 
+-------jp page!!-------

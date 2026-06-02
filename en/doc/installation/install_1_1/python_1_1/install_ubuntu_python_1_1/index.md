@@ -2,6 +2,7 @@
 layout: page
 title: Ubuntu/Debianへのインストール
 ---
+-------jp page!!-------
 
 <!-- Ubuntu/Debianへのインストール -->
 
@@ -210,3 +211,4 @@ openrtm-aist-python-exampleには RTC のサンプルが含まれています。
 ```
 
 以上、インストールが終了しましたら、[動作確認](/ja/node/1224)へ進みましょう。
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: システムエディタ（基本操作編）
 ---
+-------jp page!!-------
 
 <!-- Title: システムエディタ（基本操作編） -->
 #contents
@@ -255,3 +256,4 @@ All 系のアクションは、1番目以外の ExecutionContext についても
 
 
 
+-------jp page!!-------

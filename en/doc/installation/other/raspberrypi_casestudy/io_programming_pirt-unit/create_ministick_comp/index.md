@@ -2,6 +2,7 @@
 layout: page
 title: Ministickコンポーネントの作成
 ---
+-------jp page!!-------
 
 <!-- Title: Ministickコンポーネントの作成 -->
 <!-- * Ministickコンポーネントの作成 -->
@@ -549,3 +550,4 @@ Ministickコンポーネントを工夫して、使いやすいコンポーネ�
 
 また、sudo を利用しても実行可能です。
 
+-------jp page!!-------

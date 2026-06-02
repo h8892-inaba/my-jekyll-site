@@ -2,6 +2,7 @@
 layout: page
 title: 画像処理コンポーネントの作成(Windows XP、OpenRTM-aist-1.1、rtmtools-1.1.0-RC3、CMake、VC2010)
 ---
+-------jp page!!-------
 
 <!-- Title: 画像処理コンポーネントの作成(Windows XP、OpenRTM-aist-1.1、rtmtools-1.1.0-RC3、CMake、VC2010) -->
 #contents
@@ -1025,3 +1026,4 @@ Flip コンポーネントの全ソースコードを以下に添付します。
 [Flip.zip](Flip.zip)
 <!-- div align="center"><a href="Flip.zip"><img src="Flip.zip" width="100;"></a></div>;-->
 
+-------jp page!!-------

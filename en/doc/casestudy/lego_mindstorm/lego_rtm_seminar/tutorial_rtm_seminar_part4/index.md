@@ -2,6 +2,7 @@
 layout: page
 title: チュートリアル(RTM講習会、第4部) 
 ---
+-------jp page!!-------
 
 <!-- Title: チュートリアル(RTM講習会、第4部) -->
 #contents
@@ -101,3 +102,4 @@ RT System Editor上でRTCをアクティブ化して動作を確認してくだ�
 その後、Calcの**3**行目の**A**、**B**列のセルに1の値を入力するか、0の値を入力するかで動作が変化するかを確認してください。
 
 <div align="center"><a href="calc13.png"><img src="calc13.png" width="70%;"></a></div>
+-------jp page!!-------

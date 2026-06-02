@@ -2,6 +2,9 @@
 layout: page
 title: "Choreonoid用OpenRTM連携プラグイン Python版 トラブルシューティング"
 ---
+
+No English version available.
+
 #contents
 
 ## Choreonoidが起動しない

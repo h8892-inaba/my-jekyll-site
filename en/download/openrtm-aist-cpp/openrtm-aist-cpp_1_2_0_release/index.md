@@ -3,6 +3,8 @@ layout: page
 title: OpenRTM-aist C++ 1.2.0-RELEASE
 ---
 
+Only Japanese page.
+
 <!-- Title: OpenRTM-aist C++ 1.2.0-RELEASE -->
 <div align="right"><a href="cpp_logo.png"><img src="cpp_logo.png" width="15%;" align="right"></a></div>
 #contents(4)

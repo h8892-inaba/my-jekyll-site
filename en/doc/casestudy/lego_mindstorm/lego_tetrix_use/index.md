@@ -2,6 +2,7 @@
 layout: page
 title: TETRIX の利用方法
 ---
+-------jp page!!-------
 
 <!-- Title: TETRIX の利用方法 -->
 #contents
@@ -319,3 +320,4 @@ Lモーターの角度から車体の目標速度を出力するコンポーネ�
   </tr>
 </table>
 
+-------jp page!!-------

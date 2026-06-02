@@ -3,6 +3,8 @@ layout: page
 title: "Choreonoid用OpenRTM連携プラグイン Python版 インストール手順"
 ---
 
+No English version available.
+
 #contents
 
 ## 動作環境
@@ -141,5 +143,4 @@ choreonoidのsampleフォルダにOpenRTMPythonPluginのソースコードを入
  cd sample
  git clone https://github.com/Nobu19800/OpenRTMPythonPlugin.git
 ```
-
 

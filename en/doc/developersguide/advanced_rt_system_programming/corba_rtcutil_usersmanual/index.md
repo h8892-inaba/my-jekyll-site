@@ -2,6 +2,7 @@
 layout: page
 title: "RTC操作関数(CORBA_RTCUtil)利用マニュアル"
 ---
+-------jp page!!-------
 
 #contents
 
@@ -1869,3 +1870,4 @@ InPortの名前一覧を取得するには**get_inport_names**関数、OutPort�
 
 
 
+-------jp page!!-------

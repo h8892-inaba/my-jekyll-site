@@ -2,6 +2,11 @@
 layout: page
 title: ROBOTECH RTミドルウエア講習会 (2012年7月11日～13日) 
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="rtm_logo.png" width="20%; margin:1 1 20 20px;"></div>
 
@@ -179,3 +184,4 @@ title: ROBOTECH RTミドルウエア講習会 (2012年7月11日～13日)
 <div align="center"><img src="120711-04.jpg" width="60%; margin:5 5 5 5px;"></div>;
 <div align="center"><img src="120711-05.jpg" width="60%; margin:5 5 5 5px;"></div>;
 <div align="center"><img src="120711-06.jpg" width="60%; margin:5 5 5 5px;"></div>;
+<!-- -------jp page!!------- -->

@@ -2,6 +2,7 @@
 layout: page
 title: CPack で rpm 作成 （Linux）
 ---
+-------jp page!!-------
 
 <!-- Title: CPack で rpm 作成 （Linux） -->
 #contents
@@ -188,3 +189,4 @@ IDL コンパイル実行時に、プロジェクトディレクトリー内に�
   ├─ setup.py
   └─ flipgui.py
 ```
+-------jp page!!-------

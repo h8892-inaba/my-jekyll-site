@@ -5,7 +5,8 @@ title: OpenRTM-aist (Java版)
 
 <!-- Title: OpenRTM-aist (Java版) -->
 <div align="right"><a href="/node/117"><img src="java_logo.png" width="10%;" align="right"></a></div>
-Java で RTコンポーネントをプログラミングするためのライブラリです。Windows インストーラーとビルド済みの jar ファイルがダウンロードできます。
+
+Libraries for RTC development in Java language. Source code, a Windows installer and jar files are available.
 
 - [1.2.2-RELESE](./openrtm-aist-java_1_2_2_release)
 - [1.2.1-RELESE](./openrtm-aist-java_1_2_1_release)
@@ -16,20 +17,22 @@ Java で RTコンポーネントをプログラミングするためのライブ
 
 <br>
 <!--break-->
-### ソースコードリポジトリ
+### Source code repository
 - [trunk](http://svn.openrtm.org/OpenRTM-aist-Java/trunk)
 - [RELENG_1_0](http://svn.openrtm.org/OpenRTM-aist-Java/branches/RELENG_1_0)
 - [RELENG_1_1](http://svn.openrtm.org/OpenRTM-aist-Java/branches/RELENG_1_1)
 - [svn/RELENG_1_2](https://github.com/OpenRTM/OpenRTM-aist-Java/tree/svn/RELENG_1_2)
 
-### リポジトリステータス
+### Repository Status
 - [statsvn](http://www.openrtm.org/svnstat/java)
 
-### バグトラッキング
+### Bug tracking
 - [redmine](http://redmine.openrtm.org/projects/openrtm-aist-java)
 
-### 旧バージョン
-※1.0系同士では互換性はありますが、1.0系と0.4系は互換性がありません。ツールなども1.0系については同じ1.0系のものを使用してください。
+### Old Version
+
+Versions within the 1.0 series are compatible with each other, but the 1.0 series is not compatible with the 0.4 series. Please also use tools from the same 1.0 series when working with the 1.0 series.
+
 - [1.1.0-RELESE](./openrtm-aist-java_1_1_0_release)
 - [1.1.0-RC1](./openrtm-aist-java_1_1_0_rc1)
 - [1.0.0-RELEASE](./openrtm-aist-java_1_0_0_release)

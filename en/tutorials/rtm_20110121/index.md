@@ -2,6 +2,11 @@
 layout: page
 title: 山形大学RTミドルウェア講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -174,3 +179,4 @@ Ubuntu, Fedora などメジャーなディストリビューション用のパ�
 <!-- ***第2部：「OpenRTM-aist開発支援ツールの紹介とその利用法」 で使用するファイル -->
 <!-- -[[rtc.conf:http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2010/rtc.conf]]  -->
 <!-- -[[configsample.conf:http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2010/configsample.conf]] -->
+<!-- -------jp page!!------- -->

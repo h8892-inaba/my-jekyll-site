@@ -2,6 +2,7 @@
 layout: page
 title: インストールおよび起動
 ---
+-------jp page!!-------
 <!-- Title: インストールおよび起動 -->
 #contents
 
@@ -29,3 +30,4 @@ RTSystemEditor は Eclipse プラグインであるため、 Eclipse 本体お�
 
 
 
+-------jp page!!-------

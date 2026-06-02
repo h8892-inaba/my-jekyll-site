@@ -2,6 +2,7 @@
 layout: page
 title: RTコンポーネント作成に関する FAQ
 ---
+-------jp page!!-------
 
 
 <!-- Adoc/faq/faq_rtc_creation -->
@@ -326,3 +327,4 @@ Java と Ant のバージョン要件は以下のリンクを参照してくだ�
 <br>
 
 
+-------jp page!!-------

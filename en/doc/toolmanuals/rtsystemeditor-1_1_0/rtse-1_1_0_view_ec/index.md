@@ -2,6 +2,7 @@
 layout: page
 title: ビュー（実行コンテキストビュー編）
 ---
+-------jp page!!-------
 
 <!-- Title: ビュー（実行コンテキストビュー編） -->
 <!-- #contents -->
@@ -119,3 +120,4 @@ EC のアタッチを解除するには、participate の EC を選択して [De
 <div align="center"><strong>EC から RTC をデタッチ</strong></div>
 <br>
 
+-------jp page!!-------

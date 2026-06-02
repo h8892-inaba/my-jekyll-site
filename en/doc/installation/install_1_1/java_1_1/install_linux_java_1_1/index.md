@@ -2,6 +2,7 @@
 layout: page
 title: Linuxへのインストール
 ---
+-------jp page!!-------
 
 <!-- Title: Linuxへのインストール -->
 #contents
@@ -207,3 +208,4 @@ OpenRTM-aist-Java と 必要な jar ファイルが含まれています。
 
 ここまで確認できたら[動作確認（Linux 編）](/ja/node/1229)へ進みましょう。
 
+-------jp page!!-------

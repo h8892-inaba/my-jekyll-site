@@ -2,6 +2,7 @@
 layout: page
 title: "OpenRTM-aist 諸元"
 ---
+-------jp page!!-------
 <!-- Title: OpenRTM-aist 諸元 -->
 #contents
 
@@ -148,3 +149,4 @@ OpenRTM-aist は以下の各言語版のミドルウエアライブラリおよ�
 </table>
 
 
+-------jp page!!-------

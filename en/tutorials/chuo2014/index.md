@@ -3,6 +3,12 @@ layout: page
 title: RTミドルウェア強化月間（第3弾）中央大学・RTミドルウェア講習会
 ---
 
+
+<br>
+<a>No English version available.
+</a>
+
+<!--- <!-- -------jp page!!------- --> --->
 <div align="center"><a href="bootcamp_chuo2014.jpg"><img src="bootcamp_chuo2014.jpg" width="75%;"></a></div>
 
 #contents
@@ -145,4 +151,5 @@ title: RTミドルウェア強化月間（第3弾）中央大学・RTミドル�
 
 <div align="center"><a href="140626_05.jpg"><img src="140626_05.jpg" width="60%;"></a></div>
 <br>
+
 

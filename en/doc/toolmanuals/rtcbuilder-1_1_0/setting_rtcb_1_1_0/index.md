@@ -2,6 +2,7 @@
 layout: page
 title: 各種設定
 ---
+-------jp page!!-------
 
 <!-- Title: 各種設定 -->
 #contents
@@ -309,3 +310,4 @@ Build View 内に表示されるアイコンの色情報を設定することが
 <div align="center"><a href="fig7-8SettingDocument_ja.png"><img src="fig7-8SettingDocument_ja.png" width="70%;"></a></div>
 <div align="center"><strong>Document 設定画面</strong></div>
 
+-------jp page!!-------

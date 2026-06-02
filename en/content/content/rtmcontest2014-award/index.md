@@ -2,6 +2,7 @@
 layout: page
 title: RTミドルウェアコンテスト2014奨励賞一覧
 ---
+No English version available.
 
 # RTミドルウエアコンテスト2014奨励賞
 <!-- #ref(rtmcontest2013.png,60%,left,url=/ja/node/5403) -->

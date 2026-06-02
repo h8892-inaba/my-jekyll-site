@@ -3,24 +3,26 @@ layout: page
 title: OpenRTM-aist-Java-1.2.2-RELEASE
 ---
 
-<!-- Title: OpenRTM-aist-Java-1.2.2-RELEASE -->
+<!-- Title: OpenRTM-aist-Java-1.2.1-RELEASE -->
 <div align="right"><a href="java_logo.png"><img src="java_logo.png" width="10%;" align="right"></a></div>
 #contents(4)
 
+
 <br>
-インストール手順については以下のページを参照してください。
+(G) Please refer to the following page for the installation procedure.
 
-- [OpenRTM-aist(Java版)1.2系のインストール](/ja/node/6602)
-## パッケージ
-### Windowsインストーラー
-msiファイルは800MBのサイズがあります。ダウンロードを数分で行うためにはある程度高速な回線(50Mbps以上)を用いてください。
+- [Installing OpenRTM-aist (Java version) 1.2 series](/ja/node/6602)
 
-#### 64bit用
+## Package
+### Windows Installer
+The msi file is 800MB in size. Use a high-speed line (50Mbps or more) to download in minutes.
+
+#### For 64bit
 
 <table class="table-alt">
   <tr>
-    <td>Windows用インストーラー<br> (OpenRTM-aist、C++、Python、<br>Java版、および OpenRTP、<br> rtshell(4.2.2)含む)<br>(Visual Studio 2012、2013、<br> 2015、2017、2019 共通)</td>
-    <td><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi">OpenRTM-aist-1.2.2-RELEASE_x86_64.msi</a> <br>MD5:3275df2f82252e6c6a33249ce2170563</td>
+    <td>Windows Installer <br> (including OpenRTM-aist, C++, Python, <br> Java version and OpenRTP, <br> rtshell (4.2.2)) <br> (Visual Studio 2012, 2013, <br> 2015, 2017, 2019)</td>
+    <td><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi">OpenRTM-aist-1.2.2-RELEASE_x86_64.msi</a> <br> MD5:3275df2f82252e6c6a33249ce2170563</td>
     <td>2020/08/26</td>
   </tr>
   <tr>
@@ -50,15 +52,16 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
   </tr>
 </table>
 
-- <span style="color:red;">※Pythonは、"3.8"、"3.7"、"3.6"のいずれかのバージョンをインストールしてください。</span>;
-<!-- -&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiファイルを用いてインストールしている場合は対応不要です。}; -->
-- Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[doxygen](http://www.doxygen.nl/index.html)のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
 
-#### 32bit用
+- <span style="color:red;">* Install Python version "3.8", "3.7", or "3.6". </span>;
+<!-- - &color (red){* Please delete the old rtshell beforehand. However, if the OpenRTM-aist 1.1.2 version is installed using the msi file, no action is required. }; -->
+- The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [doxygen](http://www.doxygen.nl/index.html) and download and install the latest "doxygen-X.X.X-setup.exe".
+
+#### For 32bit
 
 <table class="table-alt">
   <tr>
-    <td>Windows用インストーラー<br> (OpenRTM-aist、C++、Python、<br>Java版、およびOpenRTP、<br>rtshell(4.2.2)含む)<br>(Visual Studio 2012、2013、<br>2015、2017、2019共通)</td>
+    <td>Installer for Windows<br> (OpenRTM-aist、C++、Python、<br>Java version, and OpenRTP、<br>including rtshell(4.2.2))<br>(Visual Studio 2012、2013、<br>2015、2017、2019)</td>
     <td><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86.msi">OpenRTM-aist-1.2.2-RELEASE_x86.msi</a> <br>MD5:5e3f29853dedf0bf5af69675657a5c04</td>
     <td>2020/08/26</td>
   </tr>
@@ -89,86 +92,87 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
   </tr>
 </table>
 
-- <span style="color:red;">※Pythonは、"3.8"、"3.7"、"3.6"のいずれかのバージョンをインストールしてください。</span>;
-<!-- -&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiファイルを用いてインストールしている場合は対応不要です。}; -->
-- Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[doxygen](http://www.doxygen.nl/index.html)のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
 
-インストールについては、[OpenRTM-aistを10分で始めよう！](/ja/doc/installation/lets_start)のページで手順を紹介しています。<br>
+- <span style="color:red;">* Install Python version "3.8", "3.7", or "3.6". </span>;
+<!-- - &color (red){* Please delete the old rtshell beforehand. However, if the OpenRTM-aist 1.1.2 version is installed using the msi file, no action is required. }; -->
+- The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [doxygen](http://www.doxygen.nl/index.html) and download and install the latest "doxygen-X.X.X-setup.exe".
+
+
+For installation, [Start OpenRTM-aist in 10 minutes!](/ja/doc/installation/lets_start) page for instructions. <br>
 
 <br>
-### Linuxパッケージ
+### Linux package
 
-現在のところ、以下のディストリビューション・バージョンでパッケージを提供しています。<br>
-以下で配布しているインストールスクリプトを利用すれば、必要なパッケージを一括でインストールできます。
+We currently offer packages in the following distribution versions: <br>
+You can use the installation script distributed below to install the required packages at once.
 
 
 <table class="table-alt">
   <tr>
-    <th>ディストリビューション・バージョン</th>
-    <th>一括インストールスクリプト(右クリックでURLを入手)</th>
+    <th>Distribution version</th>
+    <th>Bulk installation script (right click to get URL)</th>
   </tr>
   <tr>
-    <td>Ubuntu 16.04 (xenial) i386/amd64 <br> Ubuntu 18.04 (bionic) amd64 <br> Ubuntu 20.04 (focal) amd64 <br></td>
-    <td><a href="https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh">pkg_install_ubuntu.sh </a></td>
+    <td>Ubuntu 16.04 (xenial) i386 / amd64 <br> Ubuntu 18.04 (bionic) amd64 <br> Ubuntu 20.04 (focal) amd64 <br></td>
+    <td><a href="https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh">pkg_install_ubuntu.sh</a></td>
   </tr>
   <tr>
     <td>Raspbian Buster armhf</td>
     <td><a href="https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_raspbian.sh">pkg_install_raspbian.sh</a></td>
   </tr>
 </table>
-<!-- | Debian  8.0  (jessie) i386/amd64 &br; Debian  9.0  (stretch) i386/amd64| [[pkg_install_debian.sh >https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_debian.sh]] | -->
-<!-- | Fedora 27 i686/x86_64 &br; Fedora 28 i686/x86_64 &br; Fedora 29 i686/x86_64| [[pkg_install_fedora.sh >https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_fedora.sh]] | -->
+<!-- | Debian 8.0 (jessie) i386 / amd64 &br; Debian 9.0 (stretch) i386 / amd64 | [(pkg_install_debian.sh>https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_debian. sh]] | -->
+<!-- | Fedora 27 i686 / x86_64 &br; Fedora 28 i686 / x86_64 &br; Fedora 29 i686 / x86_64 | [(pkg_install_fedora.sh>https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_fedora .sh]] | -->
 
-<!-- ※Fedora用一括インストール・スクリプトはOpenRTM-aist 1.2.0版以降対応予定です。 -->
+<!-- * The batch installation script for Fedora will be compatible with OpenRTM-aist 1.2.0 or later. -->
 
-オプションを指定することで、目的に合わせたパッケージをインストールできるようになりました。インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト](/ja/node/6345)をご確認ください。
+By specifying options, you can now install packages that meet your needs. Please refer to [Bulk installation script](/ja/node/6345) for installation method, options and package types.
 
-1.2.1-RELEASEを既にインストールしている場合はアップデートが可能です。
+If you have already installed 1.2.1-RELEASE, you can update it.
 
-Ubuntu/Debianの場合
+For Ubuntu / Debian
 
 ```
  $ sudo apt update
  $ sudo apt upgrade
 ```
 
-<!-- Fedora　の場合 -->
+<!-- For Fedora -->
 <!--  -->
 <!-- # dnf update -->
 
-ダウンロード方法・インストール方法については、[OpenRTM-aist(Java版)1.2系のインストール](/ja/node/6602)をご覧くだい。
+See [OpenRTM-aist (Java version) 1.2 system installation](/ja/node/6602) for download and installation methods.
 
+## Java development environment
 
-## Java開発環境
-
-OpenRTM-aist-Java-1.2.2の動作および開発には以下のJDKが必要です。
-- JDK8(1.8): [JDK8のインストール](/ja/node/6911)
+The following JDK is required for the operation and development of OpenRTM-aist-Java-1.2.1.
+- JDK8 (1.8): [Install JDK8](/ja/node/6911)
 
 &aname(src);
-## ソースコード
+## Source code
 
 <table class="table-alt">
   <tr>
-    <td>Java版ソースコード</td>
-    <td><a href="https://github.com/OpenRTM/OpenRTM-aist-Java/releases/download/v1.2.2/OpenRTM-aist-Java-1.2.2.tar.gz">OpenRTM-aist-Java-1.2.2.tar.gz</a> <br>MD5:8c7ea4d4ebb162a3e8f45b1a9b2a7d81</td>
+    <td>Java version source code</td>
+    <td><a href="https://github.com/OpenRTM/OpenRTM-aist-Java/releases/download/v1.2.2/OpenRTM-aist-Java-1.2.2.tar.gz">OpenRTM-aist-Java-1.2.2.tar.gz</a> <br> MD5: 8c7ea4d4ebb162a3e8f45b1a9b2a7d81</td>
     <td>2020/08/26</td>
   </tr>
   <tr>
-    <td>jarファイルおよびサンプル</td>
-    <td><a href="https://github.com/OpenRTM/OpenRTM-aist-Java/releases/download/v1.2.2/OpenRTM-aist-Java-1.2.2-jar.zip">OpenRTM-aist-Java-1.2.2-jar.zip</a> <br>MD5:2a20410619e51ef0898e488a2affbcff</td>
+    <td>jar file and sample</td>
+    <td><a href="https://github.com/OpenRTM/OpenRTM-aist-Java/releases/download/v1.2.2/OpenRTM-aist-Java-1.2.2-jar.zip">OpenRTM-aist-Java-1.2.2-jar.zip</a> <br> MD5: 2a20410619e51ef0898e488a2affbcff</td>
     <td>2020/08/26</td>
   </tr>
 </table>
 
 
-### ソースからのビルド
+### Build from source
 
-ソースからビルドする方法については、[ソースからのビルド](/ja/node/6625)をご覧くだい。
+For information on how to build from source, see [Building from source](/ja/node/6625).
 
-### deb/rpmパッケージ作成
+### Create deb / rpm package
 
-jarファイルおよびサンプルからのUbuntu、Debian用debパッケージ、Fedora用rpmパッケージの作成が正式にサポートされました。<br>
-以下の手順でパッケージを作成できます。パッケージ作成に当たっては、一括インストールスクリプト（pkg_install_***.sh）を利用して必要なパッケージをあらかじめインストールしておいてください。
+Creation of deb packages for Ubuntu, Debian and Fedora rpm packages from jar files and samples is now officially supported. <br>
+You can create a package by following the steps below. When creating a package, use the batch installation script (pkg_install_***.sh) to install the necessary packages in advance.
 ```
  $ tar xvzf OpenRTM-aist-Java-1.2.2.tar.gz
  $ unzip OpenRTM-aist-Java-1.2.2-jar.zip
@@ -176,29 +180,30 @@ jarファイルおよびサンプルからのUbuntu、Debian用debパッケー�
  $ cp -r ../../OpenRTM-aist-Java/packages .
 ```
 
+ When creating a deb package
 ```
- debパッケージを作成する場合
  $ cd packages/deb
  $ sh dpkg_build.sh
 ```
 
+ When creating an rpm package
 ```
- rpmパッケージを作成する場合
  $ cd packages/rpm
  $ sh rpm_build.sh
 ```
 
-パッケージはpacakgesディレクトリ内に作成されます。
+Packages are created in the pacakges directory.
 
-<span style="color:red;">※UbuntuやDebianにてdebパッケージを作成する場合は"dpkg-dev build-essential debhelper devscripts"、Fedoraにてrpmパッケージを作成する場合は"rpm-build createrepo"といったツールをあらかじめインストールしておく必要があります。</span>;
-これらは、[一括インストール・スクリプト](/ja/node/6345)を-cオプションで実行すればインストールされます。
+<span style="color:red;">* Install tools such as "dpkg-dev build-essential debhelper devscripts" when creating deb packages on Ubuntu and Debian, and "rpm-build createrepo" before creating rpm packages on Fedora. Must be kept. </span>;
+These can be installed by executing [batch installation script](/ja/node/6345) with the -c option.
 
-## リリースノート
-- [1.2.2-RELEASE ](https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v1.2.2)
+## Release notes
+- [1.2.2-RELEASE](https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v1.2.2)
 
-### 対応(ビルド検証済)OS
-- Ubuntu 16.04 i386、 amd64
+### Supported (build verified) OS
+- Ubuntu 16.04 i386, amd64
 - Ubuntu 18.04 amd64
 - Ubuntu 20.04 amd64
 - Raspbian Buster armhf
-- Windows-10 (32/64bit)
+- Windows-10 (32 / 64bit)
+

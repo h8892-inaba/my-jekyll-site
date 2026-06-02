@@ -3,6 +3,8 @@ layout: page
 title: RTミドルウエアコンテスト2013表彰
 ---
 
+No English version available.
+
 # RTミドルウエアコンテスト2013表彰（協賛）：
 <div align="left"><img src="rtmcontest2013.png" width="60%;" align="center"></div>
 

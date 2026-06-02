@@ -2,6 +2,11 @@
 layout: page
 title: サマーサイエンスキャンプ(2009年8月19日～21日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -179,3 +184,4 @@ title: サマーサイエンスキャンプ(2009年8月19日～21日)
   - [講習会用サンプル](http://www.openrtm.org/OpenRTM-aist/download/resume/080820/ScienceCamp.zip)
   - NXTをUSBで接続したら、デバイスドライバのインストールウィザードが表示されるので、「接続しない」を選んで「特定の場所からインストールするを選び」フォルダの参照ボタンを押してUSBDriverフォルダを選択して「次へ」を押すとインストールできます。
 
+<!-- -------jp page!!------- -->

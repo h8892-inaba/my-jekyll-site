@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェアサマーキャンプ2015
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="summercamp2015_banner.png" width="60%;" align="center"></div>
 
@@ -671,3 +676,4 @@ RTMに興味を持っている方々に，サマーキャンプへの参加を�
 
 <div align="center"><a href="summercamp2015-09.jpg"><img src="summercamp2015-09.jpg" width="60%;"></a></div>
 <br>
+<!-- -------jp page!!------- -->

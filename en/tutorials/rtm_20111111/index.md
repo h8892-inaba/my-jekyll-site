@@ -2,6 +2,11 @@
 layout: page
 title: 国際ロボット展－RTミドルウエア体験セミナー
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents(4)
 
@@ -201,3 +206,4 @@ Windows推奨ですが、Linuxでも実習可能です。
 <!-- フォーム送信後、確認メールをお送りいたします。1日たっても確認メールが届かない場合は、[[こちら（openrtm-tutorial@m.aist.go.jp）:mailto:openrtm-tutorial@m.aist.go.jp]] までお問い合わせ願います。 -->
 <!-- &color(red){定員に達しましたので申し込みを締め切らせていただきました。ありがとうございました。~ -->
 <!-- なお、見学だけであれば参加可能ですので、当日、会場までお越しください。}; -->
+<!-- -------jp page!!------- -->

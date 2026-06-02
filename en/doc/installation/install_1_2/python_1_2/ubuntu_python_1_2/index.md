@@ -2,6 +2,7 @@
 layout: page
 title: 
 ---
+-------jp page!!-------
 
 <!-- Title: Ubuntu/Debianへのインストール -->
 <div align="right"><a href="ubuntu_logo2.png"><img src="ubuntu_logo2.png" width="100;" align="right"></a></div>
@@ -427,3 +428,4 @@ openrtpでは大量のファイルがインストールされるため、ここ�
 
 
 
+-------jp page!!-------

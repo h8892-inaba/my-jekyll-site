@@ -2,6 +2,7 @@
 layout: page
 title: "Fast DDS通信機能の利用"
 ---
+-------jp page!!-------
 
 <!-- Title: Fast DDS通信機能の利用 -->
 #contents
@@ -908,3 +909,4 @@ maincaconf.cnfはFast DDSのマニュアルのものを使用します。
 秘密鍵appexamplekey.pem、証明書mainexamplecacert.pem、appexamplecert.pemを使用します。
 
 
+-------jp page!!-------

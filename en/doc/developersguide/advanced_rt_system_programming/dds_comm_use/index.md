@@ -2,6 +2,7 @@
 layout: page
 title: "DDS通信機能の利用"
 ---
+-------jp page!!-------
 
 <!-- Title: DDS通信機能の利用 -->
 #contents
@@ -29,3 +30,4 @@ ParticipantはPDP(Participant Discovery Protocol)で互いのParticipantを検�
 - [OpenSplice]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/dds_comm_use/opensplice)
 
 
+-------jp page!!-------

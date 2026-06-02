@@ -1,152 +1,101 @@
 ---
 layout: page
-title: RTミドルウェアサマーキャンプ2024
+title: Summer Camp 2024
 ---
 
 <div align="center"><a href="summercamp2023_slider.png"><img src="summercamp2023_slider.png" width="80%;"></a></div>
 
-#contents
+# Event Report
 
-# 開催報告
+## Event Announcement
 
-<!-- 第14回のRTMサマーキャンプ2023も開催が危ぶまれておりましたが、特別講師陣および共催団体からの支援のおかげで、11名の参加者とともに初めてのオンラインRTMサマーキャンプを無事終えることができました。 参加者の各グループの皆さんは、互いになかなか集まれない中、RTミドルウェアやROS等のロボットミドルウェアを用いたモジュール化開発の利点を生かして開発に取り組んでくれました。オンラインでの設計ディスカッションや分散開発を通じて、ミドルウェアの利点をあらためて確認でき、また、それぞれ持ち寄った課題解決やスキルの向上につながっていたようです。 このサマーキャンプでの成果を、RTミドルウエアコンテストで発表いただけることを期待しております。 -->
+<!-- &color(red){Due to the impact of COVID-19, this year’s summer camp will also be held online.}; -->
 
-<!-- 名城大学の大原先生のご尽力と多くの特別講師やサポートスタッフのご支援のおかげで、7名の参加者と共に、今年も、サマーキャンプを作り上げて行くことが出来ました。皆さまに御礼申し上げます。 対面での設計ディスカッションや分散開発を通じて、ミドルウェアの利点をあらためて確認でき、また、それぞれ持ち寄った課題解決やスキルの向上につながっていたようです。この合宿研修の成果を、RTミドルウエアコンテストで発表いただけることを期待しております。 -->
-
-## 開催のご案内
-
-<!-- &color(red){新型コロナウイルスの影響で、本年度のサマーキャンプもオンライン開催いたします。}; -->
-
-今年で14回目となりました、RTミドルウエアサマーキャンプを8月19日から23日の5日間、産総研つくばセンター（およびオンラインのハイブリッド）にて開催いたします。RTミドルウエアやロボット開発に精通する講師陣のもとで、RTミドルウエアを用いた様々なロボットシステム開発を体験する機会を5日間にわたり提供します。RTミドルウエアを用いたプログラミングの方法や、実践的なロボットシステムへの応用、RTミドルウエアコンテストでの必勝法等、様々な講義を予定しています。一緒に参加した仲間とともに密度の濃い開発経験を通して、より実践的なロボットシステム構築方法を身に付けることができます。
-
-<!-- ''参加資格は、少なくとも1回以上RTミドルウエア講習会を受講した経験があるか、同等以上のプログラミングスキルを身に着けていることを条件とします。また、参加者は12月に行われるRTミドルウエアコンテストへの参加が期待されています。'' -->
-
-<!-- *** 参加者の声 -->
-
-<!-- - RTミドルウェアを使う人は必修の合宿にしたほうがいいと思えるくらい素晴らしい合宿でした。(B4) -->
-<!-- - 他大学の学生と知り合いの人ができました。チームで協力して目標のシステムを構築出来たので楽しかったです。(B4) -->
+The 14th RT Middleware Summer Camp will be held for five days from August 19 to August 23 at the AIST Tsukuba Center (with a hybrid online format). Under the guidance of instructors highly experienced in RT Middleware and robot development, participants will be provided with opportunities to experience various robot system development projects using RT Middleware over the course of five days. Various lectures are planned, including programming methods using RT Middleware, practical applications to robot systems, and winning strategies for the RT Middleware Contest. Through intensive collaborative development experiences with fellow participants, attendees will be able to acquire more practical robot system construction skills.
 
 
-## 開催要旨
+## Overview
 
-本サマーキャンプでは、RTミドルウエアやロボット開発に精通する講師陣のもとで、RTミドルウエアやROSを用いた様々なロボットシステム開発を体験する機会を提供します。この企画により、一緒に参加した仲間とともに密度の濃い開発経験を通して、より実践的なロボットシステム構築方法を身に付けることを目的としています。
+This summer camp provides participants with opportunities to experience various robot system development projects using RT Middleware and ROS under the guidance of instructors who are highly experienced in RT Middleware and robotics development. Through intensive collaborative development experiences with fellow participants, the goal of this program is to help attendees acquire more practical robot system construction skills.
 
-#### 主催
-- 産業技術総合研究所　インダストリアルCPS研究センター
-- （公社）計測自動制御学会SI部門　RTシステムインテグレーション部会
-- （一社）日本ロボット工業会・ロボットビジネス推進協議会
+#### Organizers
+- Industrial CPS Research Center, National Institute of Advanced Industrial Science and Technology (AIST)
+- RT System Integration Committee, SI Division, The Society of Instrument and Control Engineers (SICE)
+- Japan Robot Association / Robot Business Promotion Council
 
-<!-- *** 後援 -->
-<!-- -国立研究開発法人　新エネルギー・産業技術開発機構(NEDO) -->
+<!-- *** Support -->
+<!-- -New Energy and Industrial Technology Development Organization (NEDO) -->
 
-#### 日時・場所
-- 2024年8月19日（月）～8月23日（金）
-<!-- - Zoom/Microsoft Teamsを利用したオンライン開催 -->
-- ハイブリッド開催
-  - 産業技術総合研究所　中央事業所1群　つくば本部・情報技術共同研究棟1階・ネットワーク会議室　
-  - オンライン (Teams/Zoom等使用）
+#### Date and Venue
+- August 19 (Mon.) – August 23 (Fri.), 2024
+<!-- - Online event using Zoom/Microsoft Teams -->
+- Hybrid Event
+  - National Institute of Advanced Industrial Science and Technology (AIST), Central Complex 1, Tsukuba Headquarters, Information Technology Collaborative Research Building 1F, Network Conference Room
+  - Online (using Teams/Zoom, etc.)
 
-### 参加資格
+### Eligibility Requirements
 
-RTミドルウェア講習会に参加したことがある，もしくは同等程度の経験を有していること．
-<!-- なお、例年強化月間と称して、7月に事前講習会を実施していますが、今年は原則実施ことといたします。&color(red){ (確認) } -->
-これまで講習会を受講したことがない場合は、以下のチュートリアルを自習することで参加資格を満たしたことにいたします。
+Participants must have attended an RT Middleware workshop previously or possess equivalent experience.
+<!-- In previous years, preliminary workshops were held in July as part of an “Intensive Training Month,” but this year they will generally not be held. &color(red){ (Confirmation) } -->
+If you have never attended a workshop before, you may satisfy the participation requirements by self-studying the following tutorials.
 
-- [RTミドルウェアを10分で始めよう]({{ site.baseurl }}/ja/doc/installation/lets_start122) (インストールとサンプルの動作確認)
-- [画像処理コンポーネントの作成](https://www.openrtm.org/openrtm/ja/node/6057) (画像処理コンポーネントの作成練習、USBカメラor内蔵カメラが必要)
-- [ROBOMECH2024RTM講習会](../robomech2024) (移動ロボット実機を制御するコンポーネントの作成)
+- [Get Started with RT Middleware in 10 Minutes]({{ site.baseurl }}/ja/doc/installation/lets_start122) (Installation and sample operation check)
+- [Creating an Image Processing Component](https://www.openrtm.org/openrtm/ja/node/6057) (Practice creating image processing components; requires a USB camera or built-in camera)
+- [ROBOMECH2024RTM Workshop](../robomech2024) (Creating components to control an actual mobile robot)
 
-<!-- または， -->
-<!-- -下記のサマーキャンプ受講希望者向けの講習会に参加する意思があること -->
-<!-- --[[ROBOMECH2020講習会:/ja/tutorial/robomech2020]] -->
-<!-- --RTM強化月間 (予定) -->
-<!-- --- RTミドルウェア強化月間(第1弾)：早稲田大学・RTミドルウェア講習会 -->
-<!-- --- RTミドルウェア強化月間(第2弾)：名城大学・RTミドルウェア講習会 -->
-<!-- --- RTミドルウェア強化月間(第3弾)：都産技研・RTミドルウェア講習会(終了) -->
+### Participation Fee
+Free
+<!-- Participants are responsible for preparing their own PCs, communication equipment, and communication costs required for online participation. -->
 
-<!-- *** 参加人数 -->
-<!-- - 参加者：7名 -->
-<!-- - 講師・スタッフ：7名 -->
-<!-- スタッフ側のボランティアも随時募集 -->
+### Implementation Overview
+Participants, either individually or in groups, will develop a robot system or tool and give a成果 presentation and demonstration on the final day.
+If possible, participants are encouraged to enter their developed works into the RT Middleware Contest held at SI2024.
+Participants are expected to set clear objectives, define a project theme through individual or group discussions, conduct requirements analysis and system analysis using SysML, estimate development tasks, assign development responsibilities, and proceed with development accordingly.
 
-### 参加費
-無料
-<!-- （オンライン参加に必要なPC・通信設備、通信費などは参加者でご用意いただきます。） -->
+In the IT field, there are gatherings commonly known as “mokumoku-kai,” where individuals gather and quietly focus on coding independently; this camp is envisioned in a similar style.
+However, during development activities and final presentations/demonstrations, participants may gather and work together within the limits permitted by their affiliated universities or companies, while taking precautions to prevent the spread of COVID-19.
+Additionally, we will conduct interviews in advance regarding grouping and development themes, and PCs, simple sensors, and small robots can be loaned upon request.
+<!-- During the camp period, the first half will focus mainly on lectures, while the second half will involve individual or group remote work sessions, with instructors available online to answer questions. -->
 
-### 実施概要
-個人またはグループで一つのロボットシステムやツールを開発し、最終日に成果発表とデモンストレーションをしていただきます。
-可能であれば、開発した作品は、SI2024で行われるRTミドルウェアコンテストへエントリーしていただきたいと考えています。
-参加にあたって、それぞれ目的意識を持ち、個人またはグループによる話し合いを通じて一つの課題を設定、SysMLを用いた要求分析・システム分析を行い、開発作業の見積もり・開発の分担をした上で開発作業を進めていただきます。
+Please refer to the following links for examples of previous summer camps.
 
-<!-- 今年度は、オンラインでの開催としましたので、従来のグループワークは難しいと考えていますので、個人での参加または同じ研究室からの複数の参加を推奨いたします。 -->
-IT分野の勉強会で一般に「もくもく会」（集まって個人個人が黙々とコーディングをする会）と呼ばれる物がありますが、そのような形態を想定しています。
-ただし、開発中、あるいは成果発表・デモ時には、参加者の所属大学・企業が許容する範囲で、新型コロナ感染拡大防止に配慮した上で、複数人が集まって作業・発表することも許容いたします。
-また、事前にグルーピング及び開発対象についてヒアリングを行い、PCや簡単なセンサ、小型のロボットなどは要望があれば貸し出しします。
-<!-- 会期中は、前半は座学を中心に、後半は個人・グループそれぞれがリモートで個別に黙々と作業し、講師陣はオンラインで控えており質問に答える体制で進めます。 -->
+## Program
 
-過去のサマーキャンプの様子は以下のリンクからご覧いただけますので参考にしてください。
-
-（参考）
-- [サマーキャンプ2011](./summercamp2011)
-- [サマーキャンプ2012](./summercamp2012)
-- [サマーキャンプ2013](./summercamp2013)
-- [サマーキャンプ2014](./summercamp2014)
-- [サマーキャンプ2015](./summercamp2015)
-- [サマーキャンプ2016](./summercamp2016)
-- [サマーキャンプ2017](./summercamp2017)
-- [サマーキャンプ2018](./summercamp2018)
-- [サマーキャンプ2019](./summercamp2019)
-- [サマーキャンプ2020](./summercamp2020)
-- [サマーキャンプ2021](./summercamp2021)
-- [サマーキャンプ2022](./summercamp2022)
-- [サマーキャンプ2023](./summercamp2023)
-
-
-## プログラム
-
-- [Teams会議リンク](https://teams.microsoft.com/l/meetup-join/19%3ameeting_NGI0ZDJiNTEtY2EwMS00YWIxLTk5OTEtM2FhZjQ5ZTEyYzFk%40thread.v2/0?context=%7b%22Tid%22%3a%2218a7fec8-652f-409b-8369-272d9ce80620%22%2c%22Oid%22%3a%224d1bc24d-f5e5-48f7-ad13-d51f4a5a1705%22%7d)
-<!-- &color(red){準備中}; -->
-
-<!-- &color(red){事情により変更する可能性もありますので，ご注意ください．}; -->
-
-<!-- |CENTER:150|LEFT:400|LEFT:200|c -->
-<!-- |CENTER: ''事前学習''|>|CENTER: ''サマーキャンプ開始までに視聴しておいてください。''| -->
-<!-- | | 講演: SysML講習会 &br;[[講義資料:/sites/default/files/6048/2016SummerCamp-021.pdf]] &br;・YouTubeビデオリンクはSlackにて共有 |坂本武志&br;(グローバルアシスト)| -->
-
+- [Teams Meeting Link](https://teams.microsoft.com/l/meetup-join/19%3ameeting_NGI0ZDJiNTEtY2EwMS00YWIxLTk5OTEtM2FhZjQ5ZTEyYzFk%40thread.v2/0?context=%7b%22Tid%22%3a%2218a7fec8-652f-409b-8369-272d9ce80620%22%2c%22Oid%22%3a%224d1bc24d-f5e5-48f7-ad13-d51f4a5a1705%22%7d)
 
 <table class="table-alt">
   <tr>
-    <th>8月19日(月)</th>
-    <th colspan="2">第1日目</th>
+    <th>Monday, August 19</th>
+    <th colspan="2">Day 1</th>
   </tr>
   <tr>
     <td>13:00-13:05</td>
-    <td>開催の挨拶</td>
-    <td>大原　賢一 <br>(名城大)</td>
+    <td>Opening Remarks</td>
+    <td>Kenichi Ohara <br>(Meijo University)</td>
   </tr>
   <tr>
     <td>13:05-13:30</td>
-    <td>RTミドルウェアサマーキャンプガイダンス</td>
-    <td>大原賢一<br>(名城大)</td>
+    <td>RT Middleware Summer Camp Guidance</td>
+    <td>Kenichi Ohara<br>(Meijo University)</td>
   </tr>
   <tr>
     <td>13:30-14:20</td>
-    <td>自己紹介・決意表明</td>
+    <td>Self-Introductions and Statement of Goals</td>
     <td>-</td>
   </tr>
   <tr>
     <td>15:00-15:50</td>
-    <td>講演: SysMLを利用したロボット開発<br> <br>講義資料:<a href="RTM_SC_2024_GA.pdf">RTM_SC_2024_GA.pdf</a><br>SysMLモデル例:<a href="SysMLモデル例.pptx">SysMLモデル例.pptx</a></td>
-    <td>坂本武志<br>(グローバルアシスト)</td>
+    <td>Lecture: Robot Development Using SysML<br> <br>Lecture Materials:<a href="RTM_SC_2024_GA.pdf">RTM_SC_2024_GA.pdf</a><br>SysML Model Example:<a href="SysMLモデル例.pptx">SysML Model Example.pptx</a></td>
+    <td>Takeshi Sakamoto<br>(Global Assist)</td>
   </tr>
   <tr>
     <td>16:00-17:30</td>
-    <td>RTシステムモデル化実習</td>
-    <td>グループに分かれて構築するシステムのモデル化を行います。</td>
+    <td>RT System Modeling Workshop</td>
+    <td>Participants will model the systems to be developed in groups.</td>
   </tr>
   <tr>
-    <td>18:00-</td>
-    <td>懇親会</td>
+   <td>18:00-</td>
+    <td>Networking Event</td>
     <td>-</td>
   </tr>
 </table>
@@ -154,422 +103,268 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 <!-- url=https://us02web.zoom.us/j/88504370244?pwd=WjB0S0I4ZHE1U2EvcWpZMVlkanA2QT09 -->
 <table class="table-alt">
   <tr>
-    <th>8月20日(火)</th>
-    <th colspan="2">2日目</th>
+    <th>Tuesday, August 20</th>
+    <th colspan="2">Day 2</th>
   </tr>
   <tr>
-    <td>9:30-10:10(変更の可能性あり)</td>
-    <td>未定</td>
-    <td>菅 佑樹  <br>(Sugar Sweet Robotics)</td>
+    <td>9:30-10:10(Possibly subject to change)</td>
+    <td>TBD</td>
+    <td>Yuki Kan  <br>(Sugar Sweet Robotics)</td>
   </tr>
   <tr>
     <td>10:20-11:00</td>
-    <td>RTミドルウェアツール紹介1: <br> rtshellの使い方について</td>
-    <td>安藤 慶昭  <br>(産業技術総合研究所)</td>
+    <td>Introduction to RT Middleware Tools 1: <br> About Using rtshell</td>
+    <td>Yoshiaki Ando  <br>(National Institute of Advanced Industrial Science and Technology)</td>
   </tr>
   <tr>
     <td>11:10-11:50</td>
-    <td>RTミドルウェアツール紹介2：<br> 利用可能なRTコンポーネントやツールについて<br> <br><strong>講義資料</strong>:<a href="2024SummerCamp-03.pdf">2024SummerCamp-03.pdf</a></td>
-    <td>宮本 信彦<br> (産業技術総合研究所)</td>
+    <td>Introduction to RT Middleware Tools 2:<br> About Available RT Components and Tools<br> <br><strong>Lecture Materials</strong>:<a href="2024SummerCamp-03.pdf">2024SummerCamp-03.pdf</a></td>
+    <td>Nobuhiko Miyamoto<br> (National Institute of Advanced Industrial Science and Technology)</td>
   </tr>
   <tr>
     <td>12:00-13:00</td>
-    <td>昼休み</td>
+    <td>Lunch Break</td>
   </tr>
   <tr>
     <td>13:00-15:00</td>
-    <td>ロボットシステム開発とモデリング</td>
-    <td>坂本武志 (グローバルアシスト)</td>
+    <td>Robot System Development and Modeling</td>
+    <td>Takeshi Sakamoto (Global Assist)</td>
   </tr>
   <tr>
     <td>15:00-16:00</td>
-    <td>開発目標システム発表</td>
-    <td>今後開発するシステムに付いてグループごとに発表してもらいます。</td>
+    <td>Development Target System Presentations</td>
+    <td>Each group will present the system they plan to develop.</td>
   </tr>
   <tr>
     <td>16:00-18:00</td>
-    <td>RTシステム構築実習1</td>
-    <td>実際のシステム構築に取り組んでもらいます。</td>
+    <td>RT System Development Workshop 1</td>
+    <td>Participants will work on actual system development.</td>
   </tr>
   <tr>
     <td>18:00-22:00</td>
-    <td>夜の部</td>
-    <td>希望者は引き続き開発作業可能</td>
+    <td>Evening Session</td>
+    <td>Participants who wish may continue development work.</td>
   </tr>
 </table>
 
 <table class="table-alt">
   <tr>
-    <td>8月21日(水)</td>
-    <td colspan="2">第3日目</td>
+    <td>Wednesday, August 21</td>
+    <td colspan="2">Day 3</td>
   </tr>
   <tr>
     <td>09:00-16:30</td>
-    <td>RTシステム構築実習2</td>
+    <td>RT System Development Workshop 2</td>
     <td>-</td>
   </tr>
   <tr>
     <td>16:30-17:00</td>
-    <td>各チームの進捗報告</td>
+    <td>Progress Reports from Each Team</td>
     <td>-</td>
   </tr>
   <tr>
     <td>17:00-22:00</td>
-    <td>夜の部</td>
-    <td>希望者は引き続き開発作業可能</td>
+    <td>Evening Session</td>
+    <td>Participants who wish may continue development work.</td>
   </tr>
 </table>
 
 <table class="table-alt">
   <tr>
-    <th>8月22日(木) </th>
-    <th colspan="2">第4日目</th>
+    <th>Thursday, August 22 </th>
+    <th colspan="2">Day 4</th>
   </tr>
   <tr>
     <td>09:00-16:30</td>
-    <td>RTシステム構築実習3</td>
+    <td>RT System Development Workshop 3</td>
     <td>-</td>
   </tr>
   <tr>
     <td>16:30-17:00</td>
-    <td>各チームの進捗報告</td>
+    <td>Progress Reports from Each Team</td>
     <td>-</td>
   </tr>
   <tr>
     <td>17:00-22:00</td>
-    <td>夜の部</td>
-    <td>希望者は引き続き開発作業可能</td>
+    <td>Evening Session</td>
+    <td>Participants who wish may continue development work.</td>
   </tr>
 </table>
 
 <table class="table-alt">
   <tr>
-    <th>8月23日(金)</th>
-    <th colspan="2">第5日目</th>
+    <th>Friday, August 23</th>
+    <th colspan="2">Day 5</th>
   </tr>
   <tr>
     <td>09:00-12:00</td>
-    <td>RTシステム構築実習4</td>
+    <td>RT System Development Workshop 4</td>
     <td>-</td>
   </tr>
   <tr>
     <td>15:00-17:00</td>
-    <td>成果報告会</td>
+    <td>Final Presentation Session</td>
     <td>-</td>
   </tr>
   <tr>
     <td>17:00-17:10</td>
-    <td>閉会の挨拶</td>
+    <td>Closing Remarks</td>
   </tr>
   <tr>
     <td>17:10-18:00</td>
-    <td>片付け</td>
+    <td>Cleanup</td>
   </tr>
   <tr>
     <td>18:30-20:00</td>
-    <td>RTミドルウェア情報交換会（BOFミーティング）</td>
+    <td>RT Middleware Information Exchange Meeting (BOF Meeting)</td>
     <td>-</td>
   </tr>
 </table>
 
-※本サマーキャンプでの成果物（作品・スライド）や成果発表の動画等は、ホームページで公開します。
+※The deliverables (projects and slides) and presentation videos from this summer camp will be published on the website.
 
-<!-- *** 産総研見学会 -->
-
-<!-- 今年はオンライン開催のため見学会はありません。 -->
-<!-- 申し訳ございません。 -->
-
-<!-- ** 課題について -->
-<!-- 基本的には各参加者に課題を持ち寄っていただき，講師陣は参加者のサポートを行う形態を取ります。 -->
-<!-- 対象は、RTミドルウェアやROSを含むロボットミドルウエアを活用した課題であれば何でも結構です。 -->
-
-<!-- *** 課題例 -->
-<!-- |CENTER:200|LEFT:100|c -->
-<!-- |Robocup@Homeの競技|[[資料>http://www.openrtm.org/openrtm/sites/default/files/rulehome2015.pdf]]| -->
-<!-- |MobileRobotiNavigationFrameworkを用いたアプリケーション開発|[[資料>http://ogata-lab.jp/ja/technology_ja/mobile_nav_rtcs_ja.html]]| -->
-<!-- |人型ロボット(G-Robot)を使ったモーション生成| -->
-<!-- |Pioneer/Kobukiを用いた課題自律移動ロボットの制御| -->
-<!-- |RTミドルウェアリファレンスハードウェア「OROCHI」を用いた物体把持| -->
-<!-- |OpenHRIを用いた音声認識を用いた課題| -->
-<!-- |RTスペース操作用コンポーネントの開発| -->
-<!-- |レーザレンジファインダを用いた環境認識| -->
-<!-- |AR Toolkitを用いた拡張現実感| -->
-
-<!-- （注）変更する可能性もございますことご了承下さい． -->
-
-<!-- *** 提供可能な機材 -->
-
-<!-- - ノートPC (Think Pad Corei5程度のもの、10台まで） -->
-<!-- -- 主に、Zoomで常時接続するための機材として提供、開発に使用しても構いません、Windows PC -->
-<!-- - RaspberryPi Mouse (15台まで） -->
-<!-- #ref(https://rt-net.jp/mobility/wp-content/uploads/2015/08/RaspberryPiMouse_s.jpg, left,150%) -->
-<!-- -- LiDAR付きも１０台程度あり -->
-<!-- -- https://rt-net.jp/mobility/products/raspberry-pi-mouse -->
-<!-- -- https://www.youtube.com/watch?v=kbfV2R64yP4&feature=youtu.be -->
-<!-- - Turtlebot Berger (10台まで) -->
-<!-- #ref(https://www.besttechnology.co.jp/uploads/onlineshop/photos/e00192e594288ec39172.png, left,50%) -->
-<!-- -- https://www.besttechnology.co.jp/modules/onlineshop/index.php?fct=photo&p=192 -->
-<!-- - G-ROBOT (10台まで） -->
-<!-- #ref(grobo.jpg, left,100%) -->
-<!-- -- [[G-ROBOT>https://www.vstone.co.jp/robotshop/index.php?main_page=product_info&cPath=70_110&products_id=5197]] -->
-<!-- - RaspberryPi (全体で１０台程度） -->
-<!-- #ref(https://www.rt-shop.jp/blog/wp-content/uploads/2020/03/img_raspimouse01-765x800.png, left,50%) -->
-<!-- -- 下記のセンサ類と組み合わせて使用するのも可 -->
-<!-- - Phidgetセンサ類 + RaspberryPi + 拡張基盤セット (４セット） -->
-<!-- -- RaspberryPiに拡張ボード実装済み -->
-<!-- -- http://cgi3.win-ei.com/wordpress/?page_id=135 -->
-<!-- -- Phidgetセンサ類：圧力、温度、光（lcd）、ジョイスティック、磁気、スライダー、タッチ（静電容量） -->
-<!-- -- https://www.google.com/search?q=phidget+%E3%82%BB%E3%83%B3%E3%82%B5&rlz=1C5CHFA_enJP882JP882&sxsrf=ALeKk03gjJ3-w72H8-//T3eiaYobupVJyVfw:1596525505946&source=univ&tbm=shop&tbo=u&sa=X&ved=2ahUKEwiphqD9gIHrAhUy7GEKHbPmAuEQsxh6BAgMEE4&biw=1632&bih=1326 -->
-<!-- - micro:Bit + センサキット（４セット） -->
-<!-- #ref(microbit_set.jpeg , left,80%) -->
-<!-- -- micro:Bitと３７種類のセンサキット -->
-<!-- -- https://www.amazon.co.jp/gp/product/B07QD558NQ/ref=ox_sc_act_title_1?smid=AWD3NUTTSH82N&psc=1 -->
-<!-- - obniz (４セット） -->
-<!-- #ref(obniz.jpeg, left,100%) -->
-<!-- -- https://www.amazon.co.jp/gp/product/B082MDPRWZ/ref=ox_sc_act_title_1?smid=A2SZAQLZSFR347&psc=1 -->
-<!-- - myCobot -->
-<!-- #ref(2209131e-b842-4d31-9f42-21d47b4511ca.png, left,80%) -->
-<!-- -- https://www.switch-science.com/catalog/7141/ -->
-<!-- - Kobuki -->
-<!-- #ref(kobuki_img-640x381.jpg, left,50%) -->
-<!-- -- https://www.tegakari.net/2016/10/kobuki/ -->
-<!-- - Intel RealSense Depth Camera D415 -->
-<!-- #ref(e19bc180-fcb7-4a9f-b3a3-17a8d649601e.jpg, left,80%) -->
-<!-- -- https://www.switch-science.com/catalog/3632/ -->
-
-## 実行委員会
+## Organizing Committee
 <table class="table-alt">
   <tr>
-    <td>実行委員長</td>
-    <td>大原　賢一</td>
-    <td><a href="https://wwwms.meijo-u.ac.jp/kohara/">名城大学理工学部ロボットシステムデザイン研究室　教授</a></td>
+    <td>Executive Chair</td>
+    <td>Kenichi Ohara</td>
+    <td><a href="https://wwwms.meijo-u.ac.jp/kohara/">Professor, Robot System Design Laboratory, Faculty of Science and Technology, Meijo University</a></td>
   </tr>
   <tr>
-    <td>幹事</td>
-    <td>宮本　信彦</td>
-    <td>産業技術総合研究所 インダストリアルCPS研究センター 研究員</td>
+    <td>Secretary</td>
+    <td>Nobuhiko Miyamoto</td>
+    <td>Researcher, Industrial CPS Research Center, National Institute of Advanced Industrial Science and Technology (AIST)</td>
   </tr>
   <tr>
-    <td>委員</td>
-    <td>安藤　慶昭</td>
-    <td>日本ロボット工業会・ロボットビジネス推進協議会・RTミドルウェアWG 主査  <br> 産業技術総合研究所 情報・人間工学領域研究企画室 研究企画室長</td>
+    <td>Committee Member</td>
+    <td>Yoshiaki Ando</td>
+    <td>Chair, RT Middleware Working Group, Japan Robot Association / Robot Business Promotion Council  <br> Director, Research Planning Office, Information Technology and Human Factors Domain, National Institute of Advanced Industrial Science and Technology (AIST)</td>
   </tr>
   <tr>
-    <td>委員</td>
-    <td>高橋　三郎</td>
-    <td>SICE SI部門RTシステムインテグレーション部会主査</td>
+    <td>Committee Member</td>
+    <td>Saburo Takahashi</td>
+    <td>Chair, RT System Integration Committee, SICE SI Division</td>
   </tr>
   <tr>
-    <td>委員</td>
-    <td>菅　佑樹</td>
-    <td><a href="http://sugarsweetrobotics.com/">株式会社 SUGAR SWEET ROBOTICS</a></td>
+    <td>Committee Member</td>
+    <td>Yuki Kan</td>
+    <td><a href="http://sugarsweetrobotics.com/">SUGAR SWEET ROBOTICS Co., Ltd.</a></td>
   </tr>
   <tr>
-    <td>委員</td>
-    <td>神徳　徹雄</td>
-    <td><a href="https://www.aist-solutions.co.jp/">株式会社 AIST Solutions</a></td>
+    <td>Committee Member</td>
+    <td>Tetsuo Kotoku</td>
+    <td><a href="https://www.aist-solutions.co.jp/">AIST Solutions Co., Ltd.</a></td>
   </tr>
   <tr>
-    <td>委員</td>
-    <td>坂本　武志</td>
-    <td><a href="https://globalassist.co.jp/">株式会社 グローバルアシスト</a></td>
+    <td>Committee Member</td>
+    <td>Takeshi Sakamoto</td>
+    <td><a href="https://globalassist.co.jp/">Global Assist Co., Ltd.</a></td>
   </tr>
 </table>
 
-<!-- ** 参加者の方へ -->
+### Final Presentation and Submission Materials
+Participants are requested to prepare the following deliverables and present them at the final presentation session.
 
-<!-- *** Slackへの参加 -->
-<!-- 以下の招待リンクからSlackのOpenRTM Usersワークスペースに参加してください。 -->
+- **Presentation Slides** → Submit via Slack
+  - Please create them using PowerPoint or similar tools. Since the materials will eventually be published on this page, include only information that can be publicly disclosed.
+- **System Source Code and Binaries** → Upload to your project page
+  - Please create a project page on this website and upload the following items:
+  - Self-developed RTCs: source code and binaries
+    - It is strongly recommended that source code be hosted in each participant’s GitHub repository whenever possible
+  - Reused RTCs: information on where they were obtained and binaries
+    - Please clearly indicate the origin of reused RTCs and provide links
+- **Manuals and Documentation** → Upload to your project page
+  - Please prepare documentation containing sufficient information for third parties to reproduce the system developed during this camp.
+  - Please refer to projects from previous summer camps and contests
+    - [RTM Summer Camp 2021 Project List](../summercamp2021#toc13)
+    - [RTM Contest 2021 Project List](/contests/2021)(no_page)
+    - [RTM Summer Camp 2022 Project List](../summercamp2022#toc18)
+    - [RTM Contest 2022 Project List](https://openrtm.org/openrtm/ja/contests/2022)(no_page)
+    - [RTM Summer Camp 2023 Project List](../summercamp2023#toc18)
+    - [RTM Contest 2023 Project List](https://openrtm.org/openrtm/ja/contests/2023)(no_page)
 
-<!-- - [[招待リンク:https://join.slack.com/t/openrtm-users/shared_invite/zt-1zoln1xtj-4Jz8OEWyaQk7nmyrpwbfbw]] -->
-
-<!-- *** 自己紹介スライドの準備 -->
-
-<!-- 参加されるかたは、自己紹介用スライドのテンプレートに従って自己紹介を作成してください． -->
-<!-- 事前にSlackにてお送りください。 -->
-<!-- 送付方法は事務局より連絡させていただきます． -->
-<!-- ※テンプレートは準備中です。もう少々お待ちください。 -->
-<!-- - 自己紹介用スライドテンプレート: [[自己紹介スライドテンプレート:https://openrtm.org/openrtm/sites/default/files/7280/自己紹介スライド2024.pptx]]; -->
-
-### 最終成果報告会および提出物について
-成果物として以下の物を用意して成果報告会にて発表していただきます。
-
-- **プレゼン資料** → Slackで提出
-  - PowerPoint などで作成してください。最終的には本ページに掲載されますので一般公開可能な情報のみで作成してください。
-- **システムのソースコードおよびバイナリ** → プロジェクトページに自分で格納
-  - このWebサイト上にプロジェクトページを作成して以下の物を格納してください
-  - 自作のRTCはソースコードとバイナリ
-    - ソースコードはできるだけ各自のGitHubリポジトリに置くことを推奨します
-  - 再利用したRTCはダウンロードした場所などの情報，バイナリ
-    - 利用させてもらったRTCは出どころを明記した上でリンクを貼ってください
-- **マニュアル，ドキュメント** → プロジェクトページに自分で格納
-  - 今回作成したシステムを第三者が再現できる情報をマニュアル化してください。
-  - 過去のサマーキャンプやコンテストのプロジェクトを参照してください
-    - [RTMサマーキャンプ2021作品一覧](../summercamp2021#toc13)
-    - [RTMコンテスト2021作品一覧](/contests/2021)(no_page)
-    - [RTMサマーキャンプ2022作品一覧](../summercamp2022#toc18)
-    - [RTMコンテスト2022作品一覧](https://openrtm.org/openrtm/ja/contests/2022)(no_page)
-    - [RTMサマーキャンプ2023作品一覧](../summercamp2023#toc18)
-    - [RTMコンテスト2023作品一覧](https://openrtm.org/openrtm/ja/contests/2023)(no_page)
-- **SysMLやＵＭＬなどのモデルをつくったらそのデータ** → プロジェクトページに自分で格納
-  - モデリングツールでモデル作成をした場合はそのデータ
-  - 最終成果報告会の発表資料にモデルが含まれていればそれでも結構です
+- **If SysML, UML, or other models were created, submit the model data as well** → Upload to your project page
+  - If modeling tools were used, please upload the original model data
+  - Alternatively, including the models in the final presentation materials is also acceptable
 
 
-&aname(entry);
-<!-- ** サマーキャンプ2024申し込み (8/12(月)〆切) -->
-
-<!-- 本ページのフォームからRTミドルウェアサマーキャンプにお申し込み下さい． -->
-<!-- - 参加登録するまえに当Webページのユーザ登録をお願いします。[[ユーザ登録はこちら:http://openrtm.org/openrtm/ja/user/touroku]] -->
-<!-- - 当Webサイトにログイン済みの方は&color(red){名前の欄のユーザ名を氏名に書き換えてください};。 -->
-<!-- - フォーム送信後、確認メールをお送りいたします。1日たっても確認メールが届かない場合は、こちら summercamp(at)openrtm.org までお問い合わせください。 -->
-<!-- -- (at)を＠におきかえてください。 -->
-<!-- - 参加申込期限は8/12(月)とします。 -->
-
-
-<!-- ** 講義資料 -->
-
-<!-- - [[SysML実習:/sites/default/files/7155/20220822SC_GA.pdf]] -->
-<!-- <nowiki> -->
-<!-- [video:http://www.slideshare.net/252678104 width:640] -->
-<!-- </nowiki> -->
-<!-- <nowiki> -->
-<!-- [video:https://www.youtube.com/watch?v=H0o4OoCFCRE&feature=youtu.be] -->
-<!-- </nowiki> -->
-
-<!-- - [[ロボットミドルウェアでロボットシステムを作る:/sites/default/files/7102/RTミドルウェアサマーキャンプ資料2021.pdf  ]] -->
-<!-- <nowiki> -->
-<!-- [video:http://www.slideshare.net/252677889 width:640] -->
-<!-- </nowiki> -->
-
-<!-- - [[利用可能なRTコンポーネントやツールについて:/sites/default/files/7233/2023SummerCamp-03.pdf  ]] -->
-<!-- <nowiki> -->
-<!-- [video:http://www.slideshare.net/250060412] -->
-<!-- </nowiki> -->
-
-<!-- - [[eSEATの使い方とROSとの連携について:/sites/default/files/6705/2019SummerCamp-03.pdf ]] -->
-<!-- <nowiki> -->
-<!-- [video:http://www.slideshare.net/159363071] -->
-<!-- </nowiki> -->
-
-<!-- - [[ rtshellの使い方について:/sites/default/files/6705/2019SummerCamp-04.pdf ]] -->
-<!-- <nowiki> -->
-<!-- [video:http://www.slideshare.net/159088816] -->
-<!-- </nowiki> -->
-
-
-<!-- ---- -->
-
-## 開発成果
+## Development Results
 
 &aname(summercamp2024_group1);
-### グループ1
+### Group 1
 
-- **課題**: 鬼ごっこゲーム
-  - [プロジェクトページ](/ja/project/summercamp20241)(no_page)
-<!-- -- [[最終成果発表資料:https://www.slideshare.net/openrtm/ss-252721420]] -->
+- **Theme**: Tag Game
+  - [Project Page](/ja/project/summercamp20241)(no_page)
+<!-- -- [[Final Presentation Slides:https://www.slideshare.net/openrtm/ss-252721420]] -->
 
 <!-- <nowiki> -->
 <!-- [video:http://www.slideshare.net/252721420 width:640] -->
 <!-- </nowiki> -->
 
-  - 成果報告
+  - Result Presentation
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/EMdSnk6KxfA" frameborder="0" allowfullscreen></iframe>
 
-
-<!-- -- デモ動画（成功時） -->
-<!-- <nowiki> -->
-<!-- [video:https://www.youtube.com/watch?v=yscOc2cxrpM width:640] -->
-<!-- </nowiki> -->
-
 &aname(summercamp2024_group2);
-### グループ2
+### Group 2
 
-- **課題**: 自動駐車ロボット
-  - [プロジェクトページ](/ja/project/summercamp20242)(no_page)
-<!-- -- [[最終成果発表資料:https://www.slideshare.net/openrtm/ss-252710121]] -->
+- **Theme**: Automatic Parking Robot
+  - [Project Page](/ja/project/summercamp20242)(no_page)
+<!-- -- [[Final Presentation Slides:https://www.slideshare.net/openrtm/ss-252710121]] -->
 
 <!-- <nowiki> -->
 <!-- [video:http://www.slideshare.net/252710121 width:640] -->
 <!-- </nowiki> -->
 
-  - 成果報告
+  - Result Presentation
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8LCNtiDqKJk" frameborder="0" allowfullscreen></iframe>
 
 
-<!-- -- デモ動画 -->
-<!-- <nowiki> -->
-<!-- [video:https://www.youtube.com/watch?v=I11bmg56PUM width:640] -->
-<!-- </nowiki> -->
-
 &aname(summercamp2024_group3);
-### グループ3
+### Group 3
 
-- **課題**: 自律移動ロボットの遠隔管理システム
-  - [プロジェクトページ](/ja/project/summercamp20243)(no_page)
-<!-- -- [[最終成果発表資料:https://www.slideshare.net/openrtm/gng-252710439]] -->
+- **Theme**: Remote Management System for Autonomous Mobile Robots
+  - [Project Page](/ja/project/summercamp20243)(no_page)
+<!-- -- [[Final Presentation Slides:https://www.slideshare.net/openrtm/gng-252710439]] -->
 
 <!-- <nowiki> -->
 <!-- [video:http://www.slideshare.net/252710439 width:640] -->
 <!-- </nowiki> -->
 
-  - 成果報告
+  - Result Presentation
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HGNBGazctgU" frameborder="0" allowfullscreen></iframe>
 
 
-  - デモ動画
+  - Demo Video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JeMvhzOGg3Y" frameborder="0" allowfullscreen></iframe>
 
 
-<!-- ---- -->
-
 &aname(summercamp2024_group4);
-### グループ4
+### Group 4
 
-- **課題**: 迷路から自動で脱出できるロボット
-  - [プロジェクトページ](/ja/project/summercamp20244)(no_page)
-<!-- -- [[最終成果発表資料:https://www.slideshare.net/openrtm/ss-252710179]] -->
+- **Theme**: A Robot That Can Automatically Escape from a Maze
+  - [Project Page](/ja/project/summercamp20244)(no_page)
+<!-- -- [[Final Presentation Slides:https://www.slideshare.net/openrtm/ss-252710179]] -->
 
 <!-- <nowiki> -->
 <!-- [video:http://www.slideshare.net/252710179 width:640] -->
 <!-- </nowiki> -->
 
-  - 成果報告
+  - Result Presentation
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WLMQ4TywHoQ" frameborder="0" allowfullscreen></iframe>
 
 
-  - デモ動画
+  - Demo Video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IVwxuZlGjuA" frameborder="0" allowfullscreen></iframe>
 
 
-<!-- ---- -->
+## Scenes from the Summer Camp
 
-<!-- &aname(summercamp2022_group5); -->
-<!-- *** 東京都立大グループ -->
-
-<!-- - ''課題'': おにぎりトレーサー -->
-<!-- -- [[プロジェクトページ:/ja/project/SummerCamp2022_group5]] -->
-<!-- -- [[最終成果発表資料:https://www.slideshare.net/openrtm/rt2022pptx]] -->
-
-<!-- <nowiki> -->
-<!-- [video:http://www.slideshare.net/252709966 width:640] -->
-<!-- </nowiki> -->
-
-<!-- -- 成果報告 -->
-<!-- <nowiki> -->
-<!-- [video:https://www.youtube.com/watch?v=laOG-GTYByk width:640] -->
-<!-- </nowiki> -->
-
-<!-- ---- -->
-
-## サマーキャンプの様子
-<!-- ４枚程度？？ -->
 
 <div align="center"><a href="rtmsummercamp2024_00.jpg"><img src="rtmsummercamp2024_00.jpg" width="50%;"></a></div>
 <br>
@@ -586,28 +381,4 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 <div align="center"><a href="rtmsummercamp2024_04.jpg"><img src="rtmsummercamp2024_04.jpg" width="40%;"></a></div>
 <br>
 
-<!-- #ref(rtmsummercamp2023_05.jpg,center) -->
-<!-- #br -->
-
-
-
-<!-- ** お問い合わせ -->
-
-<!-- 基本的な情報はホームページから提供いたします． -->
-<!-- 参加申込みいただいた方は連絡したメールに返信ください． -->
-<!--  -->
-<!-- RTミドルウエアサマーキャンプ実行委員会~ -->
-<!-- summercamp(at)aist.go.jp~ -->
-<!-- (at)を＠におきかえてください．~ -->
-<!--  -->
-<!-- ** 参加申し込み -->
-<!--  -->
-<!-- + ''ユーザ登録:'' 参加登録するまえに当Webページのユーザ登録をお願いします。[[ユーザ登録はこちら:http://openrtm.org/openrtm/ja/user/register]] -->
-<!-- -- 当Webサイトにログイン済みの方は名前の欄にユーザ名が出ますが、氏名に書き換えてください。 -->
-<!-- + ''ログイン:'' ユーザ登録後 openrtm.org のサイトにログインします。 -->
-<!-- + ''参加登録:'' 下記の登録フォームに必要事項を記入し登録してください。 -->
-<!-- -- フォーム送信後、確認メールをお送りいたします。1日たっても確認メールが届かない場合は、[[こちら（summercamp(at)aist.go.jp）:mailto:summercamp@aist.go.jp]] までお問い合わせください。 -->
-<!-- + 本フォームで登録された情報は、RTMサマーキャンプ2022以外では使用しません。 -->
-
-<!-- #ref(reg_flow.png,60%,left,nolink) -->
 

@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMEC2010講習会(2010年6月14日) 
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -169,3 +174,4 @@ Ubuntu, Fedora などメジャーなディストリビューション用のパ�
 <div align="center"><a href="100614-03.png"><img src="100614-03.png" width="60%;"></a></div>
 <br>
 
+<!-- -------jp page!!------- -->

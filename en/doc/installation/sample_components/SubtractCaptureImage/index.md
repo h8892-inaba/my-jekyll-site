@@ -2,6 +2,7 @@
 layout: page
 title: "SubtractCaptureImage"
 ---
+-------jp page!!-------
 
 <!-- Title: SubtractCaptureImage -->
 
@@ -61,3 +62,4 @@ SubtractCaptureImageは入力画像で動きがないものを背景とみなし
 
 
 
+-------jp page!!-------

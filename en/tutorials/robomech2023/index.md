@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMECH2023
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <!-- #ref(https://robomech.org/2020/wp-content/uploads/2019/09/head000.jpg,left,100%,margin=10,url=/ja/tutorial/robomech2020) -->
 <!-- #ref(robomech2019_title.png,left,60%,margin=10,url=/ja/tutorial/robomech2019) -->
@@ -312,3 +317,4 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 <!-- #br -->
 
 
+<!-- -------jp page!!------- -->

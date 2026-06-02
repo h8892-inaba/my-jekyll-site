@@ -2,6 +2,7 @@
 layout: page
 title: Windowsへのインストール
 ---
+-------jp page!!-------
 
 <!-- Title: Windowsへのインストール -->
 #contents
@@ -101,3 +102,4 @@ openrtm.org の[ダウンロードサイト](/ja/node/6035)から、msi パッ�
 
 以上、インストールが終了しましたら、[動作確認](/ja/node/1225) へ進みましょう。
 
+-------jp page!!-------

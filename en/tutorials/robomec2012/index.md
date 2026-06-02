@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMEC2012講習会(2012年5月27日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -269,3 +274,4 @@ Windows推奨ですが、Linuxでも実習可能です。
 
 <div align="center"><a href="120527-07.jpg"><img src="120527-07.jpg" width="60%;"></a></div>
 <br>
+<!-- -------jp page!!------- -->

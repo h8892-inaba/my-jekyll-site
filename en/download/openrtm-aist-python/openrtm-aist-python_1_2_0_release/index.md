@@ -2,6 +2,7 @@
 layout: page
 title: OpenRTM-aist-Python-1.2.0-RELEASE
 ---
+No English version available.
 
 <!-- Title: OpenRTM-aist-Python-1.2.0-RELEASE -->
 <div align="right"><a href="python-logo.png"><img src="python-logo.png" width="20%;" align="right"></a></div>

@@ -2,6 +2,7 @@
 layout: page
 title: "Fluent Loggerによるログ収集"
 ---
+-------jp page!!-------
 
 <!-- Title: Fluent Loggerによるログ収集 -->
 #contents
@@ -869,3 +870,4 @@ OpenRTM-aist Python版で動作確認する場合はElasticsearch Loggerプラ�
  ConsoleOut.py -f rtc.conf
 ```
 
+-------jp page!!-------

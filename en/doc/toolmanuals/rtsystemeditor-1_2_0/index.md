@@ -2,6 +2,7 @@
 layout: page
 title: "RTSystemEditor-1.2.0"
 ---
+-------jp page!!-------
 <!-- Title: RTSystemEditor-1.2.0 -->
 ## RTSystemEditorとは
 現在 OMG にて、ロボット開発の効率を高める Robot Technology Component（以下RTC）の仕様策定が行われています。
@@ -34,3 +35,4 @@ RTSystemEditor は、この OpenRTM-aist に含まれる開発ツールの１つ
 - [その他](./rtse-1_2_0_other)
 
 
+-------jp page!!-------

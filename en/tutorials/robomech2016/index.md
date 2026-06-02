@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMECH2016講習会(2016年6月8日(水))
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="robomech2016.jpg" width="60%; margin:10px;" align="center"></div>
 
@@ -246,3 +251,4 @@ LEGO Mindstorms EV3 は LEGO の Mindstorms シリーズの新しいパッケー
 <br>
 
 
+<!-- -------jp page!!------- -->

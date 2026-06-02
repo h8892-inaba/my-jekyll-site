@@ -1,6 +1,8 @@
 ---
 layout: page
-title: 論文 (2019年)
+title: Paper (2019)
 ---
+
+No English version available.
 
 ※準備中です。少々お待ちください。

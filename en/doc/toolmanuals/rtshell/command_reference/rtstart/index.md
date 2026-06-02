@@ -2,6 +2,7 @@
 layout: page
 title: rtstart
 ---
+-------jp page!!-------
 
 <!-- Title: rtstart -->
 
@@ -69,3 +70,4 @@ rtstartとrtstopはこの情報を利用します。実際のところrtstartは
 ```
 
 
+-------jp page!!-------

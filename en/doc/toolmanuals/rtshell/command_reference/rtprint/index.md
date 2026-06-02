@@ -2,6 +2,7 @@
 layout: page
 title: rtprint
 ---
+-------jp page!!-------
 
 <!-- Title: rtprint -->
 
@@ -124,3 +125,4 @@ RTコンポーネントのポートを示す場合、パスの後にコロン（
 ```
 
 
+-------jp page!!-------

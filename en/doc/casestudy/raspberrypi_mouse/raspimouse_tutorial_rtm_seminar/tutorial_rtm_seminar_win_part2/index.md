@@ -2,6 +2,7 @@
 layout: page
 title: チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows) 
 ---
+-------jp page!!-------
 
 <!-- Title: チュートリアル(RTM講習会、Windows、第2部) -->
 #contents
@@ -1035,3 +1036,4 @@ RTシステムエディタで RaspberryPiMouseRTC、RobotController コンポー
 
 
 
+-------jp page!!-------

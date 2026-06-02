@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMECH2017講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="robomech2017.png" width="90%; margin:10px;" align="center"></div>
 
@@ -273,3 +278,4 @@ LEGO Mindstorms EV3 は LEGO の Mindstorms シリーズの新しいパッケー
 
 
 
+<!-- -------jp page!!------- -->

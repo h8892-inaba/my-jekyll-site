@@ -2,6 +2,11 @@
 layout: page
 title: 石川県産業大学講座・技術セミナー(2009年1月16日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -140,3 +145,4 @@ Windows版OpenRTM-aist-0.4.2を対象とした講習会を1月16日、(財)石�
 <div align="center"><a href="090116-03.jpg"><img src="090116-03.jpg" width="60%;"></a></div>
 <br>
 
+<!-- -------jp page!!------- -->

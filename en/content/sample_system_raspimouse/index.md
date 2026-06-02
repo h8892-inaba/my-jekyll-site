@@ -3,6 +3,8 @@ layout: page
 title: サンプルの RTシステムの実行
 ---
 
+No English version available.
+
 <!-- Title: サンプルの RTシステムの実行 -->
 #contents
 

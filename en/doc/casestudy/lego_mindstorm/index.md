@@ -2,6 +2,7 @@
 layout: page
 title: LEGO Mindstorms EV3 活用事例
 ---
+-------jp page!!-------
 
 <!-- Title: LEGO Mindstorms EV3 活用事例 -->
 <!-- -*- pukiwiki-edit -*- -->
@@ -156,3 +157,4 @@ EV3のコンピュータは以下の仕様になっています。
 - [チュートリアル(RTM講習会)](./lego_rtm_seminar)
 - [組み立て方](./lego_howtobuild)
 
+-------jp page!!-------

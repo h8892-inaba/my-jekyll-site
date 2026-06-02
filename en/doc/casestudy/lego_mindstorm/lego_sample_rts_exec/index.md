@@ -2,6 +2,7 @@
 layout: page
 title: サンプルの RTシステムの実行
 ---
+-------jp page!!-------
 
 <!-- ~/jekyll_workdir/openrtm_test/ja/doc/casestudy/lego_mindstorm/lego_sample_rts_exec-->
 <!-- Title: サンプルの RTシステムの実行 -->
@@ -202,3 +203,4 @@ Windows側の PC にゲームパッドを接続してから起動してくださ
 このサンプルは OpenRTM-aist-Python のサンプルコンポーネント TkJoyStick で傾けた方向に Educator Vehicle を操作することに加えて、[タッチセンサー、超音波センサー、カラーセンサーを利用した制御](../lego_ev3_rtc_install#toc6) を行う RTシステムです。
 
 <div align="center"><a href="ev3_7.png"><img src="ev3_7.png" width="70%;"></a></div>
+-------jp page!!-------

@@ -2,6 +2,11 @@
 layout: page
 title: 産総研講習会(2007年5月7日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -84,3 +89,4 @@ OpenRTM-aist-0.4.0を対象とした講習会を5月7日、産総研つくばサ
   </tr>
 </table>
 
+<!-- -------jp page!!------- -->

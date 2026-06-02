@@ -2,6 +2,7 @@
 layout: page
 title: rtshellのインストール
 ---
+-------jp page!!-------
 
 <!-- Title: rtshellのインストール -->
 OpenRTM-aistでは、コマンドラインでRTCを操作するためのツールとしてrtshellと呼ぶツールを提供しています。rtshell は、ネームサーバー上に登録されている RTコンポーネントを管理すできるツールで,
@@ -13,3 +14,4 @@ OpenRTM-aistでは、コマンドラインでRTCを操作するためのツー�
 - [動作確認(Windows編)](./check_windows)
 - [動作確認(Linux編)](./check_linux)
 
+-------jp page!!-------

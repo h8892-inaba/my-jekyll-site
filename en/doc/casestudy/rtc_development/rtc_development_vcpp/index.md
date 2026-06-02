@@ -2,6 +2,7 @@
 layout: page
 title: RTコンポーネント作成(VC++編)
 ---
+-------jp page!!-------
 
 <!-- Title: RTコンポーネント作成(VC++編) -->
 #contents
@@ -222,3 +223,4 @@ MRCConvertorComp.exe を実行する前に NamingService を起動してくだ�
 
 Debug あるいは Release フォルダーに移動し、MRCConvertorComp.exe を実行します。
 
+-------jp page!!-------

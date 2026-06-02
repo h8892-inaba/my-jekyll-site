@@ -2,6 +2,7 @@
 layout: page
 title: 画面構成と機能（RTプロファイルエディタ 編）
 ---
+-------jp page!!-------
 
 <!-- Title: 画面構成と機能（RTプロファイルエディタ 編） -->
 #contents
@@ -896,3 +897,4 @@ Detail セクションおよび Documentation セクションの内容は、ユ�
 </table>
 
 
+-------jp page!!-------

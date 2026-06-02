@@ -2,6 +2,7 @@
 layout: page
 title:  ソースからのビルド(Windows編)
 ---
+-------jp page!!-------
 
 <!-- Title: ソースからのビルド(Windows編) -->
 OpenRTM-aist本体に改修を加えてWindows上利用したい場合は、OpenRTM-aist本体のWindows用ソースパッケージを自分でビルドできます。 ここでは、ダウンロードページやリポジトリからソースコードを取得しWindows環境でOpenRTM-aistをビルドする方法を説明します。
@@ -205,3 +206,4 @@ Visual Studio 2017で、64ビットのインテルないしはAMDプロセッサ
 
 以上で、OpenRTM-aistのインストールは終了です。
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: "TkMotorComp/SliderComp"
 ---
+-------jp page!!-------
 
 <!-- Title: TkMotorComp/SliderComp -->
 
@@ -47,3 +48,4 @@ SliderCompとTkMotorCompでスライドノブでモータの回転の制御を�
   - TkMotorCompのGUI上でモータで駆動される円盤を模したものが表示され、その回転が、SliderCompのGUI上の上下スライドノブで制御できるのを確認してください。それぞれ6つのノブと6つのモータの回転を模しています。
 
 
+-------jp page!!-------

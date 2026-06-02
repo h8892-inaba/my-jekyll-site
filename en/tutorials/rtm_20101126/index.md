@@ -2,6 +2,11 @@
 layout: page
 title: 北海道大学RTミドルウェア講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -172,3 +177,4 @@ Ubuntu, Fedora などメジャーなディストリビューション用のパ�
 <!-- #imgr(100614-03.png,center,nolink) -->
 <!-- #br -->
 
+<!-- -------jp page!!------- -->

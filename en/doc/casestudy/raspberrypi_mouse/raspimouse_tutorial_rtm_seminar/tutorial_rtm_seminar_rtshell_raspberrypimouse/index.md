@@ -2,6 +2,7 @@
 layout: page
 title: チュートリアル(rtshell入門、Raspberry Pi Mouse)
 ---
+-------jp page!!-------
 <!--  チュートリアル(rtshell入門、Raspberry Pi Mouse) -->
 
 #contents
@@ -219,3 +220,4 @@ Ubuntuの場合は以下のコマンドを記述してください。
 
 
 
+-------jp page!!-------

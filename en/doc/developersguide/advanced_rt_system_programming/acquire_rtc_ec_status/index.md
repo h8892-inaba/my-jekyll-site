@@ -2,6 +2,7 @@
 layout: page
 title: "RTC（EC）の状態を取得する"
 ---
+-------jp page!!-------
 
 <!-- Title: RTC（EC）の状態を取得する -->
 エラーを取得する方法として2つの方法があります。
@@ -108,3 +109,4 @@ ComponentObserverを利用して状態を取得するようになります。
 - [component.py](https://github.com/gbiggs/rtctree/blob/master/rtctree/component.py)
 
 
+-------jp page!!-------

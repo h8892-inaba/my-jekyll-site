@@ -2,6 +2,11 @@
 layout: page
 title: iREX2013 （国際ロボット展） RTM講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="right"><img src="iREX2013rogo_R.jpg" width="30%; margin:10px;" align="right"></a></div>
 
@@ -203,3 +208,4 @@ G-ROBOTを操作するインターフェースを実際に作ってみたり、�
 
 <div align="center"><a href="131106-05.jpg"><img src="131106-05.jpg" width="60%;"></a></div>
 <br>
+<!-- -------jp page!!------- -->

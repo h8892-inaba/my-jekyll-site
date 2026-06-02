@@ -2,6 +2,7 @@
 layout: page
 title: "SSM通信機能の利用"
 ---
+-------jp page!!-------
 
 <!-- Title: SSM通信機能の利用 -->
 
@@ -111,3 +112,4 @@ OpenRTM-aistをビルド、インストールすると、ROSTransportの簡単�
 ```
 
 
+-------jp page!!-------

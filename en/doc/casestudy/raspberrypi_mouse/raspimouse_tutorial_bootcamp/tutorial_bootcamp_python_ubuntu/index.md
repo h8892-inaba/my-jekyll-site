@@ -2,6 +2,7 @@
 layout: page
 title: チュートリアル(Raspberry Pi Mouse、Python、Ubuntu、強化月間用)
 ---
+-------jp page!!-------
 
 <!-- Title: チュートリアル(Raspberry Pi Mouse、Python、Ubuntu、強化月間用) -->
 #contents
@@ -898,3 +899,4 @@ RTシステムエディタで RaspberryPiMouseRTC、RobotController コンポー
 ### アクティブ化
 そして RTC をアクティブ化すると Raspberry Pi マウスの操作ができるようになります。
 
+-------jp page!!-------

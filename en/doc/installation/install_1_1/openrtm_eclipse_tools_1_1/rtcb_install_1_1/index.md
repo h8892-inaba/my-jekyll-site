@@ -2,6 +2,7 @@
 layout: page
 title: RTCBuilder のインストール
 ---
+-------jp page!!-------
 
 <!-- Title: RTCBuilder のインストール -->
 #contents
@@ -149,3 +150,4 @@ Eclipse を起動し、メニューから [ウインドウ] > [パースペク�
 <br>
 <br>
 
+-------jp page!!-------

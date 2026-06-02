@@ -2,6 +2,7 @@
 layout: page
 title: rtpwd
 ---
+-------jp page!!-------
 
 <!-- Title: rtpwd -->
 
@@ -41,3 +42,4 @@ rtshellはパスでRTCツリーのオブジェクトを示します。ネーム�
 デバッグ情報とエラーはstderrに出力されます。
 
 
+-------jp page!!-------

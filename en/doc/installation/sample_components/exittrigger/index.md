@@ -2,6 +2,7 @@
 layout: page
 title: "ExtTrigger"
 ---
+-------jp page!!-------
 <!-- Title: ExtTrigger -->
 
 ### 概要
@@ -23,3 +24,4 @@ title: "ExtTrigger"
 Port間の接続が成功すると、ExtConnectorを実行したコンソールにどのコンポーネントの処理を進めるか選択するメニューが表示されます。
 この入力値により、それぞれのコンポーネントは処理を１周期づつ進めていきます。
 
+-------jp page!!-------

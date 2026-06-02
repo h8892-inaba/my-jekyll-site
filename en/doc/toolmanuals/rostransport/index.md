@@ -2,6 +2,7 @@
 layout: page
 title: ROSトランスポート(rosport)
 ---
+-------jp page!!-------
 
 init
 <!-- Title: ROSトランスポート(rosport) -->
@@ -67,3 +68,4 @@ pretty simple.
 
 Comments, suggestions, and improvements are welcome.
 
+-------jp page!!-------

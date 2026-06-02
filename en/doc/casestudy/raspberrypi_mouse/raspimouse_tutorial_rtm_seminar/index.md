@@ -2,6 +2,7 @@
 layout: page
 title: チュートリアル(Raspberry Pi Mouse、RTM講習会)
 ---
+-------jp page!!-------
 
 <hr>
 - [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)](./tutorial_rtm_seminar_win_part2)
@@ -15,3 +16,4 @@ title: チュートリアル(Raspberry Pi Mouse、RTM講習会)
 - [チュートリアル(画像処理実習)](./tutorial_rtm_seminar_opencv_raspberrypimouse)
 - [ポートの接続に失敗した場合の対処方法](./tutorial_rtm_seminar_connect_error)
 
+-------jp page!!-------

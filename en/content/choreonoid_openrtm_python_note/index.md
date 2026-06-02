@@ -2,7 +2,11 @@
 layout: page
 title: "Choreonoid用OpenRTM連携プラグイン Python版(備考)"
 ---
+
+No English version available.
+
 #contents
+
 
 ### Choreonoid OpenRTM連携プラグインについて
 Choreonoid標準で付属しているOpenRTM連携プラグインには以下の機能がありません。

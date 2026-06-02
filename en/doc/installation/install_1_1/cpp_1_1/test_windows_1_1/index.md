@@ -2,6 +2,7 @@
 layout: page
 title: 動作確認 (Windows編)
 ---
+-------jp page!!-------
 
 init<br>
 https://openrtm.org/openrtm/ja/node/794<br>
@@ -263,3 +264,4 @@ OutPort から InPort (または InPort から OutPort) へドラッグランド
 
 <br>
 
+-------jp page!!-------

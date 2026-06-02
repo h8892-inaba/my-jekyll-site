@@ -2,6 +2,7 @@
 layout: page
 title: "TkJoyStick/TkMobileRobotSimulator"
 ---
+-------jp page!!-------
 
 <!-- Title: TkJoyStick/TkMobileRobotSimulator -->
 #contents
@@ -52,3 +53,4 @@ TkJoystick(入力デバイス)とTkMobileRobotSimulator接続し、GUI上でJoys
 
 
 
+-------jp page!!-------

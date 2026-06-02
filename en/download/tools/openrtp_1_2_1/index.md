@@ -3,6 +3,8 @@ layout: page
 title: OpenRTP 1.2.1
 ---
 
+No English version available.
+
 <!-- Title: OpenRTP 1.2.1 -->
 <div align="right"><a href="eclipse_logo.png"><img src="eclipse_logo.png" width="15%;" align="right"></a></div>
 #contents(5)
@@ -146,5 +148,4 @@ OpenRTPの実行にはJDK8を別途インストールする必要がある場合
 - Ubuntu 16.04 i386、 amd64
 - Ubuntu 18.04 amd64
 - Windows-10 (32/64bit)
-
 

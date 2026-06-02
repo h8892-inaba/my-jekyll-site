@@ -2,6 +2,7 @@
 layout: page
 title: "OpenRTM付属のサンプルについて"
 ---
+-------jp page!!-------
 
 <!-- Title: OpenRTM-aist付属のサンプルについて -->
 
@@ -40,3 +41,4 @@ RTSystemEditorのインストールについての詳細は、[OpenRTPのイン�
 - [TkCalibGUI](./tkcalibgui)
 
 - [opencv_sample_code_build_proc](./opencv_sample_code_build_proc)
+-------jp page!!-------

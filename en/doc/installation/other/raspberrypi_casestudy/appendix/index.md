@@ -2,6 +2,7 @@
 layout: page
 title: 付録
 ---
+-------jp page!!-------
 
 <!-- Title: 付録 -->
 #contents
@@ -45,3 +46,4 @@ Windows から VNCサーバーに接続する場合には、VNCクライアン�
 <div align="center"><strong>図4-3 VNC 接続</strong></div>
 
 
+-------jp page!!-------

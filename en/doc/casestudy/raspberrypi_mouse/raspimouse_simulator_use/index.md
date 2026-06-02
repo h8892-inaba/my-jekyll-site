@@ -2,6 +2,7 @@
 layout: page
 title: シミュレーター利用方法
 ---
+-------jp page!!-------
 
 <!-- Title: シミュレーター利用方法 -->
 #contents
@@ -150,3 +151,4 @@ blocksConfigFile というパラメーターで障害物の配置を設定する
 
 
 
+-------jp page!!-------

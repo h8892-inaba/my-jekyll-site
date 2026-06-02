@@ -3,6 +3,8 @@ layout: page
 title: RTミドルウェアコンテスト2024
 ---
 
+No English version available.
+
 <!-- #ref( contest2024.png,80%,left,nolink) -->
 
 <br>

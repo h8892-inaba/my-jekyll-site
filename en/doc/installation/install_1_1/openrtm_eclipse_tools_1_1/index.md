@@ -2,6 +2,7 @@
 layout: page
 title: OpenRTM Eclipse tools のインストール 1.1系
 ---
+-------jp page!!-------
 <!-- Title: OpenRTM Eclipse tools のインストール 1.1系 -->
 <div align="left"><a href="eclipse_logo.png"><img src="eclipse_logo.png" width="15%;" align="left"></a></div>
 
@@ -27,3 +28,4 @@ Eclipse には特にインストーラーは無く、アーカイブを展開す
 - [RTCBuilder のインストール](./rtcb_install_1_1)
 - [RTSystemEditor のインストール](./rtse_install_1_1)
 - [RTSystemEditor、RTCBuilder のデバッグ](./rtse_rtcb_debug_1_1)
+-------jp page!!-------

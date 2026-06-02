@@ -1,28 +1,40 @@
 ---
 layout: page
-title: 論文 (2004年以前)
+title: Papers (2004 and earlier)
 ---
 
-## 国内学会
-1. 末廣 尚士, 北垣 高成, 神徳 徹雄, 尹 祐根, 安藤 慶昭, "RTコンポーネントの実装例.RTミドルウェアの基本機能に関する研究開発(その1)", 第21回 日本ロボット学会学術講演会予稿集, p.1F27, 2003.09, 東京工業大学 [[PDF](RSJ2003_Suehiro.pdf)]
-1. 末廣 尚士, 北垣 高成, 神徳 徹雄, 尹 祐根, 安藤 慶昭, "RTコンポーネントの実装例.RTミドルウェアの基本機能に関する研究開発(その2)", 第21回 日本ロボット学会学術講演会予稿集, p.1F28, 2003.09, 東京工業大学 [[PDF](RSJ2003_Suehiro2.pdf)]
-1. 安藤 慶昭, 末廣 尚士, 北垣 高成, 神徳 徹雄, 尹 祐根, "RT要素のモジュール化およびRTコンポーネントの実装", 第9回 ロボティクスシンポジア, pp.288-293, 2004.03, メルパルク沖縄, 那覇市, 沖縄 [[PDF](RoboticsSymposia2004_Ando.pdf)]
-1. 神徳 徹雄, 北垣 高成, 安藤 慶昭, 尹 祐根, 末廣 尚士, "RTミドルウェアのソフトウェア開発支援機能の検討", 第9回 ロボティクスシンポジア, pp.282-287, 2004.03, メルパルク沖縄, 那覇市, 沖縄 [[PDF](RoboticsSymposia2004_Kotoku.pdf)]
-1. 安藤 慶昭, 末廣 尚士, 北垣 高成, 神徳 徹雄, 尹 祐根, "RT 複合コンポーネントおよびリアルタイムコンポーネントの実装-RTミドルウェアの基本機能に関する研究開発(その7)-", 日本機械学会 ロボティクス・メカトロニクス講演会2004, p.1A1-L1-5, 2004.06, 名古屋市名城大学 [[PDF](ROBOME2004_Ando_1a1-l1-5.pdf)]
-1. 北垣 高成, 末廣 尚士, 神徳 徹雄, 尹 祐根, 安藤 慶昭, "RT コンポーネントによるマニピュレータ制御システム構築－ RT ミドルウェアの基本機能に関する研究開発（その5）－", 日本機械学会 ロボティクス・メカトロニクス講演会2004, p.1A1-L1-6, 2004.06, 名古屋市名城大学 [[PDF](ROBOME2004_Kitagaki_1a1-l1-6.pdf)]
-1. 尹 祐根, 末廣 尚士, 北垣 高成, 神徳 徹雄, 安藤 慶昭, "RTコンポーネントによるマスタアーム制御システム構築－RTミドルウェアの基本機能に関する研究開発（その6）－", 日本機械学会 ロボティクス・メカトロニクス講演会2004, p.1A1-L1-7, 2004.06, 名古屋市名城大学 [[PDF](ROBOME2004_Yoon_1a1-l1-7.pdf)]
-1. 安藤 慶昭, 末廣 尚士, 北垣 高成, 神徳 徹雄, 尹 祐根, "RT複合コンポーネントおよびコンポーネントマネージャの実装－RTミドルウェアの基本機能に関する研究開発（その8）－", 第22回 日本ロボット学会学術講演会予稿集, p.1C26, 2004.09, 岐阜県岐阜大学 [[PDF](RSJ2004_Ando.pdf)]
-1. 北垣 高成, 末廣 尚士, 安藤 慶昭, 神徳 徹雄, 尹 祐根, "システム開発支援のためのGUI コンポーネント－ RT ミドルウェアの基本機能に関する研究開発（その9）－", 第22回 日本ロボット学会学術講演会予稿集, p.1C23, 2004.09, 岐阜県岐阜大学 [[PDF](RSJ2004_Kiagaki.pdf)]
-1. 安藤 慶昭, 末廣 尚士, 北垣 高成, 神徳 徹雄, 尹 祐根, "RTコンポーネントによるロボットシステム開発-RTミドルウェアの基本機能に関する研究開発(その10)-", 計測自動制御学会 システムインテグレーション部門 講演会 2004 (SI2004), pp.264-265, 2004.12, つくば国際会議場, 茨城県 [[PDF](SI2004_Ando_1H1_2.pdf)]
+## Domestic Conferences
+Takashi Suehiro, Takanari Kitagaki, Tetsuo Kotoku, Woong-Keun Yoon, Noriaki Ando, "Implementation of RT-Components: Research and Development on Basic Functions of RT-Middleware (Part 1)", Proceedings of the 21st Annual Conference of the Robotics Society of Japan (RSJ2003), p. 1F27, 2003.09, Tokyo Institute of Technology. [[PDF](RSJ2003_Suehiro.pdf)]
 
-## 論文公開規定について
-本ページでは、各学会の論文公開規定に従って可能な限り論文原稿の公開を行っております。
+Takashi Suehiro, Takanari Kitagaki, Tetsuo Kotoku, Woong-Keun Yoon, Noriaki Ando, "Implementation of RT-Components: Research and Development on Basic Functions of RT-Middleware (Part 2)", Proceedings of the 21st Annual Conference of the Robotics Society of Japan (RSJ2003), p. 1F28, 2003.09, Tokyo Institute of Technology. [[PDF](RSJ2003_Suehiro2.pdf)]
 
-- [ロボット学会](http://www.rsj.or.jp/data_rules/L-02.pdf)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [日本機械学会](http://www.jsme.or.jp/conrule.htm)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [計測自動制御学会](http://www.sice.jp/)
-  - 転載（使用）許諾願をSICE事務局へ提出し許諾を受ければ可能。[[転載許可証](tensai_kyoka_201311.pdf)]
+Noriaki Ando, Takashi Suehiro, Takanari Kitagaki, Tetsuo Kotoku, Woong-Keun Yoon, "Modularization of RT-Elements and Implementation of RT-Components", The 9th Robotics Symposia, pp. 288-293, 2004.03, Mielparque Okinawa, Naha, Okinawa. [[PDF](RoboticsSymposia2004_Ando.pdf)]
 
+Tetsuo Kotoku, Takanari Kitagaki, Noriaki Ando, Woong-Keun Yoon, Takashi Suehiro, "Investigation of Software Development Support Functions for RT-Middleware", The 9th Robotics Symposia, pp. 282-287, 2004.03, Mielparque Okinawa, Naha, Okinawa. [[PDF](RoboticsSymposia2004_Kotoku.pdf)]
+
+Noriaki Ando, Takashi Suehiro, Takanari Kitagaki, Tetsuo Kotoku, Woong-Keun Yoon, "Implementation of Composite RT-Components and Real-time Components: Research and Development on Basic Functions of RT-Middleware (Part 7)", JSME Conference on Robotics and Mechatronics 2004 (ROBOMEC 2004), p. 1A1-L1-5, 2004.06, Meijo University, Nagoya. [[PDF](ROBOME2004_Ando_1a1-l1-5.pdf)]
+
+Takanari Kitagaki, Takashi Suehiro, Tetsuo Kotoku, Woong-Keun Yoon, Noriaki Ando, "Construction of Manipulator Control System using RT-Components: Research and Development on Basic Functions of RT-Middleware (Part 5)", JSME Conference on Robotics and Mechatronics 2004 (ROBOMEC 2004), p. 1A1-L1-6, 2004.06, Meijo University, Nagoya. [[PDF](ROBOME2004_Kitagaki_1a1-l1-6.pdf)]
+
+
+Woong-Keun Yoon, Takashi Suehiro, Takanari Kitagaki, Tetsuo Kotoku, Noriaki Ando, "Construction of Master Arm Control System using RT-Components: Research and Development on Basic Functions of RT-Middleware (Part 6)", JSME Conference on Robotics and Mechatronics 2004 (ROBOMEC 2004), p. 1A1-L1-7, 2004.06, Meijo University, Nagoya. [[PDF](ROBOME2004_Yoon_1a1-l1-7.pdf)]
+
+Noriaki Ando, Takashi Suehiro, Takanari Kitagaki, Tetsuo Kotoku, Woong-Keun Yoon, "Implementation of Composite RT-Components and Component Manager: Research and Development on Basic Functions of RT-Middleware (Part 8)", Proceedings of the 22nd Annual Conference of the Robotics Society of Japan (RSJ2004), p. 1C26, 2004.09, Gifu University, Gifu. [[PDF](RSJ2004_Ando.pdf)]
+
+Takanari Kitagaki, Takashi Suehiro, Noriaki Ando, Tetsuo Kotoku, Woong-Keun Yoon, "GUI Components for System Development Support: Research and Development on Basic Functions of RT-Middleware (Part 9)", Proceedings of the 22nd Annual Conference of the Robotics Society of Japan (RSJ2004), p. 1C23, 2004.09, Gifu University, Gifu. [[PDF](RSJ2004_Kiagaki.pdf)]
+
+Noriaki Ando, Takashi Suehiro, Takanari Kitagaki, Tetsuo Kotoku, Woong-Keun Yoon, "Robot System Development using RT-Components: Research and Development on Basic Functions of RT-Middleware (Part 10)", SICE System Integration Division Annual Conference 2004 (SI2004), pp. 264-265, 2004.12, Tsukuba International Congress Center, Ibaraki. [[PDF](SI2004_Ando_1H1_2.pdf)]
+
+
+## Regarding Paper Publication Policies
+On this page, we make efforts to provide the manuscripts of our papers to the extent permitted by the publication policies of each academic society.
+
+- [The Robotics Society of Japan (RSJ):](http://www.rsj.or.jp/data_rules/L-02.pdf)
+ - Publication is permitted as long as the author posts it on their own personal or institutional website.
+
+- [The Japan Society of Mechanical Engineers (JSME):](http://www.jsme.or.jp/conrule.htm)
+ - Publication is permitted as long as the author posts it on their own personal or institutional website.
+
+- [The Society of Instrument and Control Engineers (SICE):](http://www.sice.jp/)
+ - Publication is possible upon submitting a request for permission to reprint/use to the SICE secretariat and receiving approval. [Reprint Permission Certificate](tensai_kyoka_201311.pdf)
 

@@ -2,6 +2,7 @@
 layout: page
 title: システムエディタ（ポート間の接続 編）
 ---
+-------jp page!!-------
 
 <!-- Title: システムエディタ（ポート間の接続 編） -->
 #contents
@@ -221,3 +222,4 @@ ComboBox の選択リストには&lt;コンポーネント名&gt;:&lt;インタ�
 ここでいう完全なマッチングとは、PortInterfaceProfile の「type」が同じで、「polarity」がお互いに PROVIDED と REQUIred になっていること。
 また余りなく（PortInterfaceProfile はそれぞれのポートに複数存在する）すべての PortInterfaceProfile がマッチングすることを指しています。
 
+-------jp page!!-------

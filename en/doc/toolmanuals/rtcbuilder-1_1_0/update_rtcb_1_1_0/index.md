@@ -2,6 +2,7 @@
 layout: page
 title: 更新方法 
 ---
+-------jp page!!-------
 
 <!-- Title: 更新方法 -->
 #contents
@@ -40,3 +41,4 @@ Linux や Mac なら単純に sed で置換します。
  $ sed -ie 's/\"\${ALL_IDL_SRCS}\"/ALL_IDL_SRCS/' idl/CMakeLists.txt
 ```
 
+-------jp page!!-------

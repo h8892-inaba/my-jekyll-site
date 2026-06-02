@@ -2,6 +2,7 @@
 layout: page
 Title: "Windowsへのインストール"
 ---
+-------jp page!!-------
 
 <!-- Title: Windowsへのインストール -->
 <div align="right"><a href="windows10-logo.png"><img src="windows10-logo.png" width="15%; margin:30 30 30 30px;" align="right"></a></div>
@@ -256,3 +257,4 @@ msiファイルが正しくダウンロードされたら、ファイルをダ�
             + VCVerChanger: 使用しているVisual Studioのバージョンを指定するツール
             + WordContrlpy: PythonベースMicrosoft Office Word用RTC
 
+-------jp page!!-------

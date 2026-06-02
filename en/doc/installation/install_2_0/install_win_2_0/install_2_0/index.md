@@ -4,6 +4,7 @@ layout: page
 title: インストール
 
 ---
+-------jp page!!-------
 
 <!-- Title: インストール -->
 #contents
@@ -189,3 +190,4 @@ Microsoft Edge をお使いでダウンロードできない場合は、下記�
 <br>
 
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: rtsprofileモジュール
 ---
+-------jp page!!-------
 
 init
 <!-- Title: rtsprofileモジュール -->
@@ -96,3 +97,4 @@ rtsprofile は Python の標準スタイルに従います。[PEP8](http://www.p
 - Preceding Conditions のデフォルトを"SYNC"に変更しました。
 - バグフィクス
 
+-------jp page!!-------

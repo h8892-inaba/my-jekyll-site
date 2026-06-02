@@ -2,6 +2,7 @@
 layout: page
 title: Windows へのインストール
 ---
+-------jp page!!-------
 
 init
 <!-- Title: Windows へのインストール -->
@@ -184,3 +185,4 @@ OpenRTM-aist-Java-1.1.2の動作には JDK8 を推奨しています。<br>
             + rtc-template: 
 
 ```
+-------jp page!!-------

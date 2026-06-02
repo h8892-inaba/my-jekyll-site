@@ -2,6 +2,11 @@
 layout: page
 title: 大阪工業大学RTミドルウェア講習会（９月１９日）
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="oit_logo.png" width="50%;" align="center"></div>
 
@@ -133,3 +138,4 @@ $ sudo dpkg -i imageprocessing-1.1.0.deb
 
 <div align="center"><a href="150919-05.jpg"><img src="150919-05.jpg" width="60%;"></a></div>
 <br>
+<!-- -------jp page!!------- -->

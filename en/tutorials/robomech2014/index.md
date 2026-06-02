@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMECH2014講習会(2014年5月25日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="robomech2014.jpg" width="100%;" ></div>
 
@@ -248,3 +253,4 @@ title: ROBOMECH2014講習会(2014年5月25日)
 
 &aname(comment);
 <!-- ** 参加申込 -->
+<!-- -------jp page!!------- -->

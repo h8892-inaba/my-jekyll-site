@@ -2,6 +2,7 @@
 layout: page
 title: "rtc.conf設定項目一覧"
 ---
+-------jp page!!-------
 
 #contents(3)
 
@@ -1304,3 +1305,4 @@ InPort、OutPortのリングバッファの読み込み時のポリシーを指�
 
 
 
+-------jp page!!-------

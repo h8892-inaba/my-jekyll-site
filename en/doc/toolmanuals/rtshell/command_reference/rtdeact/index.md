@@ -2,6 +2,7 @@
 layout: page
 title: rtdeact
 ---
+-------jp page!!-------
 
 <!-- Title: rtdeact -->
 
@@ -92,3 +93,4 @@ RTコンポーネントのポートを示す場合、パスの後にコロン（
 ```
 
 
+-------jp page!!-------

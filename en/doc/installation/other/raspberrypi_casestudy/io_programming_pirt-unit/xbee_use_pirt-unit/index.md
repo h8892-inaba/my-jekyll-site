@@ -2,6 +2,7 @@
 layout: page
 title: PiRT-UnitによるXBeeモジュールの利用
 ---
+-------jp page!!-------
 
 <!-- Title: PiRT-UnitによるXBeeモジュールの利用 -->
 #contents
@@ -173,3 +174,4 @@ X-CTUの**「Modem Configuration」**タブをクリックし、下の**Modem Pa
 1. ファームウエアの書き込みが始まる
 
 
+-------jp page!!-------

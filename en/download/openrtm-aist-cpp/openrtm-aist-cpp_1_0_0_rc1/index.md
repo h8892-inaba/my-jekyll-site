@@ -3,6 +3,8 @@ layout: page
 title: OpenRTM-aist-1.0.0-RC1
 ---
 
+No English version available.
+
 <!-- Title: OpenRTM-aist-1.0.0-RC1  -->
 <div align="left"><a href="cpp_logo.png"><img src="cpp_logo.png" width="15%;" align="right"></a></div>
 #contents

@@ -2,6 +2,7 @@
 layout: page
 title: rtinject
 ---
+-------jp page!!-------
 <!-- Tilte: rtinject -->
 
 ## 書式
@@ -140,3 +141,4 @@ RTコンポーネントのポートを示す場合、パスの後にコロン（
 ```
 
 
+-------jp page!!-------

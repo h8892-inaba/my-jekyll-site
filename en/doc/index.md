@@ -2,6 +2,7 @@
 layout: page
 title: "Documentation"
 ---
+-------jp page!!-------
 
 OpenRTM-aistはロボットシステムをコンポーネント指向開発するためのソフトウエアプラットフォームです。
 
@@ -30,3 +31,4 @@ OpenRTM-aistはロボットシステムをコンポーネント指向開発す�
   - [JDK8のインストール](./appendix/jdk8installation)
   - [OpenRTM-aist1.2系のインストール(Windows、MSIインストーラー使用)](./appendix/openrtm-aist_1_2_windows_msi)
   - [一括インストールスクリプト](./appendix/bulk_installation_script)
+-------jp page!!-------

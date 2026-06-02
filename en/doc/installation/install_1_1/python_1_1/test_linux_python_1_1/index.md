@@ -2,6 +2,7 @@
 layout: page
 title: 動作確認 (Linux編)
 ---
+-------jp page!!-------
 
 <!-- Title: 動作確認 (Linux編) -->
 #contents
@@ -188,3 +189,4 @@ ConsoleInComp 側のターミナルに数字を打ち込むと、ConsoleOutComp 
 以上で、OpenRTM-aist-Python が正しくインストールされていることが確認できました。
 
 
+-------jp page!!-------

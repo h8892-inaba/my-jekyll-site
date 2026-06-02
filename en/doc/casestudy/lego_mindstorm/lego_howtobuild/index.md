@@ -2,6 +2,7 @@
 layout: page
 title: 組み立て方
 ---
+-------jp page!!-------
 
 <!-- Title: 組み立て方 -->
 #contents
@@ -367,3 +368,4 @@ Educator Vehicle の説明書のタッチセンサーを取り付ける章(61ペ
 <br>
 <br>
 
+-------jp page!!-------

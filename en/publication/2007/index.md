@@ -1,9 +1,9 @@
 ---
 layout: page
-title: 論文 (2007年)
+title: Paper(2007)
 ---
 
-## 国内学会 
+## Domestic Conference
 1. 原 佑輔, 高橋 新吾, 國井 康晴, 安藤 慶昭, "RTミドルウエアを利用したモジュールの階層化構成による遠隔移動ロボットのシステム検討及び開発", 第12回 ロボティクスシンポジア, pp.498-503, 2007.03
 1. 土屋 裕, 水川 真, 末廣 尚士, 安藤 慶昭, 中本 啓之, 池添 明宏, "RTミドルウエアを用いた分散制御型ロボットの開発", 第12回 ロボティクスシンポジア, pp.504-509, 2007.03
 1. 尹 祐根, 安藤 慶昭, 末廣 尚士, 北垣 高成, 神徳 徹雄, "OpenRTM aist による実時間制御を考慮したRTコンポーネント", 日本機械学会 ロボティクス・メカトロニクス講演会2007, p.1P1-A01, 2007.05, 秋田県, 秋田市 [[PDF](ROBOMEC07_Yoon_1P1-A01.pdf)]
@@ -24,15 +24,14 @@ title: 論文 (2007年)
 1. 神徳 徹雄, 比留川博久, 中岡 慎一郎, 末廣 尚士, 安藤 慶昭, 中村 仁彦, 山根 克, 斎藤 元, 川角 祐一郎, "分散コンポーネント型ロボットシミュレータOpenHRP3 ", 計測自動制御学会 システムインテグレーション部門 講演会 2007 (SI2007), p.3A1-2, 2007.12 [[PDF](SI2007_Kotoku_3A1_2.pdf)]
 1. 安藤 慶昭, 清水 昌幸, 尹 祐根, 神徳 徹雄, 安藤 慶昭, "RTコンポーネントの多様な実行を実現する実行コンテキストの拡張", 計測自動制御学会 システムインテグレーション部門 講演会 2007 (SI2007), p.3A1-5, 2007.12 [[PDF](SI2007_Ando_3A1_5.pdf)]
 
-## 論文公開規定について 
-本ページでは、各学会の論文公開規定に従って可能な限り論文原稿の公開を行っております。
+## About the Paper Publication Policy
 
-- [ロボット学会](http://www.rsj.or.jp/data_rules/L-02.pdf)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [日本機械学会](http://www.jsme.or.jp/conrule.htm)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [計測自動制御学会](http://www.sice.jp/)
-  - 転載（使用）許諾願をSICE事務局へ提出し許諾を受ければ可能。[[転載許可証](tensai_kyoka_201311.pdf)]
+On this page, we publish paper manuscripts as much as possible in accordance with the publication policies of each academic society.
 
-
+- [Robotics Society of Japan](http://www.rsj.or.jp/data_rules/L-02.pdf)
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
+- [Japan Society of Mechanical Engineers](http://www.jsme.or.jp/conrule.htm)
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
+- [The Society of Instrument and Control Engineers](http://www.sice.jp/)
+ - Publication is possible if a reprint (reuse) permission request is submitted to the SICE office and approval is obtained. [Reprint Permission Certificate](tensai_kyoka_201311.pdf)
 

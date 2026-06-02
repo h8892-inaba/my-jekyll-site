@@ -3,28 +3,25 @@ layout: page
 title: OpenRTM-aist-Python 1.2.2-RELEASE
 ---
 
-<!-- Title: OpenRTM-aist-Python 1.2.2-RELEASE -->
+<!-- Title: OpenRTM-aist-Python 1.2.1-RELEASE -->
 <div align="right"><a href="python-logo.png"><img src="python-logo.png" width="15%;" align="right"></a></div>
 #contents(4)
-<br>
-<br>
-<br>
 
 <br>
-インストール手順については以下のページを参照してください。
+(G) Please refer to the following page for the installation procedure.
 
-- [OpenRTM-aist(Python)1.2系のインストール](/ja/node/6601)
+- [OpenRTM-aist (Python) 1.2 installation](/ja/node/6601)
 
-## パッケージ
-### Windowsインストーラー
-msiファイルは800MBのサイズがあります。ダウンロードを数分で行うためにはある程度高速な回線(50Mbps以上)を用いてください。
+## Package
+### Windows Installer
+The msi file is 800MB in size. Use a high-speed line (50Mbps or more) to download in minutes.
 
-#### 64bit用
+#### For 64bit
 
 <table class="table-alt">
   <tr>
-    <td>Windows用インストーラー<br> (OpenRTM-aist、C++、Python、<br>Java版、および OpenRTP、<br> rtshell(4.2.2)含む)<br>(Visual Studio 2012、2013、<br> 2015、2017、2019 共通)</td>
-    <td><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi">OpenRTM-aist-1.2.2-RELEASE_x86_64.msi</a> <br>MD5:3275df2f82252e6c6a33249ce2170563</td>
+    <td>Windows Installer <br> (including OpenRTM-aist, C++, Python, <br> Java version and OpenRTP, <br> rtshell (4.2.2)) <br> (Visual Studio 2012, 2013, <br> 2015, 2017, 2019)</td>
+    <td><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi">OpenRTM-aist-1.2.2-RELEASE_x86_64.msi</a> <br> MD5:3275df2f82252e6c6a33249ce2170563</td>
     <td>2020/08/26</td>
   </tr>
   <tr>
@@ -54,15 +51,15 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
   </tr>
 </table>
 
-- <span style="color:red;">※Pythonは、"3.8"、"3.7"、"3.6"のいずれかのバージョンをインストールしてください。</span>;
-<!-- -&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiファイルを用いてインストールしている場合は対応不要です。}; -->
-- Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[doxygen](http://www.doxygen.nl/index.html)のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
+- <span style="color:red;">* Install Python version "3.8", "3.7", or "3.6". </span>;
+- The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [[doxygen: http: //www.doxygen.nl/index.html]] and download and install the latest "doxygen-X.X.X-setup.exe".
 
-#### 32bit用
+
+#### For 32bit
 
 <table class="table-alt">
   <tr>
-    <td>Windows用インストーラー<br> (OpenRTM-aist、C++、Python、<br>Java版、およびOpenRTP、<br>rtshell(4.2.2)含む)<br>(Visual Studio 2012、2013、<br>2015、2017、2019共通)</td>
+    <td>Installer for Windows<br> (OpenRTM-aist、C++、Python、<br>Java version, and OpenRTP、<br>including rtshell(4.2.2))<br>(Visual Studio 2012、2013、<br>2015、2017、2019)</td>
     <td><a href="https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86.msi">OpenRTM-aist-1.2.2-RELEASE_x86.msi</a> <br>MD5:5e3f29853dedf0bf5af69675657a5c04</td>
     <td>2020/08/26</td>
   </tr>
@@ -93,95 +90,92 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
   </tr>
 </table>
 
-- <span style="color:red;">※Pythonは、"3.8"、"3.7"、"3.6"のいずれかのバージョンをインストールしてください。</span>;
-<!-- -&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiファイルを用いてインストールしている場合は対応不要です。}; -->
-- Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[doxygen](http://www.doxygen.nl/index.html)のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
-
-インストールについては、[OpenRTM-aistを10分で始めよう！](/ja/doc/installation/lets_start)のページで手順を紹介しています。<br>
+- <span style="color:red;">* Install Python version "3.8", "3.7" or "3.6". </span>;
+- The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [[doxygen: http: //www.doxygen.nl/index.html]] and download and install the latest "doxygen-X.X.X-setup.exe".
 
 
-<br>
-### Linuxパッケージ
+For installation, [Start OpenRTM-aist in 10 minutes!](/ja/doc/installation/lets_start) page for instructions. 
 
-<!-- Linuxパッケージは順次提供される予定です。ソースからのビルドの仕方は以下を参考にしてください。 -->
+### Linux package
+<!-- Linux packages will be provided sequentially. Please refer to the following for how to build from source. -->
 
-現在のところ、以下のディストリビューション・バージョンでパッケージを提供しています。<br>
-以下で配布しているインストールスクリプトを利用すれば、必要なパッケージを一括でインストールできます。
+We currently offer packages in the following distribution versions. You can use the installation script distributed below to install the required packages at once.
 
 
 <table class="table-alt">
   <tr>
-    <th>ディストリビューション・バージョン</th>
-    <th>一括インストールスクリプト (右クリックでURLを入手)</th>
+    <th>Distribution version</th>
+    <th>Bulk installation script (right click to get URL)</th>
   </tr>
   <tr>
-    <td>Ubuntu 16.04 (xenial) i386/amd64 <br> Ubuntu 18.04 (bionic) amd64 <br> Ubuntu 20.04 (focal) amd64 <br></td>
-    <td><a href="https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh">pkg_install_ubuntu.sh </a></td>
+    <td>Ubuntu 16.04 (xenial) i386 / amd64 <br> Ubuntu 18.04 (bionic) amd64 <br> Ubuntu 20.04 (focal) amd64 <br></td>
+    <td><a href="https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh">pkg_install_ubuntu.sh</a></td>
   </tr>
   <tr>
     <td>Raspbian Buster armhf</td>
     <td><a href="https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_raspbian.sh">pkg_install_raspbian.sh</a></td>
   </tr>
 </table>
-<!-- | Debian  8.0  (jessie) i386/amd64 &br; Debian  9.0  (stretch) i386/amd64| [[pkg_install_debian.sh >https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_debian.sh]] | -->
-<!-- | Fedora 27 i686/x86_64 &br; Fedora 28 i686/x86_64 &br; Fedora 29 i686/x86_64| [[pkg_install_fedora.sh >https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_fedora.sh]] | -->
+<!-- | Debian 8.0 (jessie) i386 / amd64 &br; Debian 9.0 (stretch) i386 / amd64 | [(pkg_install_debian.sh>https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_debian.sh]] | -->
+<!-- | Fedora 27 i686 / x86_64 &br; Fedora 28 i686 / x86_64 &br; Fedora 29 i686 / x86_64 | [(pkg_install_fedora.sh>https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_fedora.sh]] | -->
 
-<!-- ※Fedora用一括インストール・スクリプトはOpenRTM-aist 1.2.0版以降対応予定です。 -->
-
-
-
-オプションを指定することで、目的に合わせたパッケージをインストールできるようになりました。<br>
-<span style="color:red;">※古いバージョンである「1.2.1」をインストールすることができます。「1.2.2」から「1.2.1」へのダウングレードもできます。</span>; <br>
-インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト](/ja/node/6345)をご確認ください。
+<!-- * The bulk installation script for Fedora will be compatible with OpenRTM-aist 1.2.0 or later. -->
 
 
-1.2.1-RELEASEを既にインストールしている場合は、以下の手順でPython3用パッケージをインストールして下さい。
 
-Ubuntu/Debianの場合（Ubuntu16.04を除く）
+By specifying options, you can now install packages that meet your needs. <br>
+<span style="color:red;">※You can install the old version "1.2.1". You can also downgrade from "1.2.2" to "1.2.1".</span>; <br>
+Please refer to [Bulk installation script](/ja/node/6345) for installation method, options and package types.
+
+
+If you have already installed 1.2.1-RELEASE, please install the package for Python3 by the following procedure.
+
+For Ubuntu / Debian (Except Ubuntu 16.04)
 
 ```
  $ sudo apt update
  $ sudo apt install omniidl-python3 openrtm-aist-python3 openrtm-aist-python3-example openrtm-aist-python3-doc
+ 
 ```
-
-Ubuntu16.04の場合
+For Ubuntu 16.04
 
 ```
  $ sudo apt update
  $ sudo apt install omniidl-python3 openrtm-aist-python3 openrtm-aist-python3-example
+ 
 ```
 
-<!-- Fedora　の場合 -->
+<!-- For Fedora -->
 <!--  -->
 <!-- # dnf update -->
 
-ダウンロード方法・インストール方法については、[OpenRTM-aist(Python版)1.2系のインストール](/ja/node/6601)をご覧くだい。
+See [OpenRTM-aist (Python version) 1.2 system installation](/ja/node/6601) for download and installation methods.
 
 &aname(src);
-## ソースコード
+## Source code
 
 <table class="table-alt">
   <tr>
-    <td>Python版ソースコード</td>
-    <td><a href="https://github.com/OpenRTM/OpenRTM-aist-Python/releases/download/v1.2.2/OpenRTM-aist-Python-1.2.2.tar.gz">OpenRTM-aist-Python-1.2.2.tar.gz</a> <br>MD5:d64ba0ba2ba65cf5a1eb60f03394fc29</td>
+    <td>Python version source code</td>
+    <td><a href="https://github.com/OpenRTM/OpenRTM-aist-Python/releases/download/v1.2.2/OpenRTM-aist-Python-1.2.2.tar.gz">OpenRTM-aist-Python-1.2.2.tar.gz</a> <br> MD5: d64ba0ba2ba65cf5a1eb60f03394fc29</td>
     <td>2020/08/26</td>
   </tr>
   <tr>
-    <td>Python版ソースコード(Win32)</td>
-    <td><a href="https://github.com/OpenRTM/OpenRTM-aist-Python/releases/download/v1.2.2/OpenRTM-aist-Python-1.2.2.zip">OpenRTM-aist-Python-1.2.2.zip</a> <br>MD5:b36f289bdf8933978316090bd2729931</td>
+    <td>Python source code (Win32)</td>
+    <td><a href="https://github.com/OpenRTM/OpenRTM-aist-Python/releases/download/v1.2.2/OpenRTM-aist-Python-1.2.2.zip">OpenRTM-aist-Python-1.2.2.zip</a> <br> MD5: b36f289bdf8933978316090bd2729931</td>
     <td>2020/08/26</td>
   </tr>
 </table>
 
 
-### ソースからのビルド
+### Build from source
 
-ソースからビルドする方法については、[ソースからのビルド(Windows編)](/ja/node/6618)または[ソースからのビルド(Linux編)](/ja/node/6651)をご覧くだい。
+For details on how to build from source, see [Building from source (Windows)](/ja/node/6618) or [Building from source (Linux)](/ja/node/6651) .
 
-### deb/rpmパッケージ作成
+### Create deb / rpm package
 
-1.1から上記のソースコードからのUbuntu、Debian用debパッケージ、Fedora用rpmパッケージの作成が正式にサポートされました。<br>
-以下の手順でパッケージを作成できます。パッケージ作成に当たっては、一括インストールスクリプト（pkg_install_***.sh）を利用して必要なパッケージをあらかじめインストールしておいてください。
+From 1.1, the creation of deb packages for Ubuntu and Debian and rpm packages for Fedora from the above source code is officially supported. <br>
+You can create a package by following the steps below. When creating a package, use the Bulk installation script (pkg_install_***.sh) to install the necessary packages in advance.
 
 ```
  $ tar xvzf OpenRTM-aist-Python-1.2.2.tar.gz
@@ -189,31 +183,21 @@ Ubuntu16.04の場合
  $ make
 ```
 
-パッケージはpacakgesディレクトリ内に作成されます。
+Packages are created in the pacakges directory.
 
-<span style="color:red;">※UbuntuやDebianにてdebパッケージを作成する場合は"dpkg-dev build-essential debhelper devscripts"、Fedoraにてrpmパッケージを作成する場合は"rpm-build createrepo"といったツールをあらかじめインストールしておく必要があります。</span>;
-これらは、[一括インストール・スクリプト](/ja/node/6345)を-cオプションで実行すればインストールされます。
+<span style="color:red;">* Install tools such as "dpkg-dev build-essential debhelper devscripts" when creating deb packages on Ubuntu and Debian, and "rpm-build createrepo" before creating rpm packages on Fedora. Must be kept. </span>;
+These can be installed by executing [Bulk nstallation script](/ja/node/6345) with the -c option.
 
-<!-- &br; -->
-<!-- ***MacPorts -->
-<!-- MacPorts 用 Portfile が利用可能です。あらかじめXcodeおよび MacPorts をインストールした上でご利用ください。 -->
-<!-- - [[Portfile (ports.tgz) :http://www.openrtm.org/pub/MacOSX/macports/ports.tgz]] -->
-<!-- - [[インストールスクリプト (port_install.sh) :http://www.openrtm.org/pub/MacOSX/macports/port_install.sh]]: ports.tgz のダウンロード、OpenRTM-aist のビルド・インストールまで自動で行います。 -->
 
-<!-- ** ツール -->
+## Release notes
+OpenRTM-aist Official Website can use source code, Windows installer, Linux package, etc. in dual license system which can be selected from LGPL license or individual contract with AIST.
 
-<!-- インストーラーのオプションで OpenRTP を選択していれば、インストールする必要はありません。 -->
-<!-- ツールを別途インストールする方法については、　[[OpenRTP 1.1.0-RC5:/ja/node/5778]] をご覧ください。 -->
+- [1.2.2-RELEASE](https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v1.2.2)
 
-<br>
-## リリースノート
-OpenRTM-aist Official Websiteからソースコード、Windowsインストーラー、Linux用パッケージなどがLGPLライセンスもしくは産総研との個別契約のうち一つから選択するデュアルライセンス方式で利用可能です。
-
-- [1.2.2-RELEASE ](https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v1.2.2)
-
-### 対応(ビルド検証済)OS
-- Ubuntu 16.04 i386、amd64
+### Supported (build verified) OS
+- Ubuntu 16.04 i386, amd64
 - Ubuntu 18.04 amd64
 - Ubuntu 20.04 amd64
 - Raspian Buster armhf
-- Windows 10 (32/64bit)
+- Windows 10 (32 / 64bit)
+

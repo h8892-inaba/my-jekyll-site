@@ -2,6 +2,7 @@
 layout: page
 title: Raspbianへのインストール
 ---
+-------jp page!!-------
 <!-- node/6924-->
 <!-- Title: Raspbianへのインストール -->
 
@@ -234,3 +235,4 @@ rtshellのインストールも確認します。
 
 
 
+-------jp page!!-------

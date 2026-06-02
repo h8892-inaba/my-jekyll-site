@@ -2,6 +2,7 @@
 layout: page
 title: CPack を使ったパッケージ作成（Windows/Linux での共通設定）
 ---
+-------jp page!!-------
 
 <!-- Title: CPack を使ったパッケージ作成（Windows/Linux での共通設定） -->
 #contents(4)
@@ -145,3 +146,4 @@ Linux 環境でパッケージを作成すると、インストール先は以�
 <br>
 
 <div align="center"><a href="Maintener_1-1.png"><img src="Maintener_1-1.png" width="40%;"></a></div>
+-------jp page!!-------

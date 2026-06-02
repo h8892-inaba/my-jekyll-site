@@ -2,6 +2,7 @@
 layout: page
 title: NXT RTC 動作確認
 ---
+-------jp page!!-------
 
 <!-- Title: NXT RTC 動作確認 -->
 #contents
@@ -86,3 +87,4 @@ RtcLink.png
 <!-- 上記のように、Pythonで作っても、もちろんC++やJavaで作っても構いません。 -->
 <!-- どういった言語で作ったコンポーネントとも、このNXT RTCは接続することができます。 -->
 
+-------jp page!!-------

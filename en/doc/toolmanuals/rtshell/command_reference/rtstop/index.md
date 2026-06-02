@@ -2,6 +2,7 @@
 layout: page
 title: rtstop
 ---
+-------jp page!!-------
 <!-- Title: rtstop -->
 
 ## 書式H
@@ -64,3 +65,4 @@ $ rtstop sys.rtsys --dry-run
 sys.rtsysというファイルの情報を元にRTシステムの停止処理をする場合、どのような処理がなされるかを表示します。(実際には停止処理は行われません。)
 
 
+-------jp page!!-------

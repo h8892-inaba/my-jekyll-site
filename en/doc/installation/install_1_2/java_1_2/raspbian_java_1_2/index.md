@@ -2,6 +2,7 @@
 layout: page
 title: Raspbianへのインストール
 ---
+-------jp page!!-------
 
 <!-- Title: Raspbianへのインストール -->
 
@@ -453,3 +454,4 @@ openrtm-aist-java-doc には、日本語と英語のクラスリファレンス�
 ```
 
 
+-------jp page!!-------

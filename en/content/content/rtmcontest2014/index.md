@@ -3,6 +3,8 @@ layout: page
 title: RTミドルウエアコンテスト2014
 ---
 
+No English version available.
+
 <div align="left"><img src="rtmcontest2014.png" width="80%;" align="center"></a></div>
 
 <br>

@@ -2,6 +2,7 @@
 layout: page
 title: RTミドルウェアコンテスト2017
 ---
+No English version available.
 
 
 <div align="left"><img src="contest2017.png" width="60%;" align="center"></div>

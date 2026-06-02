@@ -2,6 +2,11 @@
 layout: page
 title: 長野県組込みシステムコンソーシアム(2010年7月15日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 init
 #contents
@@ -47,3 +52,4 @@ init
 
 <br>
 
+<!-- -------jp page!!------- -->

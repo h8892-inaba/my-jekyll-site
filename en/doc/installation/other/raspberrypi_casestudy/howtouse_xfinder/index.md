@@ -2,6 +2,7 @@
 layout: page
 title: xfinderの利用方法
 ---
+-------jp page!!-------
 
 <!-- Title: xfinderの利用方法 -->
 #contents(4)
@@ -164,3 +165,4 @@ Raspberry Pi や BeagleBone 以外のボードを探す場合、ここに探し�
 
 
 
+-------jp page!!-------

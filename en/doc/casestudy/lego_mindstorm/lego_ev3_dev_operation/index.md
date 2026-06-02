@@ -2,6 +2,7 @@
 layout: page
 title: EV3デバイスの操作方法について
 ---
+-------jp page!!-------
 
 <!-- Title: EV3デバイスの操作方法について -->
 #contents
@@ -199,3 +200,4 @@ ev3dev-lang-python を利用して記述すると以下のようになります�
 ```
 
 
+-------jp page!!-------

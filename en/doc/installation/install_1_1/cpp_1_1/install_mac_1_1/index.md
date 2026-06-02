@@ -2,6 +2,7 @@
 layout: page
 title: Mac OS X への MacPorts によるインストール
 ---
+-------jp page!!-------
 
 <!-- Title: Mac OS X への MacPorts によるインストール -->
 <div align="right"><a href="osx_logo2.png"><img src="osx_logo2.png" width="15%;" align="right"></a></div>
@@ -120,3 +121,4 @@ ports は、依存関係を自動的に解決し、ビルドに必要なパッ�
 MacPorts では、port コマンドでインストールするよう指定されたパッケージを、設定ファイル sources.conf に記載されている特定の場所以下から探し出して、Porrtfile に従いソースをダウンロードしビルドを行います。
 
 
+-------jp page!!-------

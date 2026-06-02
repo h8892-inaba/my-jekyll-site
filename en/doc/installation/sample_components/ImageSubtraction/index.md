@@ -2,6 +2,7 @@
 layout: page
 title: "ImageSubtraction"
 ---
+-------jp page!!-------
 
 <!-- Title: ImageSubtraction -->
 
@@ -95,3 +96,4 @@ ImageSubtractionは、入力画像から背景画像を取り出すためのコ�
   </tr>
 </table>
 
+-------jp page!!-------

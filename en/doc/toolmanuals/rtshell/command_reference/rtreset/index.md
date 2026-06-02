@@ -2,6 +2,7 @@
 layout: page
 title: rtreset
 ---
+-------jp page!!-------
 
 <!-- Title: rtreset -->
 
@@ -94,3 +95,4 @@ RTコンポーネントのポートを示す場合、パスの後にコロン(�
  $ rtreset -e 2 /localhost/local.host_cxt/Motor0.rtc
 ```
 
+-------jp page!!-------

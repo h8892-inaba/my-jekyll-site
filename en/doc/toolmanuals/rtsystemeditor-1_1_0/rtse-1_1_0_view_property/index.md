@@ -2,6 +2,7 @@
 layout: page
 title: ビュー（プロパティビュー編）
 ---
+-------jp page!!-------
 
 <!-- Title: ビュー（プロパティビュー編） -->
 <!-- #contents -->
@@ -175,3 +176,4 @@ title: ビュー（プロパティビュー編）
 なお、RTC の仕様では、RTC  のLifeCycleState は ExecutionContext ごとに存在します。したがって、状態は複数存在しますが、RT System Editorでは1番目の ExecutionContext のみを使用して STATE を 表示します。
 <br>
 
+-------jp page!!-------

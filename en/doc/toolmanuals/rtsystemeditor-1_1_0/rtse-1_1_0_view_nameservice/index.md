@@ -2,6 +2,7 @@
 layout: page
 title: ビュー（ネームサービスビュー編）
 ---
+-------jp page!!-------
 
 <!-- Title: ビュー（ネームサービスビュー編） -->
 #contents
@@ -290,3 +291,4 @@ OpenRTM-aist では RTC を管理・公開するためにネームサービス�
 <div align="center"><strong>ゾンビをクリア</strong></div>
 <br>
 
+-------jp page!!-------

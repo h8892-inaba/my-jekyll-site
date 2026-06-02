@@ -2,6 +2,7 @@
 layout: page
 title: Raspberry Pi の初期設定
 ---
+-------jp page!!-------
 
 <!-- Title: Raspberry Pi の初期設定 -->
 <!-- -*- pukiwiki-edit -*- -->
@@ -336,3 +337,4 @@ TeraTerm をインストール後、起動すると接続ダイアログが現�
 
 のようにして接続します。
 
+-------jp page!!-------

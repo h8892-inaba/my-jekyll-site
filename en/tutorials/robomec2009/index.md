@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMEC09講習会(2009年5月24日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -101,3 +106,4 @@ title: ROBOMEC09講習会(2009年5月24日)
 <div align="center"><a href="090524-04.png"><img src="090524-04.png" width="60%;"></a></div>
 <br>
 
+<!-- -------jp page!!------- -->

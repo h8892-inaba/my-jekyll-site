@@ -2,6 +2,11 @@
 layout: page
 title: iREX2019 （国際ロボット展） RTM講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <!-- #ref(robomech2019_title.png,left,60%,margin=10,url=/ja/tutorial/robomech2019) -->
 
@@ -259,3 +264,4 @@ Ubuntu 18.04、18.10の場合は以下のコマンドでjava8に切り替えま�
 <div align="center"><a href="191218_15.jpg"><img src="191218_15.jpg" width="50%;"></a></div>
 <br>
 
+<!-- -------jp page!!------- -->

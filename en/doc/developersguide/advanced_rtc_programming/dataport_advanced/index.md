@@ -2,6 +2,7 @@
 layout: page
 title: "データポート (応用編)"
 ---
+-------jp page!!-------
 
 <!-- Title: データポート (応用編) -->
 <!-- -*- pukiwiki-edit -*- -->
@@ -1145,3 +1146,4 @@ InPortTestInterface.dll が、RTC を実行するディレクトリーと異な�
 7. ポート接続時にInterface Typeに「test」を指定する。<br>
 RTSystemEditor上から Interface Type を指定できます。
 
+-------jp page!!-------

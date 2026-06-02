@@ -2,6 +2,7 @@
 layout: page
 title: "ライセンス"
 ---
+-------jp page!!-------
 
 <!-- Title: ライセンス -->
 
@@ -61,3 +62,4 @@ OpenRTM-aistを改編、再配布する場合、産総研の知的財産部門�
 RtcLink、RtcTemplate(RTSystemEditor、RTCBuilderの以前のバージョン)およびOpenRTM-aist(Java版)については、ソースコードの開示および実施(製品への利用)について個別契約によるライセンス提供の実績があります。
 
 
+-------jp page!!-------

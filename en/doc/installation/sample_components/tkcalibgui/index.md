@@ -2,6 +2,7 @@
 layout: page
 title: "TkCalibGUI"
 ---
+-------jp page!!-------
 
 <!-- Title: TkCalibGUI -->
 
@@ -153,3 +154,4 @@ Windows 10のVC2019の環境ではOpenCVCameraCompとMFCameraCompが選択可能
 
 
 
+-------jp page!!-------

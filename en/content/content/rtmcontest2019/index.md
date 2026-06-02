@@ -2,7 +2,7 @@
 layout: page
 title: RTミドルウェアコンテスト2019
 ---
-
+No English version available.
 <div align="left"><img src="contest2019_title.png" width="80%;" align="center"></div>
 
 <br>

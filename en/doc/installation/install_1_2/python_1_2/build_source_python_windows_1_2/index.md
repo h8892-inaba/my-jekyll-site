@@ -2,6 +2,7 @@
 layout: page
 title: ソースからのビルド(Windows編)
 ---
+-------jp page!!-------
 
 <!-- Title: ソースからのビルド(Windows編) -->
 #contents
@@ -109,3 +110,4 @@ omniORB 4.2.3を64bitのPython 3.7の環境で使用する場合、omniORB-4.2.3
 
 
 
+-------jp page!!-------

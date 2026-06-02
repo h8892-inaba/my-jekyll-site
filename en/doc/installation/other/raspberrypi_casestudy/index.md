@@ -2,6 +2,7 @@
 layout: page
 title: Raspberry PiでのOpenRTM-aist活用事例
 ---
+-------jp page!!-------
 
 <!-- Title: Raspberry PiでのOpenRTM-aist活用事例 -->
 <div align="right"><a href="Raspberry_Pi_Logo.svg_.png"><img src="Raspberry_Pi_Logo.svg_.png" width="5%; margin:10px;" align="right"></a></div>
@@ -143,3 +144,4 @@ OpenRTM-aist(C++、Python、Java)もボード上でコンパイル・実行可�
 - [Kobukiにロボットアームを搭載する手順](./adding_robotarm_kobuki)
 - [付録](./appendix)
 
+-------jp page!!-------

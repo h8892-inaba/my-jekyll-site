@@ -1,9 +1,9 @@
 ---
 layout: page
-title: 論文 (2013年)
+title: Paper (2013)
 ---
 
-## 論文誌
+## Journal
 
 ### 解説記事
 1. 神徳 徹雄, 安藤 慶昭, 山下 智輝, "RTミドルウエアコンテストの狙い", 計測と制御, Vol.52, No.9, pp.772-777, 2013.09, ISSN 0453-4662 [[PDF](KeisokutoSeigyo_Vol52Nop09-02_Contest.pdf)]
@@ -14,7 +14,7 @@ title: 論文 (2013年)
 <!-- ** 国際学会 -->
 
 
-## 国内学会
+## Domestic Conference
 1. 関山 守, 鍛冶 良作, 安藤 慶昭, 村上 青児, 梶谷 勇, 阪口 健, 神徳 徹雄, 谷川 民生, "RTルームデモシステムにおけるRaspberryPiの連続運用のための予備評価", 第31回 日本ロボット学会学術講演会予稿集, p.2J1-01 
 , 2013.09, 首都大学東京, 南大沢キャンパス [[PDF](2J1-01_RTRoom_Sekiyama.pdf)]
 1. 村上 青児, 安藤 慶昭, 関山 守, 村上 青児, 鍛冶 良作, 谷川 民生, 神徳 徹雄, "組込み用Linuxボード，BeagleBone Blackにおける RTミドルウェアの動作と開発支援ツール", 第31回 日本ロボット学会学術講演会予稿集, p.2J1-02, 2013.09, 首都大学東京, 南大沢キャンパス [[PDF](2J1-02_BeagleBone_Murakami.pdf)]
@@ -32,15 +32,14 @@ title: 論文 (2013年)
 <!-- ** 国際学会 -->
 <!-- **受賞 -->
 
+## About the Paper Publication Policy 
 
-## 論文公開規定について 
-本ページでは、各学会の論文公開規定に従って可能な限り論文原稿の公開を行っております。
+On this page, we publish paper manuscripts as much as possible in accordance with the publication policies of each academic society.
 
-- [ロボット学会](http://www.rsj.or.jp/data_rules/L-02.pdf)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [日本機械学会](http://www.jsme.or.jp/conrule.htm)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [計測自動制御学会](http://www.sice.jp/)
-  - 転載（使用）許諾願をSICE事務局へ提出し許諾を受ければ可能。[[PDF](tensai_kyoka_201312_SI2013.pdf)]
-
+- [Robotics Society of Japan](http://www.rsj.or.jp/data_rules/L-02.pdf) 
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page. 
+- [Japan Society of Mechanical Engineers](http://www.jsme.or.jp/conrule.htm)
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
+- [The Society of Instrument and Control Engineers](http://www.sice.jp/)
+ - Publication is possible if a reprint (reuse) permission request is submitted to the SICE office and approval is obtained. [Reprint Permission Certificate](tensai_kyoka_201311.pdf)
 

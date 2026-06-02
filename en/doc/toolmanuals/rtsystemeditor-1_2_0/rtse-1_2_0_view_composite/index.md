@@ -2,6 +2,7 @@
 layout: page
 title: ビュー（複合コンポーネントビュー編）
 ---
+-------jp page!!-------
 <!-- Title: ビュー（複合コンポーネントビュー編） -->
 <!-- #contents -->
 
@@ -73,3 +74,4 @@ title: ビュー（複合コンポーネントビュー編）
 <div align="center"><strong>他のポートと接続中の場合</strong></div>
 <br>
 
+-------jp page!!-------

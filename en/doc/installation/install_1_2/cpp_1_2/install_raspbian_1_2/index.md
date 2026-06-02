@@ -4,6 +4,7 @@ layout: page
 title: Raspbianへのインストール
 
 ---
+-------jp page!!-------
 
 <!-- Titile: Raspbianへのインストール -->
 <div align="right"><a href="Raspberry_Pi_Logo.svg_.png"><img src="Raspberry_Pi_Logo.svg_.png" width="15%; margin:10px;" align="right"></a></div>
@@ -417,3 +418,4 @@ openrtm-aist-docには、日本語と英語のクラスリファレンス、IDL�
 
 
 
+-------jp page!!-------

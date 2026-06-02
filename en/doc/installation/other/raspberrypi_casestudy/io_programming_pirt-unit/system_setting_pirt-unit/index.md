@@ -2,6 +2,7 @@
 layout: page
 title: PiRT-Unitのためのシステム設定
 ---
+-------jp page!!-------
 
 <!-- Title: PiRT-Unitのためのシステム設定 -->
 #contents
@@ -178,3 +179,4 @@ WiringPi-Python は GPIO を制御するツール: WiringPi を Python から利
 ```
 
 以上で、必要なモジュールのインストールは終了です。
+-------jp page!!-------

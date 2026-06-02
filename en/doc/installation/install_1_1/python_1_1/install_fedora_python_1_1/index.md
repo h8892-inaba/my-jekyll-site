@@ -2,6 +2,7 @@
 layout: page
 title: Fedoraへのインストール
 ---
+-------jp page!!-------
 
 <!-- Title: Fedoraへのインストール -->
 #contents
@@ -133,3 +134,4 @@ OpenRTM-aist-Python-example には RTC のサンプルが含まれています�
 
 
 以上、インストールが終了しましたら、[動作確認](/ja/node/1224)へ進みましょう。
+-------jp page!!-------

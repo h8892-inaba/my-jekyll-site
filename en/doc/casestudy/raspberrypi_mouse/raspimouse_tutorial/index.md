@@ -2,6 +2,7 @@
 layout: page
 title: チュートリアル(Raspberry Pi Mouse)
 ---
+-------jp page!!-------
 
 <!-- Title: チュートリアル(Raspberry Pi Mouse) -->
 #contents
@@ -848,3 +849,4 @@ RTC を終了する場合はRTシステムエディタ上で RTC を [exit] し�
 
 <div align="center"><a href="tutorial_raspimouse16.png"><img src="tutorial_raspimouse16.png" width="70%;"></a></div>
 <br>
+-------jp page!!-------

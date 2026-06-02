@@ -2,6 +2,7 @@
 layout: page
 title: "omniORBのビルド"
 ---
+-------jp page!!-------
 <!-- Title: omniORBのビルド -->
 #contents
 
@@ -153,3 +154,4 @@ omniORB、omniORBpyの動作確認をするためには環境変数**PATH**、**
 
 
 
+-------jp page!!-------

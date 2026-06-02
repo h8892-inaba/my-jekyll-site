@@ -2,6 +2,7 @@
 layout: page
 title: Raspberry Pi Mouse 活用事例
 ---
+-------jp page!!-------
 
 <!-- Title: Raspberry Pi Mouse 活用事例 -->
 <!-- #contents -->
@@ -69,3 +70,4 @@ Raspberry Pi を搭載しているため Linux (Raspbian) 等での開発が可�
 - [シミュレーター利用方法](./raspimouse_simulator_use)
 - [コンパイル方法 (Ubuntu、CMake、Code::Blocks利用)]({{ site.baseurl }}/ja/content/build_ubuntu_codeblocks)
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: "ConfigSample"
 ---
+-------jp page!!-------
 
 <!-- Title: ConfigSample -->
 #contents
@@ -61,3 +62,4 @@ RTSystemEditorのConfigrationViewで選択・設定したConfigrationSetに従�
   - 必要に応じてvalueを変更します。
   - [適用]ボタンをクリックします。
 
+-------jp page!!-------

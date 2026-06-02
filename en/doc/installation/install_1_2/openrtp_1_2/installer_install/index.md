@@ -2,6 +2,7 @@
 layout: page
 title: インストーラによるインストール
 ---
+-------jp page!!-------
 
 <!-- Title: インストーラによるインストール -->
 
@@ -31,3 +32,4 @@ OpenRTPの使用にはJDK8相当のJDKが必要です。インストーラには
 また、OpenRTPのEclipse環境の実行に使われるJDKはOpenRTP GUI (Eclipse GUI)の中で別途設定する必要があります。OpenRTPを起動後、[Window]>[設定]と選択し、開いたダイアログより、[Java]の横の[>]をクリックし[インストール済みのJRE]クリックして設定してください。
 
 
+-------jp page!!-------

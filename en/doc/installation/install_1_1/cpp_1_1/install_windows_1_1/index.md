@@ -2,6 +2,7 @@
 layout: page
 title: Windowsへのインストール
 ---
+-------jp page!!-------
 
 <!-- Title: Windowsへのインストール -->
 
@@ -108,3 +109,4 @@ openrtm.org の[ダウンロードサイト](/ja/node/6034)から、msi パッ�
             + rtc-template:
 ```
 
+-------jp page!!-------

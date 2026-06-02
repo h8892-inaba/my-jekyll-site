@@ -2,6 +2,7 @@
 layout: page
 title: rtshellコマンド・リファレンス
 ---
+-------jp page!!-------
 
 <!-- Title: rtshellコマンド・リファレンス -->
 ## 概要
@@ -256,3 +257,4 @@ RTコンポーネントのポートを示す場合、パスの後にコロン（
 - [rtstodot](./rtstodot)
 - [rtstop](./rtstop)
 - [rtteardown](./rtteardown)
+-------jp page!!-------

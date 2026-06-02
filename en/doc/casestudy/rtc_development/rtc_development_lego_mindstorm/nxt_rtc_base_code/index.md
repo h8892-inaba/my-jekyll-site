@@ -2,6 +2,7 @@
 layout: page
 title: NXTRTC の雛形を生成
 ---
+-------jp page!!-------
 
 <!-- Title: NXTRTC の雛形を生成 -->
 ### NXTRTC の雛形を生成
@@ -63,3 +64,4 @@ rtc-template(gen.bat)の実行
 
 
 
+-------jp page!!-------

@@ -3,6 +3,8 @@ layout: page
 title: RTミドルウェアコンテスト2023
 ---
 
+No English version available.
+
 <!--div align="left"><img src="contest2023.png" width="80%;" align="center"></div-->
 
 <br>

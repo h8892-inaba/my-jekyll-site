@@ -2,6 +2,7 @@
 layout: page
 title: rtteardown
 ---
+-------jp page!!-------
 
 <!-- Title: rtteardown -->
 
@@ -43,3 +44,4 @@ RTSProfileファイルに記述された接続情報を用いて、動作中のR
 
 
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: 動作確認 (Linux編)
 ---
+-------jp page!!-------
 
 <!-- Title: 動作確認 (Linux編) -->
 #contents
@@ -214,3 +215,4 @@ ConsoleInComp と ConsoleOutComp のポートを接続したら、
 ConsoleInComp 側のターミナルに数字を打ち込むと、ConsoleOutComp 側のターミナルに、入力した数値が表示されます。
 以上で、OpenRTM-aist-Java が正しくインストールされていることが確認できました。
 
+-------jp page!!-------

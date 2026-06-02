@@ -1,28 +1,32 @@
 ---
 layout: page
-title: 講習会
+title: Training
 ---
 
-
 <div align="right"><a href="training.png"><img src="training.png" width="15%;" align="right"></a></div>
-OpenRTM-aistを使ってコンポーネントの作り方を習得するための講習会を不定期に行っています。受講者がPCを持参して、カメラやLEGO等をRTコンポーネント化して動かす実習形式の講習会です。出張講習会、出張講演も承っています。ご連絡は[こちら](mailto:n-ando@aist.go.jp)まで。
+We often conduct half- or full-day tutorials on the use of OpenRTM-aist and the RT-Middleware toolchain. Participants learn how to use the tools to construct component-based software using a hands-on approach. Participants work with real hardware, such as cameras and LEGO MindStorms robots. We conduct these tutorials, as well as lectures, at conferences and on invitation to universities, research institutes and companies. For more details, contact [Dr Ando](mailto:n-ando@aist.go.jp).
 
 &aname(training);
 
-## 講習会案内
-
-<!-- 現在のところ以下の講習会が予定されています。 -->
-
-
-
 
 <!-- ''現在のところ予定されている講習会はありません。'' -->
+
+## Upcoming training sessions
+Our next planned tutorial in English is at SICE 2011. See here for details.
+
+## Mailing list
+We make announcements about up-coming tutorials and informational posts about necessary preparations to our mailing list.
+
+## Past training sessions (English)
+- Joint Korea Japan New Zealand Workshop on Robotics (2010/04/13)
+- IROS 2009
+
 
 
 
 &aname(past-training);
 
-## 過去の講習会
+## Past training sessions (Japanese)
 <!-- - [[:/ja/node/]] -->
 - [第57回計測自動制御学会北海道支部学術講演会 特別講演](./sice_hokkaido_2025)
 - [RTミドルウェアサマーキャンプ2025](./summercamp2025)

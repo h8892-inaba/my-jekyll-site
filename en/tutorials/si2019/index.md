@@ -2,6 +2,11 @@
 layout: page
 title: SI2019 RTミドルウエア講習会(2019年12月14日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <!-- #ref(robomech2019_title.png,left,60%,margin=10,url=/ja/tutorial/robomech2019) -->
 
@@ -215,3 +220,4 @@ Ubuntu 18.04、18.10の場合は以下のコマンドでjava8に切り替えま�
 ## 講習会の様子
 <div align="center"><a href="191214_01.JPG"><img src="191214_01.JPG" width="50%;"></a></div>
 <br>
+<!-- -------jp page!!------- -->

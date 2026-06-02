@@ -5,10 +5,9 @@ title: OpenRTM-aist-1.0.0-RELEASE
 
 <!-- Title: OpenRTM-aist-1.0.0-RELEASE -->
 <div align="left"><a href="cpp_logo.png"><img src="cpp_logo.png" width="15%;" align="right"></a></div>
-<br>
-<br>
-<br>
+#clear
 #contents
+#clear
 
 
 
@@ -32,13 +31,11 @@ title: OpenRTM-aist-1.0.0-RELEASE
 </table>
 
 <br>
-
 ## パッケージ
 ### Windowsインストーラ
-
 <table class="table-alt">
   <tr>
-    <th colspan="3">Visual Studio 2008 用</th>
+    <td colspan="3" style="text-align: center;">Visual Studio 2008 用</td>
   </tr>
   <tr>
     <td>Windowsインストーラ</td>
@@ -62,7 +59,7 @@ title: OpenRTM-aist-1.0.0-RELEASE
   </tr>
   <tr>
     <td>CMake用設定ファイル(RTCB1.1以降)</td>
-    <td><div align="center"><a href="rtm_config.cmake">rtm_config.cmake(右クリックで保存)</a></div><br>%RTM_ROOT%\etcにコピーしてご利用ください。</td>
+    <td><div align="center"><a href="rtm_config.cmake);(右クリックで保存"><img src="rtm_config.cmake);(右クリックで保存" width="100;"></a></div><br>%RTM_ROOT%\etcにコピーしてご利用ください。</td>
     <td>2011.05.30</td>
   </tr>
 </table>
@@ -72,7 +69,7 @@ title: OpenRTM-aist-1.0.0-RELEASE
 
 <table class="table-alt">
   <tr>
-    <th colspan="3">Visual Studio 2005 用</th>
+    <td colspan="3" style="text-align: center;">Visual Studio 2005 用</td>
   </tr>
   <tr>
     <td>Windowsインストーラ</td>
@@ -96,7 +93,7 @@ title: OpenRTM-aist-1.0.0-RELEASE
   </tr>
   <tr>
     <td>CMake用設定ファイル(RTCB1.1以降)</td>
-    <td><div align="center"><a href="rtm_config.cmake">rtm_config.cmake(右クリックで保存)</a></div><br>%RTM_ROOT%\etcにコピーしてご利用ください。</td>
+    <td><div align="center"><a href="rtm_config.cmake);(右クリックで保存"><img src="rtm_config.cmake);(右クリックで保存" width="100;"></a></div><br>%RTM_ROOT%\etcにコピーしてご利用ください。</td>
     <td>2011.05.30</td>
   </tr>
 </table>
@@ -110,17 +107,17 @@ title: OpenRTM-aist-1.0.0-RELEASE
 Vine Linux, Fedora, Ubuntu, Debianの各ディストリビューション用のパッケージを www.openrtm.org 上のリポジトリサーバにて配布しています。
 詳細は、以下のドキュメントを参照してください。
 
-- [Vine Linux]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_vine_1_1)
-- [Fedora]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_fedora_1_1)
-- [Debian/Ubuntu]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_ubuntu_1_1)
+- [Vine Linux]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/install_vine_1_1)
+- [Fedora]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/install_fedora_1_1)
+- [Debian/Ubuntu]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/install_ubuntu_1_1)
 
 また、以下で配布しているインストールスクリプトを利用すれば、必要なパッケージを一括でインストールすることができます。
 
 <table class="table-alt">
   <tr>
-    <th>ディストリビューション</th>
-    <th>対応バージョン</th>
-    <th>一括インストールスクリプト</th>
+    <td>ディストリビューション</td>
+    <td>対応バージョン</td>
+    <td>一括インストールスクリプト</td>
   </tr>
   <tr>
     <td>Vine Linux</td>
@@ -233,13 +230,11 @@ OpenRTM-aist Official Website からソースコード、Windowsインストー�
     - Windows-Vista-VC2008-i386
 
 <br>
-
-<!-- 
 ## 過去のバージョン
-- [[1.0.0-RC1>OpenRTM-aist-1.0.0-RC1]]
-- [[0.4.2-RELESE>OpenRTM-aist-0.4.2-RELEASE]]
-- [[0.4.2-RC2>OpenRTM-aist-0.4.2-RC2]]
-- [[0.4.1-RELEASE>OpenRTM-aist-0.4.1-RELEASE]]
-- [[0.4.0-RELEASE>OpenRTM-aist-0.4.0-RELEASE]]
-- [[0.4.0-RC2>OpenRTM-aist-0.4.0-RC2]]
--->
+- 1.0.0-RC1>OpenRTM-aist-1.0.0-RC1
+- 0.4.2-RELESE>OpenRTM-aist-0.4.2-RELEASE
+- 0.4.2-RC2>OpenRTM-aist-0.4.2-RC2
+- 0.4.1-RELEASE>OpenRTM-aist-0.4.1-RELEASE
+- 0.4.0-RELEASE>OpenRTM-aist-0.4.0-RELEASE
+- 0.4.0-RC2>OpenRTM-aist-0.4.0-RC2
+

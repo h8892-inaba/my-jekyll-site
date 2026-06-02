@@ -2,6 +2,7 @@
 layout: page
 title: コンパイル方法 (Windows、CMake 利用、C++ 編 )
 ---
+-------jp page!!-------
 <!-- Title: コンパイル方法 (Windows、CMake 利用、C++ 編 ) -->
 Windows でのビルド方法を説明します。
 
@@ -130,3 +131,4 @@ C:\Program Files\OpenRTM-aist\1.2.0\Components\<言語>\<カテゴリ名>\<パ�
 
 
 
+-------jp page!!-------

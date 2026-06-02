@@ -2,6 +2,7 @@
 layout: page
 title: 自作の RTC で制御
 ---
+-------jp page!!-------
 
 <!-- Title: 自作の RTC で制御 -->
 #contents
@@ -958,3 +959,4 @@ RTCの非アクティブ化はrtstopコマンドを使用します。
 ```
  naming.formats: %n.rtc
 ```
+-------jp page!!-------

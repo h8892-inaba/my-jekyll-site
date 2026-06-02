@@ -2,6 +2,7 @@
 layout: page
 title: "OpenRTM-aistとは？"
 ---
+-------jp page!!-------
 <!-- Title: OpenRTM-aistとは？ -->
 <div align="right"><img src="piping_rtm_logo2.png" width="15%;" align="right"></div>
 
@@ -25,3 +26,4 @@ OpenRTM-aistは、ネットワーク透過性、OSやプログラミング言語
 - [RTシステム開発の流れ]({{ site.baseurl }}/ja/doc/aboutopenrtm/rts_developmentflow/)
 - [研究開発]({{ site.baseurl }}/ja/doc/aboutopenrtm/researchanddevel/)
 
+-------jp page!!-------

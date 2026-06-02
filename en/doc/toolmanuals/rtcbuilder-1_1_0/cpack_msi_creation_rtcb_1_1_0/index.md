@@ -2,6 +2,7 @@
 layout: page
 title: CPack で msi 作成（Windows）
 ---
+-------jp page!!-------
 
 <!-- Title: CPack で msi 作成（Windows） -->
 #contents(4)
@@ -189,3 +190,4 @@ IDL コンパイル実行時にプロジェクトフォルダー内にある idl
  └─RTC__POA ★
        __init__.py ★
 ```
+-------jp page!!-------

@@ -3,6 +3,7 @@ layout: page
 Title: 動作確認 (Windows編) 
 
 ---
+-------jp page!!-------
 
 <!-- Title: 動作確認 (Windows編) -->
 
@@ -265,3 +266,4 @@ batファイルは、スタートメニューの [OpenRTM-aist 2.0.* x86_64] か
 </table>
 
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: OpenRTM-aist (C++版) 1.1系のインストール
 ---
+-------jp page!!-------
 
 <!-- OpenRTM-aist (C++版) 1.1系のインストール -->
 
@@ -25,3 +26,4 @@ C++言語版の OpenRTM-aist は、パッケージやインストーラーが用
 - [システム環境変数設定ツールの使い方]({{ site.baseurl }}/ja/content/vc_version_changer)
 
 
+-------jp page!!-------

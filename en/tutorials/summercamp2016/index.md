@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェアサマーキャンプ2016
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="http://openrtm.org/openrtm/sites/default/files/6048/summercamp2016.png" width="90%;" align="center"></div>
 
@@ -635,3 +640,4 @@ RTMのスペシャリストの方々が何人もサポートについて下さ�
 
 <div align="center"><a href="summercamp2016-10.JPG"><img src="summercamp2016-10.JPG" width="60%;"></a></div>
 <br>
+<!-- -------jp page!!------- -->

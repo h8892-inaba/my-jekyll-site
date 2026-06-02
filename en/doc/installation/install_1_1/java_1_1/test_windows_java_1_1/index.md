@@ -2,6 +2,7 @@
 layout: page
 title: 動作確認 (Windows編)
 ---
+-------jp page!!-------
 
 <!-- Title: 動作確認 (Windows編) -->
 #contents
@@ -229,3 +230,4 @@ OutPort から InPort (または InPort から OutPort) へドラッグランド
 
 <br>
 
+-------jp page!!-------

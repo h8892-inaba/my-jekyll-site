@@ -1,14 +1,14 @@
 ---
 layout: page
-title: 論文 (2017年)
+title: Paper (2017)
 ---
-## 論文誌
+## Journal
 
 1. Ryo Hasegawa, Naofumi Yawata, Noriaki ANDO, Nobuhiko Nishio, Takuya Azumi, "Embedded Component-based Framework for Robot Technology Middleware", Journal of Information Processing, Vol.25, pp.811-819, 2017
 
 <!-- ** 国際学会 -->
 
-## 国内学会
+## Domestic Conference
 
 1. 安藤 慶昭, 宮本 信彦, 髙橋 三郎, ビグズ ジェフ, 花井 亮, 原 功, "FSMコンポーネント実装フレームワークの提案
 ―FSM4RTC 標準に準拠した状態遷移型コンポーネント実装―", 日本機械学会 ロボティクス・メカトロニクス講演会2017, p.2A2-J01, 2017.05, 郡山市
@@ -25,13 +25,14 @@ title: 論文 (2017年)
 
 <!-- ** 特許 -->
 
-## 論文公開規定について 
-本ページでは、各学会の論文公開規定に従って可能な限り論文原稿の公開を行っております。
+## About the Paper Publication Policy 
 
-- [ロボット学会](http://www.rsj.or.jp/data_rules/L-02.pdf)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [日本機械学会](http://www.jsme.or.jp/conrule.htm)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [計測自動制御学会](http://www.sice.jp/)
-  - 転載（使用）許諾願をSICE事務局へ提出し許諾を受ければ可能。[[転載許可証](tensai_kyoka_201312_SI2013.pdf)]
+On this page, we publish paper manuscripts as much as possible in accordance with the publication policies of each academic society.
+
+- [Robotics Society of Japan](http://www.rsj.or.jp/data_rules/L-02.pdf)
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
+- [Japan Society of Mechanical Engineers](http://www.jsme.or.jp/conrule.htm)
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
+- [The Society of Instrument and Control Engineers](http://www.sice.jp/)
+ - Publication is possible if a reprint (reuse) permission request is submitted to the SICE office and approval is obtained. [Reprint Permission Certificate](tensai_kyoka_201311.pdf)
 

@@ -3,6 +3,8 @@ layout: page
 title: 産総研オープンラボ2008
 ---
 
+No English version available.
+
 #contents
 
 
@@ -363,4 +365,3 @@ RTC-CANopenとは、安全バスシステムとして最も使用されている
 <div align="center"><a href="rover_op.png"><img src="rover_op.png" width="60%;"></a></div>
 <div align="center"><strong>惑星探査ローバ遠隔自律システムによるオペレーション</strong></div>
 <br>
-

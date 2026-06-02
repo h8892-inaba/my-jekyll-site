@@ -2,6 +2,7 @@
 layout: page
 title: SDカードの準備
 ---
+-------jp page!!-------
 <!-- Title: SDカードの準備 -->
 <!-- -*- pukiwiki-edit -*- -->
 #contents
@@ -221,3 +222,4 @@ class 6 の SDカードなら 6MB/sec, class 10の SDカードなら 10MB/sec �
 
 
 
+-------jp page!!-------

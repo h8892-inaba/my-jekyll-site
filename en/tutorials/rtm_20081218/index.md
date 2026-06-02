@@ -2,6 +2,11 @@
 layout: page
 title: 東京大学・大学院講義リアルタイムシステム(2008年12月18日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -15,3 +20,4 @@ http://www.isi.imi.i.u-tokyo.ac.jp/lectures/RTS/
 ## 資料
 - 講義資料「RTミドルウェア－ロボットソフトウェア標準－」(PDF)(no_link)
 
+<!-- -------jp page!!------- -->

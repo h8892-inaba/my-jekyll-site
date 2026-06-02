@@ -2,6 +2,7 @@
 layout: page
 title: チュートリアル(EV3、Windows、第2部)
 ---
+-------jp page!!-------
 
 <!-- Title: チュートリアル(EV3、Windows、第2部) -->
 #contents
@@ -1067,3 +1068,4 @@ RTシステムエディタで EducatorVehicle、RobotController コンポーネ�
 
 
 
+-------jp page!!-------

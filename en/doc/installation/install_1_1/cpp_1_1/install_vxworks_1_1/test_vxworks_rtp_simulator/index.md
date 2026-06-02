@@ -2,6 +2,7 @@
 layout: page
 title: OpenRTM-aist動作確認(VxWorks、RTP、シミュレータ利用の場合)
 ---
+-------jp page!!-------
 
 <!-- Title: OpenRTM-aist動作確認(VxWorks、RTP、シミュレータ利用の場合) -->
 #contents
@@ -146,3 +147,4 @@ Workbench、omniORB、openRTM-aistのパスは適宜変更してください。
  rtpSp "./ConsoleOutComp.vxe"
 ```
 
+-------jp page!!-------

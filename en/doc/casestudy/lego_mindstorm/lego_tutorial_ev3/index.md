@@ -2,6 +2,7 @@
 layout: page
 title: チュートリアル(EV3)
 ---
+-------jp page!!-------
 
 <!-- Title: チュートリアル(EV3) -->
 #contents
@@ -1231,3 +1232,4 @@ scripts フォルダー内のシェルスクリプトを実行することで以
     <td>RTC を終了する</td>
   </tr>
 </table>
+-------jp page!!-------

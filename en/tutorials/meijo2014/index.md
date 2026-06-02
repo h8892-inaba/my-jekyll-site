@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェア強化月間（第1弾）名城大学・RTミドルウェア講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="bootcamp_meijo2014.jpg" width="75%;"></div>
 
@@ -134,3 +139,4 @@ title: RTミドルウェア強化月間（第1弾）名城大学・RTミドル�
 <br>
 
 <div align="center"><a href="20140624_05.JPG"><img src="20140624_05.JPG" width="60%;"></a></div>
+<!-- -------jp page!!------- -->

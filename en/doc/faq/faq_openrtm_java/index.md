@@ -2,6 +2,7 @@
 layout: page
 title: OpenRTM-aist (Java版) に関する FAQ 
 ---
+-------jp page!!-------
 
 <!-- Title: OpenRTM-aist (Java版) に関する FAQ -->
 #contents(3)
@@ -83,3 +84,4 @@ OS が FedoraCore の場合、yum にて Java をインストールすると GCJ
   - |[[UNIX系環境で簡易に Oracle の Java を Eclipse に適用する方法: /ja/node/248#rtclinksunjava]]
 
 
+-------jp page!!-------

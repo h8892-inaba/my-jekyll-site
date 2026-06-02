@@ -2,6 +2,7 @@
 layout: page
 title: 
 ---
+-------jp page!!-------
 
 init
 <!-- Title: NXTRTC -->
@@ -48,3 +49,4 @@ GUIをもったTkJoystick(入力デバイス)と、TkMotor(出力デバイス)�
 
 
 
+-------jp page!!-------

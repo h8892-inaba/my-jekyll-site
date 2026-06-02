@@ -3,8 +3,10 @@ layout: page
 title: OpenRTP 1.1.0-RC5
 ---
 
+No English version available.
+
 <!-- Title: OpenRTP 1.1.0-RC5 -->
-<div align="left"><a href="eclipse_logo.png"><img src="eclipse_logo.png" width="100;" align="left"></a></div>
+<div align="left"><a href="eclipse_logo.png"><img src="eclipse_logo.png" width="10%;" align="left"></a></div>
 
 1.1.0からRTCBUilder および RTSystemEditorを含むツールの名称を OpenRTP (Open RT Platform) としました。  RC5はEclipse-3.8ベースです。
 

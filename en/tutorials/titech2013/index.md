@@ -2,6 +2,11 @@
 layout: page
 title: 東京工業大学・機械科学科講義「ロボット技術」
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="swallow.jpg" width="15%;"></div>
 #contents
@@ -41,3 +46,4 @@ title: 東京工業大学・機械科学科講義「ロボット技術」
    src="https://www.slideshare.net/slideshow/embed_code/key/L3lE09yQblN28O"
 %}
 
+<!-- -------jp page!!------- -->

@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェア強化月間（第4弾）大阪大学・RTミドルウェア講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><a href="bootcamp_osaka2014.jpg"><img src="bootcamp_osaka2014.jpg" width="75%;"></a></div>
 
@@ -136,3 +141,4 @@ title: RTミドルウェア強化月間（第4弾）大阪大学・RTミドル�
 
 <div align="center"><a href="140627_02.jpg"><img src="140627_02.jpg" width="100;"></a></div>
 <br>
+<!-- -------jp page!!------- -->

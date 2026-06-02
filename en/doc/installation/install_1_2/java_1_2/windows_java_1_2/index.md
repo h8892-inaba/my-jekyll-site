@@ -2,6 +2,7 @@
 layout: page
 title:  Windowsへのインストール
 ---
+-------jp page!!-------
 
 <!-- Title: Windowsへのインストール -->
 #contents
@@ -105,3 +106,4 @@ OpenRTM-aist-Java-1.２.ｘの動作にはJDK8相当のJDK(JDK11では正常動�
             + VCVerChanger: 使用しているVisual Studioのバージョンを指定するツール
             + WordContrlpy: PythonベースMicrosoft Office Word用RTC
 ```
+-------jp page!!-------

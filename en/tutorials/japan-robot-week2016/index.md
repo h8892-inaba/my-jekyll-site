@@ -2,6 +2,11 @@
 layout: page
 title: Japan Robot Week 2016 RTM講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <!-- #ref(dl_logo_wrob.jpg,60%,right,margin=10,around,url=http://biz.nikkan.co.jp/eve/s-robot/index.html) -->
 <div align="right"><img src="DSC_0025.png" width="50%; margin:10px;" align="right"></div>
@@ -203,3 +208,4 @@ RaspberryPiを利用しているので、実機上で開発したり、容易に
 <br>
 
 <div align="center"><a href="161019-05.jpg"><img src="161019-05.jpg" width="60%;"></a></div>
+<!-- -------jp page!!------- -->

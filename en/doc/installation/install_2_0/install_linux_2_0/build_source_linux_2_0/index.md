@@ -2,6 +2,7 @@
 layout: page
 Title: ソースからのビルド (Linux編) 
 ---
+-------jp page!!-------
 
 <hr>
 ~                                                                                                                                         
@@ -219,3 +220,4 @@ OpenRTM-aist-Javaソースを変更してインストールしたい場合、bui
 
 
 
+-------jp page!!-------

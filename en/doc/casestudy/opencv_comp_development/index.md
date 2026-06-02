@@ -2,6 +2,7 @@
 layout: page
 title: 画像処理コンポーネントの作成
 ---
+-------jp page!!-------
 
 <!-- Title: 画像処理コンポーネントの作成 -->
 - 画像処理コンポーネントの作成
@@ -12,3 +13,4 @@ title: 画像処理コンポーネントの作成
   - [Ubuntu 16.04、OpenRTM-aist-1.1.2-RELEASE、OpenRTP-1.1.2、CMake-3.5.1、Code::Blocks-16.01](./opencv_ubuntu_1604)
   - [Ubuntu 14.04、OpenRTM-aist-1.1、CMake](./opencv_ubuntu_1404)
 
+-------jp page!!-------

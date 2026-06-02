@@ -2,6 +2,7 @@
 layout: page
 title: "独自ロガーの実装方法"
 ---
+-------jp page!!-------
 <!-- Title: 独自ロガーの実装方法 -->
 #contents
 
@@ -264,3 +265,4 @@ TestLoggerInit関数内でLogstreamFactoryのaddFactory関数を呼ぶことで�
 
 
 
+-------jp page!!-------

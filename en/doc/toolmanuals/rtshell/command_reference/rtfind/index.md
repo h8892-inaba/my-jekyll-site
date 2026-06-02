@@ -2,6 +2,7 @@
 layout: page
 title: rtfind
 ---
+-------jp page!!-------
 
 <!-- Title: rtfind -->
 
@@ -113,3 +114,4 @@ RTコンポーネントのポートを示す場合、パスの後にコロン（
  $ for c in `rtfind . -type c -m 1`; do rtact ${c}; done
 ```
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: OpenRTPの起動手順(1.2系、Windows)
 ---
+-------jp page!!-------
 
 <!-- Title: OpenRTPの起動手順(1.2系、Windows) -->
 #contents
@@ -91,3 +92,4 @@ openrtm.orgが提供するMSIインストーラーにはomniORBが含まれて�
  set PATH=%PATH%;%OMNI_ROOT%\bin\x86_win32
 ```
 
+-------jp page!!-------

@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMECH2015講習会(2015年5月17日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="robomech2015.jpg" width="60%"></div>
 
@@ -320,3 +325,4 @@ $ sudo dpkg -i imageprocessing-1.1.0.deb
 <div align="center"><a href="150517-9.jpg"><img src="150517-9.jpg" width="60%;"></a></div>
 <br>
 
+<!-- -------jp page!!------- -->

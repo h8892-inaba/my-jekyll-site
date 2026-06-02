@@ -2,6 +2,7 @@
 layout: page
 title: SD カードの準備
 ---
+-------jp page!!-------
 
 <!-- Title: SD カードの準備 -->
 <!-- -*- pukiwiki-edit -*- -->
@@ -264,3 +265,4 @@ class 6 の SDカードなら 6MB/sec, class 10のSDカードなら 10MB/sec 程
 
 書き込みが終了すると、自動的に再度マウントされますので、今度は Finder のイジェクトボタンを押して SDカードを抜きます。
 
+-------jp page!!-------

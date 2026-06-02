@@ -2,6 +2,7 @@
 layout: page
 title: 設定画面
 ---
+-------jp page!!-------
 <!-- Title: 設定画面 -->
 #contents
 
@@ -129,3 +130,4 @@ XML ファイルへ保存することができます。
 <div align="center"><strong>接続周期と同期タイムアウト待ち時間の関係</strong></div>
 <br>
 
+-------jp page!!-------

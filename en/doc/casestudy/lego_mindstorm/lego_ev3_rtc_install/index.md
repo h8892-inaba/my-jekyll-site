@@ -2,6 +2,7 @@
 layout: page
 title: Educator Vehicle用 RTC のインストール (EV3)
 ---
+-------jp page!!-------
 
 <!-- Educator Vehicle用 RTC のインストール (EV3) -->
 #contents
@@ -376,3 +377,4 @@ sensor_height 以下だった場合は、超音波センサーを向けた方向
  cd EducatorVehicle_script_ev3dev
  sh Component/install_rtc.sh
 ```
+-------jp page!!-------

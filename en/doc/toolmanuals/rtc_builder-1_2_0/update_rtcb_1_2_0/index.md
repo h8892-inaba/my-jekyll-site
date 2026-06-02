@@ -2,6 +2,7 @@
 layout: page
 title: 更新方法
 ---
+-------jp page!!-------
 <!-- Title: 更新方法 -->
 #contents
 ここでは、OpenRTP（RTCBuilder、RTSystemEditorの総称）をアップデートする手順を説明します。OpenRTP は Eclipse のプラグインとして提供しているので、Eclipse 上で操作します。
@@ -40,3 +41,4 @@ Linux や Mac なら単純に sed で置換します。
 ```
 
 
+-------jp page!!-------

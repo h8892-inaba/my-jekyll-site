@@ -2,6 +2,7 @@
 layout: page
 title: "Toolmanuals"
 ---
+-------jp page!!-------
 
 # ツール
 
@@ -27,3 +28,4 @@ title: "Toolmanuals"
 ### [rtsprofileモジュール](./rtshell/rtsprofile)
 
 ### [ROSトランスポート(rosport)](./rostransport)
+-------jp page!!-------

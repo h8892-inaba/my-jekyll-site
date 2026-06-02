@@ -3,6 +3,8 @@ layout: page
 title: RTミドルウェアコンテスト2025
 ---
 
+No English version available.
+
 <br>
 
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>

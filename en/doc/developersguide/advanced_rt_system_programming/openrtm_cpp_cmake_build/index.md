@@ -2,6 +2,7 @@
 layout: page
 title: "OpenRTM-aist(C++版)のCMakeによるビルド手順"
 ---
+-------jp page!!-------
 
 <!-- Title: OpenRTM-aist(C++版)のCMakeによるビルド手順 -->
 #contents
@@ -670,3 +671,4 @@ QNX Software Development Platform->Reference Images->QNX SDP 7.0 x86-64 virtual 
 - [OpenRTM-aistのビルド、動作確認手順]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_qnx_1_1/qnx_build_proc_1_2/openrtm_cpp_cmake_run/)
 
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title:  rtshell
 ---
+-------jp page!!-------
 
 <!-- Title: rtshell -->
 #contents
@@ -96,3 +97,4 @@ RTシステムの管理もできます。
 - [rtshellコマンド・リファレンス](./command_reference)
 - [rtctreeモジュール](./rtctree)
 - [rtsprofileモジュール](./rtsprofile)
+-------jp page!!-------

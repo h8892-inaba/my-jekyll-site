@@ -2,6 +2,7 @@
 layout: page
 title: 産総研オープンラボ2010
 ---
+No English version available.
 
 #contents
 #clear

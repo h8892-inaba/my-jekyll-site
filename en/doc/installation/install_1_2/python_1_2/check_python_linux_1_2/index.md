@@ -2,6 +2,7 @@
 layout: page
 title: 動作確認(Linux編)
 ---
+-------jp page!!-------
 
 <!-- Title: 動作確認(Linux編) -->
 インストールが正常に終了したら、付属のサンプルで動作テストをします。サンプルは、通常は以下の場所にあります。
@@ -84,3 +85,4 @@ OutPortからInPort(またはInPortからOutPort)へドラッグランドドロ�
 以上で、RTSystemEditorを用いたコンポーネントの基本動作の確認は終了です。
 
 
+-------jp page!!-------

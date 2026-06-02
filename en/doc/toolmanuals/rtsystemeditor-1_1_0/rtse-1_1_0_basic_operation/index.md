@@ -2,6 +2,7 @@
 layout: page
 title: システムエディタ（基本操作編）
 ---
+-------jp page!!-------
 
 <!-- Title: システムエディタ（基本操作編） -->
 #contents
@@ -254,3 +255,4 @@ All 系のアクションは、1番目以外の ExecutionContext についても
 <div align="center"><strong>ログ通知オブザーバ</strong></div>
 <br>
 
+-------jp page!!-------

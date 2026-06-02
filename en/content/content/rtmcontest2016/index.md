@@ -2,6 +2,7 @@
 layout: page
 title: RTミドルウェアコンテスト2016
 ---
+No English version available.
 
 <div align="left"><a href="/openrtm/content/rtmcontest2016"><img src="contest2016.png" width="80%;" align="center"></a></div>
 

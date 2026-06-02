@@ -2,6 +2,7 @@
 layout: page
 title: OpenRTM-aist (C++版) に関する FAQ
 ---
+-------jp page!!-------
 
 <!-- Title: OpenRTM-aist (C++版) に関する FAQ -->
 #contents(3)
@@ -313,3 +314,4 @@ SimpleIO の実行スクリプト run.sh では、ターミナルウィンドウ
 このため、これ以外のターミナルウィンドウを使用している場合は、run.sh を適宜書き換えてから実行してください。~
 <br>
 
+-------jp page!!-------

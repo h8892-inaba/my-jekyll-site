@@ -2,6 +2,7 @@
 layout: page
 title: NXT Python のインストール
 ---
+-------jp page!!-------
 
 <!-- Title: NXT Python のインストール -->
 #contents
@@ -67,3 +68,4 @@ example ディレクトリーには以下のサンプルがあります。
 これらのテストを実行する際には、それぞれのサンプルが使用するモーター、センサーなどが接続された状態で実行しなければなりません。&aname(miyamoto);
 
 
+-------jp page!!-------

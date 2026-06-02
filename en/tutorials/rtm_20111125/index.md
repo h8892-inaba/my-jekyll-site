@@ -2,6 +2,11 @@
 layout: page
 title: 熊本県産業技術センターRTミドルウエア講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents(4)
 
@@ -194,3 +199,4 @@ Windows推奨ですが、Linuxでも実習可能です。
 <div align="center"><a href="111125_04.JPG"><img src="111125_04.JPG" width="80%;"></a></div>
 <br>
 
+<!-- -------jp page!!------- -->

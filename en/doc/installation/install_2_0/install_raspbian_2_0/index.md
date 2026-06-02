@@ -2,6 +2,7 @@
 layout: page
 title: Raspberry Pi OSへのインストール
 ---
+-------jp page!!-------
 
 <hr>
 <!-- Title: Raspberry Pi OSへのインストール -->
@@ -329,3 +330,4 @@ Java版サンプルRTC、Classファイル、ソースファイル、起動ス�
 
 
 
+-------jp page!!-------

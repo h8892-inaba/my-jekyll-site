@@ -2,6 +2,7 @@
 layout: page
 title: 概要・システム構築の流れ
 ---
+-------jp page!!-------
 
 <!-- Title: 概要・システム構築の流れ -->
 #contents(3)
@@ -111,3 +112,4 @@ RTSystemEditor の動作に必要な環境は以下のとおりです。
 ### 制限
 RTSystemEditor は、 OpenRTM-aist を対象に開発されたものです。その他の RTC プラットフォームに対する操作は想定しておりません。
 
+-------jp page!!-------

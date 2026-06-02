@@ -2,6 +2,7 @@
 layout: page
 title: "Composite"
 ---
+-------jp page!!-------
 
 <!-- Title: Composite -->
 #contents
@@ -74,3 +75,4 @@ Compositeのサンプルは、入力データポートから受け取った値�
   - ConsoleInとConsoleOutの両コンポーネントを起動し、PeriodicECShareCompositeと対応ポートを接続します。(上図Composite実行例を参照)
   - どちらかのコンポーネントを右クリックし、[Activate Systems]を選択します。
 
+-------jp page!!-------

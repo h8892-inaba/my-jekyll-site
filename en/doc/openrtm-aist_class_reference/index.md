@@ -2,6 +2,7 @@
 layout: page
 title: 
 ---
+-------jp page!!-------
 
 init
 <!-- Title: クラスリファレンス -->
@@ -67,3 +68,4 @@ init
 <!-- -[[Python クラスリファレンス>http://www.openrtm.org/doc/python/1.0.0/classreference_en/index.html]] -->
 <!-- -[[Java クラスリファレンス>http://www.openrtm.org/doc/java/1.0.0/classreference_en/index.html]] -->
 <!-- -[[IDLリファレンス>http://www.openrtm.org/doc/idl/1.0/idlreference_en/index.html]] -->
+-------jp page!!-------

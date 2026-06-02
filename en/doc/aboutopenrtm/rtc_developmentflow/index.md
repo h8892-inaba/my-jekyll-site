@@ -2,6 +2,7 @@
 layout: page
 title: "RTC開発の流れ"
 ---
+-------jp page!!-------
 
 <!-- Title: RTC開発の流れ -->
 #contents
@@ -150,3 +151,4 @@ RTCBuilderにより同時に生成されるMakefileやプロジェクトファ�
 
 
 
+-------jp page!!-------

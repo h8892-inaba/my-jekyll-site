@@ -2,6 +2,8 @@
 layout: page
 title: 産総研オープンラボ2012
 ---
+No English version available.
+
 
 <div align="left">><img src="openlab2011logo.png" width="60%;" align="center"></a></div>
 

@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMECH2018講習会(2018年6月3日(日))
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="robomech2018_2.jpg" width="70%; margin:10px;" align="center"></div>
 
@@ -235,3 +240,4 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 <!-- #br -->
 
 
+<!-- -------jp page!!------- -->

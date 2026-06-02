@@ -2,6 +2,7 @@
 layout: page
 title: その他
 ---
+-------jp page!!-------
 
 <!-- Title: その他 -->
 #contents
@@ -21,3 +22,4 @@ All rights reserved.
 - Java CC (生成されたソースコードを利用しています)
 https://javacc.dev.java.net/
 
+-------jp page!!-------

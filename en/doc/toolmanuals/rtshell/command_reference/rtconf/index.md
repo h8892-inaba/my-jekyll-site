@@ -2,6 +2,7 @@
 layout: page
 title: rtconf
 ---
+-------jp page!!-------
 
 <!-- Title: rtconf -->
 
@@ -154,3 +155,4 @@ RTコンポーネントのポートを示す場合、パスの後にコロン（
  $ rtconf /localhost/ConfigSample0.rtc -a act __widget__
 ```
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: "TAOのビルド"
 ---
+-------jp page!!-------
 <!-- Title: TAOのビルド -->
 #contents
 
@@ -109,3 +110,4 @@ SSLIOPを有効にする場合は、以下のように**ssl**オプションを�
  static Resource_Factory "-ORBProtocolFactory SSLIOP_Factory"
 ```
 
+-------jp page!!-------

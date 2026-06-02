@@ -2,6 +2,7 @@
 layout: page
 title: "ROS2通信機能の利用"
 ---
+-------jp page!!-------
 
 <!-- ROS2通信機能の利用 -->
 #contents
@@ -521,3 +522,4 @@ OpenRTM-aistをビルド、インストールすると、ROS2Transportの簡単�
 ```
 
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: RTSystemEditor、RTCBuilder、rtshell 等ツールに関する FAQ
 ---
+-------jp page!!-------
 
 <!-- Title: RTSystemEditor、RTCBuilder、rtshell 等ツールに関する FAQ -->
 #contents(4)
@@ -144,3 +145,4 @@ JDK を入手し、それを実行してできた jre ディレクトリーを E
 <br>
 <br>
 
+-------jp page!!-------

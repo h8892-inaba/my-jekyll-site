@@ -2,6 +2,7 @@
 layout: page
 title: CCM
 ---
+-------jp page!!-------
 
 <!-- Title: CCM -->
 #contents
@@ -160,3 +161,4 @@ component に続く &lt;component_name&gt; は宣言するコンポーネント�
 1. [『 CORBA Component Model Tutorial 』 OMG Document ccm/02-04-01](http://www.omg.org/cgi-bin/doc?ccm/2002-04-01)
 <!-- + [[Lightweight CORBA Component Model ptc/04-06-10>http://www.omg.org/docs/ptc/04-06-10.pdf]](リンク切れ) -->
 
+-------jp page!!-------

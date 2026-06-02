@@ -2,6 +2,11 @@
 layout: page
 title: 東京大学・学際理数情報学特論XIV(2007年10月18日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -12,3 +17,4 @@ title: 東京大学・学際理数情報学特論XIV(2007年10月18日)
 ## 資料
 - [講義資料「RTミドルウェア－ロボットソフトウェア標準－」(PDF)](./071018-01.pdf)(no_link)
 
+<!-- -------jp page!!------- -->

@@ -3,6 +3,8 @@ layout: page
 title: OpenRTM-aist-Java-1.2.0-RELEASE
 ---
 
+No English version available.
+
 <!-- Title: OpenRTM-aist-Java-1.2.0-RELEASE -->
 <div align="right"><a href="java_logo.png"><img src="java_logo.png" width="10%;" align="right"></a></div>
 <!-- div align="right"><a href="java_logo.png"><img src="java_logo.png" width="10%;" align="right"></a></div -->

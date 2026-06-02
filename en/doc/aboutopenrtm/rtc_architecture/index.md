@@ -2,6 +2,7 @@
 layout: page
 title: "RTコンポーネントアーキテクチャ"
 ---
+-------jp page!!-------
 
 <!-- Title: RTコンポーネントアーキテクチャ -->
 #contents
@@ -77,3 +78,4 @@ RTCはメタ情報(RTCプロファイル)取得のためのインターフェー
 異なる言語、およびOS上のRTC間の透過的連携は、分散オブジェクトミドルウエアの標準仕様であるCORBA(Common Object Request Broker Architecture)を利用することで実現されています。
 
 
+-------jp page!!-------

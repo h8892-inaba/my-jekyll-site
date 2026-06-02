@@ -5,25 +5,30 @@ title: プレス・報道 (2005年以前)
 <div align="left"><a href="../press.png"><img src="../press.png" width="10%;"></a></div>
 #clear
 
-## プレス発表
-- 2005年2月24日発表, [オープンなロボットアーキテクチャを実現するRTミドルウエアを開発](http://www.aist.go.jp/aist_j/press_release/pr2005/pr20050224/pr20050224.html)
-- 2005年2月7日発表, [ロボット用ミドルウエア技術の国際標準化活動を本格化](http://www.aist.go.jp/aist_j/press_release/pr2005/pr20050207/pr20050207.html)
-- 2004年4月8日発表, [カスタムメード生活支援ロボットシステムの実現に向けて](http://www.aist.go.jp/aist_j/press_release/pr2004/pr20040408/pr20040408.html)
+## Press Releases
+- February 24, 2005: [“Developed RT Middleware to Realize Open Robot Architecture”](http://www.aist.go.jp/aist_j/press_release/pr2005/pr20050224/pr20050224.html)
 
-## プレス発表 (外部発表) 
-- 2005年2月7日発表(NEDO), [ロボット用ミドルウエア技術の国際標準化活動を本格化](http://www.nedo.go.jp/informations/press/170207_1/170207_1.html)
+- February 7, 2005: [“Full-scale Launch of International Standardization Activities for Robot Middleware Technology”](http://www.aist.go.jp/aist_j/press_release/pr2005/pr20050207/pr20050207.html)
 
-## 報道 
-(産総研の規定により見出しは表示していません。)
-- 2005年2月8日掲載, TechOn!:国際標準化活動が開始されたことについて
-- 2005年2月25日掲載, 日刊工業新聞(34面):産総研・JARA・松下電工のRTミドルウエアについて
-- 2005年2月11日掲載, [MYCOMジャーナル:国際標準化について](http://journal.mycom.co.jp/news/2005/02/07/008.html)
-- 2004年12月6日発刊, 日経ビジネス誌(pp.102～106), 技術＆イノベーション拡大版 ヒューマノイドやカスタムメイドロボット、開発環境等について(p.106)
-- 2004年4月9日掲載, 日経新聞(17面):産総研・JARA・松下電工のミドルウエア開発について
-- 2004年4月9日掲載, 日刊工業新聞:産総研・松下電工のRTルームについて
+- April 8, 2004: [“Toward the Realization of Custom-made Lifestyle Support Robot Systems”](http://www.aist.go.jp/aist_j/press_release/pr2004/pr20040408/pr20040408.html)
 
-## その他 
-- [(2ch)ロボット用ミドルウエア技術の国際標準化活動を本格化](http://news18.2ch.net/test/read.cgi/scienceplus/1108016951/)
+## Press Releases (External)
+- February 7, 2005 (NEDO): [“Full-scale Launch of International Standardization Activities for Robot Middleware Technology”](http://www.nedo.go.jp/informations/press/170207_1/170207_1.html)
+
+## Media Coverage
+(Note: Headlines are not displayed in accordance with AIST regulations.)
+
+- February 8, 2005: Tech-On!: Regarding the commencement of international standardization activities
+
+- February 25, 2005: Nikkan Kogyo Shimbun (p. 34): Regarding RT Middleware developed by AIST, JARA, and Matsushita Electric Works
+
+- February 11, 2005: [MYCOM Journal: Regarding international standardization](http://journal.mycom.co.jp/news/2005/02/07/008.html)
+- December 6, 2004: Nikkei Business (pp. 102–106): Technology & Innovation Expanded Edition – Regarding humanoids, custom-made robots, development environments, etc. (p. 106)
+
+- April 9, 2004: The Nikkei (p. 17): Regarding middleware development by AIST, JARA, and Matsushita Electric Works
+
+- April 9, 2004: Nikkan Kogyo Shimbun: Regarding the "RT Room" by AIST and Matsushita Electric Works
 
 
-
+## Others
+- (2ch): [Full-scale launch of international standardization activities for robot middleware technology](http://news18.2ch.net/test/read.cgi/scienceplus/1108016951/)

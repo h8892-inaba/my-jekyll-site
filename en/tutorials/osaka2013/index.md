@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェア強化月間(第2弾)：大阪大学・RTミドルウェア講習会(2013年7月11日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="bootcamp_osaka2013_bannera.png" width="60%;"></div>
 
@@ -148,3 +153,4 @@ title: RTミドルウェア強化月間(第2弾)：大阪大学・RTミドルウ
 <br>
 
 &aname(comment);
+<!-- -------jp page!!------- -->

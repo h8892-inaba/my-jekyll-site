@@ -3,7 +3,8 @@ layout: page
 title: OpenRTP 1.1.2
 ---
 
-init
+No English version available.
+
 <!-- Title: OPenRTP 1.1.2 -->
 <div align="right"><a href="eclipse_logo.png"><img src="eclipse_logo.png" width="15%;" align="right"></a></div>
 

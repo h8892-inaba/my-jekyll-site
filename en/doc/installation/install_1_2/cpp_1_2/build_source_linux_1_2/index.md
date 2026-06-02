@@ -2,6 +2,7 @@
 layout: page
 title: ソースからのビルド(Linux編)
 ---
+-------jp page!!-------
 
 <!-- Title: ソースからのビルド(Linux編) -->
 パッケージが用意されていないUNIX系の環境や、クロス開発環境などで、OpenRTM-aist本体のソースを変更したり再ビルドて、OpenRTM-aistを利用したい場合には、ソースからビルド可能です。ここでは、ダウンロードページやリポジトリからソースを取得しLinux上でOpenRTM-aist をビルドする方法を説明します。
@@ -239,3 +240,4 @@ autogenの実行により、configureがOpenRTM-aistディレクトリ内にで�
 
 
 
+-------jp page!!-------

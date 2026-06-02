@@ -2,6 +2,11 @@
 layout: page
 title: JSTソフトウェアプロジェクト教育プログラム (2013年1月21,22日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 ## 開催要旨
 
@@ -178,3 +183,4 @@ Windows推奨ですが、Linuxでも実習可能です。
 <div align="center"><div align="center"><a href="130121-03.jpg"><img src="130121-03.jpg" width="60%;"></a></div>;</div>
 <div align="center"><div align="center"><a href="130121-04.jpg"><img src="130121-04.jpg" width="60%;"></a></div>;</div>
 <div align="center"><div align="center"><a href="130121-05.jpg"><img src="130121-05.jpg" width="80%;"></a></div>;</div>
+<!-- -------jp page!!------- -->

@@ -2,6 +2,7 @@
 layout: page
 title: ビュー（マネージャコントロールビュー編）
 ---
+-------jp page!!-------
 <!-- Title: ビュー（マネージャコントロールビュー編） -->
 <!-- #contents -->
 
@@ -136,3 +137,4 @@ ConfigurationSet のパラメーターは「conf.NNNN.PPPP=VVVV」の形式で�
 <br>
 
 
+-------jp page!!-------

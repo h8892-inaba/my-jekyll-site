@@ -2,6 +2,7 @@
 layout: page
 title: 
 ---
+-------jp page!!-------
 
 <!-- Title: 動作確認(Windows編) -->
 #contents
@@ -213,3 +214,4 @@ ConsoleIn0コンポーネント・アイコンの右側にはデータが出力�
   </tr>
 </table>
 
+-------jp page!!-------

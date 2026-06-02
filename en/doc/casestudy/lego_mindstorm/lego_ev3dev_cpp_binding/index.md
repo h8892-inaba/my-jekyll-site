@@ -2,6 +2,7 @@
 layout: page
 title: EV3デバイス C++ バインディングの利用
 ---
+-------jp page!!-------
 
 <!-- Title: EV3デバイス C++ バインディングの利用 -->
 <!-- -*- pukiwiki-edit -*- -->
@@ -204,3 +205,4 @@ ev3dev-lang には C++ や Python、Lua などの EV3 デバイスへのバイ�
  include_directories(${ev3dev_dir})
  target_link_libraries(testEV3 ${ev3dev_lib} pthread)
 ```
+-------jp page!!-------

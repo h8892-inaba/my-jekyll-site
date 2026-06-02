@@ -2,6 +2,11 @@
 layout: page
 title: 11/7-8 高度ポリテクセンター
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <!-- #ref(dl_logo_wrob.jpg,60%,right,margin=10,around,url=http://biz.nikkan.co.jp/eve/s-robot/index.html) -->
 <div align="right"><a href="http://biz.nikkan.co.jp/eve/s-robot/index.html"><img src="DSC_0025.png" width="30%; margin:10px;" align="right"></a></div>
@@ -173,3 +178,4 @@ RaspberryPiを利用しているので、実機上で開発したり、容易に
 
 
 
+<!-- -------jp page!!------- -->

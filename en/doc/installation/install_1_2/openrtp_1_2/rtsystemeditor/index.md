@@ -2,6 +2,7 @@
 layout: page
 title: RTSystemEditorのインストール
 ---
+-------jp page!!-------
 
 <!-- Title: RTSystemEditorのインストール -->
 #contents
@@ -119,3 +120,4 @@ RTSystemEditorの起動が確認できましたら、いったん、Eclipseを�
 - [**FAQ:**Eclipseの起動方法]({{ site.baseurl }}/ja/doc/faq/faq_rtp_tools)
 
 
+-------jp page!!-------

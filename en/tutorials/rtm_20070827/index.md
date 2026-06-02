@@ -2,6 +2,11 @@
 layout: page
 title: 産総研講習会(2007年8月27日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -112,3 +117,4 @@ Windows版OpenRTM-aist-0.4.0を対象とした講習会を8月27日、産総研�
 
 <div align="center"><a href="070827-04.png"><img src="070827-04.png" width="60%;"></a></div>
 
+<!-- -------jp page!!------- -->

@@ -1,18 +1,18 @@
 ---
 layout: page
-title: 論文 (2008年)
+title: Paper (2008)
 ---
 
-## 論文誌
+## Journal
 1. 安藤 慶昭, 中岡慎一郎, 神徳徹雄, "分散コンポーネント型ロボットシミュレータ・アーキテクチャ-RTコンポーネントを用いた実機と可換な制御ソフトウェア開発機能-", 日本ロボット学会誌, Vol.26, No.5, pp.19-22, 2008.06, 0289-1824 [[PDF](RSJ_Vol_26_No_05_2605B019.pdf)]
 
-## 国際学会
+## International Conference
 
 1. Noriaki ANDO, Takashi SUEHIRO, Tetsuo KOTOKU, "A Software Platform for Component Based RT-System Development: OpenRTM-Aist", International Conference on SIMULATION, MODELING and PROGRAMMING for AUTONOMOUS ROBOTS (SIMPAR 2008), pp.87-98, 2008.11, Venice, Italy, ISSN 0302-9743 [[PDF](SIMPAR2008_Ando.pdf)]
 1. Yujin Wakita, Natsuki Yamanobe, Kazuyuki Nagata, Noriaki ANDO, Clerc Mathias, "Development of User Interface with Single Switch Scanning for Robot Arm to Help Disabled People Using RT-Middleware ", Proceedings of The 10th International Conference on Control, Automation, Robotics and Vision, ICARCV 2008, pp.1515-1520, 2008.12, Hanoi, Vietnam [[PDF](ICARCV2008_Wakita.pdf)]
 
 
-## 国内学会
+## Domestic Conference
 
 1. 安藤 慶昭, 清水 昌幸, 神徳 徹雄, "RTコンポーネント間のデータ送受信方法に関する考察", 日本機械学会 ロボティクス・メカトロニクス講演会2008, p.1P1-E08, 2008.06, 長野 [[PDF](ROBOMEC08_Ando_1P1-E08.pdf)]
 1. 永田 和之, 脇田 優仁, 山野辺 夏樹, 安藤 慶昭, "OpenRTM-aist による介助ロボット操作インタフェースコンポーネントの開発", 日本機械学会 ロボティクス・メカトロニクス講演会2008, p.2P2-F18, 2008.06, 長野 [[PDF](ROBOMEC08_Nagata_2P2-F18.pdf)]
@@ -23,14 +23,14 @@ title: 論文 (2008年)
 1. 安藤 慶昭, "OpenRTM-aist-1.0の新機能", 計測自動制御学会 システムインテグレーション部門 講演会 2008 (SI2008), p.2L1-3, 2008.12, 岐阜県 [[PDF](SI2008_Ando_2L1_3.pdf)]
 1. 神徳 徹雄, 比留川博久, 中岡慎一郎, 末廣 尚士, 安藤 慶昭, 中村仁彦, 山根克, 齋藤元，川角祐一郎, "分散コンポーネント型ロボットシミュレータOpenHRP3", 計測自動制御学会 システムインテグレーション部門 講演会 2008 (SI2008), p.1L2-5, 2008.12, 岐阜県 [[PDF](SI2008_Kotoku_1L2_5.pdf)]
 
-## 論文公開規定について 
-本ページでは、各学会の論文公開規定に従って可能な限り論文原稿の公開を行っております。
+## About the Paper Publication Policy
 
-- [ロボット学会](http://www.rsj.or.jp/data_rules/L-02.pdf)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [日本機械学会](http://www.jsme.or.jp/conrule.htm)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [計測自動制御学会](http://www.sice.jp/)
-  - 転載（使用）許諾願をSICE事務局へ提出し許諾を受ければ可能。[[転載許可証](tensai_kyoka_201311.pdf)]
+On this page, we publish paper manuscripts as much as possible in accordance with the publication policies of each academic society.
 
+- [Robotics Society of Japan](http://www.rsj.or.jp/data_rules/L-02.pdf)
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
+- [Japan Society of Mechanical Engineers](http://www.jsme.or.jp/conrule.htm)
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
+- [The Society of Instrument and Control Engineers](http://www.sice.jp/)
+ - Publication is possible if a reprint (reuse) permission request is submitted to the SICE office and approval is obtained. [Reprint Permission Certificate](tensai_kyoka_201311.pdf)
 

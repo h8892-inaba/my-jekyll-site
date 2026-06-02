@@ -2,6 +2,7 @@
 layout: page
 title: CPack で deb 作成 （Linux）
 ---
+-------jp page!!-------
 
 <!-- Title: CPack で deb 作成 （Linux） -->
 #contents
@@ -183,3 +184,4 @@ IDL コンパイル実行時に、プロジェクトディレクトリー内に�
    └─ flipgui.py
 ```
 
+-------jp page!!-------

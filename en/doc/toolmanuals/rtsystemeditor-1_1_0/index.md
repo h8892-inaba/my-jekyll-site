@@ -2,6 +2,7 @@
 layout: page
 title: RTSystemEditor-1.1.0
 ---
+-------jp page!!-------
 
 
 ## RTSystemEditorとは
@@ -28,3 +29,4 @@ title: RTSystemEditor-1.1.0
 - [オフラインシステムエディタ](./rtse-1_1_0_offline)
 - [設定画面](./rtse-1_1_0_setting)
 - [その他](./rtse-1_1_0_other)
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: サンプルコンポーネントの実行
 ---
+-------jp page!!-------
 
 <!-- Title: サンプルコンポーネントの実行 -->
 <!-- * GPIOを利用したサンプル -->
@@ -253,3 +254,4 @@ PC上で RTSystemEditor を起動し、Raspberry Pi上の NameServewr に接続�
 </td>
  </tr>
  </table>
+-------jp page!!-------

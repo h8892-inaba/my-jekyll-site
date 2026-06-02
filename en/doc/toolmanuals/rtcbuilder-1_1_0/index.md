@@ -2,6 +2,7 @@
 layout: page
 title: RTCBuilder-1.1.0
 ---
+-------jp page!!-------
 
 <!-- https://openrtm.org/openrtm/ja/doc/toolmanuals/rtcbuilder-1_1_0
 node/4601 -->
@@ -30,3 +31,4 @@ RTCBuilderは、OpenRTM-aist に含まれる開発ツールの１つであり、
 - [その他](./other_rtcb_1_1_0)
 
 
+-------jp page!!-------

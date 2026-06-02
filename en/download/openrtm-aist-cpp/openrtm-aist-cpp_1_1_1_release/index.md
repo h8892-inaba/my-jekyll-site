@@ -8,39 +8,42 @@ title: OpenRTM-aist C++ 1.1.1-RELEASE
 #contents
 
 
-- <span style="color:red;">1.0.0 で作成したコンポーネントと 1.1.1 で作成したコンポーネントには互換性はありますが、ポートの接続方法が若干変更されたため、ツール (RTSystemEditor) は 1.1.0 のものを使用してください。</span>;
+- <span style="color:red;">RT-Components for versions 1.0.0 and 1.1.0 are compatible with each other. However, since the port connection rules have slightly changed, tools (for example RTSystemEditor) must support version 1.1.x.</span>;
 
 &aname(src);
-## ソースコード
+## Source Code
 
 <table class="table-alt">
   <tr>
-    <td>C++版ソースコード</td>
+    <td>C++ source code</td>
     <td><a href="http://openrtm.org/pub/OpenRTM-aist/cxx/1.1.1/OpenRTM-aist-1.1.1.tar.bz2">OpenRTM-aist-1.1.1-RELEASE.tar.bz2</a><br>MD5: 1d030c4972618f2f1e81cf83286af1d0</td>
     <td>2015.03.16</td>
   </tr>
   <tr>
-    <td>C++版ソースコード</td>
+    <td>C++ source code</td>
     <td><a href="http://openrtm.org/pub/OpenRTM-aist/cxx/1.1.1/OpenRTM-aist-1.1.1.tar.gz">OpenRTM-aist-1.1.1-RELEASE.tar.gz</a><br>MD5: 67abe01eb0e8df1cd3efbcd1ca78108d</td>
     <td>2015.03.16</td>
   </tr>
   <tr>
-    <td>C++版 Windows 専用ソース</td>
+    <td>C++ source code (for Windows)</td>
     <td><a href="http://openrtm.org/pub/OpenRTM-aist/cxx/1.1.1/OpenRTM-aist-1.1.1-win32.zip">OpenRTM-aist-1.1.1-RELEASE-win32.zip</a><br>MD5: beedc1f16973eb6cc6c2bc7916bafeb7</td>
     <td>2015.03.16</td>
   </tr>
 </table>
 
 <br>
-## パッケージ
-### Windows インストーラー
+## Packages
+### Windows Installer
 
-インストーラーで、ツールの RTSystemEditorRCP と OpenRTP を選択できるようになりました。また、ツールを起動するために必要な JRE(OpenJDK) もインストールすることができます。<br>
-これらの選択は、デフォルト設定のままインストールすることをお勧めします。オプションの選択については、[OpenRTM-aistを10分で始めよう！](http://openrtm.org/openrtm/ja/content/lets_start) のページで手順を紹介しています。
+RT System Editor RCP or OpenRTP can be selected. JRE (OpenJDK) is also included. <br>
+The default setting is recommended in installing. 
+<!-- インストーラで、ツールの RTSystemEditorRCP と OpenRTP を選択できるようになりました。また、ツールを起動するために必要な JRE(OpenJDK) もインストールすることができます。&br; -->
+<!-- これらの選択は、デフォルト設定のままインストールすることをお勧めします。オプションの選択については、[[OpenRTM-aistを10分で始めよう！:http://openrtm.org/openrtm/ja/content/lets_start]] のページで手順を紹介しています。 -->
 
-#### 32bit用
+#### 32bit
 
-- Visual Studio をインストールされている方は、バージョンにあったインストーラーをダウンロードしてください。
+<!-- - Visual Studioをインストールされている方は、バージョンにあったインストーラーをダウンロードしてください。 -->
+- Download the appropriate version of Visual Studio.
 
 <table class="table-alt">
   <tr>
@@ -71,48 +74,6 @@ title: OpenRTM-aist C++ 1.1.1-RELEASE
 
 <table class="table-alt">
   <tr>
-    <td colspan="3" style="text-align: center;">**各Visual Studio 32bit用バージョンで共通**</td>
-  </tr>
-  <tr>
-    <td>Python (各種ツールで必要)<br> Python 2.7</td>
-    <td><a href="https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi">python-2.7.9.msi</a></td>
-    <td><a href="https://www.python.org/">python.org</a></td>
-  </tr>
-  <tr>
-    <td>PyYAML (各種ツールで必要)<br> Pythonのバージョンに合わせること</td>
-    <td><a href="http://pyyaml.org/download/pyyaml/PyYAML-3.11.win32-py2.7.exe">PyYAML-3.11.win32-py2.7.exe</a></td>
-    <td><a href="http://pyyaml.org/">pyyaml.org</a></td>
-  </tr>
-  <tr>
-    <td>CMake （Visual C++のプロジェクトを作成するのに必要)</td>
-    <td><a href="http://www.cmake.org/files/v3.2/cmake-3.2.1-win32-x86.exe">cmake-3.2.1-win32-x86.exe</a></td>
-    <td><a href="http://www.cmake.org">cmake</a></td>
-  </tr>
-  <tr>
-    <td>Doxygen (ビルドの過程でドキュメントを整形するのに必要)</td>
-    <td><a href="http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.9.1-setup.exe">doxygen-1.8.9.1-setup.exe</a></td>
-    <td><a href="http://www.stack.nl/`dimitri/doxygen/">doxygen</a></td>
-  </tr>
-</table>
-<!-- |Doxygen (ビルドの過程でドキュメントを整形するのに必要)|[[doxygen-1.8.8-setup.exe:http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.8-setup.exe]] |[[doxygen:http://www.stack.nl/~dimitri/doxygen/]]| -->
-
-- Python のバージョンは、Python版 OpenRTM-aist も同時に利用することを考え、Python 2.7 を利用することを推奨します。
-
-#### 64bit用
-
-- Visual Studio をインストールされている方は、バージョンにあったインストーラーをダウンロードしてください。
-- Visual C++ Express 版では(デフォルトでは) 64bit バイナリのビルドができませんのでご注意ください。
-
-<table class="table-alt">
-  <tr>
-    <td colspan="3" style="text-align: center;">**Visual Studio 64bit用**</td>
-  </tr>
-  <tr>
-    <td>Visual Studio 2010</td>
-    <td><a href="http://openrtm.org/pub/Windows/OpenRTM-aist/cxx/1.1/OpenRTM-aist-1.1.1-RELEASE_x86_64_vc10.msi">OpenRTM-aist-1.1.1-RELEASE_x86_64_vc10.msi</a><br>MD5: 4dc5ec26f83677b57ae70f9a35c96d9a</td>
-    <td>2015.04.09</td>
-  </tr>
-  <tr>
     <td>Visual Studio 2012</td>
     <td><a href="http://openrtm.org/pub/Windows/OpenRTM-aist/cxx/1.1/OpenRTM-aist-1.1.1-RELEASE_x86_64_vc11.msi">OpenRTM-aist-1.1.1-RELEASE_x86_64_vc11.msi</a><br>MD5: 4f3aa87e584b79eec3dc50f721f82b1c</td>
     <td>2015.04.09</td>
@@ -126,59 +87,73 @@ title: OpenRTM-aist C++ 1.1.1-RELEASE
 
 <table class="table-alt">
   <tr>
-    <td colspan="3" style="text-align: center;">**各Visual Studio 64bit 用バージョンで共通**</td>
+    <td colspan="3" style="text-align: center;">**Visual Studio 64bit**</td>
   </tr>
   <tr>
-    <td>Python-64bit (各種ツールで必要)<br> Python 2.7</td>
+    <td>Python-64bit (Needed for tools)<br> Python 2.7</td>
     <td><a href="https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi">python-2.7.9.amd64.msi</a></td>
     <td><a href="https://www.python.org/">python.org</a></td>
   </tr>
   <tr>
-    <td>PyYAML (各種ツールで必要)<br> Python のバージョンに合わせること</td>
+    <td>PyYAML (Needed for tools)<br> Pythonのバージョンに合わせること</td>
     <td><a href="http://pyyaml.org/download/pyyaml/PyYAML-3.11.win-amd64-py2.7.exe">PyYAML-3.11.win-amd64-py2.7.exe</a></td>
     <td><a href="http://pyyaml.org/">pyyaml.org</a></td>
   </tr>
   <tr>
-    <td>CMake （Visual C++ のプロジェクトを作成するのに必要)</td>
+    <td>CMake （To generate Visual C++ project)</td>
     <td><a href="http://www.cmake.org/files/v3.2/cmake-3.2.1-win32-x86.exe">cmake-3.2.1-win32-x86.exe</a></td>
     <td><a href="http://www.cmake.org">cmake</a></td>
   </tr>
   <tr>
-    <td>Doxygen (ビルドの過程でドキュメントを整形するのに必要)</td>
+    <td>Doxygen (To generate documents)</td>
     <td><a href="http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.9.1-setup.exe">doxygen-1.8.9.1-setup.exe</a></td>
     <td><a href="http://www.stack.nl/`dimitri/doxygen/">doxygen</a></td>
+    <td>`</td>
   </tr>
 </table>
 
 
-- 64bit版 OpenRTM-aist は、Python 2.7 (64bit) がインストールされていれば動作します。
+<!-- - 64bit版OpenRTM-aistは、Python 2.7(64bit) がインストールされていれば動作します。 -->
+OpenRTM-aist x64 version needs Python 2.7 (x64).
 
 
-#### Windows 版インストールにあたっての注意事項
+#### Precautions for Windows installation
 
-- <span style="color:red;">※ Visual Studio のバージョンが異なる環境でビルドしたものは混在できません。</span>; お使いの開発環境に合わせて適切なパッケージをダウンロードしてください。
-- 古いバージョンの OpenRTM-aist をインストールされている場合は、あらかじめアンインストールすることをお勧めします。　（1.1.1-RELEASEはアンインストールしてもゴミは残りません）
-- 1.1.0 版をアンインストールしてもファイルとスタートメニューの一部が残ることを確認しています。(C++/Python/Javaすべてで確認）
-- 残ったままで新しいバージョンをインストールしても動作に影響はありませんが、手動で削除することをお勧めします。
-  - 手動で削除する場合の注意：
-  - OpenRTM-aist の異なる言語バージョン（例えば C++とPython）をインストールされている場合は、どちらも新しいバージョンに移行することをお勧めします
-  - 古い OpenRTM-aist の全てをアンインストール後、手動で下記を削除してください
-    - C:\Program Files (x86) 下の OpenRTM-aist フォルダー
-    - スタートメニューの OpenRTM-aist：スタートメニューで表示させて右クリックで削除できます
+- <span style="color:red;">* Do not use multiple OpenRTMs with multiple versions of Visual Studio.</span>; Please select and install an appropriate package of your environment.
+- Please uninstall older version of OpenRTM-aist before installing version 1.1.1.
+<!-- - 古いバージョンのOpenRTM-aistをインストールされている場合は、あらかじめアンインストールすることをお勧めします。　（1.1.1-RELEASEはアンインストールしてもゴミは残りません） -->
+- If you uninstall OpenRTM-aist 1.1.0, some files and menu icons in start menu would remain (C++/Python/Java)
+<!-- - 1.1.0版をアンインストールしてもファイルとスタートメニューの一部が残ることを確認しています。(C++/Python/Java全てで確認） -->
+- You do not have to remove the remainder files of older version, but we recommend to remove them manually for your convenience.
+<!-- - 残ったままで新しいバージョンをインストールしても動作に影響はありませんが、手動で削除することをお勧めします。 -->
+  - Cautions for the manual remove
+<!-- -- 手動で削除する場合の注意： -->
+  - If multiple language versions are installed, please upgrade both language versions.
+<!-- -- OpenRTM-aistの異なる言語バージョン（例えばC++とPython）をインストールされている場合は、どちらも新しいバージョンに移行することをお勧めします -->
+  - After uninstalling older OpenRTM-aist, please remove the following files:
+<!-- -- 古いOpenRTM-aistの全てをアンインストール後、手動で下記を削除して下さい -->
+    - C:\Program Files (x86)\OpenRTM-aist folder
+<!-- --- C:\Program Files (x86) 下の OpenRTM-aist フォルダ -->
+    - Start Menu > Programs > OpenRTM-aist menu (Right click and delete)
+<!-- --- スタートメニューのOpenRTM-aist　： スタートメニューで表示させて右クリックで削除できます -->
 
 
 <br>
-### Linux パッケージ
 
-<!-- Linux パッケージは順次提供される予定です。ソースからのビルドの仕方は以下を参考にしてください。 -->
+### Linux Packages
 
-現在のところ以下のディストリビューション・バージョンでパッケージを提供しています。<br>
-以下で配布しているインストールスクリプトを利用すれば、必要なパッケージを一括でインストールすることができます。
+<!-- Linuxパッケージは順次提供される予定です。ソースからのビルドの仕方は以下を参考にしてください。 -->
+
+Currently, the following packages are available. <br>
+Please use the installer scripts to install dependencies at the same time.
+<!-- 現在のところ以下のディストリビューション・バージョンでパッケージを提供しています。&br; -->
+<!-- 以下で配布しているインストールスクリプトを利用すれば、必要なパッケージを一括でインストールすることができます。 -->
+
 
 <table class="table-alt">
   <tr>
-    <th>ディストリビューション・バージョン</th>
-    <th>一括インストールスクリプト</th>
+    <th>Distribution Version</th>
+    <th>Install Scripts</th>
   </tr>
   <tr>
     <td>Ubuntu 12.04 (precise) i386/amd64 <br> Ubuntu 14.04 (trusty) i386/amd64 <br> Ubuntu 14.10 (utopic) i386/amd64 <br> Ubuntu 15.04 (vivid) i386/amd64</td>
@@ -194,38 +169,43 @@ title: OpenRTM-aist C++ 1.1.1-RELEASE
   </tr>
 </table>
 
-<!-- 1.1.0-RELEASE を既にインストールしている場合は、削除後 apt-get updateを 実行した上で、再度インストールしてください。 -->
+<!-- 1.1.0-RELEASEを既にインストールしている場合は、削除後apt-get updateを実行した上で、再度インストールしてください。 -->
 <!-- $ sudo dpkg -r openrtm-aist-doc openrtm-aist-example openrtm-aist-dev openrtm-aist -->
 <!-- $ sudo apt-get clean -->
 <!-- $ sudo apt-get update -->
 <!-- $ sudo apt-get install openrtm-aist openrtm-aist-doc openrtm-aist-example openrtm-aist-dev -->
 
-1.1.0-RELEASE を既にインストールしている場合はアップデートが可能です。
+<!-- 1.1.0-RELEASEを既にインストールしている場合はアップデートが可能です。 -->
+If you already installed 1.1.0-RELEASE version, just upgrade it please.
 
-Ubuntu / Debian の場合
+In Ubuntu / Debian
 
 ```
  $ sudo apt-get update
  $ sudo apt-get upgrade
 ```
 
-Fedora　の場合
+In Fedora
 
 ```
  # yum update
 ```
 
-ダウンロード方法・インストール方法については、[こちら(C++)](/ja/node/999) をご覧くだい。
+<!-- ダウンロード方法・インストール方法については、[[こちら(C++):/ja/node/999]] をご覧くだい。 -->
+To download and install, please check [HERE(C++)](/ja/node/999).
 
 
-### ソースからのビルド
+### Build from source code
 
-ソースからビルドする方法については、[ソースからのビルド(Windows編)](/ja/node/793) または [ソースからのビルド(Linux編)](/ja/node/788) をご覧くだい。
+To build OpenRTM-aist from source code, please check [HERE (Windows)](/ja/node/793) or [HERE(Linux)](/ja/node/788).
+<!-- ソースからビルドする方法については、[[ソースからのビルド(Windows編):/ja/node/793]] または [[ソースからのビルド(Linux編):/ja/node/788]] をご覧くだい。 -->
 
-### deb/rpmパッケージ作成
+### deb/rpm package creation
 
-1.1から上記の [[ソースコード>#src]] からの Ubuntu, Debian 用 deb パッケージ、Fedora, Vine用 rpm パッケージの作成が正式にサポートされました。<br>
-以下の手順でパッケージを作成することができます。パッケージ作成に当たっては、一括インストールスクリプト（pkg_install_***.sh）を利用して必要なパッケージを予めインストールしておいてください。
+From version 1.1, generating the deb package (for Ubuntu, Debian) and rpm package (Fedora, Vine) is supported. <br>
+Please follow the following steps (Please install the dependencies before generating packages)
+<!-- 1.1から上記の [[ソースコード>#src]] からのUbuntu, Debian 用debパッケージ、Fedora, Vine用 rpmパッケージの作成が正式にサポートされました。&br; -->
+<!-- 以下の手順でパッケージを作成することができます。パッケージ作成に当たっては、一括インストールスクリプト（pkg_install_***.sh）を利用して必要なパッケージを予めインストールしておいてください。 -->
 
 ```
  $ tar xvzf OpenRTM-aist-1.1.1-RELEASE.tar.gz
@@ -235,67 +215,71 @@ Fedora　の場合
  $ make
 ```
 
-パッケージはpacakgesディレクトリ内に作成されます。
+<!-- パッケージはpacakgesディレクトリ内に作成されます。 -->
+The packages are created in packages directory.
 
-<span style="color:red;">※ UbuntuやDebian にて deb パッケージを作成する場合は "dpkg-dev build-essential debhelper devscripts"、Fedora にて rpm パッケージを作成する場合は "rpm-build createrepo" といったツールを予めインストールしておく必要があります。</span>;
+<!-- &color(red){※ UbuntuやDebianにてdebパッケージを作成する場合は "dpkg-dev build-essential debhelper devscripts"、Fedoraにてrpmパッケージを作成する場合は "rpm-build createrepo" といったツールを予めインストールしておく必要があります。}; -->
+<span style="color:red;">* In Ubuntu, Debian, Install the tools with the command "dpkg-dev build-essential debhelper devscripts". In Fedora, do "rpm-build createrepo"</span>;
 
 <!-- &br; -->
 <!-- ***MacPorts -->
-<!-- MacPorts 用 Portfile が利用可能です。あらかじめXcodeおよびMacPortsをインストールした上でご利用ください。 -->
+<!-- MacPorts用Portfileが利用可能です。あらかじめXcodeおよびMacPortsをインストールした上でご利用ください。 -->
 <!-- - [[Portfile (ports.tgz) :http://www.openrtm.org/pub/MacOSX/macports/ports.tgz]] -->
-<!-- - [[インストールスクリプト (port_install.sh) :http://www.openrtm.org/pub/MacOSX/macports/port_install.sh]]: ports.tgz のダウンロード、OpenRTM-aist のビルド・インストールまで自動で行います。 -->
+<!-- - [[インストールスクリプト (port_install.sh) :http://www.openrtm.org/pub/MacOSX/macports/port_install.sh]]: ports.tgz のダウンロード、OpenRTM-aistのビルド・インストールまで自動で行います。 -->
 
-## ツール
+## Tool
 
-インストーラのオプションで OpenRTP を選択していれば、インストールする必要はありません。
-ツールを別途インストールする方法については、　[OpenRTP 1.1.0-RC5](/ja/node/5778) をご覧ください。
+If OpenRTP is selected when installing OpenRTM-aist, you do not have to install these tools.
+<!-- インストーラのオプションで OpenRTP を選択していれば、インストールする必要はありません。 -->
+<!-- ツールを別途インストールする方法については、　[[OpenRTP 1.1.0-RC5:/ja/node/5778]] をご覧ください。 -->
+If you want to install tools separately, please check [OpenRTP 1.1.0-RC5](/ja/node/5778).
 
 <br>
-## リリースノート: 1.1.1-RELEASE
-OpenRTM-aist Official Website からソースコード、Windows インストーラー、Linux 用パッケージ等が LGPL ライセンスもしくは産総研との個別契約のうち一つから選択するデュアルライセンス方式で利用可能です。
+## Release note: 1.1.1-RELEASE
+From OpenRTM-aist Official Website, Source Code Install, Windows Installer, and Linux packages are available with LGPL License or individual license (please contact us).
 
 <!-- - [[OpenRTM-aist-1.1.0-RELEASE.tar.gz:http://www.openrtm.org/pub/OpenRTM-aist/cxx/1.1.0/OpenRTM-aist-1.1.0-RELEASE.tar.gz]] -- 2012.05.25リリース -->
 
-### 機能に関する変更
-  - 雑多なバグフィックス
+### Chanages on Functionarities
+  - Bug fixes
 <!-- -- RTCの各種動作をフックするリスナ機構の追加 -->
 <!-- --- ComponentActionListener: コンポーネントの各種動作をフック可能に -->
 <!-- --- PortConnectionListeners: ポートの接続切断をフックする事が可能に -->
 <!-- --- ManagerActionListener: マネージャの各種動作のフック -->
 <!-- --- ConfigurationListener:コンフィギュレーションの動作のフック -->
 <!-- --- ConnectorListener：データポートの送受信の各種動作のフック -->
-<!-- -- rtcd で C++ だけでなくPython、JavaのRTCプロファイルを取得可能に -->
-<!-- -- EC にアクセスするための各種関数群の提供 -->
-<!-- -- SDO サービス（プロバイダ・コンシューマ）管理機能の導入 -->
+<!-- -- rtcdでC++だけでなくPython、JavaのRTCプロファイルを取得可能に -->
+<!-- -- ECにアクセスするための各種関数群の提供 -->
+<!-- -- SDOサービス（プロバイダ・コンシューマ）管理機能の導入 -->
 <!-- -- ログのタイムスタンプで ms, usが出力可能 -->
 <!-- -- 各種オプションの追加:　manager.auto_shutdown_duration等 -->
 
-### ポータビリティに関する変更
-- 64bit Linunxへの雑多な対応
-- 64bit Windowsへの対応
-<!-- -- Mac OS Xへの正式な対応 -->
-<!-- -- Linux+RtORB の正式サポート -->
-<!-- -- Cygwin+RtORB の正式サポート -->
-<!-- -- MacOS+RtORB の正式サポート -->
-- VC2012(32bit/64bit) の正式サポート
-- VC2013(32bit/64bit) の正式サポート
-<!-- -- CMake への正式対応 -->
+### Changes on portabilities
+  - For 64bitLinunx
+  - For 64bitWindows
+<!-- -- Mac OS　Xへの正式な対応 -->
+<!-- -- Linux+RtORBの正式サポート -->
+<!-- -- Cygwin+RtORBの正式サポート -->
+<!-- -- MacOS+RtORBの正式サポート -->
+  - VC2012(32bit/64bit) Support
+  - VC2013(32bit/64bit) Support
+<!-- -- CMakeへの正式対応 -->
 
-### 拡張機能に関する変更
-<!-- -- ComponentObserver の提供 -->
-<!-- -- RT preemptive kernel 用 EC の正式サポート -->
+### Changes on extensions 
+<!-- -- ComponentObserverの提供 -->
+<!-- -- RT preemptive kernel用ECの正式サポート -->
 
-### ユーザービリティに関する変更
-- Windows インストーラーで omniORB を 4.1.7 に更新
-- Windows インストーラーで OpenCV を 2.4.9 に更新し、IntelTBB で再コンパイル
-- Windows インストーラーで OpenCV を使ったサンプルコンポーネント ImageCalib (GUIを持つ)を追加
-- Windows インストーラーでツールの RTSystemEditorRCP版 と OpenRTP を選択可能にする
-- Windows インストーラーのスタートメニューでのツールを、各言語（C++、Python、Java)で共通にする
-- Windows インストーラーで OpenJDK7 JREの インストールを選択可能にする
-- deb パッケージ作成でマルチアーチ機能へ対応
-- deb パッケージ利用環境で OpenRTM-aist Python と共存時のアンインストール動作の見直し
+### Changes on usabilities
+- Updated omniORB to 4.1.7 in the Windows installer
+- Updated OpenCV to 2.4.9 in the Windows installer and recompiled with Intel TBB
+- Added a sample component using OpenCV, ImageCalib (with GUI), to the Windows installer
+- Made it possible to select RTSystemEditor (RCP version) and OpenRTP tools in the Windows installer
+- Unified the Start Menu tools in the Windows installer across all languages (C++, Python, Java)
+- Made installation of OpenJDK 7 JRE optional in the Windows installer
+- Added support for multi-architecture (multiarch) in deb package creation
+- Reviewed the uninstall behavior when coexisting with OpenRTM-aist Python in environments using deb packages
 
-### 対応 (ビルド検証済) OS
+### Support (Build Tested) OSes
 - Debian 6.0-i386
 - Debian 6.0-x86_64
 - Debian 7.0-i386
@@ -312,4 +296,3 @@ OpenRTM-aist Official Website からソースコード、Windows インストー
 - Windows-7 (64bit)
 - Windows-8.1
 - Windows-8.1 (64bit)
-

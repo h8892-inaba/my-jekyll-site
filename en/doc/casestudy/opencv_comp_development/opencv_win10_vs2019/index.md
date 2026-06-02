@@ -2,6 +2,7 @@
 layout: page
 title: 画像処理コンポーネントの作成 (Windows 10、OpenRTM-aist-2.0.0、OpenRTP-2.0.0、CMake-3.19.8、VS2019)
 ---
+-------jp page!!-------
 
 <!-- Title: 画像処理コンポーネントの作成 (Windows 10、OpenRTM-aist-2.0.0、OpenRTP-2.0.0、CMake-3.19.8、VS2019) -->
 #contents
@@ -706,3 +707,4 @@ Flip コンポーネントのコンフィギュレーションパラメーター
 
 <div align="center"><a href="flip38.png"><img src="flip38.png" width="60%;"></a></div>
 
+-------jp page!!-------

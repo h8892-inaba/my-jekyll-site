@@ -2,6 +2,7 @@
 layout: page
 title: "OpenRTM-aistを10分で始めよう！"
 ---
+-------jp page!!-------
 
 <!-- Title: OpenRTM-aistを10分で始めよう！ -->
 #contents
@@ -220,3 +221,4 @@ rtshellを利用することでコマンドラインからRTCのActivate、Deact
 - **公開コンポーネントを見てみる　&t;：　**[プロジェクト]({{ site.baseurl }}/ja/node/123)
 
 
+-------jp page!!-------

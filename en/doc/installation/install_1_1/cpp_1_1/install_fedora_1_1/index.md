@@ -2,6 +2,7 @@
 layout: page
 title: Fedoraへのインストール
 ---
+-------jp page!!-------
 
 <!-- Title: Fedoraへのインストール -->
 <div align="right"><a href="fedora_logo.png"><img src="fedora_logo.png" width="15%;" align="right"></a></div>
@@ -231,3 +232,4 @@ openrtm-aist-example にはスタンドアロン RTC、ローダブル RTC そ�
  /usr/share/openrtm-1.1/examples/rtc/ConsoleOut.so.0.0.0
 ```
 
+-------jp page!!-------

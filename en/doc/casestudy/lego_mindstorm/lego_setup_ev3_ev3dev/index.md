@@ -2,6 +2,7 @@
 layout: page
 title: EV3 および ev3dev の初期設定
 ---
+-------jp page!!-------
 
 <!-- Title: EV3 および ev3dev の初期設定 -->
 <!-- -*- pukiwiki-edit -*- -->
@@ -441,3 +442,4 @@ Windows ではデフォルトでは Bonjour はインストールされていま
 - [ファイアウォールの設定が原因で Bonjour for Windows が動作しない](http://support.apple.com/kb/TS2235?viewlocale=ja_JP)
 
 
+-------jp page!!-------

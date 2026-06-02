@@ -4,6 +4,7 @@ layout: page
 title: "Research_Development"
 
 ---
+-------jp page!!-------
 
 <!-- Title: 研究開発 -->
 
@@ -73,3 +74,4 @@ NEDOにより2008年から3年間実施された「基盤ロボット技術活�
 
 
 
+-------jp page!!-------

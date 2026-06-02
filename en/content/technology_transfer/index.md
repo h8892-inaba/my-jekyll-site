@@ -2,99 +2,32 @@
 layout: page
 title: 技術移転
 ---
-
 <div align="right"><a href="software_package.png"><img src="software_package.png" width="10%;" align="right"></a></div>
 
-独立行政法人産業技術総合研究所では、研究所が保有する技術、ノウ・ハウ、ソフトウエア等の技術移転推進しております。
-RTミドルウエア関連の技術移転を希望される場合は、下記担当者までご連絡をいただくか、[産総研イノベーション推進本部・知的財産部](https://unit.aist.go.jp/intpro/)へご連絡ください。
-
-## 連絡先
+Japan's National Institute of Advanced Industrial Science and Technology (AIST) is promoting the transfer of various technologies, know-how and software licenses owned by AIST.
+If you are interested in technology transfer of OpenRTM-aist and its related technologies, please contact the following person or the [Technology License Office of AIST](http://unit.aist.go.jp/intelprop/ci/index.htm).
+<!--break-->
+## Contact Information
 
 ```
- 国立研究開発法人産業技術総合研究所
- インダストリアルCPS研究センター ソフトウェアプラットフォーム研究チーム
- 安藤 慶昭
- 〒305-8568 茨城県つくば市梅園1-1-1 中央第2
- TEL: 029-861-5981 FAX: 029-861-5971
+ National Institute of Advanced Industrial Science and Technology
+ Industrial CPS Research Center, Software Platform Research Team
+ Noriaki Ando
+ AIST Tsukuba Central 2, Tsukuba, Ibaraki 305-8568, Japan
+ TEL: +81-29-861-5981 FAX: +81-29-861-5971
  email: n-ando <at> aist.go.jp
 ```
 
-## 特許
-
-1. 特許第4910122号
-  - 発明の名称：コンポーネント化制御システム
-  - 特許権者：東京都千代田区霞が関１－３－１ 独立行政法人産業技術総合研究所
-  - 発明者：末廣尚士、北垣高成、神徳徹雄、尹祐根、安藤慶昭
-  - 出願番号：特願2004-001562
-  - 出願日：平成16年1月7日
-  - 登録日：平成24年1月27日
-
-## 技術移転対象ソフトウエア
+## Licensable Software List
 
 <table class="table-alt">
   <tr>
-    <th>名称</th>
-    <th>管理番号</th>
-    <th>登録日</th>
+    <th>Name</th>
+    <th>License Number</th>
+    <th>Date</th>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">OpenRTM-aist-2.0系ソフトウエア</td>
-  </tr>
-  <tr>
-    <td>OpenRTM-aist-2.0</td>
-    <td>2023PRO-2940</td>
-    <td>2023/04/07</td>
-  </tr>
-  <tr>
-    <td>OpenRTM-aist-Java-2.0</td>
-    <td>2023PRO-2944</td>
-    <td>2023/04/07</td>
-  </tr>
-  <tr>
-    <td>OpenRTM-aist-Python-2.0</td>
-    <td>2023PRO-2951</td>
-    <td>2023/04/18</td>
-  </tr>
-  <tr>
-    <td>RTCBuilder 2.0</td>
-    <td>2023PRO-2945</td>
-    <td>2023/04/07</td>
-  </tr>
-  <tr>
-    <td>RTSystemEditor 2.0</td>
-    <td>2023PRO-2946</td>
-    <td>2023/04/07</td>
-  </tr>
-  <tr>
-    <td colspan="3" style="text-align: center;">OpenRTM-aist-1.2系ソフトウエア</td>
-  </tr>
-  <tr>
-    <td>OpenRTM-aist-1.2</td>
-    <td>2023PRO-2939</td>
-    <td>2023/04/07</td>
-  </tr>
-  <tr>
-    <td>OpenRTM-aist-Java-1.2</td>
-    <td>2023PRO-2941</td>
-    <td>2023/04/07</td>
-  </tr>
-  <tr>
-    <td>OpenRTM-aist-Python-1.2</td>
-    <td>2023PRO-2950</td>
-    <td>2023/04/18</td>
-  </tr>
-  <tr>
-    <td>RTCBuilder 1.2</td>
-    <td>2023PRO-2942</td>
-    <td>2023/04/07</td>
-  </tr>
-  <tr>
-    <td>RTSystemEditor 1.2</td>
-    <td>2023PRO-2943</td>
-    <td>2023/04/07</td>
-  </tr>
-  <tr>
-    <td colspan="3" style="text-align: center;">OpenRTM-aist-1.1系ソフトウエア</td>
+    <td colspan="3" style="text-align: center;">''OpenRTM-aist-1.1 software</td>
   </tr>
   <tr>
     <td>OpenRTM-aist-1.1</td>
@@ -122,17 +55,17 @@ RTミドルウエア関連の技術移転を希望される場合は、下記担
     <td>H26.02.19</td>
   </tr>
   <tr>
-    <td>OpenRTM-aist-1.1 C++版テストプログラム</td>
+    <td>OpenRTM-aist-1.1 C++ test program</td>
     <td>H29PRO-2127</td>
     <td>H29.10.16</td>
   </tr>
   <tr>
-    <td>OpenRTM-aist-1.1 Python版テストプログラム</td>
+    <td>OpenRTM-aist-1.1 Python test program</td>
     <td>H29PRO-2128</td>
     <td>H29.10.16</td>
   </tr>
   <tr>
-    <td>OpenRTM-aist-1.1 インストーラ作成プログラム</td>
+    <td>OpenRTM-aist-1.1 installer builder</td>
     <td>H29PRO-2129</td>
     <td>H29.10.16</td>
   </tr>
@@ -142,17 +75,14 @@ RTミドルウエア関連の技術移転を希望される場合は、下記担
     <td>H28.4.28</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">OpenRTM-aist-1.0系ソフトウエア</td>
+    <td>></td>
+    <td>></td>
+    <td>OpenRTM-aist-1.0 software</td>
   </tr>
   <tr>
     <td>OpenRTM-aist-1.0</td>
     <td>H22PRO-1089</td>
     <td>H22.02.05</td>
-  </tr>
-  <tr>
-    <td>TOPPERS版OpenRTM-aist-1.0</td>
-    <td>H26PRO-1623</td>
-    <td>H26.02.19</td>
   </tr>
   <tr>
     <td>OpenRTM-aist-Java-1.0</td>
@@ -175,7 +105,9 @@ RTミドルウエア関連の技術移転を希望される場合は、下記担
     <td>H22.07.13</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">OpenRTM-aist-0.4系ソフトウエア</td>
+    <td>></td>
+    <td>></td>
+    <td>OpenRTM-aist-0.4 software</td>
   </tr>
   <tr>
     <td>OpenRTM-aist-0.4.0 for Java</td>
@@ -205,103 +137,60 @@ RTミドルウエア関連の技術移転を希望される場合は、下記担
 </table>
 
 
-### RTMSafety
-以下のものは株式会社セックよりRTMSafetyとして販売されています。
+## Examples of Technology Transfer
 
-<table class="table-alt">
-  <tr>
-    <th>名称</th>
-    <th>管理番号</th>
-    <th>登録日</th>
-  </tr>
-  <tr>
-    <td colspan="3" style="text-align: center;">高信頼RTミドルウエア</td>
-  </tr>
-  <tr>
-    <td>Dependable RTM</td>
-    <td>H24PRO-1434</td>
-    <td>H24.09.14</td>
-  </tr>
-</table>
+<div align="right"><a href="https://astah.change-vision.com/ja/"><img src="astah_logo.png" width="80%; margin:20 20px;" align="right"></a></div>
+### astah* SysML-RTM linkage 
 
-### RaspberryPi用拡張基板PiRT-Unit
+- Transfered Organization: [Change Vision, Inc. ](https://www.change-vision.com/)
+- Product Name: [astah* SysML-RTM linkage plug-in](https://www.sec.co.jp/ja/rd/rtmsafety.html)
 
-<table class="table-alt">
-  <tr>
-    <th>名称</th>
-    <th>管理番号</th>
-    <th>登録日</th>
-  </tr>
-  <tr>
-    <td>RaspberryPi用拡張基板PiRT-Unit</td>
-    <td>H25PRO-1526</td>
-    <td>H25.07.01</td>
-  </tr>
-  <tr>
-    <td>XFinder</td>
-    <td>H26PRO-1644</td>
-    <td>H26.03.07</td>
-  </tr>
-</table>
+The astah* SysML-RTM linkage plug-in generates OpenRTM-aist's RT-Component design specifications (RTCProfile) and system design specifications (RTSProfile) from SysML model designs modeled using the SysML tool ``astah*`` by Change Vision, Inc.
 
-## 技術移転例
+By generating RTCProfile and RTSProfile from the parts existing on the SysML internal block diagram and linking with OpenRTP provided by OpenRTM-aist, it is possible to create a template of the source code of the RT-Component and the robot systems. It realizes the restoration of the components included in and their connection relationships.
 
-<div align="right"><a href="https://astah.change-vision.com/ja/"><img src="astah_logo.png" width="15%; margin:20 20px;" align="right"></a></div>
-### astah* SysML-RTM連携 
+- [astah* SysML-RTM linkage plug-in](http://changevision.github.io/sysml4rtm/index.html)
 
-- 移転先:[株式会社チェンジビジョン](https://www.change-vision.com/)
-- 製品名:[astah* SysML-RTM連携プラグイン](https://www.sec.co.jp/ja/rd/rtmsafety.html)
-
-astah* SysML-RTM連携プラグインは、株式会社チェンジビジョンのSysMLツール **astah*** を用いてモデリングしたSysMLモデル設計をOpenRTMのRTコンポーネント設計仕様 (RTCProfile) 、システム設計仕様 (RTSProfile)として生成、変換するプラグインです。
-
-SysML内部ブロック図上に存在するパートから RTCプロファイル 、RTSプロファイル を生成し OpenRTM-aist が提供するOpenRTPと連携することで、Robot Technologyコンポーネント(RTコンポーネント)のソースコードのひな形の作成や、ロボットシステムに含まれるコンポーネントとその接続関係の復元を実現します。
-
-- [astah* SysML-RTM連携プラグイン](http://changevision.github.io/sysml4rtm/index.html)
-
-<div align="center"><a href="astah_rtm.png"><img src="astah_rtm.png" width="70%;"></a></div>
+<div align="center"><a href="astah_rtm.png"><img src="astah_rtm.png" width="100;"></a></div>
 
 <br>
 <br>
 
-<div align="right"><a href="http://www.sec.co.jp/business/rtmsafety/index.html"><img src="rtmsafety_logo-removebg-preview.png" width="15%; margin:20 20px;" align="right"></a></div>
+<div align="right"><a href="http://www.sec.co.jp/business/rtmsafety/index.html"><img src="rtmsafety_logo-removebg-preview.png" width="100; margin:20 20px;" align="right"></a></div>
 ### RTMSafety
 
-- 移転先:[株式会社セック](https://www.sec.co.jp/ja/index.html)
-- 製品名:[RTMSafety](https://www.sec.co.jp/ja/rd/rtmsafety.html)
+- Transfered Organization: [SEC Co. Ltd.](https://www.sec.co.jp/ja/index.html)
+- Product Name:[RTMSafety](https://www.sec.co.jp/ja/rd/rtmsafety.html)
 
 
-RTMSafety（RTMセーフティ）は、ロボットの安全関連系への実装を想定し、機能安全の国際規格であるIEC 61508の認証を取得した世界初のロボット用ミドルウェアです。高い信頼性や安全性が要求されるロボットにおいて、開発コストの低減や、開発期間の短縮に貢献します。 (上記Webページより。)
+RTMSafety is the world's first middleware for robots that has acquired IEC 61508 certification, which is an international standard for functional safety, assuming implementation in robot safety-related systems. For robots that require high reliability and safety, it contributes to the reduction of development cost and shortening of the development period. (From the above web page.)
 
-RTMSafetyはOMG RTC標準のうちLightweightRTC規格を満たすC言語による実装であり、機能安全規格 IEC61508 が定めるソフトウエア開発基準に準拠した信頼性の高い実装です。機能安全規格を満たすためOpenRTM-aistにくらべ機能的な制約があり、またOpenRTM-aistとは直接の互換性はありませんが、ブリッジを用いることにより、安全関連系をRTMSafetyで、非安全関連系をOpenRTM-aistで実装することが可能です。信頼性の要求される複雑なロボットアプリケーションに対して、RTMSafetyによる信頼性の確保と、OpenRTM-aistによる柔軟性の高いシステム構築を両立することが可能です。
+RTMSafety is an implementation in C language that meets the Lightweight RTC standard among the OMG RTC standards and is a highly reliable implementation that complies with the software development standards set by the functional safety standard IEC61508. There are functional restrictions compared to OpenRTM-aist in order to meet functional safety standards, and there is no direct compatibility with OpenRTM-aist. However, by using a bridge, it is possible to build a system by using RTMSafety for safety-related implementation and OpenRTM-aist for non-safety-related implementation. For complex robot applications that require reliability, it is possible to ensure reliability with RTMSafety and build a highly flexible system with OpenRTM-aist.
 
 <br>
 <br>
+
+
 
 ### Pattern Weaver for RT-Middleware
+- Transfered Organization: [Technologic Arts Inc.](http://www.tech-arts.co.jp/)
+- Product Name: [**Pattern Weaver for RT-Middleware**](http://pw.tech-arts.co.jp/pw/rt_middleware/index.html)
 
-- 移転先:[株式会社テクノロジックアート](http://www.tech-arts.co.jp/)
-- 製品名:[Pattern Weaver for RT-Middleware](http://pw.tech-arts.co.jp/pw/rt_middleware/index.html)
+[**Pattern Weaver for RT-Middleware**](http://pw.tech-arts.co.jp/pw/rt_middleware/index.html) is the first UML modeling tool that supports RT-Middleware officially.
+RT-Components, which are executed on RT-Middleware, can be designed seamlessly through the UML modeling tools. Many features for robot system development are provided.
 
-[**Pattern Weaver for RT-Middleware**](http://pw.tech-arts.co.jp/pw/rt_middleware/index.html)は、「RT-Middleware」に対応した初めてのUMLモデリングツールです。
-RT-Middleware上で動作するRTコンポーネントの設計及び開発をUMLモデリングツールを用いてシームレスに行うことができます。
-UMLモデリングツールPattern Weaver上で作成したRTコンポーネントのモデルからコードを自動生成することができ、RTコンポーネントの開発を強力にサポートします。
-その他ロボット構築には最適な機能を満載しています。
-
-<div align="center"><a href="pattern_weaver.jpg"><img src="pattern_weaver.jpg" width="70%;"></a></div>
-<div align="center"><strong>Pattern Weaver for RTMによるシステム設計のイメージ</strong></div>
+<div align="center"><a href="http://pw.tech-arts.co.jp/pw/rt_middleware/images/component_s.jpg"><img src="http://pw.tech-arts.co.jp/pw/rt_middleware/images/component_s.jpg" width="100;"></a></div>
+<div align="center"><strong>System design in Pattern Weaver for RTM.</strong></div>
 
 
-### KEK高エネルギー加速器研究機構DAQシステム
-- 移転先:[高エネルギー加速器研究機構](https://www.kek.jp/)
-- 製品名:[DAQ-Middlewre](https://daqmw.kek.jp/)
+### KEK High Energy Accelerator Organization's DAQ system
+- Transfered Organization: [KEK High Energy Accelerator Organization](https://www.kek.jp/)
+- Product Name: [**DAQ-Middleware**](https://daqmw.kek.jp/)
 
-DAQ-Middlewareは汎用のネットワーク分散データ収集システムの構築を容易にするソフトウェアフレームワークです。
-加速器等の検出器からのデータを収集、解析、可視化システムを柔軟かつ容易に構築するためのコンポーネントおよびツール群が提供されています。
+DAQ-Middleware is a generic framework for networked distributed data acquisition system development. It provides a set of components and a tool chain to realise easy development of data acquisition from sensors, data gathering through networks, data analysis and data visualization.
 
 <div align="center"><a href="daq-middleware.png"><img src="daq-middleware.png" width="40%;"></a></div>
-<div align="center"><strong>DAQ-Middlewareアーキテクチャ</strong></div>
+<div align="center"><strong>DAQ-Middleware architecture.</strong></div>
 
 <div align="center"><a href="jparc.png"><img src="jparc.png" width="40%;"></a></div>
-<div align="center"><strong>J-PARC(大強度陽子加速器施設) </strong></div>
-
-
+<div align="center"><strong>J-PARC (Japan Photon Accelerator Research Complex).</strong></div>

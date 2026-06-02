@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェアサマーキャンプ2023
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><a href="sammercamp2023_r2.png"><img src="sammercamp2023_r2.png" width="100%;"></a></div>
 
@@ -600,3 +605,4 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 
 <!-- #ref(reg_flow.png,60%,left,nolink) -->
 
+<!-- -------jp page!!------- -->

@@ -2,6 +2,7 @@
 layout: page
 title: RTコンポーネント作成の基本
 ---
+-------jp page!!-------
 
 <!-- Title: RTコンポーネント作成の基本 -->
 #contents
@@ -339,3 +340,4 @@ ConsoleOutクラスのコンストラクタで、先ほど定義した Multiply 
 
 <br>
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: システムエディタ（RTC の表示 / 描画編集 編）
 ---
+-------jp page!!-------
 
 <!-- Title: システムエディタ（RTC の表示 / 描画編集 編） -->
 #contents
@@ -238,3 +239,4 @@ RTC を削除するには、RTCを選択し [Delete] ボタンをクリックす
 <div align="center"><strong>垂直線（左）と水平線の（右）の接続線の移動</strong></div>
 <br>
 
+-------jp page!!-------

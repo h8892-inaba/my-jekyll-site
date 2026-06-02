@@ -2,6 +2,7 @@
 layout: page
 title: コンパイル方法 (Windows、Java 編 )
 ---
+-------jp page!!-------
 
 <!-- Title: コンパイル方法 (Windows、Java 編 ) -->
 #contents
@@ -84,3 +85,4 @@ Java 言語の場合は、JDT(Java Development Tools) があらかじめ Eclipse
 ビルドに成功すると、以下の表示となります。<br><br>
 <div align="center"><a href="system-property_09.png"><img src="system-property_09.png" width="90%;"></a></div>
 <br><br>
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: "SimpleService"
 ---
+-------jp page!!-------
 
 <!-- Title: SimpleService -->
 #contents
@@ -93,3 +94,4 @@ MyServiceConsumerとMyServiceProviderの対応するポートをRTSystemEditor�
   - get_value_history：今までにセットしてきた値の履歴をProvider側から取得
 
 
+-------jp page!!-------

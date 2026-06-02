@@ -2,6 +2,7 @@
 layout: page
 title: RTミドルウェアコンテスト2016奨励賞一覧
 ---
+No English version available.
 
 #contents(2)
 

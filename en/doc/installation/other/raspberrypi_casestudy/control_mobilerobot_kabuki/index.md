@@ -2,6 +2,7 @@
 layout: page
 title: 移動ロボットKobukiの制御
 ---
+-------jp page!!-------
 <!-- Title: 移動ロボットKobukiの制御 -->
 <!-- * 移動ロボット Kobuki の制御 -->
 #contents
@@ -520,3 +521,4 @@ Windows では coil::sleep の精度が悪いので、Sleep関数を利用した
 - Kobuki 自律制御: [KobukiAutoMove.zip](KobukiAutoMove.zip)
 
 
+-------jp page!!-------

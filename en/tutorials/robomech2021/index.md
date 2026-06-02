@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMECH2021オンライン講習会 (2021年6月6日(日))
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <!-- #ref(https://robomech.org/2020/wp-content/uploads/2019/09/head000.jpg,left,100%,margin=10,url=/ja/tutorial/robomech2020) -->
 <!-- #ref(robomech2019_title.png,left,60%,margin=10,url=/ja/tutorial/robomech2019) -->
@@ -328,3 +333,4 @@ Ubuntu 18.04、18.10、20.04の場合は以下のコマンドでjava8に切り�
 <!-- #br -->
 
 
+<!-- -------jp page!!------- -->

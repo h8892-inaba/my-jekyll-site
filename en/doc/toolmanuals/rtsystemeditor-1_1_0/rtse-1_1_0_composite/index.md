@@ -2,6 +2,7 @@
 layout: page
 title: システムエディタ（複合コンポーネン編）
 ---
+-------jp page!!-------
 
 <!-- Title: システムエディタ（複合コンポーネン編） -->
 #contents
@@ -179,3 +180,4 @@ title: システムエディタ（複合コンポーネン編）
 <div align="center"><strong>ポートの接続がある場合</strong></div>
 <br>
 
+-------jp page!!-------

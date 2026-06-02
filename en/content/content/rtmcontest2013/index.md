@@ -2,6 +2,7 @@
 layout: page
 title: RTミドルウエアコンテスト2013
 ---
+No English version available.
 
 <div align="left"><img src="rtmcontest2013.png" width="60%;" align="center"></div>
 

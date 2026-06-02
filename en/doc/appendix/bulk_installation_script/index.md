@@ -3,6 +3,7 @@ layout: page
 title: "一括インストールスクリプト"
 
 ---
+-------jp page!!-------
 
 <!-- Title: 一括インストールスクリプト -->
 <!-- #contents(5) -->
@@ -178,3 +179,4 @@ OpenRTM-aist の最新バージョンが1.2.2の場合、オプション"-t"で1
  $ sudo ./pkg_install_ubuntu.sh -l python -t 1.2.1
 ```
 
+-------jp page!!-------

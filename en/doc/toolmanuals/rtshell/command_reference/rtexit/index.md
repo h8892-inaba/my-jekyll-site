@@ -2,6 +2,7 @@
 layout: page
 title: rtexit
 ---
+-------jp page!!-------
 
 <!-- Title: rtexit  -->
 
@@ -80,3 +81,4 @@ RTコンポーネントのポートを示す場合、パスの後にコロン（
  $ rtexit /localhost/ConsoleOut0.rtc
 ```
 
+-------jp page!!-------

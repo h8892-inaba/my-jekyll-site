@@ -2,6 +2,11 @@
 layout: page
 title: Japan Robot Week 2018 RTM講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <!-- #ref(dl_logo_wrob.jpg,60%,right,margin=10,around,url=http://biz.nikkan.co.jp/eve/s-robot/index.html) -->
 <!-- #ref(DSC_0025.png,50%,right,margin=10,around,url=http://biz.nikkan.co.jp/eve/s-robot/index.html) -->
@@ -212,3 +217,4 @@ title: Japan Robot Week 2018 RTM講習会
 <div align="center"><a href="181019-02re.jpg"><img src="181019-02re.jpg" width="60%;"></a></div>
 <br>
 
+<!-- -------jp page!!------- -->

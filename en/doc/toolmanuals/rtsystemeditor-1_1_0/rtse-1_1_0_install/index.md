@@ -2,6 +2,7 @@
 layout: page
 title: インストールおよび起動
 ---
+-------jp page!!-------
 
 <!-- Title: インストールおよび起動 -->
 #contents
@@ -37,3 +38,4 @@ RT System Editor が起動します。
 <div align="center"><strong>RT System Editor の初期起動時画面</strong></div>
 <br>
 
+-------jp page!!-------

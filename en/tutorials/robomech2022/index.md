@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMECH2022講習会 (2022年6月1日(水))
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <!-- #ref(https://robomech.org/2020/wp-content/uploads/2019/09/head000.jpg,left,100%,margin=10,url=/ja/tutorial/robomech2020) -->
 <!-- #ref(robomech2019_title.png,left,60%,margin=10,url=/ja/tutorial/robomech2019) -->
@@ -327,3 +332,4 @@ title: ROBOMECH2022講習会 (2022年6月1日(水))
 <!-- #br -->
 
 
+<!-- -------jp page!!------- -->

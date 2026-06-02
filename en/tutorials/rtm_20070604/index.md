@@ -2,6 +2,11 @@
 layout: page
 title: 中央大学RTミドルウエア講習会(2007年6月4日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -21,3 +26,4 @@ title: 中央大学RTミドルウエア講習会(2007年6月4日)
 - **定員:**約10名
 - **聴講料:**無料
 
+<!-- -------jp page!!------- -->

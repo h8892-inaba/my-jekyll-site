@@ -1,15 +1,15 @@
 ---
 layout: page
-title: 論文 (2006年)
+title: Paper(2006)
 ---
 
-## 国際学会
+## International Conference
 1. Noriaki ANDO, Takashi Suehiro, Kosei Kitagaki, Tetsuo Kotoku, "RT(Robot Technology)-Component and its Standardization- Towards Component Based Networked Robot Systems Development -", SICE-ICASE International Joint Conference 2006 (SICE-ICCAS 2006), pp.2633-2638, 2006.10, Busan, Korea [[PDF](SICE2006_Ando_FA12-5.pdf)]
 1. Kenichi Ohara, Takashi Suzuki, Noriaki ANDO, Bong Keun Kim, Kohtaro Ohba, Kazuo Tanie, "Distributed Control of Robot Functions using RT Middleware", SICE-ICASE International Joint Conference 2006 (SICE-ICCAS 2006), pp.2629-2632, 2006.10, Busan, Korea [[PDF](SICE2006_Ohara_FA12-4.pdf)]
 1. Yutaka TSUCHIYA, Makoto MIZUKAWA, Takashi SUEHIRO, Noriaki ANDO, Hiroyuki NAKAMOTO, Akihiro IKEZOE, "Development of Light-Weight RT-Component (LwRTC) on Embedded Processor-Application to Crawler Control Subsystem in the Physical Agent System-", SICE-ICASE International Joint Conference 2006 (SICE-ICCAS 2006), pp.2618-2622, 2006.10, Busan, Korea [[PDF](SICE2006_Tsuchiya_FA12-2.pdf)]
 1. Yoshihisa TOSHIMA, Qinhe WANG, Noriaki ANDO, Hideki Hashimoto, "Occlusion Avoidance of Information Display System in Intelligent Space", SICE-ICASE International Joint Conference 2006 (SICE-ICCAS 2006), pp.2663-2667, 2006.10, Busan, Korea [[PDF](SICE2006_Toshima_FA13-2.pdf)]
 
-## 国内学会
+## Domestic Conference
 1. 安芳次, 井上,仲吉,藤井,五十嵐,小玉, 安藤 慶昭, 神徳 徹雄, 末廣 尚士, 平野 聡, "FEASIBILITY OF DATA ACQUISITION MIDDLEWARE BASED ON ROBOT TECHNOLOGY ", Int. Conf. on Computing in High Energy and Nuclear Physics, 2006.02, インド　ムンバイ市
 1. 安藤 慶昭, ルメア オリビエ, 末廣 尚士, 神徳 徹雄, 北垣 高成, "RTミドルウエアのPIM,PSMおよび実装 －RTミドルウエアの標準化に向けて－", 第11回 ロボティクスシンポジア, pp.432-437, 2006.03, 佐賀県, 嬉野
 1. 都島 良久, 王 親和, 安藤 慶昭, 鈴木 喬, 橋本 秀紀, "空間知能化のためのネットワーク接続型情報提示装置 -RTコンポーネントを用いたアクティブプロジェクタの開発-", 日本機械学会 ロボティクス・メカトロニクス講演会2006, p.2P1-E19, 2006.05, 早稲田大学, 東京 [[PDF](ROBOMEC06_Toshima_2P1_E19.pdf)]
@@ -31,15 +31,16 @@ title: 論文 (2006年)
 1. 安藤 慶昭, 神徳 徹雄, 安 芳次, 久保田 貴也, 大川 猛, 平野 聡, "RTコンポーネントのInPort/OutPortデータ転送方法の多様化-Raw TCP/IP Socket によるデータ転送 -", 計測自動制御学会 システムインテグレーション部門 講演会 2006 (SI2006), p.3B2-1, 2006.12, 札幌, 北海道 [[PDF](SI2006_Ando_3B2_1.pdf)]
 1. 末廣 尚士, 高橋 裕信, 門内 正和 , 北垣 高成, 喜多 伸之, 音田 弘, 安藤 慶昭, 神徳 徹雄, "OpenRTMのための３次元ステレオ視覚認識コンポーネントの実装", 計測自動制御学会 システムインテグレーション部門 講演会 2006 (SI2006), p.3B2-4, 2006.12, 札幌, 北海道 [[PDF](SI2006_Takahashi_3B2_4.pdf)]
 
-## 論文公開規定について
-本ページでは、各学会の論文公開規定に従って可能な限り論文原稿の公開を行っております。
+## About the Paper Publication Policy
 
-- [ロボット学会](http://www.rsj.or.jp/data_rules/L-02.pdf)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [日本機械学会](http://www.jsme.or.jp/conrule.htm)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [計測自動制御学会](http://www.sice.jp/)
-  - 転載（使用）許諾願をSICE事務局へ提出し許諾を受ければ可能。[[転載許可証](tensai_kyoka_201311.pdf)]
+On this page, we publish paper manuscripts as much as possible in accordance with the publication policies of each academic society.
+
+- [Robotics Society of Japan](http://www.rsj.or.jp/data_rules/L-02.pdf)
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
+- [Japan Society of Mechanical Engineers](http://www.jsme.or.jp/conrule.htm) 
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
+- [The Society of Instrument and Control Engineers](http://www.sice.jp/)
+ - Publication is possible if a reprint (reuse) permission request is submitted to the SICE office and approval is obtained. [Reprint Permission Certificate](tensai_kyoka_201311.pdf)
 
 
 

@@ -2,6 +2,7 @@
 layout: page
 title:  PiRT-UnitによるI2Cデバイスの利用
 ---
+-------jp page!!-------
 
 <!-- Title: PiRT-UnitによるI2Cデバイスの利用 -->
 #contents
@@ -349,3 +350,4 @@ RaspberryPi上でI2Cデバイスにアクセスするプログラムは以上の
 などが考えられますが、それぞれ一長一短があるので状況に応じて選択するのがよいでしょう。
 
 
+-------jp page!!-------

@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウエアサマーキャンプ2011
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -261,3 +266,4 @@ RTミドルウエアコンテスト参加を目指して開発案件を抱えて
 - [Pioneer 3DX制御のための参照コンポーネント](http://210.154.184.16/pukiwiki/?ID_363)
 - [OpenCV_RTC.zip(ソース)](http://www.openrtm.org/openrtm/sites/default/files/158/OpenCVRTC-1.0.0.zip)
 - [受付システムについて](http://210.154.184.16/pukiwiki/?SYS_001_V100)
+<!-- -------jp page!!------- -->

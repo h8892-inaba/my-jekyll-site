@@ -2,6 +2,7 @@
 layout: page
 title: "SSLTransportの使用方法"
 ---
+-------jp page!!-------
 
 <!-- Title: SSLTransportの使用方法 -->
 #contents
@@ -476,3 +477,4 @@ OpenRTM-aistをビルド、インストールすると、SSLTransportの簡単�
  ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/ssl/rtc.ssl.conf
 ```
 
+-------jp page!!-------

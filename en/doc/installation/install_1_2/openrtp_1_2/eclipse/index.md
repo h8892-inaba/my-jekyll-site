@@ -2,6 +2,7 @@
 layout: page
 title: Eclipseについて
 ---
+-------jp page!!-------
 
 <!-- Title: Eclipseについて -->
 <div align="left"><a href="eclipse_logo.png"><img src="eclipse_logo.png" width="100;" align="left"></a></div>
@@ -70,3 +71,4 @@ RTCBuilderとRTSystemEditorは下記のEclipseプラグインを使用してい�
 
 インストール後Eclipseをいったん終了します。
 
+-------jp page!!-------

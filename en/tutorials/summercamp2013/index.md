@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウエアサマーキャンプ2013
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="summercamp2013_banner.png" width="60%;"</div>
 
@@ -651,3 +656,4 @@ Windows上でrtshellを動かすためには，下記のソフトも必要にな
 <br>
 
 &aname(comment);
+<!-- -------jp page!!------- -->

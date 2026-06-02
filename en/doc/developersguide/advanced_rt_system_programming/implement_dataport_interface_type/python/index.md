@@ -2,6 +2,7 @@
 layout: page
 title: "独自インターフェース型の実装手順(Python)"
 ---
+-------jp page!!-------
 
 <!-- Title: 独自インターフェース型の実装手順(Python) -->
 #contents
@@ -464,3 +465,4 @@ Pull型通信を動作確認する場合について、Pull型通信ではInPort
 
 
 
+-------jp page!!-------

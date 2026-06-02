@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMEC2013講習会(2013年5月22日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <!-- #ref(http://www.jsme.or.jp/rmd/robomec2007/JA/IMAGE/RMDTM.GIF,80%,right,margin=10,around,url=/ja/tutorial/robomec2013) -->
 <div align="center"><img src="robomec2013_tsukuba.png" width="30%; margin:10px;" ></div>
@@ -252,3 +257,4 @@ G-ROBOT & Choreonoidコースでは以下の内容を実施しました。
 <br>
 
 &aname(comment);
+<!-- -------jp page!!------- -->

@@ -4,6 +4,7 @@ layout: page
 Title: OpenRTM-aistインストーラ作業内容
 
 ---
+-------jp page!!-------
 
 <!-- Title: OpenRTM-aistインストーラ作業内容 -->
 
@@ -69,3 +70,4 @@ Title: OpenRTM-aistインストーラ作業内容
 ```
 
 
+-------jp page!!-------

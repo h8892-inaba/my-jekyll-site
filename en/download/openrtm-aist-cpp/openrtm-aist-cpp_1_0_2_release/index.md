@@ -3,6 +3,8 @@ layout: page
 title: OpenRTM-aist C++ 1.0.2-RELEASE
 ---
 
+No English version available.
+
 <!-- Title: 1.0.2-RELEASE -->
 <div align="left"><a href="cpp_logo.png"><img src="cpp_logo.png" width="15%;" align="right"></a></div>
 

@@ -2,6 +2,7 @@
 layout: page
 title: ソースからのビルド
 ---
+-------jp page!!-------
 
 <!-- Title: ソースからのビルド -->
 #contents
@@ -124,3 +125,4 @@ idl ファイルから必要な java ソースファイルが生成されます�
 <div align="center"><strong>ビルド実行結果</strong></div>
 コンソールウィンドウに以上の表示がでれば完了です。
 
+-------jp page!!-------

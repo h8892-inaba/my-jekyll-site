@@ -2,6 +2,11 @@
 layout: page
 title: 関西地区特別講演会(2009年10月8日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -76,3 +81,4 @@ title: 関西地区特別講演会(2009年10月8日)
 <div align="center"><a href="091008-03.png"><img src="091008-03.png" width="60%;"></a></div>
 
 
+<!-- -------jp page!!------- -->

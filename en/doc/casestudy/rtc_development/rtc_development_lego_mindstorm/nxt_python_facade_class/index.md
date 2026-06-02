@@ -2,6 +2,7 @@
 layout: page
 title: NXT Python Facade クラス
 ---
+-------jp page!!-------
 
 <!-- Title: NXT Python Facade クラス -->
 ## NXT Python Facade クラス
@@ -150,3 +151,4 @@ NXT の主な機能を列挙します。
 
 
 
+-------jp page!!-------

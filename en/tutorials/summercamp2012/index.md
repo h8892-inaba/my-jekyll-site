@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウエアサマーキャンプ2012
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="SummerCampLogo.png" width="80%;"></div>
 
@@ -467,3 +472,4 @@ title: RTミドルウエアサマーキャンプ2012
  神徳徹雄（尾形）
  Tel: 029-861-5952　FAX：029-861-5971
 ```
+<!-- -------jp page!!------- -->

@@ -2,6 +2,7 @@
 layout: page
 title: "OpenRTM-aistを10分で始めよう！(1.2系)"
 ---
+-------jp page!!-------
 <!-- Title: OpenRTM-aistを10分で始めよう！ -->
 #contents
 最新バージョンOpenRTM-aist-1.2.1-RELEASEではC++版、Python版、Java版、OpenRTPがインストールされます。また、rtshellも同時にインストールされます。
@@ -243,3 +244,4 @@ rtshellを利用することでコマンドラインからRTCのActivate、Deact
 - **コミュニティーに参加する　　　&t;：　**[コミュニティー]({{ site.baseurl }}/ja/node/624)
 - **公開コンポーネントを見てみる　&t;：　**[プロジェクト]({{ site.baseurl }}/ja/node/123)
 
+-------jp page!!-------

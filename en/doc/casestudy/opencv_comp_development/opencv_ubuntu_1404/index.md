@@ -2,6 +2,7 @@
 layout: page
 title: 画像処理コンポーネントの作成(OpenRTM-aist-1.1、CMake、Linux Ubuntu 14.04) 
 ---
+-------jp page!!-------
 
 <!-- Title: 画像処理コンポーネントの作成(OpenRTM-aist-1.1、CMake、Linux Ubuntu 14.04) -->
 #contents
@@ -1068,3 +1069,4 @@ Flip コンポーネントの全ソースコードを以下に添付します。
 
 [Flip.zip](Flip.zip)
 
+-------jp page!!-------

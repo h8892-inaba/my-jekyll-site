@@ -2,6 +2,7 @@
 layout: page
 title: rtresurrect
 ---
+-------jp page!!-------
 <!-- Title: rtresurrect -->
 
 ## 書式
@@ -41,3 +42,4 @@ RTSProfileファイルをロードし、実行中のコンポーネントを使�
 ```
 
 
+-------jp page!!-------

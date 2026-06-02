@@ -2,6 +2,11 @@
 layout: page
 title: 会津大学RTミドルウェア講習会（６月２４日）
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="aizu_logo.gif" width="75%;"></div>
 
@@ -74,3 +79,4 @@ title: 会津大学RTミドルウェア講習会（６月２４日）
 
 <div align="center"><a href="150624-06.jpg"><img src="150624-06.jpg" width="60%;"></a></div>
 <br>
+<!-- -------jp page!!------- -->

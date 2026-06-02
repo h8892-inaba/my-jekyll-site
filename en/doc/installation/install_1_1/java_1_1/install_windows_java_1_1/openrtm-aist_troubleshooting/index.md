@@ -2,6 +2,7 @@
 layout: page
 title: OpenRTM-aist(C++版、Python版、Java版)に関するトラブルシューティング
 ---
+-------jp page!!-------
 
 <!-- Title: OpenRTM-aist(C++版、Python版、Java版)に関するトラブルシューティング -->
 #contents(4)
@@ -524,3 +525,4 @@ OS が FedoraCore の場合、yum にて Java をインストールすると GCJ
 不具合が発生した場合は、まず、Oracle の Java が使用されているかの確認をしてください。
 - **参考**[JDKインストールのためのヒント](/ja/node/805#fedora)
 - [**UNIX系環境で簡易に Oracle の Java を Eclipse に適用する方法**](/ja/node/248#rtclinksunjava)
+-------jp page!!-------

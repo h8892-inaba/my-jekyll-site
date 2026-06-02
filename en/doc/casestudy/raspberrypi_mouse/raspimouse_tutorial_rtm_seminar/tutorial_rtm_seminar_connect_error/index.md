@@ -2,6 +2,7 @@
 layout: page
 title: ポートの接続に失敗した場合の対処方法
 ---
+-------jp page!!-------
 
 <!-- ポートの接続に失敗した場合の対処方法 -->
 #contents
@@ -93,3 +94,4 @@ RTSystemEditorが応答なしになる場合、もしくはしばらく待てば
 
 またSystem Diagramを長時間使用していると不具合が発生することがあります。
 System Diagramを×を押して削除後、もう一度System Diagramを表示して下さい。
+-------jp page!!-------

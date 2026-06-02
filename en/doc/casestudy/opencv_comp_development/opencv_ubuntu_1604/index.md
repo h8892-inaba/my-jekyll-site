@@ -2,6 +2,7 @@
 layout: page
 title: 画像処理コンポーネントの作成 (Ubuntu 16.04、OpenRTM-aist-1.1.2-RELEASE、OpenRTP-1.1.2、CMake-3.5.1、Code::Blocks-16.01)
 ---
+-------jp page!!-------
 
 <!-- Title: 画像処理コンポーネントの作成 (Ubuntu 16.04、OpenRTM-aist-1.1.2-RELEASE、OpenRTP-1.1.2、CMake-3.5.1、Code::Blocks-16.01) -->
 #contents
@@ -794,3 +795,4 @@ Flipコンポーネントのコンフィギュレーションパラメーター�
 
 
 
+-------jp page!!-------

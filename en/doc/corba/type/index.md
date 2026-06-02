@@ -2,6 +2,7 @@
 layout: page
 title: _var_type, _ptr_type
 ---
+-------jp page!!-------
 
 <!-- Title: _var_type, _ptr_type -->
 #contents
@@ -119,3 +120,4 @@ CosNaming の BindingIterator のスタブだと思われますが、_ptr_type�
    typedef ::CosNaming::BindingIterator_ptr _ptr_type;
    typedef ::CosNaming::BindingIterator_var _var_type;
 ```
+-------jp page!!-------

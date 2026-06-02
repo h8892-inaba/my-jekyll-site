@@ -2,6 +2,7 @@
 layout: page
 title: RTコンポーネント作成(NXTway編)
 ---
+-------jp page!!-------
 <!-- Title: RTコンポーネント作成(NXTway編) -->
 #contents
 #clear
@@ -203,3 +204,4 @@ cygwinを起動する
   - 接続が完了したら NXT 側が下の図のようになる
 <div align="center"><a href="8.png"><img src="8.png" width="70%;"></a></div>
 
+-------jp page!!-------

@@ -2,6 +2,11 @@
 layout: page
 title: 産総研・RTミドルウエア講習会（2013年3月29日）
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="aist_tutorial_130329.jpg" width="60%;" ></div>
 
@@ -158,3 +163,4 @@ title: 産総研・RTミドルウエア講習会（2013年3月29日）
 <!-- - 当Webサイトにログイン済みの方は名前の欄にユーザ名が出ますが、氏名に書き換えてください。 -->
 <!-- - 講習会で必要なUSBカメラの有無についてもお申し出ください。 -->
 <!-- - フォーム送信後、確認メールをお送りいたします。1日たっても確認メールが届かない場合は、[[こちら（support@openrtm.org）:mailto:support@openrtm.org]] までお問い合わせください。 -->
+<!-- -------jp page!!------- -->

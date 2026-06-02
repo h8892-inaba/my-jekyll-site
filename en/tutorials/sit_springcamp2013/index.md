@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウエアスプリングキャンプ (2013年3月26日～28日)
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 #contents
 
@@ -120,3 +125,4 @@ title: RTミドルウエアスプリングキャンプ (2013年3月26日～28日
 <div align="center"><img src="130327-02.jpg" width="60%;"></div>
 <div align="center"><img src="130328-01.jpg" width="60%;"></div>
 <div align="center"><img src="130328-02.jpg" width="60%;"></div>
+<!-- -------jp page!!------- -->

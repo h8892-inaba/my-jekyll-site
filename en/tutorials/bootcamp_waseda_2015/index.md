@@ -2,6 +2,11 @@
 layout: page
 title: RTミドルウェア強化月間2015 in 早稲田大学・RTミドルウェア講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><img src="bootcamp_waseda2014.jpg" width="75%;"></div>
 
@@ -147,3 +152,4 @@ $ sudo dpkg -i imageprocessing-1.1.0.deb
 ## 講習会の様子
 <div align="center"><a href="150701-01.jpg"><img src="150701-01.jpg" width="60%;"></a></div>
 <br>
+<!-- -------jp page!!------- -->

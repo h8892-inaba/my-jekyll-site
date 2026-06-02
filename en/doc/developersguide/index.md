@@ -2,6 +2,7 @@
 layout: page
 title: " デベロッパーズガイド"
 ---
+-------jp page!!-------
 
 <!-- Title: デベロッパーズガイド -->
 <div align="right"><img src="devguide.png" width="20%;" align="right"></div>
@@ -72,3 +73,4 @@ RTコンポーネント開発者向けのドキュメント。RTCを作る方法
 - [複合コンポーネントの概要](./inside_openrtm-aist/composite_component_overview)
 
 
+-------jp page!!-------

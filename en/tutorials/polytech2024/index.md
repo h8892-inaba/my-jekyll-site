@@ -2,6 +2,11 @@
 layout: page
 title: 高度ポリテクセンター「RTミドルウェアによるロボットプログラミング技術」（2024年11月21日～22日）
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="right"><a href="RasPiMouse_LiDAR.png"><img src="RasPiMouse_LiDAR.png" width="50%; margin:10px;" align="right"></a></div>
 
@@ -104,3 +109,4 @@ RaspberryPiを利用しているので、実機上で開発したり、容易に
 - 使い慣れたエディタ: EclipseやPythonに付属のエディタでも構いませんが、使い慣れたエディタが入っていた方が良いでしょう
   - [VScode](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)
 
+<!-- -------jp page!!------- -->

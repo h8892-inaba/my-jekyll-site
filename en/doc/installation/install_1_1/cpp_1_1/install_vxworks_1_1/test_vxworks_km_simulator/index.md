@@ -2,6 +2,7 @@
 layout: page
 title: OpenRTM-aist動作確認(VxWorks、カーネルモジュール、シミュレータ利用の場合)
 ---
+-------jp page!!-------
 
 
 <!-- Title: OpenRTM-aist動作確認(VxWorks、カーネルモジュール、シミュレータ利用の場合) -->
@@ -234,3 +235,4 @@ Workbench、omniORB、openRTM-aistのパスは適宜変更してください。
  taskSpawn "rtcd_main",100,67108864,1000000,rtcd_main,"-o","manager.shutdown_on_nortcs:NO","-o","manager.shutdown_auto:NO"
  taskSpawn "consolein_main",100,0,1000000,consolein_main
 ```
+-------jp page!!-------

@@ -7,15 +7,15 @@ top_comm_dir
 
 ## wiki
 
-## フォーラム
+## Forums
 
-## メーリングリスト
+## Mailing Lists
 
-## [講習会](../tutorials)
+## [Workshops / Training](../tutorials)
 
-## バグトラッキング
+## Bug Tracker
 
-## イベント
+## Events
 
-## 関連製品等
+## Related Products
 

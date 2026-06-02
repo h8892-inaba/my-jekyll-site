@@ -2,6 +2,7 @@
 layout: page
 title: "TAO関連の設定"
 ---
+-------jp page!!-------
 
 <!-- Title: TAO関連の設定 -->
 #contents
@@ -308,3 +309,4 @@ OpenRTM-aistをビルド、インストールすると、上記の通信プロ�
 ```
 
 
+-------jp page!!-------

@@ -2,6 +2,7 @@
 layout: page
 title: 画像処理コンポーネントの作成 (Windows 8.1、OpenRTM-aist-1.1.2-RELEASE、OpenRTP-1.1.2、CMake-3.5.2、VS2015)
 ---
+-------jp page!!-------
 
 <!-- Title: 画像処理コンポーネントの作成 (Windows 8.1、OpenRTM-aist-1.1.2-RELEASE、OpenRTP-1.1.2、CMake-3.5.2、VS2015) -->
 #contents
@@ -656,3 +657,4 @@ Flip コンポーネントのコンフィギュレーションパラメーター
 
 
 
+-------jp page!!-------

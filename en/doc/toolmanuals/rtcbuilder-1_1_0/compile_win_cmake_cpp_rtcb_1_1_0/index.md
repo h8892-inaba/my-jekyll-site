@@ -2,6 +2,7 @@
 layout: page
 title: コンパイル方法 (Windows、CMake 利用、C++ 編 )
 ---
+-------jp page!!-------
 
 <!-- Title: コンパイル方法 (Windows、CMake 利用、C++ 編 ) -->
 Windows でのビルド方法を説明します。
@@ -146,3 +147,4 @@ C:\Program Files\OpenRTM-aist\1.1\components\<言語>/<パッケージ名>
 <hr>
 
 - 添付[cmake-2.8-WiX-patch_v30.zip(1.09MB)](./cmake-2.8-WiX-patch_v30.zip)
+-------jp page!!-------

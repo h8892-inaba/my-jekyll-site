@@ -2,6 +2,11 @@
 layout: page
 title: ROBOMECH2020講習会 (2020年5月27日(水))
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="left"><a href="/ja/tutorial/robomech2020"><img src="https://robomech.org/2020/wp-content/uploads/2019/09/head000.jpg" width="100%; margin:10px;" align="left"></a></div>
 <!-- #ref(robomech2019_title.png,left,60%,margin=10,url=/ja/tutorial/robomech2019) -->
@@ -313,3 +318,4 @@ connpassから参加申し込みを行ってください。
 <!-- #br -->
 
 
+<!-- -------jp page!!------- -->

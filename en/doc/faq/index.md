@@ -2,6 +2,7 @@
 layout: page
 title: よくある質問
 ---
+-------jp page!!-------
 
 よくある質問を簡単にまとめました。
 
@@ -17,3 +18,4 @@ title: よくある質問
 - [その他の FAQ](./faq_other)
 - [過去に掲載した FAQ](./faq_old)
 - [トラブルシューティング](./trouble_shooting)
+-------jp page!!-------

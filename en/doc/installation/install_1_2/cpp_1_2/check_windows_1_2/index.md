@@ -2,6 +2,7 @@
 layout: page
 title: 動作確認(Windows編)
 ---
+-------jp page!!-------
 
 <!-- Title: 動作確認(Windows編) -->
 #contents
@@ -173,3 +174,4 @@ ConsoleIn0コンポーネントの右側にはデータが出力されるOutPort
 
 
 
+-------jp page!!-------

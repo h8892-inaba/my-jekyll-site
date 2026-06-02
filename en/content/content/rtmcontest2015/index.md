@@ -3,6 +3,8 @@ layout: page
 title: RTミドルウェアコンテスト2015
 ---
 
+No English version available.
+
 <div align="left"><a href="http://www.openrtm.org/openrtm/sites/default/files/RTMContest2015Banner.png"><img src="RTMContest2015Banner.png" width="60%;" align="center"></a></div>
 
 <br>

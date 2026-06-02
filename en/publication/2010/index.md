@@ -1,13 +1,13 @@
 ---
 layout: page
-title: 論文 (2010年)
+title: Paper (2010)
 ---
 
-## 論文誌
+## Journal
 1. 永田 和之, 脇田 優仁, 山野辺 夏樹, 安藤 慶昭, "OpenRTM-aistによる生活支援ロボットのためのロボットアームおよびマンマシンインタフェースのＲＴコンポーネント開発", 日本機械学会論文集 (C編), Vol.76, No.766, pp.27-34, 2010.06
 1. 安藤 慶昭, "初心者のためのRTミドルウエア入門 - OpenRTM-aist-1.0とその使い方 -", 日本ロボット学会誌, Vol.28, No.5, pp.550-555, 2010.06 [[PDF](JRSJ_Vol128No5.pdf)]
 
-## 国際学会
+## International Conference
 
 1. Geoffrey BIGGS, Noriaki ANDO, Tetsuo KOTOKU, "Coordinating software components in a component-based architecture for robotics", International Conference on SIMULATION, MODELING and PROGRAMMING for AUTONOMOUS ROBOTS (SIMPAR 2010), pp.168-179, 2010.11, Darmstadt, Germany, ISBN 978-3-642-17318-9, ISSN 0302-9743 [[PDF](SIMPAR2010_Geoff_Erlan.pdf)]
 1. Geoffrey BIGGS, Noriaki ANDO, Tetsuo KOTOKU, "Native robot software framework inter-operation", International Conference on SIMULATION, MODELING and PROGRAMMING for AUTONOMOUS ROBOTS (SIMPAR 2010), pp.180-191, 2010.11, Darmstadt, Germany, ISBN 978-3-642-17318-9, ISSN 0302-9743 [[PDF](SIMPAR2010_Geoff_ROStransport.pdf)]
@@ -16,7 +16,7 @@ title: 論文 (2010年)
 
 
 
-## 国内学会
+## Domestic Conference
 
 1. 安藤 慶昭, 栗原 眞二, ビグズ ジェフ, 神徳 徹雄, "OpenRTM-aist-1.0 におけるRTコンポーネントマネージャ", 日本機械学会 ロボティクス・メカトロニクス講演会2010, p.2A1-G02, 2010.06, 北海道, 旭川市 [[PDF](ROBOMEC2010_Ando_rtcd_2A1-G02.pdf)]
 1. 安藤 慶昭, 栗原 眞二, 片見 剛人, 坂本 武志, "OpenRTM-aist-1.0 における新しいサービスポートの実装", 日本機械学会 ロボティクス・メカトロニクス講演会2010, p.2A1-G01, 2010.06, 北海道, 旭川市 [[PDF](ROBOMEC2010_Ando_svcport_2A1-G01.pdf)]
@@ -32,19 +32,20 @@ title: 論文 (2010年)
 1. Geoffrey BIGGS, 中坊嘉宏, 栗原眞二, 李賢徳, 金湘宰，姜榮煥，金泰成，韓相勳, 安藤慶昭，小島一浩, 角保志，本間敬子, 水口大知，尾暮拓也, 神徳徹雄, "自律移動ロボットをターゲットとした コンポーネントベース開発プロセスの検証", 計測自動制御学会 システムインテグレーション部門 講演会 2010 (SI2010), pp.1720-1721, 2010.12, 宮城県仙台市 [[PDF](SI2010_Geoff_3A2_5.pdf)]
 1. 玄葉 誠, 大原 賢一, 中本 啓之, 飯島 雅人, 安藤 慶昭, 坂本 武志, 神徳 徹雄, 大場 光太郎, 新井 健生, "高セキュリティおよび低消費を実現する住宅のRT化", 第28回 日本ロボット学会学術講演会予稿集, p.2P2-1, 2010.09, 名古屋工業大学 [[PDF](JRSJ_Vol128No5.pdf)]
 
-## 書籍等
+## Books and Other Publications
 1. 安藤 慶昭, "ソフトウエアプラットフォーム", ロボットテクノロジー, 株式会社 オーム社, pp.212-215, 2010.09
 1. 安藤 慶昭, "3.1章 ソフトウエア技術・概要", ロボット情報学ハンドブック, ナノオプトエナジー出版局, pp.149-151, 2010.03, ISBN978-4-7649-5507-3
 1. 安藤 慶昭, "3.6章 ロボット用ミドルウェア", ロボット情報学ハンドブック, ナノオプトエナジー出版局, pp.184-193, 2010.03, ISBN978-4-7649-5507-3
 
-## 論文公開規定について 
-本ページでは、各学会の論文公開規定に従って可能な限り論文原稿の公開を行っております。
+## About the Paper Publication Policy
 
-- [ロボット学会](http://www.rsj.or.jp/data_rules/L-02.pdf)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [日本機械学会](http://www.jsme.or.jp/conrule.htm)
-  - 本人が自身および所属機関のWebページで公開する限り許諾される。
-- [計測自動制御学会](http://www.sice.jp/)
-  - 転載（使用）許諾願をSICE事務局へ提出し許諾を受ければ可能。[[転載許可証](tensai_kyoka_201311.pdf)]
-
+On this page, we publish paper manuscripts as much as possible in accordance with the publication policies of each academic society. 
+ 
+- [Robotics Society of Japan](http://www.rsj.or.jp/data_rules/L-02.pdf)
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
+- [Japan Society of Mechanical Engineers](http://www.jsme.or.jp/conrule.htm)
+ - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
+- [The Society of Instrument and Control Engineers](http://www.sice.jp/)
+ - Publication is possible if a reprint (reuse) permission request is submitted to the SICE office and approval is obtained. [Reprint Permission Certificate](tensai_k
+yoka_201311.pdf)
 

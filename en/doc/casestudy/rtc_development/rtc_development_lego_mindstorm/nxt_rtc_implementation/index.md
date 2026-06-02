@@ -2,6 +2,7 @@
 layout: page
 title: NXT RTC の実装
 ---
+-------jp page!!-------
 
 <!-- Title: NXT RTC の実装 -->
 ## NXT RTC の実装
@@ -17,3 +18,4 @@ title: NXT RTC の実装
 
 
 
+-------jp page!!-------

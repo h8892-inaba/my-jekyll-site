@@ -3,6 +3,8 @@ layout: page
 title: RTミドルウェアコンテスト2020
 ---
 
+No English version available.
+
 <div align="left"><img src="contest2020_title.png" width="80%;" align="center"></div>
 
 <br>
@@ -351,5 +353,4 @@ RTミドルウエアコンテスト事務局: rtm-contest<at>aist.go.jp
 <!-- #ref(201212-04.jpg) -->
 
 <!-- #ref(201212-05.jpg) -->
-
 

@@ -2,6 +2,7 @@
 layout: page
 title: Visual Studio Community 2022のインストール
 ---
+-------jp page!!-------
 
 <!-- Title: Visual Studio Community 2022のインストール -->
 #contents
@@ -66,3 +67,4 @@ Windows用にC++で最初から始めます。開始ファイルは提供しま�
 
 
 
+-------jp page!!-------

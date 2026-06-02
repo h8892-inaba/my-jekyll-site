@@ -2,6 +2,7 @@
 layout: page
 title: 初期設定等
 ---
+-------jp page!!-------
 
 <!-- Title: 初期設定等 -->
 #contents
@@ -111,3 +112,4 @@ Python版のインストールには最初に以下のコマンドを入力し�
  sudo sh pkg_install_python_debian.sh
 ```
 
+-------jp page!!-------

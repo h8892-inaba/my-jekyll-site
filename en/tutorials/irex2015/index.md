@@ -2,6 +2,11 @@
 layout: page
 title: iREX2015 （国際ロボット展） RTM講習会
 ---
+<br>
+<a>No English version available.
+</a>
+
+<!-- -------jp page!!------- -->
 
 <div align="center"><a href="http://www.nikkan.co.jp/eve/irex/"><img src="iREX2015rogo_R.jpg" width="70%; margin:10px;" align="center"></a></div>
 
@@ -229,3 +234,4 @@ $ sudo dpkg -i imageprocessing-1.1.0.deb
 
 <div align="center"><a href="151202-05.jpg"><img src="151202-05.jpg" width="60%;"></a></div>
 <br>
+<!-- -------jp page!!------- -->
