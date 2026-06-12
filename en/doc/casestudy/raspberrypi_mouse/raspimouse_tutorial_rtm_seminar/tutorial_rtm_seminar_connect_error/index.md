@@ -1,97 +1,117 @@
 ---
 layout: page
-title: ポートの接続に失敗した場合の対処方法
+title: Troubleshooting Failed Port Connections
 ---
--------jp page!!-------
 
 <!-- ポートの接続に失敗した場合の対処方法 -->
 #contents
 
+## Introduction
 
-## はじめに
-
-このページでは別々のマシンで起動したRTCのデータポート、サービスポートを接続した場合に発生する問題の解決方法について解説する。
+This page explains how to resolve issues that occur when connecting data ports or service ports between RTCs running on different machines.
 
 <div align="center"><a href="iorkakunin6.png"><img src="iorkakunin6.png" width="60%;"></a></div>
 
+## When RTSystemEditor Displays "Connection Failed"
 
-## RTSystemEditorで「接続に失敗しました」と表示される場合
-
-以下のようにRTSystemEditorで「接続に失敗しました」と表示される場合、エンドポイントの設定が適切ではないか、あるいはファイアーウォールなどで通信が遮断されているケースが考えられます。
+If RTSystemEditor displays "Connection Failed" as shown below, the endpoint configuration may be incorrect, or communication may be blocked by a firewall or similar software.
 
 <div align="center"><a href="iorkakunin3.png"><img src="iorkakunin3.png" width="60%;"></a></div>
 
-### ファイアーウォールで通信が遮断されることが原因の場合
-&aname(firewall);
+### When Communication Is Blocked by a Firewall
+<a name="firewall"></a>
 
-Windowsファイアウォールの場合はファイアウォールの場合はファイアウォールを無効にするか、RobotController.exeの通信を許可するように設定する必要があります。
+For Windows Firewall, you must either disable the firewall or configure it to allow communication for RobotController.exe.
 
-- [Windows10 – アプリにファイアウォール経由の通信を許可/不許可](https://pc-karuma.net/windows-10-firewall-app-allow-communicate/)
+- [Windows 10 – Allow/Block App Communication Through the Firewall](https://pc-karuma.net/windows-10-firewall-app-allow-communicate/)
 
-ウィルス対策ソフトのファイアウォールで遮断されている場合は、使用しているウィルス対策ソフトのマニュアルなどを読んで対応してください。
+If communication is blocked by the firewall included with antivirus software, refer to the manual of the antivirus software you are using and configure it appropriately.
 
+### When the Endpoint Is Configured with an Unreachable Address
 
-### エンドポイントの設定が不適切のため到達できないアドレスに設定されていることが原因の場合
+Open Command Prompt and use the ipconfig command to check the IP address.
 
-コマンドプロンプトを起動して、ipconfigコマンドでIPアドレスを確認してください。
+- [ipconfig Command](https://www.pc-master.jp/trouble/ipconfig.html)
 
-- [ipconfig コマンド](https://www.pc-master.jp/trouble/ipconfig.html)
+When connected to the Raspberry Pi Mouse access point used in the workshop, an IP address in the range 192.168.11.** should be assigned.
 
-講習会で使用するRaspberry Piマウスのアクセスポイントに接続した場合は192.168.11.**のIPアドレスが設定されているはずです。
-EV3のアクセスポイントの場合は192.168.0.**です。
+For the EV3 access point, the address range is 192.168.0.**.
 
-次にPCで起動したRTCのエンドポイントの設定を確認します。
+Next, check the endpoint configuration of the RTC running on the PC.
 
-RTSystemEditorのネームサービスビューでRTCを右クリックしてIORを表示してください。
+In the Name Service View of RTSystemEditor, right-click the RTC and display the IOR.
 
 <div align="center"><a href="iorkakunin1.png"><img src="iorkakunin1.png" width="60%;"></a></div>
 
-IOR表示の画面でProfileからIPアドレスを確認できます。
+You can check the IP address from the Profile section of the IOR display screen.
 
 <div align="center"><a href="iorkakunin2.png"><img src="iorkakunin2.png" width="60%;"></a></div>
 
-ここで確認したIPアドレスが192.168.11.**(もしくは192.168.0.**)でない場合はRTC起動時にエンドポイントの設定を行う必要があります。
-rtc.confの**corba.endpoints**オプションで設定します。
+If the IP address displayed here is not 192.168.11.** (or 192.168.0.**), you must configure the endpoint when starting the RTC.
 
-```
+Configure it using the **corba.endpoints** option in rtc.conf.
+
+```text
  corba.endpoints: 192.168.11.**
 ```
 
-rtc.confをテキストエディタで開いて編集して、RTCの実行ファイルと同じフォルダに配置して起動するか、コマンドラインオプションでrtc.confを指定して起動します。
+Open rtc.conf in a text editor, edit it, place it in the same folder as the RTC executable, and start the RTC, or specify rtc.conf using a command-line option.
 
-```
+```sh
  RobotControllerComp.exe -f rtc.conf
 ```
 
-もしくは、コマンドラインオプションで直接**corba.endpoints**を設定することもできます。
+Alternatively, you can configure **corba.endpoints** directly from the command line.
 
-```
-  RobotControllerComp.exe -o corba.endpoints:192.168.11.**
+```sh
+ RobotControllerComp.exe -o corba.endpoints:192.168.11.**
 ```
 
-## データポートの片方で色が変化しない、もしくはコネクタが表示されない場合
-RTSystemEditorでデータポートの接続を行った場合に、以下のようにデータポートの片方の色が変化しない事があります。
+## When Only One Data Port Changes Color or No Connector Is Displayed
+
+After connecting data ports in RTSystemEditor, there are cases where only one side of the data port changes color as shown below.
 
 <div align="center"><a href="iorkakunin4.png"><img src="iorkakunin4.png" width="60%;"></a></div>
 
-もしくはコネクタが表示されない場合もあります。
+In some cases, the connector may not be displayed at all.
 
-この場合は、一旦System DiagramからRTCを削除してください。※終了(exit)ではありません。
-<br>
-RTCを選択してDeleteキーを押すか、右クリックしてDeleteを選択してください。
+If this occurs, temporarily remove the RTC from the System Diagram. *This is not the same as exiting (exit).*
+
+Select the RTC and press the Delete key, or right-click it and select Delete.
 
 <div align="center"><a href="iorkakunin7.png"><img src="iorkakunin7.png" width="60%;"></a></div>
 
-削除したら、もう一度ネームサービスビューからSystem Diagramにドラッグアンドドロップしてください。
-これで問題が解決していれば、RTSystemEditorのコンポーネントオブザーバー機能が原因のため、大抵の場合はOpenRTPの再起動で解決します。
+After removing it, drag and drop the RTC from the Name Service View onto the System Diagram again.
 
+If the issue is resolved, it was most likely caused by the RTSystemEditor Component Observer feature.
 
-## RTSystemEditorが応答なしになる場合
-RTSystemEditorが応答なしになる場合、もしくはしばらく待てば動くが片方のポートの色が変化しない場合等があります。
-この場合は、[ファイアウォールなどで通信が遮断されていることが原因](/ja/node/7103#firewall)であることがほとんどです。
+In most cases, restarting OpenRTP resolves the problem.
 
-それで解決しない場合はRaspberry Pi、EV3側のRTCを再起動してください。RTCの実行中の問題で応答なしになっている可能性があります。
+## When RTSystemEditor Becomes Unresponsive
 
-またSystem Diagramを長時間使用していると不具合が発生することがあります。
-System Diagramを×を押して削除後、もう一度System Diagramを表示して下さい。
--------jp page!!-------
+RTSystemEditor may become unresponsive, or it may eventually recover after some time while only one port changes color.
+
+In most cases, this is caused by [communication being blocked by a firewall or similar software](/ja/node/7103#firewall).
+
+If that does not resolve the issue, restart the RTCs running on the Raspberry Pi or EV3.
+
+The RTC may have become unresponsive due to a runtime issue.
+
+In addition, problems may occur if the System Diagram has been used for a long time.
+
+Close the System Diagram by clicking the × button, then display the System Diagram again.
+
+## Summary
+
+In this tutorial, you learned:
+
+- How to troubleshoot failed port connections between RTCs running on different machines.
+- How to identify firewall-related communication problems.
+- How to check and configure RTC endpoint settings using rtc.conf and command-line options.
+- How to verify RTC IP address settings using the IOR display in RTSystemEditor.
+- How to resolve issues where only one data port changes color or connectors are not displayed.
+- How to refresh RTCs in the System Diagram by removing and re-adding them.
+- How to troubleshoot situations where RTSystemEditor becomes unresponsive.
+- How to restart RTCs and refresh the System Diagram when communication issues occur.
+
+By completing this tutorial, you have learned how to diagnose and resolve common port connection and communication problems in RTSystemEditor and OpenRTM systems.

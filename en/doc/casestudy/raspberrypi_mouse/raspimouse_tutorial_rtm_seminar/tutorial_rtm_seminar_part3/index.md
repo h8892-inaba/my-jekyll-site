@@ -1,17 +1,16 @@
 ---
 layout: page
-title: チュートリアル(RTM講習会、第3部)
+title: Tutorial (RTM Workshop, Part 3)
 ---
--------jp page!!-------
 
 <!-- Title: チュートリアル(RTM講習会、第3部) -->
 #contents
 
-このページではRaspberry PiマウスとLEGO Mindstorms EV3を連携したRTシステムの構築を行います。
+On this page, you will build an RT system that integrates the Raspberry Pi Mouse and LEGO Mindstorms EV3.
 
-Raspberry Piマウスをアクセスポイントとして、ノートPCとEV3をアクセスポイントに接続します。
+Use the Raspberry Pi Mouse as an access point, and connect both the laptop PC and EV3 to the access point.
 
-※Raspberry Piマウスと同じ番号のEV3を使用するようにしてください。
+*Please make sure to use the EV3 with the same number as the Raspberry Pi Mouse.*
 
 <br>
 
@@ -19,60 +18,59 @@ Raspberry Piマウスをアクセスポイントとして、ノートPCとEV3を
 <br>
 
 
-## EV3のデバイス
-EV3 には以下のデバイスが付属しています。
+## EV3 Devices
+The following devices are included with the EV3.
 
 <table class="table-alt">
   <tr>
-    <td><strong>ジャイロセンサー</strong><br> <div align="center"><a href="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img7.jpg"><img src="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img7.jpg" width="30%;"></a></div></td>
-    <td>確度モード: 精度 +/- 3°<br> 角速度モード: 最大 440 deg/sec <br> サンプリングレート 1,000 Hz</td>
+    <td><strong>Gyro Sensor</strong><br> <div align="center"><a href="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img7.jpg"><img src="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img7.jpg" width="30%;"></a></div></td>
+    <td>Angle Mode: Accuracy +/- 3°<br> Angular Velocity Mode: Up to 440 deg/sec <br> Sampling Rate: 1,000 Hz</td>
   </tr>
   <tr>
-    <td><strong>カラーセンサー</strong> <br> <div align="center"><a href="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img5.jpg"><img src="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img5.jpg" width="30%;"></a></div></td>
-    <td>計測: 赤色光の反射光、 周囲の明るさ、色 <br> 検出カラー数: 8色 （無色、黒、青、緑、黄、赤、白、茶）<br> サンプリングレート	1,000 Hz <br> 距離 約1mm～18mm（アフレル調査値）</td>
+    <td><strong>Color Sensor</strong> <br> <div align="center"><a href="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img5.jpg"><img src="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img5.jpg" width="30%;"></a></div></td>
+    <td>Measurement: Reflected red light, ambient brightness, color <br> Number of detectable colors: 8 (none, black, blue, green, yellow, red, white, brown)<br> Sampling Rate: 1,000 Hz <br> Distance: Approximately 1 mm to 18 mm (Afrel measured value)</td>
   </tr>
   <tr>
-    <td><strong>タッチセンサー</strong><br> <div align="center"><a href="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img6.jpg"><img src="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img6.jpg" width="30%;"></a></div></td>
-    <td>オン (1), オフ (0) <br> スイッチ可動域: 約4mm</td>
+    <td><strong>Touch Sensor</strong><br> <div align="center"><a href="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img6.jpg"><img src="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img6.jpg" width="30%;"></a></div></td>
+    <td>On (1), Off (0) <br> Switch travel distance: Approximately 4 mm</td>
   </tr>
   <tr>
-    <td><strong>超音波センサー</strong><br> <div align="center"><a href="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img8.jpg"><img src="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img8.jpg" width="30%;"></a></div></td>
-    <td>距離計測可能範囲: 3cmから250cm <br> 距離計測精度: +/- 1 cm <br> 前面電飾: 点灯：超音波発信中、 点滅：超音波観測中</td>
+    <td><strong>Ultrasonic Sensor</strong><br> <div align="center"><a href="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img8.jpg"><img src="https://afrel.co.jp/pages-assets/images/technology/ev3/technology-ev3-img8.jpg" width="30%;"></a></div></td>
+    <td>Distance measurement range: 3 cm to 250 cm <br> Distance measurement accuracy: +/- 1 cm <br> Front LED indicator: Lit = ultrasonic transmission, Blinking = ultrasonic observation</td>
   </tr>
   <tr>
-    <td><strong>EV3 Lモーター</strong><br> <div align="center"><a href="https://afrel.co.jp/images/2013/04/45502_LargeMotor.jpg"><img src="https://afrel.co.jp/images/2013/04/45502_LargeMotor.jpg" width="30%;"></a></div></td>
-    <td>フィードバック: 1°単位 <br> 回転数: 160から170RPM <br> 定格トルク: 0.21 N・m (30oz*in) <br> 停動トルク: 0.42 N・m (60oz*in) <br> 重さ: 76 g</td>
+    <td><strong>EV3 L Motor</strong><br> <div align="center"><a href="https://afrel.co.jp/images/2013/04/45502_LargeMotor.jpg"><img src="https://afrel.co.jp/images/2013/04/45502_LargeMotor.jpg" width="30%;"></a></div></td>
+    <td>Feedback: 1° increments <br> Rotation Speed: 160 to 170 RPM <br> Rated Torque: 0.21 N・m (30oz*in) <br> Stall Torque: 0.42 N・m (60oz*in) <br> Weight: 76 g</td>
   </tr>
   <tr>
-    <td><strong>EV3 Mモーター</strong> <br> <div align="center"><a href="https://afrel.co.jp/images/2013/04/45503_MediumMotor.jpg"><img src="https://afrel.co.jp/images/2013/04/45503_MediumMotor.jpg" width="30%;"></a></div></td>
-    <td>フィードバック 1°単位 <br> 回転数: 240から250RPM <br> 定格トルク: 0.08 N・m (11oz*in) <br> 停動トルク: 0.12 N・m (17oz*in) <br> 重さ: 36 g</td>
+    <td><strong>EV3 M Motor</strong> <br> <div align="center"><a href="https://afrel.co.jp/images/2013/04/45503_MediumMotor.jpg"><img src="https://afrel.co.jp/images/2013/04/45503_MediumMotor.jpg" width="30%;"></a></div></td>
+    <td>Feedback: 1° increments <br> Rotation Speed: 240 to 250 RPM <br> Rated Torque: 0.08 N・m (11oz*in) <br> Stall Torque: 0.12 N・m (17oz*in) <br> Weight: 36 g</td>
   </tr>
 </table>
 
 
-## EV3の組立て
-まず、EV3本体を土台に装着します。
+## Assembling the EV3
+First, mount the EV3 main unit onto the base.
 
 <br>
 
 <div align="center"><a href="robomech2018_12.jpg"><img src="robomech2018_12.jpg" width="70%;"></a></div>
 <br>
 
-次に25cmケーブルでEV3と左右のLモーターを接続します。
+Next, connect the EV3 and the left/right L motors using 25 cm cables.
 
 <br>
 
-
 <table class="table-alt">
   <tr>
-    <td>Lモーター右</td>
-    <td>ポート C</td>
-    <td>25cmケーブル</td>
+    <td>Right L Motor</td>
+    <td>Port C</td>
+    <td>25 cm Cable</td>
   </tr>
   <tr>
-    <td>Lモーター左</td>
-    <td>ポート B</td>
-    <td>25cmケーブル</td>
+    <td>Left L Motor</td>
+    <td>Port B</td>
+    <td>25 cm Cable</td>
   </tr>
 </table>
 
@@ -81,16 +79,14 @@ EV3 には以下のデバイスが付属しています。
 <div align="center"><a href="robomech2018_13.jpg"><img src="robomech2018_13.jpg" width="70%;"></a></div>
 <br>
 
-ケーブルに接続するポート、デバイス名は記載してあります。
+The port numbers and device names to connect the cables are labeled.
 
-他のデバイスを取り付ける場合は、[チュートリアル(EV3)](/ja/node/6381#toc30)を参考にしてください。
+If you want to attach other devices, refer to [Tutorial (EV3)](/ja/node/6381#toc30).
 
-## EV3との接続
-### ノートPCとRaspberry Piの接続
-[第二部](/ja/node/6551)の、実機での動作確認まで完了してください。
-この時点でノートPCとアクセスポイントのRaspberry Piが接続されているはずです。
-
-
+## Connecting to the EV3
+### Connecting the Laptop PC and Raspberry Pi
+Complete the procedure in [Part 2](/ja/node/6551) up to verifying operation on the actual hardware.
+At this point, the laptop PC and the Raspberry Pi access point should already be connected.
 
 <br>
 
@@ -98,41 +94,38 @@ EV3 には以下のデバイスが付属しています。
 <br>
 
 
-## EV3の電源の入れ方/切り方
+## Turning the EV3 Power On/Off
 
-### 電源の入れ方
+### Turning the Power On
 
-中央のボタンを押せば電源が投入されます。
+Press the center button to power on the EV3.
 
 <br>
 
 <div align="center"><a href="ev3_on.jpg"><img src="ev3_on.jpg" width="50%;"></a></div>
 <br>
 
-### 電源の切り方
+### Turning the Power Off
 
-EV3 の電源を切る場合は最初の画面で EV3 本体の左上の戻るボタンを押して「Power Off」を選択してください。
+To turn off the EV3, press the Back button at the upper-left of the EV3 unit on the initial screen and select "Power Off".
 
 <br>
 
 <div align="center"><a href="ev3_off.jpg"><img src="ev3_off.jpg" width="50%;"></a></div>
 <br>
 
-
-
 <br>
 
 <div align="center"><a href="s_DSC01033.JPG"><img src="s_DSC01033.JPG" width="50%;"></a></div>
 <br>
 
-### 再起動
+### Reboot
 
-再起動する場合は最初の画面で EV3 本体の左上の戻るボタンを押して「Reboot」を選択してください。
+To reboot the EV3, press the Back button at the upper-left of the EV3 unit on the initial screen and select "Reboot".
 
-### リセット
+### Reset
 
-ev3dev の起動が途中で停止する場合には、中央ボタン、戻るボタン(左上)、左ボタンを同時押ししてください。画面が消えたら戻るボタンを離すと再起動します。
-
+If ev3dev stops during startup, press and hold the Center button, Back button (upper-left), and Left button simultaneously. When the screen turns off, release the Back button to reboot.
 
 <br>
 
@@ -140,14 +133,13 @@ ev3dev の起動が途中で停止する場合には、中央ボタン、戻る�
 <br>
 
 
-### Raspberry PiとEV3の接続
+### Connecting Raspberry Pi and EV3
 
-EV3の電源を投入してください。
+Turn on the EV3.
 
-起動後にRaspberry Piに自動接続します。
-自動接続できた場合は、EV3の画面左上にIPアドレスが表示されます。
-IPアドレスは192.168.11.yyyが表示されます。
-
+After startup, it automatically connects to the Raspberry Pi.
+If the connection is successful, the IP address is displayed in the upper-left corner of the EV3 screen.
+The displayed IP address will be 192.168.11.yyy.
 
 <br>
 
@@ -155,14 +147,12 @@ IPアドレスは192.168.11.yyyが表示されます。
 <br>
 
 
+#### Starting the Name Server and RTC
+Start the Name Server and RTC using the EV3 on-screen interface.
 
-#### ネームサーバー、RTCの起動
-EV3の画面上の操作でネームサーバーとRTCを起動します。
+From the EV3 operation screen, select "File Browser" → "scripts".
 
-EV3 の操作画面から「File Browser」→「scripts」を選択してください。
-
-
-ネームサーバー、RTCは**start_rtcs.sh**のスクリプトを実行することで起動します。
+The Name Server and RTC are started by executing the **start_rtcs.sh** script.
 
 ```
  ------------------------------
@@ -179,19 +169,14 @@ EV3 の操作画面から「File Browser」→「scripts」を選択してくだ
  ------------------------------
 ```
 
-
 <br>
 
 <div align="center"><a href="tutorial_ev3_irex32.png"><img src="tutorial_ev3_irex32.png" width="70%;"></a></div>
 <br>
 
 
-
-### ネームサーバー追加
-RTシステムエディタから、192.168.11.yyyのネームサーバーに接続してください。
-
-
-
+### Adding the Name Server
+From RTSystemEditor, connect to the Name Server at 192.168.11.yyy.
 
 <br>
 
@@ -199,14 +184,9 @@ RTシステムエディタから、192.168.11.yyyのネームサーバーに接�
 <br>
 <br>
 
+At this point, the Name Service View in RTSystemEditor contains the Name Servers for localhost, 192.168.11.1, and 192.168.11.yyy.
 
-
-この時点でRTシステムエディタのネームサービスビューにはlocalhost、192.168.11.1、192.168.11.yyyのネームサーバーが登録されています。
-192.168.11.yyyのネームサーバーに登録されているRTCの名前は**EducatorVehicle1**となります。
-
-
-
-
+The RTC registered in the Name Server at 192.168.11.yyy is named **EducatorVehicle1**.
 
 <br>
 
@@ -222,129 +202,135 @@ RTシステムエディタから、192.168.11.yyyのネームサーバーに接�
 - 192.168.11.yyy
   - EducatorVehicle1
 
+## Summary
 
-## 動作確認
+In this tutorial, you learned:
 
-RaspberryPiMouseRTC0(192.168.11.1)とEducatorVehicle1(192.168.11.yyy)をシステムダイアグラム上で接続してください。
-EducatorVehicle0の現在の速度出力をRaspberryPiMouseRTC0の目標速度入力に接続することで、EV3の動きにRaspberry Piマウスが追従するようになります。
+- How to configure a network in which the Raspberry Pi Mouse acts as an access point and both a laptop PC and EV3 connect to it.
+- The specifications and functions of the sensors and motors included with the EV3.
+- How to assemble the EV3 and connect the left and right motors to the designated ports.
+- How to power on, power off, reboot, and reset the EV3.
+- How to connect the EV3 to the Raspberry Pi and verify the assigned IP address.
+- How to start the Name Server and RTC on the EV3 using the start_rtcs.sh script.
+- How to add the EV3 Name Server to RTSystemEditor and confirm the registered RTCs.
 
+By completing this tutorial, you have learned how to assemble and connect the EV3, establish communication with the Raspberry Pi, start the required RT components, and integrate the EV3 into the RT system environment.
+
+
+## Operation Check
+
+Connect RaspberryPiMouseRTC0 (192.168.11.1) and EducatorVehicle1 (192.168.11.yyy) on the system diagram.
+
+By connecting the current velocity output of EducatorVehicle0 to the target velocity input of RaspberryPiMouseRTC0, the Raspberry Pi Mouse will follow the movement of the EV3.
 
 <br>
 
 <div align="center"><a href="robomech2018_14.jpg"><img src="robomech2018_14.jpg" width="70%;"></a></div>
 <br>
 
-
-RTCをアクティベートしてEducator Vehicleの車輪を転がすと、Raspberry Piマウスがそれに合わせて動作します。
-
-
+Activate the RTC and rotate the wheels of the Educator Vehicle. The Raspberry Pi Mouse will move accordingly.
 
 <br>
 
 <div align="center"><a href="robomech2018_11.jpg"><img src="robomech2018_11.jpg" width="70%;"></a></div>
 <br>
 
+## Optional Exercises
 
-## 自由課題
-これで実習は一通り終了ですが、時間が余っている場合は以下のような課題に挑戦してみてください。
+This completes the main practical training. If you have extra time, try the following exercises.
 
+### Controlling the Raspberry Pi Mouse Using the EV3 Touch Sensors
 
-### EV3のタッチセンサのオンオフでRaspberry Piマウスを操作
-
-EV3のタッチセンサーのオンオフでRaspberry Piマウスを前進後退させるRTシステムを作成します。
-
+Create an RT system that moves the Raspberry Pi Mouse forward and backward using the on/off state of the EV3 touch sensors.
 
 <br>
 
 <!-- div align="center"><a href="https://afrel.co.jp/cms/wp-content/uploads/2013/04/45507_TouchSensor.jpg"><img src="https://afrel.co.jp/cms/wp-content/uploads/2013/04/45507_TouchSensor.jpg" width="70%;"></a></div-->
-<div align="center"><strong>タッチセンサー</strong></div>
+<div align="center"><strong>Touch Sensor</strong></div>
 <br>
 
-#### タッチセンサー接続
+#### Connecting the Touch Sensors
 
-EV3とタッチセンサーを35cmケーブルで接続してください。
-
-
+Connect the EV3 and the touch sensors using 35 cm cables.
 
 <table class="table-alt">
   <tr>
-    <th>タッチセンサー右</th>
-    <th>ポート 3</th>
-    <th>35cmケーブル</th>
+    <th>Right Touch Sensor</th>
+    <th>Port 3</th>
+    <th>35 cm Cable</th>
   </tr>
   <tr>
-    <td>タッチセンサー左</td>
-    <td>ポート 1</td>
-    <td>35cmケーブル</td>
+    <td>Left Touch Sensor</td>
+    <td>Port 1</td>
+    <td>35 cm Cable</td>
   </tr>
 </table>
 
-#### RTCの作成
+#### Creating the RTC
 
-以下のような仕様のRTCを作成します。
+Create an RTC with the following specifications.
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名称</th>
+    <th>Component Name</th>
     <th>SampleTouchSensor</th>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>touch</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedBooleanSeq</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>タッチセンサーのオンオフ</td>
+    <td>Description</td>
+    <td>Touch sensor on/off state</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>target_velocity</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedVelocity2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>目標速度</td>
+    <td>Description</td>
+    <td>Target velocity</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>speed</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0.2</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>タッチセンサがオンの時の直進速度の設定</td>
+    <td>Description</td>
+    <td>Straight-line speed when the touch sensor is on</td>
   </tr>
 </table>
 
-アクティビティでonExecuteを有効にしてください。
+Enable onExecute in the Activity settings.
 
-SampleTouchSensorのonExecute関数に以下のように記述します。
+Implement the onExecute function of SampleTouchSensor as follows.
 
-
-```
+```cpp
  RTC::ReturnCode_t SampleTouchSensor::onExecute(RTC::UniqueId ec_id)
  {
  	//新規データの確認
@@ -396,115 +382,116 @@ SampleTouchSensorのonExecute関数に以下のように記述します。
  }
 ```
 
-#### RTシステム作成
+#### Creating the RT System
 
-データポートを以下のように接続後、タッチセンサをオンオフするとRaspberry Piが前進後退します。
+After connecting the data ports as shown below, turning the touch sensors on and off will move the Raspberry Pi forward and backward.
 
 <br>
 
 <div align="center"><a href="robomech2018_15.jpg"><img src="robomech2018_15.jpg" width="70%;"></a></div>
 <br>
 
-### ジョイスティックコンポーネントで2台同時に操作
+### Operating Two Robots Simultaneously with a Joystick Component
 
-以下GUIジョイスティックでRaspberry Piマウス、EV3を操作するRTシステムを作成します。
+Create an RT system that controls both the Raspberry Pi Mouse and EV3 using the GUI joystick shown below.
 
 <br>
 
 <div align="center"><a href="robomech2018_18.jpg"><img src="robomech2018_18.jpg" width="50%;"></a></div>
 <br>
 
-#### ジョイスティックコンポーネント起動
+#### Starting the Joystick Component
 
-ジョイスティックコンポーネントはOpenRTM-aist Python版のサンプルにあります(**TkJoyStickComp.py**)。
-ジョイスティックコンポーネントは、Windows 8.1の場合は「スタート」>「アプリビュー(右下矢印)」>「OpenRTM-aist 1.2.0」>「Python_Examples」をクリックして、エクスプローラーで「TkJoyStickComp.bat」をダブルクリックして起動してください。
+The joystick component is included in the OpenRTM-aist Python sample programs (**TkJoyStickComp.py**).
 
-#### RTC作成
+For Windows 8.1, start the joystick component by selecting "Start" > "Apps View (lower-right arrow)" > "OpenRTM-aist 1.2.0" > "Python_Examples", then double-clicking "TkJoyStickComp.bat" in Explorer.
 
-TkJoyStickComp.pyのアウトポートのデータ型は**TimedFloatSeq**型であるため、**TimedVelocity2D**型に変換するRTCを作成する必要があります。
+#### Creating the RTC
 
-以下のような仕様のRTCを作成してください。
+Since the OutPort data type of TkJoyStickComp.py is **TimedFloatSeq**, you need to create an RTC that converts it to **TimedVelocity2D**.
+
+Create an RTC with the following specifications.
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名称</th>
+    <th>Component Name</th>
     <th>FloatSeqToVelocity</th>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>in</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedFloatSeq</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>変換前のデータ</td>
+    <td>Description</td>
+    <td>Data before conversion</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>out</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedVelocity2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>変換後のデータ</td>
+    <td>Description</td>
+    <td>Data after conversion</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>rotation_by_position</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>-0.02</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>ジョイスティックのX座標の位置に対する角速度の変化量</td>
+    <td>Description</td>
+    <td>Angular velocity change per joystick X-coordinate position</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>velocity_by_position</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0.002</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>ジョイステックのY座標に対する速度の変化量</td>
+    <td>Description</td>
+    <td>Velocity change per joystick Y-coordinate position</td>
   </tr>
 </table>
 
-アクティビティはonExecuteをオンにしてください。
+Enable onExecute in the Activity settings.
 
-onExecute関数を以下のように編集してください。
+Edit the onExecute function as follows.
 
-```
+```cpp
  RTC::ReturnCode_t FloatSeqToVelocity::onExecute(RTC::UniqueId ec_id)
  {
  	//新規データの確認
@@ -528,52 +515,50 @@ onExecute関数を以下のように編集してください。
  }
 ```
 
-#### RTシステム作成
+#### Creating the RT System
 
-以下のようにデータポートを接続してください。
+Connect the data ports as shown below.
 
 <br>
 
 <div align="center"><a href="robomech2018_16.jpg"><img src="robomech2018_16.jpg" width="70%;"></a></div>
 <br>
 
+### Making the EV3 Speak
 
-### EV3をしゃべらせる
+If a string (TimedString type) is input to the port named **sound** of EducatorVehicleRTC, the EV3 will speak the text.
 
-EducatorVehicleRTCの**sound**という名前のインポートに文字列(TimedString型)を入力すると、EV3が発声します。
+#### Creating the RTC
 
-#### RTC作成
-
-以下のような仕様のRTCを作成してください。
+Create an RTC with the following specifications.
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名称</th>
+    <th>Component Name</th>
     <th>SpeechSample</th>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>out</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedString</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>発話する文字列</td>
+    <td>Description</td>
+    <td>String to be spoken</td>
   </tr>
 </table>
 
-アクティビティはonExecuteをオンにしてください。
+Enable onExecute in the Activity settings.
 
-onExecute関数を以下のように編集してください。
+Edit the onExecute function as follows.
 
-
-```
+```cpp
  RTC::ReturnCode_t SpeechSample::onExecute(RTC::UniqueId ec_id)
  {
  	std::cout << "Please input: ";
@@ -590,49 +575,48 @@ onExecute関数を以下のように編集してください。
  }
 ```
 
+When outputting a string (`const char*`) through a data port, you must copy the string using the **CORBA::string_dup function**.
 
-
-文字列(const char*)をデータポートで出力する際は**CORBA::string_dup関数**で文字列をコピーする必要があります。
-
-```
+```cpp
  m_out.data= CORBA::string_dup("abc");
 ```
 
+#### Creating the RT System
 
-#### RTシステム作成
-
-以下のようにデータポートを接続してください。
+Connect the data ports as shown below.
 
 <br>
 
 <div align="center"><a href="robomech2018_17.jpg"><img src="robomech2018_17.jpg" width="70%;"></a></div>
 <br>
 
-### マーカーの追従
+### Marker Following
 
-Raspberry Piマウスを起動すると、OpenCVCameraコンポーネントとarptコンポーネントが起動します。
-OpenCVCameraコンポーネントは画像を取得するコンポーネント、artpコンポーネントは画像データからマーカの位置姿勢を計算して出力するコンポーネントです。
+When the Raspberry Pi Mouse starts, the OpenCVCamera component and the artp component are also started.
+
+The OpenCVCamera component acquires images, and the artp component calculates and outputs the marker position and orientation from the image data.
 
 <br>
 
 <div align="center"><a href="robomech2018_19.jpg"><img src="robomech2018_19.jpg" width="70%;"></a></div>
 <br>
 
-Raspberry Piマウスがマーカーに追従するRTシステムを作成します。
+Create an RT system in which the Raspberry Pi Mouse follows a marker.
 
-#### カメラの装着
+#### Mounting the Camera
 
-まずはカメラをRaspberry Piマウスに装着します。
+First, mount the camera on the Raspberry Pi Mouse.
 
-以下の土台部品をRaspberry Piマウスに取り付けていきます。
+Attach the following base parts to the Raspberry Pi Mouse.
 
 <br>
 
 <div align="center"><a href="robomech2018_23.jpg"><img src="robomech2018_23.jpg" width="70%;"></a></div>
 <br>
 
-部品①をRaspberry Piマウスの上部に装着してください。
-左から押し込むようにして取り付けます。
+Attach Part ① to the top of the Raspberry Pi Mouse.
+
+Install it by pushing it in from the left side.
 
 <br>
 
@@ -641,15 +625,14 @@ Raspberry Piマウスがマーカーに追従するRTシステムを作成しま
 
 <br>
 
-この時、左側の突起がプレートを挟むように取り付けてください。
+At this time, attach it so that the protrusion on the left side grips the plate.
 
 <br>
 
 <div align="center"><a href="robomech2018_22.jpg"><img src="robomech2018_22.jpg" width="70%;"></a></div>
 <br>
 
-
-部品②を部品①の左側に上から差し込んでください。
+Insert Part ② into the left side of Part ① from above.
 
 <br>
 
@@ -658,25 +641,19 @@ Raspberry Piマウスがマーカーに追従するRTシステムを作成しま
 
 <br>
 
-
 <br>
 
 <div align="center"><a href="robomech2018_25.jpg"><img src="robomech2018_25.jpg" width="70%;"></a></div>
 <br>
 
-
-部品③を左側から部品②に差し込んでください。
-
-
+Insert Part ③ into Part ② from the left side.
 
 <br>
 
 <div align="center"><a href="robomech2018_24.jpg"><img src="robomech2018_24.jpg" width="70%;"></a></div>
 <br>
 
-
-
-最後にカメラを搭載して、USBケーブルをRaspberry Piに差し込んだら完成です。
+Finally, mount the camera and connect the USB cable to the Raspberry Pi to complete the assembly.
 
 <br>
 
@@ -693,171 +670,166 @@ Raspberry Piマウスがマーカーに追従するRTシステムを作成しま
 <br>
 
 
-#### RTC作成
+#### Creating the RTC
 
-以下の仕様でRTCを作成してください。
-
-
+Create an RTC with the following specifications.
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名称</th>
+    <th>Component Name</th>
     <th>testARToolKit</th>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>marker_pos</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedPose3D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>マーカーの位置</td>
+    <td>Description</td>
+    <td>Marker position</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>target_vel</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedVelocity2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>ロボットの目標速度</td>
+    <td>Description</td>
+    <td>Target velocity of the robot</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>x_distance</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0.5</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>マーカーまでの目標距離(X軸)</td>
+    <td>Description</td>
+    <td>Target distance to the marker (X axis)</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>y_distance</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>マーカーまでの目標距離(Y軸)</td>
+    <td>Description</td>
+    <td>Target distance to the marker (Y axis)</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>x_speed</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0.1</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>X軸方向移動速度</td>
+    <td>Description</td>
+    <td>Movement speed in the X-axis direction</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>r_speed</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0.2</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>回転方向移動速度</td>
+    <td>Description</td>
+    <td>Movement speed in the rotational direction</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>error_range_x</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0.1</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>X軸方向目標距離の許容範囲</td>
+    <td>Description</td>
+    <td>Allowable range for the target distance in the X-axis direction</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>error_range_y</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0.05</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>Y軸方向目標距離の許容範囲</td>
+    <td>Description</td>
+    <td>Allowable range for the target distance in the Y-axis direction</td>
   </tr>
 </table>
 
+Set onExecute to ON in the Activity settings.
 
-アクティビティはonExecuteをONにしてください。
+Edit onExecute as follows.
 
-onExecuteを以下のように編集してください。
-
-
-
-```
+```cpp
  RTC::ReturnCode_t testARToolKit::onExecute(RTC::UniqueId ec_id)
  {
  	//新規データの確認
@@ -897,16 +869,27 @@ onExecuteを以下のように編集してください。
  }
 ```
 
-#### RTシステム作成
+#### Creating the RT System
 
-データポートを以下のように接続してください。
+Connect the data ports as shown below.
 
 <br>
 
 <div align="center"><a href="robomech2018_20.jpg"><img src="robomech2018_20.jpg" width="70%;"></a></div>
 <br>
 
-RTCをアクティベートしてカメラの前でマーカーを動かして、Raspberry Piマウスが移動するかを確認してください。
+Activate the RTC, move the marker in front of the camera, and check whether the Raspberry Pi Mouse moves.
 
+## Summary
 
--------jp page!!-------
+In this tutorial, you learned:
+
+- How to build an RT system that links the Raspberry Pi Mouse and LEGO Mindstorms EV3.
+- How to connect the laptop PC, Raspberry Pi Mouse, and EV3 through the Raspberry Pi Mouse access point.
+- How to assemble the EV3 and connect its motors and sensors.
+- How to start the Name Server and RTCs on the EV3.
+- How to connect RTCs in RTSystemEditor and verify coordinated operation between the EV3 and Raspberry Pi Mouse.
+- How to create RTCs for touch sensor control, joystick-based control, EV3 speech output, and marker following.
+- How to mount a camera on the Raspberry Pi Mouse and use marker position data to control robot movement.
+
+By completing this tutorial, you have learned how to construct and operate RT systems that integrate the Raspberry Pi Mouse, EV3, sensors, joystick input, speech output, and camera-based marker following.

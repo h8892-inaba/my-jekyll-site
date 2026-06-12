@@ -1,176 +1,166 @@
 ---
 layout: page
-title: チュートリアル(EV3)
+title: Tutorial (EV3)
 ---
--------jp page!!-------
 
-<!-- Title: チュートリアル(EV3) -->
+<!-- Title: Tutorial (EV3) -->
 #contents
 
-このページでは RTM講習会での EV3 操作手順を説明します。
+This page explains the EV3 operation procedures used in the RTM seminar.
+
 <br>
 
-実習では以下の Educator Vehicle 改を制御します。
+In this hands-on session, you will control the following modified Educator Vehicle.
 
 <br>
 
 <div align="center"><a href="s_DSC00443.JPG"><img src="s_DSC00443.JPG" width="50%;"></a></div>
 <br>
 
-LEGO Mindstorms EV3 は LEGO の Mindstorms シリーズの新しいパッケージです。EV3 のメインのコントローラーは、Linux が標準搭載され、様々な言語でロボットの開発が可能になりました。
+LEGO Mindstorms EV3 is a new package in the LEGO Mindstorms series. The main EV3 controller comes with Linux preinstalled, enabling robot development in a variety of programming languages.
 
-## 仕様
+## Specifications
 
-- [アフレル Webページ](http://www.afrel.co.jp/)
+- [Afrel Website](http://www.afrel.co.jp/)
 
 <table class="table-alt">
   <tr>
-    <td colspan="2" style="text-align: center;"><strong>LEGO Mindstorms EV3 仕様</strong></td>
+    <td colspan="2" style="text-align: center;"><strong>LEGO Mindstorms EV3 Specifications</strong></td>
   </tr>
   <tr>
-    <td>プロセッサ</td>
+    <td>Processor</td>
     <td>ARM9 300MHz</td>
   </tr>
   <tr>
-    <td>メモリ(ROM)</td>
+    <td>Memory (ROM)</td>
     <td>16MB Flash</td>
   </tr>
   <tr>
-    <td>メモリ(RAM)</td>
+    <td>Memory (RAM)</td>
     <td>64MB RAM</td>
   </tr>
   <tr>
     <td>OS</td>
-    <td>Linuxベース</td>
+    <td>Linux-based</td>
   </tr>
   <tr>
-    <td>ディスプレイ</td>
+    <td>Display</td>
     <td>178 x 128 pixels</td>
   </tr>
   <tr>
-    <td>出力ポート</td>
-    <td>4個</td>
+    <td>Output Ports</td>
+    <td>4</td>
   </tr>
   <tr>
-    <td>入力ポート</td>
-    <td>4個 <br> アナログ <br> デジタル 460.8kbit/s</td>
+    <td>Input Ports</td>
+    <td>4 <br> Analog <br> Digital 460.8kbit/s</td>
   </tr>
   <tr>
-    <td>USB通信速度</td>
+    <td>USB Communication Speed</td>
     <td>High Speed (480Mbps)</td>
   </tr>
   <tr>
-    <td>USBインターフェース</td>
-    <td>EV3同士の連結可能 (最大4台) <br> Wi-Fi通信ドングル利用可能</td>
+    <td>USB Interface</td>
+    <td>Can connect EV3 units together (up to 4 units) <br> Wi-Fi communication dongles supported</td>
   </tr>
   <tr>
-    <td>SDカードスロット</td>
-    <td>Micro SDカード 32GBまでサポート</td>
+    <td>SD Card Slot</td>
+    <td>Supports Micro SD cards up to 32GB</td>
   </tr>
   <tr>
-    <td>スマートデバイス接続</td>
-    <td>iOS、Android、Windows</td>
+    <td>Smart Device Connectivity</td>
+    <td>iOS, Android, Windows</td>
   </tr>
   <tr>
-    <td>ユーザーインターフェース</td>
-    <td>6ボタン, イルミネーション機能</td>
+    <td>User Interface</td>
+    <td>6 buttons, illumination function</td>
   </tr>
   <tr>
-    <td>プログラムサイズ （ライントレースの場合）</td>
+    <td>Program Size (Line Tracing Example)</td>
     <td>0.950KB</td>
   </tr>
   <tr>
-    <td>センサー通信性能</td>
-    <td>1000 回/秒、1ms</td>
+    <td>Sensor Communication Performance</td>
+    <td>1000 times/sec, 1ms</td>
   </tr>
   <tr>
-    <td>データロギング</td>
-    <td>最大 1,000サンプリング/秒</td>
+    <td>Data Logging</td>
+    <td>Up to 1,000 samples/sec</td>
   </tr>
   <tr>
-    <td>Bluetooth通信</td>
-    <td>最大7台のスレーブと接続可能</td>
+    <td>Bluetooth Communication</td>
+    <td>Can connect up to 7 slave devices</td>
   </tr>
   <tr>
-    <td>動力</td>
-    <td>リチャージブルバッテリー または、単3電池 6本</td>
+    <td>Power Source</td>
+    <td>Rechargeable battery or six AA batteries</td>
   </tr>
 </table>
 
-## デバイス
-EV3 には以下のデバイスが付属しています。
+## Devices
+
+The EV3 includes the following devices.
 
 <table class="table-alt">
   <tr>
-    <td>ジャイロセンサー</td>
-    <td>確度モード: 精度 +/- 3°<br> 角速度モード: 最大 440 deg/sec <br> サンプリングレート 1,000 Hz</td>
+    <td>Gyro Sensor</td>
+    <td>Angle Mode: Accuracy +/- 3°<br> Angular Velocity Mode: Up to 440 deg/sec <br> Sampling Rate: 1,000 Hz</td>
   </tr>
   <tr>
-    <td>カラーセンサー</td>
-    <td>計測: 赤色光の反射光、 周囲の明るさ、色 <br> 検出カラー数: 8色 （無色、黒、青、緑、黄、赤、白、茶）<br> サンプリングレート	1,000 Hz <br> 距離 約1mm～18mm（アフレル調査値）</td>
+    <td>Color Sensor</td>
+    <td>Measures reflected red light, ambient brightness, and color <br> Detectable Colors: 8 (None, Black, Blue, Green, Yellow, Red, White, Brown)<br> Sampling Rate: 1,000 Hz <br> Distance: Approx. 1mm–18mm (Afrel measurement)</td>
   </tr>
   <tr>
-    <td>タッチセンサー</td>
-    <td>オン (1), オフ (0) <br> スイッチ可動域: 約4mm</td>
+    <td>Touch Sensor</td>
+    <td>On (1), Off (0) <br> Switch Travel Distance: Approx. 4mm</td>
   </tr>
   <tr>
-    <td>超音波センサー</td>
-    <td>距離計測可能範囲: 3cmから250cm <br> 距離計測精度: +/- 1 cm <br> 前面電飾: 点灯：超音波発信中、 点滅：超音波観測中</td>
+    <td>Ultrasonic Sensor</td>
+    <td>Measurement Range: 3cm–250cm <br> Accuracy: +/- 1cm <br> Front Indicator: Solid = transmitting, Flashing = receiving</td>
   </tr>
   <tr>
-    <td>
-    </td>
-    <td>
-    </td>
+    <td>EV3 Large Motor</td>
+    <td>Feedback Resolution: 1° <br> Rotation Speed: 160–170RPM <br> Rated Torque: 0.21 N·m <br> Stall Torque: 0.42 N·m <br> Weight: 76g</td>
   </tr>
   <tr>
-    <td>EV3 Lモーター</td>
-    <td>フィードバック: 1°単位 <br> 回転数: 160から170RPM <br> 定格トルク: 0.21 N・m (30oz*in) <br> 停動トルク: 0.42 N・m (60oz*in) <br> 重さ: 76 g</td>
-  </tr>
-  <tr>
-    <td>EV3 Mモーター</td>
-    <td>フィードバック 1°単位 <br> 回転数: 240から250RPM <br> 定格トルク: 0.08 N・m (11oz*in) <br> 停動トルク: 0.12 N・m (17oz*in) <br> 重さ: 36 g</td>
+    <td>EV3 Medium Motor</td>
+    <td>Feedback Resolution: 1° <br> Rotation Speed: 240–250RPM <br> Rated Torque: 0.08 N·m <br> Stall Torque: 0.12 N·m <br> Weight: 36g</td>
   </tr>
 </table>
 
+## Download
 
-
-
-## ダウンロード
-最初にPC側で使用する RTC 等をダウンロードしてください。
+First, download the RTCs and related tools used on the PC side.
 
 - [RTM_Tutorial_EV3.zip](https://github.com/OpenRTM/RTM_Tutorial_EV3/archive/master.zip)
 
-ZIPファイルを [Lhaplus](http://www.vector.co.jp/soft/win95/util/se169348.html) 等で展開してください。
+Extract the ZIP file using a tool such as Lhaplus.
 
-## EV3 の組み立て方
+## Assembling the EV3
 
-EV3 は分解した状態で参加者に配ります。
-組み立て方は以下の通りです。
+Participants receive the EV3 in a disassembled state.
 
+Follow the assembly instructions below.
 
-※超音波センサー、カラーセンサー、ジャイロセンサーについては、講習で使用しないため取り付ける必要はありません。
-以下の※の作業については、時間が余った人が実施してください。
+*The ultrasonic sensor, color sensor, and gyro sensor are not used during the seminar and do not need to be installed. Steps marked with ※ may be completed if time permits.*
 
-まずは土台部分を取り出してください。
+First, take out the base assembly.
 
 <br>
 
 <div align="center"><a href="s_DSC00463.JPG"><img src="s_DSC00463.JPG" width="50%;"></a></div>
 <br>
 
-
-最初にMモーターにケーブル(25cm)を接続します※。
+Connect a 25cm cable to the Medium Motor first. ※
 
 <br>
 
 <div align="center"><a href="s_DSC00446.JPG"><img src="s_DSC00446.JPG" width="50%;"></a></div>
 <br>
 
+Next, attach the EV3 main unit.
 
-次に EV3 本体を取り付けます。
-Mモーターにケーブルを接続した場合は、ケーブルが左側の隙間から出るようにしてください。
-
+If you connected the cable to the Medium Motor, route it through the opening on the left side.
 
 <br>
 
@@ -178,8 +168,7 @@ Mモーターにケーブルを接続した場合は、ケーブルが左側の�
 <br>
 <br>
 
-
-右側のタッチセンサーを取り付けてください。
+Attach the right touch sensor.
 
 <br>
 
@@ -187,384 +176,141 @@ Mモーターにケーブルを接続した場合は、ケーブルが左側の�
 <br>
 <br>
 
-超音波センサーを取り付けてください※。
+Attach the ultrasonic sensor. ※
 
 <br>
 
 <div align="center"><a href="s_DSC00454.JPG"><img src="s_DSC00454.JPG" width="50%;"></a></div>
 <br>
 
+Connect the cables.
 
-ケーブルを接続してください。
-必須なのは車輪駆動用のLモーター右、Lモーター左、タッチセンサーだけです。
+The required devices are:
+
+- Right Large Motor
+- Left Large Motor
+- Touch Sensor
 
 <table class="table-alt">
   <tr>
-    <td>Lモーター右</td>
-    <td>ポート C</td>
-    <td>25cmケーブル</td>
+    <td>Right Large Motor</td>
+    <td>Port C</td>
+    <td>25cm cable</td>
   </tr>
   <tr>
-    <td>Lモーター左</td>
-    <td>ポート B</td>
-    <td>25cmケーブル</td>
+    <td>Left Large Motor</td>
+    <td>Port B</td>
+    <td>25cm cable</td>
   </tr>
   <tr>
-    <td>Mモーター※</td>
-    <td>ポートA</td>
-    <td>25cmケーブル</td>
+    <td>Medium Motor ※</td>
+    <td>Port A</td>
+    <td>25cm cable</td>
   </tr>
   <tr>
-    <td>タッチセンサー右</td>
-    <td>ポート 3</td>
-    <td>35cmケーブル</td>
+    <td>Right Touch Sensor</td>
+    <td>Port 3</td>
+    <td>35cm cable</td>
   </tr>
   <tr>
-    <td>タッチセンサー左</td>
-    <td>ポート 1</td>
-    <td>35cmケーブル</td>
+    <td>Left Touch Sensor</td>
+    <td>Port 1</td>
+    <td>35cm cable</td>
   </tr>
   <tr>
-    <td>超音波センサー※</td>
-    <td>ポート 4</td>
-    <td>50cmケーブル</td>
+    <td>Ultrasonic Sensor ※</td>
+    <td>Port 4</td>
+    <td>50cm cable</td>
   </tr>
   <tr>
-    <td>ジャイロセンサー※</td>
-    <td>ポート 2</td>
-    <td>25cmケーブル</td>
+    <td>Gyro Sensor ※</td>
+    <td>Port 2</td>
+    <td>25cm cable</td>
   </tr>
 </table>
 
-ケーブルは EV3 の上下に A～D と 1～4 のポートがあるのでそこにケーブルを接続します。
+The EV3 has ports A–D and 1–4 on the top and bottom. Connect the cables to the appropriate ports.
 
-<br>
+## Powering On and Off
 
-<div align="center"><div align="center"><a href="s_DSC00.JPG"><img src="s_DSC00.JPG" width="50%;"></a></div>;  <div align="center"><a href="s_DSC00471.JPG"><img src="s_DSC00471.JPG" width="40%;"></a></div>;</div>
-<br>
-<br>
+### Power On
 
-<br>
+Press the center button to turn on the EV3.
 
-<div align="center"><div align="center"><a href="s_DSC00455.JPG"><img src="s_DSC00455.JPG" width="50%;"></a></div>;  <div align="center"><a href="s_DSC00456.JPG"><img src="s_DSC00456.JPG" width="50%;"></a></div>;</div>
-<br>
-<br>
+### Power Off
 
+From the main screen, press the Back button (upper-left button on the EV3) and select **Power Off**.
 
+### Reboot
 
+From the main screen, press the Back button and select **Reboot**.
 
-左右にパーツを取り付けます※。
-Lモーター右、Lモーター左、Mモーター、タッチセンサー右、タッチセンサー左のケーブルを挟むようにして取り付けてください※。
-<br>
+### Reset
 
-Lモーター右、タッチセンサー右のケーブルは右側から、Lモーター左、Mモーター、タッチセンサー左は左側から通してください※。
+If ev3dev stops during startup, press and hold the Center, Back (upper-left), and Left buttons simultaneously. When the screen turns off, release the Back button to reboot.
 
-<br>
+## Connecting to the EV3
 
-<div align="center"><a href="s_DSC00457.JPG"><img src="s_DSC00457.JPG" width="50%;"></a></div>
-<br>
+<span style="color:red;">As a general rule, connect to the EV3 via Wi-Fi.</span>
 
+### Connecting to the Wi-Fi Access Point
 
+Press the center button to power on the EV3.
 
-<br>
+Before powering it on, make sure the Wi-Fi adapter is attached.
 
-<div align="center"><a href="s_DSC00459.JPG"><img src="s_DSC00459.JPG" width="50%;"></a></div>
-<br>
+Execute the provided script to start the access point.
 
-これでとりあえず完成ですが、余裕のある人はジャイロセンサーを取り付けてみてください※。
+From the EV3 menu, select **File Browser** and press the center button.
 
+Then select the **scripts** folder.
 
-<br>
+From the next screen, select **start_ap.sh** and press the center button.
 
-<div align="center"><div align="center"><a href="s_DSC00460.JPG"><img src="s_DSC00460.JPG" width="50%;"></a></div>;  <div align="center"><a href="s_DSC00461.JPG"><img src="s_DSC00461.JPG" width="50%;"></a></div>;</div>
-<br>
-<br>
+After a short time, the wireless access point will start.
 
-## 電源の入れ方/切り方
+Connect to the designated SSID.
 
-### 電源の入れ方
+The SSID and password are written on the label attached to the EV3.
 
-中央のボタンを押せば電源が投入されます。
+### Connecting via USB Cable
 
-<br>
+<span style="color:red;">The following procedure is only required for wired connections. If you are using Wi-Fi, skip this section.</span>
 
-<div align="center"><a href="ev3_on.jpg"><img src="ev3_on.jpg" width="50%;"></a></div>
-<br>
+Connect the EV3 to the PC using the supplied USB cable.
 
-### 電源の切り方
+Press the center button to power on the EV3.
 
-EV3 の電源を切る場合は最初の画面で EV3 本体の左上の戻るボタンを押して「Power Off」を選択してください。
+Before powering on, remove the Wi-Fi adapter.
 
-<br>
+If the ev3dev startup screen appears, startup was successful.
 
-<div align="center"><a href="ev3_off.jpg"><img src="ev3_off.jpg" width="50%;"></a></div>
-<br>
+If startup freezes, perform the reset procedure described earlier.
 
+If "EV3+ev3dev" appears under "Other Devices" in Device Manager, update the device driver according to the instructions provided in the document.
 
 
-<br>
+## Preparation
 
-<div align="center"><a href="s_DSC01033.JPG"><img src="s_DSC01033.JPG" width="50%;"></a></div>
-<br>
+Follow the procedure on [this page]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2#toc1) to start the Name Server and RT System Editor.
 
-### 再起動
+If the Name Server is already running, restart it before proceeding.
 
-再起動する場合は最初の画面で EV3 本体の左上の戻るボタンを押して「Reboot」を選択してください。
-
-### リセット
-
-ev3dev の起動が途中で停止する場合には、中央ボタン、戻るボタン(左上)、左ボタンを同時押ししてください。画面が消えたら戻るボタンを離すと再起動します。
-
-
-<br>
-
-<div align="center"><a href="ev3_reset.jpg"><img src="ev3_reset.jpg" width="50%;"></a></div>
-<br>
-
-
-
-## EV3 への接続
-
-EV3 へは<span style="color:red;">原則として無線LANで接続するようにしてください</span>;。
-
-
-### 無線LANアクセスポイントへの接続
-
-まずは EV3 の中央のスイッチを押して電源を投入してください。
-<br>
-
-ここで電源を投入する前に無線LANアダプタを取り付けておいてください。
-
-
-
-
-
-以下の作業でスクリプトを実行するとアクセスポイントが起動します。
-
-EV3 の操作画面から「File Browser」を上下ボタンで選択して中央のボタンを押してください。
-
-```
- ------------------------------
- 192.168.0.1
- ------------------------------
- [File Browser               > ]
-  Device Browser             >
-  Wireless and Networks      > 
-  Battery                    >
-  Open Roberta Lab           >
-  About                      >
- ------------------------------
-```
-
-次に scripts を選択して中央ボタンを押してください。
-
-```
- ------------------------------
- 192.168.0.1
- ------------------------------
-         File Browser
- ------------------------------
- /home/robot
- ------------------------------
- [scripts                     ]
- ・・
- ・・
- ------------------------------
-```
-
-
-次の画面から **start_ap.sh** を選択して中央ボタンを押すとスクリプトが起動します。
-
-```
- ------------------------------
- 192.168.0.1
- ------------------------------
-         File Browser
- ------------------------------
- /home/robot/scripts
- ------------------------------
- ../
- Component/
- ・・
- [start_ap.sh                 ]
- ------------------------------
-```
-
-
-しばらくすると無線LANアクセスポイントが起動するので、指定の SSID のアクセスポイントに接続してください。
-<!-- SSID は ev3_***(***は EV3 に貼り付けたテープ記載の番号)に接続します。 -->
-SSID、パスワードは EV3 に貼り付けたテープに記載してあります。
-
-
-<br>
-
-<div align="center"><a href="tutorial_ev3_irex26.png"><img src="tutorial_ev3_irex26.png" width="50%;"></a></div>
-<br>
-
-
-アクセスポイントへの接続方法は以下のページを参考にしてください。
-
-- [Windows 7 で無線LANに接続する方法](http://121ware.com/qasearch/1007/app/servlet/qadoc?QID=011120)
-- [Windows 8 / 8.1で無線LANに接続する方法](http://121ware.com/qasearch/1007/app/servlet/relatedqa?QID=014183)
-
-
-まず右下のネットワークアイコンをクリックしてください。
-
-<br>
-
-<div align="center"><a href="tu_ev3_14.png"><img src="tu_ev3_14.png" width="50%;"></a></div>
-<br>
-
-次に一覧から ev3_***を選択してください。
-
-
-<br>
-
-<div align="center"><a href="tu_ev3_11.png"><img src="tu_ev3_11.png" width="50%;"></a></div>
-<br>
-
-
-パスワードを入力してください。
-
-<br>
-
-<div align="center"><a href="tu_ev3_12.png"><img src="tu_ev3_12.png" width="50%;"></a></div>
-<br>
-
-
-### USBケーブルでの接続
-<span style="color:red;">以下の作業は有線で接続する場合の作業なので、無線で接続する場合は不要です。</span>;
-
-
-付属の USBケーブルで EV3 と PC を接続してください。
-
-
-<br>
-
-<div align="center"><a href="s_DSC00467.JPG"><img src="s_DSC00467.JPG" width="50%;"></a></div>
-<br>
-
-
-中央のボタンを押して電源を投入してください。
-
-ここで EV3 の電源を投入する前に無線LANアダプタは取り外しておいてください。
-<br>
-
-以下の画面が表示されていれば ev3dev の起動に成功していますが、起動途中で停止した場合は [[この手順>#toc23]] で再起動してください。
-
-<br>
-
-<div align="center"><a href="s_DSC00470.JPG"><img src="s_DSC00470.JPG" width="60%;"></a></div>
-<br>
-
-
-
-
-デバイスマネージャで「EV3+ev3dev」が「その他のデバイス」の下にある場合は正しく機能していないので、以下の手順でデバイスソフトウェアの更新を行ってください。
-
-- [https://sourceforge.net/p/etroboev3/wiki/lejosev3_win_eclipse_section05/](https://sourceforge.net/p/etroboev3/wiki/lejosev3_win_eclipse_section05/)
-
-まずはコントロールパネルからデバイスマネージャを開いてください。
-
-<br>
-
-<div align="center"><a href="tu_ev3_17.png"><img src="tu_ev3_17.png" width="50%;"></a></div>
-<br>
-
-<br>
-
-<div align="center"><a href="tu_ev3_18.png"><img src="tu_ev3_18.png" width="50%;"></a></div>
-<br>
-
-
-開いたら EV3+ev3dev を右クリックして「ドライバソフトウェアの更新」を選択してください。
-<br>
-
-ここで EV3+ev3dev がネットワークアダプターの下にある場合は正常に認識されているので以下の作業は不要です。
-
-<br>
-
-<div align="center"><a href="tu_ev3_1.png"><img src="tu_ev3_1.png" width="50%;"></a></div>
-<br>
-
-「コンピューターを参照してドライバー ソフトウェアを検索します」を選択してください。
-
-<br>
-
-
-
-<div align="center"><a href="tu_ev3_3.png"><img src="tu_ev3_3.png" width="50%;"></a></div>
-<br>
-
-
-「コンピューター上のデバイス ドライバーの一覧から選択します」を選択してください。
-
-<br>
-
-<div align="center"><a href="tu_ev3_4.png"><img src="tu_ev3_4.png" width="50%;"></a></div>
-<br>
-
-ネットワーク アダプターを選択して次へをクリックしてください。
-
-<br>
-
-
-
-<div align="center"><a href="tu_ev3_5.png"><img src="tu_ev3_5.png" width="50%;"></a></div>
-<br>
-
-製造元は「Microsoft Corporation」、ネットワークアダプタは「Remote RNDIS Compatible Device」を選択して次へをクリックしてください。
-
-<br>
-
-<div align="center"><a href="tu_ev3_9.png"><img src="tu_ev3_9.png" width="50%;"></a></div>
-<br>
-
-
-ドライバー更新警告が出た場合は「はい」を選択してください。
-
-<br>
-
-<div align="center"><a href="tu_ev3_7.png"><img src="tu_ev3_7.png" width="50%;"></a></div>
-<br>
-
-正常に更新されたら閉じるを選択してください。
-
-<br>
-
-<div align="center"><a href="tu_ev3_8.png"><img src="tu_ev3_8.png" width="50%;"></a></div>
-<br>
-
-
-
-
-
-## 事前準備
-
-
-[このページ]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2#toc1) の手順に従ってネームサーバー、RTシステムエディタを起動してください。
-予めネームサーバーを起動してある場合は再起動してください。
-
-
-
-またネットワークインターフェースが2つ以上ある場合に通信に失敗する可能性があるため、有線で接続した場合は他のネットワークデバイスを無効にしてからネームサーバーを起動してください。
+If two or more network interfaces are available, communication may fail. Therefore, when using a wired connection, disable other network devices before starting the Name Server.
 
 <br>
 
 <div align="center"><a href="tu_ev3_16.png"><img src="tu_ev3_16.png" width="50%;"></a></div>
 <br>
 
-
 <br>
 
 <div align="center"><a href="raspi_tu25.png"><img src="raspi_tu25.png" width="60%;"></a></div>
 <br>
 
-### ネームサーバー追加
+### Adding the Name Server
 
-続いて RTシステムエディタのネームサーバー追加ボタンで192.168.0.1(無線LANで接続する場合は192.168.11.1)を追加してください。
-
-
+Next, use the **Add Name Server** button in RT System Editor and add **192.168.0.1** (or **192.168.11.1** when connecting via wireless LAN).
 
 <br>
 
@@ -572,19 +318,18 @@ SSID、パスワードは EV3 に貼り付けたテープに記載してあり�
 <br>
 <br>
 
-するとEducatorVehicle0という RTC が見えるようになります。
+An RTC named **EducatorVehicle0** will then become visible.
 
 <div align="center"><a href="tutorial_ev3_irex29.png"><img src="tutorial_ev3_irex29.png" width="50%;"></a></div>
 
 - [EducatorVehicle](../../raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0)
 
-EducatorVehicle は EV3 の走行速度の入力、センサーのデータの出力等を行うためのコンポーネントです。
+EducatorVehicle is a component used for inputting EV3 driving speeds, outputting sensor data, and related functions.
 
 <br>
 
 <div align="center"><a href="EducatorVehicle.png"><img src="EducatorVehicle.png" width="50%;"></a></div>
 <br>
-
 
 <table class="table-alt">
   <tr>
@@ -594,100 +339,98 @@ EducatorVehicle は EV3 の走行速度の入力、センサーのデータの�
     <td colspan="3" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>velocity2D</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>目標速度</td>
+    <td>Target velocity</td>
   </tr>
   <tr>
     <td>angle</td>
     <td>RTC::TimedDouble</td>
-    <td>Mモーターの角度</td>
+    <td>M motor angle</td>
   </tr>
   <tr>
     <td>lcd</td>
     <td>RTC::TimedString</td>
-    <td>LCDに表示する画像ファイル名</td>
+    <td>Image file name to display on the LCD</td>
   </tr>
   <tr>
     <td>sound</td>
     <td>RTC::TimedString</td>
-    <td>出力する音声</td>
+    <td>Audio to output</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>odometry</td>
     <td>RTC::TimedPose2D</td>
-    <td>現在の位置・姿勢</td>
+    <td>Current position and orientation</td>
   </tr>
   <tr>
     <td>ultrasonic</td>
     <td>RTC::RangeData</td>
-    <td>超音波センサーで計測した距離</td>
+    <td>Distance measured by the ultrasonic sensor</td>
   </tr>
   <tr>
     <td>gyro</td>
     <td>RTC::TimedDouble</td>
-    <td>ジャイロセンサーで計測した角度</td>
+    <td>Angle measured by the gyro sensor</td>
   </tr>
   <tr>
     <td>color</td>
     <td>RTC::TimedString</td>
-    <td>カラーセンサーで計測した色</td>
+    <td>Color measured by the color sensor</td>
   </tr>
   <tr>
     <td>light_reflect</td>
     <td>RTC::TimedDouble</td>
-    <td>カラーセンサーで計測した反射光の強さ</td>
+    <td>Reflected light intensity measured by the color sensor</td>
   </tr>
   <tr>
     <td>touch</td>
     <td>RTC::TimedBoolean</td>
-    <td>タッチセンサーのオンオフ。右側が0番目の要素、左側が1番目の要素</td>
+    <td>Touch sensor ON/OFF state. The right side is element 0 and the left side is element 1.</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">コンフィギュレーションパラメーター</td>
+    <td colspan="3" style="text-align: center;">Configuration Parameters</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>デフォルト値</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Default Value</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>wheelRadius</td>
     <td>0.028</td>
-    <td>車輪の半径</td>
+    <td>Wheel radius</td>
   </tr>
   <tr>
     <td>wheelDistance</td>
     <td>0.054</td>
-    <td>タイヤ間距離の1/2</td>
+    <td>Half of the distance between the wheels</td>
   </tr>
   <tr>
     <td>medium_motor_speed</td>
     <td>1.6</td>
-    <td>Mモーターの速度</td>
+    <td>M motor speed</td>
   </tr>
 </table>
 
+#### About the TimedVelocity2D Type
 
+The TimedVelocity2D type is defined as follows.
 
-#### TimedVelocity2D型について
-
-TimedVelocity2D型は以下のように定義されています。
-
-```
+```cpp
      struct Velocity2D
      {
          double vx;
@@ -696,7 +439,7 @@ TimedVelocity2D型は以下のように定義されています。
      };
 ```
 
-```
+```cpp
      struct TimedVelocity2D
      {
          Time tm;
@@ -704,204 +447,200 @@ TimedVelocity2D型は以下のように定義されています。
      };
 ```
 
-vx、vy、va はロボット中心座標系での速度を表しています。
+vx, vy, and va represent velocities in the robot-centered coordinate system.
 
 <br>
 
 <div align="center"><a href="tu_ev3_19.png"><img src="tu_ev3_19.png" width="50%;"></a></div>
 <br>
 
+vx represents velocity in the X direction, vy represents velocity in the Y direction, and va represents angular velocity around the Z axis.
 
-vx は X方向の速度、vy は Y方向の速度、va は Z軸周りの角速度です。
+For a robot such as the Educator Vehicle, which has two wheels mounted on the left and right sides, vy becomes 0 if side-slipping is assumed not to occur.
 
-Educator Vehicle のように2個の車輪が左右に取り付けられているロボットの場合、横滑りしないと仮定すると vy は0になります。
+The robot is controlled by specifying vx and va.
 
-vx、va を指定することでロボットの操作を行います。
+- [Common Interface Specification](http://openrtm.org/openrtm/sites/default/files/Automobile_Interface1.0.zip)
 
-- [共通インターフェース仕様書](http://openrtm.org/openrtm/sites/default/files/Automobile_Interface1.0.zip)
+#### Audio Output
 
-
-
-#### 音声の出力
-sound による音声の入力には以下のコマンドを利用できます。
+The following commands can be used for audio input through the sound port.
 
 - beep
-  - beep と入力するとビープ音が鳴ります。
+  - Entering `beep` produces a beep sound.
 
 - tone
-  - 以下のように tone、周波数、時間と入力すると指定周波数の音を指定ミリ秒数だけ鳴らします。
+  - Enter tone, frequency, and duration as shown below to play a sound at the specified frequency for the specified number of milliseconds.
 
+```text
+tone,100,1000
 ```
- tone,100,1000
-```
 
-- それ以外
-  - それ以外は指定文字列を発音します
+- Other strings
+  - Any other string will be spoken as speech.
 
+#### Images Displayed on the LCD
 
-#### LCD に表示する画像について
-LCD で表示する画像は付属資料の software/saveBinaryImage/EXE/saveBinaryImage.exeで変換したものを利用してください。
-<br>
+For images displayed on the LCD, use images converted by:
 
-画像ファイルを saveBinaryImage.exe にドラッグ・アンド・ドロップすれば変換できます。
+`software/saveBinaryImage/EXE/saveBinaryImage.exe`
 
+included in the distributed materials.
 
+Drag and drop an image file onto `saveBinaryImage.exe` to perform the conversion.
 
+### Starting the Sample Components
 
-### サンプルコンポーネント起動
+Start **start_component_ev3.bat** included in the distributed materials.
 
-付属資料の<span style="color:red;">start_component_ev3.bat</span>;を起動してください。
-※OpenRTM-aist Python版をインストールしていない場合、もしくはインストールに失敗している場合は個別に実行ファイル入りのUSBメモリーを配布いたしますので、その中の<span style="color:red;">start_component_ev3_exe.bat</span>;を利用してください。
+*If the Python version of OpenRTM-aist is not installed, or if the installation failed, a USB memory containing standalone executables will be distributed separately. In that case, use **start_component_ev3_exe.bat**.*
 
-すると以下の2つの RTC が起動します。
+The following two RTCs will start.
 
 <div align="center"><a href="tu_ev3_24.png"><img src="tu_ev3_24.png" width="70%;"></a></div>
 
 - [FloatSeqToVelocity](../lego_sample_rts_exec#toc2)
 - [TkJoyStick]({{ site.baseurl }}/ja/doc/installation/sample_components/tkjoystick_mobilerobotsimulator#toc0)
 
-## 動作確認
+## Operation Check
 
-まずはジョイスティックで EV3 を操作してみます。
+First, try controlling the EV3 using the joystick.
 
-
-
-RTシステムエディタで EducatorVehicle、FloatSeqToVelocity、TkJoyStick を以下のように接続します。
+Connect **EducatorVehicle**, **FloatSeqToVelocity**, and **TkJoyStick** in RT System Editor as shown below.
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_16.png"><img src="tutorial_ev3_16.png" width="70%;"></a></div>
 <br>
-そして RTC をアクティブ化するとジョイスティックで EV3 の操作ができるようになります。
+
+After activating the RTCs, you will be able to control the EV3 using the joystick.
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_21.png"><img src="tutorial_ev3_21.png" width="70%;"></a></div>
 <br>
 
-## 自作の RTC で制御
+## Controlling with Your Own RTC
 
-まずは FloatSeqToVelocity の out と EducatorVehicle の target_velocity_in のコネクタを切断してください。
+First, disconnect the connector between **FloatSeqToVelocity::out** and **EducatorVehicle::target_velocity_in**.
 
 <div align="center"><a href="tutorial_ev3_17.png"><img src="tutorial_ev3_17.png" width="70%;"></a></div>
 
-FloatSeqToVelocity と EducatorVehicle の間に自作の RTC を接続して、タッチセンサーがオンになった場合に停止して音を鳴らすようにします。
+Connect your own RTC between **FloatSeqToVelocity** and **EducatorVehicle**, and implement behavior that stops the robot and plays a sound when the touch sensor is activated.
 
-### ひな形コードの作成
+### Creating Template Code
 
-RTC ビルダを起動してください。
+Start RTC Builder.
 
 <br>
 
 <div align="center"><a href="tutorial_raspimouse8.png"><img src="tutorial_raspimouse8.png" width="70%;"></a></div>
 <br>
 
-起動したら新規にプロジェクトを作成します。
+After RTC Builder starts, create a new project.
 
 <br>
 
 <div align="center"><a href="tutorial_raspimouse9.png"><img src="tutorial_raspimouse9.png" width="70%;"></a></div>
 <br>
 
-プロジェクト名は TestEV3CPP(TestEV3Py)にします。
+Set the project name to **TestEV3CPP** (or **TestEV3Py**).
 
-以下のように設定を行ってください。
-C++、もしくは Python で作成します。
+Configure the settings as shown below.
+
+Create the component in either **C++** or **Python**.
 
 <table class="table-alt">
   <tr>
-    <th colspan="3" style="text-align: center;">基本</th>
+    <th colspan="3" style="text-align: center;">Basic</th>
   </tr>
   <tr>
-    <td>モジュール名</td>
-    <td colspan="2" style="text-align;">TestEV3CPP、もしくはTestEV3Py</td>
+    <td>Module Name</td>
+    <td colspan="2" style="text-align;">TestEV3CPP or TestEV3Py</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">アクティビティ</td>
+    <td colspan="3" style="text-align: center;">Activity</td>
   </tr>
   <tr>
-    <td>有効アクション</td>
-    <td colspan="2" style="text-align;">onInitialize、onExecute、onActivated、onDeactivated</td>
+    <td>Enabled Actions</td>
+    <td colspan="2" style="text-align;">onInitialize, onExecute, onActivated, onDeactivated</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">データポート</td>
+    <td colspan="3" style="text-align: center;">Data Ports</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>velocity_in</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>入力目標速度</td>
+    <td>Input target velocity</td>
   </tr>
   <tr>
     <td>touch</td>
     <td>RTC::TimedBooleanSeq</td>
-    <td>タッチセンサーのオンオフ</td>
+    <td>Touch sensor ON/OFF state</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>velocity_out</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>出力目標速度</td>
+    <td>Output target velocity</td>
   </tr>
   <tr>
     <td>sound</td>
     <td>RTC::TimedString</td>
-    <td>音声</td>
+    <td>Audio output</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">コンフィギュレーション</td>
+    <td colspan="3" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>sound_output</td>
     <td>string</td>
-    <td>タッチセンサーが ON の時に発する音声。デフォルト値は beep</td>
+    <td>Audio played when the touch sensor is ON. The default value is beep.</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">言語・環境</td>
+    <td colspan="3" style="text-align: center;">Language / Environment</td>
   </tr>
   <tr>
-    <td>言語</td>
-    <td colspan="2" style="text-align;">C++、もしくはPython</td>
+    <td>Language</td>
+    <td colspan="2" style="text-align;">C++ or Python</td>
   </tr>
 </table>
 
-
-
-[コード生成] ボタンを押したらコードが生成されます。
+Click the **[Generate Code]** button to generate the source code.
 
 <br>
 
 <div align="center"><a href="tutorial_raspimouse10.png"><img src="tutorial_raspimouse10.png" width="70%;"></a></div>
 <br>
 
-### プロジェクト生成
+### Generating the Project
 
-コードが生成できたら C++ の場合は CMake で Visual Studio のプロジェクト(Ubuntu の場合は Code::Blocks)を生成してください。
+After the code has been generated, use CMake to generate a Visual Studio project (or Code::Blocks project on Ubuntu) if you are using C++.
 
 - [Windows]({{ site.baseurl }}/ja/doc/toolmanuals/rtcbuilder-1_1_0/compile_win_cmake_cpp_rtcb_1_1_0)
 - [Ubuntu]({{ site.baseurl }}/ja/content/build_ubuntu_codeblocks)
 
-まず CMake (cmake-gui) を起動します。
-
+First, start **CMake (cmake-gui)**.
 
 - Windows 7
 
@@ -917,17 +656,18 @@ C++、もしくは Python で作成します。
 <div align="center"><a href="tutorial_raspimouse12.png"><img src="tutorial_raspimouse12.png" width="60%;"></a></div>
 <br>
 
-起動したらソースコードのディレクトリー、ビルドを行うディレクトリーに以下を指定します。
-括弧内は eclipse の作業ディレクトリーを C:\workspace にした場合の例です。
+After starting CMake, specify the source code directory and build directory as shown below.
+
+The values in parentheses are examples assuming the Eclipse workspace directory is **C:\workspace**.
 
 <table class="table-alt">
   <tr>
     <td>Where is the source code</td>
-    <td>RTCBuilder で生成したコードのフォルダー(C:\workspace\TestEV3CPP)</td>
+    <td>Folder containing the code generated by RTCBuilder (C:\workspace\TestEV3CPP)</td>
   </tr>
   <tr>
     <td>Where to build the binaries</td>
-    <td>RTCBuilder で生成したコードのフォルダーの下に作成したbuildフォルダー(C:\workspace\TestEV3CPP\build)</td>
+    <td>build folder created under the folder containing the code generated by RTCBuilder (C:\workspace\TestEV3CPP\build)</td>
   </tr>
 </table>
 
@@ -936,60 +676,59 @@ C++、もしくは Python で作成します。
 <div align="center"><a href="tutorial_ev3_24.png"><img src="tutorial_ev3_24.png" width="50%;"></a></div>
 <br>
 
-[Configure] ボタン→ [Generate] ボタンをクリックすると**Visual Studio**のプロジェクトが生成されます。
+Click **[Configure]** and then **[Generate]** to generate the **Visual Studio** project.
 
 
-### ソースコードの編集
+### Editing the Source Code
 
-build ディレクトリーの TestEV3CPP.sln を開いてください。
+Open **TestEV3CPP.sln** in the build directory.
 
-次にコードの編集を行います。
+Next, edit the source code.
 
-**Python**の場合はまず変数の初期化部分を修正してください。
+For **Python**, first modify the variable initialization section.
 
 - TestEV3Py.py
 
-
-```
+```python
  	def __init__(self, manager):
  		#self._d_velocity_in = RTC.TimedVelocity2D(*velocity_in_arg)
  		self._d_velocity_in = RTC.TimedVelocity2D(RTC.Time(0,0),RTC.Velocity2D(0,0,0))
 ```
 
-```
+```python
  		#self._d_distance_sensor = RTC.TimedShortSeq(*distance_sensor_arg)
  		self._d_distance_sensor = RTC.TimedShortSeq(RTC.Time(0,0),[])
 ```
 
-```
+```python
  		#self._d_velocity_out = RTC.TimedVelocity2D(*velocity_out_arg)
  		self._d_velocity_out = RTC.TimedVelocity2D(RTC.Time(0,0),RTC.Velocity2D(0,0,0))
 ```
 
-```
+```python
  		#self._d_buzzer = RTC.TimedShort(*buzzer_arg)
  		self._d_buzzer = RTC.TimedShort(RTC.Time(0,0),0)
 ```
 
+First, write code in **onExecute** that outputs the input velocity unchanged.
 
-まずは onExecute で入力速度をそのまま出力するコードを書いてみます。
 <br>
 
-**C++**の場合は以下のようになります。
+For **C++**, it is implemented as follows.
+
 <br>
 
-isNew関数で新規の入力データが存在するかを確認して、read関数で変数(m_velocity_in)に格納します。
-そして m_velocity_out に出力データを格納して write関数を呼び出すとデータが送信されます。
+Use the **isNew** function to check whether new input data exists, and store it in the variable (**m_velocity_in**) using the **read** function.
 
-
+Then store the output data in **m_velocity_out** and call the **write** function to transmit the data.
 
 - src/TestEV3CPP.cpp
 
-```
+```cpp
  	if (m_velocity_inIn.isNew())
  	{
  		m_velocity_inIn.read();
- 		//入力速度をそのまま出力
+ 		// Output the input velocity unchanged
  		m_velocity_out.data.vx = m_velocity_in.data.vx;
  		m_velocity_out.data.vy = m_velocity_in.data.vy;
  		m_velocity_out.data.va = m_velocity_in.data.va;
@@ -998,15 +737,14 @@ isNew関数で新規の入力データが存在するかを確認して、read�
  	}
 ```
 
-
-**Python**の場合は以下のようになります。
+For **Python**, it is implemented as follows.
 
 - TestEV3Py.py
 
-```
+```python
  		if self._velocity_inIn.isNew():
  			data = self._velocity_inIn.read()
- 			#入力速度をそのまま出力する
+ 			# Output the input velocity unchanged
  			self._d_velocity_out.data.vx = data.data.vx
  			self._d_velocity_out.data.vy = data.data.vy
  			self._d_velocity_out.data.va = data.data.va
@@ -1014,52 +752,54 @@ isNew関数で新規の入力データが存在するかを確認して、read�
  			self._velocity_outOut.write()
 ```
 
+Next, implement processing that stops the robot when the touch sensor is ON.
 
-次にタッチセンサーがオンの場合に停止する処理を記述します。
 <br>
 
-常にタッチセンサーのデータが入力されるとは限らないので、センサーのデータを格納する変数を宣言します。
+Since touch sensor data is not always received continuously, declare a variable to store the sensor state.
+
 <br>
 
-**C++**の場合は TestEV3CPP.h に記述します。
+For **C++**, add the following to **TestEV3CPP.h**.
 
 - include/TestEV3CPP/TestEV3CPP.h
 
-```
+```cpp
   private:
  	 bool m_last_sensor_data[2];
 ```
+
 <br>
 
-**Python**の場合はコンストラクタに記述します。
+For **Python**, add the following to the constructor.
 
 - TestEV3Py.py
 
-```
+```python
  	def __init__(self, manager):
  		OpenRTM_aist.DataFlowComponentBase.__init__(self, manager)
- 
+
  		self._last_sensor_data = [False, False]
 ```
 
-次に onExecute に停止する処理を記述します。
+Next, add the stop-processing logic to **onExecute**.
+
 <br>
 
-**C++**の場合は以下のようになっています。
+For **C++**, the implementation is shown below.
+
 <br>
 
-まずインポート touch に isNew 関数で新規にデータが入力されたかを確認して、入力されている場合は read関数で読み込みます。そして変数 m_last_sensor_data に格納します。
-<br>
+First, check whether new data has arrived on the **touch** InPort using **isNew**. If new data exists, read it using **read** and store it in **m_last_sensor_data**.
 
-そしてインポート velocity_in で受信したデータの vx が 0 以上の場合には前進しているため障害物に接触するかもしれないと判定して、タッチセンサーがオンの場合は停止してブザーを鳴らします。
-
+Then, if **vx** of the data received from **velocity_in** is greater than or equal to 0, the robot is considered to be moving forward and may collide with an obstacle. If the touch sensor is ON, the robot stops and a buzzer sound is played.
 
 - src/TestEV3CPP.cpp
 
-```
+```cpp
  RTC::ReturnCode_t TestEV3CPP::onExecute(RTC::UniqueId ec_id)
  {
- 	//データを新規に受信した場合に、データをm_last_sensor_dataを格納する
+ 	// Store newly received sensor data in m_last_sensor_data
  	if (m_touchIn.isNew())
  	{
  		m_touchIn.read();
@@ -1067,13 +807,13 @@ isNew関数で新規の入力データが存在するかを確認して、read�
  		{
  			for (int i = 0; i < 2; i++)
  			{
- 				//タッチセンサがOFFからONになった時に音を鳴らす
+ 				// Play a sound when the touch sensor changes from OFF to ON
  				if (!m_last_sensor_data[i] && m_touch.data[i])
  				{
  					m_sound.data = m_sound_output.c_str();
  					setTimestamp(m_sound);
  					m_soundOut.write();
- 
+
  				}
  				m_last_sensor_data[i] = m_touch.data[i];
  			}
@@ -1082,27 +822,27 @@ isNew関数で新規の入力データが存在するかを確認して、read�
  	if (m_velocity_inIn.isNew())
  	{
  		m_velocity_inIn.read();
- 		//vxが0以上(前進)のときのみ停止するか判定する
+ 		// Determine whether to stop only when vx >= 0 (moving forward)
  		if (m_velocity_in.data.vx > 0)
  		{
  			for (int i = 0; i < 2; i++)
  			{
- 				//タッチセンサがONの時に停止する
+ 				// Stop when the touch sensor is ON
  				if (m_last_sensor_data[i])
  				{
- 					//停止する
+ 					// Stop the robot
  					m_velocity_out.data.vx = 0;
  					m_velocity_out.data.vy = 0;
  					m_velocity_out.data.va = 0;
  					setTimestamp(m_velocity_out);
  					m_velocity_outOut.write();
- 
- 
+
+
  					return RTC::RTC_OK;
  				}
  			}
  		}
- 		//入力速度をそのまま出力
+ 		// Output the input velocity unchanged
  		m_velocity_out.data.vx = m_velocity_in.data.vx;
  		m_velocity_out.data.vy = m_velocity_in.data.vy;
  		m_velocity_out.data.va = m_velocity_in.data.va;
@@ -1112,42 +852,41 @@ isNew関数で新規の入力データが存在するかを確認して、read�
  }
 ```
 
-
-**Python**の場合は以下のようになっています。
+For **Python**, the implementation is as follows.
 
 - TestEV3Py.py
 
-```
+```python
  	def onExecute(self, ec_id):
- 		#データを新規に受信した場合に、データをm_last_sensor_dataを格納する
+ 		# Store newly received sensor data in m_last_sensor_data
  		if self._touchIn.isNew():
  			data = self._touchIn.read()
  			if len(data.data) == 2:
  				for i in range(2):
- 					#タッチセンサがOFFからONになった時に音を鳴らす
+ 					# Play a sound when the touch sensor changes from OFF to ON
  					if not self._last_sensor_data[i] and data.data[i]:
  						self._d_sound.data = self._sound_output[0]
  						OpenRTM_aist.setTimestamp(self._d_sound)
  						self._soundOut.write()
  				self._last_sensor_data = data.data[:]
- 
+
  		if self._velocity_inIn.isNew():
  			data = self._velocity_inIn.read()
- 			#vxが0以上(前進)のときのみ停止するか判定する
+ 			# Determine whether to stop only when vx >= 0 (moving forward)
  			if data.data.vx > 0:
  				for d in self._last_sensor_data:
- 					#タッチセンサーがONの時に停止する
+ 					# Stop when the touch sensor is ON
  					if d:
- 						#停止する
+ 						# Stop the robot
  						self._d_velocity_out.data.vx = 0
  						self._d_velocity_out.data.vy = 0
  						self._d_velocity_out.data.va = 0
  						OpenRTM_aist.setTimestamp(self._d_velocity_out)
  						self._velocity_outOut.write()
- 						
+
  						return RTC.RTC_OK
- 
- 			#入力速度をそのまま出力する
+
+ 			# Output the input velocity unchanged
  			self._d_velocity_out.data.vx = data.data.vx
  			self._d_velocity_out.data.vy = data.data.vy
  			self._d_velocity_out.data.va = data.data.va
@@ -1156,30 +895,36 @@ isNew関数で新規の入力データが存在するかを確認して、read�
  		return RTC.RTC_OK
 ```
 
+After editing the code, build the project if you are using **C++**.
 
-コードの編集が終わったら C++ の場合はビルドしてください。
 <br>
 
-ビルドに成功すると build\src\Release(Debug) に TestEV3CPPComp.exe が生成されます。
+If the build succeeds, **TestEV3CPPComp.exe** will be generated in:
 
-### 動作確認
-TestEV3CPPComp.exe (TestEV3CPPComp.py) をダブルクリックして起動してください。
+```text
+build\src\Release
+```
+
+(or `build\src\Debug`).
+
+### Operation Check
+
+Start **TestEV3CPPComp.exe** (or **TestEV3CPPComp.py**) by double-clicking it.
+
 <br>
 
-TestEV3CPP(TestEV3Py)を以下のように接続してください。
+Connect **TestEV3CPP** (or **TestEV3Py**) as shown below.
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_18.png"><img src="tutorial_ev3_18.png" width="70%;"></a></div>
 <br>
 
-最後に RTC をアクティブ化して動作確認してください。
+Finally, activate the RTCs and verify that the system operates correctly.
 
-### RTシステム保存
+### Saving an RT System
 
-RTシステムを保存する場合は System Diagram 上で右クリックして Save As... を選択してください。
-
-
+To save the RT System, right-click on the **System Diagram** and select **Save As...**
 
 <br>
 
@@ -1191,45 +936,48 @@ RTシステムを保存する場合は System Diagram 上で右クリックし�
 
 <br>
 
+### Restoring an RT System
 
-### RTシステム復元
-
-復元する場合は Open and Restore を選択して、先ほど保存したファイルを選択してください。
+To restore a saved RT System, select **Open and Restore** and choose the file you saved earlier.
 
 <br>
 
 <div align="center"><a href="raspi_tu28.png"><img src="raspi_tu28.png" width="50%;"></a></div>
 <br>
 
-### RTC 終了
+### Exiting an RTC
 
-RTC を終了する場合は RTシステムエディタ上で RTC を exit してください。
+To terminate an RTC, execute **Exit** on the RTC from RT System Editor.
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_19.png"><img src="tutorial_ev3_19.png" width="70%;"></a></div>
 
-## 補足
+## Supplement
 
-### スクリプトファイルについて
+### About the Script Files
 
-EV3 のボタン操作で File Brower を選択すると/home/robot以下のディレクトリーの操作ができます。
+By selecting **File Browser** from the EV3 button menu, you can operate files and directories under:
+
+```text
+/home/robot
+```
+
 <br>
 
-scripts フォルダー内のシェルスクリプトを実行することで以下の操作ができます。
+The following operations can be performed by executing shell scripts in the **scripts** folder.
 
 <table class="table-alt">
   <tr>
-    <td>スクリプトファイル名</td>
-    <td>内容</td>
+    <td>Script File Name</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>run_rtcs.sh</td>
-    <td>RTC を起動する</td>
+    <td>Start RTCs</td>
   </tr>
   <tr>
     <td>stop_rtcs.sh</td>
-    <td>RTC を終了する</td>
+    <td>Stop RTCs</td>
   </tr>
 </table>
--------jp page!!-------

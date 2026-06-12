@@ -1,139 +1,143 @@
 ---
 layout: page
-title: チュートリアル(画像処理実習)
+title: Tutorial (Image Processing Exercise)
 ---
--------jp page!!-------
 
 <!-- チュートリアル(画像処理実習) -->
 #contents
 
-## はじめに
+## Introduction
 
-このページでは、OpenCVの画像処理により図形を検出して移動ロボット (Raspberry Piマウス) を追従させるRTCの作成手順を説明します。
+This page explains the procedure for creating an RTC that detects shapes using OpenCV image processing and makes a mobile robot (Raspberry Pi Mouse) follow them. :contentReference[oaicite:0]{index=0}
 
-## 作成するRTコンポーネント
+## RT Component to Be Created
 
-- CircleTracking コンポーネント：OpenCVライブラリのHoughCircles関数で画像から円を検出して、検出した円の方向に移動ロボットが回転するように制御するRTC
+- CircleTracking Component: An RTC that detects circles from images using the OpenCV library's HoughCircles function and controls the mobile robot to rotate toward the detected circle. :contentReference[oaicite:1]{index=1}
 
 <div align="center"><a href="opencv10.jpg"><img src="opencv10.jpg" width="50%;"></a></div>
 
+## About the HoughCircles Function
 
-## HoughCircles関数について
+HoughCircles is a function that detects circles from grayscale images using the Hough Transform.
 
-HoughCirclesはハフ変換を用いてグレースケール画像から円を検出する関数です。
-詳細は以下のページを参照。
+For details, refer to the following page.
 
-- [特徴検出 — opencv 2.2 documentation](http://opencv.jp/opencv-2svn/cpp/feature_detection.html#cv-houghcircles)
+- [Feature Detection — opencv 2.2 documentation](http://opencv.jp/opencv-2svn/cpp/feature_detection.html#cv-houghcircles)
 
-## RTCの概要
+## RTC Overview
 
-カメラで取得した画像をグレースケール画像に変換後、HoughCircles関数で円を検出します。
-検出した円の方向に移動ロボットが回転するように制御します。
-具体的には、検出した円の位置が画像の右側の場合は右回り、左側の場合は左回りの回転する目標速度を指令します。
-また、動作確認用に円の位置情報を付加した画像を出力します。
+After converting images captured by a camera into grayscale images, circles are detected using the HoughCircles function.
+
+The robot is controlled so that it rotates toward the detected circle.
+
+Specifically, when the detected circle is located on the right side of the image, a clockwise rotational target velocity is commanded; when it is located on the left side, a counterclockwise rotational target velocity is commanded.
+
+For operation verification, an image containing circle position information is also output. :contentReference[oaicite:2]{index=2}
 
 <div align="center"><a href="opencv2.jpg"><img src="opencv2.jpg" width="100%;"></a></div>
 
-## RTCの作成
-以降はRTCの基本的な作成方法を理解している前提で進めます。
-基本的な作成手順は以下のページを参照。
+## Creating the RTC
 
-- [チュートリアル(Raspberry Pi Mouse、RTM講習会)](https://openrtm.org/openrtm/ja/node/6549)
+The following explanation assumes that you already understand the basic procedure for creating RTCs.
 
-### RTCBuilderによるひな型コード生成
+Refer to the following page for the basic creation procedure.
 
-RTCBuilderで、以下の仕様のRTCのひな型コードを生成します。
+- [Tutorial (Raspberry Pi Mouse, RTM Seminar)](https://openrtm.org/openrtm/ja/node/6549)
+
+### Generating Template Code with RTCBuilder
+
+Use RTCBuilder to generate template code for an RTC with the following specifications. :contentReference[oaicite:3]{index=3}
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名称</th>
+    <th>Component Name</th>
     <th>CircleTracking</th>
   </tr>
   <tr>
-    <td>アクティビティ</td>
-    <td>onActivated、onDeactivated、onExecute</td>
+    <td>Activity</td>
+    <td>onActivated, onDeactivated, onExecute</td>
   </tr>
   <tr>
-    <td>言語</td>
+    <td>Language</td>
     <td>C++</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>image_in</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>RTC::CameraImage</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>入力画像</td>
+    <td>Description</td>
+    <td>Input image</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>velocity_in</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>RTC::TimedVelocity2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>変更前の目標速度</td>
+    <td>Description</td>
+    <td>Target velocity before modification</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>image_out</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>RTC::CameraImage</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>円の情報を付加した画像</td>
+    <td>Description</td>
+    <td>Image with circle information added</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>velocity_out</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>RTC::TimedVelocity2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>変更後の目標速度</td>
+    <td>Description</td>
+    <td>Modified target velocity</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>speed_r</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0.5</td>
   </tr>
   <tr>
-    <td>制約</td>
+    <td>Constraint</td>
     <td>0.0&lt;x&lt;2.0</td>
   </tr>
   <tr>
@@ -145,22 +149,22 @@ RTCBuilderで、以下の仕様のRTCのひな型コードを生成します。
     <td>0.01</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>図形の位置により、右回転、左回転する場合の回転速度</td>
+    <td>Description</td>
+    <td>Rotational speed used when rotating left or right according to the shape position</td>
   </tr>
   <tr>
     <td>Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>houghcircles_dp</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>2</td>
   </tr>
   <tr>
@@ -168,22 +172,22 @@ RTCBuilderで、以下の仕様のRTCのひな型コードを生成します。
     <td>text</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>HoughCircles関数の引数dp</td>
+    <td>Description</td>
+    <td>dp argument of the HoughCircles function</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>houghcircles_minDist</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>30</td>
   </tr>
   <tr>
@@ -191,22 +195,22 @@ RTCBuilderで、以下の仕様のRTCのひな型コードを生成します。
     <td>text</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>HoughCircles関数の引数minDist</td>
+    <td>Description</td>
+    <td>minDist argument of the HoughCircles function</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>houghcircles_param1</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>100</td>
   </tr>
   <tr>
@@ -214,85 +218,89 @@ RTCBuilderで、以下の仕様のRTCのひな型コードを生成します。
     <td>text</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>HoughCircles関数の引数param1</td>
-  </tr>
-  <tr>
-    <td colspan="2" style="text-align: center;">Configuration</td>
-  </tr>
-  <tr>
-    <td>パラメーター名</td>
-    <td>houghcircles_param2</td>
-  </tr>
-  <tr>
-    <td>型</td>
-    <td>double</td>
-  </tr>
-  <tr>
-    <td>デフォルト値</td>
-    <td>100</td>
-  </tr>
-  <tr>
-    <td>Widget</td>
-    <td>text</td>
-  </tr>
-  <tr>
-    <td>説明</td>
-    <td>HoughCircles関数の引数param2</td>
-  </tr>
-  <tr>
-    <td colspan="2" style="text-align: center;">Configuration</td>
-  </tr>
-  <tr>
-    <td>パラメーター名</td>
-    <td>houghcircles_minRadius</td>
-  </tr>
-  <tr>
-    <td>型</td>
-    <td>int</td>
-  </tr>
-  <tr>
-    <td>デフォルト値</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>Widget</td>
-    <td>text</td>
-  </tr>
-  <tr>
-    <td>説明</td>
-    <td>HoughCircles関数の引数minRadius</td>
-  </tr>
-  <tr>
-    <td colspan="2" style="text-align: center;">Configuration</td>
-  </tr>
-  <tr>
-    <td>パラメーター名</td>
-    <td>houghcircles_maxRadius</td>
-  </tr>
-  <tr>
-    <td>型</td>
-    <td>int</td>
-  </tr>
-  <tr>
-    <td>デフォルト値</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>Widget</td>
-    <td>text</td>
-  </tr>
-  <tr>
-    <td>説明</td>
-    <td>HoughCircles関数の引数maxRadius</td>
+    <td>Description</td>
+    <td>param1 argument of the HoughCircles function</td>
   </tr>
 </table>
 
-## RTC::CameraImage型について
 
-RTC::CameraImage型は画像データを格納するデータ型です。
+<table class="table-alt">
+  <tr>
+    <td colspan="2" style="text-align: center;">Configuration</td>
+  </tr>
+  <tr>
+    <td>Parameter Name</td>
+    <td>houghcircles_param2</td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>double</td>
+  </tr>
+  <tr>
+    <td>Default Value</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td>text</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>param2 argument of the HoughCircles function</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">Configuration</td>
+  </tr>
+  <tr>
+    <td>Parameter Name</td>
+    <td>houghcircles_minRadius</td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>int</td>
+  </tr>
+  <tr>
+    <td>Default Value</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td>text</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>minRadius argument of the HoughCircles function</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">Configuration</td>
+  </tr>
+  <tr>
+    <td>Parameter Name</td>
+    <td>houghcircles_maxRadius</td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>int</td>
+  </tr>
+  <tr>
+    <td>Default Value</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td>text</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>maxRadius argument of the HoughCircles function</td>
+  </tr>
+</table>
 
-```
+## About the RTC::CameraImage Type
+
+The RTC::CameraImage type is a data type used to store image data.
+
+```cpp
     struct CameraImage
     {
         /// Time stamp.
@@ -312,77 +320,78 @@ RTC::CameraImage型は画像データを格納するデータ型です。
     };
 ```
 
-このデータ型には、画像の幅**width**、画像の高さ**height**、画像データ**pixels**等を設定できます。
+This data type can store the image width **width**, image height **height**, image data **pixels**, and other values.
 
 <div align="center"><a href="CameraImage.png"><img src="CameraImage.png" width="50%;"></a></div>
 
-## ファイル編集
+## Editing Files
 
-以下のファイルを編集します。
+Edit the following files.
 
 - src/CMakeLists.txt
 - include/CircleTracking/CircleTracking.h
 - src/CircleTracking.cpp
 
+### Editing src/CMakeLists.txt
 
-### src/CMakeLists.txtの編集
+Open **CMakeLists.txt** in the **src** folder with Notepad or another editor and edit it.
 
-**src**フォルダの**CMakeLists.txt**をメモ帳などで開いて編集してください。
-ここでは、OpenCVを利用するための設定を行います。
+Here, you will configure settings for using OpenCV.
 
-以下のように**find_package**によりOpenCVのライブラリを検出します。
-find_packageの行を追加してください。
+Detect the OpenCV library using **find_package** as shown below.
 
-```
+Add the find_package line.
+
+```cmake
  set(comp_srcs CircleTracking.cpp )
  set(standalone_srcs CircleTrackingComp.cpp)
  
- find_package(OpenCV REQUIRED) #追加
+ find_package(OpenCV REQUIRED) # Add
 ```
 
-次にリンクするライブラリに、OpenCVのライブラリを追加します。
-以下の2か所を変更します。
+Next, add the OpenCV libraries to the linked libraries.
 
-```
- # target_link_libraries(${PROJECT_NAME} ${OPENRTM_LIBRARIES}) #修正前
- target_link_libraries(${PROJECT_NAME} ${OPENRTM_LIBRARIES} ${OpenCV_LIBS}) #修正後、${OpenCV_LIBS}を追加する
-```
+Modify the following two locations.
 
-```
- # target_link_libraries(${PROJECT_NAME}Comp ${OPENRTM_LIBRARIES} ${OpenCV_LIBS}) #修正前
- target_link_libraries(${PROJECT_NAME}Comp  ${OPENRTM_LIBRARIES} ${OpenCV_LIBS}) #修正後、${OpenCV_LIBS}を追加する
+```cmake
+ # target_link_libraries(${PROJECT_NAME} ${OPENRTM_LIBRARIES}) # Before modification
+ target_link_libraries(${PROJECT_NAME} ${OPENRTM_LIBRARIES} ${OpenCV_LIBS}) # After modification: add ${OpenCV_LIBS}
 ```
 
+```cmake
+ # target_link_libraries(${PROJECT_NAME}Comp ${OPENRTM_LIBRARIES} ${OpenCV_LIBS}) # Before modification
+ target_link_libraries(${PROJECT_NAME}Comp  ${OPENRTM_LIBRARIES} ${OpenCV_LIBS}) # After modification: add ${OpenCV_LIBS}
+```
 
 ### include/CircleTracking/CircleTracking.h
 
-**include/CircleTracking/CircleTracking.h**の編集を行います。
-まず、37行目付近でインクルードファイルを記述します。
+Edit **include/CircleTracking/CircleTracking.h**.
 
-```
+First, add the include file around line 37.
+
+```cpp
  #include <rtm/DataInPort.h>
  #include <rtm/DataOutPort.h>
  
- #include <opencv2/opencv.hpp> //追加
+ #include <opencv2/opencv.hpp> // Add
 ```
 
+Around line 314, there is a line that says **private:**. Add the three member variables **m_imageBuff**, **m_outputBuff**, and **m_direction** below it.
 
-314行目付近に**private:**という記述があるため、その下に**m_imageBuff**、**m_outputBuff**、**m_direction**の3つのメンバ変数を追加します。
-
-```
+```cpp
  private:
-   cv::Mat m_imageBuff; //追加、入力画像を格納する変数
-   cv::Mat m_outputBuff; //追加、円の情報を付加した画像を格納する変数
-   int m_direction; //追加、移動ロボットの回転方向を格納する変数
+   cv::Mat m_imageBuff; // Add: variable for storing the input image
+   cv::Mat m_outputBuff; // Add: variable for storing the image with circle information added
+   int m_direction; // Add: variable for storing the rotation direction of the mobile robot
 ```
 
 ### src/CircleTracking.cpp
 
-**src/CircleTracking.cpp**の編集を行います。
-**onActivated**、**onDeactivated**、**onExecute**の3つの関数を編集します。
+Edit **src/CircleTracking.cpp**.
 
+Edit the three functions **onActivated**, **onDeactivated**, and **onExecute**.
 
-```
+```cpp
  RTC::ReturnCode_t CircleTracking::onActivated(RTC::UniqueId /*ec_id*/)
  {
    // OutPortの画面サイズを0に設定
@@ -395,7 +404,7 @@ find_packageの行を追加してください。
  }
 ```
 
-```
+```cpp
  RTC::ReturnCode_t CircleTracking::onDeactivated(RTC::UniqueId /*ec_id*/)
  {
    if (!m_outputBuff.empty())
@@ -409,7 +418,7 @@ find_packageの行を追加してください。
  }
 ```
 
-```
+```cpp
  RTC::ReturnCode_t CircleTracking::onExecute(RTC::UniqueId /*ec_id*/)
  {
    if (m_image_inIn.isNew()) {
@@ -500,51 +509,52 @@ find_packageの行を追加してください。
  }
 ```
 
-## RTシステムの構築、動作確認
+## Building the RT System and Verifying Operation
 
-ここからはRTSystemEditorで作業します。
-Raspberry Piマウスを使用する場合は、Raspberry Piのアクセスポイントに接続した状態で作業してください。
-以下のページのRobotControllerコンポーネントが必要なため、実機での動作確認まで進めておいてください。
+From here, work in RTSystemEditor.
 
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)](/ja/node/6550)
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Ubuntu)](/ja/node/6551)
+If you are using the Raspberry Pi Mouse, perform the work while connected to the Raspberry Pi access point.
 
+Since the RobotController component from the following pages is required, complete the procedure up to operation verification on the actual robot.
 
-### 事前準備
+- [Tutorial (Introduction to RT Component Development, Raspberry Pi Mouse, Windows)](/ja/node/6550)
+- [Tutorial (Introduction to RT Component Development, Raspberry Pi Mouse, Ubuntu)](/ja/node/6551)
 
-動作確認には、Raspberry Piマウス、USBカメラ、カメラ用マウント、LiDAR付属のネジ、円形状の図形を印刷した紙が必要です。
-講習会ではUSBカメラとカメラ用マウントは接続済みです。紙も配布しています。
+### Preparation
 
+For operation verification, you need a Raspberry Pi Mouse, a USB camera, a camera mount, screws included with the LiDAR, and a sheet of paper printed with a circular shape.
+
+In the workshop, the USB camera and camera mount are already connected. The paper is also distributed.
 
 <div align="center"><a href="DSC04155.JPG"><img src="DSC04155.JPG" width="50%;"></a></div>
 
-専用LiDARマウントかマルチLiDARマウントかで使用するネジが異なります。
+The screws used differ depending on whether you are using the dedicated LiDAR mount or the multi-LiDAR mount.
 
-まず、以下の専用LiDARマウントの場合は、ネジは2個付属しているので、それを使用してください。
+First, for the dedicated LiDAR mount shown below, use the two screws included with it.
 
 <div align="center"><a href="DSC04139.JPG"><img src="DSC04139.JPG" width="50%;"></a></div>
 
 <div align="center"><a href="DSC04152.JPG"><img src="DSC04152.JPG" width="50%;"></a></div>
 
-以下のマルチLiDARマウントの場合は、なべタッピングネジ3-8を使用してください。
+For the multi-LiDAR mount shown below, use 3-8 pan-head tapping screws.
 
 <div align="center"><a href="DSC04142.JPG"><img src="DSC04142.JPG" width="50%;"></a></div>
 
 <div align="center"><a href="DSC04151.JPG"><img src="DSC04151.JPG" width="50%;"></a></div>
 
-以下のようにRaspberry Piマウス前方の2か所で固定します。
+Fix it at the two locations on the front of the Raspberry Pi Mouse as shown below.
 
 <div align="center"><a href="DSC04153.JPG"><img src="DSC04153.JPG" width="100%;"></a></div>
 
-PCとUSBカメラをUSBポートで接続してください。
+Connect the PC and USB camera using a USB port.
 
 <div align="center"><a href="DSC04154.JPG"><img src="DSC04154.JPG" width="100%;"></a></div>
 
+### Operation Verification
 
-### 動作確認
+#### Starting the RTCs
 
-#### RTCの起動
-動作確認には、以下の5つのRTCの起動が必要です。
+For operation verification, the following five RTCs must be started.
 
 - RaspberryPiMouseRTC
 - RobotController
@@ -552,35 +562,35 @@ PCとUSBカメラをUSBポートで接続してください。
 - CameraViewer
 - CircleTracking
 
+For how to start RaspberryPiMouseRTC and the RobotController component, refer to the procedures on the following pages.
 
-RaspberryPiMouseRTCとRobotControllerコンポーネントの起動ついては、以下のページの手順を参考にしてください。
+- [Tutorial (Introduction to RT Component Development, Raspberry Pi Mouse, Windows)](/ja/node/6550)
+- [Tutorial (Introduction to RT Component Development, Raspberry Pi Mouse, Ubuntu)](/ja/node/6551)
 
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)](/ja/node/6550)
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Ubuntu)](/ja/node/6551)
+OpenCVCamera and CameraViewer are sample components included with OpenRTM-aist.
 
-OpenCVCamera、CameraViewerはOpenRTM-aist付属のサンプルコンポーネントです。
-Windows 10の場合は、画面左下の「ここに入力して検索」に**C++_OpenCV-Examples**と入力して、C++_OpenCV-Examplesを選択したら起動するエクスプローラから**CameraViewer.bat**と**OpenCVCamera.bat**をダブルクリックして実行してください。
+For Windows 10, enter **C++_OpenCV-Examples** in "Type here to search" at the lower-left of the screen, select C++_OpenCV-Examples, and then double-click **CameraViewer.bat** and **OpenCVCamera.bat** in the Explorer window that opens.
 
 <div align="center"><a href="opencv8.jpg"><img src="opencv8.jpg" width="70%;"></a></div>
 
-Ubuntuの場合はビルドとインストール作業が必要です。
+For Ubuntu, build and installation are required.
 
-- [LinuxにおけるOpenCVサンプルのビルド手順](/ja/node/6974)
+- [Build Procedure for OpenCV Samples on Linux](/ja/node/6974)
 
-CircleTrackingはビルドで生成したCircleTrackingComp.exeを実行してください。
+For CircleTracking, execute CircleTrackingComp.exe generated by the build.
 
-#### RTシステムの構築
+#### Building the RT System
 
-RTSystemEditor上で以下のようにポートを接続してください。
+Connect the ports in RTSystemEditor as shown below.
 
 <div align="center"><a href="opencv3.jpg"><img src="opencv3.jpg" width="100%;"></a></div>
 
 <table class="table-alt">
   <tr>
-    <th>RTC名</th>
-    <th>OutPort名</th>
-    <th>RTC名</th>
-    <th>InPort名</th>
+    <th>RTC Name</th>
+    <th>OutPort Name</th>
+    <th>RTC Name</th>
+    <th>InPort Name</th>
   </tr>
   <tr>
     <td>OpenCVCamera0</td>
@@ -614,63 +624,68 @@ RTSystemEditor上で以下のようにポートを接続してください。
   </tr>
 </table>
 
-RTCをアクティブ化すれば動作確認を開始します。
 
-カメラの前で円形状の図形を印刷した紙を左右に動かして、動作を確認してください。
+Activate the RTCs to start operation verification.
+
+Move the paper with the printed circular shape left and right in front of the camera and check the operation.
 
 <div align="center"><a href="opencv9.png"><img src="opencv9.png" width="70%;"></a></div>
 
-OpenCVCameraコンポーネントがRaspberry Piマウスに取り付けたUSBカメラではなく、別のUSBカメラやノートPC内蔵カメラを使用する場合があります。
-この場合は他のカメラの画像が表示されているので、RTSystemEditorでOpenCVCamera0を選択して、コンフィギュレーションパラメータを編集します。
+The OpenCVCamera component may use another USB camera or the laptop's built-in camera instead of the USB camera attached to the Raspberry Pi Mouse.
+
+In this case, an image from another camera is displayed. Select OpenCVCamera0 in RTSystemEditor and edit the configuration parameters.
 
 <div align="center"><a href="opencv4_2.jpg"><img src="opencv4_2.jpg" width="70%;"></a></div>
 
-以下の**device_num**を変更して確認してください。
+Change **device_num** below and check the result.
 
 <div align="center"><a href="opencv5_2.jpg"><img src="opencv5_2.jpg" width="70%;"></a></div>
 
-また、円の誤検出が多い場合、RTSystemEditorでCircleTracking0を選択して、コンフィギュレーションパラメータを変更して試してみてください。
+If there are many false circle detections, select CircleTracking0 in RTSystemEditor and try changing the configuration parameters.
 
 <div align="center"><a href="opencv6_2.jpg"><img src="opencv6_2.jpg" width="70%;"></a></div>
 
-HoughCircles関数の引数の詳細についてはOpenCVのドキュメントを参考にしてください。
+For details on the arguments of the HoughCircles function, refer to the OpenCV documentation.
 
 <div align="center"><a href="opencv7_2.jpg"><img src="opencv7_2.jpg" width="70%;"></a></div>
 
+## Using a USB Camera Connected to Raspberry Pi
 
-## Raspberry Piに接続したUSBカメラを使う
+Start the OpenCVCamera component on the Raspberry Pi and build a system that sends images from the USB camera connected to the Raspberry Pi to the PC for processing.
 
-OpenCVCameraコンポーネントをRaspberry Pi上で起動して、Raspberry Piに接続したUSBカメラの画像をPCに送信して処理するシステムを構築します。
-USBカメラをRaspberry Piに接続してください。
+Connect the USB camera to the Raspberry Pi.
 
 <div align="center"><a href="sytemopencvcamera.png"><img src="sytemopencvcamera.png" width="100%;"></a></div>
 
-まず、OpenCVCameraコンポーネントはWebブラウザ上の操作で起動できるようになっていないため、Tera TermによりRaspberry Pi上のLinuxにSSHログインして操作します。
+First, because the OpenCVCamera component cannot be started from the web browser interface, log in to Linux on the Raspberry Pi via SSH using Tera Term and operate it there.
 
 - [TeraTerm](https://teratermproject.github.io/)
 
-Tera Term起動後に、ホストに**192.168.11.1**と入力してLinuxと接続します。
-ユーザー名とパスフレーズは講習会で説明しています。
+After starting Tera Term, enter **192.168.11.1** as the host and connect to Linux.
 
-ログイン後、Tera Termから以下のコマンドを実行することで、予めインストールしておいたOpenCVCameraコンポーネントを起動できます。
+The user name and passphrase are explained in the workshop.
 
-```
+After logging in, execute the following command from Tera Term to start the preinstalled OpenCVCamera component.
+
+```sh
  /usr/local/share/openrtm-1.2/components/c++/opencv-rtcs/OpenCVCamera/OpenCVCameraComp
 ```
 
-Raspberry Pi上で起動したOpenCVCamera0をCircleTracking0のデータポートと接続してください。
-PCで起動したOpenCVCamera0は不要のため終了してください。
+Connect OpenCVCamera0 running on the Raspberry Pi to the data port of CircleTracking0.
+
+OpenCVCamera0 running on the PC is no longer needed, so terminate it.
 
 <div align="center"><a href="systemopencv2.png"><img src="systemopencv2.png" width="100%;"></a></div>
 
-動作確認すると分かりますが、無線LANで送受信するカメラ画像データが大きいため、PC上でカメラ画像を表示すると遅延が大きい事が分かります。
-このため、圧縮した画像を送受信するように変更します。
+When you verify operation, you will see that displaying camera images on the PC causes a large delay because the image data transmitted over the wireless LAN is large.
 
-まず、OpenCVCamera0のコンフィギュレーションのパラメータで、**string_encode**を**jpeg**に変更します。
+Therefore, modify the system so that compressed images are sent and received.
 
-次に、CircleTrackingコンポーネントを一旦終了して、以下のようにonExecute関数を変更します。
+First, in the configuration parameters of OpenCVCamera0, change **string_encode** to **jpeg**.
 
-```
+Next, temporarily terminate the CircleTracking component and modify the onExecute function as follows.
+
+```cpp
  RTC::ReturnCode_t CircleTracking::onExecute(RTC::UniqueId /*ec_id*/)
  {
     (中略)
@@ -703,5 +718,22 @@ PCで起動したOpenCVCamera0は不要のため終了してください。
      */
 ```
 
-CircleTrackingコンポーネントをビルド後、RTC起動とデータポートの接続して動作確認してみてください。
--------jp page!!-------
+After building the CircleTracking component, start the RTC, connect the data ports, and verify operation.
+
+## Summary
+
+In this tutorial, you learned:
+
+- How to create a CircleTracking RTC that detects circles in camera images using OpenCV.
+- How to define InPorts, OutPorts, and configuration parameters for image processing and robot velocity control.
+- How to configure CMakeLists.txt to link OpenCV libraries.
+- How to add OpenCV image buffers and direction variables to the RTC header file.
+- How to implement circle detection using HoughCircles and output annotated images.
+- How to control the Raspberry Pi Mouse to rotate toward the detected circle.
+- How to build an RT system using OpenCVCamera, CameraViewer, CircleTracking, RobotController, and RaspberryPiMouseRTC.
+- How to adjust camera selection and HoughCircles parameters during operation verification.
+- How to use a USB camera connected to the Raspberry Pi by starting OpenCVCamera via SSH.
+- How to reduce wireless image transmission delay by using compressed image formats such as JPEG.
+
+By completing this tutorial, you have learned how to build and verify an OpenCV-based RT system that detects circular shapes from camera images and controls a Raspberry Pi Mouse based on the detected circle position.
+

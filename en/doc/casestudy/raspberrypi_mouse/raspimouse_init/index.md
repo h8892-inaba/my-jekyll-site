@@ -1,115 +1,139 @@
 ---
 layout: page
-title: 初期設定等
+title: Initial Setup
 ---
--------jp page!!-------
 
-<!-- Title: 初期設定等 -->
+<!-- Title: Initial Setup -->
 #contents
-
 
 # Raspbian
 
-[このページ](http://openrtm.org/openrtm/ja/content/raspberrypi_sdcard) の手順に従ってRaspbian を SDカードに書き込んでください。
-※フルキットに付属の SDカードを使用する場合はこの作業は不要です。
+Follow the instructions on [this page](http://openrtm.org/openrtm/ja/content/raspberrypi_sdcard) to write Raspbian to an SD card.
 
-# 組み立て方
-最初に Raspberry Pi に SDカードを挿入してください。一度組み立てると Raspberry Pi を取り外さない限り SDカードの交換はできません。
+*If you are using the SD card included with the full kit, this step is not required.*
+
+# Assembly
+
+First, insert the SD card into the Raspberry Pi.
+
+Once assembled, the SD card cannot be replaced unless the Raspberry Pi is removed.
+
 <div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm2.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm2.png" width="70%;"></a></div>
-まずは Raspberry Pi をラズパイマウス本体に載せます。
-スペーサーに Raspberry Pi を付属のねじで留めてください。
+
+Next, mount the Raspberry Pi onto the Raspberry Pi Mouse body.
+
+Secure the Raspberry Pi to the spacers using the included screws.
+
 <div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm0.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm0.png" width="70%;"></a></div>
-最後に Raspberry Pi とラズパイマウス本体のピンヘッダに部品を取り付ければ完成です。
+
+Finally, connect the supplied board to the pin headers on both the Raspberry Pi and the Raspberry Pi Mouse body to complete the assembly.
+
 <div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm1.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm1.png" width="70%;"></a></div>
 
+# Starting Raspbian
 
-# Raspbian 起動
+The following procedures are performed after booting Raspbian.
 
-以下の作業は Rasbian を起動して行います。
-まずは Raspberry Pi にディスプレイ、マウス、キーボード、LANケーブルを接続してください。
+First, connect a display, mouse, keyboard, and LAN cable to the Raspberry Pi.
 
-ラズパイマウスはバッテリー以外にも付属のケーブルでコンセントから電源をとれるのですが、ラズパイマウスに接続するコネクタの向きには注意してください。
+The Raspberry Pi Mouse can be powered not only by the battery but also from an AC outlet using the included power cable. However, be careful about the orientation of the connector when connecting it to the Raspberry Pi Mouse.
 
-ラズパイマウスの電源スイッチは以下の位置にあります。
+The Raspberry Pi Mouse power switches are located as shown below.
 
 <div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm8.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm8.png" width="70%;"></a></div>
 
-手前のスイッチがモーター電源で、内側のスイッチが Raspberry Pi の電源です。
-内側のスイッチを ON にしてください。
+The front switch controls the motor power, and the inner switch controls the Raspberry Pi power.
+
+Turn the inner switch ON.
 
 <div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm9.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm9.png" width="70%;"></a></div>
 
-Raspbian が起動したらユーザー名が pi、パスワードが raspberry でログインできるはずなのでログインしてください。
-ログインできたら以下のコマンドで X-Window を起動してください。
+Once Raspbian has started, log in using:
 
-```
+- Username: `pi`
+- Password: `raspberry`
+
+After logging in, start X Window with the following command:
+
+```bash
  startx
 ```
 
-# デバイスドライバ
+# Device Driver
 
+After Raspbian starts, clone the repository using the following command:
 
-Raspbian 起動後、以下のコマンドでリポジトリをクローンしてください。
-```
+```bash
  git clone https://github.com/rt-net/RaspberryPiMouse.git
 ```
-※git がインストールされていない場合は以下のコマンドを入力してください。
-```
+
+*If git is not installed, install it first with the following command:*
+
+```bash
  sudo apt-get install git
 ```
-そして以下のコマンドでカーネルのバージョンを確認してください。
-```
+
+Next, check the kernel version with:
+
+```bash
  uname -r
 ```
-仮に Raspberry Pi 2 model B のカーネルのバージョン 4.1.6-v7+ の場合は以下のコマンドでカーネルモジュールをロードしてください。
-```
+
+For example, if you are using a Raspberry Pi 2 Model B with kernel version `4.1.6-v7+`, load the kernel module using:
+
+```bash
  cd RaspberryPiMouse/lib/Pi2B+/4.1.6-v7+/
  sudo insmod rtmouse.ko
 ```
 
-SPI 機能を有効にしていない場合は以下のコマンド、もしくは [Menu] > [Preference] > [Raspberry Pi Configuration] で表示される画面で設定してください。
+If the SPI interface is not enabled, enable it using the following command or from:
 
+```text
+[Menu] > [Preferences] > [Raspberry Pi Configuration]
 ```
-  sudo raspi-config
+
+```bash
+ sudo raspi-config
 ```
 
-上下キーで「Advanced Options」を選択後 Enter キーを押してください。
-次に A5 SPI を同じ手順で選択します。
-そして左右キーで Yes を選択して OK で Enter キーを押せば有効になります。
-元の画面に戻ったら
-左右キーで [Finish] を選択して終了してください。
-詳しくは [このページ](http://www.raspberrypi-spy.co.uk/2014/08/enabling-the-spi-interface-on-the-raspberry-pi/) を参考にしてください。
+Use the arrow keys to select **Advanced Options** and press Enter.
 
+Next, select **A5 SPI** using the same procedure.
 
-※フルキットに付属の SDカードを使用する場合はこの作業は不要です。
+Then select **Yes** using the left/right arrow keys and press Enter on **OK** to enable SPI.
+
+After returning to the main screen, select **Finish** with the left/right arrow keys and exit.
+
+For more details, refer to [this page](http://www.raspberrypi-spy.co.uk/2014/08/enabling-the-spi-interface-on-the-raspberry-pi/).
+
+*If you are using the SD card included with the full kit, this step is not required.*
 
 # OpenRTM-aist
 
-# C++版
+# C++ Version
 
-Raspbian に C++版 OpenRTM-aist のインストールには以下のコマンドを入力します。
+To install the C++ version of OpenRTM-aist on Raspbian, run the following commands:
 
-```
+```bash
  wget http://svn.openrtm.org/OpenRTM-aist/tags/RELEASE_1_1_1/OpenRTM-aist/build/pkg_install_debian.sh
  sudo sh pkg_install_debian.sh
 ```
 
+For more information, refer to [this page](/ja/node/120).
 
+*The host PC is assumed to be running Windows.*
 
+For instructions on installing OpenRTM-aist on Windows, refer to [this page](/ja/node/999).
 
-詳しくは [このページ](/ja/node/120) を参考にしてください。
+Since the sample RT systems also use Python-based sample components, install the Python version as well.
 
-※母艦 PC の OS は Windows を想定しています。
-Windows に OpenRTM-aist をインストールする手順については [このページ](/ja/node/999) を参考にしてください。
-Python版のサンプルコンポーネントも利用するので、Python版もインストールしてください。
-またサンプルの RTシステムで rtshell を使用するため、[このページ](/ja/node/5013) を参考にしてインストールしてください。
+In addition, the sample RT systems use `rtshell`, so install it by following the instructions on [this page](/ja/node/5013).
 
-# Python版
-Python版のインストールには最初に以下のコマンドを入力してください。
+# Python Version
 
-```
+To install the Python version, first run the following commands:
+
+```bash
  wget http://svn.openrtm.org/OpenRTM-aist-Python/tags/RELEASE_1_1_0/OpenRTM-aist-Python/installer/install_scripts/pkg_install_python_debian.sh
  sudo sh pkg_install_python_debian.sh
 ```
-
--------jp page!!-------

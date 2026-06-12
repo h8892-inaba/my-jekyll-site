@@ -1,125 +1,182 @@
 ---
 layout: page
-title: JDK8のインストール
+title: "Installing JDK 8"
 ---
--------jp page!!-------
 
-<!-- Title: JDK8のインストール -->
+<!-- Title: Installing JDK 8 -->
 #contents(5)
 
-OpenRTM-aist-Javaの実行には、CORBAと呼ばれる通信ミドルウェアが必要です。Javaにおいては、CORBAの機能はもともと標準機能として組み込まれていましたが、Java9以降はdeprecated (将来的に廃止される非推奨機能)として扱われ、Java11以降では完全に削除されます。したがって、OpenRTM-aist-Javaを利用するためには、Java8の開発環境パッケージJDK8を利用する必要があります。
-JDK8は、配布元のOracleが配布やサポートを停止しつつありますが、まだJava8を必要としている人が多くいるため、JDK8自体はしばらくはいくつかのベンダーから入手可能です。ここでは、JDK8の入手方法、インストール方法を紹介します。
+OpenRTM-aist-Java requires communication middleware called CORBA.
 
-## JDK8配布元
-JDK8の配布元として、こちらが見つけたもののいくつかを下記に示します。あくまでも、こちらが見つけたいくつかをリストしているだけで、ここにリストされないものがあったとしても、特に意図はないことを理解ください。また、それぞれのサイトにおける配布に関しては使用が有償のもの、サポートが有償のものとかいろいろ条件があったりしますので、それぞれのサイトで、各自確認の上使用してください。
+In Java, CORBA functionality was originally included as a standard feature. However, starting with Java 9, it was marked as deprecated (a feature scheduled for future removal), and it was completely removed in Java 11 and later.
+
+Therefore, to use OpenRTM-aist-Java, it is necessary to use JDK 8, the Java 8 development environment package.
+
+Although Oracle, the original distributor of JDK 8, has been gradually discontinuing its distribution and support, JDK 8 remains available from several vendors because many users still require Java 8.
+
+This page introduces methods for obtaining and installing JDK 8.
+
+## JDK 8 Distributions
+
+Several JDK 8 distributions that we have identified are listed below.
+
+Please note that this is only a selection of distributions we have found. The omission of any particular distribution is not intentional.
+
+In addition, licensing and support terms vary among vendors. Some distributions may require payment for commercial use or support services. Please review the terms and conditions provided by each vendor before use.
 
 ### Oracle
-Javaの開発・配布元のOracleにおいても、2019年11月現在、JDK8はダウンロード可能です。個人ユースや開発ユースは無償ライセンスがあるようですが、商用ユースでは有償ライセンスが必要なようです。正確なライセンス条件などついては下記リンクやオラクルからのメッセージを参照ください。
+
+As of November 2019, Oracle, the original developer and distributor of Java, still provides JDK 8 for download.
+
+Oracle appears to provide a free license for personal and development use, while commercial use may require a paid subscription.
+
+For accurate licensing information, please refer to the following links and Oracle's official announcements.
 
 - [Oracle Java SE Subscription](https://www.oracle.com/technetwork/java/javaseproducts/overview/index.html)
-  - [JDK8 Download](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 
-  - このページはOracleがJava8の配布をやめた場合削除される可能性があります。
+  - [JDK 8 Download](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+  - This page may be removed if Oracle discontinues Java 8 distribution.
 
 ### OpenJDK
-OpenJDKは、Oracleによるオープンソース実装のJavaで、例外条項付きGPLv2(GPL v2 with Classpath Exception)で配布されています。ほとんどのJDKの実装はこのOpenJDKをベースにしたものになっています。
+
+OpenJDK is Oracle's open-source Java implementation and is distributed under GPLv2 with the Classpath Exception.
+
+Most JDK implementations are based on OpenJDK.
+
 - [OpenJDK](http://openjdk.java.net/)
 
-下記リンクよりJava SE 8xxxx (xxxxは2019年11月現在u231です)のところからJDKのDOWNLOADのボタンがありますので、それをクリックして、プラットフォームにあったものを入手してください。
-  - [OpenJDK8 download](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 
+From the following page, locate the section for Java SE 8xxxx (u231 as of November 2019), click the **DOWNLOAD** button for the JDK, and obtain the package appropriate for your platform.
 
-### Adopt Open JDK
-AdoptOpenJDKは、IBMがスポンサーしコミュニティによりメンテナンスされているOpenJDKビルドを提供するプロジェクトです。JVMとしてHotSpotと呼ばれるOpenJDKコミュニティで開発されたものと、OpenJ9と呼ばれるEclipseコミュニティで開発されたものの2種類が提供されています。
+- [OpenJDK 8 Download](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-下記リンクより[OpenJDK8(LTS)]と、JVM([HotSpot]か[OpenJ9])を選択し[Latest release]のボタンをクリックしてください。プラットフォームに合わせたものダウンロードが始まるはずです。違うプラットフォーム用のものが欲しい場合は、[Other platforms]のボタンをクリックして必要なJDKを入手してください。 またインストール方法については[Installation]と書かれたリンクより情報を得てください。
+### AdoptOpenJDK
+
+AdoptOpenJDK is a project sponsored by IBM and maintained by the community that provides OpenJDK builds.
+
+Two JVM implementations are available:
+
+- **HotSpot**, developed by the OpenJDK community
+- **OpenJ9**, developed by the Eclipse community
+
+From the link below:
+
+1. Select **OpenJDK 8 (LTS)**.
+2. Select either **HotSpot** or **OpenJ9**.
+3. Click **Latest Release**.
+
+The appropriate package for your platform should begin downloading automatically.
+
+If you need a package for another platform, click **Other Platforms**.
+
+Installation instructions are available via the **Installation** link.
+
 - [AdoptOpenJDK](https://adoptopenjdk.net/)
-  - [Adopt Open JDK 8 サポート](https://adoptopenjdk.net/support.html)(2026年5月まで)
+  - [AdoptOpenJDK 8 Support](https://adoptopenjdk.net/support.html) (through May 2026)
 
-### Amazon Open JDK
-Amazon CorrettoはAmazonの長期サポートを含むOpenJDKのビルドです。入手は下記リンクからWebサイトに行き、[Amazon Corretto8ダウンロードする]ボタンをクリックしてください。プラットウォームごとのビルドのリストが表示されますので、プラットフォームに合わせて必要なインストレーション用ファイルを入手してください。
+### Amazon OpenJDK
+
+Amazon Corretto is an OpenJDK distribution that includes long-term support from Amazon.
+
+Visit the website below and click **Download Amazon Corretto 8**.
+
+A list of platform-specific builds will be displayed. Download the installation package appropriate for your platform.
 
 - [Amazon Corretto](https://aws.amazon.com/jp/corretto/)
-  - [Amazon Open JDK 8 サポート](https://aws.amazon.com/jp/corretto/faqs/#support) (2026年6月まで)
+  - [Amazon OpenJDK 8 Support](https://aws.amazon.com/jp/corretto/faqs/#support) (through June 2026)
 
-## Linux環境でのインストール
-### リポジトリからのパッケージ入手
-主なLinuxディストリビューションでは、標準パッケージとして、JDK8に相当するOpenJDKパッケージが配布されています。
+## Installation on Linux
 
-#### Ubuntu/Debian/Raspbian
-Ubuntu Linux, Debian Linuxなどでは apt コマンドで以下のようにインストールすることができます。
+### Installing Packages from Repositories
 
-```
- $ sudo apt install openjdk-8-jdk
-```
+Most major Linux distributions provide OpenJDK packages corresponding to JDK 8 through their standard package repositories.
+
+#### Ubuntu / Debian / Raspberry Pi OS
+
+On Ubuntu, Debian, and similar distributions, JDK 8 can be installed using:
+
+```bash
+$ sudo apt install openjdk-8-jdk
+````
 
 #### Fedora
-Fedora Linuxではyumコマンドで以下のようにインストールすることができます。
 
-```
- $ sudo yum -y install java-1.8.0-openjdk
-```
+On Fedora Linux, JDK 8 can be installed using:
 
-### リポジトリからのパッケージ入手以外の方法
-上記のサードパーティベンダのWebサイトから入手することもできます。インストール方法についてはそのサイトの情報に従うか、Javaの標準的方法でインストールしてください。
-
-参考として、Raspberry Pi OS bookworm環境へAdoptium（名称Temurin）のパッケージをインストールする手順を示します。
-
-```
- $ sudo apt install apt-transport-https
- $ wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null
- $ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/trusted.gpg.d/adoptium.gpg] https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | sudo tee /etc/apt/sources.list.d/adoptium.list
- $ sudo apt update
- $ sudo apt install temurin-8-jdk
+```bash
+$ sudo yum -y install java-1.8.0-openjdk
 ```
 
-バージョンを確認しておきます。
+### Installing from Sources Other Than Repositories
 
-```
- $ java -version
- openjdk version "1.8.0_402" 
- OpenJDK Runtime Environment (Temurin)(build 1.8.0_402-b06)
- OpenJDK Client VM (Temurin)(build 25.402-b06, mixed mode)
-```
+JDK 8 can also be obtained from the third-party vendors listed above.
 
+Follow the installation instructions provided by the vendor, or use the standard Java installation procedures.
 
-### 既にJDK8以外がインストールされている場合
-なお、JDK8以外のJDKがデフォルト状態でインストールされている可能性がありますので、
+As an example, the following procedure installs the Adoptium (formerly AdoptOpenJDK, now Temurin) package on Raspberry Pi OS Bookworm.
 
-```
- $ java -version
-```
-
-コマンドでバージョンが1.8で始まるバージョンなどJDK8を意味するバージョンになっていることを確認してください。
-もし、そうでなかったら
-
-```
- $ sudo update-alternatives --config java
+```bash
+$ sudo apt install apt-transport-https
+$ wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null
+$ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/trusted.gpg.d/adoptium.gpg] https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | sudo tee /etc/apt/sources.list.d/adoptium.list
+$ sudo apt update
+$ sudo apt install temurin-8-jdk
 ```
 
-コマンドを用いてJDK8ベースのJava環境を選択してください。
-ubuntu18.04の環境でopenjdk-8-jdkをインストールした後での実行例は以下のようになります。
+Verify the installed version:
 
-```
- $ sudo update-alternatives --config java
- 
-   選択肢    パス                                          優先度  状態
-```
- ------------------------------------------------------------
- * 0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java      1111      自動モード
-```
-   1            /usr/lib/jvm/java-11-openjdk-amd64/bin/java      1111      手動モード
-   2            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java   1081      手動モード
- 
- 現在の選択 [*] を保持するには <Enter>、さもなければ選択肢の番号のキーを押してください: 2
- update-alternatives: /usr/bin/java (java) を提供するためにマニュアルモードで /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java を使います
+```bash
+$ java -version
+openjdk version "1.8.0_402"
+OpenJDK Runtime Environment (Temurin)(build 1.8.0_402-b06)
+OpenJDK Client VM (Temurin)(build 25.402-b06, mixed mode)
 ```
 
-## Windows環境へのインストール
+### If Another JDK Version Is Already Installed
 
-WindowsでのJDK８のインストールは上記のサイトなどからMSIファイルを入手し、それを実行することでインストールを行うか、MSI以外の形態のファイルにおいては入手元の指示に従いインストールを行ってください。インストール後は上記Linuxのケースと同様にコマンドプロンプトを開いて
+A version of Java other than JDK 8 may already be installed as the default Java environment.
 
+Verify the current version:
+
+```bash
+$ java -version
 ```
- java -version
+
+Make sure the reported version begins with **1.8**, indicating JDK 8.
+
+If another version is selected, use:
+
+```bash
+$ sudo update-alternatives --config java
 ```
 
-と入力し、インストールの確認を行ってください。
--------jp page!!-------
+to choose the JDK 8-based Java environment.
+
+The following example shows the output on Ubuntu 18.04 after installing `openjdk-8-jdk`:
+
+```text
+$ sudo update-alternatives --config java
+
+  Selection    Path                                          Priority   Status
+------------------------------------------------------------
+* 0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java      1111     auto mode
+  1            /usr/lib/jvm/java-11-openjdk-amd64/bin/java      1111     manual mode
+  2            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java   1081     manual mode
+
+Press <Enter> to keep the current choice [*], or type the selection number: 2
+
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java to provide /usr/bin/java (java) in manual mode
+```
+
+## Installation on Windows
+
+To install JDK 8 on Windows, download an MSI installer from one of the distribution sites listed above and run it.
+
+For distributions that use installation formats other than MSI, follow the installation instructions provided by the vendor.
+
+After installation, open a Command Prompt and verify the installation in the same way as on Linux:
+
+```cmd
+java -version
+```
+
+Confirm that the reported Java version corresponds to JDK 8.
+

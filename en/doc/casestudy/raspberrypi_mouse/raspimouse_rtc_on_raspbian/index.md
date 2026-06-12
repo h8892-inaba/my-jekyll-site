@@ -1,33 +1,33 @@
 ---
 layout: page
-title: ラズパイマウス用 RTC のインストール(Raspbian)
+title: Installing RTCs for Raspberry Pi Mouse (Raspbian)
 ---
--------jp page!!-------
 
-<!-- Title: ラズパイマウス用 RTC のインストール(Raspbian) -->
+<!-- Title: Installing RTCs for Raspberry Pi Mouse (Raspbian) -->
 #contents
 
-
 # RaspberryPiMouseRTC
-RaspberryPiMouseRTC は名城大学のロボットシステムデザイン研究室で開発されているラズパイマウス制御用の RTコンポーネントです。
 
-以下のコマンドでインストールできます。
+RaspberryPiMouseRTC is an RT-Component for controlling Raspberry Pi Mouse, developed by the Robot System Design Laboratory at Meijo University.
 
-```
+It can be installed using the following commands:
+
+```bash
  git clone https://github.com/rsdlab/RaspberryPiMouseRTC.git
  cd RaspberryPiMouseRTC
  cmake .
  make
 ```
 
-以下の RTC は必要に応じてインストールしてください。
+Install the following RTCs as needed.
 
 # RaspberryPiMouseController_DistanceSensor
-ラズパイマウスの距離センサーが障害物を感知した際に回転して回避する運動を生成する RTC です。
 
-以下のコマンドでインストールできます。
+This RTC generates obstacle-avoidance behavior by rotating the Raspberry Pi Mouse when its distance sensors detect an obstacle.
 
-```
+It can be installed using the following commands:
+
+```bash
  git clone https://github.com/Nobu19800/RaspberryPiMouseController_DistanceSensor
  cd RaspberryPiMouseController_DistanceSensor
  cmake .
@@ -44,66 +44,67 @@ RaspberryPiMouseRTC は名城大学のロボットシステムデザイン研究
     <td colspan="3" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>target_velocity_in</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>補正前の目標速度</td>
+    <td>Target velocity before correction</td>
   </tr>
   <tr>
     <td>distance_sensor</td>
     <td>RTC::TimedShortSeq</td>
-    <td>距離センサーの計測値</td>
+    <td>Distance sensor measurements</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>target_velocity_out</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>補正後の目標速度</td>
+    <td>Target velocity after correction</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">コンフィギュレーションパラメーター</td>
+    <td colspan="3" style="text-align: center;">Configuration Parameters</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>デフォルト値</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Default Value</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>sensor_limit</td>
     <td>10</td>
-    <td>回避運動を開始する距離センサーの計測値</td>
+    <td>Distance sensor threshold that triggers avoidance behavior</td>
   </tr>
   <tr>
     <td>rotational_speed</td>
     <td>1.6</td>
-    <td>回避運動の速さ</td>
+    <td>Speed of avoidance rotation</td>
   </tr>
   <tr>
     <td>stop_velocity</td>
     <td>0.01</td>
-    <td>停止していると判定する直進速度</td>
+    <td>Forward velocity threshold used to determine whether the robot is stopped</td>
   </tr>
 </table>
 
-
 # RaspberryPiMouseController_Joystick
-ジョイスティックでラズパイマウスを指定の方角へ制御するための RTC です。
-※この RTC の動作には以下の NineAxisSensor_RT_USB等の方角が計測できる RTC が必須です。
 
-以下のコマンドでインストールできます。
+This RTC controls the Raspberry Pi Mouse in a specified direction using a joystick.
 
-```
+*This RTC requires an orientation-sensing RTC such as NineAxisSensor_RT_USB described below.*
+
+It can be installed using the following commands:
+
+```bash
  git clone https://github.com/Nobu19800/RaspberryPiMouseController_Joystick
  cd RaspberryPiMouseController_Joystick
  cmake .
@@ -120,74 +121,75 @@ RaspberryPiMouseRTC は名城大学のロボットシステムデザイン研究
     <td colspan="3" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>joystick_float</td>
     <td>RTC::TimedFloatSeq</td>
-    <td>ジョイスティックの入力</td>
+    <td>Joystick input</td>
   </tr>
   <tr>
     <td>joystick_long</td>
     <td>RTC::TimedFloatSeq</td>
-    <td>ジョイスティックの入力</td>
+    <td>Joystick input</td>
   </tr>
   <tr>
     <td>orientation</td>
     <td>RTC::TimedOrientation3D</td>
-    <td>センサーなど計測した姿勢</td>
+    <td>Orientation measured by sensors</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>out</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>目標速度</td>
+    <td>Target velocity</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">コンフィギュレーションパラメーター</td>
+    <td colspan="3" style="text-align: center;">Configuration Parameters</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>デフォルト値</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Default Value</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>forward_factor</td>
     <td>0.01</td>
-    <td>入力に対する直進速度の大きさ</td>
+    <td>Forward velocity scaling factor applied to joystick input</td>
   </tr>
   <tr>
     <td>tangential_factor</td>
     <td>1.0</td>
-    <td>入力に対する回転速度の大きさ</td>
+    <td>Rotational velocity scaling factor applied to joystick input</td>
   </tr>
   <tr>
     <td>x_reverse</td>
     <td>0</td>
-    <td>1の時はジョイスティックのX座標を反転する</td>
+    <td>Reverse the joystick X coordinate when set to 1</td>
   </tr>
   <tr>
     <td>m_y_reverse</td>
     <td>0</td>
-    <td>1の時はジョイスティックのY座標を反転する</td>
+    <td>Reverse the joystick Y coordinate when set to 1</td>
   </tr>
 </table>
 
 # NineAxisSensor_RT_USB
-アールティが販売している [USB出力9軸 IMUセンサーモジュール](http://www.rt-shop.jp/blog/archives/7238) の計測値を出力する RTC です。
 
-以下のコマンドでインストールできます。
+This RTC outputs measurement data from the [USB 9-Axis IMU Sensor Module](http://www.rt-shop.jp/blog/archives/7238) sold by RT Corporation.
 
-```
+It can be installed using the following commands:
+
+```bash
  git clone https://github.com/Nobu19800/NineAxisSensor_RT_USB
  cd NineAxisSensor_RT_USB
  cmake .
@@ -195,7 +197,6 @@ RaspberryPiMouseRTC は名城大学のロボットシステムデザイン研究
 ```
 
 <div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/Components/NineAxisSensor_RT_USB_comp.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/Components/NineAxisSensor_RT_USB_comp.png" width="60%;"></a></div>
-
 
 <table class="table-alt">
   <tr>
@@ -205,99 +206,105 @@ RaspberryPiMouseRTC は名城大学のロボットシステムデザイン研究
     <td colspan="3" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>acc</td>
     <td>RTC::TimedAcceleration3D</td>
-    <td>加速度センサーの計測値</td>
+    <td>Accelerometer measurements</td>
   </tr>
   <tr>
     <td>magn</td>
     <td>RTC::TimedDoubleSeq</td>
-    <td>地磁気センサーの計測値</td>
+    <td>Geomagnetic sensor measurements</td>
   </tr>
   <tr>
     <td>gyro</td>
     <td>RTC::TimedAngularVelocity3D</td>
-    <td>ジャイロセンサーの計測値</td>
+    <td>Gyroscope measurements</td>
   </tr>
   <tr>
     <td>temp</td>
     <td>RTC::TimedDouble</td>
-    <td>温度センサーの計測値</td>
+    <td>Temperature sensor measurements</td>
   </tr>
   <tr>
     <td>rot</td>
     <td>RTC::TimedOrientation3D</td>
-    <td>姿勢</td>
+    <td>Orientation</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">コンフィギュレーションパラメーター</td>
+    <td colspan="3" style="text-align: center;">Configuration Parameters</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>デフォルト値</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Default Value</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>rotOffset</td>
     <td>0</td>
-    <td>姿勢のオフセット(0[rad]を北以外の方角にしたい場合に調整)</td>
+    <td>Orientation offset (adjust when 0 [rad] should represent a direction other than north)</td>
   </tr>
   <tr>
     <td>magnOffsetX</td>
     <td>-65</td>
-    <td>地磁気センサーのオフセット(X軸)</td>
+    <td>Geomagnetic sensor offset (X-axis)</td>
   </tr>
   <tr>
     <td>magnOffsetY</td>
     <td>-60</td>
-    <td>地磁気センサーのオフセット(Y軸)</td>
+    <td>Geomagnetic sensor offset (Y-axis)</td>
   </tr>
   <tr>
     <td>magnOffsetZ</td>
     <td>-5</td>
-    <td>地磁気センサーのオフセット(Z軸)</td>
+    <td>Geomagnetic sensor offset (Z-axis)</td>
   </tr>
   <tr>
     <td>serial_port</td>
-    <td>COM3(Windows)、/dev/ttyACM0(Linux)</td>
-    <td>デバイスファイル名</td>
+    <td>COM3 (Windows), /dev/ttyACM0 (Linux)</td>
+    <td>Device file name</td>
   </tr>
 </table>
 
-地磁気センサーのキャリブレーション用のソフトウェアは以下のコマンドでインストールできます。
+Calibration software for the geomagnetic sensor can be installed using the following commands:
 
-```
+```bash
  git clone https://github.com/Nobu19800/CalibrationUSBNineAxisSensor
  cd CalibrationUSBNineAxisSensor
  cmake .
  make
 ```
 
+When executed, the software starts a 10-second countdown.
 
-実行すると10秒カウントを始めるので、センサーをいろんな姿勢になるように回転させてください。
-可能ならばスマートフォンの8の字調整の動きを行ってください。
+During this time, rotate the sensor through various orientations.
 
-そして最後にX・Y・Z軸の地磁気センサの補正値が表示されるので、その値に-1掛けた数値を NineAxisSensor_RT_USB のコンフィギュレーションパラメーターに反映させてください。
+If possible, perform a figure-eight motion similar to the compass calibration procedure used on smartphones.
 
-ロボットにセンサーを取り付ける等した場合は再度キャリブレーションを行ってください。
+At the end of the process, calibration values for the X, Y, and Z geomagnetic sensor axes will be displayed.
 
+Multiply each value by -1 and apply the results to the corresponding configuration parameters of `NineAxisSensor_RT_USB`.
 
-# 一括インストール
-上記の RTC を一括でインストールします。
-以下のコマンドを入力してください。
+If the sensor is later mounted on a robot or its installation conditions change, perform calibration again.
 
-```
+# Batch Installation
+
+The RTCs listed above can be installed all at once.
+
+Run the following commands:
+
+```bash
  git clone https://github.com/Nobu19800/RaspberryPiMouseRTSystem_script_Raspbian
  cd RaspberryPiMouseRTSystem_script_Raspbian
  sh Component/install_rtc.sh
 ```
 
-これで RaspberryPiMouseRTSystem_script_Raspbian の Component フォルダー内に各 RTC がインストールされます。
-※キャリブレーション用ソフトウェアはインストールされないので、手動でインストールしてください。
+This installs each RTC into the `Component` directory of `RaspberryPiMouseRTSystem_script_Raspbian`.
 
--------jp page!!-------
+*The calibration software is not installed automatically and must be installed manually.*
+
+

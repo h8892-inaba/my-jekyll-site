@@ -1,64 +1,71 @@
 ---
 layout: page
-title: python-ev3dev の利用
+title: Using python-ev3dev
 ---
--------jp page!!-------
 
-<!-- Title: python-ev3dev の利用 -->
+<!-- Title: Using python-ev3dev -->
 <!-- -*- pukiwiki-edit -*- -->
-<!-- * python-ev3dev の利用 -->
+<!-- * Using python-ev3dev -->
 #contents
 
-## ev3dev-lang を利用した EV3 デバイスへのアクセス
+## Accessing EV3 Devices with ev3dev-lang
 
-ev3dev-lang は EV3 のモーターやセンサーにアクセスするためのライブラリです。以下の4つの言語で利用することができます。
+ev3dev-lang is a library for accessing EV3 motors and sensors. It can be used from the following four programming languages:
 
 - C++
 - Python
 - JavaScript
 - Lua
 
-ここでは、Python と C++ でのアクセス例を示します。
+This section introduces examples of accessing EV3 devices using Python and C++.
 
-## python-ev3dev のインストール
+## Installing python-ev3dev
 
-ev3dev-lang の Python版 (Pythonバインディング) を (クロス開発環境ではなく) EV3 にインストールします。
-以下のコマンドを入力すると、python-ev3dev がシステムにインストールされ、Python から利用できるようになります。
+Install the Python version (Python bindings) of ev3dev-lang directly on the EV3 (not in the cross-development environment).
+
+By entering the following commands, python-ev3dev will be installed on the system and become available from Python.
 
 ```
  # cd ~
  # mkdir work
- # d work
+ # cd work
  # apt-get install libboost-python1.55.0 python-setuptools python-pil
  # wget https://github.com/rhempel/ev3dev-lang-python/archive/0.6.0.zip
  # unzip 0.6.0.zip
  # cd ev3dev-lang-python-0.6.0/
  # python setup.py install
 ```
+
 <!-- # easy_install -U python-ev3dev -->
 
+## Accessing Devices from python-ev3dev
 
-## python-ev3dev からのデバイスアクセス
+Let's try rotating a motor using python-ev3dev.
 
-python-ev3dev を使ってモーターを回してみます。まず、適当なディレクトリーに移動し（先ほどの python-ev3dev をインストールする時のディレクトリーで実行するとエラーになります) python をインタラクティブモードで起動します。
+First, move to an appropriate directory (running in the directory used to install python-ev3dev will cause an error), and start Python in interactive mode.
 
 ```
- # cd 
+ # cd
  # python
  Python 2.7.9 (default, Mar  1 2015, 13:52:09)
  [GCC 4.9.2] on linux2
  Type "help", "copyright", "credits" or "license" for more information.
- >>> import ev3dev.ev3 as ev3     (ev3dev モジュールをインポートする)
- >>> m = ev3.LargeMotor() (モーターオブジェクトをインスタンス化)
- >>> m.connected (接続しているかを確認)
+ >>> import ev3dev.ev3 as ev3     (Import the ev3dev module)
+ >>> m = ev3.LargeMotor()         (Instantiate a motor object)
+ >>> m.connected                  (Check whether the motor is connected)
  True
- >>> m.run_forever(duty_cycle_sp=50) (デューティー比50%でモータを連続回転)
- >>> m.stop() (モーターを停止)
+ >>> m.run_forever(duty_cycle_sp=50)  (Rotate the motor continuously at 50% duty cycle)
+ >>> m.stop()                         (Stop the motor)
 ```
 
-モーターの停止モードには、'break'、'coast'、'hold' の3種類があります。デフォルトは 'coast' に設定してあり、m.stop() 実行時も、惰性で若干動いたと思います。これを、'hold' にして、stop 実行時にピタッと止めます。
+There are three motor stop modes: `'brake'`, `'coast'`, and `'hold'`.
+
+The default mode is `'coast'`, so when `m.stop()` is executed, the motor may continue moving slightly due to inertia.
+
+To make the motor stop immediately, change the mode to `'hold'`.
 
 <!-- >>> m.set(stop_command='hold') -->
+
 ```
  >>> m.set_attr_string(None, "stop_command", ev3.Motor.STOP_COMMAND_HOLD)
  >>> m.get_attr_string(None, "stop_command")[1]
@@ -66,10 +73,17 @@ python-ev3dev を使ってモーターを回してみます。まず、適当な
  >>> m.stop()
 ```
 
-以上のように、Python からモータを比較的容易に制御出来ます。
+As shown above, motors can be controlled relatively easily from Python.
 
-次にセンサーを利用してみます。ポート2に超音波センサーをつなぎます。引き続き Python のインタラクティブモードから以下のように入力します。
-for 文で100秒間センサの値(mm)を表示し続けます。途中でやめたいときは Ctrl+C を押してループを抜けます。
+Next, let's use a sensor.
+
+Connect an ultrasonic sensor to Port 2.
+
+While still in Python interactive mode, enter the following commands.
+
+The `for` loop continuously displays the sensor value (in centimeters) for 100 seconds.
+
+Press `Ctrl+C` to exit the loop at any time.
 
 <!-- >>> s = ev3dev.ultrasonic_sensor(ev3dev.INPUT_2) -->
 
@@ -84,7 +98,7 @@ for 文で100秒間センサの値(mm)を表示し続けます。途中でやめ
  ..
  118
  114
- ：中略
+ ：(omitted)
  2382
  2366
  326
@@ -95,48 +109,53 @@ for 文で100秒間センサの値(mm)を表示し続けます。途中でやめ
  >>>
 ```
 
-## python-ev3dev を知る
+## Learning About python-ev3dev
 
-python-ev3dev の様々なクラス・関数のチュートリアル、リファレンスマニュアルは以下のページにあります。
+Tutorials and reference manuals for the various classes and functions available in python-ev3dev can be found on the following page:
 
 - [Python language bindings for ev3dev](http://ddemidov.github.io/ev3dev-lang-python/)
 
-また、Python では、モジュールやオブジェクトに対して **dir()** 関数を呼ぶと、利用可能な変数や関数のリストを見ることができます（変数か関数かの区別は dir() だけではわかりません）。
+In Python, you can call the **dir()** function on a module or object to view a list of available variables and functions (although `dir()` alone does not distinguish between variables and functions).
 
 ```
  >>> dir(ev3)
- ['Button', 'ButtonBase', 'ButtonEVIO', 'ColorSensor', 'DcMotor', 'Device', 'FbMem', 
- 'FirgelliL12100Motor', 'FirgelliL1250Motor', 'GyroSensor', 'I2cSensor', 'INPUT_1', 'INPUT_2', 
- 'INPUT_3', 'INPUT_4', 'INPUT_AUTO', 'Image', 'ImageDraw', 'InfraredSensor', 'LargeMotor', 
- 'Led', 'Leds', 'LegoPort', 'LightSensor', 'MediumMotor', 'Motor', 'NxtMotor', 'OUTPUT_A', 
- 'OUTPUT_AUTO', 'OUTPUT_B', 'OUTPUT_C', 'OUTPUT_D', 'Popen', 'PowerSupply', 'RemoteControl', 
- 'Screen', 'Sensor', 'ServoMotor', 'Sound', 'SoundSensor', 'TouchSensor', 'UltrasonicSensor', 
- '__builtins__', '__doc__', '__file__', '__loader__', '__name__', '__package__', 'abspath', 
- 'array', 'ctypes', 'fcntl', 'fnmatch', 'list_device_names', 'list_devices', 'list_motors', 
+ ['Button', 'ButtonBase', 'ButtonEVIO', 'ColorSensor', 'DcMotor', 'Device', 'FbMem',
+ 'FirgelliL12100Motor', 'FirgelliL1250Motor', 'GyroSensor', 'I2cSensor', 'INPUT_1', 'INPUT_2',
+ 'INPUT_3', 'INPUT_4', 'INPUT_AUTO', 'Image', 'ImageDraw', 'InfraredSensor', 'LargeMotor',
+ 'Led', 'Leds', 'LegoPort', 'LightSensor', 'MediumMotor', 'Motor', 'NxtMotor', 'OUTPUT_A',
+ 'OUTPUT_AUTO', 'OUTPUT_B', 'OUTPUT_C', 'OUTPUT_D', 'Popen', 'PowerSupply', 'RemoteControl',
+ 'Screen', 'Sensor', 'ServoMotor', 'Sound', 'SoundSensor', 'TouchSensor', 'UltrasonicSensor',
+ '__builtins__', '__doc__', '__file__', '__loader__', '__name__', '__package__', 'abspath',
+ 'array', 'ctypes', 'fcntl', 'fnmatch', 'list_device_names', 'list_devices', 'list_motors',
  'mmap', 'numbers', 'os', 'pack', 're', 'stat', 'unpack']
  >>>
 ```
 
-たとえば、ev3dev.ev3 モジュールには Sound という変数か関数があります。
-run_forever() という関数があり、Sound() 関数を呼んでインスタンスを生成してみます。以下の例でわかるように、引数は不要だったようです。
+For example, the `ev3dev.ev3` module contains something called `Sound`.
+
+There also appears to be a function named `Sound()`, so let's create an instance of it.
+
+As shown below, it does not require any arguments.
 
 <!-- >>> s = ev3dev.sound() -->
+
 ```
  >>> s = ev3.Sound()
  >>> dir(s)
  ['__doc__', '__module__', 'beep', 'play', 'speak', 'tone']
 ```
 
+Running **dir(s)** on the generated object **s** reveals the functions that can likely be called on that object.
 
-生成したオブジェクト **s** に対して **dir(s)** を実行してみます。すると、このオブジェクトで呼び出し可能そうな関数群が分かります。
-試しに、speak を呼び出してみます。
+Let's try calling `speak()`.
 
 ```
  >>> s.speak("Hello RT-Middleware World")
 ```
 
-EV3 から声が出るはずです。
-実際には、関数の引数に何が必要なのか、どのようなデータ型を渡す必要があるのか、など詳細を知らないと呼び出せない関数もありますが、この方法でおおよその使い方を把握することができます。詳しい関数の呼び出し方を知りたい場合には、リファレンスマニュアルを参照してください。
+The EV3 should speak the phrase.
 
+In practice, some functions cannot be used without knowing what arguments they require and what data types must be passed. However, this method provides a quick way to understand the general usage of a module or object.
 
--------jp page!!-------
+For detailed information about function arguments and usage, please refer to the reference manual.
+

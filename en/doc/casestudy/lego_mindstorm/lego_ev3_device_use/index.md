@@ -1,122 +1,130 @@
 ---
 layout: page
-title: EV3 デバイスの利用
+title: Using EV3 Devices
 ---
--------jp page!!-------
 
 <!-- -*- pukiwiki-edit -*- -->
-<!-- * EV3 デバイスの利用 -->
+<!-- * Using EV3 Devices -->
 #contents
 
-## LEGO Mindstorms のセンサーとモーター
+## LEGO Mindstorms Sensors and Motors
 
-LEGO Mindstorms EV3 には標準で、以下のようなモーター・センサーが付属しています。
+The LEGO Mindstorms EV3 comes standard with the following motors and sensors:
 
-- ジャイロセンサー x1
-- カラーセンサー x1
-- タッチセンサー x2
-- 超音波距離センサー x1
-- モーター（L）x2
-- モーター（M）x1
+- Gyro Sensor ×1
+- Color Sensor ×1
+- Touch Sensor ×2
+- Ultrasonic Distance Sensor ×1
+- Motor (L) ×2
+- Motor (M) ×1
 
-センサー類は、プッシュスイッチは ON/OFF 値を取得可能で、超音波センサー、ジャイロセンサーは連続値を出力可能、カラーセンサーはいくつかの色を認識することもできます。
-モーターは2種類（L、M)あり、それぞれ PWM（トルク）制御、速度制御、位置制御が可能で、これらの制御のゲイン等も変更できます。
-以下に、EV3 のセンサーとモーターの使用を表示します。
+The sensors provide various types of data. The touch sensor can provide ON/OFF values, the ultrasonic and gyro sensors can output continuous values, and the color sensor can recognize several colors.
+
+There are two types of motors (L and M). Both support PWM (torque) control, speed control, and position control. The control gains and related parameters can also be adjusted.
+
+The specifications of the EV3 sensors and motors are shown below.
 
 <table class="table-alt">
   <tr>
-    <td><strong>ジャイロセンサー</strong>
+    <td><strong>Gyro Sensor</strong>
     </td>
-    <td>確度モード: 精度 +/- 3°<br> 角速度モード: 最大 440 deg/sec <br> サンプリングレート 1,000 Hz</td>
+    <td>Angle Mode: Accuracy +/- 3°<br> Angular Velocity Mode: Up to 440 deg/sec <br> Sampling Rate: 1,000 Hz</td>
   </tr>
   <tr>
-    <td><strong>カラーセンサー</strong></td>
-    <td>計測: 赤色光の反射光、周囲の明るさ、色 <br> 検出カラー数: 8色 （無色、黒、青、緑、黄、赤、白、茶）<br> サンプリングレート 1,000 Hz <br> 距離 約1mm～18mm（アフレル調査値）</td>
+    <td><strong>Color Sensor</strong></td>
+    <td>Measurements: Reflected red light, ambient light intensity, color <br> Number of detectable colors: 8 (None, Black, Blue, Green, Yellow, Red, White, Brown)<br> Sampling Rate: 1,000 Hz <br> Detection Distance: Approximately 1 mm to 18 mm (measured by Afrel)</td>
   </tr>
   <tr>
-    <td><strong>タッチセンサー</strong></td>
-    <td>オン (1)、オフ (0) <br> スイッチ可動域: 約4mm</td>
+    <td><strong>Touch Sensor</strong></td>
+    <td>On (1), Off (0) <br> Switch Travel Distance: Approximately 4 mm</td>
   </tr>
   <tr>
-    <td><strong>超音波センサー</strong></td>
-    <td>距離計測可能範囲: 3cmから250cm <br> 距離計測精度: +/- 1 cm <br> 前面電飾: 点灯：超音波発信中、点滅：超音波観測中</td>
+    <td><strong>Ultrasonic Sensor</strong></td>
+    <td>Distance Measurement Range: 3 cm to 250 cm <br> Measurement Accuracy: +/- 1 cm <br> Front Indicator Light: On = ultrasonic transmission, Flashing = ultrasonic observation</td>
   </tr>
-  </tr>
-  <tr>
   </tr>
   <tr>
   </tr>
   <tr>
-    <td><strong>EV3 Lモーター</strong></td>
-    <td>フィードバック: 1°単位 <br> 回転数: 160から170RPM <br> 定格トルク: 0.21 N・m (30oz*in) <br> 停動トルク: 0.42 N・m (60oz*in) <br> 重さ: 76 g</td>
   </tr>
   <tr>
-    <td><strong>EV3 Mモーター</strong></td>
-    <td>フィードバック 1°単位 <br> 回転数: 240から250RPM <br> 定格トルク: 0.08 N・m (11oz*in) <br> 停動トルク: 0.12 N・m (17oz*in) <br> 重さ: 36 g</td>
+    <td><strong>EV3 Large Motor (L)</strong></td>
+    <td>Feedback Resolution: 1° <br> Rotation Speed: 160–170 RPM <br> Rated Torque: 0.21 N·m (30 oz·in) <br> Stall Torque: 0.42 N·m (60 oz·in) <br> Weight: 76 g</td>
+  </tr>
+  <tr>
+    <td><strong>EV3 Medium Motor (M)</strong></td>
+    <td>Feedback Resolution: 1° <br> Rotation Speed: 240–250 RPM <br> Rated Torque: 0.08 N·m (11 oz·in) <br> Stall Torque: 0.12 N·m (17 oz·in) <br> Weight: 36 g</td>
   </tr>
 </table>
 
+## Accessing Devices via sysfs
 
-## sysfs 経由でのアクセス
-ev3dev からこれらのデバイスにアクセスするには、sysfs という仕組みを経由してアクセスします。
-sysfs は /sys 以下にある疑似的なファイルシステムで、ここに存在するファイルに値を書き込んだり読み込んだりすることで、モーターの制御やセンサーデータへのアクセスが可能になります。
+To access these devices from ev3dev, a mechanism called **sysfs** is used.
 
-sysfs 経由でのデバイスのアクセス方法に関しては、以下の ev3dev のドキュメントに詳細が記載されています。
+sysfs is a virtual file system located under `/sys`. By reading from and writing to files within this file system, it is possible to control motors and access sensor data.
 
-- 様々なデバイスへのアクセス [http://www.ev3dev.org/docs/drivers/](http://www.ev3dev.org/docs/drivers/)
-  - モーターリファレンス [http://www.ev3dev.org/docs/drivers/tacho-motor-class/](http://www.ev3dev.org/docs/drivers/tacho-motor-class/)
-    - モーター制御チュートリアル: [http://www.ev3dev.org/docs/tutorials/tacho-motors/](http://www.ev3dev.org/docs/tutorials/tacho-motors/)
-  - センサーリファレンス : [http://www.ev3dev.org/docs/drivers/lego-sensor-class/](http://www.ev3dev.org/docs/drivers/lego-sensor-class/)
+Detailed information on accessing devices through sysfs can be found in the following ev3dev documentation.
 
-具体的には、以下のようにアクセスします。
+- Accessing Various Devices: [http://www.ev3dev.org/docs/drivers/](http://www.ev3dev.org/docs/drivers/)
+  - Motor Reference: [http://www.ev3dev.org/docs/drivers/tacho-motor-class/](http://www.ev3dev.org/docs/drivers/tacho-motor-class/)
+    - Motor Control Tutorial: [http://www.ev3dev.org/docs/tutorials/tacho-motors/](http://www.ev3dev.org/docs/tutorials/tacho-motors/)
+  - Sensor Reference: [http://www.ev3dev.org/docs/drivers/lego-sensor-class/](http://www.ev3dev.org/docs/drivers/lego-sensor-class/)
 
-### モーターの制御例
+Specifically, devices can be accessed as shown below.
 
-モーターを連続回転するには、ポートAにモーター(L/Mどちらでもよい)をコマンドラインから以下のように入力します。
+### Motor Control Example
 
-```
+To make a motor rotate continuously, connect a motor (either L or M) to Port A and enter the following commands from the command line.
+
+```bash
  # echo 50 > /sys/class/tacho-motor/motor0/duty_cycle_sp
  # echo run-forever > /sys/class/tacho-motor/motor0/command
-```
+````
 
-現在の位置を表示させるにはこのように入力します。止めるには Ctrl+C 
+To display the current speed, enter the following command. Press Ctrl+C to stop displaying it.
 
-```
+```bash
  # while true; do echo -en "\033[0G$(cat /sys/class/tacho-motor/motor0/speed)   "; done
 ```
-回転を止めるには、以下のように入力します。
 
-```
+To stop the motor, enter the following command.
+
+```bash
  # echo stop > /sys/class/tacho-motor/motor0/command
 ```
 
-### センサーの例
+### Sensor Example
 
-センサーなども同様のアクセス法で利用できます。
-カラーセンサーをポート1に接続します。カラーセンサーの先1cm位のところに赤いものを置いてください。
-以下のようなコマンドを入力すると、**5**と表示されます。
+Sensors can be accessed in the same way.
 
-```
+Connect the color sensor to Port 1. Place a red object approximately 1 cm in front of the sensor.
+
+Enter the following commands to display **5**.
+
+```bash
  # echo "COL-COLOR" > /sys/class/lego-sensor/sensor1/mode
  # cat /sys/class/lego-sensor/sensor1/value1
  5
 ```
 
-カラーセンサーには、いくつかのモードがあり、上ではカラー検出モードを使用しました。このモードでは、以下の8つの色 (ただし、0は何もないことを意味する) を認識します。
+The color sensor supports several operating modes. In the example above, color detection mode is used.
+
+In this mode, the following eight colors can be recognized (where 0 indicates that no color is detected).
+
 <table class="table-alt">
   <tr>
-    <td>色</td>
-    <td>無</td>
-    <td>黒</td>
-    <td>青</td>
-    <td>緑</td>
-    <td>黄</td>
-    <td>赤</td>
-    <td>白</td>
-    <td>茶</td>
+    <td>Color</td>
+    <td>None</td>
+    <td>Black</td>
+    <td>Blue</td>
+    <td>Green</td>
+    <td>Yellow</td>
+    <td>Red</td>
+    <td>White</td>
+    <td>Brown</td>
   </tr>
   <tr>
-    <td>番号</td>
+    <td>Number</td>
     <td>0</td>
     <td>1</td>
     <td>2</td>
@@ -128,9 +136,7 @@ sysfs 経由でのデバイスのアクセス方法に関しては、以下の e
   </tr>
 </table>
 
-コマンドラインからは以上のようにアクセスできますが、プログラムからこれらの操作をしようとすると非常に面倒な手続きが必要になります。
+Although devices can be accessed from the command line as shown above, performing these operations directly from a program requires a considerable amount of cumbersome processing.
 
-プログラムからデバイスにアクセスためのアクセスライブラリがありますので、これを利用します。
+To simplify device access from programs, dedicated access libraries are available and should be used.
 
-
--------jp page!!-------

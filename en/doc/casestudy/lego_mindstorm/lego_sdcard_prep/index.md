@@ -1,268 +1,248 @@
 ---
 layout: page
-title: SD カードの準備
+title: Preparing the SD Card
 ---
--------jp page!!-------
 
-<!-- Title: SD カードの準備 -->
+<!-- Title: Preparing the SD Card -->
 <!-- -*- pukiwiki-edit -*- -->
 #contents
 
-## はじめに
+## Introduction
 
-ここでは、LEGO Mindstorms EV3 上で OpenRTM-aist とそのコンポーネントを動作させるための実行環境のインストールについて説明します。
+This section explains how to install the runtime environment required to run OpenRTM-aist and its components on LEGO Mindstorms EV3.
 
-ここでは、openrtm.org が提供する OpenRTM-aist 入りの OSイメージをダウンロードし、各種セットアップについて説明します。
-EV3上で OpenRTM を使用できるようにするまでの大まかな手順は以下の通りです。
+Here, we will explain how to download the OS image provided by openrtm.org that includes OpenRTM-aist and perform the necessary setup.
 
-- SDカードに OSイメージを書き込む
-- OS の基本的なセットアップ
-- コンポーネントの実行テスト
+The overall procedure for enabling OpenRTM on EV3 is as follows:
 
-## SD カード
+- Write the OS image to an SD card
+- Perform basic OS setup
+- Test execution of components
 
-EV3 には micro SD カードスロットが一つあり、ここに起動した OS を書き込んだ micro SD カードを差し込むと、任意の OS を起動することができます。
+## SD Card
 
-用意する SDカードは 2GB以上 32GB以下のも **micro SDカード** になります。mini SD や SDカードは刺さりませんのでご注意ください。
-また、書き込むイメージは約2GB程度ありますので、最低で2GBの容量が必要となります。EV3 は 32GBより大きい SDXC仕様の SDカードには対応していませんので、注意してください。
+The EV3 has one micro SD card slot. By inserting a micro SD card containing a bootable OS, you can start the EV3 with an arbitrary operating system.
 
-- 用意するSDカード
-  - micro SDカード
-  - 2GB以上、32GB以下
+The SD card must be a **micro SD card** with a capacity between **2 GB and 32 GB**. Please note that mini SD cards and standard SD cards cannot be inserted.
 
-## OSイメージのダウンロード
+The image file is approximately 2 GB in size, so at least 2 GB of capacity is required. EV3 does not support SDXC cards larger than 32 GB.
 
-EV3上 での OpenRTM-aist の実行には ev3dev という OS を使用します。
+- Required SD Card
+  - micro SD card
+  - 2 GB or larger, up to 32 GB
 
-- ev3dev Webページ: http://www.ev3dev.org
+## Downloading the OS Image
 
-以下のサイトから ev3-ev3dev-jessie-2015-12-30.img.zip をダウンロードしてください。
-名前が似たファイルが多数配布されているので間違えないようにしてください。
+To run OpenRTM-aist on EV3, an operating system called **ev3dev** is used.
+
+- ev3dev Website: http://www.ev3dev.org
+
+Download **ev3-ev3dev-jessie-2015-12-30.img.zip** from the following site.
+
+There are many similarly named files available, so be careful to download the correct one.
 
 - https://github.com/ev3dev/ev3dev/releases
 
-### ev3dev OSイメージのダウンロード
+### Downloading the ev3dev OS Image
 
-ev3dev とは EV3 上で Linux のディストリビューションの1つである、Debian GNU Linuxを EV3 に搭載した EV3用の Debian ディストリビューションです。
-OpenRTM-aist を動作させるには、この ev3dev を micro SDカードに書き込み、EV3 を SDカードから起動させます。
+ev3dev is a Debian GNU/Linux distribution for EV3.
 
-上記の ev3dev オフィシャルWebページから ev3dev の OSイメージファイルがダウンロードできますが、OpenRTM-aist などはインストールされていません。
-基本的には、以下のリンクから OpenRTM-aist (C++、Python) 入りの ev3dev イメージファイルをダウンロードしてください。
+To run OpenRTM-aist, write ev3dev to a micro SD card and boot EV3 from that SD card.
 
+Although the ev3dev OS image can be downloaded from the official website, it does not include OpenRTM-aist.
+
+In most cases, download the ev3dev image containing OpenRTM-aist (C++ and Python) from the following link.
 
 - [2015-08-05-ev3dev-openrtm.zip](http://openrtm.org)
 
-### サンプルコンポーネント入りのイメージ
-Educator Vehicle等のサンプルコンポーネント入りのイメージです。
+### Image with Sample Components
+
+This image includes sample components such as Educator Vehicle.
 
 - [ev3-openrtm.img](https://drive.google.com/a/nobu777.net/uc?export=download&confirm=A1zJ&id=1nJ552cMdYkgDdRtF0RHYfkL1Bqu300Kv)
 
+If the wireless LAN access point mode does not work correctly after replacing the EV3 wireless LAN adapter, connect to another access point and edit **70-persistent-net.rules** using the following command.
 
-EV3の無線LANアダプタを交換した場合に、無線LANアクセスポイントモードが正常に動作しない場合があります。
-その場合は他のアクセスポイントに接続する等して、以下のコマンドを実行して**70-persistent-net.rules**を編集します。
-ユーザー名は**robot**、パスワードは**maker**でログインして操作してください。
+Log in with username **robot** and password **maker**.
 
-```
- sudo nano /etc/udev/rules.d/70-persistent-net.rules
-```
-
-
-具体的には70-persistent-net.rulesのSUBSYSTEMから始まる行を全てコメントアウトします。
-
-```
- # USB device 0x:0x (rtl8192cu)
- SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:22:cf:f6:52:a5", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="wlan*", NAME="wlan1"
+```bash
+sudo nano /etc/udev/rules.d/70-persistent-net.rules
 ```
 
-### イメージの展開
+Specifically, comment out all lines beginning with **SUBSYSTEM** in **70-persistent-net.rules**.
 
-ダウンロードしたファイル YYYY-MM-DD-ev3dev-openrtm.zip を展開してください。
-YYYY-MM-DD-ev3dev-openrtm.img という2GB位のファイルが展開されているはずです。
+```bash
+# USB device 0x:0x (rtl8192cu)
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:22:cf:f6:52:a5", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="wlan*", NAME="wlan1"
+```
+
+### Extracting the Image
+
+Extract the downloaded file **YYYY-MM-DD-ev3dev-openrtm.zip**.
+
+A file named **YYYY-MM-DD-ev3dev-openrtm.img** of approximately 2 GB should be extracted.
 
 #### Windows
 
-ファイルを右クリックして「すべて展開」を選択すると、展開できます。
+Right-click the file and select **Extract All**.
 
 #### Linux
 
-```
- $ unzip <イメージファイル>
-```
-
-で展開できます。unzip コマンドがない場合はインストールしてください。
-
-```
- $ unzip 2015-08-06-ev3dev-openrtm.zip
- Archive:  2015-08-06-ev3dev-openrtm.zip
-   inflating: 2015-08-06-ev3dev-openrtm.img
- $ ls -l
- 合計 2321300
-
- -rw-rw-r-- 1 n-ando n-ando 1887436800  8月  4 21:37 2015-08-06-ev3dev-openrtm.img
- -rw-rw-r-- 1 n-ando n-ando  489565916  8月  5 10:13 2015-08-06-ev3dev-openrtm.zip
+```bash
+$ unzip <image file>
 ```
 
-うまく展開できない場合、ダウンロードに失敗しファイルが壊れている可能性があります。壊れたファイルを削除して、再度ダウンロードしてみてください。
+If the **unzip** command is not installed, install it first.
 
-## イメージの書き込み
+```bash
+$ unzip 2015-08-06-ev3dev-openrtm.zip
+Archive:  2015-08-06-ev3dev-openrtm.zip
+  inflating: 2015-08-06-ev3dev-openrtm.img
 
-展開された yyyy-mm-dd-ev3dev-openrtm.img はイメージファイルといい、ev3dev が起動するディスクの状態をディスクの最初から最後まで1バイトづつ抜き出したものです。
-<span style="color:red;">このファイルを SDカードに単純にコピーしても使用することはできません！！</span>;
+$ ls -l
+total 2321300
 
-以下に説明する方法で SDカードに書き込んでください。
+-rw-rw-r-- 1 n-ando n-ando 1887436800 Aug  4 21:37 2015-08-06-ev3dev-openrtm.img
+-rw-rw-r-- 1 n-ando n-ando  489565916 Aug  5 10:13 2015-08-06-ev3dev-openrtm.zip
+```
 
-### イメージの書き込み (Windows)
+If extraction fails, the downloaded file may be corrupted. Delete the damaged file and download it again.
 
-Windows では Win32DiskImager というツールを使用することでイメージの書き込みができます。
-以下のサイトからイメージデータ書き込みツール Win32DiskImager のバイナリをダウンロードします｡
+## Writing the Image
+
+The extracted file **yyyy-mm-dd-ev3dev-openrtm.img** is a disk image file containing a byte-for-byte copy of the bootable disk.
+
+<span style="color:red;">Simply copying this file to the SD card will NOT work!</span>
+
+Write the image to the SD card using one of the methods described below.
+
+### Writing the Image (Windows)
+
+On Windows, you can use **Win32DiskImager** to write the image.
+
+Download the binary package from:
 
 - Win32DiskImager: http://sourceforge.jp/projects/sfnet_win32diskimager/
 
 <div align="center"><a href="win32diskimager_site.png"><img src="win32diskimager_site.png" width="80%;"></a></div>
-<div align="center"><strong>Win32DiskImager のダウンロード</strong></div>
+<div align="center"><strong>Downloading Win32DiskImager</strong></div>
 
-ダウンロードしたファイル (win32diskimager-vX.X-binary.zip ) を解凍します｡
+Extract the downloaded archive (**win32diskimager-vX.X-binary.zip**).
 
-<span style="color:red;">※Win32DiskImager は、2バイト文字に対応していないため、YYYY-MM-DD-ev3dev-openrtm.zip は途中のパス名に全角文字や空白が含まれていない場所に解凍してください｡</span>;
+<span style="color:red;">Win32DiskImager does not support double-byte characters. Extract the image file to a location whose path contains no non-ASCII characters or spaces.</span>
 
-Raspberry Pi で使用する SD カードを PCに挿入し、Win32DiskImager を起動します｡
+Insert the SD card into the PC and start Win32DiskImager.
 
-<span style="color:red;">※SD カードはドライブとして認識されている必要があるので、事前に FAT32 形式でフォーマットしておいてください｡</span>;
+<span style="color:red;">The SD card must be recognized as a drive. Format it as FAT32 beforehand.</span>
 
-｢Image File｣に解凍したRaspbian のイメージファイル (YYYY-MM-DD-wheezy-raspbian.img)、｢Drive｣にSD カードのドライブを指定し、｢Write｣ボタンをクリックします｡
+Select the extracted image file (**YYYY-MM-DD-ev3dev-openrtm.img**) in **Image File**, choose the SD card drive in **Drive**, and click **Write**.
 
 <div align="center"><a href="win32diskimager.png"><img src="win32diskimager.png" width="70%;"></a></div>
-<div align="center"><strong>イメージデータの書き込み</strong></div>
+<div align="center"><strong>Writing the Image Data</strong></div>
 
-以上で SD カードの準備は終了です｡
-書き込みが終了したら、SD カードを Raspberry Pi に設置し、電源を投入します。
+The SD card is now ready.
 
-### イメージの書き込み (Linux)
+After writing is complete, insert the SD card into the EV3 and power it on.
 
-Linux では dd コマンドを利用してイメージの読み書きができます。
-dd コマンドは UNIX系の OS なら大抵デフォルトでインストールされています。
+### Writing the Image (Linux)
 
-SDカードを差し込んでから、 dmesg コマンドでカーネルのメッセージを確認します。
-```
- $ dmesg
-```
-   : 中略
-```
- [333478.822170] sd 3:0:0:0: [sdb] Assuming drive cache: write through
- [333478.822174]  sdb: sdb1 sdb2
- [333478.839563] sd 3:0:0:0: [sdb] Assuming drive cache: write through
- [333478.839567] sd 3:0:0:0: [sdb] Attached SCSI removable disk
- [333479.094873] EXT4-fs (sdb2): mounted filesystem with ordered data mode
- [333527.658195] usb 1-1: USB disconnect, address 2
+On Linux, use the **dd** command.
+
+The **dd** command is installed by default on most UNIX-like systems.
+
+Insert the SD card and identify the device name using:
+
+```bash
+$ dmesg
 ```
 
-このメッセージから SDカードのデバイス名を確認します。この例では sdb が SDカードのデバイス名のようです。/dev/の下を見てみます。
+Example:
 
-```
- ls -al /dev/sd*
- brw-rw---- 1 root disk 8,  0 May  7 17:28 /dev/sda
- brw-rw---- 1 root disk 8,  1 May  7 17:28 /dev/sda1
- brw-rw---- 1 root disk 8,  2 May  7 17:28 /dev/sda2
- brw-rw---- 1 root disk 8,  5 May  7 17:28 /dev/sda5
- brw-rw---- 1 root disk 8, 16 May 18 14:19 /dev/sdb
- brw-rw---- 1 root disk 8, 17 May 18 14:19 /dev/sdb1
- brw-rw---- 1 root disk 8, 32 May 18 14:19 /dev/sdc
+```bash
+[333478.822170] sd 3:0:0:0: [sdb] Assuming drive cache: write through
+[333478.822174]  sdb: sdb1 sdb2
+[333478.839563] sd 3:0:0:0: [sdb] Assuming drive cache: write through
+[333478.839567] sd 3:0:0:0: [sdb] Attached SCSI removable disk
 ```
 
-sda は大抵システムディスクなので、**絶対**に触ってはいけません。
+In this example, the SD card device appears to be **sdb**.
 
-ディストリビューションによっては、SDカード内にマウント可能なファイルシステムがある場合自動でマウントするケースもあるようです。
-その場合、ディスクをアンマウントしてください。(Ubuntuではデスクトップにマウントしたファイルシステムのフォルダーが現れるので右クリックで取り外してください。
-それ以外は umount コマンドでアンマウントします。)
+Check under `/dev`:
+
+```bash
+ls -al /dev/sd*
+```
+
+**Never touch `/dev/sda`**, as it is usually the system disk.
+
+Some distributions automatically mount SD card partitions. If so, unmount them before writing.
 
 <div align="center"><a href="ubuntu_adcard_mount.png"><img src="ubuntu_adcard_mount.png" width="50%;"></a></div>
-<div align="center"><strong>Ubuntu場でマウントされたSDカード(右クリックメニューで取り外すことができる)</strong></div>
+<div align="center"><strong>SD Card Mounted on Ubuntu (can be removed via right-click menu)</strong></div>
 
-**dd if=イメージファイル of=SDカードのデバイスファイル bs=1M** のようにコマンドを入力し実行します。
-ただし、デバイスファイルへの書き込みは管理者(root)権限が必要ですので、sudoを使用してください。
+Write the image:
 
-```
- $ sudo dd if=2015-08-05-ev3dev-openrtm.img of=/dev/sdb bs=1M
- 1850+0 records in
- 1850+0 records out
- 1939865600 bytes (1.9 GB) copied, 201.543 s, 9.6 MB/s
+```bash
+$ sudo dd if=2015-08-05-ev3dev-openrtm.img of=/dev/sdb bs=1M
 ```
 
-実行中は別のターミナルなどで、iostat コマンドを実行して書き込みが正しく行われているかどうか見ることができます。
-(最近のディストリビューションではデフォルトでインストールされていないことがあります。debian/ubuntu では apt-get install sysstat で iostatコマンドが使えるようになります。)
+You can monitor progress using **iostat**.
 
-```
- $ iostat -mx 1
-  avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-            0.00    0.00    0.00   50.25    0.00   49.75
- 
- Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
- sda               0.00     0.00    0.00    1.00     0.00     0.00     8.00     0.00    0.00   0.00   0.00
- sdb               0.00  1856.00    0.00   78.00     0.00     9.14   240.00   143.40 1855.85  12.82 100.00
+```bash
+$ iostat -mx 1
 ```
 
-sdb の項目を見ると 9.14MB/s の書き込み速度が出ていることがわかります。
-class 6 のSDカードなら 6MB/sec, class 10 の SDカードなら 10MB/sec 程度の速度が出ていれば、問題なく書き込まれていると考えてよいでしょう。
-書き込みが終了すると、ディストリビューションによっては自動でマウントされる場合があります。その場合、アンマウントしてから SDカードを抜いてください。
+If write speeds are around 6 MB/s for a Class 6 card or 10 MB/s for a Class 10 card, the process is working normally.
 
-### イメージの書き込み (Mac OS X)
+After completion, unmount the card if it is automatically mounted and remove it safely.
 
-Mac OS X も Linuxと同様 dd コマンドを利用して書き込みます。
-ただし、Mac では SDカードを挿入すると自動的にマウントされてしまい、マウント中は dd コマンドで SDカードに書き込むことができないので、アンマウント (OSから取り外す) する必要があります。
+### Writing the Image (Mac OS X)
 
-SDカードを差し込むとFinderに図のように SDカードのアイコンが現れます。
-アンマウントするつもりで**イジェクトボタンを押さないよう**気を付けてください。
+Mac OS X also uses the **dd** command.
 
-<div align="center"><a href="sdcard_mac.png"><img src="sdcard_mac.png" width="50%;"></a></div>
-<div align="center"><strong>MacにマウントされたSDカード</strong></div>
+However, the SD card is automatically mounted when inserted, so it must first be unmounted.
 
-SDカードのボリューム名はここでは **Untitled** です。ボリューム名を覚えておきます。
-コマンドプロンプトから df コマンドを入力すると以下のように表示されます。
+Locate the SD card in Finder and note its volume name (e.g., **Untitled**).
 
-```
- $ df -k
- Filesystem                        1024-blocks      Used Available Capacity   iused    ifree %iused  Mounted on
- /dev/disk0s2                        500000000 437664508  62079492    88% 109480125 15519873   88%   /
- devfs                                     194       194         0   100%       679        0  100%   /dev
- map -hosts                                  0         0         0   100%         0        0  100%   /net
- map auto_home                               0         0         0   100%         0        0  100%   /home
- /dev/disk1s1                            57288     18992     38296    34%       512        0  100%   /Volumes/Untitled
+Use:
+
+```bash
+$ df -k
 ```
 
-```
- 一番下 ''/Volumes/Untitled'' とあるのが先ほどの SDカードのマウントポイントです。一番左の SDカードのデバイス名 /dev/disk1s1 を覚えておきます。
-```
-この SDカードを一旦アンマウント します。diskutil というコマンドを使用し **diskutil umount <マウントポイント>** のように入力します。
+Find the mounted SD card, for example:
 
-```
- $ diskutil umount /Volumes/Untitled
- Volume (null) on disk1s1 unmounted
- $ df -k
- Filesystem                        1024-blocks      Used Available Capacity   iused    ifree %iused  Mounted on
- /dev/disk0s2                        500000000 437664716  62079284    88% 109480177 15519821   88%   /
- devfs                                     194       194         0   100%       679        0  100%   /dev
- map -hosts                                  0         0         0   100%         0        0  100%   /net
- map auto_home                               0         0         0   100%         0        0  100%   /home
+```bash
+/dev/disk1s1 ... /Volumes/Untitled
 ```
 
-先ほどの /Volumes/Untitled が消えて、SDカードがアンマウントされていることがわかります。
-次に dd コマンドを使用してイメージを書き込みます。
-**dd if=イメージファイル of=/dev/rdisk1 bs=1m** のように入力します。
-of=/dev/rdisk1 は先ほど覚えたデバイスファイル /dev/disk1s1 のうち後ろの **s1** を取り、さらに disk の前に raw deviceであることを示す **r** を付けたデバイス名です。
+Unmount it:
 
-このコマンドはデバイスファイルにアクセスするので管理者 (root) でなければ実行できません。sudoを使用して以下のように実行します。
-
-```
- $ sudo dd if=2015-08-05-ev3dev-openrtm.img of=/dev/rdisk1 bs=1m
- 1850+0 records in
- 1850+0 records out
- 1939865600 bytes transferred in 302.377337 secs (6415380 bytes/sec)
- $
+```bash
+$ diskutil umount /Volumes/Untitled
 ```
 
-書き込み中は、「アクティビティモニタ」で「ディスクの動作」を見ることで書き込みが正しく行われているかどうかわかります。
-class 6 の SDカードなら 6MB/sec, class 10のSDカードなら 10MB/sec 程度の速度が出ていれば、問題なく書き込まれていると考えてよいでしょう。
+Then write the image:
 
-書き込みが終了すると、自動的に再度マウントされますので、今度は Finder のイジェクトボタンを押して SDカードを抜きます。
+```bash
+$ sudo dd if=2015-08-05-ev3dev-openrtm.img of=/dev/rdisk1 bs=1m
+```
 
--------jp page!!-------
+Here, `/dev/rdisk1` is derived from `/dev/disk1s1` by removing `s1` and adding the `r` prefix.
+
+Example output:
+
+```bash
+$ sudo dd if=2015-08-05-ev3dev-openrtm.img of=/dev/rdisk1 bs=1m
+1850+0 records in
+1850+0 records out
+1939865600 bytes transferred in 302.377337 secs (6415380 bytes/sec)
+$
+```
+
+You can monitor write activity using **Activity Monitor**.
+
+If the write speed is approximately 6 MB/s for a Class 6 card or 10 MB/s for a Class 10 card, writing is proceeding normally.
+
+After writing completes, the SD card will be automatically remounted. This time, use Finder's eject button and remove the SD card safely.
+

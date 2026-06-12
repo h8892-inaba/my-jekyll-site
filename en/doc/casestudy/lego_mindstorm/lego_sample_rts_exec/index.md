@@ -1,206 +1,238 @@
 ---
 layout: page
-title: サンプルの RTシステムの実行
+title: Running Sample RT Systems
 ---
--------jp page!!-------
 
 <!-- ~/jekyll_workdir/openrtm_test/ja/doc/casestudy/lego_mindstorm/lego_sample_rts_exec-->
-<!-- Title: サンプルの RTシステムの実行 -->
+<!-- Title: Running Sample RT Systems -->
 #contents
 
-## 事前準備
+## Preparation
+
 ### Windows
-#### RTC のインストール
-サンプルの RTシステムの一部で以下の RTC を使用するためインストールしてください。
+
+#### Installing RTCs
+
+The following RTCs are used in some of the sample RT systems and must be installed.
 
 ##### DirectInputRTC
-ジョイスティックで操作するためのRTCです。
-以下のサイトからインストーラーをダウンロードして実行してください。
+
+This RTC is used to operate the system with a joystick.
+
+Download and run the installer from the following site:
 
 - [http://ysuga.net/?p=130](http://ysuga.net/?p=130)
 
 ##### JoystickToVelocity
-DirectInputRTC のアウトポートからの pos からの出力 (TimedLongSeq型) を TimedVelocity2D型に変換する RTC です。
-以下のサイトからインストーラーをダウンロードして実行してください。
 
+This RTC converts the `pos` output (TimedLongSeq type) from the DirectInputRTC OutPort into the TimedVelocity2D type.
+
+Download and run the installer from the following site:
 
 - [http://ysuga.net/?p=130](http://ysuga.net/?p=130)
+
 <!-- - http://ysuga.net/?p=130-->
 
 ##### FloatSeqToVelocity
 
-FloatSeqToVelocity は OpenRTM-aist-Python のサンプルTkJoyStick の出力 (TimedFloatSeq型) をTimeVelocity2D型でに変換してアウトポートから出力する RTC です。
+FloatSeqToVelocity is an RTC that converts the output (TimedFloatSeq type) of the TkJoyStick sample included with OpenRTM-aist-Python into TimedVelocity2D and outputs it through an OutPort.
 
-[ここ](https://github.com/Nobu19800/FloatSeqToVelocity/archive/master.zip) からダウンロードしてください。
+Download it from [here](https://github.com/Nobu19800/FloatSeqToVelocity/archive/master.zip).
 
 <table class="table-alt">
   <tr>
-    <th colspan="3" style="text-align: center;">ducatorVehicle</th>
+    <th colspan="3" style="text-align: center;">FloatSeqToVelocity</th>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>in</td>
     <td>TimeFloatSeq</td>
-    <td>変換前のデータ</td>
+    <td>Input data before conversion</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>in</td>
     <td>TimedVelocity2D</td>
-    <td>変換後のデータ</td>
+    <td>Converted output data</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">コンフィギュレーションパラメーター</td>
+    <td colspan="3" style="text-align: center;">Configuration Parameters</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>デフォルト値</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Default Value</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>rotation_by_position</td>
     <td>-0.02</td>
-    <td>ジョイスティックのX座標に対する回転角速度</td>
+    <td>Angular velocity corresponding to the joystick X position</td>
   </tr>
   <tr>
     <td>velocity_by_position</td>
     <td>0.002</td>
-    <td>ジョイスティックのY座標に対する直進速度</td>
+    <td>Forward velocity corresponding to the joystick Y position</td>
   </tr>
 </table>
 
 <div align="center"><a href="ev3_10.png"><img src="ev3_10.png" width="70%;"></a></div>
 
-#### スクリプトファイル
-RTC の起動、RTシステムの復元を自動化するためのスクリプトファイルです。
-[ここ](https://github.com/Nobu19800/EducatorVehicle_script/archive/master.zip) からダウンロードしてください。
+#### Script Files
 
-#### ネームサーバー、RTシステムエディタの起動
+These script files automate RTC startup and RT system restoration.
+
+Download them from [here](https://github.com/Nobu19800/EducatorVehicle_script/archive/master.zip).
+
+#### Starting the Name Server and RT System Editor
+
 ##### Windows
-まず最初に Windows でネームサーバー、RTシステムエディタを起動してください。
-詳しい手順は [このページ]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/test_windows_1_1) を参考にしてください。
+
+First, start the Name Server and RT System Editor on Windows.
+
+For detailed instructions, refer to [this page]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/test_windows_1_1).
 
 ##### ev3dev
-EV3 の [一括インストールの項目](../lego_ev3_rtc_install#toc7) でダウンロードしたファイルの中に rtc.conf があるので、rtc.conf の以下の ppp.pp.pp.ppp の部分を Windows側の IPアドレスに変更してください。
 
-```
- corba.nameservers: ppp.pp.pp.ppp
-```
+The downloaded package from the [Bulk Installation section](../lego_ev3_rtc_install#toc7) contains an `rtc.conf` file.
 
-これで起動したコンポーネントが Windows のネームサーバーに登録されるようになります。
+Modify the following line in `rtc.conf` by replacing `ppp.pp.pp.ppp` with the IP address of the Windows machine.
 
-Windows で IPアドレスを確認するには以下のコマンドを入力します。
-
-```
- ipconfig
+```text
+corba.nameservers: ppp.pp.pp.ppp
 ```
 
+This allows components started on EV3 to be registered with the Name Server running on Windows.
 
+To check the Windows IP address, enter:
 
+```bash
+ipconfig
+```
 
-<!-- OpenRTM-aist入りのev3devイメージファイルを使用している場合は、/home/robot/componentsの中にrtc.confがあるので、rtc.confの以下のppp.pp.pp.pppの部分をWindows側のIPアドレスに変更してください。 -->
+## Starting RTCs
 
-<!-- Windows側のPCにゲームパッドを接続してから起動してください。 -->
-
-<!-- corba.nameservers: ppp.pp.pp.ppp -->
-
-<!-- これで起動したコンポーネントがWindowsのネームサーバーに登録されるようになります。 -->
-
-<!-- WindowsでIPアドレスを確認するには以下のコマンドを入力します。 -->
-
-<!-- ipconfig -->
-
-## RTC の起動
 ### Windows
-Windows側の RTC は [スクリプトファイルの項目](../lego_ev3_rtc_install#toc12) でダウンロードしたファイルの中に start_component.bat というバッチファイルがあるのでそれを実行すれば以下の RTC が起動します。
-※64bit版 Windows、32bit版 OpenRTM-aist を対象にしています。32bit版 Windows の場合は start_component_32.bat、64bit版 OpenRTM-aist を利用する場合は start_component_64.bat を起動してください。
-※Python のインストールしたディレクトリーにパスが通っていない場合、TkJoyStick は起動できません。お手数ですが [このページ]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/test_windows_python_1_1#toc7) の手順を参考にして手動で起動してください。
+
+The downloaded script package from the [Script Files section](../lego_ev3_rtc_install#toc12) contains a batch file named `start_component.bat`.
+
+Executing it starts the following RTCs.
+
+* This batch file is intended for 64-bit Windows and 32-bit OpenRTM-aist.
+* For 32-bit Windows, use `start_component_32.bat`.
+* If you are using the 64-bit version of OpenRTM-aist, use `start_component_64.bat`.
+
+If the Python installation directory is not included in the PATH environment variable, TkJoyStick cannot be started. In that case, please start it manually by following the instructions on [this page]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/test_windows_python_1_1#toc7).
 
 ### ev3dev
-[一括インストールの項目](../lego_ev3_rtc_install#toc7) でダウンロードしたフォルダーの中の start_rtc.sh を実行することで起動できます。
 
-```
- cd RaspberryPiMouseRTSystem_script_Raspbian
- sh start_rtc.sh
-```
+Execute `start_rtc.sh` contained in the package downloaded from the [Bulk Installation section](../lego_ev3_rtc_install#toc7).
 
-これで以下の RTC が起動します。
-
-```
- ControlEducatorVehicle0
- EducatorVehicle0
+```bash
+cd RaspberryPiMouseRTSystem_script_Raspbian
+sh start_rtc.sh
 ```
 
-## RTシステムの復元、開始
-Windows側で[スクリプトファイルの項目](../lego_sample_rts_exec#toc6) でダウンロードしたファイルの JoystickControlEV3 フォルダー内の JoystickControlEV3_resurrect.bat を実行してください。
-これでデータポートの接続、コンフィギュレーションパラメーターの設定などが行われます。
-次に JoystickControlEV3_activate.bat を実行すると RTC をアクティブ化します。
-JoystickControlEV3 はジョイスティックコンポーネントから EV3 を操作する RTシステムです。
+The following RTCs will start:
 
+```text
+ControlEducatorVehicle0
+EducatorVehicle0
+```
 
+## Restoring and Starting the RT System
 
-非アクティブにする際は JoystickControlEV3_stop.bat を起動してください。
-JoystickControlEV3_teardown.bat を起動するとポートの接続を切断します。
+On Windows, execute `JoystickControlEV3_resurrect.bat` located in the `JoystickControlEV3` folder of the downloaded package from the [Script Files section](../lego_sample_rts_exec#toc6).
 
+This performs tasks such as:
 
-## サンプルの詳細
+- Connecting data ports
+- Setting configuration parameters
 
-JoystickControlEV3 以外のサンプルも `****_resurrect.bat` で RTシステム復元、`****_activate.bat` でアクティブ化、`****_stop.bat` で非アクティブ化、`****_teardown.bat` でポートの切断ができます。 
+Next, execute `JoystickControlEV3_activate.bat` to activate the RTCs.
+
+JoystickControlEV3 is an RT system that controls the EV3 using a joystick component.
+
+To deactivate the system, execute:
+
+```text
+JoystickControlEV3_stop.bat
+```
+
+To disconnect the ports, execute:
+
+```text
+JoystickControlEV3_teardown.bat
+```
+
+## Sample Details
+
+For samples other than JoystickControlEV3:
+
+- `****_resurrect.bat` : Restore RT system
+- `****_activate.bat` : Activate RTCs
+- `****_stop.bat` : Deactivate RTCs
+- `****_teardown.bat` : Disconnect ports
+
 <table class="table-alt">
   <tr>
-    <th>ファイル名</th>
-    <th>内容</th>
+    <th>File Name</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>`****_resurrect.bat`</td>
-    <td>RTシステム復元</td>
+    <td>Restore RT system</td>
   </tr>
   <tr>
     <td>`****_activate.bat`</td>
-    <td>アクティブ化</td>
+    <td>Activate RTCs</td>
   </tr>
   <tr>
     <td>`****_stop.bat`</td>
-    <td>非アクティブ化</td>
+    <td>Deactivate RTCs</td>
   </tr>
   <tr>
     <td>`****_teardown.bat`</td>
-    <td>ポートの切断</td>
+    <td>Disconnect ports</td>
   </tr>
 </table>
 
 ### GamePadSimpleControlEV3
-このサンプルはゲームパッドのアナログスティックで傾けた方向に Educator Vehicle を操作する RTシステムです。
-Windows側の PC にゲームパッドを接続してから起動してください。
+
+This sample RT system controls the Educator Vehicle in the direction indicated by the analog stick of a gamepad.
+
+Connect a gamepad to the Windows PC before starting the system.
 
 <div align="center"><a href="ev3_9.png"><img src="ev3_9.png" width="70%;"></a></div>
 
 ### JoystickSimpleControlEV3
-このサンプルは OpenRTM-aist-Python のサンプルコンポーネント TkJoyStick で傾けた方向に Educator Vehicle を操作する RTシステムです。
+
+This sample RT system controls the Educator Vehicle in the direction indicated by the TkJoyStick sample component included with OpenRTM-aist-Python.
 
 <div align="center"><a href="ev3_8.png"><img src="ev3_8.png" width="70%;"></a></div>
 
 ### GamePadControlEV3
-このサンプルはゲームパッドのアナログスティックで傾けた方向に Educator Vehicle を操作することに加えて、[タッチセンサー、超音波センサー、カラーセンサーを利用した制御](../lego_ev3_rtc_install#toc6) を行う RTシステムです。
+
+In addition to controlling the Educator Vehicle using a gamepad's analog stick, this sample RT system performs [control using the touch sensor, ultrasonic sensor, and color sensor](../lego_ev3_rtc_install#toc6).
 
 <div align="center"><a href="ev3_6.png"><img src="ev3_6.png" width="70%;"></a></div>
 
 ### JoystickControlEV3
-このサンプルは OpenRTM-aist-Python のサンプルコンポーネント TkJoyStick で傾けた方向に Educator Vehicle を操作することに加えて、[タッチセンサー、超音波センサー、カラーセンサーを利用した制御](../lego_ev3_rtc_install#toc6) を行う RTシステムです。
+
+In addition to controlling the Educator Vehicle using the TkJoyStick sample component included with OpenRTM-aist-Python, this sample RT system performs [control using the touch sensor, ultrasonic sensor, and color sensor](../lego_ev3_rtc_install#toc6).
 
 <div align="center"><a href="ev3_7.png"><img src="ev3_7.png" width="70%;"></a></div>
--------jp page!!-------
+

@@ -1,20 +1,22 @@
 ---
 layout: page
-title: ラズパイマウス用 RTC のインストール(Windows)
+title: Installing RTCs for Raspberry Pi Mouse (Windows)
 ---
--------jp page!!-------
 
-<!-- Title: ラズパイマウス用 RTC のインストール(Windows) -->
+<!-- Title: Installing RTCs for Raspberry Pi Mouse (Windows) -->
 #contents
 
+# Script Files
 
-# スクリプトファイル
-RTC の起動、RTシステムの復元を自動化するためのスクリプトファイルです。
-[ここ](https://github.com/Nobu19800/RaspberryPiMouseRTSystem_script/archive/master.zip) からダウンロードしてください。
+These are script files for automating RTC startup and RT system restoration.
+
+Download them from [here](https://github.com/Nobu19800/RaspberryPiMouseRTSystem_script/archive/master.zip).
 
 # RaspberryPiMouseGUI
-ラズパイマウス操作用GUIです。
-スクリプトファイルの項目でダウンロードしたファイルの中に同梱されています。
+
+This is a GUI for operating Raspberry Pi Mouse.
+
+It is included in the file downloaded in the Script Files section.
 
 <div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/Components/RaspberryPiMouseGUI/RaspberryPiMouseGUI.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/Components/RaspberryPiMouseGUI/RaspberryPiMouseGUI.png" width="60%;"></a></div>
 
@@ -28,53 +30,52 @@ RTC の起動、RTシステムの復元を自動化するためのスクリプ�
     <td colspan="3" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>current_velocity</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>現在の速度</td>
+    <td>Current velocity</td>
   </tr>
   <tr>
     <td>current_pose</td>
     <td>RTC::TimedPose2D</td>
-    <td>現在の位置、姿勢</td>
+    <td>Current position and orientation</td>
   </tr>
   <tr>
     <td>distance_sensor</td>
     <td>RTC::TimedShortSeq</td>
-    <td>距離センサの計測値</td>
+    <td>Distance sensor measurements</td>
   </tr>
   <tr>
     <td>orientation</td>
     <td>RTC::TimedOrientation3D</td>
-    <td>現在の姿勢</td>
+    <td>Current orientation</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>target_velocity</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>目標速度</td>
+    <td>Target velocity</td>
   </tr>
   <tr>
     <td>target_position</td>
     <td>RTC::TimedPoint2D</td>
-    <td>目標位置(未使用)</td>
+    <td>Target position (unused)</td>
   </tr>
   <tr>
     <td>update_pose</td>
     <td>RTC::TimedPose2D</td>
-    <td>位置再設定</td>
+    <td>Position reset</td>
   </tr>
 </table>
 
--------jp page!!-------

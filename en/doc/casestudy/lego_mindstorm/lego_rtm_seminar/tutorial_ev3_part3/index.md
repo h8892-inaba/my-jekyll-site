@@ -1,64 +1,64 @@
 ---
 layout: page
-title: チュートリアル(EV3、第3部)
+title: Tutorial (EV3, Part 3)
 ---
--------jp page!!-------
 
-<!-- Title: チュートリアル(EV3、第3部) -->
+<!-- Title: Tutorial (EV3, Part 3) -->
 #contents
 
-このページでは2台のEV3を連携したRTシステムの構築を行います。
+In this section, we will build an RT system that coordinates two EV3 units.
 
-1台目のEV3をアクセスポイントとして、ノートPCと2台目のEV3をアクセスポイントに接続します。
+Use the first EV3 as an access point, and connect both the laptop PC and the second EV3 to that access point.
 
-※EV3(1台目)は奇数番号のものを配布します。EV3のシールに記載された番号を確認してください。
-EV3(2台目)はEV3(1台目)の次の番号のものを配布します。(例：EV3(1台目)：7、EV3(2台目)：8)
+*Note:* EV3 (Unit 1) will be distributed with an odd-numbered ID. Please check the number indicated on the EV3 label.
+EV3 (Unit 2) will be distributed with the next consecutive number after EV3 (Unit 1). (Example: EV3 (Unit 1): 7, EV3 (Unit 2): 8)
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_irex23.png"><img src="tutorial_ev3_irex23.png" width="50%;"></a></div>
 <br>
 
-## EV3(2台目)の組立て
-[第二部]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_win)の手順に従って2台目のEducator Vehicleを組み立ててください。
+## Assembling EV3 (Unit 2)
 
-## EV3との接続
-### ノートPCとEV3(1台目)の接続
-[第二部]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_win)の、実機での動作確認まで完了してください。
-この時点でノートPCとアクセスポイントのEV3が接続されているはずです。
+Follow the instructions in [Part 2]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_win) to assemble the second Educator Vehicle.
 
+## Connecting to the EV3
 
+### Connecting the Laptop PC and EV3 (Unit 1)
+
+Complete the procedure in [Part 2]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_win) through the hardware operation test.
+
+At this point, the laptop PC should already be connected to the EV3 configured as an access point.
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_irex24.png"><img src="tutorial_ev3_irex24.png" width="50%;"></a></div>
 <br>
 
+### Connecting EV3 (Unit 1) and EV3 (Unit 2)
 
-### EV3(1台目)とEV3(2台目)の接続
+First, power on EV3 (Unit 2).
 
-まずはEV3(2台目)の電源を投入してください。
-起動後にEV3(1台目)に自動接続します。
-自動接続できた場合は、EV3の画面左上にIPアドレスが表示されます。
-IPアドレスは192.168.11.yyyが表示されます。
+After startup, it will automatically connect to EV3 (Unit 1).
 
+If the automatic connection succeeds, an IP address will be displayed in the upper-left corner of the EV3 screen.
+
+The displayed IP address will be in the form **192.168.11.yyy**.
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_irex25.png"><img src="tutorial_ev3_irex25.png" width="50%;"></a></div>
 <br>
 
+If a different IP address is displayed, please verify that you received the correct EV3 unit number.
 
+#### Starting the Name Server and RTC
 
-他のIPアドレスが表示されている場合は、配布したEV3の番号が違う可能性があるため確認してください。
+Start the Name Server and RTC from the EV3 (Unit 2) screen.
 
-#### ネームサーバー、RTCの起動
-EV3(2台目)の画面上の操作でネームサーバーとRTCを起動します。
+From the EV3 menu, select **"File Browser" → "scripts"**.
 
-EV3 の操作画面から「File Browser」→「scripts」を選択してください。
-
-
-ネームサーバー、RTCは**start_rtcs.sh**のスクリプトを実行することで起動します。
+The Name Server and RTC can be started by executing the **start_rtcs.sh** script.
 
 ```
  ------------------------------
@@ -75,19 +75,14 @@ EV3 の操作画面から「File Browser」→「scripts」を選択してくだ
  ------------------------------
 ```
 
-
 <br>
 
 <div align="center"><a href="tutorial_ev3_irex32.png"><img src="tutorial_ev3_irex32.png" width="70%;"></a></div>
 <br>
 
+### Adding a Name Server
 
-
-### ネームサーバー追加
-RTシステムエディタから、192.168.11.yyyのネームサーバーに接続してください。
-
-
-
+From RT System Editor, connect to the Name Server at **192.168.11.yyy**.
 
 <br>
 
@@ -95,12 +90,13 @@ RTシステムエディタから、192.168.11.yyyのネームサーバーに接�
 <br>
 <br>
 
+At this point, the Name Service View in RT System Editor should contain the Name Servers:
 
+- localhost
+- 192.168.0.1
+- 192.168.11.yyy
 
-この時点でRTシステムエディタのネームサービスビューにはlocalhost、192.168.0.1、192.168.11.yyyのネームサーバーが登録されています。
-192.168.11.yyyのネームサーバーに登録されているRTCの名前は**EducatorVehicle1**となります。
-
-
+The RTC registered on the Name Server at **192.168.11.yyy** is named **EducatorVehicle1**.
 
 <br>
 
@@ -114,54 +110,46 @@ RTシステムエディタから、192.168.11.yyyのネームサーバーに接�
 - 192.168.11.yyy
   - EducatorVehicle1
 
+## Operation Test
 
-## 動作確認
+Connect **EducatorVehicle0 (192.168.0.1)** and **EducatorVehicle1 (192.168.11.yyy)** on the system diagram.
 
-EducatorVehicle0(192.168.0.1)とEducatorVehicle1(192.168.11.yyy)をシステムダイアグラム上で接続してください。
-EducatorVehicle1の現在の速度出力をEducatorVehicle0の目標速度入力に接続することで、EV3(2台目)の動きにEV3(1台目)が追従するようになります。
-
+By connecting the current velocity output of EducatorVehicle1 to the target velocity input of EducatorVehicle0, EV3 (Unit 1) will follow the movement of EV3 (Unit 2).
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_irex31.png"><img src="tutorial_ev3_irex31.png" width="70%;"></a></div>
 <br>
 
-
-RTCをアクティベートして2台目のEducator Vehicleの車輪を転がすと、1台目のEducator Vehicleがそれに合わせて動作します。
-
-
+Activate the RTCs and rotate the wheels of the second Educator Vehicle. The first Educator Vehicle will move accordingly.
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_irex28.png"><img src="tutorial_ev3_irex28.png" width="50%;"></a></div>
 <br>
 
+## Optional Exercises
 
-## 自由課題
-これで実習は一通り終了ですが、時間が余っている場合は以下のような課題に挑戦してみてください。
+This completes the main hands-on exercise. If you have extra time, try some of the following challenges.
 
+### Examples
 
-### 例
-- EV3(2台目)のタッチセンサのオンオフでEV3(1台目)を操作
+- Control EV3 (Unit 1) using the ON/OFF state of the touch sensor on EV3 (Unit 2)
 
-- [ジョイスティックコンポーネントで2台同時に操作]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_tutorial_ev3#toc18)
+- [Control Two EV3 Units Simultaneously with a Joystick Component]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_tutorial_ev3#toc18)
 
-ジョイスティックコンポーネントはOpenRTM-aist Python版のサンプルにあります(**TkJoyStickComp.py**)。
-TkJoyStickComp.pyのアウトポートのデータ型は**TimedFloatSeq**型であるため、**TimedVelocity2D**型に変換するRTCを作成する必要があります。
+The joystick component is included as a sample in OpenRTM-aist Python (**TkJoyStickComp.py**).
 
+Since the OutPort data type of TkJoyStickComp.py is **TimedFloatSeq**, you must create an RTC that converts it to the **TimedVelocity2D** type.
 
-- [EV3をしゃべらせる]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_ev3_rtc_install#toc2)
+- [Make the EV3 Speak]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_ev3_rtc_install#toc2)
 
-EducatorVehicleRTCの**sound**という名前のインポートに文字列(TimedString型)を入力すると、EV3が発声します。
+If a string (**TimedString** type) is input to the InPort named **sound** of EducatorVehicleRTC, the EV3 will speak the text.
 
-
-文字列(const char*)をデータポートで出力する際は**CORBA::string_dup関数**で文字列をコピーする必要があります。
+When outputting a string (**const char*** ) through a DataPort, you must copy the string using the **CORBA::string_dup()** function.
 
 ```
- m_out.data= CORBA::string_dup("abc");
+ m_out.data = CORBA::string_dup("abc");
 ```
 
-
-- 各種センサの利用(カラーセンサ、超音波センサ、ジャイロセンサ)
-
--------jp page!!-------
+- Use various sensors (Color Sensor, Ultrasonic Sensor, Gyro Sensor)

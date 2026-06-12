@@ -1,29 +1,27 @@
 ---
 layout: page
-title: "OpenRTM-aistとは？"
+title: "What is OpenRTM-aist?"
 ---
--------jp page!!-------
-<!-- Title: OpenRTM-aistとは？ -->
+<!-- Title: What is OpenRTM-aist? -->
 <div align="right"><img src="piping_rtm_logo2.png" width="15%;" align="right"></div>
 
-OpenRTM-aistはロボットシステムをコンポーネント指向開発するためのソフトウエアプラットフォームです。
+OpenRTM-aist is a software platform for component-oriented development of robotic systems.
 <!--break-->
-OpenRTM-aistでは、ロボットシステムを作る際に、機能要素ごとにソフトウエア ― RTコンポーネント(RTCと呼ぶ)を作成し、それらをつなぎ合わせることでシステムを構築します。RTコンポーネントは、**C++**、**Python**、**Java**言語で開発することができ、主要なOS (Linux/Unix、Windows、Mac OS X)をサポートしています。
-コンポーネント開発や、コンポーネントを利用したシステム開発には、**Eclipse**ツールおよび、コマンドラインのツールを利用できます。
+In OpenRTM-aist, when building a robotic system, software modules called RT Components (RTCs) are created for each functional element, and the system is constructed by connecting these components together. RT Components can be developed in **C++**, **Python**, and **Java**, and support major operating systems such as Linux/Unix, Windows, and Mac OS X.
 
+For component development and system development using components, both **Eclipse**-based tools and command-line tools are available.
 
-RTコンポーネントは、コンポーネント間でデータやコマンドのやり取りをするためのポートと呼ばれる機能や、振る舞いを統一するためのアクティビティと呼ばれる基本的な状態遷移および、パラメーターを外部から操作可能なコンフィギュレーションといった機能が備わっています。
-これらの機能を利用することで、独立性や再利用性の高いモジュールを容易に作成できます。既存のコンポーネントを利用することで、最小限のプログラミングでシステムを構築できます。
+RT Components provide features such as ports for exchanging data and commands between components, activities that define standardized state transitions and behavior, and configurations that allow parameters to be manipulated externally.
 
-OpenRTM-aistは、ネットワーク透過性、OSやプログラミング言語に対する非依存性を重視して分散オブジェクト規格CORBAを用いて実装されています。現在のところ、OpenRTM-aistはC++、Python、およびJava言語での実装が提供されています。
+By utilizing these features, it is easy to create highly independent and reusable modules. By reusing existing components, systems can be built with minimal programming effort.
 
+OpenRTM-aist is implemented using CORBA, a distributed object standard, with an emphasis on network transparency and independence from operating systems and programming languages. Currently, OpenRTM-aist implementations are available in C++, Python, and Java.
 
-- [RTミドルウエア]({{ site.baseurl }}/ja/doc/aboutopenrtm/rtmiddleware/)
-- [ライセンス]({{ site.baseurl }}/ja/doc/aboutopenrtm/license/)
-- [OpenRTM-aist 諸元]({{ site.baseurl }}/ja/doc/aboutopenrtm/specification/)
-- [RTコンポーネントアーキテクチャ]({{ site.baseurl }}/ja/doc/aboutopenrtm/rtc_architecture)
-- [RTC開発の流れ]({{ site.baseurl }}/ja/doc/aboutopenrtm/rtc_developmentflow/)
-- [RTシステム開発の流れ]({{ site.baseurl }}/ja/doc/aboutopenrtm/rts_developmentflow/)
-- [研究開発]({{ site.baseurl }}/ja/doc/aboutopenrtm/researchanddevel/)
+- [RT Middleware]({{ site.baseurl }}/ja/doc/aboutopenrtm/rtmiddleware/)
+- [License]({{ site.baseurl }}/ja/doc/aboutopenrtm/license/)
+- [OpenRTM-aist Specifications]({{ site.baseurl }}/ja/doc/aboutopenrtm/specification/)
+- [RT Component Architecture]({{ site.baseurl }}/ja/doc/aboutopenrtm/rtc_architecture)
+- [RTC Development Flow]({{ site.baseurl }}/ja/doc/aboutopenrtm/rtc_developmentflow/)
+- [RT System Development Flow]({{ site.baseurl }}/ja/doc/aboutopenrtm/rts_developmentflow/)
+- [Research and Development]({{ site.baseurl }}/ja/doc/aboutopenrtm/researchanddevel/)
 
--------jp page!!-------

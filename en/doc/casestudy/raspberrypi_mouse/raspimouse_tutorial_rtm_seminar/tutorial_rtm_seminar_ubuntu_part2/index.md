@@ -1,148 +1,139 @@
 ---
 layout: page
-title: チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Ubuntu)
+title: Tutorial (Introduction to RT-Component Development, Raspberry Pi Mouse, Ubuntu)
 ---
--------jp page!!-------
 
 #contents
 
-## はじめに
+## Introduction
 
-このページではシミュレーター上の Raspberry Pi マウスを操作するためのコンポーネントの作成手順を説明します。
+This page explains the procedure for creating a component to operate the Raspberry Pi Mouse in the simulator.
 
 <div align="center"><a href="raspimouse2.png"><img src="raspimouse2.png" width="70%;"></a></div>
 
+## Downloading the Materials
 
+First, download the tutorial materials. If a USB flash drive has been distributed during the seminar, downloading is not necessary.
 
-
-
-## 資料のダウンロード
-
-まずは資料をダウンロードしてください。講習会でUSBメモリを配布している場合はダウンロードは不要です。
-
-```
+```bash
  git clone https://github.com/OpenRTM/RTM_Tutorial
 ```
 
-インターネットに接続できない環境で講習会を実施している場合がありますので、その場合は配布のUSBメモリーに入れてあります。
+Seminars may sometimes be conducted in environments without Internet access. In such cases, the materials are included on the distributed USB flash drive.
 
+### Simulator
 
+- [RaspberryPiMouseSimulator Component](/ja/node/6198)
 
+The simulator was developed using the physics engine [Open Dynamics Engine (ODE)](http://www.ode.org/) and the rendering library (drawstuff) included with ODE.
 
-### シミュレーター
+Since it only requires OpenGL support, it should run in most environments.
 
-- [RaspberryPiMouseSimulatorコンポーネント](/ja/node/6198)
-
-シミュレーターは [Open Dynamics Engine(ODE)](http://www.ode.org/) という物理演算エンジンと ODE 付属の描画ライブラリ(drawstuff)を使用して開発しています。
-OpenGL が動作すれば動くので、大抵の環境で動作するはずです。
-
-以下の [Raspberry Piマウス](http://products.rt-net.jp/micromouse/raspberry-pi-mouse) というロボットのシミュレーションができます。
+It can simulate the following robot, the [Raspberry Pi Mouse](http://products.rt-net.jp/micromouse/raspberry-pi-mouse).
 
 <div align="center"><a href="s_DSC00444.JPG"><img src="s_DSC00444.JPG" width="50%;"></a></div>
 
+The simulator reproduces not only the dynamics calculations and collision responses of the Raspberry Pi Mouse, but also distance sensor data with values close to those of the actual robot.
 
-シミュレーター上の Raspberry Pi マウスの動力学計算、接触応答だけではなく、距離センサーのデータも現実のロボットに近い値を再現するようにしています。
+## Raspberry Pi Mouse Specifications
 
-## Raspberry Piマウスの仕様
-
-Raspberry Piマウスはアールティが販売している独立二輪駆動型の移動ロボットです。
+The Raspberry Pi Mouse is an independently driven two-wheel mobile robot sold by RT Corporation.
 
 <div align="center"><a href="raspi_gaiyou.jpg"><img src="raspi_gaiyou.jpg" width="70%;"></a></div>
 
-
-
 <table class="table-alt">
   <tr>
-    <th colspan="2" style="text-align: center;"> ラズパイマウスの仕様</th>
+    <th colspan="2" style="text-align: center;">Raspberry Pi Mouse Specifications</th>
   </tr>
   <tr>
     <td>CPU</td>
     <td>Raspberry Pi 2 Model B</td>
   </tr>
   <tr>
-    <td>モーター</td>
-    <td>ステッピングモーターST-42BYG020 2個</td>
+    <td>Motor</td>
+    <td>Two ST-42BYG020 stepping motors</td>
   </tr>
   <tr>
-    <td>モータードライバー</td>
-    <td>SLA7070MRPT 2個</td>
+    <td>Motor Driver</td>
+    <td>Two SLA7070MRPT units</td>
   </tr>
   <tr>
-    <td>距離センサー</td>
-    <td>赤色LED+フォトトランジスタ(ST-1K3) 4個</td>
+    <td>Distance Sensor</td>
+    <td>Four red LEDs + phototransistors (ST-1K3)</td>
   </tr>
   <tr>
-    <td>モニター用赤色LED</td>
-    <td>4個</td>
+    <td>Red LEDs for Monitoring</td>
+    <td>4</td>
   </tr>
   <tr>
-    <td>ブザー</td>
-    <td>1個</td>
+    <td>Buzzer</td>
+    <td>1</td>
   </tr>
   <tr>
-    <td>スイッチ</td>
-    <td>3個</td>
+    <td>Switch</td>
+    <td>3</td>
   </tr>
   <tr>
-    <td>バッテリー</td>
-    <td>LiPo3セル(11.1V)1000mAh 1個</td>
+    <td>Battery</td>
+    <td>One LiPo 3-cell (11.1V) 1000mAh battery</td>
   </tr>
 </table>
 
 
+## RT-Component to Be Created
 
-## 作成する RTコンポーネント
+- RobotController Component
 
-- RobotController コンポーネント
+This component connects to the RaspberryPiMouseSimulator component and controls the robot in the simulator.
 
-RaspberryPiMouseSimulator コンポーネントと接続してシミュレーター上のロボットを操作するためのコンポーネントです。
+## Creating the RobotController Component
 
-## RobotController コンポーネントの作成
-
-GUI(スライダー)によりシミュレーター上のロボットの操作を行い、センサー値が一定以上の時には自動的に停止するコンポーネントの作成を行います。
+In this tutorial, you will create a component that operates the robot in the simulator using a GUI (slider) and automatically stops the robot when the sensor value exceeds a specified threshold.
 
 <div align="center"><a href="robotcomp.png"><img src="robotcomp.png" width="70%;"></a></div>
 
-### 作成手順
-作成手順は以下の通りです。
+### Development Procedure
 
-- 開発環境の確認
-- コンポーネントの仕様を決める
-- RTC Builder によるソースコードのひな型コードの作成
-- ソースコードの編集
-- コンポーネントの動作確認
+The procedure is as follows:
 
-### 動作環境・開発環境
-Linux (ここでは Ubuntu 18.04 を仮定) 上に開発環境を構築します。
+- Verify the development environment
+- Define the component specification
+- Generate source code skeletons using RTC Builder
+- Edit the source code
+- Verify component operation
 
+### Runtime Environment and Development Environment
 
-#### OpenRTM-aistのインストール
-```
+Set up the development environment on Linux. In this tutorial, Ubuntu 18.04 is assumed.
+
+#### Installing OpenRTM-aist
+
+```bash
  $ wget https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh
  $ pkg_install_ubuntu.sh -l all --yes
 ```
 
-#### JDKのインストール
+#### Installing the JDK
 
-```
- # Ubuntu 18.04、18.10の場合
+```bash
+ # For Ubuntu 18.04 and 18.10
  $ sudo apt-get install openjdk-8-jdk
- # Ubuntu 16.04の場合
+ # For Ubuntu 16.04
  $ sudo apt-get install default-jdk
 ```
 
-Ubuntu 18.04、18.10の場合は以下のコマンドでjava8に切り替えます。
+For Ubuntu 18.04 and 18.10, switch to Java 8 using the following command:
 
-```
+```bash
  $ sudo update-alternatives --config java
 ```
 
-<!-- **** OpenRTP のインストール -->
+<!-- **** Installing OpenRTP -->
 
-<!-- [[こちらのURL:/ja/node/6037]] から Linux版の OpenRTP (コンポーネント開発ツール、システム開発ツール統合環境) をダウンロード、インストールします。 -->
-<!-- OepnRTP の実行には Java も必要となりますので default-jre パッケージをインストールします。 -->
+<!-- Download and install the Linux version of OpenRTP (integrated environment for component development tools and system development tools) from [[this URL:/ja/node/6037]]. -->
+<!-- Java is also required to run OpenRTP, so install the default-jre package. -->
 
-<!-- **** JREのインストール -->
+<!-- **** Installing JRE -->
 
 <!-- $ apt-get install default-jre -->
 <!-- $ wget http://openrtm.org/pub/openrtp/packages/1.1.2.v20160526/eclipse442-openrtp112v20160526-ja-linux-gtk-x86_64.tar.gz -->
@@ -151,131 +142,131 @@ Ubuntu 18.04、18.10の場合は以下のコマンドでjava8に切り替えま�
 <!-- $ ./eclipse -->
 <!-- $ ./openrtp -->
 
-<span style="color:red;">openrtp起動後、RTSystemEditor でネームサーバに接続できない場合があります。その場合、/etc/hosts の localhost の行に自ホスト名を追記してください。</span>;
+<span style="color:red;">After starting openrtp, RTSystemEditor may not be able to connect to the Name Server. In that case, add your host name to the localhost line in /etc/hosts.</span>
 
-```
+```bash
  $ hostname
- ubuntu1804 ← ホスト名は ubuntu1804
+ ubuntu1804 ← The host name is ubuntu1804
  $ sudo vi /etc/hosts
 ```
 
-```
+```text
  127.0.0.1       localhost
- を以下のように変更
+ Change it as follows:
  127.0.0.1       localhost ubuntu1804
 ```
 
+#### Installing git
 
-#### gitのインストール
-
-```
+```bash
  $ sudo apt-get install git
 ```
 
-#### cmake-guiのインストール
+#### Installing cmake-gui
 
-```
+```bash
  $ sudo apt-get install cmake-qt-gui
 ```
 
+#### Installing Code::Blocks
 
-#### Code::Blocks のインストール
-Code::Blocks は C/C++ に対応した統合開発環境です。
-以下のコマンドでインストールできます。
+Code::Blocks is an integrated development environment that supports C/C++.
 
-```
+It can be installed using the following command:
+
+```bash
  $ sudo apt-get install codeblocks
 ```
 
-最新版を入手したい場合は以下のコマンドを入力します。
+To install the latest version, enter the following commands:
 
-```
+```bash
  $ sudo add-apt-repository ppa:damien-moore/codeblocks-stable
  $ sudo apt-get update
  $ sudo apt-get install codeblocks
 ```
 
-#### Premake、GLUTのインストール
-ODEのビルドに必要です。
+#### Installing Premake and GLUT
 
-```
+These are required to build ODE.
+
+```bash
  $ sudo apt-get install premake4 freeglut3-dev
 ```
 
-#### RaspberryPiMouseSimulator コンポーネント
-シミュレーターコンポーネントについては手動でビルドを行います。
-以下のコマンドを入力してください。
+#### RaspberryPiMouseSimulator Component
 
-```
+The simulator component must be built manually.
+
+Enter the following commands:
+
+```bash
  $ wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial/master/script/install_raspimouse_simulator.sh
  $ sudo sh install_raspimouse_simulator.sh
 ```
 
+Seminars may sometimes be conducted in environments without Internet access. In such cases, run the script included on the distributed USB flash drive.
 
-インターネットに接続できない環境で講習会を実施している場合がありますので、その場合は配布の USBメモリー内のスクリプトを起動してください。
-
-```
+```bash
  $ sudo sh install_raspimouse_simulator_usb.sh
 ```
 
+### Component Specification
 
-
-### コンポーネントの仕様
-
-RobotController は目標速度を出力するアウトポート、センサー値を入力するインポート、目標速度や停止するセンサー値を設定するコンフィギュレーションパラメーターを持っています。
+RobotController has an OutPort for outputting target velocity, an InPort for inputting sensor values, and Configuration parameters for setting the target velocity and the sensor value at which the robot stops.
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名称</th>
+    <th>Component Name</th>
     <th>RobotController</th>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>in</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>RTC::TimedShortSeq</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>センサー値</td>
+    <td>Description</td>
+    <td>Sensor values</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>out</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>RTC::TimedVelocity2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>目標速度</td>
+    <td>Description</td>
+    <td>Target velocity</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>speed_x</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0.0</td>
   </tr>
   <tr>
-    <td>制約</td>
+    <td>Constraint</td>
     <td>-1.5&lt;:x&lt;:1.5</td>
   </tr>
   <tr>
@@ -287,26 +278,26 @@ RobotController は目標速度を出力するアウトポート、センサー�
     <td>0.01</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>直進速度の設定</td>
+    <td>Description</td>
+    <td>Forward velocity setting</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>speed_r</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0.0</td>
   </tr>
   <tr>
-    <td>制約</td>
+    <td>Constraint</td>
     <td>-2.0&lt;:x&lt;:2.0</td>
   </tr>
   <tr>
@@ -318,34 +309,36 @@ RobotController は目標速度を出力するアウトポート、センサー�
     <td>0.01</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>回転速度の設定</td>
+    <td>Description</td>
+    <td>Rotational velocity setting</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>stop_d</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>int</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>30</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>停止するセンサー値の設定</td>
+    <td>Description</td>
+    <td>Sensor threshold for stopping</td>
   </tr>
 </table>
 
-#### TimedVelocity2D 型について
-2次元平面上の移動ロボットの移動速度を格納するデータ型である TimedVelocity2D 型を使用します。
 
-```
+#### About the TimedVelocity2D Type
+
+The `TimedVelocity2D` type is used to store the velocity of a mobile robot moving on a two-dimensional plane.
+
+```cpp
      struct Velocity2D
      {
          /// Velocity along the x axis in metres per second.
@@ -364,37 +357,34 @@ RobotController は目標速度を出力するアウトポート、センサー�
      };
 ```
 
+This data type can store the X-axis velocity **vx**, the Y-axis velocity **vy**, and the rotational velocity around the Z-axis **va**.
 
-
-このデータ型にはX軸方向の速度**vx**、Y軸方向の速度**vy**、Z軸周りの回転速度**va**が格納できます。
-
-**vx**、**vy**、**va**はロボット中心座標系での速度を表しています。
+**vx**, **vy**, and **va** represent velocities in the robot-centered coordinate system.
 
 <br>
 
 <div align="center"><a href="tu_ev3_20.png"><img src="tu_ev3_20.png" width="50%;"></a></div>
 <br>
 
-**vx**はX方向の速度、**vy**はY方向の速度、**va**はZ軸周りの角速度です。
+**vx** is the velocity in the X direction, **vy** is the velocity in the Y direction, and **va** is the angular velocity around the Z axis.
 
-Raspberry Piマウスのように2個の車輪が左右に取り付けられているロボットの場合、横滑りしないと仮定すると**vy**は0になります。
+For a robot such as Raspberry Pi Mouse, which has two wheels mounted on the left and right sides, **vy** is assumed to be 0 if lateral slipping is not considered.
 
-直進速度**vx**、回転速度**va**を指定することでロボットの操作を行います。
+The robot is controlled by specifying the forward velocity **vx** and rotational velocity **va**.
 
-#### 距離センサーのデータについて
-Raspberry Pi マウスの距離センサーのデータは物体との距離が近づくほど大きな値を出力するようになっています。
+#### About Distance Sensor Data
 
+The Raspberry Pi Mouse distance sensors output larger values as an object gets closer.
 
 <br>
 
 <div align="center"><a href="rpm14_graph.png"><img src="rpm14_graph.png" width="70%;"></a></div>
 <br>
 
-
 <table class="table-alt">
   <tr>
-    <th>デバイスファイルから取得した数値</th>
-    <th>実際の距離[m]</th>
+    <th>Value Obtained from Device File</th>
+    <th>Actual Distance [m]</th>
   </tr>
   <tr>
     <td>1394</td>
@@ -454,541 +444,510 @@ Raspberry Pi マウスの距離センサーのデータは物体との距離が�
   </tr>
 </table>
 
-シミュレーターではこの値を再現して出力しています。
-RobotController コンポーネントではこの値が一定以上の時に自動的に停止する処理を実装します。
+The simulator reproduces and outputs these values.
 
+In the RobotController component, we will implement processing that automatically stops the robot when this value exceeds a specified threshold.
 
-### RobotController コンポーネントのひな型コードの生成
+### Generating the Skeleton Code for the RobotController Component
 
-RobotController コンポーネントのひな型コードの生成は、RTCBuilder を用いて行います。
+The skeleton code for the RobotController component is generated using RTCBuilder.
 
-#### RTCBuilder の起動
-OpenRTP では、各種作業を行うフォルダーを「ワークスペース」(Work Space)とよび、原則としてすべての生成物はこのフォルダーの下に保存されます。
-ワークスペースはアクセスできるフォルダーであれば、どこに作っても構いませんが、このチュートリアルでは以下のワークスペースを仮定します。
+#### Starting RTCBuilder
 
-- /home/ユーザー名/workspace
+In OpenRTP, the folder used for various tasks is called a "workspace" (Work Space), and in principle, all generated files are stored under this folder.
 
-まずは OpenRTP を起動します。
+The workspace can be created in any accessible folder, but this tutorial assumes the following workspace:
 
-```
+- /home/user_name/workspace
+
+First, start OpenRTP.
+
+```bash
  $ openrtp2
 ```
 
-最初にワークスペースの場所を尋ねられますので、上記のワークスペースを指定してください。
-
+You will first be asked to specify the workspace location. Specify the workspace shown above.
 
 <div align="center"><a href="workspace_ubuntu.png"><img src="workspace_ubuntu.png" width="70%;"></a></div>
 
-
-すると、以下のような Welcome ページが表示されます。
+A Welcome page like the one below will then appear.
 
 <br>
 
-
 <div align="center"><a href="install41.png"><img src="install41.png" width="60%;"></a></div>
-<div align="center"><strong>OpenRTP の初期起動時の画面</strong></div>
+<div align="center"><strong>Initial OpenRTP Startup Screen</strong></div>
 
-Welcome ページはいまは必要ないので左上の「×」ボタンをクリックして閉じてください。
+The Welcome page is not needed at this point, so close it by clicking the "×" button in the upper-left corner.
 
-右上の [Open Perspective] ボタンをクリックしてください。
+Click the [Open Perspective] button in the upper-right corner.
 
 <div align="center"><a href="install42.png"><img src="install42.png" width="60%;"></a></div>
-<div align="center"><strong>パースペクティブの切り替え</strong></div>
+<div align="center"><strong>Switching Perspectives</strong></div>
 
-「RTC Builder」を選択することで、RTCBuilderが起動します。メニューバーに「カナヅチとRT」の RTCBuilder のアイコンが現れます。
+Select "RTC Builder" to start RTCBuilder. The RTCBuilder icon labeled with a "hammer and RT" will appear in the menu bar.
 
 <div align="center"><a href="robomech2018_3.jpg"><img src="robomech2018_3.jpg" width="60%;"></a></div>
-<div align="center"><strong>パースペクティブの選択</strong></div>
+<div align="center"><strong>Selecting a Perspective</strong></div>
 
 
+#### Creating a New Project
 
+To create the RobotController component, you need to create a new project in RTC Builder.
 
-#### 新規プロジェクトの作成
-
-RobotController コンポーネントを作成するために、RTC Builder で新規プロジェクトを作成する必要があります。
-
-左上の [Open New RTCBuilder Editor] のアイコンをクリックしてください。
-
-
+Click the [Open New RTCBuilder Editor] icon in the upper-left corner.
 
 <div align="center"><a href="CreateProject_0.png"><img src="CreateProject_0.png" width="70%;"></a></div>
-<div align="center"><strong>RTC Builder 用プロジェクトの作成</strong></div>
+<div align="center"><strong>Creating a Project for RTC Builder</strong></div>
 
-｢プロジェクト名｣欄に作成するプロジェクト名 (ここでは **RobotController**) を入力して [終了] をクリックします。
-
-
+Enter the project name to create (**RobotController** in this example) in the "Project Name" field and click [Finish].
 
 <div align="center"><a href="RT-Component-BuilderProject_1.png"><img src="RT-Component-BuilderProject_1.png" width="70%;"></a></div>
 
-指定した名称のプロジェクトが生成され、パッケージエクスプローラ内に追加されます。
-
-
+A project with the specified name is generated and added to the Package Explorer.
 
 <div align="center"><a href="PackageExplolrer_1.png"><img src="PackageExplolrer_1.png" width="70%;"></a></div>
 
-生成したプロジェクト内には、デフォルト値が設定された RTC プロファイル XML(RTC.xml) が自動的に生成されます。
+An RTC profile XML file (`RTC.xml`) with default values is automatically generated in the generated project.
 
-#### RTC プロファイルエディタの起動
+#### Starting the RTC Profile Editor
 
-RTC.xmlが生成された時点で、このプロジェクトに関連付けられているワークスペースとして RTCBuilder のエディタが開くはずです。
-もし起動しない場合はパッケージエクスプローラーの RTC.xml をダブルクリックしてください。
+When `RTC.xml` is generated, the RTCBuilder editor associated with this project should open automatically.
 
+If it does not start, double-click `RTC.xml` in the Package Explorer.
 
 <div align="center"><a href="Open_RTCBuilder_0.png"><img src="Open_RTCBuilder_0.png" width="50%;"></a></div>
 
+#### Entering Profile Information and Generating Code
 
+First, select the leftmost "Basic" tab and enter the basic information.
 
-#### プロファイル情報入力とコードの生成
+In addition to the RobotController component specification (name) defined earlier, enter information such as the description and version.
 
-まず、いちばん左の「基本」タブを選択し、基本情報を入力します。先ほど決めた RobotController コンポーネントの仕様(名前)の他に、概要やバージョン等を入力してください。
-ラベルが赤字の項目は必須項目です。その他はデフォルトで構いません。
+Fields displayed in red are required. Other fields may be left at their default values.
 
-- コンポーネント名: RobotController
-- 概要: 任意(Robot Controller component)
-- バージョン: 任意(1.0.0)
-- ベンダ名: 任意
-- カテゴリ: 任意(Controller)
-
-
-
+- Component Name: RobotController
+- Description: Optional (Robot Controller component)
+- Version: Optional (1.0.0)
+- Vendor: Optional
+- Category: Optional (Controller)
 
 <br>
 
 <div align="center"><a href="rtcb10.png"><img src="rtcb10.png" width="50%;"></a></div>
-<div align="center"><strong>基本情報の入力</strong></div>
+<div align="center"><strong>Entering Basic Information</strong></div>
 <br>
 
+Next, select the "Activity" tab and specify the action callbacks to use.
 
+The RobotController component uses the `onActivated()`, `onDeactivated()`, and `onExecute()` callbacks.
 
-次に、「アクティビティ」タブを選択し、使用するアクションコールバックを指定します。
+As shown below, click onActivated in ①, then check [ON] using the radio button in ②.
 
-RobotController コンポーネントでは、onActivated()、onDeactivated()、onExecute() コールバックを使用します。下図のように①の onAtivated をクリック後に②のラジオボタンにて [ON] にチェックを入れます。
-onDeactivated、onExecute についても同様の手順を行います。
+Follow the same procedure for onDeactivated and onExecute.
 
 <br>
 
 <div align="center"><a href="Activity_1.png"><img src="Activity_1.png" width="70%;"></a></div>
-<div align="center"><strong>アクティビティコールバックの選択</strong></div>
+<div align="center"><strong>Selecting Activity Callbacks</strong></div>
 <br>
 
+Next, select the "Data Ports" tab and enter the data port information.
 
-さらに、「データポート」タブを選択し、データポートの情報を入力します。
-先ほど決めた仕様を元に以下のように入力します。なお、変数名や表示位置はオプションで、そのままで結構です。
-
-
-
+Enter the following values based on the specifications defined earlier. Variable names and display positions are optional and may be left unchanged.
 
 <br>
-
 
 - InPort Profile:
-  - ポート名: in
-  - データ型: RTC::TimedShortSeq
+  - Port Name: in
+  - Data Type: RTC::TimedShortSeq
 
 <br>
 
 - OutPort Profile:
-  - ポート名: out
-  - データ型: RTC::TimedVelocity2D
+  - Port Name: out
+  - Data Type: RTC::TimedVelocity2D
 
 <br>
-
-
-
-
 
 <div align="center"><a href="DataPort_1.png"><img src="DataPort_1.png" width="50%;"></a></div>
-<div align="center"><strong>データポート情報の入力</strong></div>
+<div align="center"><strong>Entering Data Port Information</strong></div>
 <br>
 
-次に、「コンフィギュレーション」タブを選択し、先ほど決めた仕様を元に、Configuration の情報を入力します。
-制約条件および Widget とは、RTSystemEditor でコンポーネントのコンフィギュレーションパラメーターを表示する際に、スライダー、スピンボタン、ラジオボタンなど、GUI で値の変更を行うためのものです。
+Next, select the "Configuration" tab and enter the Configuration information based on the specifications defined earlier.
 
-直進速度 speed_x、回転速度 speed_r はスライダーのより操作できるようにします。
+Constraints and Widgets are used to change values through the GUI, such as sliders, spin buttons, and radio buttons, when displaying component configuration parameters in RTSystemEditor.
+
+The forward velocity `speed_x` and rotational velocity `speed_r` will be controlled using sliders.
 
 <br>
 
 - speed_x
-  - 名称: speed_x
-  - データ型: double
-  - デフォルト値: 0.0
-  - 制約条件: -1.5&lt;:x&lt;:1.5
+  - Name: speed_x
+  - Data Type: double
+  - Default Value: 0.0
+  - Constraint: -1.5&lt;:x&lt;:1.5
   - Widget: slider
   - Step: 0.01
 - speed_r
-  - 名称: speed_r
-  - データ型: double
-  - デフォルト値: 0.0
-  - 制約条件: -2.0&lt;:x&lt;:2.0
+  - Name: speed_r
+  - Data Type: double
+  - Default Value: 0.0
+  - Constraint: -2.0&lt;:x&lt;:2.0
   - Widget: slider
   - Step: 0.01
 - stop_d
-  - 名称: stop_d
-  - データ型: int
-  - デフォルト値: 30
+  - Name: stop_d
+  - Data Type: int
+  - Default Value: 30
   - Widget: text
 
 <br>
 
-
-
 <div align="center"><a href="Configuration_1.png"><img src="Configuration_1.png" width="50%;"></a></div>
-<div align="center"><strong>コンフィグレーション情報の入力</strong></div>
+<div align="center"><strong>Entering Configuration Information</strong></div>
 <br>
 
-次に、「言語・環境」タブを選択し、プログラミング言語を選択します。
-ここでは、C++(言語) を選択します。なお、言語・環境はデフォルト等が設定されておらず、指定し忘れるとコード生成時にエラーになりますので、必ず言語の指定を行うようにしてください。
+Next, select the "Language / Environment" tab and choose the programming language.
 
-
-
+In this tutorial, select C++ (language). Note that no default value is set for Language / Environment. If you forget to specify it, code generation will fail, so be sure to select a language.
 
 <div align="center"><a href="Language_1.png"><img src="Language_1.png" width="80%;"></a></div>
-<div align="center"><strong>プログラミング言語の選択</strong></div>
+<div align="center"><strong>Selecting the Programming Language</strong></div>
 <br>
 
-最後に、「基本」タブにある [コード生成] ボタンをクリックし、コンポーネントのひな型コードを生成します。
+Finally, click the [Generate Code] button on the "Basic" tab to generate the component skeleton code.
 
 <br>
-
 
 <div align="center"><a href="Generate_1.png"><img src="Generate_1.png" width="80%;"></a></div>
-<div align="center"><strong>ひな型コードの生成(Generate)</strong></div>
+<div align="center"><strong>Generating Skeleton Code (Generate)</strong></div>
 <br>
 
-&color(red){※ 生成されるコード群は、OpenRTP起動時に指定したワークスペースフォルダーの中に生成されます。
-現在のワークスペースは、[ファイル] > [ワークスペースの切り替え...] で確認することができます。};
+&color(red){* The generated source files are created inside the workspace folder specified when OpenRTP was started.
+You can check the current workspace from [File] > [Switch Workspace...].};
 
 
 
+### Generating Files Required for CMake Build
 
-### CMake によるビルドに必要なファイルの生成
+The code generated by RTC Builder includes a `CMakeLists.txt` file used to generate various files required for building with CMake.
 
-RTC Builder で生成したコードの中には CMake でビルドに必要な各種ファイルを生成するための CMakeLists.txt が含まれています。
-CMake を利用することにより CMakeLists.txt から Visual Studio のプロジェクトファイル、ソリューションファイル、もしくは Makefile 等を自動生成できます。
+By using CMake, Visual Studio project files, solution files, Makefiles, and other build files can be automatically generated from `CMakeLists.txt`.
 
+#### Using CMake (cmake-gui)
 
+Use CMake to configure the build environment.
 
+First, start CMake (cmake-gui).
 
-#### CMake(cmake-gui) の操作
-CMake を利用してビルド環境の Configure を行います。
-まずは CMake(cmake-gui) を起動してください。
-
-```
+```bash
  $ cmake-gui
 ```
 
-
 <div align="center"><a href="CMakeGUI0_2_ubuntu.png"><img src="CMakeGUI0_2_ubuntu.png" width="80%;"></a></div>
-<div align="center"><strong>CMake GUI の起動とディレクトリーの指定</strong></div>
+<div align="center"><strong>Starting CMake GUI and Specifying Directories</strong></div>
 
-画面上部に以下のようなテキストボックスがありますので、それぞれソースコードの場所 (CMakeList.txt がある場所) と、ビルドディレクトリーを指定します。
+At the top of the window, there are the following text boxes. Specify the source code location (where `CMakeLists.txt` is located) and the build directory.
 
-- **Where is the soruce code**
+- **Where is the source code**
 - **Where to build the binaries**
 
-ソースコードの場所は RobotController コンポーネントのソースが生成された場所で CMakeList.txt が存在するディレクトリーです。
-デフォルトでは <ワークスペースディレクトリー>/RobotController になります。
+The source code location is the directory where the RobotController component source code was generated and where `CMakeLists.txt` exists.
 
-このディレクトリーはエクスプローラから cmake-gui にドラッグアンドドロップすると手入力しなくても設定されます。
+By default, this is:
 
+```text
+<workspace directory>/RobotController
+```
 
+You can also drag and drop this directory from Explorer into cmake-gui instead of entering it manually.
 
+The build directory is the location where project files, object files, and generated binaries are stored.
 
-ビルドディレクトリーとは、ビルドするためのプロジェクトファイルやオブジェクトファイル、バイナリを格納する場所のことです。
-場所は任意ですが、この場合 <ワークスペースディレクトリー>/RobotController/build のように分かりやすい名前をつけた RobotController のサブディレクトリーを指定することをお勧めします。
+Although any location may be used, it is recommended to specify a RobotController subdirectory with a clear name, such as:
+
+```text
+<workspace directory>/RobotController/build
+```
 
 <table class="table-alt">
   <tr>
-    <td>**Where is the soruce code**</td>
-    <td>/home/ユーザー名/workspace/RobotController</td>
+    <td><strong>Where is the source code</strong></td>
+    <td>/home/user_name/workspace/RobotController</td>
   </tr>
   <tr>
-    <td>**Where to build the binaries**</td>
-    <td>/home/ユーザー名/workspace/RobotController/build</td>
+    <td><strong>Where to build the binaries</strong></td>
+    <td>/home/user_name/workspace/RobotController/build</td>
   </tr>
 </table>
 
-指定したら、下の [Configure] ボタンをクリックします。すると下図のようなダイアログが表示されますので、生成したいプロジェクトの種類を指定します。
-今回は CodeBlocks - Unix Makefiles を指定します。
-Code::Blocks を使わない場合は Unix Makefiles を使ってください。
+After entering the paths, click the **[Configure]** button.
 
+A dialog similar to the figure below will appear, allowing you to select the type of project to generate.
+
+In this tutorial, select **CodeBlocks - Unix Makefiles**.
+
+If you do not use Code::Blocks, use **Unix Makefiles**.
 
 <div align="center"><a href="cmake_ubuntu.png"><img src="cmake_ubuntu.png" width="50%;"></a></div>
-<div align="center"><strong>生成するプロジェクトの種類の指定</strong></div>
+<div align="center"><strong>Selecting the Project Type to Generate</strong></div>
 
+If you do not use cmake-gui, you can generate the files using the following commands:
 
-また cmake-gui を使用しない場合は以下のコマンドでファイルを生成できます。
-
-```
+```bash
  $ mkdir build
  $ cd build
  $ cmake .. -G "CodeBlocks - Unix Makefiles"
 ```
 
+Click **[Finish]** in the dialog to start configuration.
 
+If there are no problems, **"Configuring done"** will be displayed in the log window at the bottom.
 
-ダイアログで [Finish] をクリックすると Configure が始まります。問題がなければ下部のログウインドウに「Configuring done」と出力されますので、続けて [Generate] ボタンをクリックします。
-「Generating done」と出ればプロジェクトファイル・ソリューションファイル等の出力が完了します。
+Next, click the **[Generate]** button.
 
-なお、CMake は Configure の段階でキャッシュファイルを生成しますので、トラブルなどで設定を変更したり環境を変更した場合は [File] > [Delete Cache] を選択して、キャッシュを削除してから Configure からやり直してください。
+When **"Generating done"** is displayed, generation of the project files, solution files, and related files is complete.
 
+CMake creates cache files during configuration.
 
+If you change settings or modify the environment while troubleshooting, select:
 
+```text
+[File] > [Delete Cache]
+```
 
-### ヘッダ、ソースの編集
+delete the cache, and then rerun the configuration process from the beginning.
 
-次に先ほど指定した build ディレクトリーの中の RobotController.cbp をダブルクリックしてCode::Blocks を起動します。
+### Editing the Header and Source Files
 
+Next, start Code::Blocks by double-clicking `RobotController.cbp` in the build directory specified earlier.
 
+Edit the header file (`include/RobotController/RobotController.h`) and the source file (`src/RobotController.cpp`).
 
-
-ヘッダ (include/RobotController/RobotController.h) およびソースコード (src/RobotController.cpp) をそれぞれ編集します。
-Code::BlocksのProjectsからRobotController.h、RobotController.cpp をクリックすることで編集画面が開きます。
-
-
-
+You can open the editor by clicking `RobotController.h` and `RobotController.cpp` from Projects in Code::Blocks.
 
 <div align="center"><a href="codeblocks0_2.png"><img src="codeblocks0_2.png" width="70%;"></a></div>
 
+&color(red){In a 64-bit environment, Code::Blocks may become unstable.
+In that case, disabling the plug-in called code completion may resolve the issue.};
 
-
-&color(red){64bitの環境の場合に Code::Blocks の動作が不安定になることがあります。
-その場合は code completion というプラグインを無効化すると動作することがあります。};
-
-「Plugins」>「Manage plugins...」を選択します。
+Select "Plugins" > "Manage plugins...".
 
 <div align="center"><a href="codeblocks1_0.png"><img src="codeblocks1_0.png" width="80%;"></a></div>
 
-「code completion」を選択して [Disable] ボタンをクリックします。
+Select "code completion" and click the [Disable] button.
 
 <div align="center"><a href="codeblocks2_0.png"><img src="codeblocks2_0.png" width="80%;"></a></div>
 
-動作しないときはこの手順を試してください。
+If Code::Blocks does not work properly, try this procedure.
 
-#### アクティビティ処理の実装
+#### Implementing Activity Processing
 
+In the RobotController component, the configuration parameters (`speed_x`, `speed_y`) are controlled using sliders, and their values are output as target velocities through the OutPort (`out`).
 
-RobotController コンポーネントでは、コンフィギュレーションパラメーター(speed_x、speed_y)をスライダーで操作しその値を目標速度としてアウトポート(out)から出力します。
-インポート(in)から入力された値を変数に格納して、その値が一定以上の場合は停止するようにします。
+The values received through the InPort (`in`) are stored in variables, and the robot is stopped when any value exceeds a specified threshold.
 
 <br>
-onActivated()、onExecute()、onDeactivated() での処理内容を下図に示します。
-<br>
 
+The processing performed by `onActivated()`, `onExecute()`, and `onDeactivated()` is shown in the figure below.
+
+<br>
 
 <div align="center"><a href="RCRTC_State_1.png"><img src="RCRTC_State_1.png" width="70%;"></a></div>
 
-<div align="center"><strong>アクティビティ処理の概要</strong></div>
+<div align="center"><strong>Overview of Activity Processing</strong></div>
 <br>
 
+#### Editing the Header File (RobotController.h)
 
+Declare the variable `sensor_data` for temporarily storing sensor values.
 
-
-#### ヘッダファイル (RobotController.h) の編集
-
-センサー値を一時的に格納する変数 sensor_data を宣言します。
-
-```
+```cpp
    private:
- 	 double sensor_data[4];	//センサー値を一時格納する変数
+     double sensor_data[4];    // Variable for temporarily storing sensor values
 ```
 
+#### Editing the Source File (RobotController.cpp)
 
-#### ソースファイル (RobotController.cpp) の編集
+Implement `onActivated()`, `onDeactivated()`, and `onExecute()` as shown below.
 
-下記のように、onActivated()、onDeactivated()、onExecute() を実装します。
-
-```
+```cpp
  RTC::ReturnCode_t RobotController::onActivated(RTC::UniqueId ec_id)
  {
- 	//センサー値初期化
- 	for (int i = 0; i < 4; i++)
- 	{
- 		sensor_data[i] = 0;
- 	}
+     // Initialize sensor values
+     for (int i = 0; i < 4; i++)
+     {
+         sensor_data[i] = 0;
+     }
  
    return RTC::RTC_OK;
  }
 ```
 
-
-```
+```cpp
  RTC::ReturnCode_t RobotController::onDeactivated(RTC::UniqueId ec_id)
  {
- 	//ロボットを停止する
- 	m_out.data.vx = 0;
- 	m_out.data.va = 0;
- 	m_outOut.write();
+     // Stop the robot
+     m_out.data.vx = 0;
+     m_out.data.va = 0;
+     m_outOut.write();
  
    return RTC::RTC_OK;
  }
 ```
 
-
-```
+```cpp
  RTC::ReturnCode_t RobotController::onExecute(RTC::UniqueId ec_id)
  {
- 	//入力データの存在確認
- 	if (m_inIn.isNew())
- 	{
- 		//入力データ読み込み
- 		m_inIn.read();
- 		for (int i = 0; i < m_in.data.length(); i++)
- 		{
- 			//入力データ格納
- 			if (i < 4)
- 			{
- 				sensor_data[i] = m_in.data[i];
- 			}
- 		}
- 	}
+     // Check for input data
+     if (m_inIn.isNew())
+     {
+         // Read input data
+         m_inIn.read();
+         for (int i = 0; i < m_in.data.length(); i++)
+         {
+             // Store input data
+             if (i < 4)
+             {
+                 sensor_data[i] = m_in.data[i];
+             }
+         }
+     }
  
- 	//前進するときのみ停止するかを判定
- 	if (m_speed_x > 0)
- 	{
- 		for (int i = 0; i < 4; i++)
- 		{
- 			//センサ値が設定値以上か判定
- 			if (sensor_data[i] > m_stop_d)
- 			{
- 				//センサ値が設定値以上の場合は停止
- 				m_out.data.vx = 0;
- 				m_out.data.va = 0;
- 				m_outOut.write();
- 				return RTC::RTC_OK;
- 			}
- 		}
- 	}
- 	//設定値以上の値のセンサーが無い場合はコンフィギュレーションパラメーターの値で操作
- 	m_out.data.vx = m_speed_x;
- 	m_out.data.va = m_speed_r;
- 	m_outOut.write();
+     // Determine whether to stop only when moving forward
+     if (m_speed_x > 0)
+     {
+         for (int i = 0; i < 4; i++)
+         {
+             // Check whether the sensor value exceeds the threshold
+             if (sensor_data[i] > m_stop_d)
+             {
+                 // Stop if the sensor value exceeds the threshold
+                 m_out.data.vx = 0;
+                 m_out.data.va = 0;
+                 m_outOut.write();
+                 return RTC::RTC_OK;
+             }
+         }
+     }
+     // If no sensor value exceeds the threshold, operate according to the configuration parameters
+     m_out.data.vx = m_speed_x;
+     m_out.data.va = m_speed_r;
+     m_outOut.write();
    return RTC::RTC_OK;
  }
 ```
 
+### Building with Code::Blocks
 
+#### Executing the Build
 
-### Code::Blocks によるビルド
-
-#### ビルドの実行
-
-Code::Blocksの [ビルド] ボタンをクリックしてビルドを行います。
-
+Click the [Build] button in Code::Blocks to build the project.
 
 <br>
 
 <div align="center"><a href="codeblocks_build_2.png"><img src="codeblocks_build_2.png" width="70%;"></a></div>
-<div align="center"><strong>ビルドの実行</strong></div>
+<div align="center"><strong>Executing the Build</strong></div>
 <br>
 
+## Verifying Operation of the RobotController Component
 
-## RobotController コンポーネントの動作確認
-作成した RobotController をシミュレーターコンポーネントと接続して動作確認を行います。
+Connect the created RobotController component to the simulator component and verify its operation.
 
+### Starting RTSystemEditor
 
-
-### RTSystemEditorの起動
-OpenRTPのパースペクティブを開くのウインドウからRT System Editorを選択して起動します。
+Open the OpenRTP perspective selection window and start RT System Editor.
 
 <br>
 
 <div align="center"><a href="rtse2000.png"><img src="rtse2000.png" width="50%;"></a></div>
 <br>
 
+### Starting the Name Service
 
-### NameService の起動
-
-コンポーネントの参照を登録するためのネームサービスを起動します。
+Start the Name Service used to register component references.
 
 <br>
-RT System Editorのネームサービス起動ボタンを押すと起動します。
+
+Click the **Start Naming Service** button in RT System Editor.
 
 <div align="center"><a href="robomech2018_6_2.png"><img src="robomech2018_6_2.png" width="70%;"></a></div>
 
-<span style="color:red;">※ 「Start Naming Service」をクリックしても omniNames が起動されない場合は、フルコンピュータ名が14文字以内に設定されているかを確認してください。</span>;
+<span style="color:red;">* If omniNames does not start when you click "Start Naming Service", verify that the full computer name is set to 14 characters or fewer.</span>
 
+### Starting the RobotController Component
 
+Start the RobotController component.
 
+Execute the `RobotControllerComp` file in the `RobotController/build/src` folder.
 
-### RobotController コンポーネントの起動
-
-RobotController コンポーネントを起動します。
-
-RobotController/build/srcフォルダーの RobotControllerComp ファイルを実行してください。
-
-
-```
+```bash
  $ ./RobotControllerComp
 ```
 
+### Starting the Simulator Component
 
-### シミュレーターコンポーネントの起動
+After moving to the directory where the RaspberryPiMouseSimulator component was installed (**{directory where install_raspimouse_simulator.sh was executed}/RasPiMouseSimulatorRTC/build**), start it using the following command:
 
-RaspberryPiMouseSimulator コンポーネントをインストールしたディレクトリー(**{install_raspimouse_simulator.shを実行したディレクトリ}/RasPiMouseSimulatorRTC/build**)に移動後、下記のコマンドにて起動できます。
-
-```
+```bash
  $ ./src/RaspberryPiMouseSimulatorComp
 ```
 
+### Connecting the Components
 
-
-### コンポーネントの接続
-
-下図のように、RTSystemEditorにて
-RobotController コンポーネント、RaspberryPiMouseSimulator コンポーネントを接続します。
-
+Using RTSystemEditor, connect the RobotController component and the RaspberryPiMouseSimulator component as shown below.
 
 <div align="center"><a href="RTSE_Connect_1.png"><img src="RTSE_Connect_1.png" width="70%;"></a></div>
-<div align="center"><strong>コンポーネントの接続</strong></div>
+<div align="center"><strong>Connecting Components</strong></div>
 
-### コンポーネントの Activate
+### Activating the Components
 
-RTSystemEditor の上部にあります [Activate Systems] というアイコンをクリックし、全てのコンポーネントをアクティブ化します。
-正常にアクティベートされた場合、下図のように黄緑色でコンポーネントが表示されます。
+Click the **[Activate Systems]** icon located at the top of RTSystemEditor to activate all components.
+
+If activation is successful, the components will be displayed in light green as shown below.
 
 <br>
 
 <div align="center"><a href="RTSE_Activate_1.png"><img src="RTSE_Activate_1.png" width="70%;"></a></div>
-<div align="center"><strong>コンポーネントのアクティブ化</strong></div>
+<div align="center"><strong>Activating Components</strong></div>
 <br>
 
-### 動作確認
+### Verifying Operation
 
-下図のようにコンフィギュレーションビューの [編集] ボタンからコンフィギュレーションを変更することができます。
+As shown below, configuration parameters can be modified using the **[Edit]** button in the Configuration View.
 
 <br>
 
 <div align="center"><a href="RTSE_Configuration_10.png"><img src="RTSE_Configuration_10.png" width="70%;"></a></div>
 <br>
 
-スライダーを操作してシミュレーター上の Raspberry Pi マウスの操作ができるかを確認してください。
+Verify that you can control the Raspberry Pi Mouse in the simulator by adjusting the sliders.
 
 <br>
 
 <div align="center"><a href="RTSE_Configuration_1.png"><img src="RTSE_Configuration_1.png" width="70%;"></a></div>
-<div align="center"><strong>コンフィギュレーションパラメーターの変更</strong></div>
+<div align="center"><strong>Changing Configuration Parameters</strong></div>
 <br>
 
-
-## 実機での動作確認
+## Verifying Operation on the Actual Robot
 
 &aname(realrobot);
 
-講習会で Raspberry Pi マウス実機を用意している場合は実機での動作確認が可能です。
+If an actual Raspberry Pi Mouse is available during the seminar, you can verify operation on the real robot.
 
-手順は以下の通りです。
+The procedure is as follows:
 
-- Raspberry Pi マウスの電源を投入する
-- Raspberry Pi マウスのアクセスポイントに接続
-- ポートの接続
-- コンポーネントのアクティブ化
+- Power on the Raspberry Pi Mouse
+- Connect to the Raspberry Pi Mouse access point
+- Connect the ports
+- Activate the components
 
+### Powering On
 
+The Raspberry Pi Mouse has two power switches:
 
-### 電源を投入する
-
-Raspberry PiマウスにはRaspberry Piの電源スイッチとモーターの電源スイッチの2つがあります。
+- Raspberry Pi power switch
+- Motor power switch
 
 <br>
 
@@ -996,8 +955,7 @@ Raspberry PiマウスにはRaspberry Piの電源スイッチとモーターの�
 
 <br>
 
-
-内側の電源スイッチをオンにするとRaspberry Piが起動します。
+Turning on the inner power switch starts the Raspberry Pi.
 
 <br>
 
@@ -1005,75 +963,77 @@ Raspberry PiマウスにはRaspberry Piの電源スイッチとモーターの�
 
 <br>
 
-
-#### 電源を切る場合
+#### Powering Off
 
 &aname(shutdown);
 
-Raspberry Piの電源を切る場合は、電源スイッチから直接オフにはしないようにしてください。
-3つ並んだボタンの中央のボタンを数秒押すとシャットダウンが始まります。
-10秒程度でRaspbianのシャットダウンが終了するため、その後に電源スイッチをオフにしてください。
+When shutting down the Raspberry Pi, do not turn it off directly using the power switch.
+
+Press and hold the center button among the three buttons for several seconds to begin shutdown.
+
+Raspbian will complete shutdown in approximately 10 seconds.
+
+After that, turn off the power switch.
 
 <br>
 
 <div align="center"><a href="rpm8.png"><img src="rpm8.png" width="40%;"></a></div>
 <br>
 
+### Connecting to the Access Point
 
-### アクセスポイントに接続
+The SSID and password are printed on the label attached to the Raspberry Pi Mouse. Connect to that SSID.
 
-SSID、パスワードは Rasoberry Pi マウスに貼り付けたシールに記載してあるので、その SSID に接続してください。
+*If the network connection changes, component registration to the Name Server or port connections may fail. In that case, temporarily terminate OpenRTP, the Name Server, and all components.*
 
+If they were started after the network switch, restarting is not necessary.
 
-※ネットワークが切り替わった場合にネームサーバーへのコンポーネントの登録やポートの接続が失敗する場合があるのでOpenRTP、ネームサーバ、コンポーネントを一旦全て終了してください。
-ネットワーク切り替え後に起動した場合には問題ないので、終了させる必要はありません。
+To close OpenRTP, click the **×** button in the upper-right corner.
 
-OpenRTPを終了するには右上の×を押して終了してください。システムダイアグラムを保存するかどうか聞かれますが、Don't Saveを選択してください。
+You will be prompted to save the system diagram; select **Don't Save**.
 
 <div align="center"><a href="rtse0150.png"><img src="rtse0150.png" width="70%;"></a></div>
 
-**openrtp**コマンドを実行してOpenRTPを起動してください。
+Run the **openrtp** command to start OpenRTP.
 
-RT System Editor上でネームサーバーを再起動するには「ネームサービスを起動」ボタンを再度クリックします。
+To restart the Name Server in RT System Editor, click the **Start Naming Service** button again.
 
 <div align="center"><a href="rtse400_2.png"><img src="rtse400_2.png" width="70%;"></a></div>
 
+### Starting the Name Server and RTC on the Raspberry Pi
 
-### Raspberry Pi上のネームサーバー、RTC起動
-**※この作業は以下のLiDAR付Raspberry Piマウスで必要な作業です。LiDAR無しのRaspberry Piマウスの場合は次の作業へ進んでください。**
+**※ This step is required for the Raspberry Pi Mouse with LiDAR shown below. If you are using a Raspberry Pi Mouse without LiDAR, proceed to the next step.**
 
 <div align="center"><a href="https://rt-net.jp/mobility/wp-content/uploads/2019/12/23b47429c42d672e7f94ae0a3c9c9d6c.png"><img src="https://rt-net.jp/mobility/wp-content/uploads/2019/12/23b47429c42d672e7f94ae0a3c9c9d6c.png" width="70%;"></a></div>
 
-Edge、Chrome、Firefox等のWEBブラウザで**192.168.11.1**のアドレスにアクセスしてください。
+Using a web browser such as Edge, Chrome, or Firefox, access:
 
+**192.168.11.1**
 
 <div align="center"><a href="slam40.png"><img src="slam40.png" width="50%;"></a></div>
 
+The RaspberryPiMouse with OpenRTM-aist page will be displayed.
 
-するとRaspberryPiMouse with OpenRTM-aistの画面が表示されます。
-
-まずはネームサーバーを起動するため、**Start NameServer**ボタンを押してください。
+First, click the **Start NameServer** button to start the Name Server.
 
 <div align="center"><a href="slam42.png"><img src="slam42.png" width="70%;"></a></div>
 
-
-**RaspberryPiMouseRTC**の**Start**を押してください。
+Next, click **Start** for **RaspberryPiMouseRTC**.
 
 <div align="center"><a href="slam41.png"><img src="slam41.png" width="70%;"></a></div>
 
-
-元の画面に戻らない場合は**Back to the top page.**をクリックしてください。
+If the page does not automatically return to the main screen, click **Back to the top page.**
 
 <div align="center"><a href="slam43.png"><img src="slam43.png" width="70%;"></a></div>
 
-これで完了です。
+This completes the setup.
 
 
-### ネームサーバー追加
+### Adding the Name Server
 
-続いてRTシステムエディタの [ネームサーバー追加] ボタンで <span style="color:red;">192.168.11.1</span>; を追加してください。
+Next, click the **[Add Name Server]** button in RT System Editor and add:
 
-
+<span style="color:red;">192.168.11.1</span>
 
 <br>
 
@@ -1081,28 +1041,23 @@ Edge、Chrome、Firefox等のWEBブラウザで**192.168.11.1**のアドレス�
 <br>
 <br>
 
-すると[RaspberryPiMouseRTC](/ja/node/6015#toc0)という RTC が見えるようになります。
+You should then be able to see the RTC named [RaspberryPiMouseRTC](/ja/node/6015#toc0).
 
 <div align="center"><a href="tutorial_raspimouse2.png"><img src="tutorial_raspimouse2.png" width="70%;"></a></div>
 
-RaspberryPiMouseRTC は名城大学のロボットシステムデザイン研究室で開発されているラズパイマウス制御用の RTコンポーネントです。
+RaspberryPiMouseRTC is an RT-Component for controlling Raspberry Pi Mouse, developed by the Robot System Design Laboratory at Meijo University.
 
+### Connecting the Ports
 
-
-
-### ポートの接続
-
-RTシステムエディタで RaspberryPiMouseRTC、RobotController コンポーネントを以下のように接続します。
-
+Using RT System Editor, connect the RaspberryPiMouseRTC and RobotController components as shown below.
 
 <div align="center"><a href="tutorial_raspimouse41.png"><img src="tutorial_raspimouse41.png" width="70%;"></a></div>
 
+### Turning On the Motor Power
 
+Before operating the robot, turn on the motor power switch.
 
-### モーターの電源を投入する
-動作の前に、モーターの電源スイッチをオンにしてください。
-モーターの電源はこまめに切るようにしてください。
-
+Be sure to turn off the motor power whenever it is not needed.
 
 <br>
 
@@ -1110,8 +1065,27 @@ RTシステムエディタで RaspberryPiMouseRTC、RobotController コンポー
 
 <br>
 
+### Activating the Components
 
-### アクティブ化
-そして RTC をアクティブ化すると Raspberry Pi マウスの操作ができるようになります。
+Once the RTCs are activated, you will be able to operate the Raspberry Pi Mouse.
 
--------jp page!!-------
+## Summary
+
+In this tutorial, you learned:
+
+- How to set up a development environment for Raspberry Pi Mouse on Ubuntu
+- How to install OpenRTM-aist, OpenRTP, Code::Blocks, CMake, and related tools
+- How to build and start the RaspberryPiMouseSimulator component
+- How to create a RobotController RT-Component using RTC Builder
+- How to define InPorts, OutPorts, and Configuration parameters
+- How to generate build files using CMake and Code::Blocks
+- How to edit `RobotController.h` and `RobotController.cpp`
+- How to implement processing in `onActivated()`, `onExecute()`, and `onDeactivated()`
+- How to build and run the RobotController component
+- How to connect RobotController to RaspberryPiMouseSimulator in RT System Editor
+- How to verify operation in the simulator
+- How to connect to an actual Raspberry Pi Mouse and start RaspberryPiMouseRTC
+- How to connect and activate RTCs to operate the actual robot
+
+By extending the RobotController component created in this tutorial, you can implement more advanced robot behaviors such as obstacle avoidance, autonomous navigation, and sensor-based motion control.
+

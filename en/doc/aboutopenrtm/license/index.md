@@ -1,65 +1,70 @@
 ---
 layout: page
-title: "ライセンス"
+title: "License"
 ---
--------jp page!!-------
 
-<!-- Title: ライセンス -->
+<!-- Title: License -->
 
-OpenRTM-aistは、各言語版(C++、Java、Python)のミドルウエアライブラリと、RTCBuilder、RTSystemEditorなどツールから構成されており、それぞれ
+OpenRTM-aist consists of middleware libraries for each supported language (C++, Java, and Python) as well as tools such as RTCBuilder and RTSystemEditor.
 
-- OpenRTM-aist (C++、Java、Python版)は **LGPLと個別契約のデュアルライセンス**
-- RTSystemEditor、RTCBuilderは **EPLと個別契約のデュアルライセンス**
+These components are distributed as open-source software under the following licensing schemes:
 
-のもとでオープンソース形式で配布しています。
+- OpenRTM-aist (C++, Java, and Python editions): **Dual-licensed under LGPL and a separate commercial license agreement**
+- RTSystemEditor and RTCBuilder: **Dual-licensed under EPL and a separate commercial license agreement**
 
-LGPL(GNU Lesser General Public License)はフリーソフトウェア財団(Free Software Foundation、以下FSFと略称)が提唱しているコピーレフト型のフリーソフトウェアライセンスです。
+LGPL (GNU Lesser General Public License) is a copyleft-style free software license proposed by the Free Software Foundation (FSF).
 
-EPL(Eclipse Public License)はFSFによって認められている「フリーソフトウェアライセンス」の1つであり、CPL(一部はLGPL)等と似たライセンス形態であり、より商業利用を促進するものとなっています。
+EPL (Eclipse Public License) is one of the free software licenses recognized by the FSF. It is similar in style to CPL (and partly LGPL), while providing a framework that is more suitable for commercial use.
 
-これらのライセンスは、(i) 別モジュールとして頒布されるソフトウエアや、(ii) 許諾プログラムの派生物でないもの　には及びません。またEPLライセンスは、特許に関する条項が含まれており、コントリビューターが持つ特許が当該ソフトウエアの使用に影響しない(使用者には使用料無料の特許ライセンスが付与される)形態となっています。
+These licenses do not apply to (i) software distributed as separate modules or (ii) software that is not a derivative work of the licensed program. In addition, the EPL includes patent-related provisions, ensuring that patents held by contributors do not restrict the use of the software (users are granted a royalty-free patent license for such use).
 
-なお、LGPLライセンスの詳細については、
+For details on the LGPL, please refer to:
+
 - http://www.gnu.org/copyleft/lesser.html
-を、EPLライセンスの詳細については、
+
+For details on the EPL, please refer to:
+
 - http://opensource.org/licenses/eclipse-1.0.php
-- http://sourceforge.jp/projects/opensource/wiki/licenses/Eclipse_Public_License (日本語訳)
-を参照してください。
+- http://sourceforge.jp/projects/opensource/wiki/licenses/Eclipse_Public_License (Japanese translation)
 
-以下、OpenRTM-aistを用いた生成物の例に関連するライセンスと制約条件を説明します。
+The following sections explain the licenses and restrictions associated with software developed using OpenRTM-aist.
 
-## RTコンポーネント開発・配布
+## Development and Distribution of RT Components
 
-OpenRTM-aisのライセンスは、個々のRTコンポーネントには及びません。したがって、**RTコンポーネントの作成者は、自由なライセンスで配布・販売することができます**。
+The OpenRTM-aist license does not extend to individual RT Components. Therefore, **developers of RT Components may distribute or sell them under any license of their choosing**.
 
-RTコンポーネントは、OpenRTM-aist の libRTC.so (またはRTC.DLL) と動的リンクされており、また、RTコンポーネント自体も共有オブジェクト(またはダイナミックリンクライブラリ)として配布可能です。したがって、RTコンポーネント自体はライセンスが定める派生物とはみなされず、LGPLは及びません。
+RT Components are dynamically linked with OpenRTM-aist's libRTC.so (or RTC.DLL), and RT Components themselves can also be distributed as shared objects (or dynamic link libraries).
+
+Therefore, RT Components are not regarded as derivative works as defined by the LGPL, and the LGPL does not apply to them.
 
 <div align="center"><a href="license_for_rtcs_ja.png"><img src="./license_for_rtcs_ja.png" style="width:50%;"></a></div>
-<div align="center"><strong>RTコンポーネントのライセンス</strong></div>
+<div align="center"><strong>Licensing of RT Components</strong></div>
 
-RTコンポーネントを作成して配布する場合、任意のライセンスの元でRTコンポーネントを配布または販売することができ、ソースコードをオープンにするかクローズにするかを自由に選ぶことができます。
+When developing and distributing RT Components, developers may distribute or sell them under any license and are free to choose whether the source code is open or closed.
 
-## LGPLに基づくOpenRTM-aist の改編と再配布
+## Modification and Redistribution of OpenRTM-aist under the LGPL
 
-産総研が公開するOpenRTM-aistをLGPLに基づき利用する場合、産総研は利用者に対して、OpenRTM-aistを実行、改編、再配布、無料使用するライセンスを付与します。
-ただし、LGPLでは再配布する場合に、再配布するプログラムについて、LGPLと矛盾しないことを要求しており、その中には改編されたソースコードを第三者が入手可能であることも含まれています。
-したがって、LGPL のもとに OpenRTM-aist を改編して再配布したり販売する場合には、ソースコードを開示することが要求されます。
+When using OpenRTM-aist released by AIST under the LGPL, AIST grants users a license to execute, modify, redistribute, and use OpenRTM-aist free of charge.
 
-組込みシステムなどにおいては、ソースコードを改編せずにターゲットに適用することが困難で、改変したソースを開示することに抵抗がある場合が数多くあり、これはロボットを事業化したい会社等にとっては不都合であると言えます。
-こうした場合を考慮して、OpenRTM-aist は次に説明する、個別契約に基づくライセンス付与の形態もとれるよう、デュアルライセンス形式となっています。
+However, when redistributing software under the LGPL, the redistributed program must remain consistent with the LGPL. This includes the requirement that modified source code be made available to third parties.
 
+Therefore, if OpenRTM-aist is modified and redistributed or sold under the LGPL, the modified source code must be disclosed.
 
-## 個別契約に基づくOpenRTM-aist の改編と再配布
+In embedded systems and similar applications, it is often difficult to deploy software without modifying the source code. In many cases, organizations are reluctant to disclose those modifications. This can be inconvenient for companies seeking to commercialize robotic systems.
 
-上記の場合のように、ロボットシステムを商業化する際に、ソースコードを改編しつつ、技術の流出を防ぐためにソースコードをクローズにしたい場合、LGPLやEPLではなく、個別契約のライセンスを用いることができます。
+To address such situations, OpenRTM-aist is offered under a dual-license model, which also allows licensing through individual agreements as described below.
 
-OpenRTM-aistを改編、再配布する場合、産総研の知的財産部門と個別に協議のうえ、個別契約として産総研から利用者に対して非LGPL・非EPLのライセンスを付与することができます。
-その場合のソースコードの利用料(実施料)やライセンスの範囲等の条件については、利用形態、ソースコードの改編の度合いや両者の知的財産の割合等に応じて、詳細を決定します。ただし、産総研は産業振興を目的とする非営利法人であり、その実施料は高価なものにはならないはずです。
+## Modification and Redistribution of OpenRTM-aist under a Separate License Agreement
+
+In cases such as those described above, where a company wishes to commercialize a robotic system while modifying the source code and keeping it proprietary to protect its technology, a separate license agreement may be used instead of the LGPL or EPL.
+
+When modifying and redistributing OpenRTM-aist, users may consult with AIST's intellectual property division and obtain a non-LGPL/non-EPL license from AIST under an individual agreement.
+
+The licensing fee and scope of the license are determined based on factors such as the intended use, the extent of source code modifications, and the relative contributions of intellectual property from both parties.
+
+However, AIST is a non-profit organization dedicated to promoting industry, and therefore licensing fees are expected to remain reasonable.
 
 <div align="center"><a href="./license_for_rtms_ja.png"><img src="./license_for_rtms_ja.png" style="width:50%;"></a></div>
-<div align="center"><strong>RTミドルウエアのライセンス</strong></div>
+<div align="center"><strong>Licensing of RT Middleware</strong></div>
 
-RtcLink、RtcTemplate(RTSystemEditor、RTCBuilderの以前のバージョン)およびOpenRTM-aist(Java版)については、ソースコードの開示および実施(製品への利用)について個別契約によるライセンス提供の実績があります。
-
-
--------jp page!!-------
+For RtcLink, RtcTemplate (earlier versions of RTSystemEditor and RTCBuilder), and OpenRTM-aist (Java edition), there have been cases in which licenses were provided through individual agreements for source code disclosure and implementation (use in commercial products).

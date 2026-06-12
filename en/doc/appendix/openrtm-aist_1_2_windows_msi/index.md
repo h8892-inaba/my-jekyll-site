@@ -1,29 +1,29 @@
 ---
 layout: page
-title: OpenRTM-aist1.2系のインストール(Windows、MSIインストーラー使用)
+title: "Installing OpenRTM-aist 1.2 on Windows (Using the MSI Installer)"
 ---
--------jp page!!-------
 
-<!-- Title: OpenRTM-aist1.2系のインストール(Windows、MSIインストーラー使用) -->
+<!-- Title: Installing OpenRTM-aist 1.2 on Windows (Using the MSI Installer) -->
 <div align="right"><a href="windows10-logo.png"><img src="windows10-logo.png" width="15%; margin:30 30 30 30px;" align="right"></a></div>
 
-openrtm.orgではWindows用のMSI(Microsoft Windowsインストーラー)パッケージを提供しています。
-MSIパッケージを利用することで、依存ライブラリであるomniORBや、RTSystemEditorといったツールも同時にインストールできます。
+openrtm.org provides MSI (Microsoft Windows Installer) packages for Windows.
+
+By using the MSI package, you can install dependent libraries such as omniORB as well as tools such as RTSystemEditor at the same time.
 
 #clear
 #contents
 
-## 依存ソフトウエアのインストール
-OpenRTM-aistのインストール前に必ずPythonをインストールする必要があります。**OpenRTM-aistの32bit版をインストールする場合は32bit版のPythonを、64bit版の場合は64bit版のPythonをインストールしてください。**
+## Installing Prerequisite Software
 
-- [Python(3.6、3.7または3.8)](https://www.python.org/downloads/windows/)
+Before installing OpenRTM-aist, Python must be installed. **If you are installing the 32-bit version of OpenRTM-aist, install the 32-bit version of Python. If you are installing the 64-bit version, install the 64-bit version of Python.**
 
-## OpenRTM-aistのインストール
-以下リンクからインストーラー、64bit版はOpenRTM-aist-1.2.x-RELEASE_x86_64.msi、32bit版はOpenRTM-aist-1.2.x-RELEASE_x86.msiをダウンロードしてインストールしてください。
+- [Python (3.6, 3.7, or 3.8)](https://www.python.org/downloads/windows/)
+
+## Installing OpenRTM-aist
+
+Download and install the appropriate installer from the links below.
+
+Use **OpenRTM-aist-1.2.x-RELEASE_x86_64.msi** for the 64-bit version and **OpenRTM-aist-1.2.x-RELEASE_x86.msi** for the 32-bit version.
 
 - [OpenRTM-aist 1.2.2](https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v1.2.2)
-- [OpenRTM.orgダウンロードページ]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release)
-
-
-
--------jp page!!-------
+- [OpenRTM.org Download Page]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release)

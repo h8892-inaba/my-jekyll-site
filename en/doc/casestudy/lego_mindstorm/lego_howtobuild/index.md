@@ -1,13 +1,12 @@
 ---
 layout: page
-title: 組み立て方
+title: Assembly Instructions
 ---
--------jp page!!-------
 
-<!-- Title: 組み立て方 -->
+<!-- Title: Assembly Instructions -->
 #contents
 
-このページではレゴマインドストーム EV3 で以下の車輪移動ロボット (Educator Vehicle 改) を組み立てる手順を説明します。
+This page explains how to assemble the following wheeled mobile robot (modified Educator Vehicle) using LEGO Mindstorms EV3. :contentReference[oaicite:0]{index=0}
 
 <br>
 <br>
@@ -20,17 +19,15 @@ title: 組み立て方
 <br>
 <br>
 
+## Common Parts with the Educator Vehicle
 
+### Assembling the Wheeled Mobile Robot
 
-## Educator Vehicle との共通部分
+First, follow the **Educator Vehicle Instructions** and complete the first wheeled mobile robot assembly chapter up to step 45.
 
-### 車輪移動ロボットの組立て
+However, steps 8 and 20 are not required and should be skipped.
 
-まずは [Educator Vehicleの説明書](http://robotsquare.com/2013/10/01/education-ev3-45544-instruction/) の最初の車輪移動ロボットを組み立てる章の45番まで組み立ててください。
-ただし8番と20番の作業は必要ないので飛ばしてください。
-
-またジャイロセンサーを取り付ける章(98ページ)を参考にしてジャイロセンサーを取り付けてください。
-
+Also, refer to the gyro sensor installation chapter (page 98) and install the gyro sensor.
 
 <br>
 <br>
@@ -39,11 +36,11 @@ title: 組み立て方
 <br>
 <br>
 
+### Installing the M Motor
 
-### モーターMの取り付け
+Attach the required parts to the M motor.
 
-モーターMにパーツを取り付けます。
-Educator Vehicle の説明書のモーターMを取り付ける章(78ページ)の2～5、10番作業を行ってください。
+Follow steps 2–5 and step 10 in the M motor installation chapter (page 78) of the Educator Vehicle instructions.
 
 <br>
 <br>
@@ -52,7 +49,7 @@ Educator Vehicle の説明書のモーターMを取り付ける章(78ページ)�
 <br>
 <br>
 
-そして18番の作業を行ってモーターMを移動ロボットに取り付けてください。
+Then perform step 18 and attach the M motor to the mobile robot.
 
 <br>
 <br>
@@ -61,11 +58,11 @@ Educator Vehicle の説明書のモーターMを取り付ける章(78ページ)�
 <br>
 <br>
 
+### Attaching Parts to the Touch Sensor
 
-### タッチセンサーへのパーツ取り付け
+Attach the required parts to the touch sensor.
 
-タッチセンサーにパーツを取り付けます。
-Educator Vehicle の説明書のタッチセンサーを取り付ける章(61ページ)の1～3番の作業を行ってください。
+Follow steps 1–3 in the touch sensor installation chapter (page 61) of the Educator Vehicle instructions.
 
 <br>
 <br>
@@ -74,13 +71,9 @@ Educator Vehicle の説明書のタッチセンサーを取り付ける章(61ペ
 <br>
 <br>
 
+## Custom Assembly
 
-
-## 独自部分
-ここからの作業に必要な部品は以下の通りです。
-
-
-
+The parts required for the following assembly steps are shown below.
 
 <br>
 <br>
@@ -89,7 +82,7 @@ Educator Vehicle の説明書のタッチセンサーを取り付ける章(61ペ
 <br>
 <br>
 
-### 土台部分組立て
+### Base Assembly
 
 <br>
 <br>
@@ -111,18 +104,21 @@ Educator Vehicle の説明書のタッチセンサーを取り付ける章(61ペ
 <div align="center"><a href="s_DSC00387.JPG"><img src="s_DSC00387.JPG" width="50%;"></a></div>
 <br>
 <br>
+
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00388.JPG"><img src="s_DSC00388.JPG" width="50%;"></a></div>
 <br>
 <br>
+
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00389.JPG"><img src="s_DSC00389.JPG" width="50%;"></a></div>
 <br>
 <br>
+
 <br>
 <br>
 
@@ -136,36 +132,42 @@ Educator Vehicle の説明書のタッチセンサーを取り付ける章(61ペ
 <div align="center"><div align="center"><a href="s_DSC00393.JPG"><img src="s_DSC00393.JPG" width="50%;"></a></div>;  <div align="center"><a href="s_DSC00394.JPG"><img src="s_DSC00394.JPG" width="50%;"></a></div>;</div>
 <br>
 <br>
+
 <br>
 <br>
 
 <div align="center"><div align="center"><a href="s_DSC00395.JPG"><img src="s_DSC00395.JPG" width="50%;"></a></div>;  <div align="center"><a href="s_DSC00396.JPG"><img src="s_DSC00396.JPG" width="50%;"></a></div>;</div>
 <br>
 <br>
+
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00397.JPG"><img src="s_DSC00397.JPG" width="50%;"></a></div>
 <br>
 <br>
+
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00398.JPG"><img src="s_DSC00398.JPG" width="50%;"></a></div>
 <br>
 <br>
+
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00399.JPG"><img src="s_DSC00399.JPG" width="50%;"></a></div>
 <br>
 <br>
+
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00400.JPG"><img src="s_DSC00400.JPG" width="50%;"></a></div>
 <br>
 <br>
+
 <br>
 <br>
 
@@ -173,9 +175,7 @@ Educator Vehicle の説明書のタッチセンサーを取り付ける章(61ペ
 <br>
 <br>
 
-
-
-### タッチセンサーの取り付け
+### Installing the Touch Sensors
 
 <br>
 <br>
@@ -183,24 +183,28 @@ Educator Vehicle の説明書のタッチセンサーを取り付ける章(61ペ
 <div align="center"><div align="center"><a href="s_DSC00403.JPG"><img src="s_DSC00403.JPG" width="50%;"></a></div>;  <div align="center"><a href="s_DSC00404.JPG"><img src="s_DSC00404.JPG" width="50%;"></a></div>;</div>
 <br>
 <br>
+
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00405.JPG"><img src="s_DSC00405.JPG" width="50%;"></a></div>
 <br>
 <br>
+
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00406.JPG"><img src="s_DSC00406.JPG" width="50%;"></a></div>
 <br>
 <br>
+
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00407.JPG"><img src="s_DSC00407.JPG" width="50%;"></a></div>
 <br>
 <br>
+
 <br>
 <br>
 
@@ -208,96 +212,66 @@ Educator Vehicle の説明書のタッチセンサーを取り付ける章(61ペ
 <br>
 <br>
 
+### Installing the Ultrasonic Sensor
 
-
-### 超音波センサーの取り付け
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00409.JPG"><img src="s_DSC00409.JPG" width="50%;"></a></div>
 <br>
 <br>
-<br>
-<br>
 
 <div align="center"><a href="s_DSC00410.JPG"><img src="s_DSC00410.JPG" width="50%;"></a></div>
-<br>
-<br>
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00411.JPG"><img src="s_DSC00411.JPG" width="50%;"></a></div>
 <br>
 <br>
-<br>
-<br>
 
 <div align="center"><a href="s_DSC00412.JPG"><img src="s_DSC00412.JPG" width="50%;"></a></div>
-<br>
-<br>
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00415.JPG"><img src="s_DSC00415.JPG" width="50%;"></a></div>
 <br>
 <br>
-<br>
-<br>
 
 <div align="center"><a href="s_DSC00416.JPG"><img src="s_DSC00416.JPG" width="50%;"></a></div>
-<br>
-<br>
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00417.JPG"><img src="s_DSC00417.JPG" width="50%;"></a></div>
 <br>
 <br>
-<br>
-<br>
 
 <div align="center"><a href="s_DSC00418.JPG"><img src="s_DSC00418.JPG" width="50%;"></a></div>
-<br>
-<br>
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00419.JPG"><img src="s_DSC00419.JPG" width="50%;"></a></div>
 <br>
 <br>
-<br>
-<br>
 
 <div align="center"><a href="s_DSC00422.JPG"><img src="s_DSC00422.JPG" width="50%;"></a></div>
-<br>
-<br>
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00424.JPG"><img src="s_DSC00424.JPG" width="50%;"></a></div>
 <br>
 <br>
-<br>
-<br>
 
-
-### カラーセンサの取り付け
+### Installing the Color Sensor
 
 <div align="center"><a href="s_DSC00425.JPG"><img src="s_DSC00425.JPG" width="50%;"></a></div>
-<br>
-<br>
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00426.JPG"><img src="s_DSC00426.JPG" width="50%;"></a></div>
 <br>
 <br>
-<br>
-<br>
 
 <div align="center"><a href="s_DSC00427.JPG"><img src="s_DSC00427.JPG" width="50%;"></a></div>
-<br>
-<br>
 <br>
 <br>
 
@@ -305,48 +279,47 @@ Educator Vehicle の説明書のタッチセンサーを取り付ける章(61ペ
 <br>
 <br>
 
-
-## ケーブルの接続
+## Cable Connections
 
 <table class="table-alt">
   <tr>
-    <th>モーター右</th>
-    <th>ポート C</th>
-    <th>25cmケーブル</th>
+    <th>Right Motor</th>
+    <th>Port C</th>
+    <th>25 cm Cable</th>
   </tr>
   <tr>
-    <td>モーター左</td>
-    <td>ポート B</td>
-    <td>25cmケーブル</td>
+    <td>Left Motor</td>
+    <td>Port B</td>
+    <td>25 cm Cable</td>
   </tr>
   <tr>
-    <td>モーター(M)</td>
-    <td>ポートA</td>
-    <td>25cmケーブル</td>
+    <td>M Motor</td>
+    <td>Port A</td>
+    <td>25 cm Cable</td>
   </tr>
   <tr>
-    <td>タッチセンサー右</td>
-    <td>ポート 3</td>
-    <td>35cmケーブル</td>
+    <td>Right Touch Sensor</td>
+    <td>Port 3</td>
+    <td>35 cm Cable</td>
   </tr>
   <tr>
-    <td>タッチセンサー左</td>
-    <td>ポート 1</td>
-    <td>35cmケーブル</td>
+    <td>Left Touch Sensor</td>
+    <td>Port 1</td>
+    <td>35 cm Cable</td>
   </tr>
   <tr>
-    <td>超音波センサー</td>
-    <td>ポート 4</td>
-    <td>50cmケーブル</td>
+    <td>Ultrasonic Sensor</td>
+    <td>Port 4</td>
+    <td>50 cm Cable</td>
   </tr>
   <tr>
-    <td>ジャイロセンサー</td>
-    <td>ポート 2</td>
-    <td>25cmケーブル</td>
+    <td>Gyro Sensor</td>
+    <td>Port 2</td>
+    <td>25 cm Cable</td>
   </tr>
 </table>
 
-※カラーセンサーを利用する際は超音波センサーかタッチセンサーのケーブルを外して使用してください。
+*When using the color sensor, disconnect either the ultrasonic sensor cable or one of the touch sensor cables before use.*
 
 <br>
 <br>
@@ -354,18 +327,11 @@ Educator Vehicle の説明書のタッチセンサーを取り付ける章(61ペ
 <div align="center"><a href="s_DSC00432.JPG"><img src="s_DSC00432.JPG" width="50%;"></a></div>
 <br>
 <br>
-<br>
-<br>
 
 <div align="center"><a href="s_DSC00433.JPG"><img src="s_DSC00433.JPG" width="50%;"></a></div>
-<br>
-<br>
-
 <br>
 <br>
 
 <div align="center"><a href="s_DSC00434.JPG"><img src="s_DSC00434.JPG" width="50%;"></a></div>
 <br>
 <br>
-
--------jp page!!-------

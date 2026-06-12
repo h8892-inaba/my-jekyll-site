@@ -1,177 +1,156 @@
 ---
 layout: page
-title: チュートリアル(SLAM実習)
+title: Tutorial (SLAM Exercise)
 ---
--------jp page!!-------
 
 init
 <!-- チュートリアル(SLAM実習) -->
 #contents
 
-## はじめに
+## Introduction
 
-このページではLiDAR付RaspberryPiマウスを用いてSLAMによるナビゲーションを行います。
+This page explains how to perform navigation using SLAM with a Raspberry Pi Mouse equipped with a LiDAR.
 
 <div align="center"><a href="https://rt-net.jp/mobility/wp-content/uploads/2019/12/23b47429c42d672e7f94ae0a3c9c9d6c.png"><img src="https://rt-net.jp/mobility/wp-content/uploads/2019/12/23b47429c42d672e7f94ae0a3c9c9d6c.png" width="70%;"></a></div>
 
-SLAMはSimultaneous Localization and Mappingの略で、環境地図作成と自己位置推定を同時に実行することを指し、本チュートリアルでは[[
-移動ロボットのナビゲーションに関わるRTコンポーネント群:https://ogata-lab.jp/ja/technology_ja/mobile_nav_rtcs_ja.html]]を使用します。
+SLAM stands for Simultaneous Localization and Mapping, which refers to performing environment map generation and self-localization simultaneously. In this tutorial, the [[RT Components for Mobile Robot Navigation:https://ogata-lab.jp/ja/technology_ja/mobile_nav_rtcs_ja.html]] are used.
 
-移動ロボットのナビゲーションに関わるRTコンポーネント群は[MRPT](https://www.mrpt.org/)という自己位置推定、環境地図作成、経路計画などの機能を提供するクロスプラットフォームなライブラリを使用しています。
+The RT components for mobile robot navigation use a cross-platform library called [MRPT](https://www.mrpt.org/), which provides functions such as self-localization, environment map generation, and path planning.
 
-## 事前準備
+## Preparation
 
-### LiDARの取り付け
-まずRaspberryPiマウスにLiDARを取り付けます。
+### Installing the LiDAR
 
-LiDARマウントには2種類あります。以下に記載の(1)専用LiDARマウント、(2)マルチLiDARマウントの取付手順を参考にしてRaspberry Piマウス本体に取り付けてください。
+First, install the LiDAR on the Raspberry Pi Mouse.
 
-#### 専用LiDARマウント
+There are two types of LiDAR mounts. Install the LiDAR on the Raspberry Pi Mouse by following the instructions for either (1) the dedicated LiDAR mount or (2) the multi-LiDAR mount described below.
 
-以下の画像のように2本のねじで止めるマウントの場合、下記の手順で取り付けてください。
+#### Dedicated LiDAR Mount
 
+If you are using a mount secured with two screws as shown in the image below, follow the procedure described here.
 
 <div align="center"><a href="DSC04139.JPG"><img src="DSC04139.JPG" width="50%;"></a></div>
 
-
-以下のRaspberry Piマウス本体、LiDAR、タッピングビスを用意してください。
-
+Prepare the Raspberry Pi Mouse, LiDAR, and tapping screws shown below.
 
 <div align="center"><a href="slam29_2.png"><img src="slam29_2.png" width="50%;"></a></div>
 
-
-次にRaspberry Piマウス底面のねじを外してください。
+Next, remove the screws from the bottom of the Raspberry Pi Mouse.
 
 <div align="center"><a href="slam30.png"><img src="slam30.png" width="50%;"></a></div>
 
-基盤部分をフレームごとずらしてください。
+Slide the circuit board section together with the frame.
 
 <div align="center"><a href="slam31.png"><img src="slam31.png" width="50%;"></a></div>
 
-次にスペーサーを手で回して外してください。
+Next, remove the spacers by turning them by hand.
 
 <div align="center"><a href="slam32.png"><img src="slam32.png" width="50%;"></a></div>
 
-センサ基盤を外してください。
-
+Remove the sensor board.
 
 <div align="center"><a href="slam33.png"><img src="slam33.png" width="50%;"></a></div>
 <div align="center"><a href="slam34.png"><img src="slam34.png" width="50%;"></a></div>
 
-LiDARをRaspberry Piマウスの上部分に載せてビスで固定してください。
+Place the LiDAR on top of the Raspberry Pi Mouse and secure it with screws.
 
 <div align="center"><a href="slam35.png"><img src="slam35.png" width="50%;"></a></div>
 <div align="center"><a href="slam36.png"><img src="slam36.png" width="50%;"></a></div>
 <div align="center"><a href="slam37.png"><img src="slam37.png" width="50%;"></a></div>
 
-Raspberry PiマウスとLiDARをUSBポートで接続してください。
+Connect the Raspberry Pi Mouse and the LiDAR using a USB port.
 
 <div align="center"><a href="slam38.png"><img src="slam38.png" width="50%;"></a></div>
 <div align="center"><a href="slam39.png"><img src="slam39.png" width="50%;"></a></div>
 
-外したパーツを元に戻せば完成です。
+Reassemble the removed parts to complete the installation.
 
-#### マルチLiDARマウント
+#### Multi-LiDAR Mount
 
-以下の画像のように4つのツメを引っかけるマウントの場合、下記の手順で取り付けてください。
+If you are using a mount with four hooks as shown in the image below, follow the procedure described here.
 
 <div align="center"><a href="DSC04142.JPG"><img src="DSC04142.JPG" width="50%;"></a></div>
 
-以下のように4つのツメをRaspberry Piマウス本体に引っかけます。
+Hook the four tabs onto the Raspberry Pi Mouse as shown below.
 
-まず、前方の2つのツメを引っかけてください。
+First, attach the two front hooks.
 
 <div align="center"><a href="DSC04145.JPG"><img src="DSC04145.JPG" width="50%;"></a></div>
 
-次に後ろのツメを引っかけます。
+Next, attach the rear hooks.
 
 <div align="center"><a href="DSC04146.JPG"><img src="DSC04146.JPG" width="50%;"></a></div>
 
-そして、マルチLiDARマウントの前方2か所をなべタッピングネジ3-8で固定すれば取付完了です。
+Then secure the front two locations of the multi-LiDAR mount with 3-8 pan-head tapping screws to complete the installation.
 
 <div align="center"><a href="DSC04151.JPG"><img src="DSC04151.JPG" width="50%;"></a></div>
 
 <div align="center"><a href="DSC04147.JPG"><img src="DSC04147.JPG" width="50%;"></a></div>
 
-Raspberry PiマウスとLiDARをUSBポートで接続してください。
+Connect the Raspberry Pi Mouse and the LiDAR using a USB port.
 
 <div align="center"><a href="DSC04148.JPG"><img src="DSC04148.JPG" width="50%;"></a></div>
 
+After completing the LiDAR installation, turn on the Raspberry Pi Mouse and connect to its access point.
 
-LiDARの取り付け作業が完了したらRaspberryPiマウスの電源スイッチをオンにしてアクセスポイントに接続してください。
+## Navigation Map Generation System Using SLAM
 
-<!-- *** MapServer、NavigationManagerのダウンロード -->
+In this section, you will try a system that generates an environment map while performing self-localization.
 
-<!-- 講習会でUSBメモリを配布している場合は、ダウンロードは不要です。 -->
+MRPT supports algorithms such as [ICP-SLAM and RBPF-SLAM](https://www.mrpt.org/List_of_SLAM_algorithms), but the RT components for mobile robot navigation use ICP-SLAM.
 
-<!-- MapServer、NavigationManagerはGUIで操作します。 -->
-<!-- Raspberry Piでも起動可能ですが、その場合Raspberry Piをディスプレイに接続するか、X Window Systemで他のPCに画面を表示するかする必要があります。 -->
-<!-- 今回はMapServer、NavigationManagerをPC上で起動するため、以下から実行に必要なファイルをダウンロードしてください。 -->
+The ICP algorithm aligns two point cloud datasets (map data and the latest data acquired by the LRF) by repeatedly applying translation and rotation until the distances between corresponding points become minimal.
 
-<!-- - [[RTM_Tutorial.zip:https://github.com/OpenRTM/RTM_Tutorial/releases/download/20220930/RTM_Tutorial.zip]] -->
+The current position is calculated by aligning the point cloud data of the map being generated with the data acquired by the LRF using the ICP algorithm.
 
-<!-- MapServer、NavigationManagerはRTM_Tutorial.zipを展開したフォルダの''Navigation''フォルダに含まれています。 -->
+### Starting the Mapper System (Raspberry Pi)
 
-<!-- *** 起動済みのRTC終了 -->
-
-<!-- RobotController、RaspberryPiMouseRTCなどが起動済みの場合は終了します。 -->
-
-<!-- RaspberryPiMouseRTCはWEBブラウザの操作でStopをクリックしてください。 -->
-
-<!-- #ref(slam47.png,/jp/node/7098,center) -->
-
-## SLAMによるナビゲーション地図生成システム
-
-この章では自己位置推定をしながら環境地図生成を行うシステムを試してみます。
-MRPTは[ICP-SLAM、RBPF-SLAM](https://www.mrpt.org/List_of_SLAM_algorithms)などのアルゴリズムが使用可能ですが、移動ロボットのナビゲーションに関わるRTコンポーネント群ではICP-SLAMを使用します。
-ICPアルゴリズムは2つの点群データ(地図データ、LRFで取得した最新のデータ)を平行移動、回転を繰り返すことで、対応関係にある点の距離が最短になるように位置合わせをするアルゴリズムです。
-ICPアルゴリズムで作成中の地図データの点群データとLRFで取得したデータを位置合わせすることで現在の位置を計算します。
-
-
-### Mapperシステムの起動(Raspberry Pi)
-まずはWEBブラウザの操作でMapperシステムを起動します。
+First, start the Mapper system from the web browser interface.
 
 <div align="center"><a href="slam1.png"><img src="slam1.png" width="50%;"></a></div>
 
-元の画面に戻らない場合は「Back to the top page.」を押してください。
+If the original page does not reappear, click **Back to the top page.**
 
 <div align="center"><a href="slam2.png"><img src="slam2.png" width="50%;"></a></div>
 
+### Starting NavigationManager (PC)
 
-### NavigationManagerの起動(PC)
-次にNavigationManagerを起動します。
-Navigationフォルダ内の以下のバッチファイル、シェルスクリプトを実行してください。
+Next, start NavigationManager.
 
-- NavigationManager.bat(Windows)
-- NavigationManager.sh(Ubuntu)
+Execute the following batch file or shell script in the Navigation folder.
 
-すると以下のGUIが起動します。
+- NavigationManager.bat (Windows)
+- NavigationManager.sh (Ubuntu)
+
+The following GUI will start.
 
 <div align="center"><a href="slam48.png"><img src="slam48.png" width="50%;"></a></div>
 
-### ポートの接続、RTCのアクティブ化
+### Connecting Ports and Activating RTCs
 
-RTSystemEditorのネームサービスビューは以下の状態になっているはずです。
+The Name Service View in RTSystemEditor should be in the following state.
 
 <div align="center"><a href="slam28.png"><img src="slam28.png" width="50%;"></a></div>
 
-まずはWEBブラウザの操作で**Connect**ボタンを押してください。
-これでRaspberry Pi上のRTCのポートは接続されます。
+First, click the **Connect** button in the web browser interface.
+
+This connects the RTC ports on the Raspberry Pi.
 
 <div align="center"><a href="slam14.png"><img src="slam14.png" width="50%;"></a></div>
 
-システムダイアグラム上で以下のように接続してください。
+Connect the components in the system diagram as shown below.
 
 <div align="center"><a href="slam46.png"><img src="slam46.png" width="50%;"></a></div>
 
-NavigationManagerに関わる部分以外は接続済みのため、以下のポートを接続します。
+Except for the NavigationManager-related connections, all other connections have already been established. Connect the following ports
+
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名</th>
-    <th>ポート名</th>
-    <th>コンポーネント名</th>
-    <th>ポート名</th>
+    <th>Component Name</th>
+    <th>Port Name</th>
+    <th>Component Name</th>
+    <th>Port Name</th>
   </tr>
   <tr>
     <td>NavigationManager0</td>
@@ -199,90 +178,94 @@ NavigationManagerに関わる部分以外は接続済みのため、以下のポ
   </tr>
 </table>
 
+After connecting the ports, activate the RTCs.
 
-接続したらRTCをアクティブ化してください。
 <div align="center"><a href="slam5.png"><img src="slam5.png" width="50%;"></a></div>
 
-### 地図作成
+### Creating a Map
 
-NavigationManagerのGUIの**Start Mapping**ボタンを押してください。
+Click the **Start Mapping** button in the NavigationManager GUI.
 
 <div align="center"><a href="slam6.png"><img src="slam6.png" width="50%;"></a></div>
 
-次にRTCをアクティブ化した時に以下のジョイスティックGUIが起動しているため、黄色い円をマウスで操作してください。
-それでRaspberry Piマウスが移動します。
+Next, when the RTCs are activated, the following joystick GUI starts.
+
+Operate the yellow circle with the mouse.
+
+This will move the Raspberry Pi Mouse.
 
 <div align="center"><a href="slam8.png"><img src="slam8.png" width="50%;"></a></div>
 
-しばらく操作すると以下のように環境地図が得られます。
+After operating it for a while, an environment map similar to the following will be generated.
 
 <div align="center"><a href="testMap.png"><img src="testMap.png" width="50%;"></a></div>
 
-地図生成が終了したら**Stop Mapping**ボタンを押してください。
+When map generation is complete, click the **Stop Mapping** button.
 
 <div align="center"><a href="slam10.png"><img src="slam10.png" width="50%;"></a></div>
 
-次に地図データを保存します。
-**Save Map**ボタンを押してください。
+Next, save the map data.
+
+Click the **Save Map** button.
 
 <div align="center"><a href="slam11.png"><img src="slam11.png" width="50%;"></a></div>
 
+Set the file name to **testMap** and save it in the Navigation folder.
 
-ファイル名を**testMap**と設定して、Navigationフォルダに保存してください。
-<br>※**開く**ボタンをクリックすると保存されます。
+<br>
+※Clicking the **Open** button will save the file.
 
 <div align="center"><a href="slam45.png"><img src="slam45.png" width="50%;"></a></div>
 
-最後にWEBブラウザの操作でMapperシステムを終了させます。
+Finally, stop the Mapper system using the web browser interface.
 
 <div align="center"><a href="slam13.png"><img src="slam13.png" width="50%;"></a></div>
 
+## Running the Navigation (Path Planning) System
 
-## ナビゲーション(経路計画)システムの実行
+From here, you will use the generated environment map data to perform path planning with the Raspberry Pi Mouse.
 
-ここからは作成した環境地図データを用いてRaspberry Piマウスの経路計画を試してみます。
+### Starting the PathPlan System (Raspberry Pi)
 
-### PathPlanシステムの起動(Raspberry Pi)
-WEBブラウザの操作でPathPlanシステムを起動します。
+Start the PathPlan system from the web browser interface.
 
 <div align="center"><a href="slam15.png"><img src="slam15.png" width="50%;"></a></div>
 
-元の画面に戻らない場合は「Back to the top page.」を押してください。
+If the original page does not reappear, click **Back to the top page.**
 
+### Starting NavigationManager and MapServer (PC)
 
+Next, start NavigationManager and MapServer.
 
+If NavigationManager is already running, start only MapServer.
 
-### NavigationManager、MapServerの起動(PC)
-次にNavigationManagerとMapServerを起動します。
-NavigationManagerが起動済みの場合はMapServerのみを起動してください。
-Navigationフォルダ内の以下のバッチファイル、シェルスクリプトを実行してください。
+Run the following batch files or shell scripts in the Navigation folder.
 
-- NavigationManager.bat(Windows)、NavigationManager.sh(Ubuntu)
-- MapServer.bat(Windows)、MapServer.sh(Ubuntu)
+- NavigationManager.bat (Windows), NavigationManager.sh (Ubuntu)
+- MapServer.bat (Windows), MapServer.sh (Ubuntu)
 
+### Connecting Ports and Activating RTCs
 
-### ポートの接続、RTCのアクティブ化
-
-RTSystemEditorのネームサービスビューは以下の状態になっているはずです。
+The Name Service View in RTSystemEditor should now look as follows.
 
 <div align="center"><a href="slam18.png"><img src="slam18.png" width="50%;"></a></div>
 
-まずはWEBブラウザの操作で**Connect**ボタンを押してください。
-これでRaspberry Pi上のRTCのポートは接続されます。
+First, click the **Connect** button in the web browser interface.
+
+This will connect the RTC ports on the Raspberry Pi.
 
 <div align="center"><a href="slam16.png"><img src="slam16.png" width="50%;"></a></div>
 
-システムダイアグラム上で以下のように接続してください。
+Connect the components on the system diagram as shown below.
 
 <div align="center"><a href="slam19.png"><img src="slam19.png" width="50%;"></a></div>
 
-
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名</th>
-    <th>ポート名</th>
-    <th>コンポーネント名</th>
-    <th>ポート名</th>
+    <th>Component Name</th>
+    <th>Port Name</th>
+    <th>Component Name</th>
+    <th>Port Name</th>
   </tr>
   <tr>
     <td>NavigationManager0</td>
@@ -322,47 +305,68 @@ RTSystemEditorのネームサービスビューは以下の状態になってい
   </tr>
 </table>
 
-接続したらRTCをアクティブ化してください。
+After connecting the ports, activate the RTCs.
 
 <div align="center"><a href="slam20.png"><img src="slam20.png" width="50%;"></a></div>
 
-### 経路生成
-まずはRaspberry Piマウスの目標位置、目標姿勢角を設定します。
-NavigationManagerのGUIの地図上の目標位置となる場所をクリックしてください。
-地図上の白い部分が障害物を検出しなかった範囲のため、白い範囲のどこかをクリックしてください。
+### Path Generation
+
+First, set the target position and target orientation angle of the Raspberry Pi Mouse.
+
+Click the desired target position on the map displayed in the NavigationManager GUI.
+
+The white area on the map indicates regions where no obstacles were detected, so click somewhere within the white area.
 
 <div align="center"><a href="slam21.png"><img src="slam21.png" width="50%;"></a></div>
 
-以下の画面が表示されるので、目標角度を設定します。
-
+The following dialog will be displayed, allowing you to set the target orientation angle.
 
 <div align="center"><a href="slam22.png"><img src="slam22.png" width="50%;"></a></div>
 
-適当な場所をクリックすると中心から延びる赤い線の角度が変化するので、適当な角度に設定してください。
+Click any location in the dialog to change the angle of the red line extending from the center, and set an appropriate angle.
 
 <div align="center"><a href="path23.png"><img src="path23.png" width="50%;"></a></div>
 
-**OK**ボタンを押すと地図上に目標位置が表示されます。
+Click the **OK** button to display the target position on the map.
 
 <div align="center"><a href="slam23.png"><img src="slam23.png" width="50%;"></a></div>
 
-次に**Plan Path**ボタンを押してください。
+Next, click the **Plan Path** button.
 
 <div align="center"><a href="slam24.png"><img src="slam24.png" width="50%;"></a></div>
 
-これで目標位置までの目標経路が計算されました。
+The target path to the destination will then be calculated.
 
 <div align="center"><a href="slam25.png"><img src="slam25.png" width="50%;"></a></div>
 
-### 経路追従
+### Navigation Execution
 
-**Follow**ボタンを押すと経路追従を開始します。
+Next, click the **Start Following** button.
 
 <div align="center"><a href="slam26.png"><img src="slam26.png" width="50%;"></a></div>
 
-動作確認が終了したら、WEBブラウザのStopボタンからPathPlanシステムを終了してください。
-<!-- [[Raspberry Piマウスの電源をオフ:/ja/node/6550#shutdown]]にしてください。 -->
+The Raspberry Pi Mouse will begin moving toward the destination along the generated path.
 
 <div align="center"><a href="slam27.png"><img src="slam27.png" width="50%;"></a></div>
 
--------jp page!!-------
+When the Raspberry Pi Mouse reaches the destination, navigation is complete.
+
+If you want to stop navigation during operation, click the **Stop Following** button.
+
+## Summary
+
+In this tutorial, you learned:
+
+- How to install a LiDAR on a Raspberry Pi Mouse using either a dedicated LiDAR mount or a multi-LiDAR mount.
+- How to connect the LiDAR to the Raspberry Pi Mouse and prepare the hardware for SLAM operation.
+- How to start the Mapper system and NavigationManager.
+- How to connect and activate the RTCs required for SLAM-based map generation.
+- How to generate an environment map while performing self-localization using ICP-SLAM.
+- How to save generated map data for later use.
+- How to start the PathPlan system and MapServer for navigation.
+- How to connect the RTCs required for path planning and localization.
+- How to specify a target position and target orientation on a generated map.
+- How to generate a navigation path and execute autonomous movement toward the destination.
+- How to stop navigation when necessary.
+
+By completing this tutorial, you have learned how to generate an environment map using SLAM, perform self-localization, create navigation paths, and execute autonomous navigation with a LiDAR-equipped Raspberry Pi Mouse.

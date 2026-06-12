@@ -1,178 +1,189 @@
 ---
 layout: page
-title: チュートリアル(rtshell入門、Raspberry Pi Mouse)
+title: Tutorial (Introduction to rtshell, Raspberry Pi Mouse)
 ---
--------jp page!!-------
 <!--  チュートリアル(rtshell入門、Raspberry Pi Mouse) -->
 
 #contents
 
-## はじめに
-ここではシミュレータ上のRaspberry Piマウスを操作するRTシステムの起動、終了を自動化するバッチファイル、シェルスクリプトの作成方法について説明します。
-今まで実行ファイルをダブルクリックして起動したり、RTSystemEditorから操作してポートを接続したりしていたのが、スクリプトを実行するだけでシステムの起動に必要な処理を全て実行してくれます。
+## Introduction
 
-この実習では[RTコンポーネントの作成入門](/ja/node/6550)で作成したRobotControllerコンポーネントを使用します。
+This section explains how to create batch files and shell scripts that automate the startup and shutdown of an RT system that controls a Raspberry Pi Mouse running in a simulator.
 
-RTCの起動とRTSystemEditor上での操作を自動化するバッチファイル、シェルスクリプトを作成する実習を行います。
+Previously, you had to start executable files by double-clicking them and connect ports manually through RTSystemEditor. By executing a script, all processing required to start the system can be performed automatically.
+
+In this exercise, the RobotController component created in [Introduction to RT Component Development](/ja/node/6550) will be used.
+
+You will create batch files and shell scripts that automate RTC startup and operations normally performed in RTSystemEditor.
 
 <div align="center"><a href="rtshell1_tutorial.png"><img src="rtshell1_tutorial.png" width="50%;"></a></div>
 
 ### rtshell
 
-rtshellはコマンドラインからRTCを操作するためのツールで、RTSystemEditorと同等の機能を持ちます。
+rtshell is a tool for operating RTCs from the command line and provides functionality equivalent to RTSystemEditor.
 
-- [rtshell によるRTシステムの管理](/ja/node/5014)
-- [rtshell入門](https://openrtm.org/openrtm/sites/default/files/5620/rtshell.pdf)
+- [Managing RT Systems with rtshell](/ja/node/5014)
+- [Introduction to rtshell](https://openrtm.org/openrtm/sites/default/files/5620/rtshell.pdf)
 
-## RTシステム起動の自動化
+## Automating RT System Startup
 
-シミュレータ上のRaspberryPiマウスをRobotControllerコンポーネントで制御するシステムの起動、終了手順は以下の通りです。
+The startup and shutdown procedure for a system that controls a Raspberry Pi Mouse in a simulator using the RobotController component is as follows.
 
-1. RaspberryPiMouseSimulatorコンポーネント、RobotControllerコンポーネントを起動する。
-1. ポートをコネクタで接続する
-1. RTCをアクティブ化する
-1. RTCを終了する
+1. Start the RaspberryPiMouseSimulator component and RobotController component.
+1. Connect ports using connectors.
+1. Activate the RTCs.
+1. Exit the RTCs.
 
-### 事前準備
-この実習ではコマンドラインによる操作を行うため、コマンドプロンプト(Windows)、ターミナル(Ubuntu)を起動してください。
+### Preparation
 
-- [Windows10 – コマンドプロンプトを起動する方法](https://pc-karuma.net/windows10-open-command-prompt-window/)
-- [【Linux FAQ】Ubuntuで「端末」を開いて「コマンド」を実行するには？](https://linuxfan.info/ubuntu-open-terminal-emulator)
+Since this exercise uses command-line operations, start Command Prompt (Windows) or Terminal (Ubuntu).
 
-コマンドプロンプト、ターミナルを起動したら「**rtls**」と入力してください。
-**‘rtls’ は、内部コマンドまたは外部コマンド、操作可能なプログラムまたはバッチ ファイルとして認識されていません。**と表示された場合、PythonのScriptsフォルダ(例えば「C:\Python38\Scripts」)が環境変数Pathに設定されていません。
-Pythonをインストール場所を確認して環境変数を設定してください。
+- [How to Open Command Prompt in Windows 10](https://pc-karuma.net/windows10-open-command-prompt-window/)
+- [Linux FAQ: How to Open a Terminal and Execute Commands in Ubuntu](https://linuxfan.info/ubuntu-open-terminal-emulator)
 
-- [Pythonのインストール場所について（Windows）](https://gammasoft.jp/blog/python-install-location/)
-- [Windows 10でPath環境変数を設定／編集する](https://www.atmarkit.co.jp/ait/articles/1805/11/news035.html)
+After starting Command Prompt or Terminal, enter **rtls**.
 
-### ポートの接続自動化
-データポートの接続を自動化する手順は以下の通りです。
+If the message **'rtls' is not recognized as an internal or external command, operable program or batch file.** appears, the Python Scripts folder (for example, `C:\Python38\Scripts`) is not configured in the Path environment variable.
 
-- RTSystemEditor(もしくはrtshellのrtconコマンド)でポートを接続する。
-- rtshellの**rtcryo**コマンドで接続情報をファイルに保存する。
-- 再起動時にrtshellの**rtresurrect**コマンドで接続を復元する。
+Check the Python installation location and configure the environment variable.
 
-前準備として接続情報を保存したXMLファイルを保存し、自動起動時にはrtresurrectコマンドで状態を復元します。
+- [Python Installation Location (Windows)](https://gammasoft.jp/blog/python-install-location/)
+- [Setting/Editing the Path Environment Variable in Windows 10](https://www.atmarkit.co.jp/ait/articles/1805/11/news035.html)
 
-**RobotControllerComp**、**RaspberryPiMouseSimulatorComp**を起動後、RTSystemEditor上でポートを接続してください。
+### Automating Port Connections
 
-現在の状態は以下のようになっています。
+The procedure for automating data port connections is as follows.
+
+- Connect ports using RTSystemEditor (or the rtshell rtcon command).
+- Save the connection information to a file using the rtshell **rtcryo** command.
+- Restore the connections after restart using the rtshell **rtresurrect** command.
+
+As preparation, save the connection information to an XML file and restore the state with the rtresurrect command during automatic startup.
+
+After starting **RobotControllerComp** and **RaspberryPiMouseSimulatorComp**, connect the ports in RTSystemEditor.
+
+The current state is as follows.
 
 <div align="center"><a href="rtshell3_tutorial.png"><img src="rtshell3_tutorial.png" width="70%;"></a></div>
 
-接続後、以下のコマンドでXMLファイルを保存します。
-XMLファイルの保存場所は自分で分かる場所に変更してください。
+After connecting the ports, save the XML file with the following command.
 
-```
+Change the XML file save location to a location of your choice.
+
+```sh
  rtcryo -o C:\work\robotcontroller.xml localhost
 ```
 
-次にrtresurrectコマンドを試してみます。
-まずは全てのコネクタを削除してください。
-RTSystemEditorでコネクタをクリックしてDeleteキーを押すか、右クリックしてDeleteを選択してください。
+Next, try the rtresurrect command.
+
+First, delete all connectors.
+
+In RTSystemEditor, click a connector and press the Delete key, or right-click it and select Delete.
 
 <div align="center"><a href="rtshell2_tutorial.png"><img src="rtshell2_tutorial.png" width="70%;"></a></div>
 
-現在は以下の状態になっています。
+The current state is now as follows.
 
 <div align="center"><a href="rtshell4_tutorial.png"><img src="rtshell4_tutorial.png" width="70%;"></a></div>
 
-以下のコマンドを入力してください。
-XMLファイルの場所は保存した場所に変更してください。
+Enter the following command.
 
-```
+Change the XML file path to the location where you saved it.
+
+```sh
  rtresurrect C:\work\robotcontroller.xml
 ```
 
-ポートが接続された状態に戻ったかを確認してください。
-現在は以下の状態になっているはずです。
+Verify that the ports have returned to the connected state.
+
+The current state should now be as follows.
 
 <div align="center"><a href="rtshell3_tutorial.png"><img src="rtshell3_tutorial.png" width="70%;"></a></div>
 
-### RTCのアクティブ化の自動処理
+### Automating RTC Activation
 
-rtshellの**rtstart**でRTCをアクティブ化します。
-以下のコマンドを入力してください。
+Use the rtshell **rtstart** command to activate RTCs.
 
-```
+Enter the following command.
+
+```sh
  rtstart C:\work\robotcontroller.xml
 ```
 
-現在は以下の状態になっており、シミュレータ上のRaspberryPiマウスが操作可能になっているはずです。
+The current state should now be as shown below, and the Raspberry Pi Mouse in the simulator should be controllable.
 
 <div align="center"><a href="rtshell5_tutorial.png"><img src="rtshell5_tutorial.png" width="70%;"></a></div>
 
-次にRTCの非アクティブ化を試してみます。
-以下の**rtstop**コマンドを入力してください。
+Next, try deactivating the RTCs.
 
-```
+Enter the following **rtstop** command.
+
+```sh
  rtstop C:\work\robotcontroller.xml
 ```
 
-これでRTCが非アクティブ化されて以下の状態になっているはずです。
+The RTCs should now be deactivated and return to the following state.
 
 <div align="center"><a href="rtshell3_tutorial.png"><img src="rtshell3_tutorial.png" width="70%;"></a></div>
 
-### RTCの終了の自動化
+### Automating RTC Shutdown
 
-rtshellの**rtexit**でRTCを終了します。
+Use the rtshell **rtexit** command to exit RTCs.
 
-以下のコマンドを試してみてください。
+Try the following commands.
 
-```
+```sh
  rtexit localhost/RaspberryPiMouseSimulator0.rtc
  rtexit localhost/%COMPUTERNAME%.host_cxt/RobotController0.rtc
 ```
 
-RTCはデフォルトの設定でホスト名.host_cxtのコンテキストの下にコンポーネントを登録します。
+By default, RTCs register their components under the context named `hostname.host_cxt`.
 
 <div align="center"><a href="rtshell6_tutorial.png"><img src="rtshell6_tutorial.png" width="50%;"></a></div>
 
-※Ubuntuの場合は**HOSTNAME=`hostname`**を追加して、**%COMPUTERNAME%**を**${HOSTNAME}**に変更してください。
+*For Ubuntu, add **HOSTNAME=`hostname`** and replace **%COMPUTERNAME%** with **${HOSTNAME}**.*
 
-これでRTCが終了したはずです。
+The RTCs should now have exited.
 
-### バッチファイル、シェルスクリプトの作成
+### Creating Batch Files and Shell Scripts
 
-RTシステムを起動、終了するバッチファイル、シェルスクリプトを作成します。
+Create batch files and shell scripts for starting and stopping the RT system.
 
-Windowsの場合は以下のバッチファイルを作成してください。
+For Windows, create the following batch files.
 
 - robotcontroller_start.bat
 - robotcontroller_exit.bat
 
-バッチファイルの作成手順は以下の通りです。
+The procedure for creating batch files is as follows.
 
-- [バッチファイルの作成方法：Windowsバッチファイルに初めて触れる方へ](https://jj-blues.com/cms/wantto-howtomakebatforbeginer/)
+- [How to Create Batch Files: For Beginners Using Windows Batch Files](https://jj-blues.com/cms/wantto-howtomakebatforbeginer/)
 
-名前変更時に、エクスプローラーで拡張子を非表示にしている場合は注意してください。
+When renaming files, be careful if Explorer is configured to hide file extensions.
 
-バッチファイルはメモ帳などで開いてください。
+Open the batch files using Notepad or another text editor.
 
-Ubuntuの場合は以下のシェルスクリプトを作成してください。
+For Ubuntu, create the following shell scripts.
 
 - robotcontroller_start.sh
 - robotcontroller_exit.sh
 
+#### Creating the Startup Script
 
-#### 起動スクリプトの作成
+First, edit **robotcontroller_start.bat** and **robotcontroller_start.sh**.
 
-まずは**robotcontroller_start.bat**、**robotcontroller_start.sh**を編集します。
+Open robotcontroller_start.bat in Notepad or another editor, and write the procedure for starting RobotControllerComp and RaspberryPiMouseSimulatorComp in the batch file or shell script.
 
-robotcontroller_start.batをメモ帳などで開いて、RobotControllerComp、RaspberryPiMouseSimulatorCompを起動する手順をバッチファイル、シェルスクリプトに記述します。
+For Windows, enter the following commands.
 
-Windowsの場合は以下のコマンドを記述してください。
-
-```
+```bat
  start "" /d C:\workspace\RobotController\build\src\Release RobotControllerComp.exe
  start "" /d C:\work\RTM_Tutorial\EXE RaspberryPiMouseSimulatorComp.exe
  timeout 2
 ```
 
-Ubuntuの場合は以下のコマンドを記述してください。
+For Ubuntu, enter the following commands.
 
-```
+```sh
  cd ~/workspace/RobotController/build/src/
  ./RobotControllerComp&
  cd ~/RasPiMouseSimulatorRTC/build
@@ -180,44 +191,58 @@ Ubuntuの場合は以下のコマンドを記述してください。
  sleep 2
 ```
 
-RobotControllerComp、RaspberryPiMouseSimulatorCompのパスは環境に合わせて変更してください。
-RTCが起動しないと後のコマンドが実行できないためtimeout、sleepコマンドで待機するようにしてあります。
+Change the paths to RobotControllerComp and RaspberryPiMouseSimulatorComp according to your environment.
 
+Since subsequent commands cannot be executed until the RTCs have started, the timeout and sleep commands are used to wait.
 
-次にポートの接続、RTCのアクティブ化を実行するコマンドを記述してください。
+Next, add the commands for connecting ports and activating RTCs.
 
-```
+```sh
  rtresurrect C:\work\robotcontroller.xml
  rtstart C:\work\robotcontroller.xml
 ```
 
+After editing, execute robotcontroller_start.bat or robotcontroller_start.sh.
 
-編集が終わったら、robotcontroller_start.bat、robotcontroller_start.shを実行してみてください。
-問題がなければRTCが自動起動してシミュレータが実行されているはずです。
-RTCが起動しない、ポートが接続されないなどの場合は、実行ファイルのパス、XMLファイルのパスを確認してください。
+If everything is configured correctly, the RTCs should start automatically and the simulator should begin running.
 
-#### 終了スクリプトの作成
+If the RTCs do not start or the ports are not connected, check the paths to the executable files and the XML file.
 
-次に**robotcontroller_exit.bat**、**robotcontroller_exit.sh**を編集します。
+#### Creating the Shutdown Script
 
-以下のコマンドを記述してください。
+Next, edit **robotcontroller_exit.bat** and **robotcontroller_exit.sh**.
 
-```
+Enter the following commands.
+
+```bat
  rtexit localhost/RaspberryPiMouseSimulator0.rtc
  rtexit localhost/%COMPUTERNAME%.host_cxt/RobotController0.rtc
 ```
 
-Ubuntuの場合は以下のコマンドを記述してください。
+For Ubuntu, enter the following commands.
 
-```
+```sh
  HOSTNAME=`hostname`
  rtexit localhost/RaspberryPiMouseSimulator0.rtc
  rtexit localhost/${HOSTNAME}.host_cxt/RobotController0.rtc
 ```
 
-編集が終わったら、robotcontroller_exit.bat、robotcontroller_exit.shを実行してみてください。
-問題がなければ実行中のRTCが終了するはずです。
+After editing, execute robotcontroller_exit.bat or robotcontroller_exit.sh.
 
+If everything is configured correctly, the running RTCs should terminate.
 
+## Summary
 
--------jp page!!-------
+In this tutorial, you learned:
+
+- How to use rtshell to operate RTCs from the command line.
+- How to automate RT system startup and shutdown procedures.
+- How to save and restore port connection information using rtcryo and rtresurrect.
+- How to activate and deactivate RTCs using rtstart and rtstop.
+- How to terminate RTCs using rtexit.
+- How to create batch files for Windows and shell scripts for Ubuntu.
+- How to automate component startup, port restoration, RTC activation, and RTC shutdown using scripts.
+- How to verify automatic startup and shutdown of a Raspberry Pi Mouse simulation system.
+
+By completing this tutorial, you have learned how to automate the startup, operation, and shutdown of an RT system using rtshell, batch files, and shell scripts.
+

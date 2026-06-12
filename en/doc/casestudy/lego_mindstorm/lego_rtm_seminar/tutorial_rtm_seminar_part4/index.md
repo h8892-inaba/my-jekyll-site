@@ -1,105 +1,110 @@
 ---
 layout: page
-title: チュートリアル(RTM講習会、第4部) 
+title: Tutorial (RTM Seminar, Part 4)
 ---
--------jp page!!-------
 
-<!-- Title: チュートリアル(RTM講習会、第4部) -->
+<!-- Title: Tutorial (RTM Seminar, Part 4) -->
 #contents
 
-## はじめに
+## Introduction
 
-このページではLibreOffice Calc用RTCによるRTCの動作確認手順について説明します。
-Calcのセルの値をInPortに入力、OutPortの出力した値をセルに表示することで対象RTCの挙動を確認できます。
+This page explains how to verify the operation of RTCs using the RTC for LibreOffice Calc.
+
+You can check the behavior of a target RTC by entering values from Calc cells into an InPort and displaying values output from an OutPort in Calc cells.
 
 <div align="center"><a href="calc1.png"><img src="calc1.png" width="70%;"></a></div>
 
+In the RTM seminar, a portable version of LibreOffice and RTCs are distributed on a USB memory stick.
 
-RTM講習会ではUSBメモリでポータブル版LibreOfficeとRTCを配布します。
-Windowsで実行できます。
-UbuntuはPython3用のomniORBのパッケージがないため実行できません。講習会ではノートPCを貸し出します。
+They can be run on Windows.
 
-この実習では[第2部]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2)で作成したRobotControllerコンポーネントを使用します。
+Ubuntu is not supported because there is no omniORB package for Python 3. Laptops will be provided during the seminar.
 
+In this exercise, we use the RobotController component created in [Part 2]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2).
 
-## LibreOfficeとは？
-表計算、パワーポイント、ワープロ機能等を提供するオフィススイートです。
-フリーソフトとして公開されており、今回の講習会では以下のポータブル版を使用します。
+## What is LibreOffice?
 
-- [Portable版 LibreOffice Portable](https://ja.libreoffice.org/download/portable-versions/)
+LibreOffice is an office suite that provides spreadsheet, presentation, and word processing functions.
 
+It is distributed as free software, and in this seminar we use the following portable version.
 
-## LibreOffice Calc用RTCの起動
+- [Portable Version: LibreOffice Portable](https://ja.libreoffice.org/download/portable-versions/)
 
-配布したUSBメモリ内の**ポータブル版LibreOffice\run_CalcRTC.bat**を実行します。
+## Starting the RTC for LibreOffice Calc
 
-LibreOffice Calcが起動するため、**RTC起動**ボタンをクリックすることでOOoCalcControlというRTCを起動します。
+Run **Portable LibreOffice\run_CalcRTC.bat** from the distributed USB memory stick.
+
+LibreOffice Calc will start. Click the **Start RTC** button to launch the RTC named **OOoCalcControl**.
 
 <div align="center"><a href="calc2.png"><img src="calc2.png" width="50%;"></a></div>
 
+## Connecting an OutPort
 
-## OutPortの接続
+Connect the RobotController OutPort so that output data can be monitored in Calc.
 
-RobotControllerのOutPortと接続し、Calcで出力データの確認ができるようにします。
-Calcの**操作ダイアログ起動**ボタンをクリックしてください。
+Click the **Launch Control Dialog** button in Calc.
 
 <div align="center"><a href="calc3.png"><img src="calc3.png" width="50%;"></a></div>
 
+First, connect to the OutPort whose output data you want to monitor.
 
-まずは出力データを確認するOutPortと接続します。
-**ツリー表示ボタン**を押下してネームサーバーに登録されたRTCのポート一覧を表示後、ツリーからRobotController0のoutを選択します。
+Click the **Tree View** button to display the list of RTC ports registered in the Name Server, then select **RobotController0 → out** from the tree.
 
 <div align="center"><a href="calc4.png"><img src="calc4.png" width="50%;"></a></div>
 
+Next, change some settings.
 
-次に一部設定を変更します。
+Uncheck **Move Columns**.
 
-**列を移動させる**のチェックを外してください。
-このチェックが有効の場合、データを受信する度にセルの位置が移動するモードで動作します。
-グラフに描画する場合は位置が移動するモードを使用しますが、今回は単純に値を確認したいだけのためチェックを外します。
+When this option is enabled, the cell position moves every time data is received.
 
-**列番号**の右のボックスに**C**と入力してください。
-これで**2**行目の**A**～**C**列のセルにOutPortの出力データを表示するようになりました。
+This mode is useful when plotting graphs, but for this exercise we only want to monitor values, so disable it.
 
-設定完了後、作成ボタンを押してください。
+Enter **C** in the box to the right of **Column Number**.
+
+This will display the OutPort output data in columns **A** through **C** of row **2**.
+
+After completing the settings, click the **Create** button.
 
 <div align="center"><a href="calc9.png"><img src="calc9.png" width="50%;"></a></div>
 
-## OutPortの動作確認
-RT System Editor上でRTCをアクティブ化して動作を確認してください。
+## Verifying OutPort Operation
+
+Activate the RTC in RT System Editor and verify its operation.
 
 <div align="center"><a href="calc6.png"><img src="calc6.png" width="70%;"></a></div>
 
-この状態でコンフィギュレーションパラメータを操作してCalcのセルの値が変化するかを確認してください。
+While the RTC is active, change the configuration parameters and verify that the values displayed in the Calc cells change accordingly.
 
 <div align="center"><a href="calc7.png"><img src="calc7.png" width="70%;"></a></div>
 
-## InPortの接続
-RobotControllerのInPortと接続し、Calcからデータの入力を行うようにします。
+## Connecting an InPort
 
+Connect the RobotController InPort so that data can be entered from Calc.
 
-**ツリー表示ボタン**を押下してネームサーバーに登録されたRTCのポート一覧を表示後、ツリーからRobotController0のinを選択します。
+Click the **Tree View** button to display the list of RTC ports registered in the Name Server, then select **RobotController0 → in** from the tree.
 
 <div align="center"><a href="calc8.png"><img src="calc8.png" width="50%;"></a></div>
 
+Next, change some settings.
 
-次に一部設定を変更します。
-
-**列を移動させる**のチェックを外してください。
+Uncheck **Move Columns**.
 
 ''''
-**列番号**の右のボックスに**D**と入力してください。
-これで**3**行目の**A**～**C**列のセルにOutPortの出力データを表示するようになりました。
+Enter **D** in the box to the right of **Column Number**.
 
-設定完了後、作成ボタンを押してください。
+This will display the OutPort output data in columns **A** through **C** of row **3**.
+
+After completing the settings, click the **Create** button.
 
 <div align="center"><a href="calc12.png"><img src="calc12.png" width="50%;"></a></div>
 
-## InPortの動作確認
-RT System Editor上でRTCをアクティブ化して動作を確認してください。
+## Verifying InPort Operation
 
-この状態でコンフィギュレーションパラメータで前進する速度をOutPortから出力するように操作してください。
-その後、Calcの**3**行目の**A**、**B**列のセルに1の値を入力するか、0の値を入力するかで動作が変化するかを確認してください。
+Activate the RTC in RT System Editor and verify its operation.
+
+While the RTC is active, configure it so that a forward velocity is output through the OutPort.
+
+Then, enter either **1** or **0** into columns **A** and **B** of row **3** in Calc, and verify that the behavior changes accordingly.
 
 <div align="center"><a href="calc13.png"><img src="calc13.png" width="70%;"></a></div>
--------jp page!!-------

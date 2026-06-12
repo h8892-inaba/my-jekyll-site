@@ -1,33 +1,31 @@
 ---
 layout: page
-title: Educator Vehicle用 RTC のインストール (EV3)
+title: Installing RTCs for the Educator Vehicle (EV3)
 ---
--------jp page!!-------
 
-<!-- Educator Vehicle用 RTC のインストール (EV3) -->
+<!-- Installing RTCs for the Educator Vehicle (EV3) -->
 #contents
 
-このページでは Educator Vehicle を操作するための各RTC のインストール方法について説明します。
-
-
-
+This page explains how to install the various RTCs used to control the Educator Vehicle.
 
 ## EducatorVehicle
 
-EducatorVehicle は EV3 の走行速度の入力、センサーのデータの出力等を行うためのコンポーネントです。
+EducatorVehicle is a component for controlling the driving speed of the EV3 and outputting sensor data.
 
 - [https://github.com/Nobu19800/EducatorVehicle](https://github.com/Nobu19800/EducatorVehicle)
 
-クロス環境で以下のコマンドを入力してください。
+Enter the following commands in the cross-development environment.
 
 ```
- git clone https://github.com/Nobu19800/EducatorVehicle
- cd EducatorVehicle
- cmake .
- make
+
+git clone https://github.com/Nobu19800/EducatorVehicle
+cd EducatorVehicle
+cmake .
+make
+
 ```
 
-生成された src/EducatorVehicleComp を EV3 に転送してください。
+Transfer the generated `src/EducatorVehicleComp` to the EV3.
 
 <table class="table-alt">
   <tr>
@@ -37,130 +35,132 @@ EducatorVehicle は EV3 の走行速度の入力、センサーのデータの�
     <td colspan="3" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>velocity2D</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>目標速度</td>
+    <td>Target velocity</td>
   </tr>
   <tr>
     <td>angle</td>
     <td>RTC::TimedDouble</td>
-    <td>モーターMの角度</td>
+    <td>Motor M angle</td>
   </tr>
   <tr>
     <td>lcd</td>
     <td>RTC::CameraImage</td>
-    <td>LCDに表示する画像データ</td>
+    <td>Image data to be displayed on the LCD</td>
   </tr>
   <tr>
     <td>sound</td>
     <td>RTC::TimedString</td>
-    <td>出力する音声</td>
+    <td>Audio output</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>odometry</td>
     <td>RTC::TimedPose2D</td>
-    <td>現在の位置・姿勢</td>
+    <td>Current position and orientation</td>
   </tr>
   <tr>
     <td>current_vel</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>現在の速度・角速度</td>
+    <td>Current velocity and angular velocity</td>
   </tr>
   <tr>
     <td>ultrasonic</td>
     <td>RTC::RangeData</td>
-    <td>超音波センサーで計測した距離</td>
+    <td>Distance measured by the ultrasonic sensor</td>
   </tr>
   <tr>
     <td>gyro</td>
     <td>RTC::TimedDouble</td>
-    <td>ジャイロセンサーで計測した角度</td>
+    <td>Angle measured by the gyro sensor</td>
   </tr>
   <tr>
     <td>color</td>
     <td>RTC::TimedString</td>
-    <td>カラーセンサーで計測した色</td>
+    <td>Color measured by the color sensor</td>
   </tr>
   <tr>
     <td>light_reflect</td>
     <td>RTC::TimedDouble</td>
-    <td>カラーセンサーで計測した反射光の強さ</td>
+    <td>Reflected light intensity measured by the color sensor</td>
   </tr>
   <tr>
     <td>touch</td>
     <td>RTC::TimedBoolean</td>
-    <td>タッチセンサーのオンオフ。右側が0番目の要素、左側が1番目の要素</td>
+    <td>Touch sensor ON/OFF state. The right sensor corresponds to element 0, and the left sensor corresponds to element 1.</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">コンフィギュレーションパラメーター</td>
+    <td colspan="3" style="text-align: center;">Configuration Parameters</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>デフォルト値</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Default Value</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>wheelRadius</td>
     <td>0.028</td>
-    <td>車輪の半径</td>
+    <td>Wheel radius</td>
   </tr>
   <tr>
     <td>wheelDistance</td>
     <td>0.054</td>
-    <td>タイヤ間距離の1/2</td>
+    <td>Half the distance between the wheels</td>
   </tr>
   <tr>
     <td>medium_motor_speed</td>
     <td>1.6</td>
-    <td>モーターMの速度</td>
+    <td>Speed of Motor M</td>
   </tr>
 </table>
 
 <div align="center"><a href="simulator_ev3_2.png"><img src="simulator_ev3_2.png" width="50%;"></a></div>
 
-### タッチセンサーの出力
-touch で入力したデータの0番目が右側(3番ポート)のタッチセンサー、1番目が左側(1番ポート)のタッチセンサーに対応しています。
+### Touch Sensor Output
 
-### 音声の出力
-sound による音声の入力には以下のコマンドを利用できます。
+For the data received through `touch`, element 0 corresponds to the right touch sensor (Port 3), and element 1 corresponds to the left touch sensor (Port 1).
+
+### Audio Output
+
+The following commands can be used as input to the `sound` port.
 
 - beep
-  - beep と入力するとビープ音が鳴ります。
+  - Entering `beep` produces a beep sound.
 
 - tone
-  - 以下のように tone、周波数、時間と入力すると指定周波数の音を指定ミリ秒数だけ鳴らします。
+  - Enter `tone`, followed by a frequency and duration, as shown below, to play a tone at the specified frequency for the specified number of milliseconds.
 
 ```
- tone,100,1000
+
+tone,100,1000
+
 ```
 
-- それ以外
-  - それ以外は指定文字列を発音します
+- Other strings
+  - Any other string will be spoken using text-to-speech.
 
+### Images Displayed on the LCD
 
-### LCD に表示する画像について
-<!-- LCDで表示する画像は [[ここ:https://github.com/Nobu19800/saveBinaryImage/archive/master.zip]] からダウンロードしたファイルを解凍したフォルダーの中にある、EXE/saveBinaryImage.exe で変換したものを利用してください。 -->
-画像ファイルを saveBinaryImage.exe にドラッグ・アンド・ドロップすれば変換できます。
+Image files can be converted by dragging and dropping them onto `saveBinaryImage.exe`.
 
+The image data displayed on the LCD can be supplied after conversion using the following component.
 
+When using Windows, start it using `ImageConversionLCDComp.exe` in the release folder.
 
-LDC で表示する画像データは、以下のコンポーネントで画像データの変換を行えば入力可能です。
-Windows で使用する場合は、release フォルダーの ImageConversionLCDComp.exe で起動できます。
-
-- [https://github.com/Nobu19800/ImageConversionLCD)](https://github.com/Nobu19800/ImageConversionLCD)
+- [https://github.com/Nobu19800/ImageConversionLCD](https://github.com/Nobu19800/ImageConversionLCD)
 
 <table class="table-alt">
   <tr>
@@ -170,78 +170,75 @@ Windows で使用する場合は、release フォルダーの ImageConversionLCD
     <td colspan="3" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>out</td>
     <td>RTC::CameraImage</td>
-    <td>変換前の画像データ</td>
+    <td>Image data before conversion</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>out</td>
     <td>RTC::CameraImage</td>
-    <td>変換後の画像データ</td>
+    <td>Converted image data</td>
   </tr>
 </table>
 
-
 <div align="center"><a href="ImageConversionLCD.png"><img src="ImageConversionLCD.png" width="70%;"></a></div>
 
-
-例えば、OpenRTM-aist 付属のサンプルコンポーネント OpenCVCamera と接続すれば、EV3 にカメラ画像を表示させることができます。
+For example, by connecting it to the OpenRTM-aist sample component **OpenCVCamera**, camera images can be displayed on the EV3 LCD.
 
 <div align="center"><a href="system_lcd.png"><img src="system_lcd.png" width="60%;"></a></div>
 
 <div align="center"><a href="s_DSC00796.JPG"><img src="s_DSC00796.JPG" width="50%;"></a></div>
 
-
-あるいは、指定の画像を入力するということもできます。
+Alternatively, a specific image can be displayed.
 
 <div align="center"><a href="s_DSC00797.JPG"><img src="s_DSC00797.JPG" width="50%;"></a></div>
 <br>
 
 <div align="center"><a href="s_DSC00798.JPG"><img src="s_DSC00798.JPG" width="50%;"></a></div>
 
-
 ## ControlEducatorVehicle
-ControlEducatorVehicle を用いることによって以下の移動ロボット(Educator Vehicle 改)の制御ができます。組み立て方は [このページ](/ja/node/6038) を参考にしてください。
 
+ControlEducatorVehicle can be used to control the following mobile robot (modified Educator Vehicle). Refer to [this page](/ja/node/6038) for assembly instructions.
 
 - [https://github.com/Nobu19800/ControlEducatorVehicle](https://github.com/Nobu19800/ControlEducatorVehicle)
-
 
 <div align="center"><a href="s_DSC00443.JPG"><img src="s_DSC00443.JPG" width="50%;"></a></div>
 <br>
 <div align="center"><a href="s_DSC00440.JPG"><img src="s_DSC00440.JPG" width="50%;"></a></div>
 
-- タッチセンサーに障害物が当たった時に回避する
-- カラーセンサーで地面の反射光を計測して一定以下になったら停止する
-- 超音波センサーで地面までの距離を計測して一定上になったら停止して超音波センサーを回転させて走行可能な地面を探索する
+Features:
 
-超音波センサーを使用しない場合は Educator Vehicle の制御にも使用できます。
+- Avoids obstacles when a touch sensor is pressed.
+- Stops when the reflected light intensity measured by the color sensor falls below a specified threshold.
+- Measures the distance to the ground using the ultrasonic sensor, stops when the measured value exceeds a threshold, rotates the ultrasonic sensor, and searches for drivable ground.
 
+If the ultrasonic sensor is not used, it can also be used to control a standard Educator Vehicle.
 
-クロス環境で以下のコマンドを入力してください。
+Enter the following commands in the cross-development environment.
 
 ```
- git clone https://github.com/Nobu19800/ControlEducatorVehicle
- cd ControlEducatorVehicle
- cmake .
- make
+
+git clone https://github.com/Nobu19800/ControlEducatorVehicle
+cd ControlEducatorVehicle
+cmake .
+make
+
 ```
 
-生成された src/ControlEducatorVehicleComp を EV3 に転送してください。
-
+Transfer the generated `src/ControlEducatorVehicleComp` to the EV3.
 
 <table class="table-alt">
   <tr>
@@ -251,130 +248,131 @@ ControlEducatorVehicle を用いることによって以下の移動ロボット
     <td colspan="3" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>target_velocity_in</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>目標速度</td>
+    <td>Target velocity</td>
   </tr>
   <tr>
     <td>current_pose</td>
     <td>RTC::TimedPose2D</td>
-    <td>現在位置・姿勢</td>
+    <td>Current position and orientation</td>
   </tr>
   <tr>
     <td>ultrasonic</td>
     <td>RTC::TimedRangeData</td>
-    <td>超音波センサーで計測した距離</td>
+    <td>Distance measured by the ultrasonic sensor</td>
   </tr>
   <tr>
     <td>light_reflect</td>
     <td>RTC::TimedDouble</td>
-    <td>カラーセンサーで計測した反射光の強さ</td>
+    <td>Reflected light intensity measured by the color sensor</td>
   </tr>
   <tr>
     <td>touch</td>
     <td>TimedBoolean</td>
-    <td>タッチセンサーのオンオフ</td>
+    <td>Touch sensor ON/OFF state</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>target_velocity_out</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>補正後の目標速度</td>
+    <td>Corrected target velocity</td>
   </tr>
   <tr>
     <td>angle</td>
     <td>RTC::TimedDouble</td>
-    <td>モーターMの角度</td>
+    <td>Motor M angle</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">コンフィギュレーションパラメーター</td>
+    <td colspan="3" style="text-align: center;">Configuration Parameters</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>デフォルト値</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Default Value</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>sensor_height</td>
     <td>0.2</td>
-    <td>走行できる地面があると判定する超音波センサーの計測値</td>
+    <td>Ultrasonic sensor threshold used to determine whether drivable ground exists</td>
   </tr>
   <tr>
     <td>back_speed</td>
     <td>0.1</td>
-    <td>後退運動をする速さ</td>
+    <td>Reverse movement speed</td>
   </tr>
   <tr>
     <td>back_time</td>
     <td>1.0</td>
-    <td>後退運動する時間</td>
+    <td>Duration of reverse movement</td>
   </tr>
   <tr>
     <td>rotate_speed</td>
     <td>0.8</td>
-    <td>回転運動をする速さ</td>
+    <td>Rotation speed</td>
   </tr>
   <tr>
     <td>rotate_time</td>
     <td>2.0</td>
-    <td>回転運動する時間</td>
+    <td>Rotation duration</td>
   </tr>
   <tr>
     <td>medium_motor_range</td>
     <td>1.6</td>
-    <td>モーターMの動作範囲</td>
+    <td>Operating range of Motor M</td>
   </tr>
 </table>
 
-
-
 <div align="center"><a href="ControlEducatorVehicle.png"><img src="ControlEducatorVehicle.png" width="60%;"></a></div>
 
-
-
-### タッチセンサーの入力による回避運動
+### Obstacle Avoidance Using Touch Sensor Input
 
 <div align="center"><a href="ev3_4.png"><img src="ev3_4.png" width="60%;"></a></div>
 
+When a touch sensor is activated, the robot first moves backward at the speed specified by `back_speed` for the duration specified by `back_time`, as shown in step ③.
 
-タッチセンサーがオンになった場合、まず③のように back_speed で指定した速さで back_time で指定した時間だけ後退します。
-そして④のように rotate_speed で指定した角速度で rotate_time で指定した時間だけ回転します。
-回転する方向はオンになったタッチセンサーと逆方向です。
+It then rotates at the angular velocity specified by `rotate_speed` for the duration specified by `rotate_time`, as shown in step ④.
 
+The direction of rotation is opposite to the side on which the activated touch sensor is located.
 
+### Measuring the Distance to the Ground Using the Ultrasonic Sensor
 
-### 超音波センサーによる地面までの距離計測
+To perform the operation of measuring the distance to the ground, stopping, and rotating the ultrasonic sensor to search for drivable ground, the EV3 Education Vehicle must be assembled with the ultrasonic sensor mounted on a rotating mechanism.
 
-超音波センサーで地面までの距離を計測して停止、超音波センサーを回転させて走行可能な地面を探索する操作を実行するためには、EV3 の Education Vehicle を組み立ててさらに超音波センサーを回転させるように取り付ける必要があります。
-
-動作手順は以下のようになっています。
+The operation sequence is as follows.
 
 <div align="center"><a href="ev3_sensor.png"><img src="ev3_sensor.png" width="60%;"></a></div>
 
-机の上などを走行している場合で、②のようぬ机の端まで移動したとします。
-超音波センサーで計測した距離が sensor_height 以上になった場合、一旦停止します。
-そして③のように超音波センサーを右側に90度回転させて地面までの高さが sensor_height 以下かを判定します。
-sensor_height 以上だった場合は④のように左方向に180度回転させて地面までの高さが sensor_height 以下かを判定します。
-sensor_height 以下だった場合は、超音波センサーを向けた方向に Education Vehicle を回転させます。
+Suppose the robot is driving on a desk and reaches the edge as shown in step ②.
 
-## 一括インストール
-上記の RTC を一括でインストールします。 以下のコマンドを入力してください。
+If the distance measured by the ultrasonic sensor exceeds `sensor_height`, the robot stops.
+
+Then, as shown in step ③, the ultrasonic sensor rotates 90 degrees to the right and checks whether the distance to the ground is less than `sensor_height`.
+
+If the measured value is still greater than `sensor_height`, the sensor rotates 180 degrees to the left as shown in step ④ and checks again.
+
+If a direction is found where the measured distance is less than `sensor_height`, the Education Vehicle rotates toward that direction.
+
+## Batch Installation
+
+To install all of the RTCs described above at once, enter the following commands.
 
 ```
- git clone https://github.com/Nobu19800/EducatorVehicle_script_ev3dev
- cd EducatorVehicle_script_ev3dev
- sh Component/install_rtc.sh
+
+git clone https://github.com/Nobu19800/EducatorVehicle_script_ev3dev
+cd EducatorVehicle_script_ev3dev
+sh Component/install_rtc.sh
+
 ```
--------jp page!!-------

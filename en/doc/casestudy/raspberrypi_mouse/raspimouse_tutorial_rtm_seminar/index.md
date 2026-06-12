@@ -1,19 +1,16 @@
 ---
 layout: page
-title: チュートリアル(Raspberry Pi Mouse、RTM講習会)
+title: Tutorial (Raspberry Pi Mouse, RTM Seminar)
 ---
--------jp page!!-------
-
 <hr>
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)](./tutorial_rtm_seminar_win_part2)
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Ubuntu)](./tutorial_rtm_seminar_ubuntu_part2)
-- [チュートリアル(RTシステム構築実習、Raspberry Pi Mouse)](./tutorial_rtm_seminar_part3)
-- [チュートリアル(RTミドルウェア応用実習、Raspberry Pi Mouse)](./tutorial_rtm_seminar_part4)
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Python、Windows)]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_python_windows)
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Python、Ubuntu)]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_python_ubuntu)
-- [チュートリアル(rtshell入門、Raspberry Pi Mouse)](./tutorial_rtm_seminar_rtshell_raspberrypimouse)
-- [チュートリアル(SLAM実習)](./tutorial_rtm_seminar_slam_raspberrypimouse)
-- [チュートリアル(画像処理実習)](./tutorial_rtm_seminar_opencv_raspberrypimouse)
-- [ポートの接続に失敗した場合の対処方法](./tutorial_rtm_seminar_connect_error)
 
--------jp page!!-------
+- [Tutorial (Introduction to RT-Component Development, Raspberry Pi Mouse, Windows)](./tutorial_rtm_seminar_win_part2)
+- [Tutorial (Introduction to RT-Component Development, Raspberry Pi Mouse, Ubuntu)](./tutorial_rtm_seminar_ubuntu_part2)
+- [Tutorial (RT System Construction Exercise, Raspberry Pi Mouse)](./tutorial_rtm_seminar_part3)
+- [Tutorial (RT Middleware Advanced Exercise, Raspberry Pi Mouse)](./tutorial_rtm_seminar_part4)
+- [Tutorial (Introduction to RT-Component Development, Raspberry Pi Mouse, Python, Windows)]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_python_windows)
+- [Tutorial (Introduction to RT-Component Development, Raspberry Pi Mouse, Python, Ubuntu)]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_python_ubuntu)
+- [Tutorial (Introduction to rtshell, Raspberry Pi Mouse)](./tutorial_rtm_seminar_rtshell_raspberrypimouse)
+- [Tutorial (SLAM Exercise)](./tutorial_rtm_seminar_slam_raspberrypimouse)
+- [Tutorial (Image Processing Exercise)](./tutorial_rtm_seminar_opencv_raspberrypimouse)
+- [Troubleshooting Port Connection Failures](./tutorial_rtm_seminar_connect_error)

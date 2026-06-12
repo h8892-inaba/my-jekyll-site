@@ -1,205 +1,183 @@
 ---
 layout: page
-title: チュートリアル(Raspberry Pi Mouse)
+title: Tutorial (Raspberry Pi Mouse)
 ---
--------jp page!!-------
 
-<!-- Title: チュートリアル(Raspberry Pi Mouse) -->
+<!-- Title: Tutorial (Raspberry Pi Mouse) -->
 #contents
 
-このページでは RTM講習会での Raspberry Pi Mouse 操作手順を説明します。
+This page explains the Raspberry Pi Mouse operating procedures used in RTM training workshops. :contentReference[oaicite:0]{index=0}
 
 <div align="center"><a href="s_DSC00444.JPG"><img src="s_DSC00444.JPG" width="50%;"></a></div>
 
-Raspberry Pi Mouse (以下ラズパイマウス)はアールティが販売している二輪方式の移動ロボットです。 Raspberry Pi を搭載しているため Linux(Raspbian) 等での開発が可能です。
+Raspberry Pi Mouse (hereafter referred to as "RasPiMouse") is a two-wheeled mobile robot sold by RT Corporation. Since it is equipped with a Raspberry Pi, development can be performed using Linux (Raspbian) and other environments. :contentReference[oaicite:1]{index=1}
 
-## 仕様
+## Specifications
 
 <table class="table-alt">
   <tr>
-    <th colspan="2" style="text-align: center;">ラズパイマウスの仕様</th>
+    <th colspan="2" style="text-align: center;">Raspberry Pi Mouse Specifications</th>
   </tr>
   <tr>
     <td>CPU</td>
     <td>Raspberry Pi 2 Model B</td>
   </tr>
   <tr>
-    <td>モーター</td>
-    <td>ステッピングモーターST-42BYG020 2個</td>
+    <td>Motor</td>
+    <td>Two ST-42BYG020 stepping motors</td>
   </tr>
   <tr>
-    <td>モータードライバ</td>
-    <td>SLA7070MRPT 2個</td>
+    <td>Motor Driver</td>
+    <td>Two SLA7070MRPT units</td>
   </tr>
   <tr>
-    <td>距離センサー</td>
-    <td>赤色LED+フォトトランジスタ(ST-1K3) 4個</td>
+    <td>Distance Sensor</td>
+    <td>Four red LEDs + phototransistors (ST-1K3)</td>
   </tr>
   <tr>
-    <td>モニター用赤色LED</td>
-    <td>4個</td>
+    <td>Red LEDs for Monitoring</td>
+    <td>4</td>
   </tr>
   <tr>
-    <td>ブザー</td>
-    <td>1個</td>
+    <td>Buzzer</td>
+    <td>1</td>
   </tr>
   <tr>
-    <td>スイッチ</td>
-    <td>3個</td>
+    <td>Switch</td>
+    <td>3</td>
   </tr>
   <tr>
-    <td>バッテリー</td>
-    <td>LiPo3セル(11.1V)1000mAh 1個</td>
+    <td>Battery</td>
+    <td>One LiPo 3-cell (11.1V) 1000mAh battery</td>
   </tr>
 </table>
 
+## Download
 
-## ダウンロード
-
-最初に PC側で使用する RTC 等をダウンロードしてください。
+First, download the RTCs and related software used on the PC side.
 
 <!-- - [[robomech2016_tutorial.zip>https://github.com/Nobu19800/robomech2016_tutorial/archive/master.zip]] -->
 <!-- - [[openrtm_tutorial.zip>https://github.com/Nobu19800/openrtm_tutorial/archive/master.zip]] -->
 - [robomech2017_tutorial.zip](https://github.com/Nobu19800/robomech2017_tutorial/archive/master.zip)
 
-ZIPファイルを [Lhaplus](http://www.vector.co.jp/soft/win95/util/se169348.html) 等で展開してください。
+Extract the ZIP file using [Lhaplus](http://www.vector.co.jp/soft/win95/util/se169348.html) or a similar archive extraction tool.
 
-## 電源の入れ方/切り方
+## Powering On and Off
 
-### 電源の入れ方
+### Powering On
 
-内側のスイッチが Raspberry Pi の電源スイッチです。
-このスイッチをオンにすると電源が投入できます。
+The inner switch is the Raspberry Pi power switch.
+
+Turning this switch on powers up the system.
 
 <br>
 
 <div align="center"><a href="rpm9_raspi.png"><img src="rpm9_raspi.png" width="50%;"></a></div>
 <br>
 
-### 電源の切り方
+### Powering Off
 
-電源を切る場合は真ん中のスイッチを1秒ほど押すと OS がシャットダウンするため、その後にスイッチを切ってください。
+To shut down the system, press and hold the center switch for approximately one second. The operating system will shut down, after which you can turn off the power switch.
+
 <br>
 
-※スイッチを直接切るのはデータの破損などの危険があるため絶対にやらないでください。
+*Never turn off the power switch directly, as doing so may cause data corruption or other issues.*
 
 <br>
 
 <div align="center"><a href="rpm8.png"><img src="rpm8.png" width="50%;"></a></div>
 <br>
 
+## Connecting to the Raspberry Pi
 
+<span style="color:red;">As a general rule, connect to the Raspberry Pi via wireless LAN.</span>
 
+### Connecting to a Wireless LAN Access Point
 
+First, turn on the Raspberry Pi Mouse with the wireless LAN adapter attached.
 
-## Raspberry Pi への接続
+After a short time, a wireless LAN access point will start.
 
-Raspberry Pi へは<span style="color:red;">原則として無線LANで接続するようにしてください</span>;。
+Connect to the access point with the specified SSID.
 
+The SSID and password are printed on the label attached to the Raspberry Pi Mouse.
 
-### 無線LANアクセスポイントへの接続
+For instructions on connecting to a wireless LAN access point, refer to the following pages:
 
-まずは無線LANアダプタを取り付けた状態で Raspberry Pi Mouse の電源スイッチをオンにしてください。
+- [How to Connect to Wireless LAN in Windows 7](http://121ware.com/qasearch/1007/app/servlet/qadoc?QID=011120)
+- [How to Connect to Wireless LAN in Windows 8 / 8.1](http://121ware.com/qasearch/1007/app/servlet/relatedqa?QID=014183)
 
-
-
-しばらくすると無線LANアクセスポイントが起動するので、指定の SSID のアクセスポイントに接続してください。
-
-SSID、パスワードは Rasoberry Pi マウスに貼り付けたシールに記載してあります。
-
-
-アクセスポイントへの接続方法は以下のページを参考にしてください。
-
-- [Windows 7で無線LANに接続する方法](http://121ware.com/qasearch/1007/app/servlet/qadoc?QID=011120)
-- [Windows 8 / 8.1で無線LANに接続する方法](http://121ware.com/qasearch/1007/app/servlet/relatedqa?QID=014183)
-
-
-まず右下のネットワークアイコンをクリックしてください。
+First, click the network icon in the lower-right corner.
 
 <br>
 
 <div align="center"><a href="tu_ev3_14.png"><img src="tu_ev3_14.png" width="60%;"></a></div>
 <br>
 
-次に一覧から raspberrypi_*** を選択してください。
-
+Next, select **raspberrypi_*** from the list.
 
 <br>
 
 <div align="center"><a href="tu_ev3_15.png"><img src="tu_ev3_15.png" width="50%;"></a></div>
 <br>
 
-
-
-
-パスワードを入力してください。
+Enter the password.
 
 <br>
 
 <div align="center"><a href="tu_ev3_12.png"><img src="tu_ev3_12.png" width="60%;"></a></div>
 <br>
 
-### LANケーブルでの接続
-<span style="color:red;">以下の作業は有線で接続する場合の作業なので、無線で接続する場合は不要です。</span>;
+### Connecting via LAN Cable
 
-まず最初にLANケーブルで PC と Raspberry Pi を接続してください。
+<span style="color:red;">The following steps are only required when connecting via a wired LAN. They are unnecessary when using a wireless connection.</span>
+
+First, connect the PC and Raspberry Pi using a LAN cable.
 
 <br>
 
 <div align="center"><a href="s_DSC00465.JPG"><img src="s_DSC00465.JPG" width="50%;"></a></div>
 <br>
 
-次に Raspberry Pi Mouse の電源スイッチをオンにしてください。
+Next, turn on the Raspberry Pi Mouse power switch.
+
 <br>
 
+## Preparation
 
+Follow the instructions on [this page]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2#toc1) to start the Name Server and RT System Editor.
 
+If a Name Server is already running, restart it.
 
-
-
-## 事前準備
-
-[このページ]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2#toc1) の手順に従ってネームサーバー、RTシステムエディタを起動してください。
-予めネームサーバーを起動してある場合は再起動してください。
-
-
-またネットワークインターフェースが2つ以上ある場合に通信に失敗する可能性があるため、有線で接続した場合は他のネットワークデバイスを無効にしてからネームサーバーを起動してください。
+Also, if your PC has two or more network interfaces, communication may fail. If you are using a wired connection, disable the other network devices before starting the Name Server.
 
 <br>
 
 <div align="center"><a href="tu_ev3_16.png"><img src="tu_ev3_16.png" width="40%;"></a></div>
 <br>
 
-
-<br>
-
 <div align="center"><a href="raspi_tu25.png"><img src="raspi_tu25.png" width="60%;"></a></div>
 <br>
 
+### Adding a Name Server
 
-
-
-### ネームサーバー追加
-
-
-続いて RTシステムエディタの [ネームサーバー追加] ボタンをクリックして <span style="color:red;">192.168.11.1</span>; を追加してください。
-
-
+Next, click the **Add Name Server** button in RT System Editor and add <span style="color:red;">192.168.11.1</span>.
 
 <br>
 
 <div align="center"><div align="center"><a href="tutorial_raspimouse0.png"><img src="tutorial_raspimouse0.png" width="50%;"></a></div>;  <div align="center"><a href="tutorial_raspimouse1.png"><img src="tutorial_raspimouse1.png" width="40%;"></a></div>;</div>
+
 <br>
 <br>
 
-すると以下の2つの RTC が起動します。
+The following two RTCs will appear:
 
 <div align="center"><a href="tutorial_raspimouse2.png"><img src="tutorial_raspimouse2.png" width="60%;"></a></div>
 
 - [RaspberryPiMouseRTC]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0)
 - [RaspberryPiMouseController_DistanceSensor]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc1)
 
-RaspberryPiMouseRTC は名城大学のロボットシステムデザイン研究室で開発されているラズパイマウス制御用の RTコンポーネントです。
+RaspberryPiMouseRTC is an RT-Component for controlling Raspberry Pi Mouse, developed by the Robot System Design Laboratory at Meijo University.
 
 <br>
 
@@ -215,67 +193,65 @@ RaspberryPiMouseRTC は名城大学のロボットシステムデザイン研究
     <td colspan="3" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>target_velocity_in</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>目標速度</td>
+    <td>Target velocity</td>
   </tr>
   <tr>
     <td>pose_update_in</td>
     <td>RTC::TimedPose2D</td>
-    <td>位置設定</td>
+    <td>Position setting</td>
   </tr>
   <tr>
     <td>buzzer_hz_in</td>
     <td>RTC::TimedShort</td>
-    <td>ブザー</td>
+    <td>Buzzer</td>
   </tr>
   <tr>
     <td>led4bit_in</td>
     <td>RTC::TimedBooleanSeq</td>
-    <td>LED</td>
+    <td>LEDs</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>current_velocity_out</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>現在の速度</td>
+    <td>Current velocity</td>
   </tr>
   <tr>
     <td>current_pose_out</td>
     <td>RTC::TimedPose2D</td>
-    <td>現在位置</td>
+    <td>Current position</td>
   </tr>
   <tr>
     <td>ir_sensor_out</td>
     <td>RTC::TimedShortSeq</td>
-    <td>距離センサーの計測値</td>
+    <td>Distance sensor measurements</td>
   </tr>
   <tr>
     <td>switch3bit_out</td>
     <td>RTC::TimedBooleanSeq</td>
-    <td>スイッチのオンオフ</td>
+    <td>Switch on/off status</td>
   </tr>
 </table>
 
+#### About the TimedVelocity2D Type
 
+The `TimedVelocity2D` type is defined as follows.
 
-#### TimedVelocity2D 型について
-
-TimedVelocity2D 型は以下のように定義されています。
-
-```
+```cpp
      struct Velocity2D
      {
          double vx;
@@ -284,7 +260,7 @@ TimedVelocity2D 型は以下のように定義されています。
      };
 ```
 
-```
+```cpp
      struct TimedVelocity2D
      {
          Time tm;
@@ -292,30 +268,28 @@ TimedVelocity2D 型は以下のように定義されています。
      };
 ```
 
-vx、vy、va はロボット中心座標系での速度を表しています。
+`vx`, `vy`, and `va` represent velocities in the robot-centered coordinate system.
 
 <br>
 
 <div align="center"><a href="tu_ev3_20.png"><img src="tu_ev3_20.png" width="50%;"></a></div>
 <br>
 
-vx は X方向の速度、vy は Y方向の速度、va は Z軸周りの角速度です。
+- `vx`: Velocity in the X direction
+- `vy`: Velocity in the Y direction
+- `va`: Angular velocity around the Z axis
 
+For a robot such as Raspberry Pi Mouse, which has two wheels mounted on its left and right sides, `vy` is assumed to be 0 because sideways slipping is not considered.
 
+The robot is controlled by specifying `vx` and `va`.
 
+### Starting the Sample Components
 
-ラズパイマウスのように2個の車輪が左右に取り付けられているロボットの場合、横滑りしないと仮定すると vy は 0 になります。
+Run **start_component_raspimouse.bat** included in the supplementary materials.
 
-vx、va を指定することでロボットの操作を行います。
+*If the Python version of OpenRTM-aist is not installed or the installation failed, a USB memory device containing standalone executable files will be distributed separately. In that case, use **start_component_raspimouse_exe.bat** instead.*
 
-
-
-### サンプルコンポーネント起動
-
-付属資料の<span style="color:red;">start_component_raspimouse.bat</span>;を起動してください。
-※OpenRTM-aist Python版をインストールしていない場合、もしくはインストールに失敗している場合は個別に実行ファイル入りの USBメモリーを配布しますので、<span style="color:red;">start_component_raspimouse_exe.bat</span>;を利用してください。
-
-すると以下の2つの RTC が起動します。
+The following two RTCs will start:
 
 <div align="center"><a href="tutorial_raspimouse3_2.png"><img src="tutorial_raspimouse3_2.png" width="60%;"></a></div>
 
@@ -323,530 +297,324 @@ vx、va を指定することでロボットの操作を行います。
 <!-- - [[RaspberryPiMouseGUI>/ja/node/6016#toc1]] -->
 - [TkJoyStick]({{ site.baseurl }}/ja/doc/installation/sample_components/tkjoystick_mobilerobotsimulator#toc0)
 
-## 動作確認
+## Operation Check
 
-まずはジョイスティックでラズパイマウスを操作してみます。
+First, try operating the Raspberry Pi Mouse using the joystick.
 
-動作の前にモーター電源スイッチをオンにしておいてください。動作確認が終了したら、モーター電源はオフにするようにしてください。
+Before operation, turn on the motor power switch.
+
+After completing the operation check, be sure to turn the motor power off.
 
 <div align="center"><a href="rpm10_raspi.png"><img src="rpm10_raspi.png" width="40%;"></a></div>
 
-
-RTシステムエディタで RaspberryPiMouseRTC、FloatSeqToVelocity、TkJoyStick を以下のように接続します。
+In RT System Editor, connect `RaspberryPiMouseRTC`, `FloatSeqToVelocity`, and `TkJoyStick` as shown below.
 
 <div align="center"><a href="tutorial_raspimouse4.png"><img src="tutorial_raspimouse4.png" width="60%;"></a></div>
 
-そして RTC をアクティブ化するとジョイスティックでラズパイマウスの操作ができるようになります。
+After activating the RTCs, you will be able to operate the Raspberry Pi Mouse using the joystick.
 
 <div align="center"><a href="tutorial_raspimouse6.png"><img src="tutorial_raspimouse6.png" width="70%;"></a></div>
 
 <div align="center"><a href="tutorial_raspimouse5.png"><img src="tutorial_raspimouse5.png" width="60%;"></a></div>
 
-## 自作の RTC で制御
+## Control Using a Custom RTC
 
-まずは FloatSeqToVelocity の out と RaspberryPiMouseRTC の target_velocity_in のコネクタを切断してください。
+First, disconnect the connector between the `out` port of `FloatSeqToVelocity` and the `target_velocity_in` port of `RaspberryPiMouseRTC`.
 
 <div align="center"><a href="tutorial_raspimouse7.png"><img src="tutorial_raspimouse7.png" width="60%;"></a></div>
 
-FloatSeqToVelocity と RaspberryPiMouseRTC の間に自作の RTC を接続して、距離センサーの値が一定以上になった場合に停止して音を鳴らすようにします。
+Insert your custom RTC between `FloatSeqToVelocity` and `RaspberryPiMouseRTC` so that the robot stops and sounds a buzzer when the distance sensor value exceeds a specified threshold.
 
-### ひな形コードの作成
+### Creating Skeleton Code
 
-RTC ビルダを起動してください。
+Start RTCBuilder.
 
 <br>
 
 <div align="center"><a href="tutorial_raspimouse8.png"><img src="tutorial_raspimouse8.png" width="70%;"></a></div>
 <br>
 
-起動したら新規にプロジェクトを作成します。
+After startup, create a new project.
 
 <br>
 
 <div align="center"><a href="tutorial_raspimouse9.png"><img src="tutorial_raspimouse9.png" width="70%;"></a></div>
 <br>
 
-プロジェクト名は TestRasPiMouseCPP(TestRasPiMousePy) にします。
+Set the project name to **TestRasPiMouseCPP** (or **TestRasPiMousePy**).
 
-以下のように設定を行ってください。
-C++、もしくは Python で作成します。
+Configure the project as shown below.
+
+Create it in either C++ or Python.
 
 <table class="table-alt">
   <tr>
-    <th colspan="3" style="text-align: center;">基本</th>
+    <th colspan="3" style="text-align: center;">Basic</th>
   </tr>
   <tr>
-    <td>モジュール名</td>
-    <td colspan="2" style="text-align;">TestRasPiMouseCPP、もしくはTestRasPiMousePy</td>
+    <td>Module Name</td>
+    <td colspan="2">TestRasPiMouseCPP or TestRasPiMousePy</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">アクティビティ</td>
+    <td colspan="3" style="text-align: center;">Activity</td>
   </tr>
   <tr>
-    <td>有効アクション</td>
-    <td colspan="2" style="text-align;">onInitialize、onExecute、onActivated、onDeactivated</td>
+    <td>Enabled Actions</td>
+    <td colspan="2">onInitialize, onExecute, onActivated, onDeactivated</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">データポート</td>
+    <td colspan="3" style="text-align: center;">Data Ports</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align;">InPort</td>
+    <td colspan="3">InPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>velocity_in</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>入力目標速度</td>
+    <td>Input target velocity</td>
   </tr>
   <tr>
     <td>distance_sensor</td>
     <td>RTC::TimedShortSeq</td>
-    <td>距離センサーの計測値</td>
+    <td>Distance sensor measurements</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">OutPort</td>
+    <td colspan="3">OutPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>velocity_out</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>出力目標速度</td>
+    <td>Output target velocity</td>
   </tr>
   <tr>
     <td>buzzer</td>
     <td>RTC::TimedShort</td>
-    <td>ブザー</td>
+    <td>Buzzer</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">コンフィギュレーション</td>
+    <td colspan="3" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>stop_distance</td>
     <td>short</td>
-    <td>距離センサーで物体を検知した場合に前進しなくなる距離センサーの計測値、デフォルト値は300</td>
+    <td>Distance sensor threshold above which forward motion is stopped when an object is detected. Default value: 300</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">言語・環境</td>
+    <td colspan="3" style="text-align: center;">Language / Environment</td>
   </tr>
   <tr>
-    <td>言語</td>
-    <td colspan="2" style="text-align;">C++、もしくはPython</td>
+    <td>Language</td>
+    <td colspan="2">C++ or Python</td>
   </tr>
 </table>
 
-[コード生成] ボタンをクリックするとコードが生成されます。
+Click the **[Generate Code]** button to generate the code.
 
 <div align="center"><a href="tutorial_raspimouse10.png"><img src="tutorial_raspimouse10.png" width="60%;"></a></div>
 
+### Creating the Processing Logic
 
-#### 距離センサー
+#### C++
 
-ラズパイマウスの距離センサーは近ければ近いほど大きな値を出力します。
+Open `TestRasPiMouseCPP.cpp` and add the following processing to `onExecute()`.
 
-参考までにですが、/dev/rtlightsensor0のデバイスファイルから取得できる数値とセンサーまでの距離との関係は以下のようになっています。
+```cpp
+RTC::ReturnCode_t TestRasPiMouseCPP::onExecute(RTC::UniqueId ec_id)
+{
+  if(m_distance_sensorIn.isNew())
+  {
+    m_distance_sensorIn.read();
+  }
 
-<br>
+  if(m_velocity_inIn.isNew())
+  {
+    m_velocity_inIn.read();
 
-<div align="center"><a href="rpm14_graph.png"><img src="rpm14_graph.png" width="60%;"></a></div>
-<br>
+    if(m_distance_sensor.data[0] > m_stop_distance ||
+       m_distance_sensor.data[3] > m_stop_distance)
+    {
+      m_velocity_out.data.vx = 0;
+      m_velocity_out.data.vy = 0;
+      m_velocity_out.data.va = 0;
 
-<table class="table-alt">
-  <tr>
-    <th>デバイスファイルから取得した数値</th>
-    <th>実際の距離[m]</th>
-  </tr>
-  <tr>
-    <td>1394</td>
-    <td>0.01</td>
-  </tr>
-  <tr>
-    <td>792</td>
-    <td>0.02</td>
-  </tr>
-  <tr>
-    <td>525</td>
-    <td>0.03</td>
-  </tr>
-  <tr>
-    <td>373</td>
-    <td>0.04</td>
-  </tr>
-  <tr>
-    <td>299</td>
-    <td>0.05</td>
-  </tr>
-  <tr>
-    <td>260</td>
-    <td>0.06</td>
-  </tr>
-  <tr>
-    <td>222</td>
-    <td>0.07</td>
-  </tr>
-  <tr>
-    <td>181</td>
-    <td>0.08</td>
-  </tr>
-  <tr>
-    <td>135</td>
-    <td>0.09</td>
-  </tr>
-  <tr>
-    <td>100</td>
-    <td>0.10</td>
-  </tr>
-  <tr>
-    <td>81</td>
-    <td>0.15</td>
-  </tr>
-  <tr>
-    <td>36</td>
-    <td>0.20</td>
-  </tr>
-  <tr>
-    <td>17</td>
-    <td>0.25</td>
-  </tr>
-  <tr>
-    <td>16</td>
-    <td>0.30</td>
-  </tr>
-</table>
+      m_buzzer.data = 1000;
 
+      m_buzzerOut.write();
+    }
+    else
+    {
+      m_velocity_out = m_velocity_in;
 
+      m_buzzer.data = 0;
 
-### プロジェクト生成
+      m_buzzerOut.write();
+    }
 
-コードが生成できたら C++ の場合は CMake で Visual Studio のプロジェクト(Ubuntu の場合は Code::Blocks)を生成してください。
+    m_velocity_outOut.write();
+  }
 
-- [Windows]({{ site.baseurl }}/ja/doc/toolmanuals/rtcbuilder-1_1_0/compile_win_cmake_cpp_rtcb_1_1_0)
-- [Ubuntu]({{ site.baseurl }}/ja/content/build_ubuntu_codeblocks)
+  return RTC::RTC_OK;
+}
+```
 
-まずCMake (cmake-gui) を起動します。
+#### Python
 
-- Windows 7
+Open `TestRasPiMousePy.py` and add the following processing to `onExecute()`.
 
-<br>
+```python
+  def onExecute(self, ec_id):
 
-<div align="center"><a href="tu_ev3_10.png"><img src="tu_ev3_10.png" width="60%;"></a></div>
-<br>
+    if self._distance_sensorIn.isNew():
+      data = self._distance_sensorIn.read()
 
-- Windows 8.1
+    if self._velocity_inIn.isNew():
+      self._d_velocity_in = self._velocity_inIn.read()
 
-<br>
+      if self._d_distance_sensor.data[0] > self._stop_distance[0] or self._d_distance_sensor.data[3] > self._stop_distance[0]:
+        self._d_velocity_out.data.vx = 0
+        self._d_velocity_out.data.vy = 0
+        self._d_velocity_out.data.va = 0
+
+        self._d_buzzer.data = 1000
+
+        OpenRTM_aist.setTimestamp(self._d_buzzer)
+        self._buzzerOut.write()
+      else:
+        self._d_velocity_out = self._d_velocity_in
+
+        self._d_buzzer.data = 0
+
+        OpenRTM_aist.setTimestamp(self._d_buzzer)
+        self._buzzerOut.write()
+
+      OpenRTM_aist.setTimestamp(self._d_velocity_out)
+      self._velocity_outOut.write()
+
+    return RTC.RTC_OK
+```
+
+This RTC reads the distance sensor values and the target velocity.
+
+If the sensor value exceeds the threshold specified by the `stop_distance` configuration parameter, the RTC stops the robot and sounds the buzzer.
+
+Otherwise, it outputs the input target velocity unchanged.
+
+### Building the RTC
+
+#### C++
+
+Open a command prompt and move to the generated project directory.
+
+Execute the following commands:
+
+```bash
+cmake .
+cmake --build . --config Release
+```
+
+If the build completes successfully, the executable will be generated.
+
+#### Python
+
+No build process is required.
+
+### Starting the RTC
+
+Launch the RTC you created.
+
+#### C++
+
+Execute:
+
+```bash
+Release\TestRasPiMouseCPPComp.exe
+```
+
+#### Python
+
+Execute:
+
+```bash
+python TestRasPiMousePy.py
+```
+
+The RTC will be registered with the Name Server.
+
+### Connecting the RTC
+
+Connect the RTCs as shown below.
+
+<div align="center"><a href="tutorial_raspimouse11.png"><img src="tutorial_raspimouse11.png" width="60%;"></a></div>
+
+Connection order:
+
+```text
+TkJoyStick
+    ↓
+FloatSeqToVelocity
+    ↓
+TestRasPiMouseCPP (or TestRasPiMousePy)
+    ↓
+RaspberryPiMouseRTC
+```
+
+In addition, connect the distance sensor output:
+
+```text
+RaspberryPiMouseRTC.ir_sensor_out
+    ↓
+TestRasPiMouseCPP.distance_sensor
+```
+
+And connect the buzzer output:
+
+```text
+TestRasPiMouseCPP.buzzer
+    ↓
+RaspberryPiMouseRTC.buzzer_hz_in
+```
+
+### Activating the RTCs
+
+Activate all RTCs.
 
 <div align="center"><a href="tutorial_raspimouse12.png"><img src="tutorial_raspimouse12.png" width="60%;"></a></div>
-<br>
 
-起動したらソースコードのディレクトリー、ビルドを行うディレクトリーに以下を指定します。
-括弧内は eclipse の作業ディレクトリーをC:\workspaceにした場合の例です。
+### Verifying Operation
 
-<table class="table-alt">
-  <tr>
-    <td>Where is the source code</td>
-    <td>RTCBuilder で生成したコードのフォルダー(C:\workspace\TestRasPiMouseCPP)</td>
-  </tr>
-  <tr>
-    <td>Where to build the binaries</td>
-    <td>RTCBuilder で生成したコードのフォルダーの下に作成した build フォルダー(C:\workspace\TestRasPiMouseCPP\build)</td>
-  </tr>
-</table>
+Move the Raspberry Pi Mouse using the joystick.
 
-<br>
+When an object approaches the front-left or front-right distance sensor and the sensor value exceeds the configured threshold, the robot should stop and the buzzer should sound.
 
-<div align="center"><a href="raspi_tu26.png"><img src="raspi_tu26.png" width="60%;"></a></div>
-<br>
+You can adjust the detection threshold from the RTC configuration view by changing the value of `stop_distance`.
 
-[Configure] ボタン → [Generate] ボタンをクリックすると **Visual Studio** のプロジェクトが生成されます。
+<div align="center"><a href="tutorial_raspimouse13.png"><img src="tutorial_raspimouse13.png" width="60%;"></a></div>
 
-### ソースコードの編集
+### Summary
 
-build ディレクトリーの TestRasPiMouseCPP.sln を開いてください。
+In this tutorial, you learned:
 
-次にコードの編集を行います。
+- How to connect to Raspberry Pi Mouse
+- How to operate Raspberry Pi Mouse using RT-Components
+- How to create a simple RTC that uses distance sensor information
+- How to integrate a custom RTC into an RT system
+- How to use RTCBuilder to generate component skeletons
+- How to build and execute RTCs in both C++ and Python
 
-**Python** の場合はまず変数の初期化部分を修正してください。
+By extending the RTC created in this tutorial, you can implement more advanced autonomous behaviors such as obstacle avoidance, wall following, and waypoint navigation.
 
-- TestRasPiMousePy.py
-
-
-```
- 	def __init__(self, manager):
- 		#self._d_velocity_in = RTC.TimedVelocity2D(*velocity_in_arg)
- 		self._d_velocity_in = RTC.TimedVelocity2D(RTC.Time(0,0),RTC.Velocity2D(0,0,0))
-```
-
-```
- 		#self._d_distance_sensor = RTC.TimedShortSeq(*distance_sensor_arg)
- 		self._d_distance_sensor = RTC.TimedShortSeq(RTC.Time(0,0),[])
-```
-
-```
- 		#self._d_velocity_out = RTC.TimedVelocity2D(*velocity_out_arg)
- 		self._d_velocity_out = RTC.TimedVelocity2D(RTC.Time(0,0),RTC.Velocity2D(0,0,0))
-```
-
-```
- 		#self._d_buzzer = RTC.TimedShort(*buzzer_arg)
- 		self._d_buzzer = RTC.TimedShort(RTC.Time(0,0),0)
-```
-
-
-まずは onExecute で入力速度をそのまま出力するコードを書いてみます。
-<br>
-
-**C++**の場合は以下のようになります。
-<br>
-
-isNew 関数で新規の入力データが存在するかを確認して、read 関数で変数(m_velocity_in)に格納します。
-そして m_velocity_out に出力データを格納してwrite 関数を呼び出すとデータが送信されます。
-
-
-
-- src/TestRaspiMouseCPP.cpp
-
-```
- 	if (m_velocity_inIn.isNew())
- 	{
- 		m_velocity_inIn.read();
- 		//入力速度をそのまま出力
- 		m_velocity_out.data.vx = m_velocity_in.data.vx;
- 		m_velocity_out.data.vy = m_velocity_in.data.vy;
- 		m_velocity_out.data.va = m_velocity_in.data.va;
- 		setTimestamp(m_velocity_out);
- 		m_velocity_outOut.write();
- 
- 
- 	}
-```
-
-
-**Python**の場合は以下のようになります。
-
-- TestRasPiMousePy.py
-
-```
- 		if self._velocity_inIn.isNew():
- 			data = self._velocity_inIn.read()
- 			#入力速度をそのまま出力する
- 			self._d_velocity_out.data.vx = data.data.vx
- 			self._d_velocity_out.data.vy = data.data.vy
- 			self._d_velocity_out.data.va = data.data.va
- 			OpenRTM_aist.setTimestamp(self._d_velocity_out)
- 			self._velocity_outOut.write()
-```
-
-
-次に距離センサーの計測値が一定以上の場合に停止する処理を記述します。
-<br>
-
-常に距離センサーのデータが入力されるとは限らないので、センサーのデータを格納する変数を宣言します。
-
-<br>
-
-**C++**の場合は TestRasPiMouseCPP.h に記述します。
-
-- include/TestRasPiMouseCPP/TestRasPiMouseCPP.h
-
-```
-  private:
- 	 int m_last_sensor_data[4];
-```
-
-
-**Python**の場合はコンストラクタに記述します。
-
-- TestRasPiMousePy.py
-
-```
- 	def __init__(self, manager):
- 		OpenRTM_aist.DataFlowComponentBase.__init__(self, manager)
- 
- 		self._last_sensor_data = [0, 0, 0, 0]
-```
-
-
-
-次に onExecute に停止する処理を記述します。
-<br>
-
-**C++**の場合は以下のようになっています。
-<br>
-
-まずインポート distance_sensor に isNew 関数で新規にデータが入力されたかを確認して、入力されている場合は read 関数で読み込みます。そして変数 m_last_sensor_data に格納します。
-<br>
-
-そしてインポート velocity_in で受信したデータの vx が0以上の場合には前進しているため障害物に接触するかもしれないと判定して、距離センサーの値が一定以上の場合は停止してブザーを鳴らします。
-
-
-- src/TestRaspiMouseCPP.cpp
-
-```
- RTC::ReturnCode_t TestRasPiMouseCPP::onExecute(RTC::UniqueId ec_id)
- {
- 	//データを新規に受信した場合に、データを m_last_sensor_data を格納する
- 	if (m_distance_sensorIn.isNew())
- 	{
- 		m_distance_sensorIn.read();
- 		if (m_distance_sensor.data.length() == 4)
- 		{
- 			for (int i = 0; i < 4; i++)
- 			{
- 				m_last_sensor_data[i] = m_distance_sensor.data[i];
- 			}
- 		}
- 	}
- 
- 	if (m_velocity_inIn.isNew())
- 	{
- 		m_velocity_inIn.read();
- 		//vxが0以上(前進)のときのみ停止するか判定する
- 		if (m_velocity_in.data.vx > 0)
- 		{
- 			for (int i = 0; i < 4; i++)
- 			{
- 				//センサーの計測値がstop_distance以上の時に前進しないようにする
- 				if (m_last_sensor_data[i] > m_stop_distance)
- 				{
- 					//停止する
- 					m_velocity_out.data.vx = 0;
- 					m_velocity_out.data.vy = 0;
- 					m_velocity_out.data.va = 0;
- 					setTimestamp(m_velocity_out);
- 					m_velocity_outOut.write();
- 					
- 					//ブザーを鳴らす
- 					m_buzzer.data = 50;
- 					setTimestamp(m_buzzer);
- 					m_buzzerOut.write();
- 
- 					return RTC::RTC_OK;
- 				}
- 			}
- 		}
- 		//ブザーを止める
- 		m_buzzer.data = 0;
- 		setTimestamp(m_buzzer);
- 		m_buzzerOut.write();
- 
- 		//入力速度をそのまま出力
- 		m_velocity_out.data.vx = m_velocity_in.data.vx;
- 		m_velocity_out.data.vy = m_velocity_in.data.vy;
- 		m_velocity_out.data.va = m_velocity_in.data.va;
- 		setTimestamp(m_velocity_out);
- 		m_velocity_outOut.write();
-  	}
- 	
-   return RTC::RTC_OK;
- }
-```
-
-**Python**の場合は以下のようになっています。
-
-- TestRasPiMousePy.py
-
-```
- 	def onExecute(self, ec_id):
- 		#データを新規に受信した場合に、データをm_last_sensor_dataを格納する
- 		if self._distance_sensorIn.isNew():
- 			data = self._distance_sensorIn.read()
- 			if len(data.data) == 4:
- 				self._last_sensor_data = data.data[:]
- 
- 
- 		
- 		if self._velocity_inIn.isNew():
- 			data = self._velocity_inIn.read()
- 			#vxが0以上(前進)のときのみ停止するか判定する
- 			if data.data.vx > 0:
- 				for d in self._last_sensor_data:
- 					#センサーの計測値がstop_distance以上の時に前進しないようにする
- 					if d > self._stop_distance[0]:
- 						#停止する
- 						self._d_velocity_out.data.vx = 0
- 						self._d_velocity_out.data.vy = 0
- 						self._d_velocity_out.data.va = 0
- 						OpenRTM_aist.setTimestamp(self._d_velocity_out)
- 						self._velocity_outOut.write()
- 
- 						#ブザーを鳴らす
- 						self._d_buzzer.data = 50
- 						OpenRTM_aist.setTimestamp(self._d_buzzer)
- 						self._buzzerOut.write()
- 						
- 						return RTC.RTC_OK
- 
- 			#ブザーを止める
- 			self._d_buzzer.data = 0
- 			OpenRTM_aist.setTimestamp(self._d_buzzer)
- 			self._buzzerOut.write()
- 
- 			#入力速度をそのまま出力する
- 			self._d_velocity_out.data.vx = data.data.vx
- 			self._d_velocity_out.data.vy = data.data.vy
- 			self._d_velocity_out.data.va = data.data.va
- 			OpenRTM_aist.setTimestamp(self._d_velocity_out)
- 			self._velocity_outOut.write()
- 
- 		return RTC.RTC_OK
-```
-
-コードの編集が終わったら C++ の場合はビルドしてください。
-<br>
-
-ビルドに成功すると build\src\Release(Debug) に TestRasPiMouseCPPComp.exe が生成されます。
-
-### 動作確認
-TestRasPiMouseCPPComp.exe (TestRasPiMouseCPPComp.py) をダブルクリックして起動してください。
-<br>
-
-TestRaspiMouseCPP (TestRaspiMousePy) を以下のように接続してください。
-
-<div align="center"><a href="tutorial_raspimouse11.png"><img src="tutorial_raspimouse11.png" width="70%;"></a></div>
-
-
-最後に RTC をアクティブ化して動作確認してください。
-
-### RTシステム保存
-
-RTシステムを保存する場合は System Diagram 上で右クリックして [Save As...] を選択してください。
-
-<br>
-
-<div align="center"><a href="tutorial_raspimouse15.png"><img src="tutorial_raspimouse15.png" width="70%;"></a></div>
-<br>
-
-<div align="center"><a href="tutorial_raspimouse14.png"><img src="tutorial_raspimouse14.png" width="70%;"></a></div>
-<br>
-
-### RTシステム復元
-
-復元する場合は [Open and Restore] を選択して、先ほど保存したファイルを選択してください。
-
-<br>
-
-<div align="center"><a href="raspi_tu28.png"><img src="raspi_tu28.png" width="70%;"></a></div>
-<br>
-
-### RTC 終了
-
-RTC を終了する場合はRTシステムエディタ上で RTC を [exit] してください。
-
-<br>
-
-<div align="center"><a href="tutorial_raspimouse16.png"><img src="tutorial_raspimouse16.png" width="70%;"></a></div>
-<br>
--------jp page!!-------

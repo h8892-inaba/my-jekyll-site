@@ -1,14 +1,12 @@
 ---
 layout: page
-title: チュートリアル(Raspberry Pi Mouse、強化月間用)
+title: Tutorial (Raspberry Pi Mouse, Bootcamp Edition)
 ---
--------jp page!!-------
 
 <!-- チュートリアル(Raspberry Pi Mouse、強化月間用) -->
 
-- [チュートリアル(Raspberry Pi Mouse、C++、Windows、強化月間用)](./tutorial_bootcamp_cpp_windows)
-- [チュートリアル(Raspberry Pi Mouse、C++、Ubuntu、強化月間用)](./tutorial_bootcamp_cpp_ubuntu)
-- [チュートリアル(Raspberry Pi Mouse、Python、Windows、強化月間用)](./tutorial_bootcamp_python_windows)
-- [チュートリアル(Raspberry Pi Mouse、Python、Ubuntu、強化月間用)](./tutorial_bootcamp_python_ubuntu)
+- [Tutorial (Raspberry Pi Mouse, C++, Windows, Bootcamp Edition)](./tutorial_bootcamp_cpp_windows)
+- [Tutorial (Raspberry Pi Mouse, C++, Ubuntu, Bootcamp Edition)](./tutorial_bootcamp_cpp_ubuntu)
+- [Tutorial (Raspberry Pi Mouse, Python, Windows, Bootcamp Edition)](./tutorial_bootcamp_python_windows)
+- [Tutorial (Raspberry Pi Mouse, Python, Ubuntu, Bootcamp Edition)](./tutorial_bootcamp_python_ubuntu)
 
--------jp page!!-------

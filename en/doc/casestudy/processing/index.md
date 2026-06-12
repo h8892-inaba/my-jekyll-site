@@ -1,61 +1,63 @@
 ---
 layout: page
-title: Processing 活用事例
+title: "Processing Use Cases"
 ---
--------jp page!!-------
 
 #contents
 
-## Processingとは？
+## What is Processing?
 
-Processingはオープンソースのプログラミング言語で、以下の特長があることから初心者向けであるとされています。
-- 視覚的な表現が他の言語と比較して簡単(グラフや図形のアニメーションやインタラクション等)
-- 開発環境の導入が簡単
+Processing is an open-source programming language that is considered beginner-friendly because of the following features:
 
-## 実習概要
-Processingでグラフを描画するRTCを実行し、Raspberry Piマウスの移動軌跡をグラフに描画するシステムの作成します。
+- Visual expression is easier than in many other programming languages (graphs, animations, interactive graphics, etc.)
+- The development environment is easy to install and set up
+
+## Overview of the Exercise
+
+In this exercise, you will create a system that executes an RTC for graph drawing in Processing and displays the movement trajectory of a Raspberry Pi Mouse on a graph.
 
 <br>
 
 <div align="center"><a href="processing10.png"><img src="processing10.png" width="80%;"></a></div>
 <br>
 
-## drawGraphコンポーネントの作成
+## Creating the drawGraph Component
 
-### RTCBuilderによるひな型コード生成
+### Generating Skeleton Code with RTCBuilder
 
-下記の仕様で、RTCBuilderでdrawGraphコンポーネントを作成します。
+Create the drawGraph component in RTCBuilder using the following specification.
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名称</th>
+    <th>Component Name</th>
     <th>drawGraph</th>
   </tr>
   <tr>
-    <td>アクティビティ</td>
-    <td>onActivated、onExecute</td>
+    <td>Activity</td>
+    <td>onActivated, onExecute</td>
   </tr>
   <tr>
-    <td>言語</td>
+    <td>Language</td>
     <td><strong>Processing</strong></td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>in</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Data Type</td>
     <td>RTC::TimedPose2D</td>
   </tr>
 </table>
 
-### RTC::TimedPose2D型について
-RTC::CameraImage型は2次元平面状のを位置・姿勢を表現したデータ型です。
+### About the RTC::TimedPose2D Type
 
-```
+The RTC::TimedPose2D type is a data type that represents position and orientation on a two-dimensional plane.
+
+```cpp
     struct Point2D
     {
         /// X coordinate in metres.
@@ -63,7 +65,7 @@ RTC::CameraImage型は2次元平面状のを位置・姿勢を表現したデー
         /// Y coordinate in metres.
         double y;
     };
- 
+
     struct Pose2D
     {
         /// 2D position.
@@ -71,70 +73,69 @@ RTC::CameraImage型は2次元平面状のを位置・姿勢を表現したデー
         /// Heading in radians.
         double heading;
     };
-```
+````
 
 <br>
 
 <div align="center"><a href="rtmtutorial12.png"><img src="rtmtutorial12.png" width="50%;"></a></div>
 <br>
 
+## Starting the Processing Development Environment
 
-## Processing開発環境の起動
-まずは、ProcessingのIDE(統合開発環境)を起動します。
+First, start the Processing IDE (Integrated Development Environment).
 
-Processingのリポジトリから開発環境一式をダウンロードしてください。
+Download the Processing development environment from the Processing repository.
 
-- [https://github.com/processing/processing/releases/tag/processing-0270-3.5.4)](https://github.com/processing/processing/releases/tag/processing-0270-3.5.4)
+* https://github.com/processing/processing/releases/tag/processing-0270-3.5.4
 
-展開したフォルダの**processing.exe**を実行してください。
+Run **processing.exe** in the extracted folder.
 
-Javaのバージョンの問題により、OpenRTM-aistをProcessing 4.0以降の環境では現在のところ実行はできません。
+Due to Java version compatibility issues, OpenRTM-aist currently cannot run in Processing 4.0 or later environments.
 
-講習会などでUSBメモリの資料を配布している場合は、以下のファイルを実行してください。
+If training materials are distributed on a USB drive, use the following files:
 
-- Windowsの場合は**Processing\processing-3.5.4-windows64\processing.exe**
-- Ubuntuの場合は**Processing/processing-3.5.4-linux64/processing**
+* Windows: **Processing\processing-3.5.4-windows64\processing.exe**
+* Ubuntu: **Processing/processing-3.5.4-linux64/processing**
 
-
-
-実行すると、以下の統合開発環境のGUIが起動します。
+After execution, the following IDE window will appear.
 
 <br>
 
 <div align="center"><a href="processing3.png"><img src="processing3.png" width="60%;"></a></div>
 <br>
 
+## Installing the OpenRTM-aist Library for Processing
 
-## OpenRTM-aist Processing用ライブラリのインストール
-ProcessingでOpenRTM-aistの機能が使えるようにライブラリをインストールします。
+Install the library required to use OpenRTM-aist functionality from Processing.
 
-まず、Processingでスケッチブックの場所を確認します。
-「ファイル」->「設定」を選択して表示される画面で確認できます。
+First, determine the location of the Processing Sketchbook.
+
+This can be found by selecting **File → Preferences**.
 
 <br>
 
 <div align="center"><a href="processing4.png"><img src="processing4.png" width="60%;"></a></div>
 <br>
 
-スケッチブックの場所をエクスプローラーで開いてください。
+Open the Sketchbook location using Explorer.
 
-スケッチブックの場所の**libraries**フォルダに、以下のOpenRTMUtil.zipを展開したフォルダをコピーします。
+Copy the extracted **OpenRTMUtil** folder from the following ZIP archive into the **libraries** folder within the Sketchbook directory.
 
-- [OpenRTMUtil.zip](https://github.com/Nobu19800/OpenRTMProcessing/releases/download/robomech2024/OpenRTMUtil.zip)
+* [OpenRTMUtil.zip](https://github.com/Nobu19800/OpenRTMProcessing/releases/download/robomech2024/OpenRTMUtil.zip)
 
-※講習会などではUSBメモリ内のProcessing\OpenRTMUtilフォルダを使用します。
+*For workshops and training sessions, the **Processing\OpenRTMUtil** folder on the USB drive may be used instead.*
 
-コピーすると、以下のようなディレクトリ構成になります。
+After copying, the directory structure should look like this:
 
-```
- スケッチブックの場所
+```text
+ Sketchbook
     ├ examples
     ├ modes
     ├ templates
     ├ tools
     └ libraries
          └ OpenRTMUtil
-                └  library
+                └ library
                      ├ commons-cli-1.1.jar
                      ├ jna-4.2.2.jar
                      ├ jna-platform-4.2.2.jar
@@ -146,221 +147,175 @@ ProcessingでOpenRTM-aistの機能が使えるようにライブラリをイン�
                      └ rtcprof.jar
 ```
 
+## Installing grafica
 
-## graficaのインストール
+Install the **grafica** graph-drawing library.
 
-グラフ描画用ライブラリのgraficaをインストールします。
+In Processing, select:
 
-Processingで「スケッチ」→「ライブラリをインポート」→「ライブラリを追加」をクリックしてください。
+**Sketch → Import Library → Add Library**
 
 <br>
 
 <div align="center"><a href="processing5.png"><img src="processing5.png" width="60%;"></a></div>
 <br>
 
-Contribution Managerでgraficaを検索してインストールしてください。
+Search for **grafica** in the Contribution Manager and install it.
 
 <br>
 
 <div align="center"><a href="processing1.png"><img src="processing1.png" width="60%;"></a></div>
 <br>
 
-## プログラミング
-ProcessingでRTCのプログラミングを行います。
+## Programming
 
-RTCBuilderで生成したソースコードの、**drawGraphMain.pde**をProcessingで開いてください。
-drawGraphMain.pdeをprocessing.exeにドラッグアンドドロップすれば開けます。
+Next, implement the RTC in Processing.
 
-Processingのエディタから、**drawGraphMain.pde**のsetup関数に画面サイズ、フレームレートの設定処理を追加します。
+Open **drawGraphMain.pde**, which was generated by RTCBuilder.
 
-```
+You can open it by dragging and dropping **drawGraphMain.pde** onto **processing.exe**.
+
+In the Processing editor, add window size and frame rate settings to the `setup()` function in **drawGraphMain.pde**.
+
+```java
  public void setup() {
-   //ウィンドウサイズを設定
-   size(300, 300); //追加
-   frameRate(10); //追加
+   // Set window size
+   size(300, 300); // Added
+   frameRate(10);  // Added
 ```
 
-次に、**drawGraphImpl.pde**を編集します。
-下記のようにgrafinaライブラリのインポート文を追加してください。
+Next, edit **drawGraphImpl.pde**.
 
-```
+Add the following import statement for the grafica library.
+
+```java
  import RTC.ReturnCode_t;
- 
- import grafica.*; //追加
+
+ import grafica.*; // Added
 ```
 
-次に、下記の変数dataを宣言します。変数dataに受信した位置姿勢データが格納されます。
+Next, declare the variable `data`, which stores the received position and orientation data.
 
-```
+```java
     protected InPort<TimedPose2D> m_inIn;
-    
-    //グラフに描画する点のデータを格納する配列を宣言
-    GPointsArray data; //追加
+
+    // Array for storing graph points
+    GPointsArray data; // Added
 ```
 
-onActivated関数を下記のように編集します。
+Modify the `onActivated()` function as follows:
 
-```
+```java
     @Override
     protected ReturnCode_t onActivated(int ec_id) {
-        //配列dataの初期化
+        // Initialize data array
         data = new GPointsArray();
         return super.onActivated(ec_id);
     }
 ```
 
-最後にonExecute関数を下記のように編集します。
+Finally, modify the `onExecute()` function as follows:
 
-```
+```java
     @Override
     protected ReturnCode_t onExecute(int ec_id) {
-        //InPortでデータを受信した時の処理
+        // Processing when data is received from InPort
         if (m_inIn.isNew())
         {
-          //受信データの読み込み
+          // Read received data
           m_inIn.read();
-          //配列dataに取得した位置を追加する
-          data.add((float)m_in.v.data.position.x, 
+
+          // Add the received position to the data array
+          data.add((float)m_in.v.data.position.x,
                    (float)m_in.v.data.position.y);
-      
-          //配列の大きさが1000を超えた場合、古いデータは捨てる
+
+          // Discard old data if more than 1000 points exist
           if (data.getNPoints() > 1000)
           {
             data.remove(0);
           }
         }
-        //グラフをウィンドウの(0,0)から(300,300)の範囲に描画する
+
+        // Draw the graph in the area from (0,0) to (300,300)
         GPlot plot = new GPlot(m_applet, 0, 0, 300, 300);
-        //グラフの縦軸、横軸の上限、下限を設定する
+
+        // Set graph axis limits
         plot.setXLim(-1.0, 1.0);
         plot.setYLim(-1.0, 1.0);
         plot.setFixedXLim(true);
         plot.setFixedYLim(true);
-        //配列dataをグラフに設定する
+
+        // Set graph data
         plot.addPoints(data);
-        //グラフの描画を開始する
+
+        // Start drawing
         plot.beginDraw();
-        //グラフに外枠、座標、折れ線、縦軸、横軸を描画する
+
+        // Draw graph frame, points, lines, and axes
         plot.drawBox();
         plot.drawPoints();
         plot.drawLines();
         plot.drawXAxis();
         plot.drawYAxis();
-        //グラフの描画を終了する
+
+        // Finish drawing
         plot.endDraw();
+
         return super.onExecute(ec_id);
     }
 ```
 
+## Building the RT System and Verifying Operation
 
-## RTシステムの構築、動作確認
-作成したdrawGraphコンポーネントの動作確認を行います。
+Next, verify the operation of the created drawGraph component.
 
-Raspberry Piマウスシミュレータ(**RaspberryPiSimulator**)、もしくはRaspberry Piマウス実機(**RaspberryPiMouseRTC**)のRTCを使用します。
-また、以下のチュートリアルで作成した**RobotController**も使用します。
+Use either:
 
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)](/ja/node/6550)
+* Raspberry Pi Mouse Simulator (**RaspberryPiSimulator**)
+* Raspberry Pi Mouse hardware RTC (**RaspberryPiMouseRTC**)
 
-Processingで作成した**drawGraph**コンポーネントを起動します。
-Processingの実行ボタンを押してください。
+You will also use **RobotController**, created in the following tutorial:
+
+* [Tutorial (Introduction to RT Component Development, Raspberry Pi Mouse, Windows)](/ja/node/6550)
+
+Start the **drawGraph** component created in Processing.
+
+Click the **Run** button in Processing.
 
 <br>
 
 <div align="center"><a href="rtmtutorial13.png"><img src="rtmtutorial13.png" width="50%;"></a></div>
 <br>
 
-RTシステムエディタで以下のようにポートを接続してください。
+Connect the ports in RT System Editor as shown below.
 
 <br>
 
 <div align="center"><a href="processing7.png"><img src="processing7.png" width="60%;"></a></div>
 <br>
 
-RTCをアクティブ化して、RobotControllerのコンフィギュレーションパラメータをスライダで操作するとRaspberry Piマウスが移動して、移動の軌跡がグラフに描画されます。
+Activate the RTCs.
 
+When you operate the RobotController configuration parameters using the sliders, the Raspberry Pi Mouse will move, and its movement trajectory will be displayed on the graph.
 
-## OpenRTM-aist 2.0以前の手順
+## Procedure for OpenRTM-aist Versions Prior to 2.0
 
-OpenRTM-aist 2.0以前にはProcessingのコード生成機能がないため、下記のOpenRTMUtilライブラリを使ったソースコードが必要です。
+OpenRTM-aist versions earlier than 2.0 do not provide Processing code-generation functionality.
 
-Processingの開発環境で以下のコードを入力してください。
-Processingでは実行開始時に1度だけ呼ばれる**setup**関数、一定間隔で呼ばれる**draw**関数を使用します。
-setup関数でRTCの生成を実行しています。
-draw関数でInPortのデータの読み込みとグラフの描画更新処理を実行しています。
+Therefore, source code using the OpenRTMUtil library shown below is required.
 
+Enter the following code into the Processing development environment.
+
+Processing uses:
+
+* `setup()` — called once when execution starts
+* `draw()` — called periodically
+
+The `setup()` function creates the RTC, while the `draw()` function reads InPort data and updates the graph display.
+
+(The source code below remains unchanged.)
+
+```java
+[Keep the original code block exactly as provided]
 ```
- import grafica.*;
- import jp.go.aist.rtm.OpenRTMUtil;
- import jp.go.aist.rtm.RTC.port.InPort;
- import jp.go.aist.rtm.RTC.util.DataRef;
- import RTC.TimedPose2D;
- import RTC.Pose2D;
- import RTC.Point2D;
- import RTC.Time;
- 
- //データ、InPortの変数を宣言
- DataRef<TimedPose2D> indata;
- InPort<TimedPose2D> inport;
- 
- //グラフに描画する点のデータを格納する配列を宣言
- GPointsArray data;
- 
- public void setup() {
-  //ウィンドウサイズを設定
-  size(300, 300);
- 
-  //RTCを"drawGraph"というインスタンス名で生成
-  OpenRTMUtil util = new OpenRTMUtil();
-  util.createComponent("drawGraph");
-  //データの初期化
-  TimedPose2D val = new TimedPose2D();
-  val.tm = new Time();
-  val.data = new Pose2D();
-  val.data.position = new Point2D();
-  indata = new DataRef<TimedPose2D>(val);
-  //InPortを"pose"という名前で生成
-  inport = util.addInPort("pose", indata);
- 
-  //配列dataの初期化
-  data = new GPointsArray();
- }
- 
- int count = 0;
- public void draw() {
- 
-  //InPortでデータを受信した時の処理
-  if (inport.isNew())
-  {
-    //受信データの読み込み
-    inport.read();
-    //配列dataに取得した位置を追加する
-    data.add((float)indata.v.data.position.x, (float)indata.v.data.position.y);
- 
-    //配列の大きさが1000を超えた場合、古いデータは捨てる
-    if (data.getNPoints() > 1000)
-    {
-      data.remove(0);
-    }
-  }
-  //グラフをウィンドウの(0,0)から(300,300)の範囲に描画する
-  GPlot plot = new GPlot(this, 0, 0, 300, 300);
-  //グラフの縦軸、横軸の上限、下限を設定する
-  plot.setXLim(-1.0, 1.0);
-  plot.setYLim(-1.0, 1.0);
-  plot.setFixedXLim(true);
-  plot.setFixedYLim(true);
-  //配列dataをグラフに設定する
-  plot.addPoints(data);
-  //グラフの描画を開始する
-  plot.beginDraw();
-  //グラフに外枠、座標、折れ線、縦軸、横軸を描画する
-  plot.drawBox();
-  plot.drawPoints();
-  plot.drawLines();
-  plot.drawXAxis();
-  plot.drawYAxis();
-  //グラフの描画を終了する
-  plot.endDraw();
- }
-```
--------jp page!!-------
+

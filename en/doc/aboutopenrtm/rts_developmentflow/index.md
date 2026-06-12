@@ -1,45 +1,58 @@
 ---
 layout: page
-title: "RTシステム開発の流れ"
+title: "RT System Development Process"
 ---
--------jp page!!-------
 
-<!-- Title: RTシステム開発の流れ -->
+<!-- Title: RT System Development Process -->
 #contents
 
-ここでは、作成したRTCを複数組み合わせて, システムを構築する手法について説明します。
+This section explains how to construct a system by combining multiple RTCs.
 
-## ネームサービス
+## Naming Service
 
-分散オブジェクトミドルウエアは、任意の場所にある計算機上のオブジェクトに対して、参照を保持する代理オブジェクトを介して透>過的アクセスを提供します。
-この参照は CORBAではIOR(Interoperable Object Reference)と呼ばれ、実体はオブジェクトが存在するコンピュータのネットワークア
-ドレスやポート番号、オブジェクト固有のキー等がエンコードされたものです。 あるオブジェクトのIORを別のコンピュータ上のプロ>グラムから利用する方法としては、ネットワーク上のサーバー上にIORを登録するのが一つの方法です。この参照を登録したり取得した
-りするサービスがネームサービスです。ネームサービスはCORBAで標準的に定義されているサービスの一つであり、OpenRTM-aistでは、
-**rtm-naming**というラッパーコマンドとして提供されています。
+Distributed object middleware provides transparent access to objects located on arbitrary computers through proxy objects that hold references to those objects.
 
-RTシステムを起動する前に、RTCを登録するネームサーバーを起動させる必要があります。また、各RTCに対しては、ネームサーバーの>場所を前もって調べておく必要があり、そのために設定ファイル**rtc.conf**にその情報を指定します。例えば、ネームサーバーをホ>スト名**openrtm.mydomain.net**上で起動した場合、全てのRTCにはそれに対応したrtc.confに以下の内容を書く必要があります。
+In CORBA, such references are called IORs (Interoperable Object References). An IOR contains encoded information such as the network address and port number of the computer on which the object resides, as well as an object-specific key.
 
-```
- corba.nameservers: openrtm.mydomain.net
-```
+One way to make an object's IOR available to programs running on other computers is to register the IOR on a server accessible through the network. The service used to register and retrieve these references is called the **Naming Service**.
 
-ネームサーバーはIPアドレスでも指定することができ、「,」で区切ることで複数のサーバーに同時にRTCを登録することができます。>ネームサーバーは、通常長時間起動したまま使われ、システムにおいて固定的であるので、設定ファイルを頻繁に書き換える必要はあ>りません。
+The Naming Service is one of the standard services defined by CORBA, and in OpenRTM-aist it is provided through the wrapper command **rtm-naming**.
 
-## RTSystemEditorによるシステム構築
+Before starting an RT system, it is necessary to start a Naming Server to which RTCs will be registered. In addition, each RTC must know the location of the Naming Server in advance. This information is specified in the configuration file **rtc.conf**.
 
-作成されたいくつかのRTCを実行し、それらのポートを接続し、アクティブ化することでシステムが動作します。RTC同士の接続やRTCに
-対してアクティブ化や非アクティブ化のコマンドを送り、システムを起動するためのツールとしてRTSystemEditorが提供されています>。
+For example, if the Naming Server is running on a host named **openrtm.mydomain.net**, the following entry must be added to the `rtc.conf` file used by all RTCs:
+
+```text
+corba.nameservers: openrtm.mydomain.net
+````
+
+A Naming Server may also be specified using an IP address. Multiple Naming Servers can be specified simultaneously by separating them with commas (`,`), allowing RTCs to be registered with multiple servers at the same time.
+
+Since Naming Servers are typically long-running and remain fixed within a system, it is usually unnecessary to modify the configuration file frequently.
+
+## Building Systems with RTSystemEditor
+
+A system operates by running multiple RTCs, connecting their ports, and activating them.
+
+RTSystemEditor is provided as a tool for connecting RTCs, sending activation and deactivation commands, and starting the system.
 
 <div align="center"><a href="rtse_ja.png"><img src="rtse_ja.png" style="width:40%;"></a></div>
-<div align="center"><strong>RTSystemEditorによるシステム構築</strong></div>
+<div align="center"><strong>System Construction Using RTSystemEditor</strong></div>
 
-RTCは起動後メモリーにロードされると、左側のネームサービスビューに表示されます。 ネームサービスビュー上のRTCを中央のエディ
-タにドラッグアンドドロップすると、RTCがシステムエディタ内にアイコンで表示されます。 長方形の辺上の凸部がポートを表してお>り、RTC間のこれらのポートを接続することでシステムを構築します。また、画面中央下部にはRTCのコンフィギュレーションビューが>表示されており、ここで任意のRTCのパラメーターを編集することができるようになっています。
+Once an RTC is started and loaded into memory, it appears in the Name Service View on the left side of the screen.
 
-システムを構築したら、エディタ上で右クリックし「All Activate」を選択することで、全てのRTCをアクティブ化することが可能です
-。また、エディタ上で右クリックし「Save as」を選択することで、システムの構成情報を保存することができます。保存したシステム
-構成情報は、再度呼び出すことでシステムの接続情報、コンフィギュレーションの情報等を復元することが可能です。
+By dragging and dropping an RTC from the Name Service View into the editor area in the center, the RTC is displayed as an icon within the System Editor.
 
-現在のところ、システム構成情報を復元する際には予めRTCを起動しメモリにロードしておく必要がありますが、将来的にはRTCの起動>から接続復元までが自動で行えるようになる予定です。
+The protrusions on the edges of the rectangular RTC icon represent ports. A system is constructed by connecting these ports between RTCs.
 
--------jp page!!-------
+In addition, the Configuration View is displayed in the lower center of the screen. This view allows users to edit the parameters of any RTC.
+
+After constructing a system, all RTCs can be activated by right-clicking within the editor and selecting **"All Activate"**.
+
+System configuration information can also be saved by right-clicking within the editor and selecting **"Save as"**.
+
+The saved system configuration can later be reloaded to restore connection information, configuration settings, and other system-related information.
+
+At present, RTCs must already be started and loaded into memory before a saved system configuration can be restored. However, future versions are expected to automate the entire process, from launching RTCs to restoring system connections.
+
+

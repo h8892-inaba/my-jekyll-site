@@ -1,154 +1,199 @@
 ---
 layout: page
-title: "RTC開発の流れ"
+title: "RTC Development Process"
 ---
--------jp page!!-------
 
-<!-- Title: RTC開発の流れ -->
+<!-- Title: RTC Development Process -->
 #contents
 
-本節では、RTミドルウエア(OpenRTM-aist)を利用した、RTコンポーネントの開発方法について説明します。
+This section explains how to develop RT Components using RT Middleware (OpenRTM-aist).
 
-## 開発の流れ
+## Development Process
 
-OpenRTM-aistは、コンポーネント化のためのフレームワークと、コンポーネントを管理/実行するためのミドルウエアから構成されています。
+OpenRTM-aist consists of a framework for componentization and middleware for managing and executing components.
 
-OpenRTM-aistは、コンポーネントを開発したいユーザー(コンポーネントデベロッパ)が持つ既存のソフトウエア資産、あるいは新たに作成したソフトウエアを容易にRTC化するためのフレームワークを提供します。RTC作成の大まかな流れは下図のようになります。
+OpenRTM-aist provides a framework that enables users who wish to develop components (component developers) to easily convert their existing software assets, or newly created software, into RTCs. The overall process for creating an RTC is shown in the figure below.
 
 <div align="center"><a href="rtc_devel_flow_ja.png"><img src="rtc_devel_flow_ja.png" style="width:60%;"></a></div>
-<div align="center"><strong>RTCおよびRTシステム開発の流れ</strong></div>
+<div align="center"><strong>RTC and RT System Development Process</strong></div>
 
-上述したように、RTコンポーネントが持つ共通インターフェースに関するコード、他のコンポーネントとのデータのやり取りの処理などは、RTコンポーネントフレームワークにより隠蔽されています。これらの処理は共通であるため、多くの部分はライブラリ化や自動生成が可能です。OpenRTM-aistでは RTCの雛型を生成するためのツールとしてRTCBuilderを提供しています。
+As described above, code related to the common interfaces provided by RT Components, as well as processing for exchanging data with other components, is hidden by the RT Component Framework. Since these functions are common to all components, many parts can be implemented as libraries or generated automatically.
 
-RTC開発者は、自分が開発した既存のプログラムをコンポーネントフレームワークに組み込むことでRTコンポーネントを作成し、複数のRTCを組合わせてロボットシステムを構築します。既存のソフトウエア資源をソフトウエア部品であるRTコンポーネントとして作成しておけば、様々な場面での再利用が容易になります。作成されたRTCは、ネットワーク上のノードに配置し、任意の別のノードから利用することもできます。
+OpenRTM-aist provides RTCBuilder as a tool for generating RTC skeleton code.
 
-RTCフレームワークに則って作成されたRTCは大きく分けて2種類の形態があります。スタンドアロンRTC(Standalone RT-Component)とローダブルモジュールRTC(Loadble Module RT-Component)です。スタンドアロンRTCは単一の実行形式のバイナリです。ローダブルモジュールRTCは動的にロード可能なバイナリファイルで、1プロセスで複数種類のRTCを同時起動する場合等に用いられます。
+RTC developers create RT Components by integrating their existing programs into the component framework and then build robotic systems by combining multiple RTCs. Once existing software assets have been converted into RT Components, they can be reused easily in a variety of applications. Created RTCs can also be deployed on nodes across a network and used from arbitrary remote nodes.
 
-## RTCBuilderによるひな形コードの作成
+RTCs developed according to the RTC framework generally take one of two forms:
 
-RTCBuilderはRTコンポーネントの雛型コードを自動生成する開発ツールです。
-このツールを用いて、RTCの基本プロファイルやデータポート、サービスポート、コンフィギュレーションに関する情報を入力することでコアロジック以外の大半のコードを自動生成することができます。対応している言語は、C++、Java、Python、Luaです。コンポーネントを作成する前に、おおよそ以下のことを決めておきます。
+- Standalone RT Components
+- Loadable Module RT Components
 
-- プロファイル(名前、カテゴリ名、バージョン等)
-- データポート(InPort/OutPort、ポート名、データ型)
-- サービスポート(ポート名、サービスインターフェース)
-- コンフィギュレーション(変数の名前、変数の型)
+A Standalone RTC is a single executable binary. A Loadable Module RTC is a dynamically loadable binary file and is typically used when multiple types of RTCs are executed simultaneously within a single process.
 
-Eclipseメニューの [ファイル] > [新規] > [その他]と選択してダイアログを開き、表示されたツリーで [その他] > [RTCBuilder] 選択して [次へ] をクリックします。プロジェクト名を入力して [終了] をクリックします。下図の画面が表示され、「基本」「アクティビティ」「データポート」「サービスポート」「コンフィギュレーション」「ドキュメント生成」「言語・環境」「RTC.xml」のタブがあります。「基本」から「言語・環境」までのタブのページを順に必要に応じて項目を埋めていき、最後に、「基本」タブページにある、[コード生成] ボタンをクリックすることで、雛型コードが生成されます。生成されたコードは、Eclipse起動時に指定したワークスペース内にあるプロジェクト名のフォルダーの下に生成されます。
+## Generating Skeleton Code with RTCBuilder
+
+RTCBuilder is a development tool that automatically generates RT Component skeleton code.
+
+Using this tool, developers can generate most of the code other than the core logic by entering information such as the RTC's basic profile, data ports, service ports, and configuration parameters.
+
+The supported programming languages are:
+
+- C++
+- Java
+- Python
+- Lua
+
+Before creating a component, the following information should generally be determined:
+
+- Profile (name, category, version, etc.)
+- Data Ports (InPort/OutPort, port name, data type)
+- Service Ports (port name, service interface)
+- Configuration (variable names and types)
+
+From the Eclipse menu, select **[File] > [New] > [Other...]** to open the dialog. In the displayed tree, select **[Other] > [RTCBuilder]**, then click **[Next]**. Enter the project name and click **[Finish]**.
+
+The screen shown below will appear, containing the following tabs:
+
+- Basic
+- Activity
+- Data Ports
+- Service Ports
+- Configuration
+- Document Generation
+- Language & Environment
+- RTC.xml
+
+Fill in the required information on each tab from **Basic** through **Language & Environment**. Finally, click the **[Generate Code]** button on the **Basic** tab to generate the skeleton code.
+
+The generated code will be created in the project folder within the workspace specified when Eclipse was launched.
 
 <div align="center"><a href="rtcbuilder_ja.png"><img src="rtcbuilder_ja.png" style="width:60%;"></a></div>
-<div align="center"><strong>RTCBuilderの開発画面</strong></div>
+<div align="center"><strong>RTCBuilder Development Screen</strong></div>
 
-## RTCの実装
+## RTC Implementation
 
-RTコンポーネントのプログラミングでは通常のプログラミングと異なり、main関数に直接処理を実装することはありません。ここでは、例として C++版の実装について述べます。
+Programming an RT Component differs from ordinary programming in that processing is not implemented directly in the `main()` function.
 
-RTコンポーネントは、ある基底クラスを継承した一つのクラスとして実装されます。 RTコンポーネントにおいてコアロジックが行う処理は、その基底クラスのメンバ関数(メソッド)をオーバーライドする形で記述します。例えば、初期化時に行う処理は、**onInitialize**関数の中に、RTCがアクティブ時に周期的に処理したい内容は**onExecute**関数に記述します。 
+The following example describes implementation using the C++ version.
 
-```
- class MyComponent
-```
+An RT Component is implemented as a class that inherits from a specific base class. The core logic of the RT Component is written by overriding member functions (methods) of that base class.
+
+For example:
+
+- Processing performed during initialization is implemented in the **onInitialize()** function.
+- Processing executed periodically while the RTC is active is implemented in the **onExecute()** function.
+
+```cpp
+class MyComponent
   : public DataflowComponentBase
-```
- {
- public:
-   // 初期化時に実行したい処理
-   virtual ReturnCode_t onInitialize()
-   {
-     if (mylogic.init())
-       return RTC::RTC_OK;
-     return RTC::RTC_ERROR;
-   }
- 
-   // 周期的に実行したい処理
-   virtual ReturnCode_t onExecute(RTC::UniqueId ec_id)
-   {
-     if (mylogic.do_someting())
-       return RTC::RTC_OK;
-     RTC::RTC_ERROR;
-   }
- 
- private:
-   MyLogic mylogic;
-   // ポート等の宣言
-   //   ：
- };
-```
+{
+public:
+  // Processing to be executed during initialization
+  virtual ReturnCode_t onInitialize()
+  {
+    if (mylogic.init())
+      return RTC::RTC_OK;
+    return RTC::RTC_ERROR;
+  }
 
-上記はC++での実装例です。 この例では、説明のためにクラス宣言と実装が一体で記述されていますが、実際にはヘッダファイル(.h)と実装ファイル(.cpp)に分割されてコードが生成されます。 MyLogicクラスのオブジェクトmylogicは、このコンポーネントが実際に行うコアロジックが実装されたクラスのインスタンスです。
-例では、非常に簡潔にmylogicの関数を呼ぶことでRTCが実装されています、実際の実装でも、コアロジックを予めこの例のように簡単に利用可能なクラス化しておき、コールバック関数内での呼び出しは最低限にする方がよいでしょう。
+  // Processing to be executed periodically
+  virtual ReturnCode_t onExecute(RTC::UniqueId ec_id)
+  {
+    if (mylogic.do_someting())
+      return RTC::RTC_OK;
+    RTC::RTC_ERROR;
+  }
 
-RTCBuilderにより同時に生成されるMakefileやプロジェクトファイルでこのコードをコンパイル/ビルドすることで、実行ファイルや共有オブジェクト(又はDLL)が作成できます。
+private:
+  MyLogic mylogic;
 
-## RTC ライフサイクル
+  // Port declarations, etc.
+  // ...
+};
+````
 
-上述したように、RTCの実装では、予め決められた関数(コールバック関数)に処理を記述することで、コンポーネントを作成します。どのような関数があり、どういったタイミングで呼ばれるのかを知るためには、RTCの状態遷移すなわちライフサイクルを理解する必要があります。下に、RTCの状態遷移図を示します。
+The above example shows a C++ implementation.
+
+For simplicity, the class declaration and implementation are shown together. In practice, RTCBuilder generates separate header (`.h`) and implementation (`.cpp`) files.
+
+The `mylogic` object of type `MyLogic` is an instance of the class that implements the actual core logic of the component.
+
+In this example, the RTC is implemented simply by calling methods of `mylogic`. In real implementations, it is recommended to encapsulate the core logic in reusable classes beforehand and keep the callback functions as lightweight as possible.
+
+By compiling and building this code using the Makefile or project files generated by RTCBuilder, executable files or shared libraries (DLLs) can be created.
+
+## RTC Lifecycle
+
+As described above, RTCs are implemented by writing processing logic in predefined functions (callback functions).
+
+To understand which functions exist and when they are called, it is necessary to understand the RTC lifecycle and state transitions.
+
+The figure below shows the RTC state transition diagram.
 
 <div align="center"><a href="rtc_state_machine_ja.png"><img src="rtc_state_machine_ja.png" style="width:40%;"></a></div>
-<div align="center"><strong>RTC ライフサイクル (UML ステートマシン図)</strong></div>
+<div align="center"><strong>RTC Lifecycle (UML State Machine Diagram)</strong></div>
 
-コンポーネントは基本的に以下の状態を持ちます。 
+An RTC generally has the following states:
 
-- 生成状態(Created)
-- 活動状態(Alive)
-  - 非アクティブ状態(Inactive)
-  - アクティブ状態(Active)
-  - エラー状態(Error)
-- 終了状態
+* Created
+* Alive
 
-これらの各状態や遷移時には、決められた関数(コールバック関数)がECによって呼び出されます。 表に、コールバック関数とそれぞれが呼ばれるタイミングを示します。
+  * Inactive
+  * Active
+  * Error
+* Finalized
+
+For each state and state transition, predefined callback functions are invoked by the Execution Context (EC).
+
+The following table lists the callback functions and the timing at which they are called.
 
 <table class="table-alt">
   <tr>
-    <th>関数名</th>
-    <th>概要</th>
+    <th>Function Name</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>onInitialize</td>
-    <td>ライフサイクル初期化時に1度だけ呼ばれる。</td>
+    <td>Called only once when the lifecycle is initialized.</td>
   </tr>
   <tr>
     <td>onActivated</td>
-    <td>アクティブ化する際に1回呼ばれる。</td>
+    <td>Called once when the RTC is activated.</td>
   </tr>
   <tr>
     <td>onDeactivated</td>
-    <td>非アクティブ化する際に1回呼ばれる。</td>
+    <td>Called once when the RTC is deactivated.</td>
   </tr>
   <tr>
     <td>onExecute</td>
-    <td>アクティブ状態にあるとき周期的に呼ばれる。</td>
+    <td>Called periodically while the RTC is in the Active state.</td>
   </tr>
   <tr>
     <td>onStateUpdate</td>
-    <td>onExecuteの後に毎回呼ばれる。</td>
+    <td>Called after each execution of onExecute.</td>
   </tr>
   <tr>
     <td>onAborting</td>
-    <td>エラー状態に移行する際に1回呼ばれる。</td>
+    <td>Called once when transitioning to the Error state.</td>
   </tr>
   <tr>
     <td>onError</td>
-    <td>エラー状態にあるとき周期的に呼ばれる。</td>
+    <td>Called periodically while the RTC is in the Error state.</td>
   </tr>
   <tr>
     <td>onReset</td>
-    <td>エラー状態から復帰する際に1回呼ばれる。</td>
+    <td>Called once when recovering from the Error state.</td>
   </tr>
   <tr>
     <td>onShutdown</td>
-    <td>ECの駆動が停止する際に1回呼ばれる。</td>
+    <td>Called once when EC execution stops.</td>
   </tr>
   <tr>
     <td>onStartup</td>
-    <td>ECの駆動が開始する際に1回呼ばれる。</td>
+    <td>Called once when EC execution starts.</td>
   </tr>
   <tr>
     <td>onFinalize</td>
-    <td>ライフサイクル終了時に1度だけ呼ばれる。</td>
+    <td>Called only once when the lifecycle terminates.</td>
   </tr>
 </table>
-
-
-
--------jp page!!-------

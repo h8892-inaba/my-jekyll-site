@@ -1,115 +1,120 @@
 ---
 layout: page
-title: 画像処理コンポーネントの作成 (Windows 8.1、OpenRTM-aist-1.1.2-RELEASE、OpenRTP-1.1.2、CMake-3.5.2、VS2015)
+title: Tutorial (Introduction to RT Component Development, EV3, Ubuntu)
 ---
--------jp page!!-------
 
-<!-- Title: チュートリアル(EV3、Ubuntu、第2部) -->
+<!-- Title: Tutorial (EV3, Ubuntu, Part 2) -->
 #contents
 
-## はじめに
+## Introduction
 
-このページではシミュレーター上の Educator Vehicleを操作するためのコンポーネントの作成手順を説明します。
-Educator VehicleはレゴマインドストームEV3の組み立て例の一つです。
+This page explains the procedure for creating a component to control the Educator Vehicle in the simulator.
+
+Educator Vehicle is one of the LEGO MINDSTORMS EV3 assembly examples.
 
 <div align="center"><a href="ev32_2.png"><img src="ev32_2.png" width="70%;"></a></div>
 
+## Downloading the Materials
 
-## 資料のダウンロード
-まずは資料をダウンロードしてください。
+First, download the materials.
 
 - [RTM_Tutorial_EV3.zip](https://github.com/OpenRTM/RTM_Tutorial_EV3/releases/download/iREX2019_0.01/RTM_Tutorial_EV3.zip)
 
-付属のシミュレータで以下の Educator Vehicle 改のシミュレーションができます。
+The included simulator can simulate the following modified Educator Vehicle.
 
 <div align="center"><a href="s_DSC00443.JPG"><img src="s_DSC00443.JPG" width="50%;"></a></div>
 
-Lモーター、Mモーターの制御だけではなく、タッチセンサー、ジャイロセンサー、超音波センサーのシミュレーションも可能になっています。
+In addition to controlling the L motor and M motor, simulation of the touch sensor, gyro sensor, and ultrasonic sensor is also supported.
 
+### RT Component to be Created
 
-### 作成する RTコンポーネント
+- RobotController Component
 
-- RobotController コンポーネント
+This component connects to the EV3Simulator component and controls the robot in the simulator.
 
-EV3Simulator コンポーネントと接続してシミュレーター上のロボットを操作するためのコンポーネントです。
+## Creating the RobotController Component
 
-## RobotController コンポーネントの作成
-
-GUI(スライダー)によりシミュレーター上のロボットの操作を行い、タッチセンサーがオンの時には自動的に停止するコンポーネントの作成を行います。
+In this tutorial, you will create a component that controls the robot in the simulator using a GUI (slider controls) and automatically stops when the touch sensor is turned on.
 
 <div align="center"><a href="tutorial_ev3_irex1.png"><img src="tutorial_ev3_irex1.png" width="80%;"></a></div>
 
-### 作成手順
-作成手順は以下の通りです。
+### Procedure
 
-- 開発環境の確認
-- コンポーネントの仕様を決める
-- RTC Builderによるソースコードのひな型コードの作成
-- ソースコードの編集
-- コンポーネントの動作確認
+The procedure is as follows.
 
-### 動作環境・開発環境
-Linux (ここでは Ubuntu 18.04 を仮定) 上に開発環境を構築します。
+- Verify the development environment
+- Determine the component specifications
+- Generate template source code using RTC Builder
+- Edit the source code
+- Verify component operation
 
+### Operating Environment / Development Environment
 
-#### OpenRTM-aistのインストール
+A development environment is built on Linux (Ubuntu 18.04 is assumed here).
+
+#### Installing OpenRTM-aist
+
 ```
  $ wget https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh
  $ pkg_install_ubuntu.sh -l all --yes
 ```
 
-#### JDKのインストール
+#### Installing JDK
 
 ```
- # Ubuntu 18.04、18.10の場合
+ # For Ubuntu 18.04 and 18.10
  $ sudo apt-get install openjdk-8-jdk
- # Ubuntu 16.04の場合
+
+ # For Ubuntu 16.04
  $ sudo apt-get install default-jdk
 ```
 
-Ubuntu 18.04、18.10の場合は以下のコマンドでjava8に切り替えます。
+For Ubuntu 18.04 and 18.10, switch to Java 8 with the following command.
 
 ```
  $ sudo update-alternatives --config java
 ```
 
-
-<span style="color:red;">eclipse起動後、RTSystemEditor でネームサーバに接続できない場合があります。その場合、/etc/hosts の localhost の行に自ホスト名を追記してください。</span>;
+<span style="color:red;">After starting Eclipse, RTSystemEditor may fail to connect to the Name Server. In that case, add your host name to the localhost entry in /etc/hosts.</span>;
 
 ```
  $ hostname
- ubuntu1404 ← ホスト名は ubuntu1404
+ ubuntu1404 ← The host name is ubuntu1404
+
  $ sudo vi /etc/hosts
 ```
 
 ```
  127.0.0.1       localhost
- を以下のように変更
+
+Change it as follows:
+
  127.0.0.1       localhost ubuntu1404
 ```
 
-
-#### gitのインストール
+#### Installing Git
 
 ```
  $ sudo apt-get install git
 ```
 
-#### cmake-guiのインストール
+#### Installing cmake-gui
 
 ```
  $ sudo apt-get install cmake-qt-gui
 ```
 
-#### Code::Blocks のインストール
-Code::Blocks は C/C++ に対応した統合開発環境です。
-以下のコマンドでインストールできます。
+#### Installing Code::Blocks
+
+Code::Blocks is an integrated development environment for C/C++.
+
+Install it with the following command.
 
 ```
  $ sudo apt-get install codeblocks
 ```
 
-最新版を入手したい場合は以下のコマンドを入力します。
+If you want to install the latest version, execute the following commands.
 
 ```
  $ sudo add-apt-repository ppa:damien-moore/codeblocks-stable
@@ -117,87 +122,87 @@ Code::Blocks は C/C++ に対応した統合開発環境です。
  $ sudo apt-get install codeblocks
 ```
 
-#### Premake、GLUTのインストール
-ODEのビルドに必要です。
+#### Installing Premake and GLUT
+
+These are required to build ODE.
 
 ```
  $ sudo apt-get install premake4 freeglut3-dev
 ```
 
-#### EV3Simulator コンポーネント
-シミュレーターコンポーネントについては手動でビルドを行います。
-以下のコマンドを入力してください。
+#### EV3Simulator Component
+
+The simulator component must be built manually.
+
+Enter the following commands.
 
 ```
  $ wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial_EV3/master/script/install_ev3_simulator.sh
  $ sudo sh install_ev3_simulator.sh
 ```
 
-
-インターネットに接続できない環境で講習会を実施している場合がありますので、その場合は配布の USBメモリー内のスクリプトを起動してください。
+Training sessions may be conducted in environments without Internet access. In that case, run the script provided on the distributed USB memory.
 
 ```
  $ sudo sh install_ev3_simulator_usb.sh
 ```
 
+### Component Specifications
 
-
-### コンポーネントの仕様
-
-RobotController は目標速度を出力するアウトポート、センサー値を入力するインポート、目標速度を設定するコンフィギュレーションパラメーターを持っています。
+RobotController has an OutPort for outputting target velocity, an InPort for inputting sensor values, and configuration parameters for setting the target velocity.
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名称</th>
+    <th>Component Name</th>
     <th><strong>RobotController</strong></th>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;"><strong>InPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>in</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedBooleanSeq</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>センサー値</td>
+    <td>Description</td>
+    <td>Sensor values</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;"><strong>OutPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>out</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedVelocity2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>目標速度</td>
+    <td>Description</td>
+    <td>Target velocity</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;"><strong>Configuration</strong></td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>speed_x</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0.0</td>
   </tr>
   <tr>
-    <td>制約</td>
+    <td>Constraint</td>
     <td>-1.5<x<1.5</td>
   </tr>
   <tr>
@@ -209,26 +214,26 @@ RobotController は目標速度を出力するアウトポート、センサー�
     <td>0.01</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>直進速度の設定</td>
+    <td>Description</td>
+    <td>Forward velocity setting</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;"><strong>Configuration</strong></td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>speed_r</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0.0</td>
   </tr>
   <tr>
-    <td>制約</td>
+    <td>Constraint</td>
     <td>-2.0<x<2.0</td>
   </tr>
   <tr>
@@ -240,15 +245,14 @@ RobotController は目標速度を出力するアウトポート、センサー�
     <td>0.01</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>回転速度の設定</td>
+    <td>Description</td>
+    <td>Rotational velocity setting</td>
   </tr>
 </table>
 
+#### About the TimedVelocity2D Type
 
-
-#### TimedVelocity2D 型について
-2次元平面上の移動ロボットの移動速度を格納するデータ型である TimedVelocity2D 型を使用します。
+The TimedVelocity2D type is used as a data type for storing the movement velocity of a mobile robot on a two-dimensional plane.
 
 ```
      struct Velocity2D
@@ -260,8 +264,8 @@ RobotController は目標速度を出力するアウトポート、センサー�
            /// Yaw velocity in radians per second.
            double va;
      };
- 
- 
+
+
      struct TimedVelocity2D
      {
            Time tm;
@@ -269,371 +273,355 @@ RobotController は目標速度を出力するアウトポート、センサー�
      };
 ```
 
+This data type can store the velocity in the X-axis direction (**vx**), the velocity in the Y-axis direction (**vy**), and the rotational velocity around the Z-axis (**va**).
 
-このデータ型にはX軸方向の速度**vx**、Y軸方向の速度**vy**、Z軸周りの回転速度**va**が格納できます。
-
-**vx**、**vy**、**va**はロボット中心座標系での速度を表しています。
+**vx**, **vy**, and **va** represent velocities in the robot-centered coordinate system.
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_irex3.png"><img src="tutorial_ev3_irex3.png" width="50%;"></a></div>
 <br>
 
-**vx**はX方向の速度、**vy**はY方向の速度、**va**はZ軸周りの角速度です。
+**vx** is the velocity in the X direction, **vy** is the velocity in the Y direction, and **va** is the angular velocity around the Z axis.
 
-Educator Vehicle改のように2個の車輪が左右に取り付けられているロボットの場合、横滑りしないと仮定すると**vy**は0になります。
+For a robot such as the modified Educator Vehicle, which has two wheels mounted on the left and right sides, **vy** becomes 0 if lateral slipping is assumed not to occur.
 
-直進速度**vx**、回転速度**va**を指定することでロボットの操作を行います。
+The robot is controlled by specifying the forward velocity **vx** and rotational velocity **va**.
 
-#### タッチセンサーについて
+#### About the Touch Sensor
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_irex2.png"><img src="tutorial_ev3_irex2.png" width="50%;"></a></div>
 <br>
 
+### Generating Template Code for the RobotController Component
 
-### RobotController コンポーネントのひな型コードの生成
+Template code for the RobotController component is generated using RTCBuilder.
 
-RobotController コンポーネントのひな型コードの生成は、RTCBuilder を用いて行います。
+#### Starting RTCBuilder
 
-#### RTCBuilder の起動
-Eclipse では、各種作業を行うフォルダーを「ワークスペース」(Work Space)とよび、原則としてすべての生成物はこのフォルダーの下に保存されます。
-ワークスペースはアクセスできるフォルダーであれば、どこに作っても構いませんが、このチュートリアルでは以下のワークスペースを仮定します。
+In Eclipse, the folder used for development work is called a "workspace," and in principle all generated files are stored under this folder.
 
-- /home/ユーザー名/workspace
+The workspace can be created in any accessible folder. In this tutorial, the following workspace is assumed.
 
-まずは Eclipse を起動します。
-OpenRTP を展開したディレクトリーに移動して以下のコマンドを入力します。
+- /home/<username>/workspace
+
+First, start Eclipse.
+
+Move to the directory where OpenRTP was extracted and enter the following command.
 
 ```
  $ openrtp
 ```
 
-最初にワークスペースの場所を尋ねられますので、上記のワークスペースを指定してください。
-
+When Eclipse starts for the first time, you will be prompted to specify the workspace location. Specify the workspace shown above.
 
 <div align="center"><a href="workspace_ubuntu.png"><img src="workspace_ubuntu.png" width="80%;"></a></div>
 
-
-すると、以下のような Welcome ページが表示されます。
+A Welcome page like the following will then be displayed.
 
 <br>
 
-
 <div align="center"><a href="install41.png"><img src="install41.png" width="60%;"></a></div>
-<div align="center"><strong>Eclipse の初期起動時の画面</strong></div>
+<div align="center"><strong>Screen displayed when Eclipse is started for the first time</strong></div>
 
-Welcome ページはいまは必要ないので左上の「×」ボタンをクリックして閉じてください。
+Since the Welcome page is not needed at this point, click the "×" button in the upper-left corner to close it.
 
-右上の [Open Perspective] ボタンをクリックしてください。
+Click the [Open Perspective] button in the upper-right corner.
 
 <div align="center"><a href="install42.png"><img src="install42.png" width="60%;"></a></div>
-<div align="center"><strong>パースペクティブの切り替え</strong></div>
+<div align="center"><strong>Switching Perspectives</strong></div>
 
-「RTC Builder」を選択することで、RTCBuilderが起動します。メニューバーに「カナヅチとRT」の RTCBuilder のアイコンが現れます。
+Select "RTC Builder" to start RTCBuilder. The RTCBuilder icon, represented by a hammer and RT symbol, will appear on the menu bar.
 
 <div align="center"><a href="robomech2018_3.jpg"><img src="robomech2018_3.jpg" width="60%;"></a></div>
-<div align="center"><strong>パースペクティブの選択</strong></div>
+<div align="center"><strong>Selecting a Perspective</strong></div>
 
 
+#### Creating a New Project
 
+To create the RobotController component, first create a project in RTC Builder.
 
-#### 新規プロジェクトの作成
-
-RobotController コンポーネントを作成するために、RTC Builder で新規プロジェクトを作成する必要があります。
-
-左上の [Open New RTCBuilder Editor] のアイコンをクリックしてください。
-
-
+Click the **[Open New RTCBuilder Editor]** icon in the upper-left corner.
 
 <div align="center"><a href="CreateProject_0.png"><img src="CreateProject_0.png" width="70%;"></a></div>
-<div align="center"><strong>RTC Builder 用プロジェクトの作成</strong></div>
+<div align="center"><strong>Creating a Project for RTC Builder</strong></div>
 
-｢プロジェクト名｣欄に作成するプロジェクト名 (ここでは **RobotController**) を入力して [終了] をクリックします。
-
-
+Enter the project name (RobotController in this example) in the Project Name field and click the **Finish** button.
 
 <div align="center"><a href="RT-Component-BuilderProject_1.png"><img src="RT-Component-BuilderProject_1.png" width="70%;"></a></div>
 
-指定した名称のプロジェクトが生成され、パッケージエクスプローラ内に追加されます。
-
-
+A project with the specified name will be generated and added to the Package Explorer.
 
 <div align="center"><a href="PackageExplolrer_1.png"><img src="PackageExplolrer_1.png" width="70%;"></a></div>
 
-生成したプロジェクト内には、デフォルト値が設定された RTC プロファイル XML(RTC.xml) が自動的に生成されます。
+An RTC profile XML file (`RTC.xml`) with default values is automatically generated inside the project.
 
-#### RTC プロファイルエディタの起動
+#### Starting the RTC Profile Editor
 
-RTC.xmlが生成された時点で、このプロジェクトに関連付けられているワークスペースとして RTCBuilder のエディタが開くはずです。
-もし起動しない場合はパッケージエクスプローラーの RTC.xml をダブルクリックしてください。
+When `RTC.xml` is generated, the RTCBuilder editor associated with the project should automatically open.
 
+If it does not open, double-click `RTC.xml` in the Package Explorer.
 
 <div align="center"><a href="Open_RTCBuilder_0.png"><img src="Open_RTCBuilder_0.png" width="50%;"></a></div>
 
+#### Entering Profile Information and Generating Code
 
+First, select the **Basic** tab on the far left and enter the basic information.
 
-#### プロファイル情報入力とコードの生成
+Enter information such as the RobotController component name defined earlier, the description, and the version.
 
-まず、いちばん左の「基本」タブを選択し、基本情報を入力します。先ほど決めた RobotController コンポーネントの仕様(名前)の他に、概要やバージョン等を入力してください。
-ラベルが赤字の項目は必須項目です。その他はデフォルトで構いません。
+Fields with red labels are required. The remaining fields may be left at their default values.
 
-- コンポーネント名: RobotController
-- 概要: 任意(Robot Controller component)
-- バージョン: 任意(1.0.0)
-- ベンダ名: 任意
-- カテゴリ: 任意(Controller)
-
-
-
+- Component Name: RobotController
+- Description: Any value (e.g., Robot Controller component)
+- Version: Any value (e.g., 1.0.0)
+- Vendor Name: Any value
+- Category: Any value (e.g., Controller)
 
 <br>
 
 <div align="center"><a href="rtcb11.png"><img src="rtcb11.png" width="50%;"></a></div>
-<div align="center"><strong>基本情報の入力</strong></div>
+<div align="center"><strong>Entering Basic Information</strong></div>
 <br>
 
+Next, select the **Activity** tab and specify the action callbacks to use.
 
-次に、「アクティビティ」タブを選択し、使用するアクションコールバックを指定します。
+The RobotController component uses the following callbacks:
 
-RobotController コンポーネントでは、onActivated()、onDeactivated()、onExecute() コールバックを使用します。下図のように①の onAtivated をクリック後に②のラジオボタンにて [ON] にチェックを入れます。
-onDeactivated、onExecute についても同様の手順を行います。
+- onActivated()
+- onDeactivated()
+- onExecute()
+
+As shown below, first click **① onActivated**, then select **ON** using radio button **②**.
+
+Perform the same procedure for **onDeactivated** and **onExecute**.
 
 <br>
 
 <div align="center"><a href="Activity_1.png"><img src="Activity_1.png" width="90%;"></a></div>
-<div align="center"><strong>アクティビティコールバックの選択</strong></div>
+<div align="center"><strong>Selecting Activity Callbacks</strong></div>
 <br>
 
+Next, select the **Data Ports** tab and enter the data port information.
 
-さらに、「データポート」タブを選択し、データポートの情報を入力します。
-先ほど決めた仕様を元に以下のように入力します。なお、変数名や表示位置はオプションで、そのままで結構です。
+Enter the following values according to the specifications defined earlier.
 
-
-
+The variable names and display positions are optional and may be left unchanged.
 
 <br>
 
 - InPort Profile:
-  - ポート名: in
-  - データ型: TimedBooleanSeq
+  - Port Name: in
+  - Data Type: TimedBooleanSeq
 
 <br>
-
 
 - OutPort Profile:
-  - ポート名: out
-  - データ型: TimedVelocity2D
-
+  - Port Name: out
+  - Data Type: TimedVelocity2D
 
 <br>
-
-
-
-
 
 <div align="center"><a href="DataPort_1.png"><img src="DataPort_1.png" width="50%;"></a></div>
-<div align="center"><strong>データポート情報の入力</strong></div>
+<div align="center"><strong>Entering Data Port Information</strong></div>
 <br>
 
-次に、「コンフィギュレーション」タブを選択し、先ほど決めた仕様を元に、Configuration の情報を入力します。
-制約条件および Widget とは、RTSystemEditor でコンポーネントのコンフィギュレーションパラメーターを表示する際に、スライダー、スピンボタン、ラジオボタンなど、GUI で値の変更を行うためのものです。
+Next, select the **Configuration** tab and enter the configuration information according to the specifications defined earlier.
 
-直進速度 speed_x、回転速度 speed_r はスライダーのより操作できるようにします。
+The constraint conditions and widgets are used when displaying component configuration parameters in RTSystemEditor. They allow values to be changed through GUI elements such as sliders, spin buttons, and radio buttons.
+
+Configure the forward velocity `speed_x` and rotational velocity `speed_r` so that they can be controlled using sliders.
 
 <br>
 
 - speed_x
-  - 名称: speed_x
-  - データ型: double
-  - デフォルト値: 0.0
-  - 制約条件: -1.5&lt;:x&lt;:1.5
-  - Widget: slider
-  - Step: 0.01
-- speed_r
-  - 名称: speed_r
-  - データ型: double
-  - デフォルト値: 0.0
-  - 制約条件: -2.0&lt;:x&lt;:2.0
+  - Name: speed_x
+  - Data Type: double
+  - Default Value: 0.0
+  - Constraint: -1.5<:x<:1.5
   - Widget: slider
   - Step: 0.01
 
+- speed_r
+  - Name: speed_r
+  - Data Type: double
+  - Default Value: 0.0
+  - Constraint: -2.0<:x<:2.0
+  - Widget: slider
+  - Step: 0.01
 
 <br>
-
-
 
 <div align="center"><a href="Configuration_1.png"><img src="Configuration_1.png" width="50%;"></a></div>
-<div align="center"><strong>コンフィグレーション情報の入力</strong></div>
+<div align="center"><strong>Entering Configuration Information</strong></div>
 <br>
 
-次に、「言語・環境」タブを選択し、プログラミング言語を選択します。
-ここでは、C++(言語) を選択します。なお、言語・環境はデフォルト等が設定されておらず、指定し忘れるとコード生成時にエラーになりますので、必ず言語の指定を行うようにしてください。
+Next, select the **Language / Environment** tab and choose the programming language.
 
+Here, select **C++**.
 
-
+The language/environment setting has no default value. If you forget to specify the language, an error will occur during code generation, so be sure to specify it.
 
 <div align="center"><a href="Language_1.png"><img src="Language_1.png" width="80%;"></a></div>
-<div align="center"><strong>プログラミング言語の選択</strong></div>
+<div align="center"><strong>Selecting the Programming Language</strong></div>
 <br>
 
-最後に、「基本」タブにある [コード生成] ボタンをクリックし、コンポーネントのひな型コードを生成します。
+Finally, click the **Generate Code** button in the **Basic** tab to generate the component template code.
 
 <br>
-
 
 <div align="center"><a href="Generate_1.png"><img src="Generate_1.png" width="80%;"></a></div>
-<div align="center"><strong>ひな型コードの生成(Generate)</strong></div>
+<div align="center"><strong>Generating Template Code</strong></div>
 <br>
 
-&color(red){※ 生成されるコード群は、eclipse起動時に指定したワークスペースフォルダーの中に生成されます。
-現在のワークスペースは、[ファイル] > [ワークスペースの切り替え...] で確認することができます。};
+<span style="color:red;">*The generated code files are created in the workspace folder specified when Eclipse was started. You can check the current workspace from [File] → [Switch Workspace...].*</span>;
 
 
+### Generating Files Required for Building with CMake
 
+The code generated by RTC Builder includes a `CMakeLists.txt` file for generating various files required for building with CMake.
 
-### CMake によるビルドに必要なファイルの生成
+By using CMake, Visual Studio project files, solution files, Makefiles, and other build-related files can be automatically generated from `CMakeLists.txt`.
 
-RTC Builder で生成したコードの中には CMake でビルドに必要な各種ファイルを生成するための CMakeLists.txt が含まれています。
-CMake を利用することにより CMakeLists.txt から Visual Studio のプロジェクトファイル、ソリューションファイル、もしくは Makefile 等を自動生成できます。
+#### Using CMake (cmake-gui)
 
+Use CMake to configure the build environment.
 
-
-
-#### CMake(cmake-gui) の操作
-CMake を利用してビルド環境の Configure を行います。
-まずは CMake(cmake-gui) を起動してください。
+First, start CMake (`cmake-gui`).
 
 ```
- $ cmake-gui
+$ cmake-gui
 ```
-
 
 <div align="center"><a href="CMakeGUI0_2_ubuntu.png"><img src="CMakeGUI0_2_ubuntu.png" width="50%;"></a></div>
-<div align="center"><strong>CMake GUI の起動とディレクトリーの指定</strong></div>
+<div align="center"><strong>Starting CMake GUI and Specifying Directories</strong></div>
 
-画面上部に以下のようなテキストボックスがありますので、それぞれソースコードの場所 (CMakeList.txt がある場所) と、ビルドディレクトリーを指定します。
+At the top of the window are text boxes where you specify the source code location (where `CMakeLists.txt` exists) and the build directory.
 
-- `**Where is the soruce code**`
-- `**Where to build the binaries**`
+- `Where is the source code`
+- `Where to build the binaries`
 
-ソースコードの場所は RobotController コンポーネントのソースが生成された場所で CMakeList.txt が存在するディレクトリーです。
-デフォルトでは <ワークスペースディレクトリー>/RobotController になります。
+The source code location is the directory where the RobotController component source code was generated and where `CMakeLists.txt` exists.
 
-このディレクトリーはエクスプローラから cmake-gui にドラックアンドドロップすると手入力しなくても設定されます。
+By default, this is:
 
+```
+<workspace directory>/RobotController
+```
 
+You can also set this by dragging and dropping the directory from the file manager into cmake-gui.
 
+The build directory is where project files, object files, and generated binaries are stored.
 
-ビルドディレクトリーとは、ビルドするためのプロジェクトファイルやオブジェクトファイル、バイナリを格納する場所のことです。
-場所は任意ですが、この場合 <ワークスペースディレクトリー>/RobotController/build のように分かりやすい名前をつけた RobotController のサブディレクトリーを指定することをお勧めします。
+Any location may be used, but in this tutorial the following directory is recommended:
+
+```
+<workspace directory>/RobotController/build
+```
 
 <table class="table-alt">
   <tr>
-    <td>**Where is the soruce code**</td>
-    <td>/home/ユーザー名/workspace/RobotController</td>
+    <td><strong>Where is the source code</strong></td>
+    <td>/home/&lt;username&gt;/workspace/RobotController</td>
   </tr>
   <tr>
-    <td>**Where to build the binaries**</td>
-    <td>/home/ユーザー名/workspace/RobotController/build</td>
+    <td><strong>Where to build the binaries</strong></td>
+    <td>/home/&lt;username&gt;/workspace/RobotController/build</td>
   </tr>
 </table>
 
-指定したら、下の [Configure] ボタンをクリックします。すると下図のようなダイアログが表示されますので、生成したいプロジェクトの種類を指定します。
-今回は CodeBlocks - Unix Makefiles を指定します。
-Code::Blocks を使わない場合は Unix Makefiles を使ってください。
+After entering these paths, click the **Configure** button.
 
+A dialog like the following will appear, allowing you to specify the type of project to generate.
+
+In this tutorial, select:
+
+```
+CodeBlocks - Unix Makefiles
+```
+
+If you do not use Code::Blocks, select:
+
+```
+Unix Makefiles
+```
 
 <div align="center"><a href="CMakeGUI1_0.png"><img src="CMakeGUI1_0.png" width="80%;"></a></div>
-<div align="center"><strong>生成するプロジェクトの種類の指定</strong></div>
+<div align="center"><strong>Specifying the Type of Project to Generate</strong></div>
 
-
-また cmake-gui を使用しない場合は以下のコマンドでファイルを生成できます。
+If you are not using cmake-gui, you can generate the files from the command line as follows:
 
 ```
- $ mkdir build
- $ cd build
- $ cmake .. -G "CodeBlocks - Unix Makefiles"
+$ mkdir build
+$ cd build
+$ cmake .. -G "CodeBlocks - Unix Makefiles"
 ```
 
+Clicking **[Finish]** in the dialog starts the Configure process. If there are no problems, **"Configuring done"** will be displayed in the log window at the bottom. Then click the **[Generate]** button.
 
+When **"Generating done"** is displayed, generation of the project files, solution files, and related files has been completed.
 
-ダイアログで [Finish] をクリックすると Configure が始まります。問題がなければ下部のログウインドウに「Configuring done」と出力されますので、続けて [Generate] ボタンをクリックします。
-「Generating done」と出ればプロジェクトファイル・ソリューションファイル等の出力が完了します。
+CMake generates cache files during the Configure stage. Therefore, if you change settings or modify the environment while troubleshooting, select **[File] > [Delete Cache]**, delete the cache, and then rerun the process starting from Configure.
 
-なお、CMake は Configure の段階でキャッシュファイルを生成しますので、トラブルなどで設定を変更したり環境を変更した場合は [File] > [Delete Cache] を選択して、キャッシュを削除してから Configure からやり直してください。
+### Editing the Header and Source Files
 
+Next, double-click **RobotController.cbp** in the build directory specified earlier to start Visual Studio 2013.
 
+Edit the header file (**include/RobotController/RobotController.h**) and source file (**src/RobotController.cpp**).
 
-
-### ヘッダ、ソースの編集
-
-次に先ほど指定した build ディレクトリーの中の RobotController.cbp をダブルクリックして Visual Studio 2013 を起動します。
-
-
-
-
-ヘッダ (include/RobotController/RobotController.h) およびソースコード (src/RobotController.cpp) をそれぞれ編集します。
-Code::BlocksのProjectsからRobotController.h、RobotController.cpp をクリックすることで編集画面が開きます。
-
-
-
+You can open the editor by clicking **RobotController.h** and **RobotController.cpp** from the Projects view in Code::Blocks.
 
 <div align="center"><a href="codeblocks0_2.png"><img src="codeblocks0_2.png" width="70%;"></a></div>
 
+&color(red){On 64-bit environments, Code::Blocks may become unstable.
+In that case, disabling the plugin called **code completion** may resolve the issue.};
 
-
-&color(red){64bitの環境の場合に Code::Blocks の動作が不安定になることがあります。
-その場合は code completion というプラグインを無効化すると動作することがあります。};
-
-「Plugins」>「Manage plugins...」を選択します。
+Select **"Plugins" > "Manage plugins..."**.
 
 <div align="center"><a href="codeblocks1_0.png"><img src="codeblocks1_0.png" width="80%;"></a></div>
 
-「code completion」を選択して [Disable] ボタンをクリックします。
+Select **"code completion"** and click the **[Disable]** button.
 
 <div align="center"><a href="codeblocks2_0.png"><img src="codeblocks2_0.png" width="80%;"></a></div>
 
-動作しないときはこの手順を試してください。
+If Code::Blocks does not operate correctly, try this procedure.
 
-#### アクティビティ処理の実装
+#### Implementing Activity Processing
 
+In the RobotController component, the configuration parameters (**speed_x**, **speed_y**) are controlled using sliders, and their values are output from the OutPort (**out**) as target velocities.
 
-RobotController コンポーネントでは、コンフィギュレーションパラメーター(speed_x、speed_y)をスライダーで操作しその値を目標速度としてアウトポート(out)から出力します。
-インポート(in)から入力された値を変数に格納して、その値が一定以上の場合は停止するようにします。
+Values input through the InPort (**in**) are stored in variables, and the robot is stopped when those values exceed a certain threshold.
 
 <br>
-onActivated()、onExecute()、onDeactivated() での処理内容を下図に示します。
-<br>
 
+The processing performed in **onActivated()**, **onExecute()**, and **onDeactivated()** is shown in the figure below.
+
+<br>
 
 <div align="center"><a href="RCRTC_State_1.png"><img src="RCRTC_State_1.png" width="70%;"></a></div>
 
-<div align="center"><strong>アクティビティ処理の概要</strong></div>
+<div align="center"><strong>Overview of Activity Processing</strong></div>
 <br>
 
+#### Editing the Header File (RobotController.h)
 
-
-
-#### ヘッダファイル (RobotController.h) の編集
-
-センサー値を一時的に格納する変数 sensor_data を宣言します。
+Declare the variable **sensor_data** for temporarily storing sensor values.
 
 ```
    private:
-	 bool sensor_data[2];	       //センサー値を一時格納する変数
+	 bool sensor_data[2];	       // Variable for temporarily storing sensor values
 ```
 
+#### Editing the Source File (RobotController.cpp)
 
-#### ソースファイル (RobotController.cpp) の編集
-
-下記のように、onActivated()、onDeactivated()、onExecute() を実装します。
+Implement **onActivated()**, **onDeactivated()**, and **onExecute()** as shown below.
 
 ```
  RTC::ReturnCode_t RobotController::onActivated(RTC::UniqueId ec_id)
  {
- 	//センサー値初期化
+ 	// Initialize sensor values
  	for (int i = 0; i < 2; i++)
  	{
  		sensor_data[i] = false;
@@ -643,13 +631,10 @@ onActivated()、onExecute()、onDeactivated() での処理内容を下図に示�
  }
 ```
 
-
-
-
 ```
  RTC::ReturnCode_t RobotController::onDeactivated(RTC::UniqueId ec_id)
  {
-  	    //ロボットを停止する
+  	    // Stop the robot
   	    m_out.data.vx = 0;
   	    m_out.data.va = 0;
   	    m_outOut.write();
@@ -658,19 +643,17 @@ onActivated()、onExecute()、onDeactivated() での処理内容を下図に示�
  }
 ```
 
-
-
 ```
  RTC::ReturnCode_t RobotController::onExecute(RTC::UniqueId ec_id)
  {
- 	//入力データの存在確認
+ 	// Check whether input data exists
  	if (m_inIn.isNew())
  	{
- 		//入力データ読み込み
+ 		// Read input data
  		m_inIn.read();
  		for (int i = 0; i < m_in.data.length(); i++)
  		{
- 			//入力データ格納
+ 			// Store input data
  			if (i < 2)
  			{
  				sensor_data[i] = m_in.data[i];
@@ -678,15 +661,15 @@ onActivated()、onExecute()、onDeactivated() での処理内容を下図に示�
  		}
  	}
  
- 	//前進するときのみ停止するかを判定
+ 	// Determine whether to stop only while moving forward
  	if (m_speed_x > 0)
  	{
  		for (int i = 0; i < 2; i++)
  		{
- 			//タッチセンサのオンオフを判定
+ 			// Check whether the touch sensor is on or off
  			if (sensor_data[i] == true)
  			{
- 				//タッチセンサがオンの場合は停止
+ 				// Stop if a touch sensor is on
  				m_out.data.vx = 0;
  				m_out.data.va = 0;
  				m_outOut.write();
@@ -695,7 +678,7 @@ onActivated()、onExecute()、onDeactivated() での処理内容を下図に示�
  		}
  	}
  
- 	//すべてのタッチセンサがオフの場合はコンフィギュレーションパラメーターの値で操作
+ 	// If all touch sensors are off, operate according to the configuration parameter values
  	m_out.data.vx = m_speed_x;
  	m_out.data.va = m_speed_r;
  	m_outOut.write();
@@ -704,118 +687,106 @@ onActivated()、onExecute()、onDeactivated() での処理内容を下図に示�
   }
 ```
 
+### Building with Code::Blocks
 
+#### Executing the Build
 
-### Code::Blocks によるビルド
-
-#### ビルドの実行
-
-Code::Blocksの [ビルド] ボタンをクリックしてビルドを行います。
-
+Click the **[Build]** button in Code::Blocks to build the project.
 
 <br>
 
 <div align="center"><a href="codeblocks_build_2.png"><img src="codeblocks_build_2.png" width="70%;"></a></div>
-<div align="center"><strong>ビルドの実行</strong></div>
+<div align="center"><strong>Executing the Build</strong></div>
 <br>
 
+## Verifying Operation of the RobotController Component
 
-## RobotController コンポーネントの動作確認
-作成した RobotController をシミュレーターコンポーネントと接続して動作確認を行います。
+Connect the created RobotController component to the simulator component and verify its operation.
 
-
-以下より EV3Simulator コンポーネントをダウンロードしてください。
+Download the EV3Simulator component from the following URL.
 
 - [RTM_Tutorial_2017](https://github.com/Nobu19800/RTM_Tutorial_iREX2017/archive/master.zip)
 
+Since training sessions may be conducted in environments without Internet access, the files are also included on the distributed USB memory.
 
-インターネットに接続できない環境で講習会を実施している場合がありますので、その場合は配布のUSBメモリーに入れてあります。
+### Starting RTSystemEditor
 
-
-
-### RTSystemEditorの起動
-OpenRTPのパースペクティブを開くのウインドウからRT System Editorを選択して起動します。
+Open the OpenRTP perspective and start RT System Editor from the window.
 
 <br>
 
 <div align="center"><a href="rtse2000.png"><img src="rtse2000.png" width="50%;"></a></div>
 <br>
 
+### Starting the Name Service
 
-### NameService の起動
-
-コンポーネントの参照を登録するためのネームサービスを起動します。
+Start the Name Service used to register component references.
 
 <br>
-RT System Editorのネームサービス起動ボタンを押すと起動します。
+
+Press the Name Service startup button in RT System Editor to start it.
 
 <div align="center"><a href="robomech2018_6.jpg"><img src="robomech2018_6.jpg" width="50%;"></a></div>
 
-<span style="color:red;">※ 「Start Naming Service」をクリックしても omniNames が起動されない場合は、フルコンピュータ名が14文字以内に設定されているかを確認してください。</span>;
+<span style="color:red;">*If omniNames does not start when you click "Start Naming Service", check that the full computer name is set to 14 characters or fewer.*</span>;
 
+### Starting the RobotController Component
 
+Start the RobotController component.
 
-### RobotController コンポーネントの起動
-
-RobotController コンポーネントを起動します。
-
-RobotController\build\srcフォルダーの RobotControllerComp ファイルを実行してください。
-
+Run the **RobotControllerComp** file in the **RobotController\build\src** folder.
 
 ```
  $ RobotControllerComp
 ```
 
+### Starting the Simulator Component
 
-### シミュレーターコンポーネントの起動
-
-EV3SimulatorComp コンポーネントをインストールしたディレクトリーに移動後、下記のコマンドにて起動できます。
+After moving to the directory where the EV3SimulatorComp component was installed, start it using the following command.
 
 ```
  $ src/EV3SimulatorComp
 ```
 
+### Connecting the Components
 
+As shown below, connect the RobotController component and EV3Simulator component in RTSystemEditor.
 
-### コンポーネントの接続
-
-下図のように、RTSystemEditor にて
-RobotController コンポーネント、EV3Simulator コンポーネントを接続します。
-システムダイアグラムは左上のOpen New System Editorボタンで表示できます。
+The system diagram can be displayed using the **Open New System Editor** button in the upper-left corner.
 
 <div align="center"><a href="tutorial_ev3_irex9_2.png"><img src="tutorial_ev3_irex9_2.png" width="70%;"></a></div>
-<div align="center"><strong>コンポーネントの接続</strong></div>
+<div align="center"><strong>Connecting the Components</strong></div>
 
-### コンポーネントのActivate
+### Activating the Components
 
-RTSystemEditor の上部にあります [All Activate] というアイコンをクリックし、全てのコンポーネントをアクティブ化します。
-正常にアクティベートされた場合、下図のように黄緑色でコンポーネントが表示されます。
+Click the **[All Activate]** icon at the top of RTSystemEditor to activate all components.
+
+If activation succeeds, the components will be displayed in light green as shown below.
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_irex10.png"><img src="tutorial_ev3_irex10.png" width="70%;"></a></div>
-<div align="center"><strong>コンポーネントのアクティブ化</strong></div>
+<div align="center"><strong>Activating the Components</strong></div>
 <br>
 
-### 動作確認
+### Verifying Operation
 
-下図のようにコンフィギュレーションビューの [編集] ボタンからコンフィギュレーションを変更することができます。
+As shown below, configuration settings can be changed from the **[Edit]** button in the Configuration View.
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_irex6.png"><img src="tutorial_ev3_irex6.png" width="70%;"></a></div>
 <br>
 
-スライダーを操作してシミュレーター上のEducator Vehicle改の操作ができるかを確認してください。
+Move the sliders and verify that you can control the modified Educator Vehicle in the simulator.
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_irex7.png"><img src="tutorial_ev3_irex7.png" width="70%;"></a></div>
-<div align="center"><strong>コンフィギュレーションパラメーターの変更</strong></div>
+<div align="center"><strong>Changing Configuration Parameters</strong></div>
 <br>
 
-正常に動作している場合は、開始し位置から直進した場合に壁の前で停止します。
-
+If the system is operating correctly, the robot will stop in front of the wall when moving straight from the starting position.
 
 <br>
 
@@ -823,9 +794,7 @@ RTSystemEditor の上部にあります [All Activate] というアイコンを�
 
 <br>
 
-
-正常に動作していない場合は、壁に接触後にそのまま前進を続けます。
-
+If the system is not operating correctly, the robot will continue moving forward after contacting the wall.
 
 <br>
 
@@ -833,46 +802,45 @@ RTSystemEditor の上部にあります [All Activate] というアイコンを�
 
 <br>
 
+## Verifying Operation on the Actual Robot
 
+If actual EV3 units are available during the training session, operation can also be verified using the real hardware.
 
-## 実機での動作確認
-講習会で EV3実機を用意している場合は実機での動作確認が可能です。
+The procedure is as follows.
 
-手順は以下の通りです。
+- Assemble the modified Educator Vehicle
+- Start the EV3 access point
+- Connect to the EV3 access point
+- Connect the ports
+- Activate the components
 
-- Educator Vehicle改の組立て
-- EV3アクセスポイントの起動
-- EV3のアクセスポイントに接続
-- ポートの接続
-- コンポーネントのアクティブ化
+### Assembling the Modified Educator Vehicle
 
+The EV3 is distributed to participants in a disassembled state.
 
-### Educator Vehicle改の組立て
-EV3 は分解した状態で参加者に配ります。
-組み立て方は以下の通りです。
+Assemble it as described below.
 
+However, the ultrasonic sensor, color sensor, and gyro sensor are not used during the training and therefore do not need to be installed.
 
-ただし、超音波センサー、カラーセンサー、ジャイロセンサーについては、講習で使用しないため取り付ける必要はありません。
-以下の※の作業については、時間が余った人が実施してください。
+Tasks marked with ※ are optional and should be performed only if time remains.
 
-まずは土台部分を取り出してください。
+First, take out the base section.
 
 <br>
 
 <div align="center"><a href="s_DSC00463.JPG"><img src="s_DSC00463.JPG" width="50%;"></a></div>
 <br>
 
-最初にMモーターにケーブル(15cm)を接続します※。
+First, connect a 15 cm cable to the M motor. ※
 
 <br>
 
 <div align="center"><a href="s_DSC00446.JPG"><img src="s_DSC00446.JPG" width="50%;"></a></div>
 <br>
 
+Next, attach the EV3 main unit.
 
-次に EV3 本体を取り付けます。
-Mモーターにケーブルを接続した場合は、ケーブルが左側の隙間から出るようにしてください。
-
+If you connected a cable to the M motor, make sure the cable exits through the gap on the left side.
 
 <br>
 
@@ -880,8 +848,7 @@ Mモーターにケーブルを接続した場合は、ケーブルが左側の�
 <br>
 <br>
 
-
-右側のタッチセンサーを取り付けてください。
+Attach the touch sensor on the right side.
 
 <br>
 
@@ -889,57 +856,60 @@ Mモーターにケーブルを接続した場合は、ケーブルが左側の�
 <br>
 <br>
 
-超音波センサーを取り付けてください※。
+Attach the ultrasonic sensor. ※
 
 <br>
 
 <div align="center"><a href="s_DSC00454.JPG"><img src="s_DSC00454.JPG" width="50%;"></a></div>
 <br>
 
+Connect the cables.
 
-ケーブルを接続してください。
-必須なのは車輪駆動用のLモーター右、Lモーター左、タッチセンサーだけです。
-ケーブルに貼り付けたシールにポートの番号、デバイス名を記載してあります。
+Only the right L motor, left L motor, and touch sensors used for wheel drive are required.
+
+The labels attached to the cables indicate the port numbers and device names.
 
 <table class="table-alt">
   <tr>
-    <td>Lモーター右</td>
-    <td>ポート C</td>
-    <td>25cmケーブル</td>
+    <td>Right L Motor</td>
+    <td>Port C</td>
+    <td>25 cm cable</td>
   </tr>
   <tr>
-    <td>Lモーター左</td>
-    <td>ポート B</td>
-    <td>25cmケーブル</td>
+    <td>Left L Motor</td>
+    <td>Port B</td>
+    <td>25 cm cable</td>
   </tr>
   <tr>
-    <td>Mモーター※</td>
-    <td>ポートA</td>
-    <td>25cmケーブル</td>
+    <td>M Motor ※</td>
+    <td>Port A</td>
+    <td>25 cm cable</td>
   </tr>
   <tr>
-    <td>タッチセンサー右</td>
-    <td>ポート 3</td>
-    <td>35cmケーブル</td>
+    <td>Right Touch Sensor</td>
+    <td>Port 3</td>
+    <td>35 cm cable</td>
   </tr>
   <tr>
-    <td>タッチセンサー左</td>
-    <td>ポート 1</td>
-    <td>35cmケーブル</td>
+    <td>Left Touch Sensor</td>
+    <td>Port 1</td>
+    <td>35 cm cable</td>
   </tr>
   <tr>
-    <td>超音波センサー※</td>
-    <td>ポート 4</td>
-    <td>50cmケーブル</td>
+    <td>Ultrasonic Sensor ※</td>
+    <td>Port 4</td>
+    <td>50 cm cable</td>
   </tr>
   <tr>
-    <td>ジャイロセンサー※</td>
-    <td>ポート 2</td>
-    <td>25cmケーブル</td>
+    <td>Gyro Sensor ※</td>
+    <td>Port 2</td>
+    <td>25 cm cable</td>
   </tr>
 </table>
 
-ケーブルは EV3 の上下に A～D と 1～4 のポートがあるのでそこにケーブルを接続します。
+Connect the cables to the EV3.
+
+The EV3 has ports A–D and 1–4 on the top and bottom of the unit. Connect the cables to the appropriate ports.
 
 <br>
 
@@ -953,29 +923,25 @@ Mモーターにケーブルを接続した場合は、ケーブルが左側の�
 <br>
 <br>
 
+Attach the side parts. ※
 
+Install them so that they hold the cables for the right L motor, left L motor, M motor, right touch sensor, and left touch sensor in place. ※
 
-
-左右にパーツを取り付けます※。
-Lモーター右、Lモーター左、Mモーター、タッチセンサー右、タッチセンサー左のケーブルを挟むようにして取り付けてください※。
 <br>
 
-Lモーター右、タッチセンサー右のケーブルは右側から、Lモーター左、Mモーター、タッチセンサー左は左側から通してください※。
+Route the cables for the right L motor and right touch sensor from the right side, and the cables for the left L motor, M motor, and left touch sensor from the left side. ※
 
 <br>
 
 <div align="center"><a href="s_DSC00457.JPG"><img src="s_DSC00457.JPG" width="50%;"></a></div>
 <br>
 
-
-
 <br>
 
 <div align="center"><a href="s_DSC00459.JPG"><img src="s_DSC00459.JPG" width="50%;"></a></div>
 <br>
 
-これでとりあえず完成ですが、余裕のある人はジャイロセンサーを取り付けてみてください※。
-
+This completes the basic assembly. If you have extra time, try installing the gyro sensor as well. ※
 
 <br>
 
@@ -983,54 +949,47 @@ Lモーター右、タッチセンサー右のケーブルは右側から、Lモ
 <br>
 <br>
 
-### 電源の入れ方/切り方
+### Powering On / Off
 
-#### 電源の入れ方
+#### Powering On
 
-中央のボタンを押せば電源が投入されます。
+Press the center button to turn on the power.
 
 <br>
 
 <div align="center"><a href="ev3_on.jpg"><img src="ev3_on.jpg" width="50%;"></a></div>
 <br>
 
-#### 電源の切り方
+#### Powering Off
 
-EV3 の電源を切る場合は最初の画面で EV3 本体の左上の戻るボタンを押して「Power Off」を選択してください。
+To turn off the EV3, press the Back button at the upper-left corner of the EV3 on the initial screen and select **"Power Off"**.
 
 <br>
 
 <div align="center"><a href="ev3_off.jpg"><img src="ev3_off.jpg" width="50%;"></a></div>
 <br>
 
-
-
 <br>
 
 <div align="center"><a href="s_DSC01033.JPG"><img src="s_DSC01033.JPG" width="50%;"></a></div>
 <br>
 
-#### 再起動
+#### Rebooting
 
-再起動する場合は最初の画面で EV3 本体の左上の戻るボタンを押して「Reboot」を選択してください。
+To reboot the EV3, press the Back button at the upper-left corner of the EV3 on the initial screen and select **"Reboot"**.
 
-#### リセット
+#### Resetting
 
-ev3dev の起動が途中で停止する場合には、中央ボタン、戻るボタン(左上)、左ボタンを同時押ししてください。画面が消えたら戻るボタンを離すと再起動します。
-
+If the startup of ev3dev stops midway, press and hold the Center button, Back button (upper-left), and Left button simultaneously. When the screen turns off, release the Back button to restart the system.
 
 <br>
 
 <div align="center"><a href="ev3_reset.jpg"><img src="ev3_reset.jpg" width="50%;"></a></div>
 <br>
 
+### Configuring the Access Point
 
-
-### アクセスポイントの設定
-
-
-EV3 の操作画面から「File Browser」を上下ボタンで選択して中央のボタンを押してください。
-
+On the EV3 operation screen, select **"File Browser"** using the Up/Down buttons and press the Center button.
 
 ```
  ------------------------------
@@ -1038,15 +997,14 @@ EV3 の操作画面から「File Browser」を上下ボタンで選択して中�
  ------------------------------
  [File Browser               > ]
   Device Browser             >
-  Wireless and Networks      > 
+  Wireless and Networks      >
   Battery                    >
   Open Roberta Lab           >
   About                      >
  ------------------------------
 ```
 
-
-次に scripts を選択して中央ボタンを押してください。
+Next, select **scripts** and press the Center button.
 
 ```
  ------------------------------
@@ -1062,8 +1020,7 @@ EV3 の操作画面から「File Browser」を上下ボタンで選択して中�
  ------------------------------
 ```
 
-
-次の画面から **start_ap.sh** を選択して中央ボタンを押すとスクリプトが起動します。
+From the next screen, select **start_ap.sh** and press the Center button to execute the script.
 
 ```
  ------------------------------
@@ -1080,41 +1037,42 @@ EV3 の操作画面から「File Browser」を上下ボタンで選択して中�
  ------------------------------
 ```
 
-しばらくすると無線LANアクセスポイントが起動するので、指定の SSID のアクセスポイントに接続してください。
-<!-- SSID は ev3_***(***は EV3 に貼り付けたテープ記載の番号)に接続します。 -->
-SSID、パスワードは EV3 に貼り付けたテープに記載してあります。
+After a short time, the wireless LAN access point will start. Connect to the designated SSID access point.
+
+<!-- Connect to SSID ev3_*** (*** is the number written on the tape attached to the EV3). -->
+
+The SSID and password are written on the tape attached to the EV3.
 
 <br>
 
 <div align="center"><a href="tutorial_ev3_irex26.png"><img src="tutorial_ev3_irex26.png" width="70%;"></a></div>
 <br>
 
+### Connecting to the Access Point
 
+The SSID and password are written on the label attached to the EV3.
 
-### アクセスポイントに接続
+*If the network changes, component registration with the Name Server or port connections may fail. In that case, temporarily shut down OpenRTP, the Name Server, and all components.*
 
+*If they were started after switching networks, there is no need to restart them.*
 
-SSID、パスワードは EV3に貼り付けたシールに記載してあります。
+To exit OpenRTP, click the **×** button in the upper-right corner.
 
-※ネットワークが切り替わった場合にネームサーバーへのコンポーネントの登録やポートの接続が失敗する場合があるのでOpenRTP、ネームサーバ、コンポーネントを一旦全て終了してください。
-ネットワーク切り替え後に起動した場合には問題ないので、終了させる必要はありません。
-
-OpenRTPを終了するには右上の×を押して終了してください。システムダイアグラムを保存するかどうか聞かれますが、Don't Saveを選択してください。
+You will be asked whether to save the system diagram; select **Don't Save**.
 
 <div align="center"><a href="rtse0150.png"><img src="rtse0150.png" width="60%;"></a></div>
 
-**openrtp**コマンドを実行してOpenRTPを起動してください。
+Execute the **openrtp** command to start OpenRTP.
 
-RT System Editor上でネームサーバーを再起動するには「ネームサービスを起動」ボタンを再度クリックします。
+To restart the Name Server in RT System Editor, click the **"Start Naming Service"** button again.
 
 <div align="center"><a href="rtse400.png"><img src="rtse400.png" width="60%;"></a></div>
 
+### Adding the Name Server
 
-### ネームサーバー追加
+Next, use the **[Add Name Server]** button in RT System Editor to add:
 
-続いてRTシステムエディタの [ネームサーバー追加] ボタンで <span style="color:red;">192.168.0.1</span>; を追加してください。
-
-
+<span style="color:red;">192.168.0.1</span>;
 
 <br>
 
@@ -1122,27 +1080,19 @@ RT System Editor上でネームサーバーを再起動するには「ネーム�
 <br>
 <br>
 
-するとEducatorVehicle0という RTC が見えるようになります。
+An RTC named **EducatorVehicle0** will then become visible.
 
 <div align="center"><a href="tutorial_ev3_irex29.png"><img src="tutorial_ev3_irex29.png" width="70%;"></a></div>
 
 - [EducatorVehicle]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0)
 
+### Connecting the Ports
 
-
-
-
-
-### ポートの接続
-
-RTシステムエディタで EducatorVehicle、RobotController コンポーネントを以下のように接続します。
+In RT System Editor, connect the **EducatorVehicle** and **RobotController** components as shown below.
 
 <div align="center"><a href="tutorial_ev3_irex11.png"><img src="tutorial_ev3_irex11.png" width="70%;"></a></div>
 
+### Activation
 
-### アクティブ化
-そして RTC をアクティブ化すると EV3の操作ができるようになります。
+Once you activate the RTCs, you will be able to control the EV3.
 
-
-
--------jp page!!-------

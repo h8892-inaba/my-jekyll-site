@@ -1,102 +1,108 @@
 ---
 layout: page
-title: 画像処理コンポーネントの作成(OpenRTM-aist-1.1、CMake、Linux Ubuntu 14.04) 
+title: Creating an Image Processing Component (OpenRTM-aist-1.1, CMake, Linux Ubuntu 14.04)
 ---
--------jp page!!-------
 
-<!-- Title: 画像処理コンポーネントの作成(OpenRTM-aist-1.1、CMake、Linux Ubuntu 14.04) -->
+<!-- Title: Creating an Image Processing Component (OpenRTM-aist-1.1, CMake, Linux Ubuntu 14.04) -->
 #contents
 
-## はじめに
+## Introduction
 
-このケーススタディでは、簡単な画像処理をコンポーネント化する方法を紹介します。既存のカメラコンポーネントと画像表示コンポーネントを利用し、カメラからの画像を左右 (または上下) に反転させる処理部分をコンポーネントとして作成してカメラの画像を反転させ表示するシステムを作成します。
+This case study introduces how to componentize simple image processing.
 
-画像を反転する処理は簡単に実装することができますが、ここではさらに簡単に実装するため OpenCV ライブラリを利用しより汎用性の高い RTコンポーネントを作成します。
+Using an existing camera component and image display component, a component is created that performs horizontal (or vertical) image flipping on camera images, and a system is built to display the flipped camera image.
 
+Although image flipping can be implemented easily, this tutorial uses the OpenCV library to simplify the implementation further and create a more versatile RT Component.
 
-### OpenCVとは
+### What is OpenCV?
 
-[OpenCV](http://opencv.jp/) とはかつてインテルが、現在は Willow Garage が開発・公開しているオープンソースのコンピュータービジョン向けライブラリです。
+[OpenCV](http://opencv.jp/) is an open-source computer vision library originally developed and released by Intel and currently maintained by Willow Garage.
 
-[Wikipedia](https://ja.wikipedia.org/wiki/OpenCV)より抜粋。
+Excerpted from [Wikipedia](https://ja.wikipedia.org/wiki/OpenCV).
 
-### 作成する RTコンポーネント
+### RT Component to be Created
 
-- Flip コンポーネント: OpenCV ライブラリが提供する様々な画像処理関数のうち、cvFlip() 関数を用いて画像の反転を行う RTコンポーネント。
+- Flip Component: An RT Component that performs image flipping using the `cvFlip()` function, one of the many image processing functions provided by the OpenCV library.
 
-## cvFlip 関数の RTコンポーネント化
+## Converting the cvFlip Function into an RT Component
 
-入力された画像を左右または上下に反転し出力する RTコンポーネントを、OpenCV ライブラリの cvFlip 関数を利用して作成します。
-作成および実行環境は Windows上の Visual C++ を想定しています。対象 OpenRTM-aist のバージョンは 1.1 です。
+An RT Component that flips input images horizontally or vertically and outputs the result is created using the OpenCV library's `cvFlip` function.
 
+The development and execution environment assumes Visual C++ on Windows. The target OpenRTM-aist version is 1.1.
 
-作成手順はおおよそ以下のようになります。
+The overall development procedure is as follows:
 
-- 動作環境・開発環境についての確認
-- OpenCV と cvFlip 関数についての確認
-- コンポーネントの仕様を決める
-- RTCBuilder を用いたソースコードのひな形の作成
-- アクティビティ処理の実装
-- コンポーネントの動作確認
+- Verify the runtime and development environments
+- Review OpenCV and the cvFlip function
+- Define the component specifications
+- Generate a source code template using RTCBuilder
+- Implement activity processing
+- Verify component operation
 
-### 動作環境の確認
+### Verifying the Runtime Environment
 
-Linux (ここでは Ubuntu 14.04 を仮定) 上に開発環境を構築します。
+A development environment is built on Linux (Ubuntu 14.04 is assumed here).
 
-#### OpenRTM-aist のインストール
+#### Installing OpenRTM-aist
 
-&color(red){Choreonoid を利用する場合、以下のように PPA から OpenRTM-aistを インストールしてください。
-一括インストールスクリプトをすでに実行している場合、/etc/apt/sources.list の下の方に追記されている openrtm.org のリポジトリをコメントアウトした上で、 apt-get update してください。};
+&color(red){
+When using Choreonoid, install OpenRTM-aist from the PPA as shown below.
 
-```
+If you have already executed the all-in-one installation script, comment out the openrtm.org repository entries added near the bottom of `/etc/apt/sources.list`, and then run `apt-get update`.
+};
+
+```bash
  $ sudo add-apt-repository ppa:hrg/daily
  $ sudo apt-get update
  $ sudo apt-get install openrtm-aist openrtm-aist-dev doxygen
 ```
 
-#### OpenRTP のインストール
+#### Installing OpenRTP
 
-[こちらのURL]({{ site.baseurl }}/ja/download/openrtp/openrtp-110-rc5-ja) から Linux版の OpenRTP (コンポーネント開発ツール、システム開発ツール統合環境) をダウンロード、インストールします。
-OepnRTP の実行には Java も必要となりますので default-jre パッケージをインストールします。
+Download and install the Linux version of OpenRTP (integrated component development and system development environment) from [this URL]({{ site.baseurl }}/ja/download/openrtp/openrtp-110-rc5-ja).
 
-```
+Java is also required to run OpenRTP, so install the `default-jre` package.
+
+```bash
  $ apt-get install default-jre
  $ wget http://openrtm.org/pub/openrtp/packages/1.1.0.rc5v20150317/eclipse381-openrtp110rc5v20150317-ja-linux-gtk-x86_64.tar.gz
  $ tar xvzf eclipse381-openrtp110rc5v20150317-ja-linux-gtk-x86_64.tar.gz
  $ cd eclipse
 ```
+
 <!-- $ ./eclipse -->
-```
+
+```bash
  $ ./openrtp
 ```
 
-<span style="color:red;">eclipse 起動後、RTSystemEditor でネームサーバーに接続できない場合があります。その場合、/etc/hosts の localhost の行に自ホスト名を追記してください。</span>;
+<span style="color:red;">After starting Eclipse, RTSystemEditor may not be able to connect to the Name Server. In that case, add your host name to the localhost entry in `/etc/hosts`.</span>;
 
-```
+```bash
  $ hostname
- ubuntu1404 ← ホスト名は ubuntu1404
+ ubuntu1404 ← The host name is ubuntu1404
  $ sudo vi /etc/hosts
 ```
 
-```
+```text
  127.0.0.1       localhost
- を以下のように変更
+ Change it as follows:
  127.0.0.1       localhost ubuntu1404
 ```
 
-#### OpenCV および OpenCV コンポーネントのインストール
+#### Installing OpenCV and OpenCV Components
 
-OpenCV および OpenCV のコンポーネントをインストールします。
+Install OpenCV and the OpenCV components.
 
-まず、Ubuntu が提供している OpenCV のパッケージを下記のようにインストールします。
+First, install the OpenCV packages provided by Ubuntu as follows:
 
-```
+```bash
  $ sudo apt-get install libopencv-dev libcv2.4 libcvaux2.4 libhighgui2.4
 ```
 
-OpenCV RTC のパッケージは下記 URL にありますので、手動でダウンロードして、dpkg コマンドでインストールします。
+The OpenCV RTC package is available at the URL below. Download it manually and install it using the `dpkg` command.
 
-```
+```bash
  $ wget http://openrtm.org/pub/Linux/ubuntu/dists/trusty/main/binary-amd64/imageprocessing-1.1.0.deb
  $ sudo dpkg -i imageprocessing-1.1.0.deb
  $ ls /usr/share/openrtm-1.1/components/c++/opencv-rtcs/
@@ -118,33 +124,38 @@ OpenCV RTC のパッケージは下記 URL にありますので、手動でダ�
  Findcontour.so                   Perspective.so
 ```
 
-### cvFlip 関数について
+### About the cvFlip Function
 
-cvFlip 関数は、OpenCV で標準的に用いられている　IplImage型の画像データを垂直軸 (左右反転)、水平軸 (上下反転)、または両軸 (上下左右反転) に対して反転させます。関数プロトタイプと入出力の引数の意味は以下の通りです。
+The `cvFlip` function flips image data of type `IplImage`, which is commonly used in OpenCV, around the vertical axis (horizontal flip), horizontal axis (vertical flip), or both axes (horizontal and vertical flip). The function prototype and the meanings of its arguments are as follows.
 
-```
+```cpp
  void cvFlip(IplImage* src, IplImage* dst=NULL, int flipMode=0);
  #define cvMirror cvFlip
-  
- src       入力配列
- dst       出力配列。もしdst=NULLであれば、srcが上書きされます。
- flipMode 配列の反転方法の指定内容:
- 　flipMode = 0: X軸周りでの反転(上下反転)
- 　flipMode > 0: Y軸周りでの反転(左右反転)
- 　flipMode < 0: 両軸周りでの反転(上下左右反転)
+
+ src       Input array
+ dst       Output array. If dst=NULL, src is overwritten.
+ flipMode  Specifies the flip operation:
+   flipMode = 0: Flip around the X axis (vertical flip)
+   flipMode > 0: Flip around the Y axis (horizontal flip)
+   flipMode < 0: Flip around both axes (horizontal and vertical flip)
 ```
 
-### コンポーネントの仕様
+### Component Specifications
 
-これから作成するコンポーネントを Flip コンポーネントと呼ぶことにします。
+The component to be created will be called the **Flip Component**.
 
-このコンポーネントは画像データ型の入力ポート (InPort) と、反転処理した画像を出力するための出力ポート (OutPort) を持ちます。
-それぞれのポートの名前を 入力ポート(InPort)名: **originalImage**, 出力ポート(OutPort)名: **flippedImage** とします。
+This component has an image data input port (InPort) and an output port (OutPort) for outputting the flipped image.
 
-OpenRTM-aist には OpenCV を使用したビジョン関連のコンポーネントがサンプルとして付属しています。
-これらのコンポーネントのデータポートは画像の入出力に以下のような CameraImage 型を使用しています。
+The port names are defined as follows:
 
-```
+- Input Port (InPort): **originalImage**
+- Output Port (OutPort): **flippedImage**
+
+OpenRTM-aist includes sample vision-related components that use OpenCV.
+
+The data ports of these components use the following `CameraImage` type for image input and output.
+
+```cpp
    struct CameraImage
      {
          /// Time stamp.
@@ -166,275 +177,312 @@ OpenRTM-aist には OpenCV を使用したビジョン関連のコンポーネ�
      };
 ```
 
-このFlipコンポーネントではこれらのサンプルコンポーネントとデータのやり取りができるよう同じく CameraImage型を InPort と OutPort に使用することにします。
-CameraImage型は InterfaceDataTypes.idl で定義されており、C++であれば、InterfaceDataTypesSkel.h をインクルードすると使えるようになります。
+This Flip component will also use the `CameraImage` type for both its InPort and OutPort so that it can exchange data with these sample components.
 
-また、画像を反転させる方向は、左右反転、上下反転、上下左右反転の3通りがあります。これを実行時に指定できるように、RTコンポーネントのコンフィギュレーション機能を使用して指定できるようにします。
-パラメーター名は **flipMode** という名前にします。
+The `CameraImage` type is defined in `InterfaceDataTypes.idl`, and in C++ it becomes available by including `InterfaceDataTypesSkel.h`.
 
-flipMode は cvFlip 関数の仕様に合わせて、型は int 型とし 上下反転、左右反転、上下左右反転それぞれに 0、1、-1 を割り当てることにします。
+In addition, there are three possible flip directions: horizontal flip, vertical flip, and horizontal + vertical flip.
 
-flipModeの各値での画像処理のイメージを下図に示します。
+To allow this to be specified at runtime, the RT Component configuration mechanism will be used.
+
+The parameter name will be **flipMode**.
+
+To match the specification of the `cvFlip` function, the type will be `int`, and the following values will be assigned:
+
+- 0: Vertical flip
+- 1: Horizontal flip
+- -1: Horizontal and vertical flip
+
+The image processing behavior for each value of `flipMode` is shown below.
 
 <div align="center"><a href="cvFlip_and_FlipRTC.png"><img src="cvFlip_and_FlipRTC.png" width="60%;"></a></div>
-<div align="center"><strong>Flip コンポーネントの flipMode 指定時の画像反転パターン</strong></div>
+<div align="center"><strong>Image Flip Patterns for the Flip Component Depending on flipMode</strong></div>
 
-以上から Flip コンポーネントの仕様をまとめます。
+The specifications of the Flip component are summarized as follows.
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名称</th>
+    <th>Component Name</th>
     <th>Flip</th>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>originalImage</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>CameraImage</td>
   </tr>
   <tr>
-    <td>意味</td>
-    <td>入力画像</td>
+    <td>Description</td>
+    <td>Input image</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>flippedImage</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>CameraImage</td>
   </tr>
   <tr>
-    <td>意味</td>
-    <td>反転された画像</td>
+    <td>Description</td>
+    <td>Flipped image</td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>flipMode</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>int</td>
   </tr>
   <tr>
-    <td>意味</td>
-    <td><strong>反転モード</strong> <br> 上下反転: 0 <br> 左右反転: 1 <br> 上下左右反転: -1</td>
+    <td>Description</td>
+    <td><strong>Flip Mode</strong><br>Vertical flip: 0<br>Horizontal flip: 1<br>Horizontal and vertical flip: -1</td>
   </tr>
 </table>
 
+### Runtime Environment and Development Environment
 
-### 動作環境・開発環境
-ここで動作環境および開発環境を確認しておきます。
+Let's verify the runtime and development environment.
 
-- OS: Windows XP SP3 (Vista, 7でも可能)
-- コンパイラ: [Visual C++ 2010 Express Edition 日本語版](http://go.microsoft.com/fwlink/?LinkId=190491&clcid=0x411)
+- OS: Windows XP SP3 (Vista and Windows 7 are also supported)
+- Compiler: [Visual C++ 2010 Express Edition Japanese Version](http://go.microsoft.com/fwlink/?LinkId=190491&clcid=0x411)
 
-- [OpenRTM-aist-1.1.0-RC3 (C++版), Win32 VC2010]({{ site.baseurl }}/ja/download/openrtm-aist-content/110-rc3)
+- [OpenRTM-aist-1.1.0-RC3 (C++ Version), Win32 VC2010]({{ site.baseurl }}/ja/download/openrtm-aist-content/110-rc3)
 
 - RTSystemEditor 1.1
 - RTCBuilder 1.1
-  - [Eclipse3.4.2+RTSE+RTCB(1.1.0-RC2) Windows用全部入り](http://www.openrtm.org/pub/OpenRTM-aist/tools/1.1.0/eclipse342_rtmtools110-rc2_win32_ja.zip)
+  - [Eclipse 3.4.2 + RTSE + RTCB (1.1.0-RC2) All-in-One Package for Windows](http://www.openrtm.org/pub/OpenRTM-aist/tools/1.1.0/eclipse342_rtmtools110-rc2_win32_ja.zip)
 
-- [Doxygen](http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.11-setup.exe) ドキュメント生成に必要
+- [Doxygen](http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.11-setup.exe) Required for document generation
 - [CMake](https://cmake.org/files/v2.8/cmake-2.8.5-win32-x86.exe)
 
-- [解凍ツール(Lhaplus)](http://www.forest.impress.co.jp/lib/arc/archive/archiver/lhaplus.html)
+- [Archive Extraction Tool (Lhaplus)](http://www.forest.impress.co.jp/lib/arc/archive/archiver/lhaplus.html)
 
-OpenRTM-aist-1.1 以降では、コンポーネントのビルドに CMake を使用します。また、RTC のひな形生成ツール RTCBuilder では、ドキュメントを入力してこれを Doxygen に処理させることで、コンポーネントのマニュアルも自動で生成することができるようになっています。
-このため CMakeで Configure を行うときに Doxygen が要求されるため、予めインストールしておく必要があります。
+From OpenRTM-aist 1.1 onward, CMake is used to build components.
 
+In addition, RTCBuilder can automatically generate component manuals by passing documentation to Doxygen.
 
-### Flip コンポーネントの雛型の生成
+For this reason, Doxygen is required when running Configure with CMake and must be installed beforehand.
 
-Flip コンポーネントの雛型の生成は、RTCBuilder を用いて行います。
+### Generating the Flip Component Template
 
-#### RTCBuilder の起動
+The Flip component template is generated using RTCBuilder.
 
-Eclipse では、各種作業を行うフォルダーを「ワークスペース」(Work Space)とよび、原則としてすべての生成物はこのフォルダーの下に保存されます。
-ワークスペースはアクセスできるフォルダーであれば、どこに作っても構いませんが、このチュートリアルでは以下のワークスペースを仮定します。
+#### Starting RTCBuilder
 
-- `/workspace` (/home/<ユーザー名>/workspace を意味する。)
+In Eclipse, the folder used for development work is called a **workspace**, and in principle all generated files are stored under this folder.
 
+The workspace may be located anywhere that is accessible, but this tutorial assumes the following workspace:
 
-Eclipse を起動すると、ワークスペースの場所を尋ねられます。Eclipse を最初に起動したとき、または -clean オプション付きで起動した場合は、デフォルトで上記のディレクトリーが指定されますので、そのまま [OK] ボタンをクリックしてください。以下のような「ようこそ」画面が表示されます。
-「ようこそ」画面はいまは必要ないので左上の「×」ボタンをクリックして閉じてください。
+- `/workspace` (meaning `/home/<username>/workspace`)
 
+When Eclipse starts, it prompts for the workspace location.
+
+When Eclipse is started for the first time, or when started with the `-clean` option, the directory above is specified by default. Simply click the **[OK]** button.
+
+The following Welcome screen will be displayed.
+
+Since the Welcome screen is not needed at this point, click the **×** button in the upper-left corner to close it.
 
 <div align="center"><a href="fig1-1EclipseInit.png"><img src="fig1-1EclipseInit.png" width="60%;"></a></div>
-<div align="center"><strong>Eclipse の初期起動時の画面</strong></div>
+<div align="center"><strong>Screen Displayed When Eclipse Starts for the First Time</strong></div>
 
-右上の [Open Perspective] ボタンをクリックし、プルダウンの「Other…」を選択します。
+Click the **[Open Perspective]** button in the upper-right corner and select **Other...** from the pull-down menu.
 
 <div align="center"><a href="fig2-2PerspectiveSwitch.png"><img src="fig2-2PerspectiveSwitch.png" width="60%;"></a></div>
-<div align="center"><strong>パースペクティブの切り替え</strong></div>
+<div align="center"><strong>Switching Perspectives</strong></div>
 
-「RTC Builder」を選択することで、RTCBuilder が起動します。メニューバーに「カナヅチとRT」の RTCBuilder のアイコンが表示されます。
+Select **RTC Builder** to start RTCBuilder.
+
+The RTCBuilder icon (hammer and RT symbol) will appear on the menu bar.
 
 <div align="center"><a href="fig2-3PerspectiveSelection.png"><img src="fig2-3PerspectiveSelection.png" width="30%;"></a></div>
-<div align="center"><strong>パースペクティブの選択</strong></div>
+<div align="center"><strong>Selecting a Perspective</strong></div>
 
+#### Creating a New Project
 
-#### 新規プロジェクトの作成
+To create the Flip component, a new project must be created in RTCBuilder.
 
-Flip コンポーネントを作成するために、RTCBuilder で新規プロジェクトを作成する必要があります。プロジェクトを作成する方法は2種類あります。
+There are two methods for creating a project.
 
-1. 画面上部のメニューから [ファイル] > [新規] > [プロジェクト] を選択 (Eclipse 共通)
-  - ｢新規プロジェクト｣ 画面において，[その他] > [RTCビルダ] を選択し、[次へ] をクリックします。
-1. メニューバーの [RTCBuilder] のアイコンをクリック
+1. Select **[File] > [New] > [Project]** from the menu at the top of the screen (standard Eclipse operation)
+   - In the **New Project** screen, select **[Other] > [RTC Builder]** and click **[Next]**.
 
+2. Click the **RTCBuilder** icon on the menu bar.
 
 <div align="center"><a href="fig2-5CreateProject.png"><img src="fig2-5CreateProject.png" width="60%;"></a></div>
-<div align="center"><strong>RTC Builder 用プロジェクトの作成　１ (「ファイル」メニューから)</strong></div>
+<div align="center"><strong>Creating an RTC Builder Project 1 (From the File Menu)</strong></div>
 
 <div align="center"><a href="fig2-6CreateProject2.png"><img src="fig2-6CreateProject2.png" width="30%;"></a></div>
-<div align="center"><strong>RTC Builder 用プロジェクトの作成　２(「ファイル」メニューから)</strong></div>
+<div align="center"><strong>Creating an RTC Builder Project 2 (From the File Menu)</strong></div>
 
+Either method launches the project creation wizard shown below.
 
-どちらの方法でも、次ようなプロジェクト作成ウィザードが開始されます。
-｢プロジェクト名｣欄に作成するプロジェクト名 (ここでは **Flip**) を入力して [完了] ボタンをクリックします。
-
+Enter the project name (**Flip** in this example) in the **Project Name** field and click the **[Finish]** button.
 
 <div align="center"><a href="RT-Component-BuilderProject.png"><img src="RT-Component-BuilderProject.png" width="30%;"></a></div>
-<div align="center"><strong>RTC Builder 用プロジェクトの作成　３</strong></div>
+<div align="center"><strong>Creating an RTC Builder Project 3</strong></div>
 
-指定した名称のプロジェクトが生成され、パッケージエクスプローラー内に追加されます。
-
+A project with the specified name is generated and added to the Package Explorer.
 
 <div align="center"><a href="PackageExplolrer.png"><img src="PackageExplolrer.png" width="30%;"></a></div>
-<div align="center"><strong>RTC Builder 用プロジェクトの作成　４</strong></div>
+<div align="center"><strong>Creating an RTC Builder Project 4</strong></div>
 
-生成したプロジェクト内には、デフォルト値が設定された RTC プロファイル XML(RTC.xml) が自動的に生成されます。
+An RTC profile XML file (`RTC.xml`) with default values is automatically generated within the created project.
 
-#### RTC プロファイルエディタの起動
+#### Starting the RTC Profile Editor
 
-RTC.xml が生成された時点で、このプロジェクトに関連付けられているワークスペースとして RTCBuilder のエディタが開くはずです。
-もし開かない場合は、ツールバーの｢Open New RtcBuilder Editor｣ボタンをクリックするか、メニューバーの [ファイル] > [Open New Builder Editor] を選択します。
+When `RTC.xml` is generated, the RTCBuilder editor associated with the project workspace should open automatically.
 
+If it does not open, click the **Open New RtcBuilder Editor** button on the toolbar, or select **[File] > [Open New Builder Editor]** from the menu bar.
 
 <div align="center"><a href="Open_RTCBuilder.png"><img src="Open_RTCBuilder.png" width="30%;"></a></div>
-<div align="center"><strong>ツールバーから Open New RtcBuilder Editor</strong></div>
+<div align="center"><strong>Open New RtcBuilder Editor from the Toolbar</strong></div>
 
 <div align="center"><a href="fig2-10FileMenuOpenNewBuilder.png"><img src="fig2-10FileMenuOpenNewBuilder.png" width="30%;"></a></div>
-<div align="center"><strong>ファイルメニューから Open New Builder Editor</strong></div>
+<div align="center"><strong>Open New Builder Editor from the File Menu</strong></div>
 
 
-#### プロファイル情報入力とコードの生成
+#### Entering Profile Information and Generating Code
 
-まず、いちばん左の「基本」タブを選択し、基本情報を入力します。先ほど決めた Flip コンポーネントの仕様(名前)の他に、概要やバージョン等を入力してください。
-ラベルが赤字の項目は必須項目です。その他はデフォルトで構いません。
+First, select the **Basic** tab on the far left and enter the basic information.
 
-- モジュール名: Flip
-- モジュール概要: Flip image component
-- バージョン: 1.0.0
-- ベンダ名: AIST
-- モジュールカテゴリ: Category
-- コンポーネント型: STATIC
-- アクティビティ型: PERIODIC
-- コンポーネント種類: DataFlowComponent
-- 最大インスタンス数: 1
-- 実行型: PeriodicExecutionContext
-- 実行周期: 0.0 (<span style="color:RED;">下図では1.0となってますが 0.0 としてください.</span>;)
+In addition to the Flip component specifications (name) defined earlier, enter information such as the description and version.
+
+Items with red labels are required.
+
+The other items may be left at their default values.
+
+- Module Name: Flip
+- Module Description: Flip image component
+- Version: 1.0.0
+- Vendor Name: AIST
+- Module Category: Category
+- Component Type: STATIC
+- Activity Type: PERIODIC
+- Component Kind: DataFlowComponent
+- Maximum Number of Instances: 1
+- Execution Type: PeriodicExecutionContext
+- Execution Period: 0.0 (<span style="color:RED;">The figure below shows 1.0, but set this to 0.0.</span>;)
 
 <br>
 
 <div align="center"><a href="Basic.png"><img src="Basic.png" width="70%;"></a></div>
-<div align="center"><strong>基本情報の入力</strong></div>
+<div align="center"><strong>Entering Basic Information</strong></div>
 <br>
 
-次に、「アクティビティ」タブを選択し、使用するアクションコールバックを指定します。
+Next, select the **Activity** tab and specify the action callbacks to use.
 
-Flip コンポーネントでは、onActivated()、onDeactivated()、onExecute() コールバックを使用します。下図のように①の onAtivated をクリック後に ②のラジオボタンにて [ON] にチェックを入れます。
-onDeactivated、onExecute についても同様の操作を行います。
+The Flip component uses the `onActivated()`, `onDeactivated()`, and `onExecute()` callbacks.
+
+As shown in the figure below, first click ① `onActivated`, then select **[ON]** using radio button ②.
+
+Perform the same operation for `onDeactivated` and `onExecute`.
 
 <br>
 
 <div align="center"><a href="Activity.png"><img src="Activity.png" width="70%;"></a></div>
-<div align="center"><strong>アクティビティコールバックの選択</strong></div>
+<div align="center"><strong>Selecting Activity Callbacks</strong></div>
 <br>
 
-さらに、「データポート」タブを選択し、データポートの情報を入力します。
-先ほど決めた仕様を元に以下のように入力します。なお、変数名や表示位置はオプションで、そのままで結構です。
+Next, select the **Data Ports** tab and enter the data port information.
+
+Enter the following values according to the specifications defined earlier.
+
+The variable names and display positions are optional, so they may be left unchanged.
 
 <br>
+
 - InPort Profile:
-  - ポート名: originalImage
-  - データ型: CameraImage
-  - 変数名:  originalImage
-  - 表示位置: left
+  - Port Name: originalImage
+  - Data Type: CameraImage
+  - Variable Name: originalImage
+  - Display Position: left
+
 <br>
+
 - OutPort Profile:
-  - ポート名: flippedImage
-  - データ型: CameraImage
-  - 変数名:  flippedImage
-  - 表示位置: right
+  - Port Name: flippedImage
+  - Data Type: CameraImage
+  - Variable Name: flippedImage
+  - Display Position: right
 
 <br>
 
 <div align="center"><a href="DataPort.png"><img src="DataPort.png" width="70%;"></a></div>
-<div align="center"><strong>データポート情報の入力</strong></div>
+<div align="center"><strong>Entering Data Port Information</strong></div>
 <br>
 
-次に、「コンフィギュレーション」タブを選択し、先ほど決めた仕様を元に、Configuration の情報を入力します。
-制約条件および Widget とは、RTSystemEditor でコンポーネントのコンフィギュレーションパラメーターを表示する際に、スライダー、スピンボタン、ラジオボタンなど、GUI で値の変更を行うためのものです。
+Next, select the **Configuration** tab and enter the Configuration information based on the specifications defined earlier.
 
-ここでは、flipMode が取りうる値は先ほど仕様を決めたときに、-1、0、1 の3つの値のみ取ることにしたので、ラジオボタンを使用することにします。
+The constraint conditions and Widget settings are used when displaying component configuration parameters in RTSystemEditor, allowing values to be changed through GUI controls such as sliders, spin buttons, and radio buttons.
+
+Here, when the specifications were defined earlier, `flipMode` was set to take only three possible values: -1, 0, and 1. Therefore, a radio button will be used.
 
 <br>
+
 - flipMode
-  - 名称: flipMode
-  - データ型: int
-  - デフォルト値: 1
-  - 変数名: flipMode
-  - 制約条件: (-1、0、1) <span style="color:RED;">※ (-1: 上下左右反転, 0: 上下反転, 1: 左右反転)</span>;
+  - Name: flipMode
+  - Data Type: int
+  - Default Value: 1
+  - Variable Name: flipMode
+  - Constraint: (-1, 0, 1) <span style="color:RED;">* (-1: horizontal and vertical flip, 0: vertical flip, 1: horizontal flip)</span>;
   - Widget: radio
 
 <br>
 
 <div align="center"><a href="Configuration.png"><img src="Configuration.png" width="70%;"></a></div>
-<div align="center"><strong>コンフィグレーション情報の入力</strong></div>
+<div align="center"><strong>Entering Configuration Information</strong></div>
 <br>
 
-次に、「言語・環境」タブを選択し、プログラミング言語を選択します。ここでは、C++(言語)を選択します。
-なお、言語・環境はデフォルト等が設定されておらず、指定し忘れるとコード生成時にエラーになりますので、必ず言語の指定を行うようにしてください。
+Next, select the **Language / Environment** tab and choose the programming language.
 
-また、C++の場合デフォルトでは CMake を利用してビルドすることになっていますが、旧式の VC のプロジェクトやソリューションを直接 RTCBuilder が生成する方法を利用したい場合は [Use old build environment] をチェックしてください。
+Here, select **C++** as the language.
+
+The language/environment fields have no default values. If you forget to specify the language, an error will occur during code generation, so be sure to specify it.
+
+Also, for C++, the default is to build using CMake. If you want RTCBuilder to directly generate old-style VC projects or solution files, check **[Use old build environment]**.
 
 <div align="center"><a href="Language.png"><img src="Language.png" width="70%;"></a></div>
-<div align="center"><strong>プログラミング言語の選択</strong></div>
+<div align="center"><strong>Selecting the Programming Language</strong></div>
 <br>
 
-最後に、「基本」タブにある [コード生成] ボタンをクリックし、コンポーネントの雛型を生成します。
+Finally, click the **[Generate Code]** button on the **Basic** tab to generate the component template.
 
 <br>
 
 <div align="center"><a href="Generate.png"><img src="Generate.png" width="70%;"></a></div>
-<div align="center"><strong>雛型の生成(Generate)</strong></div>
+<div align="center"><strong>Generating the Template (Generate)</strong></div>
 <br>
 
-&color(Red){※ 生成されるコード群は、Eclipse 起動時に指定したワークスペースフォルダーの中に生成されます。
-現在のワークスペースは、[ファイル] > [ワークスペースの切り替え] で確認することができます。};
+&color(Red){*The generated code files are created in the workspace folder specified when Eclipse was started.
+You can check the current workspace from [File] > [Switch Workspace].*};
 
+#### Temporary Build
 
-#### 仮ビルド
+At this point, the source code for the Flip component has been generated.
 
-さて、ここまでで Flip コンポーネントのソースコードが生成されました。処理の中身は実装されていないので、InPort に画像を入力しても何も出力されませんが、生成直後のソースコードだけでもコンパイルおよび実行はできます。
+Since the processing itself has not yet been implemented, nothing will be output even if an image is input to the InPort. However, the source code immediately after generation can still be compiled and executed.
 
-※サービスポートとプロバイダを持つコンポーネントの場合、実装を行わないとビルドが通らないものもあります。
+*For components that have service ports and providers, some may not build successfully unless their implementation is completed.*
 
-では、まず CMake を利用してビルド環境の Configure を行います。Linux であれば、Flip コンポーネントのソースが生成されたディレクトリーで
+Now, first use CMake to configure the build environment.
 
-```
+On Linux, in the directory where the Flip component source code was generated:
+
+```bash
  $ cd workspace/Flip
  $ mkdir build
  $ cd build
@@ -442,332 +490,454 @@ onDeactivated、onExecute についても同様の操作を行います。
  $ make
 ```
 
-とすれば、Configure およびビルドが完了するはずです。ビルド終了後、からの FlipComp を起動してみましょう。
+This should complete Configure and build.
 
-```
+After the build finishes, try starting the generated `FlipComp`.
+
+```bash
  $ cd src
  $ ./FlipComp
 ```
 
-起動後、RTSystemEditor などでアクセスしてみてください。Flip というコンポーネントが表示されているはずです。
-カメラコンポーネント (OpenCVCameraComp) や表示コンポーネント (CameraViewerComp) などとも接続できますが、中で何も処理を行っていないでの、表示コンポーネントには何も表示されません。
+After startup, try accessing it using RTSystemEditor or a similar tool.
 
-次からは、コンポーネントのソースコードを作成し、中身を実装していきます。
+A component named **Flip** should be displayed.
 
-### ヘッダ、ソースの編集
+It can also be connected to a camera component (`OpenCVCameraComp`) or display component (`CameraViewerComp`), but since no processing is performed inside yet, nothing will be displayed in the display component.
 
-ヘッダ (include/Flip/Flip.h) およびソースコード (src/Flip.cpp) をそれぞれ編集します。
-Eclipse 画面左のパッケージエクスプローラーでそれぞれのファイルをダブルクリックすると、通常は Visual C++ の編集画面が開きますので、そこで編集します。
-Eclipse の中央のエディタにドラッグアンドドロップしても編集できます。
-
-#### アクティビティ処理の実装
-
-Flip コンポーネントでは、InPort から受け取った画像を画像保存用バッファに保存し、その保存した画像を OpenCV の cvFlip()関数にて変換します。
-その後、変換された画像を OutPort から送信します。
-
-<br>
-onActivated()、onExecute()、onDeactivated() での処理内容を下図に示します。
-<br>
-
-<div align="center"><a href="FlipRTC_State.png"><img src="FlipRTC_State.png" width="50%;"></a></div>
-<div align="center"><strong>アクティビティ処理の概要</strong></div>
-<br>
-
-onExecute() での処理を下図に示します。
-
-<br>
-
-<div align="center"><a href="FlipRTC.png"><img src="FlipRTC.png" width="50%;"></a></div>
-<div align="center"><strong>onExucete() での処理内容</strong></div>
-<br>
+From the next section, the component source code will be created and its internal processing will be implemented.
 
 
-#### ヘッダファイル (Flip.h) の編集
 
-OpenCV のライブラリを使用するため、OpenCV のインクルードファイルをインクルードします。
+### Editing the Header and Source Files
 
-```
- //OpenCV用インクルードファイルのインクルード
- #include<cv.h>
- #include<cxcore.h>
- #include<highgui.h>
+Next, edit the header file (`include/Flip/Flip.h`) and source file (`src/Flip.cpp`).
+
+The files can be opened in Eclipse by double-clicking them in the Package Explorer.
+
+<div align="center"><a href="EditSource.png"><img src="EditSource.png" width="70%;"></a></div>
+<div align="center"><strong>Editing Source Files</strong></div>
+
+### Editing the Header File (Flip.h)
+
+First, include the OpenCV header files.
+
+Add the following include statements.
+
+```cpp
+ #include <cv.h>
+ #include <cxcore.h>
+ #include <highgui.h>
 ```
 
-この cvFlip コンポーネントでは、画像領域の確保、Flip 処理、確保した画像領域の解放のそれぞれの処理を行います。
-これらの処理は、それぞれ onActivated()、onDeactivated()、onExecute() のコールバック関数にて行います。
+Next, add variables to store image data.
 
-```
-   /***
-    *
-    * The activated action (Active state entry action)
-    * former rtc_active_entry()
-    *
-    * @param ec_id target ExecutionContext Id
-    *
-    * @return RTC::ReturnCode_t
-    * 
-    * 
-    */
-   virtual RTC::ReturnCode_t onActivated(RTC::UniqueId ec_id);
- 
-   /***
-    *
-    * The deactivated action (Active state exit action)
-    * former rtc_active_exit()
-    *
-    * @param ec_id target ExecutionContext Id
-    *
-    * @return RTC::ReturnCode_t
-    * 
-    * 
-    */
-   virtual RTC::ReturnCode_t onDeactivated(RTC::UniqueId ec_id);
- 
-   /***
-    *
-    * The execution action that is invoked periodically
-    * former rtc_active_do()
-    *
-    * @param ec_id target ExecutionContext Id
-    *
-    * @return RTC::ReturnCode_t
-    * 
-    * 
-    */
-   virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);
-```
+Add the following declarations to the private section.
 
-反転した画像の保存用にメンバー変数を追加します。
-
-```
+```cpp
+ private:
    IplImage* m_imageBuff;
    IplImage* m_flipImageBuff;
 ```
 
-#### ソースファイル (Flip.cpp) の編集
+The purpose of these variables is as follows.
 
-下記のように、onActivated()、onDeactivated()、onExecute()を実装します。
+- `m_imageBuff`
+  - Stores the image received from the InPort.
 
-```
+- `m_flipImageBuff`
+  - Stores the image after flipping.
+
+### Editing the Source File (Flip.cpp)
+
+#### Initialization Processing
+
+Initialize the image buffers when the component becomes active.
+
+Edit `onActivated()` as follows.
+
+```cpp
  RTC::ReturnCode_t Flip::onActivated(RTC::UniqueId ec_id)
  {
-   // イメージ用メモリーの初期化
+   // Initialize image memory
    m_imageBuff = NULL;
    m_flipImageBuff = NULL;
- 
-   // OutPortの画面サイズの初期化
+
+   // Initialize output image size
    m_flippedImage.width = 0;
    m_flippedImage.height = 0;
-  
+
    return RTC::RTC_OK;
  }
- 
- 
+```
+
+#### Cleanup Processing
+
+Release the allocated image memory when the component is deactivated.
+
+Edit `onDeactivated()` as follows.
+
+```cpp
  RTC::ReturnCode_t Flip::onDeactivated(RTC::UniqueId ec_id)
  {
    if(m_imageBuff != NULL)
    {
-     // イメージ用メモリーの解放
      cvReleaseImage(&m_imageBuff);
      cvReleaseImage(&m_flipImageBuff);
    }
- 
+
    return RTC::RTC_OK;
  }
- 
- 
+```
+
+#### Image Processing
+
+The main image processing is implemented in `onExecute()`.
+
+First, check whether new image data has arrived at the InPort.
+
+```cpp
+ if (m_originalImageIn.isNew())
+ {
+   m_originalImageIn.read();
+ }
+```
+
+The received image is stored in `m_originalImage`.
+
+#### Allocating Image Buffers
+
+The image size may change depending on the camera.
+
+Therefore, before processing, verify whether the image size has changed.
+
+If it has changed, release the existing buffers and allocate new ones.
+
+```cpp
+ if( m_originalImage.width != m_flippedImage.width ||
+     m_originalImage.height != m_flippedImage.height)
+ {
+   m_flippedImage.width = m_originalImage.width;
+   m_flippedImage.height = m_originalImage.height;
+
+   if(m_imageBuff != NULL)
+   {
+     cvReleaseImage(&m_imageBuff);
+     cvReleaseImage(&m_flipImageBuff);
+   }
+
+   m_imageBuff =
+     cvCreateImage(
+       cvSize(
+         m_originalImage.width,
+         m_originalImage.height),
+       IPL_DEPTH_8U,
+       3);
+
+   m_flipImageBuff =
+     cvCreateImage(
+       cvSize(
+         m_originalImage.width,
+         m_originalImage.height),
+       IPL_DEPTH_8U,
+       3);
+ }
+```
+
+#### Copying Image Data
+
+Copy the image data received through the data port into the OpenCV image buffer.
+
+```cpp
+ memcpy(
+   m_imageBuff->imageData,
+   (void *)&(m_originalImage.pixels[0]),
+   m_originalImage.pixels.length());
+```
+
+The `pixels` member of `CameraImage` contains the actual image data.
+
+#### Executing the Flip Operation
+
+Perform image flipping using the OpenCV `cvFlip()` function.
+
+```cpp
+ cvFlip(
+   m_imageBuff,
+   m_flipImageBuff,
+   m_flipMode);
+```
+
+The meaning of `m_flipMode` is as follows.
+
+```text
+  0 : Vertical flip
+  1 : Horizontal flip
+ -1 : Horizontal and vertical flip
+```
+
+Since `m_flipMode` is bound to a configuration parameter, the user can change it at runtime through RTSystemEditor.
+
+#### Preparing Output Data
+
+After processing is completed, copy the flipped image into the output data structure.
+
+First, determine the image data size.
+
+```cpp
+ int len =
+   m_flipImageBuff->nChannels *
+   m_flipImageBuff->width *
+   m_flipImageBuff->height;
+```
+
+Resize the output image buffer.
+
+```cpp
+ m_flippedImage.pixels.length(len);
+```
+
+Copy the processed image data.
+
+```cpp
+ memcpy(
+   (void *)&(m_flippedImage.pixels[0]),
+   m_flipImageBuff->imageData,
+   len);
+```
+
+#### Writing Data to the OutPort
+
+Finally, output the flipped image.
+
+```cpp
+ m_flippedImageOut.write();
+```
+
+#### Complete onExecute() Processing
+
+Combining the processing described above results in the following implementation.
+
+```cpp
  RTC::ReturnCode_t Flip::onExecute(RTC::UniqueId ec_id)
  {
-   // 新しいデータのチェック
-   if (m_originalImageIn.isNew()) {
-     // InPortデータの読み込み
+   if (m_originalImageIn.isNew())
+   {
      m_originalImageIn.read();
- 
-     // InPort と OutPort の画面サイズ処理およびイメージ用メモリーの確保
-     if( m_originalImage.width != m_flippedImage.width || m_originalImage.height != m_flippedImage.height)
+
+     if( m_originalImage.width != m_flippedImage.width ||
+         m_originalImage.height != m_flippedImage.height)
+     {
+       m_flippedImage.width = m_originalImage.width;
+       m_flippedImage.height = m_originalImage.height;
+
+       if(m_imageBuff != NULL)
        {
- 	m_flippedImage.width = m_originalImage.width;
- 	m_flippedImage.height = m_originalImage.height;
- 
- 	// InPort のイメージサイズが変更された場合
- 	if(m_imageBuff != NULL)
- 	  {
- 	    cvReleaseImage(&m_imageBuff);
- 	    cvReleaseImage(&m_flipImageBuff);
- 	  }
- 
- 	// イメージ用メモリーの確保
- 	m_imageBuff = cvCreateImage(cvSize(m_originalImage.width, m_originalImage.height), IPL_DEPTH_8U, 3);
- 	m_flipImageBuff = cvCreateImage(cvSize(m_originalImage.width, m_originalImage.height), IPL_DEPTH_8U, 3);
+         cvReleaseImage(&m_imageBuff);
+         cvReleaseImage(&m_flipImageBuff);
        }
- 
-     // InPort の画像データを IplImage の imageData にコピー
-     memcpy(m_imageBuff->imageData,(void *)&(m_originalImage.pixels[0]),m_originalImage.pixels.length());
- 
-     // InPort からの画像データを反転する。 m_flipMode 0: X軸周り, 1: Y軸周り, -1: 両方の軸周り
-     cvFlip(m_imageBuff, m_flipImageBuff, m_flipMode);
- 
-     // 画像データのサイズ取得
-     int len = m_flipImageBuff->nChannels * m_flipImageBuff->width * m_flipImageBuff->height;
+
+       m_imageBuff =
+         cvCreateImage(
+           cvSize(
+             m_originalImage.width,
+             m_originalImage.height),
+           IPL_DEPTH_8U,
+           3);
+
+       m_flipImageBuff =
+         cvCreateImage(
+           cvSize(
+             m_originalImage.width,
+             m_originalImage.height),
+           IPL_DEPTH_8U,
+           3);
+     }
+
+     memcpy(
+       m_imageBuff->imageData,
+       (void *)&(m_originalImage.pixels[0]),
+       m_originalImage.pixels.length());
+
+     cvFlip(
+       m_imageBuff,
+       m_flipImageBuff,
+       m_flipMode);
+
+     int len =
+       m_flipImageBuff->nChannels *
+       m_flipImageBuff->width *
+       m_flipImageBuff->height;
+
      m_flippedImage.pixels.length(len);
- 
-     // 反転した画像データを OutPort にコピー
-     memcpy((void *)&(m_flippedImage.pixels[0]),m_flipImageBuff->imageData,len);
- 
-     // 反転した画像データを OutPort から出力する。
+
+     memcpy(
+       (void *)&(m_flippedImage.pixels[0]),
+       m_flipImageBuff->imageData,
+       len);
+
      m_flippedImageOut.write();
    }
- 
+
    return RTC::RTC_OK;
  }
 ```
 
-### CMake によるビルドに必要なファイルの生成
 
+### Generating Files Required for Building with CMake
 
-#### CMakeList.txt の編集
+#### Editing CMakeLists.txt
 
-Eclipse 画面左のパッケージエクスプローラーで src/CMakeLists.txt をダブルクリックもしくはエディタへドラッグアンドドロップして編集します。
+Double-click `src/CMakeLists.txt` in the Package Explorer on the left side of the Eclipse screen, or drag and drop it into the editor to edit it.
 
 <div align="center"><a href="EditCmakeLists.png"><img src="EditCmakeLists.png" width="70%;"></a></div>
-<div align="center"><strong>CMakeLists.txtの編集</strong></div>
+<div align="center"><strong>Editing CMakeLists.txt</strong></div>
 
+Since this component uses OpenCV, you need to provide the include path for the OpenCV headers, the libraries, and the library search paths.
 
-このコンポーネントでは OpenCV を利用していますので、OpenCV のヘッダのインクルードパス、ライブラリやライブラリサーチパスを与えてやる必要があります。
-幸い OpenCV は CMake に対応しており、以下の2行を追加・変更するだけで OpenCV のライブラリがリンクされ使えるようになります。
+Fortunately, OpenCV supports CMake, so OpenCV libraries can be linked and used simply by adding or modifying the following two lines.
 
-- src/CMakeLists.txt を修正する
-  - Eclipse のパッケージエクスプローラーで src/CMakeLists.txt をダブルクリック
-1. find_package (OpenCV REQUIRED) を追加
-1. 最初の target_link_libraries に ${OpenCV_LIBS} を追加
-  - target_link_libraries は2ヶ所あり、上が DLL、下が実行ファイルのライブラリ指定です
+- Modify `src/CMakeLists.txt`
+  - Double-click `src/CMakeLists.txt` in Eclipse's Package Explorer.
+1. Add `find_package(OpenCV REQUIRED)`.
+1. Add `${OpenCV_LIBS}` to the first `target_link_libraries`.
+  - There are two `target_link_libraries` entries. The upper one specifies the DLL library, and the lower one specifies the executable file library.
 
-```
+```cmake
  set(comp_srcs Flip.cpp )
  set(standalone_srcs FlipComp.cpp)
- 
- find_package(OpenCV REQUIRED) ← この行を追加
-   ：中略
+
+ find_package(OpenCV REQUIRED) ← Add this line
+   ：omitted
  add_dependencies(${PROJECT_NAME} ALL_IDL_TGT)
- target_link_libraries(${PROJECT_NAME} ${OPENRTM_LIBRARIES} ${OpenCV_LIBS}) ←　OepnCV_LIBSを追加
-   ：中略
+ target_link_libraries(${PROJECT_NAME} ${OPENRTM_LIBRARIES} ${OpenCV_LIBS}) ← Add OpenCV_LIBS
+   ：omitted
  add_executable(${PROJECT_NAME}Comp ${standalone_srcs}
    ${comp_srcs} ${comp_headers} ${ALL_IDL_SRCS})
- target_link_libraries(${PROJECT_NAME}Comp ${OPENRTM_LIBRARIES} ${OpenCV_LIBS}) ←　OepnCV_LIBSを追加
+ target_link_libraries(${PROJECT_NAME}Comp ${OPENRTM_LIBRARIES} ${OpenCV_LIBS}) ← Add OpenCV_LIBS
 ```
 
-### ビルド
+### Build
 
-#### ビルドの実行
+#### Executing the Build
 
-CMakeList.txt を編集したので、再度 CMake で Configure および Generate を行います。
+Since `CMakeLists.txt` has been edited, run Configure and Generate again with CMake.
 
-```
- $ cd workspace/Flip (eclipse ワークスペース下の Flip ディレクトリーへ移動)
- $ rm -rf build (念のため仮ビルドで作成したディレクトリーは削除)
- $ mkdir build (再度 build ディレクトリーを作成)
+```bash
+ $ cd workspace/Flip (move to the Flip directory under the Eclipse workspace)
+ $ rm -rf build (delete the directory created during the temporary build just in case)
+ $ mkdir build (create the build directory again)
  $ cd build
  $ cmake ..
  $ make
- 
 ```
-CMake の Generate が正常に終了した事を確認し、makeします。Configure で問題がある場合、先ほど編集した Flip/src/CMakeList.txt の編集にミスがある可能性があります。
-make でエラーが出た場合は、ソースコードやヘッダの編集に間違いがある可能性があります。
-エラーメッセージをよく見て、修正してください。
 
-### Flip コンポーネントの動作確認
+Confirm that CMake Generate has completed successfully, then run `make`.
 
-ここでは、OpenRTM-aist-1.1 以降で同梱されるようになったカメラコンポーネント (OpenCVCameraComp、または DirectShowCamComp)とビューアコンポーネント (CameraViewerComp)を接続し動作確認を行います。
+If there is a problem during Configure, there may be an error in the `Flip/src/CMakeLists.txt` file edited earlier.
 
-#### NameService の起動
+If an error occurs during `make`, there may be an error in the source code or header file edits.
 
-コンポーネントの参照を登録するためのネームサービスを起動します。
+Carefully check the error messages and correct the problem.
+
+### Verifying Operation of the Flip Component
+
+Here, operation is verified by connecting the camera component (`OpenCVCameraComp` or `DirectShowCamComp`) and the viewer component (`CameraViewerComp`), which have been included since OpenRTM-aist 1.1.
+
+#### Starting NameService
+
+Start the Name Service used to register component references.
 
 <br>
-```
+
+```bash
  $ rtm-naming
 ```
 
-#### rtc.conf の作成
+#### Creating rtc.conf
 
-RTコンポーネントでは、ネームサーバーのアドレスやネームサーバーへの登録フォーマットなどの情報を rtc.conf というファイルで指定する必要があります。
+In RT Components, information such as the Name Server address and the registration format for the Name Server must be specified in a file named `rtc.conf`.
 
-下記の内容を rtc.conf というファイル名で保存し、workspace/Flip/build/src/ ディレクトリーに置いてください。
+Save the following content in a file named `rtc.conf` and place it in the `workspace/Flip/build/src/` directory.
 
-```
+```text
  corba.nameservers: localhost
  naming.formats: %n.rtc
 ```
 
-#### Flip コンポーネントの起動
 
-Flip コンポーネントを起動します。
 
-先程 rtc.conf ファイルを置いたフォルダーにある、FlipComp.exe ファイルを実行してください。
+#### Starting the Flip Component
 
-```
- $ cd workspace/Flip/build/src (もし現在 build/src 以外にいる場合）
+Start the Flip component.
+
+Run the `FlipComp.exe` file in the folder where you placed the `rtc.conf` file earlier.
+
+```bash
+ $ cd workspace/Flip/build/src (if you are currently somewhere other than build/src)
  $ ./FlipComp
- 
 ```
-#### カメラコンポーネントとビューアコンポーネントの起動
 
-USBカメラのキャプチャー画像を OutPort から出力する OpenCVCameraComp、InPort で受け取った画像を画面に表示する CameraViewerComp を起動します。
+#### Starting the Camera Component and Viewer Component
 
-```
+Start `OpenCVCameraComp`, which outputs captured images from a USB camera through an OutPort, and `CameraViewerComp`, which displays images received through an InPort on the screen.
+
+```bash
  $ /usr/share/openrtm-1.1/components/c++/opencv-rtcs/OpenCVCameraComp
  $ /usr/share/openrtm-1.1/components/c++/opencv-rtcs/CameraViewerComp
- 
 ```
-### コンポーネントの接続
 
-下図のように、RTSystemEditor にて
-OpenCVCameraComp (またはDirectShowcomp) と Flip、CameraviewerComp コンポーネントを接続します。
+### Connecting the Components
+
+In RTSystemEditor, connect `OpenCVCameraComp` (or `DirectShowcomp`), `Flip`, and `CameraviewerComp` as shown below.
 
 <div align="center"><a href="RTSE_Connect.png"><img src="RTSE_Connect.png" width="70%;"></a></div>
-<div align="center"><strong>コンポーネントの接続</strong></div>
+<div align="center"><strong>Connecting the Components</strong></div>
 
-<span style="color:red;">Eclipse起動後、RTSystemEditor でネームサーバーに接続できない場合があります。その場合、/etc/hosts の localhost の行に自ホスト名を追記してください。</span>;
+<span style="color:red;">After starting Eclipse, RTSystemEditor may fail to connect to the Name Server. In that case, add your host name to the localhost entry in `/etc/hosts`.</span>;
 
-```
+```bash
  $ hostname
- ubuntu1404 ← ホスト名は ubuntu1404
+ ubuntu1404 ← The host name is ubuntu1404
  $ sudo vi /etc/hosts
 ```
 
-```
+```text
  127.0.0.1       localhost
- を以下のように変更
+ Change it as follows:
  127.0.0.1       localhost ubuntu1404
 ```
 
-#### コンポーネントの Activate
+#### Activating the Components
 
-RTSystemEditor の上部にあります「ALL」というアイコンをクリックし、全てのコンポーネントをアクティブ化します。正常にアクティベートされた場合、下図のように黄緑色でコンポーネントが表示されます。
+Click the **ALL** icon at the top of RTSystemEditor to activate all components.
+
+If activation is successful, the components will be displayed in yellow-green as shown below.
 
 <br>
 
 <div align="center"><a href="RTSE_Activate.png"><img src="RTSE_Activate.png" width="70%;"></a></div>
-<div align="center"><strong>コンポーネントのアクティブ化</strong></div>
+<div align="center"><strong>Activating the Components</strong></div>
 <br>
 
-#### 動作確認
+#### Operation Check
 
-下図のようにコンフィギュレーションビューにてコンフィギュレーションを変更することができます。
+As shown below, the configuration can be changed in the Configuration View.
 
-Flip コンポーネントのコンフィギュレーションパラメーター「flipMode」を「0」や「-1」などに変更し、画像の反転が行われるかを確認してください。
+Change the Flip component's configuration parameter `flipMode` to values such as `0` or `-1`, and verify that the image is flipped.
 
 <br>
 
 <div align="center"><a href="RTSE_Configuration.png"><img src="RTSE_Configuration.png" width="70%;"></a></div>
-<div align="center"><strong>コンフィギュレーションパラメーターの変更</strong></div>
+<div align="center"><strong>Changing Configuration Parameters</strong></div>
 <br>
 
-## Flip コンポーネントの全ソース
 
-### Flip コンポーネントソースファイル (Flip.cpp)
+### Complete Source Code of the Flip Component
 
-```
+#### Flip Component Source File (Flip.cpp)
+
+```cpp
  // -*- C++ -*-
  /*!
   * @file  Flip.cpp
@@ -776,9 +946,9 @@ Flip コンポーネントのコンフィギュレーションパラメーター
   *
   * $Id$
   */
- 
+
  #include "Flip.h"
- 
+
  // Module specification
  static const char* flip_spec[] =
    {
@@ -801,7 +971,7 @@ Flip コンポーネントのコンフィギュレーションパラメーター
      "conf.__constraints__.flip_mode", "(-1,0,1)",
      ""
    };
- 
+
  /*!
   * @brief constructor
   * @param manager Maneger Object
@@ -812,107 +982,107 @@ Flip コンポーネントのコンフィギュレーションパラメーター
      m_flippedImageOut("flippedImage", m_flippedImage)
  {
  }
- 
+
  /*!
   * @brief destructor
   */
  Flip::~Flip()
  {
  }
- 
- 
+
+
  RTC::ReturnCode_t Flip::onInitialize()
  {
    // Registration: InPort/OutPort/Service
    // Set InPort buffers
    addInPort("originalImage", m_originalImageIn);
-   
+
    // Set OutPort buffer
    addOutPort("flippedImage", m_flippedImageOut);
-   
+
    // Bind variables and configuration variable
    bindParameter("flipMode", m_flipMode, "1");
- 
+
    return RTC::RTC_OK;
  }
- 
- 
+
+
  RTC::ReturnCode_t Flip::onActivated(RTC::UniqueId ec_id)
  {
-   // イメージ用メモリーの初期化
+   // Initialize image memory
    m_imageBuff = NULL;
    m_flipImageBuff = NULL;
- 
-   // OutPort の画面サイズの初期化
+
+   // Initialize the OutPort image size
    m_flippedImage.width = 0;
    m_flippedImage.height = 0;
-  
+
    return RTC::RTC_OK;
  }
- 
- 
+
+
  RTC::ReturnCode_t Flip::onDeactivated(RTC::UniqueId ec_id)
  {
    if(m_imageBuff != NULL)
    {
-     // イメージ用メモリーの解放
+     // Release image memory
      cvReleaseImage(&m_imageBuff);
      cvReleaseImage(&m_flipImageBuff);
    }
- 
+
    return RTC::RTC_OK;
  }
- 
- 
+
+
  RTC::ReturnCode_t Flip::onExecute(RTC::UniqueId ec_id)
  {
-   // 新しいデータのチェック
+   // Check for new data
    if (m_originalImageIn.isNew()) {
-     // InPort データの読み込み
+     // Read InPort data
      m_originalImageIn.read();
- 
-     // InPort と OutPort の画面サイズ処理およびイメージ用メモリーの確保
+
+     // Process the InPort and OutPort image sizes and allocate image memory
      if( m_originalImage.width != m_flippedImage.width || m_originalImage.height != m_flippedImage.height)
        {
- 	m_flippedImage.width = m_originalImage.width;
- 	m_flippedImage.height = m_originalImage.height;
- 
- 	// InPort のイメージサイズが変更された場合
- 	if(m_imageBuff != NULL)
- 	  {
- 	    cvReleaseImage(&m_imageBuff);
- 	    cvReleaseImage(&m_flipImageBuff);
- 	  }
- 
- 	// イメージ用メモリーの確保
- 	m_imageBuff = cvCreateImage(cvSize(m_originalImage.width, m_originalImage.height), IPL_DEPTH_8U, 3);
- 	m_flipImageBuff = cvCreateImage(cvSize(m_originalImage.width, m_originalImage.height), IPL_DEPTH_8U, 3);
+         m_flippedImage.width = m_originalImage.width;
+         m_flippedImage.height = m_originalImage.height;
+
+         // If the image size of the InPort has changed
+         if(m_imageBuff != NULL)
+           {
+             cvReleaseImage(&m_imageBuff);
+             cvReleaseImage(&m_flipImageBuff);
+           }
+
+         // Allocate image memory
+         m_imageBuff = cvCreateImage(cvSize(m_originalImage.width, m_originalImage.height), IPL_DEPTH_8U, 3);
+         m_flipImageBuff = cvCreateImage(cvSize(m_originalImage.width, m_originalImage.height), IPL_DEPTH_8U, 3);
        }
- 
-     // InPort の画像データをIplImage の imageData にコピー
+
+     // Copy the InPort image data to the imageData of IplImage
      memcpy(m_imageBuff->imageData,(void *)&(m_originalImage.pixels[0]),m_originalImage.pixels.length());
- 
-     // InPort からの画像データを反転する。 m_flipMode 0: X軸周り, 1: Y軸周り, -1: 両方の軸周り
+
+     // Flip the image data from the InPort. m_flipMode 0: around the X axis, 1: around the Y axis, -1: around both axes
      cvFlip(m_imageBuff, m_flipImageBuff, m_flipMode);
- 
-     // 画像データのサイズ取得
+
+     // Get the image data size
      int len = m_flipImageBuff->nChannels * m_flipImageBuff->width * m_flipImageBuff->height;
      m_flippedImage.pixels.length(len);
- 
-     // 反転した画像データを OutPort にコピー
+
+     // Copy the flipped image data to the OutPort
      memcpy((void *)&(m_flippedImage.pixels[0]),m_flipImageBuff->imageData,len);
- 
-     // 反転した画像データを OutPort から出力する。
+
+     // Output the flipped image data from the OutPort.
      m_flippedImageOut.write();
    }
- 
+
    return RTC::RTC_OK;
  }
- 
- 
+
+
  extern "C"
  {
-  
+
    void FlipInit(RTC::Manager* manager)
    {
      coil::Properties profile(flip_spec);
@@ -920,13 +1090,13 @@ Flip コンポーネントのコンフィギュレーションパラメーター
                               RTC::Create<Flip>,
                               RTC::Delete<Flip>);
    }
-   
+
  };
 ```
 
-### Flip コンポーネントのヘッダファイル (Flip.h)
+#### Flip Component Header File (Flip.h)
 
-```
+```cpp
  // -*- C++ -*-
  /*!
   * @file  Flip.h
@@ -935,10 +1105,10 @@ Flip コンポーネントのコンフィギュレーションパラメーター
   *
   * $Id$
   */
- 
+
  #ifndef FLIP_H
  #define FLIP_H
- 
+
  #include <rtm/Manager.h>
  #include <rtm/DataFlowComponentBase.h>
  #include <rtm/CorbaPort.h>
@@ -947,14 +1117,14 @@ Flip コンポーネントのコンフィギュレーションパラメーター
  #include <rtm/idl/BasicDataTypeSkel.h>
  #include <rtm/idl/ExtendedDataTypesSkel.h>
  #include <rtm/idl/InterfaceDataTypesSkel.h>
- 
- //OpenCV 用インクルードファイルのインクルード
+
+ // Include OpenCV include files
  #include<cv.h>
  #include<cxcore.h>
  #include<highgui.h>
- 
+
  using namespace RTC;
- 
+
  /*!
   * @class Flip
   * @brief Flip image component
@@ -969,23 +1139,23 @@ Flip コンポーネントのコンフィギュレーションパラメーター
     * @param manager Maneger Object
     */
    Flip(RTC::Manager* manager);
- 
+
    /*!
     * @brief destructor
     */
    ~Flip();
- 
+
    /***
     *
     * The initialize action (on CREATED->ALIVE transition)
-    * formaer rtc_init_entry() 
+    * former rtc_init_entry()
     *
     * @return RTC::ReturnCode_t
-    * 
-    * 
+    *
+    *
     */
     virtual RTC::ReturnCode_t onInitialize();
- 
+
    /***
     *
     * The activated action (Active state entry action)
@@ -994,11 +1164,11 @@ Flip コンポーネントのコンフィギュレーションパラメーター
     * @param ec_id target ExecutionContext Id
     *
     * @return RTC::ReturnCode_t
-    * 
-    * 
+    *
+    *
     */
     virtual RTC::ReturnCode_t onActivated(RTC::UniqueId ec_id);
- 
+
    /***
     *
     * The deactivated action (Active state exit action)
@@ -1007,11 +1177,11 @@ Flip コンポーネントのコンフィギュレーションパラメーター
     * @param ec_id target ExecutionContext Id
     *
     * @return RTC::ReturnCode_t
-    * 
-    * 
+    *
+    *
     */
     virtual RTC::ReturnCode_t onDeactivated(RTC::UniqueId ec_id);
- 
+
    /***
     *
     * The execution action that is invoked periodically
@@ -1020,53 +1190,60 @@ Flip コンポーネントのコンフィギュレーションパラメーター
     * @param ec_id target ExecutionContext Id
     *
     * @return RTC::ReturnCode_t
-    * 
-    * 
+    *
+    *
     */
     virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);
- 
+
   protected:
+
    // Configuration variable declaration
+
    /*!
-    * 
+    *
     * - Name:  flipMode
     * - DefaultValue: 1
     */
    int m_flipMode;
- 
+
+
    // DataInPort declaration
+
    CameraImage m_originalImage;
- 
+
    /*!
     */
    InPort<CameraImage> m_originalImageIn;
-   
+
+
    // DataOutPort declaration
+
    CameraImage m_flippedImage;
- 
+
    /*!
     */
    OutPort<CameraImage> m_flippedImageOut;
- 
+
+
   private:
-   // 処理画像用バッファ
+
+   // Buffer for processed images
    IplImage* m_imageBuff;
    IplImage* m_flipImageBuff;
+
  };
- 
- 
+
+
  extern "C"
  {
    DLL_EXPORT void FlipInit(RTC::Manager* manager);
  };
- 
+
  #endif // FLIP_H
 ```
 
-### Flip コンポーネントの全ソースコード
+### Complete Source Code of the Flip Component
 
-Flip コンポーネントの全ソースコードを以下に添付します。
+The complete source code of the Flip component is attached below.
 
-[Flip.zip](Flip.zip)
-
--------jp page!!-------
+- [Flip.zip](Flip.zip)

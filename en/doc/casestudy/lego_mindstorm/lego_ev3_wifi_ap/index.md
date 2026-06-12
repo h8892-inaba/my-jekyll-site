@@ -1,21 +1,20 @@
 ---
 layout: page
-title: EV3 を無線LANアクセスポイントとして動作させるまでの手順
+title: Procedure for Operating EV3 as a Wireless LAN Access Point
 ---
--------jp page!!-------
 
-<!-- Title: EV3 を無線LANアクセスポイントとして動作させるまでの手順 -->
-ここでは EV3 をアクセスポイント化するまでの手順を説明します。
+<!-- Title: Procedure for Operating EV3 as a Wireless LAN Access Point -->
+This section explains the procedure for configuring the EV3 as a wireless LAN access point.
 
-Raspberry Pi とほとんど手順は同じなので、詳しいことは以下のサイトなどを参考にしてください。
+Since the procedure is almost the same as that for a Raspberry Pi, please refer to the following website for detailed information.
 
 [http://hara.jpn.com/_default/ja/Topics/RasPiE3839EE382A6E382B9E38292E784A1E7B79ALANE382A2E382AFE382BBE382B9E3839DE382A4E383B3E38388E58C96.html](http://hara.jpn.com/_default/ja/Topics/RasPiE3839EE382A6E382B9E38292E784A1E7B79ALANE382A2E382AFE382BBE382B9E3839DE382A4E383B3E38388E58C96.html)
 
+## Compiling hostapd with Realtek Device Support
 
-## Realtek 製品対応の hostapd のコンパイル
+Use the GW-USNANO2A wireless LAN adapter.
 
-無線LANアダプタは GW-USNANO2A を使います。
-まず上記のサイトにもあるように 8192CU は hostapd にはデフォルトで対応していないので、クロス環境で以下のコマンドを入力してコンパイルを行います。
+As described on the website above, the 8192CU chipset is not supported by hostapd by default. Therefore, enter the following commands in the cross-compilation environment and compile it.
 
 ```
  wget http://12244.wpc.azureedge.net/8012244/drivers/rtdrivers/cn/wlan/0001-RTL8188C_8192C_USB_linux_v4.0.2_9000.20130911.zip
@@ -26,20 +25,18 @@ Raspberry Pi とほとんど手順は同じなので、詳しいことは以下�
  make
 ```
 
-
-コンパイルが終了したら、hostapdをEV3 に転送してください。
+After compilation is complete, transfer hostapd to the EV3.
 
 ```
- sftp robot@<IPアドレス>
+ sftp robot@<IP address>
  put hostapd
 ```
 
+## Configuration
 
+### Static IP Address
 
-
-## 各種設定
-### 固定IPアドレス
-/etc/network/interfaces に以下の記述を追加してください。
+Add the following entries to `/etc/network/interfaces`.
 
 ```
  auto lo
@@ -54,24 +51,23 @@ Raspberry Pi とほとんど手順は同じなので、詳しいことは以下�
  netmask 255.255.255.0
 ```
 
+### Installing hostapd
 
-### hostapd のインストール
-
-以下のコマンドで hostapd をインストールしてください。
+Install hostapd with the following command.
 
 ```
  sudo apt-get install hostapd
 ```
 
-インストールが完了したら、先ほど転送した hostapdを/usr/sbin にコピーしてください。
+After installation is complete, copy the hostapd file you transferred earlier to `/usr/sbin`.
 
 ```
  cp hostapd /usr/sbin/hostapd
 ```
 
+Edit `/etc/hostapd/hostapd.conf` as follows.
 
-/etc/hostapd/hostapd.conf は以下のように記述します。
-ssid、wpa_passphrase は適宜変更してください。
+Modify `ssid` and `wpa_passphrase` as appropriate.
 
 ```
  interface=wlan0
@@ -89,8 +85,7 @@ ssid、wpa_passphrase は適宜変更してください。
  rsn_pairwise=CCMP
 ```
 
-
-/etc/default/hostapd を以下のように変更します。
+Modify `/etc/default/hostapd` as follows.
 
 ```
  #DAEMON_CONF=""
@@ -98,30 +93,29 @@ ssid、wpa_passphrase は適宜変更してください。
  DAEMON_CONF="/etc/hostapd/hostapd.conf"
 ```
 
-ネットワークを再起動します。
+Restart the network.
 
 ```
  sudo /etc/init.d/networking restart
 ```
 
-以下のコマンドで hostapd を起動します。
+Start hostapd with the following command.
 
 ```
  sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf -dd
 ```
 
-これで他の PC から設定した SSID が見えるようにはなったはずです。
+At this point, the configured SSID should be visible from other PCs.
 
-## DHCP サーバーの設定
+## DHCP Server Configuration
 
-以下のコマンドで DHCP サーバーをインストールします。
+Install the DHCP server with the following command.
 
 ```
  sudo apt-get install isc-dhcp-server
 ```
 
-/etc/dhcp/dhcpd.conf を以下のように修正してください。
-
+Modify `/etc/dhcp/dhcpd.conf` as follows.
 
 ```
  # option definitions common to all supported networks...
@@ -147,16 +141,15 @@ ssid、wpa_passphrase は適宜変更してください。
  }
 ```
 
-/etc/default/isc-dhcp-server を以下のように修正します。
+Modify `/etc/default/isc-dhcp-server` as follows.
+
 ```
  INTERFACES="wlan0"
 ```
 
+## Configuring the Startup Script
 
-
-## 起動スクリプトの設定
-
-最後の rc.local に以下の記述を追加します。
+Finally, add the following entries to `rc.local`.
 
 ```
  ifdown wlan0
@@ -165,17 +158,17 @@ ssid、wpa_passphrase は適宜変更してください。
  service isc-dhcp-server start
 ```
 
+Before rebooting, if you have configured wireless LAN according to the procedure on [this page](/ja/node/5861#toc6), set **Wireless and Networks → Wifi → Powered** to **OFF**. Also set **Wireless and Networks → Offline Mode** to **ON**.
 
-再起動する前に [このページ](/ja/node/5861#toc6)の手順で無線LANを設定している場合は、Wireless and Networks→Wifi→Powered を OFF に設定してください。また Wireless and Networks→Offline Mode を ON にしてください。
+All procedures are now complete. Reboot the EV3 and verify that you can connect successfully.
 
-これで全ての手順が終了したので、再起動して接続できるかを確認してください。
-失敗する場合は有線で EV3 と接続して設定が正しく行われているかを確認してください。
+If the connection fails, connect to the EV3 via a wired connection and verify that the configuration has been performed correctly.
 
-## ボタン操作でアクセスポイントを起動する手順
+## Procedure for Starting the Access Point Using Button Operations
 
-EV3 のボタン操作でアクセスポイントを起動する手順を説明します。
+This section explains how to start the access point using the EV3 buttons.
 
-まず /home/robot に以下のスクリプトファイル(ここでは start_ap.sh) を作成してください。
+First, create the following script file in `/home/robot` (named `start_ap.sh` in this example).
 
 ```
  #!/bin/sh
@@ -185,26 +178,27 @@ EV3 のボタン操作でアクセスポイントを起動する手順を説明�
  sudo service isc-dhcp-server start
 ```
 
-以下のコマンドで権限を変更してください。
+Change the file permissions with the following command.
 
 ```
  chmod +x start_ap.sh
 ```
 
-このファイルを EV3 のボタン操作で File Browser→start_ap.sh で起動するのですが、EV3 のボタン操作で sudo 実行時のパスワードが入力できないので sudo をパスワードなしで実行できるように設定します。
+This file will be launched from **File Browser → start_ap.sh** using the EV3 buttons. However, since it is not possible to enter a password when executing sudo from the EV3 button interface, configure sudo so that it can be executed without a password.
 
-以下のコマンドを入力してください。
+Enter the following command.
 
 ```
  sudo visudo
 ```
 
-そして以下の記述を追加してください。
+Then add the following lines.
 
 ```
  robot ALL=(ALL)     ALL
  %robot ALL=(ALL)     NOPASSWD: ALL
 ```
 
-これで準備完了です。EV3 のボタン操作で File Browser→start_ap.sh を起動してください。
--------jp page!!-------
+The setup is now complete. Launch **File Browser → start_ap.sh** using the EV3 buttons.
+
+

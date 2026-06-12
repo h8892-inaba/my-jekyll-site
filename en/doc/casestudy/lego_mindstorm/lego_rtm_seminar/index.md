@@ -1,11 +1,9 @@
 ---
 layout: page
-title: チュートリアル(RTM講習会)
+title: Tutorials (RTM Seminar)
 ---
--------jp page!!-------
 
-- [チュートリアル(RTコンポーネントの作成入門、EV3、Windows)](./tutorial_ev3_win)
-- [チュートリアル(RTコンポーネントの作成入門、EV3、Ubuntu)](./tutorial_ev3_ubuntu)
-- [チュートリアル(RTシステム構築実習、EV3)](./tutorial_ev3_part3)
-- [チュートリアル(RTミドルウェア応用実習、EV3)](./tutorial_rtm_seminar_part4)
--------jp page!!-------
+- [Tutorial (Introduction to RT-Component Development, EV3, Windows)](./tutorial_ev3_win)
+- [Tutorial (Introduction to RT-Component Development, EV3, Ubuntu)](./tutorial_ev3_ubuntu)
+- [Tutorial (RT System Construction Practice, EV3)](./tutorial_ev3_part3)
+- [Tutorial (Advanced RT Middleware Practice, EV3)](./tutorial_rtm_seminar_part4)

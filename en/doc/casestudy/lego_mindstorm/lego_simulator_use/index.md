@@ -1,16 +1,16 @@
 ---
 layout: page
-title: シミュレーター利用方法
+title: Using the Simulator
 ---
--------jp page!!-------
 
-<!-- Title: シミュレーター利用方法 -->
+<!-- Title: Using the Simulator -->
 #contents
 
-このページでは Educator Vehicle 改 のシミュレーター RTC の仕様、利用方法について説明します。
+This page explains the specifications and usage of the simulator RTC for the modified Educator Vehicle.
+
 <div align="center"><a href="ev32.png"><img src="ev32.png" width="60%;"></a></div>
 
-# 仕様
+# Specifications
 
 <div align="center"><a href="simulator_ev3_1.png"><img src="simulator_ev3_1.png" width="60%;"></a></div>
 
@@ -22,168 +22,167 @@ title: シミュレーター利用方法
     <td colspan="3" style="text-align: center;">InPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>velocity2D</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>目標速度</td>
+    <td>Target velocity</td>
   </tr>
   <tr>
     <td>angle</td>
     <td>RTC::TimedDouble</td>
-    <td>Mモーターの角度</td>
+    <td>M motor angle</td>
   </tr>
   <tr>
     <td>pos_update</td>
     <td>RTC::TimedPose2D</td>
-    <td>現在位置更新</td>
+    <td>Current position update</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">OutPort</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>データ型</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>odometry</td>
     <td>RTC::TimedPose2D</td>
-    <td>現在の位置</td>
+    <td>Current position</td>
   </tr>
   <tr>
     <td>current_vel</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>現在の速度</td>
+    <td>Current velocity</td>
   </tr>
   <tr>
     <td>ultrasonic</td>
     <td>RTC::RangeData</td>
-    <td>超音波センサーで計測した距離</td>
+    <td>Distance measured by the ultrasonic sensor</td>
   </tr>
   <tr>
     <td>gyro</td>
     <td>RTC::TimedDouble</td>
-    <td>ジャイロセンサーで計測した角度</td>
+    <td>Angle measured by the gyro sensor</td>
   </tr>
   <tr>
     <td>light_reflect</td>
     <td>RTC::TimedDouble</td>
-    <td>カラーセンサーで計測した反射光の強さ</td>
+    <td>Reflected light intensity measured by the color sensor</td>
   </tr>
   <tr>
     <td>touch</td>
     <td>RTC::TimedBooleanSeq</td>
-    <td>タッチセンサーのオンオフ。右側が0番目の要素、左側が1番目の要素</td>
+    <td>Touch sensor on/off status. The right sensor is element 0, and the left sensor is element 1.</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">コンフィギュレーションパラメーター</td>
+    <td colspan="3" style="text-align: center;">Configuration Parameters</td>
   </tr>
   <tr>
-    <td>名前</td>
-    <td>デフォルト値</td>
-    <td>説明</td>
+    <td>Name</td>
+    <td>Default Value</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>medium_motor_speed</td>
     <td>1.6</td>
-    <td>モーターMの速度</td>
+    <td>Speed of Motor M</td>
   </tr>
   <tr>
     <td>blocksConfigFile</td>
     <td>None</td>
-    <td>障害物の配置設定ファイルの名前</td>
+    <td>Name of the obstacle placement configuration file</td>
   </tr>
   <tr>
     <td>touchSensorOnLength</td>
     <td>0.003</td>
-    <td>タッチセンサーをオンと判定する押し込んだ距離</td>
+    <td>Press distance required for the touch sensor to be judged as ON</td>
   </tr>
   <tr>
     <td>lightReflectThreshold</td>
     <td>0.1</td>
-    <td>カラーセンサーから物体までの距離がこの値以下になると255を出力</td>
+    <td>Outputs 255 when the distance from the color sensor to an object is less than or equal to this value</td>
   </tr>
   <tr>
     <td>plane_exist</td>
     <td>0</td>
-    <td>1の時は新たに地面作成</td>
+    <td>Create a new ground plane when set to 1</td>
   </tr>
   <tr>
     <td>plane_x</td>
     <td>0</td>
-    <td>地面の位置(X)</td>
+    <td>Ground plane position (X)</td>
   </tr>
   <tr>
     <td>plane_y</td>
     <td>0</td>
-    <td>地面の位置(Y)</td>
+    <td>Ground plane position (Y)</td>
   </tr>
   <tr>
     <td>plane_z</td>
     <td>0</td>
-    <td>カラーセンサーから物体までの距離がこの値以下になると255を出力</td>
+    <td>Ground plane position (Z)</td>
   </tr>
   <tr>
     <td>plane_lx</td>
     <td>1.0</td>
-    <td>地面の長さ</td>
+    <td>Ground plane length</td>
   </tr>
   <tr>
     <td>plane_ly</td>
     <td>1.0</td>
-    <td>地面の幅</td>
+    <td>Ground plane width</td>
   </tr>
   <tr>
     <td>plane_lz</td>
     <td>1.0</td>
-    <td>地面の高さ</td>
+    <td>Ground plane height</td>
   </tr>
   <tr>
     <td>draw_time</td>
     <td>0.01</td>
-    <td>描画の周期</td>
+    <td>Rendering period</td>
   </tr>
   <tr>
     <td>sampling_time</td>
     <td>-1</td>
-    <td>シミュレーションの刻み幅。負の値に設定した場合は実行コンテキストの周期で設定</td>
+    <td>Simulation time step. If set to a negative value, the execution context period is used.</td>
   </tr>
 </table>
 
+# Usage
 
+The simulator can be downloaded from the following link.
 
-# 使用方法
+- [ZIP File](https://github.com/Nobu19800/EV3SimulatorRTC/archive/master.zip)
 
-以下からダウンロードできます。
+The executable file (**EV3SimulatorComp.exe**) is located in the **EXE** folder of the extracted archive.
 
-- [ZIPファイル](https://github.com/Nobu19800/EV3SimulatorRTC/archive/master.zip)
+Running this executable starts the RTC.
 
+## Configuration Parameters
 
-展開したフォルダーの EXEフォルダー内に実行ファイル (EV3SimulatorComp.exe) があります。
-この EXEファイルを実行すると RTC が起動します。
+### Obstacle Configuration File
 
+You can specify a CSV file containing obstacle placement settings using the parameter **blocksConfigFile**.
 
+A sample file named **test.csv** is included.
 
-## コンフィギュレーションパラメーター
-### 障害物の設定ファイル
-blocksConfigFile というパラメーターで障害物の配置を設定する CSVファイルを指定できます。
-サンプルとして test.csv というファイルを用意してあります。
-
-このファイルに位置、角度、サイズを記述してください。
+Describe the position, orientation, and size of each obstacle in the file.
 
 <table class="table-alt">
   <tr>
-    <td>位置(X)</td>
-    <td>位置(Y)</td>
-    <td>位置(Z)</td>
-    <td>長さ(L)</td>
-    <td>幅(W)</td>
-    <td>高さ(H)</td>
-    <td>角度(θ)</td>
+    <td>Position (X)</td>
+    <td>Position (Y)</td>
+    <td>Position (Z)</td>
+    <td>Length (L)</td>
+    <td>Width (W)</td>
+    <td>Height (H)</td>
+    <td>Angle (θ)</td>
   </tr>
   <tr>
     <td>0.3</td>
@@ -195,18 +194,18 @@ blocksConfigFile というパラメーターで障害物の配置を設定する
     <td>0.0</td>
   </tr>
 </table>
-
 
 <div align="center"><a href="block1.png"><img src="block1.png" width="50%;"></a></div>
 
 <div align="center"><a href="block2.png"><img src="block2.png" width="50%;"></a></div>
 
+Any number of blocks can be configured.
 
-ブロックは何個でも設定可能です。
+### Ground Plane Configuration
 
-### 地面の設定
-Educator Vehicle 改 は超音波センサーにより設置可能な地面の有無を検知して回避する運動が可能になっています。
-この制御シミュレーションのために、地面を新たに作成するコンフィギュレーションパラメーターを用意してあります。
+The modified Educator Vehicle can detect the presence or absence of a traversable surface using its ultrasonic sensor and perform avoidance behavior.
 
-plane_existを1に設定後、地面の位置、サイズを設定してください。
--------jp page!!-------
+To support simulation of this control behavior, configuration parameters are provided for creating a ground plane.
+
+Set **plane_exist** to **1**, then configure the position and size of the ground plane.
+

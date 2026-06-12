@@ -1,121 +1,147 @@
 ---
 layout: page
-title: チュートリアル(RTM講習会、第4部)
+title: Tutorial (RTM Workshop, Part 4)
 ---
--------jp page!!-------
 
 <!-- Title: チュートリアル(RTM講習会、第4部) -->
 #contents
 
-## はじめに
+## Introduction
 
-このページではLibreOffice Calc用RTCによるRTCの動作確認手順について説明します。
-Calcのセルの値をInPortに入力、OutPortの出力した値をセルに表示することで対象RTCの挙動を確認できます。
+This page explains the procedure for verifying RTC operation using the RTC for LibreOffice Calc.
+
+You can verify the behavior of the target RTC by inputting cell values in Calc to an InPort and displaying values output from an OutPort in cells.
 
 <div align="center"><a href="calc1.png"><img src="calc1.png" width="70%;"></a></div>
 
+In the RTM workshop, a portable version of LibreOffice and RTCs are distributed on a USB memory device.
 
-RTM講習会ではUSBメモリでポータブル版LibreOfficeとRTCを配布します。
-Windowsで実行できます。
+They can be executed on Windows.
 
 <br>
 
-Ubuntuの場合は以下のコマンドでインストールできます。
+For Ubuntu, they can be installed using the following commands.
 
-```
+```sh
  sudo apt install libreoffice-script-provider-python
  git clone https://github.com/Nobu19800/OOoRTCs
  cd OOoRTCs
  sh install.sh
 ```
 
+In this exercise, the RobotController component created in [Part 2](../tutorial_rtm_seminar_win_part2) will be used.
 
-この実習では[第2部](../tutorial_rtm_seminar_win_part2)で作成したRobotControllerコンポーネントを使用します。
+## What is LibreOffice?
 
+LibreOffice is an office suite that provides spreadsheet, presentation, word processing, and other functions.
 
-## LibreOfficeとは？
-表計算、パワーポイント、ワープロ機能等を提供するオフィススイートです。
-フリーソフトとして公開されており、今回の講習会では以下のポータブル版を使用します。
+It is released as free software, and in this workshop the following portable version is used.
 
-- [Portable版 LibreOffice Portable](https://ja.libreoffice.org/download/portable-versions/)
+- [Portable Version LibreOffice Portable](https://ja.libreoffice.org/download/portable-versions/)
 
+## Starting the RTC for LibreOffice Calc
 
-## LibreOffice Calc用RTCの起動
+For Windows, execute **Portable LibreOffice\run_CalcRTC.bat** from the distributed USB memory device.
 
-Windowsの場合は、配布したUSBメモリ内の**ポータブル版LibreOffice\run_CalcRTC.bat**を実行します。
 <br>
-Ubuntuの場合は、OOoRTCs/OOoCalcRTC/OOoCalcRTC.odsをダブルクリックして開きます。
+
+For Ubuntu, open OOoRTCs/OOoCalcRTC/OOoCalcRTC.ods by double-clicking it.
+
 <br>
-LibreOffice Calcが起動するため、**RTC起動**ボタンをクリックすることでOOoCalcControlというRTCを起動します。
+
+LibreOffice Calc will start. Click the **Start RTC** button to start the RTC named OOoCalcControl.
 
 <div align="center"><a href="calc2.png"><img src="calc2.png" width="50%;"></a></div>
 
+## Connecting an OutPort
 
-## OutPortの接続
+Connect to the OutPort of RobotController so that output data can be monitored in Calc.
 
-RobotControllerのOutPortと接続し、Calcで出力データの確認ができるようにします。
-Calcの**操作ダイアログ起動**ボタンをクリックしてください。
+Click the **Launch Operation Dialog** button in Calc.
 
 <div align="center"><a href="calc3.png"><img src="calc3.png" width="50%;"></a></div>
 
+First, connect to the OutPort whose output data you want to monitor.
 
-まずは出力データを確認するOutPortと接続します。
-**ツリー表示ボタン**を押下してネームサーバーに登録されたRTCのポート一覧を表示後、ツリーからRobotController0のoutを選択します。
+Click the **Tree Display** button to display a list of RTC ports registered in the Name Server, then select **out** of RobotController0 from the tree.
 
 <div align="center"><a href="calc4.png"><img src="calc4.png" width="50%;"></a></div>
 
+Next, change some settings.
 
-次に、一部の設定を変更します。
+Uncheck **Move Column**.
 
-**列を移動させる**のチェックを外してください。
-このチェックが有効の場合、データを受信する度にセルの位置が移動するモードで動作します。
-グラフに描画する場合は位置が移動するモードを使用しますが、今回は単純に値を確認したいだけのためチェックを外します。
+When this option is enabled, the component operates in a mode where the cell position moves whenever data is received.
 
-**行番号**に**3**を入力してください。
+This mode is used when drawing graphs, but in this exercise we only want to check the values, so disable it.
+
+Enter **3** in **Row Number**.
+
 <br>
-**列番号**の右のボックスに**C**と入力してください。
-<br>
-これで**2**行目の**A**～**C**列のセルにOutPortの出力データを表示するようになりました。
 
-設定完了後、作成ボタンを押してください。
+Enter **C** in the box to the right of **Column Letter**.
+
+<br>
+
+This configures the OutPort output data to be displayed in cells from columns **A** to **C** of row **2**.
+
+After completing the settings, click the Create button.
 
 <div align="center"><a href="calc9.png"><img src="calc9.png" width="50%;"></a></div>
 
-## OutPortの動作確認
-RT System Editor上でRTCをアクティブ化して動作を確認してください。
+## Verifying OutPort Operation
+
+Activate the RTC in RT System Editor and verify its operation.
 
 <div align="center"><a href="calc6.png"><img src="calc6.png" width="70%;"></a></div>
 
-この状態でコンフィギュレーションパラメータを操作してCalcのセルの値が変化するかを確認してください。
+In this state, manipulate the configuration parameters and verify that the values in the Calc cells change.
 
 <div align="center"><a href="calc7.png"><img src="calc7.png" width="70%;"></a></div>
 
-## InPortの接続
-RobotControllerのInPortと接続し、Calcからデータの入力を行うようにします。
+## Connecting an InPort
 
+Connect to the InPort of RobotController so that data can be input from Calc.
 
-**ツリー表示ボタン**を押下してネームサーバーに登録されたRTCのポート一覧を表示後、ツリーからRobotController0のinを選択します。
+Click the **Tree Display** button to display a list of RTC ports registered in the Name Server, then select **in** of RobotController0 from the tree.
 
 <div align="center"><a href="calc8.png"><img src="calc8.png" width="50%;"></a></div>
 
+Next, change some settings.
 
-次に一部設定を変更します。
-
-**列を移動させる**のチェックを外してください。
+Uncheck **Move Column**.
 
 ''''
-**列番号**の右のボックスに**D**と入力してください。
-これで**3**行目の**A**～**C**列のセルにOutPortの出力データを表示するようになりました。
 
-設定完了後、作成ボタンを押してください。
+Enter **D** in the box to the right of **Column Letter**.
+
+This configures the OutPort output data to be displayed in cells from columns **A** to **C** of row **3**.
+
+After completing the settings, click the Create button.
 
 <div align="center"><a href="calc10.png"><img src="calc10.png" width="50%;"></a></div>
 
-## InPortの動作確認
-RT System Editor上でRTCをアクティブ化して動作を確認してください。
+## Verifying InPort Operation
 
-この状態でコンフィギュレーションパラメータで前進する速度を設定して、設定した速度がOutPortから出力するように操作してください。
-その後、Calcの**3**行目の**A**～**C**列のセルに31以上の値を入力するか、30以下の値を入力するかで動作が変化するかを確認してください。
+Activate the RTC in RT System Editor and verify its operation.
+
+In this state, set the forward movement speed using the configuration parameters and operate the RTC so that the configured speed is output from the OutPort.
+
+Then, enter a value greater than or equal to 31, or a value less than or equal to 30, into the cells in columns **A** to **C** of row **3** in Calc, and verify that the behavior changes accordingly.
 
 <div align="center"><a href="calc11.png"><img src="calc11.png" width="70%;"></a></div>
--------jp page!!-------
+
+## Summary
+
+In this tutorial, you learned:
+
+- How to use the RTC for LibreOffice Calc to verify RTC operation.
+- How to install and start the LibreOffice Calc RTC environment on Windows and Ubuntu.
+- How to launch the OOoCalcControl RTC from LibreOffice Calc.
+- How to connect an RTC OutPort and display output data in Calc cells.
+- How to monitor RTC output values by changing configuration parameters.
+- How to connect an RTC InPort and send input data from Calc cells.
+- How to verify RTC behavior by changing cell values and observing the resulting operation.
+
+By completing this tutorial, you have learned how to use LibreOffice Calc as a simple interface for monitoring RTC output data and supplying input data to RTCs for operation verification.
+

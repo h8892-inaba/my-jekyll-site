@@ -1,74 +1,76 @@
 ---
 layout: page
-title: EV3 および ev3dev の初期設定
+title: Initial Setup of EV3 and ev3dev
 ---
--------jp page!!-------
 
-<!-- Title: EV3 および ev3dev の初期設定 -->
+<!-- Title: Initial Setup of EV3 and ev3dev -->
 <!-- -*- pukiwiki-edit -*- -->
-<!-- * EV3 および ev3dev の初期設定 -->
+<!-- * Initial Setup of EV3 and ev3dev -->
 
 #contents
 
-## 電池・無線LAN・SDカードのセット
+## Installing Batteries, Wireless LAN, and SD Card
 
-### 電池
+### Batteries
 
-EV3 は単3電池6本、または専用のバッテリーパックで動作します。単3電池6本、もしくは専用のバッテリーをセットしてください。
+The EV3 can be powered by six AA batteries or a dedicated battery pack. Insert either six AA batteries or the dedicated battery pack.
 
 <div align="center"><a href="EV3_with_AAAbattery.png"><img src="EV3_with_AAAbattery.png" width="40%;"></a></div>
-<div align="center"><strong>単3電池</strong></div>
+<div align="center"><strong>AA Batteries</strong></div>
 
 <div align="center"><a href="EV3_with_battery.png"><img src="EV3_with_battery.png" width="40%;"></a></div>
-<div align="center"><strong>EV3専用バッテリーパック</strong></div>
+<div align="center"><strong>Dedicated EV3 Battery Pack</strong></div>
 
-### 無線LAN
+### Wireless LAN
 
-USB接続の無線LANインターフェースをを用意します。EV3 は PCと有線接続して、PC経由でインターネットに接続することもできますが、ここでは無線LAN接続を前提として説明します。
+Prepare a USB wireless LAN adapter. The EV3 can also connect to the Internet through a PC using a wired connection, but this guide assumes a wireless LAN connection.
 
-最近の無線LANドングルであれば、大抵のものが使用可能なはずですが、一例として以下の無線LANドングルは動作確認ができています。
+Most recent wireless LAN dongles should work. The following dongles have been tested and confirmed to work:
 
 - BUFFALO WLI-UC-GNM2 Wireless LAN Adapter
 - BUFFALO WLI-UC-GN Wireless LAN Adapter
 - PLANEX GW-USMicro300
 
 <div align="center"><a href="wlan_dongle.png"><img src="wlan_dongle.png" width="60%;"></a></div>
-<div align="center"><strong>無線LANドングルの例</strong></div>
+<div align="center"><strong>Example Wireless LAN Dongle</strong></div>
 
-その他の接続方法に関しては、ev3dev の Webページをご覧ください。
+For other connection methods, refer to the ev3dev website.
 
-- [Bluetooth経由でのネット接続](http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/)
-- [USB経由での接続](http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/)
-- [Bluetoothによるテザリング接続](http://www.ev3dev.org/docs/tutorials/using-bluetooth-tethering/)
-- [USBによるテザリング接続](http://www.ev3dev.org/docs/tutorials/using-usb-tethering/)
+- [Internet Connection via Bluetooth](http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/)
+- [Connection via USB](http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/)
+- [Bluetooth Tethering](http://www.ev3dev.org/docs/tutorials/using-bluetooth-tethering/)
+- [USB Tethering](http://www.ev3dev.org/docs/tutorials/using-usb-tethering/)
 
-### SDカードの挿入
+### Inserting the SD Card
 
-無線LANドングルと共に、EV3 のコントローラの側面に ev3dev イメージを書き込んだ SDカードを以下のように挿入してください。
+Insert the SD card containing the ev3dev image into the side of the EV3 controller together with the wireless LAN dongle as shown below.
 
 <div align="center"><a href="ev3_wlan_sdcard.png"><img src="ev3_wlan_sdcard.png" width="60%;"></a></div>
-<div align="center"><strong>EV3の側面に、無線LANドングルと SDカードを挿入</strong></div>
+<div align="center"><strong>Insert the Wireless LAN Dongle and SD Card into the Side of the EV3</strong></div>
 
-## ev3dev の起動
+## Starting ev3dev
 
-SDカードを挿入し、電源ボタン（十字キーボタンの中央の濃いグレーのボタン）を押して EV3 に電源を投入すると、以下のような起動画面が表示され、十字キーのあたりの LED が点滅します。
+Insert the SD card and press the power button (the dark gray button in the center of the directional pad) to power on the EV3.
+
+The following boot screen will appear and the LEDs around the directional pad will flash.
 
 <div align="center"><a href="ev3dev_screen_booting.png"><img src="ev3dev_screen_booting.png" width="60%;"></a></div>
-<div align="center"><strong>ev3dev 起動画面</strong></div>
+<div align="center"><strong>ev3dev Boot Screen</strong></div>
 
-暫く(1分前後)して起動が完了すると、以下のような初期画面が表示されます。
+After about one minute, startup will complete and the following screen will be displayed.
 
 <div align="center"><a href="ev3dev_screen.png"><img src="ev3dev_screen.png" width="60%;"></a></div>
-<div align="center"><strong>起動直後の画面</strong></div>
+<div align="center"><strong>Screen Immediately After Startup</strong></div>
 
-## ssh ログイン
+## SSH Login
 
-### ネットワークへの接続
+### Connecting to a Network
 
-起動直後の EV3 は、まだネットワークにつながっていません。
-初期画面の状態から、十字キーで、**Wireless and Networks** を選択し、決定ボタン（中央の濃いグレーのボタン）を押します。
+Immediately after startup, the EV3 is not connected to a network.
 
-```
+From the initial screen, use the directional buttons to select **Wireless and Networks**, then press the Enter button (the dark gray center button).
+
+```text
  ------------------------------
                        V [8.12>
  ------------------------------
@@ -80,9 +82,9 @@ SDカードを挿入し、電源ボタン（十字キーボタンの中央の濃
  ------------------------------
 ```
 
-選択すると、以下のような画面になります。
+You will see the following screen:
 
-```
+```text
  ------------------------------
       Wireless and Network
  ------------------------------
@@ -95,12 +97,11 @@ SDカードを挿入し、電源ボタン（十字キーボタンの中央の濃
  Tethering                    >
  Offline Mode                □
  ------------------------------
-
 ```
 
-**WiFi** を選択すると、以下の画面に遷移します。
+Select **WiFi** to open the following screen:
 
-```
+```text
  ------------------------------
            WiFi
  ------------------------------
@@ -113,9 +114,9 @@ SDカードを挿入し、電源ボタン（十字キーボタンの中央の濃
  ------------------------------
 ```
 
-Powered を選択し、電源をONにし、スキャンして現れた SSID のうち接続したい ID を選択します。
+Turn **Powered** ON, scan for available networks, and select the SSID you want to connect to.
 
-```
+```text
  ------------------------------
       MyWirelessNetwork
  ------------------------------
@@ -127,10 +128,9 @@ Powered を選択し、電源をONにし、スキャンして現れた SSID の�
  [      Network Connection     ]
 ```
 
-**Connect** を選択し決定ボタンを押すと、KEYを入力するダイアログが現れます。再度、決定ボタンを押すと、以下のようなキーボードが現れるので、KEY を入力します。
+Select **Connect** and press Enter. A dialog for entering the key will appear. Press Enter again to display the keyboard shown below and enter the network key.
 
-
-```
+```text
  [_                           ]
  [ABC] [abc] [123] [!@# ] [INS]
  [Q][W][E][R][T][Y][U][I][O][P]
@@ -139,12 +139,15 @@ Powered を選択し、電源をONにし、スキャンして現れた SSID の�
  [ Accept ]          [ Cancel ]
 ```
 
-KEY を入力後、Accept を選択し決定ボタンを押すと、先どのダイアログに KEY が入力された状態で表示されるので、再度 **Accept** を押します。
-暫くすると、指定した無線LANアクセスポイントにつながるはずです。何度か戻るボタン（画面の左下のボタン）を押すと初期画面に戻ります。
-左上に割り当てらえた IPアドレスが表示されているはずです。
+After entering the key, select **Accept** and press Enter. The key will appear in the previous dialog. Press **Accept** again.
 
+After a short wait, the EV3 should connect to the specified wireless LAN access point.
 
-```
+Press the Back button (bottom-left button on the screen) several times to return to the home screen.
+
+The assigned IP address should now appear in the upper-left corner.
+
+```text
  --------------------------
  192.168.11.3          V [8.12>
  --------------------------
@@ -153,23 +156,23 @@ KEY を入力後、Accept を選択し決定ボタンを押すと、先どのダ
  [Wireless and Networks      > ]
   Battery                    >
   About                      >
-  
- --------------------------
 
+ --------------------------
 ```
 
-### USBケーブルでの接続
+### Connecting via USB Cable
 
-無線LANが何らかの理由で使用できない場合は USBケーブルで接続することもできます。
+If wireless LAN cannot be used for some reason, you can connect via USB cable.
 
-EV3 と PCを付属の USBケーブルで接続してください。
+Connect the EV3 and PC using the supplied USB cable.
 
 <div align="center"><a href="s_DSC00467.JPG"><img src="s_DSC00467.JPG" width="40%;"></a></div>
 
-ev3dev の初期画面で Wireless and Networks を選択してください。
-次に All Network Connections を選択します。
+From the ev3dev home screen, select **Wireless and Networks**.
 
-```
+Next, select **All Network Connections**.
+
+```text
  ------------------------------
       Wireless and Network
  ------------------------------
@@ -183,9 +186,9 @@ ev3dev の初期画面で Wireless and Networks を選択してください。
  ------------------------------
 ```
 
-Wiredを選択します。
+Select **Wired**.
 
-```
+```text
  ------------------------------
       All Network Connections
  ------------------------------
@@ -193,9 +196,9 @@ Wiredを選択します。
  ------------------------------
 ```
 
-Connectを選択すると接続します。
+Select **Connect** to establish the connection.
 
-```
+```text
  ------------------------------
              Wired
  ------------------------------
@@ -209,13 +212,15 @@ Connectを選択すると接続します。
  ------------------------------
 ```
 
-#### テザリングの設定
-EV3 で USBテザリングの設定を行う手順を説明します。
-まず ev3dev の初期画面で Wireless and Networks を選択してください。
+#### Configuring USB Tethering
 
-次に Tehering を選択します。
+This section explains how to configure USB tethering on the EV3.
 
-```
+First, select **Wireless and Networks** from the ev3dev home screen.
+
+Next, select **Tethering**.
+
+```text
  ------------------------------
       Wireless and Network
  ------------------------------
@@ -229,10 +234,9 @@ EV3 で USBテザリングの設定を行う手順を説明します。
  ------------------------------
 ```
 
-Gadget をオンにすれば完了です。
+Enable **Gadget**.
 
-
-```
+```text
  ------------------------------
            Tethering
  ------------------------------
@@ -242,10 +246,11 @@ Gadget をオンにすれば完了です。
  ------------------------------
 ```
 
+### Logging In
 
-### ログイン
+Connect to the EV3 via SSH using the assigned IP address.
 
-EV3 に割り当てられた IPアドレスに sshで接続します。デフォルトでは、ev3dev は以下の ID とパスワードが設定されています。
+By default, ev3dev uses the following credentials:
 
 <table class="table-alt">
   <tr>
@@ -258,188 +263,190 @@ EV3 に割り当てられた IPアドレスに sshで接続します。デフォ
   </tr>
 </table>
 
-Windows では、TeraTerm などのターミナルソフトウェアを利用します。
-Linux などでは、ターミナル画面から、
+On Windows, use terminal software such as Tera Term.
 
-```
- $ ssh robot@<IPアドレス>
+On Linux, connect from a terminal using:
+
+```bash
+$ ssh robot@<IP address>
 ```
 
-として、ログインします。ログインすると、以下のような画面が表示されるはずです。
+After logging in, you should see a screen similar to the following:
 
-```
-              _____     _
-    _____   _|___ /  __| | _____   __
-   / _ \ \ / / |_ \ / _` |/ _ \ \ / /
-  |  __/\ V / ___) | (_| |  __/\ V /
-   \___| \_/ |____/ \__,_|\___| \_/
+```text
+             _____     _
+   _____   _|___ /  __| | _____   __
+  / _ \ \ / / |_ \ / _` |/ _ \ \ / /
+ |  __/\ V / ___) | (_| |  __/\ V /
+  \___| \_/ |____/ \__,_|\___| \_/
 
  Debian jessie on LEGO MINDSTORMS EV3!
- 
+
  The programs included with the Debian GNU/Linux system are free software;
  the exact distribution terms for each program are described in the
  individual files in /usr/share/doc/*/copyright.
- 
+
  Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
  permitted by applicable law.
  Last login: Tue Aug  4 01:34:12 2015 from openrtm.org
  root@ev3dev:~#
 ```
 
-### TeraTerm のインストール(参考)
+### Installing Tera Term (Reference)
 
-Windows から EV3 に ssh 経由でログインするためには、ssh クライアントをインストールする必要があります。
-Windows で利用可能なクライアントは多数ありますが、ここでは Tera Term を紹介します。
+To log in to the EV3 from Windows via SSH, an SSH client must be installed.
+
+Many SSH clients are available for Windows; here we introduce Tera Term.
 
 - [Tera Term](http://sourceforge.jp/projects/ttssh2/)
 
-こちらから、TeraTerm をダウンロード、インストールしてください。
+Download and install Tera Term from the link above.
 
 <div align="center"><a href="teraterm_connect.png"><img src="teraterm_connect.png" width="60%;"></a></div>
-<div align="center"><strong>TeraTerm による接続</strong></div>
+<div align="center"><strong>Connecting with Tera Term</strong></div>
 
-TeraTerm をインストール後、起動すると接続ダイアログが現れるので、先ほど設定したホスト名+**.local** を「ホスト」のテキストボックスに入力しOKを押します。
+After installation, start Tera Term. The connection dialog will appear.
 
+Enter the hostname configured earlier followed by **.local** in the Host field and click OK.
 
-## 設定
+## Configuration
 
-### 無線LANの設定
+### Wireless LAN Configuration
 
-上記で行ったEV3 の無線LAN設定は、再起動すると消えてしまいます。起動後に自動で無線LAN に接続するためには、EV3 にログインして無線LANの接続設定を行う必要があります。
+The wireless LAN settings configured above will be lost after rebooting.
 
-### /etc/wpa_supplicant/wpa_supplicant.conf の編集
+To automatically reconnect after startup, log in to the EV3 and configure the wireless LAN connection.
 
-次に、無線LAN の ESSID とキーを登録します。
+### Editing /etc/wpa_supplicant/wpa_supplicant.conf
 
-```
- # cd /etc/wpa_supplicant
- # wpa_passphrase ESSID pass >> wpa_supplicant.conf
-```
+Register the ESSID and key for your wireless LAN.
 
-SSID には無線LANの ESSID、pass には無線LANのキーを入力します。リダイレクトの際、**>** ではなく **>>** (追記)を使用するよう注意してください。
-結果は以下のようになっていると思います。
-
-```
- ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
- update_config=1
- network={
-         ssid="OpenRTM"
-         #psk="4332221111"
-         psk=142914b76be167767055ff945898baaaf83c42b3ad3b99afb0ae531e8fb15e5e
- }
+```bash
+# cd /etc/wpa_supplicant
+# wpa_passphrase ESSID pass >> wpa_supplicant.conf
 ```
 
-通常は、これだけで接続できるはずです。ただし、無線LANアクセスポイントの設定によっては、追加の設定が必要になるかもしれません。
-以下に、一例を示します。
+Replace `ESSID` with your wireless LAN ESSID and `pass` with the network key.
 
-```
- ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
- update_config=1
- network={
-         ssid="OpenRTM"
-         proto=WPA2
-         key_mgmt=WPA-PSK
-         pairwise=TKIP CCMP
-         group=TKIP CCMP
-         #psk="4332221111"
-         psk=142914b76be167767055ff945898baaaf83c42b3ad3b99afb0ae531e8fb15e5e
- }
-```
+Be careful to use **>>** (append) rather than **>** (overwrite).
 
-最後に、インターフェースを初期化します。
+The resulting file should look similar to this:
 
-```
- # ifdown wlan0 ; ifup wlan0
- Internet Systems Consortium DHCP Client 4.2.2
- Copyright 2004-2011 Internet Systems Consortium.
- All rights reserved.
- For info, please visit https://www.isc.org/software/dhcp/
-  : 中略
- DHCPREQUEST on wlan0 to 255.255.255.255 port 67
- DHCPOFFER from 192.168.11.1
- DHCPACK from 192.168.11.1
- bound to 192.168.11.26 -- renewal in 34810 seconds.
+```text
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network={
+        ssid="OpenRTM"
+        #psk="4332221111"
+        psk=142914b76be167767055ff945898baaaf83c42b3ad3b99afb0ae531e8fb15e5e
+}
 ```
 
-実際には、いったん無線LANインターフェースがOFFになるので、このような表示は見えません。また、場合によっては、ssh 接続が切断される可能性があるので、その場合は、再度接続してみてください。
+Normally this is sufficient, but depending on your wireless access point configuration, additional settings may be required.
 
-最後に、設定が正しく行われているか確認するため、再起動してみます。
+Example:
 
-```
- # reboot
-```
-
-EV3 がシャットダウンされ、再び起動画面が表示されます。しばらくすると、初期画面が表示され、設定が正しく行われていれば、画面の左上に IPアドレスが表示されるはずです。
-
-### ホスト名でリモート接続する
-
-EV3 に ssh でリモートログインで操作する場合、上記のように無線LAN接続後、画面左上に表示される IPアドレスにssh接続することができます。
-IPアドレスは DHCP で割り当てられているので、接続の度に代わる可能性があり、そのたびに異なる IPアドレスで接続しなければならないので不便です。
-
-ev3dev には avahi という Bonjour互換のサービスがインストールしてあります。
-Bonjour は Apple が提唱するネットワーク上のサービスを自動的に検索して利用できるようにするためのサービスです。
-avahiを使うと、DHCP で IPアドレスを割り振っている EV3 に対してもホスト名でアクセスすることができるようになります。
-
-#### ホスト名の設定
-
-ev3dev ではデフォルトで **ev3dev** というホスト名が設定してあります。他の avahi や Bonjour がインストールしてあるマシンからは、**ev3dev.local** という **.local** がついたホスト名でアクセスできます。
-
-EV3 が複数台ネットワーク上にある場合には、他のホスト名と衝突しないホスト名を選び設定する必要があります。
-
-```
- $ sudo vi /etc/hostname
+```text
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network={
+        ssid="OpenRTM"
+        proto=WPA2
+        key_mgmt=WPA-PSK
+        pairwise=TKIP CCMP
+        group=TKIP CCMP
+        #psk="4332221111"
+        psk=142914b76be167767055ff945898baaaf83c42b3ad3b99afb0ae531e8fb15e5e
+}
 ```
 
-/etc/hostname の1行目にホスト名を記載します。デフォルトでは ev3dev となっていますので、好みの名前に設定してください。
-。
-### avahi-daemon のインストール
+Finally, reinitialize the interface:
 
-Linux ホストから EV3 へアクセスする場合、avahiというサービスをインストールする必要があります。
-最近のLinuxディストリビューションでは、たいていデフォルトでこのサービスがインストールされていますが、もしインストールされていない場合は、以下のように avahi デーモンをインストールします。(debian系のディストリビューションの場合)
-
-```
- $ sudo apt-get update
- $ sudo apt-get install avahi-daemon
+```bash
+# ifdown wlan0 ; ifup wlan0
 ```
 
-EV に対して ping を打ってみます。ホスト名の後に .local を付けた名前を使います。
+To verify the configuration, reboot the EV3:
 
+```bash
+# reboot
 ```
- $ ping ev3dev.local
+
+After rebooting, if everything is configured correctly, the IP address should appear in the upper-left corner of the screen.
+
+### Remote Access Using a Hostname
+
+You can connect to the EV3 using the IP address displayed in the upper-left corner after connecting to a wireless LAN.
+
+However, because the IP address is assigned by DHCP, it may change each time you connect.
+
+ev3dev includes **avahi**, a Bonjour-compatible service.
+
+Bonjour is a service proposed by Apple that automatically discovers services on a network.
+
+Using avahi, you can access an EV3 with a dynamically assigned IP address by hostname.
+
+#### Setting the Hostname
+
+By default, ev3dev uses the hostname **ev3dev**.
+
+Other machines with avahi or Bonjour installed can access it using the hostname **ev3dev.local**.
+
+If multiple EV3 units are connected to the same network, configure unique hostnames.
+
+```bash
+$ sudo vi /etc/hostname
 ```
 
-これで ping が返ってくれば、avahi がほぼ正しく設定されていることになります。
+Enter the hostname on the first line of `/etc/hostname`.
 
+### Installing avahi-daemon
 
-### Bonjour のインストール (Windowsのみ)
+To access the EV3 from a Linux host, avahi must be installed.
 
-PC から EV3 にアクセスするためには、PC側にも avahi か Bonjour がインストールされている必要があります。
+Most modern Linux distributions already include it, but if not, install it as follows (for Debian-based distributions):
 
-Windows ではデフォルトでは Bonjour はインストールされていません。
-最も簡単に Bonjour を導入する方法は [iTunes](http://www.apple.com/jp/itunes/download/) をインストールすることです。
+```bash
+$ sudo apt-get update
+$ sudo apt-get install avahi-daemon
+```
 
-- [iTunesダウンロード](http://www.apple.com/jp/itunes/download/)
+Test the connection by pinging the EV3:
 
-どうしても iTunes をインストールしたくない場合は、アーカイバアプリケーションなどで、ダウンロードした iTunesSetup.exe を展開すると BonjourSetup.exe を抽出することもできます。
+```bash
+$ ping ev3dev.local
+```
 
-また、以下の Apple Bonjour 印刷サービスにも Bonjour が同梱されています。(iTunesに同梱されているものよりバージョンが若干古いようです。)
+If you receive replies, avahi is configured correctly.
+
+### Installing Bonjour (Windows Only)
+
+To access the EV3 from a PC, avahi or Bonjour must also be installed on the PC side.
+
+Bonjour is not installed by default on Windows.
+
+The easiest way to install Bonjour is by installing iTunes.
+
+- [Download iTunes](http://www.apple.com/jp/itunes/download/)
+
+If you do not want to install iTunes, you can extract `BonjourSetup.exe` from the downloaded `iTunesSetup.exe` using an archive utility.
+
+Bonjour is also included in Apple's Bonjour Print Services package.
 
 - [Apple Bonjour](http://www.apple.com/jp/support/bonjour/)
-  - [Bonjour 印刷サービス (v2.0.2.0)](http://support.apple.com/kb/DL999)
+  - [Bonjour Print Services (v2.0.2.0)](http://support.apple.com/kb/DL999)
 
-現在 Applie では Bonjour for Windows 単体としては配布は行なっていませんが、かつて配布していたものを再配布しているサイトも幾つかあります。(ただし、古いバージョンしか入手できないようです。)
-以下は Appleサイト以外の Bonjourダウンロードサイトです。自己責任でご利用ください。
+Apple no longer distributes Bonjour for Windows as a standalone package, but some third-party sites redistribute older versions. Use them at your own risk.
 
 - [BonjourSetup.exe (v1.0.6.2)](http://www.download3k.com/Install-Bonjour.html)
 - [Bonjour64Setup.exe (v1.0.6.2)](http://download.techworld.com/760/apple-bonjour-for-windows-106-64-bit/)
-- [Apple Bonjour SDK (Apple developer へのログインが必要)](https://developer.apple.com/downloads/index.action?q=Bonjour%20SDK%20for%20Windows)
+- [Apple Bonjour SDK (requires Apple Developer login)](https://developer.apple.com/downloads/index.action?q=Bonjour%20SDK%20for%20Windows)
 
-#### Bonjour がうまく機能しない場合
+#### If Bonjour Does Not Work Properly
 
-ファイヤウォールが動作している場合、Bonjour がうまく機能しないことがあります。
-その場合、UDPポート5353を開放するかファイヤウォールをOFFにしてください。
+If a firewall is enabled, Bonjour may not function correctly.
 
-- [ファイアウォールの設定が原因で Bonjour for Windows が動作しない](http://support.apple.com/kb/TS2235?viewlocale=ja_JP)
+In that case, open UDP port 5353 or disable the firewall.
 
+- [Bonjour for Windows does not work because of firewall settings](http://support.apple.com/kb/TS2235?viewlocale=ja_JP)
 
--------jp page!!-------

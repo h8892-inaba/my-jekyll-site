@@ -1,222 +1,203 @@
 ---
 layout: page
-title: EV3用RTCの作成 (Python編)
+title: Creating RTCs for EV3 (Python Edition)
 ---
--------jp page!!-------
 
 init
-<!-- Title: EV3用RTCの作成 (Python編) -->
+<!-- Title: Creating RTCs for EV3 (Python Edition) -->
 <!-- -*- pukiwiki-edit -*- -->
-<!-- * EV3用 RTC の作成 (Python編) -->
+<!-- * Creating RTCs for EV3 (Python Edition) -->
 #contents
 
-## 移動ロボットの組み立て
+## Assembling the Mobile Robot
 
-EV3 の標準セットを購入すると、移動ロボット (Educator Vehicle) の作成方法のマニュアルが1冊ついてくるはずです。
-なければ、以下の URL からダウンロードすることができます。この移動ロボットを例にとり、移動ロボットRTC を作成してみます。
+When you purchase the standard EV3 kit, it should include a manual describing how to build a mobile robot (Educator Vehicle).
+
+If you do not have the manual, you can download it from the following URL. In this tutorial, we will use this mobile robot as an example to create a mobile robot RTC.
 
 - [Educator Vehicle](http://robotsquare.com/wp-content/uploads/2013/10/45544_educator.pdf)
 
-まずは、このマニュアルに従って、移動ロボット (Educator Vehicle) を組み立てます。
+First, assemble the mobile robot (Educator Vehicle) according to the manual.
 
-それぞれのモーター、センサーはそれぞれ以下のように取り付けます。
+Connect the motors and sensors as follows:
 
 <table class="table-alt">
   <tr>
-    <td>モーター右</td>
-    <td>ポート C</td>
+    <td>Right Motor</td>
+    <td>Port C</td>
   </tr>
   <tr>
-    <td>モーター左</td>
-    <td>ポート B</td>
+    <td>Left Motor</td>
+    <td>Port B</td>
   </tr>
   <tr>
-    <td>モーター(M)</td>
-    <td>ポートA</td>
+    <td>Motor (M)</td>
+    <td>Port A</td>
   </tr>
   <tr>
-    <td>タッチセンサー右</td>
-    <td>ポート 3</td>
+    <td>Right Touch Sensor</td>
+    <td>Port 3</td>
   </tr>
   <tr>
-    <td>タッチセンサー左</td>
-    <td>ポート 1</td>
+    <td>Left Touch Sensor</td>
+    <td>Port 1</td>
   </tr>
   <tr>
-    <td>超音波センサー</td>
-    <td>ポート 4</td>
+    <td>Ultrasonic Sensor</td>
+    <td>Port 4</td>
   </tr>
   <tr>
-    <td>ジャイロセンサー</td>
-    <td>ポート 2</td>
+    <td>Gyro Sensor</td>
+    <td>Port 2</td>
   </tr>
 </table>
 
+## Mobile Robot Kinematics
 
+The component described above receives a two-dimensional velocity command as input. However, to actually control the motors, motor angular velocity commands must be calculated and sent to the motors.
 
-## 移動ロボットの運動学
-
-さて、上記のコンポーネントは指令値として2次元速度指令を受け取りますが、実際にモータを制御する際には、モーターの角速度指令値を計算しモーターに命令しなければなりません。
-
-移動ロボットの運動学については、東北学院大学の熊谷先生のページが参考になります。
+For an introduction to mobile robot kinematics, the following page by Professor Kumagai of Tohoku Gakuin University is helpful:
 
 - [http://www.mech.tohoku-gakuin.ac.jp/rde/contents/course/robotics/wheelrobot.html](http://www.mech.tohoku-gakuin.ac.jp/rde/contents/course/robotics/wheelrobot.html)
 
-座標系としては、自律移動機能共通インターフェース仕様書に従って、
+Following the Common Interface Specification for Autonomous Mobile Functions,
 
 - [http://openrtm.org/openrtm/ja/project/Recommendation_CommonIF](http://openrtm.org/openrtm/ja/project/Recommendation_CommonIF)
 
-ロボット進行方向をX軸とした右手系を想定する。速度指令は座標系にならって、(v_x、v_y、v_a)とする。独立二輪駆動式の移動ロボットなので、v_y は常に0となり、実質的に v_x および v_a を指定することになる。
+we assume a right-handed coordinate system with the robot's forward direction as the X-axis.
 
+Velocity commands are represented as `(v_x, v_y, v_a)` according to this coordinate system. Since this is a differential-drive mobile robot, `v_y` is always 0, so only `v_x` and `v_a` need to be specified.
 
-さて、車輪の角速度を <a href="math16.png"><img src="math16.png" width="2%;"></a> , <a href="math17.png"><img src="math17.png" width="2%;"></a>として、車輪の半径を r とすると、各車輪の接地点での速度 v_r、v_l はそれぞれ
+Let the angular velocities of the right and left wheels be <a href="math16.png"><img src="math16.png" width="2%;"></a> and <a href="math17.png"><img src="math17.png" width="2%;"></a>, respectively, and let the wheel radius be `r`. The linear velocities at the wheel-ground contact points, `v_r` and `v_l`, are:
 
-<!-- v_r = rω_r -->
-<!-- v_l = rω_l -->
 <br>
 <div align="center"><a href="math3.png"><img src="math3.png" width="10%;"></a></div>
 <div align="center"><a href="math4.png"><img src="math4.png" width="10%;"></a></div>
 <br>
 
-となる。また、回転中心からロボット中心の距離を ρ とすると、以下の式が成り立つ。
+Let `ρ` be the distance from the center of rotation to the center of the robot. Then:
 
-<!-- vx = ρva -->
 <br>
 <div align="center"><a href="math5.png"><img src="math5.png" width="10%;"></a></div>
 <br>
 
-一方、中心から車輪までの距離(トレッドの1/2)を d とすると、
+On the other hand, if `d` is half the distance between the wheels (half the tread width), then:
 
-<!-- v_r = (ρ + d)va -->
-<!-- v_l = (ρ - d)va -->
 <br>
 <div align="center"><a href="math0.png"><img src="math0.png" width="10%;"></a></div>
 <div align="center"><a href="math1.png"><img src="math1.png" width="10%;"></a></div>
-<!-- #ref(http://latex.codecogs.com/png.latex?v_{r} = (\rho + d) v_{a},nolink) -->
-<!-- #ref(http://latex.codecogs.com/png.latex?v_{l} = (\rho - d) v_{a},nolink) -->
 <br>
 
-となる。以上の式から、速度指令(v_x、v_y、v_a)の時に実際に与えるべき左右のモーターの角速度は以下の通りになります。
+From these equations, the angular velocities that should be applied to the left and right motors for a velocity command `(v_x, v_y, v_a)` are:
 
-<!-- ω_r  = (vx + va d) / r -->
-<!-- ω_l  = (vx - va d) / r -->
 <br>
 <div align="center"><a href="math6.png"><img src="math6.png" width="10%;"></a></div>
 <div align="center"><a href="math7.png"><img src="math7.png" width="10%;"></a></div>
 <br>
 
-Educator Vehicle の車輪の直径 (2r)、トレッド (2d) はそれぞれ
+For the Educator Vehicle, the wheel diameter `(2r)` and tread width `(2d)` are:
 
 <table class="table-alt">
   <tr>
-    <td>車輪の直径 2r</td>
-    <td>56mm (0.056m)</td>
+    <td>Wheel Diameter (2r)</td>
+    <td>56 mm (0.056 m)</td>
   </tr>
   <tr>
-    <td>車輪の直径 r</td>
-    <td>28mm (0.028m)</td>
+    <td>Wheel Radius (r)</td>
+    <td>28 mm (0.028 m)</td>
   </tr>
   <tr>
-    <td>トレッド幅 2d</td>
-    <td>118.5mm (0.1185m)</td>
+    <td>Tread Width (2d)</td>
+    <td>118.5 mm (0.1185 m)</td>
   </tr>
   <tr>
-    <td>トレッド幅 d</td>
-    <td>59.25mm (0.05925m)</td>
+    <td>Half Tread Width (d)</td>
+    <td>59.25 mm (0.05925 m)</td>
   </tr>
   <tr>
-    <td>車輪の幅</td>
-    <td>28.5mm (0.0285m)</td>
+    <td>Wheel Width</td>
+    <td>28.5 mm (0.0285 m)</td>
   </tr>
 </table>
 
-なので、
-<!-- ω_r  = (vx + 0.05 va) / 0.02 -->
-<!-- ω_l  = (vx - 0.05 va) / 0.02 -->
+Therefore:
+
 <br>
 <div align="center"><a href="math8.png"><img src="math8.png" width="10%;"></a></div>
 <div align="center"><a href="math9.png"><img src="math9.png" width="10%;"></a></div>
 <br>
 
-となる。
+## Self-Localization (Odometry)
 
-## 自己位置推定（オドメトリ）
+Next, let us consider how to estimate the robot's position.
 
-次に、ロボットの自己位置同定の方法について考えます。
-ロボットの移動速度・角速度を積分することで任意の時点の位置・姿勢を得ることができます。速度 v_x、角速度 v_a とすると、(x、y、θ) の微小変位と v_x、v_a との関係を直線近似すると、
+By integrating the robot's linear and angular velocities, the position and orientation at any time can be obtained. Let the linear velocity be `v_x` and the angular velocity be `v_a`. Using a linear approximation, the relationship between the infinitesimal displacement `(x, y, θ)` and `(v_x, v_a)` is:
 
-<!-- dx/dt = vx cosθ -->
-<!-- dy/dt = vx sinθ -->
-<!-- dθ/dt = va -->
 <br>
 <div align="center"><a href="math10.png"><img src="math10.png" width="10%;"></a></div>
 <div align="center"><a href="math11.png"><img src="math11.png" width="10%;"></a></div>
 <div align="center"><a href="math12.png"><img src="math12.png" width="10%;"></a></div>
 <br>
 
-となる。(より厳密には円弧近似する方法もあるが、ここでは簡単に直線近似とした。)
-これを実際のロボット制御時に、計算機上で求める場合、サンプリング周期 Δt [s] として、
+(A more accurate method would use arc approximation, but for simplicity we use linear approximation here.)
 
-<!-- x_i+1 = x_i + vx_i cosθΔt -->
-<!-- y_i+1 = y_i + vx_i sinθΔt -->
-<!-- θ_i+1 = θ_i + va_i Δt -->
+When implementing this on a computer with a sampling period `Δt [s]`, the equations become:
+
 <div align="center"><a href="math13.png"><img src="math13.png" width="100;"></a></div>
 <div align="center"><a href="math14.png"><img src="math14.png" width="100;"></a></div>
 <div align="center"><a href="math15.png"><img src="math15.png" width="100;"></a></div>
 
-のように求められる。
+## Creating an RTC Skeleton
 
-## RTC のひな形作成
-## 作成する RTC の設計
+## Designing the RTC
 
-作成する RTC を設計します。
+Now we design the RTC to be created.
 
-
-作成する RTC の仕様をいかに示します。RTCBuilder で必要事項を入力し、ひな形コードを生成します。
+The specifications of the RTC are shown below. Enter the required information in RTCBuilder and generate the skeleton code.
 
 <table class="table-alt">
   <tr>
-    <td colspan="3" style="text-align: center;"><strong>基本タブ</strong></td>
+    <td colspan="3" style="text-align: center;"><strong>Basic Tab</strong></td>
   </tr>
   <tr>
-    <td style="text-align: center;"><strong>プロファイル名</strong></td>
-    <td colspan="2" style="text-align: center;"><strong>名称・指定</strong></td>
+    <td style="text-align: center;"><strong>Profile Item</strong></td>
+    <td colspan="2" style="text-align: center;"><strong>Name / Setting</strong></td>
   </tr>
   <tr>
-    <td>モジュール名</td>
+    <td>Module Name</td>
     <td colspan="2" style="text-align: center;">EducatorVehicle</td>
   </tr>
   <tr>
-    <td>バージョン</td>
-    <td colspan="2" style="text-align: center;">任意</td>
+    <td>Version</td>
+    <td colspan="2" style="text-align: center;">Any</td>
   </tr>
   <tr>
-    <td>ベンダ名</td>
-    <td colspan="2" style="text-align: center;">任意</td>
+    <td>Vendor</td>
+    <td colspan="2" style="text-align: center;">Any</td>
   </tr>
   <tr>
-    <td>カテゴリ</td>
+    <td>Category</td>
     <td colspan="2" style="text-align: center;">Mobilerobot</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;"><strong>アクティビティ</strong></td>
+    <td colspan="3" style="text-align: center;"><strong>Activity</strong></td>
   </tr>
   <tr>
-    <td>有効アクション</td>
-    <td colspan="2" style="text-align; ">onInitialize、onActivated、onDeactivated、onExecute</td>
+    <td>Enabled Actions</td>
+    <td colspan="2" style="text-align; ">onInitialize, onActivated, onDeactivated, onExecute</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;"><strong>データポート (InPort)</strong></td>
+    <td colspan="3" style="text-align: center;"><strong>Data Ports (InPort)</strong></td>
   </tr>
   <tr>
-    <td><strong>ポート名</strong></td>
-    <td><strong>型</strong></td>
-    <td><strong>意味</strong></td>
+    <td><strong>Port Name</strong></td>
+    <td><strong>Type</strong></td>
+    <td><strong>Description</strong></td>
   </tr>
   <tr>
     <td>velocity2D</td>
     <td>RTC::TimedVelocity2D</td>
-    <td>速度指令 (v_x、v_y、v_θ) [m/s、m/s、rad/s]</td>
+    <td>Velocity command (v_x, v_y, v_θ) [m/s, m/s, rad/s]</td>
   </tr>
   <tr>
     <td>angle</td>
@@ -224,58 +205,54 @@ Educator Vehicle の車輪の直径 (2r)、トレッド (2d) はそれぞれ
     <td></td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;"><strong>データポート (OutPort)</strong></td>
+    <td colspan="3" style="text-align: center;"><strong>Data Ports (OutPort)</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
-    <td>型</td>
-    <td>意味</td>
+    <td>Port Name</td>
+    <td>Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>odometry</td>
     <td>RTC::TimedPose2D</td>
-    <td>現在の位置・姿勢（角度） (x、y、θ) [m、m、rad]</td>
+    <td>Current position and orientation (x, y, θ) [m, m, rad]</td>
   </tr>
   <tr>
     <td>ultrasonic</td>
     <td>RTC::RangeData</td>
-    <td>超音波センサーをレンジセンサーと仮定し、要素1の距離データを格納</td>
+    <td>Stores the ultrasonic sensor measurement as range sensor distance data in element 1</td>
   </tr>
   <tr>
     <td>gyro</td>
     <td>RTC::TimedDouble</td>
-    <td>ジャイロセンサーを TimedDouble [rad] にて出力</td>
+    <td>Outputs gyro sensor values as TimedDouble [rad]</td>
   </tr>
   <tr>
     <td>color</td>
     <td>RTC::TimedString</td>
-    <td>カラーセンサーの値を色名 (none、black、white、blue、green、red、yellow、brown) で出力</td>
+    <td>Outputs color sensor values as color names (none, black, white, blue, green, red, yellow, brown)</td>
   </tr>
   <tr>
     <td>touch</td>
     <td>RTC::TimedBooleanSeq</td>
-    <td>タッチセンサーの値をBoolean[2] で出力</td>
+    <td>Outputs touch sensor values as Boolean[2]</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;"><strong>コンフィギュレーション</strong></td>
+    <td colspan="3" style="text-align: center;"><strong>Configuration</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
-    <td>型</td>
-    <td>意味</td>
+    <td>Parameter Name</td>
+    <td>Type</td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>wheelRadius</td>
     <td>double</td>
-    <td>タイヤの半径 [m]</td>
+    <td>Wheel radius [m]</td>
   </tr>
   <tr>
     <td>wheelDistance</td>
     <td>double</td>
-    <td>タイヤ間距離の1/2 [m]</td>
+    <td>Half the distance between the wheels [m]</td>
   </tr>
 </table>
-
-
-
--------jp page!!-------
