@@ -1,8 +1,3 @@
----
-layout: page
-title: チュートリアル(Raspberry Pi Mouse、C++、Ubuntu、強化月間用)
----
-
 <!-- Title: チュートリアル(Raspberry Pi Mouse、C++、Ubuntu、強化月間用) -->
 #contents
 
@@ -10,7 +5,7 @@ title: チュートリアル(Raspberry Pi Mouse、C++、Ubuntu、強化月間用
 
 このページではシミュレーター上の Raspberry Pi マウスを操作するためのコンポーネントの作成手順を説明します。
 
-<div align="center"><a href="raspimouse2.png"><img src="raspimouse2.png" width="70%;"></a></div>
+<div align="center"><a href="raspimouse2.png"><img src="raspimouse2.png" width="100;"></a></div>
 
 
 
@@ -48,13 +43,14 @@ OpenGL が動作すれば動くので、大抵の環境で動作するはずで�
 
 Raspberry Piマウスはアールティが販売している独立二輪駆動型の移動ロボットです。
 
-<div align="center"><a href="raspi_gaiyou.jpg"><img src="raspi_gaiyou.jpg" width="70%;"></a></div>
+<div align="center"><a href="raspi_gaiyou.jpg"><img src="raspi_gaiyou.jpg" width="100;"></a></div>
 
 
 
 <table class="table-alt">
   <tr>
-    <th colspan="2" style="text-align: center;">ラズパイマウスの仕様</th>
+    <th>></th>
+    <th>CENTER:ラズパイマウスの仕様</th>
   </tr>
   <tr>
     <td>CPU</td>
@@ -207,7 +203,8 @@ RobotController は目標速度を出力するアウトポート、センサー�
     <th>RobotController</th>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;">InPort</td>
+    <td>></td>
+    <td>CENTER: InPort</td>
   </tr>
   <tr>
     <td>ポート名</td>
@@ -222,7 +219,8 @@ RobotController は目標速度を出力するアウトポート、センサー�
     <td>センサー値</td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;">OutPort</td>
+    <td>></td>
+    <td>CENTER: OutPort</td>
   </tr>
   <tr>
     <td>ポート名</td>
@@ -237,7 +235,8 @@ RobotController は目標速度を出力するアウトポート、センサー�
     <td>目標速度</td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;">Configuration</td>
+    <td>></td>
+    <td>CENTER: Configuration</td>
   </tr>
   <tr>
     <td>パラメーター名</td>
@@ -268,7 +267,8 @@ RobotController は目標速度を出力するアウトポート、センサー�
     <td>直進速度の設定</td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;">Configuration</td>
+    <td>></td>
+    <td>CENTER: Configuration</td>
   </tr>
   <tr>
     <td>パラメーター名</td>
@@ -299,7 +299,8 @@ RobotController は目標速度を出力するアウトポート、センサー�
     <td>回転速度の設定</td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;">Configuration</td>
+    <td>></td>
+    <td>CENTER: Configuration</td>
   </tr>
   <tr>
     <td>パラメーター名</td>
@@ -364,7 +365,7 @@ Raspberry Pi マウスの距離センサーのデータは物体との距離が�
 
 <br>
 
-<div align="center"><a href="rpm14_graph.png"><img src="rpm14_graph.png" width="70%;"></a></div>
+<div align="center"><a href="rpm14_graph.png"><img src="rpm14_graph.png" width="100;"></a></div>
 <br>
 
 
@@ -488,20 +489,20 @@ RobotController コンポーネントを作成するために、RTC Builder で�
 
 
 
-<div align="center"><a href="CreateProject_0.png"><img src="CreateProject_0.png" width="70%;"></a></div>
+<div align="center"><a href="CreateProject_0.png"><img src="CreateProject_0.png" width="100;"></a></div>
 <div align="center"><strong>RTC Builder 用プロジェクトの作成</strong></div>
 
 ｢プロジェクト名｣欄に作成するプロジェクト名 (ここでは **RobotController**) を入力して [終了] をクリックします。
 
 
 
-<div align="center"><a href="RT-Component-BuilderProject_1.png"><img src="RT-Component-BuilderProject_1.png" width="70%;"></a></div>
+<div align="center"><a href="RT-Component-BuilderProject_1.png"><img src="RT-Component-BuilderProject_1.png" width="100;"></a></div>
 
 指定した名称のプロジェクトが生成され、パッケージエクスプローラ内に追加されます。
 
 
 
-<div align="center"><a href="PackageExplolrer_1.png"><img src="PackageExplolrer_1.png" width="70%;"></a></div>
+<div align="center"><a href="PackageExplolrer_1.png"><img src="PackageExplolrer_1.png" width="100;"></a></div>
 
 生成したプロジェクト内には、デフォルト値が設定された RTC プロファイル XML(RTC.xml) が自動的に生成されます。
 
@@ -511,7 +512,7 @@ RTC.xmlが生成された時点で、このプロジェクトに関連付けら�
 もし起動しない場合はパッケージエクスプローラーの RTC.xml をダブルクリックしてください。
 
 
-<div align="center"><a href="Open_RTCBuilder_0.png"><img src="Open_RTCBuilder_0.png" width="70%;"></a></div>
+<div align="center"><a href="Open_RTCBuilder_0.png"><img src="Open_RTCBuilder_0.png" width="100;"></a></div>
 
 
 
@@ -676,11 +677,11 @@ CMake を利用してビルド環境の Configure を行います。
 <table class="table-alt">
   <tr>
     <th>**Where is the soruce code**</th>
-    <th><code>/home/ユーザー名/RobotController</code></th>
+    <th>/home/ユーザー名/RobotController</th>
   </tr>
   <tr>
     <td>**Where to build the binaries**</td>
-    <td><code>/home/ユーザー名/RobotController\build</code></td>
+    <td>/home/ユーザー名/RobotController\build</td>
   </tr>
 </table>
 
@@ -924,7 +925,7 @@ RTSystemEditor の上部にあります [All Activate] というアイコンを�
 
 <br>
 
-<div align="center"><a href="RTSE_Configuration_10.png"><img src="RTSE_Configuration_10.png" width="70%;"></a></div>
+<div align="center"><a href="RTSE_Configuration_10.png"><img src="RTSE_Configuration_10.png" width="100;"></a></div>
 <br>
 
 スライダーを操作してシミュレーター上の Raspberry Pi マウスの操作ができるかを確認してください。
@@ -954,7 +955,7 @@ Raspberry PiマウスにはRaspberry Piの電源スイッチとモーターの�
 
 <br>
 
-<div align="center"><a href="rpm8_raspi.png"><img src="rpm8_raspi.png" width="70%;"></a></div>
+<div align="center"><a href="rpm8_raspi.png"><img src="rpm8_raspi.png" width="100;"></a></div>
 
 <br>
 
@@ -963,7 +964,7 @@ Raspberry PiマウスにはRaspberry Piの電源スイッチとモーターの�
 
 <br>
 
-<div align="center"><a href="rpm9_raspi.png"><img src="rpm9_raspi.png" width="70%;"></a></div>
+<div align="center"><a href="rpm9_raspi.png"><img src="rpm9_raspi.png" width="100;"></a></div>
 
 <br>
 
@@ -976,7 +977,7 @@ Raspberry Piの電源を切る場合は、電源スイッチから直接オフ�
 
 <br>
 
-<div align="center"><a href="rpm8.png"><img src="rpm8.png" width="70%;"></a></div>
+<div align="center"><a href="rpm8.png"><img src="rpm8.png" width="100;"></a></div>
 <br>
 
 
@@ -1005,7 +1006,7 @@ SSID、パスワードは Rasoberry Pi マウスに貼り付けたシールに�
 
 すると以下の2つの RTC が見えるようになります。
 
-<div align="center"><a href="tutorial_raspimouse2.png"><img src="tutorial_raspimouse2.png" width="70%;"></a></div>
+<div align="center"><a href="tutorial_raspimouse2.png"><img src="tutorial_raspimouse2.png" width="100;"></a></div>
 
 - [RaspberryPiMouseRTC](/ja/node/6015#toc0)
 - [RaspberryPiMouseController_DistanceSensor](/ja/node/6015#toc1)
@@ -1031,7 +1032,7 @@ RTシステムエディタで RaspberryPiMouseRTC、RobotController コンポー
 
 <br>
 
-<div align="center"><a href="rpm10_raspi.png"><img src="rpm10_raspi.png" width="70%;"></a></div>
+<div align="center"><a href="rpm10_raspi.png"><img src="rpm10_raspi.png" width="100;"></a></div>
 
 <br>
 
