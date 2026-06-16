@@ -1,8 +1,3 @@
----
-layout: page
-title: サンプルの RTシステムの実行
----
-
 <!-- Title: サンプルの RTシステムの実行 -->
 #contents
 
@@ -84,7 +79,7 @@ Windows側で [スクリプトファイルの項目](/ja/node/6016#toc0) でダ�
 次に SimpleControlRasPiMouse_activate.bat を実行すると RTC をアクティブ化します。
 SimpleControlRasPiMouseはGUI からラズパイマウスを操作する RTシステムです。
 
-<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/SimpleControlRasPiMouse/SimpleControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/SimpleControlRasPiMouse/SimpleControlRasPiMouse.png" width="70%;"></a></div>
+<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/SimpleControlRasPiMouse/SimpleControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/SimpleControlRasPiMouse/SimpleControlRasPiMouse.png" width="100;"></a></div>
 
 非アクティブにする際は SimpleControlRasPiMouse_stop.bat を起動してください。
 SimpleControlRasPiMouse_teardown.bat を起動するとポートの接続を切断します。
@@ -122,39 +117,39 @@ SimpleControlRasPiMouse 以外のサンプルも****_resurrect.bat で RTシス�
 このサンプルは GUI によるラズパイマウスの操作に加え、距離センサが物体を検知すると回転して回避を行う RTシステムです。
 試しに RaspberryPiMouseController_DistanceSensor0 のコンフィギュレーションパラメーター sensor_limit の値を変更してみると動きが変わると思います。
 
-<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/LightSensorControlRasPiMouse/LightSensorControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/LightSensorControlRasPiMouse/LightSensorControlRasPiMouse.png" width="70%;"></a></div>
+<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/LightSensorControlRasPiMouse/LightSensorControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/LightSensorControlRasPiMouse/LightSensorControlRasPiMouse.png" width="100;"></a></div>
 
 ### JoystickControlRasPiMouse
 このサンプルは OpenRTM-aist-Python のサンプルコンポーネント TkJoyStick で傾けた方角にラズパイマウスを操作するRTシステムです。
 このサンプルの動作には USB出力9軸 IMUセンサモジュールを Raspberry Pi に接続しておく必要があります。
 [センサのキャリブレーション](/ja/node/6015#toc3) はラズパイマウスに装着した状態で行ってください。
 
-<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/JoystickControlRasPiMouse/JoystickControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/JoystickControlRasPiMouse/JoystickControlRasPiMouse.png" width="70%;"></a></div>
+<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/JoystickControlRasPiMouse/JoystickControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/JoystickControlRasPiMouse/JoystickControlRasPiMouse.png" width="100;"></a></div>
 
 ### JoystickLightSensorControlRasPiMouse
 このサンプルは TkJoyStick による走行する方角の操作ができることに加えて、距離センサーが物体を検知した際に回避運動を行う RTシステムです。
 
-<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/JoystickLightSensorControlRasPiMouse/JoystickLightSensorControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/JoystickLightSensorControlRasPiMouse/JoystickLightSensorControlRasPiMouse.png" width="70%;"></a></div>
+<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/JoystickLightSensorControlRasPiMouse/JoystickLightSensorControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/JoystickLightSensorControlRasPiMouse/JoystickLightSensorControlRasPiMouse.png" width="100;"></a></div>
 
 
 ### GamePadSimpleControlRasPiMouse
 このサンプルはゲームパッドのアナログスティックで傾けた方向にラズパイマウスを操作する RTシステムです。
 Windows側の PC にゲームパッドを接続してから起動してください。
 
-<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadSimpleControlRasPiMouse/GamePadSimpleControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadSimpleControlRasPiMouse/GamePadSimpleControlRasPiMouse.png" width="70%;"></a></div>
+<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadSimpleControlRasPiMouse/GamePadSimpleControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadSimpleControlRasPiMouse/GamePadSimpleControlRasPiMouse.png" width="100;"></a></div>
 
 ### GamePadLightSensorSimpleControlRasPiMouse
 このサンプルはゲームパッドによる走行する方向の操作ができることに加えて、距離センサーが物体を検知した際に回避を行う RTシステムです。
 
-<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadLightSensorSimpleControlRasPiMouse/GamePadLightSensorSimpleControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadLightSensorSimpleControlRasPiMouse/GamePadLightSensorSimpleControlRasPiMouse.png" width="70%;"></a></div>
+<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadLightSensorSimpleControlRasPiMouse/GamePadLightSensorSimpleControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadLightSensorSimpleControlRasPiMouse/GamePadLightSensorSimpleControlRasPiMouse.png" width="100;"></a></div>
 
 ### GamePadControlRasPiMouse
 このサンプルはゲームパッドのアナログスティックで傾けた方角にラズパイマウスを操作する RTシステムです。
 9軸センサにより現在の姿勢を計算して、アナログスティックの傾けた方角に進むように制御を行います。
 
-<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadControlRasPiMouse/GamePadControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadControlRasPiMouse/GamePadControlRasPiMouse.png" width="70%;"></a></div>
+<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadControlRasPiMouse/GamePadControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadControlRasPiMouse/GamePadControlRasPiMouse.png" width="100;"></a></div>
 
 ### GamePadLightSensorControlRasPiMouse
 このサンプルはゲームパッドによる走行する方角の操作ができることに加えて、距離センサーが物体を検知した際に回避を行う RTシステムです。
 
-<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadLightSensorControlRasPiMouse/GamePadLightSensorControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadLightSensorControlRasPiMouse/GamePadLightSensorControlRasPiMouse.png" width="70%;"></a></div>
+<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadLightSensorControlRasPiMouse/GamePadLightSensorControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/GamePadLightSensorControlRasPiMouse/GamePadLightSensorControlRasPiMouse.png" width="100;"></a></div>

@@ -1,7 +1,3 @@
----
-layout: page
-title: 自作の RTC で制御
----
 <!-- Title: 自作の RTC で制御 -->
 #contents
 
@@ -15,7 +11,9 @@ RTC の仕様は以下のように入力します。
 
 <table class="table-alt">
   <tr>
-    <th colspan="3" style="text-align: center;" >基本</th>
+    <th>></th>
+    <th>></th>
+    <th>CENTER:基本</th>
   </tr>
   <tr>
     <td>モジュール名</td>
@@ -23,7 +21,9 @@ RTC の仕様は以下のように入力します。
     <td>LEFT:RasPiMouseSampleCPP、もしくは RasPiMouseSamplePy</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">アクティビティ</td>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:アクティビティ</td>
   </tr>
   <tr>
     <td>有効アクション</td>
@@ -31,10 +31,14 @@ RTC の仕様は以下のように入力します。
     <td>LEFT:onInitialize、onExecute、onActivated、onDeactivated</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">データポート</td>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:データポート</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">InPort</td>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:InPort</td>
   </tr>
   <tr>
     <td>名前</td>
@@ -47,7 +51,9 @@ RTC の仕様は以下のように入力します。
     <td>距離センサーの計測値</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">OutPort</td>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:OutPort</td>
   </tr>
   <tr>
     <td>名前</td>
@@ -60,7 +66,9 @@ RTC の仕様は以下のように入力します。
     <td>目標速度</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">コンフィギュレーション</td>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:コンフィギュレーション</td>
   </tr>
   <tr>
     <td>名前</td>
@@ -83,7 +91,9 @@ RTC の仕様は以下のように入力します。
     <td>距離センサーで物体を検知した場合に、前進しないようにする距離センサーの計測値、デフォルト値は300</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">言語・環境</td>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:言語・環境</td>
   </tr>
   <tr>
     <td>言語</td>
@@ -374,7 +384,8 @@ Raspberry Pi の IPアドレスは以下のコマンドで確認できます。
 
 <table class="table-alt">
   <tr>
-    <th colspan="2" style="text-align: center;">ポートの接続</th>
+    <th>></th>
+    <th>CENTER:ポートの接続</th>
   </tr>
   <tr>
     <td>RasPiMouseSampleCPP0(RasPiMouseSamplePy0)</td>
@@ -500,7 +511,9 @@ forward_velocity を0.2等に設定して前進させてください。その状
 
 <table class="table-alt">
   <tr>
-    <th colspan="3" style="text-align: center;">コンフィギュレーション</th>
+    <th>></th>
+    <th>></th>
+    <th>CENTER:コンフィギュレーション</th>
   </tr>
   <tr>
     <td>名前</td>

@@ -1,84 +1,95 @@
 ---
 layout: page
-title: 動作確認
+title: Operation Check
 ---
--------jp page!!-------
 
-<!-- Title: 動作確認 -->
+<!-- Title: Operation Check -->
 #contents
 
-Raspberry Pi にログイン後、コマンドからデバイスファイルを操作することで動作確認を行います。
-各デバイスの位置などは [ラズパイマウスのマニュアル](http://resources.rt-net.jp/products/RPiM/raspberryPiMouseManual_2015_08_04.pdf) を参考にしてください。
+After logging in to the Raspberry Pi, verify operation by accessing the device files from the command line.
 
-# LED
-以下のコマンドで LED が点灯、消灯しているかを確認してください。
+For the location and details of each device, refer to the **Raspberry Pi Mouse Manual**:
 
-```
- echo 1 > /dev/rtled0
- echo 0 > /dev/rtled0
-```
+- http://resources.rt-net.jp/products/RPiM/raspberryPiMouseManual_2015_08_04.pdf
 
-```
- echo 1 > /dev/rtled1
- echo 0 > /dev/rtled1
-```
+# LEDs
 
-```
- echo 1 > /dev/rtled2
- echo 0 > /dev/rtled2
+Use the following commands to verify that each LED turns on and off correctly.
+
+```bash
+echo 1 > /dev/rtled0
+echo 0 > /dev/rtled0
 ```
 
-```
- echo 1 > /dev/rtled3
- echo 0 > /dev/rtled3
-```
-
-# スイッチ
-スイッチを押した状態、離した状態で以下のコマンドを入力してください。
-
-```
- cat /dev/rtswitch0
- cat /dev/rtswitch1
- cat /dev/rtswitch2
- cat /dev/rtswitch3
+```bash
+echo 1 > /dev/rtled1
+echo 0 > /dev/rtled1
 ```
 
-
-
-# ブザー
-以下のコマンドでブザーが鳴るかを確認してください。
-
-```
- echo 440 > /dev/rtbuzzer0
- echo 0 > /dev/rtbuzzer0
+```bash
+echo 1 > /dev/rtled2
+echo 0 > /dev/rtled2
 ```
 
-## 距離センサー
-距離センサーに物体を近づけた状態、離した状態で以下のコマンドを入力してください。
-
-```
- cat /dev/rtlightsensor0
+```bash
+echo 1 > /dev/rtled3
+echo 0 > /dev/rtled3
 ```
 
-# モーター
-最初にモーター電源スイッチを ON にしてください。
-<div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm10.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm10.png" width="60%;"></a></div>
+# Switches
 
-以下のコマンドで車輪が回転するかを確認してください。
+Press and release each switch while running the following commands.
 
-```
- echo 1 > /dev/rtmotoren0
- 
- echo 400 > /dev/rtmotor_raw_l0
- echo -400 > /dev/rtmotor_raw_l0
- echo 0 > /dev/rtmotor_raw_l0
- 
- echo 400 > /dev/rtmotor_raw_r0
- echo -400 > /dev/rtmotor_raw_r0
- echo 0 > /dev/rtmotor_raw_r0
- 
- echo 0 > /dev/rtmotoren0
+```bash
+cat /dev/rtswitch0
+cat /dev/rtswitch1
+cat /dev/rtswitch2
+cat /dev/rtswitch3
 ```
 
-終わったらモーター電源スイッチを OFF にしてください。
--------jp page!!-------
+# Buzzer
+
+Use the following commands to verify that the buzzer sounds correctly.
+
+```bash
+echo 440 > /dev/rtbuzzer0
+echo 0 > /dev/rtbuzzer0
+```
+
+## Distance Sensors
+
+Place an object near the distance sensor and then move it away while running the following command.
+
+```bash
+cat /dev/rtlightsensor0
+```
+
+# Motors
+
+First, turn the **motor power switch ON**.
+
+<div align="center">
+<a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm10.png">
+<img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/rpm10.png" width="60%;">
+</a>
+</div>
+
+Use the following commands to verify that the wheels rotate correctly.
+
+```bash
+echo 1 > /dev/rtmotoren0
+
+echo 400 > /dev/rtmotor_raw_l0
+echo -400 > /dev/rtmotor_raw_l0
+echo 0 > /dev/rtmotor_raw_l0
+
+echo 400 > /dev/rtmotor_raw_r0
+echo -400 > /dev/rtmotor_raw_r0
+echo 0 > /dev/rtmotor_raw_r0
+
+echo 0 > /dev/rtmotoren0
+```
+
+When finished, turn the **motor power switch OFF**.
+
+

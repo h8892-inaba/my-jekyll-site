@@ -1,7 +1,3 @@
----
-layout: page
-title: コンパイル方法 (Ubuntu、CMake、Code::Blocks利用)
----
 
 <!-- Title: コンパイル方法 (Ubuntu、CMake、Code::Blocks利用) -->
 このページでは Ubuntu での Code::Blocks を利用したビルドの方法を説明します。
