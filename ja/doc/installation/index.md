@@ -13,8 +13,14 @@ title: "インストール"
 ### OpenRTM-aistを10分で始めよう！
 - [OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/lets_start)
 
+### OpenRTM-aist-2.1系インストールマニュアル
+- [Windows環境]({{ site.baseurl }}/ja/doc/installation/install_2_1/install_windows_2_1)
+- [Linux環境]({{ site.baseurl }}/ja/doc/installation/install_2_1/install_linux_2_1)
+- [Raspberry Pi OS環境]({{ site.baseurl }}/ja/doc/installation/install_2_1/install_linux_2_1)
+
+
 ### OpenRTM-aist-2.0系インストールマニュアル
-- [Windows環境]({{ site.baseurl }}/ja/doc/installation/install_2_0/install_win_2_0)
+- [Windows環境]({{ site.baseurl }}/ja/doc/installation/install_2_0/install_windows_2_0)
 - [Linux環境]({{ site.baseurl }}/ja/doc/installation/install_2_0/install_linux_2_0)
 
 ### OpenRTM-aist-1.2系インストールマニュアル

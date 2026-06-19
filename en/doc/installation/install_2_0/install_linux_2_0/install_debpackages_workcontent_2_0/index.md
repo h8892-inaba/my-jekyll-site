@@ -1,8 +1,7 @@
 ---
 layout: page
-title: OpenRTM-aist-2.0 debパッケージの詳しい内容
+title: Detailed Contents of OpenRTM-aist-2.0 deb Packages
 ---
--------jp page!!-------
 
 <hr>
 
@@ -10,14 +9,14 @@ title: OpenRTM-aist-2.0 debパッケージの詳しい内容
 
 #contents
 
-## OpenRTM-2.0 debパッケージの詳しい内容
+## Detailed Contents of OpenRTM-2.0 deb Packages
 
-各パッケージの内容は以下の通りです。
+The contents of each package are as follows.
 
 ### openrtm2
-openrtm2 にはランタイムライブラリとコマンド群が含まれています。
+openrtm2 includes runtime libraries and commands.
 
-- コマンド
+- Commands
 ```
  /usr/bin/rtcd2
  /usr/bin/rtcprof2
@@ -25,7 +24,7 @@ openrtm2 にはランタイムライブラリとコマンド群が含まれて�
  /usr/bin/rtm2-naming
 ```
 
-- 設定ファイルサンプル
+- Configuration file samples
 ```
  /usr/etc/logger/rtc.fluentbit_stream.conf
  /usr/etc/rtc.conf.sample2
@@ -34,7 +33,7 @@ openrtm2 にはランタイムライブラリとコマンド群が含まれて�
  /usr/lib/x86_64-linux-gnu/pkgconfig/openrtm2.pc
 ```
 
-- ライブラリなど
+- Libraries, etc.
 ```
  /usr/lib/x86_64-linux-gnu/libRTC2.a
  /usr/lib/x86_64-linux-gnu/libRTC2.so.2.0.0
@@ -52,14 +51,14 @@ openrtm2 にはランタイムライブラリとコマンド群が含まれて�
 ```
 
 ### openrtm2-dev
-openrtm2-devには、開発に必要なコマンド群とヘッダが含まれています。
+openrtm2-dev includes commands and headers required for development.
 
-- コマンド
+- Commands
 ```
  /usr/bin/rtm2-skelwrapper
 ```
 
-- ヘッダなど
+- Headers, etc.
 ```
  /usr/include/coil-2.0/coil/Affinity.h
  /usr/include/coil-2.0/coil/Async.h
@@ -77,7 +76,7 @@ openrtm2-devには、開発に必要なコマンド群とヘッダが含まれ�
  /usr/include/openrtm-2.0/rtm/version.h
 ```
 
-- ライブラリ・その他
+- Libraries and others
 ```
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/cmake/OpenRTMConfig.cmake
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/cmake/OpenRTMConfigVersion.cmake
@@ -86,9 +85,9 @@ openrtm2-devには、開発に必要なコマンド群とヘッダが含まれ�
 ```
 
 ### openrtm2-example
-openrtm2-example にはスタンドアロン RTC、ローダブル RTC それぞれのサンプルが含まれています。
+openrtm2-example includes samples for both standalone RTCs and loadable RTCs.
 
-- サンプル(スタンドアロンRTC)
+- Samples (Standalone RTCs)
 ```
  /usr/share/openrtm-2.0/components/c++/examples/CompositeComp
  /usr/share/openrtm-2.0/components/c++/examples/ConfigSampleComp
@@ -96,7 +95,7 @@ openrtm2-example にはスタンドアロン RTC、ローダブル RTC それぞ
  /usr/share/openrtm-2.0/components/c++/examples/rtc.conf
 ```
 
-- サンプル(ローダブルRTC)
+- Samples (Loadable RTCs)
 ```
  /usr/share/openrtm-2.0/components/c++/examples/rtc/ConfigSample.so
  /usr/share/openrtm-2.0/components/c++/examples/rtc/ConsoleIn.so
@@ -106,7 +105,7 @@ openrtm2-example にはスタンドアロン RTC、ローダブル RTC それぞ
 
 ### openrtm2-ros-tp
 
-ROS通信機能ライブラリがインストールされます。
+Installs the ROS communication function library.
 
 ```
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/ROSTransport.so
@@ -114,7 +113,7 @@ ROS通信機能ライブラリがインストールされます。
 
 ### openrtm2-ros2-tp
 
-ROS2通信機能ライブラリがインストールされます。
+Installs ROS2 communication function libraries.
 
 ```
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/FastRTPSTransport.so
@@ -122,9 +121,9 @@ ROS2通信機能ライブラリがインストールされます。
 ```
 
 ### openrtm2-doc
-openrtm2-doc には、日本語と英語のクラスリファレンス、IDL インターフェース定義リファレンスが含まれています。
+openrtm2-doc includes Japanese and English class references and IDL interface definition references.
 
-- クラスリファレンス
+- Class Reference
 ```
  /usr/share/openrtm-2.0/doc/c++/ClassReference/html/BufferBase_8h.html
  /usr/share/openrtm-2.0/doc/c++/ClassReference/html/BufferBase_8h__dep__incl.map
@@ -132,7 +131,7 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
  /usr/share/openrtm-2.0/doc/c++/ClassReference/html/structSDOPackage_1_1Organization__impl_1_1sdo__id.html
 ```
 
-- IDL リファレンス
+- IDL Reference
 ```
  /usr/share/openrtm-2.0/doc/idl/IDLReference/html/BasicDataType_8idl.html
  /usr/share/openrtm-2.0/doc/idl/IDLReference/html/BasicDataType_8idl_dep_incl.map
@@ -140,7 +139,7 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
  /usr/share/openrtm-2.0/doc/idl/IDLReference/html/unionSDOPackage_1_1Numeric.html
 ```
 
-- クラスリファレンス(英語)
+- Class Reference (English)
 ```
  /usr/share/openrtm-2.0/doc/c++/ClassReference-en/html/BufferBase_8h.html
  /usr/share/openrtm-2.0/doc/c++/ClassReference-en/html/BufferBase_8h__dep__incl.map
@@ -148,7 +147,7 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
  /usr/share/openrtm-2.0/doc/C++/ClassReference-en/html/version_8h_source.html
 ```
 
-- IDL リファレンス(英語)
+- IDL Reference (English)
 ```
  /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/BasicDataType_8idl.html
  /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/BasicDataType_8idl__dep__incl.map
@@ -158,7 +157,7 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
 
 ### openrtm2-idl
 
-- idlファイルなど
+- IDL files, etc.
 ```
  /etc/profile.d/openrtm2-idl.sh
  /usr/include/openrtm-2.0/rtm/idl/BasicDataType.idl
@@ -173,21 +172,23 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
 
 ### openrtm2-python3
 
-- コマンド
+- Commands
 ```
  /usr/bin/rtcd2_python3
  /usr/bin/rtcprof2_python3
 ```
 
-- OpenRTM-aist 本体の Python モジュール
+- Python modules of OpenRTM-aist
 ```
  /usr/lib/python3/dist-packages/OpenRTM_aist/* 
 ```
-- OpenRTM-aist用Python検索パスファイル
+
+- Python search path file for OpenRTM-aist
 ```
  /usr/lib/python3/dist-packages/OpenRTM-aist.pth 
 ```
-- ユーティリティ
+
+- Utilities
 ```
  /usr/lib/python3/dist-packages/OpenRTM_aist/utils/__init__.py
  /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/*
@@ -222,9 +223,10 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
 ```
 
 ### openrtm2-python3-doc
-英語・日本語のクラスリファレンスをインストールします。
 
-- クラスリファレンス
+Installs English and Japanese class references.
+
+- Class Reference
 ```
  /usr/share/openrtm-2.0/doc/python3/ClassReference-en/html/_async_8py.html
  /usr/share/openrtm-2.0/doc/python3/ClassReference-en/html/_buffer_base_8py.html
@@ -254,7 +256,8 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
 
 ### openrtm2-java-example
 
-Java版サンプルRTC、Classファイル、ソースファイル、起動スクリプト
+Java sample RTCs, Class files, source files, and startup scripts
+
 ```
  /usr/share/openrtm-2.0/components/java/* 
  /usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/*
@@ -279,77 +282,21 @@ Java版サンプルRTC、Classファイル、ソースファイル、起動ス�
 
 ### openrtm2-java-doc
 
-openrtm2-java-doc には、日本語と英語のクラスリファレンスが含まれています。
+openrtm2-java-doc includes Japanese and English class references.
 
 ```
  /usr/share/openrtm-2.0/doc/java/JavaDoc/OpenRTM/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/OpenRTM/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/RTC/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/RTC/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/RTM/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/RTM/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/_SDOPackage/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/_SDOPackage/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/Constants.html
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/buffer/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/buffer/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/executionContext/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/executionContext/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/log/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/port/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/port/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/port/publisher/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/port/publisher/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/util/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/util/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/util/clock/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/util/clock/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/Version.html
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/class-use
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/*
- /usr/share/openrtm-2.0/doc/java/JavaDoc/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/OpenRTM/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/OpenRTM/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/RTC/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/RTC/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/RTM/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/RTM/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/_SDOPackage/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/_SDOPackage/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/index-files/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/Constants.html
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/buffer/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/buffer/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/executionContext/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/executionContext/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/log/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/log/class-use/Logbuf.html
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/port/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/port/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/port/publisher/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/port/publisher/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/util/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/util/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/util/clock/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/util/clock/class-use/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/*
- /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/class-use/*
+ ...
  /usr/share/openrtm-2.0/doc/java/JavaDocEn/*
 ```
 
-
 ### openrtp2
-openrtpでは大量のファイルがインストールされるため、ここではリストしません。必要に応じて
+
+Since openrtp installs a large number of files, they are not listed here. If necessary, enter
+
 ```
  $ dpkg -L openrtp2
 ```
-と入力して各自での確認をしてください。
 
--------jp page!!-------
+and check the contents yourself.
+

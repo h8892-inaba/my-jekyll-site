@@ -1,8 +1,6 @@
 ---
-
 layout: page
-Title: 動作確認(Linux編)
-
+title: 動作確認(Linux編)
 ---
 
 <hr>

@@ -1,60 +1,59 @@
 ---
 layout: page
-title: Raspberry Pi OSへのインストール
+title: Installation on Raspberry Pi OS
 ---
--------jp page!!-------
 
 <hr>
 <!-- Title: Raspberry Pi OSへのインストール -->
 
 #contents
 
-## 対応バージョン
+## Supported Versions
 
-現在パッケージが用意されている Raspberry Pi OS のバージョンは
+The versions of Raspberry Pi OS for which packages are currently available are
 
 - Bullseye (32bit / 64bit)
 - Bookworm (32bit / 64bit)
 
-です。
+.
 
-## SDカードの準備
+## Preparing the SD Card
 
-OSイメージの書き込みは、公式サイトでダウンロードできるツール、Raspberry Pi Imager を使うのが便利です。<br>
+For writing the OS image, it is convenient to use Raspberry Pi Imager, a tool that can be downloaded from the official website.<br>
 https://www.raspberrypi.com/software/
 
 
-下記を選択してダウンロード、書き込みが可能です。
-- ベースのDebian GNU/Linuxのバージョン (最新 / Legacy)
-- GUI の有無 (Desktop / Lite)
-- システムアーキテクチャー (32-bit / 64-bit)
+You can select the following items to download and write the image.
+- Base Debian GNU/Linux version (latest / Legacy)
+- Whether GUI is included (Desktop / Lite)
+- System architecture (32-bit / 64-bit)
 
-## 2.0系での変更点
+## Changes in the 2.0 Series
 
-C++ は 1.2系と2.0系の共存が可能となりました。　ただし、1.2系は Buster(32bit) のみインストール可能です。 <br>
-この対応で、インストールに関しては下記が変更となっています。
+C++ can now coexist between the 1.2 series and the 2.0 series. However, the 1.2 series can be installed only on Buster (32bit). <br>
+With this support, the following installation-related items have changed.
 
-- 2.0系のdebパッケージ名を変更しました
-- Python と Java は1.2系と2.0系の共存はできません
-  - 一括インストールスクリプトを使用すれば、インストール済みの異なるバージョンを自動でアンインストールします
-- 1.2系と2.0系の一括インストールスクリプトを分けました
-  - 1.2系のインストール : pkg_install_raspbian.sh
-  - 2.0系のインストール : openrtm2_install_raspbian.sh
+- The deb package names for the 2.0 series have been changed
+- Python and Java cannot coexist between the 1.2 series and the 2.0 series
+  - If you use the batch installation script, installed different versions are automatically uninstalled
+- The batch installation scripts for the 1.2 series and the 2.0 series have been separated
+  - Installation of the 1.2 series: pkg_install_raspbian.sh
+  - Installation of the 2.0 series: openrtm2_install_raspbian.sh
 
-また、インストールスクリプト（1.2系、2.0系どちらも）は、ダウンロードからインストールまでの一括処理に対応しました。
+In addition, the installation scripts (for both the 1.2 series and the 2.0 series) now support batch processing from download to installation.
 
-## 一括インストールスクリプト
+## Batch Installation Script
 
-2.0系のインストールは、下記をシェルプロンプトに貼り付けて実行してください。　C++版、 Python版、 Java版、 rtshell、JDK8（32-bit環境のみ） がインストールされます。　スクリプトはローカルに保存されません。<br>
-※32-bit環境ではスクリプトの実行でJavaの複数バージョンがインストールされても、Java８ 使用に切り替わっています。 <br>
-※64-bit環境では下記ををご覧ください。 <br>
-- [JDK8のインストール・リポジトリからのパッケージ入手以外の方法]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8#toc9)
+To install the 2.0 series, paste the following into the shell prompt and execute it. The C++ version, Python version, Java version, rtshell, and JDK8 (32-bit environment only) will be installed. The script is not saved locally.<br>
+* In a 32-bit environment, even if multiple versions of Java are installed by running the script, it is switched to use Java 8. <br>
+* For a 64-bit environment, see the following. <br>
+- [Installing JDK8: Methods Other Than Obtaining Packages from the Repository]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8#toc9)
 
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_raspbian.sh)
 ```
 
-この実行により以下のパッケージがインストールされます。(32bit版の場合）
+The following packages are installed by this execution. (For the 32bit version)
 
 ```
  $ dpkg -l | grep openrt
@@ -79,12 +78,12 @@ C++ は 1.2系と2.0系の共存が可能となりました。　ただし、1.2
  rtsprofile-aist     4.1.5
 ```
 
-## パッケージの詳細
-各パッケージの内容は以下の通りです。
+## Package Details
+The contents of each package are as follows.
 ### openrtm2
-openrtm-aistにはランタイムライブラリとコマンド群が含まれています。
+openrtm-aist includes runtime libraries and commands.
 
-- コマンド
+- Commands
 ```
  /usr/bin/rtcd2
  /usr/bin/rtcprof2
@@ -92,7 +91,7 @@ openrtm-aistにはランタイムライブラリとコマンド群が含まれ�
  /usr/bin/rtm2-naming
 ```
 
-- 設定ファイルサンプル
+- Configuration file samples
 ```
  /usr/etc/rtc.conf.sample2
  /usr/etc/rtc.names.ssl.conf
@@ -101,7 +100,7 @@ openrtm-aistにはランタイムライブラリとコマンド群が含まれ�
 ```
 
 
-- ライブラリなど
+- Libraries, etc.
 ```
  /usr/lib/arm-linux-gnueabihf/libRTC2.a
  /usr/lib/arm-linux-gnueabihf/libRTC2.so.2.0.0
@@ -121,14 +120,14 @@ openrtm-aistにはランタイムライブラリとコマンド群が含まれ�
 ```
 
 ### openrtm2-dev
-開発に必要なコマンド群とヘッダが含まれています。
+This package includes commands and headers required for development.
 
-- コマンド
+- Command
 ```
  /usr/bin/rtm2-skelwrapper
 ```
 
-- ヘッダ
+- Headers
 ```
  /usr/include/coil-2.0/coil/Affinity.h
  /usr/include/coil-2.0/coil/Async.h
@@ -144,7 +143,7 @@ openrtm-aistにはランタイムライブラリとコマンド群が含まれ�
  /usr/include/openrtm-2.0/rtm/version.h
 ```
 
-- ライブラリ・その他
+- Libraries and other files
 ```
  /usr/lib/arm-linux-gnueabihf/openrtm-2.0/cmake/OpenRTMConfig.cmake
  /usr/lib/arm-linux-gnueabihf/openrtm-2.0/cmake/OpenRTMConfigVersion.cmake
@@ -153,7 +152,7 @@ openrtm-aistにはランタイムライブラリとコマンド群が含まれ�
 ```
 
 ### openrtm2-idl
-- idlファイルなど
+- idl files, etc.
 ```
  /etc/profile.d/openrtm2-idl.sh
  /usr/include/openrtm-2.0/rtm/idl/BasicDataType.idl
@@ -167,9 +166,9 @@ openrtm-aistにはランタイムライブラリとコマンド群が含まれ�
 ```
 
 ### openrtm2-example
-openrtm-aist-exampleにはスタンドアロンRTC、ローダブルRTCそれぞれのサンプルと、サンプルRTCのソースが含まれています。
+openrtm-aist-example includes samples of both standalone RTCs and loadable RTCs, as well as the source code for sample RTCs.
 
-- サンプル(スタンドアロンRTC)
+- Samples (standalone RTCs)
 ```
  /usr/share/openrtm-2.0/components/c++/examples/CompositeComp
  /usr/share/openrtm-2.0/components/c++/examples/ConfigSampleComp
@@ -177,7 +176,7 @@ openrtm-aist-exampleにはスタンドアロンRTC、ローダブルRTCそれぞ
  /usr/share/openrtm-2.0/components/c++/examples/rtc.conf
 ```
 
-- サンプル(ローダブルRTC)
+- Samples (loadable RTCs)
 ```
  /usr/share/openrtm-2.0/components/c++/examples/rtc/ConfigSample.so
  /usr/share/openrtm-2.0/components/c++/examples/rtc/ConsoleIn.so
@@ -186,9 +185,9 @@ openrtm-aist-exampleにはスタンドアロンRTC、ローダブルRTCそれぞ
 ```
 
 ### openrtm2-doc
-openrtm-aist-docには、日本語と英語のクラスリファレンス、IDLインターフェース定義リファレンスが含まれています。
+openrtm-aist-doc includes Japanese and English class references and IDL interface definition references.
 
-- クラスリファレンス
+- Class reference
 ```
  /usr/share/openrtm-2.0/doc/c++/ClassReference/html/BufferBase_8h.html
  /usr/share/openrtm-2.0/doc/c++/ClassReference/html/BufferBase_8h__dep__incl.map
@@ -196,7 +195,7 @@ openrtm-aist-docには、日本語と英語のクラスリファレンス、IDL�
  /usr/share/openrtm-2.0/doc/c++/ClassReference/html/structSDOPackage_1_1Organization__impl_1_1sdo__id.html
 ```
 
-- IDLリファレンス
+- IDL reference
 ```
  /usr/share/openrtm-2.0/doc/idl/IDLReference/html/BasicDataType_8idl.html
  /usr/share/openrtm-2.0/doc/idl/IDLReference/html/BasicDataType_8idl_dep_incl.map
@@ -204,7 +203,7 @@ openrtm-aist-docには、日本語と英語のクラスリファレンス、IDL�
  /usr/share/openrtm-2.0/doc/idl/IDLReference/html/unionSDOPackage_1_1Numeric.html
 ```
 
-- クラスリファレンス(英語)
+- Class reference (English)
 ```
  /usr/share/openrtm-2.0/doc/c++/ClassReference-en/html/BufferBase_8h.html
  /usr/share/openrtm-2.0/doc/c++/ClassReference-en/html/BufferBase_8h__dep__incl.map
@@ -212,7 +211,7 @@ openrtm-aist-docには、日本語と英語のクラスリファレンス、IDL�
  /usr/share/openrtm-2.0/doc/C++/ClassReference-en/html/version_8h_source.html
 ```
 
-- IDLリファレンス(英語)
+- IDL reference (English)
 ```
  /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/BasicDataType_8idl.html
  /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/BasicDataType_8idl__dep__incl.map
@@ -222,21 +221,21 @@ openrtm-aist-docには、日本語と英語のクラスリファレンス、IDL�
 
 ### openrtm2-python3
 
-- コマンド
+- Commands
 ```
  /usr/bin/rtcd2_python3
  /usr/bin/rtcprof2_python3
 ```
 
-- OpenRTM-aist 本体の Python モジュール
+- Python modules of the OpenRTM-aist main body
 ```
  /usr/lib/python3/dist-packages/OpenRTM_aist/* 
 ```
-- OpenRTM-aist用Python検索パスファイル
+- Python search path file for OpenRTM-aist
 ```
  /usr/lib/python3/dist-packages/OpenRTM-aist.pth 
 ```
-- ユーティリティ
+- Utilities
 ```
  /usr/lib/python3/dist-packages/OpenRTM_aist/utils/__init__.py
  /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/*
@@ -271,9 +270,9 @@ openrtm-aist-docには、日本語と英語のクラスリファレンス、IDL�
 ```
 
 ### openrtm2-python3-doc
-英語・日本語のクラスリファレンスをインストールします。
+Installs English and Japanese class references.
 
-- クラスリファレンス
+- Class reference
 ```
  /usr/share/openrtm-2.0/doc/python3/ClassReference-en/html/_async_8py.html
  /usr/share/openrtm-2.0/doc/python3/ClassReference-en/html/_buffer_base_8py.html
@@ -303,7 +302,7 @@ openrtm-aist-docには、日本語と英語のクラスリファレンス、IDL�
 
 ### openrtm2-java-example
 
-Java版サンプルRTC、Classファイル、ソースファイル、起動スクリプト
+Java sample RTCs, Class files, source files, and startup scripts
 
 ```
  /usr/share/openrtm-2.0/components/java/* 
@@ -326,8 +325,3 @@ Java版サンプルRTC、Classファイル、ソースファイル、起動ス�
  /usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/*
  /usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/*
 ```
-
-
-
-
--------jp page!!-------

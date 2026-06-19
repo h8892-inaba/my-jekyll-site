@@ -1,44 +1,44 @@
 ---
 layout: page
+title: Install
 ---
--------jp page!!-------
 <!-- Title: インストール -->
 
 <div align="right"><a href="ubuntu_logo2.png"><img src="ubuntu_logo2.png" width="100;" align="right"></a></div>
 
 
-OpenRTM-aistは、UbuntuやDebian GNU Linuxにおいて利用可能なdebパッケージが提供されています。
+OpenRTM-aist provides deb packages that can be used on Ubuntu and Debian GNU Linux.
 <!-- ２.０は現在、Debian、Ubuntu、Raspbian OSのディストリビューションに対応しています。 -->
 
 
 #contents
 
-2.0 は現在、Ubuntu 18.04, 20.04 (各amd64, arm64）に対応しています。
-Ubuntu/Debian GNU Linuxへのサポートバージョンや対応の有無は、予告なしに変更されることがありますので、あらかじめご了承ください。
+2.0 currently supports Ubuntu 18.04 and 20.04 (amd64 and arm64 for each).
+Please note that supported versions for Ubuntu/Debian GNU Linux and availability of support may change without notice.
 
-## 2.0系での変更点
+## Changes in the 2.0 Series
 
-C++と OpenRTP は 1.2系と2.0系の共存が可能となりました。　この対応で、インストールに関しては下記が変更となっています。
+C++ and OpenRTP can now coexist between the 1.2 series and the 2.0 series. With this support, the following installation-related items have changed.
 
-- 2.0系のdebパッケージ名を変更しました
-- Python と Java は1.2系と2.0系の共存はできません
-  - 一括インストールスクリプトを使用すれば、インストール済みの異なるバージョンを自動でアンインストールします
-- 1.2系と2.0系の一括インストールスクリプトを分けました
-  - 1.2系のインストール : pkg_install_ubuntu.sh
-  - 2.0系のインストール : openrtm2_install_ubuntu.sh
+- The deb package names for the 2.0 series have been changed
+- Python and Java cannot coexist between the 1.2 series and the 2.0 series
+  - If you use the batch installation script, installed different versions are automatically uninstalled
+- The batch installation scripts for the 1.2 series and the 2.0 series have been separated
+  - Installation of the 1.2 series: pkg_install_ubuntu.sh
+  - Installation of the 2.0 series: openrtm2_install_ubuntu.sh
 
-また、インストールスクリプト（1.2系、2.0系どちらも）は、ダウンロードからインストールまでの一括処理に対応しました。
+In addition, the installation scripts (for both the 1.2 series and the 2.0 series) now support batch processing from download to installation.
 
-## 一括インストールスクリプト
+## Batch Installation Script
 
-2.0系のインストールは、下記をシェルプロンプトに貼り付けて実行してください。　C++版、 Python版、 Java版、 OpenRTP(amd64のみ)、 rtshell、JDK8 がインストールされます。　スクリプトはローカルに保存されません。<br>
-※スクリプトの実行で、Javaの複数バージョンがインストールされても、Java８ 使用に切り替わっています
+To install the 2.0 series, paste the following into the shell prompt and execute it. The C++ version, Python version, Java version, OpenRTP (amd64 only), rtshell, and JDK8 will be installed. The script is not saved locally.<br>
+* Even if multiple versions of Java are installed by running the script, it is switched to use Java 8
 
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
 ```
 
-この実行により以下のdebパッケージと、pipによりrtshellがインストールされます。
+By executing this, the following deb packages and rtshell via pip are installed.
 
 ```
  $ dpkg -l | grep openrt
@@ -56,8 +56,7 @@ C++と OpenRTP は 1.2系と2.0系の共存が可能となりました。　こ�
  ii  openrtp2:amd64                            2.0.0-0                  amd64        OpenRTP, Open RT Platform distributed by AIST
 ```
 
-&color(fuchsia){Ubuntu24.04ではデフォルトのpipバージョン利用で、 rtshellのインストールに失敗します。　インストールスクリプトが表示している黄文字のメッセージに従い、　/etc/pip.conf へ（存在しなければ
-新規作成して）下記を追記後に再度インストールスクリプトを実行するとインストールできます。};
+&color(fuchsia){On Ubuntu 24.04, rtshell installation fails when using the default pip version. Follow the yellow message displayed by the installation script, add the following to /etc/pip.conf (create it if it does not exist), and then run the installation script again to install it.};
 
 ```
  $ vi /etc/pip.conf
@@ -65,36 +64,36 @@ C++と OpenRTP は 1.2系と2.0系の共存が可能となりました。　こ�
  break-system-packages = true
 ```
 
-オプションを指定することで、目的に合わせたパッケージをインストールすることが可能です。 help は下記で確認できます。
+By specifying options, you can install packages according to your purpose. help can be checked as follows.
 
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) --help
 ```
 
-インストールされるパッケージの詳しい内容は「[OpenRTM-aist-2.0 debパッケージの詳しい内容]({{ site.baseurl }}/ja/node/6665) 」で確認できます。
+The detailed contents of the installed packages can be checked in "[Detailed Contents of the OpenRTM-aist-2.0 deb Packages]({{ site.baseurl }}/ja/node/6665)".
 
-## ROS用パッケージのインストール
+## Installing Packages for ROS
 
-2.0系ではROS通信機能用パッケージをインストールできます。（ROS用、ROS2用)  <br>
-ここでは、ROS, ROS2 の両方をインストールしている環境へのパッケージインストール方法を説明します。
+In the 2.0 series, packages for ROS communication functions can be installed. (For ROS and ROS2) <br>
+This section explains how to install packages in an environment where both ROS and ROS2 are installed.
 
-help に記載しているように、ROSパッケージインストールオプションは以下で対応しています。<br>
+As described in help, the ROS package installation options are supported as follows.<br>
 [-e ros|ros2|all] [--ros|--ros2]
 
-すでにインストールスクリプトをオプション無しで実行済みで、追加でROS, ROS2用パッケージを追加インストールする場合は、「-l c++ -e all」で可能です。<br>
-<span style="color:fuchsia;">ROS2のみサポートされているUbuntu22.04以降の環境では、-e all でROS2用パッケージのみがインストールされます。</span>;
+If you have already run the installation script without options and want to additionally install packages for ROS and ROS2, this can be done with "-l c++ -e all".<br>
+<span style="color:fuchsia;">In environments of Ubuntu 22.04 or later where only ROS2 is supported, only packages for ROS2 are installed with -e all.</span>;
 
 
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) -l c++ -e all
 ```
 
-最初からROS, ROS2用パッケージも加えてすべてインストールしたい場合は、「 -l all -e all」で可能です。
+If you want to install everything including packages for ROS and ROS2 from the beginning, this can be done with "-l all -e all".
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) -l all -e all
 ```
 
-インストールされたパッケージを確認します。
+Check the installed packages.
 
 ```
  $ dpkg -l | grep openrt
@@ -114,15 +113,15 @@ help に記載しているように、ROSパッケージインストールオプ
  ii  openrtp2:amd64                            2.0.0-0      amd64        OpenRTP, Open RT Platform distributed by AIST
 ```
 
-## 1.2系インストール環境への2.0系インストール
+## Installing the 2.0 Series in an Environment Where the 1.2 Series Is Installed
 
-1.2系のインストールスクリプトも、URL指定で実行可能となっています。スクリプトをオプション無しで全パッケージインストールします。
+The installation script for the 1.2 series can also be executed by specifying a URL. Install all packages by running the script without options.
 
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh)
 ```
 
-インストールされたパッケージを確認します。
+Check the installed packages.
 
 ```
  $ dpkg -l | grep openrt
@@ -140,14 +139,14 @@ help に記載しているように、ROSパッケージインストールオプ
  ii  openrtp:amd64                                  1.2.2-4
 ```
 
-続けて2.0系をインストールすると、c++とopenrtpは1.2系、2.0系が共存しますが、javaとpythonは2.0系のみがインストールされている状態になります。
+If you then install the 2.0 series, c++ and openrtp from the 1.2 series and the 2.0 series coexist, but only the 2.0 series is installed for java and python.
 
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
 ```
 
-スクリプト実行中、1.2系のjavaとpythonパッケージのアンインストールについて、「Do you want to continue? [Y/n] 」と聞かれますので、Enterキーを押してください。 <br>
-インストールされたパッケージを確認します。
+During script execution, you will be asked "Do you want to continue? [Y/n]" regarding the uninstallation of the 1.2 series java and python packages, so press the Enter key. <br>
+Check the installed packages.
 
 ```
  $ dpkg -l | grep openrt
@@ -171,7 +170,7 @@ help に記載しているように、ROSパッケージインストールオプ
  ii  openrtp2:amd64                                2.0.0-0
 ```
 
-これに伴い、rtshellもインストールし直されます。
+Along with this, rtshell is also reinstalled.
 
 ```
  $ pip3 list | grep aist
@@ -181,9 +180,9 @@ help に記載しているように、ROSパッケージインストールオプ
  rtsprofile-aist        4.1.5
 ```
 
-## 2.0系インストール環境への1.2系インストール
+## Installing the 1.2 Series in an Environment Where the 2.0 Series Is Installed
 
-c++とopenrtpは1.2系、2.0系が共存しますが、javaとpythonは1.2系のみがインストールされている状態になります。 
+c++ and openrtp from the 1.2 series and the 2.0 series coexist, but only the 1.2 series is installed for java and python. 
 
 ```
  $ dpkg -l | grep openrt
@@ -207,7 +206,7 @@ c++とopenrtpは1.2系、2.0系が共存しますが、javaとpythonは1.2系の
  ii  openrtp2:amd64                             2.0.0-0
 ```
 
-rtshellも OpenRTM-aist-Python1.2.2 に対してインストールし直されます。
+rtshell is also reinstalled for OpenRTM-aist-Python 1.2.2.
 
 ```
  $ pip3 list | grep aist
@@ -216,6 +215,3 @@ rtshellも OpenRTM-aist-Python1.2.2 に対してインストールし直され�
  rtshell-aist           4.2.9
  rtsprofile-aist        4.1.5
 ```
-
-
--------jp page!!-------

@@ -2,33 +2,32 @@
 layout: page
 title: "Documentation"
 ---
--------jp page!!-------
 
-OpenRTM-aistはロボットシステムをコンポーネント指向開発するためのソフトウエアプラットフォームです。
+OpenRTM-aist is a software platform for component-oriented development of robotic systems.
 
 
-## [OpenRTM-aistとは？]({{ site.baseurl }}/ja/doc/aboutopenrtm/rtmiddleware/)
+## [What is OpenRTM-aist?]({{ site.baseurl }}/en/doc/aboutopenrtm/rtmiddleware/)
 
-## [OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/lets_start/)
+## [Get Started with OpenRTM-aist in 10 Minutes!]({{ site.baseurl }}/en/doc/installation/lets_start/)
  
-## [インストール]({{ site.baseurl }}/ja/doc/installation/)
+## [Installation]({{ site.baseurl }}/en/doc/installation/)
 
-## [ツール(準備中)]({{ site.baseurl }}/ja/doc/toolmanuals/)
+## [Tools (Under Preparation)]({{ site.baseurl }}/en/doc/toolmanuals/)
 
-## [デベロッパーズガイド]({{ site.baseurl }}/ja/doc/developersguide/)
+## [Developer's Guide]({{ site.baseurl }}/en/doc/developersguide/)
 
-## [クラスリファレンス]({{ site.baseurl }}/ja/doc/openrtm-aist_class_reference)
+## [Class Reference]({{ site.baseurl }}/en/doc/openrtm-aist_class_reference)
 
-## [ケーススタディ]({{ site.baseurl }}/ja/doc/casestudy)
+## [Case Studies]({{ site.baseurl }}/en/doc/casestudy)
 
-## [よくある質問](./faq)
+## [Frequently Asked Questions](./faq)
 
 ## [CORBA](./corba)
 
-## [過去文書](./old_documents)
+## [Legacy Documents](./old_documents)
 
 ## appendix
-  - [JDK8のインストール](./appendix/jdk8installation)
-  - [OpenRTM-aist1.2系のインストール(Windows、MSIインストーラー使用)](./appendix/openrtm-aist_1_2_windows_msi)
-  - [一括インストールスクリプト](./appendix/bulk_installation_script)
--------jp page!!-------
+  - [Installing JDK8](./appendix/jdk8installation)
+  - [Installing OpenRTM-aist 1.2 Series (Windows, Using MSI Installer)](./appendix/openrtm-aist_1_2_windows_msi)
+  - [Bulk Installation Script](./appendix/bulk_installation_script)
+

@@ -1,41 +1,44 @@
 ---
 layout: page
-title: "インストール"
+title: "Installation"
 ---
--------jp page!!-------
-<!-- Title インストール -->
-
+<!-- Title Installation -->
 
 <hr>
 
 <div align="right"><img src="install.png" width="20%;" align="right"></div>
 
 
-### OpenRTM-aistを10分で始めよう！
-- [OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/lets_start)
+### Get Started with OpenRTM-aist in 10 Minutes!
+- [Get Started with OpenRTM-aist in 10 Minutes!]({{ site.baseurl }}/en/doc/installation/lets_start)
 
-### OpenRTM-aist-2.0系インストールマニュアル
-- [Windows環境]({{ site.baseurl }}/ja/doc/installation/install_2_0/install_win_2_0)
-- [Linux環境]({{ site.baseurl }}/ja/doc/installation/install_2_0/install_linux_2_0)
+### OpenRTM-aist 2.1 Series Installation Manual
+- [Windows Environment]({{ site.baseurl }}/en/doc/installation/install_2_1/install_windows_2_1)
+- [Linux Environment]({{ site.baseurl }}/en/doc/installation/install_2_1/install_linux_2_1)
+- [Raspbian Environment]({{ site.baseurl }}/en/doc/installation/install_2_1/install_raspbian_2_1)
 
-### OpenRTM-aist-1.2系インストールマニュアル
-- [C++]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2)
-- [Python]({{ site.baseurl }}/ja/doc/installation/install_1_2/python_1_2)
-- [Java]({{ site.baseurl }}/ja/doc/installation/install_1_2/java_1_2)
-- [OpenRTP]({{ site.baseurl }}/ja/doc/installation/install_1_2/openrtp_1_2)
-- [OpenRTM付属のサンプルについて]({{ site.baseurl }}/ja/doc/installation/sample_components)
-- [rtshell]({{ site.baseurl }}/ja/doc/installation/install_rtshell)>
 
-### [OpenRTM-aist-1.1系インストールマニュアル(以下未完ページ)](./install_1_1)
-- [C++]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1)
-- [Python]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1)
-- [Java]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1)
-- [OpenRTP]({{ site.baseurl }}/ja/doc/installation/install_1_1/openrtm_eclipse_tools_1_1)
-- [OpneRTM付属のサンプルについて]({{ site.baseurl }}/ja/node/811)
-- [rtshell]({{ site.baseurl }}/ja/node/6996)
+### OpenRTM-aist 2.0 Series Installation Manual
+- [Windows Environment]({{ site.baseurl }}/en/doc/installation/install_2_0/install_windows_2_0)
+- [Linux Environment]({{ site.baseurl }}/en/doc/installation/install_2_0/install_linux_2_0)
+- [Raspbian Environment]({{ site.baseurl }}/en/doc/installation/install_2_0/install_raspbian_2_0)
+
+### OpenRTM-aist 1.2 Series Installation Manual
+- [C++]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2)
+- [Python]({{ site.baseurl }}/en/doc/installation/install_1_2/python_1_2)
+- [Java]({{ site.baseurl }}/en/doc/installation/install_1_2/java_1_2)
+- [OpenRTP]({{ site.baseurl }}/en/doc/installation/install_1_2/openrtp_1_2)
+- [About the Sample Components Included with OpenRTM]({{ site.baseurl }}/en/doc/installation/sample_components)
+- [rtshell]({{ site.baseurl }}/en/doc/installation/install_rtshell)>
+
+### [OpenRTM-aist 1.1 Series Installation Manual (Pages Below Are Incomplete)](./install_1_1)
+- [C++]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1)
+- [Python]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1)
+- [Java]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1)
+- [OpenRTP]({{ site.baseurl }}/en/doc/installation/install_1_1/openrtm_eclipse_tools_1_1)
+- [About the Sample Components Included with OpenRTM]({{ site.baseurl }}/en/node/811)
+- [rtshell]({{ site.baseurl }}/en/node/6996)
 
 <!--break-->
-### その他
-- [Raspberry Piへのインストール]({{ site.baseurl }}/ja/doc/installation/other/raspberrypi_casestudy)
-
--------jp page!!-------
+### Others
+- [Installation on Raspberry Pi]({{ site.baseurl }}/en/doc/installation/other/raspberrypi_casestudy)

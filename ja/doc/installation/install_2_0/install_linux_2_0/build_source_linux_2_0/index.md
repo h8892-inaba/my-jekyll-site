@@ -1,10 +1,7 @@
 ---
 layout: page
-Title: ソースからのビルド (Linux編) 
+title: ソースからのビルド (Linux編) 
 ---
-
-<hr>
-~                                                                                                                                         
 <!-- Title: ソースからのビルド (Linux編) -->
 #contents
 

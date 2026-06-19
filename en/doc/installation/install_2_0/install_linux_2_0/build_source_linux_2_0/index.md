@@ -1,31 +1,28 @@
 ---
 layout: page
-Title: ソースからのビルド (Linux編) 
+title: Building from Source (Linux)
 ---
--------jp page!!-------
 
-<hr>
-~                                                                                                                                         
 <!-- Title: ソースからのビルド (Linux編) -->
 #contents
 
-OpenRTM-aist本体のソースを変更して利用したい場合には、OpenRTM-aistのソースコードを取得してビルドできます。
+If you want to modify and use the OpenRTM-aist source itself, you can obtain and build the OpenRTM-aist source code.
 
+## Building with Docker
 
-## Dockerでのビルド
+This section introduces a procedure for building using a Dockerfile in an environment where only the minimum required libraries for building OpenRTM-aist from source are installed. <br>
+The Docker image is generated using the docker build command, and it is recommended because you can build in a completely clean environment every time.
 
-Dockerfileを使い、OpenRTM-aistソースビルドに必要な最小限のライブラリだけをインストールした環境でビルドを行う手順を紹介します。 <br>
-docker build コマンドで Dockerイメージを生成するのですが、毎回まっさらな環境でビルドできるのでお勧めです。
-
-初めてDockerを使う場合は、以下のようにインストールしてください。Ubuntuのデスクトップ環境であれば docker.io パッケージが提供されていると思います。
+If you are using Docker for the first time, install it as follows. If you are using the Ubuntu desktop environment, the docker.io package should be available.
 
 ```
  sudo apt install docker.io
 ```
 
-- 参考：docker.io パッケージの提供が無い場合のインストール
-  - 手動で、DockerのGPGキーを取得して、リポジトリ情報を書き込んで、docker-ceをインストールする流れになります
-  - QEMU上にubuntu-20.04-server-cloudimg-arm64.imgで aarch64 環境を構築した時は、以下の手順でインストールしました
+- Reference: Installation when the docker.io package is not available
+  - The process involves manually obtaining the Docker GPG key, writing repository information, and installing docker-ce
+  - When building an aarch64 environment using ubuntu-20.04-server-cloudimg-arm64.img on QEMU, it was installed using the following procedure
+
 ```
  sudo apt install apt-transport-https ca-certificates curl software-properties-common
  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -34,10 +31,9 @@ docker build コマンドで Dockerイメージを生成するのですが、毎
  sudo apt install docker-ce
 ```
 
+## Building C++ Source
 
-## C++ソースのビルド
-
-OpenRTM-aist 2.0系のソースには、Ubuntu18.04、20.04、22.04用のDockerfileが含まれています。
+The OpenRTM-aist 2.0 source includes Dockerfiles for Ubuntu 18.04, 20.04, and 22.04.
 
 ```
  OpenRTM-aist/scripts/ubuntu_1804/Dockerfile
@@ -45,15 +41,15 @@ OpenRTM-aist 2.0系のソースには、Ubuntu18.04、20.04、22.04用のDockerf
  OpenRTM-aist/scripts/ubuntu_2204/Dockerfile
 ```
 
-ビルド手順は以下となります。　Ubuntu20.04用のビルド例です。　<br>
-ここではGitHubから最新のOpenRTM-aistソースを取得していますが、修正を加えたソースのビルドでも同様の手順で行えます。
+The build procedure is as follows. This is a build example for Ubuntu 20.04. <br>
+Although the latest OpenRTM-aist source is obtained from GitHub here, the same procedure can be used to build modified source code.
 
 ```
  git clone https://github.com/OpenRTM/OpenRTM-aist
  sudo docker build -t test -f OpenRTM-aist/scripts/ubuntu_2004/Dockerfile .
 ```
 
-エラーなくビルドが終了したら、-tオプションで指定した test という名前のDockerイメージが生成されていることを確認できます。
+If the build completes without errors, you can confirm that a Docker image named test, specified by the -t option, has been generated.
 
 ```
  sudo docker images
@@ -61,15 +57,15 @@ OpenRTM-aist 2.0系のソースには、Ubuntu18.04、20.04、22.04用のDockerf
  test                    latest         0bc00f471b64   27 seconds ago   1.52GB
 ```
 
-ソースを修正しながらビルドが通るまで繰り返すと、 <none> というイメージが多数生成されます。　docker rmi で IMAGE ID を指定して削除できますが、まとめて削除したい場合は下記コマンド実行が便利です。
+If you repeatedly modify the source and rebuild until it succeeds, many images named <none> will be generated. You can delete them by specifying the IMAGE ID with docker rmi, but if you want to delete them all at once, the following command is convenient.
 
 ```
  sudo docker rmi $(sudo docker images -f dangling=true -q)
 ```
 
-### Dockerイメージ「openrtm/devel-rtm」について
+### About the Docker Image "openrtm/devel-rtm"
 
-ソースビルドで使用した Dockerfile の1行目は、Ubuntu18.04用、20.04用、22.04用でそれぞれの以下のようになっており、Dockerハブにアップロードされているこの名前のイメージを使用します。
+The first line of the Dockerfiles used for source builds is as follows for Ubuntu 18.04, 20.04, and 22.04, and uses images with these names uploaded to Docker Hub.
 
 ```
  FROM openrtm/devel-rtm:ubuntu18.04
@@ -77,10 +73,10 @@ OpenRTM-aist 2.0系のソースには、Ubuntu18.04、20.04、22.04用のDockerf
  FROM openrtm/devel-rtm:ubuntu22.04
 ```
 
-これらのイメージは、下記 Docierfile.devel-rtm から生成したものです。fluent-bitと、ROS、ROS2がインストールされています。
-- Ubuntu18.04用：dashing、melodic
-- Ubuntu20.04用：foxy、noetic
-- Ubuntu22.04用：humble
+These images are generated from the following Dockerfile.devel-rtm files. fluent-bit, ROS, and ROS2 are installed.
+- For Ubuntu 18.04: dashing, melodic
+- For Ubuntu 20.04: foxy, noetic
+- For Ubuntu 22.04: humble
 
 ```
  OpenRTM-aist/scripts/ubuntu_1804/Dockerfile.devel-rtm
@@ -88,15 +84,14 @@ OpenRTM-aist 2.0系のソースには、Ubuntu18.04、20.04、22.04用のDockerf
  OpenRTM-aist/scripts/ubuntu_2204/Dockerfile.devel-rtm
 ```
 
-### Dockerでdebパッケージ生成まで一括処理するスクリプト
+### Script for Automatically Generating deb Packages with Docker
 
-ここで紹介するスクリプトは、OpenRTM-aistのリリース用debパッケージ作成時に利用しているものです。 <br>
-OpenRTM-aistソースを変更してインストールしたい場合、debパッケージで手軽に試せます。
+The script introduced here is used when creating release deb packages for OpenRTM-aist. <br>
+If you want to modify and install OpenRTM-aist source code, you can easily test it using deb packages.
 
+This script performs source builds and deb package generation in Docker, and also automatically copies the generated deb packages from the Docker container to the host.
 
-このスクリプトは、Dockerでソースビルドからdebパッケージ生成まで行い、成果物であるdebパッケージをDockerコンテナからホスト側へコピーする処理までを一括で行います。
-
-Ubuntu20.04用のdebパッケージを作成する場合の手順は以下となります。
+The procedure for creating deb packages for Ubuntu 20.04 is as follows.
 
 ```
  git clone https://github.com/n-kawauchi/RTM-src-pkgs-docker-build
@@ -106,8 +101,8 @@ Ubuntu20.04用のdebパッケージを作成する場合の手順は以下とな
  drwxr-xr-x  2 root    root    4096 Jun 30 15:53 cxx-deb-pkgs/
 ```
 
-成果物のdebパッケージは cxx-deb-pkgs 下に出力されています。所有者がrootになっていますので、実行ユーザに変更しておいた方がアクセスしやすいです。 <br>
-ROSがインストールされたDockerイメージを使用しているので、ROS向けのパッケージ（openrtm2-ros*-tp）も生成されます。
+The generated deb packages are output under cxx-deb-pkgs. Since the owner is root, it is recommended to change ownership to the executing user for easier access. <br>
+Because a Docker image with ROS installed is used, ROS-related packages (openrtm2-ros*-tp) are also generated.
 
 ```
  ls cxx-deb-pkgs/
@@ -117,27 +112,27 @@ ROSがインストールされたDockerイメージを使用しているので�
  openrtm2-idl_2.0.0-0_amd64.deb           openrtm2_2.0.0-0.tar.gz
 ```
 
-（※）このスクリプトを amd64 環境で実行すれば amd64 用debパッケージが生成され、aarch64 環境で実行すれば arm64 用debパッケージが生成されます。
+(*Note*) Running this script on an amd64 environment generates deb packages for amd64, while running it on an aarch64 environment generates deb packages for arm64.
 
-OpenRTM-aistソースを変更してインストールしたい場合、build-cxx.sh スクリプトの以下の部分をコメントアウトし、build-cxx.sh と同じディレクトリにOpenRTM-aistソースを配置して実行してください。
+If you want to modify and install OpenRTM-aist source code, comment out the following sections of build-cxx.sh, place the OpenRTM-aist source in the same directory as build-cxx.sh, and execute it.
 
 ```
  #----- OpenRTM-aist
  echo "${password}" | sudo -S rm -rf ${TARGET}-*
- #rm -rf OpenRTM-aist    <-- コメントアウト
- #git clone https://github.com/OpenRTM/OpenRTM-aist    <-- コメントアウト
+ #rm -rf OpenRTM-aist    <-- Comment out
+ #git clone https://github.com/OpenRTM/OpenRTM-aist    <-- Comment out
 ```
 
-## Pythonソースのビルド
+## Building Python Source
 
-OpenRTM-aist-Python ソースには Dockerfile は含まれておりません。OpenRTM-aist-Pythonのリリース用debパッケージ作成時に下記Dockerfileを利用しています。
+The OpenRTM-aist-Python source does not include a Dockerfile. The following Dockerfiles are used when creating release deb packages for OpenRTM-aist-Python.
 - [ubuntu_1804/Dockerfile-python-deb](https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_1804/Dockerfile-python-deb)
 - [ubuntu_2004/Dockerfile-python-deb](https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2004/Dockerfile-python-deb)
 - [ubuntu_2204/Dockerfile-python-deb](https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2204/Dockerfile-python-deb)
 
-C++ソースビルドと同様に、Dockerでソースビルドからdebパッケージ生成まで行い、成果物であるdebパッケージをDockerコンテナからホスト側へコピーする処理までを一括で行うスクリプトを紹介します。
+As with the C++ source build, this section introduces a script that performs source builds and deb package generation in Docker, and automatically copies the generated deb packages from the Docker container to the host.
 
-Ubuntu20.04用のdebパッケージを作成する場合の手順は以下となります。
+The procedure for creating deb packages for Ubuntu 20.04 is as follows.
 
 ```
  git clone https://github.com/n-kawauchi/RTM-src-pkgs-docker-build
@@ -145,7 +140,7 @@ Ubuntu20.04用のdebパッケージを作成する場合の手順は以下とな
  sh build-python.sh
 ```
 
-成果物のdebパッケージはpython-deb-pkgs下に、ソースパッケージはpython-src-pkgs下に出力されます。
+The generated deb packages are output under python-deb-pkgs, and the source packages are output under python-src-pkgs.
 
 ```
  ls python-deb-pkgs/
@@ -159,30 +154,30 @@ Ubuntu20.04用のdebパッケージを作成する場合の手順は以下とな
  OpenRTM-aist-Python-2.0.0.tar.gz  OpenRTM-aist-Python-2.0.0.zip  
 ```
 
-OpenRTM-aist-Pythonソースを変更してインストールしたい場合、build-python.sh スクリプトの以下の部分をコメントアウトし、build-python.sh、Dockerfile-python-debと同じディレクトリにOpenRTM-aist-Pythonソースを配置して実行してください。
+If you want to modify and install OpenRTM-aist-Python source code, comment out the following sections of build-python.sh, place the OpenRTM-aist-Python source in the same directory as build-python.sh and Dockerfile-python-deb, and execute it.
 
 ```
  #----- OpenRTM-aist-Python
  echo "${password}" | sudo -S rm -rf ${TARGET}-*
- #--------　コメントアウト　ここから
+ #-------- Comment out from here
  #rm -rf OpenRTM-aist-Python
  #git clone https://github.com/OpenRTM/OpenRTM-aist-Python
  #cd OpenRTM-aist-Python
  #git checkout ${BRANCH}
  #cd -
- #--------　コメントアウト　ここまで
+ #-------- Comment out to here
 ```
 
-## Javaソースのビルド
+## Building Java Source
 
-OpenRTM-aist-Java ソースには Dockerfile は含まれておりません。OpenRTM-aist-Javaのリリース用debパッケージ作成時に下記Dockerfileを利用しています。
+The OpenRTM-aist-Java source does not include a Dockerfile. The following Dockerfiles are used when creating release deb packages for OpenRTM-aist-Java.
 - [ubuntu_1804/Dockerfile-java-deb](https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_1804/Dockerfile-java-deb)
 - [ubuntu_2004/Dockerfile-java-deb](https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2004/Dockerfile-java-deb)
 - [ubuntu_2204/Dockerfile-java-deb](https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2204/Dockerfile-java-deb)
 
-C++ソースビルドと同様に、Dockerでソースビルドからdebパッケージ生成まで行い、成果物であるdebパッケージをDockerコンテナからホスト側へコピーする処理までを一括で行うスクリプトを紹介します。
+As with the C++ source build, this section introduces a script that performs source builds and deb package generation in Docker, and automatically copies the generated deb packages from the Docker container to the host.
 
-Ubuntu20.04用のdebパッケージを作成する場合の手順は以下となります。
+The procedure for creating deb packages for Ubuntu 20.04 is as follows.
 
 ```
  git clone https://github.com/n-kawauchi/RTM-src-pkgs-docker-build
@@ -190,7 +185,7 @@ Ubuntu20.04用のdebパッケージを作成する場合の手順は以下とな
  sh build-java.sh
 ```
 
-成果物のdebパッケージはjava-deb-pkgs下に、ソースパッケージはjava-src-pkgs下に出力されます。
+The generated deb packages are output under java-deb-pkgs, and the source packages are output under java-src-pkgs.
 
 ```
  ls java-deb-pkgs/
@@ -204,20 +199,17 @@ Ubuntu20.04用のdebパッケージを作成する場合の手順は以下とな
  OpenRTM-aist-Java-2.0.0-jar.zip  OpenRTM-aist-Java-2.0.0.zip
  OpenRTM-aist-Java-2.0.0.tar.gz  
 ```
-OpenRTM-aist-Javaソースを変更してインストールしたい場合、build-java.sh スクリプトの以下の部分をコメントアウトし、build-java.sh、Dockerfile-java-debと同じディレクトリにOpenRTM-aist-Javaソースを配置して実行してください。
+
+If you want to modify and install OpenRTM-aist-Java source code, comment out the following sections of build-java.sh, place the OpenRTM-aist-Java source in the same directory as build-java.sh and Dockerfile-java-deb, and execute it.
 
 ```
  #----- OpenRTM-aist-Java
  echo "${password}" | sudo -S rm -rf ${TARGET}-*
- #--------　コメントアウト　ここから
+ #-------- Comment out from here
  #rm -rf OpenRTM-aist-Java
  #git clone https://github.com/OpenRTM/OpenRTM-aist-Java
  #cd OpenRTM-aist-Java
  #git checkout ${BRANCH}
  #cd -
- #--------　コメントアウト　ここまで
+ #-------- Comment out to here
 ```
-
-
-
--------jp page!!-------
