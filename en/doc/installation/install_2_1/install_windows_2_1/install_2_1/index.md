@@ -1,107 +1,107 @@
 ---
 layout: page
-title: 
+title: Installation 
 ---
--------jp page!!-------
 
-<!-- Title: インストール -->
-<div align="right"><a href="windows10-logo.png"><img src="windows10-logo.png" width="30%; margin:30 30 30 30px;" align="right"></a></div>
+<!-- Title: Installation -->
+<div align="right"><a href="windows10-logo.png"><img src="windows10-logo.png" width="15%; margin:30 30 30 30px;" align="right"></a></div>
 #contents
 
-<!-- ** インストールの準備 -->
+<!-- ** Preparing for Installation -->
 
-<!-- *** 32bit版と64bit版 -->
+<!-- *** 32-bit and 64-bit Versions -->
 <!--  -->
-<!-- 現状、ほとんどのWindowsは64bit版が利用されていますので、基本的には以下は 64bit を前提として説明します。 -->
-<!-- インストールしているWindowsが32bit版の場合は、OpenRTM-aistやその他のソフトウェアは32bit版をインストールする必要があります。 -->
+<!-- Currently, most Windows systems use the 64-bit version, so the following explanation assumes a 64-bit environment. -->
+<!-- If the installed Windows is a 32-bit version, OpenRTM-aist and other software must also be installed as 32-bit versions. -->
 <!--  -->
-<!-- &color(red){''NOTE: 基本的にすべて64bit版のソフトウェアを使用してください。''}; -->
+<!-- &color(red){''NOTE: In principle, always use 64-bit versions of software.''}; -->
 
 
 
-## 必要なソフトウエアのインストール
-OpenRTM-aistを利用するには、Python、CMake、Doxygen、Visual Studio等のソフトウェアのインストールが必要です。
+## Installing Required Software
+
+To use OpenRTM-aist, it is necessary to install software such as Python, CMake, Doxygen, and Visual Studio.
 
 ### Visual Studio
 
-C++版の開発だけでなく、Python版、Java版のRTCを作成した際に、インストーラをビルドするのにも必要です。
-以下のCommunity版（無料）をインストールするか、別途Visual Studio 2019/2022/2026を入手してインストールしてください。
+It is required not only for C++ development, but also for building installers when creating RTCs in Python or Java.
+Install the following Community Edition (free), or obtain and install Visual Studio 2019/2022/2026 separately.
 
 - [Microsoft **Download Visual Studio 2026**](https://visualstudio.microsoft.com/ja/downloads/?utm_source=mscom&utm_campaign=msdocs)
 
-現在動作確認できているVisual Studioの最新バージョンは2026です。　<br>
-C++の開発環境を入れ忘れることがよくあります。以下の説明を一読することをお勧めします。
-  - [Visual Studio Community 2026のインストール](/ja/doc/installation/install_2_1/install_windows_2_1/install_2_1/visual_studio_2_1/visual_studio_2026) 
+The latest version of Visual Studio currently verified to work is 2026. <br>
+It is common to forget to install the C++ development environment. We recommend reading the following explanation.
+  - [Installing Visual Studio Community 2026](/ja/doc/installation/install_2_1/install_windows_2_1/install_2_1/visual_studio_2_1/visual_studio_2026)
 
 ### Python
 
-PythonはPython言語版のRTCの開発だけでなく、OpenRTM-aistの様々なツールでも使用していますので必ずインストールする必要があります。
-OpenRTM-aistがサポートしているPythonは 3.10, 3.11, 3.12, 3.13, 3.14 です。
-最新版をインストールすることをお勧めします。
+Python is required not only for developing RTCs in the Python language version, but is also used by various OpenRTM-aist tools, so it must be installed.
+The versions of Python supported by OpenRTM-aist are 3.10, 3.11, 3.12, 3.13, and 3.14.
+It is recommended to install the latest version.
 
 - [Python Releases for Windows](https://www.python.org/downloads/windows/)
-  - [python-3.13.13-amd64.exe (64bit版)](https://www.python.org/ftp/python/3.13.13/python-3.13.13-amd64.exe)
+  - [python-3.13.13-amd64.exe (64-bit version)](https://www.python.org/ftp/python/3.13.13/python-3.13.13-amd64.exe)
 
-インストールする際以下の点に注意してください。
-  - Pythonのインストール先は、インストール時の選択 [Customize installation]に対応しています。
-  - [Customize installation]でインストール先を指定する手順は、下記ページの解説をご覧ください。
+Please note the following when installing.
+  - The Python installation location can be specified using the [Customize installation] option during installation.
+  - For instructions on specifying the installation location using [Customize installation], refer to the explanation on the following page.
 <!-- --- [[OpenRTM-aistを10分で始めよう！・Pythonのインストール:/ja/doc/installation/lets_start#toc1]]  -->
-    - [OpenRTM-aistを10分で始めよう！・Pythonのインストール](/ja/node/7323#toc1) 
+    - [Getting Started with OpenRTM-aist in 10 Minutes! - Installing Python](/ja/node/7323#toc1)
 
 ### CMake
-CMakeはWindowsやLinux等様々な環境でビルドに必要なファイル（Visual Studioのプロジェクトファイル、Linux上のMakefile等）を自動生成するために必要です。 <br>
-できるだけ最新版をインストールしてください。
 
-- [CMake(3.11以上推奨)](https://cmake.org/download/)
-  - [cmake-4.3.3-windows-x86_64.msi (64bit版)](https://github.com/Kitware/CMake/releases/download/v4.3.3/cmake-4.3.3-windows-x86_64.msi)
-  - インストールする際、[Install Option]画面で[Add Cmake to the system PATH for all users]を選択することを推奨します。
+CMake is required to automatically generate files necessary for building in various environments such as Windows and Linux (Visual Studio project files, Linux Makefiles, etc.). <br>
+Install the latest version whenever possible.
+
+- [CMake (3.11 or later recommended)](https://cmake.org/download/)
+  - [cmake-4.3.3-windows-x86_64.msi (64-bit version)](https://github.com/Kitware/CMake/releases/download/v4.3.3/cmake-4.3.3-windows-x86_64.msi)
+  - During installation, it is recommended to select [Add Cmake to the system PATH for all users] on the [Install Option] screen.
 
 ### Doxygen & Graphviz
 
-Doxygenは、ソースコード等のコメントからドキュメントを自動生成するツールです。 <br>
-Graphvizは、Doxygenでドキュメントを生成する際に、クラス図等の図を生成するために必要とされるツールです。 <br>
-OpenRTM-aistでは、RTCBuilderでRTCの設計時に様々な設計情報を記入することができ、それらはソースコードのコメントとして出力されます。
-これをDoxygenで処理することで、RTCのキレイなドキュメントを生成することができます。 <br>
-できるだけ最新版をインストールしてください。
+Doxygen is a tool that automatically generates documentation from comments in source code and other files. <br>
+Graphviz is a tool required by Doxygen to generate diagrams such as class diagrams when generating documentation. <br>
+In OpenRTM-aist, various design information can be entered during RTC design using RTCBuilder, and this information is output as comments in the source code.
+By processing these comments with Doxygen, well-formatted RTC documentation can be generated. <br>
+Install the latest version whenever possible.
 
 - [Doxygen](https://doxygen.nl/download.html#latestsrc)
-  - [doxygen-1.17.0-setup.exe ](https://www.doxygen.nl/files/doxygen-1.17.0-setup.exe) (32bit, 64bitの別なし）
-  - Microsoft Edge をお使いでダウンロードできない場合は、OpenRTM-aistの場合の解説をご覧ください。
-    - [OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード](/ja/node/7323#toc2) 
-
+  - [doxygen-1.17.0-setup.exe](https://www.doxygen.nl/files/doxygen-1.17.0-setup.exe) (no distinction between 32-bit and 64-bit)
+  - If you are unable to download it using Microsoft Edge, refer to the explanation for OpenRTM-aist.
+    - [Getting Started with OpenRTM-aist in 10 Minutes! - Downloading OpenRTM-aist](/ja/node/7323#toc2)
 
 &aname(Graphviz);
 - [Graphviz](https://graphviz.gitlab.io/download/)
   - [windows_10_cmake_Release_graphviz-install-15.0.0-win64.exe](https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/15.0.0/windows_10_cmake_Release_graphviz-install-15.0.0-win64.exe)
 
-インストールの途中で[Install Options]としてsystem PATHをどうするかを聞かれますが、Add Graphviz to the system PATH for all usersを選択することを推奨します。
-上記WebページからWindows版のバイナリ実行形式ファイルをダウンロードして実行してインストールしてください。
+During installation, you will be asked how to configure the system PATH under [Install Options]. It is recommended to select "Add Graphviz to the system PATH for all users".
+Download and run the Windows binary executable from the above web page to install it.
 
-インストール後、コマンドプロンプトで dot -v を実行してプラグイン情報が表示されることを確認して下さい。
+After installation, execute dot -v from the command prompt and confirm that plugin information is displayed.
+
  >dot -v
 
-<!-- 下記のように表示された場合、管理者でコマンドプロンプトを開き、dot -c を実行後に dot -v を実行すると上記のように表示されます。 -->
+<!-- If the following message is displayed, open the command prompt as Administrator, run dot -c, and then run dot -v again to display the plugin information. -->
 <!-- >dot -v -->
 <!-- dot - graphviz version 3.0.0 (20220226.1711) -->
 <!-- There is no layout engine support for "dot" -->
 <!-- Perhaps "dot -c" needs to be run (with installer's privileges) to register the plugins? -->
 <!--  -->
-<!-- 管理者でコマンドプロンプトを開く方法は、Windows10の検索窓に cmd と入力し、検索結果の「コマンドプロンプト」を右クリックして「管理者として実行」を選択します。 -->
+<!-- To open the command prompt as Administrator, type cmd in the Windows 10 search box, right-click "Command Prompt" in the search results, and select "Run as administrator". -->
 
 ### JDK8
 
-Javaで開発される場合に必要となります。下記ページの解説をご覧ください。
-    - [JDK8のインストール](/ja/node/6911) 
+This is required for Java development.
+Refer to the explanation on the following page.
+    - [Installing JDK8](/ja/node/6911)
 
+## Installing OpenRTM-aist
 
+After completing the installation of the above software, proceed with installing OpenRTM-aist.
 
-## OpenRTM-aistのインストール
+### Downloading the Installer
 
-上記のソフトウェアのインストールが完了したら、OpenRTM-aistのインストールを行います。
-
-### インストーラのダウンロード
-
-OpenRTM-aistのWindows版のインストーラ（msi形式）をダウンロードします。
+Download the Windows installer (MSI format) for OpenRTM-aist.
 
 <table class="table-alt">
   <tr>
@@ -111,42 +111,40 @@ OpenRTM-aistのWindows版のインストーラ（msi形式）をダウンロー�
   </tr>
 </table>
 
-Microsoft Edge をお使いでダウンロードできない場合は、下記ページの解説をご覧ください。
-- [OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード](/ja/node/7323#toc2) 
+If you are unable to download it using Microsoft Edge, refer to the explanation on the following page.
+- [Getting Started with OpenRTM-aist in 10 Minutes! - Downloading OpenRTM-aist](/ja/node/7323#toc2)
 
-このインストーラには、以下の内容が含まれています。
+This installer includes the following contents.
 
-- C++ 用開発環境
+- Development environment for C++
   - OpenCV 4.13.0
-  - C++用過去バージョンのDLL (古いRTC実行時に必要)
-- Python 用開発環境
-- Java 用開発環境
+  - DLLs from previous C++ versions (required for running older RTCs)
+- Development environment for Python
+- Development environment for Java
 - omniORB 4.3.4
-- OpenRTP (GUIツール、RTCBuilder，RTSystemEditor）
-  - JRE8環境 (OpenRTPに必要）
-- VCVerChanger (GUIツール）
-- rtshell (CUIツール）
+- OpenRTP (GUI tools: RTCBuilder and RTSystemEditor)
+  - JRE8 environment (required for OpenRTP)
+- VCVerChanger (GUI tool)
+- rtshell (CUI tool)
 
+### Installation
 
-### インストール
+For details of the installation process, refer to the following page.
+    - [Getting Started with OpenRTM-aist in 10 Minutes! - Installing OpenRTM-aist](/ja/node/7323#toc3)
 
-インストール過程の詳細は、下記ページをご覧ください。
-    - [OpenRTM-aistを10分で始めよう！・OpenRTM-aistのインストール](/ja/node/7323#toc3) 
+To confirm that the installation has been completed correctly, try running the sample components.
+    - [Getting Started with OpenRTM-aist in 10 Minutes! - Running Sample Components](/ja/node/7323#toc5)
 
-正しくインストールされているかどうかの確認として、サンプルコンポーネントを実行してみてください。
-    - [OpenRTM-aistを10分で始めよう！・サンプルコンポーネントを実行する](/ja/node/7323#toc5) 
+For details on the system environment variables configured by the installer and the installed files, refer to the following page.
+    - [OpenRTM-aist Installer Operations](/ja/doc/installation/install_2_1/install_windows_2_1/install_workcontent_2_1)
 
-インストーラが設定するシステム環境変数、インストールするファイル等の詳細は、下記ページをご覧ください。
-    - [OpenRTM-aistインストーラの作業内容](/ja/doc/installation/install_2_1/install_windows_2_1/install_workcontent_2_1)
+### Checking System Environment Variables
 
-### システム環境変数確認
+The system environment variable RTM_VC_VERSION is configured according to the installed version of Visual Studio.
+After installation, this environment variable should expand to the value vc16; however, it has been confirmed that in some cases it may not be expanded due to Windows behavior.
+Therefore, it is recommended to verify the system environment variables using VCVerChanger.
 
-インストールされているVisual Studioのバージョンに合わせて、システム環境変数RTM_VC_VERSIONを設定しています。 インストール後にこの環境変数がvc16の値で展開されますが、Windowsの動作により展開されないケースが発生することを確認しています。 そのため、VCVerChangerでのシステム環境変数の確認をお勧めします。
+Type VCVerChanger in the search box and start the application.
+After it starts, click the "Confirm" button, check the displayed path, and then click "Exit".
 
-検索窓に VCVerChanger と入力して起動してください。起動したら「確認」ボタンを押して表示されたパスを確認後、「終了」してください。
 <div align="center"><a href="vcverchanger.png"><img src="vcverchanger.png" width="70%;"></a></div>
-
-
-
-
--------jp page!!-------

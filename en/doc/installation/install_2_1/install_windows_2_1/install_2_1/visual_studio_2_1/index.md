@@ -1,8 +1,7 @@
 ---
 layout: page
-title: Visual Studioのインストール
+title: Installation of Visual Studio
 ---
--------jp page!!-------
 
-- [Visual Studio Community 2026のインストール](./visual_studio_2026)
--------jp page!!-------
+- [Installing Visual Studio Community 2026](./visual_studio_2026)
+

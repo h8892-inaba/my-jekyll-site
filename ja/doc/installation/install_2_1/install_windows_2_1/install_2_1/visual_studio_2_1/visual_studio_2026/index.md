@@ -14,7 +14,7 @@ title: Visual Studio Community 2026のインストール
 [**Community**]とラベルされた下の[**無料ダウンロード**]ボタンをクリックするとインストーラーのダウンロードが始まります。 <br>
 インストール手順はバージョン2022を例に説明します。
 
-<div align="left"><a href="vs2022_install1.png"><img src="vs2022_install1.png" width="20%;" align="left"></a></div>
+<div align="left"><a href="vs2022_install1.png"><img src="vs2022_install1.png" width="20%;" ></a></div>
 #clear
 
 ## インストーラーの実行
@@ -22,12 +22,12 @@ title: Visual Studio Community 2026のインストール
 
 
 
-<div align="left"><a href="vs2022_install2.png"><img src="vs2022_install2.png" width="20%;" align="left"></a></div>
+<div align="left"><a href="vs2022_install2.png"><img src="vs2022_install2.png" width="20%;" ></a></div>
 #clear
 
 
 ## インストールの確認
-<div align="left"><a href="vs2022_install3.png"><img src="vs2022_install3.png" width="20%; margin:0 20px;" align="left"></a></div>
+<div align="left"><a href="vs2022_install3.png"><img src="vs2022_install3.png" width="20%; margin:0 20px;" ></a></div>
 #clear
 
 インストールが完了するとサインインを求める画面が表示されるため、Microsoftアカウントでサインインしてください。サインインしなくても30日間は使用できます。
@@ -49,7 +49,7 @@ Visual C++のプロジェクトを作成できれば問題ありません。
 まず、[**新しいプロジェクトの作成**]をクリックしてください。
 
 
-<div align="left"><a href="vs2022_install4.png"><img src="vs2022_install4.png" width="40%;" align="left"></a></div>
+<div align="left"><a href="vs2022_install4.png"><img src="vs2022_install4.png" width="40%;" ></a></div>
 #clear
 
 この時、<br>
@@ -57,7 +57,7 @@ Visual C++のプロジェクトを作成できれば問題ありません。
 Windows用にC++で最初から始めます。開始ファイルは提供しません]<br>
 などが選択肢にあればインストールに問題ありません。
 
-<div align="left"><a href="new_project2022.png"><img src="new_project2022.png" width="30%;" align="left"></a></div>
+<div align="left"><a href="new_project2022.png"><img src="new_project2022.png" width="30%;" ></a></div>
 #clear
 
 インストールされていない場合は、<br>
@@ -67,7 +67,7 @@ Windows用にC++で最初から始めます。開始ファイルは提供しま�
 
 
 
-<div align="left"><a href="vs_install5.png"><img src="vs_install5.png" width="30%;" align="left"></a></div>
+<div align="left"><a href="vs_install5.png"><img src="vs_install5.png" width="30%;" ></a></div>
 #clear
 
 <br>

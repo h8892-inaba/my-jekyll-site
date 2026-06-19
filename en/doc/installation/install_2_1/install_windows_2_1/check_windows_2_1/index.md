@@ -1,34 +1,31 @@
 ---
 layout: page
-title: 動作確認 (Windows編)
+title: Operation Check (Windows)
 ---
--------jp page!!-------
 
 <!-- Title: 動作確認 (Windows編) -->
 
 #contents
 
+## Running Sample Components
 
-## サンプルコンポーネントを実行する
+After installation has completed successfully, you can verify operation using the included sample components.
+Batch files are provided, so you can start them simply by double-clicking.
 
-インストールが正常に終了したら、付属のサンプルコンポーネントで動作を確認できます。
-batファイルを用意していますので、それをダブルクリックすれば起動できます。
+The batch files are easy to access by opening the Start Menu folder from [OpenRTM-aist 2.1.* x86_64] in the Start Menu.<br>
 
-batファイルは、スタートメニューの [OpenRTM-aist 2.1.* x86_64] からスタートメニューフォルダーを開くとアクセスしやすいです。<br>
+Batch files are located under the folders "C++_Examples", "C++_OpenCV-Examples", "Python_Examples", and "Java_Examples".
 
-「C++_Examples」「C++_OpenCV-Examples」「Python_Examples」「Java_Examples」の各フォルダ下にbatファイルがあります。
+For details, refer to the explanation on the Getting Started in 10 Minutes page. <br>
 
-詳細は、10分で始めようページの解説をご覧ください。 <br>
-
-- [OpenRTM-aistを10分で始めよう！・サンプルコンポーネントを実行する](/ja/node/7323#toc5) 
+- [Getting Started with OpenRTM-aist in 10 Minutes! - Running Sample Components](/ja/node/7323#toc5)
 <br>
 
-<div align="center"><a href="start-menu-folder.png"><img src="start-menu-folder.png" width="90%;"></a></div><br>
-<div align="center"><strong>スタートメニューフォルダー</strong></div>
+<div align="center"><a href="start-menu-folder.png"><img src="start-menu-folder.png" width="70%;"></a></div><br>
+<div align="center"><strong>Start Menu Folder</strong></div>
 <br>
 
-
-サンプルコンポーネントのインストール先は以下です。
+The sample components are installed in the following locations.
 
 ```
  C:\Program Files\OpenRTM-aist\2.1.x\Components\C++\Examples
@@ -37,238 +34,232 @@ batファイルは、スタートメニューの [OpenRTM-aist 2.1.* x86_64] か
  C:\Program Files\OpenRTM-aist\2.1.x\Components\C++\OpenCV
 ```
 
+## Sample Component List
 
-## サンプルコンポーネント一覧
+The following table provides brief descriptions of the included sample components and links to pages explaining how to use them.
 
-付属しているサンプルコンポーネントの簡単な説明と、使い方を解説しているページへのリンクを以下に示します。
-
-### C++版、Python版、Java版に付属
+### Included with C++, Python, and Java Versions
 
 <table class="table-alt">
   <tr>
-    <td>batファイル名</td>
-    <td>サンプルコンポーネントの簡単な説明</td>
-    <td>使い方解説ページ</td>
+    <td>Batch File Name</td>
+    <td>Brief Description of the Sample Component</td>
+    <td>Usage Guide Page</td>
   </tr>
   <tr>
     <td>ConsoleIn.bat <br>ConsoleOut.bat</td>
-    <td>**ConsoleIn.bat** : コンソールから入力された数値をOutPortから出力する<span style="color:default;">ConsoleInコンポーネント</span>; を起動します。<br> **ConsoleOut.bat** : InPortに入力された数値をコンソールに表示する<span style="color:default;">ConsoleOutコンポーネント</span>;  を起動します。</td>
+    <td><strong>ConsoleIn.bat</strong>: Starts the <span style="color:default;">ConsoleIn component</span>, which outputs numeric values entered from the console through an OutPort.<br><strong>ConsoleOut.bat</strong>: Starts the <span style="color:default;">ConsoleOut component</span>, which displays numeric values received through an InPort on the console.</td>
     <td><a href="/ja/doc/installation/sample_components/simpleio">SimpleIO</a></td>
   </tr>
   <tr>
     <td>SeqIn.bat <br> SeqOut.bat</td>
-    <td>**SeqIn.bat** : ランダムな数値(Short、Long、Float、Doubleとそのシーケンス型)を出力する<span style="color:default;">SeqInコンポーネント</span>;を起動します。<br> **SeqOut.bat** : InPortに入力される数値(Short、Long、Float、Doubleとそのシーケンス型)を表示する<span style="color:default;">SeqOut</span>;を起動します。</td>
+    <td><strong>SeqIn.bat</strong>: Starts the <span style="color:default;">SeqIn component</span>, which outputs random numeric values (Short, Long, Float, Double, and their sequence types).<br><strong>SeqOut.bat</strong>: Starts the <span style="color:default;">SeqOut component</span>, which displays numeric values (Short, Long, Float, Double, and their sequence types) received through an InPort.</td>
     <td><a href="/ja/doc/installation/sample_components/seqio">SeqIO</a></td>
   </tr>
   <tr>
     <td>MyServiceProvider.bat <br>MyServiceConsumer.bat</td>
-    <td>**MyServiceProvider.bat** : MyService型のサービスを提供する<span style="color:default;">MyServiceProviderコンポーネント</span>; を起動します。<br> **MyServiceConsumer.bat** : MyService型のサービスを提供する<span style="color:default;">MyServiceConsumerコンポーネント</span>; を起動します。</td>
+    <td><strong>MyServiceProvider.bat</strong>: Starts the <span style="color:default;">MyServiceProvider component</span>, which provides a service of type MyService.<br><strong>MyServiceConsumer.bat</strong>: Starts the <span style="color:default;">MyServiceConsumer component</span>, which provides a service of type MyService.</td>
     <td><a href="/ja/doc/installation/sample_components/simpleservice">SimpleService</a></td>
   </tr>
   <tr>
     <td>ConfigSample.bat</td>
-    <td>Configuration機能の使用例のサンプル<span style="color:default;">ConfigSampleコンポーネント</span>; を起動します。RtcLinkからConfigurationを変更してConfigurationの挙動を理解するためのサンプルです。</td>
+    <td>Starts the <span style="color:default;">ConfigSample component</span>, a sample demonstrating the use of the Configuration feature. This sample helps you understand Configuration behavior by modifying Configuration settings from RtcLink.</td>
     <td><a href="/ja/doc/installation/sample_components/configsample">ConfigSample</a></td>
   </tr>
   <tr>
     <td>Composite.bat</td>
-    <td>複合コンポーネント作成サンプル<span style="color:default;">PeriodicECSharedComponentコンポーネント</span>; を起動します。Sensor、Controller、Motorの3つサブ・コンポネントを複合しています。 ConsoleInなどのコンポーネント接続して使ってみると良いでしょう。</td>
+    <td>Starts the <span style="color:default;">PeriodicECSharedComponent component</span>, a sample for creating composite components. It combines three subcomponents: Sensor, Controller, and Motor. Try connecting it with components such as ConsoleIn.</td>
     <td><a href="/ja/doc/installation/sample_components/composite">Composite</a></td>
   </tr>
 </table>
 
-### Python版のみに付属
+### Included Only with the Python Version
 
 <table class="table-alt">
   <tr>
-    <td>batファイル名</td>
-    <td>サンプルコンポーネントの簡単な説明</td>
-    <td>使い方解説ページ</td>
+    <td>Batch File Name</td>
+    <td>Brief Description of the Sample Component</td>
+    <td>Usage Guide Page</td>
   </tr>
   <tr>
     <td>TkJoystickComp.bat</td>
-    <td>Tcl/Tkを用いたGUIコンポーネントのサンプル。簡易ジョイスティックコンポーネント。</td>
+    <td>A sample GUI component using Tcl/Tk. A simple joystick component.</td>
     <td><a href="/ja/doc/installation/sample_components/tkjoystick_mobilerobotsimulator#toc0">TkJoyStick</a></td>
   </tr>
   <tr>
     <td>TkMobileRobotSimulator.bat</td>
-    <td>モバイルロボットの簡易シミュレーター。ロボットの速度をInPortで受け、移動後の位置をOutPortから出力する。</td>
+    <td>A simple mobile robot simulator. Receives robot velocity through an InPort and outputs the resulting position through an OutPort.</td>
     <td><a href="/ja/doc/installation/sample_components/tkjoystick_mobilerobotsimulator#toc4">TkMobileRobotSimulator</a></td>
   </tr>
   <tr>
     <td>TkMotorComp.bat</td>
-    <td>Tcl/Tkを用いたGUIコンポーネントのサンプル。InPortで受け取った値の速度で回転する様子をGUIで表示する。</td>
+    <td>A sample GUI component using Tcl/Tk. Displays rotation at a speed corresponding to values received through an InPort.</td>
     <td><a href="/ja/doc/installation/sample_components/tkmotorcomp_slidercomp#toc0">TkMotorComp</a></td>
   </tr>
   <tr>
     <td>SliderComp.bat</td>
-    <td>Tcl/Tkを用いたGUIコンポーネントのサンプル。Sliderで指定した値をOutPortから出力する。</td>
+    <td>A sample GUI component using Tcl/Tk. Outputs values specified with a slider through an OutPort.</td>
     <td><a href="/ja/doc/installation/sample_components/tkmotorcomp_slidercomp#toc3">SliderComp</a></td>
   </tr>
   <tr>
     <td>TkMotorPosComp.bat</td>
-    <td>Tcl/TKを用いたGUIコンポーネントのサンプル。InPortで受け取った値を回転角として動く様子をGUIで表示する。</td>
+    <td>A sample GUI component using Tcl/Tk. Displays motion corresponding to values received through an InPort as rotation angles.</td>
     <td><a href="/ja/doc/installation/sample_components/tkmotorposcomp_slidercomp">TkMotorPosComp</a></td>
   </tr>
   <tr>
     <td>TkLRFViewer.bat</td>
-    <td>Tcl/Tkを用いたGUIコンポーネントのサンプル。レーザーレンジセンサーなどから出力されるデータを表示する。</td>
+    <td>A sample GUI component using Tcl/Tk. Displays data output from laser range sensors and similar devices.</td>
     <td><a href="/ja/doc/installation/sample_components/tklrfviewer">tkLRFViewer</a></td>
   </tr>
   <tr>
     <td>AutoControl.bat</td>
-    <td>モバイルロボット用のコンポーネントで速度を出力する。測位センサーのデータをInPortで受け、ロボットの速度を計算してOutPortから出力する。</td>
+    <td>A component for mobile robots that outputs velocity. It receives positioning sensor data through an InPort, calculates robot velocity, and outputs it through an OutPort.</td>
     <td><a href="/ja/doc/installation/sample_components/autocontrol">Autocontrol</a></td>
   </tr>
 </table>
 
-### Python版、Java版に付属
+### Included with Python and Java Versions
 
 <table class="table-alt">
   <tr>
-    <td>batファイル名</td>
-    <td>サンプルコンポーネントの簡単な説明</td>
-    <td>使い方解説ページ</td>
+    <td>Batch File Name</td>
+    <td>Brief Description of the Sample Component</td>
+    <td>Usage Guide Page</td>
   </tr>
   <tr>
     <td>ExtConsoleIn.bat <br> ExtConsoleOut.bat <br> ExtConnector.bat</td>
-    <td>**ExtConsoleIn.bat** : 外部からのトリガで制御されるコンソール入力された数値をOutportから出力するコンポーネントを起動します。<br> **ExtConsoleOut.bat** : 外部からのトリガで制御されるInportに入力された数値をコンソールに出力するコンポーネントを起動します。<br> **ExtConnector.bat** : ExtTrigger/ConsoleInComp.class or .pyとExtTrigger/ConsoleOutComp.class or .pyへの外部トリガー送るプログラムを起動します。</td>
+    <td><strong>ExtConsoleIn.bat</strong>: Starts a component that outputs numeric values entered through the console via an OutPort, controlled by external triggers.<br><strong>ExtConsoleOut.bat</strong>: Starts a component that outputs numeric values received through an InPort to the console, controlled by external triggers.<br><strong>ExtConnector.bat</strong>: Starts a program that sends external triggers to ExtTrigger/ConsoleInComp.class or .py and ExtTrigger/ConsoleOutComp.class or .py.</td>
     <td><a href="/ja/doc/installation/sample_components/exttrigger">ExtTrigger</a></td>
   </tr>
 </table>
 
-### Java版のみに付属
+### Included Only with the Java Version
 
 <table class="table-alt">
   <tr>
-    <td>batファイル名</td>
-    <td>サンプルコンポーネントの簡単な説明</td>
-    <td>使い方解説ページ</td>
+    <td>Batch File Name</td>
+    <td>Brief Description of the Sample Component</td>
+    <td>Usage Guide Page</td>
   </tr>
   <tr>
     <td>GUIIn.bat</td>
-    <td>スライダーの位置をOutportから出力するGUIのサンプルを起動します。ConsoleOutComp.classと接続することもできます。</td>
+    <td>Starts a GUI sample that outputs slider positions through an OutPort. It can also be connected to ConsoleOutComp.class.</td>
     <td><a href="/ja/doc/installation/sample_components/guiin">GUIIn</a></td>
   </tr>
 </table>
 
-### OpenCV C++版
+### OpenCV C++ Version
 
 <table class="table-alt">
   <tr>
-    <td>batファイル名</td>
-    <td>サンプルコンポーネントの簡単な説明</td>
-    <td>使い方解説ページ</td>
+    <td>Batch File Name</td>
+    <td>Brief Description of the Sample Component</td>
+    <td>Usage Guide Page</td>
   </tr>
   <tr>
     <td>Affine.bat</td>
-    <td>入力画像のアフィン変換をします。</td>
+    <td>Performs affine transformation on the input image.</td>
   </tr>
   <tr>
     <td>BackgroundSubtractionSimple.bat</td>
-    <td>入力画像においてKey入力があった時点の画像から変化分を出力します。</td>
+    <td>Outputs changes from the image at the moment a key input is received.</td>
   </tr>
   <tr>
     <td>Binarization.bat</td>
-    <td>入力画像を二値化した白黒画像に変換します。</td>
+    <td>Converts the input image into a binary black-and-white image.</td>
   </tr>
   <tr>
     <td>CameraViewer.bat</td>
-    <td>InPort で受け取った画像を画面に表示します。</td>
+    <td>Displays images received through an InPort.</td>
     <td><a href="/ja/doc/installation/sample_components/opencvcamera">CameraViewer</a></td>
   </tr>
   <tr>
     <td>Chromakey.bat</td>
-    <td>画像から特定の色を除去し物体を抽出します。</td>
+    <td>Removes a specified color from an image and extracts objects.</td>
     <td><a href="/ja/doc/installation/sample_components/chromakey">Chromakey</a></td>
   </tr>
   <tr>
     <td>DialationErosion.bat</td>
-    <td>ダイアレーション/エロージョン処理を行います。</td>
+    <td>Performs dilation and erosion processing.</td>
   </tr>
   <tr>
     <td>Edge.bat</td>
-    <td>X方向一次微分画像、Y方向一次微分画像、ラプラシアン画像(二次微分画像)を出力します</td>
+    <td>Outputs first-derivative images in the X and Y directions and a Laplacian image (second-derivative image).</td>
   </tr>
   <tr>
     <td>Findcontour.bat</td>
-    <td>輪郭抽出をして、輪郭を画像中に表示します。</td>
+    <td>Extracts contours and displays them in the image.</td>
   </tr>
   <tr>
     <td>Flip</td>
-    <td>画像の反転を行います。</td>
-    <td><a href="/ja/doc/installation/sample_components/opencvcamera">Flip使用例</a></td>
+    <td>Flips the image.</td>
+    <td><a href="/ja/doc/installation/sample_components/opencvcamera">Flip Usage Example</a></td>
   </tr>
   <tr>
     <td>Histgram.bat</td>
-    <td>白黒化した画像の明度/コントラストの変更処理をしながら、ヒストグラムの変化を表示します。</td>
+    <td>Displays histogram changes while modifying brightness and contrast of a grayscale image.</td>
   </tr>
   <tr>
     <td>Hough.bat</td>
-    <td>ハフ変換による直線抽出</td>
+    <td>Line extraction using the Hough transform.</td>
   </tr>
   <tr>
     <td>ImageCalibration.bat</td>
-    <td>カメラキャリブレーションを行います。</td>
-    <td><a href="/ja/doc/installation/sample_components/tkcalibgui">TkCalibGUIから自動起動</a></td>
+    <td>Performs camera calibration.</td>
+    <td><a href="/ja/doc/installation/sample_components/tkcalibgui">Automatically Started from TkCalibGUI</a></td>
   </tr>
   <tr>
     <td>ImageSubtraction.bat</td>
-    <td>入力画像から背景画像を取り出し、前景画像部を判定し、それを取り出すマスク画像を、背景画像を出力します。</td>
+    <td>Extracts the background image from the input image, detects foreground regions, and outputs a mask image and background image.</td>
     <td><a href="/ja/doc/installation/sample_components/imagesubtraction">ImageSubtraction</a></td>
   </tr>
   <tr>
     <td>ObjectTracking.bat</td>
-    <td>画面上から選択したオブジェクトを追跡して、その位置を赤い楕円形で囲んで示します。</td>
+    <td>Tracks an object selected on the screen and indicates its position with a red ellipse.</td>
     <td><a href="/ja/doc/installation/sample_components/objecttracking">ObjectTracking</a></td>
   </tr>
   <tr>
     <td>OpenCVCamera.bat</td>
-    <td>USBカメラのキャプチャ画像を OutPort から出力します。</td>
+    <td>Outputs captured images from a USB camera through an OutPort.</td>
     <td><a href="/ja/doc/installation/sample_components/opencvcamera">OpenCVCamera</a></td>
   </tr>
   <tr>
     <td>Perspective.bat</td>
-    <td>画像のパースペクティブ変換(斜め下から見たように変換します。</td>
+    <td>Performs perspective transformation on images (as if viewed from below at an angle).</td>
   </tr>
   <tr>
     <td>RockPaperScissors.bat</td>
-    <td>画像でグーチョキパーを判定します。</td>
+    <td>Determines rock-paper-scissors gestures from images.</td>
   </tr>
   <tr>
     <td>Rotate.bat</td>
-    <td>画像を回転と縮小拡大処理をします。</td>
+    <td>Performs image rotation and scaling.</td>
   </tr>
   <tr>
     <td>Scale.bat</td>
-    <td>画像の縮小拡大処理をします。</td>
+    <td>Performs image scaling.</td>
   </tr>
   <tr>
     <td>Sepia.bat</td>
-    <td>画像のセピア化を行います。</td>
+    <td>Applies a sepia effect to images.</td>
   </tr>
   <tr>
     <td>SubtractCaptureImage.bat</td>
-    <td>入力画像から変化のない部分を背景と判断して、前景(移動物)を取り出すマスク画像を出力します。</td>
+    <td>Determines unchanged regions in the input image as background and outputs a mask image that extracts the foreground (moving objects).</td>
     <td><a href="/ja/doc/installation/sample_components/substractcaptureimage">SubtractCaptureImage</a></td>
   </tr>
   <tr>
     <td>Template.bat</td>
-    <td>テンプレートマッチング</td>
+    <td>Template matching.</td>
   </tr>
   <tr>
     <td>TkCalibGUI.bat</td>
-    <td>カメラキャリブレーションを行う ImageCalibrationコンポーネント用のGUIです。</td>
+    <td>A GUI for the ImageCalibration component used for camera calibration.</td>
     <td><a href="/ja/doc/installation/sample_components/tkcalibgui">TkCalibGUI</a></td>
   </tr>
   <tr>
     <td>Translate.bat</td>
-    <td>画像の2次元移動処理をします。</td>
+    <td>Performs two-dimensional image translation.</td>
   </tr>
 </table>
 
-
-
-
-
--------jp page!!-------

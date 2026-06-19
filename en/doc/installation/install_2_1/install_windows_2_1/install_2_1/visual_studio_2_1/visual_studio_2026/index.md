@@ -1,76 +1,69 @@
 ---
 layout: page
-title: Visual Studio Community 2026のインストール
+title: Installing Visual Studio Community 2026
 ---
--------jp page!!-------
 
 <!-- Title: Visual Studio Community 2022のインストール -->
 #contents
 
-## インストーラーの入手
-以下のページからVisual Studio Community 2026のインストーラーを入手してください
+## Obtaining the Installer
 
-- [Visual Studioのダウンロード](https://visualstudio.microsoft.com/ja/downloads/?utm_source=mscom&utm_campaign=msdocs)
+Please obtain the Visual Studio Community 2026 installer from the following page.
 
-[**Community**]とラベルされた下の[**無料ダウンロード**]ボタンをクリックするとインストーラーのダウンロードが始まります。 <br>
-インストール手順はバージョン2022を例に説明します。
+- [Download Visual Studio](https://visualstudio.microsoft.com/ja/downloads/?utm_source=mscom&utm_campaign=msdocs)
 
-<div align="left"><a href="vs2022_install1.png"><img src="vs2022_install1.png" width="20%;" align="left"></a></div>
+Click the [**Free Download**] button under the label [**Community**] to begin downloading the installer. <br>
+The installation procedure is explained using version 2022 as an example.
+
+<div align="left"><a href="vs2022_install1.png"><img src="vs2022_install1.png" width="20%;"></a></div>
 #clear
 
-## インストーラーの実行
-ダウンロードが終了したら、ダウンロードしたファイルを開いて実行してください。指示にしたがってクリックしていくと以下の画面が表示されるので、[**C++によるデスクトップ開発**]にチェックを入れて[**インストール**]ボタンをクリックしてください。
+## Running the Installer
 
+After the download is complete, open and run the downloaded file. Follow the instructions by clicking through the screens until the following screen appears. Check [**Desktop development with C++**] and click the [**Install**] button.
 
-
-<div align="left"><a href="vs2022_install2.png"><img src="vs2022_install2.png" width="20%;" align="left"></a></div>
+<div align="left"><a href="vs2022_install2.png"><img src="vs2022_install2.png" width="20%;" ></a></div>
 #clear
 
+## Verifying the Installation
 
-## インストールの確認
-<div align="left"><a href="vs2022_install3.png"><img src="vs2022_install3.png" width="20%; margin:0 20px;" align="left"></a></div>
+<div align="left"><a href="vs2022_install3.png"><img src="vs2022_install3.png" width="20%; margin:0 20px;" ></a></div>
 #clear
 
-インストールが完了するとサインインを求める画面が表示されるため、Microsoftアカウントでサインインしてください。サインインしなくても30日間は使用できます。
-Microsoftアカウントの手順は以下を参考にしてください。
+When the installation is complete, a sign-in screen will appear. Sign in with a Microsoft account. You can use Visual Studio for 30 days without signing in.
+For information about Microsoft accounts, refer to the following.
 
-[新しいMicrosoftアカウントを作成する方法](https://support.microsoft.com/ja-jp/help/4026324/microsoft-account-how-to-create)
-
-
-
+[How to Create a New Microsoft Account](https://support.microsoft.com/ja-jp/help/4026324/microsoft-account-how-to-create)
 
 #clear
 
+## Verifying That the C++ Compiler Is Installed
 
-## C++コンパイラがインストールされているかの確認
+Be sure to verify that the Desktop development with C++ feature has been installed.
 
-C++によるデスクトップ開発機能がインストールされているかを必ず確認してください。
+If you can create a Visual C++ project, there is no problem.
+First, click [**Create a new project**].
 
-Visual C++のプロジェクトを作成できれば問題ありません。
-まず、[**新しいプロジェクトの作成**]をクリックしてください。
-
-
-<div align="left"><a href="vs2022_install4.png"><img src="vs2022_install4.png" width="40%;" align="left"></a></div>
+<div align="left"><a href="vs2022_install4.png"><img src="vs2022_install4.png" width="40%;" ></a></div>
 #clear
 
-この時、<br>
-[**空のプロジェクト**<br>
-Windows用にC++で最初から始めます。開始ファイルは提供しません]<br>
-などが選択肢にあればインストールに問題ありません。
+At this point, if options such as the following are available, the installation is successful.<br>
 
-<div align="left"><a href="new_project2022.png"><img src="new_project2022.png" width="30%;" align="left"></a></div>
+[**Empty Project**<br>
+Start from scratch with C++ for Windows. No starter files are provided.]
+
+<div align="left"><a href="new_project2022.png"><img src="new_project2022.png" width="30%;" ></a></div>
 #clear
 
-インストールされていない場合は、<br>
-[探しているものが見つからない場合<br>
-**さらにツールと機能をインストールする**]<br>
-をクリックするとインストーラーが起動するので、[’’C++によるデスクトップ開発機能’’]をインストールしてください。
+If it has not been installed,<br>
 
+[Can't find what you're looking for?<br>
+**Install more tools and features**]
 
+Clicking this option launches the installer. Install [**Desktop development with C++**].
 
-<div align="left"><a href="vs_install5.png"><img src="vs_install5.png" width="30%;" align="left"></a></div>
+<div align="left"><a href="vs_install5.png"><img src="vs_install5.png" width="30%;" ></a></div>
 #clear
 
 <br>
 <br>
--------jp page!!-------
