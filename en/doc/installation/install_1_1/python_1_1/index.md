@@ -2,7 +2,9 @@
 layout: page
 title: OpenRTM-aist(Python版) 1.1系のインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 ここでは OpenRTM-aist (Python) の Windows へのインストール方法を説明します。 ※以降の説明は便宜上 OpenRTM-aist-1.0.0 について書かれています。
 
@@ -16,4 +18,4 @@ title: OpenRTM-aist(Python版) 1.1系のインストール
 - [ソースからのビルド (Linux編)](./build_source_linux_python_1_1)
 - [動作確認 (Windows編)](./test_windows_python_1_1)
 - [動作確認 (Linux編)](./test_linux_python_1_1)
--------jp page!!-------
+

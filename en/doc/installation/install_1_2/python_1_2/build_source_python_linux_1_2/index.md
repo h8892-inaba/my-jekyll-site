@@ -2,7 +2,10 @@
 layout: page
 title: ソースからのビルド(Linux編)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
+
 
 <!-- Title: ソースからのビルド(Linux編) -->
 #contents
@@ -62,4 +65,3 @@ OpenRTM-aist-Pythonはパッケージのビルドにdistutilsモジュールを�
 
 以上で、ソースコードからのビルドおよびインストールは終了です。
 
--------jp page!!-------

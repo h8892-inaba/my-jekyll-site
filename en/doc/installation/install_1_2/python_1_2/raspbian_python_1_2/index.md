@@ -2,7 +2,10 @@
 layout: page
 title: Raspbianへのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
+
 <!-- node/6924-->
 <!-- Title: Raspbianへのインストール -->
 
@@ -68,7 +71,7 @@ openrtm.orgが提供するインストール・スクリプト**pkg_install_rasp
 ```
 でインストールできます。
 
-一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)」のページをご確認ください。
+一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script)」のページをご確認ください。
 
 ## rtshellのインストール
 RTCをRaspbianにインストールしてそのホスト上からローカルにRTCをコントロールしたい場合にはrtshellが必要です。一括インストールスクリプトを用いてrtshellをインストールしてください。Raspbianではpkg_install_raspbian.shが置いてあるディレクトリで
@@ -234,5 +237,3 @@ rtshellのインストールも確認します。
 ```
 
 
-
--------jp page!!-------

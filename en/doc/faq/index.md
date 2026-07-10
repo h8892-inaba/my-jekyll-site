@@ -1,21 +1,20 @@
 ---
 layout: page
-title: よくある質問
+title: Frequently Asked Questions
 ---
--------jp page!!-------
 
-よくある質問を簡単にまとめました。
+We have briefly summarized frequently asked questions.
 
-- [RTミドルウェア / OpenRTM-aist について](./faq_rtm_openrtm-aist)
-- [一般・ライセンスに関する FAQ](./faq_common_license)
-- [インストールに関する FAQ](./faq_install)
-- [RTコンポーネント作成に関する FAQ](./faq_rtc_creation)
-- OpenRTM-aist 各言語版実装に関する FAQ
-  - [C++版](./faq_openrtm_cpp)
-  - [Python版](./faq_openrtm_python)
-  - [Java版](./faq_openrtm_java)
-- [RTSystemEditor、RTCBuilder、rtshell 等ツールに関する FAQ](./faq_rtp_tools)
-- [その他の FAQ](./faq_other)
-- [過去に掲載した FAQ](./faq_old)
-- [トラブルシューティング](./trouble_shooting)
--------jp page!!-------
+- [About RT Middleware / OpenRTM-aist](./faq_rtm_openrtm-aist)
+- [FAQ on General Matters and Licenses](./faq_common_license)
+- [FAQ on Installation](./faq_install)
+- [FAQ on Creating RT Components](./faq_rtc_creation)
+- FAQ on OpenRTM-aist Implementations for Each Language
+  - [C++ Version](./faq_openrtm_cpp)
+  - [Python Version](./faq_openrtm_python)
+  - [Java Version](./faq_openrtm_java)
+- [FAQ on Tools Such as RTSystemEditor, RTCBuilder, and rtshell](./faq_rtp_tools)
+- [Other FAQs](./faq_other)
+- [Previously Published FAQs](./faq_old)
+- [Troubleshooting](./trouble_shooting)
+

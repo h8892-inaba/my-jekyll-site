@@ -1,20 +1,18 @@
 ---
 layout: page
-title: "RTC（EC）の状態を取得する"
+title: "Getting the State of an RTC (EC)"
 ---
--------jp page!!-------
 
 <!-- Title: RTC（EC）の状態を取得する -->
-エラーを取得する方法として2つの方法があります。
-rtctree （rtshell のもととなっているライブラリ）ですと簡単に実現できますが、
-まずは原理的なところから説明させていただきます。
+There are two ways to get errors.
+This can be done easily with rtctree (the library on which rtshell is based),
+but first, let me explain the underlying principle.
 
-1) ECに対してポーリングをする
-あるRTCにアタッチされている実行コンテキスト（EC）に対して get_component_state() で
-現在の状態を問い合わせる。
-この方法はポーリングですので多用するとシステムの速度低下を招きます。
+1) Poll the EC
+For the execution context (EC) attached to an RTC, query the current state using get_component_state().
+Since this method uses polling, using it frequently may slow down the system.
 
-疑似コードで説明いたします。
+This is explained with pseudocode below.
 
 ```
 rtc = <何らかの方法でRTCのオブジェクトリファレンスを取得>
@@ -41,26 +39,25 @@ switch (ec_list[0].get_component_state(rtc)) {
 ```
 
 
-まずRTCからECを取得して、そのECに対してRTCを引数にして状態を取得しています。
-このような呼び出し方をしているのは、以下の様な考え方からです。
+First, the EC is obtained from the RTC, and then the state is obtained from that EC with the RTC passed as an argument.
+This type of call is used based on the following idea.
 
-RTCのステータスとして Inactive-Active-Error とされているのは、実際にはRTC の状態
-ではなく、ある実行コンテキスト(EC)があるRTCと結びついたときの状態です。
-（すなわち、状態はEC側にある、という考え方です。）
-http://www.omg.org/spec/RTC/ のFigure5.6 がそれに当たります。
+What is referred to as the RTC status, Inactive-Active-Error, is actually not the state of the RTC itself,
+but the state when a certain execution context (EC) is associated with an RTC.
+(In other words, the state is considered to belong to the EC side.)
+Figure 5.6 at http://www.omg.org/spec/RTC/ corresponds to this.
 
-通常は自身のECしかないため、ECの状態とRTCの状態を同一視しても問題ないのですが、
-実際には一つのRTCは複数のECにアタッチされる可能性があることをご理解ください。
+Normally, an RTC only has its own EC, so it is not a problem to regard the EC state and the RTC state as the same.
+However, please understand that one RTC can actually be attached to multiple ECs.
 
-2) ComponentObserver を利用する
-もう一つはComponentObserver （1.1.0以降で導入） を利用する方法です。
-ComponentObserverは以下の様なインターフェースを持っており、問い合わせをしたい側で
-サーバントを実装し、このオブジェクトをRTCにアタッチすることで状態が変わったとき
-などにコールバックさせます。
+2) Use ComponentObserver
+Another method is to use ComponentObserver (introduced in 1.1.0 and later).
+ComponentObserver has an interface like the following. The side that wants to make inquiries implements a servant,
+and by attaching this object to the RTC, callbacks are made when the state changes, etc.
 
 [ext/sdo/observer/ComponentObserver.idl](http://svn.openrtm.org/OpenRTM-aist/tags/RELEASE_1_1_0/OpenRTM-aist/src/ext/sdo/observer/ComponentObserver.idl)
 
-@interface ComponentObserver の項をご覧ください。
+See the @interface ComponentObserver section.
 
 
 ```
@@ -80,13 +77,15 @@ conf.add_service_profile(profile);
 
 ```
 
-状態がACTIVEに変わったら、上記 ovs_svt の
+When the state changes to ACTIVE,
 ComponentOberver_impl::update_status("RTC_STATUS", "ACTIVE:0");
-状態がINACTIVEに変わったら、
+of the above ovs_svt is called.
+When the state changes to INACTIVE,
 ComponentOberver_impl::update_status("RTC_STATUS", "INACTIVE:0");
-状態がERRORに変わったら、
+is called.
+When the state changes to ERROR,
 ComponentOberver_impl::update_status("RTC_STATUS", "ERROR:0");
-が呼び出される。
+is called.
 
 <!-- > もしないのでしたらどのタイミングでリセットするかをどのように判断するのか -->
 <!-- > 教えて頂けないでしょうか。 -->
@@ -94,19 +93,16 @@ ComponentOberver_impl::update_status("RTC_STATUS", "ERROR:0");
 <!-- > rtshellなどの方法で適切なタイミングでリセットを掛けるタイミングがわから -->
 <!-- > ず、OpenRTMでは一般的な方法がないのか気になっております。 -->
 
-ちなみに、rtshellのもととなっているrtctreeでは、たとえば RTCTree のコンストラクタに
-dynamic = True をセットするとツリーオブジェクトがRTCの状態を取得する際に
-ComponentObserverを利用して状態を取得するようになります。
+Incidentally, in rtctree, which is the basis of rtshell, for example, if dynamic = True is set in the RTCTree constructor,
+the tree object will use ComponentObserver to obtain the RTC state when obtaining the state of an RTC.
 
 - [tree.py](https://github.com/gbiggs/rtctree/blob/master/rtctree/tree.py)
 
-また TreeNode::add_callback() を利用すると、イベントをフックできるようです。
+Also, it seems that events can be hooked by using TreeNode::add_callback().
 
 - [node.py](https://github.com/gbiggs/rtctree/blob/master/rtctree/node.py)
 
-このファイルの一番下にイベント名が定義されています。
+Event names are defined at the bottom of this file.
 
 - [component.py](https://github.com/gbiggs/rtctree/blob/master/rtctree/component.py)
 
-
--------jp page!!-------

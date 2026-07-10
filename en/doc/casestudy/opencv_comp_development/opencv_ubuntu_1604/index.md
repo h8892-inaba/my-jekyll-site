@@ -189,7 +189,7 @@ Install using the installation script.
 
 #### Installing OpenRTP
 
-Download and install the Linux version of OpenRTP (integrated environment for component development tools and system development tools) from [this URL]({{ site.baseurl }}/ja/download/tools/openrtp_1_1_2).
+Download and install the Linux version of OpenRTP (integrated environment for component development tools and system development tools) from [this URL]({{ site.baseurl }}/en/download/tools/openrtp_1_1_2).
 
 Java is also required to run OpenRTP, so install the `default-jre` package.
 

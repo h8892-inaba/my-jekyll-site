@@ -1,524 +1,446 @@
 ---
 layout: page
-title: 移動ロボットKobukiの制御
+title: Controlling the Kobuki Mobile Robot
 ---
--------jp page!!-------
-<!-- Title: 移動ロボットKobukiの制御 -->
-<!-- * 移動ロボット Kobuki の制御 -->
+
+<!-- Title: Controlling the Kobuki Mobile Robot -->
+
 #contents
 
-Kobuki は Yujin Robotics から発売されている研究用移動ロボットです。
-掃除機ロボット Roomba とほぼ同様の大きさで、USBシリアル接続でPC等から制御ができるようになっています。
-また、IO、シリアル入出力、電源コネクタ、ボタン、LED等が装備されており、実験用ロボットとしての利用に適しています。
+Kobuki is a research mobile robot manufactured by Yujin Robotics.
 
-以下の Kobuki のサンプルを動作させるために必要なソフトウエアのインストールなどを行うスクリプトがこちらからダウンロードできます。
+It is approximately the same size as a Roomba robot vacuum and can be controlled from a PC via a USB serial connection.
 
-- [http://svn.openrtm.org/Embedded/trunk/RaspberryPi/tools/rpi.sh](http://svn.openrtm.org/Embedded/trunk/RaspberryPi/tools/rpi.sh)
+Kobuki is equipped with I/O interfaces, serial communication ports, power connectors, buttons, LEDs, and other features, making it suitable as an experimental robot platform.
 
+A script for installing the software required to run the Kobuki sample applications described below can be downloaded from:
+
+- http://svn.openrtm.org/Embedded/trunk/RaspberryPi/tools/rpi.sh
+
+```bash
+$ wget http://svn.openrtm.org/Embedded/trunk/RaspberryPi/tools/rpi.sh
+$ chmod 755 rpi.sh
+$ sudo ./rpi.sh hostname --type kobuki
 ```
- $ wget  http://svn.openrtm.org/Embedded/trunk/RaspberryPi/tools/rpi.sh
- $ chmod 755 rpi.sh
- $ sudo ./rpi.sh hostname --type kobuki
-```
 
-で、以下の解説で行っている環境構築と Kobuki のサンプルのコンパイルが自動で行われます。
+This script automatically performs the environment setup and compiles the Kobuki sample applications described in this guide.
 
+## Connecting Raspberry Pi and Kobuki
 
-
-## Raspberry Pi と Kobuki の接続
-
-下図は Kobuki のメインパネルです。
+The figure below shows the main panel of Kobuki.
 
 <div align="center"><a href="kobuki_panel.png"><img src="kobuki_panel.png" width="70%;"></a></div>
-<div align="center"><strong>Kobuki DC 出力コネクタ</strong></div>
+<div align="center"><strong>Kobuki DC Output Connector</strong></div>
 
-Raspberry Pi への電源供給に 5V1A DC出力コネクタ、Raspberry Pi との接続には USBコネクタを利用します。
+Use the 5V/1A DC output connector to power the Raspberry Pi, and use the USB connector for communication.
 
+### Power Supply
 
-### 電源
+Kobuki provides a DC output connector capable of supplying 5V at 1A, which can be used to power a Raspberry Pi.
 
-Kobuki には 5V 1A 出力可能な DC出力コネクタがあり、Raspberry Pi の電源をここから供給することができます。
-
-5V1A 出力コネクタは以下の型番のものを使用します。
+The connector specifications are:
 
 <table class="table-alt">
   <tr>
-    <th colspan="2">Kobuki 5V1A用コネクタ</th>
+    <th colspan="2">Kobuki 5V/1A Connector</th>
   </tr>
   <tr>
-    <td>ハウジング</td>
-    <td>Molex PN : 43645-0200</td>
+    <td>Housing</td>
+    <td>Molex PN: 43645-0200</td>
   </tr>
   <tr>
-    <td>ターミナル</td>
-    <td>Molex PN : 43030-0001</td>
+    <td>Terminal</td>
+    <td>Molex PN: 43030-0001</td>
   </tr>
 </table>
 
 <div align="center"><a href="kobuki5v_connector.png"><img src="kobuki5v_connector.png" width="70%;"></a></div>
-<div align="center"><strong>Kobuki DC5V1A用コネクタ</strong></div>
+<div align="center"><strong>Kobuki DC 5V/1A Connector</strong></div>
 
-RTロボットショップなどでも購入できます。
+These connectors can also be purchased from RT Robot Shop and similar suppliers.
 
-- [Kobuki用コネクタセット￥450.-](http://www.rt-shop.jp/index.php?main_page=product_info&cPath=1001_1022&products_id=784)
+- Kobuki Connector Set (¥450)
+  http://www.rt-shop.jp/index.php?main_page=product_info&cPath=1001_1022&products_id=784
 
-下図のような DCコネクタと USBの変換ケーブルを作成することで、Raspberry Pi へ電源を供給します。
+By creating a DC-to-USB power cable as shown below, power can be supplied to the Raspberry Pi.
 
 <div align="center"><a href="kobuki_raspberry_dccable.png"><img src="kobuki_raspberry_dccable.png" width="70%;"></a></div>
-<div align="center"><strong>Raspberry Pi用 DCケーブル</strong></div>
+<div align="center"><strong>DC Power Cable for Raspberry Pi</strong></div>
 
-近年ではスマートフォン用の USB出力端子がついたバッテリーが多数発売されていますので、こういった電源も利用できます。
+Nowadays, many portable batteries with USB outputs for smartphones are available and can also be used as power sources.
 
 <div align="center"><a href="battery.png"><img src="battery.png" width="70%;"></a></div>
-<div align="center"><strong>スマートフォン用バッテリー</strong></div>
+<div align="center"><strong>Portable Smartphone Battery</strong></div>
 
-### USB
+### USB Connection
 
-Kobuki に付属している USB ケーブルで Kobuki と Raspberry Pi を接続します。
-Raspberry Pi側からは /dev/ttyUSB0 として見えます。
+Use the USB cable included with Kobuki to connect Kobuki and the Raspberry Pi.
 
+On the Raspberry Pi, the device appears as:
+
+```bash
+$ ls /dev/ttyUSB*
+/dev/ttyUSB0
 ```
- $ ls /dev/ttyUSB*
- /dev/ttyUSB0
-```
 
-### 接続
+### Hardware Setup
 
-Raspberry Pi を Kobuki に搭載して、電源と USBを接続します。Raspberry Pi を無線LAN接続にすれば、無線遠隔操作可能な Kobuki になります。
+Mount the Raspberry Pi on the Kobuki platform and connect both power and USB cables.
+
+If the Raspberry Pi is connected to a wireless LAN, Kobuki can be controlled remotely over Wi-Fi.
 
 <div align="center"><a href="kobuki_and_raspi.png"><img src="kobuki_and_raspi.png" width="70%;"></a></div>
-<div align="center"><strong>Raspberry Pi を搭載したKobuki</strong></div>
+<div align="center"><strong>Kobuki Equipped with a Raspberry Pi</strong></div>
 
-Kobuki 動作時に脱落する可能性がありますので、Raspberry Pi はマジックテープなどで固定するとよいでしょう。
+Since the Raspberry Pi may come loose while Kobuki is moving, securing it with hook-and-loop tape (Velcro) is recommended.
 
-## KobukiAIST RTコンポーネントのコンパイル
+## Compiling the KobukiAIST RT Component
 
-前節でも RTコンポーネントのコンパイルのテストを行いましたが、ここで再度おさらいします。まずは、KobukiAIST RTコンポーネントを以下のリポジトリからチェックアウトしビルドします。
+Although RT component compilation was covered previously, we review it here.
 
-- [KobukiAIST RTC](http://svn.openrtm.org/components/trunk/mobile_robots/kobuki)
+First, check out the KobukiAIST RT component from the repository below and build it.
 
-```
-  $ svn co http://svn.openrtm.org/components/trunk/mobile_robots/kobuki
-  $ cd kobuki
-  $ mkdir build
-  $ cd build
-  $ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-  $ make
-  $ cd src
-  $ sudo make install
-```
+- KobukiAIST RTC
+  http://svn.openrtm.org/components/trunk/mobile_robots/kobuki
 
-以上で、KobukiAIST RTCがビルドされ、実行ファイルが
-- /usr/lib/openrtm-1.1/rtc/KobukiAISTComp
-にインストールされるはずです。
-
-試しに起動してみます。デバイスファイル /dev/ttyUSB0 へのアクセスには root 権限が必要ですので、sudo を使って起動しています。
-
-```
- $ rtm-naming
- $ sudo /usr/lib/openrtm-1.1/rtc/KobukiAISTComp
+```bash
+$ svn co http://svn.openrtm.org/components/trunk/mobile_robots/kobuki
+$ cd kobuki
+$ mkdir build
+$ cd build
+$ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+$ make
+$ cd src
+$ sudo make install
 ```
 
-RTSystemEditor を起動し、Raspberry Pi のホスト名またはIPアドレスに接続すると、KobukiAIST0 というコンポーネントが見えるはずです。
-クリックして Configuration ダイアログを表示させてみてください。
+After installation, the executable should be installed at:
 
-LED1 や LED2 などの操作が行えるようになっていますので、radio ボタンで RED や GREEN などをクリックしてください。LED が点灯します。
-
-## KobukiAIST コンポーネントの自動起動
-
-KobukiAIST コンポーネントをRaspberry Pi 起動時に自動的に起動するようにします。
-これにより、Kobuki に電源を投入すると、Raspberry Pi および KobukiAIST コンポーネントが自動的に起動するようになり、Raspberry Pi にいちいちログインしなくとも Kobuki を RTC 経由で操作できるようになります。
-
-以下のようなスクリプトを /etc/kobuki.sh として作成します。
-
-```
- $ sudo vi /etc/kobuki.sh
+```text
+/usr/lib/openrtm-1.1/rtc/KobukiAISTComp
 ```
 
-kobuki.sh の内容な以下の通りです。
+To test it:
 
-```
- #!/bin/sh
- #
- # KobukiAIST RTC launch script
- #
- #       Copyright Noriaki Ando <n-ando@openrtm.org>
- #       2011.03.27
- #
- # This script should be executed from rc script like a rc.local
- # as the following command line.
- #
- #
- ns=/usr/bin/rtm-naming
- kobukiRTC=/usr/lib/openrtm-1.1/rtc/KobukiAISTComp
- workdir=/tmp/kobuki
- 
- \$ns
- sleep 5
- 
- if test -d $workdir ; then
-         echo ""
- else
-         mkdir \$workdir
- fi
- 
- cd $workdir
- 
- while :
- do
-     rm -f \$workdir/*.log
-     \$kobukiRTC
-     sleep 5
- done
+```bash
+$ rtm-naming
+$ sudo /usr/lib/openrtm-1.1/rtc/KobukiAISTComp
 ```
 
-実行権限をつけます。
+Root privileges are required because access to `/dev/ttyUSB0` is necessary.
 
-```
- $ sudo chmod 755 /etc/kobuki.sh
-```
+Start RTSystemEditor and connect to the Raspberry Pi using its hostname or IP address.
 
-さらに、自動的に起動するように /etc/rc.local の最後の  **exit 0** の手前に以下のような一行を挿入します。
+You should see a component named **KobukiAIST0**.
 
-```
- /etc/kobuki.sh 2>&1 | perl -p -e 's/\n/\r\n/g' 1>&2 &
- exit 0
-```
+Open its Configuration dialog.
 
-これで、Raspberry Pi が起動すると、KobukiAIST コンポーネントも自動的に起動します。
-また、万一 KobukiAIST コンポーネントを exit で終了させても、5秒後再度起動します。
-Kobuki に電源が入っている限り、KobukiAIST コンポーネントは常駐し続けるようになっています。
+You can control LEDs such as LED1 and LED2 by selecting RED, GREEN, and other options using the radio buttons. The LEDs should illuminate accordingly.
 
-## Kobuki コンポーネントの操作
+## Automatically Starting the KobukiAIST Component
 
-### TkJoystick による操作
+To automatically start the KobukiAIST component when Raspberry Pi boots, create the following script as:
 
-TkJoystick は OpenRTM-aist-Python にサンプルとして含まれているコンポーネントです。ただし、出力はジョイスティックのX-Y値と、対向2輪型移動ロボットの車輪速度用の出力のみで、2次元速度ベクトル (TimedVelocity2D) 出力は有りません。
-
-TkJoyStick コンポーネントを改良して、2次元速度ベクトル (TimedVelocity2D) の出力をするようにし、Kobukiと接続して操作してみてください。
-
-- [オリジナルの TkJyoStick RTC](http://svn.openrtm.org/OpenRTM-aist-Python/trunk/OpenRTM-aist-Python/OpenRTM_aist/examples/TkJoyStick/)
-
-Windows では以下のディレクトリーもインストールされています。(x.yはバージョン)
-
-- C:\Program Files (x86)\OpenRTM-aist\x.y\examples\Python\TkJoyStick
-- C:\Program Files\OpenRTM-aist\x.y\examples\Python\TkJoyStick
-
-#### ヒント
-
-TkJoystick.py の中では、左右の車輪速度を計算しています。ここから、移動ロボットの運動学を考慮すれば、速度 v および角速度 ω を計算することができます。
-(参考のため、東北学院大学の熊谷先生のページへのリンクを張っておきます。) 
-
-- [車輪移動ロボットの数学の項を参照](http://www.mech.tohoku-gakuin.ac.jp/rde/contents/course/robotics/wheelrobot.html)
-
-なお、TimedVelocity2D は以下のようなデータ構造となっています。
-
-```
- struct Velocity2D
- {
-   double va; // 角速度 [rad/s]
-   double vx; // 並進速度(前方) [m/s]
-   double vy; // 並進速度(横方向) [m/s] 対向2輪型では0
- };
- struct TimedVelocity2D
- {
-   Time tm;
-   Velocity2D data;
- };
+```bash
+/etc/kobuki.sh
 ```
 
-### 自律的に移動させる
+Create the file:
 
-Kobuki をセンサーを利用して自律的に移動させてみます。
-Kobuki は、バンパセンサー、近接センサー(遠・近)、Cliffセンサーを装備されています。
-ここでは、Roomba っぽく、前進し続けて壁を検知したら、少し下がり、回転し、再び前進をする、というアルゴリズムで動かしてみます。
-(Roomba はもう少し賢く動きますが。。。)
+```bash
+$ sudo vi /etc/kobuki.sh
+```
 
-KobukiAIST RTC のセンサ出力は以下のようになっています。
-IRセンサはドックからの赤外線による信号を受けるためのもので、障害物検知には使用できません。したがって、バンパおよび崖センサーのみが障害物・崖検知に利用できます。
+Contents:
+
+```sh
+#!/bin/sh
+#
+# KobukiAIST RTC launch script
+#
+
+ns=/usr/bin/rtm-naming
+kobukiRTC=/usr/lib/openrtm-1.1/rtc/KobukiAISTComp
+workdir=/tmp/kobuki
+
+$ns
+sleep 5
+
+if test -d $workdir ; then
+        echo ""
+else
+        mkdir $workdir
+fi
+
+cd $workdir
+
+while :
+do
+    rm -f $workdir/*.log
+    $kobukiRTC
+    sleep 5
+done
+```
+
+Make it executable:
+
+```bash
+$ sudo chmod 755 /etc/kobuki.sh
+```
+
+Then insert the following line into `/etc/rc.local`, just before `exit 0`:
+
+```bash
+/etc/kobuki.sh 2>&1 | perl -p -e 's/\n/\r\n/g' 1>&2 &
+exit 0
+```
+
+Now, whenever Raspberry Pi boots, the KobukiAIST component will automatically start.
+
+Even if the component exits, it will automatically restart after 5 seconds.
+
+As long as Kobuki remains powered on, the component will continue running.
+
+## Operating the Kobuki Component
+
+### Using TkJoystick
+
+TkJoystick is a sample component included with OpenRTM-aist-Python.
+
+However, it outputs only joystick X-Y values and differential wheel speeds, and does not provide a 2D velocity vector (`TimedVelocity2D`) output.
+
+Try modifying TkJoystick to output a `TimedVelocity2D` and connect it to Kobuki.
+
+Original TkJoystick RTC:
+
+- http://svn.openrtm.org/OpenRTM-aist-Python/trunk/OpenRTM-aist-Python/OpenRTM_aist/examples/TkJoyStick/
+
+Windows installation locations:
+
+```text
+C:\Program Files (x86)\OpenRTM-aist\x.y\examples\Python\TkJoyStick
+C:\Program Files\OpenRTM-aist\x.y\examples\Python\TkJoyStick
+```
+
+### Hint
+
+Inside `TkJoystick.py`, the left and right wheel speeds are already calculated.
+
+Using mobile robot kinematics, you can derive:
+
+- Linear velocity (v)
+- Angular velocity (ω)
+
+Refer to:
+
+- Mathematics of Wheeled Mobile Robots
+  http://www.mech.tohoku-gakuin.ac.jp/rde/contents/course/robotics/wheelrobot.html
+
+The `TimedVelocity2D` data structure is:
+
+```cpp
+struct Velocity2D
+{
+  double va; // angular velocity [rad/s]
+  double vx; // forward velocity [m/s]
+  double vy; // lateral velocity [m/s]
+};
+
+struct TimedVelocity2D
+{
+  Time tm;
+  Velocity2D data;
+};
+```
+
+(Translation continues into autonomous movement control, sensor mapping, and the KobukiAutoMove example.)
+
+
+### Autonomous Navigation
+
+Next, let's make Kobuki move autonomously using its sensors.
+
+Kobuki is equipped with:
+
+- Bumper sensors
+- Proximity sensors (near/far)
+- Cliff sensors
+
+In this example, we will implement a simple Roomba-like behavior:
+
+1. Move forward continuously.
+2. When a wall or obstacle is detected:
+   - Move backward slightly.
+   - Rotate.
+   - Resume moving forward.
+
+(Actual Roomba robots use more sophisticated algorithms.)
+
+The sensor outputs of the KobukiAIST RTC are shown below.
+
+Note that the IR sensors are intended to receive infrared signals from the docking station and cannot be used for obstacle detection.
+
+Therefore, only the bumper and cliff sensors should be used for obstacle and cliff detection.
 
 <table class="table-alt">
-  <tr>
-    <th>No.</th>
-    <th>enum</th>
-    <th>意味</th>
-  </tr>
-  <tr>
-    <td>0</td>
-    <td>RIGHT_BUMPER</td>
-    <td>右バンパ</td>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>CENTER_BUMPER</td>
-    <td>中央バンパ</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>LEFT_BUMPER</td>
-    <td>左バンパ</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>RIGHT_WHEEL_DROP</td>
-    <td>右車輪脱輪</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>LEFT_WHEEL_DROP</td>
-    <td>左車輪脱輪</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>RIGHT_CLIFF</td>
-    <td>右崖センサ</td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td>CENTER_CLIFF</td>
-    <td>中央崖センサ</td>
-  </tr>
-  <tr>
-    <td>7</td>
-    <td>LEFT_CLIFF</td>
-    <td>左崖センサ</td>
-  </tr>
-  <tr>
-    <td>8</td>
-    <td>RIGHT_IRFAR_RIGHT</td>
-    <td>右IR/ドック右遠</td>
-  </tr>
-  <tr>
-    <td>9</td>
-    <td>RIGHT_IRFAR_CENTER</td>
-    <td>右IR/ドック中央遠</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>RIGHT_IRFAR_LEFT</td>
-    <td>右IR/ドック左遠</td>
-  </tr>
-  <tr>
-    <td>11</td>
-    <td>RIGHT_IRNEAR_RIGHT</td>
-    <td>右IR/ドック右近</td>
-  </tr>
-  <tr>
-    <td>12</td>
-    <td>RIGHT_IRNEAR_CENTER</td>
-    <td>右IR/ドック中央近</td>
-  </tr>
-  <tr>
-    <td>13</td>
-    <td>RIGHT_IRNEAR_LEFT</td>
-    <td>右IR/ドック左近</td>
-  </tr>
-  <tr>
-    <td>14</td>
-    <td>CENTER_IRFAR_RIGHT</td>
-    <td>中央IR/ドック右遠</td>
-  </tr>
-  <tr>
-    <td>15</td>
-    <td>CENTER_IRFAR_CENTER</td>
-    <td>中央IR/ドック中央遠</td>
-  </tr>
-  <tr>
-    <td>16</td>
-    <td>CENTER_IRFAR_LEFT</td>
-    <td>中央IR/ドック左遠</td>
-  </tr>
-  <tr>
-    <td>17</td>
-    <td>CENTER_IRNEAR_RIGHT</td>
-    <td>中央IR/ドック右近</td>
-  </tr>
-  <tr>
-    <td>18</td>
-    <td>CENTER_IRNEAR_CENTER</td>
-    <td>中央IR/ドック中央近</td>
-  </tr>
-  <tr>
-    <td>19</td>
-    <td>CENTER_IRNEAR_LEFT</td>
-    <td>中央IR/ドック左近</td>
-  </tr>
-  <tr>
-    <td>20</td>
-    <td>LEFT_IRFAR_RIGHT</td>
-    <td>左IR/ドック右遠</td>
-  </tr>
-  <tr>
-    <td>21</td>
-    <td>LEFT_IRFAR_CENTER</td>
-    <td>左IR/ドック中央遠</td>
-  </tr>
-  <tr>
-    <td>22</td>
-    <td>LEFT_IRFAR_LEFT</td>
-    <td>左IR/ドック左遠</td>
-  </tr>
-  <tr>
-    <td>23</td>
-    <td>LEFT_IRNEAR_RIGHT</td>
-    <td>左IR/ドック右近</td>
-  </tr>
-  <tr>
-    <td>24</td>
-    <td>LEFT_IRNEAR_CENTER</td>
-    <td>左IR/ドック中央近</td>
-  </tr>
-  <tr>
-    <td>25</td>
-    <td>LEFT_IRNEAR_LEFT</td>
-    <td>左IR/ドック左近</td>
-  </tr>
-  <tr>
-    <td>26</td>
-    <td>KOBUKI_DOCKED</td>
-    <td>ドック完了</td>
-  </tr>
+<tr><th>No.</th><th>Enum</th><th>Description</th></tr>
+<tr><td>0</td><td>RIGHT_BUMPER</td><td>Right bumper</td></tr>
+<tr><td>1</td><td>CENTER_BUMPER</td><td>Center bumper</td></tr>
+<tr><td>2</td><td>LEFT_BUMPER</td><td>Left bumper</td></tr>
+<tr><td>3</td><td>RIGHT_WHEEL_DROP</td><td>Right wheel drop</td></tr>
+<tr><td>4</td><td>LEFT_WHEEL_DROP</td><td>Left wheel drop</td></tr>
+<tr><td>5</td><td>RIGHT_CLIFF</td><td>Right cliff sensor</td></tr>
+<tr><td>6</td><td>CENTER_CLIFF</td><td>Center cliff sensor</td></tr>
+<tr><td>7</td><td>LEFT_CLIFF</td><td>Left cliff sensor</td></tr>
+<tr><td>8</td><td>RIGHT_IRFAR_RIGHT</td><td>Right IR / Dock Right Far</td></tr>
+<tr><td>9</td><td>RIGHT_IRFAR_CENTER</td><td>Right IR / Dock Center Far</td></tr>
+<tr><td>10</td><td>RIGHT_IRFAR_LEFT</td><td>Right IR / Dock Left Far</td></tr>
+<tr><td>11</td><td>RIGHT_IRNEAR_RIGHT</td><td>Right IR / Dock Right Near</td></tr>
+<tr><td>12</td><td>RIGHT_IRNEAR_CENTER</td><td>Right IR / Dock Center Near</td></tr>
+<tr><td>13</td><td>RIGHT_IRNEAR_LEFT</td><td>Right IR / Dock Left Near</td></tr>
+<tr><td>14</td><td>CENTER_IRFAR_RIGHT</td><td>Center IR / Dock Right Far</td></tr>
+<tr><td>15</td><td>CENTER_IRFAR_CENTER</td><td>Center IR / Dock Center Far</td></tr>
+<tr><td>16</td><td>CENTER_IRFAR_LEFT</td><td>Center IR / Dock Left Far</td></tr>
+<tr><td>17</td><td>CENTER_IRNEAR_RIGHT</td><td>Center IR / Dock Right Near</td></tr>
+<tr><td>18</td><td>CENTER_IRNEAR_CENTER</td><td>Center IR / Dock Center Near</td></tr>
+<tr><td>19</td><td>CENTER_IRNEAR_LEFT</td><td>Center IR / Dock Left Near</td></tr>
+<tr><td>20</td><td>LEFT_IRFAR_RIGHT</td><td>Left IR / Dock Right Far</td></tr>
+<tr><td>21</td><td>LEFT_IRFAR_CENTER</td><td>Left IR / Dock Center Far</td></tr>
+<tr><td>22</td><td>LEFT_IRFAR_LEFT</td><td>Left IR / Dock Left Far</td></tr>
+<tr><td>23</td><td>LEFT_IRNEAR_RIGHT</td><td>Left IR / Dock Right Near</td></tr>
+<tr><td>24</td><td>LEFT_IRNEAR_CENTER</td><td>Left IR / Dock Center Near</td></tr>
+<tr><td>25</td><td>LEFT_IRNEAR_LEFT</td><td>Left IR / Dock Left Near</td></tr>
+<tr><td>26</td><td>KOBUKI_DOCKED</td><td>Docking completed</td></tr>
 </table>
 
+To receive these sensor outputs, you will need:
 
-これらの出力を受けるため RTC::TimedBooleanSeq 型の InPort が一つ必要になります。
-また、Kobuki に移動速度指令を出力するための TimedVelocity2D型の OutPort が一つ必要になります。
+- One InPort of type `RTC::TimedBooleanSeq`
+- One OutPort of type `TimedVelocity2D` for sending velocity commands to Kobuki
 
 <table class="table-alt">
-  <tr>
-    <th colspan="2" style="text-align: center;">基本プロファイル</th>
-  </tr>
-  <tr>
-    <td>コンポーネント名称</td>
-    <td>KobukiAutoMove</td>
-  </tr>
-  <tr>
-    <td>モジュール概要</td>
-    <td>Kobuki auto move component</td>
-  </tr>
-  <tr>
-    <td>バージョン</td>
-    <td>1.0.0</td>
-  </tr>
-  <tr>
-    <td>ベンダ名</td>
-    <td>AIST</td>
-  </tr>
-  <tr>
-    <td colspan="2" style="text-align: center;">アクティビティ</td>
-  </tr>
-  <tr>
-    <td colspan="2">onInitialize、onFinalize、onActivated、onDeactivated、onExecute</td>
-  </tr>
-  <tr>
-    <td colspan="2" style="text-align: center;">データポート</td>
-  </tr>
-  <tr>
-    <td colspan="2">[in] bumper</td>
-  </tr>
-  <tr>
-    <td>概要</td>
-    <td>センサ情報　true:障害物検出（バンパ接触、車輪落下、崖検知）　false:障害物無し</td>
-  </tr>
-  <tr>
-    <td>データ型</td>
-    <td>TimedBooleanSeq</td>
-  </tr>
-  <tr>
-    <td>詳細</td>
-    <td>data[0]: 右バンパ、data[1]: 中央バンパ、... data[7]: 左崖センサ（上の表参照）</td>
-  </tr>
-  <tr>
-    <td colspan="2">[out] targetVelocity</td>
-  </tr>
-  <tr>
-    <td>概要</td>
-    <td>移動ロボットの速度ベクトル</td>
-  </tr>
-  <tr>
-    <td>データ型</td>
-    <td>TimedVelocity2D</td>
-  </tr>
-  <tr>
-    <td>詳細</td>
-    <td>vx: 並進速度、vy: 0.0、va: 角速度</td>
-  </tr>
-  <tr>
-    <td>単位</td>
-    <td>vx [m/s]、va [rad/s]</td>
-  </tr>
+<tr><th colspan="2" style="text-align:center;">Basic Profile</th></tr>
+<tr><td>Component Name</td><td>KobukiAutoMove</td></tr>
+<tr><td>Module Description</td><td>Kobuki auto move component</td></tr>
+<tr><td>Version</td><td>1.0.0</td></tr>
+<tr><td>Vendor</td><td>AIST</td></tr>
+
+<tr><th colspan="2" style="text-align:center;">Activities</th></tr>
+<tr><td colspan="2">onInitialize, onFinalize, onActivated, onDeactivated, onExecute</td></tr>
+
+<tr><th colspan="2" style="text-align:center;">Data Ports</th></tr>
+
+<tr><td colspan="2">[in] bumper</td></tr>
+<tr><td>Description</td><td>Sensor information (true: obstacle detected; false: no obstacle)</td></tr>
+<tr><td>Data Type</td><td>TimedBooleanSeq</td></tr>
+<tr><td>Details</td><td>data[0]: Right bumper, data[1]: Center bumper, ... data[7]: Left cliff sensor</td></tr>
+
+<tr><td colspan="2">[out] targetVelocity</td></tr>
+<tr><td>Description</td><td>Mobile robot velocity vector</td></tr>
+<tr><td>Data Type</td><td>TimedVelocity2D</td></tr>
+<tr><td>Details</td><td>vx: linear velocity, vy: 0.0, va: angular velocity</td></tr>
+<tr><td>Units</td><td>vx [m/s], va [rad/s]</td></tr>
 </table>
 
+Using the information above, try creating a simple RTC that enables Kobuki to move autonomously.
 
-以上の情報を手掛かりに、Kobuki を自律移動させる簡単なコンポーネントを作成してみてください。
-コンポーネントの接続でうまく行かない場合は、[トラブルシューティング]({{ site.baseurl }}/ja/doc/installation/other/raspberrypi_casestudy/install_development_env#trouble) をご覧ください。
+If you encounter problems connecting components, refer to the Troubleshooting section.
 
-#### ヒント
+#### Hint
 
-Kobuki の速度指令は TimedVelocity2D という型で、上でも示しましたが、以下のようなデータ構造です。
+As shown earlier, Kobuki velocity commands use the `TimedVelocity2D` type:
 
-```
- struct Velocity2D
- {
-   double va; // 角速度 [rad/s]
-   double vx; // 並進速度(前方) [m/s]
-   double vy; // 並進速度(横方向) [m/s] 対向2輪型では0
- };
- struct TimedVelocity2D
- {
-   Time tm;
-   Velocity2D data;
- };
-```
+```cpp
+struct Velocity2D
+{
+  double va; // angular velocity [rad/s]
+  double vx; // forward velocity [m/s]
+  double vy; // lateral velocity [m/s]
+};
 
-対向2輪型移動ロボットでは、vyは常に0.0であると考え、たとえば直進なら
-
-```
- va = 0.0; vx = 0.2; vy = 0.0;
+struct TimedVelocity2D
+{
+  Time tm;
+  Velocity2D data;
+};
 ```
 
-となります。後進するなら、
+For a differential-drive robot:
 
-```
- va = 0.0; vx = -0.2; vy = 0.0;
-```
-
-であり、その場で旋回するなら
-
-```
- va = 0.0; vx = 0.0; vy = 1.0;
+```cpp
+vy = 0.0
 ```
 
-となります。
+Moving forward:
+
+```cpp
+va = 0.0;
+vx = 0.2;
+vy = 0.0;
+```
+
+Moving backward:
+
+```cpp
+va = 0.0;
+vx = -0.2;
+vy = 0.0;
+```
+
+Rotating in place:
+
+```cpp
+va = 1.0;
+vx = 0.0;
+vy = 0.0;
+```
 
 <div align="center"><a href="timed_velocity_2d.png"><img src="timed_velocity_2d.png" width="60%;"></a></div>
-<div align="center"><strong>移動ロボットの座標系と TimedVelocity2D</strong></div>
+<div align="center"><strong>Mobile Robot Coordinate System and TimedVelocity2D</strong></div>
 
-InPort にデータが来ていたら、データを読み込みバンパ情報を取り出します。バンパ情報は、TimedBoolSeq というデータ型の .data という配列のメンバに格納されており、上の表で0,1,2番目の要素であることがわかります。
-これらのどれかが true になっていたらバンパで衝突を検知したということですから、いったん下がり、旋回します。そして、再び前進します。
-これらの動きを TimedVelocity2D のメンバーにそれぞれ設定して OutPort に writeすれば、速度指令データは Kobuki に伝達されます。
-アルゴリズムのフローチャートを下に示します。
+When data arrives at the InPort, read the bumper information.
+
+The bumper status is stored in the `.data` array of the `TimedBooleanSeq` object.
+
+From the table above:
+
+- data[0] = Right bumper
+- data[1] = Center bumper
+- data[2] = Left bumper
+
+If any of these values becomes `true`, a collision has been detected.
+
+The robot should then:
+
+1. Move backward.
+2. Rotate.
+3. Move forward again.
+
+Set the appropriate values in the `TimedVelocity2D` structure and write them to the OutPort to send velocity commands to Kobuki.
+
+The control algorithm is illustrated below.
 
 <div align="center"><a href="kobuki_auto.png"><img src="kobuki_auto.png" width="50%;"></a></div>
-<div align="center"><strong>フローチャート</strong></div>
+<div align="center"><strong>Flowchart</strong></div>
 
-どのくらい下がるか・下がったか、あるいは旋回するか・したかを計測しながら制御するのが理想ですが、簡単のために sleep関数を使用することもできます。
-Linuxではcoil::sleep が使えます
+Ideally, the robot would measure how far it has moved backward or rotated and use feedback control.
 
+For simplicity, however, you may use sleep functions.
+
+On Linux:
+
+```cpp
+coil::sleep(coil::TimeValue(0.01)); // wait 10 ms
 ```
- coil::sleep(coil::TimeValue(0.01); // 10ms待つ
-```
 
-Windows では coil::sleep の精度が悪いので、Sleep関数を利用したほうがよいでしょう。
-これらのヒントを基に、Kobuki を自律移動させるような制御コンポーネントを作成してみてください
+On Windows, the accuracy of `coil::sleep()` is poor, so the standard `Sleep()` function is recommended.
 
+Using these hints, try implementing a control component that enables Kobuki to move autonomously.
 
-## 解答
+## Reference Solutions
 
-解答として、上記の TkJoyStick コンポーネントと自律移動コンポーネントを以下に示します。
+Reference implementations of the modified TkJoyStick component and the autonomous navigation component are provided below:
 
-- GUI ジョイスティック: [TkJoyStick.zip](TkJoyStick.zip)
-- Kobuki 自律制御: [KobukiAutoMove.zip](KobukiAutoMove.zip)
+- [GUI Joystick:TkJoyStick.zip](TkJoyStick.zip)
 
-
--------jp page!!-------
+- [Kobuki Autonomous Controller:KobukiAutoMove.zip](KobukiAutoMove.zip)

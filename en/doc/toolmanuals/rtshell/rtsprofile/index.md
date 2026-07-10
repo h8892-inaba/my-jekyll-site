@@ -1,87 +1,86 @@
 ---
 layout: page
-title: rtsprofileモジュール
+title: rtsprofile Module
 ---
--------jp page!!-------
 
 init
 <!-- Title: rtsprofileモジュール -->
 #contents
 
-rtsprofile は Python で RTSProfile 仕様を利用するためのライブラリです。
+rtsprofile is a library for using the RTSProfile specification in Python.
 
-## 概要
+## Overview
 
-rtsprofile は RTシステムプロファイル（RTSProfile）の仕様のインタフェースライブラリです。
-この仕様は完全な RTシステムを記述し、システムを復元することや管理することができます。XML も YAML を利用可能です。
+rtsprofile is an interface library for the RT System Profile (RTSProfile) specification.
+This specification describes a complete RT system, and makes it possible to restore and manage the system. Both XML and YAML can be used.
 
-このソフトウエアは NEDO (独立行政法人 新エネルギー・産業技術総合開発機構) の次世代ロボット知能化技術開発プロジェクトの支援により、独立行政法人産業技術総合研究所によって開発されています。
+This software is developed by the National Institute of Advanced Industrial Science and Technology with support from NEDO (New Energy and Industrial Technology Development Organization) under the Next-Generation Robot Intelligence Technology Development Project.
 
-## 必要条件
+## Requirements
 
-- Python 2.5 以下では存在しない機能を使うので、Python 2.6 以上が必要となります。
-- Ubuntu 9.04 を使っていたら、手動で Python 2.6 をインストールする必要があります。Ubuntu 9.04 以上をおすすめします。
+- Python 2.6 or later is required because features that do not exist in Python 2.5 or earlier are used.
+- If you are using Ubuntu 9.04, you need to manually install Python 2.6. Ubuntu 9.04 or later is recommended.
 
-## インストール
+## Installation
 
-インストールはいくつかの方法が利用可能です。
+Several installation methods are available.
 
-- リポジトリ（参照：以下の[リポジトリ](#repo)）またはソースアーカイブからダウンロード後、適当なディレクトリーで解凍し、インストールする：
+- Download from the repository (see [Repository](#repo) below) or from the source archive, extract it in an appropriate directory, and install it:
 
-  1. ソースを展開する。
+  1. Extract the source.
 ```
  $ cd /home/blurgle/src/
  $ tar -xvzf rtsprofile-2.0.0-tar.gz
 ```
-  1. setup.pyを実行する。
+  1. Run setup.py.
 ```
  $ python setup.py install
 ```
-  1. 必要に応じて、環境変数を設定します。これはデフォルトで設定されていますが、設定されていない場合は自分で設定する必要があります。
-Windows上では、Python の site-packages ディレクトリーが **PYTHONPATH** 環境変数に、Python スクリプトのディレクトリーが **PATH** 環境変数に設定されていることを確認してください。
-通常これらは **C:\\Python26\\Lib\\site-packages\\** と **C:\\Python26\\Scripts\\** です（Pythonが**C:\\Python26\\**にインストールされた場合）。
+  1. Set environment variables as needed. These are set by default, but if they are not set, you need to set them yourself.
+On Windows, make sure that the Python site-packages directory is set in the **PYTHONPATH** environment variable, and that the Python script directory is set in the **PATH** environment variable.
+Normally, these are **C:\\Python26\\Lib\\site-packages\\** and **C:\\Python26\\Scripts\\** (if Python is installed in **C:\\Python26\\**).
 
-- Windows ではインストーラーの使用を推奨します。setup.py を利用すれば結果より容易に設定することができます。ただし、環境によってはさらに環境変数の設定が必要な場合があります。
+- On Windows, using the installer is recommended. Using setup.py makes the result easier to configure. However, depending on the environment, additional environment variable settings may be required.
 
-## 使い方
+## Usage
 
-ライブラリは **RtsProfle** のクラスを提供します。このクラスのインスタンスを作った後、RTSProfile のファイルを渡すことで完全な RTシステムプロファイルが作られます。
-もしくは、手動で既存の RTシステムの RTシステムプロファイルを作成し、ファイル名を渡し、そのファイルに RTSProfile を保存します。
+The library provides the **RtsProfle** class. After creating an instance of this class, passing an RTSProfile file creates a complete RT System Profile.
+Alternatively, you can manually create an RT System Profile for an existing RT system, pass a file name, and save the RTSProfile to that file.
 
-クラスの情報は Python の property でアクセスします。メソッドではありません。
+Class information is accessed using Python properties. They are not methods.
 
-API の詳細は Doxygen で構成されたドキュメンテーションを参照してください。
+For details of the API, refer to the documentation generated with Doxygen.
 
-## テストの実行
+## Running Tests
 
-ソースにサンプルファイルとテストのスクリプトが含めています。以下のようなコマンドで実行が可能です。
+The source includes sample files and test scripts. They can be executed with commands such as the following.
 
 ```
  $ python test/test.py ./test/rtsystem.xml
  $ python test/test.py ./test/rtsystem.yaml
 ```
 
-PYTHONPATH の値によって、テストはインストールされた rtsprofile を使う可能性はあります。
+Depending on the value of PYTHONPATH, the tests may use the installed rtsprofile.
 
 ## API naming conventions
 
-rtsprofile は Python の標準スタイルに従います。[PEP8](http://www.python.org/dev/peps/pep-0008/)に参照してください。
+rtsprofile follows the standard Python style. Refer to [PEP8](http://www.python.org/dev/peps/pep-0008/).
 
-最も重要な点は、プライベートな内部 API 関数はアンダースコア（「_」）で始まることです。アンダースコアで始まる関数はクラス外から証すべきではありません。
-もし使用した場合には、未定義の振る舞いを引き起こす可能性があります。アンダースコアで始まらず、docstring がある関数だけを使ってください。
+The most important point is that private internal API functions begin with an underscore ("_"). Functions that begin with an underscore should not be accessed from outside the class.
+If they are used, undefined behavior may occur. Use only functions that do not begin with an underscore and that have docstrings.
 
-## より詳細なドキュメンテーションとサンプル
+## More Detailed Documentation and Samples
 
-より詳細なドキュメンテーションは Doxygen で記述されたドキュメンテーションを参照してください。
+For more detailed documentation, refer to the documentation written with Doxygen.
 
-サンプルは[rtshellのソース](https://github.com/OpenRTM/rtshell)を参照してください。
+For samples, refer to the [rtshell source](https://github.com/OpenRTM/rtshell).
 
 &aname(repo);
 <a name="repo">
-## リポジトリ 
+## Repository 
 
-最新版のソースは[githubでGitのリポジトリ](http://github.com/gbiggs/rtsprofile)にあります。「Download source」をクリックしてダウンロードをすることができます。
-「git clone」を使うこともできます。パッチを送るなら、この方法がおすすめします。
+The latest source is available in the [Git repository on github](http://github.com/gbiggs/rtsprofile). You can download it by clicking "Download source".
+You can also use "git clone". If you want to send patches, this method is recommended.
 
 ```
  $ git clone git://github.com/gbiggs/rtsprofile.git
@@ -90,11 +89,10 @@ rtsprofile は Python の標準スタイルに従います。[PEP8](http://www.p
 ## Changelog
 ### 2.0
 
-- Message Sending の情報の解析を修正しました。
-- PrecedingCondition のタイムアウトのデータ型を整数にしました。
-- YAML フォーマットを使えるようにしました。
-- テストを追加しました。
-- Preceding Conditions のデフォルトを"SYNC"に変更しました。
-- バグフィクス
+- Fixed the parsing of Message Sending information.
+- Changed the data type of PrecedingCondition timeout to integer.
+- Added support for YAML format.
+- Added tests.
+- Changed the default of Preceding Conditions to "SYNC".
+- Bug fixes
 
--------jp page!!-------

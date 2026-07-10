@@ -20,7 +20,7 @@ This page explains the procedure for creating a component to operate the Raspber
 
 ### Simulator
 
-- [RaspberryPiMouseSimulator Component](/ja/node/6198)
+- [RaspberryPiMouseSimulator Component](/en/node/6198)
 
 The simulator was developed using the physics engine [Open Dynamics Engine (ODE)](http://www.ode.org/) and the rendering library (drawstuff) included with ODE.
 
@@ -103,7 +103,7 @@ The procedure is as follows:
 The following environment is assumed:
 
 - OS: Windows 10 (Windows 7, 8.1, and 11 are also supported)
-- [Install Visual Studio Community 2022](/ja/node/6650)
+- [Install Visual Studio Community 2022](/en/node/6650)
 - [Python 3.10](https://www.python.org/downloads/windows/)
   - [python-3.10.7-amd64.exe (64-bit)](https://www.python.org/ftp/python/3.10.7/python-3.10.7-amd64.exe)
 - [CMake](https://cmake.org/download/)
@@ -991,7 +991,7 @@ Next, click the **[Add Name Server]** button in RT System Editor and add:
 <br>
 <br>
 
-You should then be able to see the RTC named [RaspberryPiMouseRTC](/ja/node/6015#toc0).
+You should then be able to see the RTC named [RaspberryPiMouseRTC](/en/node/6015#toc0).
 
 <div align="center"><a href="robomech2018_7.jpg"><img src="robomech2018_7.jpg" width="70%;"></a></div>
 

@@ -78,7 +78,7 @@ OpenRTM-aist を インストールする際に使ったスクリプトで必要
 </table>
 
 #### 一括インストール
-Ubuntu、Debian、Fedora、Raspbian の [一括インストール手順はこちら](/ja/content/about_installscript) をご覧ください。
+Ubuntu、Debian、Fedora、Raspbian の [一括インストール手順はこちら](/en/content/about_installscript) をご覧ください。
 
 ## Windows/Linux での共通設定
 

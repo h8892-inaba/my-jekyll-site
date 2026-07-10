@@ -2,46 +2,42 @@
 layout: page
 title: rtstodot
 ---
--------jp page!!-------
 <!-- Title: -->
 
-## 書式
+## Format
 ```
 rtstodot [OPTION ...] [RTSPROFILE_FILE]
 ```
 
-## 概要
-GraphvizのdotフォーマットでRTシステムをグラフとして表示します。 ファイルが指定されていない場合RTSProfile形式で情報をstdinから読みます。
+## Overview
+Displays an RT system as a graph in Graphviz dot format. If no file is specified, information is read from stdin in RTSProfile format.
 
-## オプション(OPTION)
+## Options (OPTION)
 ```
- -x、--xml　　 XMLフォーマットを使います
- -y、--yaml　　YAMLフォーマットを使います
- --version　　 プログラムのバージョン番号を表示します
- -h、--help　　ヘルプを表示します
- -v、--verbose より詳細な情報を出力します
+ -x, --xml　　 Uses XML format.
+ -y, --yaml　　Uses YAML format.
+ --version　　 Displays the program version number.
+ -h, --help　　Displays help.
+ -v, --verbose Outputs more detailed information.
 ```
 
-## 返り値
-成功の場合はゼロを返します。失敗の場合はゼロではない値を返します。
+## Return Values
+Returns zero on success. Returns a non-zero value on failure.
 
-デバッグ情報とエラーはstderrに出力されます。
+Debug information and errors are output to stderr.
 
-## 例
-- sys.rtsysファイルを元にRTシステムを表示します。
+## Examples
+- Displays an RT system based on the sys.rtsys file.
 ```
  $ rtstodot sys.rtsys | dot -T xlib
 ```
 
-- sys.rtsysファイルを元にRTシステムを表示してEncapsulated PostScriptフォーマットでsys.epsファイルに保存します。
+- Displays an RT system based on the sys.rtsys file and saves it to the sys.eps file in Encapsulated PostScript format.
 ```
  $ rtstodot sys.rtsys | dot -T eps > sys.eps
 ```
 
-- 現在実行中のRTシステムを表示します。
+- Displays the currently running RT system.
 ```
  $ rtcryo | rtstodot | dot -T xlib
 ```
-
-
--------jp page!!-------

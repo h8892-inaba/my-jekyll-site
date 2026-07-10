@@ -2,7 +2,9 @@
 layout: page
 title: Eclipseについて
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: Eclipseについて -->
 <div align="left"><a href="eclipse_logo.png"><img src="eclipse_logo.png" width="100;" align="left"></a></div>
@@ -46,7 +48,7 @@ Pleiades All in One EclipseにはLinux版はないため、[eclipse.org](https:/
 &aname(jdk_install);
 ## JDK(Java Development Kit)のインストール
 RTC Builder、RT System Editorを使用するためにはJDK8が必要です(JDK11などの新しいバージョンでは動作しません)。下記リンクを参照してインストールしてください。
-- [JDK8のインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8)
+- [JDK8のインストール]({{ site.baseurl }}/en/doc/installation/common/install_jdk8)
 
 ## プラグインのインストール
 RTCBuilderとRTSystemEditorは下記のEclipseプラグインを使用しています。Pleiades All in Oneを使用する場合は導入済みです。
@@ -71,4 +73,4 @@ RTCBuilderとRTSystemEditorは下記のEclipseプラグインを使用してい�
 
 インストール後Eclipseをいったん終了します。
 
--------jp page!!-------
+

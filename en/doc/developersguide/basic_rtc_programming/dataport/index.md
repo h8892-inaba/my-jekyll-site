@@ -1,46 +1,45 @@
 ---
 layout: page
-title: "データポート (基礎編)"
+title: "Data Port (Basics)"
 toc: true
 toc_levels: "h2,h3"
 #toc: false
 ---
--------jp page!!-------
 <!-- Title: データポート (基礎編) -->
 <!-- -*- pukiwiki-edit -*- -->
 <!-- *データポート(基本編) -->
 <!-- #contents -->
 
 
-## データポートとは
+## What Is a Data Port?
 
-データポートは主に連続的なデータを RTC 間でやりとるするためのポートです。
-データを他の RTC へ送信するためのデータポートを OutPort、他の RTC からデータを受信するためのデータポートを InPort と呼びます。「InPort」、「OutPort」をまとめて「データポート (DataPort)」と呼ぶことがあります。
+A data port is a port mainly used to exchange continuous data between RTCs.
+A data port for sending data to another RTC is called an OutPort, and a data port for receiving data from another RTC is called an InPort. "InPort" and "OutPort" are sometimes collectively called "data ports (DataPort)."
 
 
 <div align="center"><a href="dataport_ja.png"><img src="dataport_ja.png" width="60%;"></a></div>
-<div align="center"><strong>データポート (InPort と OutPort)</strong></div>
+<div align="center"><strong>Data Ports (InPort and OutPort)</strong></div>
 
 
-RTC はいろいろなプログラミング言語で記述することができます。また、RTコンポーネントはネットワーク上に分散させることも、同じノード上に配置することも、あるいは同じプロセス上に置くこともできます。
-そして、両端の RTC がどんな言語で記述されているか、ネットワーク的に分散しているかに関わらず、データポート間のデータの受け渡しは透過的に行われます。
+RTCs can be written in various programming languages. RT Components can also be distributed over a network, placed on the same node, or placed in the same process.
+Data is passed transparently between data ports regardless of what language the RTCs at both ends are written in or whether they are distributed over a network.
 
-RTC は必要に応じて任意の数のデータポートを持たせることができます。例えば、センサーからデータを取得するコンポーネントを作るとします。
-このコンポーネントは少なくとも一つのセンサーデータを出力するための OutPort が必要になるでしょう。
+An RTC can have any number of data ports as needed. For example, suppose you create a component that acquires data from a sensor.
+This component will need at least one OutPort for outputting sensor data.
 
-あるいは、指定されたトルク値に従って、モーターを駆動するコンポーネントを作成するとします。このコンポーネントは、少なくとも一つの一つのトルク値指令を受け取る InPort が必要になります。
-これらのコンポーネントを利用して、フィードバック制御を行うための制御器 (コントローラ) コンポーネントを作成するとすれば、センサーデータを受け取る InPort、指令値 (例えば速度指令) を受け取る InPort、トルク値を出力する OutPort のそれぞれが必要になります。
+Alternatively, suppose you create a component that drives a motor according to a specified torque value. This component will need at least one InPort that receives a torque value command.
+If you create a controller component for feedback control using these components, you will need an InPort that receives sensor data, an InPort that receives command values (for example, velocity commands), and an OutPort that outputs torque values.
 
 
 <div align="center"><a href="dataport_example_ja.png"><img src="dataport_example_ja.png" width="40%;"></a></div>
-<div align="center"><strong>センサー、コントローラー、モーターとデータポートの例</strong></div>
+<div align="center"><strong>Example of Sensors, Controllers, Motors, and Data Ports</strong></div>
 
 
-プログラムとして実際に InPort と OutPort を利用する簡単な例を見てみます。各オブジェクトはそれぞれ以下の働きをします。
+Let's look at a simple example of actually using InPort and OutPort in a program. Each object has the following role.
 
-- encoderDevice: ハードウエア (例えばカウンタボード等) を制御してエンコーダから現在の角度を読み取るための機能が実装されたオブジェクト。ハードウエアベンダがそうしたライブラリ等を提供していなければ、自分で実装する必要がある。
-- encoderData: OutPort 用にエンコーダのデータを保持する変数。ここでは、エンコーダの値をを保持する data というフィールド (構造体のメンバ) を持っているものとする。
-- encoderDataOut: OutPort オブジェクト。encoderData オブジェクトに関連付けられている。
+- encoderDevice: An object that implements functionality for controlling hardware (for example, a counter board) and reading the current angle from an encoder. If the hardware vendor does not provide such a library, you need to implement it yourself.
+- encoderData: A variable that holds encoder data for the OutPort. Here, it is assumed to have a field (a structure member) named data that holds the encoder value.
+- encoderDataOut: An OutPort object. It is associated with the encoderData object.
 
 
 ```
@@ -50,14 +49,14 @@ RTC は必要に応じて任意の数のデータポートを持たせること�
 ```
 
 
-1行目では、encoderDevice オブジェクトの read() 関数を呼んで、エンコーダの現在値を読み込んでいます。読み込まれたデータは、encoderData オブジェクトの data メンバーに代入されます。
-OutPort のインスタンスである encoderDataOut オブジェクトは、write() が呼ばれると、encoderData オブジェクトからデータを取り出し、接続されている InPort へデータを出力します。
+In the first line, the read() function of the encoderDevice object is called to read the current value of the encoder. The read data is assigned to the data member of the encoderData object.
+When write() is called, the encoderDataOut object, which is an instance of OutPort, retrieves data from the encoderData object and outputs it to the connected InPort.
 
-一方、InPort を持つモーターコンポーネントは、以下のように書けます。
+On the other hand, a motor component that has an InPort can be written as follows.
 
-- motorDevice: ハードウエア(例えばモータードライバに接続されたDAボード等)を制御してモーター制御をするためのオブジェクト。ベンダからそうしたライブラリが提供されていなければ、自分で実装する必要がある。
-- motorData: InPort から入力された値を保持する変数。ここでは、エンコーダの値をを保持する data というフィールド(構造体のメンバ)を持っているものとする。
-- motorDataIn: InPort オブジェクト。motorData オブジェクトに関連付けられている。
+- motorDevice: An object for controlling hardware (for example, a DA board connected to a motor driver) and performing motor control. If such a library is not provided by the vendor, you need to implement it yourself.
+- motorData: A variable that holds the value input from the InPort. Here, it is assumed to have a field (a structure member) named data that holds the encoder value.
+- motorDataIn: An InPort object. It is associated with the motorData object.
 
 
 ```
@@ -65,468 +64,464 @@ OutPort のインスタンスである encoderDataOut オブジェクトは、wr
  if (motorDataIn.isNew() {
    motorData.data = motorDataIn.read(); // InPort からデータを読む
    motorDevice.output(motorData.data);  // モータードライバへ指令値を出力
- }
+}
 ```
 
 
-1行目ではまず InPort にデータが来ているかどうか確かめています。データが到着していれば、motorDataIn の read() 関数を呼んで、InPort からデータを motorData の data メンバーに読み込んでいます。次に、実際にモーターに指令値を渡すため、motorDevice オブジェクトの output関数を呼び出しています。
-同様に、InPort と OutPort を持つ制御器コンポーネントでは以下のようになるでしょう。
+In the first line, it first checks whether data has arrived at the InPort. If data has arrived, the read() function of motorDataIn is called to read data from the InPort into the data member of motorData. Next, the output function of the motorDevice object is called to actually pass the command value to the motor.
+Similarly, a controller component with InPort and OutPort would be as follows.
 
 
 ```
  // 制御器コンポーネントの例
  if (positionDataIn.isNew() && referenceDataIn.isNew()) {
- 
+
    positionDataIn.read();  // 位置データを InPort から読み込む
    referenceDataIn.read(); // 速度指令を InPort から読み込む
- 
+
    // 制御アルゴリズムに従ってモーターに与えるトルク値を計算
    torqueData.data = controller.calculate(positionData.data,
                                            referenceaData.data);
    torqueDataOut.write(); // モータートルク値を OutPort から出力
- }
+}
 ```
 
-行っていることは、それぞれ InPort、OutPort だけの場合とそれほど変わりませんので、詳しい説明は省略します。相手の RTC がどの言語で書かれているか、あるいは、ネットワーク上の別のノード上にあるのかローカルにあるのか等の違いについては、RTコンポーネントフレームワークにより隠蔽されているので、このように簡単にデータの送受信を行うことができます。
+What is being done is not very different from the cases of only InPort or only OutPort, so a detailed explanation is omitted. Differences such as what language the peer RTC is written in, or whether it is on another node on the network or local, are hidden by the RT Component framework, so data can be sent and received easily in this way.
 
 
 <!-- ------------------------------------------------------------ -->
-## 変数の型
+## Variable Types
 
-ここまでの例では、各オブジェクトの宣言が示されていないので、C++ や Java等、型のある言語に慣れている方は、サンプルプログラムの各変数がどのような型なのか気になったかもしれません。
+In the examples so far, the declarations of each object have not been shown, so those who are familiar with typed languages such as C++ and Java may have wondered what types the variables in the sample programs are.
 
-### 基本型
-上の例のデータ格納変数で想定していたのは、TimedDouble というデータ型
-です。C/C++ の構造体で書くと、ほぼ以下のような構造体と同等のものです。
+### Basic Types
+The data storage variable assumed in the example above is a data type called TimedDouble.
+Written as a C/C++ structure, it is almost equivalent to the following structure.
 
 ```
  struct Time
- {
+{
    long int sec;
    long int usec;
- };
- 
+};
+
  struct TimedDouble
- {
+{
    Time tm;
    double data;
- };
+};
 ```
 
-データポートの型に関しては、以下のような決まりや特徴があります。
+The following rules and characteristics apply to data port types.
 
-- データポートにはそれぞれ特有の型がある。
-- 型の定義は IDL (Interface Definition Language)という言語非依存のインターフェース定義言語によって定められている。
-- 言語が異なっても、IDL 定義の型が同じなら接続できる。
-- 型の異なるデータポート同士は接続できず、データの送受信は行えない。
+- Each data port has a specific type.
+- Type definitions are determined by IDL (Interface Definition Language), a language-independent interface definition language.
+- Even if the languages are different, ports can be connected if the IDL-defined type is the same.
+- Data ports with different types cannot be connected, and data cannot be sent or received.
 
-従って、上記の例で、エンコーダ、制御器、モーターの各コンポーネントを接続するためには、ポートのデータ型がそれぞれ TimedDouble 型でなければなりません。
+Therefore, in the above example, in order to connect the encoder, controller, and motor components, the data type of each port must be TimedDouble.
 
 
-なお、OpenRTM-aist では、デフォルトで以下のようなデータポート型を用意しており、特に定義することなく利用することができます。これらのデフォルト定義の基本型にはタイムスタンプ保持用に tm フィールドが用意されています。
+OpenRTM-aist provides the following data port types by default, which can be used without any special definition. These default basic types have a tm field for holding a timestamp.
 
 <table class="table-alt">
   <tr>
-    <th>型名</th>
-    <th>内容</th>
+    <th>Type Name</th>
+    <th>Contents</th>
   </tr>
   <tr>
     <td>TimedShort</td>
-    <td>タイムスタンプと short int 型</td>
+    <td>Timestamp and short int type</td>
   </tr>
   <tr>
     <td>TimedUShort</td>
-    <td>タイムスタンプと unsigned short int 型</td>
+    <td>Timestamp and unsigned short int type</td>
   </tr>
   <tr>
     <td>TimedLong</td>
-    <td>タイムスタンプと long int 型</td>
+    <td>Timestamp and long int type</td>
   </tr>
   <tr>
     <td>TimedULong</td>
-    <td>タイムスタンプと unsigned long int 型</td>
+    <td>Timestamp and unsigned long int type</td>
   </tr>
   <tr>
     <td>TimedFloat</td>
-    <td>タイムスタンプと float 型</td>
+    <td>Timestamp and float type</td>
   </tr>
   <tr>
     <td>TimedDouble</td>
-    <td>タイムスタンプと double 型</td>
+    <td>Timestamp and double type</td>
   </tr>
   <tr>
     <td>TimedString</td>
-    <td>タイムスタンプと string 型</td>
+    <td>Timestamp and string type</td>
   </tr>
   <tr>
     <td>TimedWString</td>
-    <td>タイムスタンプと wstring 型</td>
+    <td>Timestamp and wstring type</td>
   </tr>
   <tr>
     <td>TimedChar</td>
-    <td>タイムスタンプと char 型</td>
+    <td>Timestamp and char type</td>
   </tr>
   <tr>
     <td>TimedWChar</td>
-    <td>タイムスタンプと wchar 型</td>
+    <td>Timestamp and wchar type</td>
   </tr>
   <tr>
     <td>TimedOctet</td>
-    <td>タイムスタンプと バイト 型</td>
+    <td>Timestamp and byte type</td>
   </tr>
   <tr>
     <td>TimedBool</td>
-    <td>タイムスタンプと bool 型</td>
+    <td>Timestamp and bool type</td>
   </tr>
 </table>
 
 
-これらのうち、TimedChar、TimedWChar、TimedOctet はあまり使用する場面はないかもしれません。
+Among these, TimedChar, TimedWChar, and TimedOctet may not have many situations where they are used.
 
-IDL型から各言語固有の方への対応関係をマッピングといいます。それぞれの型から各言語上の型へのマッピングは CORBA の言語マッピング仕様書または「言語マッピング」の章を参照してください。
+The correspondence between IDL types and language-specific types is called mapping. For the mapping from each type to the type in each language, refer to the CORBA language mapping specification or the "Language Mapping" chapter.
 
 
-### 少し複雑なデータ型
+### Slightly More Complex Data Types
 
-上記の基本型には、～Seq というシーケンス型と呼ばれる型が用意されています。
-これは簡単にいえば配列を保持できる型です。
+The above basic types also provide types called sequence types, with names ending in ~Seq.
+Simply put, these are types that can hold arrays.
 
 ```
  seqdata.length(10); // 配列を10個分確保する
  for (int i(0); i < seqdata.length(); ++i) // 引数なし length は長さを返す
- {
+{
    seqdata[i] = i; // 代入する
- }
+}
 ```
 
-C++ではこのように利用することができます。配列よりは便利で、STL の vector に似ていますが、vector よりはだいぶ低機能です。
-Java では配列専用のホルダークラスが自動的に生成されこれを利用することができます。
-また、Python では Python の配列に直接マッピングされます。
+In C++, they can be used in this way. They are more convenient than arrays and are similar to STL vector, but they have far fewer functions than vector.
+In Java, a holder class dedicated to arrays is automatically generated and can be used.
+In Python, they are directly mapped to Python arrays.
 
-先ほどの例では、エンコーダーとモーターは一つでしたが、実際のロボットでは多くの自由度を扱う必要があります。
-その時に、各自由度ごとにポートを設けるのは、通信効率、同期の問題などから得策ではありません。
-そのような場合では、こうしたシーケンス型を利用することで、複数のデータを効率的に扱うことができます。
+In the previous example, there was one encoder and one motor, but in an actual robot it is necessary to handle many degrees of freedom.
+In that case, providing a port for each degree of freedom is not advisable from the standpoint of communication efficiency, synchronization issues, and so on.
+In such cases, using these sequence types makes it possible to handle multiple pieces of data efficiently.
 
-### 独自のデータ型
+### Custom Data Types
 
-さらに、もっと複雑なデータ構造を扱いたい場合もあります。その場合は、自分でデータ型を定義して、データポートで利用することもできます。詳細は「データポート(応用編)」を参照してください。
+Furthermore, there may be cases where you want to handle more complex data structures. In that case, you can define your own data type and use it with a data port. For details, refer to "Data Port (Advanced)."
 
 <!-- ------------------------------------------------------------ -->
-## データポートの接続
+## Connecting Data Ports
 
-### コネクタ
+### Connector
 
-RTC が持つ InPort と OutPort を接続するには、RTSystemEditor や rtcshell などのツールを使用します。ポートを接続すると OutPort から送信されたデータは、ネットワーク等を経由して InPort によって受信されます。
-接続は、システムの構造やコンポーネントの特性に応じて、以下のようにいくつかの種類を選択することができます。
+Tools such as RTSystemEditor and rtcshell are used to connect InPorts and OutPorts that an RTC has. When ports are connected, data sent from an OutPort is received by an InPort via the network or similar.
+Several types of connections can be selected as follows, according to the system structure and component characteristics.
 
-- データフロー型
-- インターフェース型
-- サブスクリプション型
-- データ送信ポリシー
+- Data flow type
+- Interface type
+- Subscription type
+- Data transmission policy
 
-### インターフェース型
+### Interface Type
 
-インターフェース型では、データをどのプロトコルで送受信するかを指定します。デフォルトでは、corba_cdr型という方法のみ利用できるようになっており、通常はこれを利用すれば特に問題ありません。
-ただし、システムの構成によっては、別のインターフェース型を利用するように、拡張することも可能です。
+The interface type specifies which protocol is used to send and receive data. By default, only a method called the corba_cdr type is available, and normally there is no particular problem if you use this.
+However, depending on the system configuration, it is also possible to extend it so that another interface type can be used.
 
 
 <div align="center"><a href="dataport_interfacetype_ja.png"><img src="dataport_interfacetype_ja.png" width="50%;"></a></div>
-<div align="center"><strong>インターフェース型</strong></div>
+<div align="center"><strong>Interface Type</strong></div>
 
-### データフロー型
+### Data Flow Type
 
-データの送受信の方法には、OutPort が InPort にデータを送る push 型のものと、逆に InPort から OutPort に問い合わせてデータを取ってくる pull 型のものがあります。
+Methods for sending and receiving data include the push type, in which the OutPort sends data to the InPort, and the pull type, in which the InPort queries the OutPort and retrieves data.
 
-push 型では、OutPort側のコンポーネントの主にアクティビティ (通常はon_execute() コールバック関数) が主体となりデータを受信側に送ります。送るタイミングは次のサブスクリプション型で指定します。
-一方、pull 型では、InPort側のコンポーネントの主にアクティビティ (通常は on_execute() コールバック関数) が主体となりデータを受信側に送ります。
-データを受信するタイミングは、InPort側が read() を読んだ時点となります。
+In the push type, the activity of the component on the OutPort side (usually the on_execute() callback function) mainly takes the initiative in sending data to the receiving side. The timing of sending is specified by the subscription type described next.
+On the other hand, in the pull type, the activity of the component on the InPort side (usually the on_execute() callback function) mainly takes the initiative in sending data to the receiving side.
+The timing at which data is received is when the InPort side calls read().
 
 <div align="center"><a href="dataport_dataflowtype_ja.png"><img src="dataport_dataflowtype_ja.png" width="50%;"></a></div>
-<div align="center"><strong>データフロー型</strong></div>
+<div align="center"><strong>Data Flow Type</strong></div>
 
-### サブスクリプション型
+### Subscription Type
 
-サブスクリプション型は、データフロー型が push のときにだけ有効なプロパティです。デフォルトでは、同期型送信方式の flush, および非同期型送信方式の new, periodic の3種類が提供されています。
+The subscription type is a property that is valid only when the data flow type is push. By default, three types are provided: flush, which is a synchronous transmission method, and new and periodic, which are asynchronous transmission methods.
 
-flush 型は OutPort から InPort へデータを push するとき、OutPort の write 関数内で直接データの送信を行います。つまり、write() 関数から戻った時には、InPort にデータが届いていることが保証されます。
-一方で、相手先の InPort がネットワーク的に遠い場所にあり、通信に時間がかかる場合には、write() で長い時間待たされる可能性があります。したがって、例えばアクティビティのロジックをリアルタイム実行したい場合には flush 型では問題が生じる場合があります。
+When pushing data from an OutPort to an InPort, the flush type sends data directly inside the write function of the OutPort. In other words, when the write() function returns, it is guaranteed that the data has arrived at the InPort.
+On the other hand, if the peer InPort is far away on the network and communication takes time, write() may be forced to wait for a long time. Therefore, for example, if you want to execute activity logic in real time, problems may occur with the flush type.
 
-new 型と periodic 型には、publisher という送信のためのスレッドが接続毎に用意されます。これらのタイプでは、OutPort の write() 関数を呼ぶと、データは一旦バッファに書きこまれ write() 関数はすぐに終了します。
-データの実際の送信は、publisher の別スレッドが行います。
+For the new type and periodic type, a transmission thread called a publisher is prepared for each connection. In these types, when the OutPort write() function is called, the data is first written to the buffer, and the write() function ends immediately.
+The actual transmission of data is performed by another thread of the publisher.
 
 <div align="center"><a href="dataport_subscriptiontype_ja.png"><img src="dataport_subscriptiontype_ja.png" width="50%;"></a></div>
-<div align="center"><strong>サブスクリプション型</strong></div>
+<div align="center"><strong>Subscription Type</strong></div>
 
-new 型は書き込みと同時に送信待ちしている publisher に対してシグナルを送り、起こされた publisher スレッドが実際のデータ送信を行います。
-バッファへのデータの書き込み周期に対して、データ送信時間が十分に短ければ、flush とほぼ同じですが、データ送信に時間がかかる場合には、必ずしもすべてのデータが受信側に届くわけではないことに注意してください。
-そういった意味で new 型はベストエフォート的なデータ送信方法です。
+The new type sends a signal to the publisher waiting for transmission at the same time as writing, and the awakened publisher thread performs the actual data transmission.
+If the data transmission time is sufficiently short compared with the cycle of writing data to the buffer, it is almost the same as flush, but if data transmission takes time, note that not all data will necessarily reach the receiving side.
+In that sense, the new type is a best-effort data transmission method.
 
-一方 periodic 型は、publisher が一定周期でバッファからデータを取り出しデータ送信を行います。送信周期は、接続時に外部から与えることができます。
-データ送信周期に比べて、データ送信時間が長い場合、送信周期が守られない可能性があります。また、データをバッファに書き込む周期 (アクティビティの周期) と、バッファからデータを取り出して送信する周期 (publisher の周期)、および後述するデータ送信ポリシーの整合性を考慮しなければ、定常的にバッファフル状態またはバッファエンプティ状態を引き起こす可能性があります。いわゆる、生産者・消費者問題を考慮する必要がある接続タイプになΩます。
+On the other hand, in the periodic type, the publisher retrieves data from the buffer and sends it at a fixed cycle. The transmission cycle can be given externally when connecting.
+If the data transmission time is longer than the data transmission cycle, the transmission cycle may not be maintained. Also, unless consistency is considered among the cycle of writing data to the buffer (the activity cycle), the cycle of retrieving data from the buffer and transmitting it (the publisher cycle), and the data transmission policy described later, a constant buffer-full or buffer-empty state may occur. This is a connection type that requires consideration of the so-called producer-consumer problem.
 
 
-#### サブスクリプション型まとめ
+#### Summary of Subscription Types
 
 <table class="table-alt">
   <tr>
     <td> <strong>Subscription Type</strong></td>
-    <td> <strong>同期・非同期</strong></td>
-    <td> <strong>概要</strong></td>
+    <td> <strong>Synchronous/Asynchronous</strong></td>
+    <td> <strong>Overview</strong></td>
   </tr>
   <tr>
     <td><strong>New</strong></td>
-    <td><strong>非同期通信</strong></td>
-    <td>データポートにデータが write された後、非同期で<strong>できるだけ速く</strong>送る。 <br> 基本的には到達保証はないが、インター
-フェース型が corba_cdr の場合TCP通信であるため、トランスポート層レベルでは到達が保証されている。他のインターフェース型に>ついては、その伝送方式による。 <br> <strong>[ユースケース]:</strong> データ送信側がリアルタイム実行、データ受信型が外部ノードの場合は New か Periodic を利用する。</td>
+    <td><strong>Asynchronous communication</strong></td>
+    <td>After data is written to the data port, it is sent asynchronously <strong>as quickly as possible</strong>. <br> Basically, arrival is not guaranteed, but if the interface type is corba_cdr, TCP communication is used, so arrival is guaranteed at the transport layer level. For other interface types, it depends on the transmission method. <br> <strong>[Use case]:</strong> If the data sender executes in real time and the data receiver is an external node, use New or Periodic.</td>
   </tr>
   <tr>
     <td><strong>Periodic</strong></td>
-    <td><strong>非同期通信</strong></td>
-    <td>データポートにデータが write された後、非同期で<strong>周期的に</strong>送る。 <br> 基本的には到達保証はなく、<strong>間引き</strong>も可能
-であるため、すべてのデータが送信される保証もない。ただし、送られたデータについてはインターフェース型が corba_cdr の場合TCP通信であるため、トランスポート層レベルでは到達が保証されている。他のインターフェース型については、その伝送方式による。 <br> <strong>[ユースケース]:</strong> データ送信側のデータ生成周期と受信側の消費周期が異なる場合にここれを利用する。</td>
+    <td><strong>Asynchronous communication</strong></td>
+    <td>After data is written to the data port, it is sent asynchronously <strong>periodically</strong>. <br> Basically, arrival is not guaranteed, and <strong>thinning</strong> is also possible, so there is no guarantee that all data will be sent. However, for the data that is sent, if the interface type is corba_cdr, TCP communication is used, so arrival is guaranteed at the transport layer level. For other interface types, it depends on the transmission method. <br> <strong>[Use case]:</strong> Use this when the data generation cycle on the data sending side differs from the consumption cycle on the receiving side.</td>
   </tr>
   <tr>
     <td><strong>Flush</strong></td>
-    <td><strong>同期通信</strong></td>
-    <td>データポートに write された後、データを同期転送する。write 関数から戻ると受信側にデータが届いたことが保証される。
-(受信側が消滅しているばあいを除く。) <br> <strong>[ユースケース]</strong> 複数の RTC を複合化しリアルタイム実行しており、それらの RTC 間の通信は通常 Flush で実行する。リモートノードに対するデータ通信でも、到達を保証したい場合は Flush を使用する。</td>
+    <td><strong>Synchronous communication</strong></td>
+    <td>After data is written to the data port, the data is transferred synchronously. When the write function returns, it is guaranteed that the data has arrived at the receiving side.
+(Except when the receiving side has disappeared.) <br> <strong>[Use case]</strong> When multiple RTCs are composited and executed in real time, communication between those RTCs is usually performed with Flush. Use Flush for data communication with a remote node as well when you want to guarantee arrival.</td>
   </tr>
 </table>
 
 
-### データ送信ポリシー
+### Data Transmission Policy
 
-サブスクリプション型が、new または periodic の場合、OutPort はバッファを持ちます。データを送信するタイミングで、バッファに溜まっているデータをどのような方針で送信するかをデータ送信ポリシーと呼びます。
+When the subscription type is new or periodic, the OutPort has a buffer. The policy for sending data accumulated in the buffer at the timing of data transmission is called the data transmission policy.
 
-データ送信ポリシーには、バッファに保持されているデータをすべて送信する <strong>all</strong>、先入れ先だし方式で一つずつ送信する <strong>fifo</strong>、バッファに保持されているデータをいくつかおきに送信する <strong>skip</strong>、そして最新値のみ送信し、その他のデータはすべて捨ててしまう <strong>new</strong> の四種類があります。
+There are four types of data transmission policies: <strong>all</strong>, which sends all data held in the buffer; <strong>fifo</strong>, which sends data one by one in first-in, first-out order; <strong>skip</strong>, which sends data held in the buffer at intervals; and <strong>new</strong>, which sends only the latest value and discards all other data.
 
 <table class="table-alt">
   <tr>
-    <th>ポリシー名</th>
-    <th>意味</th>
+    <th>Policy Name</th>
+    <th>Meaning</th>
   </tr>
   <tr>
     <td>all</td>
-    <td>バッファに残っているデータをすべて送信</td>
+    <td>Sends all data remaining in the buffer</td>
   </tr>
   <tr>
     <td>fifo</td>
-    <td>先入れ先だし方式で、データを一つずつ送信</td>
+    <td>Sends data one by one in first-in, first-out order</td>
   </tr>
   <tr>
     <td>skip</td>
-    <td>n 個おきにデータを送信し、それ以外は捨てる</td>
+    <td>Sends every n-th item of data and discards the rest</td>
   </tr>
   <tr>
     <td>new</td>
-    <td>最新値のみ送信し、古い値は捨てる</td>
+    <td>Sends only the latest value and discards old values</td>
   </tr>
 </table>
 
-サブスクリプション型を new や periodic 等の非同期型にした場合、データの生成速度、消費速度、さらに通信路の帯域幅を事前に見積もったうえで、これらのポリシーを適切に設定する必要があります。
+When the subscription type is an asynchronous type such as new or periodic, it is necessary to estimate in advance the data generation speed, consumption speed, and communication channel bandwidth, and then set these policies appropriately.
 
 
 <!-- ------------------------------------------------------------ -->
-## InPort プログラミング
+## InPort Programming
 
-ここからは実際のプログラムでデータポートがどのように使われるのかを見ていきます。
+From here, we will look at how data ports are used in actual programs.
 
-InPort を使う際には、以下のルールを念頭に置いたうえでプログラミングすることを推奨します。
+When using InPort, it is recommended that you program with the following rules in mind.
 
-- データは来ていないかもしれないとして処理する
-- データは正しくないかもしれないとして処理する
-- 配列の長さは常に変化するかもしれないとして処理する
-- データは途中から来なくなるかもしれないとして処理する
+- Process data on the assumption that data may not have arrived
+- Process data on the assumption that data may not be correct
+- Process data on the assumption that the length of an array may always change
+- Process data on the assumption that data may stop arriving partway through
 
-InPort に接続される OutPort は他のノードの RTC の OutPort かもしれません。ポートは接続されていないかもしれないし、データを送ってないかもしれません。
-配列が含まれるデータ型の場合、配列の長さは次のデータでは変化するかもしれません。また、ネットワーク接続が切れたり、相手の RTC が停止してしまった場合、途中からデータを送らなくなるかもしれません。
+The OutPort connected to the InPort may be the OutPort of an RTC on another node. The port may not be connected, or it may not be sending data.
+If the data type includes an array, the array length may change in the next data. Also, if the network connection is disconnected or the peer RTC stops, data may stop being sent partway through.
 
-モジュール化する上で、仮定や前提条件を少なくし、他の要素に依存しないように作るということは非常に重要で、これによって再利用性が高く使いやすいモジュールになるかどうかが変わってきてしまいます。
+When modularizing, it is very important to reduce assumptions and preconditions and to design so that the module does not depend on other elements. This can determine whether the module is highly reusable and easy to use.
 
-さて、InPort の実際の使い方を見ていく前に、InPort の構造を説明します。
+Now, before looking at the actual use of InPort, let's explain the structure of InPort.
 
 <div align="center"><a href="dataport_inport_ja.png"><img src="dataport_inport_ja.png" width="50%;"></a></div>
-<div align="center"><strong>InPort の構造</strong></div>
+<div align="center"><strong>Structure of InPort</strong></div>
 
-InPort の実体はオブジェクトです。C++ では、クラステンプレート InPort<T>型として定義されています。T にはデータポートが使用するデータ型が入ります。下の例は、サンプルに付属している ConsoleOut コンポーネントの InPort 宣言の例です。
-InPort が TimedLong 型で宣言されているのがわかります。
+The actual entity of an InPort is an object. In C++, it is defined as the class template InPort<T>. T contains the data type used by the data port. The example below is an example of an InPort declaration in the ConsoleOut component included with the samples.
+You can see that InPort is declared with the TimedLong type.
 
 ```
   TimedLong m_in;
   InPort<TimedLong> m_inIn;
 ```
 
-宣言や初期化は、RTCBuilder や rtc-template を使っていれば自動的に記述してくれます。InPort を使用する際には、InPort オブジェクトに結び付けられた T型の変数が一つ定義されます。
-先ほどの例で、TimedLong 型の m_in というものがその変数です。これを InPort 変数と呼びます。
+If you use RTCBuilder or rtc-template, declarations and initialization are written automatically. When using InPort, one variable of type T bound to the InPort object is defined.
+In the previous example, the variable is m_in of type TimedLong. This is called the InPort variable.
 
-InPort と InPort 変数は初期化時に関連付けられ、InPort のデータ読み出し関数 read() を呼ぶと、InPort が持つバッファからデータが一つ読みだされ InPort 変数にコピーされます。
-InPort にやってきたデータを使用する際にはこのように InPort 変数を介して利用します。
+The InPort and the InPort variable are associated during initialization. When the InPort data read function read() is called, one item of data is read from the buffer held by the InPort and copied to the InPort variable.
+When using data that has arrived at the InPort, it is used through the InPort variable in this way.
 
-### InPort オブジェクト
+### InPort Object
 
-InPort クラステンプレートで定義されている関数を以下の表に示します。
+The following table shows the functions defined in the InPort class template.
 
-これは C++ の InPort クラスの関数ですが、他の言語においてもほぼ同一の名前で各関数が提供されています。
-なお、これらの関数のリファレンスマニュアルは、Windows では、「スタート」>「OpenRTM-aist」>「C++」>「documents」>「Class reference」から見ることができます。
-Linux 等ではドキュメントがインストールされていれば、
-${prefix}/share/OpenRTM-aist/docs/ClassReference 等からアクセスすることができます。
-マニュアルは doxygen 形式で記述されており、上部メニューの「ネームスペース」からクラス一覧を表示させ、InPort を参照してください。
+These are functions of the C++ InPort class, but the functions are provided with almost the same names in other languages as well.
+The reference manuals for these functions can be viewed on Windows from "Start" > "OpenRTM-aist" > "C++" > "documents" > "Class reference".
+On Linux and similar systems, if the documentation is installed,
+it can be accessed from ${prefix}/share/OpenRTM-aist/docs/ClassReference and similar locations.
+The manual is written in doxygen format. Display the class list from "Namespaces" in the top menu and refer to InPort.
 
 <table class="table-alt">
   <tr>
     <th>InPort (const char *name, DataType &value)</th>
-    <th>コンストラクタ</th>
+    <th>Constructor</th>
   </tr>
   <tr>
     <td>`InPort` (void)</td>
-    <td>デストラクタ</td>
+    <td>Destructor</td>
   </tr>
   <tr>
     <td>const char *  name ()</td>
-    <td>ポート名称を取得する。</td>
+    <td>Gets the port name.</td>
   </tr>
   <tr>
     <td>bool  isNew ()</td>
-    <td>最新データが存在するか確認する</td>
+    <td>Checks whether the latest data exists</td>
   </tr>
   <tr>
     <td>bool  isEmpty ()</td>
-    <td>バッファが空かどうか確認する</td>
+    <td>Checks whether the buffer is empty</td>
   </tr>
   <tr>
     <td>bool  read ()</td>
-    <td>DataPort から値を読み出す</td>
+    <td>Reads a value from the DataPort</td>
   </tr>
   <tr>
     <td>void  update ()</td>
-    <td>バインドされた T 型の変数に InPort バッファの最新値を読み込む</td>
+    <td>Reads the latest value from the InPort buffer into the bound T-type variable</td>
   </tr>
   <tr>
     <td>void  operator>> (DataType &rhs)</td>
-    <td>T 型のデータへ InPort の最新値データを読み込む</td>
+    <td>Reads the latest InPort value data into T-type data</td>
   </tr>
   <tr>
     <td>void setOnRead (OnRead< DataType > *on_read)</td>
-    <td>InPort バッファへデータ読み込み時のコールバックの設定</td>
+    <td>Sets the callback for reading data into the InPort buffer</td>
   </tr>
   <tr>
     <td>void  setOnReadConvert (OnReadConvert< DataType > *on_rconvert)</td>
-    <td>InPort バッファへデータ読み出し時のコールバックの設定</td>
+    <td>Sets the callback for reading data from the InPort buffer</td>
   </tr>
 </table>
 
 
-主に使用する関数は、isNew() および read() 関数となります。実際に使われている例を見てみます。
+The main functions used are isNew() and read(). Let's look at an actual usage example.
 
 ```
  RTC::ReturnCode_t ConsoleOut::onExecute(RTC::UniqueId ec_id)
- {
+{
    if (m_inIn.isNew())
-     {
+    {
        m_inIn.read();
        std::cout << "Received: " << m_in.data << std::endl;
        std::cout << "TimeStamp: " << m_in.tm.sec << "[s] ";
        std::cout << m_in.tm.nsec << "[ns]" << std::endl;
-     }
+    }
    return RTC::RTC_OK;
- }
+}
 ```
 
-m_inIn.isNew() でデータが来ているかを確認し、m_inIn.read() で InPort 変数 m_in にデータを読み込んでいます。その後、m_in の内容を cout で表示しています。
+m_inIn.isNew() checks whether data has arrived, and m_inIn.read() reads data into the InPort variable m_in. After that, the contents of m_in are displayed with cout.
 
-通常は、この例のように InPort のデータの処理は、onExecute() 関数内で行い、InPort にやってくるデータを周期的に処理するようにプログラムします。
+Usually, as in this example, InPort data processing is performed inside the onExecute() function, and the program is written so that data arriving at the InPort is processed periodically.
 
-他の関数は説明からすぐにわかると思いますが、コールバックオブジェクトセットする関数 setOnRead と setOnRedConvert については、応用編で改めて説明します。
+The other functions should be clear from their descriptions, but the functions setOnRead and setOnRedConvert, which set callback objects, will be explained again in the advanced section.
 
 
 ## OutPort
 
-OutPort は InPort と比べると、単に自分がデータを送りだすだけですので、少し簡単になります。
+Compared with InPort, OutPort is a little simpler because it merely sends data out by itself.
 
 <div align="center"><a href="dataport_outport_ja.png"><img src="dataport_outport_ja.png" width="50%;"></a></div>
-<div align="center"><strong>OutPort の構造</strong></div>
+<div align="center"><strong>Structure of OutPort</strong></div>
 
-構造は InPort とほぼ同じで、C++ であれば、OutPort は T型の型引数をとるクラステンプレートになっています。T は OutPort のデータ型で、この T が同じ InPort に対してしかデータを送ることはできません。
-OutPort も InPort 同様、OutPort 変数と一緒に利用します。OutPort 変数にデータを書き込んだ後、OutPort の write() 関数を呼ぶとデータが OutPort から接続されている InPort へ送り出されます。
+Its structure is almost the same as InPort. In C++, OutPort is a class template that takes a type argument of type T. T is the data type of the OutPort, and data can be sent only to an InPort with the same T.
+Like InPort, OutPort is used together with an OutPort variable. After writing data to the OutPort variable, calling the write() function of the OutPort sends the data from the OutPort to the connected InPort.
 
-### OutPort オブジェクト
+### OutPort Object
 
-OutPort クラステンプレートで定義されている関数を以下の表に示します。
+The following table shows the functions defined in the OutPort class template.
 
-OutPort についても InPort 同様、他の言語においてもほぼ同一の名前で各関数が提供されています。リファレンスマニュアルについても InPort 同様、doxygen の「ネームスペース」から<strong>OutPort</strong>を見てください。
+As with InPort, functions with almost the same names are provided for OutPort in other languages as well. For the reference manual, as with InPort, look at <strong>OutPort</strong> from "Namespaces" in doxygen.
 
 <table class="table-alt">
   <tr>
     <th>OutPort (const char *name, DataType &value)</th>
-    <th>コンストラクタ</th>
+    <th>Constructor</th>
   </tr>
   <tr>
     <td>`OutPort` (void)</td>
-    <td>デストラクタ</td>
+    <td>Destructor</td>
   </tr>
   <tr>
     <td>bool  write (DataType &value)</td>
-    <td>データ書き込み</td>
+    <td>Data write</td>
   </tr>
   <tr>
     <td>bool  write ()</td>
-    <td>データ書き込み</td>
+    <td>Data write</td>
   </tr>
   <tr>
     <td>bool  operator<< (DataType &value)</td>
-    <td>データ書き込み</td>
+    <td>Data write</td>
   </tr>
   <tr>
     <td>DataPortStatus::Enum  getStatus (int index)</td>
-    <td>特定のコネクタへの書き込みステータスを得る</td>
+    <td>Gets the write status for a specific connector</td>
   </tr>
   <tr>
     <td>DataPortStatusList  getStatusList ()</td>
-    <td>特定のコネクタへの書き込みステータスリストを得る</td>
+    <td>Gets the write status list for a specific connector</td>
   </tr>
   <tr>
     <td>void  setOnWrite (OnWrite< DataType > *on_write)</td>
-    <td>OnWrite コールバックの設定</td>
+    <td>Sets the OnWrite callback</td>
   </tr>
   <tr>
     <td>void  setOnWriteConvert (OnWriteConvert< DataType > *on_wconvert)</td>
-    <td>OnWriteConvert コールバックの設定</td>
+    <td>Sets the OnWriteConvert callback</td>
   </tr>
 </table>
 
 
-OutPort で主に使用する関数は write() と getStatusList() になります。
+The main functions used with OutPort are write() and getStatusList().
 
 
 ```
  RTC::ReturnCode_t ConsoleIn::onExecute(RTC::UniqueId ec_id)
- {
+{
    std::cout << "Please input number: ";
    std::cin >> m_out.data;
    if (!m_outOut.write())
-     {
+    {
        DataPortStatusList stat = m_outOut.getStatusList();
- 
+
        for (size_t i(0), len(stat.size()); i < len; ++i)
-         {
+        {
            if (stat[i] != PORT_OK)
-             {
+            {
                std::cout << "Error in connector number " << i << std::endl;
-             }
-         }
-     }
+            }
+        }
+    }
    return RTC::RTC_OK;
- }
+}
 ```
 
-まず、std::cin >> m_out.data で標準入力から OutPort へデータを代入します。その後、m_outOut.write() でデータを OutPort から送り出しています。
-戻り値が false の場合、ポートのステータスを調べてどの接続でエラーが起きているのかを表示しています。
+First, std::cin >> m_out.data assigns data from standard input to the OutPort. Then m_outOut.write() sends the data from the OutPort.
+If the return value is false, the port status is checked and which connection has an error is displayed.
 
 
-## データポートのまとめ
+## Summary of Data Ports
 
-ここでは、データポート (InPort、OutPort) の基本的な概念と使い方について解説しました。
-データポートの宣言は、RTCBuilder や rtc-template で行ってくれますが、実際にどのようにデータを与えるのか、あるいは利用するのかについてはコンポーネント開発者が記述する必要があります。
-ただし、簡単に使用するだけであれば、InPort では、isNew() と read() 関数だけ、OutPort では、write() と getStatusList() 関数だけ覚えておけば十分でしょう。
-
--------jp page!!-------
+Here, we explained the basic concepts and usage of data ports (InPort and OutPort).
+Data port declarations are performed by RTCBuilder or rtc-template, but component developers need to write how data is actually given or used.
+However, for simple use, it is enough to remember only the isNew() and read() functions for InPort, and only the write() and getStatusList() functions for OutPort.

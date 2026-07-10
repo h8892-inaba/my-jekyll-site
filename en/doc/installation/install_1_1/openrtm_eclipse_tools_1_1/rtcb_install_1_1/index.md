@@ -2,7 +2,9 @@
 layout: page
 title: RTCBuilder のインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: RTCBuilder のインストール -->
 #contents
@@ -120,7 +122,7 @@ RTCBuilder は Eclipse プラグインであるため、 Eclipse 本体をイン
 <!--  -->
 
 ### RTCBuilder のインストールと起動
-[バイナリ(日本語版 jar ファイル(RTSE+RTCB)) ](/ja/node/941#binary)をダウンロードして、 Eclipse の plugin ディレクトリ(eclipse ディレクトリー以下の plugin というディレクトリー)にダウンロードした jar ファイルをそのままコピーします。
+[バイナリ(日本語版 jar ファイル(RTSE+RTCB)) ](/en/node/941#binary)をダウンロードして、 Eclipse の plugin ディレクトリ(eclipse ディレクトリー以下の plugin というディレクトリー)にダウンロードした jar ファイルをそのままコピーします。
 
 Eclipse を起動し、メニューから [ウインドウ] > [パースペクティブを開く] > [その他] を選択すると、 次のようなパースペクティブ選択画面が表示されます。
 <br>
@@ -146,8 +148,8 @@ Eclipse を起動し、メニューから [ウインドウ] > [パースペク�
 <!-- #ref(fig2-4RTCBuilderInit.png,80%,center) -->
 <br>
 
-参考：[**FAQ:** Eclipseの起動方法 ](/ja/node/248#eclipse)
+参考：[**FAQ:** Eclipseの起動方法 ](/en/node/248#eclipse)
 <br>
 <br>
 
--------jp page!!-------
+

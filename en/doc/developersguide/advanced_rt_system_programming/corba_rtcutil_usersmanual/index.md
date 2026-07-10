@@ -1,22 +1,21 @@
 ---
 layout: page
-title: "RTC操作関数(CORBA_RTCUtil)利用マニュアル"
+title: "RTC Operation Function (CORBA_RTCUtil) User Manual"
 ---
--------jp page!!-------
 
 #contents
 
-このページではOpenRTM-aistのRTC操作関数群**CORBA_RTCUtil**機能の利用方法に説明します。
+This page explains how to use the **CORBA_RTCUtil** RTC operation function group of OpenRTM-aist.
 
-今回使用したソースコードは以下から入手できます。
+The source code used here can be obtained from the following.
 
 - https://github.com/Nobu19800/testCORBA_RTCUtil
 
-## 事前準備
+## Preparation
 ### C++
-C++の場合はOpenRTM-aistとリンクしたプログラムをビルドする環境が必要です。
+For C++, you need an environment for building programs linked with OpenRTM-aist.
 
-以下のCMakeLists.txtを作成してください。
+Create the following CMakeLists.txt.
 
 ```
  cmake_minimum_required(VERSION 3.1)
@@ -34,8 +33,8 @@ C++の場合はOpenRTM-aistとリンクしたプログラムをビルドする�
  target_include_directories(${target} SYSTEM PRIVATE ${OPENRTM_INCLUDE_DIRS})
 ```
 
-また、**CORBA_RTCUtil_test.cpp**のソースファイルを作成してCMakeを実行します。
-ソースコードからビルドしたOpenRTM-aistを使う場合は、**environment-setup.omniorb.vc**.bat**を実行します。
+Also, create the source file **CORBA_RTCUtil_test.cpp** and run CMake.
+If you are using OpenRTM-aist built from source code, run **environment-setup.omniorb.vc**.bat**.
 
 ```
  %OPENRTM_INSTALL_DIR%\2.0.0\ext\environment-setup.omniorb.vc16.bat
@@ -44,7 +43,7 @@ C++の場合はOpenRTM-aistとリンクしたプログラムをビルドする�
  cmake ..
 ```
 
-CORBA_RTCUtil_test.cppには以下の内容を記述しておきます。
+Write the following content in CORBA_RTCUtil_test.cpp.
 
 ```
  #include <rtm/Manager.h>
@@ -54,7 +53,7 @@ CORBA_RTCUtil_test.cppには以下の内容を記述しておきます。
  
  
  int main (int argc, char** argv)
- {
+{
   RTC::Manager* manager;
   manager = RTC::Manager::init(argc, argv);
  
@@ -134,12 +133,12 @@ CORBA_RTCUtil_test.cppには以下の内容を記述しておきます。
   manager->join();
  
   return 0;
- }
+}
 ```
 
 
 ### Python
-Pythonの場合は以下の**CORBA_RTCUtil_test.py**を用意してください。
+For Python, prepare the following **CORBA_RTCUtil_test.py**.
 
 ```
  #!/usr/bin/env python
@@ -209,57 +208,57 @@ Pythonの場合は以下の**CORBA_RTCUtil_test.py**を用意してください�
     main()
 ```
 
-### rtc.confの作成
-以下の内容のrtc.confを作成してください。
+### Creating rtc.conf
+Create rtc.conf with the following content.
 
 ```
  manager.shutdown_auto: NO
 ```
 
-### サンプルコンポーネントの起動
+### Starting Sample Components
 
-ConsoleIn、ConsoleOut、ConfiguSample、MyServiceProvider、MyServiceConsumerのサンプルコンポーネントを起動しておきます。
+Start the sample components ConsoleIn, ConsoleOut, ConfiguSample, MyServiceProvider, and MyServiceConsumer.
 
 
-## CORBA_RTCUtilの利用
-### ポートの操作
-#### ポートのオブジェクトリファレンス取得
+## Using CORBA_RTCUtil
+### Port Operations
+#### Getting a Port Object Reference
 
-データポートの接続のために、ポートのオブジェクトリファレンスを取得する**get_port_by_name**関数を使用します。
+To connect data ports, use the **get_port_by_name** function to obtain the port object reference.
 
 <table class="table-alt">
   <tr>
-    <th colspan="2">関数名</th>
+    <th colspan="2">Function Name</th>
     <th>get_port_by_name</th>
   </tr>
   <tr>
-    <td colspan="3">引数</td>
+    <td colspan="3">Arguments</td>
   </tr>
   <tr>
-    <td>引数名</td>
-    <td>型名</td>
-    <td>意味</td>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
   </tr>
   <tr>
     <td>rtc</td>
     <td>RTC::RTObject_ptr</td>
-    <td>RTCのオブジェクトリファレンス</td>
+    <td>RTC object reference</td>
   </tr>
   <tr>
     <td>name</td>
     <td>std::string&</td>
-    <td>RTC名.ポート名</td>
+    <td>RTC name.port name</td>
   </tr>
   <tr>
-    <td colspan="2">戻り値</td>
+    <td colspan="2">Return Value</td>
   </tr>
   <tr>
-    <td>型名</td>
-    <td colspan="2">意味</td>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
   </tr>
   <tr>
     <td>RTC::PortService_ptr</td>
-    <td colspan="2">ポートのオブジェクトリファレンス</td>
+    <td colspan="2">Port object reference</td>
   </tr>
 </table>
 
@@ -297,37 +296,37 @@ ConsoleIn、ConsoleOut、ConfiguSample、MyServiceProvider、MyServiceConsumer�
 
 
 
-また**get_port_by_url**関数を使用すると、**rtcname**形式、**rtcloc**形式の文字列からオブジェクトリファレンスを取得できます。
+Also, by using the **get_port_by_url** function, you can obtain an object reference from a string in **rtcname** format or **rtcloc** format.
 
 <table class="table-alt">
   <tr>
-    <th>関数名</th>
+    <th>Function Name</th>
     <th colspan="2">get_port_by_url</th>
   </tr>
   <tr>
-    <td colspan="3">引数</td>
+    <td colspan="3">Arguments</td>
   </tr>
   <tr>
-    <td>引数名</td>
-    <td>型名</td>
-    <td>意味</td>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
   </tr>
   <tr>
     <td>port_name</td>
     <td>std::string&</td>
-    <td>ポートのURI</td>
+    <td>Port URI</td>
   </tr>
   <tr>
-    <td colspan="3">戻り値</td>
+    <td colspan="3">Return Value</td>
   </tr>
   <tr>
-    <td>型名</td>
-    <td colspan="2">意味</td>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
   </tr>
   <tr>
     <td>RTC::PortService_ptr</td>
     <td>></td>
-    <td>ポートのオブジェクトリファレンス</td>
+    <td>Port object reference</td>
   </tr>
 </table>
 
@@ -364,49 +363,49 @@ ConsoleIn、ConsoleOut、ConfiguSample、MyServiceProvider、MyServiceConsumer�
         sys.exit(1)
 ```
 
-#### コネクタ生成
+#### Connector Creation
 
-取得したデータポートを**connect**関数で接続します。
+Connect the acquired data ports with the **connect** function.
 
 <table class="table-alt">
   <tr>
-    <th>関数名</th>
+    <th>Function Name</th>
     <th colspan="2">connect</th>
   </tr>
   <tr>
-    <td colspan="3">CENTER:引数</td>
+    <td colspan="3">CENTER:Arguments</td>
   </tr>
   <tr>
-    <td>引数名</td>
-    <td>型名</td>
-    <td>意味</td>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
   </tr>
   <tr>
     <td>name</td>
     <td>std::string&</td>
-    <td>コネクタの名前</td>
+    <td>Connector name</td>
   </tr>
   <tr>
     <td>prop</td>
     <td>coil::Properties&</td>
-    <td>コネクタの設定情報</td>
+    <td>Connector setting information</td>
   </tr>
   <tr>
     <td>port0</td>
     <td>RTC::PortService_ptr</td>
-    <td>接続するポート1</td>
+    <td>Port 1 to connect</td>
   </tr>
   <tr>
     <td>port1</td>
     <td>RTC::PortService_ptr</td>
-    <td>接続するポート2</td>
+    <td>Port 2 to connect</td>
   </tr>
   <tr>
-    <td colspan="3">CENTER:戻り値</td>
+    <td colspan="3">CENTER:Return Value</td>
   </tr>
   <tr>
-    <td>型名</td>
-    <td colspan="2">CENTER:意味</td>
+    <td>Type Name</td>
+    <td colspan="2">CENTER:Meaning</td>
   </tr>
   <tr>
     <td>RTC::ReturnCode_t</td>
@@ -432,37 +431,37 @@ ConsoleIn、ConsoleOut、ConfiguSample、MyServiceProvider、MyServiceConsumer�
         "test_connector", prop, port_in_var, port_out_var)
 ```
 
-#### コネクタ削除
+#### Connector Deletion
 
 <table class="table-alt">
   <tr>
-    <th>関数名</th>
+    <th>Function Name</th>
     <th colspan="2">disconnect_connector_name</th>
   </tr>
   <tr>
-    <td colspan="3">引数</td>
+    <td colspan="3">Arguments</td>
   </tr>
   <tr>
-    <td>引数名</td>
-    <td>型名</td>
-    <td>意味</td>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
   </tr>
   <tr>
     <td>port_ref</td>
     <td>RTC::PortService_ptr</td>
-    <td>接続中のポート</td>
+    <td>Connected port</td>
   </tr>
   <tr>
     <td>conn_name</td>
     <td>std::string&</td>
-    <td>コネクタの名前</td>
+    <td>Connector name</td>
   </tr>
   <tr>
-    <td colspan="3">戻り値</td>
+    <td colspan="3">Return Value</td>
   </tr>
   <tr>
-    <td>型名</td>
-    <td colspan="2">意味</td>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
   </tr>
   <tr>
     <td>RTC::ReturnCode_t</td>
@@ -471,7 +470,7 @@ ConsoleIn、ConsoleOut、ConfiguSample、MyServiceProvider、MyServiceConsumer�
 </table>
 
 
-コネクタ名を指定してコネクタを削除するためには**disconnect_connector_name**関数を使用します。
+To delete a connector by specifying the connector name, use the **disconnect_connector_name** function.
 
 ```
   CORBA_RTCUtil::disconnect_connector_name(port_in_var.in(), "test_connector");
@@ -482,37 +481,37 @@ ConsoleIn、ConsoleOut、ConfiguSample、MyServiceProvider、MyServiceConsumer�
         port_in_var, "test_connector")
 ```
 
-コネクタのURIからオブジェクトリファレンスを取得してコネクタを削除する場合は**disconnect_connector_name**関数を使用します。
+When obtaining an object reference from a connector URI and deleting the connector, use the **disconnect_connector_name** function.
 
 <table class="table-alt">
   <tr>
-    <th>関数名</th>
+    <th>Function Name</th>
     <th colspan="2">disconnect_connector_name</th>
   </tr>
   <tr>
-    <td colspan="3">引数</td>
+    <td colspan="3">Arguments</td>
   </tr>
   <tr>
-    <td>引数名</td>
-    <td>型名</td>
-    <td>意味</td>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
   </tr>
   <tr>
     <td>port_name</td>
     <td>std::string&</td>
-    <td>ポートのURI</td>
+    <td>Port URI</td>
   </tr>
   <tr>
     <td>conn_name</td>
     <td>std::string&</td>
-    <td>コネクタの名前</td>
+    <td>Connector name</td>
   </tr>
   <tr>
-    <td colspan="3">CENTER:戻り値</td>
+    <td colspan="3">CENTER:Return Value</td>
   </tr>
   <tr>
-    <td>型名</td>
-    <td colspan="2">意味</td>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
   </tr>
   <tr>
     <td>RTC::ReturnCode_t</td>
@@ -529,48 +528,48 @@ ConsoleIn、ConsoleOut、ConfiguSample、MyServiceProvider、MyServiceConsumer�
         "rtcname://localhost:2809/*/ConsoleOut0.in", "test_connector")
 ```
 
-#### 複数のポートを一括で接続
-複数のポートを一度に接続するためには**connect_multi**関数を使用します。
+#### Connecting Multiple Ports at Once
+To connect multiple ports at once, use the **connect_multi** function.
 
 <table class="table-alt">
   <tr>
-    <th>関数名</th>
+    <th>Function Name</th>
     <th colspan="2">connect_multi</th>
   </tr>
   <tr>
-    <td colspan="3">CENTER:引数</td>
+    <td colspan="3">CENTER:Arguments</td>
   </tr>
   <tr>
-    <td>引数名</td>
-    <td>型名</td>
-    <td>意味</td>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
   </tr>
   <tr>
     <td>name</td>
     <td>std::string&</td>
-    <td>コネクタの名前</td>
+    <td>Connector name</td>
   </tr>
   <tr>
     <td>prop</td>
     <td>coil::Properties&</td>
-    <td>コネクタの設定情報</td>
+    <td>Connector setting information</td>
   </tr>
   <tr>
     <td>port0</td>
     <td>RTC::PortService_ptr</td>
-    <td>接続するポート1</td>
+    <td>Port 1 to connect</td>
   </tr>
   <tr>
     <td>target_ports</td>
     <td>RTC::PortServiceList&</td>
-    <td>ポート1と接続するポートのリスト</td>
+    <td>List of ports to connect to port 1</td>
   </tr>
   <tr>
-    <td colspan="3">CENTER:戻り値</td>
+    <td colspan="3">CENTER:Return Value</td>
   </tr>
   <tr>
-    <td>型名</td>
-    <td colspan="2">意味</td>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
   </tr>
   <tr>
     <td>RTC::ReturnCode_t</td>
@@ -590,13 +589,1284 @@ ConsoleIn、ConsoleOut、ConfiguSample、MyServiceProvider、MyServiceConsumer�
         "test_connector", prop, port_in_var, [port_out_var])
 ```
 
-#### すべてのコネクタを削除
-対象ポートのすべてのコネクタを削除するためには**disconnect_all**関数を使います。
+#### Deleting All Connectors
+To delete all connectors of the target port, use the **disconnect_all** function.
 
 <table class="table-alt">
   <tr>
-    <th>関数名</th>
+    <th>Function Name</th>
     <th colspan="2">disconnect_all</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>port_ref</td>
+    <td>RTC::PortService_ptr</td>
+    <td>Connected port</td>
+  </tr>
+  <tr>
+    <td colspan="3">Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">></td>
+  </tr>
+</table>
+
+```
+  CORBA_RTCUtil::disconnect_all(port_in_var.in());
+```
+
+```
+    OpenRTM_aist.CORBA_RTCUtil.disconnect_all_by_ref(port_in_var)
+```
+
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">disconnect_all</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>port_name</td>
+    <td>std::string&</td>
+    <td>Port URI</td>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">></td>
+  </tr>
+</table>
+
+```
+  CORBA_RTCUtil::disconnect_all("rtcname://localhost:2809/*/ConsoleIn0.out");
+```
+
+```
+    OpenRTM_aist.CORBA_RTCUtil.disconnect_all_by_name(
+        "rtcname://localhost:2809/*/ConsoleIn0.out")
+```
+
+### RTC State Operations
+#### Activation
+To activate an RTC, use the **activate** function.
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">activate</th>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>Execution context ID</td>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">></td>
+  </tr>
+</table>
+
+Since an RTC has a state for each execution context, specify ec_id when changing the state in an execution context other than the default execution context (ID: 0).
+
+```
+  CORBA_RTCUtil::activate(consolein.in(), 0);
+  CORBA_RTCUtil::activate(consoleout.in(), 0);
+```
+
+```
+    OpenRTM_aist.CORBA_RTCUtil.activate(consoleout, 0)
+    OpenRTM_aist.CORBA_RTCUtil.activate(consolein, 0)
+```
+
+
+#### Deactivation
+To deactivate an RTC, use the **deactivate** function.
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">deactivate</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>Execution context ID</td>
+  </tr>
+  <tr>
+    <td colspan="3">Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">></td>
+  </tr>
+</table>
+
+```
+  CORBA_RTCUtil::deactivate(consolein.in(), 0);
+  CORBA_RTCUtil::deactivate(consoleout.in(), 0);
+```
+
+```
+    OpenRTM_aist.CORBA_RTCUtil.deactivate(consoleout, 0)
+    OpenRTM_aist.CORBA_RTCUtil.deactivate(consolein, 0)
+```
+
+#### Reset
+To reset an RTC, use the **reset** function.
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">reset</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>Execution context ID</td>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">></td>
+  </tr>
+</table>
+
+```
+  CORBA_RTCUtil::reset(consolein.in(), 0);
+  CORBA_RTCUtil::reset(consoleout.in(), 0);
+```
+
+```
+    OpenRTM_aist.CORBA_RTCUtil.reset(consoleout, 0)
+    OpenRTM_aist.CORBA_RTCUtil.reset(consolein, 0)
+```
+
+#### Getting the RTC State
+To get the current state of an RTC, use the **get_state** function.
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">get_state</th>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>state</td>
+    <td>RTC::LifeCycleState</td>
+    <td>State</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>Execution context ID</td>
+  </tr>
+  <tr>
+    <td colspan="3">Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>bool</td>
+    <td colspan="2">true: state retrieval succeeded, false: state retrieval failed</td>
+  </tr>
+</table>
+
+```
+  RTC::LifeCycleState state;
+  CORBA_RTCUtil::get_state(state, consoleout.in(), 0);
+  std::cout << state << std::endl;
+```
+
+```
+    ret, state = OpenRTM_aist.CORBA_RTCUtil.get_state(consoleout, 0)
+    print(state)
+```
+
+Also, you can determine whether the current state is inactive, active, or error using the **is_in_inactive**, **is_in_active**, and **is_in_error** functions.
+
+if (CORBA_RTCUtil::is_in_inactive(consoleout.in()))
+```
+ {
+    std::cout << "Inactive State" << std::endl;
+  }
+  else if (CORBA_RTCUtil::is_in_active(consoleout.in()))
+  {
+    std::cout << "Active State" << std::endl;
+  }
+  else if (CORBA_RTCUtil::is_in_error(consoleout.in()))
+  {
+    std::cout << "Error State" << std::endl;
+  }
+```
+
+```
+    if OpenRTM_aist.CORBA_RTCUtil.is_in_inactive(consoleout):
+        print("Inactive State")
+    elif OpenRTM_aist.CORBA_RTCUtil.is_in_active(consoleout):
+        print("Active State")
+    elif OpenRTM_aist.CORBA_RTCUtil.is_in_error(consoleout):
+        print("Error State")
+```
+
+### Execution Context Operations
+#### Operating the Execution Period
+To change the execution period of an execution context, use the **set_default_rate** function.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>set_default_rate</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>rate</td>
+    <td>CORBA::Double</td>
+    <td>Execution period</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td>></td>
+  </tr>
+</table>
+
+```
+  CORBA_RTCUtil::set_default_rate(consoleout.in(), 20.0);
+```
+
+```
+    OpenRTM_aist.CORBA_RTCUtil.set_default_rate(consoleout, 20.0)
+```
+
+The set_default_rate function gets the execution period of the default execution context, but to get the execution period from the execution context with the specified ID, use the **set_current_rate** function.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>set_current_rate</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>Execution context ID</td>
+  </tr>
+  <tr>
+    <td>rate</td>
+    <td>CORBA::Double</td>
+    <td>Execution period</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td>></td>
+  </tr>
+</table>
+
+```
+  CORBA_RTCUtil::set_current_rate(consoleout.in(), 0, 50.0);
+```
+
+```
+    OpenRTM_aist.CORBA_RTCUtil.set_current_rate(consoleout, 0, 50.0)
+```
+
+To get the current execution period, use the **get_default_rate** function.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>get_default_rate</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>CORBA::Double</td>
+    <td>></td>
+    <td>Execution period</td>
+  </tr>
+</table>
+
+
+```
+  std::cout << CORBA_RTCUtil::get_default_rate(consoleout.in()) << std::endl;
+```
+
+```
+    print(OpenRTM_aist.CORBA_RTCUtil.get_default_rate(consoleout))
+```
+
+To get the execution period from the execution context with the specified ID, use the **get_current_rate** function.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>get_current_rate</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>Execution context ID</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>CORBA::Double</td>
+    <td>></td>
+    <td>Execution period</td>
+  </tr>
+</table>
+
+```
+  std::cout << CORBA_RTCUtil::get_current_rate(consoleout.in(), 0) << std::endl;
+```
+
+```
+    print(OpenRTM_aist.CORBA_RTCUtil.get_current_rate(consoleout, 0))
+```
+
+
+#### Attaching and Detaching Execution Contexts
+
+Normally, the execution context generated by the RTC at startup is associated (attached), but by attaching an external execution context to the RTC, the RTC can be driven by the attached execution context.
+
+To attach an execution context to the specified RTC, use the **add_rtc_to_default_ec** function.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>add_rtc_to_default_ec</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>localcomp</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC that has the execution context to attach as its default execution context</td>
+  </tr>
+  <tr>
+    <td>othercomp</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC to attach</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td>></td>
+  </tr>
+</table>
+
+```
+  CORBA_RTCUtil::add_rtc_to_default_ec(consoleout.in(), consolein.in());
+```
+
+```
+    OpenRTM_aist.CORBA_RTCUtil.add_rtc_to_default_ec(consoleout, consolein)
+```
+
+To detach the attached execution context, use the **remove_rtc_to_default_ec** function.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>remove_rtc_to_default_ec</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>localcomp</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC that has the execution context to detach as its default execution context</td>
+  </tr>
+  <tr>
+    <td>othercomp</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC to detach</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td>></td>
+  </tr>
+</table>
+
+```
+  CORBA_RTCUtil::remove_rtc_to_default_ec(consoleout.in(), consolein.in());
+```
+
+```
+    OpenRTM_aist.CORBA_RTCUtil.remove_rtc_to_default_ec(consoleout, consolein)
+```
+
+To get a list of attached external RTCs, use the **get_participants_rtc** function.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>get_participants_rtc</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC that has the target execution context as its default execution context</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::RTCList</td>
+    <td>></td>
+  </tr>
+</table>
+
+```
+  RTC::RTCList rtclist = CORBA_RTCUtil::get_participants_rtc(consoleout.in());
+  for(CORBA::ULong i=0;i < rtclist.length();i++)
+  {
+    
+    std::cout << i << "\t" << CORBA_RTCUtil::get_component_profile(rtclist[i].in()) << std::endl;
+  }
+```
+
+```
+   i = 0
+    for rtc in OpenRTM_aist.CORBA_RTCUtil.get_participants_rtc(consoleout):
+        print(i, OpenRTM_aist.CORBA_RTCUtil.get_component_profile(rtc))
+        i += 1
+```
+
+### Configuration Parameter Operations
+To set configuration parameters, use the **set_active_configuration** function.
+This function sets the parameters of the currently active configuration set.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>set_active_configuration</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>value_name</td>
+    <td>std::string&</td>
+    <td>Parameter name</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>std::string&</td>
+    <td>Set value</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>bool</td>
+    <td>></td>
+    <td>true: setting succeeded, false: setting failed</td>
+  </tr>
+</table>
+
+```
+  CORBA_RTCUtil::set_active_configuration(configsample.in(), "int_param1", "100");
+```
+
+```
+    OpenRTM_aist.CORBA_RTCUtil.set_active_configuration(
+        configsample, "int_param1", "100")
+```
+
+
+When setting a parameter by specifying a configuration set, use the **set_configuration** function.
+When this function is executed, the active configuration set is changed.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>set_configuration</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>confset_name</td>
+    <td>std::string&</td>
+    <td>Configuration set name</td>
+  </tr>
+  <tr>
+    <td>value_name</td>
+    <td>std::string&</td>
+    <td>Parameter name</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>std::string&</td>
+    <td>Set value</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>bool</td>
+    <td>></td>
+    <td>true: setting succeeded, false: setting failed</td>
+  </tr>
+</table>
+
+```
+  CORBA_RTCUtil::set_configuration(configsample.in(), "mode0", "str_param1", "test");
+```
+
+```
+    OpenRTM_aist.CORBA_RTCUtil.set_configuration(
+        configsample, "mode0", "str_param1", "test")
+```
+
+
+To get the name of the currently active configuration set, use the **get_active_configuration_name** function.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>get_active_configuration_name</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>std::string</td>
+    <td>></td>
+    <td>Configuration set name</td>
+  </tr>
+</table>
+
+```
+  std::cout << CORBA_RTCUtil::get_active_configuration_name(configsample.in()) << std::endl;
+```
+
+```
+    print(OpenRTM_aist.CORBA_RTCUtil.get_active_configuration_name(configsample))
+```
+
+To get a list of parameters in the active configuration set, use the **get_active_configuration** function.
+
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>get_active_configuration</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>coil::Properties</td>
+    <td>></td>
+    <td>Parameter list</td>
+  </tr>
+</table>
+
+```
+  std::cout << CORBA_RTCUtil::get_active_configuration(configsample.in()) << std::endl;
+```
+
+```
+    print(OpenRTM_aist.CORBA_RTCUtil.get_active_configuration(configsample))
+```
+
+To get a list of parameters by specifying a configuration set, use the **get_configuration** function.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>get_configuration</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>conf_name</td>
+    <td>std::string&</td>
+    <td>Configuration set name</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>coil::Properties</td>
+    <td>></td>
+    <td>Parameter list</td>
+  </tr>
+</table>
+
+```
+  std::cout << CORBA_RTCUtil::get_configuration(configsample.in(), "mode1") << std::endl;
+```
+
+```
+    print(OpenRTM_aist.CORBA_RTCUtil.get_configuration(configsample, "mode1"))
+```
+
+To get only a specified parameter, use the **get_parameter_by_key** function.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>get_parameter_by_key</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>conf_name</td>
+    <td>std::string&</td>
+    <td>Configuration set name</td>
+  </tr>
+  <tr>
+    <td>value_name</td>
+    <td>std::string&</td>
+    <td>Parameter name</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>std::string</td>
+    <td>></td>
+    <td>Parameter value</td>
+  </tr>
+</table>
+
+```
+  std::cout << CORBA_RTCUtil::get_parameter_by_key(configsample.in(), "mode1", "int_param1") << std::endl;
+```
+
+```
+    print(OpenRTM_aist.CORBA_RTCUtil.get_parameter_by_key(
+        configsample, "mode1", "int_param1"))
+```
+
+### Getting RTC and Port Information
+
+#### Getting RTC Information
+
+To get a component profile, use the **get_component_profile** function.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>get_component_profile</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>coil::Properties</td>
+    <td>></td>
+    <td>Component profile information</td>
+  </tr>
+</table>
+
+```
+  std::cout << CORBA_RTCUtil::get_component_profile(consolein.in()) << std::endl;
+```
+
+```
+    print(OpenRTM_aist.CORBA_RTCUtil.get_component_profile(consolein))
+```
+
+#### Getting Port Names
+
+To get a list of names of ports held by the specified RTC, use the **get_port_names** function.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>get_port_names</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>coil::vstring</td>
+    <td>></td>
+    <td>Port name list</td>
+  </tr>
+</table>
+
+```
+  coil::vstring portlist = CORBA_RTCUtil::get_port_names(consolein.in());
+  for (auto& port : portlist)
+  {
+    std::cout << port << std::endl;
+  }
+```
+
+```
+    for port in OpenRTM_aist.CORBA_RTCUtil.get_port_names(consolein):
+        print(port)
+```
+
+To get a list of InPort names, use the **get_inport_names** function. To get a list of OutPort names, use the **get_outport_names** function. To get a list of service port names, use the **get_svcport_names** function.
+
+```
+  coil::vstring inportlist = CORBA_RTCUtil::get_inport_names(consoleout.in());
+  for (auto& port : inportlist)
+  {
+    std::cout << port << std::endl;
+  }
+```
+
+```
+  coil::vstring outportlist = CORBA_RTCUtil::get_outport_names(consolein.in());
+  for (auto& port : outportlist)
+  {
+    std::cout << port << std::endl;
+  }
+  
+  coil::vstring svcportlist = CORBA_RTCUtil::get_svcport_names(myserviceprovider.in());
+  for (auto& port : svcportlist)
+  {
+    std::cout << port << std::endl;
+  }
+```
+
+```
+    for port in OpenRTM_aist.CORBA_RTCUtil.get_inport_names(consoleout):
+        print(port)
+    for port in OpenRTM_aist.CORBA_RTCUtil.get_outport_names(consolein):
+        print(port)
+    for port in OpenRTM_aist.CORBA_RTCUtil.get_svcport_names(myserviceprovider):
+        print(port)
+```
+
+#### Getting a List of Connector Names
+
+To get a list of connector names for a specified port, use the **get_connector_names** function.
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>></th>
+    <th>get_connector_names</th>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>port</td>
+    <td>RTC::PortService_ptr</td>
+    <td>Port object reference</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>coil::vstring</td>
+    <td>></td>
+    <td>Connector name list</td>
+  </tr>
+</table>
+
+```
+  coil::vstring inconlist = CORBA_RTCUtil::get_connector_names(port_in_var.in());
+  for (auto& connector : inconlist)
+  {
+    std::cout << connector << std::endl;
+  }
+```
+
+```
+    for connector in OpenRTM_aist.CORBA_RTCUtil.get_connector_names_by_portref(port_in_var):
+        print(connector)
+```
+
+You can also get a list of connector names by specifying the port name.
+
+<table class="table-alt">
+  <tr>
+    <th colspan="2">Function Name</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>port_name</td>
+    <td>std::string&</td>
+    <td>Port name</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>></td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>></td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>coil::vstring</td>
+    <td>></td>
+    <td>Connector name list</td>
+  </tr>
+</table>
+
+```
+  coil::vstring outconlist = CORBA_RTCUtil::get_connector_names(consolein.in(), "ConsoleIn0.out");
+  for (auto& connector : outconlist)
+  {
+    std::cout << connector << std::endl;
+  }
+```
+
+```
+    for connector in OpenRTM_aist.CORBA_RTCUtil.get_connector_names(consolein, "ConsoleIn0.out"):
+        print(connector)
+```
+
   </tr>
   <tr>
     <td colspan="3">引数</td>

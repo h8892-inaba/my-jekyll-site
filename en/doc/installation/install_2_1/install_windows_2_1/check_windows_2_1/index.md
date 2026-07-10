@@ -18,7 +18,7 @@ Batch files are located under the folders "C++_Examples", "C++_OpenCV-Examples",
 
 For details, refer to the explanation on the Getting Started in 10 Minutes page. <br>
 
-- [Getting Started with OpenRTM-aist in 10 Minutes! - Running Sample Components](/ja/node/7323#toc5)
+- [Getting Started with OpenRTM-aist in 10 Minutes! - Running Sample Components](/en/node/7323#toc5)
 <br>
 
 <div align="center"><a href="start-menu-folder.png"><img src="start-menu-folder.png" width="70%;"></a></div><br>

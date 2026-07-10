@@ -1,168 +1,249 @@
 ---
 layout: page
-title: xfinderの利用方法
+title: How to Use xfinder
 ---
--------jp page!!-------
 
-<!-- Title: xfinderの利用方法 -->
+<!-- Title: How to Use xfinder -->
 #contents(4)
 
-Raspberry Pi はヘッドレス状態 (モニタ、キーボードを接続しない状態) では IPアドレスなどを知る術がないため初期設定を行うのは少々困難です。
-最初にモニタとキーボードを接続して、ホスト名を設定し前述のように Avahi経由で IPアドレスをホスト名から知ることも可能ですが、全く設定していない Raspberry Pi についてはこの方法も使えません。
+When a Raspberry Pi is running in a headless configuration (without a monitor or keyboard attached), it can be difficult to determine its IP address and perform initial setup.
 
+One option is to connect a monitor and keyboard, configure a hostname, and then use Avahi to discover the IP address from the hostname as described previously. However, this approach is not available for a completely unconfigured Raspberry Pi.
 
-## xfinder とは
+## What is xfinder?
 
-xfinder は Raspberry Pi や BeagleBone などのCPUボードに搭載されている Ethernet インターフェースの MAC (Media Access Control) アドレスからIPアドレスを割出しログインするためのツールです。
+xfinder is a utility that discovers the IP addresses of CPU boards such as Raspberry Pi and BeagleBone by identifying their Ethernet interface MAC (Media Access Control) addresses and then allows users to log in to them.
 
-Ethernet のインターフェースには48ビットの固有のアドレス(MAC (Media Access Control) アドレス)が割り振られており、その上位24ビットはベンダ(ネットワーク機器を開発する企業など)の固有のアドレスとなっています。
-Ethernet ではパケットの送受信をするために相互に MACアドレスを知る必要があり、IPアドレスから MACアドレスを調べるための ARP(Address Resolution Protocol) と呼ばれるプロトコルが利用できます。
-xfinderでは、ネットワーク上に接続されている特定の MACアドレスのパターンを見つけることにより、Raspberry Pi などのヘッドレスシステムの IPアドレスを調べ、ssh 等でログインし設定・開発を容易に行えるようにサポートします。
+Every Ethernet interface is assigned a unique 48-bit MAC address. The upper 24 bits identify the vendor (such as the company that manufactured the networking hardware).
+
+Ethernet communication requires devices to know each other's MAC addresses. To obtain a MAC address from an IP address, a protocol called ARP (Address Resolution Protocol) is used.
+
+xfinder searches the network for specific MAC address patterns. By identifying devices such as Raspberry Pi boards, it helps users discover the IP addresses of headless systems and log in via SSH, making setup and development much easier.
 
 <div align="center"><a href="raspberrypi_and_arp.png"><img src="raspberrypi_and_arp.png" width="80%;"></a></div>
-<div align="center"><strong>xfinderでRaspberryPiを見つける</strong></div>
+<div align="center"><strong>Finding a Raspberry Pi with xfinder</strong></div>
 
-xfinder は一つの実行ファイルでコマンドラインツール (CUI モード) とグラフィカルユーザインターフェースツール (GUI モード) の2通りとして利用することができます。
-ここでは、GUIモードの xfinder の使い方について説明します。
+xfinder is distributed as a single executable that can be used in two modes:
 
-## xfinder のダウンロード
+- Command-line mode (CUI)
+- Graphical User Interface mode (GUI)
 
-xfinder は以下の場所からダウンロードできます。
+This section explains how to use xfinder in GUI mode.
+
+## Downloading xfinder
+
+xfinder can be downloaded from the following location:
 
 <table class="table-alt">
   <tr>
-    <th>**xfinder**</th>
+    <th>xfinder</th>
     <th>http://openrtm.org/pub/RaspberryPi/xfinder.exe</th>
   </tr>
 </table>
 
 <div align="center"><a href="xfinder_folder.png"><img src="xfinder_folder.png" width="60%;"></a></div>
-<div align="center"><strong>ダウンロードした xfinder</strong></div>
+<div align="center"><strong>Downloaded xfinder</strong></div>
 
-## xfinder (GUIモード) を使う
+## Using xfinder (GUI Mode)
 
-xfinder の使い方は以下の3ステップです。
+Using xfinder consists of three basic steps:
 
-- ネットワークをスキャンしてRaspberry Pi 等を見つける
-- スキャンして見つかった Raspberry Pi を確認する
-- TeraTerm 等ターミナルソフトウエアでログインして作業をする
+1. Scan the network and locate Raspberry Pi boards or similar devices.
+2. Verify the discovered devices.
+3. Log in using a terminal application such as Tera Term and perform setup or development tasks.
 
+### Startup
 
-
-### 起動
-
-xfinder.exeを起動すると、以下の様な画面が表示されます。
+When you launch `xfinder.exe`, the following screen appears.
 
 <div align="center"><a href="xfinder_gui_panes.png"><img src="xfinder_gui_panes.png" width="60%;"></a></div>
-<div align="center"><strong>xfinder の GUI画面</strong></div>
+<div align="center"><strong>xfinder GUI</strong></div>
 
-まず、①左上のペインにてスキャンする条件（インターフェース、ボード、MACアドレスパターン等）を指定しスキャンを開始、②次にスキャンして見つかった Raspberry Pi 等のリストが表示されるので選択、③の左下のペインにてログイン条件を指定してターミナルアプリケーションを起動します。
-ターミナルアプリケーションが起動後は、対象となる Raspberry Pi にログインして設定やプログラムの開発などを行うことができます。
+The workflow is as follows:
 
-なお、右のペインに表示されたボードのリストをダブルクリックすることでターミナルアプリケーションの起動とログインを行うことも可能です。
+1. Specify scan conditions in the upper-left pane (network interface, board type, MAC address pattern, etc.) and start scanning.
+2. Select a discovered Raspberry Pi or other board from the list that appears.
+3. Configure login settings in the lower-left pane and launch a terminal application.
 
+After the terminal application starts, you can log in to the target Raspberry Pi and perform configuration or software development.
 
-### Scan settings
+You can also launch the terminal application and log in directly by double-clicking a board in the list displayed in the right pane.
 
-左上の **Scan settings** では、ネットワークをスキャンするための条件を設定します。
+---
 
-#### Interface address
+### Scan Settings
 
-現在の PC のどのネットワークインターフェースから Raspberry Pi を探すかを選択します。複数のネットワークインターフェースがある場合、複数のIPアドレスが表示されるので、どのネットワーク(例えば、一つはグローバル側、もう一つがプライベート側のネットワークにつながっており、プライベート側のネットワークにある Raspberry Pi を探したい場合はここでプライベートアドレスを選択します。)をスキャンするかを選択します。
+The **Scan settings** pane in the upper-left corner is used to configure network scanning parameters.
+
+#### Interface Address
+
+Select the network interface from which xfinder should search for Raspberry Pi devices.
+
+If your PC has multiple network interfaces, multiple IP addresses will be displayed. Choose the network you want to scan.
+
+For example:
+
+- One interface connected to the Internet
+- Another connected to a private LAN containing the Raspberry Pi
+
+In this case, select the private network address.
 
 <div align="center"><a href="xfinder_select_ifaddr.png"><img src="xfinder_select_ifaddr.png" width="80%;"></a></div>
-<div align="center"><strong>Interface addressでスキャンするネットワークインターフェースの IPアドレスを指定する</strong></div>
+<div align="center"><strong>Selecting the network interface IP address</strong></div>
 
-全てのネットワークインターフェースに対してスキャンを行う場合は**ALL**を選択してください。
-どの IPアドレスがどのネットワークインターフェースと対応しているかわからない場合は、**コントロールパネル**→**ネットワークとインターネット**→**ネットワークと共有センター**→**アダプターの設定の変更**からアダプタのアイコンをクリックしてどのようなIPアドレスが割り当てられているか確認してください。
+To scan all network interfaces, select **ALL**.
 
-また、コマンドプロンプトを開いて **ipconfig** コマンドを実行しインターフェースと割り当てられているIPアドレスを確認することもできます。
+If you are unsure which IP address corresponds to which interface, check:
 
+**Control Panel → Network and Internet → Network and Sharing Center → Change Adapter Settings**
 
-#### Board type
+Click each adapter icon to view its assigned IP address.
 
-どのボードを探すかコンボボックスから選択します。Raspberry Pi か BeagleBone を選択でき、デフォルトでは Raspberry Pi が選択されています。
+You can also open a Command Prompt and run:
+
+```cmd
+ipconfig
+```
+
+to view all interfaces and their assigned IP addresses.
+
+#### Board Type
+
+Select the type of board to search for.
+
+Available options include:
+
+- Raspberry Pi
+- BeagleBone
+
+By default, **Raspberry Pi** is selected.
 
 <div align="center"><a href="xfinder_select_board.png"><img src="xfinder_select_board.png" width="80%;"></a></div>
-<div align="center"><strong>スキャンするボードタイプを指定する</strong></div>
+<div align="center"><strong>Selecting the board type to scan for</strong></div>
 
-この一覧に探したいボードがない場合は、該当するボードのネットワークインターフェースの MACアドレスの上6ケタを調べ、次の Match Pattern のテキストボックスに入力しスキャンする必要があります。
+If the board you want to locate is not listed, determine the first six hexadecimal digits of its network interface MAC address and enter them manually in the **Match Pattern** field described below.
 
-Raspberry Pi にUSB 無線LANアダプタを付け、無線LANのみで接続している場合はここで Raspberry Pi を選択しても探すことはできません。
-無線LANアダプタの MACアドレスの MACアドレスの上6ケタ (例えば Buffaroの場合10:6f:3f) を Match Pattern に入力して探します。
+If your Raspberry Pi uses only a USB Wi-Fi adapter, selecting Raspberry Pi here may not find it.
 
+Instead, enter the first six hexadecimal digits of the Wi-Fi adapter's MAC address (for example, Buffalo adapters often begin with `10:6f:3f`) in the **Match Pattern** field.
 
-#### Match pattern
+#### Match Pattern
 
-Raspberry Pi や BeagleBone 以外のボードを探す場合、ここに探したい MACアドレスのパターンを入力します。
+Use this field when searching for boards other than Raspberry Pi or BeagleBone.
 
 <div align="center"><a href="xfinder_select_pattern.png"><img src="xfinder_select_pattern.png" width="80%;"></a></div>
-<div align="center"><strong>スキャンする MACアドレスのパターンを指定する</strong></div>
+<div align="center"><strong>Specifying a MAC address pattern to scan</strong></div>
 
-また Raspberry Piに無線LANアダプタなどを装着している場合も、メーカー固有の MACアドレス上6ケタを入力することで探し出すことが可能です。
-ただし、メジャーなメーカーの無線LANアダプタなどはスキャンすると多数発見されることもあります。
+This field can also be used when a Raspberry Pi is connected via a Wi-Fi adapter.
 
+By entering the manufacturer's MAC address prefix (the first six hexadecimal digits), xfinder can locate the device.
 
+Be aware that common Wi-Fi adapter vendors may result in many matching devices being found on the network.
 
-#### Scan ボタン/ Abort ボタン
+#### Scan Button / Abort Button
 
-**Scan** ボタンはスキャンを実行する際に押します。スキャン中は押すことができません。
-**Abort**ボタンはスキャン実行中に途中でやめたい場合に押します。スキャン実行中のみ押すことができます。
-ボタンの下のプログレスバーはスキャンの進捗状況を表示します。
+- **Scan**: Starts a network scan. Disabled while a scan is in progress.
+- **Abort**: Stops a scan before completion. Enabled only while scanning.
 
-<!-- div align="center"><a href="xfinder_scanning_board.png"><img src="xfinder_scanning_board.png" width="80%;"></a></div-->
-<div align="center"><strong>スキャン実行時(※画像なし)</strong></div>
+The progress bar below the buttons displays scan progress.
 
+<div align="center"><strong>Scanning in progress (image unavailable)</strong></div>
 
-### Found nodes
+---
 
-右側の **Found nodes** のペインはスキャンして見つかったボードのIPアドレス、MACアドレスおよびホスト名を表示します。
+### Found Nodes
 
-- **IP address**: 見つかったボードの IPアドレスを表示します。ヘッダ部分を押すと IPアドレス順でソートします。
-- **MAC address**: 見つかったボードの MACアドレスを表示します。ヘッダ部分を押すと MACアドレス順でソートします。
-- **Host name**: 見つかったボードのホスト名を表示します。ヘッダ部分を押すとホスト名順でソートします。
+The **Found nodes** pane on the right displays discovered devices, including:
 
-なお、ここに表示されたリストをダブルクリックすると、左の **Terminal launcher** の設定に従ってターミナルアプリケーションが起動しログインできます。
+- IP address
+- MAC address
+- Host name
+
+#### IP Address
+
+Displays the IP address of each discovered board.
+
+Click the column header to sort by IP address.
+
+#### MAC Address
+
+Displays the MAC address of each discovered board.
+
+Click the column header to sort by MAC address.
+
+#### Host Name
+
+Displays the host name of each discovered board.
+
+Click the column header to sort by host name.
+
+Double-clicking an entry automatically launches the configured terminal application using the settings specified in the **Terminal launcher** pane.
 
 <div align="center"><a href="xfinder_launchterm_dclick.png"><img src="xfinder_launchterm_dclick.png" width="80%;"></a></div>
-<div align="center"><strong>Found nodes から直接ターミナルアプリケーションを起動する</strong></div>
+<div align="center"><strong>Launching a terminal application directly from Found Nodes</strong></div>
 
-### Terminal launcher
+---
 
-左側の **Terminal launcher** のペインは見つかったホストに対してターミナルアプリケーションを利用してログインする際に使用します。
+### Terminal Launcher
 
-- **User name**: ログイン時に使用するユーザー名を入力します。左上の**Scan setting** の **Board type** 設定によって自動的に値が入力されます。
-- **Password**: ログイン時に使用するパスワードを入力します。左上の**Scan setting** の **Board type** 設定によって自動的に値が入力されます。
-- **Port**: ログイン時に使用するポート番号を入力します。デフォルトでは ssh のデフォルトポート番号20が設定されています。
-- **Terminal App**: 使用するターミナルアプリケーションがコンボボックスから選択で来ます。利用可能なターミナルアプリケーションは Windows では **TeraTerm**, **Poderosa**, **PuTTY** のいずれかで、起動時にこれらがインストールされているかチェックし、利用可能なものだけリストに表示されます。
-- **Login**ボタン: 右側の Found nodes でログインするノード選択すると押下可能になります。このボタンを押すと、上の設定に従ってターミナルアプリケーションが起動され Raspberry Pi にログインできます。
+The **Terminal launcher** pane on the left is used to log in to a discovered host using a terminal application.
+
+#### User Name
+
+Enter the username used for login.
+
+This field is automatically populated based on the selected **Board type**.
+
+#### Password
+
+Enter the login password.
+
+This field is also automatically populated according to the selected **Board type**.
+
+#### Port
+
+Enter the port number used for login.
+
+By default, the SSH port is used.
+
+#### Terminal App
+
+Select the terminal application to use.
+
+On Windows, supported applications include:
+
+- Tera Term
+- Poderosa
+- PuTTY
+
+At startup, xfinder checks which applications are installed and displays only those available.
+
+#### Login Button
+
+This button becomes enabled after selecting a node in the **Found nodes** list.
+
+Clicking **Login** launches the selected terminal application and logs in to the target board using the specified settings.
 
 <table class="table-alt">
   <tr>
-    <th>ボードタイプ</th>
-    <th>User name</th>
+    <th>Board Type</th>
+    <th>User Name</th>
     <th>Password</th>
   </tr>
   <tr>
-    <td>RaspberryPi</td>
+    <td>Raspberry Pi</td>
     <td>pi</td>
     <td>raspberry</td>
   </tr>
   <tr>
     <td>BeagleBone</td>
     <td>root</td>
-    <td>(パスワード無し)</td>
+    <td>(no password)</td>
   </tr>
 </table>
 
-
-
 <div align="center"><a href="xfinder_launcterm_by_loginbutton.png"><img src="xfinder_launcterm_by_loginbutton.png" width="80%;"></a></div>
-<div align="center"><strong>Login ボタンを押してターミナルアプリケーションを起動する</strong></div>
+<div align="center"><strong>Launching a terminal application using the Login button</strong></div>
 
 <div align="center"><a href="launch_teraterm.png"><img src="launch_teraterm.png" width="80%;"></a></div>
-<div align="center"><strong>起動したターミナルアプリケーション (TeraTerm Pro)</strong></div>
-
-
-
--------jp page!!-------
+<div align="center"><strong>Launched terminal application (Tera Term Pro)</strong></div>

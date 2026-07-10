@@ -1,75 +1,73 @@
 ---
 layout: page
-title: "Choreonoid用OpenRTM連携プラグイン Python版 インストール手順"
+title: "Installation Procedure for the OpenRTM Integration Plugin for Choreonoid, Python Version"
 ---
-
-No English version available.
 
 #contents
 
-## 動作環境
-動作環境は以下の通りです。
+## Operating Environment
+The operating environments are as follows.
 
 - Windows 8.1
 - Windows 10
 - Ubuntu 14.04
 - Ubuntu 16.04
 
-Windowsの場合はビルド済みバイナリを配布してあります。
+For Windows, prebuilt binaries are distributed.
 
 
-## インストール手順(Windows)
+## Installation Procedure (Windows)
 
 ### Python
 
-Python 2.7(**64bit**)をインストールしてください。
+Install Python 2.7 (**64-bit**).
 
 - [Python 2.7.14](https://www.python.org/downloads/release/python-2714/)
 
 ### Choreonoid
 
-ビルド済みChoreonoid+OpenRTM連携プラグインは以下からダウンロードできます。
+The prebuilt Choreonoid + OpenRTM integration plugin can be downloaded from the following.
 
 - [Choreonoid+OpenRTM-Python-Plugin.zip](https://drive.google.com/a/nobu777.net/uc?authuser=0&id=1EA9LEduA1mVAoPbyL4IFQ5k8L61TxQux&export=download)
 
 
-このファイルを[Lhaplus](https://forest.watch.impress.co.jp/library/software/lhaplus/)等で適当な場所に展開すればインストール完了です。
+Installation is complete by extracting this file to an appropriate location using [Lhaplus](https://forest.watch.impress.co.jp/library/software/lhaplus/) or a similar tool.
 
-### ソースコードからビルドする場合
-何らかの事情によりソースコードからビルドせざる得ない場合は、以下のページの手順でビルドしてください。
+### When Building from Source Code
+If, for some reason, you must build from source code, build it according to the procedure on the following page.
 
-- [インストール手順(Windows、ソースからビルド)](https://github.com/Nobu19800/OpenRTMPythonPlugin/wiki/%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%89%8B%E9%A0%86(Windows))
+- [Installation Procedure (Windows, Build from Source)](https://github.com/Nobu19800/OpenRTMPythonPlugin/wiki/%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%89%8B%E9%A0%86(Windows))
 
-## インストール手順(Ubuntu)
+## Installation Procedure (Ubuntu)
 
-### ダウンロード
+### Download
 
-Choreonoidのインストール手順については[Choreonoid ホームページ](http://choreonoid.org/ja/manuals/latest/install/build-ubuntu.html)に詳しく記載されているようなのですが、一応こちらでも説明します。
+The Choreonoid installation procedure seems to be described in detail on the [Choreonoid website](http://choreonoid.org/ja/manuals/latest/install/build-ubuntu.html), but it is also explained here just in case.
 
-Choreonoidのソースコードですが、以下の理由により独自の変更を加えてあります。
-
-
-- OpenRTM連携プラグインのRTシステムエディタ上でRTCをダブルクリックした際に専用Pythonエディタを開く機能を追加するための変更
-- 2017年7月時点でWindowsで動作しなかったため一部変更
-- Pythonでライトを操作するための関数追加
+The Choreonoid source code has been independently modified for the following reasons.
 
 
-このため、オリジナルのChoreonoidではなくフォークしたものをクローンしてください。
+- Changes to add a function that opens a dedicated Python editor when double-clicking an RTC in the RT system editor of the OpenRTM integration plugin
+- Some changes because it did not work on Windows as of July 2017
+- Addition of functions for operating lights from Python
+
+
+For this reason, clone the forked version instead of the original Choreonoid.
 
 ```
  git clone https://github.com/Nobu19800/choreonoid.git
 ```
 
-gitをインストールしていない場合は以下のコマンドを入力してください。
+If git is not installed, enter the following command.
 
 ```
  sudo apt-get install git
 ```
 
 
-### インストール
-#### 依存ライブラリ
-Choreonoidには必要ライブラリをインストールするスクリプトが付属しているようなので、このスクリプトを起動してください。
+### Installation
+#### Dependent Libraries
+Choreonoid appears to include a script for installing required libraries, so start this script.
 
 ```
  cd choreonoid
@@ -85,7 +83,7 @@ sudo sh pkg_install_ubuntu.sh
 
 #### OpenRTM-aist-Python
 
-以下のコマンドを入力してください。
+Enter the following commands.
 
 ```
  wget http://svn.openrtm.org/OpenRTM-aist-Python/tags/RELEASE_1_1_2/OpenRTM-aist-Python/installer/install_scripts/pkg_install_python_ubuntu.sh
@@ -106,20 +104,20 @@ sudo sh pkg_install_ubuntu.sh
  sudo make install
 ```
 
-cmakeコマンドのオプションを変更してビルドしてください。
+Build with the cmake command options changed as follows.
 
 ```
  cmake .. -DENABLE_PYTHON=ON -DBUILD_PYTHON_PLUGIN=ON -DBUILD_OPENRTM_PYTHON_PLUGIN=ON -DENABLE_CORBA=ON -DBUILD_CORBA_PLUGIN=ON -DBUILD_OPENRTM_PLUGIN=ON
 ```
 
 
-### 動作確認に必要なソフトウェアのインストール
+### Installing Software Required for Operation Check
 
-動作確認のためにゲームパッドのRTCを使用しますが、このRTCの動作にはPySDL2がインストールされている必要があります。
+A gamepad RTC is used for the operation check, and PySDL2 must be installed for this RTC to operate.
 
-動作確認用のRTCに必要というだけなので、次ページの動作確認を行わない場合はインストールの必要はありません。
+It is only required for the RTC used for operation check, so if you do not perform the operation check on the next page, you do not need to install it.
 
-以下のコマンドを入力してください。
+Enter the following commands.
 
 ```
  wget https://bitbucket.org/marcusva/py-sdl2/downloads/PySDL2-0.9.5.tar.gz
@@ -128,19 +126,18 @@ cmakeコマンドのオプションを変更してビルドしてください。
  sudo python setup.py install
 ```
 
-さらにSDL2のインストールが必要なので、以下のコマンドでインストールしてください。
+SDL2 also needs to be installed, so install it with the following command.
 
 ```
  sudo apt-get install libsdl2-2.0-0 libsdl2-image-2.0-0
 ```
 
-これで準備完了です。
+This completes the preparation.
 
-### 追記
-choreonoidのsampleフォルダにOpenRTMPythonPluginのソースコードを入れる必要があります。
+### Additional Note
+The source code of OpenRTMPythonPlugin must be placed in the sample folder of choreonoid.
 
 ```
  cd sample
  git clone https://github.com/Nobu19800/OpenRTMPythonPlugin.git
 ```
-

@@ -22,8 +22,8 @@ init
   - [OpenCV Edition for RTCB-RC1](./rtc_development/rtc_development_opencv_rtcb-rc1)
   - [NXTway Edition](./rtc_development/rtc_development_nxtway)
   - [LEGO Mindstorms Edition](./rtc_development_lego_mindstorm)
-  - [RT Component Development (Raspberry Pi)]({{ site.baseurl }}/ja/doc/installation/other/raspberrypi_casestudy)
-  - [Cross Development of RT Components (Armadillo240)]({{ site.baseurl }}/ja/doc/old_documents/armadillo240)
+  - [RT Component Development (Raspberry Pi)]({{ site.baseurl }}/en/doc/installation/other/raspberrypi_casestudy)
+  - [Cross Development of RT Components (Armadillo240)]({{ site.baseurl }}/en/doc/old_documents/armadillo240)
 
 - [Integrating GUI Toolkits with RTCs](./guitool_and_rtc)
 - [LEGO Mindstorms EV3 Use Cases](./lego_mindstorm)

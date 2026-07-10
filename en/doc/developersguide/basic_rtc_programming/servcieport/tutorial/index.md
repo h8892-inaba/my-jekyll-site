@@ -1,16 +1,15 @@
 ---
 layout: page
-title: "サービスポートの設定手順"
+title: "Service Port Configuration Procedure"
 ---
--------jp page!!-------
 
 #contents
 
-## IDLファイルの作成
+## Creating an IDL File
 
-使用するIDLファイルを作成します。
-OpenRTM-aistのサンプルコンポーネントに付属しているMyService.idlを使用します。
-以下のコードをコピーして使用する場合は、行頭のスペースを削除してください。
+Create the IDL file to use.
+Use MyService.idl, which is included with the OpenRTM-aist sample components.
+If you copy and use the following code, remove the spaces at the beginning of each line.
 
 
 
@@ -30,44 +29,44 @@ OpenRTM-aistのサンプルコンポーネントに付属しているMyService.i
 ```
 
 
-## RTCの作成
+## Creating RTCs
 
-### Required側のRTC作成
+### Creating the RTC on the Required Side
 
-RTC Builderでモジュール名が**MyServiceConsumer**のRTCを作成してください。
-アクティビティはonExecuteを有効にしてください。
+Create an RTC whose module name is **MyServiceConsumer** with RTC Builder.
+Enable onExecute as an activity.
 
-次に、作成したIDLファイル(MyService.idl)をRTC Builderのパッケージエクスプローラーから、MyServiceConsumerの**idl**フォルダにドラッグアンドドロップして、ファイルをコピーします。
+Next, from the RTC Builder Package Explorer, drag and drop the created IDL file (MyService.idl) into the **idl** folder of MyServiceConsumer to copy the file.
 
 <div align="center"><a href="service1.png"><img src="service1.png" width="80%;"></a></div>
 
-サービスポートの設定で、Add Portボタンを押してサービスポート、Add Interfaceボタンを押してサービスインターフェースを追加します。
+In the service port settings, press the Add Port button to add a service port, and press the Add Interface button to add a service interface.
 
-今回は、ポート名をmyservice0、インターフェース名をMyService、方向をRequired、インターフェース型をSimpleService::MyServiceに設定します。
+This time, set the port name to myservice0, the interface name to MyService, the direction to Required, and the interface type to SimpleService::MyService.
 
 <div align="center"><a href="service2.png"><img src="service2.png" width="50%;"></a></div>
 
-RTCの仕様をまとめると、以下のようになっています。
+The RTC specification is summarized as follows.
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名</th>
+    <th>Component Name</th>
     <th>MyServiceConsumer</th>
   </tr>
   <tr>
-    <td>言語</td>
+    <td>Language</td>
     <td>C++</td>
   </tr>
   <tr>
-    <td>アクティビティ</td>
-    <td>onInitialize、onExecute</td>
+    <td>Activity</td>
+    <td>onInitialize, onExecute</td>
   </tr>
   <tr>
     <td>></td>
     <td>CENTER: Service</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>myservice0</td>
   </tr>
   <tr>
@@ -75,21 +74,21 @@ RTCの仕様をまとめると、以下のようになっています。
     <td>CENTER: Interface</td>
   </tr>
   <tr>
-    <td>インターフェース名</td>
+    <td>Interface Name</td>
     <td>MyService</td>
   </tr>
   <tr>
-    <td>方向</td>
+    <td>Direction</td>
     <td>Required</td>
   </tr>
   <tr>
-    <td>インターフェース型</td>
+    <td>Interface Type</td>
     <td>SimpleService::MyService</td>
   </tr>
 </table>
 
 
-RTC Builderでコード生成して、onExecute関数を以下のように編集してください。
+Generate code with RTC Builder, and edit the onExecute function as follows.
 
 
 ```
@@ -106,28 +105,28 @@ RTC Builderでコード生成して、onExecute関数を以下のように編集
  }
 ```
 
-IDLファイルで定義したMyServiceインターフェースのecho関数を呼び出しています。
-サービスポートを接続すると、Provided側で実装したecho関数が呼ばれます。
-Provided側のRTCがアクティブ状態ではない場合、echo関数は例外を投げるためtry～catchで例外処理しています。例外処理をしなかった場合、RTCがError状態に遷移することがあります。
+This calls the echo function of the MyService interface defined in the IDL file.
+When the service port is connected, the echo function implemented on the Provided side is called.
+If the RTC on the Provided side is not in the active state, the echo function throws an exception, so exception handling is performed with try-catch. If exception handling is not performed, the RTC may transition to the Error state.
 
-後はビルドして実行ファイルを生成してください。
+After that, build it and generate the executable file.
 
-### Provided側のRTC作成
+### Creating the RTC on the Provided Side
 
-RTC Builderで以下の仕様のRTCを作成してください。
-インターフェースの方向は**Provided**に設定してください。
+Create an RTC with the following specification in RTC Builder.
+Set the interface direction to **Provided**.
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名</th>
+    <th>Component Name</th>
     <th>MyServiceProvider</th>
   </tr>
   <tr>
-    <td>言語</td>
+    <td>Language</td>
     <td>C++</td>
   </tr>
   <tr>
-    <td>アクティビティ</td>
+    <td>Activity</td>
     <td>onInitialize</td>
   </tr>
   <tr>
@@ -135,7 +134,7 @@ RTC Builderで以下の仕様のRTCを作成してください。
     <td>CENTER: Service</td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>myservice0</td>
   </tr>
   <tr>
@@ -143,21 +142,21 @@ RTC Builderで以下の仕様のRTCを作成してください。
     <td>CENTER: Interface</td>
   </tr>
   <tr>
-    <td>インターフェース名</td>
+    <td>Interface Name</td>
     <td>MyService</td>
   </tr>
   <tr>
-    <td>方向</td>
+    <td>Direction</td>
     <td>Provided</td>
   </tr>
   <tr>
-    <td>インターフェース型</td>
+    <td>Interface Type</td>
     <td>SimpleService::MyService</td>
   </tr>
 </table>
 
 
-コード生成したら、**MyServiceSVC_impl.cpp**の**SimpleService_MyServiceSVC_impl::echo**関数を編集します。
+After generating the code, edit the **SimpleService_MyServiceSVC_impl::echo** function in **MyServiceSVC_impl.cpp**.
 
 ```
  #include <iostream>
@@ -175,29 +174,28 @@ RTC Builderで以下の仕様のRTCを作成してください。
 ```
 
 
-MyServiceConsumerのonExecute関数でecho関数を呼びましたが、サービスポート接続時にはSimpleService_MyServiceSVC_impl::echo関数が呼ばれます。
-戻り値の型が文字列(char*)の場合、CORBA::string_dup関数でmsgからメモリをコピーする必要があります。
+The echo function was called in the onExecute function of MyServiceConsumer, but when the service ports are connected, the SimpleService_MyServiceSVC_impl::echo function is called.
+If the return type is a string (char*), memory must be copied from msg using the CORBA::string_dup function.
 
 
-編集が完了したらビルドしてください。
+After editing is complete, build it.
 
-## 動作確認
+## Operation Check
 
-以下のようにRT System Editorでポートを接続して、RTCをアクティブ化してください。
+Connect the ports in RT System Editor as shown below, and activate the RTCs.
 
 <div align="center"><a href="service3.png"><img src="service3.png" width="50%;"></a></div>
 
-ウィンドウにtestと連続して表示されていたら正常に動作しています。
-これはRequired側ではProvided側のecho関数を呼び出して文字列を渡しています。
-Provided側では、受け取った文字列を標準出力後に、Required側に返しています。
-最後にRequired側で返された文字列を標準出力しています。
+If "test" is displayed continuously in the window, it is operating normally.
+On the Required side, the echo function on the Provided side is called and a string is passed.
+On the Provided side, the received string is output to standard output and then returned to the Required side.
+Finally, the returned string is output to standard output on the Required side.
 
 
-文字列以外のデータを利用する方法、Python、Java、Luaでの使用方法は以下のサンプルコンポーネントを参考にしてください。
+For how to use data other than strings, and how to use this in Python, Java, and Lua, refer to the following sample components.
 
-- [C++サンプルコンポーネント](https://github.com/OpenRTM/OpenRTM-aist/tree/master/examples/SimpleService)
-- [Pythonサンプルコンポーネント](https://github.com/OpenRTM/OpenRTM-aist-Python/tree/master/OpenRTM_aist/examples/SimpleService)
-- [Javaサンプルコンポーネント](https://github.com/OpenRTM/OpenRTM-aist-Java/tree/master/jp.go.aist.rtm.RTC/src/RTMExamples/SimpleService)
-- [Luaサンプルコンポーネント](https://github.com/Nobu19800/RTM-Lua/tree/master/examples)
+- [C++ Sample Component](https://github.com/OpenRTM/OpenRTM-aist/tree/master/examples/SimpleService)
+- [Python Sample Component](https://github.com/OpenRTM/OpenRTM-aist-Python/tree/master/OpenRTM_aist/examples/SimpleService)
+- [Java Sample Component](https://github.com/OpenRTM/OpenRTM-aist-Java/tree/master/jp.go.aist.rtm.RTC/src/RTMExamples/SimpleService)
+- [Lua Sample Component](https://github.com/Nobu19800/RTM-Lua/tree/master/examples)
 
--------jp page!!-------

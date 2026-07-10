@@ -1,21 +1,16 @@
 ---
 layout: page
-title: RTコンポーネントの作成
+title: Creating RT Components
 ---
--------jp page!!-------
 
 
-hogehoge
+- [Basics of Creating RT Components](./rtc_development_basic)
+- [Creating RT Components (OpenCV: Using the CameraImage Type)](./opencv_camera_image_type_use)
+- [Creating RT Components (VC++ Edition)](./rtc_development_vcpp)
+- [Creating RT Components (Java Version)](./rtc_development_java)
+- [Creating RT Components (OpenCV Edition for RTCB-RC1)](./rtc_development_opencv_rtcb-rc1)
+- [Creating RT Components (NXTway Edition)](./rtc_development_nxtway)
+- [Creating RT Components (LEGO Mindstorm Edition)](./rtc_development_lego_mindstorm)
+- [RT Component Development (Raspberry Pi)]({{ site.baseurl }}/en/doc/installation/other/raspberrypi_casestudy)
+- [RT Component Cross Development (Armadillo240)]()
 
-- [RTコンポーネントの作成の基本](./rtc_development_basic)
-- [RTコンポーネントの作成(OpenCV編 CameraImage型の使用)](./opencv_camera_image_type_use)
-- [RTコンポーネントの作成(VC++編)](./rtc_development_vcpp)
-- [RTコンポーネントの作成(Java版)](./rtc_development_java)
-- [RTコンポーネントの作成(OpenCV編 for RTCB-RC1)](./rtc_development_opencv_rtcb-rc1)
-- [RTコンポーネントの作成(NXTway編)](./rtc_development_nxtway)
-- [RTコンポーネントの作成(LEGO Mindstorm編)](./rtc_development_lego_mindstorm)
-- [RTコンポーネントの開発(Raspberry Pi)]({{ site.baseurl }}/ja/doc/installation/other/raspberrypi_casestudy)
-- [RTコンポーネントのクロス開発(Armadillo240)]()
-
-
--------jp page!!-------

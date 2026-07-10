@@ -1,90 +1,88 @@
 ---
 layout: page
-title:  PiRT-Unitを利用したIOプログラミング
+title: IO Programming Using PiRT-Unit
 ---
--------jp page!!-------
 
 <!-- Title: PiRT-Unitを利用したIOプログラミング -->
 #contents
 
-この Book では、Raspberry Pi と PiRT-Unit を組み合わせてOpenRTM-aist から利用する方法を解説します。
+This Book explains how to use Raspberry Pi together with PiRT-Unit from OpenRTM-aist.
 
-## PiRT-Unit を利用する
+## Using PiRT-Unit
 
-PiRT-Unit は産総研で開発された、Raspberry Pi用 IO拡張ボードです。
-ウィン電子工業から発売中です。
+PiRT-Unit is an IO expansion board for Raspberry Pi developed by AIST.
+It is currently available from Win-Ei Electronics.
 
 <!-- ウィン電子工業から購入することができます。 -->
 
-- ウィン電子工業:  http://win-ei.com/
-  - ラズベリーパイ拡張ボード: http://cgi3.win-ei.com/wordpress/?page_id=135
-    - 品名：Pi RT-Unit
-    - 型名：RE-01
-    - 価格：\6,615（税込）
+- Win-Ei Electronics:  http://win-ei.com/
+  - Raspberry Pi expansion board: http://cgi3.win-ei.com/wordpress/?page_id=135
+    - Product name: Pi RT-Unit
+    - Model number: RE-01
+    - Price: \6,615 (tax included)
 
 #clear
 <div align="center"><a href="pirt-unit.png"><img src="pirt-unit.png" width="80%;"></a></div>
-<div align="center"><strong>PiRT-Unit概観</strong></div>
+<div align="center"><strong>PiRT-Unit Overview</strong></div>
 
-PiRT-Unit からは、AD (4ch)、DA (2ch)、PWM (1ch)、I2C (1ch)、RS232C/XBee (1ch) がそれぞれ利用できます。
+PiRT-Unit provides AD (4ch), DA (2ch), PWM (1ch), I2C (1ch), and RS232C/XBee (1ch).
 
 <div align="center"><a href="pirt-unit_connectors.png"><img src="pirt-unit_connectors.png" width="80%;"></a></div>
-<div align="center"><strong>PiRT-Unit 入出力コネクタ配置図</strong></div>
+<div align="center"><strong>PiRT-Unit Input/Output Connector Layout Diagram</strong></div>
 
-### 特長
+### Features
 
-- アナログ入力 (10bit ADC x 4ch) 利用可能
-- アナログ出力 (12bit DAC x 2ch) 利用可能
-- PWM x1ch: RCサーボモーター利用可能
-- I2C シリアル通信利用可能
-- RS232C Dsub コネクタ利用可能
-- Xbee接続用コネクタ利用可能（上記 RS232C との選択式）
-- 5V DC入力： Raspberry Pi に電源供給可能
-  - 秋月電子等で安価に購入可能な ACアダプタを利用できます
+- Analog input (10-bit ADC x 4ch) available
+- Analog output (12-bit DAC x 2ch) available
+- PWM x1ch: RC servo motor available
+- I2C serial communication available
+- RS232C Dsub connector available
+- XBee connection connector available (selectable with the above RS232C)
+- 5V DC input: Power can be supplied to Raspberry Pi
+  - An inexpensive AC adapter available from Akizuki Denshi, etc. can be used
 
 
-### 仕様
+### Specifications
 
 <table class="table-alt">
   <tr>
-    <th colspan="2" style="text-align: center;">Raspberry Pi拡張IOボード</th>
+    <th colspan="2" style="text-align: center;">Raspberry Pi Expansion IO Board</th>
   </tr>
   <tr>
-    <td>ADコンバータ</td>
-    <td>10bit, 4ch <br> チップ: ADC104S021 <br> サンプリング 200kHz</td>
+    <td>AD converter</td>
+    <td>10bit, 4ch <br> Chip: ADC104S021 <br> Sampling 200kHz</td>
   </tr>
   <tr>
-    <td>DAコンバータ</td>
-    <td>12bit, 2ch <br> チップ MCP4822</td>
+    <td>DA converter</td>
+    <td>12bit, 2ch <br> Chip MCP4822</td>
   </tr>
   <tr>
-    <td>PWM出力</td>
-    <td>1ch, RCサーボモータードライブ用 <br> フォトカプラ絶縁</td>
+    <td>PWM output</td>
+    <td>1ch, for RC servo motor drive <br> Photocoupler isolation</td>
   </tr>
   <tr>
     <td>RS232C</td>
-    <td>D-SUB 9pinコネクタ <br> XBee とジャンパにて切り替え</td>
+    <td>D-SUB 9pin connector <br> Switchable with XBee using a jumper</td>
   </tr>
   <tr>
     <td>XBee</td>
-    <td>XBee接続コネクタ <br> XBee: Digi International 製 Zigbeeモジュール <br> XBee とジャンパにて切り替え</td>
+    <td>XBee connection connector <br> XBee: Zigbee module manufactured by Digi International <br> Switchable with XBee using a jumper</td>
   </tr>
   <tr>
-    <td>電源入力</td>
-    <td>5V DC入力 <br> Raspberry Piに電源供給可能 <br> Raspberry Piからの電源供給でも動作</td>
+    <td>Power input</td>
+    <td>5V DC input <br> Power can be supplied to Raspberry Pi <br> Operates even when powered from Raspberry Pi</td>
   </tr>
 </table>
 
 
 <div align="center"><a href="pirtunit_blockdiagram.png"><img src="pirtunit_blockdiagram.png" width="100%;"></a></div>
-<div align="center"><strong>PiRT-Unit 回路ブロック図</strong></div>
+<div align="center"><strong>PiRT-Unit Circuit Block Diagram</strong></div>
 
 <hr>
 
-- [PiRT-Unitのためのシステム設定](./system_setting_pirt-unit)
-- [IOのテスト](./io_test)
-- [Ministickコンポーネントの作成](./create_ministick_comp)
-- [PiRT-UnitによるXBeeモジュールの利用](./xbee_use_pirt-unit)
-- [PiRT-UnitによるI2Cデバイスの利用](./i2c_device_use_pirt-unit)
+- [System Settings for PiRT-Unit](./system_setting_pirt-unit)
+- [IO Test](./io_test)
+- [Creating a Ministick Component](./create_ministick_comp)
+- [Using an XBee Module with PiRT-Unit](./xbee_use_pirt-unit)
+- [Using an I2C Device with PiRT-Unit](./i2c_device_use_pirt-unit)
 
--------jp page!!-------

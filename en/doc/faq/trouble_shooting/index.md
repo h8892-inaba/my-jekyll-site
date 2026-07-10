@@ -1,84 +1,84 @@
 ---
 layout: page
-title: OpenRTM-aist(C++版、Python版、Java版)に関するトラブルシューティング
+title: Troubleshooting for OpenRTM-aist (C++ Version, Python Version, Java Version)
 ---
--------jp page!!-------
 
 <!-- Title: OpenRTM-aist(C++版、Python版、Java版)に関するトラブルシューティング -->
 #contents(4)
-OpenRTM-aist (C++版、Python版、Java版)に関するトラブルシューティングをまとめました。
+This page summarizes troubleshooting for OpenRTM-aist (C++ version, Python version, Java version).
 
 <!-- #clear -->
 
-## OpenRTM-aist (共通)
-### OS 共通
-#### コンポーネントは起動しているはずなのにゾンビオブジェクトとして表示される。
-コンポーネントは起動しており、ネームサーバーにも登録されているのに、RTSystemEditor のネームサービスビュー上ではゾンビオブジェクトとして表示されており、システムエディタにドラッグアンドドロップしても何も表示されない。
-##### [原因]コンポーネントを起動したホストに到達できない
-RTSystemEditor が動作しているPCからコンポーネントを起動したホストに何らかの理由で到達できていない可能性があります。~
-まず、RTSystemEditor が動作しているPCからコンポーネントを起動したホストに対して ping が通るか確認してください。~
-例えば、以下の3台のホストA、B、Cがあるとします。
-  - hostA: コンポーネントが動いているホスト
-  - hostB: ネームサーバーが動いているホスト
-  - hostC: RTSystemEditor が動いているホスト
+## OpenRTM-aist (Common)
+### Common to All OSes
+#### The component should be running, but it is displayed as a zombie object.
+Although the component is running and registered with the name server, it is displayed as a zombie object in the name service view of RTSystemEditor, and nothing is displayed even when it is dragged and dropped into the system editor.
+##### [Cause] The host on which the component was started cannot be reached
+The PC running RTSystemEditor may not be able to reach the host on which the component was started for some reason.~
+First, check whether ping can reach the host on which the component was started from the PC running RTSystemEditor.~
+For example, suppose there are the following three hosts A, B, and C.
+  - hostA: Host where the component is running
+  - hostB: Host where the name server is running
+  - hostC: Host where RTSystemEditor is running
 
-これらのホストのネットワークが以下のような構成になっており、~
-**[hostA]-(ネットワークI)-[hostB]-(ネットワークI)-[hostC]**~
-かつhostBが**ネットワークI**と**ネットワークII**間を適切にルーティングするように設定されていなければ、hostC から hostAへは到達できません。~
-こういった場合は、hostB を適切に設定してhostC から hostAへ到達できるようにする必要があります。
-##### [原因]コンポーネントを起動したホストでファイアウォールが有効になっている 
-コンポーネントが動作しているホストでファイアウォールが動作している場合、RTSystemEditor とコンポーネントが通信できずにこうした現象が発生する場合があります。~
-ファイアウォールの設定を見直すかOFFにするなどして、外部からコンポーネントに通信できるようにしてください。
+If the networks of these hosts are configured as follows,~
+**[hostA]-(Network I)-[hostB]-(Network I)-[hostC]**~
+and hostB is not configured to route properly between **Network I** and **Network II**, hostC cannot reach hostA.~
+In such cases, hostB must be configured appropriately so that hostC can reach hostA.
+##### [Cause] The firewall is enabled on the host where the component was started 
+If a firewall is running on the host where the component is running, RTSystemEditor and the component may not be able to communicate, causing this phenomenon.~
+Review the firewall settings or turn it off so that the component can communicate from the outside.
 <br>
 ### Windows
 
 &aname(tokkenn);
-#### インストーラー実行中に「…特権が不足しています。」などと表示されて、インストールが続行できない
-  - Administrator特権を持つユーザーとしてログオンし、インストール作業を行ってください。
+#### During installer execution, a message such as "... privileges are insufficient." is displayed, and installation cannot continue
+  - Log on as a user with Administrator privileges and perform the installation.
 <br>
-#### コンポーネントがネームサービスに登録されない。
-ネームサーバー、コンポーネントを起動後、RTSystemEditor などでネームサーバーに接続し、コンポーネントが登録されていない場合があります。~
-このような場合は、~
-まずは、ログレベルを最高にするため rtc.conf に~
+#### The component is not registered with the name service.
+After starting the name server and component, when you connect to the name server with RTSystemEditor or similar, the component may not be registered.~
+In such a case,~
+first set the following in rtc.conf to maximize the log level:~
 ```
  logger.log_level:PARANOID
 ```
-を設定し、コンポーネントを起動してみてください。~
-コンポーネントのログに~
+
+Then try starting the component.~
+If the component log does not contain a message like the following,~
 ```
  naming_svc NameServer connection succeeded: corba/ホスト名:ポート番号
 ```
-というメッセージが無ければ、ネームサーバーへの登録に失敗しています。~
-このような場合、以下の原因が考えられます。
+registration with the name server has failed.~
+In such a case, the following causes are possible.
 
-##### rtc.conf の corba.nameservers が正しく設定されていない
-コンポーネントが読み込む rtc.conf が正しく設定されているかどうか確認してください。利用しようとするネームサーバーを openrtm.aist.go.jp というホスト名と仮定すると、以下の行が rtc.conf に含まれていなければなりません。
+##### corba.nameservers in rtc.conf is not set correctly
+Check whether the rtc.conf loaded by the component is set correctly. Assuming the name server you want to use has the host name openrtm.aist.go.jp, the following line must be included in rtc.conf.
 ```
  corba.nameservers: openrtm.aist.go.jp
 ```
 
-また、ネームサーバーをポート番号を指定して起動した場合には、ポート番号も指定する必要があります。ネームサーバー起動時に指定したポート番号が1234番の場合、以下のように設定する必要があります。~
+Also, if the name server was started with a port number specified, the port number must also be specified. If the port number specified when starting the name server is 1234, it must be set as follows.~
 ```
  corba.nameservers: openrtm.aist.go.jp:1234
 ```
 
-ポート番号が指定されない場合、デフォルトポート番号2809が使用されます。これは omniORB のネームサーバー(omniNames)のデフォルトポート番号です。もし、omniORB 以外のネームサーバーを使用する場合は注意してください。
-##### コンポーネント起動したホストからネームサーバーを起動したホストへネットワーク接続ができない
-コンポーネントを起動したホストからネームサーバーを起動したホストへネットワーク接続ができるか確認してください。~
-まずは、ping が通るかどうか確認します。もし通らなければネットワークの設定を見直してください。~
-ping が通っても、ファイアウォールなどで接続が禁止されている可能性があります。まず、ネームサーバーを起動したホスト側のファイアウォールの設定を見直してください。一番簡単な方法は、ファイアウォールをOFFにすることです。方法は各OSやファイアウォールの設定方法を参照してください。
-##### ネットワークインターフェースが2つ以上ある
-ホストにネットワークインターフェースが2つ以上ある場合、CORBA にどちらのインターフェースを使用するか教えてやる必要があります。~
-これは、ネームサーバー側、コンポーネント側両者ともに考慮しなければなりません。~
-仮にそれぞれのホストが2つずつインターフェースを持っているとして、各インターフェースのアドレスが以下のように設定されているとします(maskは255.255.255.0と仮定)。~
-  - **ネームサーバーhost: eth0:192.168.0.1, eth1:192.168.100.1**~
-  - **コンポーネントhost: eth0:192.168.0.2, eth1:192.168.11.96**~
-この場合、ネームサーバーhostとコンポーネントhostは 192.168.0 のネットワークで接続されているはずです。~
-従って、~
-  - **ネームサーバーには eth0:192.168.0.1**~
-  - **コンポーネントには eth0:192.168.0.2**~
-のインターフェースを使うように教えてあげる必要があります。~
-ネームサーバー側では、ネームサーバーを起動する際に OMNIORB_USEHOSTNAME という環境変数を設定する必要があります。~
+If no port number is specified, the default port number 2809 is used. This is the default port number of the omniORB name server (omniNames). Be careful if you use a name server other than omniORB.
+##### A network connection cannot be made from the host where the component was started to the host where the name server was started
+Check whether a network connection can be made from the host where the component was started to the host where the name server was started.~
+First, check whether ping can get through. If it cannot, review the network settings.~
+Even if ping works, the connection may be prohibited by a firewall or similar. First, review the firewall settings on the host side where the name server was started. The easiest method is to turn off the firewall. For the method, refer to each OS or firewall setting procedure.
+##### There are two or more network interfaces
+If the host has two or more network interfaces, it is necessary to tell CORBA which interface to use.~
+This must be considered for both the name server side and the component side.~
+Suppose that each host has two interfaces, and the addresses of each interface are set as follows (assuming the mask is 255.255.255.0).~
+  - **Name server host: eth0:192.168.0.1, eth1:192.168.100.1**~
+  - **Component host: eth0:192.168.0.2, eth1:192.168.11.96**~
+In this case, the name server host and component host should be connected on the 192.168.0 network.~
+Therefore,~
+  - **eth0:192.168.0.1 for the name server**~
+  - **eth0:192.168.0.2 for the component**~
+must be specified as the interfaces to use.~
+On the name server side, the environment variable OMNIORB_USEHOSTNAME must be set when starting the name server.~
 
 ```
  (csh系)
@@ -90,38 +90,38 @@ ping が通っても、ファイアウォールなどで接続が禁止されて
  > rtm-naming もしくは omniNames でネームサーバーを起動
 ```
 
-直接、rtm-naming (UNIX系) もしくは rtm-naming.bat (Windows) に書き込んでも良いでしょう。~
-一方、コンポーネント側は rtc.confにcorba.endpoint の設定を記述することで、使用するインターフェースを指定することができます。~
+You may also write this directly in rtm-naming (UNIX-like systems) or rtm-naming.bat (Windows).~
+On the other hand, on the component side, you can specify the interface to use by writing the corba.endpoint setting in rtc.conf.~
 ```
  corba.endpoint: インターフェースIPアドレス:ポート番号
  corba:endpoint: 192.168.0.2:       (ポート番号を指定しない場合)
  corba:endpoint: 192.168.0.2:1234   (ポート番号を指定する場合)
 ```
 
-ポート番号は特に指定しなくても構いませんが、IPアドレスの後の**:(コロン)**を忘れずに付けてください。
+The port number does not necessarily need to be specified, but be sure to add **: (colon)** after the IP address.
 <br>
 
-## OpenRTM-aist (C++版)
+## OpenRTM-aist (C++ Version)
 ### Windows
 
 &aname(cmakecompilererrro)
-#### CMake 実行時にコンパイラが見つからない
+#### The compiler cannot be found when running CMake
 
-CMake 実行時に以下のエラーが発生する。
+The following error occurs when running CMake.
 
 ```
  No CMAKE_CXX_COMPILER could be found. 
 ```
 
-まずは、&lt;プロジェクトディレクトリ&gt;/&lt;buildディレクトリ&gt;/CMakeFiles/CMakeError.log
+First, check the following file:
 
-を確認してください。
+&lt;project directory&gt;/&lt;build directory&gt;/CMakeFiles/CMakeError.log
 
-##### (原因1) 間違ったコンパイラを指定した
+##### (Cause 1) The wrong compiler was specified
 
-CMake を実行 (Configure) する際に、コンパイラをしてします。インストールされている Visual Studio とは異なるコンパイラを指定した場合には、コンパイラが見つからず、**No CMAKE_CXX_COMPILER could be found.** のようなエラーが発生します。
+When running (Configure) CMake, you specify the compiler. If you specify a compiler different from the installed Visual Studio, the compiler cannot be found and an error such as **No CMAKE_CXX_COMPILER could be found.** occurs.
 
-CMakeError.log を見ると、以下のように、コンパイラチェック開始直後にエラーが発生します。
+Looking at CMakeError.log, an error occurs immediately after the compiler check starts, as shown below.
 
 ```
  Microsoft (R) Build Engine バージョン 4.6.1586.0
@@ -146,39 +146,39 @@ CMakeError.log を見ると、以下のように、コンパイラチェック�
  経過時間 00:00:00.50
 ```
 
-- 対応方法： 正しいコンパイラを指定します。
+- Solution: Specify the correct compiler.
 
-1. インストールされている OpenRTM を確認
-  - → 32bitか、64bitか？ 
-1. インストールされている Visual Studio を確認
+1. Check the installed OpenRTM
+  - → Is it 32-bit or 64-bit? 
+1. Check the installed Visual Studio
   - → Visual Studio 2008 (VC9), 2010 (VC10), 2012 (VC11), 2013 (VC12), 2015 (VC14), 2017 (VC15)
-1. CMake のキャッシュを削除
-  - コンパイラの指定を変更する際には必ずキャッシュを削除する必要があります。
-1. CMake Configure で正しいコンパイラを指定
-  - 32bit/64bit はインストールされている OpenRTM に合わせる
-    - 32bit は無印 (例: Visual Studio 10 2010)
-    - 64bit はWin64 (例： Visual Studio 10 2010 Win64)
+1. Delete the CMake cache
+  - When changing the compiler specification, you must always delete the cache.
+1. Specify the correct compiler in CMake Configure
+  - Match 32-bit/64-bit to the installed OpenRTM
+    - 32-bit is without suffix (example: Visual Studio 10 2010)
+    - 64-bit is Win64 (example: Visual Studio 10 2010 Win64)
 
 
-##### (原因2) Visual C++がインストールされていない
-Visual Studio インストール時に、C++コンパイラを含む Visual C++ がインストールされていない場合があります。
+##### (Cause 2) Visual C++ is not installed
+When installing Visual Studio, Visual C++, including the C++ compiler, may not have been installed.
 
-- 対応方法： Visual C++ をインストールします
-再度インストーラーを（手元にすでになければダウンロードしてから）起動し、「変更」からインストールを行います。
-インストールをカスタマイズするを選択して、インストール対象に Visual C++ が含まれていることを確認してからインストールを行います。
+- Solution: Install Visual C++
+Start the installer again (download it first if you do not already have it), and perform installation from "Change."
+Select Customize installation and confirm that Visual C++ is included in the items to be installed before installing.
 
-この原因の場合も、CMakeError.log の出力内容は（原因1）と同じです。
+In this case as well, the output content of CMakeError.log is the same as (Cause 1).
 
 
-##### (原因3) rc.exe が実行できない
+##### (Cause 3) rc.exe cannot be executed
 
-まれに、インストールされているコンパイラを CMake 実行時に正しく指定しているのにもかかわらず、**No CMAKE_CXX_COMPILER could be found.** のようなエラーが発生することがあります。
-原因の一つとして、複数のバージョンの Visual Studio をインストール・アンインストール等を行った際に、まれにツールチェーンの設定に不整合が生じ、以下のようなエラー **rc.exeが実行できない** が発生することがあります。
+In rare cases, even though the installed compiler is correctly specified when running CMake, an error such as **No CMAKE_CXX_COMPILER could be found.** may occur.
+One possible cause is that when multiple versions of Visual Studio have been installed and uninstalled, inconsistencies may rarely occur in the toolchain settings, resulting in an error such as **rc.exe cannot be executed** as shown below.
 
 ```
    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /nologo /W0 /WX- /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /errorReport:queue CMakeCCompilerId.c
    CMakeCCompilerId.c
- Link:
+Link:
    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X64 Debug\CMakeCCompilerId.obj
  LINK : fatal error LNK1158: 'rc.exe' を実行できません。 [C:\workspace\Flip\build\CMakeFiles\3.7.2\CompilerIdC\CompilerIdC.vcxproj]
  プロジェクト "C:\workspace\Flip\build\CMakeFiles\3.7.2\CompilerIdC\CompilerIdC.vcxproj" (既定のターゲット) のビルドが終了しました -- 失敗。
@@ -187,138 +187,138 @@ Visual Studio インストール時に、C++コンパイラを含む Visual C++ 
 ```
 
 
-- 対応方法： rc.exe と rcdll.dll をコピーする
+- Solution: Copy rc.exe and rcdll.dll
 
-これに対する対処方法としては、rc.exe と rcdll.dll を対象コンパイラのツールディレクトリにコピーする方法があります。
+A workaround for this is to copy rc.exe and rcdll.dll to the tool directory of the target compiler.
 
-1. rc.exe, rcdll.dll を探す
-  - エクスプローラーを開き **C:\Program Files** (又は **C:\Program Files (x86)**) を開き rc.exe を検索する。rcdll.dll は同じディレクトリにあるはずなので探すのは rc.exe のみでよい。
-  - 通常は **C:\Program Files (x86)\Windows Kits** の下にいくつかの rc.exe が見つかるが x86 というディレクトリ下にあるものが対象。
-  - 検索結果にて対象の rc.exe を右クリックし**「ファイルの場所を開く(I)」**を選択
-1. コンパイラのツールディレクトリを開く
-  - 別のエクスプローラを開き、ツールの binディレクトリを開く
-  - 上のログの例では、**C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe** から、ツールのディレクトリが **C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin** (binディレクトリが対象、x86?amd64は無視してよい)  であることがわかる。
-1. rc.exe, rcdll.dll をコピーする
-  - 1.で開いたエクスプローラから rc.exe、rcdll.dll を2.で開いたツールディレクトリにコピーする
+1. Find rc.exe and rcdll.dll
+  - Open Explorer, open **C:\Program Files** (or **C:\Program Files (x86)**), and search for rc.exe. rcdll.dll should be in the same directory, so you only need to search for rc.exe.
+  - Normally, several rc.exe files are found under **C:\Program Files (x86)\Windows Kits**, but the one under the x86 directory is the target.
+  - In the search results, right-click the target rc.exe and select **"Open file location (I)"**
+1. Open the compiler tool directory
+  - Open another Explorer window and open the tool's bin directory
+  - In the example log above, from **C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe**, you can see that the tool directory is **C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin** (the bin directory is the target; x86?amd64 can be ignored).
+1. Copy rc.exe and rcdll.dll
+  - Copy rc.exe and rcdll.dll from the Explorer window opened in step 1 to the tool directory opened in step 2
 
 
 &aname(errorinit);
-#### アプリケーションエラー「アプリケーションを正しく初期化できませんでした。…」
-: |ネームサーバー起動しようとして、rtm-naming.bat を実行すると、上記のようなエラーが出る場合があります。このエラーは起動環境上に VC++ライブラリのランタイムコンポーネントがないために起こります。VC++関連の開発環境（Microsoft Visual Studio 、Visual C++  Expressなど）をインストールしていない環境では OpenRTM-aist (C++版) を動作させることはできませんので、必ず VC++関連の開発環境をインストールしてください。~
-OpenRTM-aist (C++版)には、VC8（VS2005）ベースのものと、VC9（VS2008）ベースのものがあります。OpenRTM-aist-X.X.X-jp_vc8.msi（X.X.Xはバージョンです。)などのVC8ベースのインストーラーを使用した場合は[Microsoft Visual C++ 2005 SP1 再頒布可能パッケージ (x86) ](http://www.microsoft.com/downloads/details.aspx?FamilyID=200b2fd9-ae1a-4a14-984d-389c36f85647&DisplayLang=ja)を、OpenRTM-aist-X.X.X-jp_vc9.msi（X.X.Xはバージョンです。)などのVC9ベースのインストーラーを使用した場合は[Microsoft Visual C++ 2008 再頒布可能パッケージ (x86) ](http://www.microsoft.com/downloads/details.aspx?displaylang=ja&FamilyID=9b2da534-3e03-4391-8a4d-074b9f2bc1bf)をインストールしてください。
+#### Application error: "The application failed to initialize properly. ..."
+: |When trying to start the name server by executing rtm-naming.bat, an error like the above may appear. This error occurs because the VC++ library runtime components are not present in the execution environment. OpenRTM-aist (C++ version) cannot run in an environment where VC++-related development environments (Microsoft Visual Studio, Visual C++ Express, etc.) are not installed, so be sure to install a VC++-related development environment.~
+OpenRTM-aist (C++ version) includes versions based on VC8 (VS2005) and versions based on VC9 (VS2008). If you used a VC8-based installer such as OpenRTM-aist-X.X.X-jp_vc8.msi (where X.X.X is the version), install the [Microsoft Visual C++ 2005 SP1 Redistributable Package (x86) ](http://www.microsoft.com/downloads/details.aspx?FamilyID=200b2fd9-ae1a-4a14-984d-389c36f85647&DisplayLang=ja). If you used a VC9-based installer such as OpenRTM-aist-X.X.X-jp_vc9.msi (where X.X.X is the version), install the [Microsoft Visual C++ 2008 Redistributable Package (x86) ](http://www.microsoft.com/downloads/details.aspx?displaylang=ja&FamilyID=9b2da534-3e03-4391-8a4d-074b9f2bc1bf).
 <br>
 &aname(errorapplication);
-#### 「このアプリケーションの構成が正しくないため、アプリケーションを開始できませんでした。…」 
-サンプルの RTコンポーネントなどを起動しようとして、xxxComp.exe を実行すると、上記のようなエラーが出る場合があります。このエラーは起動環境上に VC++ライブラリのランタイムコンポーネントがないために起こります。VC++関連の開発環境（Microsoft Visual Studio,Visual C++ Expressなど）をインストールしていない環境では OpenRTM-aist (C++版) を動作させることはできませんので、必ず VC++関連の開発環境をインストールしてください。~
+#### "This application has failed to start because the application configuration is incorrect. ..." 
+When trying to start a sample RT component or similar by executing xxxComp.exe, an error like the above may appear. This error occurs because the VC++ library runtime components are not present in the execution environment. OpenRTM-aist (C++ version) cannot run in an environment where VC++-related development environments (Microsoft Visual Studio, Visual C++ Express, etc.) are not installed, so be sure to install a VC++-related development environment.~
 
-OpenRTM-aist (C++版)には、VC8（VS2005）ベースのものと、VC9（VS2008）ベースのものがあります。OpenRTM-aist-X.X.X-jp_vc8.msi（X.X.Xはバージョンです。)などのVC8ベースのインストーラーを使用した場合は[Microsoft Visual C++ 2005 SP1 再頒布可能パッケージ (x86) ](http://www.microsoft.com/downloads/details.aspx?FamilyID=200b2fd9-ae1a-4a14-984d-389c36f85647&DisplayLang=ja)を、OpenRTM-aist-X.X.X-jp_vc9.msi（X.X.Xはバージョンです。)などのVC9ベースのインストーラーを使用した場合は[Microsoft Visual C++ 2008 再頒布可能パッケージ (x86) ](http://www.microsoft.com/downloads/details.aspx?displaylang=ja&FamilyID=9b2da534-3e03-4391-8a4d-074b9f2bc1bf)をインストールしてください。
+OpenRTM-aist (C++ version) includes versions based on VC8 (VS2005) and versions based on VC9 (VS2008). If you used a VC8-based installer such as OpenRTM-aist-X.X.X-jp_vc8.msi (where X.X.X is the version), install the [Microsoft Visual C++ 2005 SP1 Redistributable Package (x86) ](http://www.microsoft.com/downloads/details.aspx?FamilyID=200b2fd9-ae1a-4a14-984d-389c36f85647&DisplayLang=ja). If you used a VC9-based installer such as OpenRTM-aist-X.X.X-jp_vc9.msi (where X.X.X is the version), install the [Microsoft Visual C++ 2008 Redistributable Package (x86) ](http://www.microsoft.com/downloads/details.aspx?displaylang=ja&FamilyID=9b2da534-3e03-4391-8a4d-074b9f2bc1bf).
 <br>
-#### Visual C++ 2005 Express Edition でビルド時に「'windows.h'が見つからない」というエラー
-Visual C++ 2005 Express Edition でビルド時に次のようなエラーが出る場合があります。
+#### Error "'windows.h' not found" during build with Visual C++ 2005 Express Edition
+The following error may occur during build with Visual C++ 2005 Express Edition.
 ```
 >c:\program files\omniorb\include\omnithread\nt.h(35) : fatal error C1083: include ファイルを開けません。'windows.h': No such file or directory
 ```
 
-これは**１．Microsoft Platform SDK がインストールがされていない、**あるいは**２．インクルードファイルパス・ライブラリパスの設定不備**が原因と考えられます。
+This is thought to be caused by **1. Microsoft Platform SDK is not installed**, or **2. include file path / library path settings are incomplete**.
 
-##### １．Microsoft Platform SDK がインストールがされていない
-- 対応方法：Microsoft Platform SDK をインストールする。その際は、[こちら](/ja/node/640#2005SDKattention)を参考にしてください。あるいは、次の**２．**にしたがってください。
-##### ２．インクルードファイルパス・ライブラリパスの設定不備
-- 対応方法：インストールをする順序などの関係で、Visual C++ 2005 Express Edition のインストールディレクトリとは違う場所に Microsoft Platform SDK がインストールされてしまうなどの事情で、Visual C++ 2005 Express Edition のコンパイラが Microsoft Platform SDK のインクルードファイルやライブラリをたぐれなくなっている場合があります。この場合は、インクルードファイルサーチパスやライブラリサーチパスに Microsoft Platform SDK のインストールディレクトリを追加することで問題を解決できます。
-  - インクルードファイルサーチパスの追加方法:Visual C++ 2005 Express Edition のメニューバー→「ツール」→「オプション」を選択し、「オプション」ウィンドウを開きます。左のツリービューから「プロジェクトおよびソリューション」→「VC++ディレクトリ」を選択します。~
-右上のプルダウンメニュー「ディレクトリを表示するプロジェクト」を「インクルード　ファイル」として、Microsoft Platform SDK のインクルードファイルのディレクトリ（例えば、「C:\Program Files\Microsoft Platform SDK\Include」）をインクルードファイルのサーチパスに追加します。
-  - ライブラリファイルサーチパスの追加方法:同様にして、「オプション」の左のツリービュー「VC++ディレクトリ」を選択した状態で、右上のプルダウンメニュー「ディレクトリを表示するプロジェクト」を「ライブラリ　ファイル」として、Microsoft Platform SDK のライブラリファイルのディレクトリ（例えば、「C:\Program Files\Microsoft Platform SDK\Lib」）をライブラリファイルのサーチパスに追加します。
-なお、サーチパスの具体的な追加方法などは Visual C++ 2005 Express Edition のヘルプ等を参照してください。
+##### 1. Microsoft Platform SDK is not installed
+- Solution: Install Microsoft Platform SDK. At that time, refer to [here](/en/node/640#2005SDKattention). Alternatively, follow **2.** below.
+##### 2. Include file path / library path settings are incomplete
+- Solution: Due to the installation order or similar reasons, Microsoft Platform SDK may have been installed in a location different from the installation directory of Visual C++ 2005 Express Edition, and the Visual C++ 2005 Express Edition compiler may not be able to find the include files or libraries of Microsoft Platform SDK. In this case, the problem can be solved by adding the Microsoft Platform SDK installation directory to the include file search path and library search path.
+  - How to add the include file search path: From the menu bar of Visual C++ 2005 Express Edition, select "Tools" → "Options" to open the "Options" window. From the tree view on the left, select "Projects and Solutions" → "VC++ Directories."~
+Set the upper-right pull-down menu "Show directories for" to "Include files", and add the directory for Microsoft Platform SDK include files (for example, "C:\Program Files\Microsoft Platform SDK\Include") to the include file search path.
+  - How to add the library file search path: In the same way, with "VC++ Directories" selected in the left tree view of "Options", set the upper-right pull-down menu "Show directories for" to "Library files", and add the directory for Microsoft Platform SDK library files (for example, "C:\Program Files\Microsoft Platform SDK\Lib") to the library file search path.
+For specific methods of adding search paths, refer to the Visual C++ 2005 Express Edition help, etc.
 <br>
 
 
-#### rtm-naming の実行でエラー発生 
-症状: rtm-naming.bat を実行するとアプリケーションエラーが発生する。~
-VC++関係のライブラリがインストールされていない可能性が考えられます。
+#### An error occurs when executing rtm-naming 
+Symptom: An application error occurs when executing rtm-naming.bat.~
+VC++-related libraries may not be installed.
 
-##### VC++関係のライブラリがインストールされていない
-Visual Studio 2005 等のアプリケーションがインストールされていない場合は、ここ[Visual Studio 2005 Express Edition](http://www.microsoft.com/japan/msdn/vstudio/express/)から"Visual C++ 2005 Express Edition"のインストールを行ってください。
+##### VC++-related libraries are not installed
+If an application such as Visual Studio 2005 is not installed, install "Visual C++ 2005 Express Edition" from here: [Visual Studio 2005 Express Edition](http://www.microsoft.com/japan/msdn/vstudio/express/).
 <br>
-#### rtm-naming が実行できない
-症状：rtm-naming.bat を実行しても黒い窓（コマンドプロンプト画面）が一瞬開いて閉じてしまう。
-##### [原因]omniORB がインストールされていない
-rtm-naming.bat 内では通常 omniORB のネームサーバー**omniNames.exe**を実行します。~
-omniORB がインストールされていないと**omniNames.exe**もインストールされないので、ネームサーバーを実行できません。~
-ダウンロードページから omniORB をダウンロードしインストールしてください。
-##### [原因]log ディレクトリのパス中に2バイト文字が含まれている
-rtm-naming.bat 内では通常 omniORB のネームサーバー**omniNames.exe**を以下のように実行します。~
+#### rtm-naming cannot be executed
+Symptom: Even if rtm-naming.bat is executed, a black window (Command Prompt screen) opens for a moment and then closes.
+##### [Cause] omniORB is not installed
+Normally, rtm-naming.bat executes the omniORB name server **omniNames.exe**.~
+If omniORB is not installed, **omniNames.exe** is not installed either, so the name server cannot be executed.~
+Download and install omniORB from the download page.
+##### [Cause] The log directory path contains double-byte characters
+Normally, rtm-naming.bat executes the omniORB name server **omniNames.exe** as follows.~
 ```
  omniNames.exe -start 2809 -logdir %TEMP%
 ```
 
-通常環境変数 %TEMP% はユーザーのテンポラリディレクトリ~
+Normally, the environment variable %TEMP% points to the user's temporary directory:~
 ```
  C:\Documents and Settings\ユーザ名\Local Settings\Temp
 ```
 
-を指します。ここで、**ユーザー名**が日本語の場合、omniNames がログファイルを正しく作成できないため、実行できずに終了します。~
-対応策としては、以下の3つが考えられます。
-- 日本語のユーザー名を使用しない:日本語を使用しないユーザーを新たに作り、その環境で実行する。
-- rtm-naming.bat を書き換える: C: \Program Files\OpenRTM-aist\[バージョン番号]\bin**の下にある rtm-naming.bat の中の以下の部分 ~
+Here, if the **user name** is Japanese, omniNames cannot correctly create the log file, so it terminates without running.~
+The following three countermeasures are possible.
+- Do not use a Japanese user name: Create a new user that does not use Japanese and run it in that environment.
+- Rewrite rtm-naming.bat: Rewrite the following part in rtm-naming.bat under C: \Program Files\OpenRTM-aist\[version number]\bin** ~
 ```
  %cosnames% -start %port% -logdir %TEMP%\ 
 ```
-を
+as follows:
 ```
  %cosnames% -start %port% -logdir [パスに日本語を含まないログディレクトリ]
 ```
-のように書き換えます。~
+~
 
-**パスに日本語を含まないログディレクトリ**は自分に書き込みの権限があるディレクトリで、安全な場所にしてください。たとえば、C:\tmp など。
-  - Java版の orbd を使用する:OpenRTM-aist の Java版と JDK をインストールすると、スタートメニューの Java版 の examples の中に**start-orbd.vbs**が現れます。これは、JDK に付属する CORBA ネームサーバーを起動するスクリプトです。~
-このネームサーバーには、omniNames のような日本語のパスの問題は存在しないので、これを使用することでユーザー名が日本語でも、ネームサーバーを起動できます。
+The **log directory whose path does not contain Japanese** should be a safe directory where you have write permission. For example, C:\tmp.
+  - Use the Java version of orbd: When you install the Java version of OpenRTM-aist and the JDK, **start-orbd.vbs** appears in the examples of the Java version in the Start menu. This is a script that starts the CORBA name server included with the JDK.~
+This name server does not have the Japanese path problem that omniNames has, so by using it, the name server can be started even if the user name is Japanese.
 <br>
 ### Unix
-#### パッケージの自動インストールでダウンロードエラーが出る。 
-OpenRTM-aist に付属する自動インストーラーは、パッケージの有無とバージョンを確認し、適当なパッケージがインストールされていない場合に各パッケージのダウンロードサイトからダウンロード及び加工するものです。このため、自動インストーラーでインストールする場合には、コンピューターを必ずインターネットに接続してください。~
-ネットワーク接続が正常でもダウンロードエラーが出る場合、回線の混雑等でウンロードに失敗した場合と、ダウンロードサイト側でファイルの場所や名前が変わった可能性が考えられます。前者の場合は時間帯等をずらして再度自動インストーラーを実行してみてください。また後者の場合には、該当するパッケージを探してから個々にダウンロードして手動インストールするか、自動インストーラーのダウンロード元アドレスを修正してから改めて起動してください。~
-なお、ダウンロードサイト側の変更があった場合、変更情報を当方までご連絡いただければ幸いですので、ご協力をお願いします。
+#### A download error occurs during automatic package installation. 
+The automatic installer included with OpenRTM-aist checks for the presence and version of packages, and if an appropriate package is not installed, it downloads and processes each package from its download site. For this reason, when installing with the automatic installer, be sure to connect the computer to the Internet.~
+If a download error occurs even though the network connection is normal, the download may have failed due to line congestion or similar reasons, or the file location or name may have changed on the download site side. In the former case, try running the automatic installer again at a different time of day. In the latter case, find the relevant package and download and install it manually, or correct the download source address in the automatic installer and then start it again.~
+In addition, if there has been a change on the download site side, we would appreciate it if you could contact us with the change information.
 <br>
-#### configure を実行したがエラーが出て終了する。
-configure のエラーの大半は、必要なパッケージが見つからないときに出ます。エラーが出た場合には、必要なパッケージがインストールされているか、autoconf が見つけられるディレクトリにヘッダ，ライブラリがインストールされているかを確認してください。
+#### configure was executed, but it exits with an error.
+Most configure errors occur when required packages cannot be found. If an error occurs, check whether the required packages are installed and whether the headers and libraries are installed in directories that autoconf can find.
 <br>
-#### make を実行してもビルドが完了しない。または make の実行エラーが出る。 
-パッケージのインストールまたは OpenRTM-aist (C++版)のビルドが不完全な可能性があります。もう一度パッケージの自動インストーラーを起動して、パッケージのインストールからやり直してください。パッケージのインストール中の処理画面に何らかのエラーメッセージが出てきた場合、該当するパッケージだけを手動でインストールするなどしてから configure を実行してください。configure を実行してエラーメッセージが出ないことを確認してから、再度 make を実行してビルドを完了させてください。
+#### The build does not complete even after running make, or an error occurs when running make. 
+The package installation or the build of OpenRTM-aist (C++ version) may be incomplete. Start the automatic package installer again and redo the process from package installation. If any error message is displayed on the processing screen during package installation, manually install only the relevant package and then run configure. After confirming that no error message is displayed when running configure, run make again to complete the build.
 <br>
 &aname(openrtminstfault);
-#### OpenRTM-aist のインストールに失敗する 
-古いバージョンの OpenRTM-aist が完全にアンインストールされていない場合、新しいバージョンのインストールができません。古いバージョンを一度アンインストールしてから、再度インストール作業をします。
-##### Vine・Fedora・ubuntu・debian共通：
-pkg_install_XXXX.sh を利用してアンインストールする。~
+#### OpenRTM-aist installation fails 
+If an old version of OpenRTM-aist has not been completely uninstalled, a new version cannot be installed. Uninstall the old version once, and then perform the installation again.
+##### Common to Vine, Fedora, ubuntu, and debian:
+Uninstall using pkg_install_XXXX.sh.~
 ```
- >su
+>su
  #pkg_install_XXXX.sh -u
 ```
 
-アンインストールの許可を求められるので、**y** を入力しながら完了させます。
-あるいは次の手順に従います。
-##### Vine：
-apt-getコマンドでアンインストールする。次の手順でアンインストールを行ってください。~
+You will be asked for permission to uninstall, so complete the process while entering **y**.
+Alternatively, follow the steps below.
+##### Vine:
+Uninstall using the apt-get command. Perform the uninstall using the following procedure.~
 ```
- >su
+>su
  #apt-get remove OpenRTM-aist-example
  #apt-get remove OpenRTM-aist-dev
  #apt-get remove OpenRTM-aist-doc
  #apt-get remove OpenRTM-aist
 ```
-##### Fedora：
-yumコマンドでアンインストールする。次の手順でアンインストールを行ってください。~
+##### Fedora:
+Uninstall using the yum command. Perform the uninstall using the following procedure.~
 ```
- >su
+>su
  #yum remove OpenRTM-aist-example
  #yum remove OpenRTM-aist-dev
  #yum remove OpenRTM-aist-doc
  #yum remove OpenRTM-aist
 ```
-##### ubuntu/debian：
-apt-getコマンドでアンインストールする。次の手順でアンインストールを行ってください。~
+##### ubuntu/debian:
+Uninstall using the apt-get command. Perform the uninstall using the following procedure.~
 ```
- >su
+>su
  #apt-get remove OpenRTM-aist-example
  #apt-get remove OpenRTM-aist-dev
  #apt-get remove OpenRTM-aist-doc
@@ -326,70 +326,70 @@ apt-getコマンドでアンインストールする。次の手順でアンイ�
 ```
 <br>
 &aname(notusecd);
-#### apt-get などを使用してインストール作業を行うときに CD を要求される 
-Ubuntu、Debian などのディストリビューションで、apt-get や pkg_install_ubuntu.sh, pkg_install_debian.sh を使用してインストール作業をしていると、次のように CD を求められることがあります。
-メディア変更:~
+#### A CD is requested when performing installation using apt-get or similar 
+In distributions such as Ubuntu and Debian, when performing installation using apt-get, pkg_install_ubuntu.sh, or pkg_install_debian.sh, you may be asked for a CD as follows.
+Media change:~
 ```
  　　'Ubuntu 7.10 _Gutsy Gibbon_ Japanese Remix - Release i386 (20071018)'
 ```
 
-とラベルの付いたディスクをドライブ '/cdrom/' に入れて Enter を押してください。~
-もちろん、CD を用意すればよいことなのですが、諸事情により用意できない場合の対処方法を記述します。~
-この場合はとりあえず、**C-c**(Ctrl+c) を入力してインストール作業を中断し、以下の手順でインストール作業をやり直してください。
-##### 1.**/etc/apt/sources.list** の編集をする
-**/etc/apt/sources.list** の冒頭部分に~
+Please insert the disk labeled as above into the drive '/cdrom/' and press Enter.~
+Of course, preparing the CD is one solution, but the following describes what to do if you cannot prepare it for various reasons.~
+In this case, first enter **C-c** (Ctrl+c) to interrupt the installation process, and then redo the installation process using the following procedure.
+##### 1. Edit **/etc/apt/sources.list**
+At the beginning of **/etc/apt/sources.list**, there is a line such as~
 ```
  deb cdrom:[Ubuntu 7.10 _Gutsy Gibbon_ Japanese Remix - Release i386 (20071018)]/ gutsy main restricted
 ```
 
-あるいは~
+or~
 ```
  deb cdrom:[Debian GNU/Linux 4.0 r3 _Etch_ - Official i386 NETINST Binary-1 20080218-14:15]/ etch contrib main
 ```
 
-というような行がありますので、該当する行頭に **#** 文字を挿入し、コメントアウトしてください。~
+Insert the **#** character at the beginning of the corresponding line and comment it out.~
 ```
  #deb cdrom:[Ubuntu 7.10 _Gutsy Gibbon_ Japanese Remix - Release i386 (20071018)]/ gutsy main restricted
 ```
 
-又は、~
+or~
 ```
  #deb cdrom:[Debian GNU/Linux 4.0 r3 _Etch_ - Official i386 NETINST Binary-1 20080218-14:15]/ etch contrib main
 ```
 
-##### 2.インストール作業をやり直す
-先ほど中断したインストール作業を始めからやり直してください。
+##### 2. Redo the installation process
+Redo the installation process that was interrupted earlier from the beginning.
 <br>
-#### サンプルプログラムの SimpleIO を実行する run.sh が実行できない
-run.sh に実行ビットが立っていない可能性があります。下記のように実行ビットを立てて実行するか、直接シェルに渡して実行してください。~
+#### The run.sh script for executing the sample program SimpleIO cannot be executed
+The execute bit may not be set on run.sh. Set the execute bit and run it as shown below, or pass it directly to the shell and execute it.~
 ```
  > ls -al run.sh
  -rw-r--r--  1 n-ando  n-ando  1146  4 27 15:12 run.sh
  > chmod 755 run.sh
  > ./run.sh
 ```
- もしくは
+or
 ```
  > sh run.sh
 ```
 <br>
-#### サンプルプログラム SimpleIO を起動したが、正常に動かない。 
-SimpleIO の実行スクリプト run.sh では、ターミナルウィンドウを kterm，xterm，gnome-terminal のいずれかに仮定しております。このため、これ以外のターミナルウィンドウを使用している場合は、run.sh を適宜書き換えてから実行してください。~
+#### The sample program SimpleIO was started, but it does not work properly. 
+The SimpleIO execution script run.sh assumes that the terminal window is one of kterm, xterm, or gnome-terminal. Therefore, if you are using a terminal window other than these, edit run.sh as appropriate before running it.~
 <br>
 
 
-## OpenRTM-aist (Python版)
+## OpenRTM-aist (Python Version)
 ### Windows
 &aname(pythonusage);
-#### rtm-naming.py を実行したら、omniNames が"usage:"を表示して終了してしまう  
-##### 症状
-rtm-naming.pyを"C:\Documents and Settings\Hoge\My Documents"等ディレクトリ名に空白が入っているディレクトリから実行した場合、omniNamesは"usage:"を表示して終了してしまいます。
-##### 対処方法
-これは、rtm-naming.py のバグによるものです。上記の症状がでた場合、下記のどちらかの方法で対処してください。
-- 対処法その1
-  - C: \の直下(または、パス名に空白が入っていない場所)に"RTMNaming"等適当なフォルダーを作成し rtm-naming.py を実行してください。
-- 対処法その2
-  - C: \Python&lt;version&gt;\Lib\site-packages\OpenRTM\rtm-namingのrtm-naming.pyの48行目を下記のように編集してください。~
+#### When rtm-naming.py is executed, omniNames displays "usage:" and exits  
+##### Symptom
+When rtm-naming.py is executed from a directory whose name contains spaces, such as "C:\Documents and Settings\Hoge\My Documents", omniNames displays "usage:" and exits.
+##### Solution
+This is due to a bug in rtm-naming.py. If the above symptom occurs, use one of the following methods to deal with it.
+- Solution 1
+  - Create an appropriate folder such as "RTMNaming" directly under C: \ (or in a location where the path name does not contain spaces), and execute rtm-naming.py.
+- Solution 2
+  - Edit line 48 of rtm-naming.py in C: \Python&lt;version&gt;\Lib\site-packages\OpenRTM\rtm-naming as follows.~
 ```
  rtm-naming.py 48行目
   cmd = "omniNames -start "+str(port)+" -logdir \""+str(currdir)+"\" &"
@@ -397,29 +397,29 @@ rtm-naming.pyを"C:\Documents and Settings\Hoge\My Documents"等ディレクト�
 <br>
 
 &aname(pythonexe);
-#### python.exeが起動しない  
-環境変数 PathにPython インストールフォルダーを追加しておいてください(C:\Python26など)。
+#### python.exe does not start  
+Add the Python installation folder to the environment variable Path (such as C:\Python26).
 <br>
 
 &aname(python);
-#### Cygwin をインストールしている環境では python.exe が複数存在する場合がある 
-Cygwin をインストールしている環境では、Cygwin上にも python.exe が存在する場合があります。その場合は、通例 Cygwin上の python.exe へのサーチパスが優先されるよう設定されるため、環境変数 Path を適切に設定しているのにもかかわらず、今回導入したはずの Python とは違うバージョンの（すなわちCygwin上の）python.exe が起動してしまう場合があります。この場合、Python のバージョンの違いによる不具合が発生してしまいます。この問題は非常に原因が特定しづらいのが特徴です。このように Cygwin などをインストールしている環境で OpenRTM-aist Python版を使う場合は、該当バージョンのpythonインストールフォルダーから python.exe が起動していることを確認してください。
-- 確認方法の例：python -Vでバージョンを調べる、（Cygwinのある環境では）which python でどの python.exe が実行されているかを確認する...など
-- この障害が発見された場合の対処：Pythonインストールフォルダー(C**: \Python26など)を**システム環境変数 Path**（*ユーザー環境変数 Path ではなく）の**先頭に追加**することで解決できます。
+#### In an environment where Cygwin is installed, multiple python.exe files may exist 
+In an environment where Cygwin is installed, python.exe may also exist on Cygwin. In that case, the search path to python.exe on Cygwin is usually set to take precedence, so even if the environment variable Path is set properly, a version of python.exe different from the Python that should have been installed this time (that is, the one on Cygwin) may start. In this case, problems due to differences in Python versions will occur. A characteristic of this problem is that it is very difficult to identify the cause. When using the Python version of OpenRTM-aist in an environment where Cygwin or similar software is installed, make sure that python.exe is being started from the Python installation folder of the relevant version.
+- Example confirmation methods: Check the version with python -V; in an environment with Cygwin, check which python.exe is being executed with which python; etc.
+- Action when this problem is found: It can be solved by adding the Python installation folder (such as C**: \Python26) to the **beginning** of the **system environment variable Path** (not the *user environment variable Path*).
 <br>
 
-#### Python2.6 + omniORBpy-3.4 で omniORB のインポート時に"ImportError: DLL load failed"エラーが発生する。
-- mscr71.dll が見つからないために発生するエラーです。msvcr71.dll を[こちら](http://reddog.s35.xrea.com/wiki/MSVCR71.DLL.html)から入手して、パスが通ったところにコピーしてください。
+#### An "ImportError: DLL load failed" error occurs when importing omniORB with Python 2.6 + omniORBpy-3.4.
+- This error occurs because mscr71.dll cannot be found. Obtain msvcr71.dll from [here](http://reddog.s35.xrea.com/wiki/MSVCR71.DLL.html) and copy it to a location where the path is set.
 <br>
 
 &aname(MSVCerror);
-#### 「MSVCP71.dll が見つからなかったため、…」というエラーで終了する 
-** |WINDOWS\system32フォルダー内に msvcp71.dll がないために発生するエラーです。msvcp71.dll を[こちら](http://www.vector.co.jp/soft/win95/util/se435079.html)から入手してください。
+#### It exits with the error "MSVCP71.dll was not found, ..." 
+** |This error occurs because msvcp71.dll is not in the WINDOWS\system32 folder. Obtain msvcp71.dll from [here](http://www.vector.co.jp/soft/win95/util/se435079.html).
 <br>
 
 &aname(rtc.conf);
-#### 「Can't open file: ./rtc.conf」などと表示される。
-RTコンポーネントの起動フォルダー（あるいはサーチパス上）に rtc.conf が見つからないため、起動できない状態です。この場合、次のように表示されます。~
+#### "Can't open file: ./rtc.conf" or similar is displayed.
+rtc.conf cannot be found in the startup folder of the RT component (or on the search path), so it cannot be started. In this case, the following is displayed.~
 ```
  Can't open file: ./rtc.conf
  Can't open file: /etc/rtc.conf
@@ -427,75 +427,72 @@ RTコンポーネントの起動フォルダー（あるいはサーチパス上
  Can't open file: /usr/local/etc/rtc.conf
  Can't open file: /usr/local/etc/rtc/rtc.conf
 ```
-これは rtc.conf を捜すサーチパスがデフォルトの状態であり、上記の順番で探したが見つからないためこのような表示になります。これを避けるためには、たとえば~
+This is because the search path for rtc.conf is in the default state, and it was searched in the order above but could not be found, so this display appears. To avoid this, for example,~
 ```
  corba.nameservers: localhost
  naming.formats: %n.rtc
 ```
-という内容のファイル rtc.conf を作成し、上記サーチパス上（通例はカレント＝コンポーネントと同じフォルダー）に配置します。
+create a file named rtc.conf with this content and place it on the above search path (usually the current folder, that is, the same folder as the component).
 <br>
-#### コンポーネントがネームサービスに登録されない
-rtc.conf の改行コードが CRLF になっている可能性が考えられます。~
-以下のコマンドにて rtc.conf の確認を行い、CRLF という文字列が表示された場合、新たに rtc.conf の作成を行ってください。~
+#### The component is not registered with the name service
+The line break code of rtc.conf may be CRLF.~
+Check rtc.conf with the following command, and if the string CRLF is displayed, create rtc.conf again.~
 ```
  $ file rtc.conf
 ```
 <br>
-## OpenRTM-aist (Java版)
-### OS 共通
-#### Java版コンポーネントでデータ転送に時間がかかる
-Java版の RTコンポーネントと C++版など他の言語のコンポーネントとの間で、特に大きなデータ（100kB以上でみられることが多い。）を送受信する場合に、極端に速度が低下する場合があります。これは Java の CORBA 側の問題であることが知られており、タイムアウトを適切に設定することにより回避することができます。~
-Java版の RTC が読み込む rtc.conf に以下のように記述することで、Java の CORBA のタイムアウトを設定します。~
+## OpenRTM-aist (Java Version)
+### Common to All OSes
+#### Data transfer takes time with Java version components
+When sending and receiving especially large data (often seen with data of 100 kB or more) between Java version RT components and components in other languages such as C++, the speed may drop drastically. This is known to be a problem on the Java CORBA side, and it can be avoided by setting the timeout appropriately.~
+Set the Java CORBA timeout by writing the following in the rtc.conf loaded by the Java version RTC.~
 ```
  corba.args: -ORBTCPReadTimeouts 1:60000:300:1
 ```
-Java (JDK1.5以降) ではデフォルトで、**100:3000:300:20** となっていますが、これを **1:60000:300:1** に変更するという意味です。各項目は左から、
-- CORBA データを read するときに、0byte であったときに Read Thread が休止させられる時間(ms)
-- CORBA データの read 時に Read Thread が待たされる累積最大時間 (ms)
-- GIOP のヘッダーを read するときのタイムアウト(ms)
-- CORBA データを read するときに、Read Thread が休止させられたときに、次回の休止の時間を増加する割合(%)
+In Java (JDK 1.5 or later), the default is **100:3000:300:20**, and this means changing it to **1:60000:300:1**. Each item means the following, from left to right:
+- The time (ms) for which the Read Thread is suspended when 0 bytes are read while reading CORBA data
+- The maximum cumulative time (ms) that the Read Thread waits when reading CORBA data
+- The timeout (ms) when reading the GIOP header
+- The rate (%) at which the next suspension time is increased when the Read Thread is suspended while reading CORBA data
 
-という意味になっています。したがって、**1:60000:300:1** は
-- read して0byteのとき、Read Thread を 1ms休止する
-- Read Thread が待つ最大累積時間は 6000ms
-- GIOP のヘッダを read するときのタイムアウト時間は 300ms
-- Read Thread の休止時間は1%づつ増加させる
+Therefore, **1:60000:300:1** means:
+- When reading returns 0 bytes, suspend the Read Thread for 1 ms
+- The maximum cumulative time that the Read Thread waits is 6000 ms
+- The timeout when reading the GIOP header is 300 ms
+- Increase the Read Thread suspension time by 1% at a time
 
-という意味になります。~
-大きなデータの場合、1回の read でデータが読み切れないので、通常何回か read を行います。~
-次のデータはすぐには来ませんので、read は読み込みバイト数を 0byte として戻りますが、通常1ms以内には次のデータはやってきます。デフォルトの設定だと Read Thread が100ms待たされますが、そんなに長時間待つ必要はなく1ms程度待てば、すぐに次のデータを読み込むことができます。~
-デフォルト設定の場合、100ms待って、さらにもう一度読み込み read が0を返すので、さらに100ms+20%の120ms待ちます。データが大きすぎれば、これを12回繰り返すと最大累積時間の3000msに達してしまうので、タイムアウトしてしまいますし、データが小さくても、データの分割数×100msの時間がかかってしまうので、非常に遅くなります。~
-Java の CORBA ではデータを100kBで分割するので、これを超えるデータをやり取りする際には、上記の設定を rtc.conf にて行っておいたほうがよいでしょう。
+For large data, the data cannot be read completely in a single read, so reads are normally performed several times.~
+Since the next data does not arrive immediately, read returns with the number of read bytes as 0 bytes, but normally the next data arrives within 1 ms. With the default setting, the Read Thread waits 100 ms, but there is no need to wait that long; waiting about 1 ms allows the next data to be read immediately.~
+With the default setting, after waiting 100 ms, another read returns 0, so it waits an additional 100 ms + 20%, or 120 ms. If the data is too large, repeating this 12 times reaches the maximum cumulative time of 3000 ms and causes a timeout, and even if the data is small, it takes the number of data fragments × 100 ms, making it extremely slow.~
+Since Java CORBA splits data at 100 kB, when exchanging data larger than this, it is recommended to make the above setting in rtc.conf.
 <br>
 ### Windows
 
 &aname(JDKver);
-#### 「java -version」がインストールした JDK のバージョンと異なる。 
-すでに JDK よりも新しいバージョンの JRE（Java Runtime Environment）がインストールされている場合は、JDK をインストールしても「java -version」が JRE のままになることがあります。この場合のインストールの確認方法を説明します。
-- 「プログラムの追加と削除」での確認方法
-  - Windowsのコントロールパネルから「プログラムの追加と削除」を呼び出し、JDK5 がインストールされていることを確認してください。
+#### "java -version" differs from the installed JDK version. 
+If a JRE (Java Runtime Environment) newer than the JDK is already installed, "java -version" may remain the JRE version even after installing the JDK. This section explains how to check the installation in this case.
+- How to check in "Add or Remove Programs"
+  - Open "Add or Remove Programs" from the Windows Control Panel and confirm that JDK5 is installed.
 
 <div align="center"><a href="add_or_delete_ja.png"><img src="add_or_delete_ja.png" width="80%;"></a></div>
-<div align="center"><strong>JDK5を「プログラムの追加と削除」で確認</strong></div>
-- マイコンピューターからの確認方法
-  - JDK をデフォルトでインストールした場合には、通常~
+<div align="center"><strong>Checking JDK5 in "Add or Remove Programs"</strong></div>
+- How to check from My Computer
+  - If the JDK is installed with the default settings, it is usually installed in a path such as~
 ```
  C:\Program Files\Java\jdk1.6.0_21
 ```
-  - というようなパスにインストールされるので、マイコンピューターで直接そのフォルダーの存在を確認します。
+  - so directly check that the folder exists from My Computer.
 
 <div align="center"><a href="confirm_Java_ja.png"><img src="confirm_Java_ja.png" width="80%;"></a></div>
-<div align="center"><strong>マイコンピューターからJDK5を確認</strong></div>
+<div align="center"><strong>Checking JDK5 from My Computer</strong></div>
 <br>
 
 ### Unix
 
 &aname(javafedora);
-#### FedoraCore で Java をインストールする際の対応 
-OS が FedoraCore の場合、yum にて Java をインストールすると GCJ (The GNU Compiler for Java ) がインストールされてしまい、その GCJ を使用するといくつかの不具合が生じる事があります。~
-不具合が発生した場合は、まず、Oracle の Java が使用されているかの確認をしてください。
-- 参考
-  - [JDKインストールのためのヒント](/ja/node/805#fedora)
-  - [UNIX系環境で簡易に Oracle の Java を Eclipse に適用する方法](/ja/node/248#rtclinksunjava)
-
--------jp page!!-------
+#### Handling Java installation on FedoraCore 
+If the OS is FedoraCore, installing Java with yum may install GCJ (The GNU Compiler for Java), and using that GCJ may cause several problems.~
+If problems occur, first check whether Oracle Java is being used.
+- References
+  - [Hints for JDK installation](/en/node/805#fedora)
+  - [A simple method for applying Oracle Java to Eclipse in UNIX-like environments](/en/node/248#rtclinksunjava)

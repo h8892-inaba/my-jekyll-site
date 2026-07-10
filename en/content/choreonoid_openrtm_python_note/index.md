@@ -1,39 +1,35 @@
 ---
 layout: page
-title: "Choreonoid用OpenRTM連携プラグイン Python版(備考)"
+title: "OpenRTM Integration Plugin for Choreonoid, Python Version (Notes)"
 ---
-
-No English version available.
-
 #contents
 
+### About the Choreonoid OpenRTM Integration Plugin
+The OpenRTM integration plugin included standard with Choreonoid does not have the following functions.
 
-### Choreonoid OpenRTM連携プラグインについて
-Choreonoid標準で付属しているOpenRTM連携プラグインには以下の機能がありません。
+- Configuration parameter setting function
+- Data type identification function when connecting connectors
 
-- コンフィギュレーションパラメータ設定機能
-- コネクタ接続時のデータ型判別機能
+It seems that these functions are planned to be added soon, but at present, configure configuration parameters externally using RTShell or similar tools.
 
-これらの機能は近いうちに追加される予定らしいですが、現状ではコンフィギュレーションパラメータの設定はRTShell等で外部から実行してください。
-
-コネクタ接続時にデータ型が違っても接続するため注意が必要です。
-
-
-### 既知のバグ
-
-RTCEditorでPythonモジュールが読み込めない環境が存在するらしいです。
-原因は調査中です。
+Care is required because connections are made even when the data types differ during connector connection.
 
 
-### 未実装の機能
+### Known Bugs
 
-ComponentListアイテムで起動したRTCをシミュレータがtickで実行する機能は現在のところ未実装です。
+There seem to be environments where Python modules cannot be loaded with RTCEditor.
+The cause is under investigation.
+
+
+### Unimplemented Functions
+
+The function for executing RTCs started with the ComponentList item by simulator ticks is currently unimplemented.
 
 
 
-### 使用したライブラリ
+### Libraries Used
 
-使用したライブラリは以下の通りです。
+The libraries used are as follows.
 
 - Choreonoid
 - boost-1.6.1
@@ -46,17 +42,17 @@ ComponentListアイテムで起動したRTCをシミュレータがtickで実行
 - yaml-0.1.7
 
 
-また、サンプルコンポーネントに以下のライブラリを使用しています。
+The following libraries are also used in the sample components.
 
 - ODE-0.13
 - PySDL2
 - SDL2
 
-### Choreonoidに関するメモ
-- アイテムの順番が環境によって違う事がある
-- プラグインの日本語化には**po**フォルダの中に言語ファイル**ja.po**を用意する。
+### Notes on Choreonoid
+- The order of items may differ depending on the environment
+- To localize a plugin into Japanese, prepare the language file **ja.po** inside the **po** folder.
 ```
- Pluginルートディレクトリ
+ Plugin root directory
 ```
 <table class="table-alt">
   <tr>
@@ -67,13 +63,12 @@ ComponentListアイテムで起動したRTCをシミュレータがtickで実行
   </tr>
 </table>
 
-ja.poの中身には以下のように翻訳前と翻訳後の文字を羅列する。
+In ja.po, list the text before and after translation as follows.
 
 ```
  msgid "RTC directory"
- msgstr "RTCディレクトリ"
+ msgstr "RTC directory"
 ```
 
-これで自動的にPOファイルをMOファイルにコンパイルするはずですが、Choreonoidはプラグイン名に対応するファイルをロードするため、プラグイン名は正しく設定する必要がある。
-
+This should automatically compile the PO file into an MO file, but since Choreonoid loads the file corresponding to the plugin name, the plugin name must be set correctly.
 

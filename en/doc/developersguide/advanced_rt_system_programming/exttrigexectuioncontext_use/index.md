@@ -1,8 +1,6 @@
 ---
 layout: page
-title: "ExtTrigExecutionContextの使用方法"
+title: "How to Use ExtTrigExecutionContext"
 ---
--------jp page!!-------
 
-準備中
--------jp page!!-------
+Coming soon

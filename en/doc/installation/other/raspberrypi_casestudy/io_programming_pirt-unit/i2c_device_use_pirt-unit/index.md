@@ -1,115 +1,112 @@
 ---
 layout: page
-title:  PiRT-UnitによるI2Cデバイスの利用
+title:  Using I2C Devices with PiRT-Unit
 ---
--------jp page!!-------
 
 <!-- Title: PiRT-UnitによるI2Cデバイスの利用 -->
 #contents
 
-## はじめに
+## Introduction
 
-Raspberry Pi上に存在する GPIO ピンのうちのI2C用ピン(2本)を用いると、複数の I2C デバイスを操作することができます。
-ここでは、I2C を利用するためのセットアップ、C言語によるプログラム記述の実例、RTコンポーネント化するためのヒントを示します。
+By using the I2C pins (2 pins) among the GPIO pins on the Raspberry Pi, multiple I2C devices can be operated.
+This section describes the setup for using I2C, actual examples of programming in C, and hints for converting them into RT components.
 
-### 必要なもの
+### Requirements
 
-- OpenRTM-aist の C++版がインストールされた Raspberry Pi
-- I2C デバイスを配線するための資材（ブレッドボード、ケーブル、抵抗、他）
-- I2C デバイス（秋月、ストロベリーリナックス、スイッチサイエンス等で入手）
-- ネットワーク(インターネット、apt-get するため）
+- A Raspberry Pi with the C++ version of OpenRTM-aist installed
+- Materials for wiring I2C devices (breadboard, cables, resistors, etc.)
+- I2C devices (available from Akizuki, Strawberry Linux, Switch Science, etc.)
+- Network connection (Internet, for apt-get)
 
-このドキュメントでは、I2C デバイスとして、
-- [LSM303DLHC（3軸地磁気＋加速度センサ）](http://strawberry-linux.com/catalog/items?code=12114)
-- [L3GD20（3軸ジャイロセンサ）](http://strawberry-linux.com/catalog/items?code=12120)
-- [RTC-8564NB（リアルタイムクロック）](http://akizukidenshi.com/catalog/g/gI-00233/)
-- [MPL115A2（大気圧センサ）](http://strawberry-linux.com/catalog/items?code=12103)
+In this document, the following I2C devices are covered:
+- [LSM303DLHC (3-axis geomagnetic + acceleration sensor)](http://strawberry-linux.com/catalog/items?code=12114)
+- [L3GD20 (3-axis gyro sensor)](http://strawberry-linux.com/catalog/items?code=12120)
+- [RTC-8564NB (real-time clock)](http://akizukidenshi.com/catalog/g/gI-00233/)
+- [MPL115A2 (barometric pressure sensor)](http://strawberry-linux.com/catalog/items?code=12103)
 
-を取り上げます。
+## What Is I2C (I-Squared-C)?
 
-## I2C(アイ・スクエア・シー)とは
+I2C is a type of serial bus communication that uses two wires. By using the edges of the clock line, values are exchanged on the data line, and multiple devices on the bus can be controlled.
+There are masters and slaves on the bus, and although the standard appears to allow multiple masters/slaves, in practice it is easy to use a single master with multiple slaves.
+When using it from a microcontroller or similar device, it is necessary to implement it while considering the transmission of clock signals by the master and the implementation of the data communication protocol. However, by using Raspberry Pi, existing libraries can be used to operate I2C devices very easily.
 
-I2C は2線を用いるシリアルバス通信の一種です。クロック線のエッジを用いてデータ線上で値の授受行い、バス上にある複数デバイスを制御することができます。
-バス上にはマスターとスレーブがあり、規格では複数のマスター／スレーブの存在を許しているようですが、実際には単一マスター／複数スレーブによる使用が簡単です。
-マイコンなどから利用する場合は、マスターによるクロック信号の送信と、データの通信プロトコル実装などを考慮して実装しなければなりませんが、Raspberry Pi を用いると既存のライブラリを使用して非常に簡単に I2C デバイスを利用することができます。
-
-Raspberry Pi の GPIOポート(26pin)のうち、もともと I2C 通信専用に設定されている GPIO が2本存在します。（下図参照）
-GPIO 0 が I2C のデータ用ポート、GPIO 1 が I2C のクロック用ポートとしてあらかじめ設定されており、これらを利用することで簡単に I2C 通信を行うことができます。
+Among the GPIO ports (26 pins) of the Raspberry Pi, there are two GPIO pins that are originally configured specifically for I2C communication. (See the figure below.)
+GPIO 0 is preconfigured as the I2C data port, and GPIO 1 is preconfigured as the I2C clock port. By using these, I2C communication can be performed easily.
 
 <div align="center"><a href="raspberry_gpio.png"><img src="raspberry_gpio.png" width="80%;"></a></div>
-<div align="center"><strong>Raspberry PiのGPIOポート、GPIO0 (I2C SDA), GPIO1 (I2C SCL)</strong></div>
+<div align="center"><strong>Raspberry Pi GPIO ports, GPIO0 (I2C SDA), GPIO1 (I2C SCL)</strong></div>
 
-この2本のポートを用いて I2C デバイスを直接接続するだけで、クロック線のドライブ・通信プロトコルの解釈などはすべて Raspberry Pi上の Linux で行われます。
-ユーザーはデバイスファイル (/dev/i2c-*) の読み書きを行うことでデバイスからのデータ取得／デバイスへのデータ出力を実現できます。
+By simply connecting I2C devices directly using these two ports, the clock line drive, interpretation of the communication protocol, and other processing are all handled by Linux on the Raspberry Pi.
+Users can acquire data from devices and output data to devices by reading from and writing to device files (/dev/i2c-*).
 
-複数のデバイスの接続はバス接続（下図）で実現することができます。
-デバイス間の調停も Raspberry Pi側である程度は行うことになっています。
-なお、上記GPIO 0、GPIO 1ポートは Raspberry Pi 基板上でプルアップ抵抗によりプルアップされていますので、別途プルアップする必要はありません。
+Multiple devices can be connected using a bus connection (figure below).
+Arbitration between devices is also handled to some extent on the Raspberry Pi side.
+Note that the GPIO 0 and GPIO 1 ports above are pulled up by pull-up resistors on the Raspberry Pi board, so no additional pull-up is required.
 
 <div align="center"><a href="i2c_devices.png"><img src="i2c_devices.png" width="80%;"></a></div>
-<div align="center"><strong>I2Cバス接続</strong></div>
+<div align="center"><strong>I2C bus connection</strong></div>
 
-## 準備
+## Preparation
 
-### システム設定
+### System Settings
 
-Raspberry Pi で I2C 通信を使うためにはいくつのかの設定ファイルを変更する必要があります。
-ファイルは root 権限で編集してください。
+To use I2C communication on Raspberry Pi, several configuration files must be changed.
+Edit the files with root privileges.
 
-#### /etc/modules の編集
-/etc/modules に以下の一行を追加します。
+#### Editing /etc/modules
+Add the following line to /etc/modules.
 
 ```
  i2c-dev
 ```
 
-これにより、/dev/i2c-* が有効になります。
+This enables /dev/i2c-*.
 
-#### /etc/modprobe.d/raspi-blacklist.conf の編集
+#### Editing /etc/modprobe.d/raspi-blacklist.conf
 
-/etc/modprobe.d/raspi-blacklist.conf の以下の一行をコメントアウトします。
+Comment out the following line in /etc/modprobe.d/raspi-blacklist.conf.
 
 ```
  # blacklist i2c-bcm2708
 ```
 
 
-以上の変更が終了したら、変更を反映するために再起動してください。
+After completing the above changes, reboot to apply the changes.
 
-### i2c-tools のインストール
+### Installing i2c-tools
 
-i2c-tools はコマンドラインから I2C デバイスへアクセスするためのツールです。
-実際に開発する際には、コマンドラインから I2C デバイスの動作を確認したいことがたびたびありますので、事前に i2c-tools をインストールしておいてください。
+i2c-tools is a set of tools for accessing I2C devices from the command line.
+During actual development, you will often want to check the operation of I2C devices from the command line, so install i2c-tools in advance.
 
 ```
  sudo apt-get install i2c-tools
 ```
 
-として、インストールします。
+Install it as shown above.
 
-## 配線
+## Wiring
 
-上記のブロック図では、I2C デバイスは SDA、SCL の2線のみが配線されていましたが、実際には当然各デバイスに電源を供給してあげる必要があります。
-それほど消費電力の大きくない I2C デバイスであれば、Raspberry Pi の GPIO ピンヘッダ 26pin のうち、2,3pin(5V)、1,17pin(3.3V)からでている電源を利用することができます。
-I2C デバイスの説明書・データシートを参照した上で、5V ないし 3.3V のうち適切な電源を供給するようにしてください。
-また、PiRT-Unit には I2C用の4ピンのコネクタが付属しており、SDA、SCL、3.3V、GND が配線可能です。
+In the block diagram above, only the two SDA and SCL lines were wired for the I2C devices, but in practice it is of course necessary to supply power to each device.
+For I2C devices that do not consume much power, the power supplied from pins 2 and 3 (5V) and pins 1 and 17 (3.3V) of the 26-pin GPIO pin header on the Raspberry Pi can be used.
+After referring to the manual or datasheet of the I2C device, supply the appropriate power, either 5V or 3.3V.
+PiRT-Unit also includes a 4-pin connector for I2C, allowing SDA, SCL, 3.3V, and GND to be wired.
 
-今回用いる I2C デバイスはすべて 3.3V で動作するため、Raspberry Pi の 1,17pin(3.3V)から各デバイスに電源を供給します。
-以下にブレッドボード上に上記の4つのデバイスを配置した際の配線図を示します。
+Since all I2C devices used here operate at 3.3V, power is supplied to each device from pins 1 and 17 (3.3V) of the Raspberry Pi.
+The wiring diagram below shows the four devices above placed on a breadboard.
 
 <div align="center"><a href="i2c_devices_circuit.png"><img src="i2c_devices_circuit.png" width="80%;"></a></div>
-<div align="center"><strong>I2CデバイスとRaspberryPiの接続</strong></div>
+<div align="center"><strong>Connection between I2C devices and RaspberryPi</strong></div>
 
-配線の際にはデバイスの説明書／データシートをよく読んで間違いのないよう配線してください。配線を間違うとデバイスが認識されないだけでなく、場合によってはデバイスが破壊される可能性もあります。
+When wiring, carefully read the manual/datasheet of each device and make sure there are no mistakes. If the wiring is incorrect, the device may not only fail to be recognized, but in some cases the device may also be damaged.
 
-デバイスの種類によっては、使用方法によって適宜ジャンパが必要なものや、I2Cの2本の信号線以外に割り込み、リセット信号などをが必要なものもあります。その場合は、Raspberry Pi の GPIO ピンを適宜利用し、プログラム側から制御する必要があります。
+Depending on the type of device, jumpers may be required as appropriate depending on the usage, or interrupt and reset signals may be required in addition to the two I2C signal lines. In such cases, it is necessary to use the Raspberry Pi GPIO pins as appropriate and control them from the program.
 
-## 動作確認
+## Operation Check
 
-### デバイスアドレスの確認
+### Checking Device Addresses
 
-上記の配線が完了したら、Raspberry Pi上から i2c-tools を利用してデバイスを操作することができます。
-まずは、**i2cdetect** コマンドで、I2C バスに接続されているすべてのデバイスのアドレスを確認してみましょう。以下のようにタイプすると、下図のような表示が現れます。
+After completing the wiring above, you can operate the devices from the Raspberry Pi using i2c-tools.
+First, use the **i2cdetect** command to check the addresses of all devices connected to the I2C bus. If you type the following, a display like the figure below appears.
 
 ```
  $ sudo i2cdetect 1
@@ -117,24 +114,24 @@ I2C デバイスの説明書・データシートを参照した上で、5V な�
 
 
 <div align="center"><a href="i2c_i2ctools_i2cdetect.png"><img src="i2c_i2ctools_i2cdetect.png" width="80%;"></a></div>
-<div align="center"><strong>I2CデバイスとRaspberryPiの接続</strong></div>
+<div align="center"><strong>Connection between I2C devices and RaspberryPi</strong></div>
 
-図では4個のデバイスが存在していることが確認できます。**-(マイナス)**以外に16進数の数字が表示されていますが、それぞれが各デバイスのアドレスを表しています。内訳は、
+In the figure, you can confirm that four devices are present. Hexadecimal numbers are displayed in places other than **- (minus)**, and each represents the address of each device. The details are as follows.
 
-- 0x19：LSM303DLHCの加速度センサー
-- 0x1e：LSM303DLHCの地磁気センサー
-- 0x51：RTC-8564NB（リアルタイムクロック）
-- 0x6a：L3GD20（ジャイロセンサー）
+- 0x19: LSM303DLHC acceleration sensor
+- 0x1e: LSM303DLHC geomagnetic sensor
+- 0x51: RTC-8564NB (real-time clock)
+- 0x6a: L3GD20 (gyro sensor)
 
-となっています。このコマンドと各デバイスの説明書／データシートを突き合わせることで、Raspberry Pi が I2C デバイスを認識できているかを確認することができます。
-なお、Raspberry Pi のリビジョンによって、コマンドの後ろに入れるバス番号が0の場合と1の場合がありますので注意してください。
+By comparing this command with the manual/datasheet of each device, you can confirm whether the Raspberry Pi is able to recognize the I2C devices.
+Note that depending on the revision of the Raspberry Pi, the bus number entered after the command may be either 0 or 1.
 
-### デバイスの制御テスト
+### Device Control Test
 
-デバイスに実際にデータを書き込むには **i2cset** コマンドを、デバイスからデータを読み込むには**i2cget**コマンドを使用します。（下図参照）
+Use the **i2cset** command to actually write data to the device, and the **i2cget** command to read data from the device. (See the figure below.)
 
 <div align="center"><a href="i2c_i2ctest.png"><img src="i2c_i2ctest.png" width="60%;"></a></div>
-<div align="center"><strong>i2ctestコマンドによるI2Cデバイスの制御の様子</strong></div>
+<div align="center"><strong>State of I2C device control using the i2ctest command</strong></div>
 
 ```
  // LSM303DLHCの地磁気センサーへアクセス
@@ -160,49 +157,49 @@ I2C デバイスの説明書・データシートを参照した上で、5V な�
  $ sudo i2cget -y 1 0x1e 0x2d
 ```
 
-この例では、LSM303DLHCの説明書に従って、まず地磁気センサを動作させるために0x1eのアドレスのデバイスに対して内部レジスタ0x00～0x02に所定の数値を書き込み、内部レジスタ0x31～32、0x03～0x09を読み出しています。
-その後、LSM303DLHCの加速度センサを動作させるため、0x19のアドレスのデバイスに対して内部レジスタ0x20に所定の数値を書き込み、0x28～0x2dまでの数値を読み込んでいます。
+In this example, according to the LSM303DLHC manual, first, to operate the geomagnetic sensor, the specified values are written to internal registers 0x00 to 0x02 of the device at address 0x1e, and internal registers 0x31 to 32 and 0x03 to 0x09 are read.
+After that, to operate the acceleration sensor of the LSM303DLHC, the specified value is written to internal register 0x20 of the device at address 0x19, and the values from 0x28 to 0x2d are read.
 
-i2c-toolsのコマンド群はルート権限でのみ実行可能であるのでsudoを使用するか、sudo bashとしてrootになって実行する必要がありますので注意してください。
+Note that the i2c-tools commands can only be executed with root privileges, so you need to use sudo or become root with sudo bash before executing them.
 
 
-## C言語によるデバイス操作
+## Device Operation in C
 
-プログラムからこれらのデバイスにアクセスするには、デバイスファイル (/dev/i2c-0 または /dev/i2c-1) をオープンし、読み書きすることでデバイスのレジスタ操作および値の読み出しを行います。
+To access these devices from a program, open the device file (/dev/i2c-0 or /dev/i2c-1) and read from or write to it to operate the device registers and read values.
 
-ただし、I2Cデバイスの種類によっては特有の初期化シーケンスを持っていたり、デバイスのデータの読み書きに一定の手順を要求するものがあります。各デバイスの説明書やデータシートを確認しながらプログラムを作成する必要があります。
-（インターネット上には、RaspberryPi／AVRマイコン／ArduinoなどからのI2Cデバイスの制御方法に関する情報が色々あるようですので、そちらも参考にしてください。）
+However, depending on the type of I2C device, some devices have a specific initialization sequence, or require a certain procedure for reading and writing device data. It is necessary to create programs while checking the manual or datasheet of each device.
+(There appears to be various information on the Internet about how to control I2C devices from RaspberryPi, AVR microcontrollers, Arduino, and so on, so please refer to those as well.)
 
-以下に、L3GD20デジタル3軸ジャイロセンサモジュールを用いたサンプルプログラムを掲載します。
+The following is a sample program using the L3GD20 digital 3-axis gyro sensor module.
 
-このモジュールはI2CおよびSPIでの通信が可能なセンサモジュールで、I2Cデバイスとして利用する場合、アドレスを0x6a、0x6bの2種類から選択可能です。ここではアドレスを0x6aとして使用しています。
+This module is a sensor module that can communicate via I2C and SPI. When used as an I2C device, the address can be selected from two types: 0x6a and 0x6b. Here, it is used with the address set to 0x6a.
 
-内部レジスタは、
+The internal registers are as follows:
 <table class="table-alt">
   <tr>
     <th>0x0f</th>
-    <th>常に0xd4を出力</th>
+    <th>Always outputs 0xd4</th>
   </tr>
   <tr>
     <td>0x20</td>
-    <td>0x0fを書き込むことで動作開始</td>
+    <td>Starts operation by writing 0x0f</td>
   </tr>
   <tr>
-    <td>0x28～2d</td>
-    <td>3軸ジャイロデータが格納される</td>
+    <td>0x28-2d</td>
+    <td>Stores 3-axis gyro data</td>
   </tr>
 </table>
 
-このほか、検出レンジ、サンプリングレート等の設定も可能ですが、ここでは触れません。
+In addition, settings such as detection range and sampling rate are also possible, but they are not covered here.
 
-### プログラム
+### Program
 
-以下にプログラムを示します。
-なお、こちらからダウンロードすることもできます。また、I2CセンサをRTコンポーネント化した、データ取得コンポーネントおよびディスプレイコンポーネントもサンプルとして示します。
+The program is shown below.
+It can also be downloaded from here. In addition, a data acquisition component and a display component, created by converting I2C sensors into RT components, are also provided as samples.
 
-- ジャイロL3GD20テストプログラム: [i2c_gyrotest.c](i2c_gyrotest.c)
-- I2Cセンサデータ取得コンポーネント: [Pi_I2CSensor.zip](Pi_I2CSensor.zip)
-- I2Cセンサディスプレイコンポーネント: [Pi_SensorDataOutPut.zip](Pi_SensorDataOutPut.zip)
+- Gyro L3GD20 test program: [i2c_gyrotest.c](i2c_gyrotest.c)
+- I2C sensor data acquisition component: [Pi_I2CSensor.zip](Pi_I2CSensor.zip)
+- I2C sensor display component: [Pi_SensorDataOutPut.zip](Pi_SensorDataOutPut.zip)
 
 
 ```
@@ -336,18 +333,16 @@ i2c-toolsのコマンド群はルート権限でのみ実行可能であるの�
 ```
 
 
-## RTコンポーネント化のためのヒント
+## Hints for Creating an RT Component
 
-RaspberryPi上でI2Cデバイスにアクセスするプログラムは以上のように記述することができます。上記のコードをRTコンポーネント化する場合には、例えば初期化部分をRTコンポーネントの**onInitialize**または**onActivated**に実装、デバイスからデータを取得して表示するルーチンを **onExecute** に実装し、OutPortから出力するようにすれば、センサデータを出力するコンポーネントが出来上がります。
+A program that accesses I2C devices on RaspberryPi can be written as described above. When converting the above code into an RT component, for example, implement the initialization part in **onInitialize** or **onActivated** of the RT component, implement the routine that acquires and displays data from the device in **onExecute**, and output it from an OutPort. This creates a component that outputs sensor data.
 
-実行コンテキストの周期は、I2Cデバイスおよびバスの速度と、バスに接続されているI2Cデバイスの数、それぞれのI2Cデバイスのサンプリングレートなどから決める必要があります。
+The period of the execution context needs to be determined based on the speed of the I2C device and bus, the number of I2C devices connected to the bus, and the sampling rate of each I2C device.
 
-複数のデバイスをI2C接続した状態でこれらをコンポーネント化する場合、各デバイス間でデータの読み書きのスケジューリングを考慮する必要があります。
-実現手法として考えられるのは、
-- すべてのI2Cデバイスを一つのコンポーネントとして取り扱う
-- I2Cバスへのアクセスを単一コンポーネントにまかせ、個別デバイスからポート間通信でデータを取得する
-- ロックなどの排他制御を共有オブジェクトなどを使って実装する
-などが考えられますが、それぞれ一長一短があるので状況に応じて選択するのがよいでしょう。
+When converting multiple I2C-connected devices into components, it is necessary to consider the scheduling of data reading and writing between each device.
+Possible implementation methods include:
+- Handling all I2C devices as a single component
+- Leaving access to the I2C bus to a single component and acquiring data from individual devices via port communication
+- Implementing exclusive control such as locks using shared objects
+and so on. Since each has its advantages and disadvantages, it is advisable to choose according to the situation.
 
-
--------jp page!!-------

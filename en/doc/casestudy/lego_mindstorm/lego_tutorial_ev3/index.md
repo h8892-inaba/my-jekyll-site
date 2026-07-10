@@ -292,7 +292,7 @@ If "EV3+ev3dev" appears under "Other Devices" in Device Manager, update the devi
 
 ## Preparation
 
-Follow the procedure on [this page]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2#toc1) to start the Name Server and RT System Editor.
+Follow the procedure on [this page]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2#toc1) to start the Name Server and RT System Editor.
 
 If the Name Server is already running, restart it before proceeding.
 
@@ -500,7 +500,7 @@ The following two RTCs will start.
 <div align="center"><a href="tu_ev3_24.png"><img src="tu_ev3_24.png" width="70%;"></a></div>
 
 - [FloatSeqToVelocity](../lego_sample_rts_exec#toc2)
-- [TkJoyStick]({{ site.baseurl }}/ja/doc/installation/sample_components/tkjoystick_mobilerobotsimulator#toc0)
+- [TkJoyStick]({{ site.baseurl }}/en/doc/installation/sample_components/tkjoystick_mobilerobotsimulator#toc0)
 
 ## Operation Check
 
@@ -637,8 +637,8 @@ Click the **[Generate Code]** button to generate the source code.
 
 After the code has been generated, use CMake to generate a Visual Studio project (or Code::Blocks project on Ubuntu) if you are using C++.
 
-- [Windows]({{ site.baseurl }}/ja/doc/toolmanuals/rtcbuilder-1_1_0/compile_win_cmake_cpp_rtcb_1_1_0)
-- [Ubuntu]({{ site.baseurl }}/ja/content/build_ubuntu_codeblocks)
+- [Windows]({{ site.baseurl }}/en/doc/toolmanuals/rtcbuilder-1_1_0/compile_win_cmake_cpp_rtcb_1_1_0)
+- [Ubuntu]({{ site.baseurl }}/en/content/build_ubuntu_codeblocks)
 
 First, start **CMake (cmake-gui)**.
 

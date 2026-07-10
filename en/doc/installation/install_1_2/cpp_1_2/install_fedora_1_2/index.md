@@ -2,7 +2,9 @@
 layout: page
 title: Fedoraへのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: Fedoraへのインストール -->
 現在、1.2系のOpenRTM-aistはFedoraの対応が不完全です。よって、本ページの情報はあくまでも参考情報として使用してください。
@@ -29,7 +31,7 @@ OpenRTM-aistを開発・実行するために必要なパッケージをもれ�
 ```
 でインストールできます。
 
-一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、[一括インストールスクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)のページをご確認ください。<!-- //英語版は/node/6990-->
+一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、[一括インストールスクリプト]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script)のページをご確認ください。<!-- //英語版は/node/6990-->
 
 ## OpenRTPのインストール
 一般的なFedora環境での開発にはRTC BuilderやRTSystem Editorを使用しますが、その場合にはOpenRTPが必要ですので、一括インストールスクリプトを用いてOpenRTPをインストールしてください。Fedoraではpkg_install_fedora.shが置いてあるディレクトリで
@@ -41,7 +43,7 @@ OpenRTM-aistを開発・実行するために必要なパッケージをもれ�
 ## JDK8のインストール
 
 OpenRTP(RTSystem EditorやRTC Builderなど)の実行にはJDK8相当のJava環境が必要です。現時点でFedoraの環境では、一括インストールスクリプトがFedoraのrpmリポジトリよりOpenJDK8をインストールします。他のJDK8をインストールしたい場合は下記のリンクを参照してください。
-- [JDK8のインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8)
+- [JDK8のインストール]({{ site.baseurl }}/en/doc/installation/common/install_jdk8)
 
 ## yumを用いる方法
 
@@ -316,4 +318,4 @@ OpenRtpでは大量のファイルがインストールされるため、ここ�
 
 
 
--------jp page!!-------
+

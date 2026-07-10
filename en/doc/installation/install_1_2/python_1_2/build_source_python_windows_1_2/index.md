@@ -2,7 +2,10 @@
 layout: page
 title: ソースからのビルド(Windows編)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
+
 
 <!-- Title: ソースからのビルド(Windows編) -->
 #contents
@@ -109,5 +112,3 @@ omniORB 4.2.3を64bitのPython 3.7の環境で使用する場合、omniORB-4.2.3
 以上で、OpenRTM-aist-pythonのインストールは終了です。
 
 
-
--------jp page!!-------

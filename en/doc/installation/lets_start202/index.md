@@ -16,7 +16,7 @@ If Python is not installed, OpenRTM-aist cannot be installed.
 
 Please install Python before installing OpenRTM-aist. Supported versions are "3.12", "3.11", "3.10", "3.9", and "3.8".
 
-For downloading Python, please refer to [Installing OpenRTM-aist 2.0 on Windows]({{ site.baseurl }}/ja/doc/installation/install_2_0/install_windows_2_0/install_2_0).
+For downloading Python, please refer to [Installing OpenRTM-aist 2.0 on Windows]({{ site.baseurl }}/en/doc/installation/install_2_0/install_windows_2_0/install_2_0).
 
 The Python installation location corresponds to the [Customize installation] option during installation.
 
@@ -43,7 +43,7 @@ Configure the search path automatically using the following procedure. This will
 
 ## Downloading OpenRTM-aist
 
-For downloading the installer, please refer to [Download]({{ site.baseurl }}/ja/download).
+For downloading the installer, please refer to [Download]({{ site.baseurl }}/en/download).
 
 If you are using Microsoft Edge and cannot download the installer because of the message shown below, follow these steps.
 
@@ -98,8 +98,8 @@ If you are using Microsoft Edge and cannot download the installer because of the
    - The Visual Studio version used by the C++ edition will be configured in the system environment variables.
    - Select the installed version of Visual Studio and click [Next].
 
-      - For downloading Visual Studio, please refer to [Installing OpenRTM-aist 2.0 on Windows]({{ site.baseurl }}/ja/doc/installation/install_2_0/install_windows_2_0/install_2_0).
-      - The Visual Studio version can be changed after installation using the VCVerChanger tool. [(How to Use VCVerChanger)]({{ site.baseurl }}/ja/content/vc_version_changer)
+      - For downloading Visual Studio, please refer to [Installing OpenRTM-aist 2.0 on Windows]({{ site.baseurl }}/en/doc/installation/install_2_0/install_windows_2_0/install_2_0).
+      - The Visual Studio version can be changed after installation using the VCVerChanger tool. [(How to Use VCVerChanger)]({{ site.baseurl }}/en/content/vc_version_changer)
       - This setting is irrelevant for the Python and Java editions, so you may simply leave the default setting and click [Next].
 
 <div align="center"><a href="RTM2.0.0-msi-4.png"><img src="RTM2.0.0-msi-4.png" width="50%;"></a></div>
@@ -151,7 +151,7 @@ In some cases, nested environment variables like this may not be expanded recurs
 
 To resolve this issue, run VCVerChanger. Clicking the [Confirm] button expands the environment variables and writes the expanded values back to the registry.
 
-[(How to Use VCVerChanger)]({{ site.baseurl }}/ja/content/vc_version_changer)
+[(How to Use VCVerChanger)]({{ site.baseurl }}/en/content/vc_version_changer)
 
 ## Running Sample Components
 
@@ -390,20 +390,20 @@ By using rtshell, you can Activate, Deactivate, Exit, and perform other RTC oper
 
 Please refer to:
 
-[rtshell Installation and Operation Verification (Windows)]({{ site.baseurl }}/ja/doc/installation/install_rtshell/check_windows)
+[rtshell Installation and Operation Verification (Windows)]({{ site.baseurl }}/en/doc/installation/install_rtshell/check_windows)
 
 ## What's Next?
 
 Please see the following links.
 
-- **Try More Sample Components &t;：** [Sample Components]({{ site.baseurl }}/ja/node/811)
+- **Try More Sample Components &t;：** [Sample Components]({{ site.baseurl }}/en/node/811)
 
-- **Create Your Own Components &t;：** [Case Studies]({{ site.baseurl }}/ja/node/110)
+- **Create Your Own Components &t;：** [Case Studies]({{ site.baseurl }}/en/node/110)
 
-- **Learn OpenRTM from the Basics &t;：** [Developer's Guide]({{ site.baseurl }}/ja/node/113)
+- **Learn OpenRTM from the Basics &t;：** [Developer's Guide]({{ site.baseurl }}/en/node/113)
 
-- **Join the Community &t;：** [Community]({{ site.baseurl }}/ja/node/624)
+- **Join the Community &t;：** [Community]({{ site.baseurl }}/en/node/624)
 
-- **Explore Public Components &t;：** [Projects]({{ site.baseurl }}/ja/node/123)
+- **Explore Public Components &t;：** [Projects]({{ site.baseurl }}/en/node/123)
 
 

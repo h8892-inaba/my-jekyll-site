@@ -2,67 +2,90 @@
 layout: page
 title: "Chromakey"
 ---
--------jp page!!-------
 
 <!-- Title: Chromakey -->
 
 #contents
 
-OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencv_sample_build)に従ってビルドしてインストールしてください。
+Please note that this sample is not included with the Python or Java editions of OpenRTM-aist. On Linux, build and install it according to [Building OpenCV Sample Code on Linux]({{ site.baseurl }}/en/doc/installation/sample_components/opencv_sample_build).
 
-### 概要
-Chromakeyは、2つの画面をクロマキー合成をするOpenCVコンポーネントのサンプルです。
-OpenCVCamera、CameraViewerといっしょに使用します。
+### Overview
 
-### 使い方
-Chromakeyは、ある特定の色を背景(例えば緑色)として撮影を行った画像のその特定色のところを透明化して、別の画面と合成するクロマキー合成という手法を実現するRTCコンポーネントです。　実行にあたっては、OpenCVCameraコンポーネントを2つ起動して2つの画面を取り込みます。また出力はCameraViewerコンポーネントを使用します。
-- 合成する2つの画面
+Chromakey is a sample OpenCV component that performs chroma key compositing of two images.
+
+It is used together with OpenCVCamera and CameraViewer.
+
+### Usage
+
+Chromakey is an RTC component that implements a technique called chroma key compositing. It makes a specific color in an image transparent (for example, green used as a background during shooting) and composites it with another image. To run it, start two OpenCVCamera components to capture two images. CameraViewer is used for displaying the output.
+
+- Two images to be composited
 
 <div align="center"><a href="foreground.png"><img src="foreground.png" width="50%;"></a></div>
-<div align="center"><strong>前面画像</strong></div>
+<div align="center"><strong>Foreground Image</strong></div>
 
 <div align="center"><a href="background.png"><img src="background.png" width="50%;"></a></div>
-<div align="center"><strong>背景画像</strong></div>
+<div align="center"><strong>Background Image</strong></div>
 
-- 手順 (Windows環境)
-  - [OpenRTPの起動手順(1.2系、Windows)]({{ site.baseurl }}/ja/doc/installation/install_1_2/start_openrtp_proc_windows_1_2)に従いOpenRTPを起動しRTSystemEditorを起動し、Name Service ViewにRTCが表示されるようにします。RTSystemEditorの使用方法の詳細については[RTSystemEditor]({{ site.baseurl }}/ja/doc/toolmanuals/rtsystemeditor-1_2_0)を参照してください。
-  - 管理者権限でコマンドプロンプトを開きOpenCVCameraコンポーネントを2つ実行できるようにします。
-  - rtc.confを編集します。例えば、以下のようなコマンドを入力し編集を行います。
-```
+- Procedure (Windows Environment)
+
+  - Start OpenRTP and RTSystemEditor according to [Procedure for Starting OpenRTP (1.2 Series, Windows)]({{ site.baseurl }}/en/doc/installation/install_1_2/start_openrtp_proc_windows_1_2), and make sure the RTCs are displayed in the Name Service View. For details on using RTSystemEditor, refer to [RTSystemEditor]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_2_0).
+
+  - Open a command prompt with administrator privileges so that two OpenCVCamera components can be executed.
+
+  - Edit rtc.conf. For example, enter the following commands:
+
+```text
 cd "\Program Files\OpenRTM-aist\1.2.1\Components\C++\OpenCV\vc14"
 notepad rtc.conf
 ```
-とし、以下の行を付け加えます。
-```
- manager.components.naming_policy: ns_unique
+
+  Add the following line:
+
+```text
+manager.components.naming_policy: ns_unique
 ```
 
-    - コマンドプロンプトを閉じます。
-  - エクスプローラーで\Program Files\OpenRTM-aist\1.2.1\Components\C++\OpenCVとたどります。
-  - CameraViewer.batをダブルクリックします。
-  - OpenCVCamera.batをダブルクリックします。
-  - OpenCVCamera.batをもう一度ダブルクリックします。
-  - Chromakey.batをダブルクリックします。
-  - RTSystemEditorの画面のName Service viewのところの[>]をクリックして、起動したコンポーネントCameraViewer0、Chromakey0、OpenCVCamera0、OpenCVCamera1のコンポーネントが表示されているのを確認します。
-  - RTSystemEditorで上部の[Open New System Editor]ボタン<a href="icon_open_editor_ja.png"><img src="icon_open_editor_ja.png" width="4%;"></a>をクリックし、新規System Editorを開き、[System Dialgram]を新たに表示させます。
-  - 上記の4つのコンポーネントをSystem Diagram上にドラッグ&ドロップします。
-  - 下記の画面のように各コンポーネントのポートを接続します。
+    - Close the command prompt.
+
+  - In Explorer, navigate to \Program Files\OpenRTM-aist\1.2.1\Components\C++\OpenCV.
+
+  - Double-click CameraViewer.bat.
+
+  - Double-click OpenCVCamera.bat.
+
+  - Double-click OpenCVCamera.bat again.
+
+  - Double-click Chromakey.bat.
+
+  - In the RTSystemEditor Name Service View, click [>] and confirm that the started components CameraViewer0, Chromakey0, OpenCVCamera0, and OpenCVCamera1 are displayed.
+
+  - In RTSystemEditor, click the [Open New System Editor] button <a href="icon_open_editor_ja.png"><img src="icon_open_editor_ja.png" width="4%;"></a> at the top of the screen to open a new System Editor and display a new [System Diagram].
+
+  - Drag and drop the four components above onto the System Diagram.
+
+  - Connect the ports of each component as shown below.
 
 <div align="center"><a href="rtse_chromakey.png"><img src="rtse_chromakey.png" width="75%;"></a></div>
-<div align="center"><strong>Chromakeyコンポーネントの接続</strong></div>
+<div align="center"><strong>Chromakey Component Connections</strong></div>
 
-  - OpenCVCamera0コンポーネントを右クリックして、[Activate]を選択します。緑色に表示が変わらない場合は、このコンポーネントを選択後、下部のConfiguration Viewを開き、[編集]をクリックし、device_numを接続されている、前面画像撮影用のUSBカメラに対応している番号に変え、[適用]ボタンをクリックします。
-  - OpenCVCamera1コンポーネントを右クリックして、[Activate]を選択します。緑色に表示が変わらない場合は、このコンポーネントを選択後、下部のConfiguration Viewを開き、[編集]をクリックし、device_numを接続されている、背景画像撮影用のUSBカメラに対応している番号に変え、[適用]ボタンをクリックします。
-  - どれかのコンポーネントを右クリックし、[Activate Systems]を選択します。
-  - 画面のウィンドウを動かしながらCameraViewerの画面を表示させます。
-  - [System Dialog](System Editor View)上のChromakey0コンポーネントをクリックします。すると下部にConfiguration Viewが表示されます。もし表示されない場合は[Configuration]タブをクリックしてください。
-  - [編集]ボタンをクリックしてクロマキーカラーの設定をします。
-lower_blue、uppder_blue、lower_green、upper_green、lower_red、upper_redの値を前面画像でバックグラウンドとして透明化する色(この例では緑色)のRGB値の青、緑、赤の成分範囲値を設定します。
-  - [適用]ボタンをクリックします。
-  - 下記のように2つの画像が合成されるの確認してください。
+  - Right-click the OpenCVCamera0 component and select [Activate]. If it does not turn green, select the component, open the Configuration View at the bottom, click [Edit], change device_num to the number corresponding to the USB camera used for capturing the foreground image, and click [Apply].
+
+  - Right-click the OpenCVCamera1 component and select [Activate]. If it does not turn green, select the component, open the Configuration View at the bottom, click [Edit], change device_num to the number corresponding to the USB camera used for capturing the background image, and click [Apply].
+
+  - Right-click any component and select [Activate Systems].
+
+  - Move the windows around and display the CameraViewer window.
+
+  - Click the Chromakey0 component in the [System Diagram] (System Editor View). The Configuration View will appear at the bottom. If it does not appear, click the [Configuration] tab.
+
+  - Click the [Edit] button to configure the chroma key color.
+
+    Set the values of lower_blue, upper_blue, lower_green, upper_green, lower_red, and upper_red to the RGB component ranges (blue, green, and red) of the color that should be made transparent in the foreground image background (green in this example).
+
+  - Click the [Apply] button.
+
+  - Confirm that the two images are composited as shown below.
 
 <div align="center"><a href="chromakeyCameraViewer.png"><img src="chromakeyCameraViewer.png" width="50%;"></a></div>
-<div align="center"><strong>クロマキー合成出力画像</strong></div>
-
-
--------jp page!!-------
+<div align="center"><strong>Chroma Key Composite Output Image</strong></div>

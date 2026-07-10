@@ -1,133 +1,156 @@
 ---
 layout: page
-title: "OpenCVCamera/CameraViewerとシンプルOpenCVサンプル"
+title: "OpenCVCamera/CameraViewer and Simple OpenCV Samples"
 ---
--------jp page!!-------
 
 <!-- Title: OpenCVCamera/CameraViewerとシンプルOpenCVサンプル -->
 #contents
 
-OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencv_sample_build)に従ってビルドしてインストールしてください。
+Please note that this sample is not included with the Python or Java editions of OpenRTM-aist. On Linux, build and install it according to [Building OpenCV Sample Code on Linux]({{ site.baseurl }}/en/doc/installation/sample_components/opencv_sample_build).
 
-### 概要
-OpenCVCamera、CameraViewerを起動することで、USBカメラの画像をモニターに表示します。OpenCV画像処理サンプルRTCコンポーネントを接続し、エフェクトをかけられます。
+### Overview
 
-### 起動画面
+By starting OpenCVCamera and CameraViewer, images captured from a USB camera can be displayed on a monitor. OpenCV image-processing sample RTC components can be connected between them to apply various effects.
+
+### Startup Screens
 
 <div align="center"><a href="new_00.png"><img src="new_00.png" width="80%;"></a></div>
-<div align="center"><strong>OpenCVCameraコンポーネントとCameraViewerコンポーネントの実行例</strong></div>
+<div align="center"><strong>OpenCVCamera Component and CameraViewer Component Execution Example</strong></div>
 
 <div align="center"><a href="new_01.png"><img src="new_01.png" width="80%;"></a></div>
-<div align="center"><strong>OpenCVCamera実行例(RTSystemEditor)</strong></div>
+<div align="center"><strong>OpenCVCamera Execution Example (RTSystemEditor)</strong></div>
 
 <div align="center"><a href="new_02.png"><img src="new_02.png" width="80%;"></a></div>
-<div align="center"><strong>CameraViewer実行例(モニター)</strong></div>
+<div align="center"><strong>CameraViewer Execution Example (Monitor)</strong></div>
 
-### 使い方
-OpenCVCameraはUSBカメラの画像データを取得し、CameraViewerコンポーネントでモニター上に表示するサンプルです。
-OpenCVのRTサンプルコンポーネントを間に接続し、画像データにエフェクトをかけることもできます。
+### Usage
 
+OpenCVCamera is a sample component that acquires image data from a USB camera and displays it on a monitor through the CameraViewer component.
 
-- 手順
-  - RTSystemEditorを起動し、新規SystemEditorを開きます。RTSystemEditorの使用方法の詳細については[RTSystemEditor]({{ site.baseurl }}/ja/doc/toolmanuals/rtsystemeditor-1_2_0)を参照
-  - OpenCVCamera(openCVCamera.bat)とCameraViewer(CameraViewer.bat)の両コンポーネントを起動します。
-    - サンプルOpenCV画像処理RTコンポーネントを使用する場合は、インストール後、スタート＞OpenRTM-aist 1.2.1 x86_64＞C++_OpenCV-Examplesから(32bit環境では、スタート>OpenRTM-aist 1.2.1 x86>C++_OpenCV-Examplesから)起動してください。
-  - RTSystemEditorのName Service Viewにこれらのコンポーネントが現れるので、二つともSystemEditor上にドラッグします。
-  - 両コンポーネントの対応ポートを結びます。(上図RTSystemEditor実行例を参照)
-  - どちらかのコンポーネントを右クリックし、[Activate Systems]を選択します。
+OpenCV RT sample components can also be inserted between them to apply image-processing effects.
 
-- OpenCVのFlipを使用する
-  - Flipコンポーネントをスタート＞OpenRTM-aist 1.2.1 x86_64＞C++_OpenCV-Examplesから(32bit環境では、スタート>OpenRTM-aist 1.2.1 x86>C++_OpenCV-Examplesから)起動してください。
-  - SystemEditor上にドラッグして表示し、OpenCVCameraとCameraViewer両コンポーネントと接続し「Activate」します。（下図Flip実行例を参照）
-  - FlipはConfigure「flip_mode」の値を変更する事で、出力データを変更することも可能です。（下図flip_modeの変更を参照）
-    - Flipの詳しい使い方・解説は[こちら](http://www.openrtm.org/openrtm/ja/node/6057)をご確認ください。
+- Procedure
+
+  - Start RTSystemEditor and open a new SystemEditor. For details on using RTSystemEditor, refer to [RTSystemEditor]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_2_0).
+
+  - Start both OpenCVCamera (openCVCamera.bat) and CameraViewer (CameraViewer.bat).
+
+    - To use the sample OpenCV image-processing RT components, launch them after installation from:
+      Start > OpenRTM-aist 1.2.1 x86_64 > C++_OpenCV-Examples
+      (On a 32-bit environment:
+      Start > OpenRTM-aist 1.2.1 x86 > C++_OpenCV-Examples)
+
+  - These components will appear in the Name Service View of RTSystemEditor. Drag both of them onto the SystemEditor.
+
+  - Connect the corresponding ports of the two components. (Refer to the RTSystemEditor execution example above.)
+
+  - Right-click either component and select [Activate Systems].
+
+### Using OpenCV Flip
+
+  - Start the Flip component from:
+    Start > OpenRTM-aist 1.2.1 x86_64 > C++_OpenCV-Examples
+    (On a 32-bit environment:
+    Start > OpenRTM-aist 1.2.1 x86 > C++_OpenCV-Examples)
+
+  - Drag it onto the SystemEditor, connect it between OpenCVCamera and CameraViewer, and activate it. (Refer to the Flip execution example below.)
+
+  - The Flip component can also modify its output by changing the value of the Configuration parameter "flip_mode." (Refer to the flip_mode example below.)
+
+    - For detailed usage and explanations of Flip, see [here](http://www.openrtm.org/openrtm/en/node/6057).
 
 <div align="center"><a href="new_05.png"><img src="new_05.png" width="60%;"></a></div>
-<div align="center"><strong>Flip実行例(RTSystemEditor)</strong></div>
-
+<div align="center"><strong>Flip Execution Example (RTSystemEditor)</strong></div>
 
 <div align="center"><a href="new_03_04.png"><img src="new_03_04.png" width="80%;"></a></div>
-<div align="center"><strong>flip_modeの変更(RTSystemEditorとモニター)</strong></div>
+<div align="center"><strong>Changing flip_mode (RTSystemEditor and Monitor)</strong></div>
 
-- OpenCV使用のその他のサンプルについて
+### Other OpenCV-Based Samples
+
 <table class="table-alt">
   <tr>
-    <th>起動コマンド</th>
-    <th>機能</th>
-    <th>configurationパラメータ</th>
+    <th>Startup Command</th>
+    <th>Function</th>
+    <th>Configuration Parameters</th>
   </tr>
   <tr>
     <td>Affine.bat</td>
-    <td>入力画像のアフィン変換をします。</td>
-    <td>Affine行列</td>
+    <td>Performs affine transformation on the input image.</td>
+    <td>Affine transformation matrix</td>
   </tr>
   <tr>
     <td>BackgroundSubtractionSimple.bat</td>
-    <td>入力画像においてKey入力があった時点の画像から変化分を出力します。</td>
-    <td>画像の変化検出の方法示すパラメータ</td>
+    <td>Outputs changes relative to the image captured when a key input is received.</td>
+    <td>Parameters specifying the image change detection method</td>
   </tr>
   <tr>
     <td>Binarization.bat</td>
-    <td>入力画像を二値化した白黒画像に変換します。</td>
-    <td>二値化の閾値</td>
+    <td>Converts the input image into a black-and-white binary image.</td>
+    <td>Binarization threshold</td>
   </tr>
   <tr>
     <td>DialationErosion.bat</td>
-    <td>ダイアレーション/エロージョン処理を行います。</td>
-    <td>二値化の閾値</td>
+    <td>Performs dilation/erosion processing.</td>
+    <td>Binarization threshold</td>
   </tr>
   <tr>
     <td>Edge.bat</td>
-    <td>X方向一次微分画像、Y方向一次微分画像、ラプラシアン画像(二次微分画像)を出力します</td>
-    <td>アパーチャーサイズ</td>
+    <td>Outputs first-derivative images in the X and Y directions and a Laplacian (second-derivative) image.</td>
+    <td>Aperture size</td>
   </tr>
   <tr>
     <td>Findcontour.bat</td>
-    <td>輪郭抽出をして、輪郭を画像中に表示します。</td>
-    <td>処理前の二値化の閾値、階層化のレベル、表示時の輪郭線のサイズ、輪郭の近似手法</td>
+    <td>Extracts contours and displays them in the image.</td>
+    <td>Pre-processing binarization threshold, hierarchy level, contour line size for display, contour approximation method</td>
   </tr>
   <tr>
     <td>Histgram.bat</td>
-    <td>白黒化した画像の明度/コントラストの変更処理をしながら、ヒストグラムの変化を表示します。</td>
-    <td>明度、コントラスト</td>
-  </tr>
-  <tr>
-    <td>Hough.bat</td>
-    <td>ハフ変換による直線抽出</td>
-    <td>ハフ変換のパラメータや検出した直線の描画パラメータ</td>
-  </tr>
-  <tr>
-    <td>Perspective.bat</td>
-    <td>画像のパースペクティブ変換(斜め下から見たように変換します。</td>
-    <td>項目なし</td>
-  </tr>
-  <tr>
-    <td>RockPaperScissors.bat</td>
-    <td>画像でグーチョキパーを判定します。</td>
-    <td>solidityに対するジャンケン判定用閾値と膨張縮小処理による欠損補完パラメータ</td>
-  </tr>
-  <tr>
-    <td>Rotate.bat</td>
-    <td>画像を回転と縮小拡大処理をします。</td>
-    <td>反時計周りの回転角と縮小拡大率</td>
-  </tr>
-  <tr>
-    <td>Scale.bat</td>
-    <td>画像の縮小拡大処理をします。</td>
-    <td>X方向Y方向の拡大縮小率</td>
-  </tr>
-  <tr>
-    <td>Sepia.bat</td>
-    <td>画像のセピア化を行います。</td>
-    <td>セピア化の色味</td>
-  </tr>
-  <tr>
-    <td>Translate.bat</td>
-    <td>画像の2次元移動処理をします。</td>
-    <td>移動方向</td>
+    <td>Displays histogram changes while adjusting image brightness and contrast.</td>
+    <td>Brightness and contrast</td>
   </tr>
 </table>
 
 
+<table class="table-alt">
+  <tr>
+    <th>Startup Command</th>
+    <th>Function</th>
+    <th>Configuration Parameters</th>
+  </tr>
+  <tr>
+    <td>Hough.bat</td>
+    <td>Detects straight lines using the Hough Transform.</td>
+    <td>Parameters for the Hough Transform and drawing parameters for detected lines.</td>
+  </tr>
+  <tr>
+    <td>Perspective.bat</td>
+    <td>Performs a perspective transformation on the image (as if viewed from below at an angle).</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>RockPaperScissors.bat</td>
+    <td>Recognizes rock, paper, and scissors gestures from an image.</td>
+    <td>Thresholds for gesture classification based on solidity and parameters for compensating missing regions through dilation/erosion processing.</td>
+  </tr>
+  <tr>
+    <td>Rotate.bat</td>
+    <td>Performs image rotation and scaling.</td>
+    <td>Counterclockwise rotation angle and scaling factor.</td>
+  </tr>
+  <tr>
+    <td>Scale.bat</td>
+    <td>Performs image scaling.</td>
+    <td>Scaling factors in the X and Y directions.</td>
+  </tr>
+  <tr>
+    <td>Sepia.bat</td>
+    <td>Applies a sepia-tone effect to the image.</td>
+    <td>Sepia-tone color adjustment.</td>
+  </tr>
+  <tr>
+    <td>Translate.bat</td>
+    <td>Performs two-dimensional image translation.</td>
+    <td>Translation direction.</td>
+  </tr>
+</table>
 
--------jp page!!-------

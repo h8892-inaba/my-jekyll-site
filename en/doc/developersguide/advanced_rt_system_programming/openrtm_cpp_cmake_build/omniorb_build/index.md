@@ -1,157 +1,153 @@
 ---
 layout: page
-title: "omniORBのビルド"
+title: "Building omniORB"
 ---
--------jp page!!-------
 <!-- Title: omniORBのビルド -->
 #contents
 
 ## Windows
 
-### omniORBのビルド
+### Building omniORB
 
 &aname(windows);
 
-ビルドにはPython、Cygwinのインストールが必要です。
+Python and Cygwin must be installed before building.
 
 - [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
 - [https://www.cygwin.com/](https://www.cygwin.com/)
 
-sslTp、httpTp機能を使う場合はOpenSSLのビルドが必要です。
+If you want to use the **sslTp** and **httpTp** features, OpenSSL must also be built.
 
 - [https://github.com/openssl/openssl/tags](https://github.com/openssl/openssl/tags)
 
-Strawberry Perlをインストールして以下のコマンドを実行する。
+Install Strawberry Perl and execute the following commands.
 
-```
- set OPENSSL_INSTALL_DIR=C:/work/openssl_install
- call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" amd64
- perl Configure VC-WIN64A --prefix=%OPENSSL_INSTALL_DIR% no-asm shared
- nmake install
+```sh
+set OPENSSL_INSTALL_DIR=C:/work/openssl_install
+call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" amd64
+perl Configure VC-WIN64A --prefix=%OPENSSL_INSTALL_DIR% no-asm shared
+nmake install
 ```
 
-omniORBのソースコードを入手します。
+Obtain the omniORB source code.
 
 - [https://sourceforge.net/projects/omniorb/files/omniORB/](https://sourceforge.net/projects/omniorb/files/omniORB/)
 
-**mk/platforms/x86_win32_vs_16.mk**でPython、OpenSSLのパスを設定します。**OPEN_SSL_ROOT**を設定しなかった場合でもビルドは可能ですが、sslTp、httpTp機能は使えません。
+Set the Python and OpenSSL paths in **mk/platforms/x86_win32_vs_16.mk**.
+Even if **OPEN_SSL_ROOT** is not specified, omniORB can still be built, but the **sslTp** and **httpTp** features cannot be used.
 
-```
- PYTHON = /cygdrive/c/Python310/python
-```
-
-```
- OPEN_SSL_ROOT = /cygdrive/c/work/openssl_install
+```make
+PYTHON = /cygdrive/c/Python310/python
 ```
 
-**config/config.mk**でビルドする環境を指定してください。
-
-```
- platform = x86_win32_vs_16
+```make
+OPEN_SSL_ROOT = /cygdrive/c/work/openssl_install
 ```
 
-omniORBを展開したフォルダに移動して以下のコマンドを実行してください。
+Specify the build environment in **config/config.mk**.
 
-```
- set PATH=C:\cygwin64\bin;%PATH%;
- call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" amd64
- cd src
- make export
+```make
+platform = x86_win32_vs_16
 ```
 
-次にomniORBpyのビルドを実行します。
-まずomniORBpyのソースコードを入手してください。
+Move to the extracted omniORB directory and execute the following commands.
+
+```sh
+set PATH=C:\cygwin64\bin;%PATH%;
+call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" amd64
+cd src
+make export
+```
+
+Next, build **omniORBpy**.
+First, obtain the omniORBpy source code.
 
 - [https://sourceforge.net/projects/omniorb/files/omniORBpy/](https://sourceforge.net/projects/omniorb/files/omniORBpy/)
 
-omniORBpyをomniORBの**src/lib**以下にコピーします。
+Copy **omniORBpy** into the **src/lib** directory of omniORB.
 
-```
- omniORB-4.x.y
-    |--src
-    |  |--lib
-    |    |--omniORBpy
-    |--mk
-    |  |--platforms
-    |    |--x86_win32_vs_16
-    |--config
-      |--config.mk
-```
-omniORBpyフォルダに移動してmakeコマンドを実行します。
-
-```
- cd lib\omniORBpy
- make export
+```text
+omniORB-4.x.y
+   |--src
+   |  |--lib
+   |    |--omniORBpy
+   |--mk
+   |  |--platforms
+   |    |--x86_win32_vs_16
+   |--config
+     |--config.mk
 ```
 
-### 環境変数の設定
+Move to the **omniORBpy** directory and execute the **make** command.
+
+```sh
+cd lib\omniORBpy
+make export
+```
+
+### Setting Environment Variables
 
 &aname(windows_env);
 
-omniORB、omniORBpyの動作確認をするためには環境変数**PATH**、**PYTHONPATH**の設定が必要です。
+To verify the operation of **omniORB** and **omniORBpy**, you must configure the **PATH** and **PYTHONPATH** environment variables.
 
-```
- set omniORB_DIR=C:/workspace/omniORB-4.3.0
- set PATH=%omniORB_DIR%\bin\x86_win32;%PATH%
- set PYTHONPATH=%omniORB_DIR%\lib\x86_win32;%omniORB_DIR%\lib\python;%PYTHONPATH%
+```sh
+set omniORB_DIR=C:/workspace/omniORB-4.3.0
+set PATH=%omniORB_DIR%\bin\x86_win32;%PATH%
+set PYTHONPATH=%omniORB_DIR%\lib\x86_win32;%omniORB_DIR%\lib\python;%PYTHONPATH%
 ```
 
 ## Ubuntu
 
-### omniORBのビルド
+### Building omniORB
 
 &aname(ubuntu);
 
-sslTp、httpTp機能を使う場合はOpenSSLのインストールが必要です。
+If you want to use the **sslTp** and **httpTp** features, OpenSSL must be installed.
 
-```
- sudo apt install libssl-dev
-```
-
-次にomniORBのソースコードを入手してビルドします。
-
-```
- export PYTHON=/usr/bin/python3
- export OMNIORB_INSTALL_DIR=~/work/omniorb_install
- wget https://jaist.dl.sourceforge.net/project/omniorb/omniORB/omniORB-4.3.0/omniORB-4.3.0.tar.bz2
- tar xf omniORB-4.3.0.tar.bz2
- cd omniORB-4.3.0
- ./configure --prefix=${OMNIORB_INSTALL_DIR} --with-openssl
- make
- make install
+```sh
+sudo apt install libssl-dev
 ```
 
-omniORBpyのビルドを実行します。
+Next, obtain the omniORB source code and build it.
 
+```sh
+export PYTHON=/usr/bin/python3
+export OMNIORB_INSTALL_DIR=~/work/omniorb_install
+wget https://jaist.dl.sourceforge.net/project/omniorb/omniORB/omniORB-4.3.0/omniORB-4.3.0.tar.bz2
+tar xf omniORB-4.3.0.tar.bz2
+cd omniORB-4.3.0
+./configure --prefix=${OMNIORB_INSTALL_DIR} --with-openssl
+make
+make install
 ```
- export PYTHON=/usr/bin/python3
- wget https://jaist.dl.sourceforge.net/project/omniorb/omniORBpy/omniORBpy-4.3.0/omniORBpy-4.3.0.tar.bz2
- tar xf omniORBpy-4.3.0.tar.bz2
- cd omniORBpy-4.3.0
- ./configure --with-omniorb=${OMNIORB_INSTALL_DIR} --prefix=${OMNIORB_INSTALL_DIR} --with-openssl
- make
- make install
+
+Build **omniORBpy**.
+
+```sh
+export PYTHON=/usr/bin/python3
+wget https://jaist.dl.sourceforge.net/project/omniorb/omniORBpy/omniORBpy-4.3.0/omniORBpy-4.3.0.tar.bz2
+tar xf omniORBpy-4.3.0.tar.bz2
+cd omniORBpy-4.3.0
+./configure --with-omniorb=${OMNIORB_INSTALL_DIR} --prefix=${OMNIORB_INSTALL_DIR} --with-openssl
+make
+make install
 ```
 
-
-### 環境変数の設定
+### Setting Environment Variables
 
 &aname(ubuntu_env);
 
-omniORB、omniORBpyの動作確認をするためには環境変数**PATH**、**LD_LIBRARY_PATH**、**PYTHONPATH**の設定が必要です。
+To verify the operation of **omniORB** and **omniORBpy**, you must configure the **PATH**, **LD_LIBRARY_PATH**, and **PYTHONPATH** environment variables.
 
-```
- export PATH=${OMNIORB_INSTALL_DIR}/bin:$PATH
- export LD_LIBRARY_PATH=${OMNIORB_INSTALL_DIR}/lib:${LD_LIBRARY_PATH}
- export PYTHONPATH=${OMNIORB_INSTALL_DIR}/lib/python3.6/site-packages:$PYTHONPATH
-```
-
-また、pkg-configでomniORBを検出するには以下のように環境変数**PKG_CONFIG**を設定する。
-
-```
- export PKG_CONFIG_PATH=${OMNIORB_INSTALL_DIR}/lib/pkgconfig:$PKG_CONFIG_PATH
+```sh
+export PATH=${OMNIORB_INSTALL_DIR}/bin:$PATH
+export LD_LIBRARY_PATH=${OMNIORB_INSTALL_DIR}/lib:${LD_LIBRARY_PATH}
+export PYTHONPATH=${OMNIORB_INSTALL_DIR}/lib/python3.6/site-packages:$PYTHONPATH
 ```
 
+To allow **pkg-config** to detect omniORB, set the **PKG_CONFIG_PATH** environment variable as follows.
 
-
--------jp page!!-------
+```sh
+export PKG_CONFIG_PATH=${OMNIORB_INSTALL_DIR}/lib/pkgconfig:$PKG_CONFIG_PATH
+```

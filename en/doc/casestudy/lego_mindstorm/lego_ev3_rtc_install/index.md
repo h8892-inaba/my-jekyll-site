@@ -211,7 +211,7 @@ Alternatively, a specific image can be displayed.
 
 ## ControlEducatorVehicle
 
-ControlEducatorVehicle can be used to control the following mobile robot (modified Educator Vehicle). Refer to [this page](/ja/node/6038) for assembly instructions.
+ControlEducatorVehicle can be used to control the following mobile robot (modified Educator Vehicle). Refer to [this page](/en/node/6038) for assembly instructions.
 
 - [https://github.com/Nobu19800/ControlEducatorVehicle](https://github.com/Nobu19800/ControlEducatorVehicle)
 

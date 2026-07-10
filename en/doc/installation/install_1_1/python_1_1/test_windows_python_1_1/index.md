@@ -2,7 +2,9 @@
 layout: page
 title: 動作確認 (Windows編)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- doc/installation/install_1_1/python_1_1/test_windows_python_1_1-->
 <!-- https://openrtm.org/openrtm/ja/node/1225/edit-->
@@ -510,4 +512,4 @@ OutPort から InPort (または InPort から OutPort) へドラッグランド
   </tr>
 </table>
 
--------jp page!!-------
+

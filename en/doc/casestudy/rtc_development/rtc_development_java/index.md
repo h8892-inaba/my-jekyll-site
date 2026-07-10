@@ -1,146 +1,145 @@
 ---
 layout: page
-title: 
+title: Creating RT Components (Java Version)
 ---
--------jp page!!-------
 
 init
 <!-- Title: RTコンポーネント作成(Java版) -->
 #contents
 
 
-# 概要 
-## OpenRTM-aist-Java 概要
-　OpenRTM-aist とは、独立行政法人産業技術総合研究所・知能システム研究部門・タスクインテリジェンス研究グループが実装・配布・メンテナンスを行っている RTミドルウェアの実装例です。RTミドルウェアおよび OpenRTM-aist は、ロボットの様々な機能要素を RTコンポーネントと呼ばれる部品単位に分割し、これらを自由に組み合わせることで多様なロボットシステムの構築を可能にするためのソフトウェアプラットフォームです。現在 OMG (Object Management Group) にて仕様策定中のロボット用ミドルウェア仕様(The Robotic Technology Component Specification)にも準拠しています。<br> OpenRTM-aist-Java は、これまで C++言語向けに提供されていた OpenRTM-aist を Java言語に移植したものです。C++版 OpenRTM-aist互換のインターフェースを有し、Java言語を使用して開発した RTコンポーネントと C++言語を利用して開発した RTコンポーネントの相互運用が可能としています。<br>
-## 対象
-　本ドキュメントは、OpenRTM-aist-Java を利用して、Java言語版 RTコンポーネントを開発する方法について説明しています。なお、本ドキュメントでは Java言語については基本知識を既に持っている方を対象としています。<br>
-## 動作環境
-　OpenRTM-aist-Java の動作に必要な環境は以下のとおりです。<br>
+# Overview 
+## OpenRTM-aist-Java Overview
+OpenRTM-aist is an implementation of RT middleware implemented, distributed, and maintained by the Task Intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology. RT middleware and OpenRTM-aist are software platforms that make it possible to build various robot systems by dividing the various functional elements of robots into component units called RT components and freely combining them. They also conform to The Robotic Technology Component Specification, a middleware specification for robots currently being standardized by the OMG (Object Management Group).<br> OpenRTM-aist-Java is a port of OpenRTM-aist, which has been provided for the C++ language, to the Java language. It has an interface compatible with the C++ version of OpenRTM-aist, and enables interoperability between RT components developed using the Java language and RT components developed using the C++ language.<br>
+## Target Audience
+This document explains how to develop Java-language RT components using OpenRTM-aist-Java. This document assumes that readers already have basic knowledge of the Java language.<br>
+## Operating Environment
+The environment required to run OpenRTM-aist-Java is as follows.<br>
 
 <br>
 
-<div align="center"><strong>表 1-1 動作環境</strong></div>
+<div align="center"><strong>Table 1-1 Operating Environment</strong></div>
 <table class="table-alt">
   <tr style="text-align: center;">
-    <th>環境</th>
-    <th>備考</th>
+    <th>Environment</th>
+    <th>Remarks</th>
   </tr>
   <tr>
     <td><a href="http://java.sun.com/javase/downloads/index_jdk5.jsp">Java Development Kit 5.0 (JDK 5) </a><br>(http://java.sun.com/products/archive/j2se/5.0_14/index.html )</td>
-    <td>注意：Java1.4 では動作しません.</td>
+    <td>Note: It does not work with Java 1.4.</td>
   </tr>
 </table>
 <br>
 <br>
-　OpenRTM-aist-Java のインストール方法の詳細につきましては、[「OpenRTM-aist-Java インストールマニュアル(UNIX)」](/ja/node/804)あるいは[「OpenRTM-aist-Java インストールマニュアル(Windows)」](/ja/node/807)を参照してください。特に、次のことを確認してから以下の作業に移ってください。
-- 「java -version」を実行したときのバージョンが上記 JDKと一致すること
+For details on how to install OpenRTM-aist-Java, refer to the ["OpenRTM-aist-Java Installation Manual (UNIX)"](/en/node/804) or the ["OpenRTM-aist-Java Installation Manual (Windows)"](/en/node/807). In particular, check the following before proceeding with the work below.
+- The version displayed when executing "java -version" matches the JDK above
 <!-- ---環境変数 JAVA_HOME に上記JDKのインストールフォルダーが設定されていること -->
-- 環境変数 RTM_JAVA_ROOT に OpenRTM-aist-Java のライブラリへのパス（ベースパス）が設定されていること
+- The path (base path) to the OpenRTM-aist-Java library is set in the environment variable RTM_JAVA_ROOT
 <!-- ---<JAVA_HOME>\jre\lib\ext\にOpenRTM-aist-0.4.x.jarとcommons-cli-1.1.jar が存在すること -->
-- <RTM_JAVA_ROOT>で設定されるパスの直下のディレクトリー「jar」内にライブラリファイル OpenRTM-aist-0.4.x.jar と commons-cli-1.1.jar が存在すること（クラスパスとして設定するため）**※**
-:　**※** [こちら ](/ja/node/6426#Antbuild)を参考に独自のクラスパスの設定も可能です。|
+- The library files OpenRTM-aist-0.4.x.jar and commons-cli-1.1.jar exist in the directory "jar" directly under the path set by <RTM_JAVA_ROOT> (to set them as the classpath) **Note**
+: **Note** It is also possible to set your own classpath by referring to [this page ](/en/node/6426#Antbuild).|
 
 <br>
 
-**◆参考:**
-  - [ JDK 5 インストール方法（UNIX） ](/ja/node/805/)、[ JDK 5 インストール方法（Windows） ](/ja/node/807)
-  - [ システム環境変数の設定方法（UNIX）](/ja/node/804#hensu)、[ システム環境変数の設定方法（Windows） ](/ja/node/807#javazip)
+**◆Reference:**
+  - [ JDK 5 installation method (UNIX) ](/en/node/805/), [ JDK 5 installation method (Windows) ](/en/node/807)
+  - [ How to set system environment variables (UNIX)](/en/node/804#hensu), [ How to set system environment variables (Windows) ](/en/node/807#javazip)
 <!-- --[[OpenRTM-aist-Java-0.4 のインストール（UNIX） >/ja/node/659#instjava04]][[OpenRTM-aist-Java-0.4のインストール（Windows） >/ja/node/666#instjava04]] -->
 <!-- --[[FAQ: 「java -version」がインストールした JDK とは違うバージョンとなります（Windows） >/ja/node/1190#JDKver]] -->
-  - [FAQ: Javaをインストールする際の FedoraCore での対応 ](/ja/node/6425#javafedora)
-  - [FAQ: 任意のフォルダーにクラスパスを設定してAnt ビルドを行う方法は？ ](/ja/node/6426#Antbuild)
+  - [FAQ: Support for FedoraCore when installing Java ](/en/node/6425#javafedora)
+  - [FAQ: How can I set a classpath to any folder and perform an Ant build? ](/en/node/6426#Antbuild)
 <br>
 
 &aname(javacomp);
-# Java版RTコンポーネントの開発について 
-　ここでは、Java版 RTコンポーネントの開発を行う場合の手順をご紹介します。サンプルとして以下のような仕様のコンポーネントを取り上げます。<br>
-<div align="center"><strong>表 2-1 サンプルコンポーネントの仕様</strong><br><br></div>
+# About Developing Java RT Components 
+Here, we introduce the procedure for developing Java RT components. As a sample, we will use a component with the following specifications.<br>
+<div align="center"><strong>Table 2-1 Sample Component Specifications</strong><br><br></div>
 
 <table class="table-alt">
   <tr>
-    <td colspan="2" style="text-align: center;"><strong>基本プロファイル</strong></td>
+    <td colspan="2" style="text-align: center;"><strong>Basic Profile</strong></td>
   </tr>
   <tr>
-    <td>コンポーネント名</td>
+    <td>Component name</td>
     <td>sample</td>
   </tr>
   <tr>
-    <td>説明</td>
+    <td>Description</td>
     <td>SampleComponent</td>
   </tr>
   <tr>
-    <td>バージョン</td>
+    <td>Version</td>
     <td>1.0</td>
   </tr>
   <tr>
-    <td>ベンダ</td>
+    <td>Vendor</td>
     <td>AIST</td>
   </tr>
   <tr>
-    <td>カテゴリ</td>
+    <td>Category</td>
     <td>example</td>
   </tr>
   <tr>
-    <td>コンポーネントの型</td>
+    <td>Component type</td>
     <td>DataFlowComponent</td>
   </tr>
   <tr>
-    <td>アクティビティタイプ</td>
+    <td>Activity type</td>
     <td>SPORADIC</td>
   </tr>
   <tr>
-    <td>最大インスタンス数</td>
+    <td>Maximum number of instances</td>
     <td>5</td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;"><strong>データInPort</strong></td>
+    <td colspan="2" style="text-align: center;"><strong>Data InPort</strong></td>
   </tr>
   <tr>
-    <td>名称</td>
+    <td>Name</td>
     <td>in</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedLong</td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;"><strong>サービスProvider</strong></td>
+    <td colspan="2" style="text-align: center;"><strong>Service Provider</strong></td>
   </tr>
   <tr>
-    <td>IDLパス</td>
-    <td>IDLs/MyService.idl  <strong>※</strong></td>
+    <td>IDL path</td>
+    <td>IDLs/MyService.idl  <strong>Note</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port name</td>
     <td>MySvcPort</td>
   </tr>
   <tr>
-    <td>サービス名</td>
+    <td>Service name</td>
     <td>myservice0</td>
   </tr>
   <tr>
-    <td>サービス型</td>
+    <td>Service type</td>
     <td>MyService</td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;"><strong>コンフィギュレーションパラメーター</strong></td>
+    <td colspan="2" style="text-align: center;"><strong>Configuration Parameter</strong></td>
   </tr>
   <tr>
-    <td>名称</td>
+    <td>Name</td>
     <td>multiply</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>int</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default value</td>
     <td>1</td>
   </tr>
 </table>
 
 <br>
-**※** MyService.idl は適当なエディタを用いて以下のような IDL ファイルを作成します。また、上の表中の「IDLパス」はMyService.idl のパスを記述します。Windowsの場合は、この「IDLパス」が MyService.idl へのフルパスでなければなりません。
+**Note** Create the following IDL file, MyService.idl, using an appropriate editor. Also, describe the path to MyService.idl in the "IDL path" in the table above. In Windows, this "IDL path" must be the full path to MyService.idl.
 
 ```
  typedef sequence<string> EchoList;
@@ -156,181 +155,181 @@ init
 ```
 <div align="center"><strong>MyService.idl</strong></div>
 <br>
-なお、上記 MyService.idl は OpenRTM-aist-0.4-Java に付属するサンプルの「examples/Java/RTMExamples/SimpleService」ディレクトリー内にあるものと同一です。
+The above MyService.idl is identical to the one in the "examples/Java/RTMExamples/SimpleService" directory of the samples included with OpenRTM-aist-0.4-Java.
 <br>
 <br>
 
 
-## GUI を用いた場合の RTコンポーネントの開発手順 
-　GUI ツールである RtcTemlate を用いて、RTコンポーネントを開発手順を説明します。RtcTemplate の詳細については[RtcLink・RtcTemplateのインストール](/node/)および[RtcTemplate](/node/)を参照してください。
-### RtcTemplate と JDT の連携
-- **Eclipse を「新規」に開く**<br>
-　RTコンポーネントの開発は、統合開発環境 Eclipse のプロジェクトから行うことも可能です。新しいワークスペースを指定して [OK] ボタンをクリックします。Eclipse が起動します。（このとき「ようこそ」という画面が表示される場合がありますが、これは閉じます。）<br>
+## Procedure for Developing RT Components Using the GUI 
+This section explains the procedure for developing RT components using RtcTemlate, a GUI tool. For details on RtcTemplate, refer to [Installing RtcLink and RtcTemplate](/node/) and [RtcTemplate](/node/).
+### Integration of RtcTemplate and JDT
+- **Open Eclipse as "New"**<br>
+RT components can also be developed from projects in the Eclipse integrated development environment. Specify a new workspace and click the [OK] button. Eclipse starts. (At this time, a "Welcome" screen may be displayed; close it.)<br>
 
 <div align="center"><a href="CheckedWorkSpace2.png"><img src="CheckedWorkSpace2.png" width="60%;"></a></div>
-<div align="center"><strong>図 2-2 新規の Workspace を指定</strong></div>
+<div align="center"><strong>Figure 2-2 Specifying a new Workspace</strong></div>
 
 <br>
 
-- **Java プロジェクトファイルの作成**<br>
-　上部メニューから [ファイル] > [新規] > [プロジェクト] を選択します。<br>
+- **Creating a Java Project File**<br>
+Select [File] > [New] > [Project] from the top menu.<br>
 <div align="center"><a href="MakeProjectForBulid1.png"><img src="MakeProjectForBulid1.png" width="60%;"></a></div>
-<div align="center"><strong>図 2-3 ビルド用プロジェクトの作成　１</strong></div>
+<div align="center"><strong>Figure 2-3 Creating a build project 1</strong></div>
 <br>
 
-　｢新規プロジェクト｣ウィザード内で｢Javaプロジェクト｣を選択し、[次へ] ボタンをクリックします。|<br>
+In the "New Project" wizard, select "Java Project" and click the [Next] button.|<br>
 <div align="center"><a href="MakeProjectForBulid2.png"><img src="MakeProjectForBulid2.png" width="60%;"></a></div>
-<div align="center"><strong>図 2-4 ビルド用プロジェクトの作成　２</strong></div>
+<div align="center"><strong>Figure 2-4 Creating a build project 2</strong></div>
 <br>
 
-　｢新規プロジェクト｣ウィザードの次のステップで、作成する｢プロジェクト名｣を入力します。｢JDK準拠｣グループ内の設定が｢5.0｣以上（あるいは1.5以上）となっていることを確認した上で、[次へ] ボタンをクリックします（**図 2-5**）。一方、環境によっては「JDK準拠」フレームであるところが「JRE」フレームとなっており、プルダウンメニューから JDK5（あるいはJDK1.5）が選択できない場合があります（**図 2-5**'）。その場合は、[こちら ](/ja/node/159#errorjavaJDK)を参照してJDKを選択できるようにします。|<br>
+In the next step of the "New Project" wizard, enter the "Project name" to be created. Confirm that the setting in the "JDK Compliance" group is "5.0" or higher (or 1.5 or higher), and then click the [Next] button (**Figure 2-5**). On the other hand, depending on the environment, the "JDK Compliance" frame may be a "JRE" frame, and JDK5 (or JDK1.5) may not be selectable from the pull-down menu (**Figure 2-5**'). In that case, refer to [this page ](/en/node/159#errorjavaJDK) to make it possible to select the JDK.|<br>
 <div align="center"><a href="MakeProjectForBulid3.png"><img src="MakeProjectForBulid3.png" width="60%;"></a></div>
-<div align="center"><strong>図 2-5 ビルド用プロジェクトの作成　３</strong></div>
+<div align="center"><strong>Figure 2-5 Creating a build project 3</strong></div>
 <br>
 
 <div align="center"><a href="PullDownMenu_Default.png"><img src="PullDownMenu_Default.png" width="60%;"></a></div>
 <!-- #ref(http://openrtm.a01.aist.go.jp/~chbi/PullDownMenu_Default.png,nolink,center) -->
-<div align="center"><strong>図 2-5' 環境によっては JDK を選択できない</strong></div>
+<div align="center"><strong>Figure 2-5' Depending on the environment, the JDK may not be selectable</strong></div>
 
 <br>
 
 
-- **参考：**
-  - → [FAQ: Q. 新規 Java プロジェクトが JDK5 (1.5) 準拠として作成できない ](/ja/node/159#errorjavaJDK)|
+- **Reference:**
+  - → [FAQ: Q. A new Java project cannot be created as JDK5 (1.5) compliant ](/en/node/159#errorjavaJDK)|
 <br>
 <br>
 <br>
 
-　表示された｢新規 Java プロジェクト｣画面において、生成するプロジェクトの各種設定を行い [終了] ボタンをクリックします。|
+In the displayed "New Java Project" screen, configure various settings for the project to be generated and click the [Finish] button.|
 
 <div align="center"><a href="ProjectSettings.png"><img src="ProjectSettings.png" width="60%;"></a></div>
-<div align="center"><strong>図 2-6 プロジェクトの各種設定をして終了</strong></div>
+<div align="center"><strong>Figure 2-6 Complete after configuring various project settings</strong></div>
 
-　指定したプロジェクトが生成され、｢パッケージ・エクスプローラービュー｣内に表示されます。|
+The specified project is generated and displayed in the "Package Explorer View".|
 
 <div align="center"><a href="PackageExplorerView.png"><img src="PackageExplorerView.png" width="60%;"></a></div>
 
-<div align="center"><strong>図 2-7 パッケージエクスプローラビューの表示例</strong></div>
+<div align="center"><strong>Figure 2-7 Example display in the Package Explorer view</strong></div>
 <br>
 <br>
-- **自動ビルドを無効に**<br>
-　Eclipse のメニューバーの [プロジェクト] > [自動的にビルド] がオンになっている場合は、チェックをはずし無効にしておいた方がいいでしょう。
-<br>
-<br>
-
-
-**※** プロジェクトの作成時の各種オプション、設定など Eclipse に関する詳細は、[Eclipse のサイト](http://www.eclipse.org/)などを参照してください。<br><br>
-<br>
-<br>
-### RtcTemplate を利用したスケルトン・コードの生成 
-- **GUI版RtcTemplate エディタの起動**
-　RtcTemplate のエディタ画面を起動します。
-
-<br>
-
-- **参考：**
-  - →　[RtcTemplate を直接起動する](/ja/node/737#startTemplate)
-**※** RtcTemplate の使用方法等につきましては、[RtcTemplate](/node)を参照してください。
+- **Disable automatic build**<br>
+If [Project] > [Build Automatically] in the Eclipse menu bar is turned on, it is better to clear the check and disable it.
 <br>
 <br>
 
-- **RtcTemplate エディタで設定項目を編集**
-　GUI版の RtcTemplate を使用して[表2-1>#javacomp](#javacomp)の仕様を持つ RTコンポーネントのスケルトン・コードを生成させる場合の設定を以下に示します。
+
+**Note** For details about Eclipse, such as options and settings when creating a project, refer to the [Eclipse site](http://www.eclipse.org/) and other resources.<br><br>
+<br>
+<br>
+### Generating Skeleton Code Using RtcTemplate 
+- **Starting the GUI RtcTemplate Editor**
+Start the RtcTemplate editor screen.
+
+<br>
+
+- **Reference:**
+  - → [Starting RtcTemplate directly](/en/node/737#startTemplate)
+**Note** For information on how to use RtcTemplate, refer to [RtcTemplate](/node).
+<br>
+<br>
+
+- **Editing settings in the RtcTemplate editor**
+The settings for generating skeleton code for an RT component with the specifications shown in [Table 2-1>#javacomp](#javacomp) using the GUI version of RtcTemplate are shown below.
 <br>
 
 <div align="center"><a href="GUIrtc-templateSetting1.png"><img src="GUIrtc-templateSetting1.png" width="60%;"></a></div>
 
 <div align="center"><a href="GUIrtc-templateSetting2.png"><img src="GUIrtc-templateSetting2.png" width="60%;"></a></div>
-<div align="center"><strong>図 2-8 GUI RtcTemplateの設定</strong></div>
+<div align="center"><strong>Figure 2-8 GUI RtcTemplate settings</strong></div>
 <br>
 <br>
-**注** ：Windowsの場合、上記 ｢Output directory｣ や「IDL path: 」などはフルパスで記述すること。
+**Note**: In Windows, describe the above "Output directory" and "IDL path:" as full paths.
 <br>
 <br>
 
-- **[Generate] ボタンでコードを生成**<br>
-　[Generate] ボタンをクリックし、コード生成を実行する。このとき必ず、RtcTemplate エディタ最下段の ｢Output directory｣ 欄に、先に生成したプロジェクトのディレクトリーを指定すること（**※** 図 2-8では「temp」となっている）。
+- **Generate code with the [Generate] button**<br>
+Click the [Generate] button to execute code generation. At this time, be sure to specify the directory of the project generated earlier in the "Output directory" field at the bottom of the RtcTemplate editor (**Note** In Figure 2-8, it is "temp").
 
 <br>
 
 
 <div><a href="GenCode.png"><img src="GenCode.png" width="70%;" align="center"></a></div><br>
-<div align="center"><strong>図 2-9 コードを生成</strong></div>
+<div align="center"><strong>Figure 2-9 Generating code</strong></div>
 <br>
 
 
 
-- **生成された各種ファイルがプロジェクトに追加**
+- **Generated files are added to the project**
 
-　｢Output directory｣として指定したディレクトリーに以下のファイルが生成されます。
-  - Sample.java　・・・・・・・・・・・・・・・・・・・　Component Profile、初期化処理などを定義したクラス
-  - Sampleimpl.java　・・・・・・・・・・・・・・・　RTコンポーネント本体クラス
-  - SampleComp.java　・・・・・・・・・・・・・　RTコンポーネント起動用クラス
-  - MyServiceSVC_impl.java　・・・・・・・  サービス実装クラス
-  - build_Sample.xml　・・・・・・・・・・・・・・  RTコンポーネント　ビルドファイル
-  - README.Sample　・・・・・・・・・・・・・・　 Read Meファイル
+The following files are generated in the directory specified as "Output directory".
+  - Sample.java ................................ Component Profile, class defining initialization processing, etc.
+  - Sampleimpl.java ...................... RT component main class
+  - SampleComp.java ................... RT component startup class
+  - MyServiceSVC_impl.java ......... Service implementation class
+  - build_Sample.xml ................... RT component build file
+  - README.Sample ................... Read Me file
 
 <br>
-　｢Output directory｣欄にプロジェクトのディレクトリーを指定することにより、生成された各種ファイルがプロジェクトへ（自動的に）追加されることになります。
+By specifying the project directory in the "Output directory" field, the generated files are added to the project (automatically).
 
 
 <div align="center"><a href="Done.png"><img src="Done.png" width="70%;"></a></div>
-<div align="center"><strong>図 2-10 各種ファイルの追加</strong></div>
+<div align="center"><strong>Figure 2-10 Adding various files</strong></div>
 <br>
 
-**※** コード生成が完了しても生成されたファイルの内容がプロジェクトの｢パッケージ・エクスプローラ｣に反映されていない場合があります。対象プロジェクトを右クリックして表示されるコンテキストメニュー内から [更新] を選択して、情報の更新を行うことができます。
+**Note** Even after code generation is complete, the contents of the generated files may not be reflected in the project's "Package Explorer". You can update the information by right-clicking the target project and selecting [Refresh] from the context menu that appears.
 <div align="center"><a href="UpdateProject.png"><img src="UpdateProject.png" width="50%;"></a></div>
-<div align="center"><strong>図 2-11 プロジェクト表示の更新</strong></div>
+<div align="center"><strong>Figure 2-11 Updating the project display</strong></div>
 <br>
 
-**※** サービスポートを定義している RTコンポーネントの場合、Rtctemplate が生成したファイルだけではエラーが表示されます。これは該当するファイルが、IDL ファイルから自動生成されるクラスを利用しているためです。これらのクラスはビルド実行時に自動生成されます。<br><br>
+**Note** In the case of an RT component that defines a service port, errors will be displayed with only the files generated by Rtctemplate. This is because the corresponding files use classes that are automatically generated from the IDL file. These classes are automatically generated when the build is executed.<br><br>
 <br>
 
-**※**クラスパスが有効となる場所に、OpenRTM-aist-Java がインストールされていない場合、エラーが表示されます。この場合、プロジェクトのプロパティから OpenRTM-aist-Java のインストールフォルダー（ディレクトリー）を指定してください。
+**Note** If OpenRTM-aist-Java is not installed in a location where the classpath is valid, errors will be displayed. In this case, specify the OpenRTM-aist-Java installation folder (directory) from the project properties.
 <br>
 
 <div align="center"><a href="ProjectContextMenu.png"><img src="ProjectContextMenu.png" width="50%;"></a></div>
-<div align="center"><strong>図 2-12 プロジェクトを右クリック</strong></div>
+<div align="center"><strong>Figure 2-12 Right-clicking the project</strong></div>
 
 <br>
 
 <div align="center"><a href="ProjectProperty.png"><img src="ProjectProperty.png" width="50%;"></a></div>
-<div align="center"><strong>図 2-13 OpenRTM-aist-Javaへのパスを追加</strong></div>
+<div align="center"><strong>Figure 2-13 Adding the path to OpenRTM-aist-Java</strong></div>
 <br>
 
 <br>
 
-- **IDLファイルを｢Output directory｣に追加**<br>
-　RtcTemplate エディタ上の「IDL path:」で指定したIDLファイルを、生成されたJavaソースコードが配置される｢Output directory｣に手動でコピーします。
+- **Adding the IDL file to the "Output directory"**<br>
+Manually copy the IDL file specified by "IDL path:" in the RtcTemplate editor to the "Output directory" where the generated Java source code is placed.
 <br>
 
 <br>
-### Eclipseを用いたビルド
+### Building with Eclipse
 
-- **Antビルド**~
-　パッケージ・エクスプローラー内の build_Sample.xml を右クリックし、表示されるコンテキストメニュー中から [実行] > [Antビルド] を選択することで、対象 RTコンポーネントのビルドを行うことが可能です。自作の jar ライブラリ等を使う必要があったり、OpenRTM-aist を違う場所にインストールしたなどの事情でクラスパスを任意の場所に設定してビルドするには[こちら ](/ja/node/159#Antbuild)を参照してください。<br>
+- **Ant build**~
+You can build the target RT component by right-clicking build_Sample.xml in the Package Explorer and selecting [Run] > [Ant Build] from the displayed context menu. If you need to use your own jar libraries, or if OpenRTM-aist is installed in a different location, refer to [this page ](/en/node/159#Antbuild) to build by setting the classpath to any location.<br>
 
 <div align="center"><a href="BuildProject.png"><img src="BuildProject.png" width="70%;"></a></div>
-<div align="center"><strong>図 2-14 プロジェクトのビルド</strong></div>
+<div align="center"><strong>Figure 2-14 Building the project</strong></div>
 <br>
 
 <div align="center"><a href="BuildProject-consoleview.png"><img src="BuildProject-consoleview.png" width="70%;"></a></div>
-<div align="center"><strong>図 2-15 ビルド実行時のコンソール画面</strong><br></div>
+<div align="center"><strong>Figure 2-15 Console screen when executing the build</strong><br></div>
 <br>
 
-ビルドが成功すると、プロジェクト内の｢classes｣ディレクトリーに classファイルが生成されます。<br><br>
+When the build succeeds, class files are generated in the "classes" directory in the project.<br><br>
 <br>
 <br>
-- **参考**
-  - [**FAQ**:Q. 任意のフォルダーにクラスパスを設定して Ant ビルドを行う方法は？ ](/ja/node/159#Antbuild)|
+- **Reference**
+  - [**FAQ**: Q. How can I set a classpath to any folder and perform an Ant build? ](/en/node/159#Antbuild)|
 <br>
 <br>
 <br>
 
-## 作成した RTコンポーネントの実行
+## Executing the Created RT Component
 
-- **rtc.confの作成**<br>
-　プロジェクト内の｢classes｣に以下のような内容のファイル **rtc.conf** を作成しておきます。
+- **Creating rtc.conf**<br>
+Create a file named **rtc.conf** with the following contents in "classes" in the project.
 
 <br>
 
@@ -341,21 +340,21 @@ init
 <div align="center"><strong>rtc.conf</strong></div>
 <br>
 
-なお、上記 **rtc.conf** は OpenRTM-aist-0.4-Java に付属しているサンプルの「examples/Java/RTMExamples/SimpleService」ディレクトリー内にあるものと同一です。
+The above **rtc.conf** is identical to the one in the "examples/Java/RTMExamples/SimpleService" directory of the samples included with OpenRTM-aist-0.4-Java.
 <br>
 <br>
-- **ネームサーバーと RtcLink の起動**~
-　OpenRTM-aist-0.4-Java に付属のツールで「bin」ディレクトリー内にある start-orbd.vbs をダブルクリック（Windows）し、あるいは、start-orbd.sh を実行（UNIX）し、ネームサーバーを起動しておきます。また、[RtcLink](/node/)を起動しておきます。
-  - 参考：
-    - [ ネームサーバの起動(UNIX) ](/ja/node/660#samplecomponent)、[ ネームサーバの起動(Windows) ](/ja/node/667#javasample)
-    - [RtcLink の起動 >RtcLink#startRtcLink](/node/)
+- **Starting the name server and RtcLink**~
+Start the name server by double-clicking start-orbd.vbs in the "bin" directory included with OpenRTM-aist-0.4-Java (Windows), or by executing start-orbd.sh (UNIX). Also start [RtcLink](/node/).
+  - Reference:
+    - [ Starting the name server (UNIX) ](/en/node/660#samplecomponent), [ Starting the name server (Windows) ](/en/node/667#javasample)
+    - [Starting RtcLink >RtcLink#startRtcLink](/node/)
 <br>
 <br>
-- **RTコンポーネントの実行**<br>
-　コマンドプロンプトあるいはターミナルを起動して、前述｢classes｣ディレクトリーをカレントとします。
+- **Executing the RT component**<br>
+Start a command prompt or terminal and make the above-mentioned "classes" directory the current directory.
 <!-- > java SampleComp -->
 
-  - **UNIX系システムの場合**
+  - **For UNIX systems**
 
 ```
  $ java -classpath .:$RTM_JAVA_ROOT/jar/OpenRTM-aist-0.4.1.jar:$RTM_JAVA_ROOT/jar/commons-cli-1.1.jar SampleComp
@@ -366,7 +365,7 @@ init
  $ java SampleComp
 ```
 
-  - **Windows系システムの場合**
+  - **For Windows systems**
  
 ```
  > java -classpath ".;%RTM_JAVA_ROOT%\jar\OpenRTM-aist-0.4.1.jar;%RTM_JAVA_ROOT%\jar\commons-cli-1.1.jar" SampleComp
@@ -376,71 +375,71 @@ init
  > set CLASSPATH=.;%RTM_JAVA_ROOT%\jar\OpenRTM-aist-0.4.1.jar;%RTM_JAVA_ROOT%\jar\commons-cli-1.1.jar
  > java SampleComp
 ```
-というコマンドを実行すれば、RtcLink上に RTコンポーネントがあらわれます。
+By executing these commands, the RT component appears in RtcLink.
 
 <br>
 <br>
 
 <div align="center"><a href="JavaSampleOnRtcLink.png"><img src="JavaSampleOnRtcLink.png" width="70%;"></a></div>
-<div align="center"><strong>図 2-16 Sample コンポーネントを実行に成功したときの RtcLink の状態</strong></div>
+<div align="center"><strong>Figure 2-16 RtcLink state when successfully executing the Sample component</strong></div>
 <br>
 
 <br>
-# Java版 RTコンポーネントの詳細 
-## Java版 RTコンポーネントの構成 
-Java版 RTコンポーネントのソースファイルと、各ファイル内で実行している概略機能との関係を図3-1に示します。また、比較のために C++版 RTコンポーネントおよび OpenRTM-aist-0.3用 Java版 RTコンポーネントの構成も併せて示します。<br>
+# Details of Java RT Components 
+## Structure of Java RT Components 
+Figure 3-1 shows the relationship between the source files of a Java RT component and the outline functions executed in each file. For comparison, the structures of C++ RT components and Java RT components for OpenRTM-aist-0.3 are also shown.<br>
 <div align="center"><a href="InnerRTcomponents.png"><img src="InnerRTcomponents.png" width="70%;"></a></div>
-<div align="center"><strong>図3-1 RTコンポーネントの構成</strong></div>
+<div align="center"><strong>Figure 3-1 Structure of an RT component</strong></div>
 <br>
 
 
-既存の C++版 RTコンポーネントと Java版 RTコンポーネントを比較した場合、以下の点が異なります。<br>
-- RTコンポーネント機能の実体の分離
-Java版 RTコンポーネントでは、起動処理の関係などから、RTコンポーネント機能の実体をXXXImplクラス (図3-1中では\<Sample>Impl.java) 側へ移動しております。これに伴い、元々の RTコンポーネントクラス(図3-1中では\<Sample>.java)側では Component Profile 定義と、各種コンポーネント生成用処理のみが残った形となっております。<br>
-- コールバック関数のインターフェース化
-C++版 RTコンポーネントにてコールバック関数として定義されていた部分が、Java版 RTコンポーネントではインターフェース化されています。<br>
-  - ModuleInitProc：コンポーネント起動クラス起動用インターフェース
-  - RtcNewFunc：RTコンポーネント生成用インターフェース
-  - RtcDeleteFunc：RTコンポーネント破棄用インターフェース
+When comparing existing C++ RT components and Java RT components, the following points differ.<br>
+- Separation of the actual RT component functionality
+In Java RT components, due to startup processing and other factors, the actual RT component functionality has been moved to the XXXImpl class (<Sample>Impl.java in Figure 3-1). Accordingly, in the original RT component class (<Sample>.java in Figure 3-1), only the Component Profile definition and various component generation processing remain.<br>
+- Conversion of callback functions into interfaces
+The parts defined as callback functions in C++ RT components have been converted into interfaces in Java RT components.<br>
+  - ModuleInitProc: Interface for starting the component startup class
+  - RtcNewFunc: Interface for generating RT components
+  - RtcDeleteFunc: Interface for destroying RT components
 
-この修正に伴い、コンポーネント起動用クラスは上記インターフェースの実装を行う必要がございます。
+With this modification, the component startup class must implement the above interfaces.
 <br>
 <br>
 
-## Java版 RTコンポーネントと C++版コンポーネントの相違点
+## Differences Between Java RT Components and C++ Components
 
-### データポート
-OpenRTM-aist-Java では、データの受け渡しを行うためにホルダクラス(DataRefクラス)を追加しています。そのため、データポートの定義および利用方法が以下のように変更されております。<br>
+### Data Ports
+OpenRTM-aist-Java adds a holder class (DataRef class) to pass data. Therefore, the definition and usage of data ports have been changed as follows.<br>
 <br>
 
 <div align="center"><a href="java_dataport.png"><img src="java_dataport.png" width="70%;"></a></div>
 
-<br>　データポート使用方法につきましては、｢SeqIO｣｢SimpleIO｣のサンプルをご参照ください。
+<br>For how to use data ports, refer to the "SeqIO" and "SimpleIO" samples.
 <br><br>
 
 
-### サービスポート 
+### Service Ports 
 
-　OpenRTM-aist-Java では、サービスポートを使用するための補助変数(/<サービス名>Base)を追加しております。このため、サービスポートの定義、利用方法が以下のように変更されております。詳細につきましては、｢SimpleService｣のサンプルをご覧ください。<br>
+OpenRTM-aist-Java adds an auxiliary variable (/<service name>Base) for using service ports. Therefore, the definition and usage of service ports have been changed as follows. For details, see the "SimpleService" sample.<br>
 <br>
 
 <div align="center"><a href="java_serviceport.png"><img src="java_serviceport.png" width="70%;"></a></div>
 
 
-### コンフィギュレーション
+### Configuration
 
-データポートの場合と同様、コンフィギュレーションを利用する場合もデータの受け渡しのためにホルダクラスを利用しています。このため、コンフィギュレーション・データの定義、利用方法が以下のように変更されております。<br>
+As with data ports, when using configuration, holder classes are used for passing data. Therefore, the definition and usage of configuration data have been changed as follows.<br>
 <br>
 
 <div align="center"><a href="java_config.png"><img src="java_config.png" width="70%;"></a></div>
 
-コンフィギュレーション・データの使用方法につきましては、｢ConfigSample｣のサンプルをご参照ください。<br>
-OpenRTM-aist-Javaで、コンフィギュレーション・データ用ホルダとして用意しているホルダクラスの種類とデータ型の関係を表3-1に示します。<br>
-<div align="center"><strong>表 3-1 コンフィギュレーション・データ用ホルダ型対応関係</strong><br><br></div>
+For how to use configuration data, refer to the "ConfigSample" sample.<br>
+Table 3-1 shows the relationship between the types of holder classes prepared by OpenRTM-aist-Java for configuration data holders and data types.<br>
+<div align="center"><strong>Table 3-1 Correspondence of Configuration Data Holder Types</strong><br><br></div>
 <table class="table-alt">
   <tr>
-    <th>データ型</th>
-    <th>ホルダ・クラス</th>
+    <th>Data type</th>
+    <th>Holder class</th>
   </tr>
   <tr>
     <td>short</td>
@@ -474,12 +473,12 @@ OpenRTM-aist-Javaで、コンフィギュレーション・データ用ホルダ
 
 
 <br>
-C++版 OpenRTM-aist と同様に、OpenRTM-aist-Java におきましてもユーザーが定義した任意の型についてコンフィグレーション・データ用ホルダを作成することができます。<br>
-コンフィギュレーション・データ用のホルダを実装する場合は、jp.go.aist.rtm.RTC.util.ValueHolder の stringFrom メソッドを実装し、implements節に Serializable インターフェースを追加する必要があります。<br>jp.go.aist.rtm.RTC.util.ValueHolder の stringFrom メソッドは、引数で渡された文字列から対象データ型に変換するためのメソッドです。<br>
-コンフィグレーション・データ用ホルダにつきましては｢ConfigSample｣サンプル内の VectorHolder クラスをご参照ください。<br>
+As with the C++ version of OpenRTM-aist, OpenRTM-aist-Java also allows users to create configuration data holders for any user-defined type.<br>
+When implementing a holder for configuration data, you must implement the stringFrom method of jp.go.aist.rtm.RTC.util.ValueHolder and add the Serializable interface to the implements clause.<br>The stringFrom method of jp.go.aist.rtm.RTC.util.ValueHolder is a method for converting a string passed as an argument into the target data type.<br>
+For configuration data holders, refer to the VectorHolder class in the "ConfigSample" sample.<br>
 
-## Java版 RTコンポーネントの起動時の振る舞い
-C++版 RTコンポーネントの起動時の振る舞いを以下に示します。コンポーネント起動時の振る舞いについては、Java版 RTコンポーネントも基本的には同様な振る舞いとなっておりますが、RTコンポーネント機能の実体が XXXImpl クラスに分離された関係から、コンポーネント生成時、コンポーネント初期化時のメッセージの送信先はXXXクラスへと変更となっております。<br>
+## Startup Behavior of Java RT Components
+The startup behavior of C++ RT components is shown below. The behavior at component startup is basically the same for Java RT components, but because the actual RT component functionality has been separated into the XXXImpl class, the message destination during component generation and component initialization has been changed to the XXX class.<br>
 
 <div align="center"><a href="JavaRTcomponent1.png"><img src="JavaRTcomponent1.png" width="70%;"></a></div>
 <br>
@@ -487,13 +486,13 @@ C++版 RTコンポーネントの起動時の振る舞いを以下に示しま�
 <div align="center"><a href="JavaRTcomponent2.png"><img src="JavaRTcomponent2.png" width="70%;"></a></div>
 <br>
 
-## IDL用データ型と Java言語データ型の対応関係
-CORBA IDL用データ型と Java言語データ型の対応関係を表3-2に示します。<br>
-<div align="center"><strong>表 3-2 データ型対応関係</strong></div>
+## Correspondence Between IDL Data Types and Java Language Data Types
+Table 3-2 shows the correspondence between CORBA IDL data types and Java language data types.<br>
+<div align="center"><strong>Table 3-2 Data Type Correspondence</strong></div>
 <table class="table-alt">
   <tr style="text-align: center;">
     <th>CORBA IDL</th>
-    <th>Java言語</th>
+    <th>Java language</th>
   </tr>
   <tr>
     <td></td>
@@ -568,50 +567,50 @@ CORBA IDL用データ型と Java言語データ型の対応関係を表3-2に示
   </tr>
 </table>
 
-# その他
+# Other
 
 ## Tips
-### Eclipse の自動起動の設定方法について
-- Windows の場合
-  - １．Eclipse プロジェクトのディレクトリーの中から｢.project｣ファイルを選択して右クリックします。表示されたコンテキストメニュー内から [プロパティ] を選択します。~
-※選択する Eclipse プロジェクトは任意のプロジェクトで構いません。
+### How to Configure Automatic Startup of Eclipse
+- For Windows
+  - 1. Select the ".project" file from within the Eclipse project directory and right-click it. Select [Properties] from the context menu that appears.~
+* The Eclipse project to select can be any project.
 
 <br>
 
 <div align="center"><a href="SelectProject.png"><img src="SelectProject.png" width="50%;"></a></div>
-<div align="center"><strong>｢.project｣ファイルを選択</strong></div>
+<div align="center"><strong>Select the ".project" file</strong></div>
 
 
-- ２．表示された｢プロパティ｣画面の｢全般｣タブ内、中段にある｢プログラム｣行右側の [変更] ボタンをクリックします。
+- 2. In the "General" tab of the displayed "Properties" screen, click the [Change] button on the right side of the "Program" row in the middle.
 <div align="center"><a href="Property.png"><img src="Property.png" width="50%;"></a></div>
-<div align="center"><strong>アプリケーションの関連付けの変更</strong></div>
+<div align="center"><strong>Changing the application association</strong></div>
 
-- ３．表示された｢ファイルを開くプログラムの選択｣画面下側にある [参照] ボタンをクリックします。
+- 3. Click the [Browse] button at the bottom of the displayed "Open With" screen.
 <div align="center"><a href="SelectApplication.png"><img src="SelectApplication.png" width="50%;"></a></div>
-<div align="center"><strong>Eclipseを選択</strong></div>
+<div align="center"><strong>Select Eclipse</strong></div>
 
-- ４．ファイル選択画面が表示されるので、自動起動を行う Eclipse がインストールされているディレクトリー内から｢eclipse.exe｣を選択します。
-- ５．｢ファイルを開くプログラムの選択｣画面、｢プロパティ｣ を [OK] ボタンをクリックして閉じます。
+- 4. A file selection screen appears. Select "eclipse.exe" from the directory where the Eclipse to be started automatically is installed.
+- 5. Close the "Open With" screen and "Properties" by clicking the [OK] button.
 <br>
-以上の設定を行うことで、｢.project｣ファイルをダブルクリックすることで指定した Eclipse を自動起動することが可能となります。<br>
+By making the above settings, it becomes possible to automatically start the specified Eclipse by double-clicking the ".project" file.<br>
 <br>
-**※** 複数の Eclipse をインストールしている場合、ダブルクリック動作では上記操作で指定したバージョンの Eclipse が常に起動されますのでご注意ください。<br>
-**※** ダブルクリックを行ったプロジェクトが、起動対象 Eclipse に設定された workspace 内に含まれない場合、起動された Eclipse のパッケージ・エクスプローラー内に表示されません。この場合は、対象プロジェクトを workspace 内にインポートするか、workspace の設定を変更してください。
+**Note** If multiple Eclipses are installed, note that the double-click operation will always start the version of Eclipse specified in the above operation.<br>
+**Note** If the project you double-clicked is not included in the workspace set for the target Eclipse to be started, it will not be displayed in the Package Explorer of the started Eclipse. In this case, import the target project into the workspace or change the workspace settings.
 <br>
 <br>
-- **Linuxの場合**
-  - data オプションにて workspace を指定して Eclipse を起動することが可能です。
+- **For Linux**
+  - It is possible to start Eclipse by specifying the workspace with the data option.
 ```
  > eclipse -data /home/devel/OpenRTM/workspace
 ```
-対象プロジェクトが含まれている workspace を指定してください。
+Specify the workspace that contains the target project.
 <br>
 <br>
 
-## 謝辞
-　OpenRTM-aist-Java は、以下のライブラリを使用して開発されました。これらのプロジェクトの開発と設計にかかわった方々に感謝します。<br>
+## Acknowledgments
+OpenRTM-aist-Java was developed using the following libraries. We thank those involved in the development and design of these projects.<br>
 - Apache Commons CLI 1.1<br>
 
 This product includes software developed by The Apache Software Foundation (http://www.apache.org/ ).
 
--------jp page!!-------
+

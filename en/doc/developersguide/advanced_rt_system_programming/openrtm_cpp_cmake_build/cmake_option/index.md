@@ -1,139 +1,136 @@
 ---
 layout: page
-title: "CMakeのオプション一覧"
+title: "CMake Options"
 ---
--------jp page!!-------
 <!-- Title: CMakeのオプション一覧 -->
 #contents
 
-
-## オプション一覧
+## Option List
 
 <table class="table-alt">
   <tr>
-    <th>名前</th>
-    <th>説明</th>
-    <th>デフォルト</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Default</th>
   </tr>
   <tr>
     <td>CORBA</td>
-    <td>利用するCORBAのライブラリの種類(omniORB、TAO、ORBexpress)</td>
+    <td>Type of CORBA library to use (omniORB, TAO, ORBexpress)</td>
     <td>omniORB</td>
   </tr>
   <tr>
     <td>ORB_ROOT</td>
-    <td>CORBAのライブラリをインストールした場所</td>
-    <td>設定しない場合、Ubuntu、omniORBの場合はFindPkgConfigで検索。それ以外はエラー</td>
+    <td>Directory where the CORBA library is installed</td>
+    <td>If not specified, searched by FindPkgConfig for Ubuntu with omniORB. Otherwise, an error occurs.</td>
   </tr>
   <tr>
     <td>SSL_ENABLE</td>
-    <td>SSLによるセキュアな通信を有効にするためのプラグインを生成するか<br> ON：生成する<br> OFF：生成しない</td>
+    <td>Whether to generate the plugin for secure communication using SSL<br> ON: Generate<br> OFF: Do not generate</td>
     <td>OFF</td>
   </tr>
   <tr>
     <td>HTTP_ENABLE</td>
-    <td>HTTP通信を有効にするためのプラグインを生成するか<br> ON：生成する<br> OFF：生成しない</td>
+    <td>Whether to generate the plugin for HTTP communication<br> ON: Generate<br> OFF: Do not generate</td>
     <td>OFF</td>
   </tr>
   <tr>
     <td>OPENSSL_ROOT</td>
-    <td>OpenSSLの各種ファイルを配置したディレクトリ。Windowsの場合は必須</td>
+    <td>Directory containing the OpenSSL files. Required on Windows.</td>
     <td></td>
   </tr>
   <tr>
     <td>OBSERVER_ENABLE</td>
-    <td>コンポーネントオブザーバーを有効にするかどうか<br> ON：有効<br> OFF：無効</td>
+    <td>Whether to enable the Component Observer<br> ON: Enable<br> OFF: Disable</td>
     <td>OFF</td>
   </tr>
   <tr>
     <td>DOCUMENTS_ENABLE</td>
-    <td>Doxygenでドキュメントを生成するかどうか<br> ON：生成する<br> OFF：生成しない</td>
+    <td>Whether to generate documentation with Doxygen<br> ON: Generate<br> OFF: Do not generate</td>
     <td>OFF</td>
   </tr>
   <tr>
     <td>ROS_ENABLE</td>
-    <td>ROS通信用シリアライザ、インターフェースを生成するか<br> ON：生成する<br> OFF：生成しない</td>
+    <td>Whether to generate serializers and interfaces for ROS communication<br> ON: Generate<br> OFF: Do not generate</td>
     <td>OFF</td>
   </tr>
   <tr>
     <td>FASTRTPS_ENABLE</td>
-    <td>DDS(Fast-RTPS)通信用インターフェースを生成するか<br> ON：生成する<br> OFF：生成しない</td>
+    <td>Whether to generate interfaces for DDS (Fast-RTPS) communication<br> ON: Generate<br> OFF: Do not generate</td>
     <td>OFF</td>
   </tr>
   <tr>
     <td>ROS2_ENABLE</td>
-    <td>ROS2通信用シリアライザを生成するか<br> ON：生成する<br> OFF：生成しない</td>
+    <td>Whether to generate serializers for ROS2 communication<br> ON: Generate<br> OFF: Do not generate</td>
     <td>OFF</td>
   </tr>
   <tr>
     <td>EXAMPLES_ENABLE</td>
-    <td>サンプルコンポーネントを生成するかどうか<br> ON：生成する<br> OFF：生成しない</td>
+    <td>Whether to build sample components<br> ON: Build<br> OFF: Do not build</td>
     <td>ON</td>
   </tr>
   <tr>
     <td>UTILS_ENABLE</td>
-    <td>サンプルコンポーネントを生成するかどうか<br> ON：生成する<br> OFF：生成しない</td>
+    <td>Whether to build utility modules<br> ON: Build<br> OFF: Do not build</td>
     <td>ON</td>
   </tr>
   <tr>
     <td>EXTLIB_ENABLE</td>
-    <td>サンプルコンポーネントを生成するかどうか<br> ON：生成する<br> OFF：生成しない</td>
+    <td>Whether to build external library modules<br> ON: Build<br> OFF: Do not build</td>
     <td>ON</td>
   </tr>
   <tr>
     <td>FLUENTBIT_ENABLE</td>
-    <td>Fluent Bitロガープラグインを生成するかどうか<br> ON：生成する<br> OFF：生成しない</td>
+    <td>Whether to build the Fluent Bit logger plugin<br> ON: Build<br> OFF: Do not build</td>
     <td>OFF</td>
   </tr>
   <tr>
     <td>FLUENTBIT_ROOT</td>
-    <td>Fluent Bitのソースコードのディレクトリ</td>
+    <td>Directory of the Fluent Bit source code</td>
     <td></td>
   </tr>
   <tr>
     <td>OPENSPLICE_ENABLE</td>
-    <td>DDS(OpenSplice)通信用インターフェースを生成するか<br> ON：生成する<br> OFF：生成しない</td>
+    <td>Whether to generate interfaces for DDS (OpenSplice) communication<br> ON: Generate<br> OFF: Do not generate</td>
     <td>OFF</td>
   </tr>
   <tr>
     <td>OPENSPLICE_DIR</td>
-    <td>OpenSpliceをインストールしたディレクトリ</td>
+    <td>Directory where OpenSplice is installed</td>
     <td></td>
   </tr>
   <tr>
     <td>RAPIDXML_DIR</td>
-    <td>rapidxmlを展開したディレクトリ</td>
+    <td>Directory where rapidxml is extracted</td>
     <td></td>
   </tr>
 </table>
 
-### omniORBに関するオプション
+### omniORB Options
 
 <table class="table-alt">
   <tr>
-    <th>名前</th>
-    <th>説明</th>
-    <th>デフォルト</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Default</th>
   </tr>
   <tr>
     <td>OMNI_VERSION</td>
-    <td>omniORBのメジャーバージョン。omniORBを手動でビルド、任意の場所にインストールした場合は必須</td>
-    <td>設定しなかった場合、LinuxでomniORBがpkg-configでインストールした場合は自動的に設定する。それ以外はエラー</td>
+    <td>Major version of omniORB. Required when omniORB is built manually and installed in a custom location.</td>
+    <td>If not specified, it is set automatically when omniORB is installed via pkg-config on Linux. Otherwise, an error occurs.</td>
   </tr>
   <tr>
     <td>OMNI_MINOR</td>
-    <td>omniORBのマイナーバージョン。omniORBを手動でビルド、任意の場所にインストールした場合は必須</td>
-    <td>同上</td>
+    <td>Minor version of omniORB. Required when omniORB is built manually and installed in a custom location.</td>
+    <td>Same as above.</td>
   </tr>
   <tr>
     <td>OMNITHREAD_VERSION</td>
-    <td>omniThreadのバージョン。omniORBを手動でビルド、任意の場所にインストールした場合は必須</td>
-    <td>同上</td>
+    <td>Version of omniThread. Required when omniORB is built manually and installed in a custom location.</td>
+    <td>Same as above.</td>
   </tr>
 </table>
 
-### ビルドを選択可能なモジュールの依存関係
-
+### Dependencies of Buildable Modules
 
 - OBSERVER_ENABLE
 - DOCUMENTS_ENABLE
@@ -141,19 +138,15 @@ title: "CMakeのオプション一覧"
 - UTILS_ENABLE
 - EXTLIB_ENABLE
 
-依存はlibcoil、libRTCのみ。
+These depend only on **libcoil** and **libRTC**.
 
 - SSL_ENABLE
 - ROS_ENABLE
 - FASTRTPS_ENABLE
 
-
-EXTLIB_ENABLEがONになっている必要がある。
-
+**EXTLIB_ENABLE** must be set to **ON**.
 
 - ROS2_ENABLE
 
-FASTRTPS_ENABLEがONになっている必要があるため、FastRTPSTransportのビルドは必須。
+Since **FASTRTPS_ENABLE** must be set to **ON**, building **FastRTPSTransport** is required.
 
-
--------jp page!!-------

@@ -276,7 +276,7 @@ Use either:
 
 You will also use **RobotController**, created in the following tutorial:
 
-* [Tutorial (Introduction to RT Component Development, Raspberry Pi Mouse, Windows)](/ja/node/6550)
+* [Tutorial (Introduction to RT Component Development, Raspberry Pi Mouse, Windows)](/en/node/6550)
 
 Start the **drawGraph** component created in Processing.
 

@@ -1,30 +1,29 @@
 ---
 layout: page
-title: "OpenSplice通信機能の利用"
+title: "Using OpenSplice Communication Functions"
 ---
--------jp page!!-------
 <!-- Title: OpenSplice通信機能の利用 -->
 #contents
 
-Vortex OpenspliceはADLINK社が開発しているOMG DDS 1.4、DDSI-RTPS 2.3仕様の通信ミドルウェアです。
+Vortex OpenSplice is communication middleware developed by ADLINK that conforms to the OMG DDS 1.4 and DDSI-RTPS 2.3 specifications.
 
 - [Data Distribution Service | Vortex OpenSplice | ADLINK](https://www.adlinktech.com/jp/vortex-opensplice-data-distribution-service)
 
-以下ではOpenRTM-aistのOpenSpliceプラグインのインストール、使用手順を説明します。
-## C++版
+The following explains how to install and use the OpenSplice plugin for OpenRTM-aist.
+## C++ Version
 ### Windows
-#### OpenSpliceの入手
-以下からOpenSpliceをダウンロードして適当な場所に展開してください。
+#### Obtaining OpenSplice
+Download OpenSplice from the following and extract it to an appropriate location.
 
 - [Releases · ADLINK-IST/opensplice](https://github.com/ADLINK-IST/opensplice/releases)
 
-#### RapidXmlの入手
-以下からRapidXmlをダウンロードして適当な場所に展開してください。
+#### Obtaining RapidXml
+Download RapidXml from the following and extract it to an appropriate location.
 
 - [RapidXml](http://rapidxml.sourceforge.net/)
 
-展開したら新たに**rapidxml**フォルダを作成してヘッダーファイル(.hpp)をそこに移動させてください。
-この時、展開したパスは以下のようになっています。
+After extracting it, create a new **rapidxml** folder and move the header files (.hpp) there.
+At this time, the extracted path should look like the following.
 
 ```
  rapidxml-1.13
@@ -36,60 +35,60 @@ Vortex OpenspliceはADLINK社が開発しているOMG DDS 1.4、DDSI-RTPS 2.3仕
 ```
 
 
-#### OpenRTM-aistのビルド
-OpenRTM-aistをビルドする前に、OpenSpliceの**release.bat**を実行します。
+#### Building OpenRTM-aist
+Before building OpenRTM-aist, run the OpenSplice **release.bat**.
 
 ```
  %OpenSplice_DIR%\x86.win32\release.bat
 ```
 
-CMake実行時に**OPENSPLICE_ENABLE**オプションを**ON**に設定し、**RAPIDXML_DIR**オプションにRapidXmlを展開したパスを指定します。
+When running CMake, set the **OPENSPLICE_ENABLE** option to **ON**, and specify the path where RapidXml was extracted in the **RAPIDXML_DIR** option.
 
 ```
  cmake -DORB_ROOT=C:/workspace/omniORB-4.2.3-win64-vc16 -G "Visual Studio 16 2019" -DOPENSPLICE_ENABLE=ON -DRAPIDXML_DIR=%RAPIDXML_DIR% ..
 ```
 
-その他の手順は通常と同じです。
+The other steps are the same as usual.
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aist Build Procedure]({{ site.baseurl }}/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
 
-適当な場所にインストールしてください。
+Install it in an appropriate location.
 
-インストールするディレクトリは**CMAKE_INSTALL_PREFIX**のオプションで設定します。
+The installation directory is set with the **CMAKE_INSTALL_PREFIX** option.
 
 ```
  cmake .. -DCMAKE_INSTALL_PREFIX=C:/workspace/OpenRTM-aist/build/install
  cmake --build . --config Release --target install
 ```
 
-#### 動作確認
+#### Operation Check
 
 
-**{インストールしたパス}\2.0.0\Components\C++\Examples\vc16**のサンプルコンポーネントを実行します。
-RTC起動前にOpenSpliceの**release.bat**を実行してください。
+Run the sample components in **{installed path}\2.0.0\Components\C++\Examples\vc16**.
+Before starting the RTCs, run the OpenSplice **release.bat**.
 
-以下の内容のrtc.confを作成してください。
+Create rtc.conf with the following content.
 
 
 ```
- manager.modules.load_path: {インストールしたパス}\\2.0.0\\ext\\transport
+ manager.modules.load_path: {installed path}\\2.0.0\\ext\\transport
  manager.modules.preload: OpenSpliceTransport.dll
  manager.components.preconnect: ConsoleOut0.in?interface_type=opensplice, ConsoleIn0.out?interface_type=opensplice
  manager.components.preactivation: ConsoleOut0, ConsoleIn0
 ```
 
-まず**OpenSpliceTransport.dll**のロードが必要になります。
-この設定は**manager.modules.preload**のオプションで設定できます。
+First, **OpenSpliceTransport.dll** must be loaded.
+This setting can be configured with the **manager.modules.preload** option.
 
-次にコネクタ生成時にインターフェース型を**opensplice**に設定する必要があります。
-コネクタの生成は**manager.components.preconnect**オプションにより設定します。
-この例では**ConsoleOut0**コンポーネントの**in**のポート、**ConsoleIn0**コンポーネントの**out**のポートにそれぞれコネクタを生成しています。
+Next, when creating the connector, the interface type must be set to **opensplice**.
+Connector creation is configured with the **manager.components.preconnect** option.
+In this example, connectors are created for the **in** port of the **ConsoleOut0** component and the **out** port of the **ConsoleIn0** component.
 
-**ConsoleInComp.exe**、**ConsoleOutComp.exe**を実行すると通信ができるようになります。
+Communication becomes possible by running **ConsoleInComp.exe** and **ConsoleOutComp.exe**.
 
 ### Ubuntu
-#### OpenSpliceの入手
-以下からOpenSpliceをダウンロードして適当な場所に展開してください。
+#### Obtaining OpenSplice
+Download OpenSplice from the following and extract it to an appropriate location.
 
 - https://github.com/ADLINK-IST/opensplice/releases
 
@@ -98,109 +97,109 @@ RTC起動前にOpenSpliceの**release.bat**を実行してください。
  tar xf PXXX-VortexOpenSplice-6.9.210323OSS-HDE-x86_64.linux-gcc7-glibc2.27-installer.tar 
 ```
 
-#### RapidXmlのインストール
-以下のコマンドでRapidXmlをインストールしてください。
+#### Installing RapidXml
+Install RapidXml with the following command.
 
 ```
  sudo apt install librapidxml-dev
 ```
 
-#### OpenRTM-aistのビルド
-OpenRTM-aistをビルドする前に、OpenSpliceの**release.com**を実行します。
+#### Building OpenRTM-aist
+Before building OpenRTM-aist, run the OpenSplice **release.com**.
 
 ```
  source ${OPENSPLICE_DIR}/x86_64.linux/release.com
 ```
 
-CMake実行時に**OPENSPLICE_ENABLE**オプションを**ON**に設定します。
+When running CMake, set the **OPENSPLICE_ENABLE** option to **ON**.
 
 ```
  cmake -DOPENSPLICE_ENABLE=ON ..
 ```
 
-その他の手順は通常と同じです。
+The other steps are the same as usual.
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aist Build Procedure]({{ site.baseurl }}/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
 
-適当な場所にインストールしてください。
+Install it in an appropriate location.
 
-インストールするディレクトリは**CMAKE_INSTALL_PREFIX**のオプションで設定します。
+The installation directory is set with the **CMAKE_INSTALL_PREFIX** option.
 
 ```
  cmake .. -DCMAKE_INSTALL_PREFIX=~/workspace/OpenRTM-aist/build/install
  cmake --build . --config Release --target install
 ```
 
-#### 動作確認
-**{インストールしたパス}/share/openrtm-2.0/components/c++/examples**のサンプルコンポーネントを実行します。
-RTC起動前にOpenSpliceの**release.com**を実行してください。
+#### Operation Check
+Run the sample components in **{installed path}/share/openrtm-2.0/components/c++/examples**.
+Before starting the RTCs, run the OpenSplice **release.com**.
 
-以下の内容のrtc.confを作成してください。
+Create rtc.conf with the following content.
 
 
 ```
- manager.modules.load_path: {インストールしたパス}/lib/openrtm-2.0
+ manager.modules.load_path: {installed path}/lib/openrtm-2.0
  manager.modules.preload: OpenSpliceTransport.so
  manager.components.preconnect: ConsoleOut0.in?interface_type=opensplice, ConsoleIn0.out?interface_type=opensplice
  manager.components.preactivation: ConsoleOut0, ConsoleIn0
 ```
 
-まず**OpenSpliceTransport.so**のロードが必要になります。
-この設定は**manager.modules.preload**のオプションで設定できます。
+First, **OpenSpliceTransport.so** must be loaded.
+This setting can be configured with the **manager.modules.preload** option.
 
-次にコネクタ生成時にインターフェース型を**opensplice**に設定する必要があります。
-コネクタの生成は**manager.components.preconnect**オプションにより設定します。
-この例では**ConsoleOut0**コンポーネントの**in**のポート、**ConsoleIn0**コンポーネントの**out**のポートにそれぞれコネクタを生成しています。
+Next, when creating the connector, the interface type must be set to **opensplice**.
+Connector creation is configured with the **manager.components.preconnect** option.
+In this example, connectors are created for the **in** port of the **ConsoleOut0** component and the **out** port of the **ConsoleIn0** component.
 
-**ConsoleInComp**、**ConsoleOutComp**を実行すると通信ができるようになります。
+Communication becomes possible by running **ConsoleInComp** and **ConsoleOutComp**.
 
-## Python版
+## Python Version
 ### Windows
-#### OpenSpliceのインストール
-まずはOpenSpliceのPythonラッパーライブラリをインストールする必要があります。
+#### Installing OpenSplice
+First, you need to install the OpenSplice Python wrapper library.
 
-適当な場所にビルド済みのOpenSpliceを展開してください。
+Extract the prebuilt OpenSplice to an appropriate location.
 
 - https://github.com/ADLINK-IST/opensplice/releases
 
-次に展開したフォルダの**HDE\x86_64.win64\tools\python\src**で以下のコマンドを実行するとインストールされます。
+Next, run the following commands in **HDE\x86_64.win64\tools\python\src** in the extracted folder to install it.
 
 ```
- {OpenSpliceを展開したディレクトリ}\HDE\x86_64.win64\release.bat
+ {directory where OpenSplice was extracted}\HDE\x86_64.win64\release.bat
  python setup.py build
  python setup.py install
 ```
 
-Cythonをインストールしていない場合は以下のコマンドを実行してください。
+If Cython is not installed, run the following command.
 
 ```
  pip install cython
 ```
 
-※上記のsetup.pyによるビルドにはPythonをビルドしたVisual Studioと同じバージョンのVisual Studioがインストールされている必要があります。
-Python 2.7ではVisual Studio 2008、Python 3.7ではVisual Studio 2017が必要になります。
+* Building with setup.py above requires the same version of Visual Studio as the one used to build Python.
+Python 2.7 requires Visual Studio 2008, and Python 3.7 requires Visual Studio 2017.
 
-#### OpenRTM-aistのインストール
-OpenRTM-aist 1.2等をインストーラーでインストールしておいてください。
-OpenRTM-aist Python版のソースコードを入手してください。
+#### Installing OpenRTM-aist
+Install OpenRTM-aist 1.2 or similar using the installer in advance.
+Obtain the source code of the Python version of OpenRTM-aist.
 
 - https://github.com/OpenRTM/OpenRTM-aist-Python
 
-以下のコマンドでOpenRTM-aist Python版をインストールしてください。
+Install the Python version of OpenRTM-aist with the following commands.
 
 ```
  python setup.py build
  python setup.py install
 ```
 
-#### 動作確認
-動作前に以下のコマンドを実行してください。
+#### Operation Check
+Before operation, run the following command.
 
 ```
-  {OpenSpliceを展開したディレクトリ}\HDE\x86_64.win64\release.bat
+  {directory where OpenSplice was extracted}\HDE\x86_64.win64\release.bat
 ```
 
-以下のようなrtc.confを作成し、**OpenSpliceTransport.py**をロード後、インターフェース型に**opensplice**を指定してRTCを起動します。
+Create an rtc.conf like the following, load **OpenSpliceTransport.py**, specify **opensplice** as the interface type, and start the RTC.
 
 ```
  manager.modules.load_path: C:\\Python37\\Lib\\site-packages\\OpenRTM_aist\\ext\\transport\\OpenSplice
@@ -211,9 +210,9 @@ OpenRTM-aist Python版のソースコードを入手してください。
 
 
 ### Ubuntu
-#### OpenSpliceのインストール
-まずはOpenSpliceのPythonラッパーライブラリをインストールする必要があります。
-以下からOpenSpliceをダウンロードして適当な場所に展開してください。
+#### Installing OpenSplice
+First, you need to install the OpenSplice Python wrapper library.
+Download OpenSplice from the following and extract it to an appropriate location.
 
 - https://github.com/ADLINK-IST/opensplice/releases
 
@@ -222,7 +221,7 @@ OpenRTM-aist Python版のソースコードを入手してください。
  tar xf PXXX-VortexOpenSplice-6.9.210323OSS-HDE-x86_64.linux-gcc7-glibc2.27-installer.tar 
 ```
 
-次に展開したフォルダの**HDE/x86_64.linux/tools/python/src**で以下のコマンドを実行するとインストールされます。
+Next, run the following commands in **HDE/x86_64.linux/tools/python/src** in the extracted folder to install it.
 
 ```
  source ${OPENSPLICE_DIR}/x86_64.linux/release.com
@@ -233,15 +232,15 @@ OpenRTM-aist Python版のソースコードを入手してください。
  # exit
 ```
 
-Cythonをインストールしていない場合は以下のコマンドを実行してください。
+If Cython is not installed, run the following command.
 
 ```
  sudo apt install python3-pip
  pip3 install cython
 ```
 
-#### omniORB-pythonのインストール
-omniORBのPython版をインストールします。
+#### Installing omniORB-python
+Install the Python version of omniORB.
 
 ```
  sudo su
@@ -252,13 +251,13 @@ omniORBのPython版をインストールします。
  # exit
 ```
 
-#### OpenRTM-aistのインストール
-OpenRTM-aist 1.2等をインストーラーでインストールしておいてください。
-OpenRTM-aist Python版のソースコードを入手してください。
+#### Installing OpenRTM-aist
+Install OpenRTM-aist 1.2 or similar using the installer in advance.
+Obtain the source code of the Python version of OpenRTM-aist.
 
 - https://github.com/OpenRTM/OpenRTM-aist-Python
 
-以下のコマンドでOpenRTM-aist Python版をインストールしてください。
+Install the Python version of OpenRTM-aist with the following commands.
 
 ```
  sudo apt install doxygen
@@ -266,10 +265,10 @@ OpenRTM-aist Python版のソースコードを入手してください。
  sudo python3 setup.py install
 ```
 
-#### 動作確認
-動作前に**release.com**を実行してください。
+#### Operation Check
+Before operation, run **release.com**.
 
-以下のようなrtc.confを作成し、**OpenSpliceTransport.py**をロード後、インターフェース型に**opensplice**を指定してRTCを起動します。
+Create an rtc.conf like the following, load **OpenSpliceTransport.py**, specify **opensplice** as the interface type, and start the RTC.
 
 ```
  manager.modules.load_path: /usr/local/lib/python3.6/dist-packages/OpenRTM_aist/ext/transport/OpenSplice
@@ -277,36 +276,36 @@ OpenRTM-aist Python版のソースコードを入手してください。
  manager.components.preconnect: ConsoleOut0.in?interface_type=opensplice&marshaling_type=opensplice, ConsoleIn0.out?interface_type=opensplice&marshaling_type=opensplice
 ```
 
-## 起動時のオプション
+## Startup Options
 ### C++
 
-rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを設定可能です。
-※開発中のOpenRTM-aistでは使用可能ですが、リリースしたバージョンでは未実装の場合があります。
+The following options can be set in rtc.conf when starting the OpenRTM-aist manager.
+* These options can be used in OpenRTM-aist under development, but may not be implemented in released versions.
 
 <table class="table-alt">
   <tr>
-    <th>オプション名</th>
-    <th>設定例</th>
-    <th>オプション</th>
-    <th>内容</th>
+    <th>Option Name</th>
+    <th>Setting Example</th>
+    <th>Options</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>opensplice.uri</td>
     <td>file://OpenSpliceQoSExample.xml</td>
     <td></td>
-    <td>OpenSpliceのQoS設定ファイルを指定する。</td>
+    <td>Specifies the OpenSplice QoS configuration file.</td>
   </tr>
   <tr>
     <td>opensplice.profile</td>
     <td>testProfile</td>
     <td></td>
-    <td>QoSのプロファイル名を指定する。</td>
+    <td>Specifies the QoS profile name.</td>
   </tr>
   <tr>
     <td>opensplice.participant_qos.name</td>
     <td>testParticipant</td>
     <td></td>
-    <td>ロードするDomainParticipantのプロファイル名</td>
+    <td>Profile name of the DomainParticipant to load</td>
   </tr>
   <tr>
     <td>opensplice.participant_qos.entity_factory.autoenable_created_entities</td>
@@ -378,7 +377,7 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
     <td>opensplice.publisher_qos.id</td>
     <td>testPublisher</td>
     <td></td>
-    <td>ロードするPublisherのプロファイル名</td>
+    <td>Profile name of the Publisher to load</td>
   </tr>
   <tr>
     <td>opensplice.subscriber_qos.entity_factory.autoenable_created_entities</td>
@@ -414,11 +413,11 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
     <td>opensplice.subscriber_qos.id</td>
     <td>testSubscriber</td>
     <td></td>
-    <td>ロードするSubscriberのプロファイル名</td>
+    <td>Profile name of the Subscriber to load</td>
   </tr>
 </table>
 
-以下に記述例を記載します。
+A description example is shown below.
 
 ```
  opensplice.uri: file://OpenSpliceQoSExample.xml
@@ -429,22 +428,22 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
 
 <table class="table-alt">
   <tr>
-    <th>オプション名</th>
-    <th>設定例</th>
-    <th>オプション</th>
-    <th>内容</th>
+    <th>Option Name</th>
+    <th>Setting Example</th>
+    <th>Options</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>opensplice.uri</td>
     <td>file://OpenSpliceQoSExample.xml</td>
     <td></td>
-    <td>OpenSpliceのQoS設定ファイルを指定する。</td>
+    <td>Specifies the OpenSplice QoS configuration file.</td>
   </tr>
   <tr>
     <td>opensplice.profile</td>
     <td>testProfile</td>
     <td></td>
-    <td>QoSのプロファイル名を指定する。</td>
+    <td>Specifies the QoS profile name.</td>
   </tr>
   <tr>
     <td>opensplice.publisher_qos.presentation.access_scope</td>
@@ -485,7 +484,7 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
 </table>
 
 
-以下に記述例を記載します。
+A description example is shown below.
 
 ```
  opensplice.uri: file://OpenSpliceQoSExample.xml
@@ -493,41 +492,41 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
 ```
 
 
-## 接続時のオプション
+## Connection Options
 ### C++
 
-データポート接続時のコネクタプロファイルに設定できるオプションは以下の通りです。
+The options that can be set in the connector profile when connecting data ports are as follows.
 
 <table class="table-alt">
   <tr>
-    <th>オプション名</th>
-    <th>デフォルト値</th>
-    <th>オプション</th>
-    <th>内容</th>
+    <th>Option Name</th>
+    <th>Default Value</th>
+    <th>Options</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>opensplice.topic</td>
     <td>chatter</td>
     <td></td>
-    <td>DDSトピックの名前</td>
+    <td>Name of the DDS topic</td>
   </tr>
   <tr>
     <td>opensplice.reader_qos.id</td>
     <td></td>
     <td></td>
-    <td>ロードするReaderのプロファイル名</td>
+    <td>Profile name of the Reader to load</td>
   </tr>
   <tr>
     <td>opensplice.writer_qos.id</td>
     <td></td>
     <td></td>
-    <td>ロードするWriterのプロファイル名</td>
+    <td>Profile name of the Writer to load</td>
   </tr>
   <tr>
     <td>opensplice.topic_qos.id</td>
     <td></td>
     <td></td>
-    <td>ロードするTopicのプロファイル名</td>
+    <td>Profile name of the Topic to load</td>
   </tr>
   <tr>
     <td>opensplice.reader_qos.durability.kind</td>
@@ -1048,7 +1047,7 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
 </table>
 
 
-以下に設定例を記載します。
+A setting example is shown below.
 
 ```
  manager.components.preconnect: ConsoleOut0.in?interface_type=opensplice&opensplice.topic=testtopic
@@ -1058,16 +1057,16 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
 
 <table class="table-alt">
   <tr>
-    <th>オプション名</th>
-    <th>デフォルト値</th>
-    <th>オプション</th>
-    <th>内容</th>
+    <th>Option Name</th>
+    <th>Default Value</th>
+    <th>Options</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>opensplice.topic</td>
     <td>chatter</td>
     <td></td>
-    <td>DDSトピックの名前</td>
+    <td>Name of the DDS topic</td>
   </tr>
   <tr>
     <td>opensplice.reader_qos.durability.kind</td>
@@ -1534,15 +1533,15 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
 ```
 
 
-## その他
-### OpenSpliceのコンフィギュレーションファイル
-OpenSpliceのコンフィギュレーションファイルは環境変数**${OSPL_URI}**で設定している。
+## Other
+### OpenSplice Configuration File
+The OpenSplice configuration file is set with the environment variable **${OSPL_URI}**.
 
 - [14. Configuration — The OpenSplice Deployment Guide](http://download.prismtech.com/docs/Vortex/html/ospl/DeploymentGuide/guide.html)
 
-デフォルトでは**${OSPL_URI}/etc/config/ospl.xml**が設定されている。
+By default, **${OSPL_URI}/etc/config/ospl.xml** is set.
 
-例えば、ドメインIDを変更するためにはospl.xmlの以下の部分を変更する。
+For example, to change the domain ID, change the following part of ospl.xml.
 
 ```
  <OpenSplice>
@@ -1553,7 +1552,7 @@ OpenSpliceのコンフィギュレーションファイルは環境変数**${OSP
          <SingleProcess>true</SingleProcess>
 ```
 
-詳細なログを出力するためには以下の部分を追加する。
+To output detailed logs, add the following part.
 
 ```
     <DDSI2Service name="ddsi2">
@@ -1565,5 +1564,3 @@ OpenSpliceのコンフィギュレーションファイルは環境変数**${OSP
         <General>
 ```
 
-
--------jp page!!-------

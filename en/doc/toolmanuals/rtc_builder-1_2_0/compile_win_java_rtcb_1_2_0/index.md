@@ -1,89 +1,87 @@
 ---
 layout: page
-title: コンパイル方法 (Windows、Java 編 )
+title: Compilation Method (Windows, Java)
 ---
--------jp page!!-------
 
 <!-- Title: コンパイル方法 (Windows、Java 編 ) -->
 #contents
-Java でのビルド方法を説明します。
-## 準備
-事前に Java Development Kit 6 をインストールする必要があります。(注意：Java1.5(5.0)では動作しません。) 
+This section explains how to build with Java.
+## Preparation
+You need to install Java Development Kit 6 in advance. (Note: It does not work with Java 1.5 (5.0).)
 
-## RTC Builder からのビルド手順
-1. RTCプロファイルエディタ画面で、[言語・環境] タブを開き、 [Java] を選択します。<br><br>
+## Build Procedure from RTC Builder
+1. On the RTC Profile Editor screen, open the [Language/Environment] tab and select [Java].<br><br>
 <div align="center"><a href="Python-lang_01.png"><img src="Python-lang_01.png" width="60%;"></a></div>
 <br><br>
-1. [基本タブ] を開き、[コードの生成] ボタンをクリックしてコードを生成します。<br><br>
+1. Open the [Basic] tab and click the [Generate Code] button to generate the code.<br><br>
 <div align="center"><a href="Python-lang_02.png"><img src="Python-lang_02.png" width="60%;"></a></div>
 <br><br>
-1. コード生成対象言語の開発環境用プラグインがインストールされている場合、以下の確認メッセージが表示されるので [はい] をクリックします。その後、表示されたダイアログで [Java(デフォルト)] を選択し [OK] ボタンをクリックします。<br>
-Java 言語の場合は、JDT(Java Development Tools) があらかじめ Eclipse に含まれています。<br><br>
+1. If a development environment plugin for the code generation target language is installed, the following confirmation message is displayed, so click [Yes]. Then, in the displayed dialog, select [Java (default)] and click the [OK] button.<br>
+For the Java language, JDT (Java Development Tools) is included in Eclipse in advance.<br><br>
 <div align="center"><a href="Python-lang_03.png"><img src="Python-lang_03.png" width="60%;"></a></div>
 <br>
 <div align="center"><a href="Python-lang_04.png"><img src="Python-lang_04.png" width="60%;"></a></div>
 <br><br>
-1. パッケージエクスプローラー内に、プロジェクトの情報が表示されますが、一部表示されていないため、メニューから [ファイル] > [更新] を選択するか、パッケージエクスプローラー内で [F5] キーをクリックして情報を更新します。<br><br>
-1. [build_モジュール名.xml] のファイルを右クリックし、[実行] > [1 Ant ビルド] を選択します。<br><br>
+1. The project information is displayed in the Package Explorer, but some information is not displayed, so select [File] > [Refresh] from the menu, or click the [F5] key in the Package Explorer to refresh the information.<br><br>
+1. Right-click the [build_module name.xml] file and select [Run] > [1 Ant Build].<br><br>
 <div align="center"><a href="Python-lang_05.png"><img src="Python-lang_05.png" width="60%;"></a></div>
 <br><br>
-1. ビルドが実行され、コンソール画面にビルド結果が表示されます。<br><br>
+1. The build is executed, and the build results are displayed on the console screen.<br><br>
 <div align="center"><a href="Python-lang_06.png"><img src="Python-lang_06.png" width="60%;"></a></div>
 <br><br>
 
-- もしコンソール画面にエラーが表示された場合は、JDK が正常にインストールされているか確認します。メニューから [ウィンドウ] > [設定] > [インストール済の JRE] を選択します。
-インストール済みの JDK が選択されているかを確認します。もし表示されていなければ、[追加] または [検索] ボタンからインストールした JDK を追加します。 <br><br>
+- If an error is displayed on the console screen, check whether the JDK is installed correctly. From the menu, select [Window] > [Preferences] > [Installed JREs].
+Check whether the installed JDK is selected. If it is not displayed, add the installed JDK using the [Add] or [Search] button. <br><br>
 <div align="center"><a href="Python-lang_07.png"><img src="Python-lang_07.png" width="70%;"></a></div>
 <br><br>
-**参照**
-- [新規 Java プロジェクトが JDK6(1.6)準拠として作成できない]({{ site.baseurl }}/ja/doc/faq/faq_rtc_creation#errorjavaJDK)
-- [任意のフォルダーにクラスパスを設定して Ant ビルドを行う方法は？]({{ site.baseurl }}/ja/doc/faq/faq_rtc_creation#Antbuild)
-- [Java で Ant を使ってコマンドラインからビルドするときに例外が表示される]({{ site.baseurl }}/ja/doc/faq/faq_rtc_creation#Antbuilderror)
+**References**
+- [A new Java project cannot be created as JDK6 (1.6) compliant]({{ site.baseurl }}/en/doc/faq/faq_rtc_creation#errorjavaJDK)
+- [How do I set a classpath to an arbitrary folder and perform an Ant build?]({{ site.baseurl }}/en/doc/faq/faq_rtc_creation#Antbuild)
+- [An exception is displayed when building from the command line using Ant with Java]({{ site.baseurl }}/en/doc/faq/faq_rtc_creation#Antbuilderror)
 
-## コマンドプロンプトからのビルド手順
-1. Apache Ant を以下のサイトからダウンロードします。Apache Ant とはビルドを実行するためのソフトウェアです。Eclipse には Ant プラグインが標準で内蔵されていますが、コマンドプロンプトからビルドを実行するためにはダウンロードする必要があります。<br><br>
-[ダウンロード：the Apache Ant Website](http://ant.apache.org/bindownload.cgi)<br><br>
-1. Zipファイルを解凍して、フォルダー名を任意に変更します。(例：apache-ant-x.xx.x → ant )<br><br>
-1. 任意のフォルダーに移動します。(例：C:\Program Files\ant )<br><br>
-1. 環境変数を設定します。(画面は Windows10 のものです)<br>
-  1. システムのプロパティ画面を開き、[環境変数] ボタンをクリックします。<br><br>
+## Build Procedure from the Command Prompt
+1. Download Apache Ant from the following site. Apache Ant is software for executing builds. Eclipse includes the Ant plugin by default, but you need to download it in order to execute builds from the command prompt.<br><br>
+[Download: the Apache Ant Website](http://ant.apache.org/bindownload.cgi)<br><br>
+1. Extract the Zip file and change the folder name as desired. (Example: apache-ant-x.xx.x → ant)<br><br>
+1. Move it to any folder. (Example: C:\Program Files\ant)<br><br>
+1. Set the environment variables. (The screen shown is from Windows 10.)<br>
+  1. Open the System Properties screen and click the [Environment Variables] button.<br><br>
 <div align="center"><a href="system-property_01.png"><img src="system-property_01.png" width="60%;"></a></div>
 <br><br>
-  1. 「システム環境変数」で [新規] ボタンをクリックします。<br><br>
+  1. Click the [New] button under "System variables".<br><br>
 <div align="center"><a href="system-property_02.png"><img src="system-property_02.png" width="60%;"></a></div>
 <br><br>
-  1. 変数名に「ANT_HOME」、変数値に「C:\Program Files\ant」を入力し [OK] ボタンをクリックします。 ※変数値は ant フォルダーのパスを指定します。<br><br>
+  1. Enter "ANT_HOME" for the variable name and "C:\Program Files\ant" for the variable value, then click the [OK] button. * Specify the path to the ant folder as the variable value.<br><br>
 <div align="center"><a href="system-property_03.png"><img src="system-property_03.png" width="60%;"></a></div>
 <br><br>
-  1. 「システム環境変数」一覧から、変数名「Path」を選択し、[編集] ボタンをクリックします。<br><br>
+  1. From the "System variables" list, select the variable name "Path" and click the [Edit] button.<br><br>
 <div align="center"><a href="system-property_04.png"><img src="system-property_04.png" width="60%;"></a></div>
 <br><br>
-  1. [新規] ボタンをクリックして、「%ANT_HOME%\bin」と入力し [OK] ボタンをクリックします。<br><br>
+  1. Click the [New] button, enter "%ANT_HOME%\bin", and click the [OK] button.<br><br>
 <div align="center"><a href="system-property_05.png"><img src="system-property_05.png" width="60%;"></a></div>
 <br><br>
-  1. JAVA_HOME を設定します。すでに設定されている場合は不要です。<br>
-「システム環境変数」で [新規] ボタンをクリックします。<br><br>
+  1. Set JAVA_HOME. This is not necessary if it is already set.<br>
+Click the [New] button under "System variables".<br><br>
 <div align="center"><a href="system-property_02.png"><img src="system-property_02.png" width="60%;"></a></div>
 <br><br>
-  1. 変数名に「JAVA_HOME」、変数値に「C:\Program Files\Java\jdkx.x.x.x_xxx」を入力し [OK] ボタンをクリックします。<br>
-※変数値は Java のインストール先フォルダーのパスを指定します。<br><br>
+  1. Enter "JAVA_HOME" for the variable name and "C:\Program Files\Java\jdkx.x.x.x_xxx" for the variable value, then click the [OK] button.<br>
+* Specify the path to the Java installation folder as the variable value.<br><br>
 <div align="center"><a href="system-property_06.png"><img src="system-property_06.png" width="60%;"></a></div>
 <br><br>
-  1. システムのプロパティ画面に戻り、[OK] ボタンをクリックして画面を閉じます。<br><br>
-1. PC を再起動します。<br><br>
-1. 再起動後、コマンドプロンプトを起動し、「ant -version」と入力して Apache Ant のバージョンを確認してください。<br><br>
+  1. Return to the System Properties screen and click the [OK] button to close the screen.<br><br>
+1. Restart the PC.<br><br>
+1. After restarting, start the command prompt and enter "ant -version" to check the Apache Ant version.<br><br>
 <div align="center"><a href="system-property_07.png"><img src="system-property_07.png" width="60%;"></a></div>
 <br><br>
-1. 同様に「java -version」と入力し、Java のバージョンを確認してください。<br><br>
+1. Similarly, enter "java -version" to check the Java version.<br><br>
 <div align="center"><a href="system-property_08.png"><img src="system-property_08.png" width="60%;"></a></div>
 <br><br>
-1. コマンドプロンプトからビルドします。<br>
-指定した RTCプロジェクトのフォルダーで、以下のコマンドを入力するとビルドが開始されます。
+1. Build from the command prompt.<br>
+In the folder of the specified RTC project, enter the following command to start the build.
 ```
  ant -f  build_*****.xml  (***** はモジュール名)
 ```
-ビルドに成功すると、以下の表示となります。<br><br>
+If the build succeeds, the following display appears.<br><br>
 <div align="center"><a href="system-property_09.png"><img src="system-property_09.png" width="60%;"></a></div>
 <br><br>
 
--------jp page!!-------

@@ -2,79 +2,101 @@
 layout: page
 title: "tkLRFViewer"
 ---
--------jp page!!-------
 
 <!-- Title: tkLRFViewer -->
 
 #contents
 
-このサンプルは、Python版にのみ付属しています。 
+This sample is included only with the Python edition.
 
-### 概要
-tkLRFViewerは、Laser Range Finderセンサーからの出力を表示するRTCの例です。レーザレンジファインダーから入力を扱うRTCを接続して使います。接続するRTCは各自接続するデバイスに合わせて入力してください。例えば、[北陽電機株式会社 URGシリーズ]({{ site.baseurl }}/node/4974)を参照してみてください。また、LRFセンサーはLaser距離計を回転させながら空間をスキャンし、測定した距離データを逐次送り出すようなセンサーです。データとして、回転角の初期値、終わり値、各距離データの測定を行う角度間隔、そして測定した距離データの列というような形でデータが出力されます。本コンポーネントは、そのスキャンしたデータがどのようになるかを見るためのコンポーネントです。
+### Overview
 
-<!-- 英語ページはnote/5085 -->
-### 起動画面
-このコンポーネントを起動すると以下のGUI画面が表示されます。
+tkLRFViewer is an example RTC that displays output from a Laser Range Finder (LRF) sensor.
+
+It is used by connecting it to an RTC that acquires input from a laser range finder. The RTC used for connection depends on the specific sensor device being used. For example, refer to the documentation for the [Hokuyo Electric URG Series]({{ site.baseurl }}/node/4974).
+
+An LRF sensor scans the surrounding environment by rotating a laser distance sensor and continuously outputs measured distance data. The output data typically consists of:
+
+- Start angle of the scan
+- End angle of the scan
+- Angular interval between measurements
+- Sequence of measured distance values
+
+This component is used to visualize the scanned distance data.
+
+<!-- English page: note/5085 -->
+
+### Startup Screen
+
+When this component is started, the following GUI window is displayed.
 
 <div align="center"><a href="tkLRFViewGUI.png"><img src="tkLRFViewGUI.png" width="100%;"></a></div>
-<div align="center"><strong>tkLRFViewer GUI画面</strong></div>
+<div align="center"><strong>tkLRFViewer GUI Window</strong></div>
 
-### 使い方
-このRTCを使うには、上記で述べたように、外部につなぐLaser Range Finderセンサーからセンサー出力を読みこみ、それを変換して[RangeData型](https://github.com/Nobu19800/DataTypeManual/blob/master/docs/RobotInterface.md#rangedata)の出力としてOutPortより出力するRTCが必要です。上記のLaser Range Finderに関するリンクを参考にRTCを準備してください。
+### Usage
 
-- このtkLRFViewerコンポーネントは、Windows環境ではエクスプローラで"Program Files\OpenRTM-aist\1.2.x\Components\Python" ディレクトリでtkLRFViewer.batをダブルクリックすることで起動できあす。センサー用のRTCを起動して、RTSystemEditorなどで本コンポーネントに接続して使用してください。
-- tkLRFViewerのGUIには4つのスライダーがあり、それぞれ「Scale Factor]、[Threshold]、[Filter(Time)]、[Filter(Spacial)]のパラメータを決めます。また[Axis]、[Grid]、[Line]、「Fill]、「Threshold]、「Filter(Time)]、[Fileter(Spacial)] のチェックボックス、「Reset  Scale]ボタンがあります。それぞれの機能を下記表に示します。
+To use this RTC, you must first prepare an RTC that:
 
-<table class="table-alt">
-  <tr>
-    <th>名前</th>
-    <th>機能</th>
-  </tr>
-  <tr>
-    <td>Scale Factor</td>
-    <td>描画をするにあたって、その距離のベースを480m x 480mの空間のを基本として、スケール値による描画の拡大縮小を行う、一般的な数m X 数ｍぐらいの範囲の検出には0.01とかの値になるように設定した方が良い※</td>
-  </tr>
-  <tr>
-    <td>Reset Scale ボタン</td>
-    <td>Scale Factor 1.0にリセットするボタン</td>
-  </tr>
-  <tr>
-    <td>Axisチェックボックス</td>
-    <td>このチェックボックスにチェックされているとX軸とY軸の軸が表示される</td>
-  </tr>
-  <tr>
-    <td>Gridチェックボックス</td>
-    <td>このチェックボックスがチェックされていると目盛線が表示される</td>
-  </tr>
-  <tr>
-    <td>Lineチェックボックス</td>
-    <td>このチェックボックスがチェックされていると測距データを曲線で描画</td>
-  </tr>
-  <tr>
-    <td>Fillチェックボックス</td>
-    <td>このチェックボックスがチェックされていると測距データを塗りつぶされた図形として描画</td>
-  </tr>
-  <tr>
-    <td>Thresholdチェックボックスとスライダー</td>
-    <td>チェックされているとパラメータが有効になり、下限値※の処理が行われる、その値より入力距離が小さい場合は、無効と見なし検出距離が1000ｍと見なす</td>
-  </tr>
-  <tr>
-    <td>Fileter(Time}チェックボックスとスライダー</td>
-    <td>チェックされている時間軸方向の変化に対するフィルターが融合になり、スライダーで効果度合いを調整</td>
-  </tr>
-  <tr>
-    <td>Fileter(Spacial)チェックボックスとスライダー</td>
-    <td>チェックされていると回転方向のスキャンデータの変化に対してのフィルタが有効になり。スライダーで効果度合いを調整</td>
-  </tr>
-</table>
-※ 現状の表示スケールや、Thresholdの働き方は、あまり現実的に有効な設定となっていません。実際の使用においては、ユーザー環境にあわせてソースコードを書き換え調整することを推奨します。
+1. Reads sensor output from an external Laser Range Finder.
+2. Converts the sensor data into the [RangeData type](https://github.com/Nobu19800/DataTypeManual/blob/master/docs/RobotInterface.md#rangedata).
+3. Outputs the converted data through an OutPort.
 
-# GUI出力例
-GUIには以下の画面のような出力がでます。
+Please refer to the Laser Range Finder resources mentioned above when preparing the required RTC.
+
+- In Windows environments, tkLRFViewer can be started by opening:
+
+```text
+Program Files\OpenRTM-aist\1.2.x\Components\Python
+```
+
+and double-clicking:
+
+```text
+tkLRFViewer.bat
+```
+
+Start the RTC corresponding to your sensor and connect it to this component using RTSystemEditor or a similar tool.
+
+---
+
+The tkLRFViewer GUI contains four sliders:
+
+- Scale Factor
+- Threshold
+- Filter(Time)
+- Filter(Spatial)
+
+It also contains:
+
+- Axis checkbox
+- Grid checkbox
+- Line checkbox
+- Fill checkbox
+- Threshold checkbox
+- Filter(Time) checkbox
+- Filter(Spatial) checkbox
+- Reset Scale button
+
+The functions of these controls are described below.
+
+| Name | Function |
+|--------|----------|
+| Scale Factor | Controls display scaling. The display is based on a virtual space of 480 m × 480 m and is scaled according to this value. For typical measurements within a few meters, values around 0.01 are recommended.* |
+| Reset Scale Button | Resets the Scale Factor to 1.0. |
+| Axis Checkbox | Displays the X and Y coordinate axes when checked. |
+| Grid Checkbox | Displays grid lines when checked. |
+| Line Checkbox | Draws range measurement data as connected curves when checked. |
+| Fill Checkbox | Draws range measurement data as filled polygons when checked. |
+| Threshold Checkbox and Slider | Enables threshold processing when checked. If an input distance is smaller than the specified lower limit*, it is treated as invalid and displayed as if the distance were 1000 m. |
+| Filter(Time) Checkbox and Slider | Enables temporal filtering when checked. The slider controls the strength of filtering applied across time. |
+| Filter(Spatial) Checkbox and Slider | Enables spatial filtering when checked. The slider controls filtering strength applied to changes between adjacent scan points in the rotational scanning direction. |
+
+\* The current scaling behavior and threshold implementation are not necessarily practical for real-world applications. For actual use, modifying and tuning the source code according to your environment is recommended.
+
+# GUI Output Example
+
+The GUI displays scan results as shown below.
+
 <div align="center"><a href="tkLRFViewGUIinUse.png"><img src="tkLRFViewGUIinUse.png" width="100%;"></a></div>
-<div align="center"><strong>使用中のGUI画面</strong></div>
+<div align="center"><strong>GUI Display During Operation</strong></div>
 
-
-
--------jp page!!-------

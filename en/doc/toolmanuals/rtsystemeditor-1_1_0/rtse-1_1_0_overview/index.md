@@ -9,7 +9,7 @@ title: 概要・システム構築の流れ
 
 <!-- **概要 -->
 ### OpenRTM-aist RT System Editor 概要
-現在[ OMG ](http://www.omg.org)にて、ロボット開発の効率を高める Robot Technology Component（以下RTC）の仕様策定が行われています。この RTC 仕様を実装および適用した共通プラットフォームとして、独立行政法人産業技術総合研究所・知能システム研究部門・統合知能研究グループでは[ OpenRTM-aist ](/ja/node/850)を提供しています。<br>
+現在[ OMG ](http://www.omg.org)にて、ロボット開発の効率を高める Robot Technology Component（以下RTC）の仕様策定が行われています。この RTC 仕様を実装および適用した共通プラットフォームとして、独立行政法人産業技術総合研究所・知能システム研究部門・統合知能研究グループでは[ OpenRTM-aist ](/en/node/850)を提供しています。<br>
 RTSystemEditor は、この OpenRTM-aist に含まれる開発ツールの１つであり、RTC をリアルタイムにグラフィカル操作する機能を持っています。また、その名前のとおり Eclipse 統合開発環境のプラグインとして作成されており、Eclipse 上にて既存のプラグインとシームレスに操作を行うことができます。
 
 

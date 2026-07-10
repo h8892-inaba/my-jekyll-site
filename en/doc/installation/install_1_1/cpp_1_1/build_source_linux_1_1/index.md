@@ -2,7 +2,9 @@
 layout: page
 title: ソースからのビルド (Linux編)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: ソースからのビルド (Linux編) -->
 パッケージが用意されていない UNIX 環境や、クロス開発環境、OpenRTM-aist 本体のソースを変更して利用したい場合には、ソースからコンパイルすることができます。
@@ -250,4 +252,4 @@ autogen の実行により、configure が OpenRTM-aist ディレクトリー内
 - OpenRTM-aist-1.0.0.tar.bz2: 汎用ソース (bzip 圧縮)
 
 
--------jp page!!-------
+

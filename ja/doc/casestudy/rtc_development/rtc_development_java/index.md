@@ -1,9 +1,8 @@
 ---
 layout: page
-title: 
+title: RTコンポーネント作成(Java版)
 ---
 
-init
 <!-- Title: RTコンポーネント作成(Java版) -->
 #contents
 

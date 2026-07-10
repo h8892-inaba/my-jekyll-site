@@ -2,46 +2,67 @@
 layout: page
 title: "ObjectTracking"
 ---
--------jp page!!-------
 
 <!-- Title: ObjectTracking -->
 
 #contents
 
-OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencv_sample_build)に従ってビルドしてインストールしてください。
+Please note that this sample is not included with the Python or Java editions of OpenRTM-aist. On Linux, build and install it according to [Building OpenCV Sample Code on Linux]({{ site.baseurl }}/en/doc/installation/sample_components/opencv_sample_build).
 
-### 概要
-ObjectTrackingは、画面上から選択したオブジェクトを追跡して、その位置を赤い楕円形でかこんでしめすOpenCVコンポーネントのサンプルです。
-OpenCVCamera、CameraViewerといっしょに使用します。
 
-### 起動画面
+### Overview
+
+ObjectTracking is a sample OpenCV component that tracks an object selected on the screen and indicates its position by enclosing it with a red ellipse.
+
+It is used together with OpenCVCamera and CameraViewer.
+
+### Startup Screen
 
 <div align="center"><a href="ObjectTrackingConsole.png"><img src="ObjectTrackingConsole.png" width="50%;"></a></div>
-<div align="center"><strong>ObjectTrackingコンポーネンの実行画面</strong></div>
+<div align="center"><strong>ObjectTracking Component Execution Window</strong></div>
 
-### 使い方
-ObjectTrackingは、画面上から選択したオブジェクトを追跡して、その位置を赤い楕円形でかこんでしめすコンポーネントです。ここではUSB Cameraから画像を取り込むためのOpenCVCameraコンポーネント、処理した画像を表示し、またマウスを用いてオブジェクトを選択するために使われるCameraViewerコンポーネントと共に使用します。以下ではWindowsにおいての使い方の説明をします。
+### Usage
 
-- 手順 
-  - [OpenRTPの起動手順(1.2系、Windows)]({{ site.baseurl }}/ja/doc/installation/install_1_2/start_openrtp_proc_windows_1_2)に従いOpenRTPを起動しRTSystemEditorを起動し、Name Service ViewにRTCが表示されるようにします。RTSystemEditorの使用方法の詳細については[RTSystemEditor]({{ site.baseurl }}/ja/doc/toolmanuals/rtsystemeditor-1_2_0)を参照してください。
-  - エクスプローラーで\Program Files\OpenRTM-aist\1.2.1\Components\C++\OpenCVとたどります。
-  - CameraViewer.batをダブルクリックします。
-  - OpenCVCamera.batをダブルクリックします。
-  - ObjectTracker.batをダブルクリックします。
-  - RTSystemEditorの画面のName Service viewのところの[>]をクリックして、起動したコンポーネントCameraViewer, ObjectTracking, OpenCVCameraのコンポーネントが表示されているのを確認します。
-  - RTSystemEditorで上部の[Open New System Editor]ボタン<a href="icon_open_editor_ja.png"><img src="icon_open_editor_ja.png" width="4%;"></a>をクリックし、新規System Editorを開き、[System Dialgram]を新たに表示させます。
-  - 上記の3つのコンポーネントをSystem Diagram上にドラッグ&ドロップします。
-  - 下記の画面のように各コンポーネントのポートを接続します。
+ObjectTracking is a component that tracks an object selected on the screen and displays its position enclosed by a red ellipse. In this example, it is used together with the OpenCVCamera component for capturing images from a USB camera and the CameraViewer component for displaying processed images and selecting objects with the mouse.
+
+The following describes usage on Windows.
+
+- Procedure
+
+  - Start OpenRTP and RTSystemEditor according to [Procedure for Starting OpenRTP (1.2 Series, Windows)]({{ site.baseurl }}/en/doc/installation/install_1_2/start_openrtp_proc_windows_1_2), and ensure that RTCs are displayed in the Name Service View. For details on using RTSystemEditor, refer to [RTSystemEditor]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_2_0).
+
+  - In Explorer, navigate to:
+
+```text
+\Program Files\OpenRTM-aist\1.2.1\Components\C++\OpenCV
+```
+
+  - Double-click CameraViewer.bat.
+
+  - Double-click OpenCVCamera.bat.
+
+  - Double-click ObjectTracker.bat.
+
+  - In the RTSystemEditor Name Service View, click [>] and confirm that the CameraViewer, ObjectTracking, and OpenCVCamera components are displayed.
+
+  - In RTSystemEditor, click the [Open New System Editor] button <a href="icon_open_editor_ja.png"><img src="icon_open_editor_ja.png" width="4%;"></a> at the top of the screen to open a new System Editor and display a new [System Diagram].
+
+  - Drag and drop the above three components onto the System Diagram.
+
+  - Connect the ports of each component as shown below.
 
 <div align="center"><a href="RTSE_ObjectTracking.png"><img src="RTSE_ObjectTracking.png" width="75%;"></a></div>
-<div align="center"><strong>ObjectTrackingコンポーネントの接続</strong></div>
+<div align="center"><strong>ObjectTracking Component Connections</strong></div>
 
-  - どれかのコンポーネントを右クリックし、[Activate Systems]を選択します。
-  - 画面のウィンドウを動かしながらCameraViewerの画面を表示させます。
+  - Right-click any component and select [Activate Systems].
+
+  - Arrange the windows so that the CameraViewer window is visible.
+
 <div align="center"><a href="ObjectTrackingCameraViewer.png"><img src="ObjectTrackingCameraViewer.png" width="50%;"></a></div>
-<div align="center"><strong>ObjectTracking出力画像</strong></div>
-  - マウスを左クリックしながら、選択したいオブジェクトを選択します。この時矩形の反転選択画面がでるようにしてください。(場合によっては、でるようになるまで時間がかかることがあります。)
-  - 選択がうまくされると上図のように赤い楕円があらわれます。このオブジェクトを物理的に動かすと、画面上で、そのオブジェクトといっしょに楕円がいっしょに動くことを確認してください。
-  - なお"img_histgram"のOutPortからは上記の矩形選択時に、選択した画像のヒストグラムが一瞬表示されます。
+<div align="center"><strong>ObjectTracking Output Image</strong></div>
 
--------jp page!!-------
+  - While holding down the left mouse button, select the object you want to track. A rectangular selection area should appear as an inverted-highlight rectangle. (Depending on the environment, it may take some time before the selection rectangle becomes available.)
+
+  - If the selection is successful, a red ellipse will appear as shown in the figure above. Physically move the selected object and confirm that the ellipse moves together with the object on the screen.
+
+  - The histogram of the selected image region is briefly displayed from the "img_histgram" OutPort when the rectangular selection is made.

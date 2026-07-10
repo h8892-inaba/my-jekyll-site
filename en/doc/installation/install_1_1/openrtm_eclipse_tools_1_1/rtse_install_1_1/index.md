@@ -2,7 +2,9 @@
 layout: page
 title: RTSystemEditor のインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: RTSystemEditor のインストール -->
 #contents
@@ -252,10 +254,10 @@ RTSystemEditor の起動が確認できましたら、一旦、Eclipse を終了
 <br>
 <br>
 参考：
-　→ [**FAQ:** Eclipseの起動方法 ](/ja/node/248#toc9)
+　→ [**FAQ:** Eclipseの起動方法 ](/en/node/248#toc9)
 <br>
 <br>
 
 
 
--------jp page!!-------
+

@@ -2,7 +2,9 @@
 layout: page
 title: QNXでのビルド手順(OpenRTM-aist 1.2)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: QNXでのビルド手順(OpenRTM-aist 1.2) -->
 #contents
@@ -15,7 +17,7 @@ title: QNXでのビルド手順(OpenRTM-aist 1.2)
 pkg_src、omniORB、libuuidのビルド手順については以下のページを参考にしてください。
 
 
-- [OpenRTM-aist(C++版)のCMakeによるビルド手順](/ja/node/6339) 
+- [OpenRTM-aist(C++版)のCMakeによるビルド手順](/en/node/6339) 
 
 
 
@@ -68,4 +70,4 @@ src/ext/local_service/Makefile.amは以下のようにサブディレクトリ�
  make
  make install
 ```
--------jp page!!-------
+

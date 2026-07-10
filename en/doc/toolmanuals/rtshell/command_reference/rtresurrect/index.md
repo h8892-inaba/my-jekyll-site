@@ -2,44 +2,40 @@
 layout: page
 title: rtresurrect
 ---
--------jp page!!-------
 <!-- Title: rtresurrect -->
 
-## 書式
+## Format
 ```
 rtresurrect [OPTION ...] [RTSPROFILE_FILE]
 ```
 
-## 概要
-RTSProfileファイルをロードし、実行中のコンポーネントを使ってRTシステム を復元します。コンポーネントの間の接続とコンポーネントのコンフィグレーションパラメータはRTSProfileファイルに記述されたものが反映されます。 RTSProfileファイルに"required"とマークされておらず実行中ではないコンポーネントは無視されます。
+## Overview
+Loads an RTSProfile file and restores an RT system using running components. Connections between components and component configuration parameters are reflected according to what is described in the RTSProfile file. Components that are not marked as "required" in the RTSProfile file and are not running are ignored.
 
-ファイル名を指定しない場合、RTSProfile形式のデータをstdinから読込みます。
+If no file name is specified, RTSProfile-format data is read from stdin.
 
-## オプション(OPTION)
+## Options (OPTION)
 ```
- --dry-run　　 復元するために何をするかを表示して終了する(実際には復元しない)
- -x, --xml　　 XMLフォーマットを使う
- -y, --yaml　　YAMLフォーマットを使う
- --version　　 プログラムのバージョン番号を表示して終了する
- -h, --help　　ヘルプを表示して終了する
- -v, --verbose 冗長な情報を出力する [デフォルト： False]
+ --dry-run　　 Displays what will be done to restore the system and exits. (It does not actually restore the system.)
+ -x, --xml　　 Uses XML format.
+ -y, --yaml　　Uses YAML format.
+ --version　　 Displays the program version number and exits.
+ -h, --help　　Displays help and exits.
+ -v, --verbose Outputs verbose information. [Default: False]
 ```
 
-## 返り値
-成功の場合はゼロを返します。失敗の場合はゼロではない値を返します。
+## Return Values
+Returns zero on success. Returns a non-zero value on failure.
 
-デバッグ情報とエラーはstderrに出力されます。
+Debug information and errors are output to stderr.
 
-## 例
-- sys.rtsysというファイルを用いRTシステムを復元します。
+## Examples
+- Restores the RT system using a file named sys.rtsys.
 ```
  $ rtresurrect sys.rtsys
 ```
 
-- sys.rtsys というファイルを用いて復元処理をする場合に何がなされるかを表示します。(実際の復元処理は行われません。)
+- Displays what will be done when restoring using a file named sys.rtsys. (The actual restore process is not performed.)
 ```
  $ rtresurrect sys.rtsys --dry-run
 ```
-
-
--------jp page!!-------

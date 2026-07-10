@@ -2,65 +2,64 @@
 layout: page
 title: rtdoc
 ---
--------jp page!!-------
 
 <!-- Title: rtdoc -->
 
-## 書式
+## Format
 ```
  rtdoc [OPTION ...] PATH
 ```
 
-## 注意
-本セクションでは本Webサイトのシステムの都合上連続するアンダースコアがうまく記述できないところがあるため、そこでは"_ _"と間に空白をいれた形で表記しますが、これは"__"を意味しますので、置き換えてお読みください。
+## Note
+In this section, due to limitations of the system used for this website, there are places where consecutive underscores cannot be written properly. In such places, they are written with a space in between as "_ _", but this means "__", so please read it by replacing it accordingly.
 
-## 概要
-RTコンポーネントの埋め込みドキュメンテーションを表示します。
+## Overview
+Displays embedded documentation of an RT Component.
 
-あるRTコンポーネントはドキュメントを埋込むことができ、隠しコンフィグレーションセットとして実装されています。このコマンドでその埋め込みドキュメンテーションを複数のフォーマットで表示できます。対応フォーマットはreStructuredText、HTML、LaTex(PDF化を考慮して)です。
+Some RT Components can embed documentation, which is implemented as a hidden configuration set. This command can display that embedded documentation in multiple formats. The supported formats are reStructuredText, HTML, and LaTeX (for conversion to PDF).
 
-## オプション
+## Options
 ```
- -f FORMAT、--format=FORMAT
- 　　　　　　フォーマットを選択します。rst、htmlおよびlatexから選択してください。
- -g、--graph 　コンポーネントのグラフを表示させます。
- --version　　　プログラムのバージョン番号を表示して終了する
- -h、--help　 　ヘルプを表示して終了する
- -v、--verbose より詳細な情報を出力する
+ -f FORMAT, --format=FORMAT
+ 　　　　　　Selects the format. Choose from rst, html, and latex.
+ -g, --graph 　Displays a graph of the component.
+ --version　　　Displays the program version number and exits.
+ -h, --help　 　Displays help and exits.
+ -v, --verbose Outputs more detailed information.
 ```
 
-### RTコンポーネントのドキュメンテーション
-このコマンドによって取り扱われる埋め込みドキュメントは、_ _doc_ _コンフィギュレーションセットに記述します。このセット内のパラメータ(隠しでないもの)はセクションとして追加されます。
+### RT Component Documentation
+The embedded documentation handled by this command is written in the _ _doc_ _ configuration set. Parameters in this set (those that are not hidden) are added as sections.
 
-一般的なセクションは:
+Common sections are:
 
 - **intro**
-  - コンポーネントの紹介。その動作目的などの概要を記載します。(Title:  Introduction.)
+  - Introduction to the component. Describes an overview such as the purpose of its operation. (Title:  Introduction.)
 - **reqs**
-  - コンポーネントを使用するための、事前にインストールされていなければいけないソフトウエアのような事前準備が必要yな事項を記載します。(Title:  Pre-requisites.)
+  - Describes items that require advance preparation, such as software that must be installed in advance in order to use the component. (Title:  Pre-requisites.)
 - **install**
-  - コンポーネントのインストール方法を記載します。(Title:  Installation.)
+  - Describes how to install the component. (Title:  Installation.)
 - **usage**
-  - コンポーネントを起動したり使用したりする方法を記載します。 (Title:  Usage.)
+  - Describes how to start and use the component. (Title:  Usage.)
 - **misc**
-  - コンポーネントを使用するにあたって知っておいたほうがよい他の重要な情報を記載します。(Title:  Miscellaneous.)
+  - Describes other important information that is useful to know when using the component. (Title:  Miscellaneous.)
 - **changelog**
-  - |コンポーネントの変更履歴を記載します。(Title:  Changelog.)
+  - |Describes the change history of the component. (Title:  Changelog.)
 
-また、コンポーネントがポートやコンフィギュレーションを持っていれば、そのデフォルトのコンフィギュレーションセットの中にportセクションとconfigセクションが自動的に作られます。_ _doc_ _セット内の他のセクションはすべてこの埋め込みドキュメントとして追加されます。
+Also, if the component has ports or configurations, port and config sections are automatically created in its default configuration set. All other sections in the _ _doc_ _ set are added as this embedded documentation.
 
-また、以下の３つのパラメータを追加の情報としてドキュメントの先頭部分に追加できます。
+The following three parameters can also be added to the beginning of the documentation as additional information.
 
 - _ _license_ _
-  - GPLやBSDなどのライセンス情報
+  - License information such as GPL or BSD
 - _ _contact_ _
-  - 作者のemailアドレスなどの連絡先情報
+  - Contact information such as the author's email address
 - _ _url_ _
-  - コンポーネントに関するホームページのURL
+  - URL of the homepage related to the component
 
-パラメータはコンポーネントソース内にもコンポーネント起動時に読込まれるコンフィギュレーション・ファイル内で記述できます。ソース内に埋め込まれたドキュメントは、使用法や連絡先の短い情報以外は、コンポーネントのバイナリ・データ・サイズを消費するためコンフィギュレーション・ファイルに記載する方法を推奨します。
+Parameters can be written either in the component source or in the configuration file loaded when the component starts. For documentation embedded in the source, except for short information such as usage and contact information, it is recommended to write it in a configuration file because it consumes the component binary data size.
 
-ソースコード内では例えば以下のように記述します:
+For example, write the following in the source code:
 
 ```
  'conf.__doc__.__license__', 'LGPL',
@@ -75,103 +74,100 @@ RTコンポーネントの埋め込みドキュメンテーションを表示し
  'conf.__doc__.Another', 'A non-standard section.',
 ```
 
-デフォルトではセクションは以下の順番でインクルードされます。
+By default, sections are included in the following order.
 ```
  intro, reqs, usage, ports, config, misc, changelog, [other sections]
 ```
 
-この順番は＿ ＿doc_ _セット内の_ _order_ _パラメータで変更でき、ドキュメントのセクション中の各パラメータの名をコンマで分離したリストで指定し、例えば以下のようににします:
+This order can be changed with the _ _order_ _ parameter in the ＿ ＿doc_ _ set. Specify a comma-separated list of the names of each parameter in the documentation sections, for example as follows:
 ```
  'conf.__doc__.__order__', 'intro,ports,config,reqs,Another'
 ```
 
-そこで指定されなかったセクションは、指定されたセクションの後になり、それぞれの順番は定義されません。
+Sections not specified there will come after the specified sections, and their order is not defined.
 
-ポートへのドキュメントはポートのプロパティーの記述を追加し、例えば以下のようにします:
+Documentation for ports is added by adding a description property to the port, for example as follows:
 ```
  self._inport.addProperty('description', 'This port receives stuff.')
 ```
 
-コンフィグレーション・パラメータのドキュメントは、_ _description_ _セットでパラメータを設定し、例えば以下のようにします:,
+Documentation for configuration parameters is set by configuring parameters in the _ _description_ _ set, for example as follows:,
 ```
  'conf.default.param', '0',
  'conf.__description__.param', 'A test parameter.',
 ```
 
-## パス
-rtshellはパスでRTCツリーのオブジェクトを示します。ネームサーバーとネームコンテクストはディレクトリ名として指定され、マネージャとRTコンポーネントはファイル名として指定されます。コマンドに渡したパスはrtshellの現在の作業ディレクトリを元に指定されます。(相対パスの場合)。rtshellの現在の作業ディレクトリはRTCSH_CWDという環境変数に保存されて、rtcwdというコマンドで変更できます。(現時点でrtcwdコマンドはLinux環境では動作していません)
+## Paths
+rtshell indicates objects in the RTC tree using paths. Name servers and name contexts are specified as directory names, and managers and RT Components are specified as file names. Paths passed to commands are specified based on the current working directory of rtshell (for relative paths). The current working directory of rtshell is stored in an environment variable named RTCSH_CWD, and can be changed with the rtcwd command. (At present, the rtcwd command does not work in Linux environments.)
 
-利用できるパスはコマンド実行時に参照しているネームサーバーによって変わります。ネームサーバーが実行されているホスト名はRTCTREE_NAMESERVERSという環境変数で指定できます。また、直接ルート直下のパスとして/<ホスト名>/....のような形でネームサーバーが実行されているホストを指定できます。
+Available paths depend on the name servers referenced when commands are executed. The host name where a name server is running can be specified with the RTCTREE_NAMESERVERS environment variable. You can also specify the host where a name server is running directly as a path under the root, such as /<host name>/....
 
-例えば、/localhost/comp0.rtcはlocalhostにあるネームサーバーに登録されたcomp0.rtcというRTコンポーネントを示します。/localhost/manager/comp0.rtcはlocalhostにあるネームサーバーの下のmanagerというディレクトリに登録されたcomp0.rtcというRTコンポーネントを示します。./comp0.rtcは現在の作業ディレクトリにあるcomp0.rtcというRTコンポーネントを示します。
+For example, /localhost/comp0.rtc indicates an RT Component named comp0.rtc registered with the name server on localhost. /localhost/manager/comp0.rtc indicates an RT Component named comp0.rtc registered in a directory named manager under the name server on localhost. ./comp0.rtc indicates an RT Component named comp0.rtc in the current working directory.
 
-RTコンポーネントのポートを示す場合、パスの後にコロン（「:」）で区切って指定します。例えば、/localhost/comp0.rtc:dataはcomp0.rtcというRTコンポーネントのdataというポートを意味します。
+To indicate a port of an RT Component, specify it after the path separated by a colon (":"). For example, /localhost/comp0.rtc:data means the port named data of the RT Component named comp0.rtc.
 
-新しいポートを作れるコマンドもあり、この場合、オプションでそれらをパスに追加できます。使えるオプションは作られるポートの名前とフォーマッタです。指定方法は以下の通りです:
+Some commands can create new ports. In this case, you can add them to the path with options. The available options are the name of the created port and the formatter. Specify them as follows:
 
 ```
  <path>:<port>.<new_port_name>#<formatter>
 ```
 
-### 例:
+### Example:
 ```
  /localhost/blurg.host_cxt/comp0.rtc:input.stuff#a_printer
 ```
 
-新たに作られるポートの名前はstuffで、データはa_printerという関数(フォーマッター)でターミナルに表示するように指定しています。(a_printerの関数はPythonが利用可能な場所に存在する必要があります。普通はユーザーがモジュールで提供します)。作られたポートはcomp0.rtcのinputというポートに接続されます。
+This specifies that the name of the newly created port is stuff, and that the data is displayed on the terminal using a function (formatter) named a_printer. (The a_printer function must exist somewhere Python can use it. Normally, the user provides it in a module.) The created port is connected to the input port of comp0.rtc.
 
-`<new_port_name>`という部分は必須ではありません。指定しない場合は"."も指定しないでください。例:
+The `<new_port_name>` part is not required. If it is not specified, do not specify "." either. Example:
 
 ```
  /localhost/blurg.host_cxt/comp0.rtc:input#a_printer
 ```
 
-`<formatter>`という部分は必須ではありません。書いていない場合は"."も指定しないでください。例:
+The `<formatter>` part is not required. If it is not written, do not specify "." either. Example:
 
 ```
  /localhost/blurg.host_cxt/comp0.rtc:input.stuff
 ```
 
-## 環境変数
+## Environment Variables
 - **RTCTREE_ORB_ARGS**
-  - ORBを作る時に渡す変数です。セミコロンで区切ります。必須ではありません。
+  - Variables passed when creating the ORB. Separate them with semicolons. This is not required.
 - **RTCTREE_NAMESERVERS**
-  - RTCツリーを作る時に参照するネームサーバーのアドレスです。アドレスをセミコロンで区切ります。リストされたアドレスはRTCツリーに追加されrtshellで参照できるようになります。ルート下のディレクトリ名としてパスで指定することもできるので必須ではありません。
+  - Addresses of name servers referenced when creating the RTC tree. Separate addresses with semicolons. The listed addresses are added to the RTC tree and can be referenced by rtshell. This is not required because they can also be specified as directory names under the root in paths.
 - **RTSH_CWD**
-  - rtshellの現在のワーキングディレクトリ。rtshellが自動的に設定します。設定しないでください。
+  - The current working directory of rtshell. rtshell sets it automatically. Do not set it manually.
 
-一般的な利用ではユーザーが設定する変数はRTCTREE_NAMESERVERSのみです。よく使うネームサーバーを設定しておくと便利です。例えば、Bashシェルの場合、以下のコマンドはlocalhostとポート192.168.0.1:65346およびホストexample.comにあるネームサーバーをrtshellが参照できるようにします。
+In typical use, the only variable that users set is RTCTREE_NAMESERVERS. It is convenient to set frequently used name servers. For example, in the Bash shell, the following command allows rtshell to reference name servers on localhost, port 192.168.0.1:65346, and host example.com.
 
 ```
  $ export RTCTREE_NAMESERVERS=localhost;192.168.0.1:65346;example.com
 ```
 
 
-## 返り値
-成功の場合はゼロを返します。失敗の場合はゼロではない値を返します。
+## Return Values
+Returns zero on success. Returns a non-zero value on failure.
 
-デバッグ情報とエラーはstderrに出力されます。
+Debug information and errors are output to stderr.
 
-## 例
-- ConsoleOut0.rtcのドキュメンテーションを標準出力に表示します。
+## Examples
+- Displays the documentation of ConsoleOut0.rtc to standard output.
 ```
  $ rtdoc /localhost/ConsoleOut0.rtc
 ```
 
-- ConsoleOut0.rtcのドキュメンテーションをdoc.htmlというファイルに保存します。
+- Saves the documentation of ConsoleOut0.rtc to a file named doc.html.
 ```
  $ rtdoc /localhost/ConsoleOut0.rtc > doc.html
 ```
 
-- ConsoleOut0.rtcのドキュメンテーションをreStructuredTextフォーマットで表示します。
+- Displays the documentation of ConsoleOut0.rtc in reStructuredText format.
 ```
  $ rtdoc /localhost/ConsoleOut0.rtc -f rst
 ```
 
-- ConsoleOut0.rtcのドキュメンテーションをrubberツールによってPDF形式で保存します。
+- Saves the documentation of ConsoleOut0.rtc in PDF format using the rubber tool.
 ```
  $ rtdoc /localhost/ConsoleOut0.rtc -f latex > doc.tex && rubber -d doc.tex
 ```
-
-
--------jp page!!-------

@@ -1,8 +1,6 @@
 ---
 layout: page
-title: "多階層複合コンポーネントの利用方法"
+title: "How to Use Multilevel Composite Components"
 ---
--------jp page!!-------
 
-準備中
--------jp page!!-------
+Coming soon

@@ -1,177 +1,173 @@
 ---
 layout: page
-title: PiRT-UnitによるXBeeモジュールの利用
+title: Using XBee Modules with PiRT-Unit
 ---
--------jp page!!-------
 
 <!-- Title: PiRT-UnitによるXBeeモジュールの利用 -->
 #contents
 
-## PiRT-UnitによるXBeeモジュールの利用
+## Using XBee Modules with PiRT-Unit
 
-PiRT-UnitにはZigBeeモジュールXBeeを接続するためのコネクタがあります。
-RaspberryPiからシリアルデバイス経由で利用して、他のZigBeeモジュールとの通信に利用したり、シリアルコンソールを無線化するのにも利用できます。
-Raspbian Wheesyではデフォルトでシリアルコンソールに設定されています。
-この解説では、シリアルコンソールをXBeeで無線化する方法を説明します。
+PiRT-Unit has a connector for connecting the ZigBee module XBee.
+It can be used from RaspberryPi via a serial device for communication with other ZigBee modules, and can also be used to make the serial console wireless.
+In Raspbian Wheesy, it is configured as the serial console by default.
+This guide explains how to make the serial console wireless using XBee.
 
 
 
-### XBeeとPCの接続
+### Connecting XBee and a PC
 
-XBeeモジュールとPCを接続するにはXBee-USBエクスプローラを利用する必要があります。
-XBeeモジュール接続コネクタとUSBコネクタがついており、PCに接続してPCからXBeeの各種設定を行ったり、XBeeをシリアルポートとして利用することができます。
+To connect an XBee module to a PC, you need to use an XBee-USB Explorer.
+It has an XBee module connector and a USB connector, and by connecting it to a PC, you can configure various XBee settings from the PC and use XBee as a serial port.
 
-XBee-USBエクスプローラは、様々なメーカーから発売されています。
+XBee-USB Explorers are sold by various manufacturers.
 
 <table class="table-alt">
   <tr>
-    <th>商品名</th>
-    <th>メーカー</th>
-    <th>価格</th>
+    <th>Product name</th>
+    <th>Manufacturer</th>
+    <th>Price</th>
     <th>URL</th>
   </tr>
   <tr>
     <td>AE-XBEE-USB</td>
-    <td>秋月電子通商</td>
-    <td>1,280円</td>
+    <td>Akizuki Denshi Tsusho</td>
+    <td>1,280 yen</td>
     <td>http://akizukidenshi.com/catalog/g/gK-06188/</td>
   </tr>
   <tr>
     <td>SFE-WRL-08687</td>
     <td>Sparkfun <br> Switch Science</td>
-    <td>2,619 円</td>
-    <td>http://www.switch-science.com/catalog/30/ <br> http://strawberry-linux.com/catalog/items?code=18128 でも入手可能</td>
+    <td>2,619 yen</td>
+    <td>http://www.switch-science.com/catalog/30/ <br> Also available from http://strawberry-linux.com/catalog/items?code=18128</td>
   </tr>
   <tr>
     <td>SFE-WRL-09819</td>
     <td>Sparkfun <br> Switch Science</td>
-    <td>2,619 円</td>
+    <td>2,619 yen</td>
     <td>http://www.switch-science.com/catalog/344/</td>
   </tr>
 </table>
 
 
 <div align="center"><a href="xbee-usb.png"><img src="xbee-usb.png" width="70%;"></a></div>
-<div align="center"><strong>XBee-USBエクスプローラ (Sparkfun(左), 秋月電子通商(右))</strong></div>
+<div align="center"><strong>XBee-USB Explorer (Sparkfun (left), Akizuki Denshi Tsusho (right))</strong></div>
 
 
 
 
-#### デバイスマネージャを開く (Windows)
+#### Open Device Manager (Windows)
 
-デバイスマネージャを開いてください。
-Windows7では、**「コントロールパネル」→「システムとセキュリティ」→「システム」→「デバイスマネージャー」**から開くことができます。
-デスクトップに「コンピュータ」がある場合、**右クリック→「プロパティー(R)」→「デバイスマネージャー」**から開くのが最も早いでしょう。
+Open Device Manager.
+In Windows 7, you can open it from **"Control Panel" -> "System and Security" -> "System" -> "Device Manager"**.
+If "Computer" is on the desktop, the quickest way is probably to open it from **right-click -> "Properties (R)" -> "Device Manager"**.
 
-#### XBee-USBエクスプローラの接続
+#### Connecting the XBee-USB Explorer
 
-XBee-USBエクスプローラをPCのUSBポートに接続します。
-初めて接続する場合は、デバイスの認識とデバイスドライバのインストールでしばらく時間がかかります。
-デバイスドライバのインストールが終了すると、以下のようにデバイスマネージャにCOMポートとして現れます。
-この時、どのCOMポートに割り当てられたかを覚えておいてください。(下の例ではCOM8に割り当てられた。)
+Connect the XBee-USB Explorer to a USB port on the PC.
+When connecting it for the first time, it may take some time for the device to be recognized and for the device driver to be installed.
+After the device driver installation is complete, it appears as a COM port in Device Manager as shown below.
+At this time, remember which COM port it has been assigned to. (In the example below, it was assigned to COM8.)
 
 <div align="center"><a href="debice_manager_xbbcomport.png"><img src="debice_manager_xbbcomport.png" width="70%;"></a></div>
-<div align="center"><strong>デバイスマネージャに現れたXBee-USBエクスプローラデバイス</strong></div>
+<div align="center"><strong>XBee-USB Explorer device appearing in Device Manager</strong></div>
 
-#### デバイスが認識されない場合
+#### If the Device Is Not Recognized
 
-運悪くドライバが自動でインストールされない場合、FTDI社のチップ(FT232B等)を使ったXBee-USBエクスプローラの場合はFTDI者から直接ドライバをダウンロードしてインストールしてください。
+If the driver is unfortunately not installed automatically, for an XBee-USB Explorer using an FTDI chip (FT232B, etc.), download and install the driver directly from FTDI.
 
-- FTDI社ドライバダウンロードサイト: http://www.ftdichip.com/Drivers/VCP.htm
+- FTDI driver download site: http://www.ftdichip.com/Drivers/VCP.htm
 
-なお、秋月およびSparkfunのXBee-USBエクスプローラでは、Windows7はドライバのインストールは不要でした。
+For the Akizuki and Sparkfun XBee-USB Explorers, driver installation was not required on Windows 7.
 
-### XBeeモジュールの設定
+### Configuring the XBee Module
 
-XBeeモジュールは大きく分けて親機と子機に分かれており、そのXBeeモジュールを親機にするか子機にするかはXBee-USBエクスプローラ経由でPCから設定します。
+XBee modules are broadly divided into parent units and child units, and whether an XBee module is used as a parent unit or a child unit is configured from the PC via the XBee-USB Explorer.
 
-一つのXBeeネットワーク内には必ず1台の親機"Coordinator"が必要で、親機に対して複数の子機がぶら下がる形になります。
-一方、購入直後のXBeeモジュールは子機"Router"に設定されており、初めてXBeeネットワークを構成する際には、どれか一つを親機"Coordinator"にしてあげる必要があります。
+Each XBee network always requires one parent unit, "Coordinator", and multiple child units are connected under the parent unit.
+On the other hand, immediately after purchase, XBee modules are configured as child units, "Router", so when creating an XBee network for the first time, one of them must be set as the parent unit, "Coordinator".
 
-XBeeモジュールを設定するには、DigiのWebページからX-CTUという設定ソフトウエアをダウンロードしPCにインストールする必要があります。
+To configure an XBee module, you need to download the configuration software called X-CTU from Digi's web page and install it on the PC.
 
-#### X-CTUのダウンロード・インストール
+#### Downloading and Installing X-CTU
 
-DigiのX-CTUのダウンロードサイトへ行きます(更新等によるリンク切れがあった場合はMLなどでお知らせいただければ幸いです)。
+Go to Digi's X-CTU download site (if the link is broken due to updates or other reasons, please let us know via the ML or similar means).
 
 
-- [Digi X-CTU ダウンロードサイト](http://www.digi.com/support/productdetail?pid=3352)
+- [Digi X-CTU download site](http://www.digi.com/support/productdetail?pid=3352)
 
-ページの **Diagnostics, Utilities and MIBs** の項目をクリックすると、X-CTUのインストーラへのリンクが現れるので、クリックしてダウンロードします。(63MB程度あります。)
+Click the **Diagnostics, Utilities and MIBs** item on the page. A link to the X-CTU installer appears, so click it to download. (It is about 63 MB.)
 
 <div align="center"><a href="digi_xctu_webpage_xctu_link.png"><img src="digi_xctu_webpage_xctu_link.png" width="70%;"></a></div>
-<div align="center"><strong>X-CTUインストーラのダウンロード</strong></div>
+<div align="center"><strong>Downloading the X-CTU installer</strong></div>
 
-ダウンロードした実行ファイル **40003002_C.exe** (このファイル名はバージョンアップなどにより変更されるかもしれません) をクリックして実行すると、インストーラが開始されます。指示に従ってインストールを完了してください。
+Click and run the downloaded executable file **40003002_C.exe** (this file name may change due to version upgrades, etc.), and the installer will start. Follow the instructions to complete the installation.
 
 <div align="center"><a href="xctu_setup0.png"><img src="xctu_setup0.png" width="70%;"></a></div>
-<div align="center"><strong>X-CTUインストーラの実行</strong></div>
+<div align="center"><strong>Running the X-CTU installer</strong></div>
 
-最後に、frimwareのバージョンアップをするか聞いてくることがありますが、特に必要がなければスキップしてください。(結構時間がかかります。)
+Finally, you may be asked whether to update the firmware, but skip it if it is not especially necessary. (It takes quite a bit of time.)
 
-#### X-CTUの起動
+#### Starting X-CTU
 
-インストール完了後、X-CTUを起動します。起動後は以下のような画面が表示されます。
+After installation is complete, start X-CTU. After startup, a screen like the following is displayed.
 
 <div align="center"><a href="xctu0.png"><img src="xctu0.png" width="70%;"></a></div>
-<div align="center"><strong>X-CTU起動後の画面</strong></div>
+<div align="center"><strong>Screen after starting X-CTU</strong></div>
 
-X-CTUの**「PC-Settings」**を選択します。
-タブ内の**Select Com Port**でXBee-USBエクスプローラデバイスが接続されているCOMポートを選択します。(この例ではCOM8です。)
-XBee-USBエクスプローラデバイスが接続されているCOMポートが不明な場合は、一旦デバイスをPCから取り外し、デバイスマネージャでなくなるCOMポートを観察するか、X-CTUを再度起動してなくなったCOMポートを見つけるなどして対応するCOMポートを特定してください。
+Select **"PC-Settings"** in X-CTU.
+In **Select Com Port** within the tab, select the COM port to which the XBee-USB Explorer device is connected. (In this example, it is COM8.)
+If you do not know the COM port to which the XBee-USB Explorer device is connected, temporarily disconnect the device from the PC and observe which COM port disappears in Device Manager, or restart X-CTU and find the COM port that disappeared, to identify the corresponding COM port.
 
-**Select Com Port**で対象となるCOMポートを選択したら、右下の**Test/Query**ボタンを押してください。XBeeと通信を行い、以下のようにシリアルナンバーなどを表示します。
+After selecting the target COM port in **Select Com Port**, press the **Test/Query** button at the bottom right. It communicates with the XBee and displays the serial number and other information as shown below.
 
 <div align="center"><a href="xctu1.png"><img src="xctu1.png" width="70%;"></a></div>
-<div align="center"><strong>接続テスト</strong></div>
+<div align="center"><strong>Connection test</strong></div>
 
-#### ファームウエア設定情報の読み込み
+#### Loading Firmware Configuration Information
 
-次に接続されているXBeeが現在どのような設定になっているか、ファームウエアの情報を読み込みます。
-X-CTUの**「Modem Configuration」**タブをクリックし、下の**Modem Parameter and Firmware**のエリアの**「Read」**ボタンをクリックします。
-すると、XBeeとの通信が開始され、少し経つと以下のようにXBeeの設定情報が下のエリアにツリー表示されます。
+Next, load the firmware information to check the current configuration of the connected XBee.
+Click the **"Modem Configuration"** tab in X-CTU, then click the **"Read"** button in the **Modem Parameter and Firmware** area below.
+Then communication with the XBee starts, and after a short while, the XBee configuration information is displayed in a tree in the lower area as shown below.
 
 <div align="center"><a href="xctu2.png"><img src="xctu2.png" width="70%;"></a></div>
-<div align="center"><strong>ファームウエア設定情報の読み込み</strong></div>
+<div align="center"><strong>Loading firmware configuration information</strong></div>
 
-また、**「Modem」**の部分にXBeeモジュールの種類、**「Function Set」**の部分にファームウェアの種類、「Version」にファームウェアのバージョンが表示されます。
+The XBee module type is displayed in the **"Modem"** section, the firmware type is displayed in the **"Function Set"** section, and the firmware version is displayed in "Version".
 
-**「Function Set」**の部分はおそらく **ZIGBEE ROUTER AT** となっているはずですが、これはこのXBeeモジュールが"Router"すなわち子機として設定されていることを意味します。
+The **"Function Set"** section is probably **ZIGBEE ROUTER AT**, which means that this XBee module is configured as a "Router", that is, a child unit.
 
-#### RouterからCoordinatorへの変更
+#### Changing from Router to Coordinator
 
-ここで子機"Router"を親機"Coordinator"に変更してみます。
-親機すなわり**「Coordinator」**に変更するために、プルダウンメニューから**ZIGBEE COORDINATOR AT**を選択します。
+Here, change the child unit "Router" to the parent unit "Coordinator".
+To change it to the parent unit, that is, **"Coordinator"**, select **ZIGBEE COORDINATOR AT** from the pull-down menu.
 
 <div align="center"><a href="xctu3.png"><img src="xctu3.png" width="70%;"></a></div>
-<div align="center"><strong>ファームウエア ZIGBEE COORDINATOR AT への変更</strong></div>
+<div align="center"><strong>Changing the firmware to ZIGBEE COORDINATOR AT</strong></div>
 
-**「Write」**ボタンを押すとXBeeへの書き込みが開始されます。1から2分程度で書き込みが終了します。
+Press the **"Write"** button to start writing to the XBee. Writing completes in about 1 to 2 minutes.
 
 <div align="center"><a href="xctu6.png"><img src="xctu6.png" width="70%;"></a></div>
-<div align="center"><strong>ファームウエアの書き込み</strong></div>
+<div align="center"><strong>Writing the firmware</strong></div>
 
-#### ATとAPIの違い
+#### Difference Between AT and API
 
-先ほどのファームウエアの選択時に、**ZIGBEE COORDINATOR AT** のほかに **ZIGBEE COORDINATOR API** というファームウエアがあったことに気付かれたかもしれません。
-**AT** とつくものは、ATコマンドでXBeeの設定を行うタイプのファームウエアで、一方**API**とつくものは、API経由でXBeeの設定を行うタイプのファームウエアを意味します。
-
-
-
-## もしXBeeが全く応答しなくなったら
-
-もしXBeeが全く応答しなくなったら、強制的にファームウエアを上書きし出荷状態に戻します。
-以下の手順に従って、工場出荷状態に戻してください。
-
-1. XBee-USBエクスプローラデバイスからXBeeを外す
-1. その状態でXBee-USBエクスプローラデバイスをPCに接続する
-1. X-CTUを起動
-1. "Modem Configuration"タブをクリック
-1. "Always update firmware" チェックボックスをクリック
-1. 適切な"Modem"タイプを選択
-1. 適切な"Function Set"を選択
-1. "Write"をクリック。しばらくすると、エラーダイアログが出るので、XBeeをXBee-USBエクスプローラデバイスに挿入
-1. ファームウエアの書き込みが始まる
+When selecting the firmware earlier, you may have noticed that in addition to **ZIGBEE COORDINATOR AT**, there was firmware called **ZIGBEE COORDINATOR API**.
+Firmware with **AT** means the type of firmware that configures the XBee using AT commands, while firmware with **API** means the type of firmware that configures the XBee via an API.
 
 
--------jp page!!-------
+
+## If XBee Stops Responding Completely
+
+If XBee stops responding completely, forcibly overwrite the firmware and restore it to the factory state.
+Follow the procedure below to restore it to the factory default state.
+
+1. Remove XBee from the XBee-USB Explorer device
+1. In that state, connect the XBee-USB Explorer device to the PC
+1. Start X-CTU
+1. Click the "Modem Configuration" tab
+1. Click the "Always update firmware" checkbox
+1. Select the appropriate "Modem" type
+1. Select the appropriate "Function Set"
+1. Click "Write". After a short while, an error dialog appears, so insert XBee into the XBee-USB Explorer device
+1. Firmware writing starts

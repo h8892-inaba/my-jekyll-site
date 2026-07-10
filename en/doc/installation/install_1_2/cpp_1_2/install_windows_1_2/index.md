@@ -2,7 +2,9 @@
 layout: page
 Title: "Windowsへのインストール"
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: Windowsへのインストール -->
 <div align="right"><a href="windows10-logo.png"><img src="windows10-logo.png" width="15%; margin:30 30 30 30px;" align="right"></a></div>
@@ -112,7 +114,7 @@ OpenRTM-aistでは、RTCBuilderでRTCの設計時に様々な設計情報を記�
 
 OpenRTM-aistのWindows版のインストーラ（msi形式）を以下のページからダウンロードします。
 
-- [OpenRTM-aist-1.2.2-RELEASE]({{ site.baseurl }}/ja/download)
+- [OpenRTM-aist-1.2.2-RELEASE]({{ site.baseurl }}/en/download)
   - [OpenRTM-aist-1.2.2-RELEASE_x86_64.msi (64bit版)](https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi)
 
 このインストーラには、以下の内容が含まれています。
@@ -161,7 +163,7 @@ msiファイルが正しくダウンロードされたら、ファイルをダ�
 <div align="center"><a href="openrtm122_inst_08.png"><img src="openrtm122_inst_08.png" width="60%; margin:10 10 10 10px;"></a></div>
 
 すべてインストールが完了すると以下の画面となります。**「完了」** を押してウインドウを閉じてください。
-以上でインストールは完了です。正しくインストールされているかどうかは、[「OpenRTMを10分で始めよう・サンプルコンポーネント」]({{ site.baseurl }}/ja/doc/installation/lets_start121) などを見ながらサンプルコンポーネントを実行するなどして確認してください。
+以上でインストールは完了です。正しくインストールされているかどうかは、[「OpenRTMを10分で始めよう・サンプルコンポーネント」]({{ site.baseurl }}/en/doc/installation/lets_start121) などを見ながらサンプルコンポーネントを実行するなどして確認してください。
 
 
 
@@ -257,4 +259,4 @@ msiファイルが正しくダウンロードされたら、ファイルをダ�
             + VCVerChanger: 使用しているVisual Studioのバージョンを指定するツール
             + WordContrlpy: PythonベースMicrosoft Office Word用RTC
 
--------jp page!!-------
+

@@ -1,257 +1,308 @@
 ---
 layout: page
-title: サンプルコンポーネントの実行
+title: Running Sample Components
 ---
--------jp page!!-------
 
 <!-- Title: サンプルコンポーネントの実行 -->
 <!-- * GPIOを利用したサンプル -->
 
 #contents
 
-以下の例では、GPIO を用いて、スイッチの ON/OFF の検出と、LED の点灯を行うコンポーネント (DigitalIn-RTC、DigitalOut-RTC) を作成して Raspberry Pi の特徴である GPIO の利用について理解を深めます。
-サンプルコンポーネントのソースコードは以下からダウンロードできます。
+The following example uses GPIO to detect switch ON/OFF states and control LED illumination through RT Components (**DigitalIn-RTC** and **DigitalOut-RTC**). By building and running these components, you can gain a better understanding of how to use the Raspberry Pi's GPIO functionality.
 
-- [サンプルコンポーネントソース](RaspberryPi_sample.zip)
+The sample component source code can be downloaded from:
 
-## Raspberry Pi の GIOP
+- [Sample Component Source Code](RaspberryPi_sample.zip)
 
-Raspberry Pi には GPIO端子があり、これを利用することで様々な外部デバイスを利用することができます。
+## Raspberry Pi GPIO
 
-Raspberry Pi 本体に付属している GPIO のピンアサインを以下に示します｡
+The Raspberry Pi provides GPIO (General Purpose Input/Output) pins that can be used to interface with a variety of external devices.
+
+The GPIO pin assignments are shown below.
 
 <div align="center"><a href="raspberrypi_gpio_pinassign.png"><img src="raspberrypi_gpio_pinassign.png" width="80%;"></a></div>
-<div align="center"><strong>Raspberry Pi GPIO のピンアサイン</strong></div>
+<div align="center"><strong>Raspberry Pi GPIO Pin Assignment</strong></div>
 
-GPIO を使用する場合には、各ピンの位置に注意してください｡特に5V 端子を使用する場合、配線を誤ると Raspberry Pi 本体および SD カードを破壊してしまう危険がありますので、十分に注意してください｡
+When using GPIO pins, pay close attention to the pin layout. In particular, incorrect wiring involving the **5V pins** may damage the Raspberry Pi itself or the SD card. Proceed with caution.
 
-## ブレッドボード配線例
+## Breadboard Wiring Examples
 
-LED を点灯させる回路と、スイッチの ON/OFF を検出する回路を作成します。
-ブレッドボード等があれば簡単に回路を組めますが、ない場合でも部品点数が少ないのでリード線をはんだ付けするなどすれば比較的容易に回路を組むことができるでしょう。
-以下に、必要な部品のリストを示します。
+In this example, we will build:
+
+- An LED circuit
+- A switch circuit for detecting ON/OFF states
+
+Using a breadboard makes circuit assembly straightforward. However, since the number of components is small, the circuits can also be built by soldering wires directly.
+
+The required parts are listed below.
 
 <table class="table-alt">
   <tr>
-    <th colspan="2" style="text-align: center;">部品表</th>
+    <th colspan="2" style="text-align: center;">Parts List</th>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;">LED回路</td>
-  </tr>
-  <tr>
-    <td>LED</td>
-    <td>1個</td>
-  </tr>
-  <tr>
-    <td>抵抗</td>
-    <td>100Ω (茶黒茶金) ～330Ω (橙橙茶金)</td>
-  </tr>
-  <tr>
-    <td>リード線</td>
-    <td>若干</td>
-  </tr>
-  <tr>
-    <td colspan="2" style="text-align: center;">スイッチLED回路</td>
+    <td colspan="2" style="text-align: center;">LED Circuit</td>
   </tr>
   <tr>
     <td>LED</td>
-    <td>1個</td>
+    <td>1</td>
   </tr>
   <tr>
-    <td>抵抗</td>
-    <td>330Ω (橙橙茶金) ～1kΩ (茶黒赤金)</td>
+    <td>Resistor</td>
+    <td>100Ω (Brown-Black-Brown-Gold) to 330Ω (Orange-Orange-Brown-Gold)</td>
   </tr>
   <tr>
-    <td>リード線</td>
-    <td>若干</td>
+    <td>Wires</td>
+    <td>As needed</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">Switch Circuit</td>
+  </tr>
+  <tr>
+    <td>LED</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Resistor</td>
+    <td>330Ω (Orange-Orange-Brown-Gold) to 1kΩ (Brown-Black-Red-Gold)</td>
+  </tr>
+  <tr>
+    <td>Wires</td>
+    <td>As needed</td>
   </tr>
 </table>
 
-Raspberry Pi が1台の場合は、以下の LEDとスイッチ回路を同じ Raspberry Pi に接続します。
-もし、Raspberry Pi が2台あるなら、それぞれの Raspberry Pi に LED とスイッチを取り付けると面白いかもしれません。
+If you have only one Raspberry Pi, connect both the LED and switch circuits to the same board.
 
-### DigitalIn-RTC 用配線例
+If you have two Raspberry Pis, it may be interesting to connect an LED and switch to each device and communicate between them.
 
-DigitalIn-RTC は、データポートに入力された bool 値 (true/false) を指定された GPIO ポートに出力するコンポーネントです。GPIO ポートの出力値を観測するために、**Ground**ピンと**GPIO 18**ピンに LED と抵抗を接続し下図のような回路を作成します。
+### Wiring Example for DigitalIn-RTC
+
+**DigitalIn-RTC** outputs a Boolean value (`true`/`false`) received through its data port to a specified GPIO pin.
+
+To observe the GPIO output, connect an LED and resistor between the **Ground** pin and **GPIO 18**, as shown below.
 
 <div align="center"><a href="gpio_led_circuit.png"><img src="gpio_led_circuit.png" width="80%;"></a></div>
-<div align="center"><strong>LED 接続回路図</strong></div>
+<div align="center"><strong>LED Connection Circuit Diagram</strong></div>
 
-ブレッドボードでこの回路を作成する場合はこのようになります。
+The equivalent breadboard wiring is shown below.
 
 <div align="center"><a href="3_rp2.png"><img src="3_rp2.png" width="80%;"></a></div>
-<div align="center"><strong>ブレッドボードによる LED 回路配線例</strong></div>
+<div align="center"><strong>Breadboard Example for LED Circuit</strong></div>
 
-### DigitalOut-RTC 用配線例
+### Wiring Example for DigitalOut-RTC
 
-DigitalOut-RTC は、GPIO ポートに入力された bool 値 (true/false) をデータポートから出力するコンポーネントです｡
-GPIO に値を入力するために、**Ground**, **3.3V Power**, **GPIO 17**に抵抗とスイッチを接続して下図のような回路を作成します。
+**DigitalOut-RTC** reads a Boolean value (`true`/`false`) from a GPIO pin and outputs it through a data port.
+
+To provide input to the GPIO pin, connect a resistor and switch to **Ground**, **3.3V Power**, and **GPIO 17**, as shown below.
 
 <div align="center"><a href="gpio_stiwch_circuit.png"><img src="gpio_stiwch_circuit.png" width="80%;"></a></div>
-<div align="center"><strong>タクトスイッチ接続回路図</strong></div>
+<div align="center"><strong>Tact Switch Connection Circuit Diagram</strong></div>
 
-ブレッドボードでこの回路を作成する場合はこのようになります。
+The corresponding breadboard wiring is shown below.
 
 <div align="center"><a href="3_rp3.png"><img src="3_rp3.png" width="80%;"></a></div>
-<div align="center"><strong>ブレッドボードによりスイッチ回路配線例</strong></div>
+<div align="center"><strong>Breadboard Example for Switch Circuit</strong></div>
 
-## コンポーネントのコンパイル
+## Compiling the Components
 
-ソースコードを以下から Raspberry Pi にダウンロードして、DigitalIn-RTC/DigitalOut-RTC コンポーネントをコンパイルします。
+Download the source code onto the Raspberry Pi and compile the DigitalIn-RTC and DigitalOut-RTC components.
 
-- [サンプルコンポーネントソース](RaspberryPi_sample.zip)
+- [Sample Component Source Code](RaspberryPi_sample.zip)
 
-### DigitalIn-RTC のコンパイル
+### Compiling DigitalIn-RTC
 
-```
- $ unzip RaspberryPi_sample.zip
- $ cd RaspberryPi_sample/DigitalInRPI/
- $ vi CMakeLists.txt
-```
-
-ここで、CMakeLists.txt を書き換えて、ドキュメントの生成を抑制するよう設定します。
-
-```
- option(BUILD_DOCUMENTATION "Build the documentation" OFF)
-  ↓
- option(BUILD_DOCUMENTATION "Build the documentation" ON)
- 
- $ mkdir build
- $ cd build
- $ cmake ..
- -- The C compiler identification is GNU 4.6.3
- -- The CXX compiler identification is GNU 4.6.3
-   : 中略
- -- Configuring done
- -- Generating done
- -- Build files have been written to: /home/pi/RaspberryPi_sample/DigitalInRPI/build
+```bash
+$ unzip RaspberryPi_sample.zip
+$ cd RaspberryPi_sample/DigitalInRPI/
+$ vi CMakeLists.txt
 ```
 
-OpenRTM-aist が正しくインストールされていれば、問題なく configure が終了します。
-もし、OpenRTM や coil が無いなどでエラーが出た場合、OpenRTM-aist (C++版) が正しくインストールされていることを確認 (dpkg -l |grep openrtm 等) してください。
+Edit `CMakeLists.txt` to disable documentation generation.
 
-```
- $ make
-  : 中略
- Scanning dependencies of target DigitalInComp
- [ 66%] Building CXX object src/CMakeFiles/DigitalInComp.dir/DigitalInComp.cpp.o
- [100%] Building CXX object src/CMakeFiles/DigitalInComp.dir/DigitalIn.cpp.o
- Linking CXX executable DigitalInComp
- [100%] Built target DigitalInComp
- $
+```cmake
+option(BUILD_DOCUMENTATION "Build the documentation" ON)
+ ↓
+option(BUILD_DOCUMENTATION "Build the documentation" OFF)
 ```
 
-コンパイルされたコンポーネント DigitalInComp は src の下にあります。
+Then build the component.
 
-```
- $ ls src/
- CMakeFiles  cmake_install.cmake  DigitalInComp  DigitalIn.so  Makefile
-```
-
-### DigitalOut-RTC のコンパイル
-
-DigitalIn-RTC と同様にコンパイルします。
-
-```
- $ cd RaspberryPi_sample/DigitalOutRPI/
- $ mkdir build
- $ vi CMakeLists.txt
+```bash
+$ mkdir build
+$ cd build
+$ cmake ..
+-- The C compiler identification is GNU 4.6.3
+-- The CXX compiler identification is GNU 4.6.3
+   : omitted
+-- Configuring done
+-- Generating done
+-- Build files have been written to:
+   /home/pi/RaspberryPi_sample/DigitalInRPI/build
 ```
 
-ここで、CMakeLists.txt を書き換えて、ドキュメントの生成を抑制するよう設定します。
+If OpenRTM-aist is installed correctly, configuration should complete without errors.
 
-```
- option(BUILD_DOCUMENTATION "Build the documentation" OFF)
-  ↓
- option(BUILD_DOCUMENTATION "Build the documentation" ON)
- 
- $ mkdir build
- $ cd build
- $ cmake ..
- -- The C compiler identification is GNU 4.6.3
- -- The CXX compiler identification is GNU 4.6.3
-   : 中略
- -- Configuring done
- -- Generating done
- -- Build files have been written to: /home/pi/RaspberryPi_sample/DigitalOutRPI/build
-```
-続いて make します。
+If errors occur indicating that OpenRTM or Coil cannot be found, verify that OpenRTM-aist (C++ version) is installed correctly.
 
-```
- $ make
- -- OpenRTMConfig.cmake found.
- -- Configrued by configuration mode.
-  : 中略
- Scanning dependencies of target DigitalOutComp
- [ 66%] Building CXX object src/CMakeFiles/DigitalOutComp.dir/DigitalOutComp.cpp.o
- [100%] Building CXX object src/CMakeFiles/DigitalOutComp.dir/DigitalOut.cpp.o
- Linking CXX executable DigitalOutComp
- [100%] Built target DigitalOutComp
- $
+Example:
+
+```bash
+$ dpkg -l | grep openrtm
 ```
 
-コンパイルされたコンポーネント DigitalOutComp は src の下にあります。
+Build the component:
 
-```
- $ ls src/
- CMakeFiles  cmake_install.cmake  DigitalOutComp  DigitalOut.so  Makefile
-```
-
-## コンポーネントの実行
-
-各RTC が正常にコンパイルできたら、NameServer を起動後、各RTC を起動します｡
-
-```
- $ rtm-naming
- $ sudo  /home/pi/RaspberryPi_sample/DigitalOutRPI/build/src/DigitalOutComp &
- $ sudo  /home/pi/RaspberryPi_sample/DigitalInRPI/build/src/DigitalInComp &
+```bash
+$ make
+  : omitted
+Scanning dependencies of target DigitalInComp
+[ 66%] Building CXX object ...
+[100%] Building CXX object ...
+Linking CXX executable DigitalInComp
+[100%] Built target DigitalInComp
+$
 ```
 
-**<span style="color:red;">サンプルコンポーネントは GPIO を利用するので root 権限で実行する必要があります｡</span>**
+The compiled executable is located in the `src` directory.
 
-PC上で RTSystemEditor を起動し、Raspberry Pi上の NameServewr に接続します｡
-各RTC を配置し、ポート間の接続を行った後、活性化(Activate)します｡
+```bash
+$ ls src/
+CMakeFiles  cmake_install.cmake
+DigitalInComp  DigitalIn.so  Makefile
+```
+
+### Compiling DigitalOut-RTC
+
+Compile DigitalOut-RTC in the same manner.
+
+```bash
+$ cd RaspberryPi_sample/DigitalOutRPI/
+$ vi CMakeLists.txt
+```
+
+Edit `CMakeLists.txt`:
+
+```cmake
+option(BUILD_DOCUMENTATION "Build the documentation" ON)
+ ↓
+option(BUILD_DOCUMENTATION "Build the documentation" OFF)
+```
+
+Then configure the build.
+
+```bash
+$ mkdir build
+$ cd build
+$ cmake ..
+-- The C compiler identification is GNU 4.6.3
+-- The CXX compiler identification is GNU 4.6.3
+   : omitted
+-- Configuring done
+-- Generating done
+-- Build files have been written to:
+   /home/pi/RaspberryPi_sample/DigitalOutRPI/build
+```
+
+Build the component.
+
+```bash
+$ make
+-- OpenRTMConfig.cmake found.
+-- Configured by configuration mode.
+   : omitted
+Scanning dependencies of target DigitalOutComp
+[ 66%] Building CXX object ...
+[100%] Building CXX object ...
+Linking CXX executable DigitalOutComp
+[100%] Built target DigitalOutComp
+$
+```
+
+The compiled executable is located in the `src` directory.
+
+```bash
+$ ls src/
+CMakeFiles  cmake_install.cmake
+DigitalOutComp  DigitalOut.so  Makefile
+```
+
+## Running the Components
+
+After both RTCs have been successfully compiled, start the Name Server and launch the components.
+
+```bash
+$ rtm-naming
+$ sudo /home/pi/RaspberryPi_sample/DigitalOutRPI/build/src/DigitalOutComp &
+$ sudo /home/pi/RaspberryPi_sample/DigitalInRPI/build/src/DigitalInComp &
+```
+
+**Because these sample components use GPIO, they must be executed with root privileges.**
+
+Start RTSystemEditor on a PC and connect to the Name Server running on the Raspberry Pi.
+
+Place the RTCs in the system diagram, connect their ports, and activate them.
 
 <div align="center"><a href="3_rp4.png"><img src="3_rp4.png" width="80%;"></a></div>
-<div align="center"><strong>サンプル RTC の実行</strong></div>
+<div align="center"><strong>Running the Sample RTCs</strong></div>
 
-各RTC が正常に起動すると、タクトスイッチの状態に応じて、LED が点灯/消灯するようになります｡
+When both RTCs are operating correctly, pressing and releasing the tact switch will cause the LED to turn on and off accordingly.
 
 
-<hr>
-# コメント
+# Comments
 
-### naming serverの設定について
+### About Name Server Configuration
 
-パーマリンク Submitted by SUZUKAWA yuichi on 火, 2013-04-23 00:53.
-
-<table class="table-alt">
- <tr>
-<td>
-早速、この方法で試してみたのですが、Naming Serverが立ち上がったのに、Eclips上に表示されなくて悩みました。
-
-力技で、Raspberry pi 側の naming serverのHost server名を192.168.0.X:100などのように設定して無理やりポート開きました。 通常だと、ローカルホストになるので「Raspberry pi：ポートナンバー」の様に表示されて、入れないです。
-
-</td>
- </tr>
- </table>
-
-### Raspberry pi UART通信コンポーネントの作成について
-
-パーマリンク Submitted by SUZUKAWA yuichi on 火, 2013-04-23 01:02.
+**Permalink** Submitted by SUZUKAWA Yuichi on Tue, 2013-04-23 00:53.
 
 <table class="table-alt">
- <tr>
+<tr>
 <td>
-追加ですが、簡単なUART通信のループバックコンポーネントを作ったらうまくいきました。
 
-プログラムは以下のサイト様を参考にさせて頂きました。
+I tried this method immediately, but although the Naming Server started successfully, it did not appear in Eclipse, which caused some confusion.
 
-ほぼ移植で動きます。
+As a workaround, I manually configured the Raspberry Pi naming server host address as something like:
 
-参考サイト ・Chick Lab様 Raspberry Pi でシリアル通信 http://chicklab.blog84.fc2.com/blog-entry-46.html ・工作と小物のがらくた部屋様 http://junkroom2cyberrobotics.blogspot.jp/2013/03/raspberry-pi-uart.html
+```text
+192.168.0.X:100
+```
+
+and forcibly opened the port.
+
+Normally, it uses localhost, which causes it to appear as:
+
+```text
+RaspberryPi:port_number
+```
+
+making it inaccessible from outside.
 
 </td>
- </tr>
- </table>
--------jp page!!-------
+</tr>
+</table>
+
+### Creating a Raspberry Pi UART Communication Component
+
+**Permalink** Submitted by SUZUKAWA Yuichi on Tue, 2013-04-23 01:02.
+
+<table class="table-alt">
+<tr>
+<td>
+
+As an additional note, I successfully created a simple UART loopback communication component.
+
+The program was based on the following reference sites and worked with only minor modifications.
+
+Reference sites:
+
+- Chick Lab: *Serial Communication on Raspberry Pi*  
+  http://chicklab.blog84.fc2.com/blog-entry-46.html
+
+- Junk Room of Crafts and Gadgets  
+  http://junkroom2cyberrobotics.blogspot.jp/2013/03/raspberry-pi-uart.html
+
+The code worked almost unchanged after porting.
+
+</td>
+</tr>
+</table>

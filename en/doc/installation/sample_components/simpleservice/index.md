@@ -2,7 +2,6 @@
 layout: page
 title: "SimpleService"
 ---
--------jp page!!-------
 
 <!-- Title: SimpleService -->
 #contents
@@ -42,7 +41,7 @@ SimpleServiceは、MyServiceConsumerからコマンドを送り、MyServiceProvi
 MyServiceConsumerとMyServiceProviderの対応するポートをRTSystemEditor上で接続し、両コンポーネントをアクティベートします(ActivateするのはConsumer側コンポーネントだけでもよい)とConsumer側プロンプトにコマンド一覧が表示されるので、適当なコマンドを入力してください。Provider側の応答がプロンプト上で観察できます。
 
 - 手順
-  - RTSystemEditorを起動し、新規SystemEditorを開きます。RTSystemEditorの使用方法の詳細については[RTSystemEditor]({{ site.baseurl }}/ja/doc/toolmanuals/rtsystemeditor-1_2_0)を参照
+  - RTSystemEditorを起動し、新規SystemEditorを開きます。RTSystemEditorの使用方法の詳細については[RTSystemEditor]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_2_0)を参照
   - MyServiceConsumerとMyServiceProviderの両コンポーネントを起動します。
 
 コンポーネントの起動はOSやOpenRTM-aistの言語によって異なりますので、以下の表を参考に起動します。
@@ -94,4 +93,3 @@ MyServiceConsumerとMyServiceProviderの対応するポートをRTSystemEditor�
   - get_value_history：今までにセットしてきた値の履歴をProvider側から取得
 
 
--------jp page!!-------

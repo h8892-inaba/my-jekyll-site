@@ -1,189 +1,184 @@
 ---
 layout: page
-title: 一般・ライセンスに関する FAQ
+title: FAQ on General Matters and Licenses
 ---
--------jp page!!-------
 
 <!-- Title: 一般・ライセンスに関する FAQ -->
 #contents
 
 
-## OpenRTM の利用について
+## About Using OpenRTM
 
-### RTミドルウエアと OpenRTM-aist の違いは？
+### What is the difference between RT Middleware and OpenRTM-aist?
 
-RTミドルウエアとは、Robot Technology (ロボット技術(要素)用の) ミドルウエアという意味です。これは、産総研だけのものではなく、広く一般にロボット用のミドルウエアを指す言葉です。従って、ROS や OROCOS、OPRoS など他のロボット用のプラットフォーム・ミドルウエアも広い意味で RTミドルウエアと呼ぶことができます。
-しかし一方で、一般的には[OMG の RTC 標準仕様](http://www.omg.org/spec/RTC) を実装したものを RTミドルウエアと呼ぶことが多いと思います。
+RT Middleware means middleware for Robot Technology (robot technology elements). This is not something limited to AIST; it is a general term that broadly refers to middleware for robots. Therefore, other robot platforms and middleware such as ROS, OROCOS, and OPRoS can also be called RT Middleware in a broad sense.
+On the other hand, in general, implementations of the [OMG RTC standard specification](http://www.omg.org/spec/RTC) are often called RT Middleware.
 
-産総研がオープンソースで開発・配布している RTミドルウエアは固有名詞として OpenRTM-aist と呼ばれます。このほかに、OMG RTC 標準準拠の RTミドルウエアには、株式会社セックの OpenRTM.NET、RT-Middleware on Android、本田技術研究所の RTミドルウエアなど互換性を持ついくつかの実装があります。
-
-
-### OpenRTM-aist を使うにはお金がいるの？
-
-OpenRTM-aist は、LGPLライセンスでソースコードを公開している、いわゆるオープンソースソフトウエアです。
-使用するためにお金は一切必要ありません。
-
-詳しくは下の「ライセンス」に関するFAQをご参照ください。
+The RT Middleware developed and distributed as open source by AIST is called OpenRTM-aist as a proper noun. In addition, there are several compatible implementations of RT Middleware conforming to the OMG RTC standard, such as OpenRTM.NET by SEC Co., Ltd., RT-Middleware on Android, and RT Middleware by Honda R&D Co., Ltd.
 
 
-### OpenRTM-aist を使うには産総研に申請する必要があるの？
+### Does it cost money to use OpenRTM-aist?
 
-OpenRTM-aist は、LGPLのオープンソースプロダクトですので、使用するにあたって産総研の許可を取る必要はまったくありません。
-ご自由にダウンロード、使用していただいて構いません。
-また LGPLライセンスに従う限り、製品に組み込んで販売することも自由です。産総研の許可を取る必要はありません。
-ただし、もし製品にご使用に使用されたい場合は、メーリングリストや[Webページのコンタクトフォーム](http://openrtm.org/openrtm/contact)などへお知らせいただけるとありがたいです。
+OpenRTM-aist is so-called open-source software whose source code is released under the LGPL license.
+No money is required at all to use it.
 
-
-### サポートは提供されるの？保証はあるの？
-
-OpenRTM-aist は、無保証のオープンソースプロダクトです。OpenRTM-aist は As-Is の状態で提供され、産総研およびその開発者はその使用または性能に関していかなる保証も行いません。
-また、OpenRTM-aist を使用することにより得られる成果または結果を保証せず、また産総研および開発者はバグやその他不具合などを修正する義務を負いません。
-これは、オープンソースソフトウエアに限らず一般的なソフトウエアの使用許諾に記載されている無保証に関する条項と同等のものです。
-
-しかし、産総研ではユーザー間の情報共有のために、
-
-- [メーリングリスト](/community/mailinglist_ja)
-- [Webフォーラム](/community/forum_ja)
-
-を設け、そこに投稿された質問等を通じて疑問等にはできるだけお答えするよう努力しております。
-さらに、講習会、サマーキャンプ、コンテストなどを開催し、RTコンポーネント開発・システム開発技能の習得を促進しており、その場を通じて疑問やフィードバックに対して可能な限りこたえる努力を行っています。
-
-詳しくは「コミュニティについて」をご参照ください。
+For details, please refer to the FAQ on "Licenses" below.
 
 
+### Do I need to apply to AIST to use OpenRTM-aist?
 
-## ライセンス等
-
-### OpenRTM-aist のライセンスはなんですか？
-
-OpenRTM-aist (C++, Python, Java)版は LGPL (GNU Lesser General Public License)と、産総研との個別契約可能なデュアルライセンス方式を採用しています。
-ツール (RTCBUilder, RTSystemEditor)は EPL (Eclipse Public License) と、産総研との個別契約可能なデュアルライセンス方式を採用しています。
-
-### デュアルライセンスとはなんですか？
-
-1つのソフトウェアを異なる2種類（またはそれ以上）のライセンスの元で配布する方法をデュアルライセンス方式と呼びます。
-ソフトウェアがデュアルライセンスで配布される場合、その利用者はそのソフトウェアを利用または再配布するためにいずれかのライセンスを選ぶことができます。詳細はWikipedia等をご覧ください。
-
-- [デュアルライセンス(wikipedia)](http://ja.wikipedia.org/wiki/%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9)
+OpenRTM-aist is an LGPL open-source product, so you do not need to obtain permission from AIST at all in order to use it.
+You are free to download and use it.
+Also, as long as you comply with the LGPL license, you are free to incorporate it into products and sell them. You do not need to obtain permission from AIST.
+However, if you would like to use it in a product, we would appreciate it if you could let us know via the mailing list or the [contact form on the Web page](http://openrtm.org/openrtm/contact).
 
 
-### なぜデュアルライセンスなのですか？
+### Is support provided? Is there any warranty?
 
-我々は OpenRTM-aist および RTミドルウエア・RTコンポーネントという考え方を広めたいと考えており、そのためにオープンソースでソフトウエアを配布しています。
-一方で、我々産総研は実際に RTミドルウエアを利用してロボットなどの実用化・事業化したいと考えている企業を支援するミッションも負っております。
-その際、オープンソースライセンスのみで配布していると、企業にとって不都合ないくつかの制約があるため、オープンソースとは別の個別契約も可能なデュアルライセンス方式を採用しています。
+OpenRTM-aist is an open-source product without warranty. OpenRTM-aist is provided As-Is, and AIST and its developers make no warranty of any kind regarding its use or performance.
+In addition, AIST and the developers do not guarantee the achievements or results obtained by using OpenRTM-aist, and AIST and the developers have no obligation to fix bugs or other defects.
+This is equivalent to the no-warranty clauses commonly included in software licenses in general, not only open-source software.
 
-### どういう場合個別契約が必要なのですか？
+However, AIST provides the following for information sharing among users:
 
-例えば、「OpenRTM-aist 本体を改変してシステムに組み込みたいが、改変した部分は公開したくない」という場合、LGPLライセンスで OpenRTM-aist を利用することはできないので、産総研と個別に契約していただく必要があります。
-その際、若干の実施料をいただくことになりますが、RTミドルウエアを推進している立場上、法外な値段の実施料をいただくことは決してありませんのでご安心ください。
+- [Mailing list](/community/mailinglist_ja)
+- [Web forum](/community/forum_ja)
 
-### OpenRTM-aist とツールのライセンスが異なるのはなぜですか？
+Through questions posted there, we make efforts to answer questions as much as possible.
+Furthermore, we hold training courses, summer camps, contests, and other events to promote the acquisition of RT component development and system development skills, and we make efforts to respond to questions and feedback as much as possible through those opportunities.
 
-OpenRTM-aist は、LGPL、ツールは EPL を採用しています。LGPL と EPL には特許条項とGPLライセンスのライブラリと混ぜて使えるか、など違いがあります。
-
-EPL には特許条項があり、ソフトウエアのコントリビューターが持つ特許が当該ソフトウエアに影響しない(使用者には使用料無料の特許ライセンスが付与される)ため使用者にとってはより安全なライセンスとなっていますが、GPL とは非互換のため混ぜて使うことはできません。
-したがって、EPL ライセンスの Eclipse ではプラグイン（RTCBuilder、RTSystemEditorなどもプラグインです）も EPL とすることが通例となっています。(例外条項を付加すればプラグインに GPL を適用可能ではありますが。)
-
-一方、OpenRTM-aist を利用して C++ や Python で RTコンポーネントを作成する場合、GPL ライセンスのライブラリなどとリンクすることは容易に起こりえます。したがって、OpenRTM-aist 自体を EPL にするとこうした GPL ライブラリとのリンクが事実上できなくなるため、GPL と互換性のある LGPL を採用しています。
+For details, please refer to "About the Community."
 
 
 
-## コミュニティについて
+## Licenses, etc.
 
-### OpenRTM-aist コミュニティに参加するには？
+### What is the license of OpenRTM-aist?
 
-OpenRTM-aist のコミィニティに参加することで、OpenRTM-aist を使う上で必要な情報を得たり、他のユーザーと情報交換することができます。
-方法としては以下にあげるいくつかの方法があります。
+OpenRTM-aist (C++, Python, Java versions) adopts a dual licensing system consisting of the LGPL (GNU Lesser General Public License) and individual contracts with AIST.
+The tools (RTCBUilder, RTSystemEditor) adopt a dual licensing system consisting of the EPL (Eclipse Public License) and individual contracts with AIST.
 
-- メーリングリストに参加する
-- フォーラムに参加する
-- Faebookに参加する
-- 講習会に参加する
-- サマーキャンプに参加する
-- 作った RTコンポーネントを公開する
-- RTミドルウエアコンテストに参加する
-- 学会などで発表する
+### What is dual licensing?
 
-詳細は以下のFAQをご覧ください。
+The method of distributing a single piece of software under two or more different licenses is called dual licensing.
+When software is distributed under dual licenses, users can choose one of the licenses in order to use or redistribute the software. For details, please see Wikipedia and other sources.
+
+- [Dual licensing (wikipedia)](http://ja.wikipedia.org/wiki/%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9)
 
 
-### メーリングリストに参加するには？
+### Why is it dual licensed?
 
-コミュニティに参加する一番簡単な方法はメーリングリストに参加することです。
-OpenRTM-aist および RTミドルウエア全般の話題を議論するためのメーリングリストがあります。OpenRTM-aist がインストールができない、コンポーネントがうまくつながらないなど、困りごとを相談する場であり、講習会、イベントなどの情報を発信する場ともなっています。
+We want to spread OpenRTM-aist and the concepts of RT Middleware and RT components, and for that reason we distribute the software as open source.
+On the other hand, we at AIST also have a mission to support companies that want to use RT Middleware in practice to commercialize and put robots and other systems into practical use.
+In such cases, distributing only under an open-source license imposes several restrictions that may be inconvenient for companies, so we adopt a dual licensing system that also allows individual contracts separate from open source.
 
-加入は非常に簡単でこちらのページに必要事項を送信の上、自動送信されたメール内のリンクをクリックすれば完了です。
+### In what cases is an individual contract required?
+
+For example, if you want to modify the OpenRTM-aist core itself and incorporate it into a system, but do not want to publish the modified portions, you cannot use OpenRTM-aist under the LGPL license, so you need to enter into an individual contract with AIST.
+In that case, we will charge a small implementation fee, but please rest assured that, given our position of promoting RT Middleware, we will never charge an exorbitant implementation fee.
+
+### Why are the licenses for OpenRTM-aist and the tools different?
+
+OpenRTM-aist adopts the LGPL, while the tools adopt the EPL. There are differences between the LGPL and the EPL, such as patent clauses and whether they can be used together with GPL-licensed libraries.
+
+The EPL has patent clauses, and patents held by contributors to the software do not affect the software (users are granted a royalty-free patent license), making it a safer license for users. However, because it is incompatible with the GPL, it cannot be used together with GPL software.
+Therefore, in Eclipse, which is licensed under the EPL, it is customary for plugins (RTCBuilder, RTSystemEditor, etc. are also plugins) to also be under the EPL. (It is possible to apply the GPL to plugins by adding an exception clause, however.)
+
+On the other hand, when creating RT components in C++ or Python using OpenRTM-aist, linking with GPL-licensed libraries can easily occur. Therefore, if OpenRTM-aist itself were made EPL, linking with such GPL libraries would effectively become impossible, so the LGPL, which is compatible with the GPL, is adopted.
+
+
+
+## About the Community
+
+### How can I participate in the OpenRTM-aist community?
+
+By participating in the OpenRTM-aist community, you can obtain information necessary for using OpenRTM-aist and exchange information with other users.
+There are several ways to do this, including the following.
+
+- Join the mailing list
+- Join the forum
+- Join Facebook
+- Attend a training course
+- Join the summer camp
+- Publish RT components you have created
+- Participate in the RT Middleware Contest
+- Present at academic conferences, etc.
+
+Please see the following FAQ for details.
+
+
+### How can I join the mailing list?
+
+The easiest way to participate in the community is to join the mailing list.
+There is a mailing list for discussing topics related to OpenRTM-aist and RT Middleware in general. It is a place to consult about problems such as being unable to install OpenRTM-aist or components not connecting properly, and it is also used to announce information about training courses, events, and so on.
+
+Joining is very easy: submit the required information on this page, then click the link in the automatically sent email to complete the process.
 
 - http://www.openrtm.org/mailman/listinfo/openrtm-users
 
-### フォーラムに参加するには？
+### How can I participate in the forum?
 
-フォーラムとは、Webページ上に設けられた掲示板です。OpenRTM.org にはフォーラムが設置されています。
+A forum is a bulletin board provided on a Web page. A forum is provided on OpenRTM.org.
 
 - http://openrtm.org/openrtm/ja/community/forum_ja
 
-このフォーラムはメーリングリストと連動しています。メーリングリストの内容が自動でフォーラムにも投稿され、逆にフォーラムに投稿された内容はメーリングリストにも投稿されます。
+This forum is linked with the mailing list. Mailing list content is automatically posted to the forum as well, and conversely, content posted to the forum is also posted to the mailing list.
 
 
-### Facebook に参加するには？
+### How can I join Facebook?
 
-OpenRTM-aist に関する情報は Facebook でも発信しています。1週間に1,2回程度の頻度で、RTミドルウエアに関するお知らせを掲示いたしますので、Facebook をご利用の方であれば、タイムラインにお知らせが表示されます。
-また、RTミドルウエアに関する話題がユーザーの皆様から提供されることもあります。
+Information about OpenRTM-aist is also posted on Facebook. Announcements related to RT Middleware are posted about once or twice a week, so if you use Facebook, the announcements will appear in your timeline.
+In addition, topics related to RT Middleware may also be provided by users.
 
-Facebook をご利用の方は、下記ページにアクセスしていただき「いいね」を押していただくか、
+If you use Facebook, please access the following page and click "Like":
 
 - https://www.facebook.com/openrtm
 
-下記、OpenRTM-aist の Webページにアクセスしていただき、右上の「いいね」ボタンを押していただければ、登録完了となります。
+Alternatively, access the following OpenRTM-aist Web page and click the "Like" button at the upper right to complete registration.
 
 - http://openrtm.org/
 
 
-### 講習会に参加するには？
+### How can I attend a training course?
 
-産総研では定期または非定期で RTミドルウエアの講習会を開催しています。
+AIST holds RT Middleware training courses on a regular or irregular basis.
 
-通常、機械学会・ロボティクスメカトロニクス講演会のチュートリアルとして RTミドルウエア講習会を開催しております。
-また、イベントや依頼によって非定期に開催されることもあります。その際は、http://openrtm.org の NEWS や Facebook、およびメーリングリストで開催のご案内を流します。
-
-
-### サマーキャンプに参加するには？
-
-産総研では毎年夏に RTミドルウエアサマーキャンプという合宿形式の講習会を開催しております。
-サマーキャンプでは通常月曜日から金曜日まで、産総研の宿泊施設（さくら館）に宿泊していただき座学、実習、成果発表といった内容で参加者に RTミドルウエアを用いたロボットシステム構築を学習してもらいます。
-
-参加資格は少なくとも上記講習会を1回以上受講した人となっており、より実践的なシステム構築を学ぶことを主眼とした講習会となっています。
-
-### プロジェクトページって何？
-
-プロジェクトページとは、openrtm.org に設置されている RTコンポーネントの公開サイトです。誰でも自分の作った RTコンポーネントを公開できます。
-また、自分が必要なコンポーネントはここから探してダウンロードすることもできます。
-
-- プロジェクトページ: http://openrtm.org/openrtm/ja/project/projects_ja
-
-プロジェクトページに自分のコンポーネントを登録するにはユーザー権限の昇格が必要です。
-詳しくは
-
-- [プロジェクト作成マニュアル](http://openrtm.org/openrtm/ja/node/1554)
-
-をご覧ください。
-
-### RTミドルウエアコンテストに参加するには？
-
-毎年12月に行われる計測自動制御学会・システムインテグレーション部門の講演会において、RTミドルウエアコンテストを開催しています。
-コンテストは講演会のオーガナイズドセッションとして開催されますが、参加者は講演会に投稿する論文の他に、RTミドルウエアを使用した何らかのソフトウエア作品を予め OpenRTM の Webページに登録し、審査委員、有志の一般審査委員から評価を受けます。
-講演会での最終的なプレゼンテーションを行った後、審査委員会を開き各種賞を授与します。
-
-RTミドルウエアコンテストの特徴として、その賞の多さがあります。個人または企業が協賛賞として一口1万～2万円をだし、賞を設立することができます。
-各賞は協賛した個人または企業が独自の基準で受賞作品を選ぶことができます。最も優秀な作品は審査委員会で決定され、計測自動制御学会・システムインテグレーション部会から最優秀賞が授与されます。
-
-### 学会等で発表するには？
-
-機械学会・ロボティクスメカトロニクス講演会(ROBOMECH)、ロボット学会学術講演会、計測自動制御学会・システムインテグレーション部門講演会でオーガナイズドセッション、「RTシステムとオープン化」「RTミドルウエアとオープン化」を毎年開催しています。
-RTミドルウエアや他のロボットミドルウエアを用いてシステム構築した例、ソフトウエアを構築する上での問題点などを議論するためのオーガナイズドセッションです。
-ロボットのソフトウエアに興味がある学生さんにはぜひ発表していただきたいと考えています。
-OS 開催の案内も、Webページ、Facebook、メーリングリストにてご案内しています。
+Usually, we hold RT Middleware training courses as tutorials at the JSME Robotics and Mechatronics Conference.
+They may also be held irregularly for events or upon request. In such cases, announcements will be made through NEWS on http://openrtm.org, Facebook, and the mailing list.
 
 
--------jp page!!-------
+### How can I participate in the summer camp?
+
+AIST holds a residential training course called the RT Middleware Summer Camp every summer.
+At the summer camp, participants usually stay from Monday to Friday at AIST's lodging facility (Sakura-kan) and learn how to build robot systems using RT Middleware through lectures, practical exercises, and result presentations.
+
+Eligibility requires that participants have attended at least one of the training courses mentioned above, and the training course is primarily focused on learning more practical system construction.
+
+### What is the project page?
+
+The project page is a site on openrtm.org for publishing RT components. Anyone can publish RT components they have created.
+You can also search for and download components you need from there.
+
+- Project page: http://openrtm.org/openrtm/ja/project/projects_ja
+
+To register your own components on the project page, you need to elevate your user privileges.
+For details, please see:
+
+- [Project creation manual](http://openrtm.org/openrtm/ja/node/1554)
+
+### How can I participate in the RT Middleware Contest?
+
+The RT Middleware Contest is held every December at the conference of the Society of Instrument and Control Engineers, System Integration Division.
+The contest is held as an organized session of the conference, and participants register in advance on the OpenRTM Web page some software work using RT Middleware, in addition to the paper submitted to the conference, and receive evaluations from judges and volunteer general judges.
+After the final presentation at the conference, the judging committee is held and various awards are presented.
+
+One feature of the RT Middleware Contest is the large number of awards. Individuals or companies can provide sponsorship awards with contributions of 10,000 to 20,000 yen per award and establish their own awards.
+Each award can be given based on the criteria of the sponsoring individual or company. The best work is determined by the judging committee, and the Best Award is presented by the System Integration Division of the Society of Instrument and Control Engineers.
+
+### How can I present at academic conferences, etc.?
+
+Organized sessions titled "RT Systems and Openness" and "RT Middleware and Openness" are held every year at the JSME Robotics and Mechatronics Conference (ROBOMECH), the Annual Conference of the Robotics Society of Japan, and the conference of the Society of Instrument and Control Engineers, System Integration Division.
+These organized sessions are for discussing examples of system construction using RT Middleware or other robot middleware, problems encountered when building software, and related topics.
+We especially hope that students who are interested in robot software will give presentations.
+Announcements for organized sessions are also made through the Web page, Facebook, and the mailing list.
+

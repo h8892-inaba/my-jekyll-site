@@ -60,7 +60,7 @@ The following environment is assumed.
 
 - OS: Windows 10 (Windows 7 and 8.1 are also supported)
 - [OpenRTM-aist: 1.2.2-Release](https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi)
-- [Visual Studio 2019]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022) (2013, 2015, and 2017 are also supported)
+- [Visual Studio 2019]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022) (2013, 2015, and 2017 are also supported)
 - [CMake](https://cmake.org/download/) (version 3.5 or later recommended)
 - [Python 3.8](https://www.python.org/downloads/windows/)
 - [Doxygen](http://www.doxygen.nl/download.html)

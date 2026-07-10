@@ -979,8 +979,8 @@ The following two RTCs should become visible:
 
 <div align="center"><a href="tutorial_raspimouse2.png"><img src="tutorial_raspimouse2.png" width="70%;"></a></div>
 
-- [RaspberryPiMouseRTC](/ja/node/6015#toc0)
-- [RaspberryPiMouseController_DistanceSensor](/ja/node/6015#toc1)
+- [RaspberryPiMouseRTC](/en/node/6015#toc0)
+- [RaspberryPiMouseController_DistanceSensor](/en/node/6015#toc1)
 
 **RaspberryPiMouseRTC** is an RT Component for controlling the Raspberry Pi Mouse, developed by the Robot System Design Laboratory at Meijo University.
 

@@ -21,7 +21,7 @@ Install the free Community Edition below, or obtain and install Visual Studio 20
 
 The latest version of Visual Studio currently verified to work is 2022. <br>
 It is common to forget to install the C++ development environment. We recommend reading the following guide.
-  - [Installing Visual Studio Community 2022]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
+  - [Installing Visual Studio Community 2022]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
 
 ### Python
 
@@ -36,7 +36,7 @@ Please note the following when installing:
 
   - The Python installation directory can be specified by selecting [Customize installation] during installation.
   - For instructions on specifying the installation directory using [Customize installation], refer to the following page:
-    - [Get Started with OpenRTM-aist in 10 Minutes! - Installing Python]({{ site.baseurl }}/ja/doc/installation/lets_start#toc1)
+    - [Get Started with OpenRTM-aist in 10 Minutes! - Installing Python]({{ site.baseurl }}/en/doc/installation/lets_start#toc1)
 
 ### CMake
 
@@ -58,7 +58,7 @@ Install the latest versions whenever possible.
 - [Doxygen](https://doxygen.nl/download.html#latestsrc)
   - [doxygen-1.11.0-setup.exe](https://www.doxygen.nl/files/doxygen-1.11.0-setup.exe) (No distinction between 32-bit and 64-bit versions)
   - If you cannot download it using Microsoft Edge, refer to the OpenRTM-aist download instructions:
-    - [Get Started with OpenRTM-aist in 10 Minutes! - Downloading OpenRTM-aist]({{ site.baseurl }}/ja/doc/installation/lets_start#toc2)
+    - [Get Started with OpenRTM-aist in 10 Minutes! - Downloading OpenRTM-aist]({{ site.baseurl }}/en/doc/installation/lets_start#toc2)
 
 &aname(Graphviz);
 - [Graphviz](https://graphviz.gitlab.io/download/)
@@ -93,7 +93,7 @@ The plugin configuration file:
 
 Required for Java development. Please refer to the following page:
 
-- [Installing JDK8]({{ site.baseurl }}/ja/node/6911)
+- [Installing JDK8]({{ site.baseurl }}/en/node/6911)
 
 ## Installing OpenRTM-aist
 
@@ -113,7 +113,7 @@ Download the Windows installer (MSI format) for OpenRTM-aist.
 
 If you cannot download the installer using Microsoft Edge, refer to the following page:
 
-- [Get Started with OpenRTM-aist in 10 Minutes! - Downloading OpenRTM-aist]({{ site.baseurl }}/ja/doc/installation/lets_start#toc2)
+- [Get Started with OpenRTM-aist in 10 Minutes! - Downloading OpenRTM-aist]({{ site.baseurl }}/en/doc/installation/lets_start#toc2)
 
 This installer includes the following:
 
@@ -132,21 +132,21 @@ This installer includes the following:
 
 For details of the installation procedure, refer to the following page:
 
-- [Get Started with OpenRTM-aist in 10 Minutes! - Installing OpenRTM-aist]({{ site.baseurl }}/ja/doc/installation/lets_start#toc3)
+- [Get Started with OpenRTM-aist in 10 Minutes! - Installing OpenRTM-aist]({{ site.baseurl }}/en/doc/installation/lets_start#toc3)
 
 To verify that the installation was successful, try running the sample components:
 
-- [Get Started with OpenRTM-aist in 10 Minutes! - Running Sample Components]({{ site.baseurl }}/ja/doc/installation/lets_start#toc5)
+- [Get Started with OpenRTM-aist in 10 Minutes! - Running Sample Components]({{ site.baseurl }}/en/doc/installation/lets_start#toc5)
 
 For details on system environment variables configured by the installer and installed files, refer to:
 
-- [OpenRTM-aist Installer Operations]({{ site.baseurl }}/ja/doc/installation/install_2_0/install_windows_2_0/install_workcontent_2_0)
+- [OpenRTM-aist Installer Operations]({{ site.baseurl }}/en/doc/installation/install_2_0/install_windows_2_0/install_workcontent_2_0)
 
 ### Specifying the Visual Studio Version
 
 The system environment variable **RTM_VC_VERSION** is configured according to the installed Visual Studio version.
 
-If you want to change it after installation, you can use a GUI tool. See the [VCVerChanger]({{ site.baseurl }}/ja/content/vc_version_changer/) page for instructions.
+If you want to change it after installation, you can use a GUI tool. See the [VCVerChanger]({{ site.baseurl }}/en/content/vc_version_changer/) page for instructions.
 
 <br>
 
@@ -168,7 +168,7 @@ If you want to change it after installation, you can use a GUI tool. See the [VC
   </tr>
 </table>
 
-After installation, even if you do not change the Visual Studio version, verify the system environment variable settings using [VCVerChanger]({{ site.baseurl }}/ja/content/vc_version_changer/).
+After installation, even if you do not change the Visual Studio version, verify the system environment variable settings using [VCVerChanger]({{ site.baseurl }}/en/content/vc_version_changer/).
 If unnecessary paths remain, remove them.
 
 <br>

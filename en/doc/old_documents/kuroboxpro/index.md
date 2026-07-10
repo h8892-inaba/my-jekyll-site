@@ -2,7 +2,10 @@
 layout: page
 title: 玄箱PROへのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
+
 
 <!-- Title: 玄箱PROへのインストール -->
 #contents
@@ -140,5 +143,3 @@ OpenRTM-aist-0.4.0のソース展開後, rootになりbuildディレクトリの
 - [KURO-BOX/PRO Debian化決定版？](http://w3.quake3.jp/sushi-k/wp/?p=93)
 - [山下康成の”ハックしよう”](http://www.yamasita.jp/)
 
-
--------jp page!!-------

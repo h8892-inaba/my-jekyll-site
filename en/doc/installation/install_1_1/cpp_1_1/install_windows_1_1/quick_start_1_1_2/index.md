@@ -2,7 +2,9 @@
 layout: page
 title: 10分で始めよう！
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 init
 https://openrtm.org/openrtm/ja/node/6026/
@@ -24,7 +26,7 @@ Python 2.7 をインストールしていない場合は、OpenRTM-aist はイ�
 
 ## OpenRTM-aist インストール
 ここでは32bit用インストーラー OpenRTM-aist-1.1.2-RELEASE_x86.msi を使った手順を紹介します。
-インストーラーのダウンロードは、[OpenRTM-aist-1.1.2-RELEASE](/ja/node/6034) をご覧ください。
+インストーラーのダウンロードは、[OpenRTM-aist-1.1.2-RELEASE](/en/node/6034) をご覧ください。
 
 
 
@@ -403,10 +405,10 @@ RTシステムエディタを見てみると、RTC がアクティブ化され�
 
 下記リンク先をご覧ください。
 
-- **もっとサンプルを動かしてみる　：　**[サンプルコンポーネント]({{ site.baseurl }}/ja/doc/installation/sample_components)
-- **コンポーネントを作ってみる　：　**[ケーススタディー]({{ site.baseurl }}/ja/doc/casestudy)
-- **OpenRTM の基礎から学ぶ　：　**[デベロッパーズガイド]({{ site.baseurl }}/ja/doc/developersguide)
-- **コミュニティーに参加する　：　**[コミュニティー]({{ site.baseurl }}/ja/community)
+- **もっとサンプルを動かしてみる　：　**[サンプルコンポーネント]({{ site.baseurl }}/en/doc/installation/sample_components)
+- **コンポーネントを作ってみる　：　**[ケーススタディー]({{ site.baseurl }}/en/doc/casestudy)
+- **OpenRTM の基礎から学ぶ　：　**[デベロッパーズガイド]({{ site.baseurl }}/en/doc/developersguide)
+- **コミュニティーに参加する　：　**[コミュニティー]({{ site.baseurl }}/en/community)
 - **公開されているコンポーネントを見てみる　：　**[プロジェクト](node/hoge)
 
 
@@ -414,4 +416,4 @@ RTシステムエディタを見てみると、RTC がアクティブ化され�
 
 <br>
 <br>
--------jp page!!-------
+

@@ -1,89 +1,85 @@
 ---
 layout: page
-title: "SDO サービス編"
+title: "SDO Service Section"
 ---
--------jp page!!-------
 <!-- Title: SDO サービス編 -->
 <!-- -*- pukiwiki-edit -*- -->
 <!-- * SDO サービス編 -->
 
 #contents
 
-RTC には、サービスポート以外に、SDO サービスと呼ばれるサービスインターフェースを追加することができます。
+In addition to service ports, service interfaces called SDO services can be added to RTCs.
 
-SDO は Super Distributed Object の略であり、OMG で標準化された分散コンポーネントの規格一つです。
-RTC の実態である RTObject は、実は SDO のオブジェクトを継承していて、RTC は SDO のオブジェクトの一種であると言えます。
-SDO では、コンポーネントの基本的なインターフェースが定義されています。
-SDO のコンポーネントが持つサービスインターフェースは、SDOService インターフェースと呼ばれ、インターフェース定義を継承することになっています。
-実は、RTC のポートや実行コンテキストも SDOService を継承しており、SDO サービスの一種となっています。
+SDO stands for Super Distributed Object, and it is one of the distributed component standards standardized by OMG.
+RTObject, which is the actual entity of an RTC, actually inherits from an SDO object, so an RTC can be said to be a kind of SDO object.
+SDO defines the basic interfaces of components.
+A service interface owned by an SDO component is called an SDOService interface, and it inherits the interface definition.
+In fact, RTC ports and execution contexts also inherit SDOService and are a type of SDO service.
 
-サービスポートと SDO サービスの違いは何でしょうか？
+What is the difference between a service port and an SDO service?
 
-どちらも、RTC の外側に対してサービスを提供 (Provided) したり、外部のサービスを利用 (Required) するものです。
-大きな違いは、サービスポートは RTC の内部のロジック（RTC 開発者が実装するコアロジック）の詳細にアクセスするための（あるいは、コアロジックから外部のサービスにアクセスするための）インターフェースを提供するのに対して、SDO サービスは、RTC 自身、すなわちコアロジックを包含するコンポーネントの機能の詳細にアクセスする（コンポー
-ネントの機能から外部のサービスにアクセスする）インターフェースを提供します。
+Both provide services (Provided) to the outside of an RTC or use external services (Required).
+The major difference is that service ports provide interfaces for accessing details of the internal logic of an RTC (the core logic implemented by the RTC developer), or for accessing external services from the core logic, whereas SDO services provide interfaces for accessing details of the functionality of the RTC itself, that is, the component that contains the core logic (or for accessing external services from the component's functionality).
 
-- **サービスポート**: RTC 内のコアロジックに対するサービス（から利用する）サービス
-- **SDOサービス**: RTC のコンポーネントとしての機能に対する（から利用する）サービス
+- **Service port**: A service for (or used by) the core logic inside an RTC
+- **SDO service**: A service for (or used by) the functionality of the RTC as a component
 
-SDO サービスの具体的な使われ方は以下のようなものです。
+Specific uses of SDO services are as follows.
 
-## ComponentObserver の例
+## Example of ComponentObserver
 
-例えば、OpenRTM の拡張機能として ComponentObserver と呼ばれるものがあります。これは、外部のツールなどが、コンポーネント (RTC) 自身に何らかの状態変化があった際に、ポーリングをしなくとも通知を受け取ることができる仕組みです。
+For example, OpenRTM has an extension function called ComponentObserver. This is a mechanism that allows external tools and similar applications to receive notifications without polling when some kind of state change occurs in the component (RTC) itself.
 
-RTC の状態や、プロファイル、EC の状態、ポートの接続・切断を含む状態の変化、コンフィギュレーションの変更などに変更があった場合に、ツール等がその変更の通知を受け取ることができます。
+Tools and similar applications can receive notifications when there are changes in RTC states, profiles, EC states, state changes including port connection and disconnection, configuration changes, and so on.
 
-これらの状態変化は、RTC の get_component_profile()、EC の get_profile()関数などを周期的に呼ぶ（ポーリングする）ことで、外部から知ることは可能です。しかし、RTC の様々な変化を知るために、複数のツールや外部の RTC から get_xxx() などの多数の関数を周期的に呼ぶことは非効率であり、変化の見地も最悪ケースではポーリングの周期の分の遅延が発生します。
+It is possible to know these state changes externally by periodically calling (polling) functions such as the RTC's get_component_profile() and the EC's get_profile(). However, periodically calling many functions such as get_xxx() from multiple tools or external RTCs in order to know various changes in an RTC is inefficient, and in the worst case, detecting changes incurs a delay equal to the polling cycle.
 
-ツールなどが、あらかじめコールバックオブジェクトをRTCに与えておき、変化があった場合にのみRTC側からそのオブジェクトの関数を即座に呼べば、遅延もなく変化が起きた場合にのみ関数がコールされるため効率的です。
+If tools and similar applications give callback objects to the RTC in advance, and the RTC side immediately calls functions of those objects only when changes occur, there is no delay, and functions are called only when changes occur, making this efficient.
 
-また、こうした機能は RTC のコアロジックとは関係なく、RTC のフレームワークそのものに関連するサービス機能です。したがって、このようなサービスインターフェースは SDO サービスとして実装することが適切です。
+Also, such functionality is unrelated to the RTC core logic and is a service function related to the RTC framework itself. Therefore, it is appropriate to implement such service interfaces as SDO services.
 
-なお、ComponentObserver のケースでは、RTC 側ではツールが提供するサービスオブジェクトの関数を呼ぶことで、その機能を実現します。すなわち、サービスの実装はツール側に存在し、RTC 側ではツールのサービスを利用することになります。したがって、このケースでは、RTC 側は SDO サービスのコンシューマ (Required インターフェース) を実装することとなります。
+In the case of ComponentObserver, the RTC side realizes this functionality by calling functions of a service object provided by the tool. In other words, the service implementation exists on the tool side, and the RTC side uses the tool's service. Therefore, in this case, the RTC side implements an SDO service consumer (Required interface).
 
-逆に、RTC 側がサービスを提供し、ツールなど外部からそのサービスを利用するケースも考えられます。この場合は、SDOサービスのプロバイダ (Provided インターフェース) を実装することになります。
+Conversely, there may also be cases where the RTC side provides a service and tools or other external entities use that service. In this case, an SDO service provider (Provided interface) is implemented.
 
 
-## 実現方法
+## Implementation Method
 
-SDO サービスプロバイダ、SDO サービスコンシューマ共に、通常は共有オブジェクトの形で提供され、所定の方法で RTC のプロセスからロード、ファクトリへの登録、インスタンス化されてサービスの提供または利用が開始されます。
+Both SDO service providers and SDO service consumers are normally provided in the form of shared objects. They are loaded from the RTC process by a prescribed method, registered with a factory, instantiated, and then service provision or use begins.
 
-SDO サービスは、1つのRTCに対して1種類につき1つの SDO サービスがインスタンス化され対応付けられます。プロセス単位であらかじめ定められたサービスがインスタンス化されます。
+For one RTC, one SDO service of each type is instantiated and associated with it. Services predefined on a per-process basis are instantiated.
 
-rtc.conf に設定可能な SDO サービス関連のオプションは次のようになっています。
+The SDO service-related options that can be set in rtc.conf are as follows.
 
 <table class="table-alt">
   <tr>
-    <th colspan="2">SDO サービスプロバイダ関係の設定</th>
+    <th colspan="2">Settings Related to SDO Service Providers</th>
   </tr>
   <tr>
     <td>sdo.service.provider.available_services</td>
-    <td>読み出しのみ。利用可能なサービスのリスト</td>
+    <td>Read-only. List of available services</td>
   </tr>
   <tr>
     <td>sdo.service.provider.enabled_services</td>
-    <td>読み込まれた SDO サービスプロバイダのうち、有効にするもの。すべて有効の場合は ALL を指定</td>
+    <td>Among the loaded SDO service providers, those to enable. Specify ALL to enable all.</td>
   </tr>
   <tr>
     <td>sdo.service.provider.providing_services</td>
-    <td>読み出しのみ。利用されている SDO サービスのリスト。</td>
+    <td>Read-only. List of SDO services being used.</td>
   </tr>
   <tr>
-    <th colspan="3">SDO サービスコンシューマ関係の設定</th>
+    <th colspan="3">Settings Related to SDO Service Consumers</th>
   </tr>
   <tr>
     <td>sdo.service.consumer.available_services</td>
-    <td>読み出しのみ。利用可能な SDO サービスコンシューマのリスト。</td>
+    <td>Read-only. List of available SDO service consumers.</td>
   </tr>
   <tr>
     <td>sdo.service.consumer.enabled_services</td>
-    <td>読み込まれた SDO サービスコンシューマのうち、有効にするもの。すべて有効の場合は ALL を指定</td>
+    <td>Among the loaded SDO service consumers, those to enable. Specify ALL to enable all.</td>
   </tr>
 </table>
 
 
-次節からは、SDO サービスの RTC 側でのプロバイダ、コンシューマの実装方法について説明します。
+From the next section, we explain how to implement providers and consumers on the RTC side for SDO services.
 
-
--------jp page!!-------

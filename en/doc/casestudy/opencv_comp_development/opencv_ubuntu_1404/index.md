@@ -59,7 +59,7 @@ If you have already executed the all-in-one installation script, comment out the
 
 #### Installing OpenRTP
 
-Download and install the Linux version of OpenRTP (integrated component development and system development environment) from [this URL]({{ site.baseurl }}/ja/download/openrtp/openrtp-110-rc5-ja).
+Download and install the Linux version of OpenRTP (integrated component development and system development environment) from [this URL]({{ site.baseurl }}/en/download/openrtp/openrtp-110-rc5-ja).
 
 Java is also required to run OpenRTP, so install the `default-jre` package.
 
@@ -259,7 +259,7 @@ Let's verify the runtime and development environment.
 - OS: Windows XP SP3 (Vista and Windows 7 are also supported)
 - Compiler: [Visual C++ 2010 Express Edition Japanese Version](http://go.microsoft.com/fwlink/?LinkId=190491&clcid=0x411)
 
-- [OpenRTM-aist-1.1.0-RC3 (C++ Version), Win32 VC2010]({{ site.baseurl }}/ja/download/openrtm-aist-content/110-rc3)
+- [OpenRTM-aist-1.1.0-RC3 (C++ Version), Win32 VC2010]({{ site.baseurl }}/en/download/openrtm-aist-content/110-rc3)
 
 - RTSystemEditor 1.1
 - RTCBuilder 1.1

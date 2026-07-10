@@ -2,7 +2,9 @@
 layout: page
 title: ソースからのビルド(Linux編)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: ソースからのビルド(Linux編) -->
 パッケージが用意されていないUNIX系の環境や、クロス開発環境などで、OpenRTM-aist本体のソースを変更したり再ビルドて、OpenRTM-aistを利用したい場合には、ソースからビルド可能です。ここでは、ダウンロードページやリポジトリからソースを取得しLinux上でOpenRTM-aist をビルドする方法を説明します。
@@ -42,7 +44,7 @@ UbuntuやFedoraなどの特定のディストリビューション向けには�
 
 このスクリプトを-cオプションを用いて実行することにより、コア(OpenRTM-aist自体の)開発用のツールをインストールすることができます。それを実行するか、別個に必要なツールをインストールしておいてください。
 
-- [一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)
+- [一括インストール・スクリプト]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script)
 
 ### ソースのダウンロード
 
@@ -240,4 +242,4 @@ autogenの実行により、configureがOpenRTM-aistディレクトリ内にで�
 
 
 
--------jp page!!-------
+

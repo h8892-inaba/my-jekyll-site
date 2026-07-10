@@ -1,44 +1,41 @@
 ---
 layout: page
-title: 更新方法
+title: Update Method
 ---
--------jp page!!-------
 <!-- Title: 更新方法 -->
 #contents
-ここでは、OpenRTP（RTCBuilder、RTSystemEditorの総称）をアップデートする手順を説明します。OpenRTP は Eclipse のプラグインとして提供しているので、Eclipse 上で操作します。
+This section explains the procedure for updating OpenRTP (the collective name for RTCBuilder and RTSystemEditor). Since OpenRTP is provided as an Eclipse plugin, the operation is performed on Eclipse.
 
-### OpenRTP の更新
-Eclipse のメニューで、[ヘルプ] > [新規ソフトウエアのインストール] を選択します。
+### Updating OpenRTP
+From the Eclipse menu, select [Help] > [Install New Software].
 
 <div align="center"><a href="openrtp_01.jpg"><img src="openrtp_01.jpg" width="40%;"></a></div>
 
-「インストール」ダイアログの [追加] ボタンをクリックし、リポジトリを追加します。名前とロケーションは以下のように指定します。
-- **名前** : OpenRTP
-- **ロケーション** : http://openrtm.org/pub/openrtp/stable/updates/
+Click the [Add] button in the "Install" dialog and add the repository. Specify the name and location as follows.
+- **Name** : OpenRTP
+- **Location** : http://openrtm.org/pub/openrtp/stable/updates/
 
 <div align="center"><a href="openrtp_02.jpg"><img src="openrtp_02.jpg" width="40%;"></a></div>
 
-OpenRTP 1.1.0 をチェックし [次へ] または [完了] ボタンをクリックします。
+Check OpenRTP 1.1.0 and click the [Next] or [Finish] button.
 <br>
-インストール途中で証明書の信頼についての問い合わせ画面が開きますので、レ点を入れて [OK] ボタンをクリックしてください。
+During installation, a screen asking whether to trust the certificate will open. Check the checkbox and click the [OK] button.
 
 <div align="center"><a href="openrtp_03.jpg"><img src="openrtp_03.jpg" width="50%;"></a></div>
 
-インストール後は指示に従い再始動すると更新が反映されます。
+After installation, restart as instructed, and the update will be applied.
 
-### 既存のコンポーネントへの反映方法
+### How to Apply the Update to Existing Components
 
-すでに、生成したコンポーネントのプロジェクトに関しては、次の手順等で対処してください。
+For projects of components that have already been generated, handle them using the following procedure, for example.
 
-- eclipse にもう一度読み込んでコードを再生成します（eclipse 上でいったんプロジェクトを削除し、改めてインポートする）
-- eclipse のパッケージ・エクスプローラ画面で、プロジェクト内の RTC.xml をダブルクリックし、[コード生成] ボタンをクリックします
-- この時 diff 画面が表示されるので、idl/CMakeLists.txt のみを更新します
+- Load them into eclipse again and regenerate the code (delete the project once on eclipse, then import it again)
+- In the eclipse Package Explorer screen, double-click RTC.xml in the project and click the [Generate Code] button
+- At this time, a diff screen will be displayed, so update only idl/CMakeLists.txt
 
-Linux や Mac なら単純に sed で置換します。
+On Linux or Mac, simply replace it with sed.
 
 ```
  $ sed -ie 's/\"\${ALL_IDL_SRCS}\"/ALL_IDL_SRCS/' idl/CMakeLists.txt
 ```
 
-
--------jp page!!-------

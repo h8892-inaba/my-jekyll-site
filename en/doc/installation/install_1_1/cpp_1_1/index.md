@@ -2,7 +2,9 @@
 layout: page
 title: OpenRTM-aist (C++版) 1.1系のインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- OpenRTM-aist (C++版) 1.1系のインストール -->
 
@@ -23,7 +25,7 @@ C++言語版の OpenRTM-aist は、パッケージやインストーラーが用
 - [ソースからのビルド (Windows編、ランタイムライブラリ/MT・/MTd指定)](./build_source_windows_runtime_1_1)
 - [動作確認 (Windows編)](./test_windows_1_1)
 - [動作確認 (Linux編)](./test_linux_1_1)
-- [システム環境変数設定ツールの使い方]({{ site.baseurl }}/ja/content/vc_version_changer)
+- [システム環境変数設定ツールの使い方]({{ site.baseurl }}/en/content/vc_version_changer)
 
 
--------jp page!!-------
+

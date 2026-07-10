@@ -2,7 +2,9 @@
 layout: page
 title: ソースからのビルド (Windows編、ランタイムライブラリ/MT・/MTd指定)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: ソースからのビルド (Windows編、ランタイムライブラリ/MT・/MTd指定) -->
 Visual Studio でランタイムライブラリにマルチスレッド(/MT)、マルチスレッドデバッグ(/MTd)を指定した RTC を開発する場合、/MT、/MTdの実行ファイルが他の DLL にリンクして処理を行うとヒープ破壊等で異常終了することがあります。
@@ -369,4 +371,4 @@ OpenRTM-aist、あるいは omniORB のどこで異常が発生しているの�
 どうしてもランタイムライブラリに /MT、/MTd を設定したい場合は、上記の方法で静的ライブラリを作成してください。
 
 上記の方法で /MT、/MTd 指定の RTC が一応動作できるようにはなりますが、omniORB と coil が advapi32.dll という名前のライブラリにリンクしており、advapi32.dll が /MD のランタイムライブラリ(MSVCRT)を使用しているため、ここで何が起こるかは分かりません。
--------jp page!!-------
+

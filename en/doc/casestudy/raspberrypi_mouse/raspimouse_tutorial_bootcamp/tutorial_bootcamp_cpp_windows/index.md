@@ -896,7 +896,7 @@ After that, the following three RTCs will become visible.
 
 <div align="center"><a href="robomech2018_7.jpg"><img src="robomech2018_7.jpg" width="60%;"></a></div>
 
-- [RaspberryPiMouseRTC](/ja/node/6015#toc0)
+- [RaspberryPiMouseRTC](/en/node/6015#toc0)
 - OpenCVCamera
 - artp
 

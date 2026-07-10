@@ -2,44 +2,40 @@
 layout: page
 title: rtpwd
 ---
--------jp page!!-------
 
 <!-- Title: rtpwd -->
 
-## 書式
+## Format
 ```
 rtpwd
 ```
 
-## 概要
-現在の作業ディレクトリを表示します。
+## Overview
+Displays the current working directory.
 
-## パス
-rtshellはパスでRTCツリーのオブジェクトを示します。ネームサーバーとネームコンテクストはディレクトリ名として指定され、マネージャとRTコンポーネントはファイル名として指定されます。コマンドに渡したパスはrtshellの現在の作業ディレクトリを元に指定されます。(相対パスの場合)。rtshellの現在の作業ディレクトリはRTCSH_CWDという環境変数に保存されて、rtcwdというコマンドで変更できます。
+## Paths
+rtshell indicates objects in the RTC tree using paths. Name servers and name contexts are specified as directory names, and managers and RT Components are specified as file names. Paths passed to commands are specified based on the current working directory of rtshell (for relative paths). The current working directory of rtshell is stored in an environment variable named RTCSH_CWD, and can be changed with the rtcwd command.
 
-利用できるパスはコマンド実行時に参照しているネームサーバーによって変わります。ネームサーバーが実行されているホスト名はRTCTREE_NAMESERVERSという環境変数で指定できます。また、直接ルート直下のパスとして/<ホスト名>/....のような形でネームサーバーが実行されているホストを指定できます。
+Available paths depend on the name servers referenced when commands are executed. The host name where a name server is running can be specified with the RTCTREE_NAMESERVERS environment variable. You can also specify the host where a name server is running directly as a path under the root, such as /<host name>/....
 
-例えば、/localhost/comp0.rtcはlocalhostにあるネームサーバーに登録されたcomp0.rtcというRTコンポーネントを示します。/localhost/manager/comp0.rtcはlocalhostにあるネームサーバーの下のmanagerというディレクトリに登録されたcomp0.rtcというRTコンポーネントを示します。./comp0.rtcは現在の作業ディレクトリにあるcomp0.rtcというRTコンポーネントを示します。
+For example, /localhost/comp0.rtc indicates an RT Component named comp0.rtc registered with the name server on localhost. /localhost/manager/comp0.rtc indicates an RT Component named comp0.rtc registered in a directory named manager under the name server on localhost. ./comp0.rtc indicates an RT Component named comp0.rtc in the current working directory.
 
-## 環境変数
+## Environment Variables
 - **RTCTREE_ORB_ARGS**
-  - ORBを作る時に渡す変数です。セミコロンで区切ります。必須ではありません。
+  - Variables passed when creating the ORB. Separate them with semicolons. This is not required.
 - **RTCTREE_NAMESERVERS**
-  - RTCツリーを作る時に参照するネームサーバーのアドレスです。アドレスをセミコロンで区切ります。リストされたアドレスはRTCツリーに追加されrtshellで参照できるようになります。ルート下のディレクトリ名としてパスで指定することもできるので必須ではありません。
+  - Addresses of name servers referenced when creating the RTC tree. Separate addresses with semicolons. The listed addresses are added to the RTC tree and can be referenced by rtshell. This is not required because they can also be specified as directory names under the root in paths.
 - **RTSH_CWD**
-  - rtshellの現在のワーキングディレクトリ。rtshellが自動的に設定します。設定しないでください。
+  - The current working directory of rtshell. rtshell sets it automatically. Do not set it manually.
 
-一般的な利用ではユーザーが設定する変数はRTCTREE_NAMESERVERSのみです。よく使うネームサーバーを設定しておくと便利です。例えば、Bashシェルの場合、以下のコマンドはlocalhostとポート192.168.0.1:65346およびホストexample.comにあるネームサーバーをrtshellが参照できるようにします。
+In typical use, the only variable that users set is RTCTREE_NAMESERVERS. It is convenient to set frequently used name servers. For example, in the Bash shell, the following command allows rtshell to reference name servers on localhost, port 192.168.0.1:65346, and host example.com.
 
 ```
  $ export RTCTREE_NAMESERVERS=localhost;192.168.0.1:65346;example.com
 ```
 
 
-## 返り値
-成功の場合はゼロを返します。失敗の場合はゼロではない値を返します。
+## Return Values
+Returns zero on success. Returns a non-zero value on failure.
 
-デバッグ情報とエラーはstderrに出力されます。
-
-
--------jp page!!-------
+Debug information and errors are output to stderr.

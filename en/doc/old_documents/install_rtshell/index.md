@@ -1,11 +1,14 @@
 ---
 layout: page
-title: 
+title: rtshell のインストール
 ---
--------jp page!!-------
 
-init
+
 #contents
+
+<br>
+<a>No English version available.
+</a>
 
 ## はじめに
 
@@ -138,4 +141,3 @@ PATH 環境変数に以下のような二つのパスを追加すると動きま
   C:\Python26
   C:\Python26\Scripts
 ```
--------jp page!!-------

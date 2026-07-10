@@ -1,9 +1,8 @@
 ---
 layout: page
-title: "LogicalTimeTriggeredECの使用方法"
+title: "How to Use LogicalTimeTriggeredEC"
 
 ---
--------jp page!!-------
 
-準備中
--------jp page!!-------
+Under preparation.
+

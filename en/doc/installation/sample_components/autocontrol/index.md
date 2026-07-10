@@ -2,39 +2,41 @@
 layout: page
 title: "Autocontrol"
 ---
--------jp page!!-------
 
 <!-- Title: Autocontrol -->
 
 #contents
-このサンプルは、Python版にのみ付属しています。 
-### 概要
-InPortから入ったデータをある基準で判別してOutPortに別の形の出力をするコンポーネントです。SeqIn、SeqOutとともに使用できます。
 
-各Port間を接続するとSeqOut側の出力値、SeqIn側の入力値がそれぞれのコンソール画面に表示されます。(Port間の接続にはRTSystemEditorを利用ください。)
+This sample is included only in the Python edition.
 
-### 起動画面
+### Overview
+
+This component evaluates data received through an InPort according to a certain criterion and outputs a different form of data through an OutPort. It can be used together with SeqIn and SeqOut.
+
+When the corresponding ports are connected, the output values on the SeqOut side and the input values on the SeqIn side are displayed in their respective console windows. (Use RTSystemEditor to connect the ports.)
+
+### Startup Screens
 
 <div align="center"><a href="autocontrol_example_rtse.png"><img src="autocontrol_example_rtse.png" width="60%;"></a></div>
-<div align="center"><strong>Autocontrol実行例(RTSystemEditor接続画面)</strong></div>
+<div align="center"><strong>Autocontrol Execution Example (RTSystemEditor Connection Screen)</strong></div>
 
 <div align="center"><a href="seqinout_console.png"><img src="seqinout_console.png" width="60%;"></a></div>
-<div align="center"><strong>SeqInコンポーネントとSeqOutコンポーネントのコンソール画面</strong></div>
+<div align="center"><strong>Console Windows of SeqIn and SeqOut Components</strong></div>
 
-### 使い方
-Autocontrolのサンプルは、Sensから入力したデータの4番目の要素をConfigurationで設定できるパラメータdistance_to_envと比較して、その値以下ならvelポートより(turn_vel, - turn_vel)をその値より大きければ(velocity, velocity)の出力をするコンポーネントです。
+### Usage
 
-Autocntrol, SeqOutとSeqInの対応するポートをRTSystemEditor上で接続してください。両コンポーネントをアクティベートするとSeqOutだけでなくSeqInの出力される数値も連続的に変化し、データポートの入出力が観察できます。
+The Autocontrol sample compares the fourth element of the data input through the Sens port with the parameter distance_to_env, which can be configured through Configuration. If the value is less than or equal to distance_to_env, the component outputs (turn_vel, -turn_vel) from the vel port. If the value is greater than distance_to_env, it outputs (velocity, velocity).
 
-- 手順
+Connect the corresponding ports of Autocontrol, SeqOut, and SeqIn in RTSystemEditor. When both components are activated, not only the output values of SeqOut but also the values displayed by SeqIn change continuously, allowing observation of data port input and output.
 
-  1. RTSystemEditorを起動し、SystemEditorを用意します。RTSystemEditorの使用方法の詳細については[RTSystemEditor]({{ site.baseurl }}/ja/doc/toolmanuals/rtsystemeditor-1_2_0)を参照
-  2. AutocontrolとSeqOut、SeqInコンポーネントを起動します。エクスプローラーでディレクトリ"\Program Files\OpenRTM-asit\1.2.x\Components\Python"より、”Autocontrol.bat"、”SeqIn.bat"、”SeqOut.bat"をダブルクリックしてください。
-  3. RTSystemEditorのNameServiceViewに3つのコンポーネントが現れるので、それらをSystemEditor上にドラッグ＆ドロップします。
-  4. 両コンポーネントの対応ポートを接続します。(上図実行例を参照)
-  5. どちらかのコンポーネントを右クリックし、[Activate System]を選択します。
-  6. [System Diagram]の中からAutocontrol0コンポーネントを選択し、画面下部にあらわれる[Configuration View]の[編集]ボタンをクリックします。[Configuration View]が表示されなければ、[Configuration View]タブが表示されているはずなので、それをクリックしてください。
-  7. パラメータ値を変更します。このシステム構成例では、[velocity]を10.0、[turn_velocity]を1.0、[distance_to_env]を5.0に設定するのが分かりやすい設定値の例です。
-  8. SeqOutのコンソール画面に表示されるfloatの4番目のデータ値と、SeqInのコンソール画面のSequence Dataの2つの値に注目してください。SeqOutの値が[distance_to_env]の値と比較され、SeqInのコンソール画面に[turn_vel]、- [turn_vel]か、[velocity]、[velocity]の値として出力されているのを確認してください。それぞれConfigurationパラメータを変化させて、入出力の関係がどのようになるかを見てみるのも良いでしょう。
+- Procedure
 
--------jp page!!-------
+  1. Start RTSystemEditor and create a SystemEditor. For details on how to use RTSystemEditor, refer to [RTSystemEditor]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_2_0).
+  2. Start the Autocontrol, SeqOut, and SeqIn components. In Explorer, navigate to the directory "\Program Files\OpenRTM-asit\1.2.x\Components\Python" and double-click "Autocontrol.bat", "SeqIn.bat", and "SeqOut.bat".
+  3. The three components will appear in the NameServiceView of RTSystemEditor. Drag and drop them onto the SystemEditor.
+  4. Connect the corresponding ports of the components. (Refer to the execution example shown above.)
+  5. Right-click either component and select [Activate System].
+  6. Select the Autocontrol0 component in the [System Diagram], then click the [Edit] button in the [Configuration View] displayed at the bottom of the screen. If [Configuration View] is not visible, click the [Configuration View] tab.
+  7. Modify the parameter values. In this system configuration example, easy-to-understand settings are: [velocity] = 10.0, [turn_velocity] = 1.0, and [distance_to_env] = 5.0.
+  8. Pay attention to the fourth float data value displayed in the SeqOut console window and the two Sequence Data values displayed in the SeqIn console window. Verify that the SeqOut value is compared with the [distance_to_env] value and that either [turn_vel], -[turn_vel] or [velocity], [velocity] is output to the SeqIn console window. You may also experiment by changing the Configuration parameters to observe how the relationship between input and output changes.
+

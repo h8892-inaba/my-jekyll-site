@@ -1,148 +1,147 @@
 ---
 layout: page
-title: システムエディタ（複合コンポーネント編）
+title: System Editor (Composite Components)
 
 ---
--------jp page!!-------
 
 <!-- Title: システムエディタ（複合コンポーネント編） -->
 #contents
 
-複合コンポーネントの操作を説明します。
+This section explains how to operate composite components.
 
-### 複合コンポーネントを作成する
-複数のコンポーネントをまとめて複合コンポーネントにすることができます。<br>
-複合コンポーネントにしたいコンポーネントを選択して、右クリックして「Create Composite Component」を選択すると、複合コンポーネント生成ダイアログが表示されます。
+### Creating a Composite Component
+You can combine multiple components into a composite component.<br>
+Select the components you want to make into a composite component, right-click them, and select "Create Composite Component". The composite component creation dialog will be displayed.
 <br>
 
 <div align="center"><a href="fig66CreateCompositeComponent.png"><img src="fig66CreateCompositeComponent.png" width="50%;"></a></div>
-<div align="center"><strong>複合コンポーネントの作成</strong></div>
+<div align="center"><strong>Creating a Composite Component</strong></div>
 <br>
 
 <div align="center"><a href="SystemEditor_1302.jpg"><img src="SystemEditor_1302.jpg" width="60%;"></a></div>
-<div align="center"><strong>複合コンポーネント生成ダイアログ</strong></div>
+<div align="center"><strong>Composite Component Creation Dialog</strong></div>
 <br>
 
-ダイアログの各項目は以下のとおりです。<br>
+The items in the dialog are as follows.<br>
 
-<div align="center"><strong>複合コンポーネント生成のダイアログ項目と必要条件</strong></div>
+<div align="center"><strong>Dialog Items and Requirements for Creating a Composite Component</strong></div>
 <table class="table-alt">
   <tr>
     <th>No.</th>
-    <th>ダイアログ説明</th>
-    <th>説明</th>
+    <th>Dialog Description</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>①</td>
     <td>Manager</td>
-    <td>ネームサービスビューに表示されているマネージャ一覧からマネージャを選択します。ここで選択されたマネージャが複合コンポーネントを生成します。</td>
+    <td>Select a manager from the list of managers displayed in the Name Service View. The manager selected here creates the composite component.</td>
   </tr>
   <tr>
     <td>②</td>
     <td>Name</td>
-    <td>複合コンポーネントのインスタンス名を指定します。</td>
+    <td>Specifies the instance name of the composite component.</td>
   </tr>
   <tr>
     <td>③</td>
     <td>Type</td>
-    <td>複合コンポーネントの種別を指定します。指定可能な種別は以下のとおり。<br>[PeriodicECShared]<br>各RTCが ExecutionContext のみを共有する形で動作します。各RTCの状態は独立しているため、複合コンポーネント内で複数の状態が存在することもあります。<br>[PeriodicStateShared]<br>各RTCが同一の ExecutionContext を共有するとともに、状態も共有する形で動作します。<br>[Grouping]<br>各RTCが何も共有しない複合コンポーネントで、各RTCがそれぞれ ExecutionContext、状態を保持します。</td>
+    <td>Specifies the type of composite component. The available types are as follows.<br>[PeriodicECShared]<br>Each RTC operates by sharing only the ExecutionContext. Since the state of each RTC is independent, multiple states may exist within the composite component.<br>[PeriodicStateShared]<br>Each RTC operates by sharing the same ExecutionContext as well as the same state.<br>[Grouping]<br>A composite component in which each RTC shares nothing, and each RTC maintains its own ExecutionContext and state.</td>
   </tr>
   <tr>
     <td>④</td>
     <td>Path</td>
-    <td>複合コンポーネントに設定するパスを指定します。</td>
+    <td>Specifies the path to be set for the composite component.</td>
   </tr>
   <tr>
     <td>⑤</td>
     <td>Port</td>
-    <td>子のコンポーネントのポート一覧から、複合コンポーネントに表示するポートを選択します。<br>ここで選択されたポートに対して、複合コンポーネントにプロキシ用のポートが作成されます。<br></td>
+    <td>Selects the ports to be displayed on the composite component from the list of ports of the child components.<br>Proxy ports are created on the composite component for the ports selected here.<br></td>
   </tr>
   <tr>
     <td>⑥</td>
     <td>-</td>
-    <td>ポートの全選択・全解除ボタン</td>
+    <td>Buttons for selecting all ports and clearing all port selections</td>
   </tr>
 </table>
 
-複合コンポーネントを作成すると、子のコンポーネントとして選択していたコンポーネントはシステムエディタ上から表示が消え、新しい複合コンポーネントが描画されます。<br>
-複合コンポーネントのダイアグラムをダブルクリックするか、右クリックして「エディタで開く」を選択すると、新しいシステムダイアグラムが開き、複合コンポーネント内部が表示されます。<br>
+When a composite component is created, the components that were selected as child components disappear from the System Editor, and the new composite component is drawn.<br>
+Double-click the composite component diagram, or right-click it and select "Open in Editor". A new System Diagram opens and the inside of the composite component is displayed.<br>
 <br>
 
 <div align="center"><a href="fig68CompositeOpenWithSE.png"><img src="fig68CompositeOpenWithSE.png" width="60%;"></a></div>
-<div align="center"><strong>複合コンポーネントをシステムエディタで開く</strong></div>
+<div align="center"><strong>Opening a Composite Component in the System Editor</strong></div>
 
 <br>
 
 <div align="center"><a href="fig69ViewCompositeComponent.png"><img src="fig69ViewCompositeComponent.png" width="60%;"></a></div>
-<div align="center"><strong>複合コンポーネント内を表示するシステムエディタ</strong></div>
+<div align="center"><strong>System Editor Displaying the Inside of a Composite Component</strong></div>
 <br>
 
-※ ただし、システム構成の保存時には、コンポーネントの描画情報はコンポーネントに対して１つしか保存できないため、複合コンポーネント内を表示するシステムダイアグラムで変更した描画情報は保存されません。
+* However, when saving the system configuration, drawing information for a component can be saved only once for each component, so drawing information changed in the System Diagram that displays the inside of the composite component is not saved.
 <br>
 
 
-### 複合コンポーネントの子を追加する
-複合コンポーネント内を表示するシステムエディタを開いて、ネームサービスビューから RTC をドラッグ＆ドロップすることで、複合コンポーネントの子が追加されます。追加された子RTCのポートはすべて非公開に設定されます。
+### Adding a Child to a Composite Component
+Open the System Editor that displays the inside of the composite component, and drag and drop an RTC from the Name Service View. This adds the RTC as a child of the composite component. All ports of the added child RTC are set to private.
 <br>
 
 <div align="center"><a href="fig70CompositeComponentAddRTC.png"><img src="fig70CompositeComponentAddRTC.png" width="70%;"></a></div>
-<div align="center"><strong>子RTCの追加</strong></div>
+<div align="center"><strong>Adding a Child RTC</strong></div>
 <br>
 
 
-### 複合コンポーネントの子を削除する
-複合コンポーネント内を表示するシステムエディタを開いて、そこで子のコンポーネントを削除することで、複合コンポーネントの子が削除されます。<br>
-削除された子のコンポーネントは、複合コンポーネント内から表示が消え、元のシステムダイアグラム（複合コンポーネント自身が表示されているダイアグラム）に表示されます。
+### Deleting a Child from a Composite Component
+Open the System Editor that displays the inside of the composite component, and delete the child component there. This deletes the child from the composite component.<br>
+The deleted child component disappears from inside the composite component and is displayed in the original System Diagram (the diagram in which the composite component itself is displayed).
 <br>
 
 <div align="center"><a href="fig71DeleteChildComponent.png"><img src="fig71DeleteChildComponent.png" width="70%;"></a></div>
-<div align="center"><strong>複合コンポーネント内から子のコンポーネントを削除</strong></div>
+<div align="center"><strong>Deleting a Child Component from Inside a Composite Component</strong></div>
 <br>
 
 <div align="center"><a href="fig72ChildComponent.png"><img src="fig72ChildComponent.png" width="70%;"></a></div>
-<div align="center"><strong>複合コンポーネントが表示されているシステムエディタ上に子のコンポーネント表示</strong></div>
+<div align="center"><strong>Displaying a Child Component on the System Editor Where the Composite Component Is Displayed</strong></div>
 <br>
 
 
-### 複合コンポーネントを削除する
-複合コンポーネント上で右クリックして「Delete」を選択すると、複合コンポーネントがダイアグラムから削除されます。<br>
-削除時に複合コンポーネントを別のシステムダイアグラムで開いていると、エディタの終了確認のダイアログが表示されます。
+### Deleting a Composite Component
+Right-click the composite component and select "Delete". The composite component is deleted from the diagram.<br>
+If the composite component is open in another System Diagram when it is deleted, a dialog confirming that the editor should be closed is displayed.
 <br>
 
 <div align="center"><a href="fig73DeleteCompositeComponent.png"><img src="fig73DeleteCompositeComponent.png" width="70%;"></a></div>
-<div align="center"><strong>複合コンポーネントの削除</strong></div>
+<div align="center"><strong>Deleting a Composite Component</strong></div>
 <br>
 
 <div align="center"><a href="fig74CloseCompositeComponentDialog.png"><img src="fig74CloseCompositeComponentDialog.png" width="50%;"></a></div>
-<div align="center"><strong>複合コンポーネントを表示するエディタの終了確認ダイアログ</strong></div>
+<div align="center"><strong>Dialog Confirming Closure of the Editor Displaying the Composite Component</strong></div>
 <br>
 
 
-### 複合コンポーネントを解除する
-複合コンポーネント上で右クリックして「Decompose Composite Component」を選択すると、複合コンポーネントへexist()が送られ、コンポーネント自体を終了します。<br>
-解除時に複合コンポーネントを別のシステムダイアグラムで開いていると、エディタの終了確認のダイアログが表示されます。<br>
-複合コンポーネントが解除されると、子のコンポーネントが元のシステムダイアグラム（複合コンポーネントが表示されていたダイアグラム）に表示されます。
+### Decomposing a Composite Component
+Right-click the composite component and select "Decompose Composite Component". This sends exist() to the composite component and terminates the component itself.<br>
+If the composite component is open in another System Diagram when it is decomposed, a dialog confirming that the editor should be closed is displayed.<br>
+When the composite component is decomposed, the child components are displayed in the original System Diagram (the diagram where the composite component was displayed).
 <br>
 
 <div align="center"><a href="fig75DecomposeCompositeComponent.png"><img src="fig75DecomposeCompositeComponent.png" width="50%;"></a></div>
-<div align="center"><strong>複合コンポーネントの解除</strong></div>
+<div align="center"><strong>Decomposing a Composite Component</strong></div>
 <br>
 
 <div align="center"><a href="fig76CloseCompositeComponentDialog.png"><img src="fig76CloseCompositeComponentDialog.png" width="70%;"></a></div>
-<div align="center"><strong>複合コンポーネントを表示するエディタの終了確認ダイアログ</strong></div>
+<div align="center"><strong>Dialog Confirming Closure of the Editor Displaying the Composite Component</strong></div>
 <br>
 
 
-### ポートの公開/非公開を切り替える
-複合コンポーネント内を表示するシステムエディタにあるコンポーネントのポートが複合コンポーネント上に公開されている場合、下記のように別のアイコンで表示されます。
+### Switching Ports Between Public and Private
+If the ports of a component in the System Editor that displays the inside of the composite component are exposed on the composite component, they are displayed with different icons as shown below.
 <br>
 
-<div align="center"><strong>子RTCの公開されているポートのアイコン</strong></div>
+<div align="center"><strong>Icons for Public Ports of Child RTCs</strong></div>
 <table class="table-alt">
   <tr>
     <th>No.</th>
-    <th>名前</th>
-    <th>形状</th>
+    <th>Name</th>
+    <th>Shape</th>
   </tr>
   <tr>
     <td>1</td>
@@ -161,7 +160,7 @@ title: システムエディタ（複合コンポーネント編）
   </tr>
 </table>
 
-公開されているポートを右クリックして、「Unexport」を選択すると、そのポートが公開されていない状態に変わります。また、公開されていないポートを右クリックして、「Export」を選択すると、そのポートが公開されている状態に変わります。
+Right-click a public port and select "Unexport" to change the port to a non-public state. Also, right-click a non-public port and select "Export" to change the port to a public state.
 <br>
 
 <table class="table-alt">
@@ -171,15 +170,12 @@ title: システムエディタ（複合コンポーネント編）
   </tr>
 </table>
 
-<div align="center"><strong>ポートの公開/非公開</strong></div>
+<div align="center"><strong>Public/Private Port Setting</strong></div>
 <br>
 
-ただし、ポートが別のコンポーネントのポートと接続されている場合は、「Unexport」にすることができません。
+However, if the port is connected to a port of another component, it cannot be set to "Unexport".
 <br>
 
 <div align="center"><a href="fig78CantUnexport.png"><img src="fig78CantUnexport.png" width="70%;"></a></div>
-<div align="center"><strong>ポートの接続がある場合</strong></div>
+<div align="center"><strong>When There Is a Port Connection</strong></div>
 <br>
-
-
--------jp page!!-------

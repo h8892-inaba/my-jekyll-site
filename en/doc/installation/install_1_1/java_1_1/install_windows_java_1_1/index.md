@@ -2,7 +2,9 @@
 layout: page
 title: Windows へのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 init
 <!-- Title: Windows へのインストール -->
@@ -16,10 +18,10 @@ openrtm.org では Windows 用の msi (Microsoft Windows インストーラー)�
 
 ## msi パッケージによるインストール
 
-openrtm.org の[ダウンロードサイト](/ja/node/6036)から、msi パッケージをダウンロードします。msi パッケージには、必要な RTSystemEditor といったツールは含まれていますが、JDK は予めインストールしておく必要があります。
+openrtm.org の[ダウンロードサイト](/en/node/6036)から、msi パッケージをダウンロードします。msi パッケージには、必要な RTSystemEditor といったツールは含まれていますが、JDK は予めインストールしておく必要があります。
 
 1.1.2 版からは一つの Windows 用インストーラーに3言語（C++、Java、Python）＋ツール（Eclipse＋rtshell）すべてが同梱されています。古いバージョンは予めアンインストールすることをお勧めします。
-また、[ダウンロードサイト](/ja/node/6036)での赤字表記の注意書きをご覧ください。
+また、[ダウンロードサイト](/en/node/6036)での赤字表記の注意書きをご覧ください。
 
 
 
@@ -71,7 +73,7 @@ OpenRTM-aist-Java-1.1.2の動作には JDK8 を推奨しています。<br>
 <br>
 ### OpenRTM-aist インストーラーの起動
 
-手順については、[OpenRTM-aistを10分で始めよう！](/ja/node/6026) のページをご覧ください。
+手順については、[OpenRTM-aistを10分で始めよう！](/en/node/6026) のページをご覧ください。
 
 <br>
 &aname(javazip);
@@ -155,7 +157,7 @@ OpenRTM-aist-Java-1.1.2の動作には JDK8 を推奨しています。<br>
 
 ### インストールされるファイル
 ファイルは以下のような構造でインストールされます。<br>
-上記のインストール環境の設定を確認する[スクリプト](/ja/node/6092)を実行すると、tree コマンドによる OpenRTM-aist ディレクトリー構造をログファイルに保存しますので、詳細を確認することができます。
+上記のインストール環境の設定を確認する[スクリプト](/en/node/6092)を実行すると、tree コマンドによる OpenRTM-aist ディレクトリー構造をログファイルに保存しますので、詳細を確認することができます。
 
 ```
  <install_dir>
@@ -185,4 +187,4 @@ OpenRTM-aist-Java-1.1.2の動作には JDK8 を推奨しています。<br>
             + rtc-template: 
 
 ```
--------jp page!!-------
+

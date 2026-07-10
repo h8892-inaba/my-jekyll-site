@@ -2,7 +2,9 @@
 layout: page
 title: ソースからのビルド (Windows編)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: ソースからのビルド (Windows編) -->
 OpenRTM-aist 本体に手を加えたうえで Windows 上で利用したい場合は、Windows 用ソースパッケージを自分でビルドするができます。
@@ -302,4 +304,4 @@ ARCH、VC_VERSION の設定については、このバッチファイルに記�
 - **環境変数 PATH の設定**: 環境変数 PATHに%RTM_ROOT%\binだけでなく%RTM_ROOT%\utils\rtc-templateも登録することをお勧めします。
 
 以上で、OpenRTM-aist のインストールは終了です。
--------jp page!!-------
+

@@ -2,7 +2,9 @@
 layout: page
 title: OpenRTM-aist動作確認(VxWorks、RTP、シミュレータ利用の場合)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: OpenRTM-aist動作確認(VxWorks、RTP、シミュレータ利用の場合) -->
 #contents
@@ -14,7 +16,7 @@ title: OpenRTM-aist動作確認(VxWorks、RTP、シミュレータ利用の場�
 
 以下の手順でシミュレータの設定を行ってください。
 
-- [VxWorksシミュレータの設定](/ja/node/6378)
+- [VxWorksシミュレータの設定](/en/node/6378)
 
 ## シミュレータの接続
 
@@ -120,7 +122,7 @@ VxWorksのネームサーバーにはネームサービス接続ボタンをク�
 RTCの接続、アクティブ化等の手順はUbuntuで動作確認する場合と同じです。
 
 
-- [動作確認 (Linux編)](/ja/node/789)
+- [動作確認 (Linux編)](/en/node/789)
 
 
 ### コマンドラインによる操作について
@@ -147,4 +149,4 @@ Workbench、omniORB、openRTM-aistのパスは適宜変更してください。
  rtpSp "./ConsoleOutComp.vxe"
 ```
 
--------jp page!!-------
+

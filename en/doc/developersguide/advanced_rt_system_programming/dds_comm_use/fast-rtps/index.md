@@ -1,85 +1,84 @@
 ---
 layout: page
-title: "Fast DDS通信機能の利用"
+title: "Using Fast DDS Communication Functions"
 ---
--------jp page!!-------
 
 <!-- Title: Fast DDS通信機能の利用 -->
 #contents
 
-Fast DDS(以前のバージョンではFast RTPS)はeProsima社が開発しているOMG DDS 2.0、RTPS 2.2仕様の通信ミドルウェアです。
+Fast DDS (Fast RTPS in earlier versions) is communication middleware developed by eProsima that conforms to the OMG DDS 2.0 and RTPS 2.2 specifications.
 
 - [eProsima Fast DDS](https://www.eprosima.com/index.php/products-all/eprosima-fast-dds)
 
-以下ではOpenRTM-aistのFast RTPSプラグインのインストール手順、使用方法を説明します。
+The following explains how to install and use the Fast RTPS plugin for OpenRTM-aist.
 
-※[ROS2通信機能]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/ros2_comm_use)がインストール済みの場合、Fast DDS通信機能も利用可能になっているため以下の手順は不要です。
+* If [ROS2 Communication Functions]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/ros2_comm_use) are already installed, the Fast DDS communication function is also available, so the following procedure is unnecessary.
 
-C++版のみの対応です。
+Only the C++ version is supported.
 
 ## Windows
-### Fast DDSのインストール
-以下のサイトからインストーラーをダウンロードしてインストールしてください。
+### Installing Fast DDS
+Download and install the installer from the following site.
 
 - [eProsima Fast DDS](https://www.eprosima.com/index.php/products-all/eprosima-fast-dds)
 
-### OpenRTM-aistのビルド
+### Building OpenRTM-aist
 
-CMake実行時に**FASTRTPS_ENABLE**のオプションをONにします。
+Set the **FASTRTPS_ENABLE** option to ON when running CMake.
 
 ```
  cmake -DORB_ROOT=C:/workspace/omniORB-4.2.3-win64-vc16 -G "Visual Studio 16 2019" -DFASTRTPS_ENABLE=ON ..
 ```
 
-その他の手順は通常と同じです。
+The other steps are the same as usual.
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aist Build Procedure]({{ site.baseurl }}/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
 
-適当な場所にインストールしてください。
+Install it in an appropriate location.
 
-インストールするディレクトリは**CMAKE_INSTALL_PREFIX**のオプションで設定します。
+The installation directory is set with the **CMAKE_INSTALL_PREFIX** option.
 
 ```
  cmake .. -DCMAKE_INSTALL_PREFIX=C:/workspace/OpenRTM-aist/build/install
  cmake --build . --config Release --target install
 ```
 
-### 動作確認
+### Operation Check
 
-**{インストールしたパス}\2.0.0\Components\C++\Examples\vc16**のサンプルコンポーネントを実行します。
+Run the sample components in **{installed path}\2.0.0\Components\C++\Examples\vc16**.
 
-以下の内容のrtc.confを作成してください。
+Create rtc.conf with the following content.
 
 
 ```
- manager.modules.load_path: {インストールしたパス}\\2.0.0\\ext\\transport
+ manager.modules.load_path: {installed path}\\2.0.0\\ext\\transport
  manager.modules.preload: FastRTPSTransport.dll
  manager.components.preconnect: ConsoleOut0.in?interface_type=fast-rtps, ConsoleIn0.out?interface_type=fast-rtps
  manager.components.preactivation: ConsoleOut0, ConsoleIn0
 ```
 
-まず**FastRTPSTransport.dll**のロードが必要になります。
-この設定は**manager.modules.preload**のオプションで設定できます。
+First, **FastRTPSTransport.dll** must be loaded.
+This setting can be configured with the **manager.modules.preload** option.
 
-次にコネクタ生成時にインターフェース型を**fast-rtps**に設定する必要があります。
-コネクタの生成は**manager.components.preconnect**オプションにより設定します。
-この例では**ConsoleOut0**コンポーネントの**in**のポート、**ConsoleIn0**コンポーネントの**out**のポートにそれぞれコネクタを生成しています。
+Next, when creating the connector, the interface type must be set to **fast-rtps**.
+Connector creation is configured with the **manager.components.preconnect** option.
+In this example, connectors are created for the **in** port of the **ConsoleOut0** component and the **out** port of the **ConsoleIn0** component.
 
-**ConsoleInComp.exe**、**ConsoleOutComp.exe**を実行すると通信ができるようになります。
+Communication becomes possible by running **ConsoleInComp.exe** and **ConsoleOutComp.exe**.
 
 ## Ubuntu
 
-### Fast DDSのインストール
+### Installing Fast DDS
 
-#### 依存ライブラリのインストール
+#### Installing Dependent Libraries
 
-asio、TinyXML-2をインストールします。
+Install asio and TinyXML-2.
 
 ```
  sudo apt install libasio-dev libtinyxml2-dev
 ```
 
-Fast-CDRをビルド、インストールします。
+Build and install Fast-CDR.
 
 ```
  export $OPENRTM_INSTALL_DIR=~/fastdds_install
@@ -94,7 +93,7 @@ Fast-CDRをビルド、インストールします。
  cmake --build . --config Release --target install
 ```
 
-foonathan/memoryをビルド、インストールします。
+Build and install foonathan/memory.
 
 ```
  export FOONATHAN_MEMORY_VERSION=1.2.1
@@ -108,10 +107,10 @@ foonathan/memoryをビルド、インストールします。
  cmake --build . --config Release --target install
 ```
 
-#### Fast DDSのビルド
+#### Building Fast DDS
 
-Fast DDSのビルドにはCMake 3.11以上のバージョンが必要です。
-Ubuntu 18.04環境ではaptでインストールされるCMakeのバージョンが3.10のため、新しいバージョンのCMakeをダウンロードしてPATHを設定してください。
+Building Fast DDS requires CMake version 3.11 or later.
+In an Ubuntu 18.04 environment, the version of CMake installed with apt is 3.10, so download a newer version of CMake and set PATH.
 
 ```
  wget https://github.com/Kitware/CMake/releases/download/v3.22.3/cmake-3.22.3-linux-x86_64.tar.gz
@@ -119,7 +118,7 @@ Ubuntu 18.04環境ではaptでインストールされるCMakeのバージョン
  export PATH=~/cmake-3.22.3-linux-x86_64/bin:$PATH
 ```
 
-以下のコマンドでFast DDSをビルド、インストールしてください。
+Build and install Fast DDS with the following commands.
 
 ```
  export FASTDDS_VERSION=2.5.1
@@ -133,120 +132,120 @@ Ubuntu 18.04環境ではaptでインストールされるCMakeのバージョン
  cmake --build . --config Release --target install
 ```
 
-### OpenRTM-aistのビルド
+### Building OpenRTM-aist
 
-CMake実行時に**FASTRTPS_ENABLE**のオプションをONにします。
+Set the **FASTRTPS_ENABLE** option to ON when running CMake.
 
 ```
  cmake .. -DFASTRTPS_ENABLE=ON -Dfastrtps_DIR=${OPENRTM_INSTALL_DIR}/share/fastrtps/cmake
 ```
 
-その他の手順は通常と同じです。
+The other steps are the same as usual.
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aist Build Procedure]({{ site.baseurl }}/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
 
-適当な場所にインストールしてください。
+Install it in an appropriate location.
 
-インストールするディレクトリは**CMAKE_INSTALL_PREFIX**のオプションで設定します。
+The installation directory is set with the **CMAKE_INSTALL_PREFIX** option.
 
 ```
  cmake .. -DCMAKE_INSTALL_PREFIX=${OPENRTM_INSTALL_DIR}
  cmake --build . --config Release --target install
 ```
 
-### 動作確認
+### Operation Check
 
-**{インストールしたパス}/share/openrtm-2.0/components/c++/examples**のサンプルコンポーネントを実行します。
+Run the sample components in **{installed path}/share/openrtm-2.0/components/c++/examples**.
 
-以下の内容のrtc.confを作成してください。
+Create rtc.conf with the following content.
 
 
 ```
- manager.modules.load_path: {インストールしたパス}/lib/openrtm-2.0/transport
+ manager.modules.load_path: {installed path}/lib/openrtm-2.0/transport
  manager.modules.preload: FastRTPSTransport.so
  manager.components.preconnect: ConsoleOut0.in?interface_type=fast-rtps, ConsoleIn0.out?interface_type=fast-rtps
  manager.components.preactivation: ConsoleOut0, ConsoleIn0
 ```
 
-まず**FastRTPSTransport.so**のロードが必要になります。
-この設定は**manager.modules.preload**のオプションで設定できます。
+First, **FastRTPSTransport.so** must be loaded.
+This setting can be configured with the **manager.modules.preload** option.
 
-次にコネクタ生成時にインターフェース型を**fast-rtps**に設定する必要があります。
-コネクタの生成は**manager.components.preconnect**オプションにより設定します。
-この例では**ConsoleOut0**コンポーネントの**in**のポート、**ConsoleIn0**コンポーネントの**out**のポートにそれぞれコネクタを生成しています。
+Next, when creating the connector, the interface type must be set to **fast-rtps**.
+Connector creation is configured with the **manager.components.preconnect** option.
+In this example, connectors are created for the **in** port of the **ConsoleOut0** component and the **out** port of the **ConsoleIn0** component.
 
-**ConsoleInComp**、**ConsoleOutComp**を実行すると通信ができるようになります。
+Communication becomes possible by running **ConsoleInComp** and **ConsoleOutComp**.
 
 
-## 起動時のオプション
+## Startup Options
 &aname(runoption);
-rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを設定可能です。
-※開発中のOpenRTM-aistでは使用可能ですが、リリースしたバージョンでは未実装の場合があります。
+The following options can be set in rtc.conf when starting the OpenRTM-aist manager.
+* These options can be used in OpenRTM-aist under development, but may not be implemented in released versions.
 
 <table class="table-alt">
   <tr>
-    <th>オプション名</th>
-    <th>設定例</th>
-    <th>内容</th>
+    <th>Option Name</th>
+    <th>Setting Example</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>fast-rtps.xmlprofile.filename</td>
     <td>C:/openrtminstall/2.0.0/ext/transport/FastRTPsQoSExample.xml</td>
-    <td><a href="https://fast-dds.docs.eprosima.com/en/latest/fastdds/xml_configuration/xml_configuration.html">Fast DDSの設定ファイル</a>を指定する。</td>
+    <td>Specifies the <a href="https://fast-dds.docs.eprosima.com/en/latest/fastdds/xml_configuration/xml_configuration.html">Fast DDS configuration file</a>.</td>
   </tr>
   <tr>
     <td>fast-rtps.participant.name</td>
     <td>participant_openrtm</td>
-    <td>ロードするDomainParticipantのプロファイル名</td>
+    <td>Profile name of the DomainParticipant to load</td>
   </tr>
   <tr>
     <td>fast-rtps.domain.id</td>
     <td>0</td>
-    <td>ドメインのID</td>
+    <td>Domain ID</td>
   </tr>
   <tr>
     <td>fast-rtps.dds.sec.auth.plugin</td>
     <td>builtin.PKI-DH</td>
-    <td>認証プラグインの名前</td>
+    <td>Name of the authentication plugin</td>
   </tr>
   <tr>
     <td>fast-rtps.dds.sec.auth.XXX</td>
     <td></td>
-    <td>認証プラグインの設定</td>
+    <td>Authentication plugin settings</td>
   </tr>
   <tr>
     <td>fast-rtps.dds.sec.access.plugin</td>
     <td>builtin.Access-Permissions</td>
-    <td>アクセス制御プラグインの名前</td>
+    <td>Name of the access control plugin</td>
   </tr>
   <tr>
     <td>fast-rtps.dds.sec.access.XXX</td>
     <td></td>
-    <td>アクセス制御プラグインの設定</td>
+    <td>Access control plugin settings</td>
   </tr>
   <tr>
     <td>fast-rtps.dds.sec.crypto.plugin</td>
     <td>builtin.AES-GCM-GMAC</td>
-    <td>暗号化プラグインの名前</td>
+    <td>Name of the encryption plugin</td>
   </tr>
   <tr>
     <td>fast-rtps.dds.sec.crypto.XXX</td>
     <td></td>
-    <td>暗号化プラグインの設定</td>
+    <td>Encryption plugin settings</td>
   </tr>
   <tr>
     <td>fast-rtps.dds.sec.log.plugin</td>
     <td>builtin.DDS_LogTopic</td>
-    <td>セキュリティロギングプラグインの名前</td>
+    <td>Name of the security logging plugin</td>
   </tr>
   <tr>
     <td>fast-rtps.dds.sec.log.XXX</td>
     <td></td>
-    <td>セキュリティロギングプラグインの設定</td>
+    <td>Security logging plugin settings</td>
   </tr>
 </table>
 
-以下に設定例を記載します。
+A setting example is shown below.
 
 ```
  fast-rtps.xmlprofile.filename: ${OPENRTM_INSTALL_DIR}/transport/FastRTPsQoSExample.xml
@@ -254,34 +253,34 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
 ```
 
 
-## 接続時のオプション
+## Connection Options
 &aname(connectoption);
-データポート接続時のコネクタプロファイルに設定できるオプションは以下の通りです。
+The options that can be set in the connector profile when connecting data ports are as follows.
 
 <table class="table-alt">
   <tr>
-    <th>オプション名</th>
-    <th>デフォルト値</th>
-    <th>オプション</th>
-    <th>内容</th>
+    <th>Option Name</th>
+    <th>Default Value</th>
+    <th>Options</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>fast-rtps.topic</td>
     <td>chatter</td>
     <td></td>
-    <td>DDSトピックの名前。ROS2シリアライザを使う場合は先頭に<strong>rt/</strong>を付けた名前に自動的に変更する。</td>
+    <td>Name of the DDS topic. When using the ROS2 serializer, it is automatically changed to a name prefixed with <strong>rt/</strong>.</td>
   </tr>
   <tr>
     <td>fast-rtps.subscriber.name</td>
     <td></td>
     <td></td>
-    <td>ロードするSubscriberのプロファイル名</td>
+    <td>Profile name of the Subscriber to load</td>
   </tr>
   <tr>
     <td>fast-rtps.subscriber.qos.deadline.period.seconds</td>
     <td>2147483647</td>
     <td></td>
-    <td>受信側の最小周期</td>
+    <td>Minimum period on the receiving side</td>
   </tr>
   <tr>
     <td>fast-rtps.subscriber.qos.deadline.period.nanosec</td>
@@ -317,7 +316,7 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
     <td>fast-rtps.subscriber.qos.durability.kind</td>
     <td>VOLATILE_DURABILITY_QOS</td>
     <td>VOLATILE_DURABILITY_QOS, TRANSIENT_LOCAL_DURABILITY_QOS, TRANSIENT_DURABILITY_QOS, PERSISTENT_DURABILITY_QOS</td>
-    <td>受信側の堅牢性(VOLATILE_DURABILITY_QOS：変わりやすい、TRANSIENT_LOCAL_DURABILITY_QOS：一時的なローカル設定）</td>
+    <td>Durability on the receiving side (VOLATILE_DURABILITY_QOS: volatile, TRANSIENT_LOCAL_DURABILITY_QOS: temporary local setting)</td>
   </tr>
   <tr>
     <td>fast-rtps.subscriber.qos.durabilityService.history_depth</td>
@@ -407,7 +406,7 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
     <td>fast-rtps.subscriber.qos.liveliness.lease_duration.seconds</td>
     <td>2147483647</td>
     <td></td>
-    <td>受信側のハートビートの周期</td>
+    <td>Heartbeat period on the receiving side</td>
   </tr>
   <tr>
     <td>fast-rtps.subscriber.qos.liveliness.lease_duration.nanosec</td>
@@ -443,7 +442,7 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
     <td>fast-rtps.subscriber.qos.reliability.kind</td>
     <td>BEST_EFFORT_RELIABILITY_QOS</td>
     <td>BEST_EFFORT_RELIABILITY_QOS, RELIABLE_RELIABILITY_QOS</td>
-    <td>受信側の信頼性(RELIABLE_RELIABILITY_QOS：高信頼、BEST_EFFORT_RELIABILITY_QOS：最高速度)</td>
+    <td>Reliability on the receiving side (RELIABLE_RELIABILITY_QOS: highly reliable, BEST_EFFORT_RELIABILITY_QOS: highest speed)</td>
   </tr>
   <tr>
     <td>fast-rtps.subscriber.qos.reliability.max_blocking_time.seconds</td>
@@ -551,13 +550,13 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
     <td>fast-rtps.publisher.name</td>
     <td></td>
     <td></td>
-    <td>ロードするPublisherのプロファイル名</td>
+    <td>Profile name of the Publisher to load</td>
   </tr>
   <tr>
     <td>fast-rtps.publisher.qos.deadline.period.seconds</td>
     <td>2147483647</td>
     <td></td>
-    <td>送信側の最小周期</td>
+    <td>Minimum period on the sending side</td>
   </tr>
   <tr>
     <td>fast-rtps.publisher.qos.deadline.period.nanosec</td>
@@ -593,7 +592,7 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
     <td>fast-rtps.publisher.qos.durability.kind</td>
     <td>VOLATILE_DURABILITY_QOS</td>
     <td>VOLATILE_DURABILITY_QOS, TRANSIENT_LOCAL_DURABILITY_QOS, TRANSIENT_DURABILITY_QOS, PERSISTENT_DURABILITY_QOS</td>
-    <td>送信側の堅牢性(VOLATILE_DURABILITY_QOS：変わりやすい、TRANSIENT_LOCAL_DURABILITY_QOS：一時的なローカル設定）</td>
+    <td>Durability on the sending side (VOLATILE_DURABILITY_QOS: volatile, TRANSIENT_LOCAL_DURABILITY_QOS: temporary local setting)</td>
   </tr>
   <tr>
     <td>fast-rtps.publisher.qos.durabilityService.history_depth</td>
@@ -653,7 +652,7 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
     <td>fast-rtps.publisher.qos.lifespan.duration.seconds</td>
     <td>2147483647</td>
     <td></td>
-    <td>送信側の未送信データの保持時間</td>
+    <td>Retention time for unsent data on the sending side</td>
   </tr>
   <tr>
     <td>fast-rtps.publisher.qos.lifespan.duration.nanosec</td>
@@ -683,7 +682,7 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
     <td>fast-rtps.publisher.qos.liveliness.lease_duration.seconds</td>
     <td>2147483647</td>
     <td></td>
-    <td>送信側のハートビートの周期</td>
+    <td>Heartbeat period on the sending side</td>
   </tr>
   <tr>
     <td>fast-rtps.publisher.qos.liveliness.lease_duration.nanosec</td>
@@ -725,7 +724,7 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
     <td>fast-rtps.publisher.qos.reliability.kind</td>
     <td>BEST_EFFORT_RELIABILITY_QOS</td>
     <td>BEST_EFFORT_RELIABILITY_QOS, RELIABLE_RELIABILITY_QOS</td>
-    <td>送信側の信頼性(RELIABLE_RELIABILITY_QOS：高信頼、BEST_EFFORT_RELIABILITY_QOS：最高速度、SYSTEM_DEFAULT)</td>
+    <td>Reliability on the sending side (RELIABLE_RELIABILITY_QOS: highly reliable, BEST_EFFORT_RELIABILITY_QOS: highest speed, SYSTEM_DEFAULT)</td>
   </tr>
   <tr>
     <td>fast-rtps.publisher.qos.reliability.max_blocking_time.seconds</td>
@@ -797,13 +796,13 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
     <td>fast-rtps.publisher.topic.historyQos.depth</td>
     <td>1</td>
     <td></td>
-    <td>送信側の保持するデータ数</td>
+    <td>Number of data samples retained on the sending side</td>
   </tr>
   <tr>
     <td>fast-rtps.publisher.topic.historyQos.kind</td>
     <td>KEEP_LAST_HISTORY_QOS</td>
     <td>KEEP_LAST_HISTORY_QOS, KEEP_ALL_HISTORY_QOS</td>
-    <td>送信データの保持方法（KEEP_LAST_HISTORY_QOS：すべてのデータを保持、KEEP_LAST_HISTORY_QOS：depthで指定したデータ数だけ保持）</td>
+    <td>Method for retaining sent data (KEEP_LAST_HISTORY_QOS: retains all data, KEEP_LAST_HISTORY_QOS: retains only the number of data samples specified by depth)</td>
   </tr>
   <tr>
     <td>fast-rtps.publisher.times.heartbeatPeriod.seconds</td>
@@ -855,19 +854,19 @@ rtc.confでOpenRTM-aistのマネージャ起動時に以下のオプションを
   </tr>
 </table>
 
-以下に設定例を記載します。
+A setting example is shown below.
 
 ```
  manager.components.preconnect: ConsoleOut0.in?interface_type=fast-rtps&fast-rtps.subscriber.name=subscriber_openrtm
 ```
 
-## セキュア通信機能の利用
-Fast DDSは[DDS Security仕様](https://www.omg.org/spec/DDS-SECURITY/1.1/About-DDS-SECURITY/)のセキュア通信機能を提供しています。
+## Using Secure Communication Functions
+Fast DDS provides secure communication functions based on the [DDS Security specification](https://www.omg.org/spec/DDS-SECURITY/1.1/About-DDS-SECURITY/).
 
 - [8. Security — Fast DDS 2.5.1 documentation](https://fast-dds.docs.eprosima.com/en/latest/fastdds/security/security.html)
 
-OpenRTM-aistのFast DDSプラグインでセキュア通信機能を使用するためには起動時のオプションを設定する必要があります。
-以下に設定例を記載します。
+To use secure communication functions with the OpenRTM-aist Fast DDS plugin, startup options must be configured.
+A setting example is shown below.
 
 ```
  fast-rtps.dds.sec.auth.plugin: builtin.PKI-DH
@@ -878,12 +877,12 @@ OpenRTM-aistのFast DDSプラグインでセキュア通信機能を使用する
 ```
 
 
-### 秘密鍵、証明書の作成
-[Fast DDSのマニュアル](https://fast-dds.docs.eprosima.com/en/1.5.0/security.html)の手順で秘密鍵、証明書を作成します。
+### Creating Private Keys and Certificates
+Create the private keys and certificates according to the procedure in the [Fast DDS manual](https://fast-dds.docs.eprosima.com/en/1.5.0/security.html).
 
-以下で秘密鍵、自己署名証明書を作成するコマンドを掲載します。
-maincaconf.cnfはFast DDSのマニュアルのものを使用します。
-出力するファイル名を変更したい場合は適宜maincaconf.cnfの以下の項目を変更してください。
+The commands for creating a private key and self-signed certificate are shown below.
+Use the maincaconf.cnf file from the Fast DDS manual.
+If you want to change the output file names, modify the following items in maincaconf.cnf as needed.
 
 ```
  certificate = $dir/mainexamplecacert.pem
@@ -891,9 +890,9 @@ maincaconf.cnfはFast DDSのマニュアルのものを使用します。
 ```
 
 
-また、req_distinguished_nameの項目は変更して、その内容に応じて変更したappconf.cnfを用意してください。
+Also, change the req_distinguished_name items and prepare an appconf.cnf file modified according to those contents.
 
-以下のコマンドを実行します。
+Run the following commands.
 
 ```
  type nul > index.txt
@@ -906,7 +905,5 @@ maincaconf.cnfはFast DDSのマニュアルのものを使用します。
 ```
 
 
-秘密鍵appexamplekey.pem、証明書mainexamplecacert.pem、appexamplecert.pemを使用します。
+Use the private key appexamplekey.pem and the certificates mainexamplecacert.pem and appexamplecert.pem.
 
-
--------jp page!!-------

@@ -1,22 +1,21 @@
 ---
 layout: page
-title: NXT RTC 動作確認
+title: NXT RTC Operation Check
 ---
--------jp page!!-------
 
 <!-- Title: NXT RTC 動作確認 -->
 #contents
 
 
-# NXT RTC 動作確認
-では、作成した NXTRTC を実際に動作させてみます。
+# NXT RTC Operation Check
+Now, let us actually run the NXTRTC that we created.
 
-## ネームサーバーの起動
-ネームサーバーを起動します。
-Windows用の OpenRTM-aist(C++版) をインストールしている場合は、スタートメニューの「OpenRTM-aist」>「C++」>「tools」>「Start Naming Service」から起動できます。
+## Starting the Name Server
+Start the name server.
+If OpenRTM-aist for Windows (C++ version) is installed, you can start it from "OpenRTM-aist" > "C++" > "tools" > "Start Naming Service" in the Start menu.
 
-## rtc.conf の作成
-rtc.conf を作成します。
+## Creating rtc.conf
+Create rtc.conf.
 
 ```
  corba.nameservers: localhost
@@ -24,62 +23,61 @@ rtc.conf を作成します。
  manager.shutdown_auto: NO
 ```
 
-corna.nameservers の項目は使用したいネームサーバーのアドレスに合わせて設定します。
-ここでは、ローカルのネームサーバーを使用しますので、**localhost**とします。
+Set the corna.nameservers item according to the address of the name server you want to use.
+Here, we will use the local name server, so set it to **localhost**.
 
-起動したいコンポーネントが入っているそれぞれのディレクトリーにコピーしておきます。
-今回作成した NXTRTC のほかに
+Copy it to each directory containing the components you want to start.
+In addition to the NXTRTC created this time, we will start the following:
 - TkJoystickComp
 - TkMotorPosComp
 - TkSliderMonitorComp
-を起動することにします。
 
 
-## RTSystemEditor の起動
-RTSystemEditor を起動します。
-RTSystemEditor を起動後、ネームサーバー(ここでは localhost)に接続します。
-また、SystemDiagram エディタを開くために、ツールバーの SystemDiagram アイコンをクリックします。
+## Starting RTSystemEditor
+Start RTSystemEditor.
+After starting RTSystemEditor, connect to the name server (localhost here).
+Also, to open the SystemDiagram editor, click the SystemDiagram icon on the toolbar.
 
 
-## コンポーネントの起動
-以下のコンポーネントを起動します。
+## Starting the Components
+Start the following components.
 - NXTRTC
 - TkJoystickComp
 - TkMotorPosComp
 - TkSliderMonitorComp
-起動すると、RTSystemEditorのNameServcie ビュー上にコンポーネントが表示されます。
+When they start, the components are displayed in the NameServcie view of RTSystemEditor.
 
 ### TkJoystickComp
-TkJoyStickComp は GUI上でジョイスティックを模擬するためのコンポーネントです。
-図に示すような GUI があらわれ、中央の丸をドラッグすることでジョイスティックのように、X-Yの値を OutPort(上) から出力するコンポーネントです。
-TkJoyStickComp にはもうひとつ OutPort(下) が付いていて、こちらは作動駆動型移動ロボットを操作するのに便利な左右の車輪の速度を出力するためのデータポートです。
-NXTRTC の入力ポートに直接接続すれば、Tribot を制御することができます。
+TkJoyStickComp is a component for simulating a joystick on the GUI.
+A GUI like the one shown in the figure appears, and by dragging the circle in the center, it outputs X-Y values from the OutPort (top) like a joystick.
+TkJoyStickComp has another OutPort (bottom), which is a data port for outputting the speeds of the left and right wheels, useful for operating a differential-drive mobile robot.
+If it is connected directly to the input port of NXTRTC, Tribot can be controlled.
 
 <div align="center"><a href="TkJoystick.png"><img src="TkJoystick.png" width="70%;"></a></div>
 
 ### TkMotorComp
-TkMotorComp は GUI上で車輪に見立てた丸いアイコンが、InPort へ入力されたデータ(角度)に従って回転する、車輪の回転の様子をモニタリングするためのコンポーネントです。
-NXTRTC の車輪の角度を出力する OutPort に接続することで、NXT の車輪の回転の様子を見ることができます。
-NXT の車輪を手で回しても、その様子をモニタすることができます。
+TkMotorComp is a component for monitoring wheel rotation. A circular icon representing a wheel rotates on the GUI according to the data (angle) input to the InPort.
+By connecting it to the OutPort that outputs the wheel angle of NXTRTC, you can see how the wheels of NXT are rotating.
+You can also monitor the rotation even if you turn the NXT wheels by hand.
 <div align="center"><a href="TkMotor.png"><img src="TkMotor.png" width="70%;"></a></div>
 
 ### TkSliderMonitorComp
-TkSliderMonitorComp は、InPort へ入力されたデータの値をGUIのスライダで表示するためのコンポーネントです。
-NXTRTC のセンサー出力ポートに接続することで、NXT のセンサーデータのモニタリングをすることができます。
+TkSliderMonitorComp is a component for displaying the value of data input to the InPort using GUI sliders.
+By connecting it to the sensor output port of NXTRTC, you can monitor NXT sensor data.
 
 
-## コンポーネントの接続
-すべてのコンポーネントが起動したら、コンポーネントを接続します。
-NameService ビューから SystemDiagram エディタへ各コンポーネントをドラッグアンドドロップします。
-接続したいポートからポートへドラッグアンドドロップすることでポートを接続することができます。
-下に、幾つかのコンポーネントを接続した例を示します。
+## Connecting the Components
+After all components have started, connect them.
+Drag and drop each component from the NameService view to the SystemDiagram editor.
+You can connect ports by dragging and dropping from the port you want to connect to another port.
+An example of several connected components is shown below.
 
-<span style="color:red;">NXTに超音波センサーが取り付けられていない場合、NXTRTC の Activate 後にエラー状態(赤色)になります。</span>;
+<span style="color:red;">If an ultrasonic sensor is not attached to NXT, NXTRTC will enter the error state (red) after Activate.</span>;
 
 RtcLink.png
 <!-- div align="center"><a href="RtcLink.png"><img src="RtcLink.png" width="70%;"></a></div-->
 
-これらのコンポーネントを使って、NXTRTC が正しく動いているかどうかを確認しましょう。
+Use these components to check whether NXTRTC is operating correctly.
 
 <!-- **NXTを自由に動かすコンポーネントを作ってみる -->
 <!-- これで、NXTをRTコンポーネント化することができました。 -->
@@ -87,4 +85,3 @@ RtcLink.png
 <!-- 上記のように、Pythonで作っても、もちろんC++やJavaで作っても構いません。 -->
 <!-- どういった言語で作ったコンポーネントとも、このNXT RTCは接続することができます。 -->
 
--------jp page!!-------

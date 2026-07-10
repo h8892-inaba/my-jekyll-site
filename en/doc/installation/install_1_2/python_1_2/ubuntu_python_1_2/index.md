@@ -2,7 +2,10 @@
 layout: page
 title: 
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
+
 
 <!-- Title: Ubuntu/Debianへのインストール -->
 <div align="right"><a href="ubuntu_logo2.png"><img src="ubuntu_logo2.png" width="100;" align="right"></a></div>
@@ -18,7 +21,7 @@ openrtm.orgが提供するインストール・スクリプト**pkg_install_ubun
 
 オプションを指定することで、目的に合わせたパッケージをインストールすることが可能です。
 
-一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)」のページをご確認ください。<br>
+一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script)」のページをご確認ください。<br>
 <span style="color:red;">※最新バージョンが「1.2.2」である場合は、オプション指定で「1.2.1」のインストール、「1.2.2」から「1.2.1」へのダウングレードができます。</span>;
 
 一括インストールスクリプトは、ダウンロードした後、ダウンロード先ディレクトリに移動し、
@@ -56,7 +59,7 @@ Debianの場合はsuでroot権限を得た後に
 ## JDK8のインストール
 
 OpenRTP(RTSystemEditorやRTCBuilderなど)の実行にはJDK8相当のJava環境が必要です。(デフォルトの環境でJDK8がインストールされている場合もありますが、Ubuntu 18.04ではJDK11がインストールされているため、JDK8のインストールが必要です。)　なお、rtshell/rtctree/rtsprofileの使用にはJDKは必要ありませんのでOpenRTPを使わない場合にはJDK8をインストールする必要はありません。JDK8の入手やインストールについては以下を参照してください。
-- [JDK8のインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8)
+- [JDK8のインストール]({{ site.baseurl }}/en/doc/installation/common/install_jdk8)
 
 ## rtshellのインストール
 制御コンピュータが小規模のシステムの場合など、CUIでRTCを制御したい場合にはOpenRTPのRTSystemEditor相当の機能をCUIから実行できるようなツールとしてrtshellと呼ばれるツールが提供されています。rtshellのインストールは一括インストールスクリプトを用いて、一括インストールスクリプト・ファイルが置かれているディレクトリで
@@ -427,5 +430,3 @@ openrtpでは大量のファイルがインストールされるため、ここ�
 ```
 
 
-
--------jp page!!-------

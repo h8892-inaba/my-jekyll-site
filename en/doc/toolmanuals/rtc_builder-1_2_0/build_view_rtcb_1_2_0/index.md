@@ -1,27 +1,26 @@
 ---
 layout: page
-title: 画面構成と機能（ビルドビュー 編）
+title: Screen Layout and Functions (Build View)
 ---
--------jp page!!-------
 
-<!-- Title: 画面構成と機能（ビルドビュー 編） -->
+<!-- Title: Screen Layout and Functions (Build View) -->
 #contents
-<!-- ***ビルドビュー  -->
-ビルドビューは作成中の RTコンポーネントの設定内容をグラフィカルに表示するためのビューです。
-ビルドビューの表示例を以下に示します。
+<!-- ***Build View  -->
+The Build View is a view for graphically displaying the configuration details of the RT component being created.
+An example of the Build View is shown below.
 <br>
 
 <div align="center"><a href="fig3-13BuildView_ja.png"><img src="fig3-13BuildView_ja.png" width="70%;"></a></div>
-<div align="center"><strong>ビルドビュー</strong></div>
+<div align="center"><strong>Build View</strong></div>
 <br>
 
-ビルドビュー内には、設定した RTコンポーネントの名称、データポート (InPort/OutPort) の数・名称、サービスポートの数・名称、サービスインターフェースの数・名称が表示されます。
-また各ポートは、各設定画面で設定した表示位置に表示されます。
+In the Build View, the configured RT component name, the number and names of data ports (InPort/OutPort), the number and names of service ports, and the number and names of service interfaces are displayed.
+Each port is also displayed at the position specified in each configuration screen.
 <br>
 
-### ビルドビューの表示 
-｢RTCBuilder｣ パースペクティブ切り替え時にビルドビューが表示されていない場合、以下の手順にて表示することができます。
-画面上部のメニューから [ウィンドウ] > [ビューの表示] > [その他] を選択。表示された ｢ビューの表示｣ 画面にて、[OpenRTP Tools] > [BuildView] を選択。
+### Displaying the Build View
+If the Build View is not displayed when switching to the "RTCBuilder" perspective, it can be displayed by following the steps below.
+From the menu at the top of the screen, select [Window] > [Show View] > [Other]. In the displayed "Show View" screen, select [OpenRTP Tools] > [BuildView].
 <br>
 
 <table class="table-alt">
@@ -30,11 +29,8 @@ title: 画面構成と機能（ビルドビュー 編）
     <td><div align="center"><a href="fig3-14DispBuildView2_ja.png"><img src="fig3-14DispBuildView2_ja.png" width="50%;"></a></div></td>
   </tr>
   <tr>
-    <td style="text-align: center;" colspan="2">ビルドビューの表示</td>
+    <td style="text-align: center;" colspan="2">Displaying the Build View</td>
   </tr>
 </table>
 <br>
 
-
-
--------jp page!!-------

@@ -2,7 +2,9 @@
 layout: page
 title: 動作確認 (Linux編)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: 動作確認 (Linux編) -->
 #contents
@@ -138,7 +140,7 @@ rtm-naming コマンドが見つからない場合は、rtm-naming,py を実行�
 ### RTSystemEditor の起動
 
 RTSystemEditor を使って、RTコンポーネントの接続とアクティブ化を行います。
-[こちら](/ja/node/5778)から Eclipse 全部入りパッケージをダウンロードし解凍してください。
+[こちら](/en/node/5778)から Eclipse 全部入りパッケージをダウンロードし解凍してください。
 
 RTSystemEditor は Java Development Kit7 を使用します。以下のマニュアルを参考にインストールしてください。
 また、Ubuntu 等では、デフォルトの Java 環境は OpenJDK が推奨されています。
@@ -147,7 +149,7 @@ RTSystemEditor は Java Development Kit7 を使用します。以下のマニュ
   - [Java SE Development Kit 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
   - [JDKインストールのためのヒント ](/node/805)
 
-[こちら](/ja/node/4870)のページを参考にRTSystemEditorを起動してください。
+[こちら](/en/node/4870)のページを参考にRTSystemEditorを起動してください。
 
 ### ネームサーバーの参照と確認
 
@@ -189,4 +191,4 @@ ConsoleInComp 側のターミナルに数字を打ち込むと、ConsoleOutComp 
 以上で、OpenRTM-aist-Python が正しくインストールされていることが確認できました。
 
 
--------jp page!!-------
+

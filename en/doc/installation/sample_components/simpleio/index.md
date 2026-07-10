@@ -2,72 +2,84 @@
 layout: page
 title: "SimpleIO"
 ---
--------jp page!!-------
 <!-- Title: SimpleIO -->
 
 #contents
-このサンプルは、OpenRTM-aistのC++版、Python版、Java版に付属されています。
 
-### 概要
-InPort、OutPortの使用方法のサンプルです．ConsoleInコンポーネントとConsoleOutコンポーネントを起動させます。
-Port間を接続すると、ConsoleIn側で入力した数字が、ConsoleOut側に表示されます．Port間はRTSystemEditorを用いる以外にrtshellコマンドを実行することで接続できます。
+This sample is included with the C++, Python, and Java editions of OpenRTM-aist.
 
-### 起動画面
+### Overview
+
+This sample demonstrates the use of InPorts and OutPorts.
+
+Start the ConsoleIn and ConsoleOut components. When the ports are connected, numbers entered on the ConsoleIn side are displayed on the ConsoleOut side.
+
+Ports can be connected either using RTSystemEditor or by executing rtshell commands.
+
+### Startup Screens
 
 <div align="center"><a href="SimpleIO_example_rtse_ja.png"><img src="SimpleIO_example_rtse_ja.png" width="60%;"></a></div>
-<div align="center"><strong>SimpleIO実行例(RTSystemEditor接続画面)</strong></div>
+<div align="center"><strong>SimpleIO Execution Example (RTSystemEditor Connection Screen)</strong></div>
 
 <div align="center"><a href="open_consolein_out.png"><img src="open_consolein_out.png" width="60%;"></a></div>
-<div align="center"><strong>ConsoleInコンポーネントとConsoleOutコンポーネントの実行例</strong></div>
-### 使い方
-SimpleIOのサンプルは、ConsoleInで入力された数字をデータポートからConsoleOutへ送って、ConsoleOut側にも同じ数字を表示させるサンプルです。
-ConsoleInの画面から数字を入力してください。そうするとConsoleOutで入力した数字が出力されます。
+<div align="center"><strong>ConsoleIn and ConsoleOut Component Execution Example</strong></div>
 
+### Usage
 
-  - OpenRTPを起動し、RTSystemEditorを開きます。RTSystemEditorの使用方法の詳細については[RTSystemEditor]({{ site.baseurl }}/ja/doc/toolmanuals/rtsystemeditor-1_2_0)を参照
-  - ConsoleInとConsoleOutの両コンポーネントを起動します。
-コンポーネントの起動はOSやOpenRTM-aistの言語によって異なってます。以下の表を参考に起動します。
+The SimpleIO sample sends numbers entered in ConsoleIn to ConsoleOut through a data port and displays the same numbers in ConsoleOut.
+
+Enter a number in the ConsoleIn window. The same number will then be displayed in the ConsoleOut window.
+
+- Procedure
+
+  - Start OpenRTP and open RTSystemEditor. For details on using RTSystemEditor, refer to [RTSystemEditor]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_2_0).
+
+  - Start both the ConsoleIn and ConsoleOut components.
+
+    The startup method depends on the operating system and the OpenRTM-aist language edition. Refer to the table below.
+
 <table class="table-alt">
   <tr>
     <th></th>
-    <th colspan="2">Windowsの場合</th>
-    <th colspan="2">Linuxの場合</th>
+    <th colspan="2">Windows</th>
+    <th colspan="2">Linux</th>
   </tr>
   <tr>
     <td></td>
-    <td>ConsoleInコンポーネント</td>
-    <td>ConsoleOutコンポーネント</td>
-    <td>ConsoleInコンポーネント</td>
-    <td>ConsoleOutコンポーネント</td>
+    <td>ConsoleIn Component</td>
+    <td>ConsoleOut Component</td>
+    <td>ConsoleIn Component</td>
+    <td>ConsoleOut Component</td>
   </tr>
   <tr>
-    <td>C++版</td>
+    <td>C++ Edition</td>
     <td>ConsoleIn.bat</td>
     <td>ConsoleOut.bat</td>
     <td>ConsoleInComp</td>
     <td>ConsoleOutComp</td>
   </tr>
   <tr>
-    <td>Python版</td>
+    <td>Python Edition</td>
     <td>ConsoleIn.bat</td>
     <td>ConsoleOut.bat</td>
     <td>ConsoleIn.py</td>
     <td>ConsoleOut.py</td>
   </tr>
   <tr>
-    <td>Java版</td>
+    <td>Java Edition</td>
     <td>ConsoleIn.bat</td>
     <td>ConsoleOut.bat</td>
     <td>ConsoleIn.sh</td>
     <td>ConsoleOut.sh</td>
   </tr>
 </table>
-  - RTSystemEditorのName Service Viewに両コンポーネントが現れるので、それらをSystemEditor上にドラッグします。
-  - 両コンポーネントのポートを結びます。（上図SimpleIO実行例を参照）
-  - どちらかのコンポーネントを右クリックし、[Activate Systems]を選択します。
-  - ConsoleInの画面に「Please input number:」のプロンプトが現れるので、数字を入力します。
-  - ConsoleOutの画面にその数字が表示されます。
 
+  - Both components will appear in the Name Service View of RTSystemEditor. Drag them onto the SystemEditor.
 
+  - Connect the ports of the two components. (Refer to the SimpleIO execution example above.)
 
--------jp page!!-------
+  - Right-click either component and select [Activate Systems].
+
+  - The prompt "Please input number:" will appear in the ConsoleIn window. Enter a number.
+
+  - The same number will be displayed in the ConsoleOut window.

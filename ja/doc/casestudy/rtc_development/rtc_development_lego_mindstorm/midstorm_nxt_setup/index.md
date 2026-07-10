@@ -3,7 +3,6 @@ layout: page
 title: Mindstorm NXT 設定
 ---
 
-init
 <!-- Title: Mindstorm NXT 設定 -->
 #contents
 

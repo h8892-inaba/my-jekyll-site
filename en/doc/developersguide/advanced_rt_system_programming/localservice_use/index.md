@@ -1,8 +1,7 @@
 ---
 layout: page
-title: "LocalServiceの利用方法"
+title: "How to Use LocalService"
 ---
--------jp page!!-------
 
-準備中
--------jp page!!-------
+Under preparation.
+

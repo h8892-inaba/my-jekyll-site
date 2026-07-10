@@ -2,7 +2,9 @@
 layout: page
 title: ソースからのビルド (Windows編)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: ソースからのビルド (Windows編) -->
 #contents
@@ -101,4 +103,4 @@ ZIPファイルを展開すると、以下の様なディレクトリツリー�
 
 以上で、OpenRTM-aist のインストールは終了です。
 
--------jp page!!-------
+

@@ -70,7 +70,7 @@ By specifying options, you can install packages according to your purpose. help 
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) --help
 ```
 
-The detailed contents of the installed packages can be checked in "[Detailed Contents of the OpenRTM-aist-2.0 deb Packages]({{ site.baseurl }}/ja/node/6665)".
+The detailed contents of the installed packages can be checked in "[Detailed Contents of the OpenRTM-aist-2.0 deb Packages]({{ site.baseurl }}/en/node/6665)".
 
 ## Installing Packages for ROS
 

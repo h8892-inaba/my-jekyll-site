@@ -11,7 +11,7 @@ The latest version, OpenRTM-aist-1.2.1-RELEASE, installs the C++, Python, and Ja
 If Python is not installed, OpenRTM-aist cannot be installed.
 Please install Python before installing OpenRTM-aist. Supported versions are "3.7", "3.6", and "2.7".
 
-For downloading Python, see [OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl }}/ja/node/6877).
+For downloading Python, see [OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl }}/en/node/6877).
 
 <!-- http://opensource.org/licenses/eclipse-1.0.php -->
 <!-- http://sourceforge.jp/projects/opensource/wiki/licenses%2FEclipse_Public_License(日本語訳) -->
@@ -31,7 +31,7 @@ Configure the search path automatically using the following method. This adds th
 ## Installing OpenRTM-aist
 This section introduces the installation procedure using the 64-bit installer OpenRTM-aist-1.2.1-RELEASE_x86_64.msi on Windows 10.
 
-For downloading the installer, see [OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl }}/ja/node/6877).
+For downloading the installer, see [OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl }}/en/node/6877).
 
 **[Installation Procedure]**
 1. Launch the installer. If the [Windows protected your PC] screen appears, click [More info] to display the [Run] button, then click [Run]. (This screen appears when installing applications that are not registered with Microsoft Corp. on certain Windows versions. Since this software is not registered, this screen is displayed.)
@@ -47,8 +47,8 @@ For downloading the installer, see [OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl 
 5. Select the Visual Studio version.
   - Set the Visual Studio version used by the C++ edition in the system environment variables.
   - Select the installed Visual Studio version and click [Next].
-    - For downloading Visual Studio, see [OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl }}/ja/node/6877).
-    - The Visual Studio version can be changed after installation using the VCVerChanger tool. [(How to use VCVerChanger)]({{ site.baseurl }}/ja/content/vc_version_changer)
+    - For downloading Visual Studio, see [OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl }}/en/node/6877).
+    - The Visual Studio version can be changed after installation using the VCVerChanger tool. [(How to use VCVerChanger)]({{ site.baseurl }}/en/content/vc_version_changer)
     - This setting is irrelevant for the Python and Java editions, so click [Next] with the default settings.
 <div align="center"><a href="OpenRTM121-install004.png"><img src="OpenRTM121-install004.png" width="50%;"></a></div>
 <br>
@@ -213,9 +213,9 @@ First, start the sample components and operate them using rtshell.
 ## Next...
 Please refer to the links below.
 
-- **Try running more samples　　　&t;：　**[Sample Components]({{ site.baseurl }}/ja/node/811)
-- **Try creating a component　　　&t;：　**[Case Study]({{ site.baseurl }}/ja/node/110)
-- **Learn OpenRTM from the basics　&t;：　**[Developer's Guide]({{ site.baseurl }}/ja/node/113)
-- **Join the community　　　　　&t;：　**[Community]({{ site.baseurl }}/ja/node/624)
-- **Browse published components　&t;：　**[Projects]({{ site.baseurl }}/ja/node/123)
+- **Try running more samples　　　&t;：　**[Sample Components]({{ site.baseurl }}/en/node/811)
+- **Try creating a component　　　&t;：　**[Case Study]({{ site.baseurl }}/en/node/110)
+- **Learn OpenRTM from the basics　&t;：　**[Developer's Guide]({{ site.baseurl }}/en/node/113)
+- **Join the community　　　　　&t;：　**[Community]({{ site.baseurl }}/en/node/624)
+- **Browse published components　&t;：　**[Projects]({{ site.baseurl }}/en/node/123)
 

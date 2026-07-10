@@ -1,12 +1,10 @@
 ---
 layout: page
-title: "Choreonoid用OpenRTM連携プラグイン Python版 チュートリアル(TankJoystick)"
+title: "OpenRTM Integration Plugin for Choreonoid, Python Version Tutorial (TankJoystick)"
 ---
 
-No English version available.
-
-このページではChoreonoid OpenRTM連携プラグイン Python版でTankモデルをゲームパッドで操作するまでの手順を説明します。
-使用するモデル、作成するRTCは[Choreonoid公式ページのチュートリアル](https://choreonoid.org/ja/manuals/1.7/openrtm/tank-joystick-project.html)とほぼ同じです。
+This page explains the procedure for operating the Tank model with a gamepad using the Choreonoid OpenRTM integration plugin Python version.
+The model used and the RTC to be created are almost the same as those in the [tutorial on the official Choreonoid page](https://choreonoid.org/ja/manuals/1.7/openrtm/tank-joystick-project.html).
 
 
 <br>
@@ -17,30 +15,30 @@ No English version available.
 
 #contents
 
-## RTC作成
+## Creating the RTC
 
-この章ではシミュレータ上のアクチュエータ、センサなどの入出力を行うRTCの開発手順を説明します。
+This chapter explains the procedure for developing an RTC that performs input and output for actuators, sensors, and similar elements on the simulator.
 
-### RTC Builder起動
+### Starting RTC Builder
 
-まずはRTC Builderでソースコードのひな型を作成します。
-RTC Builder利用のために、OpenRTM-aistをインストールしてください。
+First, create a source code template with RTC Builder.
+Install OpenRTM-aist in order to use RTC Builder.
 
 - [OpenRTM-aist.2.0.1-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release)
 
 
-インストールが完了したらRTC Builderを起動してひな型を作成してください。
-Windows 8.1の場合は「スタート」>「アプリビュー(右下矢印)」>「OpenRTM-aist 2.0.1」>「OpenRTP」をクリックすると起動できます。
+After installation is complete, start RTC Builder and create the template.
+On Windows 8.1, you can start it by clicking "Start" > "Apps view (lower-right arrow)" > "OpenRTM-aist 2.0.1" > "OpenRTP".
 
 
-作成手順は以下が参考になります。
+The following can be used as a reference for the creation procedure.
 
 - [RTCBuilder-1.1.0]({{ site.baseurl }}/ja/doc/toolmanuals/rtcbuilder-1_1_0/)
 
 
-### RTCひな型作成
+### Creating the RTC Template
 
-作成するRTCの仕様は以下のようになっています。言語は**Python**を選択してください。
+The specification of the RTC to be created is as follows. Select **Python** as the language.
 
 <br>
 
@@ -49,71 +47,71 @@ Windows 8.1の場合は「スタート」>「アプリビュー(右下矢印)」
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名称</th>
-    <th>**TankIoRTC_Py**</th>
+    <th>Component Name</th>
+    <th><strong>TankIoRTC_Py</strong></th>
   </tr>
   <tr>
-    <td colspan="2">CENTER: **InPort**</td>
+    <td colspan="2">CENTER: <strong>InPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>velocities</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedVelocity2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>車体の目標速度</td>
+    <td>Description</td>
+    <td>Target velocity of the vehicle body</td>
   </tr>
   <tr>
-    <td colspan="2"> **InPort**</td>
+    <td colspan="2"> <strong>InPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>torques</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedDoubleSeq</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>砲塔部分の関節トルク</td>
+    <td>Description</td>
+    <td>Joint torque of the turret section</td>
   </tr>
   <tr>
-    <td colspan="2">**InPort**</td>
+    <td colspan="2"><strong>InPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>lightSwitch</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedBooleanSeq</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>ライトのオンオフ</td>
+    <td>Description</td>
+    <td>Light on/off</td>
   </tr>
   <tr>
-    <td colspan="2">**OutPort**</td>
+    <td colspan="2"><strong>OutPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>angles</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>PanTiltAngles</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>砲塔部分の関節角度</td>
+    <td>Description</td>
+    <td>Joint angles of the turret section</td>
   </tr>
   <tr>
-    <td colspan="2"> **言語**</td>
+    <td colspan="2"> <strong>Language</strong></td>
   </tr>
   <tr>
     <td colspan="2">Python</td>
@@ -121,35 +119,35 @@ Windows 8.1の場合は「スタート」>「アプリビュー(右下矢印)」
 </table>
 
 
-### ソースコード編集
+### Editing the Source Code
 
-生成したソースコードにRTCのモジュール名のクラス(TankIoRTC_Pyならばclass TankIoRTC_Py)が記述されているので、そのクラスに以下の関数を追加してください。
+The generated source code contains a class with the RTC module name (for TankIoRTC_Py, class TankIoRTC_Py), so add the following functions to that class.
 
 <table class="table-alt">
   <tr>
-    <th>関数名</th>
-    <th>引数</th>
-    <th>内容</th>
+    <th>Function Name</th>
+    <th>Argument</th>
+    <th>Content</th>
   </tr>
   <tr>
     <td>setBody</td>
     <td>body</td>
-    <td>Bodyオブジェクトを設定する関数</td>
+    <td>Function for setting the Body object</td>
   </tr>
   <tr>
     <td>inputFromSimulator</td>
     <td></td>
-    <td>センサの計測値などをアウトポートから出力する処理等を記述する関数。シミュレーションステップ後に実行される</td>
+    <td>Function for writing processing such as outputting sensor measurement values from an outport. Executed after the simulation step</td>
   </tr>
   <tr>
     <td>outputToSimulator</td>
     <td></td>
-    <td>アクチュエータのトルクなどをインポートから入力する処理等を記述する関数。シミュレーションステップ前に実行される</td>
+    <td>Function for writing processing such as inputting actuator torques from an inport. Executed before the simulation step</td>
   </tr>
 </table>
 
 
-具体的には以下のソースコードを記載します。
+Specifically, write the following source code.
 
 
 
@@ -215,10 +213,11 @@ Windows 8.1の場合は「スタート」>「アプリビュー(右下矢印)」
  
  
 ```
-まず、setBody関数内で制御対象のLinkオブジェクト、Lightオブジェクトを取得しています。
-Link、Lightオブジェクトは名前で取得できます。
 
-Link名はモデルに対応するアイテムを選択後、左下のビューから""リンク""タブを表示すれば確認できます。
+First, in the setBody function, the Link objects and Light object to be controlled are obtained.
+Link and Light objects can be obtained by name.
+
+You can check Link names by selecting the item corresponding to the model and then displaying the "Link" tab from the lower-left view.
 
 
 <br>
@@ -227,7 +226,7 @@ Link名はモデルに対応するアイテムを選択後、左下のビュー�
 <br>
 
 
-Light名の確認方法は分からないのでChoreonoid公式サイトを確認してください。
+I do not know how to check Light names, so please check the official Choreonoid website.
 
 
 
@@ -245,7 +244,7 @@ Light名の確認方法は分からないのでChoreonoid公式サイトを確�
 
 
 
-関節の角度の取得**q**変数により取得できます。
+Joint angles can be obtained using the **q** variable.
 
 ```
  self._d_angles.pan = self.cannonY.q
@@ -253,7 +252,7 @@ Light名の確認方法は分からないのでChoreonoid公式サイトを確�
 
 
 
-関節の速度の入力は**dq**、トルクの入力は**u**変数に格納することでシミュレータに反映できます。
+Joint velocity input can be reflected in the simulator by storing values in the **dq** variable, and torque input by storing values in the **u** variable.
 
 ```
  self.crawlerL.dq = lms
@@ -265,7 +264,7 @@ Light名の確認方法は分からないのでChoreonoid公式サイトを確�
 
 
 
-ライトのオンオフは**on**変数にbool変数を格納します。
+For turning the light on and off, store a bool variable in the **on** variable.
 
 ```
  self.light.on =  data.data[0]
@@ -274,26 +273,26 @@ Light名の確認方法は分からないのでChoreonoid公式サイトを確�
 
 
 
-## RTシステム作成
+## Creating the RT System
 
-### Choreonoid起動
+### Starting Choreonoid
 
 #### Windows
 
-Windowsの場合はChoreonoidを展開したフォルダの**bin/chorenoid.exe**をダブルクリックしてください。
+On Windows, double-click **bin/chorenoid.exe** in the folder where Choreonoid was extracted.
 
 #### Ubuntu
 
-Ubuntuの場合はコマンドから**choreonoid**と入力してください。
+On Ubuntu, enter **choreonoid** from the command line.
 
 
 
-### アイテム追加
+### Adding Items
 
-#### ワールド、シミュレータ
+#### World and Simulator
 
-まずはワールドアイテム、シミュレータアイテムを追加します。 ファイル、新規から**ワールド**と**AISTシミュレータ**を選択して追加してください。
-※表示されるアイテムの順番が変わることがあるため、この画像と違う画面になる可能性があります。
+First, add a world item and a simulator item. From File > New, select and add **World** and **AIST Simulator**.
+* The order of displayed items may change, so the screen may differ from this image.
 
 <br>
 
@@ -302,27 +301,27 @@ Ubuntuの場合はコマンドから**choreonoid**と入力してください。
 
 
 
-この時点でアイテムツリーは以下のようになります。
+At this point, the item tree is as follows.
 
 ```
- World(ワールドアイテム)
-    |-AISTSimulator(AISTシミュレータ)
+ World(World item)
+    |-AISTSimulator(AIST Simulator)
 ```
 
-アイテムツリーの概要、アイテムの移動方法は以下のページを参考にしてください。
+For an overview of the item tree and how to move items, refer to the following page.
 
-- [プロジェクトとアイテム — Choreonoid 開発版 ドキュメント](https://choreonoid.org/ja/documents/latest/basics/item.html#basics-item-tree)
-
-
-#### モデル
+- [Projects and Items — Choreonoid Development Version Documentation](https://choreonoid.org/ja/documents/latest/basics/item.html#basics-item-tree)
 
 
-次に環境、タンクのモデルを追加します。
+#### Model
 
-ファイル、読み込みから**OpenHRP モデルファイル**を選択後、以下のファイルを読み込んでください。
 
-- {Choreonoidインストールディレクトリ}/share/model/tank/tank.wrl
-- {Choreonoidインストールディレクトリ}/share/model/Labo1/Labo1.wrl
+Next, add the environment and Tank models.
+
+From File > Import, select **OpenHRP Model File**, and then load the following files.
+
+- {Choreonoid installation directory}/share/model/tank/tank.wrl
+- {Choreonoid installation directory}/share/model/Labo1/Labo1.wrl
 
 
 <br>
@@ -331,19 +330,19 @@ Ubuntuの場合はコマンドから**choreonoid**と入力してください。
 <br>
 
 
-この時点でアイテムツリーは以下のようになります。
+At this point, the item tree is as follows.
 
 ```
- World(ワールドアイテム)
-    |-AISTSimulator(AISTシミュレータ)
+ World(World item)
+    |-AISTSimulator(AIST Simulator)
     |-Tank(model/tank/tank.wrl)
     |-Labo1(model/Labo1/Labo1.wrl)
 ```
 
 
-#### RTコンポーネント
+#### RT Components
 
-RTコンポーネントを追加します。 ファイル、新規から**PyRTC**を選択して追加してください。
+Add RT Components. From File > New, select and add **PyRTC**.
 
 <br>
 
@@ -352,13 +351,13 @@ RTコンポーネントを追加します。 ファイル、新規から**PyRTC*
 
 
 
-Tankアイテムの下に3つのアイテムを追加して、**TankIO**、**Controller**、**Joystick**と名前を付けてください。
+Add three items under the Tank item, and name them **TankIO**, **Controller**, and **Joystick**.
 
-この時点でアイテムツリーは以下のようになります。
+At this point, the item tree is as follows.
 
 ```
- World(ワールドアイテム)
-    |-AISTSimulator(AISTシミュレータ)
+ World(World item)
+    |-AISTSimulator(AIST Simulator)
     |-Tank(model/tank/tank.wrl)
       |-TankIO(PyRTC)
       |-Controller(PyRTC)
@@ -366,9 +365,9 @@ Tankアイテムの下に3つのアイテムを追加して、**TankIO**、**Con
     |-Labo1(model/Labo1/Labo1.wrl)
 ```
 
-#### Pythonファイルの設定
+#### Setting the Python Files
 
-**TankIO**、**Controller**、**Joystick**のプロパティから**RTC module**という項目を設定してください。
+Set the item named **RTC module** from the properties of **TankIO**, **Controller**, and **Joystick**.
 
 
 <br>
@@ -378,12 +377,12 @@ Tankアイテムの下に3つのアイテムを追加して、**TankIO**、**Con
 
 
 
-各アイテムで以下のファイルを設定します。
+Set the following files for each item.
 
 <table class="table-alt">
   <tr>
-    <th>アイテム名</th>
-    <th>ファイル名</th>
+    <th>Item Name</th>
+    <th>File Name</th>
   </tr>
   <tr>
     <td>TankIO</td>
@@ -400,23 +399,23 @@ Tankアイテムの下に3つのアイテムを追加して、**TankIO**、**Con
 </table>
 
 
-Pythonファイルを設定するとRTCが起動します。
-※本プラグインではChoreonoidに付属しているC++版OpenRTMプラグインのようにControllerRTC、BodyIoRTC、RTCという区別はありません。RTCのソースコードにシミュレータ上のロボットの制御、センサ値の取得等の処理を書けばそれでBodyIoRTCと同じ動作ができます。
+When a Python file is set, the RTC starts.
+* In this plugin, there is no distinction such as ControllerRTC, BodyIoRTC, and RTC like in the C++ version of the OpenRTM plugin included with Choreonoid. If processing such as controlling the robot on the simulator and obtaining sensor values is written in the RTC source code, it can operate in the same way as BodyIoRTC.
 
 
-#### RTシステム構築
+#### Building the RT System
 
-RTシステムを追加します。 ファイル、新規から**RTシステム**を選択して追加してください。
+Add an RT System. From File > New, select and add **RT System**.
 
 <br>
 
 <div align="center"><a href="cnoid-rtm-py6.png"><img src="cnoid-rtm-py6.png" width="50%;"></a></div>
 <br>
 
-表示、ビューの表示から、**RTCダイアグラム**を表示してください。
+From View > Show View, display the **RTC Diagram**.
 
 
-**'RTCリスト**が表示されていない場合は同様に表示してください。
+If **'RTC List** is not displayed, display it in the same way.
 
 
 <br>
@@ -425,7 +424,7 @@ RTシステムを追加します。 ファイル、新規から**RTシステム*
 <br>
 
 
-RTCダイアグラム表示後、左下のRTCリストからドラッグアンドドロップすることで、RTCダイアグラム上にRTCを表示できます。
+After displaying the RTC Diagram, you can display RTCs on the RTC Diagram by dragging and dropping them from the RTC List in the lower-left.
 
 
 <br>
@@ -435,7 +434,7 @@ RTCダイアグラム表示後、左下のRTCリストからドラッグアン�
 
 
 
-RTCダイアグラム上で以下のように接続してください。
+Connect them on the RTC Diagram as follows.
 
 <br>
 
@@ -443,16 +442,17 @@ RTCダイアグラム上で以下のように接続してください。
 <br>
 
 
-#### シミュレーション実行
+#### Running the Simulation
 
-シミュレーションを開始する前に、時間分解能を1000fpsに設定してください。 これでシミュレーションを開始するとゲームパッドのジョイスティックでシミュレータ上のクローラー、アームの操作、ボタンでライトのオンオフを操作できるようになります。
+Before starting the simulation, set the time resolution to 1000 fps. When you start the simulation with this setting, you will be able to operate the crawler and arm on the simulator using the joystick of the gamepad, and turn the light on and off using buttons.
 
-### RTCの仕様
-基本はChoreonoid付属のOpenRTMプラグインのサンプルと同じですが、一部データ型の変更、コンフィギュレーションパラメータの追加を行っています。
+### RTC Specifications
+
+The basics are the same as the samples of the OpenRTM plugin included with Choreonoid, but some data types have been changed and configuration parameters have been added.
 
 #### TankJoystickControllerRTC_Py
 
-Tankロボットの制御を行うためのRTCです。
+This is an RTC for controlling the Tank robot.
 
 <br>
 
@@ -463,176 +463,176 @@ Tankロボットの制御を行うためのRTCです。
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名称</th>
-    <th>**TankJoystickControllerRTC_Py**</th>
+    <th>Component Name</th>
+    <th><strong>TankJoystickControllerRTC_Py</strong></th>
   </tr>
   <tr>
-    <td colspan="2">**InPort**</td>
+    <td colspan="2"><strong>InPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>angles</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>PanTiltAngles</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>砲塔部分の関節角度</td>
+    <td>Description</td>
+    <td>Joint angles of the turret section</td>
   </tr>
   <tr>
-    <td colspan="2">**InPort**</td>
+    <td colspan="2"><strong>InPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>axes_1</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedVector2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>右アナログスティックの状態。傾けると0.0～1.0の範囲で値を出力する。傾けた方向で右が正、左が負、下が正、上が負の値になります。</td>
+    <td>Description</td>
+    <td>Status of the right analog stick. When tilted, it outputs a value in the range from 0.0 to 1.0. Depending on the direction tilted, right is positive, left is negative, down is positive, and up is negative.</td>
   </tr>
   <tr>
-    <td colspan="2">**InPort**</td>
+    <td colspan="2"><strong>InPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>axes_2</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedVector2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>左アナログスティックの状態</td>
+    <td>Description</td>
+    <td>Status of the left analog stick</td>
   </tr>
   <tr>
-    <td colspan="2">**InPort**</td>
+    <td colspan="2"><strong>InPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>buttons</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedBooleanSeq</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>ボタンのオンオフ</td>
+    <td>Description</td>
+    <td>Button on/off</td>
   </tr>
   <tr>
-    <td colspan="2">**OutPort**</td>
+    <td colspan="2"><strong>OutPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>velocities</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedVelocity2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>車体の目標速度</td>
+    <td>Description</td>
+    <td>Target velocity of the vehicle body</td>
   </tr>
   <tr>
-    <td colspan="2">**OutPort**</td>
+    <td colspan="2"><strong>OutPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>torques</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedDoubleSeq</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>砲塔部分の関節トルク</td>
+    <td>Description</td>
+    <td>Joint torque of the turret section</td>
   </tr>
   <tr>
-    <td colspan="2">**OutPort**</td>
+    <td colspan="2"><strong>OutPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>lightSwitch</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedBooleanSeq</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>ライトのオンオフ</td>
+    <td>Description</td>
+    <td>Light on/off</td>
   </tr>
   <tr>
-    <td colspan="2">**Configuration**</td>
+    <td colspan="2"><strong>Configuration</strong></td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>timeStep</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0.001</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>シミュレーションのステップ時間</td>
+    <td>Description</td>
+    <td>Simulation step time</td>
   </tr>
   <tr>
-    <td colspan="2">CENTER: **Configuration**</td>
+    <td colspan="2">CENTER: <strong>Configuration</strong></td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>KP</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>200.0</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>比例ゲイン</td>
+    <td>Description</td>
+    <td>Proportional gain</td>
   </tr>
   <tr>
-    <td colspan="2">**Configuration**</td>
+    <td colspan="2"><strong>Configuration</strong></td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>KD</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>50.0</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>微分ゲイン</td>
+    <td>Description</td>
+    <td>Derivative gain</td>
   </tr>
 </table>
 
 #### JoystickPySDL2
 
-ゲームパッドのアナログスティック、ボタン等の状態を出力するRTCです。
+This is an RTC that outputs the status of the gamepad's analog sticks, buttons, and so on.
 
 <br>
 
@@ -643,104 +643,102 @@ Tankロボットの制御を行うためのRTCです。
 
 <table class="table-alt">
   <tr>
-    <th>コンポーネント名称</th>
-    <th>**TankJoystickControllerRTC_Py**</th>
+    <th>Component Name</th>
+    <th><strong>TankJoystickControllerRTC_Py</strong></th>
   </tr>
   <tr>
-    <td colspan="2">**OutPort**</td>
+    <td colspan="2"><strong>OutPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>axes_1</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedVector2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>右アナログスティックの状態。傾けると0.0～1.0の範囲で値を出力する。傾けた方向で右が正、左が負、下が正、上が負の値になります。</td>
+    <td>Description</td>
+    <td>Status of the right analog stick. When tilted, it outputs a value in the range from 0.0 to 1.0. Depending on the direction tilted, right is positive, left is negative, down is positive, and up is negative.</td>
   </tr>
   <tr>
-    <td colspan="2">**OutPort**</td>
+    <td colspan="2"><strong>OutPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>axes_2</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedVector2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>左アナログスティックの状態</td>
+    <td>Description</td>
+    <td>Status of the left analog stick</td>
   </tr>
   <tr>
-    <td colspan="2">**OutPort**</td>
+    <td colspan="2"><strong>OutPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>buttons</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedBooleanSeq</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>ボタンのオンオフ</td>
+    <td>Description</td>
+    <td>Button on/off</td>
   </tr>
   <tr>
-    <td colspan="2">**OutPort**</td>
+    <td colspan="2"><strong>OutPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>hats</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedBooleanSeq</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>十字キーの状態</td>
+    <td>Description</td>
+    <td>D-pad status</td>
   </tr>
   <tr>
-    <td colspan="2">**OutPort**</td>
+    <td colspan="2"><strong>OutPort</strong></td>
   </tr>
   <tr>
-    <td>ポート名</td>
+    <td>Port Name</td>
     <td>balls</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>TimedVector2D</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>ジョイボールの移動量</td>
+    <td>Description</td>
+    <td>Movement amount of the joy ball</td>
   </tr>
   <tr>
-    <td colspan="2">**Configuration**</td>
+    <td colspan="2"><strong>Configuration</strong></td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
+    <td>Parameter Name</td>
     <td>index</td>
   </tr>
   <tr>
-    <td>型</td>
+    <td>Type</td>
     <td>int</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
+    <td>Default Value</td>
     <td>0</td>
   </tr>
   <tr>
-    <td>説明</td>
-    <td>ゲームパッドのID</td>
+    <td>Description</td>
+    <td>Gamepad ID</td>
   </tr>
 </table>
-
-
 

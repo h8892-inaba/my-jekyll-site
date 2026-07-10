@@ -1,8 +1,6 @@
 ---
 layout: page
-title: "マネージャアクションのコールバック関数の利用"
+title: "Using Callback Functions for Manager Actions"
 ---
--------jp page!!-------
 
-準備中
--------jp page!!-------
+Coming soon

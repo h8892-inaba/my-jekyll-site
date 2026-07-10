@@ -1,185 +1,173 @@
 ---
 layout: page
-title: "rtc.conf設定項目一覧"
+title: "List of rtc.conf Setting Items"
 ---
--------jp page!!-------
 
 #contents(3)
 
-## 一般的な設定
+## General Settings
 
 ### config.version
-コンフィギュレーションファイルのバージョン。
+Configuration file version.
 
-このパラメータは内部的にセットされるコンフィギュレーションのバージョン。
-通常、OpenRTM-aistと同じバージョンである。rtc.confでセットする必要はなく、読み取り専用のパラメータ。
-このバージョンを読み取ることで、rtc.confとOpenRTM-aistのバージョンを知ることができる。
+This parameter is the internally set configuration version.
+Normally, it is the same version as OpenRTM-aist. It does not need to be set in rtc.conf and is a read-only parameter.
+By reading this version, you can know the versions of rtc.conf and OpenRTM-aist.
 
-- 設定: 読み出し専用. 設定による影響なし.
-- デフォルト: 現在の OpenRTM-aist のバージョンと同じ.
-- 例:
+- Setting: Read-only. No effect from setting.
+- Default: Same as the current OpenRTM-aist version.
+- Example:
 ```
  config.version: 2.0
 ```
 
 ### openrtm.name
 
-このパラメーターは、内部で設定されているバージョンを含むOpenRTM-aistの名前である。
-読み取り専用のパラメータでありrtc.confで設定する必要はない。
-このパラメーターを読み取ることにより、OpenRTM-aistの名前とバージョンがわかる。
+This parameter is the name of OpenRTM-aist, including the version set internally.
+It is a read-only parameter and does not need to be set in rtc.conf.
+By reading this parameter, you can know the name and version of OpenRTM-aist.
 
-- 設定: 読み取り専用. 設定による影響なし.
-- デフォルト: 現在のバージョン付きの OpenRTM-aist の名称
-- 例:
+- Setting: Read-only. No effect from setting.
+- Default: OpenRTM-aist name with the current version
+- Example:
 openrtm.name: OpenRTM-aist-2.0.0
 
 ### openrtm.version
-OpenRTM-aist のバージョン。
-- 例:
+OpenRTM-aist version.
+- Example:
 ```
  openrtm.version: 1.0.0
 ```
 
-## ネームサービスに関する設定
+## Settings Related to the Name Service
 
 ### naming.enable
 
-このオプションはネーミングサービスに関する機能の有効・無効を切り替える。
-YESを指定した場合、ネームサービスへRTCの参照を登録する。NOの場合、ネー
-ムサービスへのRTCの参照の登録は行われない。
+This option enables or disables functions related to the naming service.
+If YES is specified, the RTC reference is registered with the name service. If NO is specified, the RTC reference is not registered with the name service.
 
-- 指定: **YES** or **NO**
-- デフォルト値: YES
-- 例:
+- Specification: **YES** or **NO**
+- Default value: YES
+- Example:
 ```
  manager.is_master: NO
 ```
 
 ### naming.type
 
-このオプションはネームサービスのタイプを指定する。現在のところはcorbaの
-みをサポートしている。
-- 指定: ネームサービスのタイプ
-- デフォルト値: corba
-- 例:
+This option specifies the type of name service. Currently, only corba is supported.
+- Specification: Name service type
+- Default value: corba
+- Example:
 ```
  naming.type: corba
 ```
 
 ### naming.formats
 
-RTCをネームサーバに登録する際のフォーマットを指定する。以下の **%**で始
-まる指定子を利用することができる。名前階層のデリミタは **/** であり、名
-前と種類(kind)のデリミタは **.** である。
+Specifies the format used when registering an RTC with the name server. The following specifiers starting with **%** can be used. The delimiter for the name hierarchy is **/**, and the delimiter between name and kind is **.**.
 
 <table class="table-alt">
   <tr>
     <td>%n</td>
-    <td>RTCのインスタンス名</td>
+    <td>RTC instance name</td>
   </tr>
   <tr>
     <td>%t</td>
-    <td>RTCのタイプ名</td>
+    <td>RTC type name</td>
   </tr>
   <tr>
     <td>%m</td>
-    <td>RTCのモジュール名</td>
+    <td>RTC module name</td>
   </tr>
   <tr>
     <td>%v</td>
-    <td>RTCのバージョン</td>
+    <td>RTC version</td>
   </tr>
   <tr>
     <td>%V</td>
-    <td>RTCのベンダ名</td>
+    <td>RTC vendor name</td>
   </tr>
   <tr>
     <td>%c</td>
-    <td>RTCのカテゴリ名</td>
+    <td>RTC category name</td>
   </tr>
   <tr>
     <td>%h</td>
-    <td>ホスト名</td>
+    <td>Host name</td>
   </tr>
   <tr>
     <td>%M</td>
-    <td>マネージャ名</td>
+    <td>Manager name</td>
   </tr>
   <tr>
     <td>%p</td>
-    <td>プロセスID</td>
+    <td>Process ID</td>
   </tr>
 </table>
 
-- 指定: /<name>.<kind>/<name>.<kind>/...
-- デフォルト値: %h.host_cxt/%n.mgr
-- 例:
+- Specification: /<name>.<kind>/<name>.<kind>/...
+- Default value: %h.host_cxt/%n.mgr
+- Example:
 ```
  naming.formats: %h.host/%n.rtc
 ```
 
 ### naming.update.enable
 
-RTCのネームサーバへの登録は通常インスタンス生成時に行われる。したがって、
-RTCの生成以降に起動されたネームサーバには、当該RTCの名前と参照は登録さ
-れない。このオプションを指定することで、定期的にネームサーバを確認し、
-ネームサーバの起動が確認された場合、改めて名前と参照を登録する。
+Registration of an RTC with the name server is normally performed when the instance is created. Therefore, the RTC name and reference are not registered with a name server that is started after the RTC is created. By specifying this option, the name server is checked periodically, and if the name server is confirmed to have started, the name and reference are registered again.
 
-- 指定: **YES** or **NO**
-- デフォルト値: YES
-- 例:
+- Specification: **YES** or **NO**
+- Default value: YES
+- Example:
 ```
  naming.update.enable: YES
 ```
 
 ### naming.update.interval
 
-naming.update.enable が YES の場合、ネームサーバの確認および再登録を行
-う周期を指定する。
+When naming.update.enable is YES, this specifies the cycle for checking and re-registering with the name server.
 
-- 指定: 登録周期を [s] で指定する。
-- デフォルト値: 10.0
-- 例:
+- Specification: Specify the registration cycle in [s].
+- Default value: 10.0
+- Example:
 ```
  naming.update.interval: 10.0
 ```
 
 ### naming.update.rebind
 
-このオプションに YES を指定すると、すでに名前と参照が登録されているネー
-ムサーバ上で名前が削除されるなどした場合にもの、再度登録を行う。
+If YES is specified for this option, registration is performed again even when the name has been deleted on a name server where the name and reference are already registered.
 
-- 指定: **YES** or **NO**
-- デフォルト値: NO
-- 例:
+- Specification: **YES** or **NO**
+- Default value: NO
+- Example:
 ```
  naming.update.rebind: NO
 ```
 
 <!-- Logger configurations -->
 
-## ロガー関係の設定
+## Logger-Related Settings
 
 ### logger.enable
 
-ロガーの有効化・無効化の指定。
+Specifies whether to enable or disable the logger.
 
-- 指定: **YES** or **NO**
-- デフォルト値: YES
-- 例:
+- Specification: **YES** or **NO**
+- Default value: YES
+- Example:
 ```
  logger.enable: YES
 ```
 
 ### logger.file_name
 
-ログファイル名の指定。カンマ区切りで複数のファイルへ出力することもでき
-る。プロセスIDを置き換える指定子 %p が利用可能。また、ファイル名
-**stdout** とするとログを標準出力する。
+Specifies the log file name. Output to multiple files can also be specified by separating them with commas. The specifier %p, which replaces the process ID, can be used. Also, if the file name is set to **stdout**, logs are output to standard output.
 
-- 指定: パスを含むファイル名
-- デフォルト値: ./rtc%p.log
-- 例:
+- Specification: File name including path
+- Default value: ./rtc%p.log
+- Example:
 ```
  logger.file_name: /tmp/rtc%p.log
  logger.file_name: /tmp/rtc%p.log, stdout
@@ -187,9 +175,7 @@ naming.update.enable が YES の場合、ネームサーバの確認および再
 
 ### logger.date_format
 
-ログに記載する日付・時刻のフォーマット指定。以下の strftime(3) に似た
-フォーマット指定子を利用可能。時刻を指定しない場合、**No** または
-**Disable** を指定する。
+Specifies the date and time format written to the log. The following format specifiers similar to strftime(3) can be used. If the time is not specified, specify **No** or **Disable**.
 
 <table class="table-alt">
   <tr>
@@ -282,9 +268,9 @@ naming.update.enable が YES の場合、ネームサーバの確認および再
   </tr>
 </table>
 
-- 指定: /<name>.<kind>/<name>.<kind>/...
-- デフォルト値: %b %d %H:%M:%S
-- 例:
+- Specification: /<name>.<kind>/<name>.<kind>/...
+- Default value: %b %d %H:%M:%S
+- Example:
 ```
  logger.date_format: No
  logger.date_format: Disable
@@ -297,7 +283,7 @@ naming.update.enable が YES の場合、ネームサーバの確認および再
 
 ### logger.log_level
 
-以下のログレベルを指定可能。
+The following log levels can be specified.
 
 - SILENT
 - FATAL
@@ -309,8 +295,7 @@ naming.update.enable が YES の場合、ネームサーバの確認および再
 - VERBOSE
 - PARANOID
 
-各ログレベルを指定した際に実際にログに記録されるログメッセージのレベ
-ルは以下の通り。
+The actual levels of log messages recorded when each log level is specified are as follows.
 
 <table class="table-alt">
   <tr>
@@ -351,113 +336,99 @@ naming.update.enable が YES の場合、ネームサーバの確認および再
   </tr>
 </table>
 
-**TRACE**, **VERBOSE**, **PARANOID** の各ログレベルは通常巨大なログファイルを生成します。**PARANOID**を指定すると、ログフォーマットが崩れる場合があります。
+The log levels **TRACE**, **VERBOSE**, and **PARANOID** usually generate huge log files. If **PARANOID** is specified, the log format may be broken.
 
-- 指定: (SILENT|FATAL|ERROR|WARN|INFO|DEBUG|TRACE|VERBOSE|PARANOID)
-- デフォルト値: INFO
-- 例:
+- Specification: (SILENT|FATAL|ERROR|WARN|INFO|DEBUG|TRACE|VERBOSE|PARANOID)
+- Default value: INFO
+- Example:
 ```
  logger.log_level: DEBUG
 ```
 
 ### logger.clock_type
 
-logger.clock_type 　オプションはログメッセージのタイムスタンプに使用するクロックのタイプを指定します。
-現在以下の３種類のクロップタイプが使用可能です
+The logger.clock_type option specifies the type of clock to use for log message timestamps.
+Currently, the following three clock types are available.
 
 - system: system clock [default]
 - logical: logical clock
 - adjusted: adjusted clock
 
-論理時間クロック (logical time clock) を利用するには、プログラム中のどこかに以下のように指定してください。
+To use the logical time clock, specify the following somewhere in the program.
 ```
  coil::ClockManager::instance().getClock("logical").settime()
 ```
 
-- 設定: system, logical, adjusted
-- デフォルト: system
-- 例:
+- Setting: system, logical, adjusted
+- Default: system
+- Example:
 ```
  logger.clock_type: system
 ```
 
 ### logger.escape_sequence_enable
 
-このオプションはログ出力に色を付けるかどうかを指定する。logger.file_name: stdout と指定した場合、端末がエスケープシーケンスをサポートしていれば、ログ出力がカラーで表示される。ファイルへの出力に色を付けることはおすすめしない。
+This option specifies whether to color log output. If logger.file_name: stdout is specified and the terminal supports escape sequences, log output is displayed in color. It is not recommended to color output to files.
 
-- 設定: YES or NO
-- デフォルト: NO
-- 例:
+- Setting: YES or NO
+- Default: NO
+- Example:
 ```
  logger.escape_sequence_enable: NO
 ```
 
 
-## CORBAに関する設定
+## Settings Related to CORBA
 
 ### corba.args
 
-CORBAに与える引数を指定する。CORBA は実装毎に異なるコマンドラインオプショ
-ンを持つ。通常コマンドライン引数は、CORBA の API である ORB_init() 関数
-に与えられるが、このオプションは指定された文字列をこの ORB_init() 関数
-に渡す。
+Specifies arguments to pass to CORBA. CORBA has command-line options that differ by implementation. Normally, command-line arguments are passed to ORB_init(), which is a CORBA API function, and this option passes the specified string to this ORB_init() function.
 
-- 指定: 文字列
-- デフォルト: 空文字列
-- 例:
+- Specification: String
+- Default: Empty string
+- Example:
 ```
  corba.args: -ORBInitialHost myhost -ORBInitialPort 8888
 ```
 
-#### 指定例1
+#### Specification Example 1
 
-画像データなどをデータポートで送る際、1回に送信するデータサイズ約2MBを超える場合には注意が必要。
-omniORBでは、giop(General Inter-ORB Protocol)で扱えるサイズはデフォルトで"2097152B(2MB)"であり
-このサイズを超えるデータを送ろうとすると、giopの制限のため正しいデータを送ることができない。
-corba.args オプションを利用して、最大サイズを変更することが可能である。この指定は、OutPort、InPort両方にて指定する必要がある。
+When sending image data or similar through a data port, care is required if the data size sent at one time exceeds about 2 MB.
+In omniORB, the size that can be handled by giop (General Inter-ORB Protocol) is "2097152B (2 MB)" by default, and if you try to send data exceeding this size, correct data cannot be sent due to the giop limit.
+The maximum size can be changed using the corba.args option. This specification must be made for both OutPort and InPort.
 
 ```
  corba.args: -ORBgiopMaxMsgSize 3145728 # この行を追加
                                         # Maxサイズを3Mに指定
 ```
 
-なお、corba.args に指定する以外に、環境変数を以下のように指定することでこの制限を緩和することができる。
+In addition to specifying this in corba.args, this limit can also be relaxed by specifying the environment variable as follows.
 
 ```
   export ORBgiopMaxMsgSize=3145728
 ```
 
-- （参考）(omniORB configuration and API) http://omniorb.sourceforge.net/omni41/omniORB/omniORB004.html
+- (Reference) (omniORB configuration and API) http://omniorb.sourceforge.net/omni41/omniORB/omniORB004.html
 
 
-### corba.endpoint [非推奨]
+### corba.endpoint [Deprecated]
 
-このプションは corba.endpoints に置き換えられた。非推奨。
+This option has been replaced by corba.endpoints. Deprecated.
 
 
 ### corba.endpoints
 
-CORBAにおいては、リモートのオブジェクトのIORと呼ばれる参照によりアクセ
-スするが、IORには当該オブジェクトが動作するノードのアドレスとポート番号
-が通常1セットのみ記述されている。OpenRTMが動作しているノードに2つ以上の
-ネットワークインターフェースが存在する場合、IORに含まれるノードのアドレ
-スとして意図しないアドレスが割り振られる場合がある。
+In CORBA, remote objects are accessed using a reference called an IOR, and the IOR usually contains only one set of the address and port number of the node on which the object operates. If the node running OpenRTM has two or more network interfaces, an unintended address may be assigned as the node address included in the IOR.
 
-これを解消するために、本オプションでCORBAで利用するネットワークのアドレ
-スを指定することができる。**ホストアドレス:ポート番号** として指定するが、ポート番号は省略できる。
+To resolve this, this option can specify the network address used by CORBA. It is specified as **host address:port number**, but the port number can be omitted.
 
-ORBの実装によっては、IORに複数のアドレスを含めることができる。ただし、
-Java標準のCORBAであるJavaIDLにおいては、複数のアドレスを指定したIOR経由
-で当該オブジェクトにアクセスする場合、動作が遅くなるなど問題も報告され
-ているので注意が必要である。
+Depending on the ORB implementation, multiple addresses can be included in the IOR. However, in JavaIDL, the standard CORBA for Java, problems such as slow operation have been reported when accessing an object through an IOR that specifies multiple addresses, so caution is required.
 
-**アドレス:ポート** の対を **,(カンマ)**で区切り複数指定することができ
-る。特別な文字列として **all** を指定することで、ノードのすべてのアドレ
-スをIORに含めることもできる。
+Multiple **address:port** pairs can be specified by separating them with **, (comma)**. By specifying **all** as a special string, all addresses of the node can also be included in the IOR.
 
-- 指定: <host_addr>:<port>, <host_addr>:<port>, ... または all
-- デフォルト: 空文字
-- 例:
+- Specification: <host_addr>:<port>, <host_addr>:<port>, ... or all
+- Default: Empty string
+- Example:
 ```
  corba.endpoints: 192.168.1.10:1111, 192.168.10.11:2222
  corba.endpoints: 192.168.1.10, 192.168.10.11
@@ -468,35 +439,35 @@ corba.endpoints:
 
 ### corba.endpoints_ipv4: [readonly]
 
-このパラメータは読み取り専用で、現在のプロセスが使用しているIPv4のエンドポイントがセットされます。
-このパラメータを読むことで、現在使用しているエンドポイントを知ることができます。
+This parameter is read-only and is set to the IPv4 endpoint currently used by the current process.
+By reading this parameter, you can know the endpoint currently being used.
 
-- 設定: 読み取り専用
-- デフォルト: なし
-- 例:
+- Setting: Read-only
+- Default: none
+- Example:
 ```
  corba.endpoints_ipv6: [readonly]
 ```
 
 ### corba.endpoints_ipv6: [readonly]
 
-このパラメータは読み取り専用で、現在のプロセスが使用しているIPv6のエンドポイントがセットされます。
-このパラメータを読むことで、現在使用しているエンドポイントを知ることができます。
+This parameter is read-only and is set to the IPv6 endpoint currently used by the current process.
+By reading this parameter, you can know the endpoint currently being used.
 
-- 設定: 読み取り専用
-- デフォルト: なし
-- 例:
+- Setting: Read-only
+- Default: none
+- Example:
 ```
  corba.endpoints_ipv6: [readonly]
 ```
 
 ### corba.endpoint_property
 
-このプションは、利用可能なエンドポイントのうち何番目のアドレスをIPv4, IpV6のいずれかのアドレスとして利用するかどうかについて指定する。
+This option specifies which available endpoint address is to be used as either an IPv4 or IPv6 address.
 
-- 設定: {ipv4|ipv6}(<number of endpoint address>, ...), 
-- デフォルト: なし
-- 例:
+- Setting: {ipv4|ipv6}(<number of endpoint address>, ...), 
+- Default: none
+- Example:
 ```
  corba.endpoint_property: ipv4
  corba.endpoint_property: ipv4, ipv6(0)
@@ -506,12 +477,12 @@ corba.endpoints:
 
 ### corba.nameservers
 
-このプションはRTC等を登録するネームサーバを指定する。カンマ区切りで複数のネームサーバを指定することができる。指定したアドレスおよびポート番号にネームサーバがない場合でも特にエラーにはならず、存在するネームサーバにのみRTCの名前を登録する。
-ポート番号が省略された場合はデフォルトのポート番号 2809 が使われます。
+This option specifies the name server to which RTCs and similar objects are registered. Multiple name servers can be specified by separating them with commas. Even if there is no name server at the specified address and port number, no particular error occurs, and RTC names are registered only with existing name servers.
+If the port number is omitted, the default port number 2809 is used.
 
-- 指定: <host_addr>:<port>, <host_addr>:<port>, ...
-- デフォルト: localhost
-- 例:
+- Specification: <host_addr>:<port>, <host_addr>:<port>, ...
+- Default: localhost
+- Example:
 ```
  corba.nameservers: openrtm.aist.go.jp:9876
  corba.nameservers: rtm0.aist.go.jp, rtm1.aist.go.jp, rtm2.aist.go.jp
@@ -520,24 +491,15 @@ corba.endpoints:
 
 ### corba.nameservice.replace_endpoint
 
-ノードに複数のNICが存在する場合、ネームサーバ上に登録されるRTCのIORに含
-まれるアドレスが、適切でない場合が存在する。例えば、あるノードが
-192.168.0.10と192.168.1.10という2つのアドレスを持ち、192.168.0.1 および
-192.168.1.1 に存在する2つのネームサーバ上に登録される場合、仮に
-192.168.0.10 が当該ノードでデフォルトで利用されるネットワークインター
-フェースだとすると、上記2つのネームサーバネームサーバに登録されるIORには、
-192.168.0.10 のみが含まれる。このとき、192.168.1.0 のネットワークではネームサーバ上のIORは到達不可能なアドレスが記載された無意味なものとなる。
+When a node has multiple NICs, the address included in the RTC's IOR registered on the name server may be inappropriate. For example, if a node has two addresses, 192.168.0.10 and 192.168.1.10, and is registered on two name servers located at 192.168.0.1 and 192.168.1.1, and if 192.168.0.10 is the network interface used by default on that node, the IOR registered on the above two name servers will include only 192.168.0.10. In this case, on the 192.168.1.0 network, the IOR on the name server becomes meaningless because it contains an unreachable address.
 
-このオプションを指定すると、上記のケースのような場合、192.168.1.1 のネー
-ムサーバに登録されるIORのアドレスを 192.168.1.10 に置き換える。
+When this option is specified, in a case like the above, the address of the IOR registered with the 192.168.1.1 name server is replaced with 192.168.1.10.
 
-ただし、このオプション指定することによって、192.168.1.0 ネットワーク上
-の他のノードからは、当該RTCのプロファイル等を利用することはできるが、ポー
-トの接続等は行うことはできない。
+However, by specifying this option, other nodes on the 192.168.1.0 network can use the profile and similar information of the RTC, but cannot perform port connections and similar operations.
 
-- 指定: **YES** or **NO**
-- デフォルト: NO
-- 例:
+- Specification: **YES** or **NO**
+- Default: NO
+- Example:
 ```
  corba.nameservice.replace_endpoint: NO
 ```
@@ -545,218 +507,194 @@ corba.endpoints:
 
 ### corba.alternate_iiop_addresses
 
-このオプションは、代替IIOPアドレスをIORプロファイルに追加します。
-IORにはサーバント(CORBAオブジェクトのサーバ)の追加のエンドポイント
-を含めることができます。これは、"corba.endpoints"オプションとほぼ
-同等ですが、実際にエンドポイントを作成しない点が異なります。
-("corba.endpoints" オプションでは実際のエンドポイントを作ろうとし、
-できなければエラーが返されます。) このオプションは単に代替のIIOPエ
-ンドポイントアドレス情報をIORに追加します。
+This option adds alternate IIOP addresses to the IOR profile.
+The IOR can include additional endpoints for the servant (the CORBA object server). This is almost equivalent to the "corba.endpoints" option, but differs in that it does not actually create endpoints.
+(The "corba.endpoints" option attempts to create actual endpoints, and returns an error if it cannot.) This option simply adds alternate IIOP endpoint address information to the IOR.
 
-このオプションは、RTCをNATやルータの内部に配置する場合に使用します。
-一般的には、プライベートネットワーク内のRTCはグローバルネットワー
-ク上のRTCを接続することはできません。しかしながら、NATやルータのポー
-トフォワーディングが適切に設定されていればグローバル側のRTCはプライ
-ベートネットワークのRTCに接続することが可能です。
+This option is used when placing an RTC inside a NAT or router.
+In general, RTCs inside a private network cannot connect to RTCs on the global network. However, if port forwarding on the NAT or router is configured appropriately, RTCs on the global side can connect to RTCs in the private network.
 
-設定は以下のように行います。
+Configure it as follows.
 
-1. NATやルータのポートフォワーディングを適切に設定します。
-  - ここでは、グローバル側のポート2810をプライベート側のあるアドレ
-スの2810へ転送するように設定します。
-1. プライベート側のRTCのrtc.confを以下のように設定します。
+1. Configure port forwarding on the NAT or router appropriately.
+  - Here, configure it so that port 2810 on the global side is forwarded to port 2810 of an address on the private side.
+1. Configure rtc.conf of the RTC on the private side as follows.
 ```
   corba.nameservers: my.global.nameserver.com <- グローバル側のネームサーバを設定
   corba.endpoints: :2810 <- コンポーネントのポート番号
   corba.alternate_iiop_addresses: w.x.y.z:2810 <- ルータのグローバル側のIPアドレスとポート番号
 ```
-1. グローバル側のRTCとプライベート側のRTCを起動
+1. Start the RTC on the global side and the RTC on the private side
 
-なお、RTSystemEditorでは、プライベート側のRTCへのアクセスが極端に
-遅くなる場合があります。これはJavaのIOR追加プロファイル機能の実装
-が十分でないため、プライベート側に到達するのに時間がかかるためと考
-えられます。rtshellなどを利用すると、接続にかかる時間を減らすこと
-ができます。また、RTSystemEditorやrtshellでの接続に時間がかかった
-場合でも、一旦接続したポート間の通信速度は通常とほとんど変わりませ
-ん。
+In RTSystemEditor, access to the RTC on the private side may become extremely slow. This is thought to be because Java's IOR additional profile function is not sufficiently implemented, so it takes time to reach the private side. Using rtshell or similar tools can reduce the time required for connection. Also, even if connection with RTSystemEditor or rtshell takes time, the communication speed between ports once connected is usually almost unchanged.
 
-- 指定: address:port
-- デフォルト: 未指定
-- 例:
+- Specification: address:port
+- Default: Unspecified
+- Example:
 ```
  corba.alternate_iiop_addresses: addr:port
 ```
 
-## manager に関する設定
+## Settings Related to manager
 
 ### manger.name
 
-managerの名前。マネージャがネームサーバで登録される際には、ここで設定した名前で登録される。
-この "manager.name" は、ストリング化されたCORBAオブジェクト名でマスター/スレーブマネージャーをグループ化するために使用されます。 "manager.name" が "manager" に設定され、マネージャーがマスターである場合、オブジェクト参照は次のように配置されます。
+Name of the manager. When the manager is registered with the name server, it is registered with the name set here.
+This "manager.name" is used to group master/slave managers by the stringified CORBA object name. If "manager.name" is set to "manager" and the manager is the master, the object reference is placed as follows.
 
 ```
  corbaloc::<hostname>:2810/manager 
 ```
 
-また、他のスレーブマネージャは以下のストリング化されたIORを持ちます。
+Other slave managers have the following stringified IOR.
 ```
  corbaloc::<hostname>:<port_number>/manager
 ```
 
-- 指定: ネームサーバ等に登録可能な任意の名前
-- デフォルト値: manager
-- 例:
+- Specification: Any name that can be registered with a name server, etc.
+- Default value: manager
+- Example:
 ```
  manager.name: manager
 ```
 
 ### manager.instance_name
 
-マネージャのインスタンス名。
+Instance name of the manager.
 
-この "manager.instance_name" は、ネームサービス登録時のマネージャーの名前に使用されます。 通常、マスターマネージャーの参照は、"manager|mgr" という名前でネームサーバーに登録されます。 このオプションが "foobar" に設定されている場合、登録されたマースターマネージャー名は "foobar|mgr" になります。
-- 設定: manager の任意の名称文字列
-- デフォルト: manager
-- 例:
+This "manager.instance_name" is used as the name of the manager when registering with the name service. Normally, the master manager reference is registered with the name "manager|mgr" in the name server. If this option is set to "foobar", the registered master manager name becomes "foobar|mgr".
+- Setting: Any manager name string
+- Default: manager
+- Example:
 ```
  manager.instance_name: manager
 ```
 
 ### manager_naming_formats
 
-マネージャをネームサーバに登録する際のフォーマットを指定する。以下の
-**%**で始まる指定子を利用することができる。
+Specifies the format used when registering the manager with the name server. The following specifiers starting with **%** can be used.
 
 <table class="table-alt">
   <tr>
-    <th>指定子</th>
-    <th>意味</th>
+    <th>Specifier</th>
+    <th>Meaning</th>
   </tr>
   <tr>
     <td>%n</td>
-    <td>マネージャ名</td>
+    <td>Manager name</td>
   </tr>
   <tr>
     <td>%h</td>
-    <td>ホスト名</td>
+    <td>Host name</td>
   </tr>
   <tr>
     <td>%M</td>
-    <td>マネージャ名</td>
+    <td>Manager name</td>
   </tr>
   <tr>
     <td>%p</td>
-    <td>マネージャのプロセスID</td>
+    <td>Manager process ID</td>
   </tr>
 </table>
 
-- 指定: /<name>.<kind>/<name>.<kind>/...
-- デフォルト値: %h.host_cxt/%n.mgr
-- 例:
+- Specification: /<name>.<kind>/<name>.<kind>/...
+- Default value: %h.host_cxt/%n.mgr
+- Example:
 ```
  manager.name: %h.host_cxt/%n.mgr
 ```
 
 ### manager.is_master
 
-当該プロセスをマスターマネージャにするかどうか？コマンドラインオプショ
-ン **-d** を指定すると、この値が NO に設定されていてもマスターマネージャ
-になる。
+Specifies whether to make the process a master manager. If the command-line option **-d** is specified, this becomes the master manager even if this value is set to NO.
 
-- 指定: **YES** or **NO**
-- デフォルト値: NO
-- 例:
+- Specification: **YES** or **NO**
+- Default value: NO
+- Example:
 ```
  manager.is_master: NO
 ```
 
 ### manager.corba_servant
 
-マネージャのCORBAサーバントを起動するかどうかの設定。YES を設定すると、
-マネージャのCORBAサーバントが起動するため、リモートからマネージャの操作
-が可能になる。NO の場合には、CORBAサーバントが起動しないため、マネージャ
-のCORBA経由での操作はできなくなる。
+Specifies whether to start the manager's CORBA servant. If YES is set, the manager's CORBA servant starts, allowing the manager to be operated remotely. If NO is set, the CORBA servant does not start, so the manager cannot be operated via CORBA.
 
-- 指定: **YES** or **NO**
-- デフォルト値: YES
-- 例:
+- Specification: **YES** or **NO**
+- Default value: YES
+- Example:
 ```
  manager.corba_servant: YES
 ```
 
 ### corba.master_manager
 
-マスターマネージャのアドレスとポート番号。マスターマネージャは、
-corbaloc 形式のURL指定でアクセス可能であるが、その際に使用するポート番
-号を指定する。また、スレーブマネージャは、ここで指定されたマスターマネー
-ジャを自身のマスターマネージャとして解釈、起動時にマスターマネージャに
-アクセスしネゴシエーションを行う。
+Address and port number of the master manager. The master manager can be accessed using a corbaloc-format URL specification, and this specifies the port number to use at that time. The slave manager also interprets the master manager specified here as its own master manager, accesses the master manager at startup, and performs negotiation.
 
-- 指定: <host_name>:<port>
-- デフォルト: localhost:2810
-- 例:
+- Specification: <host_name>:<port>
+- Default: localhost:2810
+- Example:
 ```
  corba.master_manager: localhost:2810
 ```
 
 ### manager.update_master_manager.enable
 
-スレーブマネージャへのマスターマネージャの登録の自動更新
+Automatic update of master manager registration with the slave manager
 
-このオプションは、スレーブマネージャで有効です。 スレーブマネージャーは、自分自身をマスターマネージャーに登録する必要があります。 このオプションを "YES"に設定すると、スレーブマネージャーは定期的にマスターマネージャーに登録します。 「NO」を設定すると、スレーブマネージャは、起動時に一度だけマスタマネージャに登録されます。
+This option is valid for slave managers. A slave manager must register itself with the master manager. If this option is set to "YES", the slave manager periodically registers with the master manager. If "NO" is set, the slave manager is registered with the master manager only once at startup.
 
-- 設定: YES/NO (Read/Write)
-- デフォルト: YES
-- 例:
+- Setting: YES/NO (Read/Write)
+- Default: YES
+- Example:
 ```
  manager.update_master_manager.enable:YES
 ```
 
 ### manager.update_master_manager.interval
 
-スレーブマネージャのマスターマネージャへの登録更新周期
+Registration update cycle of the slave manager to the master manager
 
-このオプションは、corba.update_master_manager.enableに関連します。
-「corba.update_master_manager.enable」オプションがYESに設定されている場合、更新間隔はこのオプションによって設定されます。 デフォルトの間隔は10秒です。
-- 設定: seconds (Read/Write)
-- デフォルト: 10.0
-- 例:
+This option is related to corba.update_master_manager.enable.
+If the "corba.update_master_manager.enable" option is set to YES, the update interval is set by this option. The default interval is 10 seconds.
+- Setting: seconds (Read/Write)
+- Default: 10.0
+- Example:
 manager.update_master_manager.interval: 10.0
 
 ### manager.components.naming_policy
 
-このオプションは、RTCの命名（番号付け）ポリシーを指定します。 RTCインスタンスが作成されると、コンポーネントタイプ名（type_name）に次のように増分番号が付けられた名前が割り当てられます。
+This option specifies the naming (numbering) policy for RTCs. When an RTC instance is created, a name is assigned by adding an incremental number to the component type name (type_name) as follows.
 
 ```
  <type_name> <number>
  example: ConsoleOut0、ConsoleOut1、ConsoleOut2、...
 ```
 
-デフォルトでは、同じプロセスの同じタイプのコンポーネントには0から順番に番号が付けられるため、異なるプロセスまたは異なるノード（コンピューター）で作成されたRTCは同じ名前を持つ場合があります。これらのRTCがネームサーバー（ns）に登録されると、同じパスと同じ名前のRTCが互いのオブジェクト参照を上書きし、目的のRTCにアクセスできなくなります。したがって、2つのポリシーが提供されます。各ノードに一意の番号を割り当てる「node_unique」とネームサーバーに一意の番号を割り当てる「ns_unique」です。
+By default, components of the same type in the same process are numbered sequentially from 0, so RTCs created in different processes or on different nodes (computers) may have the same name. When these RTCs are registered with the name server (ns), RTCs with the same path and same name overwrite each other's object references, making it impossible to access the desired RTC. Therefore, two policies are provided: "node_unique", which assigns a unique number to each node, and "ns_unique", which assigns a unique number on the name server.
 
-デフォルトでは、次の3つのオプションを指定できます。
+By default, the following three options can be specified.
 
-- process_unique：プロセス内で一意の名前（番号）を指定します
-- node_unique：ノード内で一意の名前（番号）を指定します
-- ns_unique：ネームサーバーで一意の名前（番号）を指定します
+- process_unique: Specifies a name (number) unique within the process
+- node_unique: Specifies a name (number) unique within the node
+- ns_unique: Specifies a name (number) unique within the name server
 
-ポリシーはユーザーが拡張できます。
+The policy can be extended by the user.
 
-- 設定：読み取り/書き込み、{process_unique、node_unique、ns_unique}
-- デフォルト：process_unique
-- 例：
+- Setting: Read/Write, {process_unique, node_unique, ns_unique}
+- Default: process_unique
+- Example:
 ```
  manager.components.naming_policy: process_unique
 ```
 
 ### manager.components.precreate
 
-事前のコンポーネント作成
+Pre-creation of components
 
-このオプションは、マネージャーのイベントループを開始する前に事前に作成するコンポーネントの名前（モジュール名）を指定します。 コンポーネントのファクトリーは、「manager.module.preload」オプションで登録するか、マネージャーに静的にリンクする必要があります。
+This option specifies the names (module names) of components to create in advance before starting the manager event loop. Component factories must be registered with the "manager.module.preload" option or statically linked to the manager.
 
-- 設定: Read/Write, <component class name>, ...
-- デフォルト: None
+- Setting: Read/Write, <component class name>, ...
+- Default: None
 - Example:
 ```
  manager.components.precreate: ConsoleIn, ConsoleOut, SeqIn, SeqOut
@@ -765,13 +703,13 @@ manager.update_master_manager.interval: 10.0
 ### manager.components.preconnect
 &aname(preconnect);
 
-事前の接続生成。このオプションは、マネージャーイベントループを開始する前に作成するコネクタを指定します。
-ターゲットコンポーネントとポートは、"manager.components.precreate" オプションを使用して事前に作成されている必要があります。
-ポートは、"<comp0>.<Port0>?port=<comp1>.<port1>＆<option_key>=<option_value>＆..." の形式で指定されます。
-dataflow_type または interface_type が指定されていない場合、"dataflow_type = push", "interface_type = corba_cdr" が自動的に指定されます。
+Pre-creation of connections. This option specifies the connectors to create before starting the manager event loop.
+The target components and ports must have been created in advance using the "manager.components.precreate" option.
+Ports are specified in the format "<comp0>.<Port0>?port=<comp1>.<port1>&<option_key>=<option_value>&...".
+If dataflow_type or interface_type is not specified, "dataflow_type = push" and "interface_type = corba_cdr" are automatically specified.
 
-- 設定: <comp0>.<Port0>?port=<comp1>.<port1>&<option_key>=<option_value>&...
-- デフォルト: none
+- Setting: <comp0>.<Port0>?port=<comp1>.<port1>&<option_key>=<option_value>&...
+- Default: none
 - Example:
 ```
  manager.components.preconnect: ConsoleIn0.out?port=ConsoleOut0.in& \ 
@@ -783,10 +721,10 @@ dataflow_type または interface_type が指定されていない場合、"data
 ### manager.components.preactivation
 &aname(preactivation);
 
-以前のコンポーネントのアクティブ化。このオプションは、マネージャーのイベントループを開始する前に、事前にアクティブにするコンポーネントの名前（モジュール名）を指定します。 ターゲットコンポーネントは、あらかじめ manager.components.precreate オプションで作成しておく必要があります。
+Pre-activation of components. This option specifies the names (module names) of components to activate in advance before starting the manager event loop. The target components must be created in advance with the manager.components.precreate option.
 
-- 設定: Read/Write, <component class name>, ...
-- デフォルト: None
+- Setting: Read/Write, <component class name>, ...
+- Default: None
 - Example:
 ```
  manager.components.preactivation: ConsoleIn0, ConsoleOut0
@@ -794,85 +732,73 @@ dataflow_type または interface_type が指定されていない場合、"data
 
 ### manager.cpu_affinity
 
-このオプションは、マネージャのプロセスを特定のCPUにバインドする。
-オプション引数は、カンマで区切られた1つ以上のCPU IDでなければならない。
-CPU IDは0から始まり、最大値はCPUコア数-1となる。
-もし不正なCPU IDが指定された場合、このプロセスはすべてのCPUを利用するよう設定される。
+This option binds the manager process to a specific CPU.
+The option argument must be one or more CPU IDs separated by commas.
+CPU IDs start from 0, and the maximum value is the number of CPU cores minus 1.
+If an invalid CPU ID is specified, this process is configured to use all CPUs.
 
-- 指定: バインドするCPU IDをカンマ区切りで指定
-- デフォルト: なし
-- 例:
+- Specification: Specify CPU IDs to bind, separated by commas
+- Default: none
+- Example:
 ```
  manager.cpu_affinity: 0,1
 ```
 
 
-## マネージャのライフサイクルオプション
+## Manager Lifecycle Options
 
 ### manager.shutdown_on_nortcs:
 
-プロセス上にRTCが一つもなくなった場合、すなわち同一プロセス上のRTCの最
-後の1つが終了した場合に、マネージャをシャットダウンし当該プロセスを終了
-させるかどうかを指定する。YES の場合には、RTCが一つもなくなった時点でプ
-ロセスが終了する。NOの場合は、RTCが一つもない状態でもマネージャ、プロセ
-スともに動き続ける。
+Specifies whether to shut down the manager and terminate the process when there are no RTCs left in the process, that is, when the last RTC in the same process has terminated. If YES, the process terminates when there are no RTCs left. If NO, the manager and process continue running even when there are no RTCs.
 
-- 指定: **YES** or **NO**
-- デフォルト: YES
-- 例:
+- Specification: **YES** or **NO**
+- Default: YES
+- Example:
 ```
  manager.shutdown_on_nortcs: YES
 ```
 
 ### manager.shutdown_auto
 
-プロセス内のRTCの有無を一定時間ごとに調べ、RTCがない場合には、マネージャ
-およびプロセスをシャットダウンするかどうかを設定する。YESの場合、RTCが
-一つもなければ、マネージャおよびプロセスは自動的にシャットダウンされる。
-NOの場合、RTCが一つもなくともマネージャおよびプロセスが動作し続ける。
+Checks at regular intervals whether there are RTCs in the process, and specifies whether to shut down the manager and process if there are no RTCs. If YES, the manager and process are automatically shut down if there are no RTCs. If NO, the manager and process continue operating even if there are no RTCs.
 
-manager.shutdown_on_nortcs との違いは、シャットダウンのトリガが、
-manager.shutdown_on_nortcs ではRTCの削除であるのに対して、
-manager.shutdown_auto は時間となっている点である。
-- 指定: **YES** or **NO**
-- デフォルト: YES
-- 例:
+The difference from manager.shutdown_on_nortcs is that the shutdown trigger is RTC deletion for manager.shutdown_on_nortcs, whereas it is time for manager.shutdown_auto.
+- Specification: **YES** or **NO**
+- Default: YES
+- Example:
 ```
  manager.shutdown_auto: YES
 ```
 
 ### manager.auto_shutdown_duration
 
-プロセス内のRTCの有無調べる周期。単位は秒。上記の manager.shutdown_auto が
-YESに設定されている場合、このオプションで設定された周期でRTCの有無を確認
-しにいく。
+Cycle for checking whether RTCs exist in the process. The unit is seconds. If manager.shutdown_auto above is set to YES, this option is used as the cycle for checking whether RTCs exist.
 
-- 指定: 数値 (単位[s])
-- デフォルト: 10.0
-- 例:
+- Specification: Numeric value (unit [s])
+- Default: 10.0
+- Example:
 ```
  manager.auto_shutdown_duration: 10.0
 ```
 
 ### manager.termination_waittime
 
-マネージャ終了ウェイト時間指定。 このオプションは、マネージャーへの終了要求から実際の終了スレッドが実行を開始するまでの時間を指定します。 単位は秒です。 通常、このオプションを指定または変更する必要はありません。 ただし、CORBAの終了処理が正常に終了する前に別の終了処理を実行して例外が発生した場合は、この時間を調整することで問題が解決する場合があります。
+Specifies the manager termination wait time. This option specifies the time from a termination request to the manager until the actual termination thread starts execution. The unit is seconds. Normally, you do not need to specify or change this option. However, if an exception occurs because another termination process is executed before CORBA termination processing finishes normally, adjusting this time may solve the problem.
 
-- 設定: Read/Write, duration [s]
-- デフォルト: 0.5
-- 例:
+- Setting: Read/Write, duration [s]
+- Default: 0.5
+- Example:
 manager.termination_waittime: 0.5
 
-## モジュール管理に関するオプション
+## Options Related to Module Management
 
 ### manager.modules.load_path
 
-マネージャはこのオプションで指定されたサーチパスリストからモジュールを
-探索する。パスはカンマ区切りで列挙する。パスのデリミタは、UNIXでもWindowsでも / である。
+The manager searches for modules from the search path list specified by this option. Paths are listed separated by commas. The path delimiter is / on both UNIX and Windows.
 
-- 指定: /dir_name0/dir_name1/..., /dir_name0/dir_name1/...
-- デフォルト値: ./
-- 例:
+- Specification: /dir_name0/dir_name1/..., /dir_name0/dir_name1/...
+- Default value: ./
+- Example:
 ```
  manager.modules.load_path: C:/Program Files/OpenRTM-aist
  manager.modules.load_path: /usr/lib, /usr/local/lib,       \
@@ -881,15 +807,13 @@ manager.termination_waittime: 0.5
 
 ### manager.modules.preload:
 
-マネージャは起動時に予めローダブルモジュールをロードすることができる。
-このオプションで指定されたローダブルモジュール
-を、**manager.modules.load_path** で指定されたサーチパスから探し出す。
-もし、**manager.modules.abs_path_allowed** で YES が指定されていれば、
-ローダブルモジュールを絶対パスで指定することもできる。
+The manager can load loadable modules in advance at startup.
+The loadable modules specified by this option are searched for from the search paths specified by **manager.modules.load_path**.
+If YES is specified for **manager.modules.abs_path_allowed**, loadable modules can also be specified with absolute paths.
 
-- 指定: <module_name>.dll, <module_name>.dll, ...
-- デフォルト値: 空
-- 例:
+- Specification: <module_name>.dll, <module_name>.dll, ...
+- Default value: Empty
+- Example:
 ```
  manager.modules.preload: ConsoleIn.dll, ConsoleOut.dll
  manager.modules.preload: ConsoleIn.so, ConsoleOut.so
@@ -899,34 +823,34 @@ manager.termination_waittime: 0.5
 
 ### manager.modules.abs_path_allowed
 
-モジュールの絶対パス指定許可フラグ。もしこのオプションがYESの場合、モジュールの接待パス指定が許可される。
+Flag allowing absolute path specification for modules. If this option is YES, absolute path specification for modules is allowed.
 
-- 指定: **YES** or **NO**
-- デフォルト値: YES
-- 例:
+- Specification: **YES** or **NO**
+- Default value: YES
+- Example:
 ```
  manager.modules.abs_path_allowed: YES
 ```
 
 ### manager.modules.search_auto
 
-モジュールの自動検索機能を有効にする。
-このオプションは、RTCロード可能モジュールを自動的に検索するかどうかを指定します。 このオプションが "YES" に設定されている場合、RTCインスタンス化がマネージャーに要求されると、ターゲットRTCロード可能モジュール（DLLなど）が自動的に検索され、モジュール検索パスからロードされて、コンポーネントがインスタンス化されます。 NOの場合、ターゲットRTCのロード可能モジュールを事前にロードする必要があります。
+Enables automatic module search functionality.
+This option specifies whether to automatically search for RTC loadable modules. If this option is set to "YES", when RTC instantiation is requested of the manager, the target RTC loadable module (such as a DLL) is automatically searched for, loaded from the module search path, and the component is instantiated. If NO, the loadable module of the target RTC must be loaded in advance.
 
-- 設定: Read/Write, YES / NO
-- デフォルト: YES
-- 例:
+- Setting: Read/Write, YES / NO
+- Default: YES
+- Example:
 ```
  manager.modules.search_auto: YES
 ```
 
 ### manager.preload.modules: none
-CORBA初期化前にロードするモジュールリスト
+List of modules to load before CORBA initialization
 
-このオプションは、CORBAの初期化前にロードするモジュールを指定します。 一部の機能を実装するロード可能なモジュールは、CORBAの初期化前にロードする必要があり、そのようなモジュールはこのオプションで指定されます。 モジュールの指定方法はmanager.modules.preloadと同じです。
+This option specifies modules to load before CORBA initialization. Loadable modules that implement some functions must be loaded before CORBA initialization, and such modules are specified with this option. The method of specifying modules is the same as manager.modules.preload.
 
-- 設定: <module_name>(.<extention>) (init_func_name), ...
-- デフォルト: none
+- Setting: <module_name>(.<extention>) (init_func_name), ...
+- Default: none
 - Example: 
 ```
    manager.preload.modules: SSLTransport.dll
@@ -949,39 +873,37 @@ CORBA初期化前にロードするモジュールリスト
 <!-- # manager.modules.download_cleanup: -->
 <!-- # -->
 
-## マネージャの言語サポートオプション
+## Manager Language Support Options
 
 ### manager.supported_languages
 
-マスターマネージャは、リモートアプリケーションなどからの要求に応じて、
-スレーブマネージャおよびRTCを起動する。スレーブマネージャは、C++言語版
-だけでなく、Java版、Python版などの可能性もある。
+The master manager starts slave managers and RTCs in response to requests from remote applications and the like. Slave managers may be not only the C++ language version, but also the Java version, Python version, and so on.
 
 
-- 指定: C++, Java, Python 等の言語をカンマ区切りで指定
-- デフォルト: C++, Java, Python3
-- 例:
+- Specification: Specify languages such as C++, Java, Python separated by commas
+- Default: C++, Java, Python3
+- Example:
 ```
  manager.supported_languages: C++, Python3, Java
 ```
 
 ### manager.modules.`<lang>`.suffixes
 
-言語ごとのRTCモジュールの拡張子。
-このオプションは、ロード可能なモジュールRTCの拡張を指定します。
+RTC module extensions for each language.
+This option specifies the extensions of loadable module RTCs.
 
 ```
   manager.modules.<lang>.suffixes
 ```
 
-`<lang>`の部分はmanager.supported_languagesで指定する必要があります。 "."（ドット）は不要です。 C ++、Python / Python3、Java言語にはそれぞれ適切なデフォルトの拡張子が指定されているため、通常は設定は必要ありません。
+The `<lang>` part must be specified in manager.supported_languages. The "." (dot) is not required. Appropriate default extensions are specified for the C++, Python / Python3, and Java languages respectively, so normally no setting is required.
 
-- 指定: 共有オブジェクトの拡張子名
-- デフォルト:
+- Specification: Extension name of shared object
+- Default:
   - Windows: dll
-  - Linux等: so
+  - Linux, etc.: so
   - Mac OS X: dylib
-- 例
+- Example
 ```
  manager.modules.C++.suffixes: dll
  manager.modules.C++.suffixes: so
@@ -990,15 +912,15 @@ CORBA初期化前にロードするモジュールリスト
 
 ### manager.modules.`<lang>`.manager_cmd
 
-言語ごとのマネージャプログラム名。
-このオプションは、各言語の実行可能マネージャーの名前を指定します。 マスターマネージャーがRTCのインスタンス化を要求されると、スレーブマネージャーが実行され、RTCがスレーブマネージャープロセスでインスタンス化されます。 C++版のRTCはC++版のマネージャ（rtcd）を使用し、Python版RTCはPython版マネージャ（rtcd_python）を使用します。 コマンド検索パスのデフォルトの実行可能ファイルは、C ++、Python / Python3、およびJava言語に対してそれぞれ指定されます。通常、設定は必要ありません。
+Manager program name for each language.
+This option specifies the name of the executable manager for each language. When the master manager is requested to instantiate an RTC, the slave manager is executed, and the RTC is instantiated in the slave manager process. C++ version RTCs use the C++ version manager (rtcd), and Python version RTCs use the Python version manager (rtcd_python). Default executables in the command search path are specified for the C++, Python / Python3, and Java languages respectively. Normally, no setting is required.
 
-- 指定: マネージャのコマンド名
-- デフォルト:
+- Specification: Manager command name
+- Default:
   - C++: rtcd
   - Python: rtcd_python
   - Java: rtc_java
-- 例
+- Example
 ```
  manager.modules.C++.manager_cmd: rtcd
  manager.modules.Python.manager_cmd: rtcd_python
@@ -1007,16 +929,16 @@ CORBA初期化前にロードするモジュールリスト
 
 ### manager.modules.`<lang>`.profile_cmd
 
-言語ごとのプロファイル取得コマンド名。
-このオプションは、RTCプロファイルを取得するコマンドであるプロファイル実行可能ファイルの名前を言語ごとに指定します。 既存のロード可能なモジュールからRTCを検索する場合、マスターマネージャーはプロファイルコマンドを実行して、ロード可能なモジュールから各コンポーネントのプロファイルを取得します。 C++版RTCはC++版プロファイルコマンド（rtcprof）を使用し、PythonバージョンRTCはPythonバージョンマネージャ（rtcprof_python）を使用します。 コマンド検索パスは、指定された実行可能ファイルに設定する必要があります。 C++、Python / Python3、およびJava言語にはそれぞれ適切なデフォルトの実行可能ファイルが指定されているため、通常は設定は必要ありません。
+Profile acquisition command name for each language.
+This option specifies, for each language, the name of the profile executable, which is the command for acquiring RTC profiles. When searching for RTCs from existing loadable modules, the master manager executes the profile command to acquire the profile of each component from the loadable module. C++ version RTCs use the C++ version profile command (rtcprof), and Python version RTCs use the Python version manager (rtcprof_python). The command search path must be set to the specified executable file. Appropriate default executables are specified for the C++, Python / Python3, and Java languages respectively, so normally no setting is required.
 
-- 指定: プロファイル取得コマンド名
-- デフォルト:
+- Specification: Profile acquisition command name
+- Default:
   - C++: rtcprof
   - Python: rtcprof_python
   - Python3: rtcprof_python3
   - Java: rtc_java
-- 例
+- Example
 ```
  manager.modules.C++.profile_cmd: rtcprof
  manager.modules.Python.profile_cmd: rtcprof_python
@@ -1025,15 +947,15 @@ CORBA初期化前にロードするモジュールリスト
 
 ### manager.modules.`<lang>`.load_paths
 
-言語ごとのRTCモジュールロードパス。
-このオプションは、各言語のロード可能なモジュールRTCのロードパスを指定します。 マスターマネージャーがどこかからRTCを検索する場合、指定されたロードパスが使用されます。
+RTC module load paths for each language.
+This option specifies the load paths for loadable module RTCs in each language. When the master manager searches for RTCs from somewhere, the specified load paths are used.
 
-- 指定: RTCモジュールロードパス。
-- デフォルト:
+- Specification: RTC module load path.
+- Default:
   - C++: ./
   - Python: ./
   - Java: ./
-- 例
+- Example
 ```
  manager.modules.C++.load_paths: ./, /usr/share/openrtm-1.2/components/cxx
  manager.modules.Python.load_paths: ./, /usr/share/openrtm-1.2/components/python
@@ -1043,47 +965,46 @@ CORBA初期化前にロードするモジュールリスト
 
 <!-- Timer configuration -->
 
-## タイマに関する設定
+## Timer-Related Settings
 
 ### timer.enable
 
-タイマ機能を有効/無効にする。タイマを無効にするとタイマを利用している機
-能、例えばネームサーバの定期的確認と再登録等が無効になる。
+Enables/disables the timer function. If the timer is disabled, functions using the timer, such as periodic checking and re-registration with the name server, are disabled.
 
-- 指定: **YES** or **NO**
-- デフォルト値: YES
-- 例:
+- Specification: **YES** or **NO**
+- Default value: YES
+- Example:
 ```
  timer.enable: YES
 ```
 
 ### timer.tick
 
-タイマの精度を指定する。
+Specifies timer precision.
 
-- 指定: タイマの精度を [s] で指定する。
-- デフォルト値: 0.1 [s], (= 100ms)
-- 例:
+- Specification: Specify timer precision in [s].
+- Default value: 0.1 [s], (= 100 ms)
+- Example:
 ```
  timer.tick: 1.0
 ```
 
-## 実行コンテキストオプション
+## Execution Context Options
 
 ### exec_cxt.periodic.type
 
-デフォルトの実行コンテキストのタイプ。
-デフォルトでは以下の実行コンテキストが指定可能。
+Default execution context type.
+By default, the following execution contexts can be specified.
 
-- PeridicExecutionContext: デフォルトのEC。最も一般的なECで指定しなければこのECが利用される。
-- ExtTrigExecutionContext:   外部トリガにより駆動されるEC。デフォルトで組み込み済み。
-- OpenHRPExecutionContext:  外部トリガにより並列的に駆動されるEC。デフォルトで組み込み済み。OpenHRP3と一緒に利用される。
-- SimulatorExecutionContext: 外部トリガにより並列的に駆動されるEC。デフォルトで組み込み済み。Choreonoidと一緒に利用される。
-- RTPreemptEC: （ソフト）リアルタイム実行コンテキスト。LinuxのRT-preemptiveカーネルと一緒に利用される。
+- PeridicExecutionContext: Default EC. This is the most common EC and is used if no EC is specified.
+- ExtTrigExecutionContext:   EC driven by an external trigger. Built in by default.
+- OpenHRPExecutionContext:  EC driven in parallel by an external trigger. Built in by default. Used with OpenHRP3.
+- SimulatorExecutionContext: EC driven in parallel by an external trigger. Built in by default. Used with Choreonoid.
+- RTPreemptEC: (Soft) real-time execution context. Used with the Linux RT-preemptive kernel.
 
-- 指定: デフォルトの実行コンテキスト名
-- デフォルト値: PeriodicExecutionContext
-- 例:
+- Specification: Default execution context name
+- Default value: PeriodicExecutionContext
+- Example:
 ```
  exec_cxt.periodic.type: PeriodicExecutionContext
  exec_cxt.periodic.type: ArtExecutionContext
@@ -1091,11 +1012,11 @@ CORBA初期化前にロードするモジュールリスト
 
 ### exec_cxt.periodic.rate
 
-デフォルトの実行コンテキストの周期。このオプションはシステム全体のECの周期を指定する。RTCが明示的にECの周期を指定しない場合、この周期が利用される。
+Default execution context cycle. This option specifies the EC cycle for the entire system. If the RTC does not explicitly specify the EC cycle, this cycle is used.
 
-- 指定: デフォルトの実行コンテキスト周期を [Hz] で指定する
-- デフォルト値: 1000
-- 例:
+- Specification: Specify the default execution context cycle in [Hz]
+- Default value: 1000
+- Example:
 ```
  exec_cxt.periodic.rate: 100
 ```
@@ -1105,13 +1026,13 @@ CORBA初期化前にロードするモジュールリスト
 ### exec_cxt.sync_deactivation
 ### exec_cxt.sync_reset
 
-RTCはアクティブ化、非アクティブ化、およびリセットにより、状態が遷移します。 一部の実行コンテキストは、メインロジックを異なるスレッドで実行します。 これらのフラグがYESに設定されている場合、アクティブ化、非アクティブ化、およびリセットは同期して実行されます。 つまり、これらのフラグがYESの場合、状態遷移の完了後にはアクティブ化/非アクティブ化/リセット操作の呼び出しから戻っていることが保証されます。
+The state of an RTC transitions through activation, deactivation, and reset. Some execution contexts execute the main logic in a different thread. If these flags are set to YES, activation, deactivation, and reset are executed synchronously. In other words, when these flags are YES, it is guaranteed that the activation/deactivation/reset operation call returns after the state transition is complete.
 
-"sync_transition" は、同期遷移フラグを他のすべての同期遷移フラグ (sync_activation / deactivation / resetting) に一括設定します。
+"sync_transition" sets the synchronous transition flag collectively for all other synchronous transition flags (sync_activation / deactivation / resetting).
 
-- 設定: YES or NO
-- デフォルト：YES（デフォルト設定推奨）
-- 例:
+- Setting: YES or NO
+- Default: YES (default setting recommended)
+- Example:
 ```
  exec_cxt.sync_transition: YES
  exec_cxt.sync_activation: YES
@@ -1124,12 +1045,12 @@ RTCはアクティブ化、非アクティブ化、およびリセットによ�
 ### exec_cxt.deactivation_timeout
 ### exec_cxt.reset_timeout
 
-動機遷移時のタイムアウト指定。
-動機遷移フラグがYESに設定されているとき、以下のタイムアウトの設定が有効になります。"timeout_transition" オプションが設定された場合、他の activation/deactivation/reset のタイムアウト値が一括で設定されます。
+Timeout specification during synchronous transitions.
+When the synchronous transition flag is set to YES, the following timeout settings become valid. If the "timeout_transition" option is set, the timeout values for activation/deactivation/reset are set collectively.
 
-- 設定: Read/Write, seconds [s]
-- デフォルト：0.5 [s]
-- 例:
+- Setting: Read/Write, seconds [s]
+- Default: 0.5 [s]
+- Example:
 ```
  exec_cxt.transition_timeout: 0.5
  exec_cxt.activation_timeout: 0.5
@@ -1137,49 +1058,49 @@ RTCはアクティブ化、非アクティブ化、およびリセットによ�
  exec_cxt.reset_timeout: 0.5
 ```
 
-## SDO サービスオプション
+## SDO Service Options
 
 ### sdo.service.provider.available_services
 
-このパラメータは現在利用可能なSDOサービス（プロバイダ）のリストが入る。
+This parameter contains the list of currently available SDO services (providers).
 
-- 設定: 読み取り専用, `<sdo service0>`, `<sdo service1>`, ... 
-- デフォルト: None
-- 例:
+- Setting: Read-only, `<sdo service0>`, `<sdo service1>`, ... 
+- Default: None
+- Example:
 ```
  sdo.service.provider.available_services: <利用可能なSDOサービス（プロバイダ）のリスト>
 ```
 
 ### sdo.service.provider.enabled_services
 
-このオプションは有効にSDOサービス（プロバイダ）を指定する。
-特定のサービスをサービス型名で指定するか、全てを有効にする場合は "ALL" を指定する。
+This option specifies the SDO services (providers) to enable.
+Specify a specific service by service type name, or specify "ALL" to enable all.
 
-- 設定: 読み書き, `<sdo service0>`, `<sdo service1>`, ... または ALL
-- デフォルト: ALL
-- 例:
+- Setting: Read/Write, `<sdo service0>`, `<sdo service1>`, ... or ALL
+- Default: ALL
+- Example:
 ```
  sdo.service.provider.enabled_services: <有効にするSDOサービスのリスト>
 ```
 
 ### sdo.service.provider.providing_services
 
-このオプションは現在インスタンス化され提供されているSDOサービス（プロバイダ）が入る。
+This option contains the SDO services (providers) that are currently instantiated and provided.
 
-- 設定: 読み取り専用, `<sdo service0>`, `<sdo service1>`, ... 
-- デフォルト: None
-- 例:
+- Setting: Read-only, `<sdo service0>`, `<sdo service1>`, ... 
+- Default: None
+- Example:
 ```
  sdo.service.provider.enabled_services: <現在インスタンス化されているDOサービスのリスト>
 ```
 
 ### sdo.service.consumer.available_services
 
-このパラメータは現在利用可能なSDOサービス（コンシューマ）のリストが入る。
+This parameter contains the list of currently available SDO services (consumers).
 
-- 設定: 読み取り専用, `<sdo service0>`, `<sdo service1>`, ... 
-- デフォルト: None
-- 例:
+- Setting: Read-only, `<sdo service0>`, `<sdo service1>`, ... 
+- Default: None
+- Example:
 ```
  sdo.service.consumer.available_services: <利用可能なSDOサービス（コンシューマ）のリスト>
 ```
@@ -1187,49 +1108,49 @@ RTCはアクティブ化、非アクティブ化、およびリセットによ�
 
 ### sdo.service.consumer.enabled_services
 
-このオプションは使用するSDOサービス（コンシューマ）を指定する。
-特定のサービスをサービス型名で指定するか、全てを有効にする場合は "ALL" を指定する。
+This option specifies the SDO services (consumers) to use.
+Specify a specific service by service type name, or specify "ALL" to enable all.
 
-- 設定: 読み書き, `<sdo service0>`, `<sdo service1>`, ... または ALL
-- デフォルト: ALL
-- 例:
+- Setting: Read/Write, `<sdo service0>`, `<sdo service1>`, ... or ALL
+- Default: ALL
+- Example:
 ```
  sdo.service.consumer.enabled_services: <有効にするSDOサービスのリスト>
 ```
 
 
-## ローカルサービスオプション
+## Local Service Options
 
 ### manager.local_service.modules
 
-ローカルサービスモジュールをロードする。
-同一プロセス内のRTCに対してユーザ定義のサービを提供するためにローカルサービスメカニズムが提供されています。
-コンポーネントは、ローカルサービスをマネージャから取得したり、使用したりすることができます。
-例えば、この仕組を利用すると、複数のRTC間で共通のリソースにアクセスしたりできます。
+Loads local service modules.
+A local service mechanism is provided to provide user-defined services to RTCs within the same process.
+Components can obtain and use local services from the manager.
+For example, this mechanism can be used to access common resources among multiple RTCs.
 
-ローカルサービスモジュールは、しばしばコンポーネントのロードやインスタンス化よりも前に初期化されなければいけません。
-そのため、ローカルサービスモジュールはこのオプションで指定して事前にロードと初期化を行う必要があります。
+Local service modules often need to be initialized before components are loaded or instantiated.
+Therefore, local service modules must be specified with this option and loaded and initialized in advance.
 
-- 設定: Read/Write, モジュールロードパス
-- デフォルト：None
-- 例:
+- Setting: Read/Write, module load path
+- Default: None
+- Example:
 manager.local_service.modules: IEEE1394CameraService.so
 
 ### manager.local_service.enabled_services
 
-有効にするローカルサービスを指定する。デフォルトではすべてのローカルサービスがアクティブ化および利用可能に設定されます。このオプションは有効にする特定のローカルサービスを指定します。
+Specifies the local services to enable. By default, all local services are set to be activated and available. This option specifies particular local services to enable.
 
-- 設定: Read/Write, 有効にするローカルサービス名
-- デフォルト：None
-- 例:
+- Setting: Read/Write, local service name to enable
+- Default: None
+- Example:
 manager.local_service.enabled_services: IEEE1394CameraService
 
 
-## ポートの設定
+## Port Settings
 
 
-ポートの設定は以下の**port.inport.dataport**、**port.{ポート型}.{ポート名}**、**{カテゴリ名}.{インスタンス名}.port.inport.{ポート名}.{設定項目}**の文字列の後に項目名を指定することで設定できます。
-接続時のコネクタプロファイルで同じ設定をしている場合は、コネクタプロファイルの設定で上書きするのでrtc.confの設定は無効になります。
+Port settings can be configured by specifying the item name after the following strings: **port.inport.dataport**, **port.{port type}.{port name}**, and **{category name}.{instance name}.port.inport.{port name}.{setting item}**.
+If the same setting is specified in the connector profile at connection time, the connector profile setting overrides it, so the rtc.conf setting becomes invalid.
 
 ```
  port.{ポート型}.dataport.{設定項目}: {設定値}
@@ -1238,71 +1159,67 @@ manager.local_service.enabled_services: IEEE1394CameraService
 ```
 
 ### allow_dup_connection
-2つのポートの間で複数のコネクタを生成しないようにします。
-NO(不許可)にした場合、ポートAとポートBで接続した場合、もう一度connect関数を実行してポートAとポートBを接続しようとしてもPRECONDITION_NOT_METの値を返して接続失敗になります。
+Prevents multiple connectors from being created between two ports.
+If set to NO (not allowed), when port A and port B are connected, trying to connect port A and port B again by executing the connect function returns PRECONDITION_NOT_MET and the connection fails.
 
-- 設定: 多重のコネクタを許可か不許可かの設定
-- デフォルト：NO
-- 例:
+- Setting: Specifies whether multiple connectors are allowed or not allowed
+- Default: NO
+- Example:
 ```
  port.inport.in.allow_dup_connection: NO
 ```
 
 ### fan_in
-InPortのコネクタの最大数を指定する。例えば100に設定すると、InPort Aと接続したポートの数が100以上になると、connect関数実行時にPRECONDITION_NOT_METを返して接続失敗になります。
+Specifies the maximum number of connectors for an InPort. For example, if this is set to 100, when the number of ports connected to InPort A becomes 100 or more, executing the connect function returns PRECONDITION_NOT_MET and the connection fails.
 
-- 設定: InPortのコネクタの最大数を設定
-- デフォルト：100
-- 例:
+- Setting: Sets the maximum number of connectors for an InPort
+- Default: 100
+- Example:
 ```
  port.inport.in.fan_in: 100
 ```
 
 
 ### fan_out
-OutPortのコネクタの最大数を指定する。例えば100に設定すると、OutPort Aと接続したポートの数が100以上になると、connect関数実行時にPRECONDITION_NOT_METを返して接続失敗になります。
+Specifies the maximum number of connectors for an OutPort. For example, if this is set to 100, when the number of ports connected to OutPort A becomes 100 or more, executing the connect function returns PRECONDITION_NOT_MET and the connection fails.
 
-- 設定: OutPortのコネクタの最大数を設定
-- デフォルト：100
-- 例:
+- Setting: Sets the maximum number of connectors for an OutPort
+- Default: 100
+- Example:
 ```
  port.outport.out.fan_out: 100
 ```
 
 
 ### buffer.length
-InPort、OutPortのリングバッファのバッファサイズを指定します。OutPortの場合はサブスクリプション型がNew、Periodic型の時に有効です。InPortは常に有効です。
+Specifies the buffer size of the ring buffer for InPort and OutPort. For OutPort, this is valid when the subscription type is New or Periodic. For InPort, it is always valid.
 
-- 設定: バッファサイズを設定
-- デフォルト：8
-- 例:
+- Setting: Sets the buffer size
+- Default: 8
+- Example:
 ```
  port.inport.in.buffer.length: 8
 ```
 
 
 ### buffer.write.full_policy
-InPort、OutPortのリングバッファの上書き時のポリシーを指定します。OutPortの場合はサブスクリプション型がNew、Periodic型の時に有効です。InPortは常に有効です。
+Specifies the policy when overwriting the ring buffer of InPort and OutPort. For OutPort, this is valid when the subscription type is New or Periodic. For InPort, it is always valid.
 
-- 設定: 上書き時のポリシー
-- デフォルト：overwrite
-- 例:
+- Setting: Policy when overwriting
+- Default: overwrite
+- Example:
 ```
  port.inport.in.buffer.write.full_policy: block
  port.inport.in.buffer.write.full_policy: do_nothing
 ```
 
 ### buffer.read.empty_policy
-InPort、OutPortのリングバッファの読み込み時のポリシーを指定します。OutPortの場合はサブスクリプション型がNew、Periodic型の時に有効です。InPortは常に有効です。
+Specifies the policy when reading from the ring buffer of InPort and OutPort. For OutPort, this is valid when the subscription type is New or Periodic. For InPort, it is always valid.
 
-- 設定: 読み込み時のポリシー
-- デフォルト：readback
-- 例:
+- Setting: Policy when reading
+- Default: readback
+- Example:
 ```
  port.inport.in.buffer.read.empty_policy: block
  port.inport.in.buffer.read.empty_policy: do_nothing
 ```
-
-
-
--------jp page!!-------

@@ -20,13 +20,13 @@ EV3 (Unit 2) will be distributed with the next consecutive number after EV3 (Uni
 
 ## Assembling EV3 (Unit 2)
 
-Follow the instructions in [Part 2]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_win) to assemble the second Educator Vehicle.
+Follow the instructions in [Part 2]({{ site.baseurl }}/en/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_win) to assemble the second Educator Vehicle.
 
 ## Connecting to the EV3
 
 ### Connecting the Laptop PC and EV3 (Unit 1)
 
-Complete the procedure in [Part 2]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_win) through the hardware operation test.
+Complete the procedure in [Part 2]({{ site.baseurl }}/en/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_win) through the hardware operation test.
 
 At this point, the laptop PC should already be connected to the EV3 configured as an access point.
 
@@ -136,13 +136,13 @@ This completes the main hands-on exercise. If you have extra time, try some of t
 
 - Control EV3 (Unit 1) using the ON/OFF state of the touch sensor on EV3 (Unit 2)
 
-- [Control Two EV3 Units Simultaneously with a Joystick Component]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_tutorial_ev3#toc18)
+- [Control Two EV3 Units Simultaneously with a Joystick Component]({{ site.baseurl }}/en/doc/casestudy/lego_mindstorm/lego_tutorial_ev3#toc18)
 
 The joystick component is included as a sample in OpenRTM-aist Python (**TkJoyStickComp.py**).
 
 Since the OutPort data type of TkJoyStickComp.py is **TimedFloatSeq**, you must create an RTC that converts it to the **TimedVelocity2D** type.
 
-- [Make the EV3 Speak]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_ev3_rtc_install#toc2)
+- [Make the EV3 Speak]({{ site.baseurl }}/en/doc/casestudy/lego_mindstorm/lego_ev3_rtc_install#toc2)
 
 If a string (**TimedString** type) is input to the InPort named **sound** of EducatorVehicleRTC, the EV3 will speak the text.
 

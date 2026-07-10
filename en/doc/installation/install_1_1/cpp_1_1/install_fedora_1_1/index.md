@@ -2,7 +2,9 @@
 layout: page
 title: Fedoraへのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: Fedoraへのインストール -->
 <div align="right"><a href="fedora_logo.png"><img src="fedora_logo.png" width="15%;" align="right"></a></div>
@@ -36,7 +38,7 @@ OpenRTM-aist を開発・実行するために必要なパッケージをもれ�
 ただし、OpenRTM-aist 関係のすべてのパッケージをインストールするので、必要ないものもインストールされる可能性があります。
 詳しく理解している人は、手動でインストールした方がよいでしょう。
 
-詳しいオプションやパッケージの種類につきましては、「[一括インストール・スクリプト](/ja/node/6345)」のページをご確認ください
+詳しいオプションやパッケージの種類につきましては、「[一括インストール・スクリプト](/en/node/6345)」のページをご確認ください
 
 <!-- また、次のパッケージは対応していませんのでyumコマンドでインストールしてください。 -->
 
@@ -232,4 +234,4 @@ openrtm-aist-example にはスタンドアロン RTC、ローダブル RTC そ�
  /usr/share/openrtm-1.1/examples/rtc/ConsoleOut.so.0.0.0
 ```
 
--------jp page!!-------
+

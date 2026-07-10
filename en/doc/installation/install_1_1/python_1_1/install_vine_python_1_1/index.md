@@ -2,7 +2,9 @@
 layout: page
 title: Vine Linuxへのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 init
 <!-- Title: Vine Linuxへのインストール -->
@@ -118,5 +120,5 @@ OpenRTM-aist-Python-example には RTC のサンプルが含まれています�
 ```
 
 
-以上、インストールが終了しましたら、[動作確認](/ja/node/1224)へ進みましょう。
--------jp page!!-------
+以上、インストールが終了しましたら、[動作確認](/en/node/1224)へ進みましょう。
+

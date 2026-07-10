@@ -1,13 +1,12 @@
 ---
 layout: page
-title: "データポートの独自インターフェース型の実装手順"
+title: "Procedure for Implementing a Custom Interface Type for Data Ports"
 ---
--------jp page!!-------
 
 <!-- Title: データポートの独自インターフェース型の実装手順 -->
 #contents
 
-OpenRTM-aistのデータポートは基本的にCORBAのメソッド呼び出しでデータを転送しますが、通信インターフェースのプラグインを追加することで様々な通信プロトコルを選択可能になります。
+OpenRTM-aist data ports basically transfer data through CORBA method calls, but by adding communication interface plugins, various communication protocols can be selected.
 
 <br>
 
@@ -15,16 +14,16 @@ OpenRTM-aistのデータポートは基本的にCORBAのメソッド呼び出し
 
 <br>
 
-このページでは独自通信インターフェースの追加方法を説明します。
-以下の独自シリアライザ作成方法も参考にしてください。
+This page explains how to add a custom communication interface.
+Please also refer to the following procedure for creating a custom serializer.
 
-- [独自シリアライザの実装手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/implement_original_serializer)
+- [Procedure for Implementing a Custom Serializer]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/implement_original_serializer)
 
-OpenRTM-aistにはデータフロー型がPush型の通信とPull型の通信、まだ実装中ですが双方向通信のduplex型があります。
-Push型通信は**InPortConsumer**、**InPortProvider**で構成されており、Pull型通信は**OutPortConsumer**、**OutPortProvider**で構成されています。
+OpenRTM-aist has Push-type and Pull-type communication as data flow types, as well as a duplex type for bidirectional communication, although it is still under implementation.
+Push-type communication consists of **InPortConsumer** and **InPortProvider**, while Pull-type communication consists of **OutPortConsumer** and **OutPortProvider**.
 
-Push型通信ではOutPort側でPublisherがInPortConsumerの**put**関数を呼び出して、put関数内でInPortProviderへデータを転送します。
-InPortProviderではInPortConnectorオブジェクトのwrite関数を呼んでデータを追加します。
+In Push-type communication, the Publisher on the OutPort side calls the **put** function of InPortConsumer, and data is transferred to InPortProvider inside the put function.
+InPortProvider calls the write function of the InPortConnector object to add data.
 
 <br>
 
@@ -32,8 +31,8 @@ InPortProviderではInPortConnectorオブジェクトのwrite関数を呼んで�
 
 <br>
 
-Pull型通信ではInPort側でOutPortConsumerの**get**関数を呼び出して、get関数内でOutPortProviderからデータを取得します。
-OutPort側でOutPortProviderがOutPortConnectorのread関数を呼んでデータを取得してOutPortConsumerに渡します。
+In Pull-type communication, the InPort side calls the **get** function of OutPortConsumer, and data is obtained from OutPortProvider inside the get function.
+On the OutPort side, OutPortProvider calls the read function of OutPortConnector, obtains the data, and passes it to OutPortConsumer.
 
 <br>
 
@@ -42,13 +41,13 @@ OutPort側でOutPortProviderがOutPortConnectorのread関数を呼んでデー�
 <br>
 
 
-このため、Push型通信のためのInPortConsumer、InPortProvider、もしくはPull型通信のためのOutPortConsumer、OutPortProviderを実装することで独自の通信インターフェースが実現できます。
+Therefore, a custom communication interface can be implemented by implementing InPortConsumer and InPortProvider for Push-type communication, or OutPortConsumer and OutPortProvider for Pull-type communication.
 
 
 
-以下に独自インターフェース型の実装手順を記載します。
+The implementation procedures for custom interface types are shown below.
 
-- [独自インターフェース型の実装手順(C++)]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/cpp/)
-- [独自インターフェース型の実装手順(Python)]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/)
-- [独自インターフェース型の実装手順(Java)]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/java/)
--------jp page!!-------
+- [Procedure for Implementing a Custom Interface Type (C++)]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/cpp/)
+- [Procedure for Implementing a Custom Interface Type (Python)]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/)
+- [Procedure for Implementing a Custom Interface Type (Java)]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/java/)
+

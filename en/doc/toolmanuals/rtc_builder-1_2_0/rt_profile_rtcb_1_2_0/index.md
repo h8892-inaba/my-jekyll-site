@@ -1,274 +1,273 @@
 ---
 layout: page
-title: 画面構成と機能（RTプロファイルエディタ 編）
+title: Screen Layout and Functions (RT Profile Editor)
 ---
--------jp page!!-------
 
 <!-- Title: 画面構成と機能（RTプロファイルエディタ 編） -->
 #contents
 <!-- *** RTプロファイルエディタ -->
-ここでは、RTプロファイルエディタについて説明します。
+This section explains the RT Profile Editor.
 <br>
 
 <div align="center"><a href="fig3-2RTProfileEditor_ja.png"><img src="fig3-2RTProfileEditor_ja.png" width="50%;"></a></div>
-<div align="center"><strong>RTプロファイルエディタ</strong></div>
+<div align="center"><strong>RT Profile Editor</strong></div>
 <br>
-　RTプロファイルエディタは、以下のページから構成されています。
-<div align="center"><strong>RTプロファイルエディタ構成</strong></div>
+　The RT Profile Editor consists of the following pages.
+<div align="center"><strong>RT Profile Editor Configuration</strong></div>
 
 <table class="table-alt">
   <tr>
-    <th>№</th>
-    <th>画面要素名</th>
-    <th>説明</th>
+    <th>No.</th>
+    <th>Screen Component Name</th>
+    <th>Description</th>
   </tr>
   <tr>
-    <td>１</td>
-    <td>基本プロファイル入力ページ</td>
-    <td>RTコンポーネントのプロファイル情報など、コンポーネントの基本情報を入力します。</td>
+    <td>1</td>
+    <td>Basic Profile Input Page</td>
+    <td>Enter basic component information, such as profile information for the RT component.</td>
   </tr>
   <tr>
-    <td>２</td>
-    <td>アクティビティ・プロファイル</td>
-    <td>RTコンポーネントがサポートしているアクティビティ情報などを指定します。</td>
+    <td>2</td>
+    <td>Activity Profile</td>
+    <td>Specify information such as the activities supported by the RT component.</td>
   </tr>
   <tr>
-    <td>３</td>
-    <td>データポート・プロファイル</td>
-    <td>RTコンポーネントに付属するデータポートのプロファイルを入力します。</td>
+    <td>3</td>
+    <td>Data Port Profile</td>
+    <td>Enter profiles for the data ports attached to the RT component.</td>
   </tr>
   <tr>
-    <td>４</td>
-    <td>サービスポート・プロファイル</td>
-    <td>RTコンポーネントに付属するサービスポートおよびサービスポートに付属するサービスインターフェースのプロファイルを入力します。</td>
+    <td>4</td>
+    <td>Service Port Profile</td>
+    <td>Enter profiles for the service ports attached to the RT component and the service interfaces attached to the service ports.</td>
   </tr>
   <tr>
-    <td>５</td>
-    <td>コンフィギュレーション</td>
-    <td>RTコンポーネントに設定するユーザー定義のコンフィギュレーション・パラメーター報およびシステムのコンフィギュレーション情報を入力します。</td>
+    <td>5</td>
+    <td>Configuration</td>
+    <td>Enter user-defined configuration parameter information and system configuration information to be set for the RT component.</td>
   </tr>
   <tr>
-    <td>６</td>
-    <td>ドキュメント生成</td>
-    <td>生成対象の RTコンポーネントに追加する各種ドキュメント情報を入力します。</td>
+    <td>6</td>
+    <td>Documentation Generation</td>
+    <td>Enter various documentation information to be added to the RT component to be generated.</td>
   </tr>
   <tr>
-    <td>７</td>
-    <td>言語・環境</td>
-    <td>生成対象のコード選択や OS などの実行環境に関する情報を入力します。</td>
+    <td>7</td>
+    <td>Language/Environment</td>
+    <td>Enter information about the code selection to be generated and the execution environment, such as the OS.</td>
   </tr>
   <tr>
-    <td>８</td>
+    <td>8</td>
     <td>RTC.xml</td>
-    <td>設定された情報を基に生成した RtcProfile の XML形式での表示・編集を行います。</td>
+    <td>Displays and edits the RtcProfile generated based on the configured information in XML format.</td>
   </tr>
 </table>
 
-各ページの切り替えは、エディタ画面下部のタブを選択することで行うことができます。
+You can switch between pages by selecting the tabs at the bottom of the editor screen.
 <br>
 
-### 基本プロファイル入力ページ 
-RTコンポーネントのプロファイル情報など、コンポーネントの基本情報を入力するページです。
+### Basic Profile Input Page 
+This page is used to enter basic component information, such as profile information for the RT component.
 <br>
 
 <div align="center"><a href="editor-basic.png"><img src="editor-basic.png" width="50%;"></a></div>
-<div align="center"><strong>基本プロファイル入力ページ</strong></div>
+<div align="center"><strong>Basic Profile Input Page</strong></div>
 <br>
-以下に各入力項目について説明いたします。
-<div align="center"><strong>基本プロファイル入力ページ　項目説明</strong></div>
+Each input item is described below.
+<div align="center"><strong>Basic Profile Input Page Item Descriptions</strong></div>
 
 <table class="table-alt">
   <tr>
-    <th>項目</th>
-    <th>説明</th>
-    <th>必須</th>
+    <th>Item</th>
+    <th>Description</th>
+    <th>Required</th>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;" >RT-Component Basic Profile</td>
   </tr>
   <tr>
-    <td>モジュール名</td>
-    <td>RTコンポーネントを識別する名前です。必須入力項目。この名前は、生成されるソースコード中で、コンポーネントの名前に使用されます。英数字のみ入力可能です。</td>
+    <td>Module Name</td>
+    <td>This is the name that identifies the RT component. This is a required input item. This name is used as the component name in the generated source code. Only alphanumeric characters can be entered.</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>モジュール概要</td>
-    <td>RTコンポーネントの簡単な概要説明です。</td>
+    <td>Module Description</td>
+    <td>A brief overview of the RT component.</td>
     <td>-</td>
   </tr>
   <tr>
-    <td>バージョン</td>
-    <td>RTコンポーネントのバージョンです。原則 x.y.z のような形式でバージョン番号を入力します。</td>
+    <td>Version</td>
+    <td>The version of the RT component. In principle, enter the version number in a format such as x.y.z.</td>
     <td>-</td>
   </tr>
   <tr>
-    <td>ベンダ名</td>
-    <td>RTコンポーネントを開発したベンダ名です。</td>
+    <td>Vendor Name</td>
+    <td>The name of the vendor that developed the RT component.</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>モジュールカテゴリ</td>
-    <td>RTコンポーネントのカテゴリです。</td>
+    <td>Module Category</td>
+    <td>The category of the RT component.</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>コンポーネント型</td>
-    <td>RTコンポーネントの型です。以下の選択肢の中から指定可能です。<br>・STATIC：静的に存在するタイプの RTC です。動的な生成、削除は行われません。<br>・UNIQUE：動的に生成・削除はできるが、各コンポーネントが内部に固有状態を保持しており、必ずしも交換可能ではないタイプの RTC です。<br>・COMMUTATIVE：動的に生成・削除が可能で、内部の状態を持たないため、生成されたコンポーネントが交換可能なタイプの RTC です。</td>
+    <td>Component Type</td>
+    <td>The type of the RT component. It can be specified from the following options.<br>・STATIC: A type of RTC that exists statically. Dynamic creation and deletion are not performed.<br>・UNIQUE: A type of RTC that can be dynamically created and deleted, but each component has an internal unique state and is not necessarily interchangeable.<br>・COMMUTATIVE: A type of RTC that can be dynamically created and deleted, and because it has no internal state, generated components are interchangeable.</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>アクティビティ型</td>
-    <td>RTコンポーネントのアクティビティタイプです。以下の選択肢の中から指定可能です。<br>・PERIODIC ：一定周期でRTCのアクションを実行するアクティビティタイプ<br>・SPORADIC ：RTCのアクションを不定期に実行するアクティビティタイプ<br>・EVENT_DRIVEN ：RTC のアクションがイベントドリブンであるアクティビティタイプ</td>
+    <td>Activity Type</td>
+    <td>The activity type of the RT component. It can be specified from the following options.<br>・PERIODIC: An activity type that executes RTC actions at regular intervals<br>・SPORADIC: An activity type that executes RTC actions irregularly<br>・EVENT_DRIVEN: An activity type in which RTC actions are event-driven</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>コンポーネント種類</td>
-    <td>RTコンポーネントの実行形態の種類です。以下の選択肢から選択可能です。(複数選択肢の組み合わせ可)<br>・DataFlow ： 周期的にアクションを実行する実行形態<br>・FSM ： 外部イベントによってアクションを実行する形態<br>・MultiMode ： 複数の動作モードを持つ実行形態</td>
+    <td>Component Kind</td>
+    <td>The type of execution form of the RT component. It can be selected from the following options. (Multiple options can be combined)<br>・DataFlow: An execution form that executes actions periodically<br>・FSM: An execution form that executes actions according to external events<br>・MultiMode: An execution form that has multiple operation modes</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>最大インスタンス数</td>
-    <td>RTコンポーネント　インスタンスの最大数です。自然数を入力してください。</td>
+    <td>Maximum Number of Instances</td>
+    <td>The maximum number of RT component instances. Enter a natural number.</td>
     <td>-</td>
   </tr>
   <tr>
-    <td>実行型</td>
-    <td>ExecutionContext の型です。 以下から選択可能です。<br>・PeriodicExecutionContext ： 周期実行を行うExecutionContext<br>・ExtTrigExecutionContext ： 外部トリガによって実行を行う ExecutionContex</td>
+    <td>Execution Type</td>
+    <td>The type of ExecutionContext. It can be selected from the following.<br>・PeriodicExecutionContext: ExecutionContext that performs periodic execution<br>・ExtTrigExecutionContext: ExecutionContext that performs execution by an external trigger</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>実行周期</td>
-    <td>ExecutionContext の実行周期です。正の double型の数値が入力可能です（単位Hz）。</td>
+    <td>Execution Rate</td>
+    <td>The execution rate of the ExecutionContext. A positive double value can be entered (unit: Hz).</td>
     <td>-</td>
   </tr>
   <tr>
-    <td>概要</td>
-    <td>RTコンポーネントに関する説明です。</td>
+    <td>Description</td>
+    <td>A description of the RT component.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>RTC Type</td>
-    <td>特定機能を実現するRTコンポーネントを区別する必要がある場合に指定します。</td>
+    <td>Specify this when it is necessary to distinguish RT components that implement specific functions.</td>
     <td>－</td>
   </tr>
 </table>
 
 <br>
 
-### アクティビティ・プロファイル入力ページ
-生成対象の RTコンポーネントがサポートしているアクティビティに関する情報を入力するページです。
+### Activity Profile Input Page
+This page is used to enter information about the activities supported by the RT component to be generated.
 <br>
 
 <div align="center"><a href="fig3-4ActivityProfile_ja.png"><img src="fig3-4ActivityProfile_ja.png" width="50%;"></a></div>
 <!-- CENTER:''図 3-4 データポート・プロファイル入力ページ'' -->
-<div align="center"><strong>アクティビティ・プロファイル入力ページ</strong></div>
+<div align="center"><strong>Activity Profile Input Page</strong></div>
 <br>
-Documentation セクションの内容は、アクティビティ毎に設定します。Documentation セクションには、選択中のアクティビティに対応した内容が表示されます。
+The contents of the Documentation section are set for each activity. The Documentation section displays the content corresponding to the currently selected activity.
 <br>
-以下に各入力項目について説明いたします。
+Each input item is described below.
 <br>
 
-<div align="center"><strong>アクティビティ・プロファイル入力ページ　項目説明</strong></div>
+<div align="center"><strong>Activity Profile Input Page Item Descriptions</strong></div>
 <table class="table-alt">
   <tr>
-    <th>項目</th>
-    <th>説明</th>
-    <th>必須</th>
+    <th>Item</th>
+    <th>Description</th>
+    <th>Required</th>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">Activity Profile</td>
   </tr>
   <tr>
     <td>onInitialize</td>
-    <td>初期化処理です。コンポーネントライフサイクルの開始時に一度だけ呼ばれます。</td>
+    <td>Initialization processing. It is called only once at the start of the component lifecycle.</td>
     <td>-</td>
   </tr>
   <tr>
     <td>onFinalize</td>
-    <td>終了処理です。コンポーネントライフサイクルの終了時に1度だけ呼ばれます。</td>
+    <td>Finalization processing. It is called only once at the end of the component lifecycle.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>onStartup</td>
-    <td>ExecutionContext が実行を開始するとき1度だけ呼ばれます。</td>
+    <td>Called only once when the ExecutionContext starts execution.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>onShutdown</td>
-    <td>ExecutionContext が実行を停止するとき1度だけ呼ばれます。</td>
+    <td>Called only once when the ExecutionContext stops execution.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>onActivated</td>
-    <td>非アクティブ状態からアクティブ化されるとき1度だけ呼ばれます。</td>
+    <td>Called only once when transitioning from the inactive state to the active state.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>onDeactivated</td>
-    <td>アクティブ状態から非アクティブ化されるとき1度だけ呼ばれます。</td>
+    <td>Called only once when transitioning from the active state to the inactive state.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>onAborting</td>
-    <td>ERROR 状態に入る前に1度だけ呼ばれます。</td>
+    <td>Called only once before entering the ERROR state.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>onError</td>
-    <td>ERROR 状態にいる間に呼ばれます。</td>
+    <td>Called while in the ERROR state.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>onReset</td>
-    <td>ERROR 状態からリセットされ非アクティブ状態に移行するときに1度だけ呼ばれます。</td>
+    <td>Called only once when resetting from the ERROR state and transitioning to the inactive state.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>onExecute</td>
-    <td>アクティブ状態時に周期的に呼ばれます。</td>
+    <td>Called periodically while in the active state.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>onStateUpdate</td>
-    <td>on_execute の後毎回呼ばれます。</td>
+    <td>Called every time after on_execute.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>onRateChanged</td>
-    <td>ExecutionContext の rate が変更されたとき呼ばれます。</td>
+    <td>Called when the rate of the ExecutionContext is changed.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>onAction</td>
-    <td>対応する状態に応じた動作を実行するために呼ばれます。</td>
+    <td>Called to execute an operation according to the corresponding state.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>onModeChanged</td>
-    <td>モードが変更された時に呼ばれます。</td>
+    <td>Called when the mode is changed.</td>
     <td>－</td>
   </tr>
   <tr>
     <td style="text-align: center;" colspan="3">Documentation</td>
   </tr>
   <tr>
-    <td>アクティビティ名</td>
-    <td>現在選択されているアクティビティの名称を表示します。</td>
+    <td>Activity Name</td>
+    <td>Displays the name of the currently selected activity.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>動作概要</td>
-    <td>対象アクティビティが実行する動作の概要説明を記述します。</td>
+    <td>Operation Overview</td>
+    <td>Describe an overview of the operation executed by the target activity.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>事前条件</td>
-    <td>対象アクティビティを実行する前に成立すべき事前条件を記述します。</td>
+    <td>Preconditions</td>
+    <td>Describe the preconditions that must be satisfied before executing the target activity.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>事後条件</td>
-    <td>対象アクティビティを実行した後に成立する事後条件を記述します。ただし、事前条件が満たされない状態で対象アクティビティが実行された場合は事後条件の成立は保証されません。</td>
+    <td>Postconditions</td>
+    <td>Describe the postconditions that are satisfied after executing the target activity. However, if the target activity is executed when the preconditions are not satisfied, satisfaction of the postconditions is not guaranteed.</td>
     <td>－</td>
   </tr>
 </table>
@@ -277,55 +276,55 @@ Documentation セクションの内容は、アクティビティ毎に設定し
 
 
 
-### データポート・プロファイル入力ページ 
-RTコンポーネントに付属するデータポートの情報を入力するページです。
+### Data Port Profile Input Page 
+This page is used to enter information about the data ports attached to the RT component.
 <br>
 
 <div align="center"><a href="fig3-4InputDataPort_ja.png"><img src="fig3-4InputDataPort_ja.png" width="50%;"></a></div>
-<div align="center"><strong>データポート・プロファイル入力ページ</strong></div>
+<div align="center"><strong>Data Port Profile Input Page</strong></div>
 <br>
-各ポート (InPort/OutPort) を新規に追加する場合は、各セクションの [Add] ボタンをクリックしてください。
-また、各セクションの [Delete] ボタンをクリックすると、選択中のポートを削除することができます。
-ドキュメントセクションの内容はポート毎に設定することが可能です。ドキュメントセクションには、選択中のポートに対応した内容が表示されます。
-以下に各入力項目について説明いたします。
+To add a new port (InPort/OutPort), click the [Add] button in each section.
+You can also delete the selected port by clicking the [Delete] button in each section.
+The contents of the documentation section can be set for each port. The documentation section displays the content corresponding to the selected port.
+Each input item is described below.
 <br>
 
-<div align="center"><strong>データポート・プロファイル入力ページ　項目説明</strong></div>
+<div align="center"><strong>Data Port Profile Input Page Item Descriptions</strong></div>
 <table class="table-alt">
   <tr>
-    <th>項目</th>
-    <th>説明</th>
-    <th>必須</th>
+    <th>Item</th>
+    <th>Description</th>
+    <th>Required</th>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">DataPortプロファイル</td>
+    <td colspan="3" style="text-align: center;">DataPort Profile</td>
   </tr>
   <tr>
-    <td>ポート名</td>
-    <td>DataPort の名称です。半角英数字のみ入力可能です。<br>Data OutPort、Service Port と併せてポート名称は重複することができません。</td>
+    <td>Port Name</td>
+    <td>The name of the DataPort. Only half-width alphanumeric characters can be entered.<br>Port names cannot overlap with Data OutPort or Service Port names.</td>
     <td>○</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">Detail</td>
   </tr>
   <tr>
-    <td>ポート名</td>
-    <td>現在選択されている Data Port を｢ポート名(InPort/OutPort)｣の形式で表示します。</td>
+    <td>Port Name</td>
+    <td>Displays the currently selected Data Port in the format "port name (InPort/OutPort)".</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>データ型</td>
-    <td>DataPort が扱うデータ型です。<br>設定画面にて指定した IDL 内で定義されているデータ型が利用可能です。</td>
+    <td>Data Type</td>
+    <td>The data type handled by the DataPort.<br>Data types defined in the IDL specified on the settings screen can be used.</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>変数名</td>
-    <td>DataPort に対応する変数名です。</td>
+    <td>Variable Name</td>
+    <td>The variable name corresponding to the DataPort.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>表示位置</td>
-    <td>ビルドビュー内でのData InPortの表示位置です。</td>
+    <td>Display Position</td>
+    <td>The display position of the Data InPort in the Build View.</td>
     <td>○</td>
   </tr>
 <!-- |Constraint|Data InPort で扱うデータに対する制約条件です。制約条件の記述方法については、3.2.9を参照してください。|－| -->
@@ -338,293 +337,293 @@ RTコンポーネントに付属するデータポートの情報を入力する
 <!-- |>|>|Documentation| -->
 <!-- |ポート名|現在選択されている Data Port を｢ポート名(InPort/OutPort)｣の形式で表示します。|－| -->
   <tr>
-    <td>概要説明</td>
-    <td>データポートに対する概要説明を記述します。</td>
+    <td>Overview Description</td>
+    <td>Describe an overview of the data port.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>データ型</td>
-    <td>データポートの扱う型に対する説明を記述します。</td>
+    <td>Data Type</td>
+    <td>Describe the type handled by the data port.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>データ数</td>
-    <td>データが配列になる場合など、データ数に関する説明を記述します。</td>
+    <td>Number of Data</td>
+    <td>Describe the number of data items, such as when the data is an array.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>意味</td>
-    <td>データの意味の説明を記述します。</td>
+    <td>Meaning</td>
+    <td>Describe the meaning of the data.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>単位</td>
-    <td>データ単位に関する説明を記述します。</td>
+    <td>Unit</td>
+    <td>Describe the unit of the data.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>発生頻度、周期</td>
-    <td>データの発生頻度、周期に関する説明を記述します。</td>
+    <td>Occurrence Frequency/Cycle</td>
+    <td>Describe the occurrence frequency and cycle of the data.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>処理速度、周期</td>
-    <td>データの処理速度、処理周期に関する説明を記述します。</td>
+    <td>Processing Speed/Cycle</td>
+    <td>Describe the processing speed and processing cycle of the data.</td>
     <td>－</td>
   </tr>
 </table>
 <br>
 
-### サービスポート・プロファイル入力ページ 
-RTコンポーネントに付属するサービスポートの情報を入力するページです。
+### Service Port Profile Input Page 
+This page is used to enter information about the service ports attached to the RT component.
 <br>
 
 <div align="center"><a href="fig3-5InputServicePort_ja.png"><img src="fig3-5InputServicePort_ja.png" width="50%;"></a></div>
-<div align="center"><strong>サービスポート・プロファイル入力ページ(サービスポート情報入力)</strong></div>
+<div align="center"><strong>Service Port Profile Input Page (Service Port Information Input)</strong></div>
 <br>
 <br>
 
 <div align="center"><a href="fig3-6InputServicePort2_ja.png"><img src="fig3-6InputServicePort2_ja.png" width="50%;"></a></div>
 <!-- CENTER:''図 3-6 サービスポート・プロファイル入力ページ(サービスインターフェース情報入)'' -->
-<div align="center"><strong>サービスポート・プロファイル入力ページ(サービスインターフェース情報入力)</strong></div>
+<div align="center"><strong>Service Port Profile Input Page (Service Interface Information Input)</strong></div>
 <br>
 
-新規サービスポートは、画面左側「 RT-Component Service Ports 」欄の｢ Add Port ｣を選択することで追加することができます。
-画面左側「 RT-Component Service Ports 」にてサービスポートを選択した状態で、｢Add Interface ｣を選択することで新規サービスインターフェースを追加することができます。
-画面左側「 RT-Component Service Ports 」にて、サービスポートもしくはサービスインターフェースを選択した状態で [Delete] を選択することで、選択したポート／インターフェースを削除することができます。
-以下に各入力項目について説明いたします。
+A new service port can be added by selecting "Add Port" in the "RT-Component Service Ports" field on the left side of the screen.
+With a service port selected in "RT-Component Service Ports" on the left side of the screen, you can add a new service interface by selecting "Add Interface".
+With a service port or service interface selected in "RT-Component Service Ports" on the left side of the screen, you can delete the selected port/interface by selecting [Delete].
+Each input item is described below.
 
 
 <br>
-<div align="center"><strong> サービスポート・プロファイル入力ページ　項目説明(サービスポート)</strong></div>
+<div align="center"><strong>Service Port Profile Input Page Item Descriptions (Service Port)</strong></div>
 <br>
 <table class="table-alt">
   <tr>
-    <th>項目</th>
-    <th>説明</th>
-    <th>必須</th>
+    <th>Item</th>
+    <th>Description</th>
+    <th>Required</th>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">RT-Component Service Port Profile</td>
   </tr>
   <tr>
-    <td>ポート名</td>
-    <td>サービスポートの名称です。半角英数字のみ入力可能です。<br>Data InPort、Data OutPort、Service Port名称は重複できません。</td>
+    <td>Port Name</td>
+    <td>The name of the service port. Only half-width alphanumeric characters can be entered.<br>Data InPort, Data OutPort, and Service Port names cannot overlap.</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>表示位置</td>
-    <td>ビルドビュー内でのサービスポートの表示位置です。</td>
+    <td>Display Position</td>
+    <td>The display position of the service port in the Build View.</td>
     <td>○</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">Documentation</td>
   </tr>
   <tr>
-    <td>概要説明</td>
-    <td>サービスポートに対する概要説明を記述します。</td>
+    <td>Overview Description</td>
+    <td>Describe an overview of the service port.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>I/F概要説明</td>
-    <td>サービスポートに付属するサービスインターフェースの概要説明を記述します。</td>
+    <td>I/F Overview Description</td>
+    <td>Describe an overview of the service interfaces attached to the service port.</td>
     <td>－</td>
   </tr>
 </table>
 
 <br>
 
-<div align="center"><strong> サービスポート・プロファイル入力ページ　項目説明(サービスポート)</strong></div>
+<div align="center"><strong>Service Port Profile Input Page Item Descriptions (Service Port)</strong></div>
 <br>
 <table class="table-alt">
   <tr>
-    <th>項目</th>
-    <th>説明</th>
-    <th>必須</th>
+    <th>Item</th>
+    <th>Description</th>
+    <th>Required</th>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">RT-Component Service Port Interface Profile</td>
   </tr>
   <tr>
-    <td>インターフェース名</td>
-    <td>サービスインターフェースの名称です。半角英数字のみ入力可能です。<br>サービスインターフェース名は重複することができません。</td>
+    <td>Interface Name</td>
+    <td>The name of the service interface. Only half-width alphanumeric characters can be entered.<br>Service interface names cannot overlap.</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>方向</td>
-    <td>サービスインターフェースの種類です。以下の選択肢から選択可能です。<br>・Provided：提供インターフェース(Service Provider用)<br>・Required：要求インターフェース(Service Consumer用)</td>
+    <td>Direction</td>
+    <td>The type of service interface. It can be selected from the following options.<br>・Provided: Provided interface (for Service Provider)<br>・Required: Required interface (for Service Consumer)</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>インスタンス名</td>
-    <td>サービスインターフェースのインスタンス名です。半角英数字のみ入力可能です。</td>
+    <td>Instance Name</td>
+    <td>The instance name of the service interface. Only half-width alphanumeric characters can be entered.</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>変数名</td>
-    <td>サービスインターフェースの変数名です。省略された場合は、インスタンス名を使用します。</td>
+    <td>Variable Name</td>
+    <td>The variable name of the service interface. If omitted, the instance name is used.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>IDLファイル</td>
-    <td>サービスインターフェースで使用する IDL ファイル名を指定します。[Browse...] ボタンをクリックすると、ファイル選択ダイアログが表示されます。</td>
+    <td>IDL File</td>
+    <td>Specifies the IDL file name used for the service interface. Clicking the [Browse...] button displays a file selection dialog.</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>インターフェース型</td>
-    <td>サービスインターフェースで使用するサービスの型です。IDL fileを指定するとIDL内で定義されている型情報が表示されます。半角英数字のみ入力可能です。</td>
+    <td>Interface Type</td>
+    <td>The service type used for the service interface. When an IDL file is specified, type information defined in the IDL is displayed. Only half-width alphanumeric characters can be entered.</td>
     <td>○</td>
   </tr>
   <tr>
     <td>IDL Path</td>
-    <td>IDLのサーチパスです。[Browse...] ボタンをクリックすると、ディレクトリー選択ダイアログが表示されます。</td>
+    <td>The IDL search path. Clicking the [Browse...] button displays a directory selection dialog.</td>
     <td>－</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">Documentation</td>
   </tr>
   <tr>
-    <td>概要説明</td>
-    <td>サービスインターフェースに対する概要説明を記述します。</td>
+    <td>Overview Description</td>
+    <td>Describe an overview of the service interface.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>引数</td>
-    <td>サービスインターフェースの引数に関する説明を記述します。</td>
+    <td>Arguments</td>
+    <td>Describe the arguments of the service interface.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>戻り値</td>
-    <td>サービスインターフェースの戻り値に関する説明を記述します。</td>
+    <td>Return Value</td>
+    <td>Describe the return value of the service interface.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>例外</td>
-    <td>サービスインターフェースの例外に関する説明を記述します。</td>
+    <td>Exceptions</td>
+    <td>Describe the exceptions of the service interface.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>事前条件</td>
-    <td>サービスインターフェースのオペレーションを実行前に満たしておくべき事前条件に関する説明を記述します。</td>
+    <td>Preconditions</td>
+    <td>Describe the preconditions that must be satisfied before executing the operation of the service interface.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>事後条件</td>
-    <td>サービスインターフェースのオペレーションを実行後に満たす事後条件に関する説明を記述します。</td>
+    <td>Postconditions</td>
+    <td>Describe the postconditions that are satisfied after executing the operation of the service interface.</td>
     <td>－</td>
   </tr>
 </table>
 
 
 <br>
-### コンフィギュレーション・プロファイル入力ページ
-RT コンポーネントに設定するユーザー定義のコンフィギュレーション・パラメーター情報およびその他システムのコンフィギュレーション情報を入力するページです。
+### Configuration Profile Input Page
+This page is used to enter user-defined configuration parameter information and other system configuration information to be set for the RT component.
 
 <br>
 
 <div align="center"><a href="fig3-7InputConfigProfile_ja.png"><img src="fig3-7InputConfigProfile_ja.png" width="50%;"></a></div>
 <!-- CENTER:''図 3-7 コンフィギュレーション・プロファイル入力ページ'' -->
-<div align="center"><strong>コンフィギュレーション・プロファイル入力ページ</strong></div>
+<div align="center"><strong>Configuration Profile Input Page</strong></div>
 <br>
-ユーザー定義コンフィギュレーション・パラメーター情報およびシステム・コンフィギュレーション情報を新規に追加する場合は、各セクションの [Add] ボタンをクリックしてください。
-また、各セクションの [Delete] ボタンをクリックすると、選択中のコンフィギュレーション情報を削除することができます。
+To add new user-defined configuration parameter information and system configuration information, click the [Add] button in each section.
+You can also delete the selected configuration information by clicking the [Delete] button in each section.
 <br>
-Detail セクションおよび Documentation セクションの内容は、ユーザー定義コンフィギュレーション・パラメーター毎に設定することが可能です。
-各セクションには、選択中のユーザー定義コンフィギュレーション・パラメーターに設定した内容が表示されます。
+The contents of the Detail section and Documentation section can be set for each user-defined configuration parameter.
+Each section displays the content configured for the selected user-defined configuration parameter.
 <br>
-以下に各入力項目について説明いたします。
-<div align="center"><strong>コンフィギュレーション・プロファイル入力ページ　項目説明</strong></div>
+Each input item is described below.
+<div align="center"><strong>Configuration Profile Input Page Item Descriptions</strong></div>
 
 <table class="table-alt">
   <tr>
-    <th>項目</th>
-    <th>説明</th>
-    <th>必須</th>
+    <th>Item</th>
+    <th>Description</th>
+    <th>Required</th>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">RT-Component Configuration Parameter Definitions</td>
   </tr>
   <tr>
-    <td>名称</td>
-    <td>ユーザー定義コンフィギュレーション・パラメーターの名称です。半角英数字のみ入力可能です。<br>ユーザー定義コンフィギュレーション・パラメーター名称は重複することができません。</td>
+    <td>Name</td>
+    <td>The name of the user-defined configuration parameter. Only half-width alphanumeric characters can be entered.<br>User-defined configuration parameter names cannot overlap.</td>
     <td>○</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;">Detail</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
-    <td>現在選択されているユーザー定義コンフィギュレーション・パラメーターを表示します。</td>
+    <td>Parameter Name</td>
+    <td>Displays the currently selected user-defined configuration parameter.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>データ型</td>
-    <td>ユーザ定義コンフィギュレーション・パラメーターのデータ型です。<br>設定画面にて指定したIDL内で定義されているデータ型が利用可能です。</td>
+    <td>Data Type</td>
+    <td>The data type of the user-defined configuration parameter.<br>Data types defined in the IDL specified on the settings screen can be used.</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
-    <td>ユーザー定義コンフィギュレーション・パラメーターのデフォルト値です。２バイト文字を含む任意の値を設定可能です。</td>
+    <td>Default Value</td>
+    <td>The default value of the user-defined configuration parameter. Any value, including two-byte characters, can be set.</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>変数名</td>
-    <td>ユーザー定義コンフィギュレーション・パラメーターの変数名です。半角英数字のみ入力可能です。</td>
+    <td>Variable Name</td>
+    <td>The variable name of the user-defined configuration parameter. Only half-width alphanumeric characters can be entered.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>単位</td>
-    <td>ユーザー定義コンフィギュレーション・パラメーターの単位です。</td>
+    <td>Unit</td>
+    <td>The unit of the user-defined configuration parameter.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>制約条件</td>
-    <td>ユーザー定義コンフィギュレーション・パラメーターに対する制約条件を記述します。制約条件の記述方法については、[[制約情報の記述方式>#seiyaku]] を参照してください。</td>
+    <td>Constraint</td>
+    <td>Describe the constraint conditions for the user-defined configuration parameter. For how to describe constraint conditions, see [[Constraint Information Description Format>#seiyaku]].</td>
     <td>－</td>
   </tr>
   <tr>
     <td>Widget</td>
-    <td>RTSystemEditorのConfigurationViewにてコンフィギュレーション・パラメーターを設定する際に利用するコントロールを指定します。以下の値から選択可能です。<br>・text：テキストボックス(デフォルト設定)<br>・slider：スライダ<br>・spin：スピンボタン<br>・radio：ラジオボタン<br>・check：チェックボックス<br>・ordered_list：順序付きリスト</td>
+    <td>Specifies the control used when setting configuration parameters in the ConfigurationView of RTSystemEditor. It can be selected from the following values.<br>・text: Text box (default setting)<br>・slider: Slider<br>・spin: Spin button<br>・radio: Radio button<br>・check: Checkbox<br>・ordered_list: Ordered list</td>
     <td>○</td>
   </tr>
   <tr>
     <td>Step</td>
-    <td>入力用コントロールとして、｢slider｣を選択した場合に、スライダの刻み幅を指定します。</td>
+    <td>When "slider" is selected as the input control, specifies the step width of the slider.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>パラメーター名</td>
-    <td>現在選択されているユーザー定義コンフィギュレーション・パラメーターを表示します。</td>
+    <td>Parameter Name</td>
+    <td>Displays the currently selected user-defined configuration parameter.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>データ名</td>
-    <td>ユーザー定義コンフィギュレーション・パラメーターの名称に対する説明を記述します。</td>
+    <td>Data Name</td>
+    <td>Describe the name of the user-defined configuration parameter.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
-    <td>ユーザー定義コンフィギュレーション・パラメーターのデフォルト値に対する説明を記述します。</td>
+    <td>Default Value</td>
+    <td>Describe the default value of the user-defined configuration parameter.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>概要説明</td>
-    <td>ユーザー定義コンフィギュレーション・パラメーターに対する概要説明を記述します。</td>
+    <td>Overview Description</td>
+    <td>Describe an overview of the user-defined configuration parameter.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>単位</td>
-    <td>ユーザー定義コンフィギュレーション・パラメーターの単位に対する説明を記述します。</td>
+    <td>Unit</td>
+    <td>Describe the unit of the user-defined configuration parameter.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>データレンジ</td>
-    <td>ユーザー定義コンフィギュレーション・パラメーターのデータ範囲に関する説明を記述します。</td>
+    <td>Data Range</td>
+    <td>Describe the data range of the user-defined configuration parameter.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>制約条件</td>
-    <td>ユーザー定義コンフィギュレーション・パラメーターの制約条件に関する説明を記述します。</td>
+    <td>Constraint</td>
+    <td>Describe the constraint conditions of the user-defined configuration parameter.</td>
     <td>－</td>
   </tr>
   <tr>
@@ -632,272 +631,269 @@ Detail セクションおよび Documentation セクションの内容は、ユ�
   </tr>
   <tr>
     <td>Configuration</td>
-    <td>設定を行うコンフィギュレーション名です。一覧から選択します。</td>
+    <td>The configuration name to be set. Select it from the list.</td>
     <td>○</td>
   </tr>
   <tr>
-    <td>デフォルト値</td>
-    <td>設定対象コンフィギュレーションのデフォルト値です。予めデフォルト値が設定されている項目については、名称選択時にデフォルト値が設定されます。</td>
+    <td>Default Value</td>
+    <td>The default value of the configuration to be set. For items that already have default values set, the default value is set when the name is selected.</td>
     <td>－</td>
   </tr>
 </table>
 
 <br>
 
-### ドキュメント情報設定ページ
-生成対象のRTコンポーネントに関する各種ドキュメント情報を入力します。<br>
+### Documentation Information Settings Page
+Enter various documentation information related to the RT component to be generated.<br>
 
 <br>
 
 <div align="center"><a href="fig3-8Documentinfo.png"><img src="fig3-8Documentinfo.png" width="100;"></a></div>
 <!-- CENTER:''図 3-8 言語・環境情報入力ページ'' -->
-<div align="center"><strong>ドキュメント情報入力ページ</strong></div>
+<div align="center"><strong>Documentation Information Input Page</strong></div>
 <br>
-このページで入力された情報は、生成されたコードに doxygen 形式で埋め込まれます。
+The information entered on this page is embedded in the generated code in doxygen format.
 <br>
-以下に各入力項目について説明いたします。
-<div align="center"><strong> ドキュメント情報設定ページ　項目説明</strong></div>
+Each input item is described below.
+<div align="center"><strong>Documentation Information Settings Page Item Descriptions</strong></div>
 
 <table class="table-alt">
   <tr>
-    <td>項目</td>
-    <td>説明</td>
-    <td>必須</td>
+    <td>Item</td>
+    <td>Description</td>
+    <td>Required</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">コンポーネント概要</td>
+    <td colspan="3" style="text-align: center;">Component Overview</td>
   </tr>
   <tr>
-    <td>概要説明</td>
-    <td>生成するRTコンポーネントの概要説明を記述します。</td>
+    <td>Overview Description</td>
+    <td>Describe an overview of the RT component to be generated.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>入出力</td>
-    <td>RTコンポーネントの入出力に関する概略説明を記述します。</td>
+    <td>Input/Output</td>
+    <td>Describe an overview of the input/output of the RT component.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>アルゴリズムなど</td>
-    <td>RTコンポーネントが使用しているアルゴリズムなどの説明を記述します。</td>
+    <td>Algorithms, etc.</td>
+    <td>Describe the algorithms and other items used by the RT component.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">その他</td>
+    <td colspan="3" style="text-align: center;">Other</td>
   </tr>
   <tr>
-    <td>作成者・連絡先</td>
-    <td>RTコンポーネントの作成者および連絡先に関する情報を記述します。</td>
+    <td>Author/Contact</td>
+    <td>Describe information about the author and contact of the RT component.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>ライセンス、使用条件</td>
-    <td>RTコンポーネントのライセンス情報、使用条件に関する情報を記述します。</td>
+    <td>License/Terms of Use</td>
+    <td>Describe information about the license and terms of use of the RT component.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>参考文献</td>
-    <td>参考文献情報を記述します。</td>
+    <td>References</td>
+    <td>Describe reference information.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">バージョンアップログ</td>
+    <td colspan="3" style="text-align: center;">Version Upgrade Log</td>
   </tr>
   <tr>
     <td>VersionUp Log</td>
-    <td>今回の変更内容に関するログ情報を記述します。</td>
+    <td>Describe log information related to the changes made this time.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>ライセンス、使用条件</td>
-    <td>過去のバージョンアップ時のログ情報を表示します。</td>
+    <td>License/Terms of Use</td>
+    <td>Displays log information from past version upgrades.</td>
     <td>－</td>
   </tr>
 </table>
 
 
 
-### 言語・環境情報入力ページ 
-入力した RT コンポーネント仕様に基づき生成するテンプレート・ソースコードの言語選択や、OS 等の実行環境、依存ライブラリなどを入力するページです。
+### Language/Environment Information Input Page 
+This page is used to enter the language selection for the template source code generated based on the entered RT component specifications, the execution environment such as OS, dependent libraries, and so on.
 <br>
 
 <div align="center"><a href="editor-lang.png"><img src="editor-lang.png" width="50%;"></a></div>
-<div align="center"><strong>言語・環境情報入力ページ</strong></div>
+<div align="center"><strong>Language/Environment Information Input Page</strong></div>
 <br>
 
-生成対象の言語ごとにセクションが分かれています。生成したい言語のセクションを選択し、各言語固有の設定情報を入力してください。
-あるセクションを選択した場合には、他のセクションは全て閉じるようになっています。
-コード生成実行時（基本プロファイル入力ページの [コード生成] ボタンクリック時）に選択されていたセクションの言語用テンプレートコードが生成されます。
-以下に各入力項目について説明いたします。
+Sections are divided by the language to be generated. Select the section for the language you want to generate, and enter the setting information specific to each language.
+When one section is selected, all other sections are closed.
+When code generation is executed (when the [Generate Code] button on the Basic Profile input page is clicked), template code for the language of the selected section is generated.
+Each input item is described below.
 
-<div align="center"><strong>言語・環境情報入力ページ　項目説明</strong></div>
+<div align="center"><strong>Language/Environment Information Input Page Item Descriptions</strong></div>
 
 <table class="table-alt">
   <tr>
-    <td>項目</td>
-    <td>説明</td>
-    <td>必須</td>
+    <td>Item</td>
+    <td>Description</td>
+    <td>Required</td>
   </tr>
   <tr>
-    <td>言語</td>
-    <td>生成対象の言語を指定します。</td>
+    <td>Language</td>
+    <td>Specifies the language to be generated.</td>
     <td>○</td>
   </tr>
   <tr>
     <td>Use old build environment.</td>
-    <td>このチェックボックスを ON にすると、旧バージョンと同様なコード(Cmakeを利用しない形式)を生成します。</td>
+    <td>When this checkbox is turned ON, code similar to the old version (a format that does not use Cmake) is generated.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">環境</td>
+    <td colspan="3" style="text-align: center;">Environment</td>
   </tr>
   <tr>
     <td>Version</td>
-    <td>生成対象 RTC を実装している言語のバージョン情報を設定します。</td>
+    <td>Sets the version information of the language in which the RTC to be generated is implemented.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>OS</td>
-    <td>生成対象 RTC が動作する OS 情報を設定します。</td>
+    <td>Sets OS information on which the RTC to be generated runs.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>OS Version</td>
-    <td>生成対象 RTC が動作する OS のバージョン情報を設定します。</td>
+    <td>Sets version information for the OS on which the RTC to be generated runs.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>CPU</td>
-    <td>生成対象 RTC が動作する CPU アーキテクチャ情報を設定します。</td>
+    <td>Sets CPU architecture information on which the RTC to be generated runs.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>その他 OS 情報</td>
-    <td>生成対象 RTC が動作する OS について、バージョン情報以外の補足情報を設定します。</td>
+    <td>Other OS Information</td>
+    <td>Sets supplementary information other than version information for the OS on which the RTC to be generated runs.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td>その他 CPU 情報</td>
-    <td>生成対象 RTC が動作する CPU について、アーキテクチャ情報以外の補足情報を設定します。</td>
+    <td>Other CPU Information</td>
+    <td>Sets supplementary information other than architecture information for the CPU on which the RTC to be generated runs.</td>
     <td>－</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: center;">ライブラリ情報</td>
+    <td colspan="3" style="text-align: center;">Library Information</td>
   </tr>
   <tr>
     <td>Name</td>
-    <td>生成対象 RTC が利用する外部ライブラリの名称を指定します。</td>
+    <td>Specifies the name of the external library used by the RTC to be generated.</td>
     <td>○</td>
   </tr>
   <tr>
     <td>Version</td>
-    <td>生成対象 RTC が利用する外部ライブラリのバージョン情報を指定します。</td>
+    <td>Specifies version information for the external library used by the RTC to be generated.</td>
     <td>－</td>
   </tr>
   <tr>
     <td>Info.</td>
-    <td>生成対象 RTC が利用する外部ライブラリの補足情報を指定します。</td>
+    <td>Specifies supplementary information for the external library used by the RTC to be generated.</td>
     <td>－</td>
   </tr>
 </table>
 
 <!-- Java セクションの Jar File の追加/削除は、セクション横の [Add]、[Delete] ボタンにて行うことができます。 -->
-[Add] ボタンをクリックすると、一覧中に項目行が追加されます。そして、追加された行をクリックすると、ファイル選択ダイアログが表示されるますので対象ファイルを選択してください。
+When you click the [Add] button, an item row is added to the list. Then, when you click the added row, a file selection dialog is displayed, so select the target file.
 <!-- ~''※'' Ruby および C# については、現状では未対応です。 -->
 <br>
 
-### RTC プロファイル XML 編集ページ
-入力した RTコンポーネント仕様を記した XML ファイル (RTC.xml) の内容確認、編集を行うページです。
-他のページで設定した内容を確認したり、GUI 画面からは入力できない項目を直接編集するために使用します。
+### RTC Profile XML Editing Page
+This page is used to check and edit the contents of the XML file (RTC.xml) that describes the entered RT component specifications.
+It is used to check the settings configured on other pages and to directly edit items that cannot be entered from the GUI screen.
 <br>
 
 
 <div align="center"><a href="fig3-9InputLangEnv2_ja.png"><img src="fig3-9InputLangEnv2_ja.png" width="60%;"></a></div>
-<div align="center"><strong>言語・環境情報入力ページ</strong></div>
+<div align="center"><strong>Language/Environment Information Input Page</strong></div>
 <br>
 
-表示される RTコンポーネント仕様の内容は、このページに切り替えた時に他ページで設定されている内容を基に作成されます。
+The content of the displayed RT component specifications is created based on the content configured on other pages when switching to this page.
 <br>
-画面右上の [Update] ボタンをクリックすると、このページで設定、変更した内容を他のページに反映させることができます (他のページへ反映させるのみで、ファイルへの書き込みは行いません) 。
-また、以下のような画面が表示され、変更点を確認することができます。修正内容を他ページへ反映する場合には [OK] をクリックしてください。
+Clicking the [Update] button at the upper right of the screen reflects the content set or changed on this page in the other pages (it only reflects the content in the other pages and does not write to the file).
+A screen like the following is also displayed, allowing you to check the changes. To reflect the changes in the other pages, click [OK].
 <br>
 
 
 <div align="center"><a href="fig3-9InputLangEnv3_ja.png"><img src="fig3-9InputLangEnv3_ja.png" width="50%;"></a></div>
 
-<div align="center"><strong>XML編集内容比較画面</strong></div>
+<div align="center"><strong>XML Edit Content Comparison Screen</strong></div>
 <br>
 
 
-このページで直接入力した内容は、このページを表示している状態で保存した場合のみ保存されます。
-このページにて内容編集後、他ページを開いた状態で保存すると、他のページにて入力した項目が優先されます。
-このページの内容を保存する場合には、RTC.xml のスキーマ定義に従ったバリデーションが行われます。
-バリデーション時にエラーが発見された場合は、以下のようなエラーメッセージが表示されますので、表示内容を参考に該当箇所を修正してください。
+The content entered directly on this page is saved only when it is saved while this page is displayed.
+If you edit the content on this page and then save while another page is open, the items entered on the other page take precedence.
+When saving the content of this page, validation is performed according to the schema definition of RTC.xml.
+If an error is found during validation, an error message like the following is displayed, so correct the relevant location by referring to the displayed content.
 <br>
 
 
 <div align="center"><a href="fig3-10ErrorXML_ja.png"><img src="fig3-10ErrorXML_ja.png" width="50%;"></a></div>
-<div align="center"><strong>XML バリデーションエラーの例</strong></div>
+<div align="center"><strong>Example of an XML Validation Error</strong></div>
 <br>
 
 &aname(seiyaku);
-### 制約情報の記述方式
-データポートおよびユーザ定義コンフィギュレーション・パラメーターへの制約条件は以下の書式で設定します。
+### Constraint Information Description Format
+Constraint conditions for data ports and user-defined configuration parameters are set in the following format.
 
 
-<div align="center"><strong>制約条件の記述方式</strong></div>
+<div align="center"><strong>Constraint Condition Description Format</strong></div>
 
 <table class="table-alt">
   <tr>
-    <th>設定内容</th>
-    <th>設定書式</th>
+    <th>Setting Content</th>
+    <th>Setting Format</th>
   </tr>
   <tr>
-    <td>指定なし</td>
-    <td>空白</td>
+    <td>None</td>
+    <td>Blank</td>
   </tr>
   <tr>
-    <td>100（即値）</td>
+    <td>100 (literal value)</td>
     <td>100</td>
   </tr>
   <tr>
-    <td>100以上</td>
+    <td>100 or more</td>
     <td>x >= 100</td>
   </tr>
   <tr>
-    <td>100以下</td>
+    <td>100 or less</td>
     <td>x<=100</td>
   </tr>
   <tr>
-    <td>100超</td>
+    <td>Greater than 100</td>
     <td>x>100</td>
   </tr>
   <tr>
-    <td>100未満</td>
+    <td>Less than 100</td>
     <td>x<100</td>
   </tr>
   <tr>
-    <td>100以上200以下</td>
+    <td>100 or more and 200 or less</td>
     <td>100<=x<=200</td>
   </tr>
   <tr>
-    <td>100超200未満</td>
+    <td>Greater than 100 and less than 200</td>
     <td>100<x<200</td>
   </tr>
   <tr>
-    <td>列挙型</td>
+    <td>Enumeration Type</td>
     <td>(9600,19200,115200)</td>
   </tr>
   <tr>
-    <td>配列型</td>
+    <td>Array Type</td>
     <td>x>100, x>200, x>300</td>
   </tr>
   <tr>
-    <td>ハッシュ型</td>
+    <td>Hash Type</td>
     <td>{key0: 100<x<200, key1: x>=100}</td>
   </tr>
 </table>
 
-
-
--------jp page!!-------

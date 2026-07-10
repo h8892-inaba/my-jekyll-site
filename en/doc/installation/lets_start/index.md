@@ -1,199 +1,244 @@
 ---
 layout: page
-title: OpenRTM-aistを10分で始めよう！
+title: Getting Started with OpenRTM-aist in 10 Minutes!
 ---
 
 <!-- Title: OpenRTM-aistを10分で始めよう！ -->
 #contents
 
-最新バージョンOpenRTM-aist-2.1.0-RELEASEではC++版、Python版、Java版、OpenRTP、rtshell がインストールされます。
+The latest version, OpenRTM-aist-2.1.0-RELEASE, installs the C++ edition, Python edition, Java edition, OpenRTP, and rtshell.
 
-# 事前準備
-## Pythonのインストール
-Pythonをインストールしていない場合は、OpenRTM-aistをインストールできません。
-OpenRTM-aistをインストールする前に、Pythonをインストールしてください。バージョンは、"3.14"、"3.13"、"3.12"、"3.11"、"3.10"に対応しています。
+# Preparation
 
-Pythonのダウンロードは [OpenRTM-aist 2.1系のWindowsへのインストール](/ja/doc/installation/install_2_1/install_windows_2_1/install_2_1) をご覧ください。
+## Installing Python
 
-Pythonのインストール先は、インストール時の選択 [Customize installation]に対応しています。
+If Python is not installed, OpenRTM-aist cannot be installed.
+Please install Python before installing OpenRTM-aist. Supported versions are
+"3.14", "3.13", "3.12", "3.11", and "3.10".
 
-サーチパスは、以下の方法で自動で設定されるようにしてください。こうすると、python.exeが置いてあるディレクトリとScriptsディレクトリがPathに追加されます。<br> (例: Path=C:\Python313;C:\ Python313\Scripts;...）
+For downloading Python, see [Installing OpenRTM-aist 2.1 on Windows](/en/doc/installation/install_2_1/install_windows_2_1/install_2_1).
 
-**[インストール手順]**
+The Python installation location supports the [Customize installation] option during installation.
 
-- Pythonインストーラーを起動します。ここではバージョン3.13を例に説明します。
-- 最初の画面の下部にある[add python *** to PATH]にチェックを入れて、[Customize installation]を選択してください。
+Configure the search path automatically using the following method. This adds the directory containing python.exe and the Scripts directory to the Path.<br> (Example: Path=C:\Python313;C:\Python313\Scripts;...)
 
+**[Installation Procedure]**
+
+- Launch the Python installer. Version 3.13 is used as an example here.
+- Check [add python *** to PATH] at the bottom of the first screen, then select [Customize installation].
 
 <div align="center"><a href="py313_install_1.png"><img src="py313_install_1.png" width="70%;"></a></div>
 
-- 次の[Optional Features]画面で変更はありません。[Next]を選択して進んでください。
+- No changes are required on the [Optional Features] screen. Select [Next] to continue.
 
 <div align="center"><a href="py313_install_2.png"><img src="py313_install_2.png" width="70%;"></a></div>
 
-- [Advanced Options]画面では、[Install for all users]にチェックを入れて、[Customize install location]でインストール先を設定してください。(例: Path=C:\Python313;C:\ Python313\Scripts;...）
+- On the [Advanced Options] screen, check [Install for all users], and specify the installation destination in [Customize install location]. (Example: Path=C:\Python313;C:\Python313\Scripts;...)
 
 <div align="center"><a href="py313_install_3.png"><img src="py313_install_3.png" width="70%;"></a></div>
 
-- [Install] を選択してインストールを完了します。
+- Select [Install] to complete the installation.
 
-## OpenRTM-aistのダウンロード
+## Downloading OpenRTM-aist
 
-インストーラーのダウンロードは [ダウンロード](/ja/node/7332) をご覧ください。
+For downloading the installer, see [Download](/en/node/7332).
 
-Microsoft Edge をお使いで、下記メッセージが出てダウンロードできない場合の手順を紹介します。
+If you are using Microsoft Edge and cannot download because the following message appears, follow the procedure below.
 
 <div align="center"><a href="edge-download-01.png"><img src="edge-download-01.png" width="70%;"></a></div>
 
-- マウスオーバーで表示される「・・・」をクリックします
+- Click the "..." displayed when you hover the mouse cursor over the item.
 
 <div align="center"><a href="edge-download-02.png"><img src="edge-download-02.png" width="70%;"></a></div>
 
-- 「保存」をクリックします
+- Click "Keep".
 
 <div align="center"><a href="edge-download-03.png"><img src="edge-download-03.png" width="60%;"></a></div>
 
-- 「削除」横の「レ（チェックマーク）」をクリックして表示される「保持する」をクリックします
+- Click the "✓" (check mark) next to "Delete", then click "Keep anyway" from the displayed menu.
 
 <div align="center"><a href="edge-download-04.png"><img src="edge-download-04.png" width="50%;"></a></div>
 
-- これでダウンロードが完了しますので、「ファイルを開く」をクリックするとインストーラが起動します
+- The download is now complete. Click "Open file" to start the installer.
 
-## OpenRTM-aistのインストール
+## Installing OpenRTM-aist
 
-**[インストール手順]**
-1. インストーラーを起動し、 [次へ]をクリックします。
+**[Installation Procedure]**
+
+1. Launch the installer and click [Next].
 <div align="center"><a href="RTM210_msi_1.png"><img src="RTM210_msi_1.png" width="90%;"></a></div>
 <br>
-1. 使用承諾契約書のページです。ソフトウェアライセンス条項に同意して[次へ]をクリックします。
+
+1. This is the license agreement page. Accept the software license terms and click [Next].
 <div align="center"><a href="RTM210_msi_2.png"><img src="RTM210_msi_2.png" width="90%;"></a></div>
 <br>
-1. インストールの種類を選択します。デフォルトのまま[次へ]をクリックします。
+
+1. Select the installation type. Click [Next] with the default settings.
 <div align="center"><a href="RTM210_msi_3.png"><img src="RTM210_msi_3.png" width="90%;"></a></div>
 <br>
-1. セットアップの種類を選択します。
-[標準]をクリックすることで全機能がインストールされます。
+
+1. Select the setup type.
+Click [Typical] to install all features.
 <br>
 <div align="center"><a href="RTM210_msi_4.png"><img src="RTM210_msi_4.png" width="90%;"></a></div>
 <br>
-1. インストールが終了しました。[完了]をクリックしてインストーラーを終了します。
+
+1. Installation is complete. Click [Finish] to exit the installer.
 <div align="center"><a href="RTM210_msi_5.png"><img src="RTM210_msi_5.png" width="90%;"></a></div>
 <br>
-<!-- ※使用しているVisual Studio のバージョンが2019(vc14)以外の場合は、以下のページを参考に環境変数のRTM_VC_VERSIONを変更してください。&br; -->
+
+<!-- ※使用しているVisual Studio のバージョンが2019(vc14)以外の場合は、以下のページを
+参考に環境変数のRTM_VC_VERSIONを変更してください。&br; -->
 <!-- [[RTM_VC_VERSIONの変更:/ja/node/6136/]] -->
 
-## システム環境変数確認
+## Checking System Environment Variables
 
-ネストされた環境変数が再帰的に展開されないケースが発生することを確認していますが、ツールのVerChangerで解決できます。詳細は下記ページをご覧ください。
-    - [システム環境変数確認](/ja/doc/installation/install_2_1/install_win_2_1/install_2_1#toc9)
+We have confirmed cases where nested environment variables are not expanded recursively, but this can be resolved using the VerChanger tool. For details, see the following page.
 
-## サンプルコンポーネントを実行する
+- [Checking System Environment Variables](/en/doc/installation/install_2_1/install_win_2_1/install_2_1#toc9)
 
-OpenRTPのRTSystemEditor機能を使い、２つのRTCの接続動作を確認する手順を説明します。
+## Running Sample Components
+
+This section explains how to verify the connection operation between two RTCs using the RTSystemEditor feature of OpenRTP.
 
 &aname(openrtp_start);
-### OpenRTP起動
-- デスクトップのショートカットをクリックして起動します。
+
+### Starting OpenRTP
+
+- Launch it by clicking the desktop shortcut.
+
 <div align="center"><a href="OpenRTP210-001.png"><img src="OpenRTP210-001.png" width="70%;"></a></div>
-<div align="center"><strong>OpenRTP起動</strong></div>
+<div align="center"><strong>Starting OpenRTP</strong></div>
 
-  - ワークスペースは適当な場所を指定してください。
+- Specify any appropriate location for the workspace.
+
 <div align="center"><a href="OpenRTP122-001.png"><img src="OpenRTP122-001.png" width="70%;"></a></div>
-<div align="center"><strong>ワークスペースの選択</strong></div>
+<div align="center"><strong>Selecting a Workspace</strong></div>
 <br>
-- 「ようこそ」画面は必要ないので左上の[ようこそ]タブの[×]ボタンをクリックして画面を閉じてください。
+
+- The "Welcome" screen is not needed, so click the [×] button on the [Welcome] tab in the upper-left corner to close the screen.
+
 <div align="center"><a href="OpenRTP122-002.png"><img src="OpenRTP122-002.png" width="70%;"></a></div>
-<div align="center"><strong>初期起動時の画面</strong></div>
+<div align="center"><strong>Screen at Initial Startup</strong></div>
 <br>
 
-### RTSystemEditorの使用
-- 画面右上の[パースペクティブを開く]をクリックします。表示されるダイアログで[RT System Editor]を選択して[開く]をクリックするとRTSystemEditorが起動します。
+### Using RTSystemEditor
+
+- Click [Open Perspective] in the upper-right corner of the screen. In the dialog that appears, select [RT System Editor] and click [Open] to start RTSystemEditor.
+
 <div align="center"><div align="center"><a href="OpenRTP122-003.png"><img src="OpenRTP122-003.png" width="70%;"></a></div>;  <div align="center"><a href="OpenRTP122-004.png"><img src="OpenRTP122-004.png" width="70%;"></a></div>;</div>
-<div align="center"><strong>パースペクティブの切り替え</strong></div>
+<div align="center"><strong>Switching Perspectives</strong></div>
 <br>
 
-- 初回起動時のみ「ツールバーの起動に失敗しました。」のダイアログが表示されるので、指示通りにOpenRTPを終了させて再度起動してください。
+- Only during the first startup, a dialog saying "Failed to start the toolbar." will be displayed. Follow the instructions to exit OpenRTP and start it again.
+
 <div align="center"><a href="OpenRTP210-002.png"><img src="OpenRTP210-002.png" width="70%;"></a></div>
-<div align="center"><strong>OpenRTPを再起動</strong></div>
+<div align="center"><strong>Restart OpenRTP</strong></div>
 
-- ネームサービス起動ボタンを押してネームサーバのlocalhostを起動してください。
+- Press the Name Service startup button to start the localhost name server.
+
 <div align="center"><div align="center"><a href="OpenRTP210-003.png"><img src="OpenRTP210-003.png" width="70%;"></a></div>;  <div align="center"><a href="OpenRTP210-004.png"><img src="OpenRTP210-004.png" width="70%;"></a></div>;</div>
-<div align="center"><strong>ネームサービス起動</strong></div>
 
-### C++のConsoleIn、ConsoleOutを起動
-- Windowsの検索窓に小文字で構わないので、「c++_e」 まで入力すると C++_Examples の候補が表示されるのでクリックしてください。
+### Starting C++ ConsoleIn and ConsoleOut
+
+- Enter "c++_e" in lowercase in the Windows search box. When the C++_Examples candidate appears, click it.
+
 <div align="center"><a href="menu-c++RTC_001.png"><img src="menu-c++RTC_001.png" width="70%;"></a></div>
-<div align="center"><strong>C++_Examplesを選択</strong></div>
+<div align="center"><strong>Select C++_Examples</strong></div>
 
-- C++のサンプルRTCの一覧が表示されますので、ConsoleInとConsoleOutをダブルクリックで起動してください。
+- A list of C++ sample RTCs will be displayed. Double-click ConsoleIn and ConsoleOut to start them.
+
 <div align="center"><a href="menu-c++RTC_002.png"><img src="menu-c++RTC_002.png" width="20%;"></a></div>
-<div align="center"><strong>ConsoleInとConsoleOutを起動</strong></div>
+<div align="center"><strong>Start ConsoleIn and ConsoleOut</strong></div>
 
 <br>
 
+- After startup, console windows similar to the following will be displayed.
 
-- 起動すると以下のようなコンソール画面が表示されます。
 <!-- CENTER:&ref(ConsoleIn001.png,center,90%);&ref(ConsoleOut001.png,center,90%); -->
+
 <div align="center"><div align="center"><a href="ConsoleInOut122-001.png"><img src="ConsoleInOut122-001.png" width="90%;"></a></div>;</div>
-<div align="center"><strong>ConsoleIn.batとConsoleOut.bat</strong></div>
+<div align="center"><strong>ConsoleIn.bat and ConsoleOut.bat</strong></div>
 <br>
 
+- Click [Open New System Editor] from the toolbar to display the [System Diagram].
 
-- ツールバーから [Open New System Editor]をクリックして、[System Diagram]を表示します。
 <div align="center"><a href="OpenRTP122-008.png"><img src="OpenRTP122-008.png" width="70%;"></a></div>
-<div align="center"><strong>System Diagramを表示</strong></div>
+<div align="center"><strong>Display the System Diagram</strong></div>
 <br>
-- [NameServiceView]にあるConsoleIn、ConsoleOutのコンポーネントを[System Diagram]上にドラッグ＆ドロップすると、以下の画像のように表示されます。
+
+- Drag and drop the ConsoleIn and ConsoleOut components from [NameServiceView] onto the [System Diagram]. They will be displayed as shown below.
+
 <div align="center"><a href="OpenRTP122-009.png"><img src="OpenRTP122-009.png" width="70%;"></a></div>
-<div align="center"><strong>コンポーネントをドラッグ＆ドロップ</strong></div>
+<div align="center"><strong>Drag and Drop Components</strong></div>
 <br>
-- データポート間でドラッグ＆ドロップしてコンポーネントを接続します。その後、接続に必要な情報の入力を促すダイアログが表示されるので[OK]をクリックします。
+
+- Connect the components by dragging and dropping between the data ports. After that, a dialog prompting for the information required for the connection will appear. Click [OK].
+
 <div align="center"><div align="center"><a href="OpenRTP122-010.png"><img src="OpenRTP122-010.png" width="70%;"></a></div>;  <div align="center"><a href="OpenRTP122-011.png"><img src="OpenRTP122-011.png" width="70%;"></a></div>;</div>
-<div align="center"><strong>コンポーネント接続</strong></div>
+<div align="center"><strong>Connecting Components</strong></div>
 <br>
-  - 以下の画像のように接続されます。
+
+- The components will be connected as shown in the image below.
+
 <div align="center"><a href="OpenRTP122-012.png"><img src="OpenRTP122-012.png" width="70%;"></a></div>
-<div align="center"><strong>接続完了</strong></div>
+<div align="center"><strong>Connection Complete</strong></div>
 <br>
-- コンポーネントの状態をActiveにします。[All Activate]クリックしてください。コンポーネントの色が青から明るい緑に変わったら成功です。コンポーネントは個別に選択して右クリックをすることに個別にActiveにすることも可能です。([All Activate]が表示されていない場合は、Openrtpを再起動してみてください。または、コンポーネントを個別にActiveにしても良いです。）
+
+- Change the component state to Active. Click [All Activate]. If the component color changes from blue to light green, the operation is successful. Components can also be activated individually by selecting them and right-clicking. (If [All Activate] is not displayed, try restarting OpenRTP. Alternatively, you may activate the components individually.)
+
 <div align="center"><a href="OpenRTP122-013.png"><img src="OpenRTP122-013.png" width="70%;"></a></div>
 <br>
+
 <div align="center"><a href="OpenRTP122-014.png"><img src="OpenRTP122-014.png" width="70%;"></a></div>
-<div align="center"><strong>Activate完了</strong></div>
+<div align="center"><strong>Activation Complete</strong></div>
 <br>
-### コンポーネントのコンソール画面での動作確認
-- 次にコンソール画面で動作確認します。RTSystemEditorで接続後、ConsoleIn画面に「Please input number:」と表示されます。
+
+
+### Verifying Operation in the Component Console Windows
+
+- Next, verify operation in the console windows. After connecting the components in RTSystemEditor, "Please input number:" is displayed in the ConsoleIn window.
+
 <div align="center"><a href="Console122-001.png"><img src="Console122-001.png" width="70%;"></a></div>
-<div align="center"><strong>「Please input number:」と表示</strong></div>
+<div align="center"><strong>"Please input number:" Displayed</strong></div>
 <br>
-- ConsoleIn画面で任意の数値を入力し[Enter]を押すと、ConsoleOut画面に数値が表示されます。
+
+- Enter any numeric value in the ConsoleIn window and press [Enter]. The value is displayed in the ConsoleOut window.
+
 <div align="center"><div align="center"><a href="Console122-002.png"><img src="Console122-002.png" width="90%;"></a></div>;</div>
-<div align="center"><strong>動作確認</strong></div>
+<div align="center"><strong>Operation Verification</strong></div>
 <br>
-  - 数値以外の入力や、大きすぎる数値を入力すると動作がおかしくなることがあります。その場合はCntrl-Cキーでバッチファイルの動作を停止させ、再度バッチファイルの起動からやり直してください。
-- コンポーネントを終了する場合は、ツールバーから[All Deactivate]をクリックします。その後、コンポーネントを右クリックして[Exit]してください。
-  - Deactivateに時間がかかる場合はConsoleInの数値入力で止まっているので、その場合は何か数値を入力してください。
+
+  - Entering non-numeric values or excessively large values may cause abnormal behavior. In that case, stop the batch file using the Ctrl-C key and restart from launching the batch files again.
+
+- To terminate the components, click [All Deactivate] from the toolbar. Then right-click the components and select [Exit].
+
+  - If deactivation takes a long time, ConsoleIn is waiting for numeric input. In that case, enter any numeric value.
+
 <div align="center"><a href="Console122-004.png"><img src="Console122-004.png" width="70%;"></a></div>
-<div align="center"><strong>コンポーネントのDeactivate</strong></div>
+<div align="center"><strong>Deactivating Components</strong></div>
 <br>
+
 <div align="center"><a href="Console122-005.png"><img src="Console122-005.png" width="70%;"></a></div>
-<div align="center"><strong>コンポーネントの終了</strong></div>
+<div align="center"><strong>Terminating Components</strong></div>
 <br>
-- 以上でConsoleInとConsoleOutを使用した動作確認は終了です。
 
-## rtshellを利用する
-OpenRTM-aistではrtshellが標準でインストールされます。
-rtshellを利用することでコマンドラインからRTCのActivate、Deactivate、終了等ができるようになります。<br>
-[rtshellのインストール・動作確認(Windows編)](/ja/doc/installation/install_rtshell/check_windows) をご覧ください。
+- This completes the operation verification using ConsoleIn and ConsoleOut.
 
+## Using rtshell
 
-## 次は...
-下記リンク先をご覧ください。
-- **もっとサンプルを動かしてみる　&t;：　**[サンプルコンポーネント](/ja/node/811)
-- **コンポーネントを作ってみる　　&t;：　**[ケーススタディー](/ja/node/110)
-- **OpenRTMの基礎から学ぶ　　　&t;：　**[デベロッパーズガイド](/ja/node/113)
-- **コミュニティーに参加する　　　&t;：　**[コミュニティー](/ja/node/624)
-- **公開コンポーネントを見てみる　&t;：　**[プロジェクト](/ja/node/123)
+rtshell is installed by default with OpenRTM-aist.
 
+By using rtshell, you can activate, deactivate, and terminate RTCs from the command line.<br>
 
+See [Installing and Verifying rtshell Operation (Windows Edition)](/en/doc/installation/install_rtshell/check_windows).
 
+## Next...
+
+Please refer to the links below.
+
+- **Try running more samples　　　&t;：　**[Sample Components](/en/node/811)
+- **Try creating a component　　　&t;：　**[Case Study](/en/node/110)
+- **Learn OpenRTM from the basics　&t;：　**[Developer's Guide](/en/node/113)
+- **Join the community　　　　　&t;：　**[Community](/en/node/624)
+- **Browse published components　&t;：　**[Projects](/en/node/123)

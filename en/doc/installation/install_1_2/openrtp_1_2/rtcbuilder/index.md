@@ -2,7 +2,9 @@
 layout: page
 title: RTCBuilderのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: RTCBuilderのインストール -->
 #contents
@@ -103,7 +105,7 @@ RTCBuilderの動作に必要な環境は以下のとおりです。
 
 RTCBuilderはEclipseプラグインであるため、Eclipse本体をインストールする必要があります。
 さらに、EclipseはJavaアプリケーションなので、Eclipse本体をインストールする前にJava実行環境（あるいはJDK：Java開発環境でもよい）をインストールする必要があります。
-- Java実行環境のインストールについては、[EclipseについてのJDK(Java Development Kit)のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/openrtp_1_2/eclipse#jdk_install)を参照してください。
+- Java実行環境のインストールについては、[EclipseについてのJDK(Java Development Kit)のインストール]({{ site.baseurl }}/en/doc/installation/install_1_2/openrtp_1_2/eclipse#jdk_install)を参照してください。
 - Eclipseのインストールについては、[EclipseについてのEclipseのインストール](../eclipse#eclipse_install)を参照してください。
 
 ### RTCBuilderのビルド
@@ -129,7 +131,7 @@ Eclipseを起動し、メニューから[ウインドウ]>[パースペクティ
 
 <div align="center"><a href="fig2-10FileMenuOpenNewBuilder_ja.png"><img src="fig2-10FileMenuOpenNewBuilder_ja.png" width="60%;"></a></div>
 
-参考：[**FAQ:**Eclipseの起動方法]({{ site.baseurl }}/ja/doc/faq/faq_rtp_tools#eclipse)
+参考：[**FAQ:**Eclipseの起動方法]({{ site.baseurl }}/en/doc/faq/faq_rtp_tools#eclipse)
 
 
--------jp page!!-------
+

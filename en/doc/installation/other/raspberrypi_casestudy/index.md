@@ -1,44 +1,47 @@
 ---
 layout: page
-title: Raspberry PiでのOpenRTM-aist活用事例
+title: OpenRTM-aist Use Cases on Raspberry Pi
 ---
--------jp page!!-------
 
-<!-- Title: Raspberry PiでのOpenRTM-aist活用事例 -->
+<!-- Title: OpenRTM-aist Use Cases on Raspberry Pi -->
+
 <div align="right"><a href="Raspberry_Pi_Logo.svg_.png"><img src="Raspberry_Pi_Logo.svg_.png" width="5%; margin:10px;" align="right"></a></div>
 
-## はじめに
-Raspberry Piとは、ラズベリーパイ財団が英国で開発したARMプロセッサを搭載したシングルボードコンピューターです。
+## Introduction
 
-Raspberry Piは組込みボードサイズにも関わらず、ARM用の通常のLinux (Debian、Fedora、Arch Linux)やFreeBSDが動作し、ボード上でセルフコンパイルも行えるため大変使いやすいです。
-ディスクも現在は安価で大容量なSDカードを利用でき、本体価格も3000円程度と非常に安価です。
-また、基本的なI/Oが提供されており、外部のいろいろなデバイスとも接続できるため、ロボット制御やセンサーによる計測など、いろいろな応用が考えられます。
+Raspberry Pi is a single-board computer developed by the Raspberry Pi Foundation in the United Kingdom and is based on ARM processors.
 
-### 仕様
+Despite its compact embedded-board form factor, Raspberry Pi can run standard ARM versions of Linux distributions (Debian, Fedora, Arch Linux) as well as FreeBSD. Since it supports native compilation directly on the board, it is very easy to use.
 
-Raspberry Piの外観を以下に示します。
+Storage is provided via inexpensive, high-capacity SD cards, and the board itself is also very affordable, costing around 3,000 yen.
+
+In addition, Raspberry Pi provides a variety of basic I/O interfaces and can connect to numerous external devices, making it suitable for applications such as robot control, sensor measurement, and many other embedded and robotics projects.
+
+### Specifications
+
+The appearance of a Raspberry Pi is shown below.
 
 <div align="center"><a href="raspberrypi.png"><img src="raspberrypi.png" width="50%;"></a></div>
 <div align="center"><strong>Raspberry Pi</strong></div>
 
-Raspberry Piには３つの基本タイプ(Model A、Model B、Model Zero)があり、また基本タイプごとに複数のモデルがあります。詳細については下記Wikipediaのリンクなどを参照してください。
+Raspberry Pi is available in three primary categories (Model A, Model B, and Model Zero), with multiple variations within each category. For details, refer to the Wikipedia page below.
 
-- Wikipediaより:http://ja.wikipedia.org/wiki/Raspberry_Pi
+- Wikipedia: http://ja.wikipedia.org/wiki/Raspberry_Pi
 
-以下に代表的なモデルの仕様を表示します。
+Representative model specifications are shown below.
 
 <table class="table-alt">
   <tr>
-    <td colspan="4" style="text-align: center;" >仕様</td>
+    <td colspan="4" style="text-align: center;">Specifications</td>
   </tr>
   <tr>
     <td></td>
     <td>3 Model B</td>
     <td>3 Model B+</td>
-    <td>4 Model B (4G)</td>
+    <td>4 Model B (4 GB)</td>
   </tr>
   <tr>
-    <td>ターゲット価格</td>
+    <td>Target Price</td>
     <td>$35</td>
     <td>$35</td>
     <td>$55</td>
@@ -51,9 +54,9 @@ Raspberry Piには３つの基本タイプ(Model A、Model B、Model Zero)があ
   </tr>
   <tr>
     <td>CPU</td>
-    <td>ARM Cortex-A53 1.2GHz</td>
-    <td>ARM Coretex-A53 1.4GHz</td>
-    <td>ARM Coretex-A72 1.5GHz</td>
+    <td>ARM Cortex-A53 1.2 GHz</td>
+    <td>ARM Cortex-A53 1.4 GHz</td>
+    <td>ARM Cortex-A72 1.5 GHz</td>
   </tr>
   <tr>
     <td>GPU</td>
@@ -61,87 +64,93 @@ Raspberry Piには３つの基本タイプ(Model A、Model B、Model Zero)があ
     <td>Broadcom VideoCore VI</td>
   </tr>
   <tr>
-    <td>メモリ(SDRAM)</td>
-    <td colspan="2" style="text-align: center;">1GB(GPU共有)</td>
-    <td>4GB(GPU共有)</td>
+    <td>Memory (SDRAM)</td>
+    <td colspan="2" style="text-align: center;">1 GB (shared with GPU)</td>
+    <td>4 GB (shared with GPU)</td>
   </tr>
   <tr>
-    <td>USB 2.0ポート</td>
-    <td>4(統合USBハブ)</td>
+    <td>USB 2.0 Ports</td>
+    <td>4 (integrated USB hub)</td>
     <td>4</td>
     <td>2</td>
   </tr>
   <tr>
-    <td>USB 3.0ポート</td>
+    <td>USB 3.0 Ports</td>
     <td colspan="2" style="text-align: center;">-</td>
     <td>2</td>
   </tr>
   <tr>
-    <td>映像出力</td>
-    <td colspan="2"style="text-align: center;">コンポジット RCA(PAL&NTSC)、HDMI(rev 1.3 & 1.4)、MIPI DSI</td>
-    <td>コンポジットRCA(PAL/NTSC)、micro-HDMI(up to 4kp60) 2.0 x 2、MIPI DSI</td>
+    <td>Video Output</td>
+    <td colspan="2" style="text-align: center;">Composite RCA (PAL & NTSC), HDMI (rev 1.3 & 1.4), MIPI DSI</td>
+    <td>Composite RCA (PAL/NTSC), dual micro-HDMI 2.0 (up to 4Kp60), MIPI DSI</td>
   </tr>
   <tr>
-    <td>音声出力</td>
-    <td colspan="2" style="text-align: center;">3.5 mm ジャック、I2S、HDMI</td>
-    <td>3.5 mmジャック、I2S、micro HDMI</td>
+    <td>Audio Output</td>
+    <td colspan="2" style="text-align: center;">3.5 mm jack, I2S, HDMI</td>
+    <td>3.5 mm jack, I2S, micro HDMI</td>
   </tr>
   <tr>
-    <td>ストレージ</td>
-    <td colspan="3" style="text-align: center;">SDメモリーカード/MMC/SDIOカードスロット</td>
+    <td>Storage</td>
+    <td colspan="3" style="text-align: center;">SD Memory Card / MMC / SDIO card slot</td>
   </tr>
   <tr>
-    <td>ネットワーク</td>
-    <td>10/100 Mbpsイーサネット(RJ45)</td>
-    <td>Gigabit Ethernet over USB 2.0 (maximum throughput 300Mbps) (RJ45)</td>
+    <td>Networking</td>
+    <td>10/100 Mbps Ethernet (RJ45)</td>
+    <td>Gigabit Ethernet over USB 2.0 (maximum throughput 300 Mbps) (RJ45)</td>
     <td>Gigabit Ethernet (RJ45)</td>
   </tr>
   <tr>
-    <td>低レベル周辺機器</td>
-    <td colspan="3" style="text-align: center;">8 × GPIO、UART、I2C、SPIと2つのチップセレクト、+3.3V、+5V、接地</td>
+    <td>Low-Level Peripherals</td>
+    <td colspan="3" style="text-align: center;">8 × GPIO, UART, I2C, SPI with two chip selects, +3.3V, +5V, Ground</td>
   </tr>
   <tr>
-    <td>電源</td>
-    <td colspan="2" style="text-align: center;">2.5A(12.5W)</td>
-    <td>3A(15 W)</td>
+    <td>Power</td>
+    <td colspan="2" style="text-align: center;">2.5 A (12.5 W)</td>
+    <td>3 A (15 W)</td>
   </tr>
   <tr>
-    <td>電源ソース</td>
-    <td colspan="2" style="text-align: center;">5V/microUSBまたはGPIO</td>
-    <td>5V/USB Type-CまたはGPIO</td>
+    <td>Power Source</td>
+    <td colspan="2" style="text-align: center;">5 V via microUSB or GPIO</td>
+    <td>5 V via USB Type-C or GPIO</td>
   </tr>
   <tr>
-    <td>大きさ</td>
-    <td>85.0mm × 56.5mm</td>
-    <td colspan="2" style="text-align: center;">85.0mm x 56.0mm</td>
+    <td>Dimensions</td>
+    <td>85.0 mm × 56.5 mm</td>
+    <td colspan="2" style="text-align: center;">85.0 mm × 56.0 mm</td>
   </tr>
 </table>
 
-より詳しくは上記Wikiなどを参照してください。
+For more detailed specifications, please refer to the Wiki page and other related resources.
 
-### このBookの概要
+### Overview of This Book
 
-産総研が開発したI/O拡張基盤PiRT-Unitを利用すれば、比較的簡単にI/Oを利用することが可能です。
+Using the PiRT-Unit I/O expansion board developed by AIST, I/O devices can be utilized relatively easily.
 
 <div align="center"><a href="pirt-unit.png"><img src="pirt-unit.png" width="70%;"></a></div>
 <div align="center"><strong>PiRT-Unit</strong></div>
 
-OpenRTM-aist(C++、Python、Java)もボード上でコンパイル・実行可能ですので、組込みボードでありながら、通常のLinux PC上での開発プロセスとほぼ同様の使い方が可能です。
+OpenRTM-aist (C++, Python, and Java editions) can be compiled and executed directly on Raspberry Pi. As a result, despite being an embedded platform, it can be used in much the same way as a standard Linux PC development environment.
 
-ここではOpenRTM-aistでRTコンポーネントを開発・実行するための環境構築方法、便利に使うためのノウハウ、移動ロボットの制御やI/Oの利用方法などを解説します。
+This guide explains:
+
+- How to build a development environment for OpenRTM-aist
+- Useful tips and operational know-how
+- Methods for controlling mobile robots
+- Techniques for utilizing I/O devices
+- Development and execution of RT Components
+
 <div align="center"><a href="pirt-unit_app.png"><img src="pirt-unit_app.png" width="70%;"></a></div>
-<div align="center"><strong>Raspberry PiやPiRT-Unitを利用したアプリケーション</strong></div>
+<div align="center"><strong>Applications Using Raspberry Pi and PiRT-Unit</strong></div>
 
 <hr>
 
-- [SDカードの準備](./prep_sdc)
-- [Raspberry Pi の初期設定](./raspi_init_setting)
-- [xfinderの利用方法](./howtouse_xfinder)
-- [開発環境のインストール](./install_development_env)
-- [サンプルコンポーネントの実行](./running_sample_comp)
-- [PiRT-Unitを利用したIOプログラミング](./io_programming_pirt-unit)
-- [移動ロボットKobukiの制御](./control_mobilerobot_kabuki)
-- [Kobukiにロボットアームを搭載する手順](./adding_robotarm_kobuki)
-- [付録](./appendix)
+- [Preparing an SD Card](./prep_sdc)
+- [Initial Raspberry Pi Configuration](./raspi_init_setting)
+- [Using xfinder](./howtouse_xfinder)
+- [Installing the Development Environment](./install_development_env)
+- [Running Sample Components](./running_sample_comp)
+- [I/O Programming with PiRT-Unit](./io_programming_pirt-unit)
+- [Controlling the Kobuki Mobile Robot](./control_mobilerobot_kabuki)
+- [Adding a Robot Arm to Kobuki](./adding_robotarm_kobuki)
+- [Appendix](./appendix)
 
--------jp page!!-------

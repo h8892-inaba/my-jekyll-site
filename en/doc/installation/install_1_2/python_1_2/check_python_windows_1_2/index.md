@@ -2,7 +2,9 @@
 layout: page
 title: 
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: 動作確認(Windows編) -->
 #contents
@@ -23,13 +25,13 @@ RTコンポーネント ConsoleIn、ConsoleOutからなるサンプルセット�
 これらは、最もSimpleなI/O(入出力)を例示するためのサンプルです。ConsoleInのOutPortからConsoleOutのInPortへ接続を構成し、これらの2つのコンポーネントをアクティブ化(Activate)することで動作します。
 
 ## 動作確認環境
-以下では、MSIインストーラーでOpenRTM-aistをデフォルトでインストールした環境で、スタートメニューから各種プログラムを起動する場合しOpenRTPを使う方法を説明します。OpenRTPを使わないでrtshellを使う場合は、rtshellのインストールにおける[動作確認(Windows編)]({{ site.baseurl }}/ja/doc/installation/install_rtshell/check_windows)を参照してください。なお、ソースビルドした場合は、サンプルコンポネントは、<span style="color:blue;"><ソースディレクトリ></span>;\OpenRTM-aist\examples\SimpleIOにありますので、リンク先や下記の説明でのConsoleIn/ConsoleOutコンポーネントの場所はそこに置き換えてください。
+以下では、MSIインストーラーでOpenRTM-aistをデフォルトでインストールした環境で、スタートメニューから各種プログラムを起動する場合しOpenRTPを使う方法を説明します。OpenRTPを使わないでrtshellを使う場合は、rtshellのインストールにおける[動作確認(Windows編)]({{ site.baseurl }}/en/doc/installation/install_rtshell/check_windows)を参照してください。なお、ソースビルドした場合は、サンプルコンポネントは、<span style="color:blue;"><ソースディレクトリ></span>;\OpenRTM-aist\examples\SimpleIOにありますので、リンク先や下記の説明でのConsoleIn/ConsoleOutコンポーネントの場所はそこに置き換えてください。
 
 ## 動作確認手順
 ### RTSystemEditor、ネームサーバーの起動
 以下の手順に従ってRTSystemEditor、ネームサーバーを起動してください。
 
-- [OpenRTP起動手順]({{ site.baseurl }}/ja/doc/installation/install_1_2/start_openrtp_linux_1_2)
+- [OpenRTP起動手順]({{ site.baseurl }}/en/doc/installation/install_1_2/start_openrtp_linux_1_2)
 
 
 ### サンプルコンポーネントの起動
@@ -214,4 +216,3 @@ ConsoleIn0コンポーネント・アイコンの右側にはデータが出力�
   </tr>
 </table>
 
--------jp page!!-------

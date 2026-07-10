@@ -20,7 +20,7 @@ They can be run on Windows.
 
 Ubuntu is not supported because there is no omniORB package for Python 3. Laptops will be provided during the seminar.
 
-In this exercise, we use the RobotController component created in [Part 2]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2).
+In this exercise, we use the RobotController component created in [Part 2]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2).
 
 ## What is LibreOffice?
 

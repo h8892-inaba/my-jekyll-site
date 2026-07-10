@@ -2,7 +2,9 @@
 layout: page
 title: OpenRTM-aist動作確認(VxWorks、カーネルモジュール、PowerPC搭載ボード>利用の場合)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 init
 <!-- Title: OpenRTM-aist動作確認(VxWorks、カーネルモジュール、PowerPC搭載ボード利用の場合) -->
@@ -17,7 +19,7 @@ init
 
 以下の手順でWorkbenchとVxWorksの接続を生成してください。
 
-- [VxWorksターゲットサーバ－接続の生成手順](/ja/node/6379)
+- [VxWorksターゲットサーバ－接続の生成手順](/en/node/6379)
 
 WorkbenchのRemote Systemでターゲットサーバを選択後にconnect 'xxxxx'ボタンを押すとVxWorksと接続します。
 
@@ -142,7 +144,7 @@ Ubuntuで起動したRTシステムエディタでRTCが起動したかを確認
 RTCの接続、アクティブ化等の手順はUbuntuで動作確認する場合と同じです。
 
 
-- [動作確認 (Linux編)](/ja/node/789)
+- [動作確認 (Linux編)](/en/node/789)
 
 ただしORBexpressを使用した場合にはデータポートのコネクタ接続時にエンディアンをbigに設定する必要があります。
 
@@ -172,4 +174,4 @@ Workbench、omniORB、openRTM-aistのパス、UbuntuのIPアドレスは適宜�
  taskSpawn "rtcd_main",100,67108864,1000000,rtcd_main,"-o","manager.shutdown_on_nortcs:NO","-o","manager.shutdown_auto:NO","-o","corba.nameservers:172.30.1.1"
  taskSpawn "consolein_main",100,0,1000000,consolein_main
 ```
--------jp page!!-------
+

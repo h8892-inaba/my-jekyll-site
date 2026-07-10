@@ -1,48 +1,47 @@
 ---
 layout: page
-title: OpenRTM-aist (C++版) に関する FAQ
+title: FAQ on OpenRTM-aist (C++ Version)
 ---
--------jp page!!-------
 
 <!-- Title: OpenRTM-aist (C++版) に関する FAQ -->
 #contents(3)
 
 ## Windows
 
-### CMakeに失敗する
+### CMake fails
 
-- 原因1:アーキテクチャを合わせていない可能性があります。
+- Cause 1: The architecture may not match.
 
-アーキテクチャを合わせていない可能性があります。
-OpenRTM は 32bit をインストールしているのに、CMake でコンパイラを 64bit に指定しているなど、アーキテクチャを合わせていない可能性があります。
-アーキテクチャを合わせてから実行する必要があります。
-
-<br>
-
-- 原因2：CMake のバージョンが古い可能性があります。
-OpenRTM で対応している CMake および VisualStudio のバージョンをインストールして実行してください。
-<br>
-<br>
-
-### ネームサーバーのコンソール画面が開かない
-- 原因1：omniORB がインストールされていない
-
-openrtm.org が提供する msi インストーラーには omniORB が含まれていますが、手動でインストールした場合には、omniORB が入っていない場合も考えられますので、omniORB がインストールされているか確認してください。
+The architecture may not match.
+For example, even though 32-bit OpenRTM is installed, the compiler may be specified as 64-bit in CMake, so the architecture may not match.
+You need to match the architecture before running it.
 
 <br>
 
-- 原因2：環境変数 OMNI_ROOT が設定されていない
-「Start Naming Service」は %RTM_ROOT%\bin\rtm-naming.bat にあるバッチファイルからネームサーバー (omniNames.exe) を起動します。 この際、omniNames.exe を参照するために環境変数 OMNI_NAMES を利用しています。 
-通常インストーラーで OpenRTM-aist をインストールした場合には、OMNI_ROOT 環境変数が自動で設定されますが、何らかの理由で環境変数が無効になったり、手動でインストールした場合は、環境変数が設定されていないことがあります。
+- Cause 2: The CMake version may be old.
+Install and run the versions of CMake and Visual Studio supported by OpenRTM.
+<br>
+<br>
 
-環境変数 OMNI_ROOT が設定されていることを確認してください<br>
-環境変数は、
-- [コントロールパネル] > [システム] > [詳細設定]タブ > [環境変数]
-- [マイコンピューター] を右クリック、[プロパティ] > [詳細設定] タブ > [環境変数] などから参照・編集することができます。
+### The name server console screen does not open
+- Cause 1: omniORB is not installed
 
-原因3：ユーザー名が2バイト文字の場合、ログを出力するフォルダーを適切に設定できずに omniNames.exe の起動に失敗している
-環境変数 TEMP を2バイト文字を含まない場所に設定することで改善する場合があります。
-適当なテンポラリフォルダー (以下のケースでは C:\temp) を作成し、そこを環境変数 TEMP が指すように、rtm-naming.bat の先頭部分で以下のように設定します。
+The msi installer provided by openrtm.org includes omniORB, but if you installed it manually, omniORB may not be installed, so check whether omniORB is installed.
+
+<br>
+
+- Cause 2: The environment variable OMNI_ROOT is not set
+"Start Naming Service" starts the name server (omniNames.exe) from the batch file located at %RTM_ROOT%\bin\rtm-naming.bat. At this time, the environment variable OMNI_NAMES is used to refer to omniNames.exe. 
+Normally, when OpenRTM-aist is installed with the installer, the OMNI_ROOT environment variable is automatically set, but for some reason the environment variable may become invalid, or if you installed manually, the environment variable may not be set.
+
+Check that the environment variable OMNI_ROOT is set.<br>
+Environment variables can be viewed and edited from:
+- [Control Panel] > [System] > [Advanced] tab > [Environment Variables]
+- Right-click [My Computer], then [Properties] > [Advanced] tab > [Environment Variables], etc.
+
+Cause 3: If the user name contains double-byte characters, the folder for log output cannot be set properly and omniNames.exe fails to start
+This may be improved by setting the environment variable TEMP to a location that does not contain double-byte characters.
+Create an appropriate temporary folder (C:\temp in the following case), and set it at the beginning of rtm-naming.bat as follows so that the environment variable TEMP points to it.
 
 ```
  set cosnames="omninames"
@@ -53,9 +52,9 @@ openrtm.org が提供する msi インストーラーには omniORB が含まれ
  set TEMP=C:\temp
 ```
 
-また、稀なケースですが、ホスト名やアドレスの設定の問題で、起動できないことがあります。
-その場合、利用している PC の IPアドレス を omniNames.exe に設定する必要があります。
-環境変数 OMNIORB_USEHOSTNAME を以下のように設定します (以下は自ホストの IPアドレスが 192.168.0.11 の場合の例)。
+Also, in rare cases, it may not be possible to start due to problems with the host name or address settings.
+In that case, you need to set the IP address of the PC you are using in omniNames.exe.
+Set the environment variable OMNIORB_USEHOSTNAME as follows (the following is an example where the IP address of the local host is 192.168.0.11).
 
 ```
  set cosnames="omninames"
@@ -67,37 +66,37 @@ openrtm.org が提供する msi インストーラーには omniORB が含まれ
 <br>
 <br>
 
-### サンプルコンポーネントが起動しない
-rtc.conf の設定に問題があります。rtc.conf の設定を以下のように設定し直して確認してください。
+### Sample components do not start
+There is a problem with the rtc.conf settings. Reset the rtc.conf settings as follows and check again.
 ```
  corba.nameservers: localhost
 ```
-例えば、corba.endpoint/corba.endpoints などの設定が現在実行中の PC のホストアドレスとミスマッチを起こしている場合は、CORBA が異常終了します。
+For example, if settings such as corba.endpoint/corba.endpoints do not match the host address of the PC currently running, CORBA will terminate abnormally.
 <br>
 <br>
 
-### サンプルコンポーネントを起動させると、ランタイムエラーで終了する
-ライブラリー等が適切にインストールされていない、設定されていない等の原因でラインタイムエラーが表示される場合があります。
-PCを再起動する または OpenRTM-aist をすべてアンインストールし、再インストールすることで改善される場合があります。
+### When starting a sample component, it terminates with a runtime error
+A runtime error may be displayed because libraries or other components are not installed or configured properly.
+This may be improved by restarting the PC or uninstalling all of OpenRTM-aist and reinstalling it.
 <br>
 <br>
 
 &aname(cmakecompilererrro);
-### CMake 実行時にコンパイラが見つからない
+### The compiler cannot be found when running CMake
 
-CMake 実行時に以下のエラーが発生する。
+The following error occurs when running CMake.
 
 ```
  No CMAKE_CXX_COMPILER could be found. 
 ```
 
-まずは、&lt;プロジェクトディレクトリー&gt;/&lt;buildディレクトリー&gt;/CMakeFiles/CMakeError.log を確認してください。
+First, check &lt;project directory&gt;/&lt;build directory&gt;/CMakeFiles/CMakeError.log.
 
-:原因1：間違ったコンパイラを指定した
+:Cause 1: The wrong compiler was specified
 
-CMake を実行 (Configure) する際に、コンパイラをしてします。インストールされている Visual Studio とは異なるコンパイラを指定した場合には、コンパイラが見つからず、**No CMAKE_CXX_COMPILER could be found.** のようなエラーが発生します。
+When running (Configure) CMake, you specify the compiler. If you specify a compiler different from the installed Visual Studio, the compiler cannot be found and an error such as **No CMAKE_CXX_COMPILER could be found.** occurs.
 
-CMakeError.log を見ると、以下のように、コンパイラチェック開始直後にエラーが発生します。
+Looking at CMakeError.log, an error occurs immediately after the compiler check starts, as shown below.
 
 ```
  Microsoft (R) Build Engine バージョン 4.6.1586.0
@@ -134,34 +133,34 @@ CMakeError.log を見ると、以下のように、コンパイラチェック�
  経過時間 00:00:00.50
 ```
 
-- 対応方法：正しいコンパイラを指定します。
+- Solution: Specify the correct compiler.
 
-1. インストールされている OpenRTM を確認
-  - → 32bitか、64bitか？ 
-1. インストールされている Visual Studio を確認
+1. Check the installed OpenRTM
+  - → Is it 32-bit or 64-bit? 
+1. Check the installed Visual Studio
   - → Visual Studio 2008 (VC9), 2010 (VC10), 2012 (VC11), 2013 (VC12), 2015 (VC14), 2017 (VC15)
-1. CMake のキャッシュを削除
-  - コンパイラの指定を変更する際には必ずキャッシュを削除する必要があります。
-1. CMake Configure で正しいコンパイラを指定
-  - 32bit/64bit はインストールされている OpenRTM に合わせる
-    - 32bit は無印 (例: Visual Studio 10 2010)
-    - 64bit はWin64 (例： Visual Studio 10 2010 Win64)
+1. Delete the CMake cache
+  - When changing the compiler specification, you must always delete the cache.
+1. Specify the correct compiler in CMake Configure
+  - Match 32-bit/64-bit to the installed OpenRTM
+    - 32-bit is without suffix (example: Visual Studio 10 2010)
+    - 64-bit is Win64 (example: Visual Studio 10 2010 Win64)
 
 <br>
 
-- 原因2：Visual C++ がインストールされていない
-Visual Studio インストール時に、C++コンパイラを含む Visual C++ がインストールされていない場合があります。
+- Cause 2: Visual C++ is not installed
+When installing Visual Studio, Visual C++, including the C++ compiler, may not have been installed.
 
-- 対応方法：Visual C++ をインストールします
-再度インストーラーを（手元になければダウンロードしてから）起動し、[変更] からインストールを行います。
-インストールをカスタマイズするを選択して、インストール対象に Visual C++ が含まれていることを確認してからインストールを行います。
+- Solution: Install Visual C++
+Start the installer again (download it first if you do not have it on hand), and perform installation from [Change].
+Select Customize installation and confirm that Visual C++ is included in the items to be installed before installing.
 
-この原因の場合も、CMakeError.log の出力内容は（原因1）と同じです。
+In this case as well, the output content of CMakeError.log is the same as (Cause 1).
 
 
-- 原因3：rc.exe が実行できない
-まれに、インストールされているコンパイラを CMake 実行時に正しく指定しているのにもかかわらず、**No CMAKE_CXX_COMPILER could be found.** のようなエラーが発生することがあります。
-原因の一つとして、複数のバージョンの Visual Studio をインストール・アンインストール等を行った際に、まれにツールチェーンの設定に不整合が生じ、以下のようなエラー **rc.exeが実行できない** が発生することがあります。
+- Cause 3: rc.exe cannot be executed
+In rare cases, even though the installed compiler is correctly specified when running CMake, an error such as **No CMAKE_CXX_COMPILER could be found.** may occur.
+One possible cause is that when multiple versions of Visual Studio have been installed and uninstalled, inconsistencies may rarely occur in the toolchain settings, resulting in an error such as **rc.exe cannot be executed** as shown below.
 
 ```
  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe
@@ -187,131 +186,129 @@ Visual Studio インストール時に、C++コンパイラを含む Visual C++ 
 ```
 
 
-- 対応方法：rc.exe と rcdll.dll をコピーする
-これに対する対処方法としては、rc.exe と rcdll.dll を対象コンパイラのツールディレクトリーにコピーする方法があります。
+- Solution: Copy rc.exe and rcdll.dll
+A workaround for this is to copy rc.exe and rcdll.dll to the tool directory of the target compiler.
 
-1. rc.exe, rcdll.dll を探す
-  - エクスプローラーを開き **C:\Program Files** (または **C:\Program Files (x86)**) を開き rc.exe を検索する。rcdll.dll は同じディレクトリーにあるはずなので探すのは rc.exe のみでよい。
-  - 通常は **C:\Program Files (x86)\Windows Kits** の下にいくつかの rc.exe が見つかるが x86 というディレクトリー下にあるものが対象。
-  - 検索結果にて対象の rc.exe を右クリックし**「ファイルの場所を開く」**を選択
-1. コンパイラのツールディレクトリーを開く
-  - 別のエクスプローラーを開き、ツールの bin ディレクトリーを開く
-  - 上のログの例では、**C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe** から、ツールのディレクトリーが **C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin** (binディレクトリーが対象、x86?amd64は無視してよい)  であることがわかる。
-1. rc.exe, rcdll.dll をコピーする
-  - 1.で開いたエクスプローラーから rc.exe、rcdll.dll を2.で開いたツールディレクトリーにコピーする
+1. Find rc.exe and rcdll.dll
+  - Open Explorer, open **C:\Program Files** (or **C:\Program Files (x86)**), and search for rc.exe. rcdll.dll should be in the same directory, so you only need to search for rc.exe.
+  - Normally, several rc.exe files are found under **C:\Program Files (x86)\Windows Kits**, but the one under the x86 directory is the target.
+  - In the search results, right-click the target rc.exe and select **"Open file location"**
+1. Open the compiler tool directory
+  - Open another Explorer window and open the tool's bin directory
+  - In the example log above, from **C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe**, you can see that the tool directory is **C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin** (the bin directory is the target; x86?amd64 can be ignored).
+1. Copy rc.exe and rcdll.dll
+  - Copy rc.exe and rcdll.dll from the Explorer window opened in step 1 to the tool directory opened in step 2
 <br>
 <br>
 
 <br>
 
-### OpenRTP 実行時に xxx.dll が存在しないというエラーが表示される
-- 原因1：
-  - Windows10 のみの現象の可能性があります。
-  - RTM_VC_VERSION が正しく環境変数に設定されていない可能性があります。
+### An error saying xxx.dll does not exist is displayed when running OpenRTP
+- Cause 1:
+  - This may be a phenomenon that occurs only on Windows 10.
+  - RTM_VC_VERSION may not be correctly set in the environment variables.
 
-- 対処方法：
-OpenRTM インストール後に PCを再起動して、環境変数に RTM_VC_VERSION が正しく設定されているかを確認してください。
+- Solution:
+After installing OpenRTM, restart the PC and check whether RTM_VC_VERSION is correctly set in the environment variables.
 <br>
 <br>
 
 &aname(errorapplication);
-### 「このアプリケーションの構成が正しくないため、アプリケーションを開始できませんでした。…」 が表示される
-サンプルの RTコンポーネントなどを起動しようとして、xxxComp.exe を実行すると、上記のようなエラーが出る場合があります。
-このエラーは起動環境上に VC++ライブラリーのランタイムコンポーネントがないために起こります。
-VC++関連の開発環境（Microsoft Visual Studio,Visual C++ Expressなど）をインストールしていない環境では OpenRTM-aist (C++版) を動作させることはできませんので、必ず VC++関連の開発環境をインストールしてください。~
+### "This application has failed to start because the application configuration is incorrect. ..." is displayed
+When trying to start a sample RT component or similar by executing xxxComp.exe, an error like the above may appear.
+This error occurs because the VC++ library runtime components are not present in the execution environment.
+OpenRTM-aist (C++ version) cannot run in an environment where VC++-related development environments (Microsoft Visual Studio, Visual C++ Express, etc.) are not installed, so be sure to install a VC++-related development environment.~
 <br>
 <br>
 
 &aname(errorinit);
-### アプリケーションエラー「アプリケーションを正しく初期化できませんでした。…」が表示される
-ネームサーバー起動しようとして、rtm-naming.bat を実行すると、上記のようなエラーが出る場合があります。
-このエラーは、起動環境上に VC++ライブラリーのランタイムコンポーネントがないために起こります。
-VC++関連の開発環境（Microsoft Visual Studio 、Visual C++  Expressなど）をインストールしていない環境では OpenRTM-aist (C++版) を動作させることはできませんので、必ず VC++関連の開発環境をインストールしてください。
+### The application error "The application failed to initialize properly. ..." is displayed
+When trying to start the name server by executing rtm-naming.bat, an error like the above may appear.
+This error occurs because the VC++ library runtime components are not present in the execution environment.
+OpenRTM-aist (C++ version) cannot run in an environment where VC++-related development environments (Microsoft Visual Studio, Visual C++ Express, etc.) are not installed, so be sure to install a VC++-related development environment.
 <br>
 <br>
 
-#### VC++関係のライブラリーがインストールされていない
-Visual Studio 等のアプリケーションのインストールを行ってください。
+#### VC++-related libraries are not installed
+Install an application such as Visual Studio.
 <br>
 <br>
 
-### rtm-naming.bat を実行するとアプリケーションエラーが発生する
-VC++関係のライブラリーがインストールされていない可能性が考えるので、インストールを行ってください。
+### An application error occurs when executing rtm-naming.bat
+VC++-related libraries may not be installed, so install them.
 <br>
 <br>
 
-### rtm-naming が実行できない
-rtm-naming.bat を実行しても黒い窓（コマンドプロンプト画面）が一瞬開いて閉じてしまう。
+### rtm-naming cannot be executed
+Even if rtm-naming.bat is executed, a black window (Command Prompt screen) opens for a moment and then closes.
 
-- 原因1：omniORB がインストールされていない
-  - 対処方法：ダウンロードページから omniORB をダウンロードしインストールしてください。<br>
-rtm-naming.bat 内では通常 omniORB のネームサーバー**omniNames.exe**を実行します。~
-omniORB がインストールされていないと**omniNames.exe**もインストールされないので、ネームサーバーを実行できません。~
+- Cause 1: omniORB is not installed
+  - Solution: Download and install omniORB from the download page.<br>
+Normally, rtm-naming.bat executes the omniORB name server **omniNames.exe**.~
+If omniORB is not installed, **omniNames.exe** is not installed either, so the name server cannot be executed.~
 <br>
-- 原因2：log ディレクトリーのパス中に2バイト文字が含まれている
-  - 対処方法：r tm-naming.bat 内では通常 omniORB のネームサーバー**omniNames.exe**を以下のように実行します。~
+- Cause 2: The log directory path contains double-byte characters
+  - Solution: Normally, rtm-naming.bat executes the omniORB name server **omniNames.exe** as follows.~
 ```
  omniNames.exe -start 2809 -logdir %TEMP%
 ```
 
-通常環境変数 %TEMP% はユーザーのテンポラリディレクトリー
+Normally, the environment variable %TEMP% points to the user's temporary directory:
 ```
  C:\Documents and Settings\ユーザー名\Local Settings\Temp
 ```
 
-を指します。ここで、**ユーザー名**が日本語の場合、omniNames がログファイルを正しく作成できないため、実行できずに終了します。~
-対応策としては、以下の3つが考えられます。
-- 日本語のユーザー名を使用しない
-  - 日本語を使用しないユーザーを新たに作り、その環境で実行する。
-- rtm-naming.bat を書き換える
-  - **C**: \Program Files\OpenRTM-aist\[バージョン番号]\bin**の下にある rtm-naming.bat の中の以下の部分 ~
+Here, if the **user name** is Japanese, omniNames cannot correctly create the log file, so it terminates without running.~
+The following three countermeasures are possible.
+- Do not use a Japanese user name
+  - Create a new user that does not use Japanese and run it in that environment.
+- Rewrite rtm-naming.bat
+  - Rewrite the following part in rtm-naming.bat under **C**:\Program Files\OpenRTM-aist\[version number]\bin** ~
 
 ```
  %cosnames% -start %port% -logdir %TEMP%\ 
 ```
-を~
+as follows:~
 ```
- %cosnames% -start %port% -logdir [パスに日本語を含まないログディレクトリー]
+ %cosnames% -start %port% -logdir [log directory whose path does not contain Japanese]
 ```
-のように書き換えます。~
-**パスに日本語を含まないログディレクトリー**は自分に書き込みの権限があるディレクトリーで、安全な場所にしてください。たとえば、C:\tmp など。
+~
+The **log directory whose path does not contain Japanese** should be a safe directory where you have write permission. For example, C:\tmp.
 
-- Java版の orbd を使用する
-  - OpenRTM-aist の Java版と JDK をインストールすると、スタートメニューの Java版 の examples の中に **start-orbd.vbs** が現れます。これは、JDK に付属する CORBA ネームサーバーを起動するスクリプトです。~
-このネームサーバーには、omniNames のような日本語のパスの問題は存在しないので、これを使用することでユーザー名が日本語でも、ネームサーバーを起動できます。
+- Use the Java version of orbd
+  - When you install the Java version of OpenRTM-aist and the JDK, **start-orbd.vbs** appears in the examples of the Java version in the Start menu. This is a script that starts the CORBA name server included with the JDK.~
+This name server does not have the Japanese path problem that omniNames has, so by using it, the name server can be started even if the user name is Japanese.
 <br>
 
 ## UNIX
-### configure を実行したがエラーが出て終了する
-configure のエラーの大半は、必要なパッケージが見つからないときに出ます。エラーが出た場合には、必要なパッケージがインストールされているか、autoconf が見つけられるディレクトリーにヘッダ、ライブラリーがインストールされているかを確認してください。
+### configure was executed, but it exits with an error
+Most configure errors occur when required packages cannot be found. If an error occurs, check whether the required packages are installed and whether the headers and libraries are installed in directories that autoconf can find.
 <br>
 <br>
 
-### make を実行してもビルドが完了しない。または make の実行エラーが表示される 
-パッケージのインストールまたは OpenRTM-aist (C++版)のビルドが不完全な可能性があります。もう一度パッケージの自動インストーラーを起動して、パッケージのインストールからやり直してください。
-パッケージのインストール中の処理画面に何らかのエラーメッセージが表示された場合、該当するパッケージだけを手動でインストールするなどしてから configure を実行してください。
-configure を実行してエラーメッセージが表示されないことを確認してから、再度 make を実行してビルドを完了させてください。
+### The build does not complete even after running make, or an error is displayed when running make 
+The package installation or the build of OpenRTM-aist (C++ version) may be incomplete. Start the automatic package installer again and redo the process from package installation.
+If any error message is displayed on the processing screen during package installation, manually install only the relevant package and then run configure.
+After confirming that no error message is displayed when running configure, run make again to complete the build.
 <br>
 <br>
 
-### サンプルプログラムの SimpleIO を実行する run.sh が実行できない
-run.sh に実行ビットが立っていない可能性があります。下記のように実行ビットを立てて実行するか、直接シェルに渡して実行してください。~
+### The run.sh script for executing the sample program SimpleIO cannot be executed
+The execute bit may not be set on run.sh. Set the execute bit and run it as shown below, or pass it directly to the shell and execute it.~
 ```
  > ls -al run.sh
  -rw-r--r--  1 n-ando  n-ando  1146  4 27 15:12 run.sh
  > chmod 755 run.sh
  > ./run.sh
 ```
- もしくは
+or
 ```
  > sh run.sh
 ```
 <br>
 <br>
 
-### サンプルプログラムの SimpleIO を起動したが、正常に動作しない
-SimpleIO の実行スクリプト run.sh では、ターミナルウィンドウを kterm，xterm，gnome-terminal のいずれかに仮定しております。
-このため、これ以外のターミナルウィンドウを使用している場合は、run.sh を適宜書き換えてから実行してください。~
+### The sample program SimpleIO was started, but it does not work properly
+The SimpleIO execution script run.sh assumes that the terminal window is one of kterm, xterm, or gnome-terminal.
+Therefore, if you are using a terminal window other than these, edit run.sh as appropriate before running it.~
 <br>
-
--------jp page!!-------

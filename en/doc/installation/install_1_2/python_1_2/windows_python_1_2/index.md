@@ -2,7 +2,11 @@
 layout: page
 title: Windowsへのインストール
 ---
--------jp page!!-------
+
+<br>
+<a>No English version available.
+</a>
+
 
 <!-- Title Windowsへのインストール -->
 #contents
@@ -10,7 +14,7 @@ title: Windowsへのインストール
 ## OpenRTM-aistのインストール
 MSIインストーラーによるOpenRTM-aistのインストール手順については下記のページに記載。
 
-- [OpenRTM-aist 1.2系のインストール(Windows、MSIインストーラー使用)]({{ site.baseurl }}/ja/doc/appendix/openrtm-aist_1_2_windows_msi)
+- [OpenRTM-aist 1.2系のインストール(Windows、MSIインストーラー使用)]({{ site.baseurl }}/en/doc/appendix/openrtm-aist_1_2_windows_msi)
 
 
 ## 開発に必要なソフトウエアのインストール
@@ -20,7 +24,7 @@ RTCの開発にはCMake、Doxygen、Visual Studioのインストールが必要�
 インストールの途中で[Install Options]としてsystem PATHをどうするかを聞かれますが、Add CMake to the system PATH for all usersを選択することを推奨します。(チェックはそれで行っています。)
 - [Doxygen](http://www.doxygen.nl/download.html)
 のWebページからWindows版のバイナリ実行形式ファイルをダウンロードして実行してインストールしてください。
-- [Visual Studio]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
+- [Visual Studio]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
 からダウンロード版をインストールするか、別途Visual Studio 2010/2012/2013/2015/2017/2019を入手してインストールしてください。Visual StudioはPythonベースのRTC開発自体には直接必要なものではないですが、開発したRTCの配布にあたってOpenRTM-aistの環境と共にMSI配布パッケージを作りたい場合は必要となります。
 
 ## インストーラーの作業内容
@@ -117,4 +121,3 @@ RTCの開発にはCMake、Doxygen、Visual Studioのインストールが必要�
             + WordContrlpy: PythonベースMicrosoft Office Word用RTC
 
 ```
--------jp page!!-------

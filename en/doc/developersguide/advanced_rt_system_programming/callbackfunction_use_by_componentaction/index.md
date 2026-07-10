@@ -1,8 +1,7 @@
 ---
 layout: page
-title: "コンポーネントアクションのコールバック関数の利用"
+title: "Using Callback Functions for Component Actions"
 ---
--------jp page!!-------
 
-準備中
--------jp page!!-------
+Coming soon
+

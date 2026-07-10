@@ -1,47 +1,45 @@
 ---
 layout: page
-title: RTコンポーネント作成に関する FAQ
+title: FAQ on Creating RT Components
 ---
--------jp page!!-------
-
 
 <!-- Adoc/faq/faq_rtc_creation -->
 
 <!-- Title: RTコンポーネント作成に関する FAQ -->
 #contents(4)
 
-### サービスポートを持つ RTC を Eclipse でビルドするとエラーが表示される
-RTCBuilder でサービスポートを持つ RTC を生成した場合、Eclipse のビルドで以下のような「***POA を型に解決できません」エラーが表示されます。
+### An error is displayed when building an RTC with a service port in Eclipse
+If an RTC with a service port is generated with RTCBuilder, an error such as "***POA cannot be resolved to a type" is displayed during the Eclipse build.
 
 <div align="center"><a href="Error_POA.png"><img src="Error_POA.png" width="70%;"></a></div>
 
-**原因：**
-idl コンパイルは、サービスポートで使用する idlファイルから javaファイル(スタブソース、スケルトンソース、各種ユーティリティソース)を生成します。
-idl コンパイルが実行される前にビルドが実行されると、ビルドに必要なこれらのソースファイル(javaファイル)が見つからずエラーになります。
+**Cause:**
+idl compilation generates java files (stub sources, skeleton sources, and various utility sources) from the idl file used by the service port.
+If the build is executed before idl compilation is performed, these source files (java files) required for the build cannot be found, resulting in an error.
 
-**対処方法：**
-Eclipse のパッケージエクスプローラから「build_JavaRTCTest.xml」を右クリックして [実行] > [antビルド] 実行してください。
-これにより、idl コンパイルが実行され、javaファイルが生成されます。
-「build_JavaRTCTest.xml」実行後に、[F5] キーなどでプロジェクトを更新すると、エラー表示が消えます。
-<br>
-<br>
-
-### RTC がシステムエディタ上に表示されない
-ネットワークの切り替え時に発生する現象で、NameService と RTC を再起動することで表示されるようになります。
+**Solution:**
+Right-click "build_JavaRTCTest.xml" from Eclipse's Package Explorer and execute [Run] > [Ant Build].
+This runs idl compilation and generates the java files.
+After executing "build_JavaRTCTest.xml", refresh the project with the [F5] key or similar, and the error display will disappear.
 <br>
 <br>
 
-### データポートで約2MB以上のデータを送りたい
-画像データなどをデータポートで送る際、1回に送られるデータサイズ約2MBを超える場合には注意が必要です。
-<br>
-omniORBでは、giop (General Inter-ORB Protocol)で扱えるサイズはデフォルトで"2097152B(2MB)"となっています。
-このサイズを超えるデータを1回で送ろうとすると、giop の制限のため正しいデータを送ることができません。
+### The RTC is not displayed in the system editor
+This phenomenon occurs when switching networks, and it will be displayed by restarting the NameService and RTC.
 <br>
 <br>
-この最大サイズを変更するためには、下記の2つの方法があります。
+
+### I want to send data of about 2 MB or more through a data port
+When sending image data or similar through a data port, care is required if the data size sent at one time exceeds about 2 MB.
+<br>
+In omniORB, the size that can be handled by giop (General Inter-ORB Protocol) is "2097152B (2 MB)" by default.
+If you try to send data exceeding this size at one time, correct data cannot be sent due to the giop limit.
 <br>
 <br>
-- **rtc.conf にて最大サイズを指定する場合**
+There are the following two ways to change this maximum size.
+<br>
+<br>
+- **When specifying the maximum size in rtc.conf**
 ```
  # file: rtc.conf
  corba.nameservers: localhost
@@ -49,60 +47,60 @@ omniORBでは、giop (General Inter-ORB Protocol)で扱えるサイズはデフ�
  corba.args: -ORBgiopMaxMsgSize 3145728 ※この行を追加 (Maxサイズを3Mに指定)
 ```
 <br>
-- **環境変数にて指定する場合**
+- **When specifying it with an environment variable**
 ```
   export ORBgiopMaxMsgSize=3145728
 ```
 
-※ giopMaxMsgSize を指定する場合、server、client 共に (対になるコンポーネント) 設定する必要があります。
+※ When specifying giopMaxMsgSize, it must be set on both the server and client (the paired components).
 <br>
 (omniORB configuration and API)<br>
 [http://omniorb.sourceforge.net/omni41/omniORB/omniORB004.html](http://omniorb.sourceforge.net/omni41/omniORB/omniORB004.html)
 
 <br>
 
-### Raspberry Pi との接続時に、IPアドレスが割り当てられない
-Raspberry Pi を再起動してください。
+### An IP address is not assigned when connecting to a Raspberry Pi
+Restart the Raspberry Pi.
 <br>
 <br>
 
-### Raspberry Pi 上のデータポートと PC上のデータポートを接続すると接続エラーになる
-Raspberry Pi が起動する前に PC側の NameService を立ち上げていたためと思われます。再度、NameService を立ち上げ直してください。
+### A connection error occurs when connecting a data port on the Raspberry Pi to a data port on the PC
+This is thought to be because the NameService on the PC side was started before the Raspberry Pi started. Restart the NameService again.
 <br>
 <br>
 
-### Raspberry Pi に接続した場合に RTC と通信できなくなる
-ウイルス対策ソフトの影響の可能性があります。WiFi 設定を WPA2 に変更してください。
+### Communication with the RTC becomes impossible when connected to a Raspberry Pi
+This may be due to antivirus software. Change the WiFi setting to WPA2.
 <br>
 <br>
 
-### Raspberry Pi 側のサービスに ConsoleOut が表示されない
+### ConsoleOut is not displayed in the service on the Raspberry Pi side
 
-- **ネームサーバの問題**
-  - ネームサーバのエンドポイントアドレスが不正な場合このような現象が起きます。rtm-naming で再度ネームサーバを起動しなおすと解決する場合があります。
-このほか、Raspberry Pi の有線LANと無線LAN等2つ以上のネットワークインターフェースがある場合、PCとの接続に使用するどちらかのネットワークのみを使うように設定することで解決するケースもあります。
+- **Name server problem**
+  - This phenomenon occurs when the endpoint address of the name server is invalid. It may be resolved by restarting the name server again with rtm-naming.
+In addition, if the Raspberry Pi has two or more network interfaces, such as wired LAN and wireless LAN, it may also be resolved by configuring it to use only the network used for connection with the PC.
 
-- **コンポーネントの問題**
-  - コンポーネントが読み込んだ設定ファイル(rtc.conf)に localhost 以外のネームサーバが登録されている場合が考えられます。corba.nameservers:  localhost と記述するなど localhost のネームサーバにコンポーネントを登録するよう設定してください。
-また、Raspberry Pi の有線LANと無線LAN等2つ以上のネットワークインターフェースがある場合、PCとの接続に使用するどちらかのネットワークのみを使うように設定することで解決するケースもあります。
+- **Component problem**
+  - It is possible that a name server other than localhost is registered in the configuration file (rtc.conf) loaded by the component. Configure the component to register with the localhost name server, such as by writing corba.nameservers:  localhost.
+Also, if the Raspberry Pi has two or more network interfaces, such as wired LAN and wireless LAN, it may also be resolved by configuring it to use only the network used for connection with the PC.
 <br>
 <br>
 
 
-### PCにネットワークインターフェースが2つ以上ある場合、RTSystemEditor で接続できない、反応しなくなるなどの問題がある
+### If the PC has two or more network interfaces, there are problems such as being unable to connect or no response in RTSystemEditor
 
-- **PC側のコンポーネントの問題**
-  - PCにネットワークインターフェースが2つ以上ある場合、Raspberry Pi で使用しない側のインターフェースアドレスがコンポーネントの参照として利用されている場合このような現象が起こります。
-エンドポイントを設定するため、rtc.conf に使用する方の IPアドレスを以下のように設定します。
+- **Problem with the PC-side component**
+  - If the PC has two or more network interfaces and the interface address on the side not used by the Raspberry Pi is being used as the component reference, this phenomenon occurs.
+To set the endpoint, set the IP address to be used in rtc.conf as follows.
 
 ```
  corba.endpoints: 192.168.11.20
 ```
 
-ただし、Vista 以降の Windows では、C:\Program Files 以下のファイルは簡単には編集ができなくなっています。c:\tmp など適当なディレクトリーに ConsoleIn.exe と rtc.conf をコピー(あるいは新たに作成)するなどして、対処してください。
+However, on Windows Vista and later, files under C:\Program Files cannot be edited easily. To deal with this, copy ConsoleIn.exe and rtc.conf to an appropriate directory such as c:\tmp, or create them there.
 
-- **Raspberry Pi側のコンポーネントの問題**
-  - Raspberry Pi の有線LANと無線LAN等2つ以上のネットワークインターフェースがある場合で、それぞれが別のネットワークにつながっている場合、上述のPCと同様の問題が起こります。エンドポイントを設定するため、rtc.conf に以下のように記載します。
+- **Problem with the Raspberry Pi-side component**
+  - If the Raspberry Pi has two or more network interfaces, such as wired LAN and wireless LAN, and each is connected to a different network, the same problem as with the PC described above occurs. To set the endpoint, write the following in rtc.conf.
 
 ```
  corba.endpoints: 192.168.11.21
@@ -110,28 +108,28 @@ Raspberry Pi が起動する前に PC側の NameService を立ち上げていた
 <br>
 <br>
 
-### RTコンポーネントのインスタンス命名規則について
-RTコンポーネントのインスタンス命名規則は、**[RTコンポーネント type名] + [数字 (0、1、2、3...)]** のようになっています。
+### About RT component instance naming rules
+The instance naming rule for RT components is like **[RT component type name] + [number (0, 1, 2, 3...)]**.
 <br>
 <br>
-RTコンポーネント type名は、rtc-template で --type-name オプションで指定した名前、もしくは、コンポーネントプロファイル (通常は *.cppファイルの先頭に記述) "type_name" に指定されている名前です。
-番号は、同一マネージャ上で生成されたコンポーネントに対して、0、1、2、3...のような連番を振ります。
+The RT component type name is the name specified with the --type-name option in rtc-template, or the name specified for "type_name" in the component profile (usually written at the beginning of the *.cpp file).
+Numbers are assigned sequentially, such as 0, 1, 2, 3..., to components generated on the same manager.
 <br>
 <br>
-同一のコンポーネントが別プロセスで複数起動された場合には、インスタンスの番号はそれぞれ 0 から始まるので、同一の名前のコンポーネントが複数起動されたことになります。
-場合によっては、ネームサービスに同一の名前として複数のコンポーネントが登録されることになり、前に登録されたものは後で登録されたもので上書きされます。
+When the same component is started multiple times in separate processes, the instance number starts from 0 for each, so multiple components with the same name are started.
+Depending on the case, multiple components may be registered with the same name in the name service, and the one registered earlier will be overwritten by the one registered later.
 <br>
 <br>
-これを回避するには、以下の方法があります。
+To avoid this, the following methods are available.
 
-- **同一プロセスで複数のコンポーネントを起動させる**
-- **rtc.conf の naming.formats オプションでそれぞれ衝突しない名前フォーマットを指定する**
+- **Start multiple components in the same process**
+- **Specify name formats that do not conflict with each other using the naming.formats option in rtc.conf**
 
 <br>
 
 
-### 標準以外のデータ型を InPort / OutPort で使うには
-通常 OpenRTM-aist では rtm/idl/BasicDataType.idl で定義されている
+### To use non-standard data types with InPort / OutPort
+Normally, in OpenRTM-aist, the following are defined in rtm/idl/BasicDataType.idl:
 <br>
 <br>
 TimedShort、TimedLong、TimedUShort、TimedULong、TimedFloat、TimedDouble、TimedChar<br>
@@ -140,12 +138,12 @@ TimedULongSeq、TimedFloatSeq、TimedDoubleSeq、TimedCharSeq、TimedBooleanSeq<
 TimedOctetSeq、TimedStringSeq
 <br>
 <br>
-の20種類のデータ型を InPort および OutPort のデータ型として使用することができます。
+These 20 data types can be used as data types for InPort and OutPort.
 <br>
 <br>
-これ以外のデータ型を定義し InPort / OutPort で使用したい場合は、そのデータ型を IDL で定義し、コンポーネントをコンパイルするときに同時にコンパイル・リンクする必要があります。<br>
+If you want to define data types other than these and use them with InPort / OutPort, you need to define the data type in IDL and compile and link it at the same time when compiling the component.<br>
 <br>
-仮に画像を格納するため、サイズ(width, height)、デプス、イメージデータ、各メンバを持つデータ型を使用したいとします。IDL ではこのデータ型を以下のように定義します。<br>
+Suppose you want to use a data type for storing images, with members for size (width, height), depth, image data, and so on. In IDL, define this data type as follows.<br>
 ```
  #include <BasicDataType.idl>
  module RTC
@@ -160,12 +158,12 @@ TimedOctetSeq、TimedStringSeq
    };
  };
 ```
-Time型は OpenRTM で定義されているタイムスタンプのための型です。無くても構いませんが、含めておいたほうが良いでしょう。
-これを TimedImage.idl として、ファイルに保存します。
+The Time type is a type for timestamps defined in OpenRTM. It may be omitted, but it is better to include it.
+Save this as a file named TimedImage.idl.
 <br>
 <br>
-このファイルをコンポーネントを作成するディレクトリーにおきます。
-次に、rtc-template  でコンポーネントを作成します。その際、この IDL ファイルを --consumer-idl オプションに指定します。
+Place this file in the directory where you create the component.
+Next, create the component with rtc-template. At that time, specify this IDL file with the --consumer-idl option.
 ```
  rtc-template -bcxx
    --module-name=ConsoleIn --module-type='DataFlowComponent'
@@ -178,16 +176,16 @@ Time型は OpenRTM で定義されているタイムスタンプのための型�
 ```
 
 <br>
-この例では、TimedImage.idl で定義した TimedImage型を OutPort のデータ型として用いています。生成されたコードをコンパイルします。
+In this example, the TimedImage type defined in TimedImage.idl is used as the data type of the OutPort. Compile the generated code.
 
 <br>
 ```
  make -f Makefile.ConsoleIn
 ```
-これで、TimedImage.idl が IDL コンパイラでコンパイルされ、スタブが生成されると共に、コンポーネントにリンクされます。
-コンポーネント内でのデータの使用方法は通常のものと同じです。
-これと同じデータ型を他のコンポーネントでも使用したい場合は、この IDL ファイルだけコピーして、同様に rtc-template の --consumer-idl オプションでファイルを指定してください。
-これで、このデータ型を用いてコンポーネント間で通信できるようになります。
+This compiles TimedImage.idl with the IDL compiler, generates stubs, and links them to the component.
+The method of using the data inside the component is the same as usual.
+If you want to use the same data type in other components, copy only this IDL file and similarly specify the file with the --consumer-idl option of rtc-template.
+This makes it possible to communicate between components using this data type.
 
 <br>
 
@@ -196,110 +194,110 @@ Time型は OpenRTM で定義されているタイムスタンプのための型�
 <!-- **ConsoleOut でコールバックが必要な訳は？ -->
 
 &aname(errorjavaJDK);
-### 新規 Java プロジェクトが JDK6(1.6)準拠として作成できない
-新規プロジェクトで Java プロジェクトを作成しようとすると、次のようなダイアログが表示されて、JDK準拠が選択できないことがあります。
+### A new Java project cannot be created as JDK6 (1.6) compliant
+When trying to create a Java project as a new project, a dialog like the following may be displayed, and JDK compliance may not be selectable.
 <br>
-RTCBuilder を利用し、Java で RTコンポーネント作成するプロジェクトでは、このダイアログにおいて指定する JRE（Java実行環境）を JDK 内に含まれている JRE とする必要があります。このままでは JDK内の JRE を選択できないため設定を変更します。
+For projects that use RTCBuilder to create RT components in Java, the JRE (Java runtime environment) specified in this dialog must be the JRE included in the JDK. As it is, the JRE inside the JDK cannot be selected, so change the settings.
 <br>
 <br>
 
-1. 下図のように JRE フレーム内の「JREを構成...」リンクをクリックします。（あるいは、一旦このダイアログをキャンセルして Eclipse のメニューバーの[ウィンドウ] > [設定] > 「設定」ダイアログの左のツリー部分から「Java」の下の「インストール済みのJRE」を選択します。）
+1. As shown in the figure below, click the "Configure JREs..." link in the JRE frame. (Alternatively, cancel this dialog once, and from the Eclipse menu bar, select [Window] > [Preferences], then select "Installed JREs" under "Java" from the tree on the left side of the "Preferences" dialog.)
 <br>
 <br>
 <div align="center"><a href="new_project_name_ja.png"><img src="new_project_name_ja.png" width="50%;"></a></div>
-<div align="center"><strong>新規Javaプロジェクトのダイアログ（JDKの選択がない場合）</strong></div>
+<div align="center"><strong>New Java project dialog (when there is no JDK selection)</strong></div>
 <br>
-2. [追加] ボタンをクリックします。
+2. Click the [Add] button.
 <br>
 <div align="center"><a href="new_JRE_setting_ja.png"><img src="new_JRE_setting_ja.png" width="80%;"></a></div>
-<div align="center"><strong>インストール済みのJREのダイアログ（JDKの表示はまだない）</strong></div>
+<div align="center"><strong>Installed JREs dialog (JDK is not yet displayed)</strong></div>
 <br>
-3.「標準VM」 を選択して [次へ] ボタンをクリックします。
+3. Select "Standard VM" and click the [Next] button.
 <br>
 <div align="center"><a href="new_JRE_VM_setting_ja.png"><img src="new_JRE_VM_setting_ja.png" width="60%;"></a></div>
-<div align="center"><strong>JREの型の選択のダイアログ</strong></div>
+<div align="center"><strong>JRE type selection dialog</strong></div>
 <br>
-4. [ディレクトリー] ボタンをクリックして、JDK6 までのパスを選択します。（参考：通常、JDK6 のパスはC:\Program Files\Java\jdk1.6.0_XX）
+4. Click the [Directory] button and select the path to JDK6. (Reference: Normally, the JDK6 path is C:\Program Files\Java\jdk1.6.0_XX)
 <br>
 <div align="center"><a href="add_JRE_ja.png"><img src="add_JRE_ja.png" width="50%;"></a></div>
-<div align="center"><strong>JRE の追加ダイアログ</strong></div>
+<div align="center"><strong>Add JRE dialog</strong></div>
 <br>
 <div align="center"><a href="select_JDK_ja.png"><img src="select_JDK_ja.png" width="70%;"></a></div>
-<div align="center"><strong>JDK6 までのパスを選択し、「JRE の追加」ダイアログに JDK を参照させる</strong></div>
+<div align="center"><strong>Select the path to JDK6 and make the "Add JRE" dialog refer to the JDK</strong></div>
 <br>
-5. JDK までのパスの参照に成功すると、「JRE の追加」ダイアログが下図のようになりますので、[完了] ボタンをクリックしてダイアログを閉じます。
+5. When reference to the path to the JDK succeeds, the "Add JRE" dialog will appear as shown below, so click the [Finish] button and close the dialog.
 <br>
 <div align="center"><a href="load_JDK_ja.png"><img src="load_JDK_ja.png" width="50%;"></a></div>
-<div align="center"><strong>JDK6 のパス参照に成功</strong></div>
+<div align="center"><strong>Successfully referenced the JDK6 path</strong></div>
 <br>
-6.「インストール済みの JRE」ダイアログに戻ってくるので（JDK が追加された状態で）、下図のようにアクティブとする JRE にチェックを入れ、[OK] ボタンをクリックします。
+6. You will return to the "Installed JREs" dialog (with the JDK added), so check the JRE to make active as shown below and click the [OK] button.
 <br>
 <div align="center"><a href="set_active_JDK_ja.png"><img src="set_active_JDK_ja.png" width="80%;"></a></div>
-<div align="center"><strong>「インストール済みの JRE」ダイアログに JDK が追加されているので、アクティブチェックを JDK に変更</strong></div>
+<div align="center"><strong>Since the JDK has been added to the "Installed JREs" dialog, change the active check to the JDK</strong></div>
 <br>
-7.「新規 Java プロジェクト」のダイアログで JDK が選択できるようになります。
+7. The JDK can now be selected in the "New Java Project" dialog.
 <br>
 <div align="center"><a href="SelectJDKasJRE_ja.png"><img src="SelectJDKasJRE_ja.png" width="50%;"></a></div>
-<div align="center"><strong>「JRE」としてJDK内の JRE で構成するように指定する</strong></div>
+<div align="center"><strong>Specify configuration using the JRE inside the JDK as the "JRE"</strong></div>
 <br>
 
 
 &aname(Antbuild);
-### 任意のフォルダーにクラスパスを設定して Ant ビルドを行う方法は？
-環境変数 RTM_JAVA_ROOT に OpenRTM-aist (Java版)ライブラリ「OpenRTM-aist-X.X.X.jar」（X.X.Xはバージョンです。）が存在するフォルダー「jar」へのベースパス（親フォルダまでのパス）を設定し、それをクラスパスの設定に用いることで、OpenRTM-aist (Java版)は RTCBuilder でのコード生成と Ant でのビルド実行の連携を築いています。したがって、RTM_JAVA_ROOT は OpenRTM-aist (Java版) のライブラリフォルダーへのパス（ベースパス）を必ず保持していなければならないわけです。ところが、RTM_JAVA_ROOT は本来、OpenRTM-aist (Java版) のインストール場所を指すものなので、結果 OpenRTM-aist (Java版) のライブラリと他のコンポーネント（ドキュメント・サンプル・ユーティリティツール類）は常にそのフォルダー構造を保っていなければなりません。
+### How can I set a classpath to an arbitrary folder and perform an Ant build?
+OpenRTM-aist (Java version) establishes coordination between code generation in RTCBuilder and build execution with Ant by setting the base path (path up to the parent folder) to the "jar" folder, where the OpenRTM-aist (Java version) library "OpenRTM-aist-X.X.X.jar" (X.X.X is the version) exists, in the environment variable RTM_JAVA_ROOT, and using it for classpath settings. Therefore, RTM_JAVA_ROOT must always hold the path (base path) to the OpenRTM-aist (Java version) library folder. However, RTM_JAVA_ROOT originally points to the installation location of OpenRTM-aist (Java version), so as a result, the OpenRTM-aist (Java version) library and other components (documents, samples, and utility tools) must always maintain that folder structure.
 <br>
 <br>
-環境変数 RTM_JAVA_ROOT をクラスパス設定専用に使う方法も考えられます。OpenRTM-aist (Java版)のライブラリフォルダーを自由な位置に配置し、それに合わせて RTM_JAVA_ROOT 設定するという使い方もできるでしょう。ただし、この場合は、「環境変数 RTM_JAVA_ROOTをライブラリへのクラスパスの用途以外には使用していない」という保証が必要です。
+It is also possible to use the environment variable RTM_JAVA_ROOT exclusively for classpath settings. You could place the OpenRTM-aist (Java version) library folder wherever you like and set RTM_JAVA_ROOT accordingly. However, in this case, it is necessary to guarantee that "the environment variable RTM_JAVA_ROOT is not used for anything other than the classpath to the library."
 <br>
 <br>
-そこで、何らかの事情で RTM_JAVA_ROOT が指示しているところとは別のところにクラスパスを設定したい場合、クラスパスをどのように設定したらよいのかをここで説明します。
+Therefore, if for some reason you want to set the classpath somewhere other than the location pointed to by RTM_JAVA_ROOT, this section explains how to set the classpath.
 <br>
 <br>
 
-- **Eclipse の Ant 設定ダイアログを呼び出す**
+- **Call the Eclipse Ant settings dialog**
 <br>
-Eclipse の通常左のビュー「パッケージ・エクスプローラー」から build_<CompName>.xml を右クリックして、[実行] > [Antビルド...] を選択する。
+From Eclipse's usual left-side view "Package Explorer", right-click build_<CompName>.xml and select [Run] > [Ant Build...].
 <br>
 <br>
 <div align="center"><a href="Call_Ant_Setting_ja.png"><img src="Call_Ant_Setting_ja.png" width="80%;"></a></div>
-<div align="center"><strong>Ant設定ダイアログを呼び出す</strong></div>
+<div align="center"><strong>Call the Ant settings dialog</strong></div>
 
 <br>
 
-- **クラスパスの設定**<br>
-1. Ant の設定ダイアログが表示されるので、「クラスパス」タブを選択する。
+- **Classpath settings**<br>
+1. The Ant settings dialog is displayed, so select the "Classpath" tab.
 <br>
 <br>
 <div align="center"><a href="Ant_Setting_Classpath_ja.png"><img src="Ant_Setting_Classpath_ja.png" width="80%;"></a></div>
-<div align="center"><strong>「クラスパス」タグを選択する</strong></div>
+<div align="center"><strong>Select the "Classpath" tab</strong></div>
 
 <br>
 
-2.「ユーザーエントリ」を一度選択し、その後「外部 JAR の追加」ボタンをクリックする。
+2. Select "User Entries" once, then click the "Add External JARs" button.
 <br>
 <br>
 <div align="center"><a href="Ant_External_Jar_ja.png"><img src="Ant_External_Jar_ja.png" width="80%;"></a></div>
-<div align="center"><strong>外部JARの追加</strong></div>
+<div align="center"><strong>Add external JARs</strong></div>
 
 <br>
 
-3.「JAR の選択」ダイアログが現れたら、目的の JAR ライブラリまでのパスを指定する。結果、下図のように追加した JAR ライブラリが Ant の設定ダイアログに表示される。
+3. When the "JAR Selection" dialog appears, specify the path to the target JAR library. As a result, the added JAR library is displayed in the Ant settings dialog as shown below.
 <br>
 <br>
 <div align="center"><a href="Ant_Add_Jar_ja.png"><img src="Ant_Add_Jar_ja.png" width="80%;"></a></div>
-<div align="center"><strong>追加された JAR</strong></div>
+<div align="center"><strong>Added JAR</strong></div>
 
 <br>
 
-**重要な留意点**<br>
-環境変数 RTM_JAVA_ROOT は必ず設定しなければなりません（ただし、ダミーでも可）。クラスパスを任意に指定することで、たとえ RTM_JAVA_ROOT の設定が不要となったとしても、その設定削除をしたり、設定そのものをしなかったりするとビルド時にエラーとなります。また、RTM_JAVA_ROOT が指し示すパスの先には（空でもいいので）必ず「jar」という名前のフォルダーが実在していなければなりません。
+**Important notes**<br>
+The environment variable RTM_JAVA_ROOT must always be set (however, it may be a dummy). By specifying the classpath arbitrarily, even if the RTM_JAVA_ROOT setting becomes unnecessary, deleting that setting or not setting it at all will result in an error during the build. Also, a folder named "jar" must actually exist at the path indicated by RTM_JAVA_ROOT (it may be empty).
 <br>
 <br>
 
 
 &aname(Antbuilderror);
-### Java で Ant を使ってコマンドラインからビルドするときに例外が表示される
-Java で Ant を実行すると以下のような例外が表示される場合があります。
+### An exception is displayed when building from the command line using Ant with Java
+When running Ant with Java, an exception like the following may be displayed.
 
 ```
  >ant -f build_ModuleName.xml
@@ -320,11 +318,9 @@ Java で Ant を実行すると以下のような例外が表示される場合�
         at sun.launcher.LauncherHelper.checkAndLoadMain(LauncherHelper.java:482)
 ```
 
-**原因：**Java のバージョンが古い可能性があります。<br>
-Java と Ant のバージョン要件は以下のリンクを参照してください。必要に応じてアップデートを実行してください。<br>
+**Cause:** The Java version may be old.<br>
+See the following link for the Java and Ant version requirements. Update as necessary.<br>
 <br>
-[Java と Ant のバージョン要件](http://ant.apache.org/faq.html#java-version)
+[Java and Ant version requirements](http://ant.apache.org/faq.html#java-version)
 <br>
 
-
--------jp page!!-------

@@ -1,31 +1,36 @@
 ---
 layout: page
-title: "ROS2通信機能の利用"
+title: "Using the ROS2 Communication Feature"
 ---
--------jp page!!-------
 
-<!-- ROS2通信機能の利用 -->
+<!-- Using the ROS2 Communication Feature -->
 #contents
 
-## C++版
+## C++ Version
+
 ### Windows
 
-#### Chocolateyのインストール
-以下のページの指示に従いインストールします。
+#### Installing Chocolatey
+
+Install it by following the instructions on the following page.
 
 - [Chocolatey](https://chocolatey.org/install#installing-chocolatey)
 
-#### Python3のインストール
-以下のコマンドでインストールします。
+#### Installing Python3
 
- > choco install -y python
+Install it using the following command.
 
-#### OpenSSLのインストール
-以下から**Win64OpenSSL-1_0_2r.exe**を入手して、それを実行してインストールします。
+```
+> choco install -y python
+```
+
+#### Installing OpenSSL
+
+Download **Win64OpenSSL-1_0_2r.exe** from the following page, then run it to install.
 
 - [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html)
 
-以下の環境変数を設定します。
+Set the following environment variable.
 
 <table class="table-alt">
   <tr>
@@ -36,333 +41,350 @@ title: "ROS2通信機能の利用"
 
 <br>
 
-環境変数PATHに**C:\OpenSSL-Win64\bin**を追加します。
+Add **C:\OpenSSL-Win64\bin** to the PATH environment variable.
 
-#### asio、eigen、tinyxml、tinyxml-usestl、log4cxxのインストール
-以下のページからNuGetパッケージ(**.nupkg**)ファイルをダウンロードしてください。
+#### Installing asio, eigen, tinyxml, tinyxml-usestl, and log4cxx
+
+Download the NuGet package (**.nupkg**) files from the following page.
 
 - https://github.com/ros2/choco-packages/releases
 
-以下のコマンドでインストールします。依存するNugetパッケージが増える場合もあるようなので、適宜変更してください。
+Install them using the following command. Since additional dependent NuGet packages may be required, modify the command as appropriate.
 
- > choco install -y -s <**'ダウンロードしたパス**'> asio eigen tinyxml-usestl tinyxml2 log4cxx
+```
+> choco install -y -s <**'Downloaded path**'> asio eigen tinyxml-usestl tinyxml2 log4cxx
+```
 
+#### Installing Python Packages
 
-#### Python用パッケージのインストール
-以下のコマンドでインストールします。
+Install them using the following command.
 
- > python -m pip install -U catkin_pkg empy pyparsing pyyaml setuptools
+```
+> python -m pip install -U catkin_pkg empy pyparsing pyyaml setuptools
+```
 
-#### ROS2のインストール
-以下のページから**ros2-****-********-windows-release-amd64.zip**をダウンロードします。
+#### Installing ROS2
+
+Download **ros2-****-********-windows-release-amd64.zip** from the following page.
 
 - https://github.com/ros2/ros2/releases
 
-**C:\dev\ros2**等に展開して完了です。
+Extract it to **C:\dev\ros2** or another suitable location to complete the installation.
 
-#### OpenRTM-aistのビルド
+#### Building OpenRTM-aist
 
-CMake実行前にROS2の環境を設定するスクリプトを実行します。
-
- > call C:\dev\ros2\local_setup.bat
-
-CMake実行時に**FASTRTPS_ENABLE**、**ROS2_ENABLE**のオプションをONにします。
-
- > cmake  -DORB_ROOT=C:/workspace/omniORB-4.2.3-win64-vc14 -G "Visual Studio 16 2019" -A x64 -DFASTRTPS_ENABLE=ON -DROS2_ENABLE=ON ..
-
-その他の手順は通常と同じです。
-
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
-
-適当な場所にインストールしてください。
-
-インストールするディレクトリは**CMAKE_INSTALL_PREFIX**のオプションで設定します。
-
- > cmake .. -DCMAKE_INSTALL_PREFIX=C:/workspace/OpenRTM-aist/build_omni/install
- > cmake --build . --config Release --target install
-
-#### 動作確認
-
-**<**'インストールしたパス**'>\2.0.0\Components\C++\Examples\vc14**のサンプルコンポーネントを実行します。
-
-以下の内容のrtc.confを作成してください。
-
+Before running CMake, execute the script to configure the ROS2 environment.
 
 ```
- manager.modules.load_path: {インストールしたパス}\\2.0.0\\ext\\transport
- manager.modules.preload: FastRTPSTransport.dll, ROS2Transport.dll
- manager.components.preconnect: ConsoleOut0.in?interface_type=fast-rtps&marshaling_type=ros2:std_msgs/Float32&fast-rtps.topic=chatter, ConsoleIn0.out?interface_type=fast-rtps&marshaling_type=ros2:std_msgs/Float32&fast-rtps.topic=chatter
- manager.components.preactivation: ConsoleOut0, ConsoleIn0
+> call C:\dev\ros2\local_setup.bat
 ```
 
-: manager.module.load_path | シリアライザ用モジュール(FastRTPSTransport.dllとROS2Transport.dll)が置かれている場所
-: manager.modules.preload | シリアライザ用モジュールを読み込む順番で指定
-: manager.components.preconnect | コネクタ生成時の設定を記述します。interface_type(インターフェース型)に**fast-rtps**を、marshaling_type(マーシャリング型)に対応シリアライザ名を、fast-rtps.topic(トピック)に適当な任意の名前を記述します。
+Turn ON the **FASTRTPS_ENABLE** and **ROS2_ENABLE** options when running CMake.
 
-ROS/ROS2用のシリアライザと対応するROS/ROS2メッセージ型の関係を以下のリンクで示します。
+```
+> cmake -DORB_ROOT=C:/workspace/omniORB-4.2.3-win64-vc14 -G "Visual Studio 16 2019" -A x64 -DFASTRTPS_ENABLE=ON -DROS2_ENABLE=ON ..
+```
 
+The remaining steps are the same as the standard build procedure.
 
-- [シリアライザ名とROS/ROS2メッセージ型]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/ros_comm_use/ros_ros2_default_support_message_types)
+- [OpenRTM-aist Build Procedure]({{ site.baseurl }}/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
 
-コネクタの生成は**manager.components.preconnect**オプションにより設定します。
-この例では**ConsoleOut0**コンポーネントの**in**のポート、**ConsoleIn0**コンポーネントの**out**のポートにそれぞれコネクタを生成しています。
+Install it to an appropriate location.
 
-実行前に環境変数PATHに以下を追加する必要があります。
+Specify the installation directory using the **CMAKE_INSTALL_PREFIX** option.
 
-- <**'インストールしたパス**'>\2.0.0\bin\vc14
-- <**'インストールしたパス**'>\2.0.0\omniORB\4.2.3_vc14\bin\x86_win32
+```
+> cmake .. -DCMAKE_INSTALL_PREFIX=C:/workspace/OpenRTM-aist/build_omni/install
+> cmake --build . --config Release --target install
+```
+
+#### Operation Check
+
+Run the sample components located in **<**'Installation path**'>\2.0.0\Components\C++\Examples\vc14**.
+
+Create an rtc.conf file with the following contents.
+
+```
+manager.modules.load_path: {Installation path}\\2.0.0\\ext\\transport
+manager.modules.preload: FastRTPSTransport.dll, ROS2Transport.dll
+manager.components.preconnect: ConsoleOut0.in?interface_type=fast-rtps&marshaling_type=ros2:std_msgs/Float32&fast-rtps.topic=chatter, ConsoleIn0.out?interface_type=fast-rtps&marshaling_type=ros2:std_msgs/Float32&fast-rtps.topic=chatter
+manager.components.preactivation: ConsoleOut0, ConsoleIn0
+```
+
+: manager.module.load_path | Location where the serializer modules (FastRTPSTransport.dll and ROS2Transport.dll) are stored
+: manager.modules.preload | Specifies the order in which the serializer modules are loaded
+: manager.components.preconnect | Describes the settings for connector creation. Specify **fast-rtps** for interface_type (interface type), the corresponding serializer name for marshaling_type (marshaling type), and any arbitrary name for fast-rtps.topic (topic).
+
+The relationship between the serializers for ROS/ROS2 and the corresponding ROS/ROS2 message types is shown at the following link.
+
+- [Serializer Names and ROS/ROS2 Message Types]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/ros_comm_use/ros_ros2_default_support_message_types)
+
+Connector creation is configured using the **manager.components.preconnect** option.
+
+In this example, connectors are created for the **in** port of the **ConsoleOut0** component and the **out** port of the **ConsoleIn0** component.
+
+Before execution, add the following directories to the PATH environment variable.
+
+- <**'Installation path**'>\2.0.0\bin\vc14
+- <**'Installation path**'>\2.0.0\omniORB\4.2.3_vc14\bin\x86_win32
 - C:\dev\ros2\bin
 - C:\ProgramData\chocolatey\lib\tinyxml2\lib
 - C:\ProgramData\chocolatey\lib\log4cxx\lib
 
-
-
-**ConsoleInComp.exe**、**ConsoleOutComp.exe**を実行すると通信ができるようになります。
-
-
+Communication becomes available after running **ConsoleInComp.exe** and **ConsoleOutComp.exe**.
 
 ### Ubuntu
-#### ROS2のインストール
-以下のコマンドでインストールします。
+
+#### Installing ROS2
+
+Install it using the following commands.
 
 ```
- $ curl http://repo.ros2.org/repos.key | sudo apt-key add -
- $ sudo sh -c 'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'
- $ export ROS_DISTRO=crystal
- $ sudo apt update
- $ sudo apt install ros-${ROS_DISTRO}-ros-core
+$ curl http://repo.ros2.org/repos.key | sudo apt-key add -
+$ sudo sh -c 'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'
+$ export ROS_DISTRO=crystal
+$ sudo apt update
+$ sudo apt install ros-${ROS_DISTRO}-ros-core
 ```
 
-ROS2用にbashの設定を以下のように行います。(次回以降のbash起動時の設定と、現在実行中のbashの設定を行います。)
+Configure bash for ROS2 as follows. (This sets up both future bash sessions and the currently running bash session.)
 
 ```
- echo "source /opt/ros/crystal/setup.bash" >> ~/.bashrc
- source ~/.bashrc
+echo "source /opt/ros/crystal/setup.bash" >> ~/.bashrc
+source ~/.bashrc
 ```
 
+#### Building OpenRTM-aist
 
-
-#### OpenRTM-aistのビルド
-
-CMake実行時に**FASTRTPS_ENABLE**、**ROS2_ENABLE**のオプションをONにします。
+Turn ON the **FASTRTPS_ENABLE** and **ROS2_ENABLE** options when running CMake.
 
 ```
- $ cmake -DCORBA=omniORB -DCMAKE_BUILD_TYPE=Release -DFASTRTPS_ENABLE=ON -DROS2_ENABLE=ON ..
+$ cmake -DCORBA=omniORB -DCMAKE_BUILD_TYPE=Release -DFASTRTPS_ENABLE=ON -DROS2_ENABLE=ON ..
 ```
 
-その他の手順は通常と同じです。
+The remaining steps are the same as the standard build procedure.
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aist Build Procedure]({{ site.baseurl }}/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
 
-ビルド後にインストールしてください。
-
-```
- $ cmake --build . --target install
-```
-
-#### 動作確認
-以下のrtc.confを作成します。
+Install it after building.
 
 ```
- manager.modules.load_path: /usr/local/lib/openrtm-2.0/transport/
- manager.modules.preload: FastRTPSTransport.so, ROS2Transport.so
- manager.components.preconnect: ConsoleOut0.in?interface_type=fast-rtps&marshaling_type=ros2:std_msgs/Float32&fast-rtps.topic=chatter, ConsoleIn0.out?interface_type=fast-rtps&marshaling_type=ros2:std_msgs/Float32&fast-rtps.topic=chatter
- manager.components.preactivation: ConsoleOut0, ConsoleIn0
+$ cmake --build . --target install
 ```
 
-: manager.module.load_path | シリアライザ用モジュール(FastRTPSTransport.soとROS2Transport.so)が置かれている場所
-: manager.modules.preload | シリアライザ用モジュールを読み込む順番で指定
-: manager.components.preconnect | コネクタ生成時の設定を記述します。interface_type(インターフェース型)に**fast-rtps**を、marshaling_type(マーシャリング型)に対応シリアライザ名を、fast-rtps.topic(トピック)に適当な任意の名前を記述します。
+#### Operation Check
 
-OpenRTM-aistのシリアライザが対応しているメッセージ型を以下に示します。
-
-- [シリアライザ名とROS/ROS2メッセージ型]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/ros_comm_use/ros_ros2_default_support_message_types)
-
-RTCを起動して動作確認します。
-
-それぞれ別のターミナルから起動してください。
+Create the following rtc.conf.
 
 ```
- /usr/local/share/openrtm-2.0/components/c++/examples/ConsoleInComp
+manager.modules.load_path: /usr/local/lib/openrtm-2.0/transport/
+manager.modules.preload: FastRTPSTransport.so, ROS2Transport.so
+manager.components.preconnect: ConsoleOut0.in?interface_type=fast-rtps&marshaling_type=ros2:std_msgs/Float32&fast-rtps.topic=chatter, ConsoleIn0.out?interface_type=fast-rtps&marshaling_type=ros2:std_msgs/Float32&fast-rtps.topic=chatter
+manager.components.preactivation: ConsoleOut0, ConsoleIn0
+```
+
+: manager.module.load_path | Location where the serializer modules (FastRTPSTransport.so and ROS2Transport.so) are stored
+: manager.modules.preload | Specifies the order in which the serializer modules are loaded
+: manager.components.preconnect | Describes the settings for connector creation. Specify **fast-rtps** for interface_type (interface type), the corresponding serializer name for marshaling_type (marshaling type), and any arbitrary name for fast-rtps.topic (topic).
+
+The message types supported by the OpenRTM-aist serializers are shown below.
+
+- [Serializer Names and ROS/ROS2 Message Types]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/ros_comm_use/ros_ros2_default_support_message_types)
+
+Start the RTCs to verify operation.
+
+Start each one from a separate terminal.
+
+```
+/usr/local/share/openrtm-2.0/components/c++/examples/ConsoleInComp
 ```
 
 ```
- /usr/local/share/openrtm-2.0/components/c++/examples/ConsoleOutComp
+/usr/local/share/openrtm-2.0/components/c++/examples/ConsoleOutComp
 ```
 
-## Python版
+## Python Version
+
 ### Windows
-C++版と同じ手順でROS2をインストールしてください。
 
-#### OpenRTM-aistのインストール
-OpenRTM-aist 1.2等をインストーラーでインストールしておいてください。
-OpenRTM-aist Python版のソースコードを入手してください。
+Install ROS2 using the same procedure as for the C++ version.
 
-- [Python版のソースコード](https://github.com/OpenRTM/OpenRTM-aist-Python)
+#### Installing OpenRTM-aist
 
-以下のコマンドでOpenRTM-aist Python版をインストールしてください。
+Install OpenRTM-aist 1.2 or later using the installer.
 
-```
- python setup.py build
- python setup.py install
-```
+Obtain the source code for the Python version of OpenRTM-aist.
 
-#### 動作確認
-動作前に以下のコマンドを実行してください。
+- [Python Source Code](https://github.com/OpenRTM/OpenRTM-aist-Python)
 
-```
-  call C:\dev\ros2\setup.bat
+Install the Python version of OpenRTM-aist using the following commands.
+
+```sh
+python setup.py build
+python setup.py install
 ```
 
-以下のようなrtc.confを作成し、**ROS2Transport.py**をロード後、インターフェース型に**opensplice**を指定して起動します。
+#### Operation Check
 
+Execute the following command before running.
+
+```sh
+call C:\dev\ros2\setup.bat
 ```
- manager.modules.load_path: C:\\Python37\\Lib\\site-packages\\OpenRTM_aist\\ext\\transport\\ROS2Transport
- manager.modules.preload: ROS2Transport.py
- manager.components.preconnect: ConsoleOut0.in?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&ros2.topic=chatter, ConsoleIn0.out?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&ros2.topic=chatter
- manager.components.preactivation: ConsoleOut0, ConsoleIn0
+
+Create an rtc.conf file as shown below, load **ROS2Transport.py**, and start it with **opensplice** specified as the interface type.
+
+```text
+manager.modules.load_path: C:\\Python37\\Lib\\site-packages\\OpenRTM_aist\\ext\\transport\\ROS2Transport
+manager.modules.preload: ROS2Transport.py
+manager.components.preconnect: ConsoleOut0.in?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&ros2.topic=chatter, ConsoleIn0.out?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&ros2.topic=chatter
+manager.components.preactivation: ConsoleOut0, ConsoleIn0
 ```
 
-: manager.module.load_path | シリアライザ用モジュール(ROS2Transport.py)が置かれている場所
-: manager.modules.preload | シリアライザ用モジュールを読み込む順番で指定
-: manager.components.preconnect | コネクタ生成時の設定を記述します。interface_type(インターフェース型)に**ros2**を、marshaling_type(マーシャリング型)に対応シリアライザ名を、ros2.topic(トピック)に適当な任意の名前を記述します。
-
-
+: manager.module.load_path | Location where the serializer module (ROS2Transport.py) is stored
+: manager.modules.preload | Specifies the order in which the serializer module is loaded
+: manager.components.preconnect | Describes the settings for connector creation. Specify **ros2** for interface_type (interface type), the corresponding serializer name for marshaling_type (marshaling type), and any arbitrary name for ros2.topic (topic).
 
 ### Ubuntu
-#### ROS2のインストール
-以下のコマンドでインストールします。
 
-```
- $ curl http://repo.ros2.org/repos.key | sudo apt-key add -
- $ sudo sh -c 'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'
- $ export ROS_DISTRO=crystal
- $ sudo apt update
- $ sudo apt install ros-${ROS_DISTRO}-desktop
-```
+#### Installing ROS2
 
-ROS2の環境設定のbashを実行するようにします。
+Install it using the following commands.
 
-```
- $ echo "source /opt/ros/crystal/setup.bash" >> ~/.bashrc
- $ source ~/.bashrc
+```sh
+$ curl http://repo.ros2.org/repos.key | sudo apt-key add -
+$ sudo sh -c 'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'
+$ export ROS_DISTRO=crystal
+$ sudo apt update
+$ sudo apt install ros-${ROS_DISTRO}-desktop
 ```
 
+Configure bash to load the ROS2 environment.
 
-```
- $  sudo apt-get install python-omniorb-omg omniidl-python doxygen
-```
-
-#### OpenRTM-aistのインストール
-OpenRTM-aist Python版のソースコードを入手してください。
-
-- [Python版のソースコード](https://github.com/OpenRTM/OpenRTM-aist-Python)
-
-以下のコマンドでOpenRTM-aist Python版をビルド/インストールしてください。
-
-```
- $ python setup.py build
- $ python setup.py install
+```sh
+$ echo "source /opt/ros/crystal/setup.bash" >> ~/.bashrc
+$ source ~/.bashrc
 ```
 
-#### 動作確認
-ros2のsetup.bashを実行するとPYTHONPATHが上書きされるようなので以下のコマンドを実行する。
-
-```
- $ export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.6/site-packages
- $ export PATH=$PATH:/usr/local/lib/python3.6/site-packages/
+```sh
+$ sudo apt-get install python-omniorb-omg omniidl-python doxygen
 ```
 
-omniORBpyがインストールされているディレクトリにあわせて変更してください。
+#### Installing OpenRTM-aist
 
-以下のようなrtc.confを作成し、**ROS2Transport.py**をロードし、インターフェース型に**ros2**、シリアライザに**ros2:std_msgs/Float32**を指定して起動するように指定します。
+Obtain the source code for the Python version of OpenRTM-aist.
 
-```
- manager.modules.load_path: /usr/local/lib/python3.6/site-packages/OpenRTM_aist/ext/transport/ROS2Transport/
- manager.modules.preload: ROS2Transport.py
- manager.components.preconnect: ConsoleOut0.in?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&ros2.topic=chatter, ConsoleIn0.out?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&ros2.topic=chatter
- manager.components.preactivation: ConsoleOut0, ConsoleIn0
-```
+- [Python Source Code](https://github.com/OpenRTM/OpenRTM-aist-Python)
 
-OpenRTM-aistのシリアライザが対応しているメッセージ型を以下に示します。
+Build and install the Python version of OpenRTM-aist using the following commands.
 
-- [シリアライザ名とROS/ROS2メッセージ型]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/ros_comm_use/ros_ros2_default_support_message_types)
-
-
-以下のコマンドでRTCを起動して動作確認してください。
-
-```
- $ python /usr/local/share/openrtm-2.0/components/python/SimpleIO/ConsoleIn.py
+```sh
+$ python setup.py build
+$ python setup.py install
 ```
 
-```
- $ python /usr/local/share/openrtm-2.0/components/python/SimpleIO/ConsoleOut.py
+#### Operation Check
+
+Executing ros2's setup.bash appears to overwrite PYTHONPATH, so execute the following commands.
+
+```sh
+$ export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.6/site-packages
+$ export PATH=$PATH:/usr/local/lib/python3.6/site-packages/
 ```
 
-## 起動時のオプション
+Modify the paths according to the directory where omniORBpy is installed.
+
+Create an rtc.conf file as shown below, load **ROS2Transport.py**, and configure it to start with **ros2** as the interface type and **ros2:std_msgs/Float32** as the serializer.
+
+```text
+manager.modules.load_path: /usr/local/lib/python3.6/site-packages/OpenRTM_aist/ext/transport/ROS2Transport/
+manager.modules.preload: ROS2Transport.py
+manager.components.preconnect: ConsoleOut0.in?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&ros2.topic=chatter, ConsoleIn0.out?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&ros2.topic=chatter
+manager.components.preactivation: ConsoleOut0, ConsoleIn0
+```
+
+The message types supported by the OpenRTM-aist serializers are shown below.
+
+- [Serializer Names and ROS/ROS2 Message Types]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/ros_comm_use/ros_ros2_default_support_message_types)
+
+Verify operation by starting the RTCs with the following commands.
+
+```sh
+$ python /usr/local/share/openrtm-2.0/components/python/SimpleIO/ConsoleIn.py
+```
+
+```sh
+$ python /usr/local/share/openrtm-2.0/components/python/SimpleIO/ConsoleOut.py
+```
+
+## Startup Options
+
 ### C++
-[Fast DDS通信機能のオプション]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/dds_comm_use/fast-rtps#起動時のオプション)を設定してください。
+
+Configure the [Fast DDS Communication Feature Options]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/dds_comm_use/fast-rtps#起動時のオプション).
 
 ### Python
-以下のオプションが設定できます。
+
+The following options can be configured.
 
 <table class="table-alt">
   <tr>
-    <th>オプション名</th>
-    <th>設定例</th>
-    <th>内容</th>
+    <th>Option Name</th>
+    <th>Example Setting</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>ros2.args</td>
     <td></td>
-    <td>**rclpy.init**の引数**args**</td>
+    <td><strong>args</strong> argument of <code>rclpy.init</code></td>
   </tr>
   <tr>
     <td>ros2.node.name</td>
     <td>node_name</td>
-    <td>ノード名</td>
+    <td>Node name</td>
   </tr>
 </table>
 
-## 接続時のオプション
-### C++
-[Fast DDS通信機能のオプション]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/dds_comm_use/fast-rtps#接続時のオプション)を設定してください。
+## Connection Options
 
+### C++
+
+Configure the [Fast DDS Communication Feature Options]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/dds_comm_use/fast-rtps#接続時のオプション).
 
 ### Python
 
-接続時に設定可能な項目は以下の通りです。
+The items that can be configured at connection time are as follows.
 
 <table class="table-alt">
   <tr>
-    <th>オプション名</th>
-    <th>デフォルト値</th>
-    <th>オプション</th>
-    <th>内容</th>
+    <th>Option Name</th>
+    <th>Default Value</th>
+    <th>Option</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>marshaling_type</td>
     <td></td>
     <td></td>
-    <td>シリアライザの種類。**ros:std_msgs/Float32**などが設定できる。</td>
+    <td>Type of serializer. Values such as <strong>ros:std_msgs/Float32</strong> can be set.</td>
   </tr>
   <tr>
     <td>ros2.topic</td>
     <td>chatter</td>
     <td></td>
-    <td>DDSトピック名</td>
+    <td>DDS topic name</td>
   </tr>
   <tr>
     <td>ros2.reader_qos.durability.kind</td>
     <td>TRANSIENT_DURABILITY_QOS</td>
     <td>VOLATILE_DURABILITY_QOS, TRANSIENT_LOCAL_DURABILITY_QOS, SYSTEM_DEFAULT_QOS</td>
-    <td>送信側の堅牢性(VOLATILE_DURABILITY_QOS：変わりやすい、TRANSIENT_LOCAL_DURABILITY_QOS：一時的なローカル設定）</td>
+    <td>Durability on the sending side (VOLATILE_DURABILITY_QOS: volatile, TRANSIENT_LOCAL_DURABILITY_QOS: transient local setting)</td>
   </tr>
   <tr>
     <td>ros2.reader_qos.deadline.period.sec</td>
     <td>0</td>
     <td></td>
-    <td>受信側の最小周期</td>
+    <td>Minimum period on the receiving side</td>
   </tr>
   <tr>
     <td>ros2.reader_qos.deadline.period.nanosec</td>
@@ -380,7 +402,7 @@ OpenRTM-aistのシリアライザが対応しているメッセージ型を以�
     <td>ros2.reader_qos.liveliness.lease_duration.sec</td>
     <td>0</td>
     <td></td>
-    <td>受信側のハートビートの周期</td>
+    <td>Heartbeat period on the receiving side</td>
   </tr>
   <tr>
     <td>ros2.reader_qos.liveliness.lease_duration.nanosec</td>
@@ -392,20 +414,20 @@ OpenRTM-aistのシリアライザが対応しているメッセージ型を以�
     <td>ros2.reader_qos.reliability.kind</td>
     <td>RELIABLE_RELIABILITY_QOS</td>
     <td>BEST_EFFORT_RELIABILITY_QOS, RELIABLE_RELIABILITY_QOS, SYSTEM_DEFAULT_RELIABILITY_QOS</td>
-    <td>受信側の信頼性(RELIABLE_RELIABILITY_QOS：高信頼、BEST_EFFORT_RELIABILITY_QOS：最高速度)</td>
+    <td>Reliability on the receiving side (RELIABLE_RELIABILITY_QOS: high reliability, BEST_EFFORT_RELIABILITY_QOS: maximum speed)</td>
   </tr>
   <tr>
     <td>ros2.reader_qos.history.kind</td>
     <td>KEEP_LAST_HISTORY_QOS</td>
     <td>KEEP_LAST_HISTORY_QOS, KEEP_ALL_HISTORY_QOS, SYSTEM_DEFAULT_HISTORY_QOS</td>
-    <td>受信データの保持方法（KEEP_ALL_HISTORY_QOS：すべてのデータを保持、KEEP_LAST_HISTORY_QOSで指定したデータ数だけ保持）</td>
+    <td>How received data is retained (KEEP_ALL_HISTORY_QOS: retain all data, KEEP_LAST_HISTORY_QOS: retain only the number of data items specified)</td>
     <td>KEEP_LAST</td>
   </tr>
   <tr>
     <td>ros2.reader_qos.history.depth</td>
     <td>1</td>
     <td></td>
-    <td>受信側の保持するデータ数</td>
+    <td>Number of data items retained on the receiving side</td>
   </tr>
   <tr>
     <td>ros2.reader_qos.lifespan.duration.sec</td>
@@ -429,13 +451,13 @@ OpenRTM-aistのシリアライザが対応しているメッセージ型を以�
     <td>ros2.writer_qos.durability.kind</td>
     <td>TRANSIENT_DURABILITY_QOS</td>
     <td>VOLATILE_DURABILITY_QOS, TRANSIENT_LOCAL_DURABILITY_QOS, SYSTEM_DEFAULT_QOS</td>
-    <td>送信側の堅牢性(VOLATILE_DURABILITY_QOS：変わりやすい、TRANSIENT_LOCAL_DURABILITY_QOS：一時的なローカル設定）</td>
+    <td>Durability on the sending side (VOLATILE_DURABILITY_QOS: volatile, TRANSIENT_LOCAL_DURABILITY_QOS: transient local setting)</td>
   </tr>
   <tr>
     <td>ros2.writer_qos.deadline.period.sec</td>
     <td>0</td>
     <td></td>
-    <td>送信側の最小周期</td>
+    <td>Minimum period on the sending side</td>
   </tr>
   <tr>
     <td>ros2.writer_qos.deadline.period.nanosec</td>
@@ -443,6 +465,8 @@ OpenRTM-aistのシリアライザが対応しているメッセージ型を以�
     <td></td>
     <td></td>
   </tr>
+
+
   <tr>
     <td>ros2.writer_qos.liveliness.kind</td>
     <td>AUTOMATIC_LIVELINESS_QOS</td>
@@ -453,7 +477,7 @@ OpenRTM-aistのシリアライザが対応しているメッセージ型を以�
     <td>ros2.writer_qos.liveliness.lease_duration.sec</td>
     <td>0</td>
     <td></td>
-    <td>送信側のハートビートの周期</td>
+    <td>Heartbeat period on the sending side</td>
   </tr>
   <tr>
     <td>ros2.writer_qos.liveliness.lease_duration.nanosec</td>
@@ -465,25 +489,25 @@ OpenRTM-aistのシリアライザが対応しているメッセージ型を以�
     <td>ros2.writer_qos.reliability.kind</td>
     <td>RELIABLE_RELIABILITY_QOS</td>
     <td>BEST_EFFORT_RELIABILITY_QOS, RELIABLE_RELIABILITY_QOS, SYSTEM_DEFAULT_RELIABILITY_QOS</td>
-    <td>送信側の信頼性(RELIABLE_RELIABILITY_QOS：高信頼、BEST_EFFORT_RELIABILITY_QOS：最高速度)</td>
+    <td>Reliability on the sending side (RELIABLE_RELIABILITY_QOS: high reliability, BEST_EFFORT_RELIABILITY_QOS: maximum speed)</td>
   </tr>
   <tr>
     <td>ros2.writer_qos.history.kind</td>
     <td>KEEP_LAST_HISTORY_QOS</td>
     <td>KEEP_LAST_HISTORY_QOS, KEEP_ALL_HISTORY_QOS, SYSTEM_DEFAULT_HISTORY_QOS</td>
-    <td>送信データの保持方法（KEEP_ALL_HISTORY_QOS：すべてのデータを保持、KEEP_LAST_HISTORY_QOSで指定したデータ数だけ保持）</td>
+    <td>How sent data is retained (KEEP_ALL_HISTORY_QOS: retain all data, KEEP_LAST_HISTORY_QOS: retain only the number of data items specified)</td>
   </tr>
   <tr>
     <td>ros2.writer_qos.history.depth</td>
     <td>1</td>
     <td></td>
-    <td>送信側の保持するデータ数</td>
+    <td>Number of data items retained on the sending side</td>
   </tr>
   <tr>
     <td>ros2.writer_qos.lifespan.duration.sec</td>
     <td>0</td>
     <td></td>
-    <td>送信側の未送信データの保持時間</td>
+    <td>Retention time for unsent data on the sending side</td>
   </tr>
   <tr>
     <td>ros2.writer_qos.lifespan.duration.nanosec</td>
@@ -499,27 +523,25 @@ OpenRTM-aistのシリアライザが対応しているメッセージ型を以�
   </tr>
 </table>
 
-以下に設定例を記載します。
+The following shows a configuration example.
 
 ```
- manager.components.preconnect: ConsoleOut0.in?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32, ConsoleIn0.out?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32
+manager.components.preconnect: ConsoleOut0.in?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32, ConsoleIn0.out?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32
 ```
 
-## 簡単な動作確認
-OpenRTM-aistをビルド、インストールすると、ROS2Transportの簡単な動作確認用の設定ファイルがインストールされます。
+## Simple Operation Check
+
+When OpenRTM-aist is built and installed, a configuration file for a simple operation check of ROS2Transport is installed.
 
 ```
- D:\ros2-windows\setup.bat
- %RTM_ROOT%\ext\environment-setup.omniorb.vc16.bat
- %RTM_ROOT%\Components\C++\Examples\vc16\ConsoleOutComp.exe -f %RTM_ROOT%\ext\transport\rtc.ros2.conf
+D:\ros2-windows\setup.bat
+%RTM_ROOT%\ext\environment-setup.omniorb.vc16.bat
+%RTM_ROOT%\Components\C++\Examples\vc16\ConsoleOutComp.exe -f %RTM_ROOT%\ext\transport\rtc.ros2.conf
 ```
 
-
 ```
- source /opt/ros/dashing/setup.sh
- source ${OPENRTM_INSTALL_DIR}/etc/environment-setup.sh
- ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/transport/rtc.ros2.conf
+source /opt/ros/dashing/setup.sh
+source ${OPENRTM_INSTALL_DIR}/etc/environment-setup.sh
+${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/transport/rtc.ros2.conf
 ```
 
-
--------jp page!!-------

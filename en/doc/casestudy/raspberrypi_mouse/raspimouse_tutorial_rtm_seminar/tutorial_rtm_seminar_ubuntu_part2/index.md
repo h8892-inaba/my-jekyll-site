@@ -23,7 +23,7 @@ Seminars may sometimes be conducted in environments without Internet access. In 
 
 ### Simulator
 
-- [RaspberryPiMouseSimulator Component](/ja/node/6198)
+- [RaspberryPiMouseSimulator Component](/en/node/6198)
 
 The simulator was developed using the physics engine [Open Dynamics Engine (ODE)](http://www.ode.org/) and the rendering library (drawstuff) included with ODE.
 
@@ -1041,7 +1041,7 @@ Next, click the **[Add Name Server]** button in RT System Editor and add:
 <br>
 <br>
 
-You should then be able to see the RTC named [RaspberryPiMouseRTC](/ja/node/6015#toc0).
+You should then be able to see the RTC named [RaspberryPiMouseRTC](/en/node/6015#toc0).
 
 <div align="center"><a href="tutorial_raspimouse2.png"><img src="tutorial_raspimouse2.png" width="70%;"></a></div>
 

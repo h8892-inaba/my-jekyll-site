@@ -1,21 +1,18 @@
 ---
 layout: page
-title: NXT RTC の実装
+title: NXT RTC Implementation
 ---
--------jp page!!-------
 
 <!-- Title: NXT RTC の実装 -->
-## NXT RTC の実装
+## NXT RTC Implementation
 
-では、上で実装した NXTBrick クラスを組み込むための RTC を作成します。
-作成する RTC の仕様は以下のとおりです。
+Now, we will create an RTC for incorporating the NXTBrick class implemented above.
+The specifications of the RTC to be created are as follows.
 
 - InPort
-  - モーター速度 (TimedFloatSeq)
+  - Motor speed (TimedFloatSeq)
 - Outport
-  - モーター位置 (TimedFloatSeq)
-  - センサーデータ (TimedFloatSeq)
+  - Motor position (TimedFloatSeq)
+  - Sensor data (TimedFloatSeq)
 
 
-
--------jp page!!-------

@@ -2,9 +2,10 @@
 layout: page
 title: 
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
-init
 <!-- Title: NXTRTC -->
 
 #contents
@@ -48,5 +49,3 @@ GUIをもったTkJoystick(入力デバイス)と、TkMotor(出力デバイス)�
   - どちらかのコンポーネントを右クリックし、[Activate Systems]を選択します。
 
 
-
--------jp page!!-------

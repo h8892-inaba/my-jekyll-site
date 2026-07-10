@@ -1,58 +1,57 @@
 ---
 layout: page
-title: "Fluent Loggerによるログ収集"
+title: "Log Collection with Fluent Logger"
 ---
--------jp page!!-------
 
 <!-- Title: Fluent Loggerによるログ収集 -->
 #contents
 
-Fluentd、Fluent Bitはログの処理や転送を行うオープンソースのソフトウェアライブラリです。
+Fluentd and Fluent Bit are open-source software libraries for processing and forwarding logs.
 
 - [fluentd](https://www.fluentd.org/)
 - [fluentbit](https://fluentbit.io/)
 
-Fluentd、Fluent Bitはデータを収集するInputプラグイン、データを送信するOutputプラグインを設定できます。
-Fluentd、Fluent Bitの概要図は以下のようになっています。
+Fluentd and Fluent Bit can be configured with Input plugins that collect data and Output plugins that send data.
+The overview diagram of Fluentd and Fluent Bit is as follows.
 
 <div align="center"><a href="fluentbit2.png"><img src="fluentbit2.png" width="80%;"></a></div>
 
-Inputは外部プロセスから受信、プロセス内部からのログ書き込み、CPU使用率やディスク使用率等を取得するなどで収集したデータをOutputに渡します。
-Outputは受け取ったデータを外部プロセスへ送信、ファイルへ書き込み、標準出力等します。
-Input、Outputはプラグインとして実装されており、プラグインを変更することでデータの収集方法や送信方法を変更できるため、以下のような様々なデータの収集方法、送信方法を選択できます。
+Input passes collected data to Output by receiving data from external processes, writing logs from inside processes, obtaining CPU usage, disk usage, and so on.
+Output sends the received data to external processes, writes it to files, outputs it to standard output, and so on.
+Input and Output are implemented as plugins, and by changing the plugins, the methods for collecting and sending data can be changed. Therefore, various data collection and transmission methods such as the following can be selected.
 
 - [Inputs - Fluent Bit: Official Manual](https://docs.fluentbit.io/manual/pipeline/inputs)
 - [Outputs - Fluent Bit: Official Manual](https://docs.fluentbit.io/manual/pipeline/outputs)
 
-またInputからOutputにデータを渡す前にFilterでデータの変換、追加、除外等を実行できます。
+In addition, before data is passed from Input to Output, data conversion, addition, exclusion, and so on can be performed by Filter.
 
-Inputにはタグが設定でき、Output、Filterにはマッチングルールを設定できます。
-Output、Filerはマッチングルールに一致したタグのデータを受け取ることができます。
+Tags can be set for Input, and matching rules can be set for Output and Filter.
+Output and Filer can receive data with tags that match the matching rules.
 
-このページではOpenRTM-aistのFluent Loggerプラグインの使用方法を説明します。
+This page explains how to use the Fluent Logger plugin of OpenRTM-aist.
 
-## C++版
+## C++ Version
 
 ### Windows
-#### Fluent Bitのインストール
+#### Installing Fluent Bit
 
-Fluent BitのビルドにBison/Flexが必要なため適当な場所に展開して環境変数PATHに設定します。
+Bison/Flex is required to build Fluent Bit, so extract it to an appropriate location and set it in the PATH environment variable.
 
 - https://sourceforge.net/projects/winflexbison/
 
 set PATH=%WORKDIR%\win_flex_bison-2.5.24;%PATH%
 
 
-OpenSSLを適当な場所に展開してください。
+Extract OpenSSL to an appropriate location.
 
-- [SSLTransportの使用方法]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/ssltransport_use)
+- [How to Use SSLTransport]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/ssltransport_use)
 
 
-Windows用に修正したFluent Bitのソースコードを適当な場所に展開してPowerShellでそのフォルダに移動してください。
+Extract the Fluent Bit source code modified for Windows to an appropriate location, and move to that folder in PowerShell.
 
 - https://github.com/Nobu19800/fluent-bit
 
-PowerShellで以下のコマンドを実行するとFluent Bitをビルドします。
+Run the following commands in PowerShell to build Fluent Bit.
 
 ```
  cmake -DFLB_RELEASE=On -DFLB_TRACE=Off -DFLB_SHARED_LIB=On -DFLB_EXAMPLES=Off  -DCMAKE_BUILD_TYPE=Release -DOPENSSL_ROOT_DIR=${OpenSSL_INSTALL_DIR} -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${FLUENTBIT_INSTALL_DIR}
@@ -61,8 +60,8 @@ PowerShellで以下のコマンドを実行するとFluent Bitをビルドしま
 ```
 
 
-#### 各種ライブラリのインストール
-以下のコマンドで必要なヘッダーファイルをコピーします。
+#### Installing Various Libraries
+Copy the required header files with the following commands.
 
 ```
  $FLUENTBIT_BUILD_DIR = "${FLUENTBIT_SOURCE_DIR}\build"
@@ -87,35 +86,35 @@ PowerShellで以下のコマンドを実行するとFluent Bitをビルドしま
  Copy-Item $FLUENTBIT_SOURCE_DIR\lib\cmetrics\include\prometheus_remote_write -destination $FLUENTBIT_INSTALL_DIR\include -recurs
 ```
 
-#### OpenRTM-aistのビルド
+#### Building OpenRTM-aist
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aist Build Procedure]({{ site.baseurl }}/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
 
-CMake実行時に**FLUENTBIT_ENABLE**、**FLUENTBIT_ROOT**のオプションを設定します。
+When running CMake, set the **FLUENTBIT_ENABLE** and **FLUENTBIT_ROOT** options.
 
 ```
  cmake -DORB_ROOT=$ORB_ROOT -DFLUENTBIT_ENABLE=ON -DFLUENTBIT_ROOT=$FLUENTBIT_INSTALL_DIR -DCMAKE_INSTALL_PREFIX=$OPENRTM_INSTALL_DIR
 ```
 
-他の手順は通常のビルド手順と同じです。
+The other steps are the same as the normal build procedure.
 
-以下のコマンドでインストールしてください。
+Install with the following command.
 
 ```
  cmake --build . --target install --config Release
 ```
 
-#### 動作確認
+#### Operation Check
 
-td-agent、もしくはtd-agent-bitをインストール、起動する必要があります。
+td-agent or td-agent-bit must be installed and started.
 
-- [ログ収集ソフトウェアのインストール、起動手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_install)
-
-
-##### RTCの起動
+- [Procedure for Installing and Starting Log Collection Software]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/fluent_logger_install)
 
 
-rtc.confで以下のように設定する。tagの名前は適宜変更する。
+##### Starting the RTC
+
+
+Configure rtc.conf as follows. Change the tag name as needed.
 
 ```
  
@@ -127,16 +126,16 @@ rtc.confで以下のように設定する。tagの名前は適宜変更する。
  logger.logstream.fluentd.input0.conf.tag: test.simpleio
 ```
 
-RTCを実行するとログを送信する。
+When the RTC is executed, logs are sent.
 
-またはOpenRTM-aistに含まれる**rtc.fluentbit_stream.conf**を使用して起動することもできます。
+Alternatively, you can start it using **rtc.fluentbit_stream.conf** included with OpenRTM-aist.
 
 ```
  ${OPENRTM_INSTALL_DIR}\2.0.0\Components\C++\Examples\vc16\ConsoleOutComp.exe -f ${OPENRTM_INSTALL_DIR}\2.0.0\ext\logger\rtc.fluentbit_stream.conf
 ```
 
 ### Ubuntu
-#### Fluent Bitのインストール
+#### Installing Fluent Bit
 
 ```
  sudo apt install flex bison
@@ -150,8 +149,8 @@ RTCを実行するとログを送信する。
  sudo cmake --build . --target install
 ```
 
-#### 各種ライブラリのインストール
-以下のコマンドで必要なヘッダーファイルをコピーします。
+#### Installing Various Libraries
+Copy the required header files with the following commands.
 
 ```
  export FLUENTBIT_SOURCE_DIR=${WORKSPACE}/fluent-bit-1.8.9
@@ -173,35 +172,35 @@ RTCを実行するとログを送信する。
  cp ${FLUENTBIT_SOURCE_DIR}/lib/flb_libco/libco.h ${FLUENTBIT_INSTALL_DIR}/include/
 ```
 
-#### OpenRTM-aistのビルド
+#### Building OpenRTM-aist
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aist Build Procedure]({{ site.baseurl }}/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
 
-CMake実行時に**FLUENTBIT_ENABLE**、**FLUENTBIT_ROOT**のオプションを設定します。
+When running CMake, set the **FLUENTBIT_ENABLE** and **FLUENTBIT_ROOT** options.
 
 ```
  cmake -DFLUENTBIT_ENABLE=ON -DFLUENTBIT_ROOT=${FLUENTBITINSTALLDIR} ..
 ```
 
-他の手順は通常のビルド手順と同じです。
+The other steps are the same as the normal build procedure.
 
-以下のコマンドでインストールしてください。
+Install with the following command.
 
 ```
  cmake --build . --target install
 ```
 
-#### 動作確認
+#### Operation Check
 
-td-agent、もしくはtd-agent-bitをインストール、起動する必要があります。
+td-agent or td-agent-bit must be installed and started.
 
-- [ログ収集ソフトウェアのインストール、起動手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_install)
-
-
-##### RTCの起動
+- [Procedure for Installing and Starting Log Collection Software]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/fluent_logger_install)
 
 
-rtc.confで以下のように設定する。tagの名前は適宜変更する。
+##### Starting the RTC
+
+
+Configure rtc.conf as follows. Change the tag name as needed.
 
 
 ```
@@ -213,23 +212,23 @@ rtc.confで以下のように設定する。tagの名前は適宜変更する。
  logger.logstream.fluentd.input0.tag: test.simpleio
 ```
 
-RTCを実行するとログを送信する。
+When the RTC is executed, logs are sent.
 
-動作しない場合は/etc/ssl/certsから壊れたリンクを削除する。
+If it does not work, remove broken links from /etc/ssl/certs.
 
 
-またはOpenRTM-aistに含まれる**rtc.fluentbit_stream.conf**を使用して起動することもできます。
+Alternatively, you can start it using **rtc.fluentbit_stream.conf** included with OpenRTM-aist.
 
 ```
  ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/logger/rtc.fluentbit_stream.conf
 ```
 
-## Python版
-Python版のFluent LoggerプラグインはForward Outputのみに対応しています。
-別にForward通信を受信するFluentd、Fluent Bitを起動して、処理して他のOutputプラグインで送信するという使い方ができます。
+## Python Version
+The Python version of the Fluent Logger plugin supports only Forward Output.
+It can be used by separately starting Fluentd or Fluent Bit that receives Forward communication, processing it, and sending it with another Output plugin.
 
-### fluent-logger-pythonのインストール
-fluent-logger-pythonのインストールが必要です。
+### Installing fluent-logger-python
+fluent-logger-python must be installed.
 
 ```
  pip install fluent-logger
@@ -237,19 +236,19 @@ fluent-logger-pythonのインストールが必要です。
 
 <!-- - https://github.com/fluent/fluent-logger-python/releases -->
 
-<!-- fluent-logger-python-0.9.3.zipを適当な場所に展開して以下のコマンドを実行してください。 -->
+<!-- Extract fluent-logger-python-0.9.3.zip to an appropriate location and run the following command. -->
 
 <!-- python setup.py install -->
 
-Ubuntuの場合はsudoで実行してください。
+For Ubuntu, run it with sudo.
 
-### 動作確認
-td-agent、もしくはtd-agent-bitをインストールする必要があります。
+### Operation Check
+td-agent or td-agent-bit must be installed.
 
-- [ログ収集ソフトウェアのインストール、起動手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_install)
+- [Procedure for Installing and Starting Log Collection Software]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/fluent_logger_install)
 
-#### RTCの起動
-rtc.confに以下のように記述してRTCを起動するとfluentdにログが送信されます。
+#### Starting the RTC
+When you write the following in rtc.conf and start the RTC, logs are sent to fluentd.
 
 ```
  manager.modules.load_path: C:\\Python37\\Lib\\site-packages\\OpenRTM_aist\\ext\\logger\\fluentlogger
@@ -257,20 +256,20 @@ rtc.confに以下のように記述してRTCを起動するとfluentdにログ�
  logger.logstream.fluentd.output0.tag: test.simpleio
 ```
 
-**manager.modules.load_path**はOpenRTM-aistをインストールしたPythonのパスによって適宜変更してください。
-Ubuntuの場合は**/usr/local/lib/python2.7/dist-packages/OpenRTM_aist/ext/logger/fluentlogger**等になります。
+Change **manager.modules.load_path** as needed according to the Python path where OpenRTM-aist is installed.
+For Ubuntu, it becomes something like **/usr/local/lib/python2.7/dist-packages/OpenRTM_aist/ext/logger/fluentlogger**.
 
-fluentdでログは以下のように表示される。
+Logs are displayed in fluentd as follows.
 
 ```
  2018-12-26 09:06:18.000000000 +0900 test.simpleio: {"message":"exit","time":"2018-12-26 09:06:18,841","name":"fluent.ec_worker","level":"TRACE"}
 ```
 
-メッセージの内容、名前、ログを送信した時間、ログレベルが送信される。
+The message contents, name, time when the log was sent, and log level are sent.
 
 
-## 簡単な動作確認
-OpenRTM-aistをビルド、インストールすると、Fluent Loggerプラグインの簡単な動作確認用の設定ファイルがインストールされます。
+## Simple Operation Check
+When OpenRTM-aist is built and installed, a configuration file for a simple operation check of the Fluent Logger plugin is installed.
 
 ```
  %RTM_ROOT%\ext\environment-setup.omniorb.vc16.bat
@@ -282,16 +281,16 @@ OpenRTM-aistをビルド、インストールすると、Fluent Loggerプラグ�
  ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/logger/rtc.fluentbit_stream.conf
 ```
 
-## Kibana+Elasticsearchによるログ可視化
+## Log Visualization with Kibana+Elasticsearch
 
-[Kibana](https://www.elastic.co/jp/kibana/)はElastic社の開発したデータ可視化ツールです。
-分析エンジン[ElasticSearch](https://www.elastic.co/jp/elasticsearch/)と連携してWebブラウザ上でグラフなどのデータ可視化ができるようになります。
+[Kibana](https://www.elastic.co/jp/kibana/) is a data visualization tool developed by Elastic.
+By working together with the analysis engine [ElasticSearch](https://www.elastic.co/jp/elasticsearch/), it enables data visualization such as graphs in a web browser.
 
-OpenRTM-aistのFluent BitプラグインからElasticSearchにログを送信して、Kibanaでデータを可視化する手順を説明します。
+This section explains the procedure for sending logs from the OpenRTM-aist Fluent Bit plugin to ElasticSearch and visualizing the data with Kibana.
 
-### Elasticsearchのインストール
-Ubuntu 18.04環境で以下のコマンドによりElasticsearchをインストールします。
-Ubuntu 18.04ではElasticsearchのバージョン次第で動作しない場合があるので、こちらで動作を確認した7.8.0をインストールします。
+### Installing Elasticsearch
+Install Elasticsearch in an Ubuntu 18.04 environment with the following commands.
+Depending on the Elasticsearch version, it may not work on Ubuntu 18.04, so install version 7.8.0, whose operation has been verified here.
 
 ```
  wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
@@ -302,7 +301,7 @@ Ubuntu 18.04ではElasticsearchのバージョン次第で動作しない場合�
  sudo systemctl enable elasticsearch.service
 ```
 
-**/etc/elasticsearch/elasticsearch.yml**を編集します。
+Edit **/etc/elasticsearch/elasticsearch.yml**.
 
 ```
  network.bind_host: 0
@@ -310,20 +309,20 @@ Ubuntu 18.04ではElasticsearchのバージョン次第で動作しない場合�
 ```
 
 
-編集後にサービスを再起動します。
+Restart the service after editing.
 
 ```
  sudo systemctl restart elasticsearch.service
 ```
 
-メモリの不足で起動できない場合は**/etc/elasticesearch/jvm.options**を編集して調節してください。
+If it cannot start due to insufficient memory, edit **/etc/elasticesearch/jvm.options** and adjust it.
 
  -Xms1g
  -Xmx1g
 
 
-### Kibanaのインストール
-以下のコマンドでKibanaをインストールします。Elasticsearchと同じバージョンを指定します。
+### Installing Kibana
+Install Kibana with the following command. Specify the same version as Elasticsearch.
 
 ```
  sudo apt install kibana=7.8.0
@@ -331,29 +330,29 @@ Ubuntu 18.04ではElasticsearchのバージョン次第で動作しない場合�
  sudo systemctl enable kibana.service
 ```
 
-また、**/etc/kibana/kibana.yml**に以下の行を追加します。
+Also, add the following lines to **/etc/kibana/kibana.yml**.
 
 ```
  server.port: 5601
  server.host: "0.0.0.0"
 ```
 
-**server.host**にNICに設定されたIPアドレスを指定してください。
+Specify the IP address set for the NIC in **server.host**.
 
 ```
  server.host: "192.168.11.2"
 ```
 
 
-サービスを再起動します。
+Restart the service.
 
 ```
  sudo systemctl restart kibana.service
 ```
 
-### 動作確認
+### Operation Check
 
-以下のrtc.confを作成してください。
+Create the following rtc.conf.
 
 ```
  logger.enable: YES
@@ -372,484 +371,68 @@ Ubuntu 18.04ではElasticsearchのバージョン次第で動作しない場合�
  logger.logstream.fluentd.output0.conf.Index: fluentbit
 ```
 
-${OPNRTM_INSTALL_DIR}はOpenRTM-aistをインストールしたパスに置き換えてください。
-**host**、**port**にElasticsearchのアドレスとポート番号を指定してください。
-**Index**や**tag**は任意の文字列を設定します。
+Replace ${OPNRTM_INSTALL_DIR} with the path where OpenRTM-aist is installed.
+Specify the Elasticsearch address and port number in **host** and **port**.
+Set any strings for **Index** and **tag**.
 
-このrtc.confを指定してRTCを起動します。
+Start the RTC by specifying this rtc.conf.
 
 ```
  ./share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f rtc.conf
 ```
 
 
-次にWebブラウザからKibanaにアクセスしてログを確認します。
-**http://127.0.0.1:5601**にアクセスしてください。別の端末からアクセスする場合はIPアドレスを変更してください。
+Next, access Kibana from a web browser and check the logs.
+Access **http://127.0.0.1:5601**. If accessing from another terminal, change the IP address.
 
 
 <div align="center"><a href="kibana1.png"><img src="kibana1.png" width="50%;"></a></div>
 
-可視化するデータのインデックスパターンを設定します。今回の例ではrtc.confでIndexを**fluentbit**に指定しました。
-ページが開いたら左上をクリックして表示されたメニューからManagmentの**Stack Management**をクリックしてください。
+Set the index pattern for the data to visualize. In this example, **fluentbit** was specified for Index in rtc.conf.
+When the page opens, click the upper left, and then click **Stack Management** under Managment from the displayed menu.
 
 <div align="center"><a href="kibana2.png"><img src="kibana2.png" width="60%;"></a></div>
 
-Stack Managementのページの左側の**Index Patterns**をクリックします。
+Click **Index Patterns** on the left side of the Stack Management page.
 
 <div align="center"><a href="kibana3.png"><img src="kibana3.png" width="60%;"></a></div>
 
-Index patternsのページの**Create Index pattern**ボタンを押します。
+On the Index patterns page, press the **Create Index pattern** button.
 
 <div align="center"><a href="kibana4.png"><img src="kibana4.png" width="60%;"></a></div>
 
-Create index patternのページでIndex patternを**fluentbit***に指定してNext stepボタンを押します。
+On the Create index pattern page, specify **fluentbit*** for Index pattern and press the Next step button.
 
 <div align="center"><a href="kibana5.png"><img src="kibana5.png" width="60%;"></a></div>
 
-Step 2でTime Filter field nameは**@timestamp**のままCreate index patternボタンを押します。
+In Step 2, leave Time Filter field name as **@timestamp** and press the Create index pattern button.
 
 <div align="center"><a href="kibana6.png"><img src="kibana6.png" width="60%;"></a></div>
 
-ここからはデータを確認します。
-ページ左上をクリックして、メニューからKibanaの**Discover**をクリックしてください。
+From here, check the data.
+Click the upper left of the page, and then click Kibana **Discover** from the menu.
 
 <div align="center"><a href="kibana7.png"><img src="kibana7.png" width="60%;"></a></div>
 
-Discoverの画面で左側にインデックスパターンが表示されているため、インデックスパターンをクリックして先ほど設定した**fluentbit***に切り替えます。
+On the Discover screen, the index pattern is displayed on the left, so click the index pattern and switch to the previously configured **fluentbit***.
 
 <div align="center"><a href="kibana8.png"><img src="kibana8.png" width="60%;"></a></div>
 
-これでログの一覧が確認できます。グラフなどで利用する手順についてはKibanaのマニュアルなどを参考にしてください。
+You can now check the list of logs. For procedures for using graphs and so on, refer to the Kibana manual and other resources.
 
 <div align="center"><a href="kibana9.png"><img src="kibana9.png" width="50%;"></a></div>
 
 
-### Pythonで動作確認
-OpenRTM-aist Python版で動作確認する場合はElasticsearch Loggerプラグインを使用します。
-まずはelasticsearchのPythonライブラリ、ECSentbit:https://fluentbit.io/]]
-
-Fluentd、Fluent Bitはデータを収集するInputプラグイン、データを送信するOutputプラグインを設定できます。
-Fluentd、Fluent Bitの概要図は以下のようになっています。
-
-<div align="center"><a href="fluentbit2.png"><img src="fluentbit2.png" width="80%;"></a></div>
-
-Inputは外部プロセスから受信、プロセス内部からのログ書き込み、CPU使用率やディスク使用率等を取得するなどで収集したデータをOutputに渡します。
-Outputは受け取ったデータを外部プロセスへ送信、ファイルへ書き込み、標準出力等します。
-Input、Outputはプラグインとして実装されており、プラグインを変更することでデータの収集方法や送信方法を変更できるため、以下のような様々なデータの収集方法、送信方法を選択できます。
-
-- [Inputs - Fluent Bit: Official Manual](https://docs.fluentbit.io/manual/pipeline/inputs)
-- [Outputs - Fluent Bit: Official Manual](https://docs.fluentbit.io/manual/pipeline/outputs)
-
-またInputからOutputにデータを渡す前にFilterでデータの変換、追加、除外等を実行できます。
-
-Inputにはタグが設定でき、Output、Filterにはマッチングルールを設定できます。
-Output、Filerはマッチングルールに一致したタグのデータを受け取ることができます。
-
-このページではOpenRTM-aistのFluent Loggerプラグインの使用方法を説明します。
-
-## C++版
-
-### Windows
-#### Fluent Bitのインストール
-
-Fluent BitのビルドにBison/Flexが必要なため適当な場所に展開して環境変数PATHに設定します。
-
-- https://sourceforge.net/projects/winflexbison/
-
-set PATH=%WORKDIR%\win_flex_bison-2.5.24;%PATH%
-
-
-OpenSSLを適当な場所に展開してください。
-
-- [SSLTransportの使用方法]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/ssltransport_use)
-
-
-Windows用に修正したFluent Bitのソースコードを適当な場所に展開してPowerShellでそのフォルダに移動してください。
-
-- https://github.com/Nobu19800/fluent-bit
-
-PowerShellで以下のコマンドを実行するとFluent Bitをビルドします。
-
-```
- cmake -DFLB_RELEASE=On -DFLB_TRACE=Off -DFLB_SHARED_LIB=On -DFLB_EXAMPLES=Off  -DCMAKE_BUILD_TYPE=Release -DOPENSSL_ROOT_DIR=${OpenSSL_INSTALL_DIR} -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${FLUENTBIT_INSTALL_DIR}
- cmake --build . --config Release
- cmake --build . --target install --config Release
-```
-
-
-#### 各種ライブラリのインストール
-以下のコマンドで必要なヘッダーファイルをコピーします。
-
-```
- $FLUENTBIT_BUILD_DIR = "${FLUENTBIT_SOURCE_DIR}\build"
-```
-
-```
- Copy-Item $FLUENTBIT_SOURCE_DIR\lib\monkey\include\monkey\mk_core\external -destination $FLUENTBIT_INSTALL_DIR\include\monkey\mk_core -recurs
- Copy-Item $FLUENTBIT_SOURCE_DIR\lib\monkey\mk_core\deps\libevent\include\event.h $FLUENTBIT_INSTALL_DIR\include
- Copy-Item $FLUENTBIT_SOURCE_DIR\lib\monkey\mk_core\deps\libevent\include\evutil.h $FLUENTBIT_INSTALL_DIR\include
- Copy-Item $FLUENTBIT_SOURCE_DIR\lib\monkey\mk_core\deps\libevent\include\event2 -destination $FLUENTBIT_INSTALL_DIR\include -recurs
- Copy-Item $FLUENTBIT_BUILD_DIR\lib\monkey\mk_core\deps\libevent\include\event2\event-config.h $FLUENTBIT_INSTALL_DIR\include\event2
- Copy-Item $FLUENTBIT_SOURCE_DIR\lib\msgpack-*\include\msgpack.h $FLUENTBIT_INSTALL_DIR\include
- Copy-Item $FLUENTBIT_SOURCE_DIR\lib\msgpack-*\include\msgpack -destination $FLUENTBIT_INSTALL_DIR\include -recurs
- Copy-Item $FLUENTBIT_SOURCE_DIR\lib\mbedtls-*\include\mbedtls -destination $FLUENTBIT_INSTALL_DIR\include -recurs
- Copy-Item $FLUENTBIT_SOURCE_DIR\lib\c-ares-*\include\*.h $FLUENTBIT_INSTALL_DIR\include
- Copy-Item $FLUENTBIT_BUILD_DIR\lib\c-ares-*\ares_build.h $FLUENTBIT_INSTALL_DIR\include
- Copy-Item $FLUENTBIT_BUILD_DIR\lib\c-ares-*\ares_config.h $FLUENTBIT_INSTALL_DIR\include
- Copy-Item $FLUENTBIT_BUILD_DIR\lib\c-ares-*\ares_config.h $FLUENTBIT_INSTALL_DIR\include
- New-Item $FLUENTBIT_INSTALL_DIR\lib\fluent-bit -ItemType Directory
- Copy-Item $FLUENTBIT_BUILD_DIR\library\Release\fluent-bit.lib $FLUENTBIT_INSTALL_DIR\lib\fluent-bit
- Copy-Item $FLUENTBIT_SOURCE_DIR\lib\cmetrics\include\cmetrics -destination $FLUENTBIT_INSTALL_DIR\include -recurs
- Copy-Item $FLUENTBIT_SOURCE_DIR\lib\cmetrics\include\prometheus_remote_write -destination $FLUENTBIT_INSTALL_DIR\include -recurs
-```
-
-#### OpenRTM-aistのビルド
-
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
-
-CMake実行時に**FLUENTBIT_ENABLE**、**FLUENTBIT_ROOT**のオプションを設定します。
-
-```
- cmake -DORB_ROOT=$ORB_ROOT -DFLUENTBIT_ENABLE=ON -DFLUENTBIT_ROOT=$FLUENTBIT_INSTALL_DIR -DCMAKE_INSTALL_PREFIX=$OPENRTM_INSTALL_DIR
-```
-
-他の手順は通常のビルド手順と同じです。
-
-以下のコマンドでインストールしてください。
-
-```
- cmake --build . --target install --config Release
-```
-
-#### 動作確認
-
-td-agent、もしくはtd-agent-bitをインストール、起動する必要があります。
-
-- [ログ収集ソフトウェアのインストール、起動手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_install)
-
-
-##### RTCの起動
-
-
-rtc.confで以下のように設定する。tagの名前は適宜変更する。
-
-```
- 
- logger.plugins: C:\\Program Files\\OpenRTM-aist\\logger\\2.0.0\\FluentBit.dll
- logger.logstream.fluentd.output0.plugin: forward
- logger.logstream.fluentd.output0.conf.match:*
- 
- logger.logstream.fluentd.input0.plugin: lib
- logger.logstream.fluentd.input0.conf.tag: test.simpleio
-```
-
-RTCを実行するとログを送信する。
-
-またはOpenRTM-aistに含まれる**rtc.fluentbit_stream.conf**を使用して起動することもできます。
-
-```
- ${OPENRTM_INSTALL_DIR}\2.0.0\Components\C++\Examples\vc16\ConsoleOutComp.exe -f ${OPENRTM_INSTALL_DIR}\2.0.0\ext\logger\rtc.fluentbit_stream.conf
-```
-
-### Ubuntu
-#### Fluent Bitのインストール
-
-```
- sudo apt install flex bison
- wget https://github.com/fluent/fluent-bit/archive/v1.8.9.tar.gz
- tar xf v1.8.9.tar.gz
- cd fluent-bit-1.8.9/
- sed  -i -e 's/jemalloc-5.2.1\/configure/jemalloc-5.2.1\/configure --disable-initial-exec-tls/g' CMakeLists.txt
- cd build
- cmake .. -DFLB_RELEASE=On -DFLB_TRACE=Off -DFLB_JEMALLOC=On -DFLB_TLS=On -DFLB_SHARED_LIB=On -DFLB_EXAMPLES=Off -DFLB_HTTP_SERVER=On -DFLB_IN_SYSTEMD=On -DFLB_OUT_KAFKA=Off
- cmake --build . --config Release -- -j$(nproc)
- sudo cmake --build . --target install
-```
-
-#### 各種ライブラリのインストール
-以下のコマンドで必要なヘッダーファイルをコピーします。
-
-```
- export FLUENTBIT_SOURCE_DIR=${WORKSPACE}/fluent-bit-1.8.9
- export FLUENTBIT_BUILD_DIR = ${FLUENTBIT_SOURCE_DIR}/build
- export FLUENTBIT_INSTALL_DIR=/usr/local
-```
-
-```
- mkdir -p ${FLUENTBIT_INSTALL_DIR}/include/lib/flb_libco
- cp -r ${FLUENTBIT_SOURCE_DIR}/lib/flb_libco/libco.h ${FLUENTBIT_INSTALL_DIR}/include/lib/flb_libco
- cp -r ${FLUENTBIT_BUILD_DIR}/include/jemalloc ${FLUENTBIT_INSTALL_DIR}/include/
- cp -r ${FLUENTBIT_SOURCE_DIR}/lib/msgpack-*/include/* ${FLUENTBIT_INSTALL_DIR}/include/
- cp -r ${FLUENTBIT_SOURCE_DIR}/lib/monkey/include/monkey ${FLUENTBIT_INSTALL_DIR}/include/
- cp -r ${FLUENTBIT_SOURCE_DIR}/lib/mbedtls-*/include/mbedtls ${FLUENTBIT_INSTALL_DIR}/include/
- cp -r ${FLUENTBIT_SOURCE_DIR}/lib/c-ares-*/include/* ${FLUENTBIT_INSTALL_DIR}/include/
- cp -r ${FLUENTBIT_BUILD_DIR}/lib/c-ares-*/ares_build.h ${FLUENTBIT_INSTALL_DIR}/include/
- cp -r ${FLUENTBIT_BUILD_DIR}/lib/c-ares-*/ares_config.h ${FLUENTBIT_INSTALL_DIR}/include/
- cp -r ${FLUENTBIT_SOURCE_DIR}/lib/cmetrics/include/* ${FLUENTBIT_INSTALL_DIR}/include/
- cp ${FLUENTBIT_SOURCE_DIR}/lib/flb_libco/libco.h ${FLUENTBIT_INSTALL_DIR}/include/
-```
-
-#### OpenRTM-aistのビルド
-
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
-
-CMake実行時に**FLUENTBIT_ENABLE**、**FLUENTBIT_ROOT**のオプションを設定します。
-
-```
- cmake -DFLUENTBIT_ENABLE=ON -DFLUENTBIT_ROOT=${FLUENTBITINSTALLDIR} ..
-```
-
-他の手順は通常のビルド手順と同じです。
-
-以下のコマンドでインストールしてください。
-
-```
- cmake --build . --target install
-```
-
-#### 動作確認
-
-td-agent、もしくはtd-agent-bitをインストール、起動する必要があります。
-
-- [ログ収集ソフトウェアのインストール、起動手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_install)
-
-
-##### RTCの起動
-
-
-rtc.confで以下のように設定する。tagの名前は適宜変更する。
-
-
-```
- logger.plugins: /usr/local/lib/openrtm-2.0/logger/FluentBit.so
- logger.logstream.fluentd.output0.plugin: forward
- logger.logstream.fluentd.output0.conf.match:*
- 
- logger.logstream.fluentd.input0.plugin: lib
- logger.logstream.fluentd.input0.tag: test.simpleio
-```
-
-RTCを実行するとログを送信する。
-
-動作しない場合は/etc/ssl/certsから壊れたリンクを削除する。
-
-
-またはOpenRTM-aistに含まれる**rtc.fluentbit_stream.conf**を使用して起動することもできます。
-
-```
- ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/logger/rtc.fluentbit_stream.conf
-```
-
-## Python版
-Python版のFluent LoggerプラグインはForward Outputのみに対応しています。
-別にForward通信を受信するFluentd、Fluent Bitを起動して、処理して他のOutputプラグインで送信するという使い方ができます。
-
-### fluent-logger-pythonのインストール
-fluent-logger-pythonのインストールが必要です。
-
-```
- pip install fluent-logger
-```
-
-<!-- - https://github.com/fluent/fluent-logger-python/releases -->
-
-<!-- fluent-logger-python-0.9.3.zipを適当な場所に展開して以下のコマンドを実行してください。 -->
-
-<!-- python setup.py install -->
-
-Ubuntuの場合はsudoで実行してください。
-
-### 動作確認
-td-agent、もしくはtd-agent-bitをインストールする必要があります。
-
-- [ログ収集ソフトウェアのインストール、起動手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/fluent_logger_install)
-
-#### RTCの起動
-rtc.confに以下のように記述してRTCを起動するとfluentdにログが送信されます。
-
-```
- manager.modules.load_path: C:\\Python37\\Lib\\site-packages\\OpenRTM_aist\\ext\\logger\\fluentlogger
- logger.plugins: FluentLogger.py
- logger.logstream.fluentd.output0.tag: test.simpleio
-```
-
-**manager.modules.load_path**はOpenRTM-aistをインストールしたPythonのパスによって適宜変更してください。
-Ubuntuの場合は**/usr/local/lib/python2.7/dist-packages/OpenRTM_aist/ext/logger/fluentlogger**等になります。
-
-fluentdでログは以下のように表示される。
-
-```
- 2018-12-26 09:06:18.000000000 +0900 test.simpleio: {"message":"exit","time":"2018-12-26 09:06:18,841","name":"fluent.ec_worker","level":"TRACE"}
-```
-
-メッセージの内容、名前、ログを送信した時間、ログレベルが送信される。
-
-
-## 簡単な動作確認
-OpenRTM-aistをビルド、インストールすると、Fluent Loggerプラグインの簡単な動作確認用の設定ファイルがインストールされます。
-
-```
- %RTM_ROOT%\ext\environment-setup.omniorb.vc16.bat
- %RTM_ROOT%\Components\C++\Examples\vc16\ConsoleOutComp.exe -f %RTM_ROOT%\ext\logger\rtc.fluentbit_stream.conf
-```
-
-```
- source ${OPENRTM_INSTALL_DIR}/etc/environment-setup.sh
- ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/logger/rtc.fluentbit_stream.conf
-```
-
-## Kibana+Elasticsearchによるログ可視化
-
-[Kibana](https://www.elastic.co/jp/kibana/)はElastic社の開発したデータ可視化ツールです。
-分析エンジン[ElasticSearch](https://www.elastic.co/jp/elasticsearch/)と連携してWebブラウザ上でグラフなどのデータ可視化ができるようになります。
-
-OpenRTM-aistのFluent BitプラグインからElasticSearchにログを送信して、Kibanaでデータを可視化する手順を説明します。
-
-### Elasticsearchのインストール
-Ubuntu 18.04環境で以下のコマンドによりElasticsearchをインストールします。
-Ubuntu 18.04ではElasticsearchのバージョン次第で動作しない場合があるので、こちらで動作を確認した7.8.0をインストールします。
-
-```
- wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
- add-apt-repository "deb https://artifacts.elastic.co/packages/7.x/apt stable main"
- sudo apt update
- sudo apt install elasticsearch=7.8.0
- sudo systemctl daemon-reload
- sudo systemctl enable elasticsearch.service
-```
-
-**/etc/elasticsearch/elasticsearch.yml**を編集します。
-
-```
- network.bind_host: 0
- discovery.seed_hosts: ["127.0.0.1", "[::1]"]
-```
-
-
-編集後にサービスを再起動します。
-
-```
- sudo systemctl restart elasticsearch.service
-```
-
-メモリの不足で起動できない場合は**/etc/elasticesearch/jvm.options**を編集して調節してください。
-
- -Xms1g
- -Xmx1g
-
-
-### Kibanaのインストール
-以下のコマンドでKibanaをインストールします。Elasticsearchと同じバージョンを指定します。
-
-```
- sudo apt install kibana=7.8.0
- sudo systemctl daemon-reload
- sudo systemctl enable kibana.service
-```
-
-また、**/etc/kibana/kibana.yml**に以下の行を追加します。
-
-```
- server.port: 5601
- server.host: "0.0.0.0"
-```
-
-**server.host**にNICに設定されたIPアドレスを指定してください。
-
-```
- server.host: "192.168.11.2"
-```
-
-
-サービスを再起動します。
-
-```
- sudo systemctl restart kibana.service
-```
-
-### 動作確認
-
-以下のrtc.confを作成してください。
-
-```
- logger.enable: YES
- logger.log_level: INFO
- 
- 
- logger.plugins: ${OPNRTM_INSTALL_DIR}/lib/openrtm-2.0/logger/FluentBit.so
- 
- logger.logstream.fluentd.input.plugin: lib
- logger.logstream.fluentd.input.conf.tag: myRTCs_log
- 
- logger.logstream.fluentd.output0.plugin: es
- logger.logstream.fluentd.output0.conf.match: *
- logger.logstream.fluentd.output0.conf.host: 127.0.0.1
- logger.logstream.fluentd.output0.conf.port: 9200
- logger.logstream.fluentd.output0.conf.Index: fluentbit
-```
-
-${OPNRTM_INSTALL_DIR}はOpenRTM-aistをインストールしたパスに置き換えてください。
-**host**、**port**にElasticsearchのアドレスとポート番号を指定してください。
-**Index**や**tag**は任意の文字列を設定します。
-
-このrtc.confを指定してRTCを起動します。
-
-```
- ./share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f rtc.conf
-```
-
-
-次にWebブラウザからKibanaにアクセスしてログを確認します。
-**http://127.0.0.1:5601**にアクセスしてください。別の端末からアクセスする場合はIPアドレスを変更してください。
-
-
-<div align="center"><a href="kibana1.png"><img src="kibana1.png" width="50%;"></a></div>
-
-可視化するデータのインデックスパターンを設定します。今回の例ではrtc.confでIndexを**fluentbit**に指定しました。
-ページが開いたら左上をクリックして表示されたメニューからManagmentの**Stack Management**をクリックしてください。
-
-<div align="center"><a href="kibana2.png"><img src="kibana2.png" width="60%;"></a></div>
-
-Stack Managementのページの左側の**Index Patterns**をクリックします。
-
-<div align="center"><a href="kibana3.png"><img src="kibana3.png" width="60%;"></a></div>
-
-Index patternsのページの**Create Index pattern**ボタンを押します。
-
-<div align="center"><a href="kibana4.png"><img src="kibana4.png" width="60%;"></a></div>
-
-Create index patternのページでIndex patternを**fluentbit***に指定してNext stepボタンを押します。
-
-<div align="center"><a href="kibana5.png"><img src="kibana5.png" width="60%;"></a></div>
-
-Step 2でTime Filter field nameは**@timestamp**のままCreate index patternボタンを押します。
-
-<div align="center"><a href="kibana6.png"><img src="kibana6.png" width="60%;"></a></div>
-
-ここからはデータを確認します。
-ページ左上をクリックして、メニューからKibanaの**Discover**をクリックしてください。
-
-<div align="center"><a href="kibana7.png"><img src="kibana7.png" width="60%;"></a></div>
-
-Discoverの画面で左側にインデックスパターンが表示されているため、インデックスパターンをクリックして先ほど設定した**fluentbit***に切り替えます。
-
-<div align="center"><a href="kibana8.png"><img src="kibana8.png" width="60%;"></a></div>
-
-これでログの一覧が確認できます。グラフなどで利用する手順についてはKibanaのマニュアルなどを参考にしてください。
-
-<div align="center"><a href="kibana9.png"><img src="kibana9.png" width="50%;"></a></div>
-
-
-### Pythonで動作確認
-OpenRTM-aist Python版で動作確認する場合はElasticsearch Loggerプラグインを使用します。
-まずはelasticsearchのPythonライブラリ、ECSフォーマッタ をインストールします。elasticsearchのバージョンには注意してください。
+### Operation Check with Python
+When checking operation with the Python version of OpenRTM-aist, use the Elasticsearch Logger plugin.
+First, install the Python library for Elasticsearch and the ECS formatter. Pay attention to the Elasticsearch version.
 
 ```
  pip install elasticsearch==7.8.0
  pip install ecs-logging
 ```
 
-以下のようなrtc.confを用意して**ESLogger.py**をロードしてください。
+Prepare an rtc.conf like the following and load **ESLogger.py**.
 
 ```
  logger.enable: YES
@@ -862,12 +445,11 @@ OpenRTM-aist Python版で動作確認する場合はElasticsearch Loggerプラ�
  logger.logstream.elasticsearch.output0.index: fluentbit
 ```
 
-接続先のElasticsearchサーバーのアドレス、ポート番号、データを登録するインデックスを指定してください。
+Specify the address and port number of the destination Elasticsearch server, and the index where the data will be registered.
 
-このrtc.confを指定してRTCを起動します。
+Start the RTC by specifying this rtc.conf.
 
 ```
  ConsoleOut.py -f rtc.conf
 ```
 
--------jp page!!-------

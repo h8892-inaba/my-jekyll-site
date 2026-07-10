@@ -3,4 +3,5 @@ layout: page
 title: "opencv_sample_code_build_prock"
 ---
 
-init
+このページは準備中です。
+

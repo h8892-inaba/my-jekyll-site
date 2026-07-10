@@ -1,480 +1,506 @@
 ---
 layout: page
-title: "SSLTransportの使用方法"
+title: "Using SSLTransport"
 ---
--------jp page!!-------
 
-<!-- Title: SSLTransportの使用方法 -->
+<!-- Title: Using SSLTransport -->
 #contents
 
-## 概要
-オブジェクトの[CORBA Security Service](https://www.omg.org/spec/SEC/About-SEC/)仕様のセキュリティ機能を一部使用可能になっています。
-CORBA Security Serviceではセキュリティポリシーのモデル、認証、アクセス制御、メッセージ保護、委譲、監査、否認不可の機能を定義していますが、omniORBではGIOPメッセージをSSL/TLSによるサーバー・クライアント認証と暗号化で保護するSSLIOP通信をサポートしています。
-このページではOpenRTM-aistでomniORBのSSLIOP通信を使用する手順を説明します。
+## Overview
 
+Some security features defined in the [CORBA Security Service](https://www.omg.org/spec/SEC/About-SEC/) specification are available for use.
 
+The CORBA Security Service defines security policy models, authentication, access control, message protection, delegation, auditing, and non-repudiation. omniORB supports SSLIOP communication, which protects GIOP messages through SSL/TLS server/client authentication and encryption.
 
+This page describes how to use omniORB's SSLIOP communication with OpenRTM-aist.
 
 ## C++
-### Windows
-#### OpenRTM-aistのビルドとインストール
 
-まず、OpenSSLのヘッダーファイル、ライブラリを適当な場所に展開してください。
+### Windows
+
+#### Building and Installing OpenRTM-aist
+
+First, extract the OpenSSL header files and libraries to an appropriate location.
 
 - https://openrtm.org/pub/OpenSSL/
 
-OpenRTM-aist+omniORBを以下の手順でビルド、インストールします。
+Build and install OpenRTM-aist + omniORB according to the following procedure.
 
-- [OpenRTM-aist(C++版)のCMakeによるビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build#windowsomniorb)
+- [Building OpenRTM-aist (C++ Version) with CMake]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build#windowsomniorb)
 
-ただし、CMake実行時に**SSL_ENABLE**、**OPENSSL_ROOT_DIR**のオプションを設定する必要があります。
+When running CMake, however, you must specify the **SSL_ENABLE** and **OPENSSL_ROOT_DIR** options.
 
 <table class="table-alt">
   <tr>
-    <th>設定項目</th>
-    <th>内容</th>
-    <th>設定例</th>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Example</th>
   </tr>
   <tr>
     <td>SSL_ENABLE</td>
-    <td>SSLTransportプラグインの生成の有無</td>
+    <td>Whether to build the SSLTransport plugin</td>
     <td>ON</td>
   </tr>
   <tr>
     <td>OPENSSL_ROOT_DIR</td>
-    <td>OpenSSLの各種ファイルを配置したパス</td>
+    <td>Path where the OpenSSL files are located</td>
     <td>C:/work/OpenSSL/x64</td>
   </tr>
 </table>
 
-また、CMake実行時にOpenRTM-aistのインストールフォルダは指定してそこにインストールするようにしてください。
+Also, specify the OpenRTM-aist installation directory when running CMake so that it is installed there.
 
-```
- set OPENRTM_INSTALL_DIR=C:/work/openrtm_install
- set OMNIORB_SOURCE_DIR=C:/workspace/omniORB-4.2.5-x64-vc14-py310
- set OPENSSL_ROOT_DIR=C:/work/OpenSSL/x64
- cmake .. -DORB_ROOT=%OMNIORB_SOURCE_DIR% -DSSL_ENABLE=ON -DOPENSSL_ROOT_DIR=%OPENSSL_ROOT_DIR% -DCMAKE_INSTALL_PREFIX=%OPENRTM_INSTALL_DIR%
- cmake --build . --config Release
- cmake --build . --config Release --target install
+```sh
+set OPENRTM_INSTALL_DIR=C:/work/openrtm_install
+set OMNIORB_SOURCE_DIR=C:/workspace/omniORB-4.2.5-x64-vc14-py310
+set OPENSSL_ROOT_DIR=C:/work/OpenSSL/x64
+cmake .. -DORB_ROOT=%OMNIORB_SOURCE_DIR% -DSSL_ENABLE=ON -DOPENSSL_ROOT_DIR=%OPENSSL_ROOT_DIR% -DCMAKE_INSTALL_PREFIX=%OPENRTM_INSTALL_DIR%
+cmake --build . --config Release
+cmake --build . --config Release --target install
 ```
 
 ### Ubuntu
-#### OpenRTM-aistのビルドとインストール
-OpenSSLのヘッダとライブラリをインストールします。
 
+#### Building and Installing OpenRTM-aist
+
+Install the OpenSSL headers and libraries.
+
+```sh
+sudo apt install libssl-dev
 ```
- sudo apt install libssl-dev
-```
 
-OpenRTM-aist+omniORBを以下の手順でビルド、インストールします。
+Build and install OpenRTM-aist + omniORB according to the following procedure.
 
-- [OpenRTM-aist(C++版)のCMakeによるビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build#ubuntuomniorb)
+- [Building OpenRTM-aist (C++ Version) with CMake]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build#ubuntuomniorb)
 
-ただし、**SSL_ENABLE**のオプションを設定する必要があります。
+However, you must specify the **SSL_ENABLE** option.
 
 <table class="table-alt">
   <tr>
-    <th>設定項目</th>
-    <th>内容</th>
-    <th>設定例</th>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Example</th>
   </tr>
   <tr>
     <td>SSL_ENABLE</td>
-    <td>SSLTransportプラグインの生成の有無</td>
+    <td>Whether to build the SSLTransport plugin</td>
     <td>ON</td>
   </tr>
 </table>
 
-```
- set OPENRTM_INSTALL_DIR=~/work/openrtm_install
- cmake .. -DSSL_ENABLE=ON -DCMAKE_INSTALL_PREFIX=$OPENRTM_INSTALL_DIR
- cmake --build . --config Release -- -j$(nproc)
- cmake --build . --config Release --target install
+```sh
+set OPENRTM_INSTALL_DIR=~/work/openrtm_install
+cmake .. -DSSL_ENABLE=ON -DCMAKE_INSTALL_PREFIX=$OPENRTM_INSTALL_DIR
+cmake --build . --config Release -- -j$(nproc)
+cmake --build . --config Release --target install
 ```
 
 ## Python
-### OpenRTM-aistのビルドとインストール
-以下の手順でOpenRTM-aist Python版をインストールしてださい。
 
-- [OpenRTM-aistのビルド、動作確認手順]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_qnx_1_1/qnx_build_proc_1_2/openrtm_cpp_cmake_run#pythoninstall)
+### Building and Installing OpenRTM-aist
 
-ただし、動作確認でOpenRTM-aist C++版付属のネームサーバーを使用するため、C++版のビルドも実行してください。
+Install the Python version of OpenRTM-aist according to the following procedure.
 
-## 動作確認
+- [Building and Verifying OpenRTM-aist]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/install_qnx_1_1/qnx_build_proc_1_2/openrtm_cpp_cmake_run#pythoninstall)
 
-### ネームサーバー起動
+For the operation check, the Name Server included with the C++ version of OpenRTM-aist is used, so be sure to build the C++ version as well.
 
-SSLTransportの動作確認のためにはネームサーバーがSSLIOP通信に対応している必要があります。
-OpenRTM-aist付属の**openrtmNames**を起動します。
+## Operation Check
 
-以下のコマンドを実行してください。パスは確認して変更してください。
+### Starting the Name Server
 
-```
- %OPENRTM_INSTALL_DIR%\2.0.0\bin\vc16\openrtmNames.exe -f %OPENRTM_INSTALL_DIR%\2.0.0\ext\rtc.names.ssl.conf
-```
+To verify SSLTransport, the Name Server must support SSLIOP communication.
 
-```
- $OPENRTM_INSTALL_DIR/bin/openrtmNames -f $OPENRTM_INSTALL_DIR/etc/rtc.names.ssl.conf
-```
+Start **openrtmNames**, which is included with OpenRTM-aist.
 
-**rtc.names.ssl.conf**では生成済みのルート証明書root.crtと秘密鍵とサーバー証明書を連結したファイルserver.pemを使用するため、動作確認に使用するRTCもこれらの証明書ファイルを使います。
-実際にシステムを開発する際は証明書と秘密鍵を変更してください。
+Run the following command. Adjust the path as necessary.
 
-### RTC起動
-
-以下のようなrtc.confを作成します。OpenRTM-aistをインストールしたパスは適宜変更してください。
-
-C++では以下のファイルを作成します。
-
-```
- manager.modules.load_path: C:/work/openrtm_install/2.0.0/ext/ssl
- manager.preload.modules: SSLTransport.dll
- 
- corba.ssl.certificate_authority_file:C:/work/openrtm_install/2.0.0/ext/ssl/root.crt
- corba.ssl.key_file:C:/work/openrtm_install/2.0.0/ext/ssl/server.pem
- corba.ssl.key_file_password:password
- corba.args:-ORBserverTransportRule "* ssl" -ORBclientTransportRule "* ssl" -ORBendPoint giop:ssl::
- corba.nameservers: corbaloc:ssliop:localhost:2809
- corba.master_manager: giop:ssl:localhost:2810
+```sh
+%OPENRTM_INSTALL_DIR%\2.0.0\bin\vc16\openrtmNames.exe -f %OPENRTM_INSTALL_DIR%\2.0.0\ext\rtc.names.ssl.conf
 ```
 
-Pythonでは以下のファイルを作成します。
-
-```
- manager.modules.load_path: C:/Python37/Lib/site-packages/OpenRTM_aist/ext/vc16/ssl
- manager.preload.modules: SSLTransport.py
- 
- corba.ssl.certificate_authority_file:C:/Python37/Lib/site-packages/OpenRTM_aist/ext/ssl/root.crt
- corba.ssl.key_file:C:/Python37/Lib/site-packages/OpenRTM_aist/ext/ssl/server.pem
- corba.ssl.key_file_password:password
- corba.args:-ORBserverTransportRule "* ssl" -ORBclientTransportRule "* ssl" -ORBendPoint giop:ssl::
- corba.nameservers: corbaloc:ssliop:localhost:2809
- corba.master_manager: giop:ssl:localhost:2810
+```sh
+$OPENRTM_INSTALL_DIR/bin/openrtmNames -f $OPENRTM_INSTALL_DIR/etc/rtc.names.ssl.conf
 ```
 
-各設定項目の内容は以下のようになっています。
+Since **rtc.names.ssl.conf** uses the generated root certificate (**root.crt**) and the file **server.pem**, which contains the private key and server certificate, the RTCs used for the operation check also use these certificate files.
 
+When developing an actual system, replace these certificates and private keys with your own.
+
+### Starting the RTC
+
+Create an rtc.conf file as shown below. Modify the OpenRTM-aist installation path as appropriate.
+
+For C++, create the following file.
+
+```text
+manager.modules.load_path: C:/work/openrtm_install/2.0.0/ext/ssl
+manager.preload.modules: SSLTransport.dll
+
+corba.ssl.certificate_authority_file:C:/work/openrtm_install/2.0.0/ext/ssl/root.crt
+corba.ssl.key_file:C:/work/openrtm_install/2.0.0/ext/ssl/server.pem
+corba.ssl.key_file_password:password
+corba.args:-ORBserverTransportRule "* ssl" -ORBclientTransportRule "* ssl" -ORBendPoint giop:ssl::
+corba.nameservers: corbaloc:ssliop:localhost:2809
+corba.master_manager: giop:ssl:localhost:2810
+```
+
+For Python, create the following file.
+
+```text
+manager.modules.load_path: C:/Python37/Lib/site-packages/OpenRTM_aist/ext/vc16/ssl
+manager.preload.modules: SSLTransport.py
+
+corba.ssl.certificate_authority_file:C:/Python37/Lib/site-packages/OpenRTM_aist/ext/ssl/root.crt
+corba.ssl.key_file:C:/Python37/Lib/site-packages/OpenRTM_aist/ext/ssl/server.pem
+corba.ssl.key_file_password:password
+corba.args:-ORBserverTransportRule "* ssl" -ORBclientTransportRule "* ssl" -ORBendPoint giop:ssl::
+corba.nameservers: corbaloc:ssliop:localhost:2809
+corba.master_manager: giop:ssl:localhost:2810
+```
+
+The contents of each configuration item are as follows.
 
 <table class="table-alt">
   <tr>
-    <th>項目名</th>
-    <th>説明</th>
+    <th>Item Name</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>corba.ssl.certificate_authority_file</td>
-    <td>ルート証明書</td>
+    <td>Root certificate</td>
   </tr>
   <tr>
     <td>corba.ssl.key_file</td>
-    <td>秘密鍵+サーバー証明書兼クライアント証明書の連結ファイル</td>
+    <td>Combined file containing the private key, server certificate, and client certificate</td>
   </tr>
   <tr>
     <td>corba.ssl.key_file_password</td>
-    <td>秘密鍵のパスフレーズ</td>
+    <td>Passphrase for the private key</td>
   </tr>
   <tr>
     <td>corba.args</td>
-    <td>CORBAライブラリの初期化関数に渡す引数。ここでSSLIOP通信のエンドポイントを設定する必要がある。</td>
+    <td>Arguments passed to the CORBA library initialization function. The endpoint for SSLIOP communication must be specified here.</td>
   </tr>
   <tr>
     <td>corba.nameservers</td>
-    <td>ネームサーバーのアドレス。ここでSSLIOP通信でネームサーバーに接続するように設定する。</td>
+    <td>Address of the Name Server. Configure this to connect to the Name Server using SSLIOP communication.</td>
   </tr>
   <tr>
     <td>corba.master_manager</td>
-    <td>マスターマネージャのエンドポイント。マスターマネージャの場合は自身のエンドポイントを設定し、スレーブマネージャの場合は接続先のマスターマネージャのアドレスを設定する。</td>
+    <td>Endpoint of the Master Manager. For a Master Manager, specify its own endpoint. For a Slave Manager, specify the address of the Master Manager to connect to.</td>
   </tr>
 </table>
 
-このrtc.confを指定してConsoleIn、ConsoleOutのRTCを起動します。
+Start the ConsoleIn and ConsoleOut RTCs using this rtc.conf.
 
-```
- %OPENRTM_INSTALL_DIR%\2.0.0\Components\C++\Examples\vc16\ConsoleInComp.exe -f rtc.conf
-```
-
-```
- %OPENRTM_INSTALL_DIR%\2.0.0\Components\C++\Examples\vc16\ConsoleOutComp.exe -f rtc.conf
+```sh
+%OPENRTM_INSTALL_DIR%\2.0.0\Components\C++\Examples\vc16\ConsoleInComp.exe -f rtc.conf
 ```
 
-```
- ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f rtc.conf
-```
-
-```
- ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleInComp -f rtc.conf
+```sh
+%OPENRTM_INSTALL_DIR%\2.0.0\Components\C++\Examples\vc16\ConsoleOutComp.exe -f rtc.conf
 ```
 
-```
- python %OpenRTMPython_INSTALL_DIR%\Lib\site-packages\ConsoleIn.py -f rtc.conf
-```
-
-```
- python %OpenRTMPython_INSTALL_DIR%\Lib\site-packages\ConsoleOut.py -f rtc.conf
+```sh
+${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f rtc.conf
 ```
 
-```
- python3 ${OpenRTMPython_INSTALL_DIR}/share/openrtm-2.0/components/python3/SimpleIO/ConsoleOut.py -f rtc.conf
-```
-
-```
- python3 ${OpenRTMPython_INSTALL_DIR}/share/openrtm-2.0/components/python3/SimpleIO/ConsoleIn.py -f rtc.conf
+```sh
+${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleInComp -f rtc.conf
 ```
 
-これでネームサーバーに登録されますが、RTシステムエディタにSSLIOP通信機能はないため、OpenRTM-aistの機能かrtshellによりポートの接続やRTCのアクティブ化を実行する必要があります。
-
-## マネージャ起動時のポート接続、RTCのアクティブ化
-
-rtc.confの[manager.components.preconnect]({{ site.baseurl }}/ja/doc/developersguide/basic_rtc_programming/rtc_conf_reference#preconnect)、[manager.components.preactivation]({{ site.baseurl }}/ja/doc/developersguide/basic_rtc_programming/rtc_conf_reference)でrtcname形式、rtcloc形式を指定することでポートの接続、RTCのアクティブ化ができます。
-SSLIOP通信の場合は以下のようにプロトコルに**ssliop**を指定することで使用可能になります。
-
-```
- manager.components.preconnect: ConsoleIn0.out?port=rtcname.ssliop://localhost:2809/*/ConsoleOut0.in
- manager.components.preactivation: ConsoleIn0, rtcname.ssliop://localhost:2809/*/ConsoleOut0
+```sh
+python %OpenRTMPython_INSTALL_DIR%\Lib\site-packages\ConsoleIn.py -f rtc.conf
 ```
 
-```
- naming.type: corba, manager
- manager.components.preconnect: ConsoleIn0.out?port=rtcloc.ssliop://localhost:2810/*/ConsoleOut0.in
- manager.components.preactivation: ConsoleIn0, rtcloc.ssliop://localhost:2810/*/ConsoleOut0
+```sh
+python %OpenRTMPython_INSTALL_DIR%\Lib\site-packages\ConsoleOut.py -f rtc.conf
 ```
 
-## rtshellによる操作
+```sh
+python3 ${OpenRTMPython_INSTALL_DIR}/share/openrtm-2.0/components/python3/SimpleIO/ConsoleOut.py -f rtc.conf
+```
+
+```sh
+python3 ${OpenRTMPython_INSTALL_DIR}/share/openrtm-2.0/components/python3/SimpleIO/ConsoleIn.py -f rtc.conf
+```
+
+The RTCs will now be registered with the Name Server. However, since RT System Editor does not support SSLIOP communication, you must use OpenRTM-aist functionality or rtshell to connect ports and activate RTCs.
+
+## Connecting Ports and Activating RTCs at Manager Startup
+
+By specifying rtcname or rtcloc format in [manager.components.preconnect]({{ site.baseurl }}/en/doc/developersguide/basic_rtc_programming/rtc_conf_reference#preconnect) and [manager.components.preactivation]({{ site.baseurl }}/en/doc/developersguide/basic_rtc_programming/rtc_conf_reference), you can connect ports and activate RTCs.
+
+For SSLIOP communication, specify **ssliop** as the protocol as shown below.
+
+```text
+manager.components.preconnect: ConsoleIn0.out?port=rtcname.ssliop://localhost:2809/*/ConsoleOut0.in
+manager.components.preactivation: ConsoleIn0, rtcname.ssliop://localhost:2809/*/ConsoleOut0
+```
+
+```text
+naming.type: corba, manager
+manager.components.preconnect: ConsoleIn0.out?port=rtcloc.ssliop://localhost:2810/*/ConsoleOut0.in
+manager.components.preactivation: ConsoleIn0, rtcloc.ssliop://localhost:2810/*/ConsoleOut0
+```
+
+## Using rtshell
+
 &aname(rtshell);
 
-まず、現在インストールされるrtshellでは対応していないため、最新版のrtctree、rtshell、rtsprofileが必要です。
+First, the currently distributed version of rtshell does not support this feature, so you need the latest versions of rtctree, rtshell, and rtsprofile.
 
 - https://github.com/OpenRTM/rtctree
 - https://github.com/OpenRTM/rtshell
 - https://github.com/OpenRTM/rtsprofile
 
-rtshellでSSLIOP通信機能を使用するためには以下の環境変数を設定する必要があります。
+To use SSLIOP communication with rtshell, set the following environment variables.
 
 <table class="table-alt">
   <tr>
-    <th>環境変数名</th>
-    <th>設定例</th>
-    <th>意味</th>
+    <th>Environment Variable</th>
+    <th>Example Setting</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>RTCTREE_SSL_ENABLE</td>
     <td>YES</td>
-    <td>YES：rtctreeでSSLIOP通信機能を有効にする。</td>
+    <td>YES: Enables SSLIOP communication in rtctree.</td>
   </tr>
   <tr>
     <td>RTCTREE_NAMESERVERS</td>
     <td>ssliop:localhost:2809</td>
-    <td>接続するネームサーバー</td>
+    <td>Name Server to connect to</td>
   </tr>
   <tr>
     <td>ORBsslCAFile</td>
     <td>root.crt</td>
-    <td>ルート証明書</td>
+    <td>Root certificate</td>
   </tr>
   <tr>
     <td>ORBsslKeyFile</td>
     <td>server.pem</td>
-    <td>秘密鍵+サーバー証明書兼クライアント証明書の連結ファイル</td>
+    <td>Combined file containing the private key, server certificate, and client certificate</td>
   </tr>
   <tr>
     <td>ORBsslKeyPassword</td>
     <td>password</td>
-    <td>秘密鍵のパスフレーズ</td>
+    <td>Passphrase for the private key</td>
   </tr>
   <tr>
     <td>ORBserverTransportRule</td>
     <td>"* ssl"</td>
-    <td>サーバー側の通信プロトコル選択のルール</td>
+    <td>Communication protocol selection rule for the server side</td>
   </tr>
   <tr>
     <td>ORBclientTransportRule</td>
     <td>"* ssl"</td>
-    <td>クライアント側の通信プロトコル選択のルール</td>
+    <td>Communication protocol selection rule for the client side</td>
   </tr>
   <tr>
     <td>ORBendPoint</td>
     <td>giop:ssl::</td>
-    <td>omniORBのエンドポイント</td>
+    <td>omniORB endpoint</td>
   </tr>
 </table>
 
-```
- set RTCTREE_SSL_ENABLE=YES
- set ORBsslCAFile=%RTM_ROOT%/ext/ssl/root.crt
- set ORBsslKeyFile=%RTM_ROOT%/ext/ssl/server.pem
- set ORBsslKeyPassword=password
- set RTCTREE_NAMESERVERS=ssliop:localhost:2809
- set ORBserverTransportRule=* ssl
- set ORBclientTransportRule=* ssl
- set ORBendPoint=giop:ssl::
-```
-
-以下のように接続するネームサーバーのアドレスの前に**ssliop:**を付けることでSSLIOP通信でネームサーバーに接続できるようになります。
-
-```
- rtcon /ssliop:localhost:2809/test.host_cxt/ConsoleIn0.rtc:out /ssliop:localhost:2809/test.host_cxt/ConsoleOut0.rtc:in
- rtact /ssliop:localhost:2809/test.host_cxt/ConsoleIn0.rtc /ssliop:localhost:2809/test.host_cxt/ConsoleOut0.rtc
- rtdeact /ssliop:localhost:2809/test.host_cxt/ConsoleIn0.rtc /ssliop:localhost:2809/test.host_cxt/ConsoleOut0.rtc
- rtexit /ssliop:localhost:2809/test.host_cxt/ConsoleOut0.rtc
- rtcryo ssliop:localhost:2809 -o sys.rtsys
+```sh
+set RTCTREE_SSL_ENABLE=YES
+set ORBsslCAFile=%RTM_ROOT%/ext/ssl/root.crt
+set ORBsslKeyFile=%RTM_ROOT%/ext/ssl/server.pem
+set ORBsslKeyPassword=password
+set RTCTREE_NAMESERVERS=ssliop:localhost:2809
+set ORBserverTransportRule=* ssl
+set ORBclientTransportRule=* ssl
+set ORBendPoint=giop:ssl::
 ```
 
+By prefixing the Name Server address with **ssliop:** as shown below, you can connect to the Name Server using SSLIOP communication.
 
-## 秘密鍵、証明書の生成
+```sh
+rtcon /ssliop:localhost:2809/test.host_cxt/ConsoleIn0.rtc:out /ssliop:localhost:2809/test.host_cxt/ConsoleOut0.rtc:in
+rtact /ssliop:localhost:2809/test.host_cxt/ConsoleIn0.rtc /ssliop:localhost:2809/test.host_cxt/ConsoleOut0.rtc
+rtdeact /ssliop:localhost:2809/test.host_cxt/ConsoleIn0.rtc /ssliop:localhost:2809/test.host_cxt/ConsoleOut0.rtc
+rtexit /ssliop:localhost:2809/test.host_cxt/ConsoleOut0.rtc
+rtcryo ssliop:localhost:2809 -o sys.rtsys
+```
 
-まずは秘密鍵、証明書の生成が必要です。
+## Generating Private Keys and Certificates
 
-証明書にはルート証明書、中間証明書、サーバー証明書、クライアント証明書があります。
-以下はサーバー証明書によるサーバー認証を行う場合の概要図です。
+First, you need to generate private keys and certificates.
+
+There are four types of certificates: root certificates, intermediate certificates, server certificates, and client certificates.
+
+The following figure provides an overview of server authentication using a server certificate.
 
 <div align="center"><a href="ssl1.png"><img src="ssl1.png" width="80%;"></a></div>
 
-通信するサーバー、クライアントPC以外に公開鍵証明書認証局(CA、Certificate Authority)が必要です。
-認証局はルート証明書と対応する秘密鍵(秘密鍵1)を持っています。
-サーバーは秘密鍵を生成後、生成した秘密鍵(秘密鍵a)でCSR(Certificate Signing Request：公開鍵情報、ウェブサイトの所有者情報)を認証局に送信します。
-認証局はCSRに秘密鍵1で署名したサーバー証明書を発行します。
-サーバーとクライアントのSSL/TLS通信のハンドシェイク処理でサーバー証明書を送信します。この時に他にも鍵交換アルゴリズムの処理などもありますが説明は省略します。
-クライアントは予め入手しておいたルート証明書の公開鍵でサーバー証明書の署名の検証を行い、証明書の検証が完了したら暗号化通信(秘密鍵aで符号化、サーバー証明書の公開鍵で復号)を開始します。
+In addition to the communicating server and client PCs, a Certificate Authority (CA) is required.
 
-この他に中間認証局がルート認証局から中間証明書を取得し、中間認証局がサーバー証明書を発行する場合があります。
-説明は以下のサイトの図が分かりやすいので参考になると思います。
+The Certificate Authority possesses the root certificate and its corresponding private key (Private Key 1).
 
-- [OpenSSLでプライベート認証局の構築（ルートCA、中間CA）](https://qiita.com/bashaway/items/ac5ece9618a613f37ce5)
+After generating its private key, the server sends a Certificate Signing Request (CSR), which contains the public key information and website owner information, to the Certificate Authority using the generated private key (Private Key A).
 
-ここまでの説明ではクライアント側がサーバーの認証をしていましたが、サーバーがクライアントの認証をする場合があります。
-omniORBでは引数`-ORBsslVerifyMode`や環境変数`ORBsslVerifyMode`で以下のパラメータを設定することで認証方法を変更可能です。
+The Certificate Authority issues a server certificate by signing the CSR with Private Key 1.
+
+During the SSL/TLS handshake between the server and client, the server certificate is transmitted. Other processes, such as key exchange algorithms, are also performed at this stage, but they are omitted from this explanation.
+
+The client verifies the signature of the server certificate using the public key in the root certificate obtained in advance. Once the certificate has been successfully verified, encrypted communication begins (encrypted with Private Key A and decrypted using the public key in the server certificate).
+
+In some cases, an intermediate Certificate Authority obtains an intermediate certificate from the root Certificate Authority, and the intermediate Certificate Authority issues the server certificate.
+
+The diagrams on the following page provide an easy-to-understand explanation and are recommended for reference.
+
+- [Building a Private Certificate Authority with OpenSSL (Root CA, Intermediate CA)](https://qiita.com/bashaway/items/ac5ece9618a613f37ce5)
+
+So far, the explanation has assumed that the client authenticates the server. However, there are cases where the server authenticates the client.
+
+In omniORB, you can change the authentication method by specifying the following parameters with the `-ORBsslVerifyMode` argument or the `ORBsslVerifyMode` environment variable.
 
 <table class="table-alt">
   <tr>
-    <th>パラメータ</th>
-    <th>意味</th>
+    <th>Parameter</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>none</td>
-    <td>サーバー証明書の検証に失敗してもハンドシェイクを継続する。クライアント証明書の要求は実行しない。</td>
+    <td>Continue the handshake even if server certificate verification fails. Client certificates are not requested.</td>
   </tr>
   <tr>
-    <td>peer(デフォルト値)</td>
-    <td>サーバーがクライアント証明書を要求する。サーバー認証、クライアント認証(クライアント証明書が送信されてきた場合)で失敗したらハンドシェイクを終了する。</td>
+    <td>peer (default)</td>
+    <td>The server requests a client certificate. The handshake is terminated if either server authentication or client authentication (when a client certificate is provided) fails.</td>
   </tr>
   <tr>
     <td>peer, fail</td>
-    <td>クライアント証明書が送信されなかったらハンドシェイクを終了する。</td>
+    <td>Terminate the handshake if no client certificate is provided.</td>
   </tr>
   <tr>
     <td>peer, once</td>
-    <td>クライアント認証を最初のハンドシェイクでのみ実行する。</td>
+    <td>Perform client authentication only during the initial handshake.</td>
   </tr>
   <tr>
     <td>peer, fail, once</td>
-    <td>上記の組み合わせ。</td>
+    <td>A combination of the above options.</td>
   </tr>
 </table>
 
-omniORBはサーバー証明書、クライアント証明書のルート証明書ファイルを個別に指定できないため、どちらも`corba.ssl.certificate_authority_file`オプションで指定してください。
+Since omniORB cannot specify separate root certificate files for server certificates and client certificates, specify both using the `corba.ssl.certificate_authority_file` option.
 
-まとめると、OpenRTM-aistのSSL/TLS通信にはルート証明書、サーバー証明書、クライアント証明書、中間証明書、秘密鍵を以下のように配置する必要があります。
+In summary, for SSL/TLS communication with OpenRTM-aist, the root certificate, server certificate, client certificate, intermediate certificate, and private key should be arranged as shown below.
 
 <div align="center"><a href="ssl2.png"><img src="ssl2.png" width="80%;"></a></div>
 
-以降ではOpenSSLのコマンドを使って自己認証局と自己署名証明書(いわゆるオレオレ証明書)を作成してみます。
-cnfファイルは上記のリンク先のサイトのものを使用します。
+The following example demonstrates how to create a self-signed Certificate Authority and self-signed certificates (commonly called "self-signed certificates") using OpenSSL commands.
 
-まず適当な作業フォルダにroot、inter、serverフォルダを作成します。
+The cnf file used here is the one provided on the website linked above.
 
-ルート認証局の秘密鍵、ルート証明書を作成します。
+First, create the **root**, **inter**, and **server** directories in a suitable working folder.
 
-```
- mkdir root
- cd root
- mkdir newcerts
- type nul > index.txt
- echo 01 > serial
- echo 00 > crlnumberl
- openssl genrsa -out RootCA_key.pem -passout pass:rootpass 2048
- openssl req -new -subj "/C=JP/ST=Tokyo/O=EXAMPLE/CN=EXAMPLE Root CA" -out RootCA_csr.pem  -key RootCA_key.pem  -passin pass:rootpass -config ../conf/openssl_sign.cnf
- openssl ca  -batch -extensions v3_ca -out RootCA_crt.pem -in RootCA_csr.pem -selfsign -keyfile RootCA_key.pem -passin pass:rootpass -config ../conf/openssl_sign.cnf
- openssl x509 -in RootCA_crt.pem -out RootCA_crt.pem
- cd ..
-```
+Create the private key and root certificate for the Root Certificate Authority.
 
-次に中間認証局の秘密鍵、中間証明書のCSRを作成します。
-
-```
- mkdir inter
- cd inter
- mkdir newcerts
- type nul > index.txt
- echo 01 > serial
- echo 00 > crlnumberl
- openssl genrsa -out InterCA_key.pem -passout pass:interpass 2048
- openssl req -new -subj "/C=JP/ST=Tokyo/O=EXAMPLE/CN=EXAMPLE Intermediate CA" -out InterCA_csr.pem -key InterCA_key.pem -passin pass:interpass -config ../conf/openssl_sign.cnf
- cd ..
+```sh
+mkdir root
+cd root
+mkdir newcerts
+type nul > index.txt
+echo 01 > serial
+echo 00 > crlnumberl
+openssl genrsa -out RootCA_key.pem -passout pass:rootpass 2048
+openssl req -new -subj "/C=JP/ST=Tokyo/O=EXAMPLE/CN=EXAMPLE Root CA" -out RootCA_csr.pem -key RootCA_key.pem -passin pass:rootpass -config ../conf/openssl_sign.cnf
+openssl ca -batch -extensions v3_ca -out RootCA_crt.pem -in RootCA_csr.pem -selfsign -keyfile RootCA_key.pem -passin pass:rootpass -config ../conf/openssl_sign.cnf
+openssl x509 -in RootCA_crt.pem -out RootCA_crt.pem
+cd ..
 ```
 
-ルート認証局で中間証明書を発行します。
+Next, create the private key for the Intermediate Certificate Authority and the CSR for the intermediate certificate.
 
-```
- cd root
- openssl ca -batch -extensions v3_ca -out ..\inter\InterCA_crt.pem -in  ..\inter\InterCA_csr.pem -cert RootCA_crt.pem -keyfile RootCA_key.pem -passin pass:interpass -config ../conf/openssl_sign.cnf
- cd ..
-```
-
-
-サーバーで秘密鍵とサーバー証明書のCSRを作成します。
-
-```
- mkdir server
- cd server
- mkdir newcerts
- type nul > index.txt
- echo 01 > serial
- echo 00 > crlnumberl
- openssl genrsa -out Server_key.pem -passout pass:serverpass 2048
- openssl req -new -subj "/C=JP/ST=Tokyo/O=EXAMPLE/CN=EXAMPLE Server" -out Server_csr.pem -key Server_key.pem -passin pass:serverpass -config ../conf/openssl_sign.cnf
- cd ..
+```sh
+mkdir inter
+cd inter
+mkdir newcerts
+type nul > index.txt
+echo 01 > serial
+echo 00 > crlnumberl
+openssl genrsa -out InterCA_key.pem -passout pass:interpass 2048
+openssl req -new -subj "/C=JP/ST=Tokyo/O=EXAMPLE/CN=EXAMPLE Intermediate CA" -out InterCA_csr.pem -key InterCA_key.pem -passin pass:interpass -config ../conf/openssl_sign.cnf
+cd ..
 ```
 
-中間認証局でサーバー証明書を発行します。
+Issue the intermediate certificate using the Root Certificate Authority.
 
-```
- cd inter
- openssl x509 -req -in ..\server\Server_csr.pem -sha256 -CA InterCA_crt.pem -CAkey InterCA_key.pem -set_serial 01 -days 730 -out ..\server\Server_crt.pem -passin pass:serverpass
- cd ..
-```
-
-秘密鍵、サーバー証明書、中間証明書を連結します。
-
-```
- cd server
- openssl x509 -in Server_crt.pem -out Server_crt.pem
- openssl x509 -in ..\inter\InterCA_crt.pem -out InterCA_crt.pem
- copy /b Server_key.pem + Server_crt.pem + InterCA_crt.pem server.pem
+```sh
+cd root
+openssl ca -batch -extensions v3_ca -out ..\inter\InterCA_crt.pem -in ..\inter\InterCA_csr.pem -cert RootCA_crt.pem -keyfile RootCA_key.pem -passin pass:interpass -config ../conf/openssl_sign.cnf
+cd ..
 ```
 
+Next, create the server's private key and the CSR for the server certificate.
 
-今回使用するのは連結したファイル(server.pem)とルート証明書(RootCA_crt.pem)です。
-
-## 簡単な動作確認
-OpenRTM-aistをビルド、インストールすると、SSLTransportの簡単な動作確認用の設定ファイルがインストールされます。
-
-```
- %RTM_ROOT%\ext\environment-setup.omniorb.vc16.bat
- %RTM_ROOT%\bin\vc16\openrtmNames.exe -f %RTM_ROOT%\ext\rtc.names.ssl.conf
-```
-
-```
- %RTM_ROOT%\ext\environment-setup.omniorb.vc16.bat
- %RTM_ROOT%\Components\C++\Examples\vc16\ConsoleOutComp.exe -f %RTM_ROOT%\ext\ssl\rtc.ssl.conf
+```sh
+mkdir server
+cd server
+mkdir newcerts
+type nul > index.txt
+echo 01 > serial
+echo 00 > crlnumberl
+openssl genrsa -out Server_key.pem -passout pass:serverpass 2048
+openssl req -new -subj "/C=JP/ST=Tokyo/O=EXAMPLE/CN=EXAMPLE Server" -out Server_csr.pem -key Server_key.pem -passin pass:serverpass -config ../conf/openssl_sign.cnf
+cd ..
 ```
 
-```
- source ${OPENRTM_INSTALL_DIR}/etc/environment-setup.sh
- ${OPENRTM_INSTALL_DIR}/bin/openrtmNames -f ${OPENRTM_INSTALL_DIR}/etc/rtc.names.ssl.conf
+Issue the server certificate using the Intermediate Certificate Authority.
+
+```sh
+cd inter
+openssl x509 -req -in ..\server\Server_csr.pem -sha256 -CA InterCA_crt.pem -CAkey InterCA_key.pem -set_serial 01 -days 730 -out ..\server\Server_crt.pem -passin pass:serverpass
+cd ..
 ```
 
-```
- source ${OPENRTM_INSTALL_DIR}/etc/environment-setup.sh 
- ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/ssl/rtc.ssl.conf
+Concatenate the private key, server certificate, and intermediate certificate.
+
+```sh
+cd server
+openssl x509 -in Server_crt.pem -out Server_crt.pem
+openssl x509 -in ..\inter\InterCA_crt.pem -out InterCA_crt.pem
+copy /b Server_key.pem + Server_crt.pem + InterCA_crt.pem server.pem
 ```
 
--------jp page!!-------
+The files used in this example are the concatenated file (**server.pem**) and the root certificate (**RootCA_crt.pem**).
+
+## Simple Operation Check
+
+When OpenRTM-aist is built and installed, a configuration file for a simple operation check of SSLTransport is also installed.
+
+### Windows
+
+First, start the Name Server.
+
+```sh
+%RTM_ROOT%\ext\environment-setup.omniorb.vc16.bat
+%RTM_ROOT%\bin\vc16\openrtmNames.exe -f %RTM_ROOT%\ext\rtc.names.ssl.conf
+```
+
+Next, start the RTC.
+
+```sh
+%RTM_ROOT%\ext\environment-setup.omniorb.vc16.bat
+%RTM_ROOT%\Components\C++\Examples\vc16\ConsoleOutComp.exe -f %RTM_ROOT%\ext\ssl\rtc.ssl.conf
+```
+
+### Ubuntu
+
+First, configure the environment and start the Name Server.
+
+```sh
+source ${OPENRTM_INSTALL_DIR}/etc/environment-setup.sh
+${OPENRTM_INSTALL_DIR}/bin/openrtmNames -f ${OPENRTM_INSTALL_DIR}/etc/rtc.names.ssl.conf
+```
+
+Next, start the RTC.
+
+```sh
+source ${OPENRTM_INSTALL_DIR}/etc/environment-setup.sh
+${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/ssl/rtc.ssl.conf
+```
+

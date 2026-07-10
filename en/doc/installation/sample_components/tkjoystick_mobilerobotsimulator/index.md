@@ -2,55 +2,112 @@
 layout: page
 title: "TkJoyStick/TkMobileRobotSimulator"
 ---
--------jp page!!-------
 
 <!-- Title: TkJoyStick/TkMobileRobotSimulator -->
 #contents
+
 ## TkJoyStick
-このサンプルは、OpenRTM-aistのPython版に付属しています。 C++版、Java版には付属していませんのでご注意ください。
 
-### 概要
-GUI画面を持ったRTコンポーネントのサンプルです。TkJoyStickComp.batを実行することでサンプル・コンポーネントが起動されます。
-GUI上のジョイスティックをドラッグで移動した位置に応じた値(x, y)を出力します。
+This sample is included with the Python edition of OpenRTM-aist. Please note that it is not included with the C++ or Java editions.
 
-### 起動画面
+### Overview
+
+This is a sample RT Component with a GUI interface. The sample component can be started by running TkJoyStickComp.bat.
+
+It outputs position values (x, y) corresponding to the location where the joystick is dragged within the GUI.
+
+### Startup Screen
+
 <div align="center"><a href="TkJoystick.png"><img src="TkJoystick.png" width="60%;"></a></div>
-<div align="center"><strong>TkJoyStick実行例</strong></div>
+<div align="center"><strong>TkJoyStick Execution Example</strong></div>
 
-### 使い方
-- 画面中央に表示される小さい丸をドラッグすることで、丸の座標に応じた (x, y) の値を出力します。右上のScale Factorのスライダを調整することで、出力する座標値のスケールを調整できます。画面右下には、直角座標系の(x, y)の値と、極座標系の(r, theta)が表示されます。
-- OutPortは2つあり、"pos"からは位置に応じた値が、"vel"からは反時計方向に座標を45度かたむけた値が、たとえば"pos"が(10,10)だとすると"vel"には(14.142, 0)が出力されます。
+### Usage
+
+- Drag the small circle displayed in the center of the screen to output (x, y) values corresponding to its position.
+- The scale of the output coordinates can be adjusted using the **Scale Factor** slider in the upper-right corner.
+- The lower-right area of the screen displays both Cartesian coordinates (x, y) and polar coordinates (r, θ).
+
+There are two OutPorts:
+
+- **pos**: Outputs values corresponding directly to the joystick position.
+- **vel**: Outputs values rotated 45 degrees counterclockwise from the position coordinates.
+
+For example, if the value from **pos** is:
+
+```text
+(10, 10)
+```
+
+then the value from **vel** will be:
+
+```text
+(14.142, 0)
+```
+
+---
 
 ## TkMobileRobotSimulator
-このサンプルは、OpenRTM-aistのPython版に付属しています。C++版、Java版には付属していませんのでご注意ください。
 
-### 概要
-GUI画面を持ったRTコンポーネントのサンプルです。TkMobileRobotSimulator.batを実行することでサンプル・コンポーネントが起動されます。
+This sample is included with the Python edition of OpenRTM-aist. Please note that it is not included with the C++ or Java editions.
 
-### 起動画面
+### Overview
+
+This is a sample RT Component with a GUI interface. The sample component can be started by running TkMobileRobotSimulator.bat.
+
+### Startup Screen
 
 <div align="center"><a href="TkMobileRobotSimulator.png"><img src="TkMobileRobotSimulator.png" width="60%;"></a></div>
-<div align="center"><strong>TkMobileRobotSimulator実行例</strong></div>
+<div align="center"><strong>TkMobileRobotSimulator Execution Example</strong></div>
 
-### 使い方
-実際にRTCとしてシステムが認識し、Name ServiceでRTCが見えるようにするためには、GUIの右側中央にある[Create]ボタンを押します。GUI上にモータで前後左右に動く物体を模した五角形のオブジェクトが表示されます。InPortへの入力値に応じて、画面上の5角形のオブジェクトが移動します。InPortへの入力はロボットを駆動する左側車輪用モータの回転速度と右側車輪のモータ回転速度になります。まっすぐ頂点方向に進むためには両方の車輪の速度が一緒である必要があります。
+### Usage
 
-## システム構成
+To make the system recognize the simulator as an RTC and display it in the Name Service, click the **[Create]** button located near the center-right side of the GUI.
+
+A pentagonal object representing a motor-driven mobile robot will appear on the GUI.
+
+The pentagon moves according to values received through the InPort.
+
+The InPort inputs correspond to the rotational speeds of the left and right wheel motors used to drive the robot.
+
+For the robot to move straight toward the direction of its front vertex, both wheel speeds must be equal.
+
+---
+
+## System Configuration
+
 <div align="center"><a href="SysEdit.png"><img src="SysEdit.png" width="60%;"></a></div>
-<div align="center"><strong>RTSystemEditor実行例</strong></div>
+<div align="center"><strong>RTSystemEditor Execution Example</strong></div>
 
-### 使い方
-TkJoystick(入力デバイス)とTkMobileRobotSimulator接続し、GUI上でJoystickで移動速度を制御するくロボットのシミュレーションをします。
+### Usage
 
-- 手順
-  - RTSystemEditorを起動し、新規SystemEditorを開きます。RTSystemEditorの使用方法の詳細については[RTSystemEditor]({{ site.baseurl }}/ja/doc/toolmanuals/rtsystemeditor-1_2_0)を参照
-  - TkJoyStickComp.py、TkMobileRobotSimulator.py、両コンポーネントを起動します。
-  - TkMobileRobotSimulator.pyのGUIの[Create]ボタンを１回クリックします。
-  - RTSystemEditorのName Service Viewに両コンポーネントが表示されるので、それらをSystemEditor上にドラッグします。
-  - 両コンポーネントの対応ポート(どちらもvel)を結びます。(上図RTSystemEditor実行例を参照)
-  - どちらかのコンポーネントを右クリックし、[Activate Systems]を選択します。
-  - TkJoystickCompの画面上で中心点をドラッグすることにより、TkMobileRobotSimulator上の5角形のオブジェクト(ロボットを表しています)が動きます。Y方向(上下方向)にTkJoystickコンポーネントを動かすと進行方向への移動速度が変化し、X方向(左右方向)に動かすと、回転速度と回転方向が変化するように動きます。(TkJoyStickの"vel" OutPortを使う場合は、ジョイステックを上下方向に動かすと、ベクター値の2値が同じ値になります。また左右に動かした場合は、正負が逆の値になります。これをTkMobileRobotSimulatorに送ると、それぞれ左右のモータへの速度制御入力として動作するため、上下方向の移動は2つのモータを同じ方向で同じ速度で動かすような形で頂点方向への直進速度の制御ということになります。また左右方向のジョイステックの移動は"vel" OutPortからのベクターの2要素は正負が反転した値となり、それがTkMobileRobotSimulatorにとっては左右のモータの速度の制御値になるため、同じ絶対値速度で逆方向にモータを回すことになるので、ロボットはその場で回転するということになります。) 
+Connect TkJoyStick (input device) to TkMobileRobotSimulator and simulate robot motion controlled by the joystick through the GUI.
 
+- Procedure
 
+  - Start RTSystemEditor and open a new SystemEditor. For details on using RTSystemEditor, refer to [RTSystemEditor]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_2_0).
 
--------jp page!!-------
+  - Start both TkJoyStickComp.py and TkMobileRobotSimulator.py.
+
+  - Click the **[Create]** button once in the TkMobileRobotSimulator GUI.
+
+  - Both components will appear in the Name Service View of RTSystemEditor. Drag them onto the SystemEditor.
+
+  - Connect the corresponding ports (**vel** on both components). (Refer to the RTSystemEditor example above.)
+
+  - Right-click either component and select **[Activate Systems]**.
+
+  - Drag the center point in the TkJoyStickComp window. The pentagonal object (representing the robot) in TkMobileRobotSimulator will move accordingly.
+
+    - Moving the joystick in the **Y direction (up/down)** changes the robot's forward/backward speed.
+    - Moving the joystick in the **X direction (left/right)** changes the robot's rotation speed and rotation direction.
+
+  - When using the **vel** OutPort of TkJoyStick:
+
+    - Moving the joystick vertically produces two identical values in the output vector.
+    - Moving the joystick horizontally produces two values with opposite signs.
+
+    When these values are sent to TkMobileRobotSimulator:
+
+    - Vertical joystick movement causes both motors to rotate at the same speed in the same direction, resulting in straight-line motion toward the robot's front vertex.
+    - Horizontal joystick movement causes the left and right motors to rotate at equal speeds in opposite directions, causing the robot to rotate in place.
+

@@ -2,7 +2,9 @@
 layout: page
 Title: "OpenRTM-aist(C++版)1.2系のインストール"
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!--- Title: OpenRTM-aist(C++版)1.2系のインストール--->
 
@@ -19,4 +21,4 @@ C++言語版のOpenRTM-aistは、インストールパッケージやインス�
 - [ソースからのビルド (Windows編)](./build_source_windows_1_2)
 - [ソースからのビルド(Linux編)](./build_source_linux_1_2)
 
--------jp page!!-------
+

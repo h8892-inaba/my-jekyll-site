@@ -1,41 +1,40 @@
 ---
 layout: page
-title: NXT Python Facade クラス
+title: NXT Python Facade Class
 ---
--------jp page!!-------
 
 <!-- Title: NXT Python Facade クラス -->
-## NXT Python Facade クラス
-NXT Python 自体は NXTインテリジェントブロックのほとんどすべての機能を使用することができますが、それらの機能すべてを直接使用するのは煩雑になるため、利用したい機能のみをインターフェースする Facade クラスを作ります。
+## NXT Python Facade Class
+NXT Python itself can use almost all functions of the NXT intelligent block, but using all of those functions directly becomes complicated, so we will create a Facade class that interfaces only with the functions we want to use.
 
-NXT の主な機能を列挙します。
+The main functions of NXT are listed below.
 
-- 入力
-  - モーター速度値を与える
-  - サウンドの音程値を与える
-  - 液晶表示に出力するメッセージを与える
-- 出力
-  - モーターエンコーダ値を読む
-  - センサー値(サウンド、超音波、タッチ、光)の値を読む
-  - システム情報を読む
-- その他
-  - NXT の検索
-  - NXT への接続
-  - NXT のファイルの読み書き
-  - ファームウエアの読み書き
+- Input
+  - Provide motor speed values
+  - Provide sound pitch values
+  - Provide messages to output to the LCD display
+- Output
+  - Read motor encoder values
+  - Read sensor values (sound, ultrasonic, touch, light)
+  - Read system information
+- Others
+  - Search for NXT
+  - Connect to NXT
+  - Read and write files on NXT
+  - Read and write firmware
 
-これらすべてを一度にサポートするクラスを作るのでは Façade クラスを作る意味がなくなってしまいます。
-必要な機能が出てきたらそのつど Façade クラスを更新すればよいのです。
-したがって、ここで作成する Façade クラスでは、今回作成するロボットに合わせて、以下の機能のみをサポートすることにします。
+Creating a class that supports all of these at once would defeat the purpose of creating a Façade class.
+You can update the Façade class each time a required function comes up.
+Therefore, the Façade class created here will support only the following functions according to the robot being created this time.
 
-- 入力
-  - モーター速度値を与える: setMotors()
-- 出力
-  - モーターエンコーダ値を読む: getMotors()
-  - センサー値 (サウンド、超音波、タッチ、光) の値を読む: getSensors()
+- Input
+  - Provide motor speed values: setMotors()
+- Output
+  - Read motor encoder values: getMotors()
+  - Read sensor values (sound, ultrasonic, touch, light): getSensors()
 
-関数名はおおよそのイメージです。
-この考え方で作成したクラス (NXTBrick.py) を以下に示します。
+The function names are rough examples.
+The class (NXTBrick.py) created based on this idea is shown below.
 
 ```
  #!/usr/bin/env python
@@ -141,14 +140,11 @@ NXT の主な機能を列挙します。
 ```
 
 
-最後の **if <u>name</u> == "<u>main</u>":**から始まる部分はテストプログラムです。このモジュールを単体で動かしたときに実行されます。
-まずは、このモジュールが完全に動くまでテストをすることが重要です。
+The final part starting with **if <u>name</u> == "<u>main</u>":** is the test program. It is executed when this module is run by itself.
+First, it is important to test this module until it works completely.
 
-以上で、NXT の Façade クラスができました。
-非常に簡単なクラスですが、モーターに速度を与え、ポジションを読み、センサーの値を読むことのできるクラスができました。
-はじめから何でもできるようにしようとすると、結局何をするためのクラスなのかよくわからないクラスができてしまいます。
-バージョンアップはいつでもできるので、まずは最低限の機能でもちゃんと動くクラスを作ることが重要です。
+This completes the NXT Façade class.
+Although it is a very simple class, we now have a class that can give speed values to the motors, read positions, and read sensor values.
+If you try to make it do everything from the beginning, you will end up with a class whose purpose is unclear.
+Since version upgrades can be done at any time, it is important to first create a class that works properly even with the minimum required functions.
 
-
-
--------jp page!!-------

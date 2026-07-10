@@ -2,7 +2,9 @@
 layout: page
 title: Tips
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: Tips -->
 ## JDKインストールのためのヒント
@@ -401,4 +403,4 @@ JDKの確認
 <!--  -->
 
 
--------jp page!!-------
+

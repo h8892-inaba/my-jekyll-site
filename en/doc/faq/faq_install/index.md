@@ -1,8 +1,7 @@
 ---
 layout: page
-title: インストールに関する FAQ
+title: FAQ on Installation
 ---
--------jp page!!-------
 
 <!-- Title:  インストールに関する FAQ -->
 #contents
@@ -10,101 +9,101 @@ title: インストールに関する FAQ
 
 ## Windows
 
-### WindowsでPythonをインストールしてもバージョン番号が表示されない
-OpenRTM-aistがサポートしているPythonバージョンをインストールし、その際Pythonのパスを通したのに、コマンドプロンプトで確認するとバージョン番号が表示されないことがあります。
+### The version number is not displayed even after installing Python on Windows
+Even if you install a Python version supported by OpenRTM-aist and add the Python path at that time, the version number may not be displayed when you check it from the Command Prompt.
 
 ```
  >python --version
  Python
 ```
 
-**原因：**
-- 先にMicrosoft Store 等からダウンロードされたものがインストールされている可能性があります
-- where pythonコマンドでインストール先を確認してください
+**Cause:**
+- A version downloaded from the Microsoft Store or similar may already be installed
+- Check the installation location with the where python command
 ```
  >where python
 ```
 
-**対処方法：**
-- Pythonのアプリ実行エイリアスを確認し、オンになっていたらオフに変更してWindowsを再起動して下さい
-- Windowsの設定 → アプリと機能 → アプリ実行エイリアスで、「pytnon.exe」と「python3.exe」をオフにする
+**Solution:**
+- Check Python's app execution aliases, and if they are turned on, turn them off and restart Windows
+- In Windows Settings → Apps & features → App execution aliases, turn off "pytnon.exe" and "python3.exe"
 
 
-再起動後にコマンドプロンプトでPythonのバージョン番号が表示されることを確認して下さい。
-Pythonインストール時のパスを通す手順は、下記ページの解説をご覧ください。 <br>
-[OpenRTM-aistを10分で始めよう！・Pythonのインストール](/ja/doc/installation/lets_start#toc1) 
+After restarting, confirm that the Python version number is displayed in the Command Prompt.
+For the procedure for adding the path when installing Python, see the explanation on the following page. <br>
+[Let's Start OpenRTM-aist in 10 Minutes!・Installing Python](/en/doc/installation/lets_start#toc1) 
 
 
 <br>
 <br>
 
-### Windows Defenderからの警告が出る
-ネームサーバやサンプルコンポーネントを起動しようとすると、Windows Defenderのファイアウォールにより[Windows セキュリティの重要な警告]ダイアログが表示されることがあります。
+### A warning appears from Windows Defender
+When trying to start the name server or sample components, the Windows Defender Firewall may display the [Windows Security Alert] dialog.
 <br>
 <br>
-**対処方法：**
-[プライベート ネットワーク(ホームネットワークや社内ネットワークなど)(R)]にチェックを入れ[パブリックネットワーク(空港、喫茶店など)(非推奨)(U)]のチェックをはずしてアクセスを許可する(A)]をクリックしてください。
-<br>
-<br>
-
-### Windows10 へ OpenRTM-aist 1.1.2版をインストールしたが、PATH に追加されていない
-**原因：**
-- Windows10 のみでの現象の可能性があります。
-- PATH の設定が長いと長さ制限のために切り捨てられる可能性があります。
-
-
-**対処方法：**
-インストール後にPCを再起動してください。
+**Solution:**
+Check [Private networks (home or work networks) (R)], uncheck [Public networks (airports, coffee shops, etc.) (not recommended) (U)], and click [Allow access (A)].
 <br>
 <br>
 
-### Windows10 で omniORB の PATH設定が展開されていない
-
-Windows10 で setコマンドを確認したところ、omniORBの PATH設定 %OMNI_ROOT% の変数部分が展開されていなかった。
-<br>
-<br>
-**原因：**
-- Windows10 のみでの現象の可能性があります。
-- PATH が展開されていない可能性があります。
+### OpenRTM-aist 1.1.2 was installed on Windows 10, but it was not added to PATH
+**Cause:**
+- This may be a phenomenon that occurs only on Windows 10.
+- If the PATH setting is long, it may be truncated due to the length limit.
 
 
-**対処方法：**
-インストール後にPCを再起動してください。
+**Solution:**
+Restart the PC after installation.
 <br>
 <br>
 
-### Eclipse が起動できない
-JRE がインストールされていない可能性がありますので、対応バージョンの JRE をインストールしてください。
+### The omniORB PATH setting is not expanded on Windows 10
+
+When checking the set command on Windows 10, the variable part %OMNI_ROOT% of the omniORB PATH setting was not expanded.
+<br>
+<br>
+**Cause:**
+- This may be a phenomenon that occurs only on Windows 10.
+- The PATH may not have been expanded.
+
+
+**Solution:**
+Restart the PC after installation.
+<br>
+<br>
+
+### Eclipse cannot be started
+JRE may not be installed, so install the supported version of JRE.
 <br>
 <br>
 
 
 ## UNIX
 
-### パッケージの自動インストールでダウンロードエラーが表示される 
-OpenRTM-aist に付属する自動インストーラーは、パッケージの有無とバージョンを確認し、適当なパッケージがインストールされていない場合に各パッケージのダウンロードサイトからダウンロード及び加工するものです。
-このため、自動インストーラーでインストールする場合には、コンピューターを必ずインターネットに接続してください。~
-ネットワーク接続が正常でもダウンロードエラーが出る場合、回線の混雑等でウンロードに失敗した場合と、ダウンロードサイト側でファイルの場所や名前が変わった可能性が考えられます。
-前者の場合は時間帯等をずらして再度自動インストーラーを実行してみてください。また後者の場合には、該当するパッケージを探してから個々にダウンロードして手動インストールするか、自動インストーラーのダウンロード元アドレスを修正してから改めて起動してください。~
+### A download error is displayed during automatic package installation 
+The automatic installer included with OpenRTM-aist checks for the presence and version of packages, and if an appropriate package is not installed, it downloads and processes each package from its download site.
+For this reason, when installing with the automatic installer, be sure to connect the computer to the Internet.~
+If a download error occurs even though the network connection is normal, the download may have failed due to line congestion or similar reasons, or the file location or name may have changed on the download site side.
+In the former case, try running the automatic installer again at a different time of day. In the latter case, find the relevant package and download and install it manually, or correct the download source address in the automatic installer and then start it again.~
 <br>
 <br>
 
 &aname(openrtminstfault);
-### OpenRTM-aist のインストールに失敗する 
-古いバージョンの OpenRTM-aist が完全にアンインストールされていない場合、新しいバージョンのインストールができません。古いバージョンを一度アンインストールしてから、再度インストール作業をします。
-#### Fedora・Ubuntu・Debian 共通：
-pkg_install_XXXX.sh を利用してアンインストールする。~
+### OpenRTM-aist installation fails 
+If an old version of OpenRTM-aist has not been completely uninstalled, a new version cannot be installed. Uninstall the old version once, and then perform the installation again.
+#### Common to Fedora, Ubuntu, and Debian:
+Uninstall using pkg_install_XXXX.sh.~
 
 ```
  >su
  #pkg_install_XXXX.sh -u
 ```
 
-アンインストールの許可を求められるので、**「y」** を入力しながら完了させます。
-あるいは次の手順に従います。
+You will be asked for permission to uninstall, so complete the process while entering **"y"**.
+Alternatively, follow the steps below.
 
-#### Fedora：
-yumコマンドでアンインストールする。次の手順でアンインストールを行ってください。~
+#### Fedora:
+Uninstall using the yum command. Perform the uninstall using the following procedure.~
 
 ```
  >su
@@ -114,8 +113,8 @@ yumコマンドでアンインストールする。次の手順でアンイン�
  #yum remove OpenRTM-aist-doc
  #yum remove OpenRTM-aist
 ```
-#### Ubuntu / Debian：
-apt-getコマンドでアンインストールする。次の手順でアンインストールを行ってください。~
+#### Ubuntu / Debian:
+Uninstall using the apt-get command. Perform the uninstall using the following procedure.~
 ```
  >su
 
@@ -128,40 +127,40 @@ apt-getコマンドでアンインストールする。次の手順でアンイ�
 <br>
 
 &aname(notusecd);
-### apt-get などを使用してインストール作業を行うときに CD を要求される 
-Ubuntu、Debian などのディストリビューションで、apt-get や pkg_install_ubuntu.sh, pkg_install_debian.sh を使用してインストール作業をしていると、次のように CD を求められることがあります。
-メディア変更:~
+### A CD is requested when performing installation using apt-get or similar 
+In distributions such as Ubuntu and Debian, when performing installation using apt-get, pkg_install_ubuntu.sh, or pkg_install_debian.sh, you may be asked for a CD as follows.
+Media change:~
 ```
  　　'Ubuntu 7.10 _Gutsy Gibbon_ Japanese Remix - Release i386 (20071018)'
 ```
 
-とラベルの付いたディスクをドライブ '/cdrom/' に入れて Enter を押してください。~
-もちろん、CD を用意すればよいことなのですが、諸事情により用意できない場合の対処方法を記述します。~
-この場合はとりあえず、**C-c**(Ctrl+c) を入力してインストール作業を中断し、以下の手順でインストール作業をやり直してください。
+Please insert the disk labeled as above into the drive '/cdrom/' and press Enter.~
+Of course, preparing the CD is one solution, but the following describes what to do if you cannot prepare it for various reasons.~
+In this case, first enter **C-c** (Ctrl+c) to interrupt the installation process, and then redo the installation process using the following procedure.
 
-:1. **/etc/apt/sources.list** の編集をする
+:1. Edit **/etc/apt/sources.list**
 
-**/etc/apt/sources.list** の冒頭部分に~
+At the beginning of **/etc/apt/sources.list**, there is a line such as~
 ```
  deb cdrom:[Ubuntu 7.10 _Gutsy Gibbon_ Japanese Remix - Release i386 (20071018)]/ gutsy main restricted
 ```
 
-あるいは~
+or~
 ```
  deb cdrom:[Debian GNU/Linux 4.0 r3 _Etch_ - Official i386 NETINST Binary-1 20080218-14:15]/ etch contrib main
 ```
 
-というような行がありますので、該当する行頭に **#** 文字を挿入し、コメントアウトしてください。~
+Insert the **#** character at the beginning of the corresponding line and comment it out.~
 ```
  #deb cdrom:[Ubuntu 7.10 _Gutsy Gibbon_ Japanese Remix - Release i386 (20071018)]/ gutsy main restricted
 ```
 
-または、~
+or~
 ```
  #deb cdrom:[Debian GNU/Linux 4.0 r3 _Etch_ - Official i386 NETINST Binary-1 20080218-14:15]/ etch contrib main
 ```
 
-:2. インストール作業をやり直す
-先ほど中断したインストール作業を始めからやり直してください。
+:2. Redo the installation process
+Redo the installation process that was interrupted earlier from the beginning.
 <br>
--------jp page!!-------
+

@@ -15,7 +15,7 @@ If you want to modify the OpenRTM-aist core and use it on Windows, you can obtai
 
 ## Required Software and Libraries
 
-The following software is required. For details, see [Installing OpenRTM-aist 2.0 on Windows]({{ site.baseurl }}/ja/doc/installation/install_2_0/install_windows_2_0/install_2_0).
+The following software is required. For details, see [Installing OpenRTM-aist 2.0 on Windows]({{ site.baseurl }}/en/doc/installation/install_2_0/install_windows_2_0/install_2_0).
 
 - Visual Studio
 - Python
@@ -32,7 +32,7 @@ Replace XX with the version of Python you have installed, download the appropria
 
 - [Binary Packages Provided by openrtm.org](https://openrtm.org/pub/omniORB/win32/omniORB-4.2.5/)
 
-For information on building with other libraries, see [RT System Development (Advanced) - Building OpenRTM-aist (C++ Version) with CMake]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build).
+For information on building with other libraries, see [RT System Development (Advanced) - Building OpenRTM-aist (C++ Version) with CMake]({{ site.baseurl }}/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build).
 
 ## Build and Installation Commands
 

@@ -1,23 +1,26 @@
 ---
 layout: page
-title: "TAO関連の設定"
+title: "TAO-Related Settings"
 ---
--------jp page!!-------
 
-<!-- Title: TAO関連の設定 -->
+<!-- Title: TAO-Related Settings -->
 #contents
 
-このページではOpenRTM-aistで通信ミドルウェアにTAOを使用した場合に各種通信プロトコルを使用するための設定ファイルの作成方法を説明します。
-TAOではIIOP、DIOP、UIOP、HTIOP、SHMIOP、SSLIOP、SCIOP、MIOP、COIOP、ZIOP通信が使用可能です。
-ただし、IIOP、SSLIOP、ZIOP通信以外は独自規格のプロトコルのため、他のCORBA実装との互換性はありません。
+This page describes how to create configuration files for using various communication protocols when TAO is used as the communication middleware in OpenRTM-aist.
+
+TAO supports IIOP, DIOP, UIOP, HTIOP, SHMIOP, SSLIOP, SCIOP, MIOP, COIOP, and ZIOP communication.
+
+However, protocols other than IIOP, SSLIOP, and ZIOP are proprietary protocols, so they are not compatible with other CORBA implementations.
 
 ## DIOP
 
-DIOP(Datagram Inter-ORB Protocol)はGIOPをUDP/IP上の実装であり、IIOP(TCP/IP)と比較すると軽量ですが到達保障がない通信プロトコルです。
-IIOP通信との大きな違いとしてCORBAサービスの呼び出しが一方通行であり、戻り値を取ることができません。
-例えば、外部のツールからRTCのコンポーネントプロファイルを取得する場合には、DIOP通信では戻り値(コンポーネントプロファイル)を取得できないため使用できません。
+DIOP (Datagram Inter-ORB Protocol) is an implementation of GIOP over UDP/IP. Compared with IIOP (TCP/IP), it is lightweight, but it is a communication protocol that does not guarantee delivery.
 
-OpenRTM-aistでDIOP通信を使用するために、データポートのデータ転送用に以下のoneway属性のメソッドを定義しています。
+A major difference from IIOP communication is that CORBA service calls are one-way and cannot return values.
+
+For example, when obtaining an RTC component profile from an external tool, DIOP communication cannot be used because the return value (component profile) cannot be obtained.
+
+To use DIOP communication with OpenRTM-aist, the following method with the oneway attribute is defined for data port data transfer.
 
 ```
  module OpenRTM
@@ -29,7 +32,7 @@ OpenRTM-aistでDIOP通信を使用するために、データポートのデー�
  };
 ```
 
-実際に使用する場合は、以下の図のようにデータポートのデータ送信にDIOP通信を用いて、それ以外はIIOP等の別の通信で接続する必要があります。
+When actually using it, as shown in the following figure, DIOP communication must be used for data transmission through data ports, while other connections must use another communication protocol such as IIOP.
 
 <br>
 
@@ -37,32 +40,33 @@ OpenRTM-aistでDIOP通信を使用するために、データポートのデー�
 
 <br>
 
-以下にrtc.confの設定例を記載します。
-IIOPとDIOPのエンドポイントを設定します。
+The following shows an example configuration for rtc.conf.
+
+Set the endpoints for IIOP and DIOP.
 
 corba.args: -ORBEndpoint iiop://: -ORBEndpoint diop://: -ORBSvcConf svc.conf
 
 
-svc.confはTAOの設定ファイルです。
-svc.confという名前のファイルが実行パスに存在すれば自動的に読み込みますが、ORBSvcConfオプションで明示的に指定もできます。
+svc.conf is a TAO configuration file.
 
-以下にsvc.confでは以下のようにORBProtocolFactoryの設定を行います。
+If a file named svc.conf exists in the execution path, it is loaded automatically, but it can also be specified explicitly with the ORBSvcConf option.
+
+In svc.conf, configure ORBProtocolFactory as follows.
 
 ```
  static Advanced_Resource_Factory "-ORBProtocolFactory DIOP_Factory -ORBProtocolFactory IIOP_Factory -ORBReactorType select_st"
 ```
 
-OpenRTM-aistでインストールされるrtc.diop.conf、svc.confを使用することもできます。
+You can also use rtc.diop.conf and svc.conf installed with OpenRTM-aist.
 
 ```
  %RTM_ROOT%Components\C++\Examples\%RTM_VC_VERSION%\ConsoleInComp.exe -f ext\tao_diop\rtc.diop.conf
  %RTM_ROOT%Components\C++\Examples\%RTM_VC_VERSION%\ConsoleOutComp.exe -f ext\tao_diop\rtc.diop.conf
 ```
 
+When connecting ports, specify **corba_cdr_udp** for Interface Type to transfer data using DIOP communication.
 
-ポート接続時にInterface Typeに**corba_cdr_udp**を指定して接続することでDIOP通信によりデータの転送を行います。
-
-RT System EditorではConnector Profileで設定します。
+In RT System Editor, set this in Connector Profile.
 
 <br>
 
@@ -70,19 +74,21 @@ RT System EditorではConnector Profileで設定します。
 
 <br>
 
-rtc.confでは**interface_type**を**corba_cdr_udp**に設定して事前接続設定をします。
+In rtc.conf, set **interface_type** to **corba_cdr_udp** to configure preconnection.
 
 ```
  manager.components.preconnect: ConsoleIn0.out?port=rtcname://localhost:2809/*/ConsoleOut0.in&interface_type=corba_cdr_udp
 ```
 
-
 ## HTIOP
-HTIOP(HTTP Tunneling Inter-ORB Protocol)はGIOPメッセージをHTTPパケットで送信する通信プロトコルです。
-HTIOP通信の利点としては、ファイアーウォールやHTTPプロキシサーバを経由した通信が容易になる事や、リバースプロキシやロードバランサー等の既存の仕組みを流用しやすいという事が挙げられます。
 
-まずはネームサーバーを起動しますが、ネームサーバーにもHTIOPのエンドポイントを設定する必要があります。
-以下の内容の設定ファイル**svc.names.htiop.conf**を作成してください。
+HTIOP (HTTP Tunneling Inter-ORB Protocol) is a communication protocol that sends GIOP messages as HTTP packets.
+
+The advantages of HTIOP communication include easier communication through firewalls and HTTP proxy servers, and easier reuse of existing mechanisms such as reverse proxies and load balancers.
+
+First, start the Name Server, but the HTIOP endpoint must also be configured for the Name Server.
+
+Create the configuration file **svc.names.htiop.conf** with the following contents.
 
 ```
  dynamic HTIOP_Factory Service_Object *
@@ -92,17 +98,17 @@ HTIOP通信の利点としては、ファイアーウォールやHTTPプロキ�
  static Resource_Factory "-ORBProtocolFactory HTIOP_Factory"
 ```
 
-TAO付属のネームサーバー**tao_cosnaming**を起動します。
-WindowsでOpenRTM-aistをビルドした場合、**${RTM_ROOT}/ACE/${RTM_VC_VERSION}/bin/tao_cosnaming.exe**にコピーしています。Ubuntuの場合はTAOをインストールした時に${OPENRTM_INSTALL_DIR}/binに入っているものを使用してください。
+Start **tao_cosnaming**, the Name Server included with TAO.
 
-以下のように作成したsvc.names.htiop.confを指定してtao_cosnamingを起動します。
+If OpenRTM-aist was built on Windows, it is copied to **${RTM_ROOT}/ACE/${RTM_VC_VERSION}/bin/tao_cosnaming.exe**. On Ubuntu, use the one located in ${OPENRTM_INSTALL_DIR}/bin when TAO is installed.
+
+Start tao_cosnaming by specifying the created svc.names.htiop.conf as follows.
 
 ```
  ACE\vc16\bin\tao_cosnaming.exe -ORBEndpoint htiop://127.0.0.1:2809 -ORBSvcConf ext/svc.names.htiop.conf
 ```
 
-
-CosoleIn、ConsoleOutコンポーネントを以下の内容のrtc.confで起動します。
+Start the CosoleIn and ConsoleOut components with rtc.conf containing the following contents.
 
 ```
  corba.args: -ORBEndpoint htiop:// -ORBSvcConf ext/tao_htiop/svc.htiop.conf
@@ -114,10 +120,12 @@ CosoleIn、ConsoleOutコンポーネントを以下の内容のrtc.confで起動
  manager.components.preconnect: ConsoleIn0.out?port=rtcname.htiop://localhost:2809/*/ConsoleOut0.in
 ```
 
-**corba.args**オプションはTAOのORB_init関数への引数を指定します。
-HTIOPのエンドポイントとTAOの設定ファイル(ext/svc.htiop.conf)を設定しています。
+The **corba.args** option specifies arguments to TAO's ORB_init function.
 
-設定ファイル**svc.htiop.conf**は以下の内容で作成します。
+It configures the HTIOP endpoint and the TAO configuration file (ext/svc.htiop.conf).
+
+
+Create the configuration file **svc.htiop.conf** with the following contents.
 
 ```
  dynamic HTIOP_Factory Service_Object *
@@ -127,14 +135,15 @@ HTIOPのエンドポイントとTAOの設定ファイル(ext/svc.htiop.conf)を�
  static Advanced_Resource_Factory "-ORBProtocolFactory HTIOP_Factory"
 ```
 
+Also configure the Name Server to connect to.
 
-また、接続するネームサーバーの設定を行います。
-ネームサーバーはHTIOPのエンドポイント(htiop:localhost:2809)を指定します。
+Specify the HTIOP endpoint (**htiop:localhost:2809**) for the Name Server.
 
-HTIOP通信を使用する場合、RT System EditorやrtshellではRTCを操作できません。
-現在のところ、独自にプログラムを作成するか、マネージャ起動時の事前接続(preconnect)、事前アクティブ化(preactivation)の設定を行う必要があります。
+When using HTIOP communication, RTCs cannot be operated from RT System Editor or rtshell.
 
-**HT_Config.conf**でプロキシサーバーの設定を行うことができます。
+Currently, you must either create your own application or configure preconnection (**preconnect**) and preactivation (**preactivation**) when starting the manager.
+
+You can configure the proxy server in **HT_Config.conf**.
 
 ```
  [htbp]
@@ -143,10 +152,9 @@ HTIOP通信を使用する場合、RT System EditorやrtshellではRTCを操作�
  proxy_host=localhost
 ```
 
+The following shows an example of HTTP packets used in HTIOP communication.
 
-以下にHTIOP通信時のHTTPパケットの内容の一例を掲載します。
-GETメソッド実行後にPOSTメソッドを実行します。POSTメソッドのボディにGIOPメッセージを格納して送信します。
-
+After executing the GET method, the POST method is executed. The GIOP message is stored in the body of the POST request and sent.
 
 ```
  GET http://127.0.0.1:2809//1/request1647425846.html HTTP/1.1
@@ -162,17 +170,18 @@ GETメソッド実行後にPOSTメソッドを実行します。POSTメソッド
 ```
 
 ## SSLIOP
-SSLIOP(Secure Sockets Layer (SSL) Inter-ORB Protocol)は、GIOPにSSL/TLSによるサーバー・クライアント認証、通信内容の暗号化を適用した通信プロトコルでセキュアな通信が可能になります。
 
-まず、OpenRTM-aistをビルドする時にCMake実行で**SSL_ENABLE**オプションをオンにしてください。
+SSLIOP (Secure Sockets Layer (SSL) Inter-ORB Protocol) is a communication protocol that applies SSL/TLS server/client authentication and encrypted communication to GIOP, enabling secure communication.
+
+First, when building OpenRTM-aist, enable the **SSL_ENABLE** option when running CMake.
 
 ```
  cmake .. -DSSL_ENABLE=ON
 ```
 
+After building and installing OpenRTM-aist, start the Name Server.
 
-OpenRTM-aistをビルド、インストール後に、まずはネームサーバーを起動します。
-ネームサーバーにはSSLIOPのエンドポイントを指定するため、以下の内容の設定ファイル**svc.names.ssliop.conf**を作成してください。
+Since the Name Server requires an SSLIOP endpoint, create the configuration file **svc.names.ssliop.conf** with the following contents.
 
 ```
  dynamic SSLIOP_Factory Service_Object *
@@ -181,18 +190,17 @@ OpenRTM-aistをビルド、インストール後に、まずはネームサー�
  static Resource_Factory "-ORBProtocolFactory SSLIOP_Factory"
 ```
 
-**SSLPrivateKey**オプションでは秘密鍵、**SSLCertificate**オプションではサーバー証明書、**SSLCAfile**ではルート証明書を指定します。
+The **SSLPrivateKey** option specifies the private key, **SSLCertificate** specifies the server certificate, and **SSLCAfile** specifies the root certificate.
 
-TAO付属のネームサーバー**tao_cosnaming**を起動します。
+Start **tao_cosnaming**, the Name Server included with TAO.
 
-以下のように作成したsvc.names.ssliop.confを指定してtao_cosnamingを起動します。
+Start tao_cosnaming by specifying the created **svc.names.ssliop.conf** as follows.
 
 ```
  tao_cosnaming -ORBEndpoint iiop://localhost:/ssl_port=2809 -ORBSvcConf etc/svc.names.ssliop.conf
 ```
 
-
-CosoleIn、ConsoleOutコンポーネントを以下の内容のrtc.confで起動します。
+Start the CosoleIn and ConsoleOut components using an rtc.conf file with the following contents.
 
 ```
  corba.args: -ORBEndpoint htiop:// -ORBSvcConf ./etc/tao_htiop/svc.ssliop.conf
@@ -204,10 +212,11 @@ CosoleIn、ConsoleOutコンポーネントを以下の内容のrtc.confで起動
  manager.components.preconnect: ConsoleIn0.out?port=rtcname.ssliop://localhost:2809/*/ConsoleOut0.in
 ```
 
-**corba.args**オプションはTAOのORB_init関数への引数を指定します。
-SSLIOPのエンドポイントとTAOの設定ファイル(ext/svc.ssliop.conf)を設定しています。
+The **corba.args** option specifies the arguments passed to TAO's ORB_init function.
 
-''svc.ssliop.conf'は以下の内容で作成します。
+It configures the SSLIOP endpoint and the TAO configuration file (ext/svc.ssliop.conf).
+
+Create **svc.ssliop.conf** with the following contents.
 
 ```
  dynamic SSLIOP_Factory Service_Object *
@@ -216,23 +225,26 @@ SSLIOPのエンドポイントとTAOの設定ファイル(ext/svc.ssliop.conf)�
  static Advanced_Resource_Factory "-ORBProtocolFactory SSLIOP_Factory"
 ```
 
+Also configure the Name Server to connect to.
 
+Specify the SSLIOP endpoint (**ssliop:127.0.0.1:2809**) for the Name Server.
 
-また、接続するネームサーバーの設定を行います。
-ネームサーバーはSSLIOPのエンドポイント(ssliop:127.0.0.1:2809)を指定します。
+Since SSLIOP communication conforms to the OMG CORBA Security Service specification, it can communicate with other CORBA implementations such as omniORB and OiL.
 
-SSLIOP通信はOMG CORBA Security Service仕様の規格のため、omniORBやOiL等の他の実装との通信も可能です。
-このため、rtshellでポートの接続、RTCのアクティブ化の操作ができます。rtshellによるSSLIOP通信の利用方法はについては以下のページを参考にしてください。
+Therefore, rtshell can be used to connect ports and activate RTCs. For information on using SSLIOP communication with rtshell, refer to the following page.
 
-- [SSLTransportの使用方法]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/ssltransport_use#rtshell)
+- [Using SSLTransport]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/ssltransport_use#rtshell)
 
-rtc.confに記述したように、マネージャ起動時の事前接続(preconnect)、事前アクティブ化(preactivation)の設定を行う事もできます。
+As shown in rtc.conf, you can also configure preconnection (**preconnect**) and preactivation (**preactivation**) when the manager starts.
 
 
 ## SHMIOP
-SHMIOP(Shared Memory Inter-ORB Protocol)は共有メモリでGIOPメッセージをやり取りするための通信プロトコルです。
-共有メモリの読み書きでデータを転送するためTCP/IP通信での転送と比較するとパフォーマンスの向上が期待できます。
-ただし、データの転送は共有メモリですが、データ書き込みの通知にTCP/IP通信を使用しています。
+
+SHMIOP (Shared Memory Inter-ORB Protocol) is a communication protocol for exchanging GIOP messages through shared memory.
+
+Since data is transferred by reading from and writing to shared memory, improved performance can be expected compared with transfer over TCP/IP communication.
+
+However, although the data transfer uses shared memory, TCP/IP communication is used to notify data writes.
 
 ```
  corba.args: -ORBListenEndpoints shmiop:// -ORBSvcConf /home/nobu/testlib/etc/tao_shmiop/svc.shmiop.conf -ORBDebugLevel 5
@@ -242,14 +254,13 @@ SHMIOP(Shared Memory Inter-ORB Protocol)は共有メモリでGIOPメッセージ
  corba.master_manager: shmiop://1.0@hostname:2810
 ```
 
-
 ```
  static Advanced_Resource_Factory "-ORBProtocolFactory SHMIOP_Factory -ORBProtocolFactory IIOP_Factory -ORBReactorType select_st"
 ```
 
+## Simple Operation Check
 
-## 簡単な動作確認
-OpenRTM-aistをビルド、インストールすると、上記の通信プロトコルの簡単な動作確認用の設定ファイルがインストールされます。
+When OpenRTM-aist is built and installed, configuration files for a simple operation check of the above communication protocols are installed.
 
 ### DIOP
 
@@ -275,7 +286,6 @@ OpenRTM-aistをビルド、インストールすると、上記の通信プロ�
  %RTM_ROOT%\Components\C++\Examples\vc16\ConsoleOutComp.exe -f %RTM_ROOT%\ext\tao_htiop\rtc.htiop.conf
 ```
 
-
 ```
  source ${OPENRTM_INSTALL_DIR}/etc/environment-setup.sh
  ${OPENRTM_INSTALL_DIR}/bin/openrtmNames -ORBEndpoint htiop://127.0.0.1:2809 -ORBSvcConf  ${OPENRTM_INSTALL_DIR}/etc/svc.names.htiop.conf
@@ -285,9 +295,8 @@ OpenRTM-aistをビルド、インストールすると、上記の通信プロ�
  source ${OPENRTM_INSTALL_DIR}/etc/environment-setup.sh
  ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/tao_htiop/rtc.htiop.conf
 ```
-
-
 ### SSLIOP
+
 ```
  %RTM_ROOT%\ext\environment-setup.tao.vc16.bat
  %RTM_ROOT%\ACE\vc16\bin\tao_cosnaming.exe -ORBEndpoint iiop://localhost:/ssl_port=2809 -ORBSvcConf %RTM_ROOT%\ext\svc.names.ssliop.conf
@@ -307,6 +316,3 @@ OpenRTM-aistをビルド、インストールすると、上記の通信プロ�
  source ${OPENRTM_INSTALL_DIR}/etc/environment-setup.sh
  ${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/tao_ssliop/rtc.ssliop.conf
 ```
-
-
--------jp page!!-------

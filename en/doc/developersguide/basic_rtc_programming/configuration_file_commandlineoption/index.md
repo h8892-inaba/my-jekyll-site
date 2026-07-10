@@ -1,179 +1,178 @@
 ---
 layout: page
-title: "設定ファイルとコマンドラインオプション (基礎編)"
+title: "Configuration Files and Command-Line Options (Basics)"
 ---
--------jp page!!-------
 <!-- Title: 設定ファイルとコマンドラインオプション (基礎編) -->
 #contents
 
-## 設定ファイル  ( rtc.conf ) 
-コンポーネントマネージャは起動時に設定ファイル rtc.conf を読み込みます。
-コンフィギュレーションファイルは通常 rtc.conf という名前で作成しますが、任意の名前で作成したコンフィギュレーションファイルを渡すこともできます。
+## Configuration File  ( rtc.conf ) 
+The component manager reads the configuration file rtc.conf at startup.
+The configuration file is usually created with the name rtc.conf, but a configuration file created with any name can also be passed.
 
-### rtc.conf の配置場所
+### Location of rtc.conf
 
-rtc.conf は通常RTC実行ファイル（スタンドアロンコンポーネント： xxxComp や xxxComp.exe など実行形式になっているRTC)  と同じディレクトリーに配置して、その設定を自動的に読み込ませます。
-もしくは、<strong>-f</strong> オプションを利用して任意の名前の設定ファイルを読み込ませることもできます。
-rtc.conf が実行ファイルと同じディレクトリーにないか、<strong>-f</strong> オプションで指定されていない場合は、代わりにシステムに配置された rtc.conf を読み込みます。
+rtc.conf is usually placed in the same directory as the RTC executable file (standalone component: an RTC in executable format such as xxxComp or xxxComp.exe), so that its settings are loaded automatically.
+Alternatively, you can use the <strong>-f</strong> option to load a configuration file with any name.
+If rtc.conf is not in the same directory as the executable file or is not specified with the <strong>-f</strong> option, the system-wide rtc.conf is loaded instead.
 
-rtc.conf の読み込み優先度は以下のように設定されています。
+The loading priority of rtc.conf is set as follows.
 
-#### Linux/Unixの場合
-1. コマンドラインオプション "-f"
-1. 環境変数 "RTC_MANAGER_CONFIG"
-1. デフォルト設定ファイル "./rtc.conf"
-1. デフォルト設定ファイル "/etc/rtc.conf"
-1. デフォルト設定ファイル "/etc/rtc/rtc.conf"
-1. デフォルト設定ファイル "/usr/local/etc/rtc.conf"
-1. デフォルト設定ファイル "/usr/local/etc/rtc/rtc.conf"
-1. 埋め込みコンフィギュレーション値
+#### For Linux/Unix
+1. Command-line option "-f"
+1. Environment variable "RTC_MANAGER_CONFIG"
+1. Default configuration file "./rtc.conf"
+1. Default configuration file "/etc/rtc.conf"
+1. Default configuration file "/etc/rtc/rtc.conf"
+1. Default configuration file "/usr/local/etc/rtc.conf"
+1. Default configuration file "/usr/local/etc/rtc/rtc.conf"
+1. Embedded configuration values
 
-#### Windowsの場合
-1. コマンドラインオプション "-f"
-1. 環境変数 "RTC_MANAGER_CONFIG"
-1. デフォルト設定ファイル "./rtc.conf"
-1. デフォルト設定ファイル "%RTM_ROOT%/%RTM_VC_VERSION%/rtc.conf"
+#### For Windows
+1. Command-line option "-f"
+1. Environment variable "RTC_MANAGER_CONFIG"
+1. Default configuration file "./rtc.conf"
+1. Default configuration file "%RTM_ROOT%/%RTM_VC_VERSION%/rtc.conf"
 
-Windowsでは、環境変数 ”RTM_ROOT"' および ’’RTM_VC_VERSION'' で指定されるディレクトリー下に置かれた rtc.conf (通常は C:\Program Files\OpenRTM-aist\(バージョン番号)\(VCのバージョン)) が読み込まれます。
+On Windows, rtc.conf placed under the directory specified by the environment variables "RTM_ROOT" and "RTM_VC_VERSION" (usually C:\Program Files\OpenRTM-aist\(version number)\(VC version)) is loaded.
 
-### 主な設定項目
-以下に、良く利用される rtc.conf の設定オプションを示します。
-以下のオプション以外にも、rtc.conf には様々なオプションを指定することができます。詳細は [rtc.conf設定項目一覧]({{ site.baseurl }}/ja/doc/developersguide/basic_rtc_programming/rtc_conf_reference) を参照してください。
+### Main Setting Items
+The following are commonly used rtc.conf setting options.
+Various options other than the following can also be specified in rtc.conf. For details, see [List of rtc.conf Setting Items]({{ site.baseurl }}/en/doc/developersguide/basic_rtc_programming/rtc_conf_reference).
 
-#### ネームサービスに関する設定 
-ネーミングサービスの設定に関する項目は以下の通りです。
+#### Settings Related to the Name Service 
+Items related to naming service settings are as follows.
 
 :<strong>corba.nameservers</strong>|
-host_name:port_numberで指定、デフォルトポートは2809 (omniORB のデフォルト)。~
-複数サーバーを指定可能で、サーバー名の区切り文字はコンマ "," 。
+Specified as host_name:port_number; the default port is 2809 (omniORB default).~
+Multiple servers can be specified, and the delimiter between server names is a comma ",".
 
 :<strong>naming.formats</strong>|
 %h.host_cxt/%n.rtc →host.host_cxt/MyComp.rtc~
-複数指定可能。~
-0.2.0互換にしたければ、~
+Multiple specifications are possible.~
+If you want 0.2.0 compatibility, use:~
 %h.host_cxt/%M.mgr_cxt/%c.cat_cxt/%m.mod_cxt/%n.rtc
 
 :<strong>naming.update.enable</strong>|
 “YES” or “NO”~
-ネーミングサービスへの登録の自動アップデート設定。~
-コンポーネント起動後にネームサービスが起動したときに、再度名前を登録します。
+Automatic update setting for registration with the naming service.~
+When the name service is started after the component is started, the name is registered again.
 
 :<strong>naming.update.interval</strong>|
-アップデートの周期[s]。デフォルトは10秒。
+Update cycle [s]. The default is 10 seconds.
 
 :<strong>timer.enable</strong>|
 “YES” or “NO”~
-マネージャタイマー有効・無効。naming.updateを使用するには有効でなければならない。
+Enables/disables the manager timer. It must be enabled to use naming.update.
 
 :<strong>timer.tick</strong>|
-タイマーの分解能[s]。デフォルトは100ms。
+Timer resolution [s]. The default is 100 ms.
 
-#### ログ出力に関する設定
+#### Settings Related to Log Output
 
 :<strong>logger.enable</strong>|
 “YES” or “NO”~
-ログ出力を有効・無効に設定。
+Enables/disables log output.
 
 :<strong>logger.file_name</strong>|
-ログファイル名。~
-%h：ホスト名､%M:マネージャ名,%p：プロセスID 使用可
+Log file name.~
+%h: host name, %M: manager name, %p: process ID can be used
 
 :<strong>logger.date_format</strong>|
-日付フォーマット。strftime(3)の表記法に準拠。~
-デフォルト：%b %d %H:%M:%S → Apr 24 01:02:04|
+Date format. Conforms to strftime(3) notation.~
+Default: %b %d %H:%M:%S → Apr 24 01:02:04|
 
 :<strong>logger.log_level</strong>|
-ログレベル： SILENT, ERROR, WARN, INFO, DEBUG, TRACE, VERBOSE, PARANOID.~
+Log level: SILENT, ERROR, WARN, INFO, DEBUG, TRACE, VERBOSE, PARANOID.~
 <!-- ログレベル： SILENT, ERROR, WARN, NORMAL, INFO, DEBUG, TRACE, VERBOSE, PARANOID.~ -->
-何も出力しない(SILENT)～全て出力する(PARANOID).~
-※以前は RTC 内で使えましたが、現在は使えません。
+Outputs nothing (SILENT) through outputs everything (PARANOID).~
+※Previously this could be used inside RTC, but currently it cannot be used.
 
 
-#### 実行コンテキストに関する設定 
+#### Settings Related to Execution Contexts 
 
 :<strong>exec_cxt.periodic.type</strong>|
-使用する実行コンテキストを指定。~
-現在のところ、
-PeriodicExecutionContext, ExtTrigExecutionContext
-が使用可能です。~
-デフォルトはPeriodicExecutionContext.
+Specifies the execution context to use.~
+Currently,
+PeriodicExecutionContext and ExtTrigExecutionContext
+are available.~
+The default is PeriodicExecutionContext.
 
 :<strong>exec_cxt.periodic.rate</strong>|
-実行コンテキストの周波数[Hz]を指定。~
-有効範囲：(0, 1000000].~
-デフォルト：1000.~
+Specifies the execution context frequency [Hz].~
+Valid range: (0, 1000000].~
+Default: 1000.~
 
 
-#### その他の設定 
+#### Other Settings 
 
 :<strong>corba.endpoint</strong>|
-IP_Addr:Port で指定。NIC が複数あるとき、ORB をどちらで listen させるかを指定します。~
-Port を指定しない場合でも<strong>:</strong>が必要です。~
-例:  corba.endpoint: 192.168.0.12~
-NIC が2つある場合必ず指定してください。
-(指定しなくても偶然正常に動作することもあります。)
+Specified as IP_Addr:Port. When there are multiple NICs, this specifies which one the ORB should listen on.~
+Even when Port is not specified, <strong>:</strong> is required.~
+Example:  corba.endpoint: 192.168.0.12~
+If there are two NICs, be sure to specify this.
+(It may work correctly by chance even if it is not specified.)
 
 :<strong>corba.args</strong>|
-CORBA に対する引数。詳細は omniORB のマニュアルを参照してください。
+Arguments for CORBA. For details, refer to the omniORB manual.
 
-<strong>[カテゴリ名].[コンポーネント名].config_file</strong>|
-<strong>[カテゴリ名].[インスタンス名]. config_file</strong>|
-コンポーネントの設定ファイル
-カテゴリ名：manipulator、コンポーネント名：myarm、インスタンス名 myarm 0、1、2… の場合
+<strong>[category name].[component name].config_file</strong>|
+<strong>[category name].[instance name]. config_file</strong>|
+Component configuration file
+If the category name is manipulator, the component name is myarm, and the instance names are myarm 0, 1, 2, ...
 ```
  manipulator.myarm.config_file: arm.conf
  または
  manipulator.myarm0.config.file: arm0.conf
 ```
-のように指定可能です。
+can be specified as shown above.
 
-## コマンドラインオプション
+## Command-Line Options
 
 
-スタンドアロンコンポーネントの場合、またはRTC daemon (rtcd) では、コマンドラインにいくつかのオプションを指定することができます。
-以下の表に、指定可能なコマンドラインオプションを示します。
+For standalone components or the RTC daemon (rtcd), several options can be specified on the command line.
+The following table shows the command-line options that can be specified.
 
 hogehogehoge
 
 <table class="table-alt">
   <tr>
-    <th>オプション</th>
-    <th>意味</th>
+    <th>Option</th>
+    <th>Meaning</th>
   </tr>
   <tr>
     <td>-a</td>
-    <td>マネージャサービス OFF</td>
+    <td>Manager service OFF</td>
   </tr>
   <tr>
-    <td>-f ファイル名</td>
-    <td>設定ファイルの指定</td>
+    <td>-f file name</td>
+    <td>Specifies the configuration file</td>
   </tr>
   <tr>
-    <td>-o オプション</td>
-    <td>オプション指定</td>
+    <td>-o option</td>
+    <td>Specifies an option</td>
   </tr>
   <tr>
-    <td>-p ポート番号</td>
-    <td>ポート番号指定</td>
+    <td>-p port number</td>
+    <td>Specifies the port number</td>
   </tr>
   <tr>
     <td>-d</td>
-    <td>マスターマネージャ指定</td>
+    <td>Specifies the master manager</td>
   </tr>
 </table>
 
 
-これらのオプションの詳細な意味をいかに示します。
+The detailed meanings of these options are shown below.
 
-### -a: マネージャサービスOFF
+### -a: Manager Service OFF
 
-通常、RTCを起動するためには、内部のコンポーネントマネージャがRTCをインスタンス化したり、削除したりします。（ライフサイクルの管理を行う、という）
-デフォルトではこのマネージャを、リモートから制御できるようにサーバー（サーバント）が起動されるようになっています。
-しかし、起動後に、同じプロセスで同じRTCを起動したり、別のRTCのモジュールをロードしてRTCを起動させたり等する必要がない場合には、サーバントは不要なので <strong>-a</strong> オプションを指定することでサーバントの起動を抑制することもできます。
+Normally, to start an RTC, the internal component manager instantiates and deletes RTCs. (This is called lifecycle management.)
+By default, a server (servant) is started so that this manager can be controlled remotely.
+However, if there is no need after startup to start the same RTC in the same process, load another RTC module and start an RTC, or perform similar operations, the servant is unnecessary, so startup of the servant can be suppressed by specifying the <strong>-a</strong> option.
 
-### -f: 設定ファイル指定
+### -f: Specify Configuration File
 
-<strong>-f</strong> オプションを利用すると、任意の名前のファイルを rtc.conf の代わりにスタンドアロンコンポーネントやrtcdに与えることができます。
+By using the <strong>-f</strong> option, you can give a file with any name to a standalone component or rtcd instead of rtc.conf.
 
 ```
  <利用例>
@@ -181,10 +180,10 @@ hogehogehoge
 ```
 
 
-### -o: オプション指定
+### -o: Specify Option
 
-<strong>-o</strong> オプションを利用すると、rtc.conf に指定することのできるオプションをコマンドラインから与えることができます。<strong>-o</strong> オプションで与えたオプションは rtc.conf で指定されたものよりも優先されますので、rtc.conf で指定してあるオプションを一時的に上書きして変更したい場合などは、<strong>-o</strong>オプションを利用すると便利です。
-ただし、コマンドラインオプションとして渡すので、空白は引数の切れ目として認識されますので、指定する際には空白を入れないか、シングルクォーテーションかダブルクォーテーションで囲むなどする必要があります。
+By using the <strong>-o</strong> option, you can provide options that can be specified in rtc.conf from the command line. Options given with the <strong>-o</strong> option take precedence over those specified in rtc.conf, so it is useful to use the <strong>-o</strong> option when you want to temporarily override and change options specified in rtc.conf.
+However, because they are passed as command-line options, spaces are recognized as argument separators, so when specifying them, you must either not include spaces or enclose the option in single quotes or double quotes.
 
 ```
  <利用例>
@@ -196,11 +195,11 @@ hogehogehoge
 ```
 
 
-### -p: ポート番号指定
+### -p: Specify Port Number
 
-<strong>-p</strong> を利用すると、起動するRTCが利用するポート番号を指定することができます。
-RTC起動時に特定のポート番号で起動したい場合には、このオプションを利用するとよいでしょう。
-このオプションは <strong>corba.endpoints:</strong> オプションでホスト名無しで、ポート番号のみを指定するのと同じふるまいをします。
+By using <strong>-p</strong>, you can specify the port number used by the RTC being started.
+If you want to start the RTC with a specific port number, use this option.
+This option behaves the same as specifying only the port number without a host name in the <strong>corba.endpoints:</strong> option.
 
 ```
  <利用例>
@@ -209,10 +208,8 @@ RTC起動時に特定のポート番号で起動したい場合には、この�
  ConsoleInComp -o "corba.endpoints: :2810" 
 ```
 
-### -d: マスターマネージャ指定
+### -d: Specify Master Manager
 
-<strong>-d</strong> オプションを利用すると、起動したスタンドアロンコンポーネントや rtcd をデーモンモードかつマスターマネージャとして起動することができます。
-マネージャにはマスターとスレーブがあり、マスターは通常固定ポート番号 2810 でリクエストを待ち受け、スレーブに対してRTCの起動などを委譲します。
-<strong>-d</strong> オプションを指定して起動すると、ポート番号がデフォルトでは 2810 に固定され、またマネージャのサーバントがマスターモードで起動され、ネームサービスにマネージャの参照が登録されます。
-
--------jp page!!-------
+By using the <strong>-d</strong> option, you can start the standalone component or rtcd as a daemon and as the master manager.
+Managers include master and slave managers. The master normally waits for requests on the fixed port number 2810 and delegates RTC startup and other operations to slaves.
+When started with the <strong>-d</strong> option specified, the port number is fixed to 2810 by default, the manager servant is started in master mode, and a reference to the manager is registered with the name service.

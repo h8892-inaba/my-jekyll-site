@@ -1,19 +1,18 @@
 ---
 layout: page
-title:  rtshell
+title: rtshell
 ---
--------jp page!!-------
 
 <!-- Title: rtshell -->
 #contents
 
-## イントロダクション
+## Introduction
 
-rtshellは、ネームサーバー上に登録されているRTコンポーネントをシェルから管理できるツールです。
-コンポーネントをactivate/deactivate/resetしたり、ポートの接続を行うことができます。
-RTシステムの管理もできます。
+rtshell is a tool that allows you to manage RT Components registered on a name server from the shell.
+You can activate/deactivate/reset components and connect ports.
+You can also manage RT systems.
 
-このツールは、リソースの少ないシステム、GUIの利用ができない環境(特にコンポーネントを管理する他のPCとネットワークでつながっていない環境など)や、RTSystemEditorの利用ができない環境、スクリプトでRT Systemを構築する場合などで有効です。コマンドラインの利用に精通している人にも便利なツールです。
+This tool is useful for systems with limited resources, environments where a GUI cannot be used (especially environments that are not connected via a network to another PC used to manage components), environments where RTSystemEditor cannot be used, and cases where an RT System is built using scripts. It is also a useful tool for people who are familiar with using the command line.
 
 <!-- このソフトウエアはNEDO(独立行政法人新エネルギー産業技術総合開発機構)の次世代ロボット知能化技術開発プロジェクトの支援により、独立行政法人産業技術総合研究所によって開発されています。 -->
 <!-- 管理番号H23PRO-1214。 -->
@@ -22,20 +21,20 @@ RTシステムの管理もできます。
 <!-- (LGPL3). See LICENSE.txt. -->
 <!--  -->
 
-## 必要条件
+## Requirements
 
-- rtctreeが必要です。
-- rtsprofileが必要です。
-- Python3以上、OpenRTM-aist-Pythonが必要です。
-  - 詳細な対応しているPythonバージョンについては[ダウンロードページ]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release#toc1)をご確認ください。
+- rtctree is required.
+- rtsprofile is required.
+- Python 3 or later and OpenRTM-aist-Python are required.
+  - For details on supported Python versions, please check the [download page]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release#toc1).
 
 
 <!-- pipによりインストールする場合は、trctreeとrtsprofileは自動的にインストールされます。 -->
 
 
-## インストール
+## Installation
 
-インストール方法については[rtshellのインストール]({{ site.baseurl }}/ja/doc/installation/install_rtshell)のページを参照してください。
+For installation instructions, see the [Installing rtshell]({{ site.baseurl }}/en/doc/installation/install_rtshell) page.
 <!-- インストールはいくつかの方法が利用可能です。 -->
 <!--  -->
 <!-- - (好ましい方法) pipを利用してPyPiからインストールする。 -->
@@ -61,19 +60,19 @@ RTシステムの管理もできます。
 <!-- Windows上では、インストーラープログラムを利用してインストール可能です。 -->
 <!--  -->
 
-## リポジトリ
+## Repository
 
-最新版のソースはgithubのリポジトリにあります（URL:http://github.com/OpenRTM/rtshell）。
-[Download ZIP]をクリックしてダウンロードできます。下記のように"git clone"コマンドを使うこともできます。(gitが前もってインストールされている必要があります)。
+The latest source code is available in the GitHub repository (URL: http://github.com/OpenRTM/rtshell).
+You can download it by clicking [Download ZIP]. You can also use the "git clone" command as shown below. (git must be installed beforehand.)
 
 ```
   $ git clone git://github.com/OpenRTM/rtshell.git
 ```
 
 
-## ドキュメント
+## Documentation
 
-ドキュメントはLinuxではmanページとして提供し、/usr/local/share/manにインストールされます。Windowsの場合はHTMLにて提供し、<pythonディレクトリ>\Lib\site-packages\rtshell\data\doc\htmlの下のen、jaディレクトリの下に英語版、日本語版がそれぞれコピーされます。また本Webサイト上にも掲載しています。
+On Linux, the documentation is provided as man pages and installed in /usr/local/share/man. On Windows, it is provided in HTML format, and the English and Japanese versions are copied under the en and ja directories under <python directory>\Lib\site-packages\rtshell\data\doc\html, respectively. It is also published on this website.
 
 <!-- このパスを$MANPATHという環境変数に追加する必要な場合があります。例えば、rtshellのmanページが/usr/local/share/manにインストールされた場合、以下の行を.bashrcに追加してください。 -->
 <!-- export MANPATH=/usr/local/share/man:${MANPATH} -->
@@ -92,9 +91,9 @@ RTシステムの管理もできます。
 
 <hr>
 
-以下未作成。
+Not yet created below.
 
-- [rtshellコマンド・リファレンス](./command_reference)
-- [rtctreeモジュール](./rtctree)
-- [rtsprofileモジュール](./rtsprofile)
--------jp page!!-------
+- [rtshell Command Reference](./command_reference)
+- [rtctree Module](./rtctree)
+- [rtsprofile Module](./rtsprofile)
+

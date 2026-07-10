@@ -1,29 +1,23 @@
 ---
 layout: page
-title: Kobukiにロボットアームを搭載する手順
+title: Procedure for Mounting a Robot Arm on Kobuki
 ---
--------jp page!!-------
 
-<!-- Title: Kobukiにロボットアームを搭載する手順 -->
+<!-- Title: Procedure for Mounting a Robot Arm on Kobuki -->
+
 #contents
 
-## アカデミックスカラロボット
+## Academic SCARA Robot
 
-アカデミックスカラロボットはヴイストンが販売しているロボット制御学習用の水平多関節型ロボットアームです。
+The Academic SCARA Robot is a horizontally articulated robotic arm sold by Vstone for learning robot control.
 
-<!-- 以下の部分はあるとページを開くのが異様におそくなるので、コメントアウト -->
-<!-- #br -->
-<!--  -->
-<!-- #ref(https://www.vstone.co.jp/products/scara_robot/img/MG_2393ass.jpg, left) -->
-<!-- #br -->
-<!--  -->
-- [https://www.vstone.co.jp/products/scara_robot/](https://www.vstone.co.jp/products/scara_robot/)
+- https://www.vstone.co.jp/products/scara_robot/
 
-アカデミックスカラロボット制御の RTC については以下のページを参考にしてください。
+For information about RTCs for controlling the Academic SCARA Robot, refer to:
 
-- [USBメモリーに搭載したポータブルRTM 環境を用いたロボット教育ツール]({{ site.baseurl }}/ja/node/5943)<!-- projectpage-->
+- [Robot Education Tool Using a Portable RTM Environment Installed on a USB Memory Device]({{ site.baseurl }}/en/node/5943)
 
-この章ではアカデミックスカラロボットを Kobuki のプレートに固定する手順を説明します。
+This section explains how to mount the Academic SCARA Robot onto the Kobuki platform.
 
 <br>
 
@@ -31,236 +25,239 @@ title: Kobukiにロボットアームを搭載する手順
 
 <br>
 
-この作業には必要なものは以下の通りです。
+The following items are required:
 
 <table class="table-alt">
   <tr>
-    <th>名前</th>
-    <th>数量</th>
+    <th>Item</th>
+    <th>Quantity</th>
   </tr>
   <tr>
     <td>Kobuki</td>
-    <td>1台</td>
+    <td>1</td>
   </tr>
   <tr>
-    <td>プレート</td>
-    <td>1枚</td>
+    <td>Plate</td>
+    <td>1</td>
   </tr>
   <tr>
-    <td>支柱(5cm)</td>
-    <td>8本</td>
+    <td>Support posts (5 cm)</td>
+    <td>8</td>
   </tr>
   <tr>
-    <td>アカデミックスカラロボット</td>
-    <td>1台</td>
+    <td>Academic SCARA Robot</td>
+    <td>1</td>
   </tr>
   <tr>
-    <td>木ネジ(2cm以上)</td>
-    <td>4本</td>
+    <td>Wood screws (2 cm or longer)</td>
+    <td>4</td>
   </tr>
 </table>
 
-### ロボットの仕様
-
+### Robot Specifications
 
 <table class="table-alt">
   <tr>
-    <th colspan="2" >アカデミックスカラロボットの仕様</th>
+    <th colspan="2">Academic SCARA Robot Specifications</th>
   </tr>
   <tr>
-    <td>自由度</td>
-    <td>4自由度 + ハンド</td>
+    <td>Degrees of Freedom</td>
+    <td>4 DOF + Gripper</td>
   </tr>
   <tr>
-    <td>サーボモーター</td>
+    <td>Servo Motor</td>
     <td>RS304MD</td>
   </tr>
   <tr>
-    <td>通信方法</td>
-    <td>HID USB - UART ブリッジ</td>
+    <td>Communication Method</td>
+    <td>HID USB–UART Bridge</td>
   </tr>
 </table>
 
-### プレートに直接スカラボットを固定する場合
-プレートに直接スカラロボットを取り付ける手順を説明します。
+### Mounting the SCARA Robot Directly to the Plate
 
-まずはプレートにキリ等で下穴をあけます。
-以下の赤い点の位置に穴をあけてください。
+This section describes how to mount the SCARA robot directly onto the plate.
+
+First, drill pilot holes in the plate using an awl or similar tool.
+
+Create holes at the positions marked by the red dots below.
 
 <br>
 
 <div align="left"><a href="plate.jpg"><img src="plate.jpg" width="50%;"></a></div>
+
 <br>
 
-後はスカラロボットの根元部分を木ねじで固定すれば固定できます。
+Then secure the base of the SCARA robot to the plate using wood screws.
 
 <br>
 
 <div align="left"><a href="s_DSC00511.JPG"><img src="s_DSC00511.JPG" width="50%;"></a></div>
+
 <br>
 
+### Mounting Using the Base
 
+This section explains how to attach the SCARA robot to its base and then mount the base onto the plate.
 
-### 土台ごと固定する場合
-スカラロボットを土台に取り付けて、土台をプレートに固定する方法について説明します。
+#### Modifying the Base
 
-#### 土台の加工
-Kobuki のプレートに固定するために、スカラロボットの土台に穴をあけます。
-以下の図の赤い部分に穴をあけてください。穴の大きさは使用する木ねじの大きさで決めてください。
+To secure the base to the Kobuki plate, drill holes in the robot base.
+
+Drill holes at the locations indicated in red in the figure below. The hole size should match the wood screws you intend to use.
 
 <br>
 
 <div align="left"><a href="s_DSC00493.JPG"><img src="s_DSC00493.JPG" width="70%;"></a></div>
+
 <br>
 
-#### 土台の取り付け
-まずスカラロボットを土台に取り付けます。
-図のように逆向きの取り付けた後、ユリアねじで固定してください。
+#### Attaching the Base
+
+First, mount the SCARA robot onto its base.
+
+Install it facing the opposite direction as shown in the figure, and secure it using the thumb screws.
 
 <br>
 
 <div align="left"><a href="s_DSC00492.JPG"><img src="s_DSC00492.JPG" width="70%;"></a></div>
+
 <br>
 
+#### Mounting the Robot
 
+Prepare pilot holes in the plate beforehand using an awl or drill.
 
-#### ロボットの取り付け
-予めプレートにはキリ等で下穴をあけておいてください。
-土台の穴をあけた部分に木ネジを差し込んでネジでプレートと接合すれば完成です。
+Insert wood screws through the holes made in the base and fasten the base to the plate.
 
 <br>
 
 <div align="left"><a href="s_DSC00508.JPG"><img src="s_DSC00508.JPG" width="70%;"></a></div>
+
 <br>
 
+### Installing the Plate
 
-### プレートの取り付け
+First, attach four support posts to the Kobuki platform.
 
-まずは Kobuki に支柱を4本立てます。
-レーザーレンジセンサー、Raspberry Pi は両面テープなどで Kobuki に接着しておいてください。
-
+The laser range sensor and Raspberry Pi should be attached to Kobuki using double-sided tape or a similar method.
 
 <br>
 
 <div align="left"><a href="s_DSC00499.JPG"><img src="s_DSC00499.JPG" width="70%;"></a></div>
+
 <br>
 
-
-支柱は5cmの支柱を2つ接続したものを使用してください。
+Use support posts created by connecting two 5 cm posts together.
 
 <br>
 
 <div align="left"><a href="s_DSC00496.JPG"><img src="s_DSC00496.JPG" width="70%;"></a></div>
+
 <br>
 
-そしてプレートを載せてねじで留めれば完成です。
+Finally, place the plate on top and secure it with screws.
 
 <br>
 
 <div align="left"><a href="s_DSC00503.JPG"><img src="s_DSC00503.JPG" width="70%;"></a></div>
+
 <br>
 
+## SainSmart 4-DOF Robot Arm
 
-## サインスマート製4自由度ロボットアーム
-この章ではサインスマートが販売している4自由度ロボットアームを Kobuki に取り付ける手順を説明します。
-
+This section describes how to mount the 4-DOF robot arm sold by SainSmart onto Kobuki.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-ky9icPtKZM" frameborder="0" allowfullscreen></iframe>
 
+- http://www.sainsmart.com/diy-4-axis-servos-control-palletizing-robot-arm-model-for-arduino-uno-mega2560.html
 
-- [http://www.sainsmart.com/diy-4-axis-servos-control-palletizing-robot-arm-model-for-arduino-uno-mega2560.html](http://www.sainsmart.com/diy-4-axis-servos-control-palletizing-robot-arm-model-for-arduino-uno-mega2560.html)
+For information on RTCs for controlling the 4-DOF robot arm, refer to:
 
-4自由度ロボットアーム制御の RTC については以下のページを参考にしてください。
+- [RT Components for Educational Robot Arm Control Using RT Middleware]({{ site.baseurl }}/en/node/5933)
 
-- [RTミドルウェア学習用ロボットアーム制御RTコンポーネント群]({{ site.baseurl }}/ja/node/5933)
-
-
-この作業には必要なものは以下の通りです。
-
+The following items are required:
 
 <table class="table-alt">
   <tr>
-    <th>名前</th>
-    <th>数量</th>
+    <th>Item</th>
+    <th>Quantity</th>
   </tr>
   <tr>
     <td>Kobuki</td>
-    <td>1台</td>
+    <td>1</td>
   </tr>
   <tr>
-    <td>プレート</td>
-    <td>1枚</td>
+    <td>Plate</td>
+    <td>1</td>
   </tr>
   <tr>
-    <td>支柱(5cm)</td>
-    <td>8本</td>
+    <td>Support posts (5 cm)</td>
+    <td>8</td>
   </tr>
   <tr>
-    <td>4自由度ロボットアーム</td>
-    <td>1台</td>
+    <td>4-DOF Robot Arm</td>
+    <td>1</td>
   </tr>
   <tr>
-    <td>Arduino Uno※</td>
-    <td>1台</td>
+    <td>Arduino Uno*</td>
+    <td>1</td>
   </tr>
   <tr>
-    <td>ジャンパーコード</td>
-    <td>15本以上</td>
+    <td>Jumper wires</td>
+    <td>15 or more</td>
   </tr>
   <tr>
-    <td>ブレッドボード</td>
-    <td>1枚</td>
+    <td>Breadboard</td>
+    <td>1</td>
   </tr>
   <tr>
-    <td>電池ボックス 単3×4本用</td>
-    <td>1個</td>
+    <td>Battery holder (for four AA batteries)</td>
+    <td>1</td>
   </tr>
   <tr>
-    <td>単三電池</td>
-    <td>4本</td>
+    <td>AA batteries</td>
+    <td>4</td>
   </tr>
   <tr>
-    <td>木ネジ(2cm以上)</td>
-    <td>4本</td>
+    <td>Wood screws (2 cm or longer)</td>
+    <td>4</td>
   </tr>
 </table>
 
+* When controlling from an Intel Edison or Raspberry Pi, a PCA9685-based servo driver may be used instead.
 
-※Intel Edison、Raspberry Pi から制御する場合は PCA9685 搭載のサーボドライバでも可
-
-
-
-### ロボットの仕様
+### Robot Specifications
 
 <table class="table-alt">
   <tr>
-    <th colspan="2">4自由度ロボットアームの仕様</th>
+    <th colspan="2">4-DOF Robot Arm Specifications</th>
   </tr>
   <tr>
-    <td>自由度</td>
-    <td>4自由度</td>
+    <td>Degrees of Freedom</td>
+    <td>4 DOF</td>
   </tr>
   <tr>
-    <td>サーボモーター</td>
-    <td>MG995、SG90 9G</td>
+    <td>Servo Motors</td>
+    <td>MG995, SG90 9G</td>
   </tr>
 </table>
 
-### ロボットの取り付け
+### Mounting the Robot
 
-4自由度ロボットアームには最初から取り付け用の穴があいているためこちらへの加工は不要です。
+The 4-DOF robot arm already includes mounting holes, so no modification is necessary.
 
 <br>
 
 <div align="center"><a href="arm_4axis.jpg"><img src="arm_4axis.jpg" width="70%;"></a></div>
+
 <br>
 
-土台部分の穴に木ネジを差し込んでプレートと接合してください。
+Insert wood screws through the mounting holes in the base and fasten the robot arm to the plate.
 
-### プレートの取り付け
+### Installing the Plate
 
-<!-- [[アカデミックスカラロボットの手順>#toc5]]と同じです。-->
-[アカデミックスカラロボットの手順](#土台の取り付け)と同じです。
+The procedure is the same as described in the section:
 
+[Academic SCARA Robot Installation Procedure](#土台の取り付け)
 
--------jp page!!-------

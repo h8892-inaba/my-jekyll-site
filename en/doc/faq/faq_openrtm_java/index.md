@@ -1,87 +1,83 @@
 ---
 layout: page
-title: OpenRTM-aist (Java版) に関する FAQ 
+title: FAQ on OpenRTM-aist (Java Version) 
 ---
--------jp page!!-------
 
 <!-- Title: OpenRTM-aist (Java版) に関する FAQ -->
 #contents(3)
 
-## OS 共通
+## Common to All OSes
 
-### Java版コンポーネントでデータ転送に時間がかかる
-Java版の RTコンポーネントと C++版など他の言語のコンポーネントとの間で、特に大きなデータ（100kB以上でみられることが多い。）を送受信する場合に、極端に速度が低下する場合があります。これは Java の CORBA 側の問題であることが知られており、タイムアウトを適切に設定することにより回避することができます。~
-Java版の RTC が読み込む rtc.conf に以下のように記述することで、Java の CORBA のタイムアウトを設定します。~
+### Data transfer takes time with Java version components
+When sending and receiving especially large data (often seen with data of 100 kB or more) between Java version RT components and components in other languages such as C++, the speed may drop drastically. This is known to be a problem on the Java CORBA side, and it can be avoided by setting the timeout appropriately.~
+Set the Java CORBA timeout by writing the following in the rtc.conf loaded by the Java version RTC.~
 ```
  corba.args: -ORBTCPReadTimeouts 1:60000:300:1
 ```
-Java (JDK1.5以降) ではデフォルトで、**100:3000:300:20** となっていますが、これを **1:60000:300:1** に変更するという意味です。各項目は左から、
-- CORBA データを read するときに、0byte であったときに Read Thread が休止させられる時間(ms)
-- CORBA データの read 時に Read Thread が待たされる累積最大時間 (ms)
-- GIOP のヘッダーを read するときのタイムアウト(ms)
-- CORBA データを read するときに、Read Thread が休止させられたときに、次回の休止の時間を増加する割合(%)
+In Java (JDK 1.5 or later), the default is **100:3000:300:20**, and this means changing it to **1:60000:300:1**. Each item means the following, from left to right:
+- The time (ms) for which the Read Thread is suspended when 0 bytes are read while reading CORBA data
+- The maximum cumulative time (ms) that the Read Thread waits when reading CORBA data
+- The timeout (ms) when reading the GIOP header
+- The rate (%) at which the next suspension time is increased when the Read Thread is suspended while reading CORBA data
 
-という意味になっています。したがって、**1:60000:300:1** は
-- read して0byteのとき、Read Thread を 1ms休止する
-- Read Thread が待つ最大累積時間は 6000ms
-- GIOP のヘッダを read するときのタイムアウト時間は 300ms
-- Read Thread の休止時間は1%づつ増加させる
+Therefore, **1:60000:300:1** means:
+- When reading returns 0 bytes, suspend the Read Thread for 1 ms
+- The maximum cumulative time that the Read Thread waits is 6000 ms
+- The timeout when reading the GIOP header is 300 ms
+- Increase the Read Thread suspension time by 1% at a time
 
-という意味になります。~
-大きなデータの場合、1回の read でデータが読み切れないので、通常何回か read を行います。~
-次のデータはすぐには来ませんので、read は読み込みバイト数を 0byte として戻りますが、通常1ms以内には次のデータはやってきます。デフォルトの設定だと Read Thread が100ms待たされますが、そんなに長時間待つ必要はなく1ms程度待てば、すぐに次のデータを読み込むことができます。~
-デフォルト設定の場合、100ms待って、さらにもう一度読み込み read が0を返すので、さらに100ms+20%の120ms待ちます。データが大きすぎれば、これを12回繰り返すと最大累積時間の3000msに達してしまうので、タイムアウトしてしまいますし、データが小さくても、データの分割数×100msの時間がかかってしまうので、非常に遅くなります。~
-Java の CORBA ではデータを100kBで分割するので、これを超えるデータをやり取りする際には、上記の設定を rtc.conf にて行っておいたほうがよいでしょう。
+For large data, the data cannot be read completely in a single read, so reads are normally performed several times.~
+Since the next data does not arrive immediately, read returns with the number of read bytes as 0 bytes, but normally the next data arrives within 1 ms. With the default setting, the Read Thread waits 100 ms, but there is no need to wait that long; waiting about 1 ms allows the next data to be read immediately.~
+With the default setting, after waiting 100 ms, another read returns 0, so it waits an additional 100 ms + 20%, or 120 ms. If the data is too large, repeating this 12 times reaches the maximum cumulative time of 3000 ms and causes a timeout, and even if the data is small, it takes the number of data fragments × 100 ms, making it extremely slow.~
+Since Java CORBA splits data at 100 kB, when exchanging data larger than this, it is recommended to make the above setting in rtc.conf.
 <br>
 <br>
 
 ## Windows
 
-### ネームサーバーのコンソール画面が開かない
-「Start Java Naming Service」は %RTM_ROOT%\bin\rtm-naming.bat にあるバッチファイルからネームサーバー (omniNames.exe) を起動します。
-この際、omniNames.exe を参照するために環境変数 OMNI_NAMES を利用しています。
-通常インストーラーで OpenRTM-aist をインストールした場合には、OMNI_ROOT 環境変数が自動で設定されます。しかし、何らかの理由で環境変数が無効になっていたり、手動でインストールした場合は、環境変数が設定されていないことがあります。
+### The name server console screen does not open
+"Start Java Naming Service" starts the name server (omniNames.exe) from the batch file located at %RTM_ROOT%\bin\rtm-naming.bat.
+At this time, the environment variable OMNI_NAMES is used to refer to omniNames.exe.
+Normally, when OpenRTM-aist is installed with the installer, the OMNI_ROOT environment variable is automatically set. However, for some reason the environment variable may become invalid, or if you installed manually, the environment variable may not be set.
 <br>
 <br>
 
-### サンプルコンポーネントが起動しない
-rtc.conf の設定に問題があります。rtc.conf の設定を以下のように設定し直して確認してください。
+### Sample components do not start
+There is a problem with the rtc.conf settings. Reset the rtc.conf settings as follows and check again.
 ```
  corba.nameservers: localhost
 ```
-例えば、corba.endpoint/corba.endpoints などの設定が現在実行中の PC のホストアドレスとミスマッチを起こしている場合などは、CORBA が異常終了します。
+For example, if settings such as corba.endpoint/corba.endpoints do not match the host address of the PC currently running, CORBA will terminate abnormally.
 <br>
 <br>
 
-### サンプルコンポーネントを起動させると、ランタイムエラーで終了する
-ライブラリー等が適切にインストールされていない、設定されていない等の原因でラインタイムエラーが表示される場合があります。
-PCを再起動する または OpenRTM-aist をすべてアンインストールし、再インストールすることで改善される場合があります。
+### When starting a sample component, it terminates with a runtime error
+A runtime error may be displayed because libraries or other components are not installed or configured properly.
+This may be improved by restarting the PC or uninstalling all of OpenRTM-aist and reinstalling it.
 <br>
 <br>
 
 ## UNIX
 
 &aname(fedoraNS);
-### FedoraCore で RTSystemEditor の NameService View にエラーが表示される
-OS が FedoraCore の場合、yum にて Java をインストールすると GCJ (The GNU Compiler for Java ) がインストールされてしまい、その GCJ を使用すると RTSystemEditorのNameService View にエラーが表示されることがあります。~
-エラーが表示された場合は、まず、Oracle の Java が使用されているか確認してください。~
-Eclipse だけで Oracle の Java を使用したい場合は、jdk-xxx-linux-i586.bin をダウンロード後、実行してできた jre ディレクトリーを Eclipse インストールディレクトリーへコピーしてご使用ください。~
+### An error is displayed in the NameService View of RTSystemEditor on FedoraCore
+If the OS is FedoraCore, installing Java with yum may install GCJ (The GNU Compiler for Java), and if that GCJ is used, an error may be displayed in the NameService View of RTSystemEditor.~
+If an error is displayed, first check whether Oracle Java is being used.~
+If you want to use Oracle Java only with Eclipse, download jdk-xxx-linux-i586.bin, execute it, and copy the generated jre directory to the Eclipse installation directory before use.~
 ```
  $ sh jdk-6u4-linux-i586.bin
  $ cp -r jdk1.6.0_04/jre eclipse/
 ```
-- (JPackage,alternativesというのを使用する事で、使用する Java を選択する事も可能なようです。)
+- (It also seems possible to select the Java to use by using JPackage and alternatives.)
 <br>
 <br>
 
 &aname(javafedora);
-### FedoraCore で Java をインストールする際の対応 
-OS が FedoraCore の場合、yum にて Java をインストールすると GCJ (The GNU Compiler for Java ) がインストールされてしまい、その GCJ を使用するといくつかの不具合が生じる事があります。~
-不具合が発生した場合は、まず、Oracle の Java が使用されているかの確認をしてください。
+### Handling Java installation on FedoraCore 
+If the OS is FedoraCore, installing Java with yum may install GCJ (The GNU Compiler for Java), and using that GCJ may cause several problems.~
+If problems occur, first check whether Oracle Java is being used.
 
-- 参考 
-  - [[JDKインストールのためのヒント: /ja/node/805#fedora]]
-  - |[[UNIX系環境で簡易に Oracle の Java を Eclipse に適用する方法: /ja/node/248#rtclinksunjava]]
+- References 
+  - [[Hints for JDK installation: /ja/node/805#fedora]]
+  - |[[A simple method for applying Oracle Java to Eclipse in UNIX-like environments: /ja/node/248#rtclinksunjava]]
 
-
--------jp page!!-------

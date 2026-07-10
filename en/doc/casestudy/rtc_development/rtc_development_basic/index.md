@@ -1,33 +1,32 @@
 ---
 layout: page
-title: RTコンポーネント作成の基本
+title: Basics of Creating RT Components
 ---
--------jp page!!-------
 
 <!-- Title: RTコンポーネント作成の基本 -->
 #contents
 
 
-# データポートのあるコンポーネント
-ここでは、データポートのあるコンポーネントを二つ作成し、二つのコンポーネント間でデータの送受信を行ってみます。
-作成するコンポーネントの仕様は以下の通りです。
+# Components with Data Ports
+Here, we will create two components with data ports and try sending and receiving data between the two components.
+The specifications of the components to be created are as follows.
 
-- コンポーネント1
-  - OutPort を一つもつ
-  - OutPort のデータ型は TimedLong
-  - コンソールから入力した値を OutPort から出力
+- Component 1
+  - Has one OutPort
+  - The data type of the OutPort is TimedLong
+  - Outputs the value entered from the console from the OutPort
 
-- コンポーネント2
-  - InPort を一つ持つ
-  - InPort のデータ型は TimeLong
-  - コンフィギュレーションパラメーターを一つ持つ
-  - コンフィギュレーションパラーメーターは int型
-  - コンフィギュレーションパラーメーターのデフォルト値は1
-  - InPort 変数から読み出すときはパラメーターを掛けた値を読み出す
-  - InPort から読み出した値をコンソールへ出力
+- Component 2
+  - Has one InPort
+  - The data type of the InPort is TimeLong
+  - Has one configuration parameter
+  - The configuration parameter is of type int
+  - The default value of the configuration parameter is 1
+  - When reading from the InPort variable, reads the value multiplied by the parameter
+  - Outputs the value read from the InPort to the console
 
-## rtc-template によるソース生成 
-上記の仕様を持つコンポーネントを作成する為に以下のようなシェルスクリプトを gen.sh という名前で用意します。
+## Source Generation Using rtc-template
+To create components with the above specifications, prepare the following shell script named gen.sh.
 
 ```
  #!/bin/sh
@@ -50,7 +49,7 @@ title: RTコンポーネント作成の基本
      --config="multiply:int:1"
 ```
 
-最初の rtc-template の実行でコンポーネント1:ConsoleInComp、次の rtc-template の実行でコンポーネント2:ConsoleOutComp が作成されます。
+The first execution of rtc-template creates Component 1: ConsoleInComp, and the next execution of rtc-template creates Component 2: ConsoleOutComp.
 
 ```
  > sh gen.sh 
@@ -85,12 +84,12 @@ title: RTコンポーネント作成の基本
    File "README.ConsoleOut" was generated.
    File "ConsoleOut.yaml" was generated.
 ```
-## ConsoleIn の実装
-生成されたソースを編集して、ConsoleIn コンポーネントを実装していきます。
+## Implementing ConsoleIn
+Edit the generated source files and implement the ConsoleIn component.
 
 ### ConsoleIn.h
-このコンポーネントはアクティブ化されたときに、入力待ちを行い入力された値を OutPort から出力するコンポーネントです。
-従って、アクティブ状態の時にループ実行される onExecute メンバ関数のみ実装すればよいので、生成された ConsoleIn.h を以下のようにコメントアウトされている onExecute 関数のコメントをはずします。
+This component waits for input when activated and outputs the entered value from the OutPort.
+Therefore, it is only necessary to implement the onExecute member function, which is executed repeatedly in the active state. Remove the comment from the commented-out onExecute function in the generated ConsoleIn.h as follows.
 
 ```
      :略
@@ -100,7 +99,7 @@ title: RTコンポーネント作成の基本
      :略
 ```
 
-また、ConsoleIn.h の下の方に、rtc-template で指定した OutPort の変数宣言があります。
+Also, near the bottom of ConsoleIn.h, there are variable declarations for the OutPort specified by rtc-template.
 
 ```
      :略
@@ -111,14 +110,14 @@ title: RTコンポーネント作成の基本
    // </rtc-template>
 ```
 
-**TimedLong m_out** と宣言されているのが、OutPort にバインドされる変数。
+The variable declared as **TimedLong m_out** is the variable bound to the OutPort.
 
-**OutPort\<TimedLong> m_outOut** と宣言されているのが、OutPort のインスタンスです。
+The variable declared as **OutPort\<TimedLong> m_outOut** is the OutPort instance.
 
 
 ### ConsoleIn.cpp
-ConsoleInの 実装は簡単です。
-コメントアウトされている onExecute のコメントをはずし、以下のように実装します。
+The implementation of ConsoleIn is simple.
+Remove the comment from the commented-out onExecute and implement it as follows.
 
 ```
  RTC::ReturnCode_t ConsoleIn::onExecute(RTC::UniqueId ec_id)
@@ -132,23 +131,23 @@ ConsoleInの 実装は簡単です。
  }
 ```
 
-ここで行われていることは、
-1. cin >> m_out.data でユーザーからの入力待ちをする。
-1. 入力された値を、m_out.data(long型) へ格納
-1. 入力された値を確認の為表示
-1. m_outOut.write() で OutPort からデータを出力。
+The following operations are performed here:
+1. Wait for input from the user with cin >> m_out.data.
+1. Store the entered value in m_out.data (long type).
+1. Display the entered value for confirmation.
+1. Output data from the OutPort with m_outOut.write().
 
 
-## ConsoleOut の実装 
-ConsoleOut コンポーネントは少し複雑です。
-InPort に入ってきたデータにコンフィギュレーションパラメーター multiply を掛けた値を格納しなければなりません。
-これは、InPort にコールバックオブジェクトをセットするという方法で実現できます。
+## Implementing ConsoleOut
+The ConsoleOut component is slightly more complex.
+It must store the value obtained by multiplying the data entering the InPort by the configuration parameter multiply.
+This can be achieved by setting a callback object on the InPort.
 
-### コールバックオブジェクト
-コールバックオブジェクトとは、InPort や OutPort のバッファにあるイベントが発生したときに呼ばれる**operator()**が定義されたオブジェクトです。
-今回は、InPort のバッファに書き込まれるときに値を変換する為のコールバック OnWriteConvert を使用します。
+### Callback Object
+A callback object is an object in which **operator()** is defined and is called when an event occurs in the buffer of an InPort or OutPort.
+This time, we will use the callback OnWriteConvert to convert the value when it is written to the InPort buffer.
 
-RTC::OnWriteConvert を継承して以下のようなクラスを定義します。
+Define the following class by inheriting RTC::OnWriteConvert.
 
 ```
  class Multiply
@@ -167,9 +166,9 @@ RTC::OnWriteConvert を継承して以下のようなクラスを定義します
 ```
 
 ### ConsoleOut.h
-上記のコールバッククラスを ConsoleOut.h の include の行の直後に挿入します。
-さらに、このコールバッククラスのインスタンスを ConsoleOut クラスのメンバ変数として宣言します。
-場所は、private のすぐ下辺りでよいでしょう。
+Insert the above callback class immediately after the include lines in ConsoleOut.h.
+In addition, declare an instance of this callback class as a member variable of the ConsoleOut class.
+A suitable location is just below private.
 
 ```
  private:
@@ -178,8 +177,8 @@ RTC::OnWriteConvert を継承して以下のようなクラスを定義します
 ```
 
 
-このコンポーネントはアクティブ化されたときに、InPort からデータを読み込み標準出力にデータを表示するコンポーネントです。
-従って、アクティブ状態の時にループ実行される onExecute メンバ関数のみ実装すればよいので、生成された ConsoleOut.h を以下のようにコメントアウトされている onExecute 関数のコメントをはずします。
+This component reads data from the InPort when activated and displays the data on standard output.
+Therefore, it is only necessary to implement the onExecute member function, which is executed repeatedly in the active state. Remove the comment from the commented-out onExecute function in the generated ConsoleOut.h as follows.
 
 ```
      :略
@@ -189,10 +188,10 @@ RTC::OnWriteConvert を継承して以下のようなクラスを定義します
      :略
 ```
 
-また、ConsoleOut.h の下の方に、rtc-template で指定したコンフィギュレーション変数の宣言と InPort の変数宣言があります。
+Also, near the bottom of ConsoleOut.h, there are declarations for the configuration variable specified by rtc-template and the InPort variable.
 
-ConsoleOut では InPort のバッファとして RingBuffer を使用するので、**RingBuffer.h** をインクルードする必要があります。
-ConsoleOut.h の先頭部分をで以下のように **RingBuffer.h** をインクルードしてください。
+Since ConsoleOut uses RingBuffer as the InPort buffer, it is necessary to include **RingBuffer.h**.
+Include **RingBuffer.h** near the beginning of ConsoleOut.h as follows.
 
 ```
  #include <rtm/idl/BasicDataTypeSkel.h>
@@ -204,7 +203,7 @@ ConsoleOut.h の先頭部分をで以下のように **RingBuffer.h** をイン�
  #include <rtm/RingBuffer.h> //これを追加する
 ```
 
-また、InPort の宣言部分でデフォルトでは **InPort\<TimedLong> m_inIn** となっているところを **InPort\<TimedLong, RTC::RingBuffer> m_inIn** のように書き換えて、InPort が RingBuffer を使用するように変更してください。
+Also, in the InPort declaration section, change the default **InPort\<TimedLong> m_inIn** to **InPort\<TimedLong, RTC::RingBuffer> m_inIn** so that the InPort uses RingBuffer.
 
 ```
      :略
@@ -220,13 +219,13 @@ ConsoleOut.h の先頭部分をで以下のように **RingBuffer.h** をイン�
    InPort<TimedLong, RTC::RingBuffer> m_inIn;
 ```
 
-**int m_multiply**と宣言されているのが、コンフィギュレーション「multiply」にバインドされる変数。
+The variable declared as **int m_multiply** is the variable bound to the configuration "multiply".
 
-**TimedLong m_in** と宣言されているのが、InPort にバインドされる変数。
+The variable declared as **TimedLong m_in** is the variable bound to the InPort.
 
-**InPort\<TimedLong> m_inIn** と宣言されているのが、InPort のインスタンスです。
+The variable declared as **InPort\<TimedLong> m_inIn** is the InPort instance.
 ### ConsoleOut.cpp
-ConsoleOutクラスのコンストラクタで、先ほど定義した Multiply のインスタンスの初期化を追加します。
+In the constructor of the ConsoleOut class, add initialization of the Multiply instance defined earlier.
 
 ```
  ConsoleOut::ConsoleOut(RTC::Manager* manager)
@@ -238,13 +237,13 @@ ConsoleOutクラスのコンストラクタで、先ほど定義した Multiply 
      m_owc(m_multiply), 
      dummy(0)
 ```
-**※ Remark :**
+**Remark:**
 
-「m_owc(m_multiply),dummy(0)」 の部分を追加するだけでなく、「m_inIn("in", m_in)」を「m_inIn("in", m_in)<span style="color:red;">**,**</span>;」と変更することも忘れずに（カンマ「,」の追加もれに注意）。
+Do not only add the part "m_owc(m_multiply),dummy(0)", but also remember to change "m_inIn("in", m_in)" to "m_inIn("in", m_in)<span style="color:red;">**,**</span>;" (be careful not to forget to add the comma ",").
 
 <br>
 
-　さらに、コールバックオブジェクトを InPort に追加する為、コンストラクタ内で以下のように記述します。
+Furthermore, to add the callback object to the InPort, write the following in the constructor.
 
 ```
    m_inIn.setOnWriteConvert(&m_owc); //これを追加
@@ -254,7 +253,7 @@ ConsoleOutクラスのコンストラクタで、先ほど定義した Multiply 
    registerInPort("in", m_inIn);
 ```
 
-コメントアウトされている onExecute のコメントをはずし、以下のように実装します。
+Remove the comment from the commented-out onExecute and implement it as follows.
 
 ```
  RTC::ReturnCode_t ConsoleOut::onExecute(RTC::UniqueId ec_id)
@@ -272,32 +271,32 @@ ConsoleOutクラスのコンストラクタで、先ほど定義した Multiply 
  }
 ```
 
-ここで行われていることは、
-1. m_inIn.isNew() で InPort にデータが入ってきているかチェックする。
- - isNew() というメンバ関数は RingBuffer に定義されている関数です。
-1. 新しいデータが入っていたら、m_inIn.read() で変数にデータを読み込む。
-1. そのデータ (m_in.data) を表示する。
+The following operations are performed here:
+1. Check whether data has entered the InPort with m_inIn.isNew().
+ - The member function isNew() is defined in RingBuffer.
+1. If new data has entered, read the data into the variable with m_inIn.read().
+1. Display that data (m_in.data).
 
-## コンパイル
-実装が終わったら以下のようにソースをコンパイルします。
+## Compilation
+After completing the implementation, compile the source as follows.
 
 ```
  > make -f Makefile.ConsoleIn
  > make -f Makefile.ConsoleOut
 ```
 
-コンパイルエラーが出た場合はスペルミスなどがないかどうかチェックして再度コンパイルを行ってください。
+If a compilation error occurs, check for spelling mistakes and other errors, then compile again.
 
-## 実行
-- ネームサーバ起動していることを確認します。
-- 適切な rtc.conf * を作成しておきます。~
-  -  適切な rtc.conf とは…　次に一例をしめします。
+## Execution
+- Confirm that the name server is running.
+- Create an appropriate rtc.conf * in advance.~
+  - An appropriate rtc.conf is... The following is one example.
 ```
  corba.nameservers: localhost
  naming.formats: %h.host_cxt/%n.rtc
 ```
-- 二つのターミナルから、ConsoleInComp および ConsoleOutComp を実行します。
-- RtcLink を起動して、二つのコンポーネントを接続し、アクティブ化します。
+- Execute ConsoleInComp and ConsoleOutComp from two terminals.
+- Start RtcLink, connect the two components, and activate them.
 
 <br>
 
@@ -305,7 +304,7 @@ ConsoleOutクラスのコンストラクタで、先ほど定義した Multiply 
 
 <br>
 
-　ConsoleIn を実行したターミナルで、入力を促す **Please input number:** という表示が出るので、適当な数字を入力します。
+In the terminal where ConsoleIn was executed, the prompt **Please input number:** is displayed, so enter an appropriate number.
 
 ```
  Please input number: 1
@@ -316,7 +315,7 @@ ConsoleOutクラスのコンストラクタで、先ほど定義した Multiply 
  Sending to subscriber: 3
 ```
 
-　ConsoleOut を実行したターミナルでは、以下のように表示されるはずです。
+In the terminal where ConsoleOut was executed, it should be displayed as follows.
 
 ```
  Received: 1
@@ -327,7 +326,7 @@ ConsoleOutクラスのコンストラクタで、先ほど定義した Multiply 
  TimeStamp: 0[s] 0[ns]
 ```
 
-　次に RtcLink のコンフィギュレーションビューで multiply の値を10に変更してみましょう。すると、ConsoleIn から上記のように入力すると、以下のようにそれぞれ10倍された値が出力されるはずです。
+Next, try changing the value of multiply to 10 in the RtcLink configuration view. Then, when input is entered from ConsoleIn as shown above, values multiplied by 10 should be output as follows.
 
 ```
  Received: 10
@@ -340,4 +339,3 @@ ConsoleOutクラスのコンストラクタで、先ほど定義した Multiply 
 
 <br>
 
--------jp page!!-------

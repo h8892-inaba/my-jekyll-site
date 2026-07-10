@@ -31,7 +31,7 @@ Install the following Community Edition (free), or obtain and install Visual Stu
 
 The latest version of Visual Studio currently verified to work is 2026. <br>
 It is common to forget to install the C++ development environment. We recommend reading the following explanation.
-  - [Installing Visual Studio Community 2026](/ja/doc/installation/install_2_1/install_windows_2_1/install_2_1/visual_studio_2_1/visual_studio_2026)
+  - [Installing Visual Studio Community 2026](/en/doc/installation/install_2_1/install_windows_2_1/install_2_1/visual_studio_2_1/visual_studio_2026)
 
 ### Python
 
@@ -46,7 +46,7 @@ Please note the following when installing.
   - The Python installation location can be specified using the [Customize installation] option during installation.
   - For instructions on specifying the installation location using [Customize installation], refer to the explanation on the following page.
 <!-- --- [[OpenRTM-aistを10分で始めよう！・Pythonのインストール:/ja/doc/installation/lets_start#toc1]]  -->
-    - [Getting Started with OpenRTM-aist in 10 Minutes! - Installing Python](/ja/node/7323#toc1)
+    - [Getting Started with OpenRTM-aist in 10 Minutes! - Installing Python](/en/node/7323#toc1)
 
 ### CMake
 
@@ -68,7 +68,7 @@ Install the latest version whenever possible.
 - [Doxygen](https://doxygen.nl/download.html#latestsrc)
   - [doxygen-1.17.0-setup.exe](https://www.doxygen.nl/files/doxygen-1.17.0-setup.exe) (no distinction between 32-bit and 64-bit)
   - If you are unable to download it using Microsoft Edge, refer to the explanation for OpenRTM-aist.
-    - [Getting Started with OpenRTM-aist in 10 Minutes! - Downloading OpenRTM-aist](/ja/node/7323#toc2)
+    - [Getting Started with OpenRTM-aist in 10 Minutes! - Downloading OpenRTM-aist](/en/node/7323#toc2)
 
 &aname(Graphviz);
 - [Graphviz](https://graphviz.gitlab.io/download/)
@@ -93,7 +93,7 @@ After installation, execute dot -v from the command prompt and confirm that plug
 
 This is required for Java development.
 Refer to the explanation on the following page.
-    - [Installing JDK8](/ja/node/6911)
+    - [Installing JDK8](/en/node/6911)
 
 ## Installing OpenRTM-aist
 
@@ -112,7 +112,7 @@ Download the Windows installer (MSI format) for OpenRTM-aist.
 </table>
 
 If you are unable to download it using Microsoft Edge, refer to the explanation on the following page.
-- [Getting Started with OpenRTM-aist in 10 Minutes! - Downloading OpenRTM-aist](/ja/node/7323#toc2)
+- [Getting Started with OpenRTM-aist in 10 Minutes! - Downloading OpenRTM-aist](/en/node/7323#toc2)
 
 This installer includes the following contents.
 
@@ -130,13 +130,13 @@ This installer includes the following contents.
 ### Installation
 
 For details of the installation process, refer to the following page.
-    - [Getting Started with OpenRTM-aist in 10 Minutes! - Installing OpenRTM-aist](/ja/node/7323#toc3)
+    - [Getting Started with OpenRTM-aist in 10 Minutes! - Installing OpenRTM-aist](/en/node/7323#toc3)
 
 To confirm that the installation has been completed correctly, try running the sample components.
-    - [Getting Started with OpenRTM-aist in 10 Minutes! - Running Sample Components](/ja/node/7323#toc5)
+    - [Getting Started with OpenRTM-aist in 10 Minutes! - Running Sample Components](/en/node/7323#toc5)
 
 For details on the system environment variables configured by the installer and the installed files, refer to the following page.
-    - [OpenRTM-aist Installer Operations](/ja/doc/installation/install_2_1/install_windows_2_1/install_workcontent_2_1)
+    - [OpenRTM-aist Installer Operations](/en/doc/installation/install_2_1/install_windows_2_1/install_workcontent_2_1)
 
 ### Checking System Environment Variables
 

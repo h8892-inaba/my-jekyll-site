@@ -1,17 +1,16 @@
 ---
 layout: page
-title: NXT Python のインストール
+title: Installing NXT Python
 ---
--------jp page!!-------
 
 <!-- Title: NXT Python のインストール -->
 #contents
 
 
-# NXT Python のインストール
+# Installing NXT Python
 
 
-NXT RTC を作成する前に、Python から Bluetooth を使用するためのモジュール PyBlues と、NXT を制御するためのモジュール NXT Python をインストールします。
+Before creating the NXT RTC, install PyBlues, a module for using Bluetooth from Python, and NXT Python, a module for controlling NXT.
 - [PyBlues](http://code.google.com/p/pybluez/)
   - [PyBluez-0.18.win32-py2.4](http://pybluez.googlecode.com/files/PyBluez-0.18.win32-py2.4.exe)
   - [PyBluez-0.18.win32-py2.5](http://pybluez.googlecode.com/files/PyBluez-0.18.win32-py2.5.exe)
@@ -22,50 +21,45 @@ NXT RTC を作成する前に、Python から Bluetooth を使用するための
   - [nxt_python-0.7.tar.gz](http://home.comcast.net/`dplau/nxt_python/download/nxt_python-0.7.tar.gz)`
 
 
-## PyBlues のインストール
-上記リンクからWindows用 のインストーラをダウンロードします。
-ダウンロードした実行ファイルを実行すればインストールは完了です。
+## Installing PyBlues
+Download the Windows installer from the link above.
+Run the downloaded executable file to complete the installation.
 
-## NXT Python のインストール
-上記リンクから zip ファイルをダウンロードします。
-NXT Python は setup.py スクリプトを使用してインストールします。
-- .pyに関連付けがされている場合
-```
- setup.py install
-```
-- 関連づけされていない場合:
-```
- c:\Python24\python setup.py install
-```
+## Installing NXT Python
+Download the zip file from the link above.
+NXT Python is installed using the setup.py script.
+- If .py files are associated:
 
-```
- Microsoft Windows XP [Version 5.1.2600]
- (C) Copyright 1985-2001 Microsoft Corp.
- 
- C:\tmp\nxt_python-0.7>setup.py install
- running install
- running build
- running build_py
- ...
- copying build\scripts-2.4\nxt_filer -> c:\python24\Scripts
- copying build\scripts-2.4\nxt_push -> c:\python24\Scripts
- copying build\scripts-2.4\nxt_test -> c:\python24\Scripts
- 
- C:\tmp\nxt_python-0.7>
-```
+setup.py install
 
-## NXT Python のテスト
-NXT を ON にしてPCに接続されている状態で、example 以下のサンプルを実行し、NXT Python から NXT が制御できるかどうか確認します。
+- If they are not associated:
 
-example ディレクトリーには以下のサンプルがあります。
+c:\Python24\python setup.py install
 
-- latency.py: センサー読出しのレイテンシを計測する。
-- mary.py: NXT のサウンド機能で「メリーさんの羊」を演奏する
-- message_test.py: インテリジェントブロックの液晶画面にメッセージを表示する
-- spin.py: PortB, PortC のモーターを動かしスピンさせる
-- test_sensors.py: 全センサーの値を表示する
+Microsoft Windows XP [Version 5.1.2600]
+(C) Copyright 1985-2001 Microsoft Corp.
 
-これらのテストを実行する際には、それぞれのサンプルが使用するモーター、センサーなどが接続された状態で実行しなければなりません。&aname(miyamoto);
+C:\tmp\nxt_python-0.7>setup.py install
+running install
+running build
+running build_py
+...
+copying build\scripts-2.4\nxt_filer -> c:\python24\Scripts
+copying build\scripts-2.4\nxt_push -> c:\python24\Scripts
+copying build\scripts-2.4\nxt_test -> c:\python24\Scripts
+
+C:\tmp\nxt_python-0.7>
 
 
--------jp page!!-------
+## Testing NXT Python
+With NXT turned ON and connected to the PC, run the samples under example and check whether NXT can be controlled from NXT Python.
+
+The example directory contains the following samples.
+
+- latency.py: Measures the latency of sensor reading.
+- mary.py: Plays "Mary Had a Little Lamb" using the NXT sound function.
+- message_test.py: Displays a message on the LCD screen of the intelligent block.
+- spin.py: Moves the motors on PortB and PortC to make it spin.
+- test_sensors.py: Displays the values of all sensors.
+
+When running these tests, they must be executed with the motors, sensors, and other devices used by each sample connected. &aname(miyamoto);

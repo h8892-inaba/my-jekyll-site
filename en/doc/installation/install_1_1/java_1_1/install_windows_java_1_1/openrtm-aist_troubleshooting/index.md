@@ -2,7 +2,9 @@
 layout: page
 title: OpenRTM-aist(C++版、Python版、Java版)に関するトラブルシューティング
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: OpenRTM-aist(C++版、Python版、Java版)に関するトラブルシューティング -->
 #contents(4)
@@ -523,6 +525,6 @@ Java の CORBA ではデータを100kBで分割するので、これを超える
 #### FedoraCore で Java をインストールする際の対応 
 OS が FedoraCore の場合、yum にて Java をインストールすると GCJ (The GNU Compiler for Java ) がインストールされてしまい、その GCJ を使用するといくつかの不具合が生じる事があります。~
 不具合が発生した場合は、まず、Oracle の Java が使用されているかの確認をしてください。
-- **参考**[JDKインストールのためのヒント](/ja/node/805#fedora)
-- [**UNIX系環境で簡易に Oracle の Java を Eclipse に適用する方法**](/ja/node/248#rtclinksunjava)
--------jp page!!-------
+- **参考**[JDKインストールのためのヒント](/en/node/805#fedora)
+- [**UNIX系環境で簡易に Oracle の Java を Eclipse に適用する方法**](/en/node/248#rtclinksunjava)
+

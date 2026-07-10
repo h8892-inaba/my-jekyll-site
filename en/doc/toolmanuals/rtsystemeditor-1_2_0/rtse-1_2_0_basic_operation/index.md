@@ -1,17 +1,16 @@
 ---
 layout: page
-title: システムエディタ（基本操作編）
+title: System Editor (Basic Operations)
 ---
--------jp page!!-------
 
 <!-- Title: システムエディタ（基本操作編） -->
 #contents
 
-ここでは、システムエディタの概要と基本操作について説明します。
+This section explains the overview and basic operations of the System Editor.
 
 
-## 概要
-システムエディタでは、RTC の状態がリアルタイムで表示されます。またポート間の接続や、RTC の状態を変更することでシステム構築、動作検証を行うことができます。
+## Overview
+In the System Editor, the state of RTCs is displayed in real time. You can also build systems and verify operation by connecting ports and changing the state of RTCs.
 #clear
 
 <table class="table-alt">
@@ -20,57 +19,57 @@ title: システムエディタ（基本操作編）
     <th><div align="center"><a href="SystemEditor_012.jpg"><img src="SystemEditor_012.jpg" width="80%;"></a></div></th>
   </tr>
   <tr>
-    <th style="text-align: center;">システムエディタの位置</th>
-    <th style="text-align: center;">システムエディタ</th>
+    <th style="text-align: center;">System Editor Location</th>
+    <th style="text-align: center;">System Editor</th>
   </tr>
 </table>
 <br>
 
 
-## 基本操作
-RTC のポート間の接続方法と RTC を実行する方法を説明します。
+## Basic Operations
+This section explains how to connect ports between RTCs and how to execute RTCs.
 
-### システムエディタを開く
-新しいシステムエディタを開くには、ツールバーの [Open New System Editor] ボタンをクリックするか、メニューバーの [File] > [Open New System Editor] を選択します。
+### Opening the System Editor
+To open a new System Editor, click the [Open New System Editor] button on the toolbar, or select [File] > [Open New System Editor] from the menu bar.
 <br>
 
 <div align="center"><a href="SystemEditor_013.jpg"><img src="SystemEditor_013.jpg" width="70%;"></a></div>
-<div align="center"><strong>ツールバーから Open New System Editor</strong></div>
+<div align="center"><strong>Open New System Editor from the Toolbar</strong></div>
 <br>
 
 <div align="center"><a href="SystemEditor_014.jpg"><img src="SystemEditor_014.jpg" width="70%;"></a></div>
-<div align="center"><strong>Fileメニューから Open New System Editor</strong></div>
+<div align="center"><strong>Open New System Editor from the File Menu</strong></div>
 <br>
 
 
-### RTC をシステムエディタに配置する
-RTC をシステムエディタに配置するには、ネームサービスビューから RTC をドラッグ＆ドロップします。
+### Placing an RTC in the System Editor
+To place an RTC in the System Editor, drag and drop the RTC from the Name Service View.
 <br>
 
 <div align="center"><a href="fig40EditorComponentDnD.png"><img src="fig40EditorComponentDnD.png" width="70%;"></a></div>
-<div align="center"><strong>RTC をシステムエディタに配置する</strong></div>
+<div align="center"><strong>Placing an RTC in the System Editor</strong></div>
 <br>
 
-ネームサービス上で [Ctrl] キーを押しながらクリックし、複数RTC を選択すれば、まとめてシステムエディタ上へ配置することができます。
+If you click RTCs in the name service while holding down the [Ctrl] key and select multiple RTCs, you can place them all together in the System Editor.
 <br>
 
 <div align="center"><a href="fig41EditorComponentMultiDnD.png"><img src="fig41EditorComponentMultiDnD.png" width="70%;"></a></div>
-<div align="center"><strong>複数の RTC をまとめてシステムエディタに配置する</strong></div>
+<div align="center"><strong>Placing Multiple RTCs Together in the System Editor</strong></div>
 <br>
 
-なお、すでにシステムエディタ上に配置された RTC、もしくは複合RTC の親RTC、子RTCを重複して追加することはできません。
-複数 RTC の配置では重複する RTC はスルーされ、単体RTC の配置ではエラーダイアログが表示されます。
+Note that RTCs that have already been placed in the System Editor, or parent RTCs and child RTCs of a composite RTC, cannot be added redundantly.
+When placing multiple RTCs, duplicate RTCs are skipped, and when placing a single RTC, an error dialog is displayed.
 <br>
 
 <div align="center"><a href="fig42DeployComponentError.png"><img src="fig42DeployComponentError.png" width="70%;"></a></div>
-<div align="center"><strong>RTC 配置の重複エラーダイアログ</strong></div>
+<div align="center"><strong>Duplicate RTC Placement Error Dialog</strong></div>
 <br>
 
 
-### RTC の状態を変更する
-ここでは、 RTC の状態を変更する方法を説明します。<br>
-システムダイアグラムでは、RTCを選択し、「Activate」、「Deactivate」、「Reset」、「Finalize」、「Exit」、「Start」、「Stop」を実行することができます。
-また、ネームサービスビューでも同様に実行することができます。
+### Changing the State of an RTC
+This section explains how to change the state of an RTC.<br>
+In the System Diagram, you can select an RTC and execute "Activate", "Deactivate", "Reset", "Finalize", "Exit", "Start", and "Stop".
+You can also execute them in the same way from the Name Service View.
 <br>
 
 <table class="table-alt">
@@ -79,181 +78,178 @@ RTC をシステムエディタに配置するには、ネームサービスビ�
     <th><div align="center"><a href="fig51RTCStatusChangeEditor.png"><img src="fig51RTCStatusChangeEditor.png" width="85%;"></a></div></th>
   </tr>
 </table>
-<div align="center"><strong>ネームサービスビュー（左）とシステムエディタ（右）から RTC 状態を変更する</strong></div>
+<div align="center"><strong>Changing the RTC State from the Name Service View (left) and the System Editor (right)</strong></div>
 <br>
 
-これらのアクションの意味は以下のとおりです。実行先にご注意ください。
+The meanings of these actions are as follows. Please pay attention to the execution target.
 <br>
 
-<div align="center"><strong>RTCの状態を変更するアクション</strong></div>
+<div align="center"><strong>Actions for Changing the RTC State</strong></div>
 <table class="table-alt">
   <tr>
     <th>No.</th>
-    <th>アクション名</th>
-    <th>実行先</th>
-    <th>意味</th>
+    <th>Action Name</th>
+    <th>Execution Target</th>
+    <th>Meaning</th>
   </tr>
   <tr>
     <td>1</td>
     <td>Activate</td>
-    <td>選択された RTC とその1番目の ExecutionContext に対して実行</td>
-    <td>Activate を要求する</td>
+    <td>Executed for the selected RTC and its first ExecutionContext</td>
+    <td>Requests Activate</td>
   </tr>
   <tr>
     <td>2</td>
     <td>Deactivate</td>
     <td>〃</td>
-    <td>Deactivate を要求する</td>
+    <td>Requests Deactivate</td>
   </tr>
   <tr>
     <td>3</td>
     <td>Reset</td>
     <td>〃</td>
-    <td>Reset を要求する</td>
+    <td>Requests Reset</td>
   </tr>
   <tr>
     <td>4</td>
     <td>Exit</td>
-    <td>選択された RTC に対して実行</td>
-    <td>Exit を要求する</td>
+    <td>Executed for the selected RTC</td>
+    <td>Requests Exit</td>
   </tr>
   <tr>
     <td>5</td>
     <td>Start</td>
-    <td>選択された RTC の1番目の ExecutionContext に対して実行</td>
-    <td>Start を要求する</td>
+    <td>Executed for the first ExecutionContext of the selected RTC</td>
+    <td>Requests Start</td>
   </tr>
   <tr>
     <td>6</td>
     <td>Stop</td>
     <td>〃</td>
-    <td>Activate を要求する</td>
+    <td>Requests Activate</td>
   </tr>
 </table>
 
-「[設定画面](/ja/node/4885/)」のオンラインエディタの項目で、アクションの実行確認を有効にしている場合は、アクションの実行前に確認のダイアログが表示されます。
+If confirmation of action execution is enabled in the online editor item of "[Settings Screen](/en/node/4885/)", a confirmation dialog is displayed before the action is executed.
 
 <div align="center"><a href="fig52RTCStatusChangeConfirm.png"><img src="fig52RTCStatusChangeConfirm.png" width="70%;"></a></div>
-<div align="center"><strong>アクションの実行確認ダイアログ</strong></div>
+<div align="center"><strong>Action Execution Confirmation Dialog</strong></div>
 <br>
 
-初期設定では、事前確認を行わないようになっています。<br>
-Activate、Deactivate については、ショートカットキーが割り当てられています。初期設定では以下の設定になっています。<br>
+By default, advance confirmation is disabled.<br>
+Shortcut keys are assigned to Activate and Deactivate. By default, they are set as follows.<br>
 ・Activate → Ctrl + Alt + A <br>
 ・Deactivate → Ctrl + Alt + D <br>
-キーバインドを変更するには、Eclipse 標準の設定メニューの「一般」→「キー」で設定することができます。
+To change the key bindings, use "General" → "Keys" in the standard Eclipse settings menu.
 <br>
 
-また、簡易にシステムを操作するための機能として、システムエディタに含まれるすべての RTC へ Activate、Deactivate、Start、Stop、変更を要求することがツールバーとコンテキストメニューからできます。
+Also, as a function for easily operating the system, you can request Activate, Deactivate, Start, Stop, and changes for all RTCs included in the System Editor from the toolbar and context menu.
 <br>
 
 <div align="center"><a href="fig53AllExec.png"><img src="fig53AllExec.png" width="85%;"></a></div>
-<div align="center"><strong>All 実行（ツールバーは左からAll Activate、All Deactivate、All Start、All Stop）</strong></div>
+<div align="center"><strong>All Execution (Toolbar, from left: All Activate, All Deactivate, All Start, All Stop)</strong></div>
 <br>
 
-All 系のアクションは、1番目以外の ExecutionContext についても行われます。 Activate やStart を画面内の RTC に１つずつおこなった場合と結果が異なることにご注意ください。
+All-type actions are also performed for ExecutionContexts other than the first one. Please note that the results differ from activating or starting each RTC on the screen one by one.
 
 
-### ポート間を接続する
-システムエディタでは、 RTC のポート間を接続することができます。<br>
-ポート間を接続するには、ポートとポートをドラッグ＆ドロップでつなぎます。
+### Connecting Ports
+In the System Editor, you can connect RTC ports to each other.<br>
+To connect ports, drag and drop one port to another port.
 <br>
 
 <div align="center"><a href="fig54ConnectPort.png"><img src="fig54ConnectPort.png" width="70%;"></a></div>
-<div align="center"><strong>ポート間接続</strong></div>
+<div align="center"><strong>Port Connection</strong></div>
 <br>
 
-ドラッグ＆ドロップ終了後、接続に必要な情報の入力を促すダイアログが表示されます。
+After the drag and drop is completed, a dialog prompting you to enter the information required for connection is displayed.
 <br>
 
 <div align="center"><a href="SystemEditor_015.jpg"><img src="SystemEditor_015.jpg" width="70%;"></a></div>
-<div align="center"><strong> ConnectorProfileダイアログの例</strong></div>
+<div align="center"><strong>Example of the ConnectorProfile Dialog</strong></div>
 <br>
 
-このダイアログでは、 ConnectorProfile を作成します。 ConnectorProfile は、それぞれのポートが必要とする条件が満たされるように作成される必要がありますが、このダイアログは必要な条件を満たす値のみが入力されるようプルダウンで促します。
-必要な条件を満たすことができない接続の場合には、ドラッグ＆ドロップの接続時に禁止マークが表示され、ドラッグ＆ドロップを行うことができません。
+In this dialog, a ConnectorProfile is created. The ConnectorProfile must be created so that the conditions required by each port are satisfied. This dialog prompts you with pull-down menus so that only values satisfying the required conditions can be entered.
+For a connection that cannot satisfy the required conditions, a prohibited mark is displayed during the drag-and-drop connection, and drag and drop cannot be performed.
 <br>
 
 <div align="center"><a href="fig56ConnectedProhibitionMark.png"><img src="fig56ConnectedProhibitionMark.png" width="50%;"></a></div>
-<div align="center"><strong>接続禁止マーク</strong></div>
+<div align="center"><strong>Connection Prohibited Mark</strong></div>
 <br>
 
-ポート間の接続は、大きくデータポート間接続とサービスポート間接続に分かれます。詳細については「[システムエディタ（ポート間の接続 編）](/ja/node/4885/)」を参照願います。
+Port connections are broadly divided into data port connections and service port connections. For details, please refer to "[System Editor (Connecting Ports)](/en/node/4885/)".
 
 
-### ポート間の接続を切断する
-ポート間の接続を切断するには、接続を選択し [Delete] ボタンをクリックするか、コンテキストメニューに表示される [Delete] をクリックします。
+### Disconnecting a Port Connection
+To disconnect a port connection, select the connection and click the [Delete] button, or click [Delete] displayed in the context menu.
 <br>
 
 <div align="center"><a href="fig61Disconnect.png"><img src="fig61Disconnect.png" width="70%;"></a></div>
-<div align="center"><strong>接続の削除</strong></div>
+<div align="center"><strong>Deleting a Connection</strong></div>
 <br>
 
 
-### ポート間の接続をすべて切断する
-ポートの接続をすべて切断するには、ポートを選択して、右クリックし「All Disconnect」を実行します。
+### Disconnecting All Port Connections
+To disconnect all port connections, select a port, right-click it, and execute "All Disconnect".
 <br>
 
 <div align="center"><a href="fig62AllDisconnect.png"><img src="fig62AllDisconnect.png" width="70%;"></a></div>
-<div align="center"><strong>接続の全切断</strong></div>
+<div align="center"><strong>Disconnecting All Connections</strong></div>
 <br>
 
 
-### 単独ポートの接続を設定する
-単独のポート接続へ ConnectorProfile を設定することができます。<br>
-ポートを右クリックし、コンテクストメニューから「Connect」を選択すると、ポート間接続のときと同様に、ConnectorProfile の設定ダイアログが開きます。
+### Setting a Single Port Connection
+You can set a ConnectorProfile for a single port connection.<br>
+Right-click a port and select "Connect" from the context menu. The ConnectorProfile settings dialog opens in the same way as for a port-to-port connection.
 <br>
 
 <div align="center"><a href="fig63ConnectSinglePort.png"><img src="fig63ConnectSinglePort.png" width="70%;"></a></div>
-<div align="center"><strong>単独のポート接続</strong></div>
+<div align="center"><strong>Single Port Connection</strong></div>
 <br>
 
-単独のポート接続を削除するには、同じく右クリックのコンテキストメニューから「Disconnect」を選択し、ポート切断ダイアログから操作します。
-ダイアログに表示された ConnectorProfile の一覧から対象を削除し、[OK] ボタンをクリックすると切断処理が実施されます。
+To delete a single port connection, similarly select "Disconnect" from the right-click context menu and operate from the port disconnection dialog.
+Delete the target from the list of ConnectorProfiles displayed in the dialog, and click the [OK] button to perform the disconnection process.
 <br>
 
 <div align="center"><a href="fig64DisconnectPort.png"><img src="fig64DisconnectPort.png" width="70%;"></a></div>
-<div align="center"><strong>ポートの切断</strong></div>
+<div align="center"><strong>Port Disconnection</strong></div>
 <br>
 
 <div align="center"><a href="fig65DisconnectPortDialog.png"><img src="fig65DisconnectPortDialog.png" width="70%;"></a></div>
-<div align="center"><strong>ポートの切断ダイアログ</strong></div>
+<div align="center"><strong>Port Disconnection Dialog</strong></div>
 <br>
 
-なお、ポート切断ダイアログには単独ポート接続や、通常のポート間接続のすべての ConnectorProfile の一覧が表示されるので、ダイアグラムに描画されない単独ポート接続の確認にも利用できます。
+The port disconnection dialog displays a list of all ConnectorProfiles for single port connections and normal port-to-port connections, so it can also be used to check single port connections that are not drawn in the diagram.
 <br>
 
 
-### ログを収集する
-ログ通知オブザーバにより、RTC のログメッセージをツールで収集することができます。（OpenRTM-aist 1.1以降）<br>
-ダイアグラム上の RTC を右クリックし、コンテキストメニューの「Start Logging」を選択するとログ収集を開始します。
-すでにログ収集を開始している RTC の場合は、メニュー表示が「Stop Logging」となり、ログ収集を停止します。<br>
-なお、オブザーバに対応していない RTC の場合は、メニューが非活性となります。
+### Collecting Logs
+With the log notification observer, RTC log messages can be collected by the tool. (OpenRTM-aist 1.1 or later)<br>
+Right-click an RTC on the diagram and select "Start Logging" from the context menu to start log collection.
+For an RTC that has already started log collection, the menu display changes to "Stop Logging", and log collection is stopped.<br>
+For an RTC that does not support observers, the menu is disabled.
 <br>
 
 <table class="table-alt">
   <tr>
-    <td style="text-align: center;">ログ収集の開始</td>
-    <td style="text-align: center;">ログ収集の停止</td>
+    <td style="text-align: center;">Starting Log Collection</td>
+    <td style="text-align: center;">Stopping Log Collection</td>
   </tr>
   <tr>
 <td><div align="center"><a href="fig79LoggingStart.png"><img src="fig79LoggingStart.png" width="50%;"></a></div></td>
 <td><div align="center"><a href="fig79LoggingStop.png"><img src="fig79LoggingStop.png" width="50%;"></a></div></td>
   </tr>
 </table>
-<div align="center"><strong>ログ収集の開始/停止</strong></div>
+<div align="center"><strong>Starting/Stopping Log Collection</strong></div>
 
-ログ収集は、状態通知オブザーバと同様、ログ通知のオブザーバの参照を RTC に登録し、通知を受けます。
-コンテキストメニューからログ収集開始時にオブザーバを登録し、ログ収集停止時にオブザーバを解除します。
-また、状態通知オブザーバと同じく、ダイアグラムから RTC を削除するとオブザーバを解除します。<br>
-ログ通知では、時刻やログレベルを含んだデータ構造（ログレコード）が RTC から送られ、ツールはログのデータを蓄積します。
-蓄積されたログは、ログビューを使って参照することができます。
+For log collection, as with the state notification observer, a reference to the log notification observer is registered with the RTC and notifications are received.
+The observer is registered when log collection is started from the context menu, and the observer is unregistered when log collection is stopped.
+Also, as with the state notification observer, the observer is unregistered when an RTC is removed from the diagram.<br>
+In log notification, a data structure including the time and log level (log record) is sent from the RTC, and the tool accumulates the log data.
+The accumulated logs can be viewed using the Log View.
 <br>
 
 <div align="center"><a href="fig80LogObserver.png"><img src="fig80LogObserver.png" width="70%;"></a></div>
-<div align="center"><strong>ログ通知オブザーバ</strong></div>
+<div align="center"><strong>Log Notification Observer</strong></div>
 <br>
 
-
-
--------jp page!!-------

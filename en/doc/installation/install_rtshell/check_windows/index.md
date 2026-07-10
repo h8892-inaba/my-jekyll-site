@@ -1,123 +1,137 @@
 ---
 layout: page
-title: 動作確認(Windows編)
+title: Operation Check (Windows Edition)
 ---
--------jp page!!-------
 
 <!-- Title: 動作確認(Windows編) -->
 
 #contents(3)
 
-## 動作確認環境
-以下では、Windows 10にmsiインストーラーでOpenRTM-aistをデフォルトでインストールした環境をもとに説明します。
+## Test Environment
 
-サンプルコンポーネントセットSimpleIOを使って、rtshellが正しくインストールされているかを確認します。
+The following explanation assumes an environment where OpenRTM-aist has been installed with the MSI installer using the default settings on Windows 10.
 
-## サンプル(SimpleIO)を使用した動作確認
+Use the sample component set SimpleIO to verify that rtshell has been installed correctly.
 
-RTコンポーネントConsoleIn、ConsoleOutからなるサンプルセットを用います。ConsoleInはコンソールから入力された数値をOutPortから出力するコンポーネント、ConsoleOutはInPortに入力された数値をコンソールに表示するコンポーネントです。これらは簡単なI/O(入出力)を例示するためのサンプルです。ConsoleInのOutPortからConsoleOutのInPortへの接続をし、これらの2つのコンポーネントをアクティブ化(Activate)することで動作します。
+## Operation Check Using the Sample (SimpleIO)
 
-## Name Serverの起動
-まずは以下の手順でName Serverを起動します。
-- 画面の左下の[ここに入力して検索]に"start naming service"と入力します。
-- [Start Naming Service]をクリックします。
+This sample set consists of the RT Components ConsoleIn and ConsoleOut. ConsoleIn is a component that outputs numerical values entered from the console through an OutPort, while ConsoleOut is a component that displays numerical values received through an InPort on the console. These components are samples intended to demonstrate simple I/O (input/output). They operate by connecting the OutPort of ConsoleIn to the InPort of ConsoleOut and activating these two components.
+
+## Starting the Name Server
+
+First, start the Name Server using the following procedure.
+
+- Enter "start naming service" in the [Type here to search] box at the lower-left corner of the screen.
+- Click [Start Naming Service].
+
 <div align="center"><a href="rtshell6.png"><img src="rtshell6.png" width="50%;"></a></div>
-- 以下のような画面が表示されます。
+
+- The following screen will be displayed.
+
 <div align="center"><a href="rtshell5.png"><img src="rtshell5.png" width="50%;"></a></div>
 
-## サンプルコンポーネントの起動
-サンプルコンポーネントを起動します。
+## Starting the Sample Components
 
-Windows 10の場合は右下の「ここに入力して検索」に**Python_Examples**と入力してサンプルコンポーネントの起動ファイルのディレクトリでエクスプローラを開きます。
+Start the sample components.
+
+On Windows 10, enter **Python_Examples** in the [Type here to search] box at the lower right and open Explorer at the directory containing the sample component startup files.
 
 <div align="center"><a href="rtm8-2.png"><img src="rtm8-2.png" width="50%;"></a></div>
-<div align="center"><strong>サンプルコンポーネント起動ファイル</strong></div>
+<div align="center"><strong>Sample Component Startup Files</strong></div>
 
-「ConsoleIn.bat」「ConsoleOut.bat」をそれぞれダブルクリックして2つのコンポーネントを起動します。起動すると、下図のような2つのコンソール画面が開きます。
-また、サンプルコンポーネントは通常下記のディレクトリ下にインストールされますので、そこからエクスプローラで直接起動しても構いません。
+Double-click "ConsoleIn.bat" and "ConsoleOut.bat" to start the two components. After startup, two console windows will open as shown below.
+
+The sample components are normally installed under the following directory, so you may also start them directly from Explorer.
+
 - C:\Program Files\OpenRTM-aist\1.2.<span style="color:blue;">x</span>;\Components\Python
 
 <div align="center"><a href="rtm9-2.png"><img src="rtm9-2.png" width="80%;"></a></div>
-<div align="center"><strong>ConsoleInコンポーネントとConsoleOutコンポーネント</strong></div>
+<div align="center"><strong>ConsoleIn Component and ConsoleOut Component</strong></div>
 
+### If the Components Do Not Start
 
-### コンポーネントが起動しない場合
+If the components do not start, there may be several possible causes.
 
-コンポーネントが起動しない場合、いくつかの原因が考えられます。
+#### The Console Window Opens and Immediately Closes
 
-#### コンソール画面が開いてすぐに消える
+There may be a problem with the rtc.conf configuration. Open the Examples\SimpleIO\rtc.conf file under the directory containing the sample startup files and check the settings. For example, CORBA may terminate abnormally if settings such as corba.endpoint or corba.endpoints do not match the host address of the currently running PC.
 
-rtc.confの設定に問題があり、起動できないケースがあります。上記のサンプル起動ファイルがあるディレクトリ下Examples\SimpleIO￥rtc.confファイルを開いて設定を確認してください。例えば、corba.endpoint/corba.endpointsなどの設定が現在実行中のPCのホストアドレスとミスマッチを起こしている場合などは、CORBAが異常終了します。
+Try replacing the configuration with the following minimal rtc.conf setting.
 
-以下のような最低限のrtc.confに設定しなおして試してみてください。
-
+```text
+corba.nameservers: localhost
 ```
- corba.nameservers: localhost
-```
 
+#### omniORBpy Is Not Installed
 
-#### omniORBpyがインストールされていない。
+The MSI installer provided by openrtm.org includes omniORBpy. However, if you select a custom installation, OpenRTM-aist-Python can be installed without omniORBpy. In addition, if OpenRTM-aist was installed manually, omniORBpy may not be installed. Verify that omniORBpy is installed.
 
-openrtm.orgが提供するmsiインストーラーにはomniORBpyが含まれていますが、カスタムインストールを選択すると、omniORBpyをインストールせずにOpenRTM-aist-Pythonをインストールできます。また、手動でインストールした場合には、omniORBpyが入っていない場合も考えられますので、omniORBpyがインストールされているか確認してください。
+#### Incorrect Association for .py Files
 
-#### pyファイルの関連付けが違っている
-
-ConsoleIn、ConsoleOutを起動するファイルは、
+The files used to start ConsoleIn and ConsoleOut are:
 
 C:\Program Files\OpenRTM-aist\1.2.<span style="color:blue;">x</span>;\Components\Python\Examples\SimpleIO\ConsoleIn.py<br>
 C:\Program Files\OpenRTM-aist\1.2.<span style="color:blue;">x</span>;\Components\Python\Examples\SimpleIO\ConsoleOut.py
 
-ですので、これらのファイルをダブルクリックしてみてください。うまく起動しないようでしたらファイルの関連付けが間違っています。
+Try double-clicking these files directly. If they do not start correctly, the file association is incorrect.
 
-#### その他
+#### Other Causes
 
-ホスト名やアドレスの設定の問題で、起動がうまくいかないケースがあります。その場合、利用しているPCのIPアドレスをomniNames.exeに教えてあげるとうまくいくケースがあります。
-環境変数OMNIORB_USEHOSTNAMEを以下のように設定します(以下は自ホストのIPアドレスが192.168.0.11の場合の例)。
+Startup may fail due to host name or address configuration issues. In such cases, operation may succeed if the PC's IP address is provided to omniNames.exe.
 
-```
- 変数名(N): OMNIORB_USEHOSTNAME
- 変数値(V): 192.168.0.11
-```
+Set the environment variable OMNIORB_USEHOSTNAME as follows (the example below assumes the local host IP address is 192.168.0.11).
 
-## rtshell操作
-
-- コマンドラインコンソールを開きます。
-
-- コマンドラインから以下のようにコマンドrtlsを実行し、以下のように表示されることを確認します。
-```
- C:\Users\openrtm>rtls -R 127.0.0.1
- .:
- ConsoleIn0.rtc  ConsoleOut0.rtc
+```text
+Variable name (N): OMNIORB_USEHOSTNAME
+Variable value (V): 192.168.0.11
 ```
 
-- ConsoleInコンポーネントとConsoleOutコンポーネントを接続します。
-```
- rtcon /localhost/ConsoleIn0.rtc:out /localhost/ConsoleOut0.rtc:in
+## Operating rtshell
+
+- Open a command-line console.
+
+- From the command line, execute the rtls command as shown below and confirm that the following output is displayed.
+
+```text
+C:\Users\openrtm>rtls -R 127.0.0.1
+.:
+ConsoleIn0.rtc  ConsoleOut0.rtc
 ```
 
-- ConsoleInコンポーネントとConsoleOutコンポーネントをActivateします。
-```
- rtact /localhost/ConsoleIn0.rtc /localhost/ConsoleOut0.rtc
+- Connect the ConsoleIn component and ConsoleOut component.
+
+```text
+rtcon /localhost/ConsoleIn0.rtc:out /localhost/ConsoleOut0.rtc:in
 ```
 
-- するとConsoleInとConsoleOutのコンソールが以下のように変わり、ConsoleIn側コンソールに"Please Input number:"と表示されます。
+- Activate the ConsoleIn component and ConsoleOut component.
+
+```text
+rtact /localhost/ConsoleIn0.rtc /localhost/ConsoleOut0.rtc
+```
+
+- The ConsoleIn and ConsoleOut consoles will then change as shown below, and "Please Input number:" will be displayed in the ConsoleIn console.
 
 <div align="center"><a href="rtm9-3.png"><img src="rtm9-3.png" width="80%;"></a></div>
 
-- ConsoleInのコンソールから数値を(16bit整数の範囲で)入力しEnterキーを押します。
+- Enter a numerical value (within the range of a 16-bit integer) in the ConsoleIn console and press the Enter key.
 
-- ConsoleOutのコンソールにConsoleInのコンソールで入力した数値が表示されるのを確認します。
-同じ数値が表示されていれば動作は確認できました。
-- 以下のように入力しDeactivateします。
-```
- rtdeact /localhost/ConsoleIn0.rtc /localhost/ConsoleOut0.rtc
-```
-この時ConsoleIn.py側のコンソールに数値を入力しEnterキーを押すことにより、入力待ち状態を解消してください。 その後
-```
- rtexit /localhost/ConsoleIn0.rtc
- rtexit /localhost/ConsoleOut0.rtc
-```
-と入力し、コンソールが閉じることを確認してください。
+- Confirm that the value entered in the ConsoleIn console is displayed in the ConsoleOut console.
+If the same value is displayed, operation has been verified successfully.
 
+- Deactivate the components by entering the following command.
 
--------jp page!!-------
+```text
+rtdeact /localhost/ConsoleIn0.rtc /localhost/ConsoleOut0.rtc
+```
+
+At this time, enter a numerical value in the ConsoleIn.py console and press the Enter key to release the input-waiting state.
+
+Then enter:
+
+```text
+rtexit /localhost/ConsoleIn0.rtc
+rtexit /localhost/ConsoleOut0.rtc
+```
+
+and confirm that the console windows close.

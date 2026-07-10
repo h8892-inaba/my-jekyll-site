@@ -2,7 +2,9 @@
 layout: page
 title: ソースからのビルド (Linux編)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: ソースからのビルド (Linux編) -->
 #contents
@@ -150,4 +152,4 @@ setup.py を使用してビルドします。
 <!-- -OpenRTM-aist-Python-example-1.0.0.tar.gz: サンプル用ソース (gzip 圧縮) -->
 
 
--------jp page!!-------
+

@@ -1,33 +1,29 @@
 ---
 layout: page
-title: インストールおよび起動
+title: Installation and Startup
 ---
--------jp page!!-------
 <!-- Title: インストールおよび起動 -->
 #contents
 
-ここでは、RTSystemEditor のインストールおよび起動について説明します。
+This section explains how to install and start RTSystemEditor.
 
-### RTSystemEditor のインストール
-RTSystemEditor は Eclipse プラグインであるため、 Eclipse 本体および依存している他の Eclipse プラグインをまずインストールする必要があります。
-インストールに関しては、[OpenRTM Eclipse tools のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/openrtm_eclipse_tools_1_1) を参照してください。
+### Installing RTSystemEditor
+Since RTSystemEditor is an Eclipse plugin, you must first install Eclipse itself and the other Eclipse plugins it depends on.
+For installation, see [Installing OpenRTM Eclipse tools]({{ site.baseurl }}/en/doc/installation/install_1_1/openrtm_eclipse_tools_1_1).
 
-### RTSystemEditor の起動
+### Starting RTSystemEditor
 
-1. インストール後、 Eclipse を初めて起動すると、以下のような「ようこそ」画面が表示されます。<br>
-画面左上の「✖」をクリックし、「ようこそ」画面を閉じます。<br><br>
+1. When you start Eclipse for the first time after installation, a "Welcome" screen like the following is displayed.<br>
+Click "✖" at the upper left of the screen to close the "Welcome" screen.<br><br>
 <div align="center"><a href="RTCBuilder1.1.2_021.jpg"><img src="RTCBuilder1.1.2_021.jpg" width="80%;"></a></div>
 <br><br>
-1. 以下の画面で、右上の [パースペクティブを開く] ボタンをクリックします。<br><br>
+1. On the following screen, click the [Open Perspective] button at the upper right.<br><br>
 <div align="center"><a href="RTCBuilder1.1.2_022.jpg"><img src="RTCBuilder1.1.2_022.jpg" width="80%;"></a></div>
 <br><br>
-1. [RT System Editor] を選択し、[OK] ボタンをクリックします。<br><br>
+1. Select [RT System Editor] and click the [OK] button.<br><br>
 <div align="center"><a href="RTCBuilder1.1.2_023.jpg"><img src="RTCBuilder1.1.2_023.jpg" width="50%;"></a></div>
 <br><br>
-1. RTSystemEditor が起動します。<br><br>
+1. RTSystemEditor starts.<br><br>
 <div align="center"><a href="RTCBuilder1.1.2_024.jpg"><img src="RTCBuilder1.1.2_024.jpg" width="80%;"></a></div>
 <br><br>
 
-
-
--------jp page!!-------

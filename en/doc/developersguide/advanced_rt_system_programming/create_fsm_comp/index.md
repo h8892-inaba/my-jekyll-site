@@ -1,77 +1,74 @@
 ---
 layout: page
-title: "FSMコンポーネント作成手順"
+title: "Procedure for Creating an FSM Component"
 
 ---
--------jp page!!-------
 <!-- Title: FSMコンポーネント作成手順 -->
-## RTCBuilderでのコード生成
+## Code Generation with RTCBuilder
 
-まずは通常のRTC作成手順と同じくプロジェクトの作成、モジュール名の設定、言語の設定(C++)を行います。
+First, create a project, set the module name, and set the language (C++) in the same way as the normal RTC creation procedure.
 
-次にFSMタブからFSMのチェックボックスをオンにします。
-さらに新規作成ボタンを押してGUIエディタを起動します。
+Next, turn on the FSM checkbox from the FSM tab.
+Then press the New button to start the GUI editor.
 
 <div align="center"><a href="fsm1.png"><img src="fsm1.png" width="30%;"></a></div>
 
 
-起動したエディタで右クリックして**Add node**を選択する。
+Right-click in the editor that starts and select **Add node**.
 
 <div align="center"><a href="fsm2.png"><img src="fsm2.png" width="30%;"></a></div>
 
-作成したノードを右クリックして**Edit node**を選択します。
+Right-click the created node and select **Edit node**.
 
 <div align="center"><a href="fsm3.png"><img src="fsm3.png" width="30%;"></a></div>
 
-**State Name**を適当な名前に変更します。
+Change **State Name** to an appropriate name.
 
 <div align="center"><a href="fsm4.png"><img src="fsm4.png" width="30%;"></a></div>
 
-同様の手順でノードを複数作成します。
-以下の図ではToggle Initial、Toggle finalを設定しているノードがありますが、この設定により生成するコードは変化しないようです。
+Create multiple nodes by following the same procedure.
+In the figure below, there are nodes where Toggle Initial and Toggle final are set, but this setting does not seem to change the generated code.
 
 <div align="center"><a href="fsm8.png"><img src="fsm8.png" width="30%;"></a></div>
 
-一部のノードは**On Entry**、**On Exit**をオンにしてください。
+For some nodes, turn on **On Entry** and **On Exit**.
 
 <div align="center"><a href="fsm7.png"><img src="fsm7.png" width="30%;"></a></div>
 
-またノードからノードへドラッグアンドドロップすることで状態遷移を定義します。
+You can also define state transitions by dragging and dropping from one node to another.
 
 <div align="center"><a href="fsm8-2.png"><img src="fsm8-2.png" width="30%;"></a></div>
 
-エディタを閉じます。
+Close the editor.
 
 <div align="center"><a href="fsm10.png"><img src="fsm10.png" width="30%;"></a></div>
 
-その後、コード生成を行います。
+After that, generate the code.
 
 <div align="center"><a href="fsm11.png"><img src="fsm11.png" width="30%;"></a></div>
 
 
-## RTCのビルド
-ビルドにはOpenRTM-aist 2.0が必要です。
-以下の手順でOpenRTM-aistでビルドしてください。
+## Building the RTC
+OpenRTM-aist 2.0 is required for the build.
+Build with OpenRTM-aist by following the procedure below.
 
-- [https://openrtm.org/openrtm/ja/content/cmake_build_rtm](https://openrtm.org/openrtm/ja/content/cmake_build_rtm)
+- [https://openrtm.org/openrtm/en/content/cmake_build_rtm](https://openrtm.org/openrtm/en/content/cmake_build_rtm)
 
-その後、INSTALLのプロジェクトをビルドして適当な場所にインストールしてください。
-インストールする場所を変更するためにはCMAKE_INSTALL_PREFIXのオプションを変更します。
+After that, build the INSTALL project and install it in an appropriate location.
+To change the installation location, change the CMAKE_INSTALL_PREFIX option.
 
-RTCのコードを生成したフォルダで以下のコマンドを実行します。
+Run the following commands in the folder where the RTC code was generated.
 
 ```
  mkdir build
  cd build
- set OPENRTM_DIR={OpenRTM-aistをインストールしたディレクトリ}\2.0.0\cmake\
+ set OPENRTM_DIR={directory where OpenRTM-aist is installed}\2.0.0\cmake\
  cmake -G "Visual Studio 15 2017" -A x64 ..
  cmake --build . --config Release
 ```
 
-## コードの編集
-執筆中
+## Editing the Code
+Under writing
 
-## 動作確認手順
+## Operation Check Procedure
 
-
--------jp page!!-------

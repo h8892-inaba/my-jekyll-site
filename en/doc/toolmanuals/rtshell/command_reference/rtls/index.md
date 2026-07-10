@@ -2,40 +2,39 @@
 layout: page
 title: rtls
 ---
--------jp page!!-------
 
 <!-- Title: rtls -->
 
-## 書式
+## Format
 ```
 rtls [OPTION ...] [PATH]
 ```
 
-## 概要
-RTCツリーのディレクトリにあるオブジェクトをリストします。デフォルトは現在のワーキングディレクトリをリストします。
+## Overview
+Lists objects in a directory of the RTC tree. By default, it lists the current working directory.
 
-ロング形式の表示では、以下の項目も表示します。
+In long-format display, the following items are also displayed.
 ```
- ステート
- ポートの数/接続されたポートの数
- インポートの数/接続されたインポートの数
- アウトポートの数/接続されたアウトポートの数
- サービスポートの数/接続されたサービスポートの数
- 名前
-```
-
-## オプション(OPTION)
-```
- -l　　　詳細な情報を表示します
- -R、--recurse
- 　　　　　　サブツリーの情報も表示します。
- --version　プログラムのバージョン番号を表示します
- -h、--help	ヘルプを表示します
- -v、--verbose	より詳細な情報を出力します
+ State
+ Number of ports/number of connected ports
+ Number of InPorts/number of connected InPorts
+ Number of OutPorts/number of connected OutPorts
+ Number of service ports/number of connected service ports
+ Name
 ```
 
-### -lオプションで表示されるフィールドの意味
-- lオプションを使用した場合、例えば、以下のように表示されます:
+## Options (OPTION)
+```
+ -l　　　Displays detailed information.
+ -R, --recurse
+ 　　　　　　Displays information for subtrees as well.
+ --version　Displays the program version number.
+ -h, --help	Displays help.
+ -v, --verbose	Outputs more detailed information.
+```
+
+### Meaning of the Fields Displayed with the -l Option
+- When the l option is used, output such as the following is displayed:
 ```
  C:\>rtls -l /localhost/OPENRTM-AIS57CA.host_cxt
  Active    0/0  0/0  0/0  0/0  ConfigSample0.rtc
@@ -43,116 +42,113 @@ RTCツリーのディレクトリにあるオブジェクトをリストしま�
  Inactive  1/0  1/0  0/0  0/0  ConsoleOut0.rtc
 ```
 
-ここで、表示される各行は
+Here, each displayed line is
 
 ```
  STATE  AP/APC　IP/IPC　OP/OPC  SP/SPC NAME
 ```
 
-となり、それぞれは以下の意味を持ちます:
+and each field has the following meaning:
 - STATE
-  - Active、Inactive、Errorのどれかのコンポーネントの状態が表示されます。
+  - Displays the component state, which is one of Active, Inactive, or Error.
 - APN/APC
-  - ポートの総数/接続しているポートの数
+  - Total number of ports/number of connected ports
 - IP/IPC
-  - 入力ポートの総数/接続している入力ポートの数
+  - Total number of input ports/number of connected input ports
 - OP/OPC
-  - 出力ポートの総数/接続している出力ポートの数
+  - Total number of output ports/number of connected output ports
 - SP/SPC
-  - サービスポートの総数/接続しているサービスポートの数
+  - Total number of service ports/number of connected service ports
 - NAME
-  - ノードの名前(RTC名など)
+  - Node name, such as the RTC name
 
 
-## パス
-rtshellはパスでRTCツリーのオブジェクトを示します。ネームサーバーとネームコンテクストはディレクトリ名として指定され、マネージャとRTコンポーネントはファイル名として指定されます。コマンドに渡したパスはrtshellの現在の作業ディレクトリを元に指定されます。(相対パスの場合)。rtshellの現在の作業ディレクトリはRTCSH_CWDという環境変数に保存されて、rtcwdというコマンドで変更できます。(現時点でrtcwdコマンドはLinux環境では動作していません)
+## Paths
+rtshell indicates objects in the RTC tree using paths. Name servers and name contexts are specified as directory names, and managers and RT Components are specified as file names. Paths passed to commands are specified based on the current working directory of rtshell (for relative paths). The current working directory of rtshell is stored in an environment variable named RTCSH_CWD, and can be changed with the rtcwd command. (At present, the rtcwd command does not work in Linux environments.)
 
-利用できるパスはコマンド実行時に参照しているネームサーバーによって変わります。ネームサーバーが実行されているホスト名はRTCTREE_NAMESERVERSという環境変数で指定できます。また、直接ルート直下のパスとして/<ホスト名>/....のような形でネームサーバーが実行されているホストを指定できます。
+Available paths depend on the name servers referenced when commands are executed. The host name where a name server is running can be specified with the RTCTREE_NAMESERVERS environment variable. You can also specify the host where a name server is running directly as a path under the root, such as /<host name>/....
 
-例えば、/localhost/comp0.rtcはlocalhostにあるネームサーバーに登録されたcomp0.rtcというRTコンポーネントを示します。/localhost/manager/comp0.rtcはlocalhostにあるネームサーバーの下のmanagerというディレクトリに登録されたcomp0.rtcというRTコンポーネントを示します。./comp0.rtcは現在の作業ディレクトリにあるcomp0.rtcというRTコンポーネントを示します。
+For example, /localhost/comp0.rtc indicates an RT Component named comp0.rtc registered with the name server on localhost. /localhost/manager/comp0.rtc indicates an RT Component named comp0.rtc registered in a directory named manager under the name server on localhost. ./comp0.rtc indicates an RT Component named comp0.rtc in the current working directory.
 
-RTコンポーネントのポートを示す場合、パスの後にコロン（「:」）で区切って指定します。例えば、/localhost/comp0.rtc:dataはcomp0.rtcというRTコンポーネントのdataというポートを意味します。
+To indicate a port of an RT Component, specify it after the path separated by a colon (":"). For example, /localhost/comp0.rtc:data means the port named data of the RT Component named comp0.rtc.
 
-新しいポートを作れるコマンドもあり、この場合、オプションでそれらをパスに追加できます。使えるオプションは作られるポートの名前とフォーマッタです。指定方法は以下の通りです:
+Some commands can create new ports. In this case, you can add them to the path with options. The available options are the name of the created port and the formatter. Specify them as follows:
 
 ```
  <path>:<port>.<new_port_name>#<formatter>
 ```
 
-### 例:
+### Example:
 ```
  /localhost/blurg.host_cxt/comp0.rtc:input.stuff#a_printer
 ```
 
-新たに作られるポートの名前はstuffで、データはa_printerという関数(フォーマッター)でターミナルに表示するように指定しています。(a_printerの関数はPythonが利用可能な場所に存在する必要があります。普通はユーザーがモジュールで提供します)。作られたポートはcomp0.rtcのinputというポートに接続されます。
+This specifies that the name of the newly created port is stuff, and that the data is displayed on the terminal using a function (formatter) named a_printer. (The a_printer function must exist somewhere Python can use it. Normally, the user provides it in a module.) The created port is connected to the input port of comp0.rtc.
 
-`<new_port_name>`という部分は必須ではありません。指定しない場合は"."も指定しないでください。例:
+The `<new_port_name>` part is not required. If it is not specified, do not specify "." either. Example:
 
 ```
  /localhost/blurg.host_cxt/comp0.rtc:input#a_printer
 ```
 
-`<formatter>`という部分は必須ではありません。書いていない場合は"."も指定しないでください。例:
+The `<formatter>` part is not required. If it is not written, do not specify "." either. Example:
 
 ```
  /localhost/blurg.host_cxt/comp0.rtc:input.stuff
 ```
 
-## 環境変数
+## Environment Variables
 - **RTCTREE_ORB_ARGS**
-  - ORBを作る時に渡す変数です。セミコロンで区切ります。必須ではありません。
+  - Variables passed when creating the ORB. Separate them with semicolons. This is not required.
 - **RTCTREE_NAMESERVERS**
-  - RTCツリーを作る時に参照するネームサーバーのアドレスです。アドレスをセミコロンで区切ります。リストされたアドレスはRTCツリーに追加されrtshellで参照できるようになります。ルート下のディレクトリ名としてパスで指定することもできるので必須ではありません。
+  - Addresses of name servers referenced when creating the RTC tree. Separate addresses with semicolons. The listed addresses are added to the RTC tree and can be referenced by rtshell. This is not required because they can also be specified as directory names under the root in paths.
 - **RTSH_CWD**
-  - rtshellの現在のワーキングディレクトリ。rtshellが自動的に設定します。設定しないでください。
+  - The current working directory of rtshell. rtshell sets it automatically. Do not set it manually.
 
-一般的な利用ではユーザーが設定する変数はRTCTREE_NAMESERVERSのみです。よく使うネームサーバーを設定しておくと便利です。例えば、Bashシェルの場合、以下のコマンドはlocalhostとポート192.168.0.1:65346およびホストexample.comにあるネームサーバーをrtshellが参照できるようにします。
+In typical use, the only variable that users set is RTCTREE_NAMESERVERS. It is convenient to set frequently used name servers. For example, in the Bash shell, the following command allows rtshell to reference name servers on localhost, port 192.168.0.1:65346, and host example.com.
 
 ```
  $ export RTCTREE_NAMESERVERS=localhost;192.168.0.1:65346;example.com
 ```
 
 
-## 返り値
-成功の場合はゼロを返します。失敗の場合はゼロではない値を返します。
+## Return Values
+Returns zero on success. Returns a non-zero value on failure.
 
-デバッグ情報とエラーはstderrに出力されます。
+Debug information and errors are output to stderr.
 
-## 例
-- 現在のワーキングディレクトリにあるオブジェクトを表示します。
+## Examples
+- Displays objects in the current working directory.
 ```
  $ rtls
 ```
 
-- RTCツリーのルートディレクトリをリストします。このコマンドはネームサーバーを表示します。
+- Lists the root directory of the RTC tree. This command displays name servers.
 ```
  $ rtls /
 ```
 
-- localhostネームサーバーに登録されているオブジェクトをリストします。
+- Lists objects registered with the localhost name server.
 ```
  $ rtls /localhost
 ```
 
-- localhostネームサーバーに登録されたすべてのオブジェクトをリストします。
+- Lists all objects registered with the localhost name server.
 ```
  $ rtls -R /localhost
 ```
 
-- localhostネームサーバーの登録されたオブジェクトの詳細な情報をリストします。コンポーネントのステートなどを見ることが可能です。
+- Lists detailed information about objects registered with the localhost name server. It is possible to view component states and other information.
 ```
  $ rtls -l /localhost
 ```
 
-- localhostネームサーバーに登録されたすべてのオブジェクトの詳細な情報をリストします。
+- Lists detailed information about all objects registered with the localhost name server.
 ```
  $ rtls -lR /localhost
 ```
 
-- 1秒ごとに現在のワーキングディレクトリのコンポーネントの状態を表示します。(POSIX環境のみ)
+- Displays the state of components in the current working directory every second. (POSIX environments only)
 ```
  $ watch -n 1 rtls -l
 ```
-
-
--------jp page!!-------

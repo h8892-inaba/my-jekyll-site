@@ -1,24 +1,23 @@
 ---
 layout: page
-title: VPNを利用したRTMネットワーク設定方法
+title: RTM Network Setup Method Using VPN
 ---
--------jp page!!-------
 
 <!-- Title: VPNを利用したRTMネットワーク設定方法 -->
 #contents
 
-OpenRTM-aist を利用していると、ルーター・Firewall や NAT の内と外の RTC 同士を接続したい場合があります。
-NAT の設定を自分で変えることができる場合、NAT のポートフォワーディング機能を利用し、rtc.conf の [corba.alternate_iiop_addresses](http://www.openrtm.org/openrtm/ja/content/rtcconf_reference_ja#toc23) オプションを指定することで NA T内外の RTC 同士を連携させることも可能です。
-しかし、RTC の数だけポートフォワーディングの設定が必要であり、また自分で設定できない NAT や会社や学校の Firewall に対してはこの方法を利用できません。
+When using OpenRTM-aist, there may be cases where you want to connect RTCs inside and outside a router, firewall, or NAT.
+If you can change the NAT settings yourself, it is also possible to make RTCs inside and outside NAT work together by using the NAT port forwarding function and specifying the [corba.alternate_iiop_addresses](http://www.openrtm.org/openrtm/ja/content/rtcconf_reference_ja#toc23) option in rtc.conf.
+However, port forwarding settings are required for each RTC, and this method cannot be used for NATs that you cannot configure yourself or for company or school firewalls.
 
-そこで、VPN により仮想ネットワークを構築し RTC 間の通信をすべて VPN で行うことにより、Firewall などがあってもその内外の RTC 同士を連携させることができます。
-このドキュメントでは VPN 仮想ネットワークを構築しそこを介してRTC同士を接続する方法を述べます。
+Therefore, by constructing a virtual network using VPN and performing all communication between RTCs over the VPN, RTCs inside and outside firewalls and similar environments can work together.
+This document describes how to construct a VPN virtual network and connect RTCs through it.
 
-## VPN サーバーの設定 (Linux)
+## VPN Server Setup (Linux)
 
-### pptpd のインストール
+### Installing pptpd
 
-まずはじめに VPN サーバー PPTPDをインストールします。Ubuntu や Debian などではパッケージが提供されていますので、以下のように apt-get でインストールできます。
+First, install the VPN server PPTPD. Packages are provided for Ubuntu, Debian, and similar systems, so you can install it with apt-get as follows.
 
 ```
  $ sudo apt-get install pptpd
@@ -29,16 +28,16 @@ NAT の設定を自分で変えることができる場合、NAT のポートフ
  Starting PPTP Daemon: pptpd.
 ```
 
-### pptpd.confの設定
+### Configuring pptpd.conf
 
-次に/etc/pptpd.confを編集し pptpd サーバーの設定を行います。
+Next, edit /etc/pptpd.conf and configure the pptpd server.
 
 ```
 $ sudo vi /etc/pptpd.conf
 ```
 
-viなどのエディタで pptpd.conf を開き、設定ファイル下にある localip,、remoteip を設定します。
-以下では最後の2行に localipとして 192.168.22.1、remoteip として 192.168.22.10-100 を設定しています。
+Open pptpd.conf with an editor such as vi, and set localip and remoteip near the bottom of the configuration file.
+In the following example, the last two lines set 192.168.22.1 as localip and 192.168.22.10-100 as remoteip.
 
 ```
  [/etc/pptpd.confファイル］
@@ -51,48 +50,48 @@ viなどのエディタで pptpd.conf を開き、設定ファイル下にある
  remoteip 192.168.22.10-100
 ```
 
-ここに設定するアドレスは基本的に現在使用していないネットワークおよびIPアドレスを指定してください。
-この例では外部から接続してきたクライアントには192.168.22.10～100までのアドレスを付与します。
+For the addresses set here, basically specify a network and IP addresses that are not currently being used.
+In this example, clients connecting from outside are assigned addresses from 192.168.22.10 to 100.
 
 
 
-### ネットワーク構成
+### Network Configuration
 
-通常 VPN クライアントに対してはサーバーは適当なIPアドレスを割り振るように設定することが多いようですが、RTM ネットワークとして設定する場合、クライアント PC の IPアドレスを固定に設定したほうが RTC の設定もやりやすくなります。
+Usually, VPN servers are often configured to assign appropriate IP addresses to VPN clients, but when configuring an RTM network, it is easier to configure RTCs if the IP addresses of client PCs are fixed.
 
-ここでは、RTM 用のネットワーク設定として以下のものを想定します。
+Here, the following network settings are assumed for the RTM network.
 
 <table class="table-alt">
   <tr>
-    <th>PC名</th>
-    <th>IPアドレス</th>
-    <th>備考</th>
+    <th>PC name</th>
+    <th>IP address</th>
+    <th>Remarks</th>
   </tr>
   <tr>
     <td>PC0</td>
     <td>192.168.22.1</td>
-    <td>VPN サーバー, CORBA ネームサーバー</td>
+    <td>VPN server, CORBA name server</td>
   </tr>
   <tr>
     <td>PC1</td>
     <td>192.168.22.10</td>
-    <td>RTC が動作する PC</td>
+    <td>PC on which RTCs run</td>
   </tr>
   <tr>
     <td>PC2</td>
     <td>192.168.22.11</td>
-    <td>RTC が動作する PC</td>
+    <td>PC on which RTCs run</td>
   </tr>
   <tr>
     <td>PC3</td>
     <td>192.168.22.12</td>
-    <td>RTC が動作する PC</td>
+    <td>PC on which RTCs run</td>
   </tr>
 </table>
 
-### /etc/ppp/chap-secretsの設定
+### Configuring /etc/ppp/chap-secrets
 
-上記のネットワーク構成を踏まえたうえで、次に PPTP 接続用のユーザID、パスワードを /etc/ppp/chap-secrets ファイルに設定します。
+Based on the above network configuration, next set the user IDs and passwords for PPTP connections in the /etc/ppp/chap-secrets file.
 
 
 ```
@@ -106,46 +105,46 @@ viなどのエディタで pptpd.conf を開き、設定ファイル下にある
  pc3 pptpd openrtm1 192.168.22.12
 ```
 
-ここでは client（ユーザーID）としてpc1, pc2, pc3を定義し、serverにpptpd、secret（パスワード）にopenrtm1, openrtm2, openrtm3、IP address（クライアントに割り振るIPアドレス）は上で決めた IPアドレスを設定しています。
+Here, pc1, pc2, and pc3 are defined as clients (user IDs), pptpd is set as the server, openrtm1, openrtm2, and openrtm3 are set as the secrets (passwords), and the IP addresses decided above are set as the IP addresses to be assigned to the clients.
 
-### サーバーの再起動
+### Restarting the Server
 
-以上ができたら、pptpd を再起動します。
+After completing the above, restart pptpd.
 
 ```
  $ sudo /etc/init.d/pptpd restart
 ```
 
 
-## VPN クライアントの設定(Linux)
+## VPN Client Setup (Linux)
 
-VPN クライアントの設定を行います。Linux の場合は、サーバー同様にまず pptpd をインストールします。
+Configure the VPN client. For Linux, install pptpd first, just as on the server.
 
-### エントリの作成
+### Creating an Entry
 
-VPN 接続する際の設定情報を pptpsetup コマンドを利用して作成します。
+Create the configuration information for connecting to the VPN using the pptpsetup command.
 
 ```
  $ sudo pptpsetup --create pc1 --server pc0.mydomain --username pc1 --password openrtm1 --encrypt
 ```
 
-コマンドの引数の意味は以下の通りです。
+The meanings of the command arguments are as follows.
 
-- **pc1:** エントリ名
-- **--server pc0.mydomain:** VPN サーバーの指定
-- **--username pc1:** 上記で設定したユーザー名 **pc1**
-- **--password openrtm1:** 上記で設定したパスワード **openrtm1**
-- ''--encrypt::' 暗号化オプション
+- **pc1:** Entry name
+- **--server pc0.mydomain:** Specify the VPN server
+- **--username pc1:** The user name **pc1** configured above
+- **--password openrtm1:** The password **openrtm1** configured above
+- ''--encrypt::' Encryption option
 
-### サーバーへの接続
+### Connecting to the Server
 
-VPN サーバーへの接続は pppd コマンドを使って以下のように行います。
+Connect to the VPN server using the pppd command as follows.
 
 ```
  $ sudo pppd call pc1
 ```
 
-これでVPN サーバーに接続されます。IPアドレスが上で設定したpc1のアドレス(192.168.22.10) 確認してみます。
+This connects to the VPN server. Check whether the IP address is the pc1 address set above (192.168.22.10).
 
 ```
  $ ifconfig ppp0
@@ -159,27 +158,27 @@ VPN サーバーへの接続は pppd コマンドを使って以下のように�
            RXバイト:62 (62.0 B)  TXバイト:68 (68.0 B)
 ```
 
-上で設定したIPアドレス 192.168.22.10 が割り当てられていることが確認できました。
+You can confirm that the IP address 192.168.22.10 set above has been assigned.
 
-### ルーティングの設定
+### Routing Settings
 
-以上の操作で pc1と pc0の間に VPN トンネルができました。従って、pc1からはpc0に対して192.168.22.1というIPアドレスがアクセス可能です。
-しかし、VPN サーバーに接続された他のクライアントには到達できません。PC2 (192.168.22.11) を VPN 接続した状態で ping を打ってみます。
+With the above operations, a VPN tunnel has been created between pc1 and pc0. Therefore, from pc1, pc0 is accessible using the IP address 192.168.22.1.
+However, other clients connected to the VPN server cannot be reached. Try pinging PC2 (192.168.22.11) while it is connected to the VPN.
 
 ```
  $ ping 192.168.22.11
  PING 192.168.22.11 (192.168.22.11) 56(84) bytes of data.
 ```
 
-このように表示され止まってしまいます。Ctrl+Cで抜けてください。
+It stops after displaying this. Exit with Ctrl+C.
 
-VPN クライアント間で通信できるようにルーティングを設定します。
+Set routing so that VPN clients can communicate with each other.
 
 ```
  $ sudo route add -net 192.168.22.0 gw 192.168.22.1 netmask 255.255.255.0
 ```
 
-再度 ping を打って確かめます。
+Ping again to check.
 
 ```
  $ ping 192.168.22.11
@@ -193,119 +192,119 @@ VPN クライアント間で通信できるようにルーティングを設定�
  rtt min/avg/max/mdev = 29.868/36.146/46.203/7.185 ms
 ```
 
-これで、別のクライアントにも到達できるようになりました。
+Now you can reach another client as well.
 
-### VPN の切断
+### Disconnecting the VPN
 
-VPN から切断するときは pkill を使ってpptpのプロセスをkillします。
+When disconnecting from the VPN, use pkill to kill the pptp process.
 
 ```
  $ sudo pkill pptp
 ```
 
-## VPN クライアントの設定(Windows)
+## VPN Client Setup (Windows)
 
-Widnows では標準で VPN が組み込まれており、ウィザードを利用して簡単に VPN をセットアップすることができます。
+In Windows, VPN is built in by default, and you can easily set up a VPN using the wizard.
 
-### VPN 設定ウィザード
+### VPN Setup Wizard
 
-まず、コントロールパネルから「ネットワークと共有センター」を開きます。
-「ネットワーク設定の変更」→「新しい接続またはネットワークのセットアップ」をクリックします。
+First, open "Network and Sharing Center" from the Control Panel.
+Click "Change your networking settings" → "Set up a new connection or network".
 
 <div align="center"><a href="vpn_windows_00.png"><img src="vpn_windows_00.png" width="80%;"></a></div>
-<div align="center"><strong>ネットワークと共有センター</strong></div>
+<div align="center"><strong>Network and Sharing Center</strong></div>
 
-すると、以下の画面「接続またはネットワークのセットアップ」に遷移します。ここで [職場に接続します] をクリックし [次へ] ボタンをクリックします。
+The following "Set Up a Connection or Network" screen appears. Click [Connect to a workplace] here, then click the [Next] button.
 
 <div align="center"><a href="vpn_windows_01.png"><img src="vpn_windows_01.png" width="80%;"></a></div>
-<div align="center"><strong>接続またはネットワークのセットアップ</strong></div>
+<div align="center"><strong>Set Up a Connection or Network</strong></div>
 
-次に新規接続を作成します。上のラジオボタン「いいえ、新しい接続を作成します」を選択し [次へ] ボタンをクリックします。
+Next, create a new connection. Select the upper radio button "No, create a new connection" and click the [Next] button.
 
 <div align="center"><a href="vpn_windows_02.png"><img src="vpn_windows_02.png" width="80%;"></a></div>
-<div align="center"><strong>職場への接続(1)：新しい接続の作成</strong></div>
+<div align="center"><strong>Connect to a Workplace (1): Creating a New Connection</strong></div>
 
-次に接続方法を選びます。ここでは VPN を選択してください。
+Next, choose the connection method. Select VPN here.
 
 <div align="center"><a href="vpn_windows_03.png"><img src="vpn_windows_03.png" width="80%;"></a></div>
-<div align="center"><strong>職場への接続(2)：VPN の使用</strong></div>
+<div align="center"><strong>Connect to a Workplace (2): Using VPN</strong></div>
 
-次に VPN サーバーのアドレスと接続名を入力します。VPN のサーバー名または IPアドレスを入力してください。接続先の名前は接続を他と区別するためにつける名前です。ここでは RTM-VPN としました。
+Next, enter the VPN server address and connection name. Enter the VPN server name or IP address. The destination name is a name used to distinguish this connection from others. Here, it is set to RTM-VPN.
 
 <div align="center"><a href="vpn_windows_04.png"><img src="vpn_windows_04.png" width="80%;"></a></div>
-<div align="center"><strong>職場への接続(3)：サーバーアドレスの設定</strong></div>
+<div align="center"><strong>Connect to a Workplace (3): Setting the Server Address</strong></div>
 
-次にユーザー名とパスワードを入力します。サーバー上で設定したユーザー名とパスワードを入力します。ここでは pc2/openrtm2 を設定しています。最後に [接続] ボタンをクリックして接続します。
+Next, enter the user name and password. Enter the user name and password configured on the server. Here, pc2/openrtm2 is set. Finally, click the [Connect] button to connect.
 
 <div align="center"><a href="vpn_windows_05.png"><img src="vpn_windows_05.png" width="80%;"></a></div>
-<div align="center"><strong>職場への接続(4)：ユーザー名とパスワードの入力</strong></div>
+<div align="center"><strong>Connect to a Workplace (4): Entering the User Name and Password</strong></div>
 
-接続には10数秒程度かかります。
+Connection takes about 10 or more seconds.
 
 <div align="center"><a href="vpn_windows_06.png"><img src="vpn_windows_06.png" width="80%;"></a></div>
-<div align="center"><strong>職場への接続(5)：接続中</strong></div>
+<div align="center"><strong>Connect to a Workplace (5): Connecting</strong></div>
 
-接続が完了すると以下の画面になります。
+When the connection is complete, the following screen appears.
 
 <div align="center"><a href="vpn_windows_07.png"><img src="vpn_windows_07.png" width="80%;"></a></div>
-<div align="center"><strong>職場への接続(6)：接続完了</strong></div>
+<div align="center"><strong>Connect to a Workplace (6): Connection Complete</strong></div>
 
-### ルーティングの設定
+### Routing Settings
 
-上述の Linux の場合と同様に、ルーティングの設定をする必要があります。
+As in the Linux case described above, routing settings must be configured.
 
-まず、コマンドプロンプトを管理者権限で開きます。
-スタートメニューの「プログラムとファイルの検索」に **cmd** と入力し Ctrl+Shift+Enter を押します。
-画面全体が暗くなりユーザーアカウント制御のダイアログが現れますので [はい] をクリックして続けます。
+First, open Command Prompt with administrator privileges.
+Enter **cmd** in "Search programs and files" in the Start menu and press Ctrl+Shift+Enter.
+The entire screen darkens and the User Account Control dialog appears, so click [Yes] to continue.
 
 ```
  C:\> route add 192.168.22.0 mask 255.255.255.0 192.168.22.1
 ```
 
-ipconfig コマンドで VPN のアドレスが 192.168.22.11 になっていることを確認します。
+Use the ipconfig command to confirm that the VPN address is 192.168.22.11.
 
 ```
  C:\> ipconfig
 ```
 
-さらに、もう一つのクライアント pc1 に対して ping を打ってみます。
+Furthermore, try pinging another client, pc1.
 
 ```
  C:\ ping 192.168.22.11
 ```
 
-これで ping が通っていれば VPN 接続成功です。
+If the ping succeeds, the VPN connection has succeeded.
 
-### VPNの接続・切断
+### Connecting and Disconnecting the VPN
 
-VPN の切断は「ネットワークと共有センター」から右の「アダプタの設定の変更」を選択します。
+To disconnect the VPN, select "Change adapter settings" on the right side of "Network and Sharing Center".
 
 <div align="center"><a href="vpn_windows_00.png"><img src="vpn_windows_00.png" width="80%;"></a></div>
-<div align="center"><strong>ネットワークと共有センター</strong></div>
+<div align="center"><strong>Network and Sharing Center</strong></div>
 
-アダプタの一覧の中に RTM-VPN がありますので、右クリックで「切断」を選ぶと切断できます。
-再度接続する場合もこの画面から RTM－VPN を右クリックし「接続」を選ぶことで接続できます。
+RTM-VPN appears in the list of adapters, and you can disconnect by right-clicking it and selecting "Disconnect".
+To connect again, you can also right-click RTM-VPN on this screen and select "Connect".
 
 <div align="center"><a href="vpn_windows_08.png"><img src="vpn_windows_08.png" width="80%;"></a></div>
-<div align="center"><strong>アダプタの設定の変更</strong></div>
+<div align="center"><strong>Change Adapter Settings</strong></div>
 
-## RTC等の設定
+## Settings for RTCs and Other Components
 
-以上の設定で VPN ネットワークが構成できました。このネットワーク上で RTC を動作させるための設定を行います。
+With the above settings, the VPN network has been configured. Next, configure the settings for running RTCs on this network.
 
-### ネームサーバー
+### Name Server
 
-ネームサーバーは VPN サーバーと同じ pc0 上で動作させることになっていました。
-VPN 接続後 rtm-naming コマンドでネームサーバーを再起動します。
+The name server is assumed to run on pc0, the same PC as the VPN server.
+After connecting to the VPN, restart the name server with the rtm-naming command.
 
 ```
  $ rtm-naming
 ```
 
-### RTCの設定 (rtc.conf)
+### RTC Settings (rtc.conf)
 
 
-VPN サーバー(pc0)または VPN クライアント(pc1,pc2,pc3)上で RTC を動作させる場合は、以下のように endpoint を設定します。
+When running RTCs on the VPN server (pc0) or VPN clients (pc1, pc2, pc3), set the endpoint as follows.
 
 ```
  [pc0用のrtc.conf]
@@ -331,12 +330,12 @@ VPN サーバー(pc0)または VPN クライアント(pc1,pc2,pc3)上で RTC を
  corba.endpoints: 192.168.22.12
 ```
 
-これで、すべてのRTC間通信はVPNを通じて行われます。
+With this, all communication between RTCs is performed through the VPN.
 
-## パフォーマンス
+## Performance
 
-VPN 接続経由で通信すると、通常よりもパフォーマンスが低下する場合があります。
-パフォーマンスを上げる方法に関してはここでは詳しく述べませんが、簡単なベンチマークとしてカメラコンポーネントとビューアコンポーネントで画像の転送を行った場合のパフォーマンスの例を挙げます。
+When communicating through a VPN connection, performance may be lower than usual.
+This section does not describe in detail how to improve performance, but as a simple benchmark, it gives an example of performance when transferring images using a camera component and a viewer component.
 
 - pc0
   - Ubuntu 10.04 x86_64
@@ -359,9 +358,9 @@ VPN 接続経由で通信すると、通常よりもパフォーマンスが低�
 <table class="table-alt">
   <tr>
     <th></th>
-    <th>通常</th>
-    <th>暗号化あり</th>
-    <th>暗号化なし</th>
+    <th>Normal</th>
+    <th>With encryption</th>
+    <th>Without encryption</th>
   </tr>
   <tr>
     <td>pc1->pc2 (VGA)</td>
@@ -377,7 +376,6 @@ VPN 接続経由で通信すると、通常よりもパフォーマンスが低�
   </tr>
 </table>
 
-暗号化ありの場合と無しの場合では約倍程度の速度の差がありますが、いずれの場合も通常の通信時に比べ1/10～1/20程度の速度になっていることがわかります。
-Windows の VPN が特に遅いという報告もありますが、詳細は不明です。
+There is roughly a twofold difference in speed between the encrypted and unencrypted cases, but in both cases, the speed is about 1/10 to 1/20 compared with normal communication.
+There are also reports that Windows VPN is particularly slow, but the details are unknown.
 
--------jp page!!-------

@@ -1,41 +1,40 @@
 ---
 layout: page
-title: "RTCプログラミングの流れ"
+title: "RTC Programming Flow"
 ---
--------jp page!!-------
 
 <!-- Tilte: RTCプログラミングの流れ -->
 #contents(4)
 #clear
 
-## RTC プログラミングの流れ
-OpenRTM-aist は、コンポーネントを開発したいユーザー(コンポーネントデベロッパ) が持つ既存のソフトウエア資産、あるいは新たに作成したソフトウエアを容易に RTコンポーネント(RTC)化するためのフレームワークを提供します。
-コンポーネント作成の大まかな流れは下図のようになります。
+## RTC Programming Flow
+OpenRTM-aist provides a framework that allows users who want to develop components (component developers) to easily turn existing software assets or newly created software into RT Components (RTCs).
+The general flow of component creation is shown in the figure below.
 
 <br>
 <div align="center"><a href="ComponentDevelFlow.png"><img src="ComponentDevelFlow.png" width="70%;"></a></div>
-<div align="center"><strong>RTコンポーネントの開発フロー</strong></div>
+<div align="center"><strong>RT Component Development Flow</strong></div>
 <br>
 
-コンポーネントデベロッパーは、既存のソフトウエア資産のライブラリ関数・クラスライブラリ等をコンポーネントフレームワークに埋め込みコンポーネントを作成します。
-こうすることで、既存のソフトウエア資源をソフトウエア部品である RTコンポーネントとして作成しておき、様々な場面で再利用することができるようになります。
-作成された RTコンポーネントは、ネットワーク上の適切な場所に配置して、分散オブジェクトとしてネットワーク上の任意の場所から利用することができます。 
+Component developers create components by embedding library functions, class libraries, and other existing software assets into the component framework.
+By doing this, existing software resources can be created as RT Components, which are software parts, and reused in various situations.
+The created RT Components can be placed at appropriate locations on the network and used as distributed objects from anywhere on the network. 
 
-図に示すように、RTコンポーネントフレームワークに則って作成された RTコンポーネントは大きく分けて2つのバイナリファイルとして作成することができます。
-スタンドアロン RTコンポーネント (Standalone RT-Component) は、単一ファイルでそのまま実行できる実行形式のバイナリです。
-ローダブルモジュール RTコンポーネント (Loadable Module RT-Component) は動的にロード可能なローダブルモジュール形式のバイナリファイルです。 
-RTコンポーネントはこれらの2つの形式で作成、配布、実行することができます。 
+As shown in the figure, RT Components created according to the RT Component framework can be broadly created as two types of binary files.
+A Standalone RT-Component is an executable binary that can be run as a single file.
+A Loadable Module RT-Component is a binary file in a dynamically loadable module format. 
+RT Components can be created, distributed, and executed in these two formats. 
 
-## RTC プログラミングの基礎
-通常のプログラミングと RTコンポーネントのプログラミングには、幾つかの大きな違いがあります。
+## Basics of RTC Programming
+There are several major differences between ordinary programming and RT Component programming.
 
 
-### main関数が無いプログラム
-RTコンポーネントのプログラムには通常のプログラムとは異なり、main関数がありません。
-代わりに1つの RTコンポーネントは、通常ある特別な基底クラスを継承した一つのクラスとして実装されます。
+### A Program Without a main Function
+Unlike ordinary programs, RT Component programs do not have a main function.
+Instead, one RT Component is usually implemented as a single class that inherits from a special base class.
 
-RTコンポーネントにさせたい処理は、その基底クラスのメンバ関数(メソッド)をオーバーライドする形で記述します。
-例えば、初期化のような処理は、onInitialize という関数の中に記述します。あるいは、終了時に行いたい処理であれば、onFinalize という関数の中に記述します。
+The processing you want the RT Component to perform is written by overriding member functions (methods) of that base class.
+For example, processing such as initialization is written in a function called onInitialize. Or, processing you want to perform at termination is written in a function called onFinalize.
 
 ```
  ReturnCode_t MyComponent::onInitialize()
@@ -48,144 +47,140 @@ RTコンポーネントにさせたい処理は、その基底クラスのメン
  }
 ```
 
-では、ここで書いた初期化処理や、終了処理はいつ実行されるのでしょうか？
-それを知るためには、RTコンポーネントのライフサイクルを知る必要があります。
+So when are the initialization processing and termination processing written here executed?
+To understand that, you need to know the lifecycle of an RT Component.
 
-### コンポーネント・ライフサイクル
-ある RTコンポーネントが生まれてから死ぬまでの一連の流れのことを、コンポーネントのライフサイクルと呼びます。
+### Component Lifecycle
+The sequence of events from the birth to the death of an RT Component is called the component lifecycle.
 
-コンポーネントには基本的に
+A component basically has the following three states:
 
-- 生成状態(Created)
-- 活動状態(Alive)
-- 終了状態
+- Created
+- Alive
+- Terminated
 
-の3つの状態を持ちます。
-(Alive状態は内部にさらに状態を持ちます(後述)。)
+(The Alive state has further internal states (described later).)
 
-コンポーネントは1つのクラスであることは上で述べました。
-従って、コンポーネントが生成されるということは、オブジェクト(インスタンス)が生成されることとほぼ同じです。
-通常、RTコンポーネントはマネージャ(RTCマネージャ)によって生成され、以後マネージャが RTコンポーネントのライフサイクルを管理します。
+As mentioned above, a component is a single class.
+Therefore, the creation of a component is almost the same as the creation of an object (instance).
+Usually, an RT Component is created by a manager (RTC Manager), and after that the manager manages the lifecycle of the RT Component.
 
-具体的には、マネージャは RTコンポーネントのインスタンス生成後、上で述べた onInitialize関数をコールします。
-また、RTコンポーネントが終了するとき、マネージャは onFinalize関数をコールします。
-このように、RTコンポーネントのライフサイクルの中の特定のタイミングに割り当てられた処理(これをアクションと呼ぶ)毎に、必要な処理を記述することで、RTコンポーネントのプログラミングを行います。
-### 実行コンテキスト
-通常プログラムを実行するとスレッドが割り当てられ、そのスレッドがプログラムとして記述された処理を実行します。
-ロボットを制御するプログラムでは、通常スレッドにより実行されるループ(制御ループや処理ループ)を持ち、センサーデータを処理したり、アクチュエーターを制御し続けます。
-こうした、何かを処理したり制御したりするための主たる処理を RTコンポーネントではコアロジックと呼びます。
+Specifically, after creating an RT Component instance, the manager calls the onInitialize function mentioned above.
+Also, when the RT Component terminates, the manager calls the onFinalize function.
+In this way, RT Component programming is performed by writing the necessary processing for each process (called an action) assigned to a specific timing in the RT Component lifecycle.
+### Execution Context
+When an ordinary program is executed, a thread is assigned, and that thread executes the processing written as the program.
+Programs that control robots usually have loops (control loops or processing loops) executed by threads, and they continue processing sensor data or controlling actuators.
+In RT Components, the main processing for performing or controlling something like this is called the core logic.
 
-RTコンポーネントは、生成され Alive状態になると通常一つのスレッドが割り当てられ、RTコンポーネントとしてのメインの処理(コアロジック)を実行します。
-このスレッドを RTコンポーネントでは実行コンテキスト(ExecutionContext)と呼びます。
-実際には、実行コンテキストはスレッドそのものではなく、スレッドを抽象的に表現したもので実行周期や状態を持ちます。
-つまり、RTコンポーネントが生成されると実行コンテキストが RTコンポーネントに関連付けられ、コアロジックが駆動されることにより、RTコンポーネントが何らかの処理(例えばロボットを制御するなど)を行います。
+When an RT Component is created and enters the Alive state, usually one thread is assigned, and the main processing (core logic) as an RT Component is executed.
+In RT Components, this thread is called an ExecutionContext.
+In actuality, an execution context is not the thread itself, but an abstract representation of a thread, and it has an execution cycle and state.
+In other words, when an RT Component is created, an execution context is associated with the RT Component, and by driving the core logic, the RT Component performs some kind of processing (for example, controlling a robot).
 
-### RTC の状態遷移 
-上で述べたように、RTコンポーネントは状態を持ち、その状態や遷移に割り当てられたアクションとして処理を記述します。
-下図は RTコンポーネントの状態遷移図(UMLのステートマシン図)を表しています。
+### RTC State Transitions 
+As described above, an RT Component has states, and processing is written as actions assigned to those states and transitions.
+The figure below shows the state transition diagram (UML state machine diagram) of an RT Component.
 
 <br><br>
 <div align="center"><a href="RTCStateMachine040.png"><img src="RTCStateMachine040.png" width="70%;"></a></div>
-<div align="center"><strong>RTコンポーネントの状態遷移</strong></div>
+<div align="center"><strong>RT Component State Transitions</strong></div>
 <br><br>
 
-Created と Alive は RTコンポーネントの状態です。
-Alive状態の中にも幾つかの状態が存在しています。
+Created and Alive are states of an RT Component.
+There are also several states within the Alive state.
 
-#### スレッドの停止状態と実行状態 
-まず、Alive状態内部の上部の Stopped と Running状態から見ていきます。
+#### Stopped and Running States of the Thread 
+First, let us look at the Stopped and Running states in the upper part inside the Alive state.
 
 <br><br>
 <div align="center"><a href="RTCStateMachineStartStop.png"><img src="RTCStateMachineStartStop.png" width="70%;"></a></div>
-<div align="center"><strong>スレッドの停止状態と実行状態</strong></div>
+<div align="center"><strong>Stopped and Running States of the Thread</strong></div>
 <br><br>
 
-これは、実行コンテキストをスレッドとして見たとき、スレッドが停止中(Stopped)か実行中(Running)かを表す状態です。
+These states indicate whether the thread is stopped (Stopped) or running (Running) when the execution context is viewed as a thread.
 
-停止状態(Stopped)にある実行コンテキストが startイベントを受け取ると、RTコンポーネントの onStartup を実行して実行状態(Running)に遷移します。
-逆に stopイベントにより、実行コンテキストは RTコンポーネントの onShutdown を実行して停止状態(Stopped)状態に遷移します。
+When an execution context in the Stopped state receives a start event, it executes the RT Component's onStartup and transitions to the Running state.
+Conversely, with a stop event, the execution context executes the RT Component's onShutdown and transitions to the Stopped state.
 
-コアロジックのアクションは、実行状態(Running)状態のときのみ実行され、停止状態においては全てのアクションは実行されません。
+Core logic actions are executed only in the Running state, and no actions are executed in the Stopped state.
 
 
-#### アクティブ・非アクティブ状態 
-Alive状態内の下段はコアロジックのアクティブ(Active)・非アクティブ(Inactive)・エラー(Error)に関する状態遷移です。
+#### Active and Inactive States 
+The lower part inside the Alive state shows state transitions related to the Active, Inactive, and Error states of the core logic.
 
-RTコンポーネント生成直後は、RTコンポーネントは非アクティブ状態(Inactive)にあります。
-RTコンポーネントをアクティブ化すると、RTコンポーネントのアクションである onActivate がコールされアクティブ状態に遷移します。
-アクティブ状態にいる間、通常 RTコンポーネントのアクション onExecute が繰り返し実行され続けます。
-通常はこの onExecute内で、RTコンポーネントのメインの処理を行います。
-例えば、センサからデータを読み込み他のコンポーネントへ送ったり、他のコンポーネントから受け取ったデータに基づきモータを制御したりといった、ロボットにおいて基本的な繰り返し処理は onExecute に記述することになるでしょう。
+Immediately after an RT Component is created, the RT Component is in the Inactive state.
+When the RT Component is activated, onActivate, which is an action of the RT Component, is called, and the component transitions to the Active state.
+While in the Active state, the RT Component action onExecute is normally executed repeatedly.
+Usually, the main processing of the RT Component is performed inside this onExecute.
+For example, basic repetitive processing in a robot, such as reading data from sensors and sending it to other components, or controlling motors based on data received from other components, will be written in onExecute.
 
-RTコンポーネントは非アクティブ化されるか、エラーが発生するまでアクティブ状態に留まり続けます。
-非アクティブ化される場合は onDeactivate がコールされ、非アクティブ状態に遷移します。
-アクティブ状態の処理の中で何らかのエラーが発生した場合、RTコンポーネントのアクションである onAborting がコールされ、エラー状態(Error)に遷移します。
+The RT Component continues to remain in the Active state until it is deactivated or an error occurs.
+When it is deactivated, onDeactivate is called, and the component transitions to the Inactive state.
+If some kind of error occurs during processing in the Active state, onAborting, which is an action of the RT Component, is called, and the component transitions to the Error state.
 
-エラー状態に遷移した場合、外部からリセットが行われるまでエラー状態に留まり続け onError がコールされ続けます。
-リセットが行われると、onReset がコールされます。
-onReset の処理が成功すれば非アクティブ状態(Inactive)に遷移し、再びアクティブ状態になることが出来ますが、onReset が失敗した場合は、エラー状態に留まり続けます。
+When the component transitions to the Error state, it remains in the Error state until it is reset from outside, and onError continues to be called.
+When a reset is performed, onReset is called.
+If the processing of onReset succeeds, the component transitions to the Inactive state and can become Active again, but if onReset fails, it remains in the Error state.
 
 <br><br>
 <div align="center"><a href="RTCStateMachineActiveInactive.png"><img src="RTCStateMachineActiveInactive.png" width="70%;"></a></div>
-<div align="center"><strong>非アクティブ状態・アクティブ状態・エラー状態</strong></div>
+<div align="center"><strong>Inactive State, Active State, and Error State</strong></div>
 <br><br>
 
-### アクションのまとめ 
-RTコンポーネント開発者の主な仕事は、自分が作成しようとするコンポーネントでは、これまで述べてきた RTコンポーネントの各状態毎にどういった処理をすればよいのかを考え、それぞれのアクションに対応する関数を実装することです。
-つまり、自分が作成するコンポーネントに必要な**on???**という関数だけをオーバーライドし、関数の中身を記述すればいいのです。
+### Summary of Actions 
+The main task of an RT Component developer is to consider what processing should be performed in each state of the RT Component described so far for the component they are creating, and to implement the functions corresponding to each action.
+In other words, you only need to override the **on???** functions required for the component you are creating and write the contents of those functions.
 
-以下に、コンポーネントのアクションの関数と役割を示します。
+The following shows the component action functions and their roles.
 <table class="table-alt">
   <tr>
     <td>onInitialize</td>
-    <td>初期化処理、コンポーネントライフサイクルの開始時に一度だけ呼ばれる。</td>
+    <td>Initialization processing. Called only once at the start of the component lifecycle.</td>
   </tr>
   <tr>
     <td>onActivated</td>
-    <td>非アクティブ状態からアクティブ化されるとき1度だけ呼ばれる。</td>
+    <td>Called only once when the component is activated from the inactive state.</td>
   </tr>
   <tr>
     <td>onExecute</td>
-    <td>アクティブ状態時に周期的に呼ばれる。</td>
+    <td>Called periodically while in the active state.</td>
   </tr>
   <tr>
     <td>onDeactivated</td>
-    <td>アクティブ状態から非アクティブ化されるとき1度だけ呼ばれる。</td>
+    <td>Called only once when the component is deactivated from the active state.</td>
   </tr>
   <tr>
     <td>onAborting</td>
-    <td>ERROR 状態に入る前に1度だけ呼ばれる。</td>
+    <td>Called only once before entering the ERROR state.</td>
   </tr>
   <tr>
     <td>onReset</td>
-    <td>エラー状態からリセットされ非アクティブ状態に移行するときに1度だけ呼ばれる。</td>
+    <td>Called only once when the component is reset from the error state and transitions to the inactive state.</td>
   </tr>
   <tr>
     <td>onError</td>
-    <td>エラー状態にいる間周期的に呼ばれる。</td>
+    <td>Called periodically while in the error state.</td>
   </tr>
   <tr>
     <td>onFinalize</td>
-    <td>コンポーネントライフサイクルの終了時に1度だけ呼ばれる。</td>
+    <td>Called only once at the end of the component lifecycle.</td>
   </tr>
   <tr>
     <td>onStateUpdate</td>
-    <td>onExecute の後毎回呼ばれる。</td>
+    <td>Called every time after onExecute.</td>
   </tr>
   <tr>
     <td>onRateChanged</td>
-    <td>ExecutionContext の rate が変更されたとき呼ばれる。</td>
+    <td>Called when the rate of the ExecutionContext is changed.</td>
   </tr>
   <tr>
     <td>onStartup</td>
-    <td>ExecutionContext が実行を開始するとき1度だけ呼ばれる。</td>
+    <td>Called only once when the ExecutionContext starts execution.</td>
   </tr>
   <tr>
     <td>onShutdown</td>
-    <td>ExecutionContext が実行を停止するとき1度だけ呼ばれる。</td>
+    <td>Called only once when the ExecutionContext stops execution.</td>
   </tr>
 </table>
 
-
-
--------jp page!!-------

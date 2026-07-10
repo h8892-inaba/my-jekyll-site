@@ -2,29 +2,31 @@
 layout: page
 title: RTCBuilder-1.2.0
 ---
--------jp page!!-------
+
 <!-- // Title: RTCBuilder-1.2.0-->
 
-##RTCBuilder-1.2.0 とは
-RTCBuilderは、OpenRTM-aist に含まれる開発ツールの１つであり、RTCのプロファイル情報から、RTCのソースコードのひな型を生成することができます。C++、Python、Javaなどのプログラム言語に対応しています。また、Eclipse 統合開発環境のプラグインとして作成されており、 Eclipse 上にて既存のプラグインとシームレスに操作を行うことができます。
+
+## What Is RTCBuilder-1.2.0?
+
+RTCBuilder is one of the development tools included with OpenRTM-aist, and it can generate RTC source code templates from RTC profile information. It supports programming languages such as C++, Python, and Java. It is also created as a plugin for the Eclipse integrated development environment, allowing seamless operation with existing plugins on Eclipse.
 
 <hr>
 
-- [概要・RTC作成の流れ](./flow_rtc_creation_1_2_0)
-- [インストールおよび起動](./install_rtcb_1_2_0)
-- [画面構成と機能（概要）](./overview_rtcb_1_2_0)
-- [画面構成と機能（RTプロファイルエディタ 編）](./rt_profile_rtcb_1_2_0)
-- [画面構成と機能（ビルドビュー 編）](./build_view_rtcb_1_2_0)
-- [コード生成・セーブとロード](./codegen_rtcb_1_2_0)
-- [プロファイルのエクスポート/インポート](./prof_exp_imp_rtcb_1_2_0)
-- [各種設定](./setting_rtcb_1_2_0)
-- [更新方法](./update_rtcb_1_2_0)
-- [コンパイル方法 (Windows、CMake 利用、C++ 編 )](./compile_win_cmake_cpp_rtcb_1_2_0)
-- [コンパイル方法 (Windows、Java 編 )](./compile_win_java_rtcb_1_2_0)
-- [CPack を使ったパッケージ作成（Windows/Linux での共通設定）](./cpack_package_creation_rtcb_1_2_0)
-- [CPack で msi 作成（Windows）](./cpack_msi_creation_rtcb_1_2_0)
-- [CPack で deb 作成 （Linux）](./cpack_deb_creation_rtcb_1_2_0)
-- [CPack で rpm 作成 （Linux）](./cpack_rpm_creation_rtcb_1_2_0)
-- [その他](./other_rtcb_1_2_0)
-- [言語プラグインの追加手順](./lang_plugin_rtcb_1_2_0)
--------jp page!!-------
+- [Overview and RTC Creation Flow](./flow_rtc_creation_1_2_0)
+- [Installation and Startup](./install_rtcb_1_2_0)
+- [Screen Layout and Functions (Overview)](./overview_rtcb_1_2_0)
+- [Screen Layout and Functions (RT Profile Editor)](./rt_profile_rtcb_1_2_0)
+- [Screen Layout and Functions (Build View)](./build_view_rtcb_1_2_0)
+- [Code Generation, Save, and Load](./codegen_rtcb_1_2_0)
+- [Profile Export/Import](./prof_exp_imp_rtcb_1_2_0)
+- [Various Settings](./setting_rtcb_1_2_0)
+- [Update Method](./update_rtcb_1_2_0)
+- [Compilation Method (Windows, Using CMake, C++)](./compile_win_cmake_cpp_rtcb_1_2_0)
+- [Compilation Method (Windows, Java)](./compile_win_java_rtcb_1_2_0)
+- [Package Creation Using CPack (Common Settings for Windows/Linux)](./cpack_package_creation_rtcb_1_2_0)
+- [Creating an msi with CPack (Windows)](./cpack_msi_creation_rtcb_1_2_0)
+- [Creating a deb with CPack (Linux)](./cpack_deb_creation_rtcb_1_2_0)
+- [Creating an rpm with CPack (Linux)](./cpack_rpm_creation_rtcb_1_2_0)
+- [Other](./other_rtcb_1_2_0)
+- [Procedure for Adding Language Plugins](./lang_plugin_rtcb_1_2_0)
+

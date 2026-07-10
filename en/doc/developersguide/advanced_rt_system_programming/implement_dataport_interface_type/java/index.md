@@ -1,8 +1,6 @@
 ---
 layout: page
-title: "独自インターフェース型の実装手順(Java)"
+title: "Implementation Procedure for a Custom Interface Type (Java)"
 ---
--------jp page!!-------
 
-準備中
--------jp page!!-------
+Under preparation.

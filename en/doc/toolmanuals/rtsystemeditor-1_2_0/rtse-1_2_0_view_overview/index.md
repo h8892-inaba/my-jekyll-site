@@ -1,76 +1,73 @@
 ---
 layout: page
-title: ビュー（概要）
+title: Views (Overview)
 ---
--------jp page!!-------
 
 <!-- Title: ビュー（概要） -->
 #contents
 
-RTSystemEditor では、以下のようなビューを使用します。
+RTSystemEditor uses the following views.
 <br>
 
 <div align="center"><a href="fig6RTSystemEditorView_all.png"><img src="fig6RTSystemEditorView_all.png" width="60%;"></a></div>
 <div align="center"><a href="fig6RTSystemEditorView_part.png"><img src="fig6RTSystemEditorView_part.png" width="60%;"></a></div>
-<div align="center"><strong>RT System Editorのビュー</strong></div>
+<div align="center"><strong>Views of RT System Editor</strong></div>
 <br>
 
-<div align="center"><strong>ビュー 一覧</strong></div>
+<div align="center"><strong>List of Views</strong></div>
 <table class="table-alt">
   <tr>
-    <td>№</td>
-    <td>ビュー名</td>
-    <td>説明</td>
+    <td>No.</td>
+    <td>View Name</td>
+    <td>Description</td>
   </tr>
   <tr>
-    <td>１</td>
-    <td>ネームサービスビュー</td>
-    <td>RTC が登録されているネームサービスの内容をツリー表示します。</td>
+    <td>1</td>
+    <td>Name Service View</td>
+    <td>Displays the contents of the name service where RTCs are registered in a tree format.</td>
   </tr>
   <tr>
-    <td>２</td>
-    <td>コンフィグレーションビュー</td>
-    <td>選択されている RTC のコンフィグレーション情報を表示/編集します。</td>
+    <td>2</td>
+    <td>Configuration View</td>
+    <td>Displays and edits the configuration information of the selected RTC.</td>
   </tr>
   <tr>
-    <td>３</td>
-    <td>マネージャコントロールビュー</td>
-    <td>選択されているマネージャを制御します。</td>
+    <td>3</td>
+    <td>Manager Control View</td>
+    <td>Controls the selected manager.</td>
   </tr>
   <tr>
-    <td>４</td>
-    <td>複合コンポーネントビュー</td>
-    <td>選択されている複合 RTC のポート公開情報を表示/設定します。</td>
+    <td>4</td>
+    <td>Composite Component View</td>
+    <td>Displays and sets the port public information of the selected composite RTC.</td>
   </tr>
   <tr>
-    <td>５</td>
-    <td>実行コンテキストビュー</td>
-    <td>選択されている RTC が属する実行コンテキスト（EC）の一覧を表示し、RTC、EC のアクション実行、EC への RTC のアタッチ/デタッチを行います。</td>
+    <td>5</td>
+    <td>Execution Context View</td>
+    <td>Displays a list of execution contexts (ECs) to which the selected RTC belongs, executes RTC and EC actions, and attaches/detaches RTCs to/from ECs.</td>
   </tr>
   <tr>
-    <td>６</td>
-    <td>ログビュー</td>
-    <td>ログ通知オブザーバーにより通知されるログメッセージを表示します。</td>
+    <td>6</td>
+    <td>Log View</td>
+    <td>Displays log messages notified by the log notification observer.</td>
   </tr>
   <tr>
-    <td>７</td>
-    <td>プロパティビュー</td>
-    <td>選択されている RTC のプロファイル情報を表示します。</td>
+    <td>7</td>
+    <td>Property View</td>
+    <td>Displays the profile information of the selected RTC.</td>
   </tr>
   <tr>
-    <td>８</td>
-    <td>システムエディタ</td>
-    <td>RTC をグラフィカルに表示し、RTシステムを作成します。</td>
+    <td>8</td>
+    <td>System Editor</td>
+    <td>Displays RTCs graphically and creates RT systems.</td>
   </tr>
   <tr>
-    <td>９</td>
-    <td>オフラインシステムエディタ</td>
-    <td>RTリポジトリやローカルの RTコンポーネント仕様ファイルの内容をグラフィカルに表示し、RTシステムを作成します。</td>
+    <td>9</td>
+    <td>Offline System Editor</td>
+    <td>Graphically displays the contents of the RT Repository and local RT component specification files, and creates RT systems.</td>
   </tr>
 </table>
 
 
-この後の節では、各ビューについてそれぞれ解説していきます。
+The following sections explain each view.
 
-
--------jp page!!-------

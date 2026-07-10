@@ -26,4 +26,4 @@ Download and install the appropriate installer from the links below.
 Use **OpenRTM-aist-1.2.x-RELEASE_x86_64.msi** for the 64-bit version and **OpenRTM-aist-1.2.x-RELEASE_x86.msi** for the 32-bit version.
 
 - [OpenRTM-aist 1.2.2](https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v1.2.2)
-- [OpenRTM.org Download Page]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release)
+- [OpenRTM.org Download Page]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release)

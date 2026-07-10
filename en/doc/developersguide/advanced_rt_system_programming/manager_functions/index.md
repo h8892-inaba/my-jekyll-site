@@ -1,8 +1,7 @@
 ---
 layout: page
-title: "マネージャの機能"
+title: "Manager Functions"
 ---
--------jp page!!-------
 
-準備中
--------jp page!!-------
+Under preparation.
+

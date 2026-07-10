@@ -103,7 +103,7 @@ Download them from [here](https://github.com/Nobu19800/EducatorVehicle_script/ar
 
 First, start the Name Server and RT System Editor on Windows.
 
-For detailed instructions, refer to [this page]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/test_windows_1_1).
+For detailed instructions, refer to [this page]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/test_windows_1_1).
 
 ##### ev3dev
 
@@ -135,7 +135,7 @@ Executing it starts the following RTCs.
 * For 32-bit Windows, use `start_component_32.bat`.
 * If you are using the 64-bit version of OpenRTM-aist, use `start_component_64.bat`.
 
-If the Python installation directory is not included in the PATH environment variable, TkJoyStick cannot be started. In that case, please start it manually by following the instructions on [this page]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/test_windows_python_1_1#toc7).
+If the Python installation directory is not included in the PATH environment variable, TkJoyStick cannot be started. In that case, please start it manually by following the instructions on [this page]({{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/test_windows_python_1_1#toc7).
 
 ### ev3dev
 

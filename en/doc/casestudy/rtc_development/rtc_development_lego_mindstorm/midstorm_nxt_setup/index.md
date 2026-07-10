@@ -1,126 +1,118 @@
 ---
 layout: page
-title: Mindstorm NXT 設定
+title: Mindstorm NXT Setup
 ---
--------jp page!!-------
-
-init
 <!-- Title: Mindstorm NXT 設定 -->
 #contents
 
-NXT を RTC化するにあたり、まずは NXT と PC の設定を行います。
-PC と NXT は USB または Bluetooth で接続することができるますが、せっかく電池で動く NXT を紐付きでは使いたくないのでBluetoothで接続します。
+Before turning NXT into an RTC, first configure NXT and the PC.
+The PC and NXT can be connected via USB or Bluetooth, but since NXT runs on batteries, we do not want to use it tethered, so we will connect it via Bluetooth.
 
 
-## ブロックの組み立て
-ここでは、写真に示すような構成を例にとり、NXT を RTC化します。
+## Assembling the Block
+Here, we will use the configuration shown in the photo as an example and turn NXT into an RTC.
 
 <!-- div align="center"><a href="TribotBase.png"><img src="TribotBase.png" width="100;"></a></div-->
 
 TribotBase.png
 
-これは、Tribot と呼ばれる構成の移動ベースの部分に、目玉のような超音波センサーを前面に取り付けただけの簡単な構成です。
-移動ベースの組み立て方法は、Mindstorm NXT の箱に入っている「Start Here」と書かれた小箱の中の小冊子に詳しく記載されているので参照してください。
-この小冊子で解説されている移動ベースに、いくつかの LEGOブロックを追加して、超音波センサーを取り付ければ完成です。
+This is a simple configuration in which an ultrasonic sensor that looks like eyes is attached to the front of the mobile base part of a configuration called Tribot.
+The assembly method for the mobile base is described in detail in the small booklet inside the box labeled "Start Here" included in the Mindstorm NXT package, so refer to it.
+Add several LEGO blocks to the mobile base explained in this booklet and attach the ultrasonic sensor to complete it.
 
 
-## Bluetoothデバイスのインストール
-NXT のインテリジェントブロックには最初から Bluetooth が内蔵されています。
-一方、PC に Bluetoothデバイスが内臓されていない場合は、写真のような Bluetoothデバイスを PC に取り付けることで、NXT と通信することができるようになります。
+## Installing the Bluetooth Device
+The NXT intelligent block has Bluetooth built in from the beginning.
+On the other hand, if a Bluetooth device is not built into the PC, you can communicate with NXT by attaching a Bluetooth device like the one in the photo to the PC.
 
-まずは、これらのデバイスを取り付けて、必要ならデバイスドライバをインストールするなどして使えるようにします。
-Windows-XP などではたいていの市販の Bluetooth デバイスなら、ドライバを改めてインストールすることなくデフォルトのドライバで動作するようです。
+First, attach these devices and, if necessary, install the device drivers so that they can be used.
+On Windows XP and similar systems, most commercially available Bluetooth devices seem to work with the default driver without installing a separate driver.
 
 <!-- div align="center"><a href="BluetoothDevices.png"><img src="BluetoothDevices.png" width="100;"></a></div-->
 BluetoothDevices.png
 
-Bluetooth が適切にインストールされていれば、コントロールパネルに Bluetooth のアイコンが現れます。
-これをクリックすると図のような Bluetooth設定ダイアログが現れます。
+If Bluetooth is installed properly, a Bluetooth icon will appear in the Control Panel.
+Clicking this displays the Bluetooth settings dialog shown in the figure.
 
 <!-- div align="center"><a href="BthDialogOption.png"><img src="BthDialogOption.png" width="100;"></a></div -->
 BluetoothDevices.png
 
-「オプション」を開き、
-- 「発見機能を有効にする」
-- 「Bluetooth アイコンを通知領域に表示する」
-をチェックします。
+Open "Options" and check the following:
+- "Turn discovery on"
+- "Show the Bluetooth icon in the notification area"
 
-次は、NXT と PC を接続するので、このダイアログはとりあえずそのままにしておきます。
-
-
-## PC と NXT の接続
-PC と NXT を Bluetoothで接続する手順はおおよそ以下のとおりです。
-
-1. NXT の電源を入れる
-1. NXT を Bluetooth 検索モードにし検索する
-1. 自分の PC を選択
-1. チャネル選択
-1. PC の Bluetooth 設定ダイアログから接続ウィザードを起動
-1. パスキーを設定する
-1. PC と NXT 両者で接続ボタンを押す
-1. 接続後 NXT を再起動する
+Next, since NXT and the PC will be connected, leave this dialog open for now.
 
 
-### NXT の起動
-NXT のインテリジェントブロックの中央のオレンジ色のボタンを押して電源を入れます。
-電源が入ると「ピロリロリ♪」と音が鳴ってブロックが起動します。(音量の設定を0にしている場合には音は出ない。)
-電源を入れると、図のような画面「My files」モードになります。
+## Connecting the PC and NXT
+The procedure for connecting the PC and NXT via Bluetooth is roughly as follows.
+
+1. Turn on NXT
+1. Put NXT in Bluetooth search mode and search
+1. Select your PC
+1. Select the channel
+1. Start the connection wizard from the PC Bluetooth settings dialog
+1. Set the passkey
+1. Press the connection button on both the PC and NXT
+1. Restart NXT after connection
+
+
+### Starting NXT
+Press the orange button in the center of the NXT intelligent block to turn it on.
+When it turns on, a "pirolirori♪" sound plays and the block starts up. (No sound is produced if the volume setting is 0.)
+When it is turned on, it enters the "My files" mode screen shown in the figure.
 
 <!-- div align="center"><a href="NXTBoot.png"><img src="NXTBoot.png" width="100;"></a></div-->
 NXTBoot.png
 
-このような画面にならない場合は、オレンジ色のボタンのしたの四角いボタンを何度か押すことで、「My files」モードにすることができます。
+If this screen does not appear, you can switch to "My files" mode by pressing the square button below the orange button several times.
 
-### Bluetooth デバイスの検索
-「My files」モードの状態で、オレンジ色ボタンの左右にある、灰色の三角ボタンを押し「Bluetooth」モードにカーソルを合わせ、オレンジボタンを押します。
+### Searching for Bluetooth Devices
+In "My files" mode, press the gray triangular buttons on the left and right of the orange button to move the cursor to "Bluetooth" mode, then press the orange button.
 
 <!-- div align="center"><a href="NXTBluetooth.png"><img src="NXTBluetooth.png" width="100;"></a></div-->
 NXTBluetooth.png
 
-さらに、左右の三角ボタンを押し、「Search」モードにカーソルを合わせます。
+Next, press the left and right triangular buttons to move the cursor to "Search" mode.
 
 <!-- div align="center"><a href="NXTBthSearch.png"><img src="NXTBthSearch.png" width="100;"></a></div-->
 NXTBthSearch.png
 
-この状態で、オレンジ色のボタンを押し、実際に接続先を検索します。
-検索状態の画面を下に示します。
+In this state, press the orange button to actually search for connection targets.
+The search screen is shown below.
 <!-- div align="center"><a href="NXTBthSearching.png"><img src="NXTBthSearching.png" width="100;"></a></div-->
 NXTBthSearching.png
 
 
-### デバイスの接続
-PC の Bluetooth が有効で NXT から PC が見えれば、図のように PC の名前が表れるはずです。
-ここで PC の名前とは Windows における「コンピューター名」です。
+### Connecting the Device
+If Bluetooth on the PC is enabled and the PC is visible from NXT, the PC name should appear as shown in the figure.
+Here, the PC name means the "Computer name" in Windows.
 
 <!-- div align="center"><a href="NXTBthPCfound.png"><img src="NXTBthPCfound.png" width="100;"></a></div-->
 NXTBthPCfound.png
 
-近くに Bluetooth搭載 PC があれば、何台かの PC が見えるかもしれません。
-三角ボタンを押して自分の PC にカーソルを合わせ、オレンジ色の確認ボタンを押します。
+If there are Bluetooth-equipped PCs nearby, several PCs may be visible.
+Press the triangular buttons to move the cursor to your PC, then press the orange confirmation button.
 
-次に Bluetooth のチャネル選択画面になるので、そのままオレンジ色の確認ボタンを押します。
-Connecting と表示された後、パスキー入力画面になるので、そのままオレンジボタンを押します。
+Next, the Bluetooth channel selection screen appears, so press the orange confirmation button as it is.
+After "Connecting" is displayed, the passkey input screen appears, so press the orange button as it is.
 <!--div align="center"><a href="NXTBthPasskey.png"><img src="NXTBthPasskey.png" width="100;"></a></div-->
 NXTBthPasskey.png
 
-PC側で図のようなバルーンが表示されるのでこのバルーンをクリックします。
+A balloon like the one shown in the figure appears on the PC side, so click this balloon.
 
 <!-- div align="center"><a href="PCballoon.png"><img src="PCballoon.png" width="100;"></a></div-->
 PCballoon.png
 
-パスキーの入力を求められるので、先ほど NXT に表示されていたパスキーを入力します。
-接続が完了すると、図のようなダイアログが現れます。
-他のデバイスを認識しないように「発見機能を無効にする」をチェックし「完了」を押して終了します。
+You will be asked to enter the passkey, so enter the passkey that was displayed on NXT earlier.
+When the connection is complete, a dialog like the one shown in the figure appears.
+To avoid recognizing other devices, check "Turn discovery off" and press "Finish" to exit.
 
 <!-- div align="center"><a href="PCConnectComp.png"><img src="PCConnectComp.png" width="100;"></a></div-->
 PCConnectComp.png
 
-### 接続の確認
-Bluetooth設定ダイアログの「デバイス」タブで見ると、図のように NXT が接続されていることが確認できます。
+### Confirming the Connection
+If you look at the "Devices" tab in the Bluetooth settings dialog, you can confirm that NXT is connected as shown in the figure.
 
 <!-- div align="center"><a href="PCDevlistNXT.png"><img src="PCDevlistNXT.png" width="100;"></a></div-->
 PCDevlistNXT.png
-
-
-
--------jp page!!-------

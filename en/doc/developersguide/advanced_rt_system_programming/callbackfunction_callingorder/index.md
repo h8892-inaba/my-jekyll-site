@@ -1,8 +1,7 @@
 ---
 layout: page
-title: "コネクタ生成時、データ転送時にコールバック関数が呼ばれる順序について"
+title: "Order in Which Callback Functions Are Called During Connector Creation and Data Transfer"
 ---
--------jp page!!-------
 
-準備中
--------jp page!!-------
+Coming soon
+

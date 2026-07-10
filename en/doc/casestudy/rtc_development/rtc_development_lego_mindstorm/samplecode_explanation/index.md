@@ -1,27 +1,25 @@
 ---
 layout: page
-title: サンプルコードの説明
+title: Sample Code Explanation
 ---
--------jp page!!-------
 
 <!-- Title: サンプルコードの説明 -->
 #contents
 
 
-### サンプルコードの説明
-ここから、NXTRTC.py に先ほど作成した NXTBrick.py の機能を組み込んでいきます。
+### Sample Code Explanation
+From here, we will incorporate the functionality of NXTBrick.py created earlier into NXTRTC.py.
 
-- NXTBrick.py のインポート
-NXTBrick クラスを使用するために NXBrick.py をインポートします。
-import の記述方法は、下記のように拡張子(.py)を除いたファイル名を指定します。
+- Importing NXTBrick.py
+To use the NXTBrick class, import NXBrick.py.
+Specify the file name without the extension (.py) as shown below for the import statement.
 ```
  import NXTBrick
 ```
 
-- onInitialize(self) の実装
-onInitialize()で、NXTBrick クラスのインスタンス化を行います。
-NXTBrick クラスのインスタンス化過程にてエラーが発生した場合、RTC_ERROR が戻り
-終了状態へ遷移します。
+- Implementing onInitialize(self)
+In onInitialize(), instantiate the NXTBrick class.
+If an error occurs during the instantiation process of the NXTBrick class, RTC_ERROR is returned and the state transitions to the exit state.
 ```
 # create NXTBrick object
 	try:
@@ -31,23 +29,23 @@ NXTBrick クラスのインスタンス化過程にてエラーが発生した�
     	return RTC.RTC_ERROR
 ```
 
-- onActivated(self, ec_id),onDeactivated(self, ec_id) の実装
-onActivated(),onDeactivated()では、NXTBrickクラスのresetPosition() メソッドをコールします。
+- Implementing onActivated(self, ec_id), onDeactivated(self, ec_id)
+In onActivated() and onDeactivated(), call the resetPosition() method of the NXTBrick class.
 ```
     self._nxtbrick.resetPosition() 
 ```
 
-- onExecute(self, ec_id) の実装
-onExecute() では、下記の処理を行ってます。
+- Implementing onExecute(self, ec_id)
+In onExecute(), the following processing is performed.
 
 
-  - データ InPort からの速度の読み込み。
-  - Configuration 機能を用い NXT のどのポートへ速度出力を行うかを決定。
-  - NXTBrick の setMotors() メソッドにてモーターへ速度を出力。
-  - NXTBrick の getSensors() にて NTX の超音波センサー値を取得し、データがあれば OutPort から出力。
-  - NXTBrick の getMotors() にて NTX の回転角度[deg]を取得し、データがあれば OutPort から出力。
+  - Read velocity from the data InPort.
+  - Use the Configuration function to determine which NXT port to output velocity to.
+  - Output velocity to the motors using the setMotors() method of NXTBrick.
+  - Obtain the ultrasonic sensor value of NXT using getSensors() of NXTBrick, and output it from the OutPort if data is available.
+  - Obtain the rotation angle [deg] of NXT using getMotors() of NXTBrick, and output it from the OutPort if data is available.
 
-上記をまとめたサンプルコードを以下に示す。
+The sample code summarizing the above is shown below.
 
 
 ```
@@ -185,11 +183,11 @@ onExecute() では、下記の処理を行ってます。
  	main()
 ```
 
-### サンプルコードの説明(コールバックオブジェクトの使用例)
-このサンプルでは上記のサンプルにコールバック OnWrite を追加し、InPort のバッファへデータが書き込まれた際にモーターへの速度出力を行うように拡張します。
+### Sample Code Explanation (Example of Using a Callback Object)
+In this sample, the callback OnWrite is added to the above sample and extended so that velocity is output to the motors when data is written to the InPort buffer.
 
-- コールバッククラス~
-下記のようにコールバッククラスを記述します。
+- Callback class~
+Write the callback class as follows.
 
 ```
  # @class CallBackClass
@@ -211,20 +209,20 @@ onExecute() では、下記の処理を行ってます。
  		self._nxtbrick.setMotors(vel_)
 ```
 
-このクラスでは、NTXBrick クラスのオブジェクトとコンフィギュレーション変数 map を引数にとります。
+This class takes an NTXBrick class object and the configuration variable map as arguments.
 
-- コールバッククラスの登録~
-下記のように、setOnWrite() メソッドにてコールバックオブジェクトを登録します。
+- Registering the callback class~
+Register the callback object with the setOnWrite() method as shown below.
 
 ```
    # set callback class
    self._velIn.setOnWrite(CallBackClass(self._ntxbrick,self._map))
 ```
 
-setOnWrite() により、InPort へデータが書き込まれた際に、CallBackClassの<u>call</u>()
-メソッドが呼ばれるようになります。
+With setOnWrite(), the <u>call</u>()
+method of CallBackClass will be called when data is written to the InPort.
 
-上記をまとめたサンプルコードを以下に示す。
+The sample code summarizing the above is shown below.
 
 ```
  #!/usr/bin/env python
@@ -371,7 +369,7 @@ setOnWrite() により、InPort へデータが書き込まれた際に、CallBa
 ```
 
 
-はじめの例では、モーターへの出力、センサー値の読み込み、モーターエンコーダの読み込みをすべて同一ループで同期的に行っていましたが、コールバックを使用することで、データが来たらすぐにモーターへ値を出力できるようになります。
+In the first example, output to the motors, reading sensor values, and reading motor encoders were all performed synchronously in the same loop, but by using a callback, values can be output to the motors immediately when data arrives.
 
 
 
@@ -381,6 +379,3 @@ setOnWrite() により、InPort へデータが書き込まれた際に、CallBa
 <!-- 上記のように、Pythonで作っても、もちろんC++やJavaで作っても構いません。 -->
 <!-- どういった言語で作ったコンポーネントとも、このNXT RTCは接続することができます。 -->
 
-
-
--------jp page!!-------

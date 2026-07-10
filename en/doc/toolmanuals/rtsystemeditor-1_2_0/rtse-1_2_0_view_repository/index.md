@@ -1,65 +1,62 @@
 ---
 layout: page
-title: ビュー（リポジトリビュー編）
+title: Views (Repository View)
 ---
--------jp page!!-------
 
 <!-- Title: ビュー（リポジトリビュー編） -->
 <!-- #contents -->
 
-ここでは、リポジトリビューについて解説します。
+This section explains the Repository View.
 <br>
 
-リポジトリビューは、RTコンポーネント仕様記述ファイルを読み込み、ツリービューで表示する機能をもっています。
+The Repository View has a function for loading RT component specification description files and displaying them in a tree view.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_041.jpg"><img src="RTCBuilder1.1.2_041.jpg" width="50%;"></a></div>
-<div align="center"><strong>リポジトリビュー</strong></div>
+<div align="center"><strong>Repository View</strong></div>
 <br>
 
 
-### ファイルのロード
-ここでは、リポジトリビューに RTコンポーネント仕様記述ファイルを指定して表示する方法を説明します。<br>
-リポジトリビュー内で右クリックし、表示されるコンテキストメニューから [ファイルから読込] を選択すると、ファイル選択ダイアログが表示されます。ここでリポジトリビューに読み込む RTコンポーネント仕様記述ファイルを選択します。<br>
-このダイアログは xml ファイルのみ表示するようフィルタがかかります。
+### Loading a File
+This section explains how to specify and display an RT component specification description file in the Repository View.<br>
+Right-click inside the Repository View and select [Load from File] from the displayed context menu. A file selection dialog is displayed. Select the RT component specification description file to load into the Repository View.<br>
+This dialog is filtered to display only xml files.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_042.jpg"><img src="RTCBuilder1.1.2_042.jpg" width="85%;"></a></div>
-<div align="center"><strong>ファイルのロード</strong></div>
+<div align="center"><strong>Loading a File</strong></div>
 <br>
 
-ローカルに存在する RTコンポーネント仕様記述ファイルを読み込んだ場合、最上位階層は読み込んだ RTコンポーネント仕様記述ファイルの絶対パスを表示します。
-そして、２階層目は RTコンポーネント仕様記述ファイル内で定義されている category 属性の値を表示します。
-また３階層目は RTコンポーネント仕様記述ファイル内の name 属性に記述されている値と RTコンポーネント仕様記述ファイル名を表示します。
+When a local RT component specification description file is loaded, the top level displays the absolute path of the loaded RT component specification description file.
+The second level displays the value of the category attribute defined in the RT component specification description file.
+The third level displays the value described in the name attribute in the RT component specification description file and the RT component specification description file name.
 
 
-### ディレクトリーのロード
-ここでは、RTコンポーネント仕様記述ファイルが存在するディレクトリーを指定して、ディレクトリー内の全ファイルの読み込み、表示を行う方法を説明します。<br>
-リポジトリビュー上で右クリックし、表示されるコンテキストメニューから [ディレクトリから読込] を選択すると、ディレクトリー選択ダイアログが表示されます。
-リポジトリビューに読み込むディレクトリーを選択します。ディレクトリー以下に存在する RTコンポーネント仕様記述ファイルを読み込みます。
+### Loading a Directory
+This section explains how to specify a directory containing RT component specification description files and load and display all files in the directory.<br>
+Right-click in the Repository View and select [Load from Directory] from the displayed context menu. A directory selection dialog is displayed.
+Select the directory to load into the Repository View. RT component specification description files under the directory are loaded.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_043.jpg"><img src="RTCBuilder1.1.2_043.jpg" width="85%;"></a></div>
-<div align="center"><strong>ディレクトリーのロード</strong></div>
+<div align="center"><strong>Loading a Directory</strong></div>
 <br>
 
-表示方法はファイルのロードと同様です。<br>
-すでに展開したディレクトリーに新しい RTコンポーネント仕様記述ファイルを追加し、再度読み込みを行うと追加された RTコンポーネント仕様記述ファイルのみ読み込まれます。
+The display method is the same as when loading a file.<br>
+If a new RT component specification description file is added to a directory that has already been expanded and loading is performed again, only the added RT component specification description file is loaded.
 <br>
 
 
-### 削除
-リポジトリビューのコンポーネントは、リポジトリビュー上で右クリックし、コンテキストメニューから [削除] を選択して削除することが可能です。<br>
-[削除] はパス、category、コンポーネントのいずれかを選択している場合のみ選択できます。
+### Deletion
+Components in the Repository View can be deleted by right-clicking in the Repository View and selecting [Delete] from the context menu.<br>
+[Delete] can be selected only when a path, category, or component is selected.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_044.jpg"><img src="RTCBuilder1.1.2_044.jpg" width="50%;"></a></div>
-<div align="center"><strong>コンポーネントの削除</strong></div>
+<div align="center"><strong>Deleting a Component</strong></div>
 <br>
 
-最上位階層であるパスを削除すると、下位の category、コンポーネントも同時に削除されます。また３階層目のコンポーネントを削除し、他のコンポーネントが存在しない場合は再帰的に最上位階層まで削除されます。
+If the path, which is the top level, is deleted, the lower-level categories and components are also deleted at the same time. Also, if a component at the third level is deleted and no other components exist, the entries are deleted recursively up to the top level.
 <br>
 <br>
 
-
--------jp page!!-------

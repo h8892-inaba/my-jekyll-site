@@ -119,15 +119,15 @@ To install the C++ version of OpenRTM-aist on Raspbian, run the following comman
  sudo sh pkg_install_debian.sh
 ```
 
-For more information, refer to [this page](/ja/node/120).
+For more information, refer to [this page](/en/node/120).
 
 *The host PC is assumed to be running Windows.*
 
-For instructions on installing OpenRTM-aist on Windows, refer to [this page](/ja/node/999).
+For instructions on installing OpenRTM-aist on Windows, refer to [this page](/en/node/999).
 
 Since the sample RT systems also use Python-based sample components, install the Python version as well.
 
-In addition, the sample RT systems use `rtshell`, so install it by following the instructions on [this page](/ja/node/5013).
+In addition, the sample RT systems use `rtshell`, so install it by following the instructions on [this page](/en/node/5013).
 
 # Python Version
 

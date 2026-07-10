@@ -2,7 +2,9 @@
 layout: page
 title: 動作確認(Linux編)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Titile: 動作確認(Linux編) -->
 インストールが正常に終了したら、付属のサンプルで動作テストをします。サンプルは、通常は以下の場所にあります。
@@ -37,7 +39,7 @@ ConsoleInCompのOutPortからConsoleOutCompのInPortへ接続を構成し、こ�
 ### RTSystemEditor、ネームサーバー起動
 以下の手順に従ってRTSystemEditor、ネームサーバーを起動してください。
 
-- [OpenRTP起動手順]({{ site.baseurl }}/ja/doc/installation/install_1_2/start_openrtp_linux_1_2)
+- [OpenRTP起動手順]({{ site.baseurl }}/en/doc/installation/install_1_2/start_openrtp_linux_1_2)
 
 
 ### ConsoleInCompの起動
@@ -121,4 +123,4 @@ OutPortからInPort(またはInPortからOutPort)へドラッグランドドロ�
 以上で、コンポーネントの基本動作の確認は終了です。
 
 
--------jp page!!-------
+

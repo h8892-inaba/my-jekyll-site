@@ -1,160 +1,159 @@
 ---
 layout: page
-title: CPack で msi 作成（Windows）
+title: Creating an msi with CPack (Windows)
 ---
--------jp page!!-------
 <!-- Title: CPack で msi 作成（Windows） -->
 #contents(4)
 
-## はじめに
+## Introduction
 
-msi インストーラーは Visual Studio でビルドして作成します。<br>
+The msi installer is created by building with Visual Studio.<br>
 
-## doxygen ドキュメントを含めない場合の作成手順
-※デフォルトでは、ドキュメントビルドは OFF になっているため生成されません。
+## Creation Procedure When Not Including doxygen Documentation
+* By default, the documentation build is OFF, so it is not generated.
 
-Visual Studio のソリューション エクスプローラーから「PACKAGE」を右クリックして「ビルド」を選択し実行します。
+From Solution Explorer in Visual Studio, right-click "PACKAGE", select "Build", and execute it.
 <br>
 <div align="center"><a href="doxygenoff1-1.png"><img src="doxygenoff1-1.png" width="50%;"></a></div>
 
 <br>
 
-## doxygen ドキュメントを含める場合の作成手順
-プロジェクトフォルダー直下にある CMakeLists.txt の下記の行を、OFF → ON に書き換えます。<br>
-C++ RTC の場合は 86行目あたり、Python RTC の場合は 77行目あたりです。
+## Creation Procedure When Including doxygen Documentation
+Change the following line in CMakeLists.txt directly under the project folder from OFF to ON.<br>
+For a C++ RTC, this is around line 86, and for a Python RTC, around line 77.
 
 ```
  option(BUILD_DOCUMENTATION "Build the documentation" ON) ※この行の OFF を ON に書き換えます。(デフォルトは OFF)
 ```
 
-1. Visual Studio のソリューション エクスプローラーから「doc」を右クリックして「ビルド」を選択し実行します。<br>
+1. From Solution Explorer in Visual Studio, right-click "doc", select "Build", and execute it.<br>
 <br>
 <div align="center"><a href="doxygenon1-1.png"><img src="doxygenon1-1.png" width="50%;"></a></div>
 <br>
-1. 「doc」でビルド完了後、「PACKAGE」を右クリックして、「ビルド」を選択します。<br>
+1. After the build of "doc" is complete, right-click "PACKAGE" and select "Build".<br>
 <br>
 
 <div align="center"><a href="doxygenon1-2.png"><img src="doxygenon1-2.png" width="50%;"></a></div>
 <br>
 
-【注意事項】
-- CMake の configure で「BUILD_DOCUMENTATION」にチェックが入っているのを確認すること。
-- 先に「doc」のビルドをしてから、「PACKAGE」のビルドを行うこと。「doc」のビルドをせずに「PACKAGE」のビルドを行うとエラーになります 。
+[Notes]
+- Confirm that "BUILD_DOCUMENTATION" is checked in CMake configure.
+- Build "doc" first, and then build "PACKAGE". If you build "PACKAGE" without building "doc", an error will occur.
 
-## msi インストーラーの保存場所、ファイル名
-正常に作成できた場合は、プロジェクトディレクトリーの [build] 内に保存されます。 <br>
-ファイル名は、「RTCプロジェクト名＋RTCのバージョン番号_OpenRTM-aist のバージョン番号_アーキテクチャ」となります。<br><br>
-(例) Flip100_rtm120_win64.msi<br>
-※アーキテクチャは、[win32] または [win64] となります。<br>
-　バージョン番号は、ドットを省いた形式で、[1.0.0] は [100] となります。
+## msi Installer Storage Location and File Name
+If it is created successfully, it will be saved in [build] under the project directory.<br>
+The file name will be "RTC project name + RTC version number_OpenRTM-aist version number_architecture".<br><br>
+(Example) Flip100_rtm120_win64.msi<br>
+* The architecture will be [win32] or [win64].<br>
+　The version number is in a format with dots removed; [1.0.0] becomes [100].
 
-## msi のインストール・アンインストール
-### インストール
-1. 作成した msi インストーラーをダブルクリックします。<br>
+## Installing and Uninstalling an msi
+### Installation
+1. Double-click the created msi installer.<br>
 <br>
-1. [次へ] をクリックします。<br>
+1. Click [Next].<br>
 <br>
 <div align="center"><a href="msi_install1-1.png"><img src="msi_install1-1.png" width="50%;"></a></div>
 <br>
-1. [使用許諾契約書に同意します] にチェックを入れ、[次へ] をクリックします。<br>
+1. Check [I accept the license agreement] and click [Next].<br>
 <br>
 <div align="center"><a href="msi_install2-1.png"><img src="msi_install2-1.png" width="50%;"></a></div>
 <br>
-1. [次へ] をクリックします。<br>
-デフォルトのインストールパスは以下になります。<br>
-(例) C:\Program Files\OpenRTM-aist\1.2.0\Components\c++\ImageProcessing\<br>
-※ImageProcessing は、RTCBuilderの「モジュールカテゴリ」で指定した名前<br>
+1. Click [Next].<br>
+The default installation path is as follows.<br>
+(Example) C:\Program Files\OpenRTM-aist\1.2.0\Components\c++\ImageProcessing\<br>
+* ImageProcessing is the name specified in "Module Category" in RTCBuilder.<br>
 <br>
 <div align="center"><a href="msi_install3-1.png"><img src="msi_install3-1.png" width="50%;"></a></div>
 <br>
-1. [インストール] をクリックすると、インストールが開始されます。<br>
+1. Click [Install] to start the installation.<br>
 <br>
 <div align="center"><a href="msi_install4-1.png"><img src="msi_install4-1.png" width="50%;"></a></div>
 <br>
 <div align="center"><a href="msi_install4-2.png"><img src="msi_install4-2.png" width="50%;"></a></div>
 <br>
-1. [完了] をクリックし、インストーラーを終了します。インストール後、スタートメニューに登録されます。<br>
+1. Click [Finish] to exit the installer. After installation, it will be registered in the Start menu.<br>
 <br>
 <div align="center"><a href="msi_install5-1.png"><img src="msi_install5-1.png" width="50%;"></a></div>
 <br>
 
-### アップグレードの GUID 設定
-アップグレードをするときに、すでにインストールされているバージョンを確認するため GUID を設定する必要があります。
-GUID は、デフォルトで設定されていないため、Visual Studio で PACKAGE をビルドをする度に新しい GUID が割り当てられてしまいます。
-事前に GUID を設定しておくことで、アップグレードなのか、新規インストールなのかを判断することができます。<br>
-以下に、GUID の設定手順を示します。<br><br>
-1. Visual Studio のソリューション エクスプローラーから「PACKAGE」を右クリックし、「ビルド」を選択し実行します。<br>
+### GUID Settings for Upgrades
+When upgrading, it is necessary to set a GUID in order to check the version that is already installed.
+Because the GUID is not set by default, a new GUID is assigned every time PACKAGE is built in Visual Studio.
+By setting the GUID in advance, it is possible to determine whether it is an upgrade or a new installation.<br>
+The procedure for setting the GUID is shown below.<br><br>
+1. From Solution Explorer in Visual Studio, right-click "PACKAGE", select "Build", and execute it.<br>
 <br>
 <div align="center"><a href="msi_upgrade1-1.png.png"><img src="msi_upgrade1-1.png" width="50%;"></a></div>
 <br>
-1. ビルドが完了すると、以下の出力画面に GUID が表示されるので、選択してコピーします。<br>
+1. When the build is complete, the GUID will be displayed in the output screen below. Select it and copy it.<br>
 <br>
 <div align="center"><a href="msi_upgrade2-1.png"><img src="msi_upgrade2-1.png" width="50%;"></a></div>
 <br>
-1. ソリューション エクスプローラーから「ALL_BILD」を展開し、CMakeLists.txt をクリックします。<br>
+1. From Solution Explorer, expand "ALL_BILD" and click CMakeLists.txt.<br>
 <br>
 <div align="center"><a href="msi_upgrade3-1.png"><img src="msi_upgrade3-1.png" width="50%;"></a></div>
 <br>
-1. 手順２でコピーした GUID を以下の画面のように貼り付け、CMakeLists.txt を上書き保存します。<br>
+1. Paste the GUID copied in step 2 as shown in the following screen, and overwrite-save CMakeLists.txt.<br>
 <br>
 <div align="center"><a href="msi_upgrade4-1.png"><img src="msi_upgrade4-1.png" width="50%;"></a></div>
 <br>
-1. 再度、ソリューション エクスプローラーから「PACKAGE」を右クリックし、「ビルド」を選択し実行します。<br>
+1. Again, from Solution Explorer, right-click "PACKAGE", select "Build", and execute it.<br>
 <br>
 <div align="center"><a href="msi_upgrade5-1.png"><img src="msi_upgrade5-1.png" width="50%;"></a></div>
 <br>
 
-[補足]<br>
-GUID の作成には上記のほかに、GUID を新規に作成する方法もあります。<br>
-Visual Studio のメニューから [ツール] > [GUID の作成] を選択し、「GUID の作成」ダイアログを表示させます。<br>
+[Supplement]<br>
+In addition to the above, there is also a method of creating a new GUID.<br>
+From the Visual Studio menu, select [Tools] > [Create GUID] to display the "Create GUID" dialog.<br>
 <br>
-1. [GUID 形式] で、[4. レジストリ形式・・・] を選択します。<br>
-1. [新規 GUID] ボタンをクリックします。<br>
-1. [コピー] ボタンをクリックします。<br>
-1. [終了] ボタンをクリックして、ダイアログを閉じます。<br>
+1. In [GUID format], select [4. Registry Format...].<br>
+1. Click the [New GUID] button.<br>
+1. Click the [Copy] button.<br>
+1. Click the [Exit] button to close the dialog.<br>
 <br>
 <div align="center"><a href="msi_upgrade6-1.png"><img src="msi_upgrade6-1.png" width="50%;"></a></div>
 <br>
-1. 以下の画面のように、CMakeLists.txt に貼り付けて、上書き保存します。※数字のみを貼り付けます。<br>
+1. Paste it into CMakeLists.txt as shown in the following screen and overwrite-save it. * Paste only the numbers.<br>
 <br>
 <div align="center"><a href="msi_upgrade4-1.png"><img src="msi_upgrade4-1.png" width="50%;"></a></div>
 <br>
 
-### アンインストール
-以下、アンインストール手順です。
-#### コントロールパネルから削除する方法
-1. [コントロールパネル] を開き、[プログラムのアンインストール] をクリックします。<br>
+### Uninstallation
+The uninstallation procedure is as follows.
+#### How to Remove from Control Panel
+1. Open [Control Panel] and click [Uninstall a program].<br>
 <br>
 <div align="center"><a href="msi_uninstall0-1.png"><img src="msi_uninstall0-1.png" width="50%;"></a></div>
 <br>
-1. インストールしたパッケージ名を選択し、[アンインストール] をクリックします。<br>
+1. Select the installed package name and click [Uninstall].<br>
 <br>
 <div align="center"><a href="msi_uninstall0-2.png"><img src="msi_uninstall0-2.png" width="50%;"></a></div>
 <br>
-1. コントロールパネルの一覧から表示が消えていればアンインストール完了です。<br><br>
-#### インストーラーから削除する方法
-1. 作成した msi インストーラーをダブルクリックします。<br><br>
-1. [削除] をクリックします。<br>
+1. If the display has disappeared from the list in Control Panel, uninstallation is complete.<br><br>
+#### How to Remove from the Installer
+1. Double-click the created msi installer.<br><br>
+1. Click [Remove].<br>
 <br>
 <div align="center"><a href="msi_uninstall1-1.png"><img src="msi_uninstall1-1.png" width="50%;"></a></div>
 <br>
-1. [削除]をクリックします。<br>
+1. Click [Remove].<br>
 <br>
 <div align="center"><a href="msi_uninstall2-1.png"><img src="msi_uninstall2-1.png" width="50%;"></a></div>
 <br>
 <div align="center"><a href="msi_uninstall2-2.png"><img src="msi_uninstall2-2.png" width="50%;"></a></div>
 <br>
-1. [完了] をクリックし、インストーラーを終了します。<br>
+1. Click [Finish] to exit the installer.<br>
 <br>
 <div align="center"><a href="msi_uninstall3-1.png"><img src="msi_uninstall3-1.png" width="50%;"></a></div>
 <br>
 
-## サービスポートを持つ Python RTC の IDLコンパイル処理
-サービスポートを持つ Python RTC は、パッケージインストール時に IDL コンパイルを実行します。
-IDL コンパイル実行時にプロジェクトフォルダー内にある idlcompile.bat、delete.bat でこの動作を実現させているため、これらのファイルを削除してしまうと機能しなくなってしまうので注意が必要です。 <br>
-コントロールパネルからアンインストールすることで、IDL コンパイル実行後に生成したファイルも削除されます。
+## IDL Compilation Processing for Python RTCs with Service Ports
+Python RTCs with service ports execute IDL compilation when the package is installed.
+This behavior is implemented by idlcompile.bat and delete.bat in the project folder during IDL compilation execution, so be careful not to delete these files, as the function will stop working.<br>
+By uninstalling from Control Panel, files generated after IDL compilation execution will also be deleted.
 
-以下、msi インストーラーによりインストールされるファイル一覧です。★マークが IDL コンパイルで生成されるファイルです。
+The following is a list of files installed by the msi installer. Files marked with ★ are generated by IDL compilation.
 
 ```
  tree /f インストールディレクトリー\OpenRTM-aist\1.2.0\Components\Python\Category\FlipGUI
@@ -190,6 +189,3 @@ IDL コンパイル実行時にプロジェクトフォルダー内にある idl
  └─RTC__POA ★
        __init__.py ★
 ```
-
-
--------jp page!!-------

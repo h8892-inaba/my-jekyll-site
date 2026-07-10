@@ -180,7 +180,7 @@ Let's first confirm the runtime and development environments.
 - OS: Windows XP SP3 (Vista and Windows 7 are also supported)
 - Compiler: [Visual C++ 2010 Express Edition Japanese Version](http://go.microsoft.com/fwlink/?LinkId=190491&clcid=0x411)
 
-- [OpenRTM-aist-1.1.0-RC3 (C++ Version), Win32 VC2010]({{ site.baseurl }}/ja/download/openrtm-aist-content/110-rc3)
+- [OpenRTM-aist-1.1.0-RC3 (C++ Version), Win32 VC2010]({{ site.baseurl }}/en/download/openrtm-aist-content/110-rc3)
 
 - RTSystemEditor 1.1
 - RTCBuilder 1.1

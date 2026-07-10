@@ -2,7 +2,9 @@
 layout: page
 title: Armadillo240へのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 
 <!-- Title: Armadillo240へのインストール -->
@@ -586,5 +588,3 @@ URG センサーも PoE からの電源供給で動作します。
 <div align="center"><a href="Armadillo_URG3.png"><img src="Armadillo_URG3.png" width="100;"></a></div>
 <div align="center"><strong>PoE (Power over Ether) HUB により電力供給が可能</strong></div>
 
-　
--------jp page!!-------

@@ -9,7 +9,7 @@ title: 自作の RTC で制御
 ### ひな形コードの作成
 新規作成した RTC を RaspberryPiMouseRTC と接続して制御するまでの手順を説明します。
 
-まずは Windows、Ubuntu上で [このページ](/ja/node/4601) の手順に従って RTC を作成してください。
+まずは Windows、Ubuntu上で [このページ](/en/node/4601) の手順に従って RTC を作成してください。
 RTC の仕様は以下のように入力します。
 
 
@@ -98,8 +98,8 @@ RTC の仕様は以下のように入力します。
 
 ※RTC は Raspberry Pi 上で動作させることを前提にしていますが、動作確認や講習会での利用には Windows や Ubuntu上で動作させても問題はないので、その場合はコードの編集をする前に CMake で Visual Studio、もしくは Code::Blocks のプロジェクトを生成しておくことをお勧めします。CMake でプロジェクト生成からビルドまでの手順は以下のページに記載してあります。
 
-- [Windows](/ja/node/4623)
-- [Ubuntu](/ja/node/6033)
+- [Windows](/en/node/4623)
+- [Ubuntu](/en/node/6033)
 
 プロジェクトが生成できたら Visual Studio の場合は RasPiMouseSampleCPP.sln、Code::Blocks の場合は RasPiMouseSampleCPP.cbp を開いてソースコードの編集を行ってください。
 
@@ -165,7 +165,7 @@ Python(RasPiMouseSamplePy.py)
  		return RTC.RTC_OK
 ```
 
-[共通インターフェース仕様書](/ja/node/3853) では進行方向をX軸正方向にしているため、Velocity2D型の vx に直進速度、va に回転速度を入力します。
+[共通インターフェース仕様書](/en/node/3853) では進行方向をX軸正方向にしているため、Velocity2D型の vx に直進速度、va に回転速度を入力します。
 
 
 Python ではさらにコンストラクタの以下の部分を修正してください。
@@ -528,7 +528,7 @@ forward_velocity を0.2等に設定して前進させてください。その状
 ### onExecute 関数の実装
 
 onExecute 関数の実装を以下のように実装します。
-ここで [動作確認の項目](/ja/node/6018#toc6) で述べたように距離センサーは距離が短くなるほど大きな値を出力するので注意してください。
+ここで [動作確認の項目](/en/node/6018#toc6) で述べたように距離センサーは距離が短くなるほど大きな値を出力するので注意してください。
 
 ```
  RTC::ReturnCode_t RaspberryPiMouseController_DistanceSensor::onExecute(RTC::UniqueId ec_id)

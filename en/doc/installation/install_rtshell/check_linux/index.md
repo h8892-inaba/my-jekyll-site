@@ -1,107 +1,125 @@
 ---
 layout: page
-title: 動作確認(Linux編)
+title: Operation Check (Linux Edition)
 ---
--------jp page!!-------
 
 <!-- /node/6996 -->
 <!-- Title: 動作確認(Linux編) -->
-インストールが正常に終了したら、付属のサンプルで動作テストをします。サンプルは、通常は以下の場所にあります。
-- /usr/share/openrtm-1.2/components/python/<サンプルコンポーネントセット名>
+After installation has completed successfully, perform an operation test using the included samples. The samples are normally located in the following directory.
 
-サンプルコンポーネントセットSimpleIOを使って、OpenRTM-aistが正しくビルド・インストールされているかを確認します。
+- /usr/share/openrtm-1.2/components/python/<Sample Component Set Name>
+
+Use the sample component set SimpleIO to verify that OpenRTM-aist has been built and installed correctly.
 
 #contents(3)
 
+## Sample Component Set SimpleIO
 
-## サンプルコンポーネントセットSimpleIO
+This is a sample set consisting of the RT Components ConsoleIn and ConsoleOut. ConsoleIn is a component that outputs numerical values entered from the console through an OutPort, while ConsoleOut is a component that displays numerical values received through an InPort on the console. These components are samples intended to demonstrate simple I/O (input/output). They operate by creating a connection from the OutPort of ConsoleIn to the InPort of ConsoleOut and activating these two components.
 
-RTコンポーネントConsoleIn、ConsoleOutからなるサンプルセットです。ConsoleInはコンソールから入力された数値をOutPortから出力するコンポーネント、ConsoleOutはInPortに入力された数値をコンソールに表示するコンポーネントです。これらは、単純なI/O(入出力)を例示するためのサンプルです。ConsoleInのOutPortからConsoleOutのInPortへ接続を構成し、これらの2つのコンポーネントをアクティブ化(Activate)することで動作します。
+In the following explanation, it is assumed that the samples are located under /usr/share/openrtm-1.2/components/python/SimpleIO and that the search path has been configured for the Python executable.
 
-以降、サンプルは/usr/share/openrtm-1.2/components/python/SimpleIO下にあり、Python本体の実行ファイルにはサーチパスが設定されているものとして説明を記述します。
+## Verifying Operation Using the Samples
 
+### Starting the Name Server
 
-## サンプルを使用した動作確認
+- Start the name server. It can be started with the following command.
 
-### ネームサーバーの起動
-- ネームサーバーを起動します。以下のコマンドで起動ができます。
+```bash
+$ rtm-naming
 ```
- $ rtm-naming
-```
-- OpenRTM-aist(C++)をインストールしていない環境では、下記スクリプトで起動できるように用意しています。
-```
- $ python /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtm-naming/rtm-naming.py
-       or
- $ python3 /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtm-naming/rtm-naming.py
-```
-ここで{Python2.7|python3}は、Python版のOpenRTM-aistをインストールした時のLinux環境でインストールしてあったPythonのバージョンによって変わり、Python 2.7がインストールされていた場合は"Python2.7"です。(Ubuntu18.04のデフォルトはPython2.7です。)
 
-以下のような画面が表示されます。
+- In environments where OpenRTM-aist (C++) is not installed, the following scripts are provided so that it can be started.
+
+```bash
+$ python /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtm-naming/rtm-naming.py
+      or
+$ python3 /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtm-naming/rtm-naming.py
+```
+
+Here, {Python2.7|python3} depends on the version of Python installed in the Linux environment when the Python edition of OpenRTM-aist was installed. If Python 2.7 was installed, use "python2.7". (The default on Ubuntu 18.04 is Python 2.7.)
+
+The following screen will be displayed.
 
 <div align="center"><a href="startnameservice002.png"><img src="startnameservice002.png" width="60%;"></a></div>
-<div align="center"><strong>ネームサーバー画面</strong></div>
+<div align="center"><strong>Name Server Window</strong></div>
 
-### サンプルコンポーネントの起動
-- ターミナルを開きます。
-- ターミナルでカレントディレクトリを/usr/share/openrtm-1.2/components/python/SimpleIOにします。
-```
- $ cd /usr/share/openrtm-1.2/components/python/SimpleIO
-```
+### Starting the Sample Components
 
-- ConsoleInコンポーネントを以下のコマンド起動します。
-```
- $ python ConsoleIn.py
+- Open a terminal.
+- Change the current directory to /usr/share/openrtm-1.2/components/python/SimpleIO.
+
+```bash
+$ cd /usr/share/openrtm-1.2/components/python/SimpleIO
 ```
 
-- 別ターミナルを開きます。
-- カレントディレクトリを上記と同じところに設定します。
-- ConsoleOutコンポーネントを以下のコマンドで起動します。
-```
- $ python ConsoleOut.py
+- Start the ConsoleIn component with the following command.
+
+```bash
+$ python ConsoleIn.py
 ```
 
-#### ネームサービス上の名前の確認
-- 別ターミナルを開きます
-以下のようにして名前を確認してください。
-```
- $ rtls -R localhost
- .:
- ConsoleIn0.rtc  ConsoleOut0.rtc
-```
-#### サンプルコンポーネントの接続
-- ConsoleIn0コンポネントとConsoleOut0を以下のコマンド接続します。
-上記で開いたターミナルで
-```
- rtcon /localhost/ConsoleIn0.rtc:out /localhost/ConsoleOut0.rtc:in
-```
-と入力します。
+- Open another terminal.
+- Set the current directory to the same location as above.
+- Start the ConsoleOut component with the following command.
 
-### サンプルコンポーネントのアクティブ化
-- 上記のターミナルで
+```bash
+$ python ConsoleOut.py
 ```
- rtact /localhost/ConsoleIn0.rtc /localhost/ConsoleOut0.rtc
+
+#### Checking Names on the Name Service
+
+- Open another terminal.
+
+Check the registered names as follows.
+
+```bash
+$ rtls -R localhost
+.:
+ConsoleIn0.rtc  ConsoleOut0.rtc
 ```
-と入力します。すると、Consolein.pyとConsoleOut.pyを起動したターミナルの以下の画面がとなり、ConsoleIn.pyを起動したターミナルではPlease input number:というプロンプト表示に変わります。
+
+#### Connecting the Sample Components
+
+- Connect the ConsoleIn0 component and ConsoleOut0 component using the following command.
+
+In the terminal opened above, enter:
+
+```bash
+rtcon /localhost/ConsoleIn0.rtc:out /localhost/ConsoleOut0.rtc:in
+```
+
+### Activating the Sample Components
+
+- In the terminal above, enter:
+
+```bash
+rtact /localhost/ConsoleIn0.rtc /localhost/ConsoleOut0.rtc
+```
+
+When executed, the terminals running ConsoleIn.py and ConsoleOut.py will change as shown below, and the terminal running ConsoleIn.py will display the prompt "Please input number:".
 
 <div align="center"><a href="simpleio_ubuntu.png"><img src="simpleio_ubuntu.png" width="60%;"></a></div>
-<div align="center"><strong>アクティブ化後のConsoleInコンポーネントとConsoleOutコンポーネントのターミナル画面</strong></div>
+<div align="center"><strong>Console Windows of ConsoleIn and ConsoleOut Components After Activation</strong></div>
 
-- 適当な数値(short intの範囲内:32767以下)をConsoleInを起動したターミナルで入力しEnterキーを押します。
-- ConsoleOut.pyターミナル画面に入力した数値と同じものが表示されます。これでConsoleInコンポーネントからConsoleOutコンポーネントへデータが転送されたことがわかります。
+- Enter an arbitrary numerical value (within the range of short int: 32767 or less) in the terminal running ConsoleIn and press the Enter key.
+- The same value entered will be displayed in the ConsoleOut.py terminal window. This confirms that data has been transferred from the ConsoleIn component to the ConsoleOut component.
 
-### サンプルコンポーネントの非アクティブ化と終了
-- 以下のコマンドで非アクティブ化します。 
-```
- rtdeact /localhost/ConsoleIn0.rtc /localhost/ConsoleOut0.rtc
-```
-- ConsoleIn.pyのターミナルは入力待ちになっているので、適当な数値: 32767以下を入力してEnterキーを押します。
-- 以下のコマンドを入力し、ConsoleIn.pyとConsoleOut.pyの実行が終了するのを、それぞれのターミナルで確認してください。
-```
- rtexit /localhost/ConsoleIn0.rtc
- rtexit /localhost/ConsoleOut0.rtc
+### Deactivating and Exiting the Sample Components
+
+- Deactivate the components with the following command.
+
+```bash
+rtdeact /localhost/ConsoleIn0.rtc /localhost/ConsoleOut0.rtc
 ```
 
-以上で、コマンドラインを用いたコンポーネントの基本動作の確認は終了です。
+- The ConsoleIn.py terminal will be waiting for input, so enter an arbitrary numerical value (32767 or less) and press the Enter key.
 
+- Enter the following commands and confirm in each terminal that ConsoleIn.py and ConsoleOut.py have terminated.
 
--------jp page!!-------
+```bash
+rtexit /localhost/ConsoleIn0.rtc
+rtexit /localhost/ConsoleOut0.rtc
+```
+
+This completes the verification of the basic component operations using the command line.

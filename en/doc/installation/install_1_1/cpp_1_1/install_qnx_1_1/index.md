@@ -2,7 +2,9 @@
 layout: page
 title: QNX  へのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: QNX  へのインストール -->
 <div align="right"><a href="qnx_logo.png"><img src="qnx_logo.png" width="15%;" align="right"></a></div>
@@ -202,4 +204,4 @@ ConsoleIn のプロンプトに対して数字を入力すると、ConsoleOut �
 - [QNXでのビルド手順(OpenRTM-aist 1.2)](./qnx_build_proc_1_2)
 
 
--------jp page!!-------
+

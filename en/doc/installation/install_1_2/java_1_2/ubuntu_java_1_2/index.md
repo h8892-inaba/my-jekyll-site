@@ -2,7 +2,9 @@
 layout: page
 title:  Ubuntu/Debianへのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: Ubuntu/Debianへのインストール -->
 <div align="right"><a href="ubuntu_logo2.png"><img src="ubuntu_logo2.png" width="100;" align="right"></a></div>
@@ -53,7 +55,7 @@ Debianの場合はsuでroot権限を得た後に
 ## JDK8のインストール
 
 Java版OpenRTM-aistの使用にはJDK8相当のJava環境が必要です。(デフォルトの環境でJDK8がインストールされている場合もありますが、Ubuntu 18.04ではJDK11がインストールされているため、JDK8のインストールが必要です。)　JDK8の入手やインストールについては以下を参照してください。
-- [JDK8のインストール](/ja/node/6911)
+- [JDK8のインストール](/en/node/6911)
 
 ### インストールの確認
 インストールを確認します。
@@ -409,4 +411,4 @@ openrtpでは大量のファイルがインストールされるため、ここ�
 
 
 
--------jp page!!-------
+

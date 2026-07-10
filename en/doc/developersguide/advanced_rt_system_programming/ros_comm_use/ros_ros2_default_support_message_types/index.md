@@ -1,18 +1,18 @@
 ---
 layout: page
-title: " デベロッパーズガイド"
+title: "Developer's Guide"
 ---
--------jp page!!-------
-<!-- Title: シリアライザ名とROS/ROS2メッセージ型 -->
+<!-- Title: Serializer Names and ROS/ROS2 Message Types -->
 #contents
 
-ROS,ROS2通信機能を使用する場合、以下のROS/ROS2メッセージ型に対応のシリアライザをOpenRTM-aistは備えています。以下のメッセージ型以外が必要な場合は、そのメッセージ型に変換するシリアライザを独自に実装してください。
+When using the ROS or ROS2 communication features, OpenRTM-aist provides serializers corresponding to the following ROS/ROS2 message types.
+If you need to use a message type other than those listed below, implement a custom serializer that converts data to the required message type.
 
 <table class="table-alt">
   <tr>
-    <th>シリアライザ名</th>
-    <th>RTMデータ型</th>
-    <th>ROS,ROS2メッセージ型</th>
+    <th>Serializer Name</th>
+    <th>RTM Data Type</th>
+    <th>ROS/ROS2 Message Type</th>
   </tr>
   <tr>
     <td>ros:std_msgs/Float32,<br> ros2:std_msgs/Float32</td>
@@ -75,7 +75,7 @@ ROS,ROS2通信機能を使用する場合、以下のROS/ROS2メッセージ型�
     <td>std_msgs/Int8MultiArray</td>
   </tr>
   <tr>
-    <td>ros:std_msgs/Int16MultiArray,<br> ros2:std_msgs/nt16MultiArray</td>
+    <td>ros:std_msgs/Int16MultiArray,<br> ros2:std_msgs/Int16MultiArray</td>
     <td>TimedShortSeq,TimedLongSeq,<br> TimedUShortSeq,TimedULongSeq,<br> TimedFloatSeq,TimedDoubleSeq</td>
     <td>std_msgs/Int16MultiArray</td>
   </tr>
@@ -136,6 +136,3 @@ ROS,ROS2通信機能を使用する場合、以下のROS/ROS2メッセージ型�
   </tr>
 </table>
 
-
-
--------jp page!!-------

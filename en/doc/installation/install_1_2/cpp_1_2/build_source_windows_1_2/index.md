@@ -2,7 +2,9 @@
 layout: page
 title:  ソースからのビルド(Windows編)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: ソースからのビルド(Windows編) -->
 OpenRTM-aist本体に改修を加えてWindows上利用したい場合は、OpenRTM-aist本体のWindows用ソースパッケージを自分でビルドできます。 ここでは、ダウンロードページやリポジトリからソースコードを取得しWindows環境でOpenRTM-aistをビルドする方法を説明します。
@@ -47,7 +49,7 @@ Community版は有償のProfessional版とほぼ同等の機能ですが、個�
 
 以下よりVisual Studio 2019は入手できます。
 
-- [Visual Studioのインストール手順]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
+- [Visual Studioのインストール手順]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
 
 なお、Visual Studio 2017をインストールする場合は"C++によるデスクトップ開発"を選択し、さらに"インストール詳細"のところで"Windows 8.1 SDK と UCRT SDK"を選択してインストールをおこなってください。
 
@@ -206,4 +208,4 @@ Visual Studio 2017で、64ビットのインテルないしはAMDプロセッサ
 
 以上で、OpenRTM-aistのインストールは終了です。
 
--------jp page!!-------
+

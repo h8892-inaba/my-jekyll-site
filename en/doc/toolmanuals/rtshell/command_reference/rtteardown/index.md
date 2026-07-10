@@ -2,46 +2,42 @@
 layout: page
 title: rtteardown
 ---
--------jp page!!-------
 
 <!-- Title: rtteardown -->
 
-## 書式
+## Format
 ```
  rtteardown [OPTION ...] [RTSPROFILE_FILE]
 ```
 
-# 概要
-RTSProfileファイルに記述された接続情報を用いて、動作中のRTシステムの接続を削除します。
+# Overview
+Deletes the connections of a running RT system using the connection information described in the RTSProfile file.
 
-ファイル名を指定しなかった場合、RTSProfile情報をstdinから読みこみます。
+If no file name is specified, RTSProfile information is read from stdin.
 
-## オプション
+## Options
 ```
- --dry-run　　 実行する内容を表示します(実際には削除は行われません)。
- -x、--xml　　 XMLフォーマットを使います。
- -y、--yaml 　 YAMLフォーマットを使います。
- --version　　 プログラムのバージョン番号を表示します。
- -h、--help　　ヘルプを表示します。
- -v、--verbose より詳細な情報を出力します。
+ --dry-run　　 Displays what will be executed. (Deletion is not actually performed.)
+ -x, --xml　　 Uses XML format.
+ -y, --yaml 　 Uses YAML format.
+ --version　　 Displays the program version number.
+ -h, --help　　Displays help.
+ -v, --verbose Outputs more detailed information.
 ```
 
-## 返り値
-成功の場合はゼロを返します。失敗の場合はゼロではない値を返します。
+## Return Values
+Returns zero on success. Returns a non-zero value on failure.
 
-デバッグ情報とエラーはstderrに出力されます。
+Debug information and errors are output to stderr.
 
-## 例
-- sys.rtsysファイルの情報を用いて現在実行中のRTシステムの接続を削除します。
+## Examples
+- Deletes the connections of the currently running RT system using the information in the sys.rtsys file.
 ```
  $ rtteardown sys.rtsys
 ```
 
-- sys.rtsysファイルの情報を用いて現在実行中のRTシステムの接続を削除する場合、どのようなことがなされるかを表示します。(実際には、削除は行われません。)
+- Displays what will be done when deleting the connections of the currently running RT system using the information in the sys.rtsys file. (Deletion is not actually performed.)
 ```
  $ rtteardown sys.rtsys --dry-run
 ```
 
-
-
--------jp page!!-------

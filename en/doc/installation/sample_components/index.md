@@ -1,25 +1,23 @@
 ---
 layout: page
-title: "OpenRTM付属のサンプルについて"
+title: "About the Sample Components Included with OpenRTM"
 ---
--------jp page!!-------
 
 <!-- Title: OpenRTM-aist付属のサンプルについて -->
 
-OpenRTM-aistにはいくつかのサンプルコンポーネントが付属しており、簡単に使ってみれます。
-(CameraViewer/OpenCVCameraコンポーネントにはOpenCVが必要です。）
-また、サンプルコンポーネントのソースコードも付属していますので、開発の参考にしてください。
+OpenRTM-aist includes several sample components that can be used easily.
+(The CameraViewer/OpenCVCamera components require OpenCV.)
+The source code of the sample components is also included, so please use it as a reference for development.
 
-本章では、OpenRTM-aistに付属のサンプルについて説明します。サンプルコンポーネントを使ってみる場合は、サンプルコンポーネントを起動する前にネーム・サービスを起動しておいてください。ネーム・サービス用のプログラムとしては以下のものが用意されています。
+This chapter describes the sample components included with OpenRTM-aist. If you want to use the sample components, start the Name Service before launching the sample components. The following programs are provided for the Name Service.
 
   - Start Naming Service.bat (C++)
   - rtm-naming.py (Python)
 
-Windowsでネーム・サーバーを実行するには、該当するファイルをエクスプローラーで見つけダブルクリックしてください。インストーラーを用いてインストールした場合は、[スタートメニュー]>[OpenRTM-aist]>[Start Naming Service]としてもネームサービスを起動できます。
-なお、本章ではRTSystemEditorがインストールされた環境であることを想定して説明しています。
-RTSystemEditorのインストールについての詳細は、[OpenRTPのインストール](//ja/node/6655)を参照してください。
+To run the Name Server on Windows, locate the corresponding file in Explorer and double-click it. If OpenRTM-aist was installed using the installer, the Name Service can also be started from [Start Menu] > [OpenRTM-aist] > [Start Naming Service].
 
-
+This chapter assumes an environment where RTSystemEditor has been installed.
+For details on installing RTSystemEditor, refer to [Installing OpenRTP](/node/6655).
 
 - [SimpleIO](./simpleio)
 - [SeqIO](./seqio)
@@ -33,7 +31,7 @@ RTSystemEditorのインストールについての詳細は、[OpenRTPのイン�
 - [TkJoyStick/TkMobileRobotSimulator](./tkjoystick_mobilerobotsimulator)
 - [TkMotorComp/SliderComp](./tkmotorcomp_slidercomp)
 - [TkMotorPosComp/SliderComp](./tkmotorposcomp_slidercomp)
-- [OpenCVCamera/CameraViewerとシンプルOpenCVサンプル](./opencvcamera)
+- [OpenCVCamera/CameraViewer and Simple OpenCV Samples](./opencvcamera)
 - [Chromakey](./chromakey)
 - [ObjectTracking](./objecttracking)
 - [ImageSubtraction](./ImageSubtraction)
@@ -41,4 +39,4 @@ RTSystemEditorのインストールについての詳細は、[OpenRTPのイン�
 - [TkCalibGUI](./tkcalibgui)
 
 - [opencv_sample_code_build_proc](./opencv_sample_code_build_proc)
--------jp page!!-------
+

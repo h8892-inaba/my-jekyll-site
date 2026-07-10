@@ -1,22 +1,18 @@
 ---
 layout: page
-title: "独自シリアライザの実装手順"
+title: "Implementation Procedure for a Custom Serializer"
 ---
--------jp page!!-------
 
 <!-- Title: 独自シリアライザの実装手順 -->
 #contents
 
-OpenRTM-aistのデータポートでは以下のようにデータをバイト列に変換するシリアライザ、データを送信する通信インターフェースの種類については複数の実装から選択可能です。
+In the OpenRTM-aist data port, you can select from multiple implementations for both the serializer that converts data into a byte stream and the communication interface used to transmit the data, as shown below.
 
 <div align="center"><a href="sirializer1-1.png"><img src="sirializer1-1.png" width="80%;"></a></div>
 
-インターフェース型が選択可能のためRTC同士だけではなく、ROSのノード、あるいはROS2のようにDDSにより通信を行うプロセスとデータのやり取りが可能になります。
-またシリアライザが選択可能のため、図のようにTimedLong型をTimedLong型のような別のデータ型に変換して様々なデータ型のポートと柔軟に接続することができます。
+Since the interface type can be selected, it is possible to exchange data not only between RTCs but also with ROS nodes or processes that communicate using DDS, such as ROS 2.
+In addition, since the serializer can be selected, it is possible to convert a data type such as **TimedLong** into another data type, as shown in the figure, enabling flexible connections between ports with different data types.
 
-現在はC++版、Python版で使用可能です。
+Currently, this feature is available in the C++ and Python versions.
 
-以下に独自シリアライザの作成手順を記載します。
-
-
--------jp page!!-------
+The following sections describe the procedure for creating a custom serializer.

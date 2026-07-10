@@ -2,7 +2,9 @@
 layout: page
 title: Raspbianへのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: Raspbianへのインストール -->
 
@@ -14,7 +16,7 @@ Raspbianへのサポートバージョンや対応の有無は、予告なしに
 
 ## JDK8のインストール
 Java版OpenRTM-aistの使用にはJDK8相当のJava環境が必要です。以下のリンクを参照にJDK8を入手してインストールしてください。
-- [JDK8のインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8)
+- [JDK8のインストール]({{ site.baseurl }}/en/doc/installation/common/install_jdk8)
 
 ## 一括インストールスクリプト
 openrtm.orgが提供するインストール・スクリプト**pkg_install_raspbian.sh**を指定のURLからダウンロードし、root権限で実行します。このスクリプトでは必要なパッケージを順次apt-getを用いてインストールしていきます。
@@ -27,12 +29,12 @@ openrtm.orgが提供するインストール・スクリプト**pkg_install_rasp
 ```
 でJava版OpenRTM-aistをインストールできます。
 
-一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)」のページをご確認ください。
+一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script)」のページをご確認ください。
 
 
 ## rtshellのインストール
 Raspbianの環境では現在OpenRTPの対応がありません。よってRaspianの環境では、ローカルでGUI(RTSystemEditor)を用いたRTCの制御ができません。RTCの制御を行うための方法としては、リモートで他の対応ホスト上でRTSystemEditorを起動してそこから制御を行うという方法と、ローカルでrtshellというツールを用いて制御を行うという方法があります。rtshellのインストールについては以下のリンクを参照してください。
-[rtshellのインストール方法]({{ site.baseurl }}/ja/doc/toolmanuals/rtshell/command_reference/rtstodot)
+[rtshellのインストール方法]({{ site.baseurl }}/en/doc/toolmanuals/rtshell/command_reference/rtstodot)
 
 ### インストールの確認
 インストールを確認します。
@@ -454,4 +456,4 @@ openrtm-aist-java-doc には、日本語と英語のクラスリファレンス�
 ```
 
 
--------jp page!!-------
+

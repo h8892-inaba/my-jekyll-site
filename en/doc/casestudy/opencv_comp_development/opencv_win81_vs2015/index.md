@@ -180,7 +180,7 @@ Here, we will confirm the runtime and development environment.
 - Compiler: [Visual Studio 2015 Express](https://www.visualstudio.com/ja/post-download-vs/?sku=xdesk&clcid=0x409&telem=ga)
 
 
-- [OpenRTM-aist-1.1.2-Release]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release)
+- [OpenRTM-aist-1.1.2-Release]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release)
 
 - [Doxygen](http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.11-setup.exe) Required for document generation
 - [CMake](https://cmake.org/files/v3.5/cmake-3.5.2-win32-x86.msi)

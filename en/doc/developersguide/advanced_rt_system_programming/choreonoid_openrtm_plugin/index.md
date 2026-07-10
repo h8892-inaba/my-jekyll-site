@@ -1,39 +1,38 @@
----
+i---
 layout: page
-title: "独自実行コンテキストの作成手順"
+title: "Procedure for Creating a Custom Execution Context"
 ---
--------jp page!!-------
 
 <!-- Choreonoid OpenRTMプラグインの利用方法 -->
 #contents
-Choreonoidはオープンソースのロボット用シミュレーションソフトウェアです。
-拡張性が高く、物理エンジン、通信機能、スクリプティング機能、制御アルゴリズム等をC++プラグインとして追加できます。
+Choreonoid is open-source robot simulation software.
+It is highly extensible, and physics engines, communication functions, scripting functions, control algorithms, and other features can be added as C++ plugins.
 
-- [Choreonoid ホームページ](https://choreonoid.org/ja/)
+- [Choreonoid Homepage](https://choreonoid.org/en/)
 
-Choreonoid用OpenRTMプラグインはChoreonoid上でRTCを起動し、シミュレータ上のオブジェクトのトルクや速度、ビジョンセンサやレーザーレンジセンサ等の入出力をポートの入出力と関連付けたRTCを作成できます。
-これにより外部のRTCとChoreonoidの入出力が連携し、RTCの再利用によるシミュレータ実行の効率化、シミュレータ環境から実機環境へシームレスに移行できます。
+The OpenRTM plugin for Choreonoid can start RTCs on Choreonoid and create RTCs that associate inputs and outputs such as torque and velocity of objects in the simulator, vision sensors, laser range sensors, and others with port inputs and outputs.
+This enables external RTCs to work together with Choreonoid inputs and outputs, improves simulator execution efficiency through RTC reuse, and enables seamless migration from the simulator environment to the real-machine environment.
 
 <div align="center"><a href="choreonoid1_1.png"><img src="choreonoid1_1.png" width="80%;"></a></div>
 
-このページではOpenRTMプラグインのインストール手順について説明します。
+This page explains the installation procedure for the OpenRTM plugin.
 
 
 
 
-## ビルド手順
-OpenRTMプラグインは現在OpenRTM-aist 1.2.2以前のバージョンのサポートを終了しています。
-OpenRTM-aist 2.0.0以上のバージョンのインストールが必要です。
+## Build Procedure
+The OpenRTM plugin currently no longer supports OpenRTM-aist 1.2.2 and earlier versions.
+OpenRTM-aist version 2.0.0 or later must be installed.
 
 ### Windows
-#### OpenRTM-aistのビルドとインストール
+#### Building and Installing OpenRTM-aist
 
-OpenRTM-aist+omniORBを以下の手順でビルド、インストールしてください。
-※インストーラーでOpenRTM-aistをインストールしている場合は不要。
+Build and install OpenRTM-aist+omniORB by following the procedure below.
+* This is not necessary if OpenRTM-aist has been installed using the installer.
 
-- [OpenRTM-aist(C++版)のCMakeによるビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build#windowsomniorb)
+- [Procedure for Building OpenRTM-aist (C++ version) with CMake]({{ site.baseurl }}/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build#windowsomniorb)
 
-ただし、CMake実行時にOpenRTM-aistのインストールフォルダは指定してそこにインストールするようにしてください。
+However, when running CMake, specify the OpenRTM-aist installation folder so that it is installed there.
 
 ```
  set OPENRTM_INSTALL_DIR=C:/work/openrtm_install
@@ -43,67 +42,67 @@ OpenRTM-aist+omniORBを以下の手順でビルド、インストールしてく
  cmake --build . --config Release --target install
 ```
 
-またOpenSSLのヘッダーファイル、ライブラリを適当な場所に展開してください。
+Also, extract the OpenSSL header files and libraries to an appropriate location.
 
 - https://openrtm.org/pub/OpenSSL/1.1.0/
 
-#### Choreonoidのビルドとインストール
+#### Building and Installing Choreonoid
 
-Choreonoidを以下の手順でビルド、インストールしてください。
+Build and install Choreonoid by following the procedure below.
 
-- [ソースコードからのビルドとインストール (Windows編)](https://choreonoid.org/ja/documents/latest/install/build-windows.html)
+- [Building and Installing from Source Code (Windows)](https://choreonoid.org/en/documents/latest/install/build-windows.html)
 
-CMake、Boost、Qtのバージョンには注意してください。
+Pay attention to the versions of CMake, Boost, and Qt.
 
-- CMakeのバージョンが古い場合、Boostをライブラリを検出できない場合があります。できるだけ最新版をインストールしてください。
-- Boostはデフォルトの設定で**C:\local\boost_1_77_0**のようなフォルダにインストールされますが、CMakeは**C:\local\boost_{バージョン番号}**からBoostを探すため、古いバージョンがすでに**C:\local\**以下にインストールされている場合にそちらを検出する事があるので注意してください。
+- If the CMake version is old, Boost libraries may not be detected. Install the latest version as much as possible.
+- Boost is installed by default in a folder such as **C:\local\boost_1_77_0**, but CMake searches for Boost from **C:\local\boost_{version number}**. Therefore, if an older version is already installed under **C:\local\**, note that CMake may detect that version.
 
-OpenRTMプラグインの使用のためにはCORBAプラグインのビルドに、ヘッダーファイルなどの各種ファイルをインストールが必要です。
-また、OpenRTM Pythonプラグインの使用のためにはPythonプラグインのビルドが必要です。
+To use the OpenRTM plugin, the CORBA plugin must be built and various files such as header files must be installed.
+Also, to use the OpenRTM Python plugin, the Python plugin must be built.
 
 <table class="table-alt">
   <tr>
-    <th>設定項目</th>
-    <th>内容</th>
-    <th>設定例</th>
+    <th>Setting Item</th>
+    <th>Description</th>
+    <th>Setting Example</th>
   </tr>
   <tr>
     <td>ENABLE_CORBA</td>
-    <td>CORBA通信機能の有効化、無効化</td>
+    <td>Enable or disable CORBA communication functions</td>
     <td>ON</td>
   </tr>
   <tr>
     <td>BUILD_CORBA_PLUGIN</td>
-    <td>CORBAプラグインのビルドの有無</td>
+    <td>Whether to build the CORBA plugin</td>
     <td>ON</td>
   </tr>
   <tr>
     <td>CHOREONOID_OMNIORB_DIR</td>
-    <td>omniORBのインストールフォルダのパス</td>
-    <td>**'C:/work/openrtm_install/2.0.0/omniORB/4.2.5_vc16**'</td>
+    <td>Path to the omniORB installation folder</td>
+    <td><strong>'C:/work/openrtm_install/2.0.0/omniORB/4.2.5_vc16</strong>'</td>
   </tr>
   <tr>
     <td>INSTALL_SDK</td>
-    <td>ヘッダーファイルなどの各種ファイルをインストールするか</td>
+    <td>Whether to install various files such as header files</td>
     <td>ON</td>
   </tr>
   <tr>
     <td>ENABLE_PYTHON</td>
-    <td>Pythonスクリプティング機能、およびPythonプラグインのビルドの有無</td>
+    <td>Whether to build the Python scripting function and Python plugin</td>
     <td>ON</td>
   </tr>
   <tr>
     <td>CMAKE_INSTALL_PREFIX</td>
-    <td>Choreonoidのインストールフォルダ</td>
-    <td>**'C:/work/choreonoid_install**'</td>
+    <td>Choreonoid installation folder</td>
+    <td><strong>'C:/work/choreonoid_install</strong>'</td>
   </tr>
 </table>
 
 
-**CHOREONOID_OMNIORB_DIR**については環境変数OMNI_ROOTを設定していると自動でomniORBを検出しますが、Choreonoidが生成するCMakeコンフィグファイルの問題でOpenRTMプラグインのビルドでエラーが発生することがあるので必ず手動でパスを設定してください。
-またPythonプラグインのビルドのため、Pythonをインストールしてください。
+Regarding **CHOREONOID_OMNIORB_DIR**, if the environment variable OMNI_ROOT is set, omniORB is detected automatically. However, due to an issue with the CMake config file generated by Choreonoid, an error may occur when building the OpenRTM plugin, so be sure to set the path manually.
+Also, install Python in order to build the Python plugin.
 
-コマンドでは以下のように入力できます。
+You can enter the following commands.
 
 ```
  set CHOREONOID_INSTALL_DIR=C:/work/choreonoid_install
@@ -118,46 +117,46 @@ OpenRTMプラグインの使用のためにはCORBAプラグインのビルド�
  cmake --build . --config Release --target install
 ```
 
-※[choreonoidのリポジトリ](https://github.com/choreonoid/choreonoid)のmasterブランチのソースコードに不具合があり、WindowsでのCorbaPluginのビルドでエラーが発生します。masterブランチのソースコードを使う場合、**src/CorbaPlugin/CorbaPlugin.cpp**の以下の部分を修正してください。
+* There is a bug in the source code of the master branch of the [choreonoid repository](https://github.com/choreonoid/choreonoid), and an error occurs when building CorbaPlugin on Windows. If you use the source code from the master branch, modify the following part of **src/CorbaPlugin/CorbaPlugin.cpp**.
 
 ```
- nameServerProcess.start(QString("\"") + command.c_str() + "\""); //修正前
+ nameServerProcess.start(QString("\"") + command.c_str() + "\""); // Before correction
  
- nameServerProcess.start(QString("\"") + command.c_str() + "\"", QStringList()); //修正後
+ nameServerProcess.start(QString("\"") + command.c_str() + "\"", QStringList()); // After correction
 ```
 
-※OpenRTM-aistをインストーラーでインストールした場合はCHOREONOID_OMNIORB_DIRオプションの設定は不要です。
+* If OpenRTM-aist has been installed using the installer, the CHOREONOID_OMNIORB_DIR option does not need to be set.
 
-#### OpenRTMプラグインのビルドとインストール
+#### Building and Installing the OpenRTM Plugin
 
-OpenRTMプラグインのソースコードは以下から入手できます。
+The source code of the OpenRTM plugin can be obtained from the following.
 
 - [choreonoid-openrtm](https://github.com/OpenRTM/choreonoid-openrtm)
 
-Choreonoidと同様、CMake実行後にVisual Studioでビルドします。
+As with Choreonoid, build it with Visual Studio after running CMake.
 
-CMakeでは以下の項目を設定します。
+Set the following items in CMake.
 
 <table class="table-alt">
   <tr>
-    <th>設定項目</th>
-    <th>内容</th>
-    <th>設定例</th>
+    <th>Setting Item</th>
+    <th>Description</th>
+    <th>Setting Example</th>
   </tr>
   <tr>
     <td>Choreonoid_DIR</td>
-    <td>ChoreonoidのCMakeコンフィグファイルがインストールされたフォルダ</td>
-    <td>**'C:/work/choreonoid_install/share/choreonoid/cmake**'</td>
+    <td>Folder where the Choreonoid CMake config file is installed</td>
+    <td><strong>'C:/work/choreonoid_install/share/choreonoid/cmake</strong>'</td>
   </tr>
   <tr>
     <td>OpenRTM_DIR</td>
-    <td>OpenRTM-aistのCMakeコンフィグファイルがインストールされたフォルダ</td>
-    <td>**'C:/work/openrtm_install/2.0.0/cmake**'</td>
+    <td>Folder where the OpenRTM-aist CMake config file is installed</td>
+    <td><strong>'C:/work/openrtm_install/2.0.0/cmake</strong>'</td>
   </tr>
 </table>
 
-以下のコマンドを実行することでビルド、インストールができます。
-生成したOpenRTMプラグインはChoreonoidのインストールフォルダにコピーされます。
+You can build and install it by running the following commands.
+The generated OpenRTM plugin will be copied to the Choreonoid installation folder.
 
 ```
  git clone https://github.com/OpenRTM/choreonoid-openrtm
@@ -169,17 +168,17 @@ CMakeでは以下の項目を設定します。
  cmake --build . --config Release --target install
 ```
 
-※OpenRTM-aistをインストーラーでインストールした場合はOpenRTM_DIRオプションの設定は不要です。
+* If OpenRTM-aist has been installed using the installer, the OpenRTM_DIR option does not need to be set.
 
-#### OpenRTM Pythonプラグインのビルドとインストール
+#### Building and Installing the OpenRTM Python Plugin
 
-OpenRTMプラグインのソースコードは以下から入手できます。
+The source code of the OpenRTM plugin can be obtained from the following.
 
 - [OpenRTMPythonPlugin](https://github.com/Nobu19800/OpenRTMPythonPlugin)
 
-CMakeの設定項目はOpenRTMプラグインと同じです。
+The CMake setting items are the same as for the OpenRTM plugin.
 
-以下のコマンドを実行することでビルド、インストールができます。
+You can build and install it by running the following commands.
 
 ```
  git clone https://github.com/Nobu19800/OpenRTMPythonPlugin
@@ -191,36 +190,36 @@ CMakeの設定項目はOpenRTMプラグインと同じです。
  cmake --build . --config Release --target install
 ```
 
-※OpenRTM-aistをインストーラーでインストールした場合はOpenRTM_DIRオプションの設定は不要です。
+* If OpenRTM-aist has been installed using the installer, the OpenRTM_DIR option does not need to be set.
 
-#### 必要なファイル一式をまとめる
+#### Collecting the Required Files
 
-Choreonoidをビルド、インストールすると、基本的には必要なファイルはインストール先にコピーされます。
-ただし、Pythonプラグインをビルドする場合は、対応するバージョンのPythonがインストールされている必要があります。
+When Choreonoid is built and installed, basically the required files are copied to the installation destination.
+However, when building the Python plugin, the corresponding version of Python must be installed.
 
-このため、対応するバージョンのPythonがインストールされていない場合は、以下のページのように組み込み用Pythonを同梱する必要があります。
+Therefore, if the corresponding version of Python is not installed, you need to bundle the embedded Python environment as described on the following page.
 
-- [WindowsでPython3.7の実行環境を手早く作る方法](https://qiita.com/hirohiro77/items/377dfc0a264acb3db222)
+- [Quickly Creating a Python 3.7 Execution Environment on Windows](https://qiita.com/hirohiro77/items/377dfc0a264acb3db222)
 
 
-まずは、対応するバージョンの**python-3.x.y-embed-amd64**をダウンロードしてください。
+First, download the corresponding version of **python-3.x.y-embed-amd64**.
 
 - https://www.python.org/ftp/python/
 
-次に必要なライブラリをインストールします。
-Choreonoidはnumpyが必要なためインストールします。
+Next, install the required libraries.
+Choreonoid requires numpy, so install it.
 
 ```
  python -m pip install numpy
 ```
 
-また、Choreonoid Pythonプラグインのサンプルプログラムを実行するためにPySDL2が必要なためインストールします。
+Also, PySDL2 is required to run the sample programs of the Choreonoid Python plugin, so install it.
 
 ```
  python -m pip install pysdl2 pysdl2-dll
 ```
 
-omniORB、OpenRTM-aistをインストールする必要があるため、以下のファイル、フォルダを**python-3.x.y-embed-amd64/Lib/site-packages**以下のコピーしてください。
+Since omniORB and OpenRTM-aist must be installed, copy the following files and folders under **python-3.x.y-embed-amd64/Lib/site-packages**.
 
 - CosNaming
 - omniidl
@@ -242,11 +241,11 @@ omniORB、OpenRTM-aistをインストールする必要があるため、以下�
 
 
 ### Ubuntu
-#### OpenRTM-aistのビルドとインストール
+#### Building and Installing OpenRTM-aist
 
-OpenRTM-aist+omniORBを以下の手順でビルド、インストールしてください。
+Build and install OpenRTM-aist+omniORB by following the procedure below.
 
-- [OpenRTM-aist(C++版)のCMakeによるビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build#ubuntuomniorb)
+- [Procedure for Building OpenRTM-aist (C++ version) with CMake]({{ site.baseurl }}/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build#ubuntuomniorb)
 
 ```
  export OPENRTM_INSTALL_PATH=~/work/openrtm_install
@@ -261,49 +260,49 @@ OpenRTM-aist+omniORBを以下の手順でビルド、インストールしてく
 ```
 
 
-#### Choreonoidのビルドとインストール
+#### Building and Installing Choreonoid
 
-Choreonoidを以下の手順でビルド、インストールしてください。
+Build and install Choreonoid by following the procedure below.
 
-- [ソースコードからのビルドとインストール (Windows編)](https://choreonoid.org/ja/documents/latest/install/build-windows.html)
+- [Building and Installing from Source Code (Windows)](https://choreonoid.org/en/documents/latest/install/build-windows.html)
 
-CMake、Boost、Qtのバージョンには注意してください。
+Pay attention to the versions of CMake, Boost, and Qt.
 
-- CMakeのバージョンが古い場合、Boostをライブラリを検出できない場合があります。できるだけ最新版をインストールしてください。
-- Boostはデフォルトの設定で**C:\local\boost_1_77_0**のようなフォルダにインストールされますが、CMakeは**C:\local\boost_{バージョン番号}**からBoostを探すため、古いバージョンがすでに**C:\local\**以下にインストールされている場合にそちらを検出する事があるので注意してください。
+- If the CMake version is old, Boost libraries may not be detected. Install the latest version as much as possible.
+- Boost is installed by default in a folder such as **C:\local\boost_1_77_0**, but CMake searches for Boost from **C:\local\boost_{version number}**. Therefore, if an older version is already installed under **C:\local\**, note that CMake may detect that version.
 
-OpenRTMプラグインの使用のためにはCORBAプラグインのビルドに、ヘッダーファイルなどの各種ファイルをインストールが必要です。
-また、OpenRTM Pythonプラグインの使用のためにはPythonプラグインのビルドが必要です。
+To use the OpenRTM plugin, the CORBA plugin must be built and various files such as header files must be installed.
+Also, to use the OpenRTM Python plugin, the Python plugin must be built.
 
 <table class="table-alt">
   <tr>
-    <th>設定項目</th>
-    <th>内容</th>
-    <th>設定例</th>
+    <th>Setting Item</th>
+    <th>Description</th>
+    <th>Setting Example</th>
   </tr>
   <tr>
     <td>ENABLE_CORBA</td>
-    <td>CORBA通信機能の有効化、無効化</td>
+    <td>Enable or disable CORBA communication functions</td>
     <td>ON</td>
   </tr>
   <tr>
     <td>BUILD_CORBA_PLUGIN</td>
-    <td>CORBAプラグインのビルドの有無</td>
+    <td>Whether to build the CORBA plugin</td>
     <td>ON</td>
   </tr>
   <tr>
     <td>INSTALL_SDK</td>
-    <td>ヘッダーファイルなどの各種ファイルをインストールするか</td>
+    <td>Whether to install various files such as header files</td>
     <td>ON</td>
   </tr>
   <tr>
     <td>ENABLE_PYTHON</td>
-    <td>Pythonスクリプティング機能、およびPythonプラグインのビルドの有無</td>
+    <td>Whether to build the Python scripting function and Python plugin</td>
     <td>ON</td>
   </tr>
   <tr>
     <td>CMAKE_INSTALL_PREFIX</td>
-    <td>Choreonoidのインストールフォルダ</td>
+    <td>Choreonoid installation folder</td>
     <td>'/work/choreonoid_install'</td>
   </tr>
 </table>
@@ -321,35 +320,35 @@ OpenRTMプラグインの使用のためにはCORBAプラグインのビルド�
 
 
 
-#### OpenRTMプラグインのビルドとインストール
+#### Building and Installing the OpenRTM Plugin
 
-OpenRTMプラグインのソースコードは以下から入手できます。
+The source code of the OpenRTM plugin can be obtained from the following.
 
 - [choreonoid-openrtm](https://github.com/OpenRTM/choreonoid-openrtm)
 
 
-CMakeでは以下の項目を設定します。
+Set the following items in CMake.
 
 <table class="table-alt">
   <tr>
-    <th>設定項目</th>
-    <th>内容</th>
-    <th>設定例</th>
+    <th>Setting Item</th>
+    <th>Description</th>
+    <th>Setting Example</th>
   </tr>
   <tr>
     <td>Choreonoid_DIR</td>
-    <td>ChoreonoidのCMakeコンフィグファイルがインストールされたフォルダ</td>
+    <td>Folder where the Choreonoid CMake config file is installed</td>
     <td>`/work/choreonoid_install/share/choreonoid/cmake`</td>
   </tr>
   <tr>
     <td>OpenRTM_DIR</td>
-    <td>OpenRTM-aistのCMakeコンフィグファイルがインストールされたフォルダ</td>
+    <td>Folder where the OpenRTM-aist CMake config file is installed</td>
     <td>`/work/openrtm_install/lib/openrtm-2.0/cmake`</td>
   </tr>
 </table>
 
-以下のコマンドを実行することでビルド、インストールができます。
-生成したOpenRTMプラグインはChoreonoidのインストールフォルダにコピーされます。
+You can build and install it by running the following commands.
+The generated OpenRTM plugin will be copied to the Choreonoid installation folder.
 
 ```
  git clone https://github.com/OpenRTM/choreonoid-openrtm
@@ -362,15 +361,15 @@ CMakeでは以下の項目を設定します。
 ```
 
 
-#### OpenRTM Pythonプラグインのビルドとインストール
+#### Building and Installing the OpenRTM Python Plugin
 
-OpenRTMプラグインのソースコードは以下から入手できます。
+The source code of the OpenRTM plugin can be obtained from the following.
 
 - [OpenRTMPythonPlugin](https://github.com/Nobu19800/OpenRTMPythonPlugin)
 
-CMakeの設定項目はOpenRTMプラグインと同じです。
+The CMake setting items are the same as for the OpenRTM plugin.
 
-以下のコマンドを実行することでビルド、インストールができます。
+You can build and install it by running the following commands.
 
 ```
  git clone https://github.com/Nobu19800/OpenRTMPythonPlugin
@@ -382,12 +381,9 @@ CMakeの設定項目はOpenRTMプラグインと同じです。
  cmake --build . --config Release --target install
 ```
 
-## 使用方法
+## Usage
 
-使用方法については以下のページを参考にしてください。
+For usage, refer to the following pages.
 
-- [OpenRTMプラグイン](https://choreonoid.org/ja/documents/1.7/openrtm/index.html)
-- [Choreonoid用OpenRTM連携プラグイン Python版 マニュアル]({{ site.baseurl }}/ja/content/choreonoid_openrtm_python_manual)
-
-
--------jp page!!-------
+- [OpenRTM Plugin](https://choreonoid.org/en/documents/1.7/openrtm/index.html)
+- [OpenRTM Integration Plugin for Choreonoid, Python Version Manual]({{ site.baseurl }}/en/content/choreonoid_openrtm_python_manual)

@@ -1,40 +1,39 @@
 ---
 layout: page
-title: RTミドルウェア / OpenRTM-aist について
+title: About RT Middleware / OpenRTM-aist
 ---
--------jp page!!-------
 
 <!-- Title: RTミドルウェア / OpenRTM-aist について -->
 #contents
 #clear
 
 
-## RTミドルウエアとは 
-単体のロボットだけでなく、利用可能な様々なロボット機能要素を指して RT (Robot Technology/Robotic Technology) と呼びます。
-RTミドルウエアとは、こうした様々な機能要素をモジュール化し、ソフトウエア的に統合するためのプラットフォームです。
-RTミドルウエアの目的は、仕様をオープンにして様々な実装同士が相互接続できるようなオープンアーキテクチャのプラットフォームを確立することです。
-従って、RTミドルウエアはこうしたプラットフォーム全体を指す言葉です。
+## What is RT Middleware? 
+Not only individual robots, but also various available robot functional elements are called RT (Robot Technology/Robotic Technology).
+RT Middleware is a platform for modularizing these various functional elements and integrating them as software.
+The purpose of RT Middleware is to establish an open-architecture platform whose specifications are open and in which various implementations can interconnect with each other.
+Therefore, RT Middleware is a term that refers to this overall platform.
 
-## RTコンポーネントとは
-RTミドルウエアにおいては、ロボット機能要素は RTコンポーネントと呼ばれるソフトウエアコンポーネントとしてモジュール化され、ロボットは RTミドルウエア上で RTコンポーネント組み合わせることで実現されます。
-RTコンポーネントは、他のコンポーネントと通信・相互作用を行うデータポート・サービスポートを備えており、これらのインターフェース仕様を共通化することで、様々なコンポーネント同士を容易に結合することができます。
-また、RTコンポーネントは共通の内部状態及び状態遷移を持ち、上位のアプリケーションプログラムは多くのコンポーネントを統一的に扱うことができるようになっています。
-さらに、内部パラメーター設定を外部から操作できる標準インターフェースを持つため、再コンパイルすることなく様々な用途で再利用することができます。
+## What is an RT Component?
+In RT Middleware, robot functional elements are modularized as software components called RT Components, and robots are realized by combining RT Components on RT Middleware.
+RT Components have data ports and service ports for communication and interaction with other components, and by standardizing these interface specifications, various components can be easily connected to each other.
+In addition, RT Components have common internal states and state transitions, allowing upper-level application programs to handle many components in a unified manner.
+Furthermore, because they have a standard interface that allows internal parameter settings to be operated externally, they can be reused for various purposes without recompilation.
 
-## OpenRTM-aistとは
-OpenRTM-aist は、産総研が実装・配布している RTミドルウエアの実装の一つです。
-RTコンポーネントを作成するための RTコンポーネントフレームワーク、RTコンポーネントのライフサイクルの管理・運用を行う RTミドルウエア、さらにコンポーネントの雛形コードを作成するための RTCBuilder、RTコンポーネントを操作・接続するための GUIツール RTSystemEditor から構成されています。
-現在、産総研からは C++、Python 及び Java に対する実装が提供されています。~
+## What is OpenRTM-aist?
+OpenRTM-aist is one implementation of RT Middleware implemented and distributed by AIST.
+It consists of an RT Component framework for creating RT Components, RT Middleware for managing and operating the lifecycle of RT Components, RTCBuilder for creating component template code, and RTSystemEditor, a GUI tool for operating and connecting RT Components.
+Currently, AIST provides implementations for C++, Python, and Java.~
 <!-- このほかに、この OpenRTM-aist を他の言語へ移植したバージョンも開発されており、現在 Version0.2.0 互換の実装としては、Java版および .NET版の OpenRTM 互換ミドルウエアが存在します。 -->
 <!--  -->
 <!-- **OpenRTM-aist の現在のバージョンは？ -->
 <!-- OpenRTM-aist の現在のバージョンは1.0.0です。 -->
 <!--  -->
-## 対応言語は？
-OpenRTM-aist は C++、Python 及び Java 言語で RTコンポーネントを開発するためのフレームワークを提供しています。
+## What languages are supported?
+OpenRTM-aist provides a framework for developing RT Components in C++, Python, and Java.
 
-## 対応OSは？
-OpenRTM-aist は現在、FreeBSD、Linux 及び Windows で動作確認をしています。
+## What OSes are supported?
+OpenRTM-aist is currently verified to run on FreeBSD, Linux, and Windows.
 <!-- 動作する FreeBSD のバージョン、Linux ディストリビューション 及び Windows は以下の通りです。 -->
 <!-- -FreeBSD (5.2, 6.0, 6.2) -->
 <!-- -Vine Linux (3.2, 4.0)  -->
@@ -42,14 +41,13 @@ OpenRTM-aist は現在、FreeBSD、Linux 及び Windows で動作確認をして
 <!-- -Debian3.1(Sarge)  -->
 <!-- -Ubuntu Linux 7 -->
 
-## ライセンスは？
-OpenRTM-aist は、LGPL(GNU Lesser General Public License) および産総研と個別に契約するライセンスのデュアルライセンス方式で提供されています。
-個別ライセンスとは、OpenRTM-aist のソースコードを改変し商用利用したい場合、ソースをクローズにしたまま配布可能にするためのライセンスです。
-特に、組込み等の用途では通常ソースの改変が必要とされますので、企業等での利用を促進するためにこうしたライセンスが用意されています。
+## What is the license?
+OpenRTM-aist is provided under a dual licensing system consisting of the LGPL (GNU Lesser General Public License) and a license individually contracted with AIST.
+The individual license is a license that allows distribution with the source kept closed when you want to modify the source code of OpenRTM-aist and use it commercially.
+In particular, for uses such as embedded systems, source modifications are usually required, so this kind of license is provided to promote use by companies and other organizations.
 
-## 作成したコンポーネントのライセンスは？
-コンポーネントは動的リンク可能なライブラリ(UNIX では Shared Object、Windows では DLL (Dynamic Link Library)と呼ばれる)として作成し配布することができますので、OpenRTM-aist のコアライブラリと動的リンクし利用されるコンポーネントは LGPLライセンスのもとでは特に制約を受けません。
-作成者が個別にライセンスを設定することができます。
-ただし、コンポーネントの再利用を促進するという我々の趣旨に賛同いただける方は、ソースコードレベルで作成したコンポーネントをオープンにしていただければ幸いです。
+## What is the license of components I create?
+Components can be created and distributed as dynamically linkable libraries (called Shared Objects on UNIX and DLLs (Dynamic Link Libraries) on Windows), so components that are dynamically linked with and use the OpenRTM-aist core library are not subject to any particular restrictions under the LGPL license.
+The creator can set an individual license.
+However, if you agree with our aim of promoting component reuse, we would appreciate it if you made the components you create open at the source code level.
 
--------jp page!!-------

@@ -2,7 +2,9 @@
 layout: page
 title: 玄箱HGへのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: 玄箱HGへのインストール -->
 #contents
@@ -276,4 +278,3 @@ OpenRTM-aist-0.4.0 のソース展開後、root になり build ディレクト�
 - [LinkStation／玄箱をハックしよう](http://www.yamasita.jp/linkstation/)
 
 
--------jp page!!-------

@@ -1,59 +1,64 @@
 ---
 layout: page
-title: インストール方法
+title: Installation Procedure
 ---
--------jp page!!-------
 <!-- Title: インストール方法 -->
 
 #contents
 
-rtshellのインストールにはrtshellがPythonのプログラムであるため、OpenRTM-aist-Pythonのインストールが必要になります。
+Since rtshell is a Python program, installing OpenRTM-aist-Python is required in order to install rtshell.
+
 <!-- よって、インストールはOpenRTM-aist-Pythonとrtshellのインストール、およびPythonの実行環境のインストールが必要になる場合があります。(Linuxの一括インストールはそのスクリプトの中でPythonのインストールを行いますが、Windowsのmsiのケースは前もってインストールをする必要があります。なお対応しているPythonのバージョンは[[ダウンロードページ:/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release#toc1]]をご確認ください。 -->
 <!-- ) -->
 
-## Windowsへのインストール
-msiインストーラーによるOpenRTM-aistをインストールしてください。手順については下記のページを参照してください。<br>
-    - [OpenRTM-aistを10分で始めよう！・OpenRTM-aistのインストール]({{ site.baseurl }}/ja/doc/installation/lets_start#toc2) 
+## Installation on Windows
 
+Install OpenRTM-aist using the MSI installer. For installation instructions, refer to the following page.<br>
 
-## Linux環境へのインストール
+- [Getting Started with OpenRTM-aist in 10 Minutes! - Installing OpenRTM-aist]({{ site.baseurl }}/en/doc/installation/lets_start#toc2)
 
-### Ubuntuの場合
+## Installation on Linux
 
-一括インストールスクリプトを引数無しで実行すると、rtshell も含めて、C++版、 Python版、 Java版、 OpenRTP(amd64のみ)、 JDK8 がインストールされます。　
+### Ubuntu
 
-OpenRTM-aist 2.0系のインストール時は、下記をシェルプロンプトに貼り付けて実行してください。　
-```
- $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
-```
+When the all-in-one installation script is executed without arguments, rtshell, the C++ edition, Python edition, Java edition, OpenRTP (amd64 only), and JDK8 are installed.
 
-OpenRTM-aist 1.2系のインストール時は、下記を実行して下さい。
-```
- $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh)
+To install OpenRTM-aist 2.0 series, paste and execute the following command in a shell prompt.
+
+```bash
+$ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
 ```
 
+To install OpenRTM-aist 1.2 series, execute the following command.
 
-### Raspbianの場合
-一括インストールスクリプトをダウンロードしたディレクトリに移動し、以下のように入力します。
-```
- $ sudo sh pkg_install_raspbian.sh -l c++ -l python -l rtshell --yes
- $ sudo rtshell_post_install
+```bash
+$ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh)
 ```
 
-なおRaspbianの環境では現状問題が報告されており下記の方法で対処してください。
+### Raspbian
 
-上記の実行後、sudoをつけないで
-```
- $ rtshell_post_install
-```
+Move to the directory where the all-in-one installation script was downloaded, and enter the following commands.
 
-と実行し、最初の２つの問い合わせには下記のように’’n’’と答え、最後の問い合わせのみに**y**と答えてください。
-```
- Link man pages? n
- Link documentation? n
- Add shell support to .bashrc? y
+```bash
+$ sudo sh pkg_install_raspbian.sh -l c++ -l python -l rtshell --yes
+$ sudo rtshell_post_install
 ```
 
-実行を完了したら、一度ターミナルを閉じてください。
+Please note that issues have currently been reported in the Raspbian environment. Use the following workaround.
 
--------jp page!!-------
+After executing the commands above, run the following command **without sudo**.
+
+```bash
+$ rtshell_post_install
+```
+
+For the first two prompts, answer **n** as shown below, and answer **y** only for the final prompt.
+
+```text
+Link man pages? n
+Link documentation? n
+Add shell support to .bashrc? y
+```
+
+After completing the execution, close the terminal once.
+

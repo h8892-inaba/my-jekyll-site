@@ -1084,7 +1084,7 @@ An RTC named **EducatorVehicle0** will then become visible.
 
 <div align="center"><a href="tutorial_ev3_irex29.png"><img src="tutorial_ev3_irex29.png" width="70%;"></a></div>
 
-- [EducatorVehicle]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0)
+- [EducatorVehicle]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0)
 
 ### Connecting the Ports
 

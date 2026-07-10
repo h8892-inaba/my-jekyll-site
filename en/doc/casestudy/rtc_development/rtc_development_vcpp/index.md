@@ -1,47 +1,46 @@
 ---
 layout: page
-title: RTコンポーネント作成(VC++編)
+title: Creating RT Components (VC++ Edition)
 ---
--------jp page!!-------
 
 <!-- Title: RTコンポーネント作成(VC++編) -->
 #contents
 
-# データポートのあるコンポーネント
+# Component with Data Ports
 
-ここでは、データポートを2つ持つコンポーネント (MRCConvertor) を VC8 にて作成します。
+Here, we create a component (MRCConvertor) with two data ports using VC8.
 
-## コンポーネントの概要 
+## Component Overview 
 
-入力デバイスからのデータを車輪2つの速度に変換し、OutPort から出力するコンポーネント。
+A component that converts data from an input device into the speeds of two wheels and outputs them from an OutPort.
 
-Joystick等の入力デバイスにて移動ロボット(前輪2、後輪1、前輪だけが駆動)を操作する際に、使用することができる。
+It can be used when operating a mobile robot (two front wheels, one rear wheel, only the front wheels are driven) with an input device such as a joystick.
 
 
-作成する RTC の仕様は以下のとおりです。
+The specifications of the RTC to be created are as follows.
 
 - InPort
-  - 移動ロボットに対する速度 (TimedFloatSeq)
+  - Velocity for the mobile robot (TimedFloatSeq)
 
 - OutPort
-  - 移動ロボットの車輪の速度 (TimedFloatSeq)
+  - Wheel velocities of the mobile robot (TimedFloatSeq)
 
-## MRCConvertor の雛型を生成 
+## Generating the MRCConvertor Template 
 
-RtcTemplate にて雛型を生成します。
+Generate the template with RtcTemplate.
 
-### 作業用フォルダーの作成 
-適当な場所に作業用フォルダーを作成します。
+### Creating a Working Folder 
+Create a working folder in an appropriate location.
 
-今回は、フォルダー名をコンポーネント名 (MRCConvertor) と同じにします。
+This time, use the same folder name as the component name (MRCConvertor).
 
-1. "マイコンピューター"をダブルクリック
-1. 作業用フォルダーを作成したいフォルダーへ移動
-1. 右クリックして [新規作成] > [フォルダー] でフォルダーを作成
+1. Double-click "My Computer"
+1. Move to the folder where you want to create the working folder
+1. Right-click and create a folder from [New] > [Folder]
 
-### CUI版 rtc-template 編 (gen.bat)
+### CUI Version rtc-template Edition (gen.bat)
 
-rtc-template の実行を簡単にするために、下記のようなバッチファイルを先ほど作成した作業用フォルダーに作成します。
+To make it easy to execute rtc-template, create a batch file like the following in the working folder created earlier.
 
 ```
  rtc-template.py -bcxx^
@@ -53,9 +52,9 @@ rtc-template の実行を簡単にするために、下記のようなバッチ�
   --outport=velToWheel:TimedFloatSeq
 ```
 
-### rtc-template (gen.bat) の実行
+### Executing rtc-template (gen.bat)
 
-下記のように gen.bat ファイルを実行します。
+Execute the gen.bat file as shown below.
 
 ```
  >gen.bat
@@ -84,9 +83,9 @@ rtc-template の実行を簡単にするために、下記のようなバッチ�
    File "MRCConvertor.yaml" was generated.
 ```
 
-### Eclipse版 RtcTemplate 編 
+### Eclipse Version RtcTemplate Edition 
 
-Eclipse版 RtcTemplate での対応は下記のようになります。
+The settings in the Eclipse version RtcTemplate are as follows.
 
 - Programing language selection: C++
 - Module definition
@@ -104,27 +103,27 @@ Eclipse版 RtcTemplate での対応は下記のようになります。
   - Ports: Name:velToWheel, Type:TimedFloatSeq
 
 
-### copyprops.bat の実行 
+### Running copyprops.bat 
 
-RtcTemplate 実行により、copyprops.bat ファイルが作業用フォルダーに生成されます。
+By executing RtcTemplate, the copyprops.bat file is generated in the working folder.
 
-この copyprops.bat ファイルを用い、コンポーネントのビルドに必要な rtm_config.vsprops を作業フォルダーにコピーします。
+Using this copyprops.bat file, copy rtm_config.vsprops, which is required to build the component, to the working folder.
 
-copyprops.bat ファイルをダブルクリックしてください。
+Double-click the copyprops.bat file.
 
 
-## MRCConvertor の実装 
+## Implementing MRCConvertor 
 
-### Visual Studio の起動 
+### Starting Visual Studio 
 
-MRCConvertorComp_vc8.vcproj をダブルクリックし、Visual Studio を起動します。
+Double-click MRCConvertorComp_vc8.vcproj to start Visual Studio.
 
-### ヘッダファイルの編集
+### Editing the Header File
 
-Visual Studio のソリューションエクスプローラーにて、MRCConvertorComp > Header Files の順にクリックし、 MRCConvertor.h をダブルクリックします。
+In the Visual Studio Solution Explorer, click MRCConvertorComp > Header Files in this order, then double-click MRCConvertor.h.
 
-#### ヘッダファイルのインクルード
-今回は、std::vector と math ライブラリを使用しますので、2つのヘッダファイルをインクルードします。
+#### Including Header Files
+This time, we will use std::vector and the math library, so include the two header files.
 
 ```
  #include <vector>
@@ -134,10 +133,10 @@ Visual Studio のソリューションエクスプローラーにて、MRCConver
 ```
 
 
-- "virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);"関数のコメントをはずします。
+- Uncomment the "virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);" function.
 
-- メンバー変数とメソッドの宣言~
-今回は、MobileRobot (前輪2、後輪1、前輪だけが駆動) の移動ベクトルを車輪速度に変換するためのメソッド convert()、変換に必要な係数 m_k を宣言します。
+- Declaring member variables and methods~
+This time, declare the convert() method for converting the movement vector of MobileRobot (two front wheels, one rear wheel, only the front wheels are driven) into wheel velocities, and the coefficient m_k required for the conversion.
 
 
 ```
@@ -157,13 +156,13 @@ Visual Studio のソリューションエクスプローラーにて、MRCConver
   }
 ```
 
-### ソースファイルの編集 
+### Editing the Source File 
 
-Visual Studio のソリューションエクスプローラーにて、MRCConvertorComp > Source Files の順にクリックし、 MRCConvertor.cpp をダブルクリックします。
+In the Visual Studio Solution Explorer, click MRCConvertorComp > Source Files in this order, then double-click MRCConvertor.cpp.
 
 
-#### onExecute() の実装
-onExecute() のコメントをはずし、以下のように実装します。
+#### Implementing onExecute()
+Uncomment onExecute() and implement it as follows.
 
 
 ```
@@ -187,40 +186,38 @@ onExecute() のコメントをはずし、以下のように実装します。
  }
 ```
 
-ここで行われていることは、
+The processing performed here is as follows:
 
-1. m_velFromInputIn.isNew() にて InPort にデータが届いているかをチェックする。
-1. 新しいデータが届いていたら、m_velFromInputIn.read() で変数にデータを読み込む。
-1. 読み込んだデータを convert() にて車輪速度に変換する。
-1. 変換したデータを OutPort の変数にセットし、OutPort のバッファに書き込む。
-
-
-## ビルド
-
-Visual Studio のメニューから [ビルド] > [ソリューションのビルド] をクリックしコンポーネントのビルドを行います。
+1. Check whether data has arrived at the InPort with m_velFromInputIn.isNew().
+1. If new data has arrived, read the data into the variable with m_velFromInputIn.read().
+1. Convert the read data into wheel velocities with convert().
+1. Set the converted data in the OutPort variable and write it to the OutPort buffer.
 
 
-## rtc.conf の作成 
+## Build
 
-エディタにて以下の内容を記述し、rtc.conf というファイル名で Debug あるいは Release フォルダーに保存します。
+From the Visual Studio menu, click [Build] > [Build Solution] to build the component.
+
+
+## Creating rtc.conf 
+
+In an editor, write the following content and save it with the file name rtc.conf in the Debug or Release folder.
 
 ```
  corba.nameservers: localhost
  naming.formats: %n.rtc
 ```
 
-## 実行
+## Execution
 
-ビルドにてエラーが無かった場合、Debug あるいは Release フォルダーに rtc.conf を作成し、MRCConvertorComp.exe を実行します。
+If there were no errors in the build, create rtc.conf in the Debug or Release folder and run MRCConvertorComp.exe.
 
-MRCConvertorComp.exe を実行する前に NamingService を起動してください。
-### ネームサーバーの起動
+Start NamingService before running MRCConvertorComp.exe.
+### Starting the Name Server
 
-＜OpenRTM-aist インストールフォルダー＞\bin\rtm-naming.batをダブルクリックしCORBAネームサーバーを起動します。
+Double-click <OpenRTM-aist installation folder>\bin\rtm-naming.bat to start the CORBA name server.
 
 
-### MRCConvertorComp.exe の実行
+### Running MRCConvertorComp.exe
 
-Debug あるいは Release フォルダーに移動し、MRCConvertorComp.exe を実行します。
-
--------jp page!!-------
+Move to the Debug or Release folder and run MRCConvertorComp.exe.

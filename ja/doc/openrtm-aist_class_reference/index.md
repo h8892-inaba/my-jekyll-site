@@ -1,9 +1,8 @@
 ---
 layout: page
-title: 
+title: クラスリファレンス
 ---
 
-init
 <!-- Title: クラスリファレンス -->
 <div align="right"><img src="reference.png" width="15%;" align="right"></div>
 ## 最新版(2.0.2)クラスリファレンス

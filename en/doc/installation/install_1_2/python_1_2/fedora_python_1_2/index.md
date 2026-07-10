@@ -2,7 +2,10 @@
 layout: page
 title: Fedoraへのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
+
 
 <!-- Title: Fedoraへのインストール -->
 現在、1.2系のOpenRTM-aistはFedoraの対応が不完全です。よって、本ページの情報はあくまでも参考情報として使用してください。
@@ -30,7 +33,7 @@ OpenRTM-aistを開発・実行するために必要なパッケージをもれ�
  sudo sh pkg_install_fedora.sh -l python --yes
 ```
 でインストールできます。
-一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)」のページをご確認ください。
+一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script)」のページをご確認ください。
 
 ## OpenRTPのインストール
 一般的なUbuntu/Debian環境での開発にはRTC BuilderやRTSystem Editorを使用しますが、その場合にはOpenRTPが必要ですので、一括インストールスクリプトを用いてOpenRTPをインストールしてください。Ubuntuではpkg_install_ubuntu.shが置いてあるディレクトリで
@@ -48,7 +51,7 @@ OpenRTM-aistを開発・実行するために必要なパッケージをもれ�
 ## JDK8のインストール
 
 OpenRTP(RTSystem EditorやRTC Builderなど)の実行にはJDK8相当のJava環境が必要です。現時点でFedoraの環境では、一括インストールスクリプトがFedoraのrpmリポジトリよりOpenJDK8をインストールします。他のJDK8をインストールしたい場合は下記のリンクを参照してください。なお、rtshell/rtctree/rtsprofileの使用にはJDKは必要ありませんのでOpenRTPを使わない場合にはJDK8をインストールする必要はありません。 JDK8の入手やインストールについては以下を参照してください。
-- [JDK8のインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8)
+- [JDK8のインストール]({{ site.baseurl }}/en/doc/installation/common/install_jdk8)
 
 ## rtshellのインストール
 制御用コンピューター・システムが小規模の場合など、CUIでRTCを制御したい場合にはOpenRTPのRTSystemEditor相当の機能をCUIから実行できるようなツールとしてrtshellと呼ばれるツールが提供されています。rtshellのインストールはターミナル上で一括インストールスクリプトを用いて、一括インストールスクリプト・ファイルが置かれているディレクトリで以下のように入力します。
@@ -377,5 +380,3 @@ OpenRtpでは大量のファイルがインストールされるため、ここ�
  /usr/local/lib/python3.7/dist-packages/rtsprofile_aist-4.1.2.dist-info/*
 ```
 
-
--------jp page!!-------

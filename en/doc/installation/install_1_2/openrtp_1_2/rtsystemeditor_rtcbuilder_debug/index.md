@@ -2,7 +2,9 @@
 layout: page
 title: RTSystemEditor、RTCBuilderのデバッグ
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: RTSystemEditor、RTCBuilderのデバッグ -->
 #contents
@@ -28,7 +30,7 @@ Standard Editionだとプラグイン開発環境を手動でインストール�
 ### JDK
 
 JDK8相当のJREかJDKが必要なため、以下のリンクを参照してJDK8をインストールしてください。
-- [JDK8のインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8)
+- [JDK8のインストール]({{ site.baseurl }}/en/doc/installation/common/install_jdk8)
 
 
 ### RTSystemEditor、RTCBuilderのソースコード
@@ -112,4 +114,4 @@ Antビルドで文字化けする場合は、[実行]→[外部ツール]→[外
 
 <div align="center"><a href="plugin3_1_ja.png"><img src="plugin3_1_ja.png" width="60%;"></a></div>
 
--------jp page!!-------
+

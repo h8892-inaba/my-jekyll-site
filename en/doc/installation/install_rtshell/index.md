@@ -1,17 +1,13 @@
 ---
 layout: page
-title: rtshellのインストール
+title: Installing rtshell
 ---
--------jp page!!-------
 
 <!-- Title: rtshellのインストール -->
-OpenRTM-aistでは、コマンドラインでRTCを操作するためのツールとしてrtshellと呼ぶツールを提供しています。rtshell は、ネームサーバー上に登録されている RTコンポーネントを管理すできるツールで,
-コンポーネントをactivate/deactivate/resetしたり、ポートの接続を行えます。 RTシステムの管理もできます。ここではそのインストール方法や、動作確認方法などについて説明します。なお、インストール以外の使い方などについては[rtshell]({{ site.baseurl }}/ja/doc/toolmanuals/rtshell)を参照してください。
+OpenRTM-aist provides a tool called rtshell for operating RTCs from the command line. rtshell is a tool that can manage RT Components registered on a name server. It can activate, deactivate, and reset components, as well as connect ports. It can also manage RT systems. This section explains how to install it and how to verify its operation. For information on usage other than installation, refer to [rtshell]({{ site.baseurl }}/en/doc/toolmanuals/rtshell).
 
 <hr>
 
-- [インストール方法](./howto_install)
-- [動作確認(Windows編)](./check_windows)
-- [動作確認(Linux編)](./check_linux)
-
--------jp page!!-------
+- [Installation Procedure](./howto_install)
+- [Operation Check (Windows Edition)](./check_windows)
+- [Operation Check (Linux Edition)](./check_linux)

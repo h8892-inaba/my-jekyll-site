@@ -145,7 +145,7 @@ Next, turn on the Raspberry Pi Mouse power switch.
 
 ## Preparation
 
-Follow the instructions on [this page]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2#toc1) to start the Name Server and RT System Editor.
+Follow the instructions on [this page]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2#toc1) to start the Name Server and RT System Editor.
 
 If a Name Server is already running, restart it.
 
@@ -174,8 +174,8 @@ The following two RTCs will appear:
 
 <div align="center"><a href="tutorial_raspimouse2.png"><img src="tutorial_raspimouse2.png" width="60%;"></a></div>
 
-- [RaspberryPiMouseRTC]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0)
-- [RaspberryPiMouseController_DistanceSensor]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc1)
+- [RaspberryPiMouseRTC]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0)
+- [RaspberryPiMouseController_DistanceSensor]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc1)
 
 RaspberryPiMouseRTC is an RT-Component for controlling Raspberry Pi Mouse, developed by the Robot System Design Laboratory at Meijo University.
 
@@ -293,9 +293,9 @@ The following two RTCs will start:
 
 <div align="center"><a href="tutorial_raspimouse3_2.png"><img src="tutorial_raspimouse3_2.png" width="60%;"></a></div>
 
-- [FloatSeqToVelocity]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_sample_rts_exec#toc2)
+- [FloatSeqToVelocity]({{ site.baseurl }}/en/doc/casestudy/lego_mindstorm/lego_sample_rts_exec#toc2)
 <!-- - [[RaspberryPiMouseGUI>/ja/node/6016#toc1]] -->
-- [TkJoyStick]({{ site.baseurl }}/ja/doc/installation/sample_components/tkjoystick_mobilerobotsimulator#toc0)
+- [TkJoyStick]({{ site.baseurl }}/en/doc/installation/sample_components/tkjoystick_mobilerobotsimulator#toc0)
 
 ## Operation Check
 

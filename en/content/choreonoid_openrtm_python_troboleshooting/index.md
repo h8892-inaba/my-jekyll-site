@@ -1,54 +1,49 @@
 ---
 layout: page
-title: "Choreonoid用OpenRTM連携プラグイン Python版 トラブルシューティング"
+title: "Troubleshooting for the OpenRTM Integration Plugin for Choreonoid, Python Version"
 ---
-
-No English version available.
-
 #contents
 
-## Choreonoidが起動しない
-以下の原因が考えられます。
+## Choreonoid Does Not Start
+The following causes are possible.
 
-### Pythonの問題
+### Python Problem
 
-まずPython 2.7の**64bit版**がインストールされていることを確認してください。
+First, confirm that the **64-bit version** of Python 2.7 is installed.
 
 - [Python 2.7.14](https://www.python.org/downloads/release/python-2714/)
 
-それでも起動しない場合は、**PYTHONHOME**をPythonインストールディレクトリに設定してください。
+If it still does not start, set **PYTHONHOME** to the Python installation directory.
 
 ```
  set PYTHONHOME=C:\python27
 ```
 
-これで動かない場合は下のコメント欄でお知らせください。
+If it still does not work, please let us know in the comments section below.
 
 
-### PCの対応しているOpenGLバージョンの問題
+### Problem with the OpenGL Version Supported by the PC
 
-Choreonoid内部のライブラリの問題でOpenGL 1.1にしか対応していないPCでは起動できません。
-以下のサイトで**OpenGLバージョンチェックプログラム**を入手して確認してください。
+Due to a problem with an internal Choreonoid library, Choreonoid cannot start on PCs that support only OpenGL 1.1.
+Obtain and run the **OpenGL version check program** from the following site to confirm.
 
 - [http://skomo.o.oo7.jp/f53/hp53_9.htm](http://skomo.o.oo7.jp/f53/hp53_9.htm)
 
 
 
-## OpenRTMプラグインがロードできない
+## The OpenRTM Plugin Cannot Be Loaded
 
-現在、調査中です。
-
-
-
-## どのプラグインもロードできない
-
-パスに日本語が含まれているとロードできません。
-
-これはChoreonoid自体の問題なので、こちらでは対処しません。
-
-## RTCEditorアイテム追加時にプロセスが落ちる
-
-この問題についても調査中です。
+This is currently under investigation.
 
 
+
+## None of the Plugins Can Be Loaded
+
+Plugins cannot be loaded if the path contains Japanese characters.
+
+This is an issue with Choreonoid itself, so it will not be handled here.
+
+## The Process Crashes When Adding an RTCEditor Item
+
+This issue is also under investigation.
 

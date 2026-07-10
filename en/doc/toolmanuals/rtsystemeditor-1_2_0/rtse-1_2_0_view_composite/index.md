@@ -1,77 +1,74 @@
 ---
 layout: page
-title: ビュー（複合コンポーネントビュー編）
+title: Views (Composite Component View)
 ---
--------jp page!!-------
 <!-- Title: ビュー（複合コンポーネントビュー編） -->
 <!-- #contents -->
 
-ここでは複合コンポーネントビューについて説明します。
+This section explains the Composite Component View.
 <br>
 
 <div align="center"><a href="fig18CompositeComponentView.jpg"><img src="fig18CompositeComponentView.jpg" width="85%;"></a></div>
-<div align="center"><strong>複合コンポーネントビューの位置</strong></div>
+<div align="center"><strong>Location of the Composite Component View</strong></div>
 <br>
 
-複合コンポーネントビューでは、選択された複合 RTC のポート公開情報が表示され、ポートの公開/非公開を設定することができます。
+In the Composite Component View, port public/private information for the selected composite RTC is displayed, and you can set ports to public or private.
 <br>
 
 <div align="center"><a href="fig19CompositeComponentView.png"><img src="fig19CompositeComponentView.png" width="100%;"></a></div>
-<div align="center"><strong>複合コンポーネントビュー</strong></div>
+<div align="center"><strong>Composite Component View</strong></div>
 <br>
 
-<div align="center"><strong>複合コンポーネントビューの画面構成</strong></div>
+<div align="center"><strong>Screen Layout of the Composite Component View</strong></div>
 <table class="table-alt">
   <tr>
     <th>No.</th>
-    <th>説明</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>①</td>
-    <td>複合 RTC のインスタンス名。</td>
+    <td>Instance name of the composite RTC.</td>
   </tr>
   <tr>
     <td>②</td>
-    <td>複合 RTC のタイプ名。</td>
+    <td>Type name of the composite RTC.</td>
   </tr>
   <tr>
     <td>③</td>
-    <td>ポートの公開/非公開の状態。</td>
+    <td>Public/private state of the port.</td>
   </tr>
   <tr>
     <td>④</td>
-    <td>複合 RTC に含まれる子 RTC のインスタンス名。</td>
+    <td>Instance name of the child RTC included in the composite RTC.</td>
   </tr>
   <tr>
     <td>⑤</td>
-    <td>複合 RTC に含まれる子 RTC のポート名。</td>
+    <td>Port name of the child RTC included in the composite RTC.</td>
   </tr>
   <tr>
     <td>⑥</td>
-    <td>ポートの公開/非公開の変更を反映させます。</td>
+    <td>Applies changes to the public/private state of ports.</td>
   </tr>
   <tr>
     <td>⑦</td>
-    <td>ポートの公開/非公開の変更をキャンセルします。</td>
+    <td>Cancels changes to the public/private state of ports.</td>
   </tr>
 </table>
 
-複合コンポーネントビューで編集中の情報は、⑥の [Apply] ボタンがクリックされるまで適用されません。また、修正中(未適用)の情報は薄い赤色で表示されます。また、システムエディタ上で選択したポートは薄い黄色で表示されます。
+Information being edited in the Composite Component View is not applied until the [Apply] button in ⑥ is clicked. Information being modified (not yet applied) is displayed in light red. Ports selected in the System Editor are displayed in light yellow.
 <br>
 
 <div align="center"><a href="fig20CompsiteComponentView.png"><img src="fig20CompsiteComponentView.png" width="70%;"></a></div>
-<div align="center"><strong>ポート公開/非公開の編集中</strong></div>
+<div align="center"><strong>Editing Port Public/Private Settings</strong></div>
 <br>
 
 <div align="center"><a href="fig21CompsiteComponentView.png"><img src="fig21CompsiteComponentView.png" width="70%;"></a></div>
-<div align="center"><strong>システムエディタ上で選択中のポート</strong></div>
+<div align="center"><strong>Port Selected in the System Editor</strong></div>
 <br>
 
-複合コンポーネントのポートが、別のコンポーネントのポートと接続されている場合は、複合コンポーネントビューで該当のポートがグレイで表示され、編集不可となります。
+If a port of a composite component is connected to a port of another component, the corresponding port is displayed in gray in the Composite Component View and cannot be edited.
 <br>
 
 <div align="center"><a href="fig22CompsiteComponentView.png"><img src="fig22CompsiteComponentView.png" width="70%;"></a></div>
-<div align="center"><strong>他のポートと接続中の場合</strong></div>
+<div align="center"><strong>When Connected to Another Port</strong></div>
 <br>
-
--------jp page!!-------

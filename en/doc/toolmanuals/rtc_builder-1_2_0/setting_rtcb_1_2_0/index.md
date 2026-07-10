@@ -1,42 +1,41 @@
 ---
 layout: page
-title: 各種設定
+title: Various Settings
 ---
--------jp page!!-------
 
 <!-- Title: 各種設定 -->
 #contents
 
-ここでは RTCBuilder の各種設定について説明します。
-RTCBuilder の設定画面は、画面上部メニューの [ウィンドウ] > [設定....] を選択して表示される「設定」画面から ｢RTCBuilder｣ を選択すると表示されます。
+This section explains the various settings of RTCBuilder.
+The RTCBuilder settings screen is displayed by selecting "RTCBuilder" from the "Preferences" screen, which is displayed by selecting [Window] > [Preferences...] from the menu at the top of the screen.
 <br>
 
 <div align="center"><a href="fig7-1SettingRTCBuilder2_ja.png"><img src="fig7-1SettingRTCBuilder2_ja.png" width="50%;"></a></div>
 
-## データ型
-Data Port および Configuration パラメーターで設定するデータ型を定義した IDL ファイルの位置を設定することができます。
-IDL 格納ディレクトリーを新規に追加する場合は、[新規] ボタンをクリックしてください。また、[除去] ボタンをクリックすると、選択中の IDL 格納ディレクトリーを削除することができます。
-IDL 格納ディレクトリーの実際の位置は、｢IDL File Directories｣ 欄内をクリックして表示されるディレクトリー選択画面にて選択してください。
+## Data Type
+You can set the location of the IDL files that define the data types configured for Data Port and Configuration parameters.
+To add a new IDL storage directory, click the [New] button. You can also delete the selected IDL storage directory by clicking the [Remove] button.
+Select the actual location of the IDL storage directory in the directory selection screen that appears when you click inside the "IDL File Directories" field.
 
 <div align="center"><a href="fig7-1SettingRTCBuilder1_ja.png"><img src="fig7-1SettingRTCBuilder1_ja.png" width="50%;"></a></div>
-<div align="center"><strong>RTCBuilder 設定画面</strong></div>
+<div align="center"><strong>RTCBuilder Settings Screen</strong></div>
 
 <br>
 
 
-## コード生成
-RTC プロファイルエディタの基本プロファイル入力ページおよびコンフィギュレーション・プロファイル入力ページにて新規エディタ表示時、新規項目追加時にデフォルトで設定される内容を設定することができます。
+## Code Generation
+You can set the default contents that are configured when a new editor is displayed or a new item is added on the Basic Profile input page and Configuration Profile input page of the RTC Profile Editor.
 <br>
 
 <div align="center"><a href="fig7-2SettingGenerateCode_ja.png"><img src="fig7-2SettingGenerateCode_ja.png" width="40%;"></a></div>
-<div align="center"><strong>コード生成設定画面</strong></div>
+<div align="center"><strong>Code Generation Settings Screen</strong></div>
 <br>
-なお、この設定画面中のデフォルト設定([デフォルトの復元] ボタンをクリックした際に設定される内容)は以下のとおりです。
-<div align="center"><strong>コード生成設定画面　デフォルト値</strong></div>
+The default settings on this settings screen (the contents set when the [Restore Defaults] button is clicked) are as follows.
+<div align="center"><strong>Code Generation Settings Screen Default Values</strong></div>
 <table class="table-alt">
   <tr>
-    <th>項目</th>
-    <th>デフォルト値</th>
+    <th>Item</th>
+    <th>Default Value</th>
   </tr>
   <tr>
     <td>></td>
@@ -117,18 +116,18 @@ RTC プロファイルエディタの基本プロファイル入力ページお�
 <br>
 
 ## Port
-RTC プロファイルエディタのデータポート・プロファイル入力ページおよびサービスポート・プロファイル入力ページにて新規項目を追加した際にデフォルトで設定される内容を設定することができます。
+You can set the default contents that are configured when a new item is added on the Data Port Profile input page and Service Port Profile input page of the RTC Profile Editor.
 <br>
 
 <div align="center"><a href="fig7-3SettingPort_ja.png"><img src="fig7-3SettingPort_ja.png" width="40%;"></a></div>
-<div align="center"><strong>Port設定画面</strong></div>
+<div align="center"><strong>Port Settings Screen</strong></div>
 <br>
-なお、この設定画面中のデフォルト設定([デフォルトの復元] ボタンをクリックした際に設定される内容)は以下のとおりです。
-<div align="center"><strong>Port設定画面　デフォルト値</strong></div>
+The default settings on this settings screen (the contents set when the [Restore Defaults] button is clicked) are as follows.
+<div align="center"><strong>Port Settings Screen Default Values</strong></div>
 <table class="table-alt">
   <tr>
-    <th>項目</th>
-    <th>デフォルト値</th>
+    <th>Item</th>
+    <th>Default Value</th>
   </tr>
   <tr>
     <td colspan="2">Data Port</td>
@@ -179,20 +178,20 @@ RTC プロファイルエディタのデータポート・プロファイル入�
 <br>
 
 ## Configuration
-RTC プロファイルエディタのコンフィギュレーション・プロファイル入力ページのシステム・コンフィギュレーション情報に表示される項目を設定することができます。
+You can set the items displayed in the system configuration information on the Configuration Profile input page of the RTC Profile Editor.
 <br>
 
 <div align="center"><a href="fig7-4SettingConfig_ja.png"><img src="fig7-4SettingConfig_ja.png" width="40%;"></a></div>
-<div align="center"><strong>Configuration設定画面</strong></div>
+<div align="center"><strong>Configuration Settings Screen</strong></div>
 <br>
-なお、この設定画面中のデフォルト設定([デフォルトの復元] ボタンをクリックした際に設定される内容)は以下のとおりです。
-<div align="center"><strong>Configuration 設定画面　デフォルト値</strong></div>
+The default settings on this settings screen (the contents set when the [Restore Defaults] button is clicked) are as follows.
+<div align="center"><strong>Configuration Settings Screen Default Values</strong></div>
 <!-- |項目|デフォルト値||項目|デフォルト値| -->
 
 <table class="table-alt">
   <tr>
-    <th>項目</th>
-    <th>デフォルト値</th>
+    <th>Item</th>
+    <th>Default Value</th>
   </tr>
   <tr>
     <td>exec_cxt.periodic.type</td>
@@ -211,87 +210,85 @@ RTC プロファイルエディタのコンフィギュレーション・プロ�
 <br>
 
 ## Export
-RT コンポーネントのパッケージング機能の各アーカイブ形式に含めるファイルを設定することができます。
+You can set the files to be included in each archive format of the RT component packaging function.
 <br>
 
 <div align="center"><a href="fig7-4SettingExport_ja.png"><img src="fig7-4SettingExport_ja.png" width="40%;"></a></div>
-<div align="center"><strong>Export設定画面</strong></div>
+<div align="center"><strong>Export Settings Screen</strong></div>
 <br>
-設定画面はアーカイブ形式ごとのセクション（Source Export，Binary Export，Source+Binary Export）に分かれています。また、各セクションは拡張子指定部と、ファイル名指定部から構成されています。
+The settings screen is divided into sections for each archive format (Source Export, Binary Export, Source+Binary Export). Each section consists of an extension specification area and a file name specification area.
 <br>
 
 
 <div align="center"><a href="fig7-5SettingExport_ja.png"><img src="fig7-5SettingExport_ja.png" width="70%;"></a></div>
-<div align="center"><strong>Export設定画面(セクション)</strong></div>
+<div align="center"><strong>Export Settings Screen (Section)</strong></div>
 <br>
-拡張子指定部では、各アーカイブ形式に含めるファイルの拡張子を設定することができます。[タイプの選択] ボタンをクリックすると、以下のようなタイプ選択画面が表示されますので、アーカイブに含めたいファイルタイプを選択してください。
+In the extension specification area, you can set the extensions of files to be included in each archive format. When you click the [Select Types] button, a type selection screen like the following is displayed. Select the file types you want to include in the archive.
 <br>
 <br>
 <table class="table-alt">
   <tr>
     <!-- th>BGCOLOR(white):</th-->
     <td><div align="left"><a href="fig7-6Select_ja.png"><img src="fig7-6Select_ja.png" width="70%;" align="left"></a></div></td>
-    <td>※ファイル拡張子リストには登録済みの拡張子のみ表示されます。リスト
-内に存在しないファイルを選択したい場合は、画面下部の｢他の拡張子｣欄に該当する拡張子を「，」区切りで
-入力してください。</td>
+    <td>* Only registered extensions are displayed in the file extension list. If you want to select files that do not exist in the list, enter the corresponding extensions in the "Other extensions" field at the bottom of the screen, separated by ",".</td>
   </tr>
 </table>
 
-<div align="center"><strong>拡張子選択画面</strong></div>
+<div align="center"><strong>Extension Selection Screen</strong></div>
 <br>
-ファイル設定部ではアーカイブに含めるファイル名を設定することができます。「ファイル名」リスト下部の [Add] ボタンをクリックすると新しい行が追加されますので、アーカイブに含めたいファイル名を直接入力してください。また、[Delete] ボタンをクリックすると、選択している行を削除することができます。
-**上図の  Export 設定画面(セクション)**の例では、アーカイブ方式として ｢Source+Binary｣ を選択した際に、拡張子が ｢cpp｣ ｢h」であるファイルと、ファイル名が ｢Makefile｣ ｢README｣ であるファイルをアーカイブに含める設定となります。
-なお、この設定画面中のデフォルト設定([デフォルトの復元] ボタンをクリックした際に設定される内容)は以下のとおりです。
-<div align="center"><strong>Export 設定画面　デフォルト値</strong></div>
+In the file setting area, you can set the file names to be included in the archive. When you click the [Add] button at the bottom of the "File name" list, a new row is added, so directly enter the file name you want to include in the archive. You can also delete the selected row by clicking the [Delete] button.
+In the example shown in <strong>Export Settings Screen (Section)</strong> above, when "Source+Binary" is selected as the archive method, files with the extensions "cpp" and "h" and files with the names "Makefile" and "README" are included in the archive.
+The default settings on this settings screen (the contents set when the [Restore Defaults] button is clicked) are as follows.
+<div align="center"><strong>Export Settings Screen Default Values</strong></div>
 <table class="table-alt">
   <tr>
-    <th>項目</th>
-    <th>デフォルト値</th>
+    <th>Item</th>
+    <th>Default Value</th>
   </tr>
   <tr>
     <td colspan="2">Source Export</td>
   </tr>
   <tr>
-    <td>拡張子</td>
-    <td>conf，cpp，h，vcproj，java，xml，py</td>
+    <td>Extension</td>
+    <td>conf, cpp, h, vcproj, java, xml, py</td>
   </tr>
   <tr>
-    <td>ファイル名</td>
-    <td>Makefile，README</td>
+    <td>File Name</td>
+    <td>Makefile, README</td>
   </tr>
   <tr>
     <td colspan="2">Binary Export</td>
   </tr>
   <tr>
-    <td>拡張子</td>
-    <td>conf，exe，class，py</td>
+    <td>Extension</td>
+    <td>conf, exe, class, py</td>
   </tr>
   <tr>
-    <td>ファイル名</td>
+    <td>File Name</td>
     <td>README</td>
   </tr>
   <tr>
     <td colspan="2">Source+Binary Export</td>
   </tr>
   <tr>
-    <td>拡張子</td>
-    <td>conf，cpp，h，vcproj，java，xml，py，exe，class</td>
+    <td>Extension</td>
+    <td>conf, cpp, h, vcproj, java, xml, py, exe, class</td>
   </tr>
   <tr>
-    <td>ファイル名</td>
-    <td>Makefile，README</td>
+    <td>File Name</td>
+    <td>Makefile, README</td>
   </tr>
 </table>
 <br>
 
 ## Build View 
-Build View 内に表示されるアイコンの色情報を設定することができます。
+You can set the color information of the icons displayed in the Build View.
 <br>
 
 <div align="center"><a href="fig7-7SettingBuildView_ja.png"><img src="fig7-7SettingBuildView_ja.png" width="40%;"></a></div>
-<div align="center"><strong>Build View 設定画面</strong></div>
+<div align="center"><strong>Build View Settings Screen</strong></div>
 <br>
-それぞれの色設定ボタンにより、コンポーネント本体、DataInPort、DataOutPort、ServicePort、ServiceInterface の色設定を変更することが可能です。
+Each color setting button allows you to change the color settings for the component body, DataInPort, DataOutPort, ServicePort, and ServiceInterface.
 <br>
 
 <!-- *Data Type -->
@@ -308,8 +305,6 @@ Build View 内に表示されるアイコンの色情報を設定することが
 
 ## Document
 <!-- 各アクティビティの概要を説明するドキュメントの入力を設定することができます。 -->
-各アクティビティの有効無効属性（ON/OFF）を設定することができます。
+You can set the enabled/disabled attributes (ON/OFF) for each activity.
 <div align="center"><a href="fig7-8SettingDocument_ja.png"><img src="fig7-8SettingDocument_ja.png" width="40%;"></a></div>
-<div align="center"><strong>Document 設定画面</strong></div>
-
--------jp page!!-------
+<div align="center"><strong>Document Settings Screen</strong></div>

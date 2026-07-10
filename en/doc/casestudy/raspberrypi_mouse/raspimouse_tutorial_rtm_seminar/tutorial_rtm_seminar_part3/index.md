@@ -81,11 +81,11 @@ Next, connect the EV3 and the left/right L motors using 25 cm cables.
 
 The port numbers and device names to connect the cables are labeled.
 
-If you want to attach other devices, refer to [Tutorial (EV3)](/ja/node/6381#toc30).
+If you want to attach other devices, refer to [Tutorial (EV3)](/en/node/6381#toc30).
 
 ## Connecting to the EV3
 ### Connecting the Laptop PC and Raspberry Pi
-Complete the procedure in [Part 2](/ja/node/6551) up to verifying operation on the actual hardware.
+Complete the procedure in [Part 2](/en/node/6551) up to verifying operation on the actual hardware.
 At this point, the laptop PC and the Raspberry Pi access point should already be connected.
 
 <br>

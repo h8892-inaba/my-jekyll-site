@@ -1,16 +1,15 @@
 ---
 layout: page
-title: "コンフィギュレーション (応用編)"
+title: "Configuration (Advanced)"
 ---
--------jp page!!-------
 <!-- Title: コンフィギュレーション (応用編) -->
 #contents
 
-コンフィギュレーション(基本編)では、コンフィギュレーションの基本的な使い方について説明しました。応用編では、もう少し踏み込んだ使い方について解説します。
+In Configuration (Basics), we explained the basic usage of configuration. In this advanced section, we explain more in-depth usage.
 
-## コールバックの利用
-コンフィギュレーションパラメータのコールバックの利用について説明します。<br>
-コンフィギュレーションには、以下のコールバックがあります。
+## Using Callbacks
+This section explains the use of callbacks for configuration parameters.<br>
+Configuration has the following callbacks.
 
 - OnUpdateCallback
 - OnUpdateParamCallback
@@ -19,7 +18,7 @@ title: "コンフィギュレーション (応用編)"
 - OnRemoveConfigurationSetCallback
 - OnActivateSetCallback
 
-以下のようにしてコールバックを設定します。
+Set callbacks as follows.
 
 ### OnUpdateCallback
 ```
@@ -165,11 +164,11 @@ title: "コンフィギュレーション (応用編)"
  };
 ```
 
-### サンプル
-参考までに、コールバックが呼ばれると実行周期がコンフィギュレーションパラメーター Interval に設定されるという例を示します。
-アクティブ、非アクティブに遷移したときにコールバックにより、コンフィギュレーションパラメーターが変更されることを確認します。
+### Sample
+For reference, here is an example in which, when a callback is called, the execution cycle is set to the configuration parameter Interval.
+We confirm that the configuration parameter is changed by the callback when transitioning to active and inactive states.
 
-コンフィギュレーション(初期編) を参照して、初期パラメーターを設定します。
+Refer to Configuration (Initial Section) and set the initial parameters.
 ```
  static const char* configurationtest_spec[] =
   {
@@ -213,16 +212,16 @@ title: "コンフィギュレーション (応用編)"
  }
 ```
 
-m_configsets は ConfigAdminクラス (コンフィギュレーション情報管理オブジェクト)で、ConfigAdmin.h にコールバックの定義があります。
+m_configsets is the ConfigAdmin class (configuration information management object), and callback definitions are in ConfigAdmin.h.
 
-まず、RTC を起動して、RTC を配置します。コンソールには以下のように表示されます。
+First, start the RTC and place the RTC. The console displays the following.
 <div align="center"><a href="ConfigurationCallback01.png"><img src="ConfigurationCallback01.png" width="70%;"></a></div>
 <br>
 <div align="center"><a href="ConfigurationCallback01-1.png"><img src="ConfigurationCallback01-1.png" width="70%;"></a></div>
 <br>
 <br>
 
-次に、RTC をアクティブにします。コンソールには以下のように表示されます。
+Next, activate the RTC. The console displays the following.
 <div align="center"><a href="ConfigurationCallback05.png"><img src="ConfigurationCallback05.png" width="70%;"></a></div>
 <br>
 <div align="center"><a href="ConfigurationCallback02-1.png"><img src="ConfigurationCallback02-1.png" width="70%;"></a></div>
@@ -247,35 +246,35 @@ m_configsets は ConfigAdminクラス (コンフィギュレーション情報�
 
 <br>
 
-Interval を「1000」から「1」に設定します。
+Set Interval from "1000" to "1".
 ```
  cproperties.setProperty("Interval", "1");
 ```
 
 <br>
 
-コンフィギュレーションセットを取得し追加します。このときに OnSetConfiguration が呼ばれます。
+Get and add the configuration set. At this time, OnSetConfiguration is called.
 ```
  this->m_configsets.setConfigurationSetValues(cproperties);
 ```
 
 <br>
 
-コンフィギュレーションセットをアクティブ化します。このときに OnSetActivateSet が呼ばれますが、まだコンフィギュレーションパラメーターは変更されていません。
+Activate the configuration set. At this time, OnSetActivateSet is called, but the configuration parameter has not yet been changed.
 ```
  this->m_configsets.activateConfigurationSet("default");
 ```
 
 <br>
 
-もう一つのコンフィギュレーションパラメーター Test のみをアップデートします。Interval は「1000」のままです。
+Update only the other configuration parameter, Test. Interval remains "1000".
 ```
  this->m_configsets.update("default","Test");
 ```
 
 <br>
 
-コンフィギュレーションセットを更新し Interval に「1」を設定します。
+Update the configuration set and set Interval to "1".
 ```
  this->m_configsets.update("default");
 ```
@@ -283,20 +282,20 @@ Interval を「1000」から「1」に設定します。
 <br>
 <br>
 
-次に、アクティブ化したまま RTSystemEditor で Interval を「2」に変更します。コンソールには以下のように表示されます。
+Next, while still activated, change Interval to "2" in RTSystemEditor. The console displays the following.
 
 
 <div align="center"><div align="center"><a href="ConfigurationCallback03.png"><img src="ConfigurationCallback03.png" width="70%;"></a></div>;  <div align="center"><a href="ConfigurationCallback04.png"><img src="ConfigurationCallback04.png" width="70%;"></a></div>;</div>
 <br>
 <div align="center"><a href="ConfigurationCallback03-1.png"><img src="ConfigurationCallback03-1.png" width="70%;"></a></div>
 <br>
-まず、上述同様、コンフィギュレーションセットへの更新パラメータの追加とアクティブ化が行われます。
-onExecute の後 または onStateUpdate() の直後に更新が行われます。
+First, as described above, the updated parameter is added to the configuration set and activated.
+The update is performed after onExecute or immediately after onStateUpdate().
 
 <br>
 <br>
 
-続いて、RTC を非アクティブにします。コンソールには以下のように表示されます。
+Next, deactivate the RTC. The console displays the following.
 
 <div align="center"><a href="ConfigurationCallback06.png"><img src="ConfigurationCallback06.png" width="70%;"></a></div>
 <br>
@@ -320,26 +319,24 @@ onExecute の後 または onStateUpdate() の直後に更新が行われます�
  }
 ```
 
-アクティブにしたときと異なるのは、Interval を 800 にした箇所と、m_configsets.update("default","Interval") として Interval のみ更新しているところです。
-今回は、m_configsets.update("default","Interval") で値が更新されているか確認できます。
+The differences from when it was activated are the part where Interval is set to 800, and the part where only Interval is updated with m_configsets.update("default","Interval").
+This time, you can confirm that the value is updated by m_configsets.update("default","Interval").
 
 <br>
 <br>
 
-続いて、RTSyetemEditor でコンフィギュレーションセットを追加します。
-図で [追加] ボタンをクリックした後に、[適用] ボタンをクリックすると OnAddConfigurationAddCallback を呼ぶことができます。
-コンソールには以下のように表示されます。
+Next, add a configuration set in RTSyetemEditor.
+After clicking the [Add] button in the figure, click the [Apply] button to call OnAddConfigurationAddCallback.
+The console displays the following.
 
 <div align="center"><a href="ConfigurationCallback07.png"><img src="ConfigurationCallback07.png" width="70%;"></a></div>
 <br>
 <div align="center"><a href="ConfigurationCallback07-1.png"><img src="ConfigurationCallback07-1.png" width="70%;"></a></div>
 <br>
 
-同様に、コンフィギュレーションセットを削除することで OnRemoveConfigurationSetCallback を呼ぶことができます。
+Similarly, you can call OnRemoveConfigurationSetCallback by deleting a configuration set.
 
 <br>
 
-基本的に、パラメーターの変更は RTC のアクティビティが呼び出されるまではコンフィギュレーションパラメーターが外部で変更されても反映されませんが、コールバックを使うことでいろいろな設定ができるようになります。
+Basically, parameter changes are not reflected even if configuration parameters are changed externally until an RTC activity is called, but using callbacks makes it possible to configure various settings.
 
-
--------jp page!!-------

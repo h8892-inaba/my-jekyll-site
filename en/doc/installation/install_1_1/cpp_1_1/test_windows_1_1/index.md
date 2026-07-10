@@ -2,7 +2,9 @@
 layout: page
 title: 動作確認 (Windows編)
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 init<br>
 https://openrtm.org/openrtm/ja/node/794<br>
@@ -209,7 +211,7 @@ OutPort から InPort (または InPort から OutPort) へドラッグランド
 
 以下のメッセージが出て RTSystemEditorRCP (RTSE) が起動しない場合は、32bit 版の Java 動作環境 (JRE) または Java 開発環境 (JDK) をインストールする必要があります。
 変更インストールで JRE を選択すればインストールされます。手順は、コントロールパネルの「プログラムのアンインストールまたは変更」を開き、OpenRTM-aist の右クリックして「変更」を選択します。
-インストーラー画面での JRE 選択については、[OpenRTM-aistを10分で始めよう！](/ja/node/5710) のページをご覧ください。
+インストーラー画面での JRE 選択については、[OpenRTM-aistを10分で始めよう！](/en/node/5710) のページをご覧ください。
 <!-- [[Java のダウンロード:http://java.com/ja/download/manual.jsp]] -->
 
 <div align="center"><a href="Clipboard01.jpg"><img src="Clipboard01.jpg" width="60%;"></a></div>
@@ -264,4 +266,4 @@ OutPort から InPort (または InPort から OutPort) へドラッグランド
 
 <br>
 
--------jp page!!-------
+

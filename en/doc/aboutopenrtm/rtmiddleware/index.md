@@ -17,11 +17,11 @@ By utilizing these features, it is easy to create highly independent and reusabl
 
 OpenRTM-aist is implemented using CORBA, a distributed object standard, with an emphasis on network transparency and independence from operating systems and programming languages. Currently, OpenRTM-aist implementations are available in C++, Python, and Java.
 
-- [RT Middleware]({{ site.baseurl }}/ja/doc/aboutopenrtm/rtmiddleware/)
-- [License]({{ site.baseurl }}/ja/doc/aboutopenrtm/license/)
-- [OpenRTM-aist Specifications]({{ site.baseurl }}/ja/doc/aboutopenrtm/specification/)
-- [RT Component Architecture]({{ site.baseurl }}/ja/doc/aboutopenrtm/rtc_architecture)
-- [RTC Development Flow]({{ site.baseurl }}/ja/doc/aboutopenrtm/rtc_developmentflow/)
-- [RT System Development Flow]({{ site.baseurl }}/ja/doc/aboutopenrtm/rts_developmentflow/)
-- [Research and Development]({{ site.baseurl }}/ja/doc/aboutopenrtm/researchanddevel/)
+- [RT Middleware]({{ site.baseurl }}/en/doc/aboutopenrtm/rtmiddleware/)
+- [License]({{ site.baseurl }}/en/doc/aboutopenrtm/license/)
+- [OpenRTM-aist Specifications]({{ site.baseurl }}/en/doc/aboutopenrtm/specification/)
+- [RT Component Architecture]({{ site.baseurl }}/en/doc/aboutopenrtm/rtc_architecture)
+- [RTC Development Flow]({{ site.baseurl }}/en/doc/aboutopenrtm/rtc_developmentflow/)
+- [RT System Development Flow]({{ site.baseurl }}/en/doc/aboutopenrtm/rts_developmentflow/)
+- [Research and Development]({{ site.baseurl }}/en/doc/aboutopenrtm/researchanddevel/)
 

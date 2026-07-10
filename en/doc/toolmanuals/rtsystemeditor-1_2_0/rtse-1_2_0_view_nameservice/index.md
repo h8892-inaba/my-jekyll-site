@@ -1,293 +1,289 @@
 ---
 layout: page
-title: ビュー（ネームサービスビュー編）
+title: Views (Name Service View)
 ---
--------jp page!!-------
 <!-- Title: ビュー（ネームサービスビュー編 -->
 #contents
 
-ここでは、ネームサービスビューについて解説します。
+This section explains the Name Service View.
 <br>
 
-OpenRTM-aist では RTC を管理・公開するためにネームサービスが使用されており、ネームサービスビューでは、この内容を表示/編集することができます。
+In OpenRTM-aist, a name service is used to manage and publish RTCs, and the Name Service View allows you to display and edit this information.
 <br>
 
 
-### 機能概要
-ネームサービスビューは、RTC をリアルタイムにグラフィカル操作する機能を持っています。提供される機能の一覧は以下のとおりです。
+### Function Overview
+The Name Service View provides functions for graphically operating RTCs in real time. The list of provided functions is as follows.
 #clear
 
-<div align="center"><strong>機能概要一覧</strong></div>
+<div align="center"><strong>Function Overview List</strong></div>
 <table class="table-alt">
   <tr>
     <td>No.</td>
-    <td>機能名称</td>
-    <td>機能概要</td>
+    <td>Function Name</td>
+    <td>Function Overview</td>
   </tr>
   <tr>
     <td>1</td>
-    <td>ネームサーバー接続/編集機能</td>
-    <td>ネームサーバーに接続し、登録されているコンポーネントをネームサービスビューにツリー形式で表示する。</td>
+    <td>Name Server Connection/Edit Function</td>
+    <td>Connects to a name server and displays the registered components in the Name Service View in a tree format.</td>
   </tr>
   <tr>
     <td>2</td>
-    <td>コンポーネントプロファイル表示機能</td>
-    <td>選択したコンポーネントのプロファイル情報をプロパティビューに表示する。</td>
+    <td>Component Profile Display Function</td>
+    <td>Displays the profile information of the selected component in the Property View.</td>
   </tr>
 </table>
 
 
-### ネームサービスビューの起動
-メニューから[ウインドウ] > [ビューの表示] > [Name Service View] を選択すると、ネームサービスビューが表示されます。
+### Starting the Name Service View
+Select [Window] > [Show View] > [Name Service View] from the menu to display the Name Service View.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0301.jpg"><img src="RTCBuilder1.1.2_0301.jpg" width="70%;"></a></div>
-<div align="center"><strong>ビューの表示</strong></div>
+<div align="center"><strong>Show View</strong></div>
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0302.jpg"><img src="RTCBuilder1.1.2_0302.jpg" width="60%;"></a></div>
-<div align="center"><strong>ネームサービスビューの初期起動時画面</strong></div>
+<div align="center"><strong>Initial Startup Screen of the Name Service View</strong></div>
 <br>
 
 
-### ネームサーバーに接続するには
-ネームサーバーに接続するには、ネームサービスビューの上部に存在する [ネームサーバを追加] ボタンをクリックするか、コンテキストメニューから [ネームサーバを追加] を選択します。
+### Connecting to a Name Server
+To connect to a name server, click the [Add Name Server] button at the top of the Name Service View, or select [Add Name Server] from the context menu.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0303.jpg"><img src="RTCBuilder1.1.2_0303.jpg" width="60%;"></a></div>
-<div align="center"><strong>ネームサーバーに接続する</strong></div>
+<div align="center"><strong>Connecting to a Name Server</strong></div>
 <br>
 
-ネームサーバー接続ダイアログでは、IPアドレスおよびポート番号を入力します。（ポート番号が省略された場合には、設定画面で設定されたポート番号が使用されます。デフォルトのポート番号は2809番ポートです）
+In the name server connection dialog, enter the IP address and port number. (If the port number is omitted, the port number configured on the settings screen is used. The default port number is port 2809.)
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0304.jpg"><img src="RTCBuilder1.1.2_0304.jpg" width="60%;"></a></div>
-<div align="center"><strong>ネームサーバーの接続ダイアログ</strong></div>
+<div align="center"><strong>Name Server Connection Dialog</strong></div>
 <br>
 
-**※**Eclipseの（再）起動時には最後に接続したアドレスへ自動的に接続します。存在しない場合には、ローカルホストの2809番ポートに接続を試みます。
+**Note:** When Eclipse is started or restarted, it automatically connects to the last connected address. If none exists, it attempts to connect to port 2809 on localhost.
 
 
-### ネームサーバーを画面から削除するには
-接続しているネームサーバーを画面から削除するには、ネームサーバーを右クリックし [ビューから削除] を選択します。
+### Removing a Name Server from the Screen
+To remove a connected name server from the screen, right-click the name server and select [Remove from View].
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0305.jpg"><img src="RTCBuilder1.1.2_0305.jpg" width="60%;"></a></div>
-<div align="center"><strong>ネームサーバーを画面から削除する</strong></div>
+<div align="center"><strong>Removing a Name Server from the Screen</strong></div>
 <br>
 
-### ネームサーバーの内容を表示する
-接続したネームサーバーにコンポーネントが登録されていると、以下のように登録内容がツリー形式で表示されます。
+### Displaying the Contents of a Name Server
+If components are registered in the connected name server, the registered contents are displayed in a tree format as shown below.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0306.jpg"><img src="RTCBuilder1.1.2_0306.jpg" width="60%;"></a></div><br>
-<div align="center"><strong>ネームサービスビュー</strong></div>
+<div align="center"><strong>Name Service View</strong></div>
 <br>
 
-各アイコンの意味は以下のとおりです。
+The meanings of the icons are as follows.
 
-<div align="center"><strong>ネームサーバーアイコンの一覧</strong></div>
+<div align="center"><strong>List of Name Server Icons</strong></div>
 
 
 <table class="table-alt">
   <tr>
-    <th>№</th>
-    <th>アイコン</th> 
-    <th>種類（KIND）</th> 
-    <th>名前</th>
+    <th>No.</th>
+    <th>Icon</th> 
+    <th>Type (KIND)</th> 
+    <th>Name</th>
   </tr>
   <tr>
     <td>1</td>
     <td><div align="center"><a href="IconHostCxt.png"><img src="IconHostCxt.png" width="13%;"></a></div></td>
     <td>host_cxt</td>
-    <td>ホストコンテキスト</td>
+    <td>Host context</td>
   </tr>
   <tr>
     <td>2</td>
     <td><div align="center"><a href="IconMgrCxt.png"><img src="IconMgrCxt.png" width="13%;"></a></div></td>
     <td>mgr_cxt</td>
-    <td>マネージャコンテキスト</td>
+    <td>Manager context</td>
   </tr>
   <tr>
     <td>3</td>
     <td><div align="center"><a href="IconCateCxt.png"><img src="IconCateCxt.png" width="13%;"></a></div></td>
     <td>cate_cxt</td>
-    <td>カテゴリコンテキスト</td>
+    <td>Category context</td>
   </tr>
   <tr>
     <td>4</td>
     <td><div align="center"><a href="IconModCxt.png"><img src="IconModCxt.png" width="13%;"></a></div></td>
     <td>mod_cxt</td>
-    <td>モジュールコンテキスト</td>
+    <td>Module context</td>
   </tr>
   <tr>
     <td>5</td>
     <td><div align="center"><a href="IconElse.png"><img src="IconElse.png" width="13%;"></a></div></td>
-    <td>上記以外</td>
-    <td>フォルダー（上記以外のコンテキスト）</td>
+    <td>Other than the above</td>
+    <td>Folder (contexts other than the above)</td>
   </tr>
   <tr>
     <td>6</td>
     <td><div align="center"><a href="IconRTC.png"><img src="IconRTC.png" width="13%;"></a></div></td>
-    <td>なし</td>
+    <td>None</td>
     <td>RTC</td>
   </tr>
   <tr>
     <td>7</td>
     <td><div align="center"><a href="IconMgr.png"><img src="IconMgr.png" width="13%;"></a></div></td>
-    <td>なし</td>
-    <td>マネージャ</td>
+    <td>None</td>
+    <td>Manager</td>
   </tr>
   <tr>
     <td>8</td>
     <td><div align="center"><a href="IconObj.png"><img src="IconObj.png" width="13%;"></a></div></td>
-    <td>なし</td>
-    <td>オブジェクト（RTC 以外のオブジェクト）</td>
+    <td>None</td>
+    <td>Object (object other than RTC)</td>
   </tr>
   <tr>
     <td>9</td>
     <td><div align="center"><a href="IconZombi.png"><img src="IconZombi.png" width="13%;"></a></div></td>
-    <td>なし</td>
-    <td>ネームサーバーにエントリされてはいるが、実体のオブジェクトにアクセスできないゾンビオブジェクト</td>
+    <td>None</td>
+    <td>Zombie object that is registered in the name server but whose actual object cannot be accessed</td>
   </tr>
 </table>
 
 
 
-ネームサービスビューは、接続先の各ネームサーバーを常に監視し、表示の同期・更新を行っています。（監視の周期は、設定画面の[[接続周期:]]で変更することができます）。
-また、明示的にネームサーバーの内容を再取得する場合は更新を行います。更新を行うには、ネームサービスビューの上部の [更新] ボタンをクリックするか、コンテキストメニューにて [更新] を選択します。
+The Name Service View constantly monitors each connected name server and synchronizes and updates the display. (The monitoring cycle can be changed in [[Connection Cycle:]] on the settings screen.)
+Also, when you want to explicitly reacquire the contents of a name server, perform an update. To perform an update, click the [Refresh] button at the top of the Name Service View, or select [Refresh] from the context menu.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0307.jpg"><img src="RTCBuilder1.1.2_0307.jpg" width="60%;"></a></div>
-<div align="center"><strong>リフレッシュ</strong></div>
+<div align="center"><strong>Refresh</strong></div>
 <br>
 
 
-### ネームサービスビューの表示範囲を変更する
-ネームサービスビューでは、RTC の数が多くなることによって操作する範囲が煩雑化するのを防ぐために、表示ルートの位置を移動する機能があります。<br>
-表示ルートを移動するには、移動する先を選択し、ネームサービスビューの上部の [次へジャンプ] ボタンをクリックするか、コンテキストメニューにて [次へジャンプ] を選択します。
+### Changing the Display Range of the Name Service View
+The Name Service View has a function for moving the display root position to prevent the operation range from becoming complicated as the number of RTCs increases.<br>
+To move the display root, select the destination, then click the [Jump Next] button at the top of the Name Service View, or select [Jump Next] from the context menu.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0308.jpg"><img src="RTCBuilder1.1.2_0308.jpg" width="60%;"></a></div>
-<div align="center"><strong>表示ルート変更</strong></div>
+<div align="center"><strong>Changing the Display Root</strong></div>
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0309.jpg"><img src="RTCBuilder1.1.2_0309.jpg" width="60%;"></a></div>
-<div align="center"><strong>表示ルート変更例</strong></div>
+<div align="center"><strong>Example of Changing the Display Root</strong></div>
 <br>
 
-移動後は、[戻る] で1階層上に戻ることができます。また、[ホームへ戻る] で最上位の階層に戻ります。
+After moving, you can return one level up with [Back]. You can also return to the top-level hierarchy with [Back to Home].
 
 
-### ネームサービスビューの表示内容をフィルターする
-ネームサービスビューでは、RTC の数が多くなることによって操作する範囲が煩雑化するのを防ぐための、もうひとつの方法として、フィルター（表示するエントリの種類を限定）する機能があります。<br>
-フィルターを設定するには、ネームサービスビューの上部に存在する [フィルタを設定] ボタンをクリックします。
+### Filtering the Display Contents of the Name Service View
+As another way to prevent the operation range from becoming complicated as the number of RTCs increases, the Name Service View has a filter function that limits the types of entries displayed.<br>
+To set a filter, click the [Set Filter] button at the top of the Name Service View.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0310.jpg"><img src="RTCBuilder1.1.2_0310.jpg" width="60%;"></a></div>
-<div align="center"><strong>フィルターの指示</strong></div>
+<div align="center"><strong>Filter Instruction</strong></div>
 <br>
 
-「フィルタを設定」ダイアログでは、非表示にするエントリの種類を、「ビューから除外するエレメントを選択」欄から選択します。
+In the "Set Filter" dialog, select the types of entries to hide from the "Select elements to exclude from the view" field.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0311.jpg"><img src="RTCBuilder1.1.2_0311.jpg" width="60%;"></a></div>
-<div align="center"><strong>ネームサービスフィルタダイアログ</strong></div>
+<div align="center"><strong>Name Service Filter Dialog</strong></div>
 <br>
 
-ネームサービスビューの表示から除外したい要素にチェックをつけると、ネームサービスビューに表示されなくなります。<br>
-「ネーミングオブジェクト名」を有効にすると、オブジェクト名の条件に一致するものが非表示となります。<br>
-オブジェクト名の条件は前方一致と部分一致が選択できます。
+If you check the elements you want to exclude from the Name Service View display, they will no longer be displayed in the Name Service View.<br>
+When "Naming Object Name" is enabled, objects that match the object name condition are hidden.<br>
+For the object name condition, prefix match and partial match can be selected.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0312.jpg"><img src="RTCBuilder1.1.2_0312.jpg" width="60%;"></a></div>
-<div align="center"><strong>オブジェクト名によるフィルタリング</strong></div>
+<div align="center"><strong>Filtering by Object Name</strong></div>
 <br>
 
 
-### ネームサービスからエントリを削除する
-ネームサービスビューでは、ネームサービスのネーミングオブジェクトのエントリを削除することができます。ネーミングオブジェクトを削除するには、コンテキストメニューにて [ネームサービスから削除] ボタンをクリックします。
+### Deleting an Entry from the Name Service
+In the Name Service View, you can delete naming object entries from the name service. To delete a naming object, click [Delete from Name Service] in the context menu.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0313.jpg"><img src="RTCBuilder1.1.2_0313.jpg" width="60%;"></a></div>
-<div align="center"><strong>ネームサービスから削除する</strong></div>
+<div align="center"><strong>Deleting from the Name Service</strong></div>
 <br>
 
 
-### ネームサービスへオブジェクトを登録する
-ネームサービスビューで、ネームサービスにオブジェクトのエントリを登録することができます。<br>
-オブジェクトを登録するには、配下にオブジェクトを追加したいコンテキストおよびオブジェクトのコンテキストメニューから、[オブジェクトを追加] を選択します。
+### Registering an Object in the Name Service
+In the Name Service View, you can register an object entry in the name service.<br>
+To register an object, select [Add Object] from the context menu of the context or object under which you want to add the object.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0314.jpg"><img src="RTCBuilder1.1.2_0314.jpg" width="60%;"></a></div>
-<div align="center"><strong>オブジェクトを追加する</strong></div>
+<div align="center"><strong>Adding an Object</strong></div>
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0315.jpg"><img src="RTCBuilder1.1.2_0315.jpg" width="60%;"></a></div>
-<div align="center"><strong>オブジェクト追加ダイアログ</strong></div>
+<div align="center"><strong>Add Object Dialog</strong></div>
 <br>
 
-「オブジェクトを追加」ダイアログでは、オブジェクトの名前(Name)、種類(Kind)、および IOR を指定します。
+In the "Add Object" dialog, specify the object name (Name), type (Kind), and IOR.
 
 
-### ネームサービスへコンテキストを登録する
-ネームサービスビューで、ネームサービスにコンテキストのエントリを登録することができます。<br>
-コンテキストを登録するには、配下にコンテキストを追加したいコンテキストのコンテキストメニューから、[コンテキストを追加] を選択します。
+### Registering a Context in the Name Service
+In the Name Service View, you can register a context entry in the name service.<br>
+To register a context, select [Add Context] from the context menu of the context under which you want to add the context.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0316.jpg"><img src="RTCBuilder1.1.2_0316.jpg" width="60%;"></a></div>
-<div align="center"><strong>コンテキストを追加する</strong></div>
+<div align="center"><strong>Adding a Context</strong></div>
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0317.jpg"><img src="RTCBuilder1.1.2_0317.jpg" width="60%;"></a></div>
-<div align="center"><strong>コンテキスト追加ダイアログ</strong></div>
+<div align="center"><strong>Add Context Dialog</strong></div>
 <br>
 
-「コンテキストを追加」ダイアログでは、コンテキストの名前(Name)、種類(Kind)を指定します。<br>
-種類(Kind)には以下のいずれかの値を選択します。
+In the "Add Context" dialog, specify the context name (Name) and type (Kind).<br>
+For type (Kind), select one of the following values.
 
-<div align="center"><strong>コンテキストの種類(kind)の一覧</strong></div>
+<div align="center"><strong>List of Context Types (kind)</strong></div>
 <table class="table-alt">
   <tr>
-    <th>№</th>
-    <th>種類（Kind）</th>
-    <th>名前</th>
+    <th>No.</th>
+    <th>Type (Kind)</th>
+    <th>Name</th>
   </tr>
   <tr>
     <td>1</td>
     <td>host_cxt</td>
-    <td>ホストコンテキスト</td>
+    <td>Host context</td>
   </tr>
   <tr>
     <td>2</td>
     <td>mgr_cxt</td>
-    <td>マネージャコンテキスト</td>
+    <td>Manager context</td>
   </tr>
   <tr>
     <td>3</td>
     <td>cate_cxt</td>
-    <td>カテゴリコンテキスト</td>
+    <td>Category context</td>
   </tr>
   <tr>
     <td>4</td>
     <td>mod_cxt</td>
-    <td>モジュールコンテキスト</td>
+    <td>Module context</td>
   </tr>
   <tr>
     <td>5</td>
-    <td>上記以外を入力</td>
-    <td>フォルダー（上記以外のコンテキスト）</td>
+    <td>Enter something other than the above</td>
+    <td>Folder (contexts other than the above)</td>
   </tr>
 </table>
 
 
-### ゾンビオブジェクトを削除する
-ネームサービスビューには、ゾンビオブジェクトを一括して削除する機能があります。ゾンビオブジェクトをすべて削除するには、ネームサービスビュー上部の [ゾンビをクリア] ボタンをクリックします。
+### Deleting Zombie Objects
+The Name Service View has a function for deleting zombie objects all at once. To delete all zombie objects, click the [Clear Zombies] button at the top of the Name Service View.
 <br>
 
 <div align="center"><a href="RTCBuilder1.1.2_0318.jpg"><img src="RTCBuilder1.1.2_0318.jpg" width="60%;"></a></div>
-<div align="center"><strong>ゾンビをクリア</strong></div>
+<div align="center"><strong>Clear Zombies</strong></div>
 <br>
-
-
--------jp page!!-------

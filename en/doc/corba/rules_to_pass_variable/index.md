@@ -1,15 +1,14 @@
 ---
 layout: page
-title: 変数受渡規則
+title: Rules for Passing Variables
 ---
--------jp page!!-------
 
 <!-- Title: 変数受渡規則 -->
 #contents
 #clear
-## 構造体・/オブジェクトリファレンス 
+## Structures / Object References 
 
-CORBA の構造体は C++ において、構造体 "struct" にマッピングされる。
+CORBA structures are mapped to the structure "struct" in C++.
 ```
  // -*- IDL -*-
  struct Profile {
@@ -32,34 +31,34 @@ CORBA の構造体は C++ において、構造体 "struct" にマッピング�
  };
 ```
 
-- 固定長の構造体
+- Fixed-length structures
 
 
-- 可変長の構造体
+- Variable-length structures
 
-構造体に可変長のメンバー (string、wstring、sequence (可変長メンバを持つ struct、可変長メンバを持つ union) が含まれていると、構造体は可変長データとみなされます。
-この場合、固定長の構造体とは異なる C++ コードが生成され、戻り値や outパラメータにおける扱いが異なります。
+If a structure contains variable-length members (string, wstring, sequence, struct with variable-length members, or union with variable-length members), the structure is considered variable-length data.
+In this case, C++ code different from that for fixed-length structures is generated, and handling differs for return values and out parameters.
 
-  - _var型
-IDL コンパイラは IDL における構造体から、C++ の構造体と _var 型のクラスを自動的に生成します。
-_var 型クラスはスマートポインタのように振る舞い、可変長の構造体として _var クラスを使用する場合、可変長のメンバーに割り当てられるメモリーは自動的に管理されます。 
+  - _var type
+The IDL compiler automatically generates a C++ structure and a _var type class from a structure in IDL.
+The _var type class behaves like a smart pointer, and when using the _var class as a variable-length structure, the memory allocated to variable-length members is automatically managed. 
 
-  - _var 型の変数(例えば var1)から他の_var型の変数(var2)に代入が行われた場合には、そのポインタの所有権が var2 に移り、その後 var1 は初期化もしくは代入が行われるまで、使用することはできません。
-  - 構造体がスコープの外に出ると，可変長のメンバーに関連付けられていたすべてのメモリは自動的に解放されます。 ただし、すでに所有権を他に譲渡している_var型変数がスコープから出る場合、元のデータに対しては開放は行われません。(所有権を既に譲渡しているので。)
-  - 初期化もしくは代入された構造体に対して，再び初期化または代入が行われた場合，元のデータに関連付けられていたメモリは自動的に解放されます。
-  - 可変長のメンバーにオブジェクトリファレンスが代入される場合は，必ずそのオブジェクトリファレンスのコピーが作成されます。可変長のメンバーにポインタが代入される場合，コピーは作成されません。
+  - When assignment is performed from a _var type variable (for example, var1) to another _var type variable (var2), ownership of that pointer moves to var2, and after that, var1 cannot be used until it is initialized or assigned again.
+  - When a structure goes out of scope, all memory associated with variable-length members is automatically released. However, when a _var type variable that has already transferred ownership to another variable goes out of scope, the original data is not released. (Because ownership has already been transferred.)
+  - When a structure that has been initialized or assigned is initialized or assigned again, the memory associated with the original data is automatically released.
+  - When an object reference is assigned to a variable-length member, a copy of that object reference is always created. When a pointer is assigned to a variable-length member, no copy is created.
 
 
 
-### _var 型
-#### 変換コンストラクタ(T_ptr)
+### _var Type
+#### Conversion Constructor (T_ptr)
 
-- 実装例
+- Implementation example
 ```
   _CORBA_ObjRef_Var(T_ptr p) : pd_objref(p) {}
 ```
 
-_ptr型のオブジェクト参照の所有権は_var型に移るため、参照カウントの増減はない。
+Because ownership of the _ptr type object reference moves to the _var type, there is no increase or decrease in the reference count.
 
 ```
  MyObject_ptr ptr = obj->get_myobject();
@@ -69,13 +68,13 @@ _ptr型のオブジェクト参照の所有権は_var型に移るため、参照
  // var がスコープを抜けるなどして解体されるとき参照カウントはデクリメントされる
  
 ```
-#### 変換コンストラクタ(const T_var&)
-- 実装例
+#### Conversion Constructor (const T_var&)
+- Implementation example
 ```
  Object_var(const T_var& p) : pd_ref(T::_duplicate(p.pd_ref)) {}
 ```
 
-代入元の_var型のオブジェクト参照の所有権はコピーされる。
+Ownership of the object reference of the source _var type is copied.
 
 ```
  MyObject_var var0 = obj->get_myobject();
@@ -84,27 +83,27 @@ _ptr型のオブジェクト参照の所有権は_var型に移るため、参照
  // リファレンスカウントはインクリメントされ var1も所有権を持つ
 ```
 
-#### 変換コンストラクタ(const T_member) 
-- 実装例
+#### Conversion Constructor (const T_member) 
+- Implementation example
 
-#### in引数とin()関数
-単純にオブジェクト参照の_ptr型ポインタを返す。
-所有権の移動は起こらない。
+#### in Argument and in() Function
+Simply returns a _ptr type pointer to the object reference.
+No ownership transfer occurs.
 
-- 実装例
+- Implementation example
 ```
  T_ptr  in() const { return pd_objref; }
 ```
 
-通常、関数の**in**引数にオブジェクト参照を渡す際に使用する。
-オブジェクト参照を与えられた側の関数は、所有権を持たないため関数内で**release**してはいけない。
-関数から戻ってきたあと、_var型変数に依然として所有権が保持されており、_var型変数の解体時にオブジェクトは**release**される。
+Usually used when passing an object reference to an **in** argument of a function.
+The function receiving the object reference does not have ownership, so it must not **release** it inside the function.
+After returning from the function, ownership is still retained by the _var type variable, and the object is **released** when the _var type variable is destructed.
 
-オブジェクト参照を**in**引数として受け取る関数を定義する場合は、_ptr型の引数として定義する。さらに、関数内では、そのオブジェクトのオペレーションを呼ぶだけで、**release**等は行ってはいけない。
-また、関数内でオブジェクト参照をどこか(グローバル変数、static 変数、オブジェクトのメンバー等)に保存したい場合は、所有権をコピーするため duplicate関数で複製する必要がある。
+When defining a function that receives an object reference as an **in** argument, define it as a _ptr type argument. Furthermore, inside the function, only call operations on that object; do not perform **release** or similar operations.
+Also, if you want to save the object reference somewhere inside the function (global variable, static variable, object member, etc.), you need to duplicate it using the duplicate function in order to copy ownership.
 
 
-- 使用例
+- Usage example
 
 ```
  void myfunc(MyObject_ptr obj)
@@ -122,11 +121,11 @@ _ptr型のオブジェクト参照の所有権は_var型に移るため、参照
  // スコープを抜けたので参照カウントがデクリメントされる
 ```
 
-#### out引数と out()関数 
-現在所有している参照を**release**(参照カウントをデクリメント)して、リファレンスのポインタをnilにセットして返す。
-すなわち、**out()**関数呼び出し以前にもしオブジェクト参照を保持している場合はその所有権を放棄し参照は破棄される。
+#### out Argument and out() Function 
+Releases the currently owned reference (**release**, decrements the reference count), sets the reference pointer to nil, and returns it.
+In other words, if an object reference is held before calling the **out()** function, its ownership is abandoned and the reference is destroyed.
 
-- 実装例
+- Implementation example
 
 ```
  T_ptr& out() {
@@ -136,13 +135,13 @@ _ptr型のオブジェクト参照の所有権は_var型に移るため、参照
  }
 ```
 
-通常、関数の**out**引数にオブジェクト参照を渡す際に使用する。すなわち、関数から戻ってきたあと、この変数に新たにオブジェクト参照が保持されていることが期待される。
-このとき、オブジェクト参照の所有権はこの変数に保持されていると考える。
-**out()**で変数を渡された関数側では、何らかの形でオブジェクト参照を生成または複製して、引数に所有権を渡す必要がある。
+Usually used when passing an object reference to an **out** argument of a function. In other words, after returning from the function, this variable is expected to hold a new object reference.
+At this time, ownership of the object reference is considered to be held by this variable.
+The function side that receives the variable with **out()** must create or duplicate an object reference in some form and pass ownership to the argument.
 
-オブジェクト参照を**out**引数として受け取る関数を定義する場合は、_ptr型参照の引数として定義する。関数内では、引数は必ずnilオブジェクト参照であり、かつ通常何らかのオブジェクトを所有権を与えて代入することが期待される。
+When defining a function that receives an object reference as an **out** argument, define it as a _ptr type reference argument. Inside the function, the argument is always a nil object reference, and normally it is expected that some object will be assigned with ownership.
 
-- 使用例
+- Usage example
 
 ```
  void myfunc(MyObject_ptr& obj)
@@ -173,21 +172,21 @@ _ptr型のオブジェクト参照の所有権は_var型に移るため、参照
 
 
 #### inout()
-リファレンスへのポインタの参照を返す。
+Returns a reference to the pointer to the reference.
 
-- 実装
+- Implementation
 
 ```
  T_ptr& inout()    { return pd_objref; }
 ```
 
-通常、関数の**inout**引数にオブジェクト参照を渡す際に使用する。
-すなわち、関数内では何らかのオブジェクト参照が引数に入っていることが期待され、オブジェクトの所有権は関数側に移る。また、関数は何らかのオブジェクト参照をこの引数に与えて返すことが期待され、引数すなわち呼び出し元の変数に所有権を与える。
-関数内では引数にオブジェクト参照を新たにセットする場合は、まず**release**してから新たなオブジェクト参照を生成または複製して引数に所有権を渡す必要がある。
+Usually used when passing an object reference to an **inout** argument of a function.
+In other words, inside the function, some object reference is expected to be contained in the argument, and ownership of the object moves to the function side. Also, the function is expected to provide some object reference to this argument and return it, giving ownership to the argument, that is, the caller's variable.
+Inside the function, when setting a new object reference to the argument, it is necessary to first **release** it, then create or duplicate a new object reference and pass ownership to the argument.
 
-オブジェクト参照を**inout**引数として取る関数は、設計の観点からあまり推奨されない。もし、**inout**引数として取る関数を定義する必要がある場合は、_ptr型参照の引数として定義する。
+Functions that take object references as **inout** arguments are not very recommended from a design standpoint. If it is necessary to define a function that takes an **inout** argument, define it as a _ptr type reference argument.
 
-- 使用例
+- Usage example
 
 ```
  void myfunc(MyObject_ptr& obj)
@@ -224,7 +223,7 @@ _ptr型のオブジェクト参照の所有権は_var型に移るため、参照
 
 
 #### _retn()
-現在持っているオブジェクト参照の所有権を放棄してポインタを返す。
+Abandons ownership of the currently held object reference and returns the pointer.
 
 ```
  T_ptr _retn() {
@@ -234,12 +233,12 @@ _ptr型のオブジェクト参照の所有権は_var型に移るため、参照
  }
 ```
 
-通常、関数の戻り値にオブジェクト参照を返す場合に使用される。
-所有権は関数の呼び出し側に渡るので、呼び出し側ではオブジェクト参照を破棄する責任がある。したがって、呼び出し側で release するか、_var型変数で受ける必要がある。
+Usually used when returning an object reference as the return value of a function.
+Ownership is passed to the function caller, so the caller is responsible for destroying the object reference. Therefore, the caller must either release it or receive it with a _var type variable.
 
-逆に、戻り値でオブジェクト参照を返す場合、呼び出し側では必ず release により参照カウントがデクリメントされるため、関数内では_duplicate()などで所有権を複製しておく必要がある。
+Conversely, when returning an object reference as a return value, the caller always decrements the reference count with release, so ownership must be duplicated inside the function using _duplicate() or similar.
 
-- 使用例
+- Usage example
 
 ```
  MyObject_ptr myfunc()
@@ -269,49 +268,49 @@ _ptr型のオブジェクト参照の所有権は_var型に移るため、参照
 ```
 
 
-#### 規則のまとめ
+#### Summary of Rules
 
 <table class="table-alt">
   <tr>
-    <th>関数</th>
-    <th>型</th>
-    <th>release責任</th>
-    <th>関数内</th>
+    <th>Function</th>
+    <th>Type</th>
+    <th>release responsibility</th>
+    <th>Inside the function</th>
   </tr>
   <tr>
     <td>in</td>
     <td>T_ptr</td>
-    <td>呼出側</td>
-    <td>オペレーション呼出</td>
+    <td>Caller</td>
+    <td>Operation call</td>
   </tr>
   <tr>
     <td>out</td>
     <td>T_ptr&amp;</td>
-    <td>呼出側</td>
-    <td>_duplicate 代入</td>
+    <td>Caller</td>
+    <td>_duplicate assignment</td>
   </tr>
   <tr>
     <td>inout</td>
     <td>T_ptr&</td>
-    <td>in:関数, out:呼出側</td>
-    <td>release後, _duplicate代入</td>
+    <td>in: function, out: caller</td>
+    <td>After release, _duplicate assignment</td>
   </tr>
   <tr>
     <td>_retn</td>
     <td>T_ptr</td>
-    <td>呼出側</td>
-    <td>_duplicateしてreturn</td>
+    <td>Caller</td>
+    <td>_duplicate and return</td>
   </tr>
 </table>
 
-### _var型,_ptr型の代入でのリファレンスカウント
-#### _ptr型への_var型の代入
+### Reference Counts in Assignment of _var Type and _ptr Type
+#### Assignment of _var Type to _ptr Type
 
-ポインタへの代入。
+Assignment to a pointer.
 
-複製なし、解放せず。
+No duplication, no release.
 
-- 使用例
+- Usage example
 
 ```
  { 
@@ -332,15 +331,15 @@ _ptr型のオブジェクト参照の所有権は_var型に移るため、参照
  // var に関しては、スコープを抜けたので参照カウントがデクリメントされる
 ```
 
-#### _var型への_ptr型の代入
+#### Assignment of _ptr Type to _var Type
 
-_var が保有しているオブジェクトに対して release() されるが、
-引数で渡された _ptr型のオブジェクトに対しては duplicate() されない。
+release() is performed on the object held by _var,
+but duplicate() is not performed on the _ptr type object passed as the argument.
 
 
-複製なし、解放あり。
+No duplication, with release.
 
-- 実装(omniORB)
+- Implementation (omniORB)
 
 ```
   inline T_var& operator= (T_ptr p) {
@@ -350,7 +349,7 @@ _var が保有しているオブジェクトに対して release() されるが�
   }
 ```
 
-- 使用例
+- Usage example
 
 ```
  { 
@@ -365,16 +364,16 @@ _var が保有しているオブジェクトに対して release() されるが�
  // objに関しては、スコープを抜けたので参照カウントがデクリメントされる
 ```
 
-#### _var型への_var型の代入
+#### Assignment of _var Type to _var Type
 
-_var が保有しているオブジェクトに対して release() がコールされ、
-かつ、引数で渡されたオブジェクトに対しても duplicate() がコールされる。
-
-
-複製あり、解放あり。
+release() is called on the object held by _var,
+and duplicate() is also called on the object passed as the argument.
 
 
-- 実装(omniORB)
+With duplication, with release.
+
+
+- Implementation (omniORB)
 
 ```
   inline T_var& operator= (const T_var& p) {
@@ -387,7 +386,7 @@ _var が保有しているオブジェクトに対して release() がコール�
   }
 ```
 
-- 使用例
+- Usage example
 
 ```
  { 
@@ -400,13 +399,13 @@ _var が保有しているオブジェクトに対して release() がコール�
   } // var1, var2に関しては、スコープを抜けたので参照カウントがデクリメントされる
 ```
 
-### _narrow()でのリファレンスカウント
+### Reference Counts in _narrow()
 
-_narrow()処理の過程において、_narrow()の呼び出しが成功した場合、その対象オブジェクトのリファレンスカウントはインクリメントされるが、失敗した場合はインクリメントされない。
+In the process of _narrow(), if the _narrow() call succeeds, the reference count of the target object is incremented; if it fails, it is not incremented.
 
-デクリメントは行われない。
+No decrement is performed.
 
-- 実装(RTCSK.cc)
+- Implementation (RTCSK.cc)
 
 ```
  RTC::RTObject_ptr
@@ -418,7 +417,7 @@ _narrow()処理の過程において、_narrow()の呼び出しが成功した�
  }
 ```
 
-- 実装(omniObjRef.cc)
+- Implementation (omniObjRef.cc)
 
 ```
  void*
@@ -467,21 +466,20 @@ _narrow()処理の過程において、_narrow()の呼び出しが成功した�
  }
 ```
 
-### 規則 
+### Rules 
 
-#### クライアント側
+#### Client Side
 
-クライアントが呼び出しからオブジェクト参照を受信するならば、そのクライアントはそのオブジェクト参照が不要となったときにはそれを開放しなくてはならない。
+If a client receives an object reference from an invocation, that client must release the object reference when it is no longer needed.
 
-(引用：　『CORBA分散オブジェクト　Orbixを用いて』　P.98 オブジェクト参照のためのメモリ管理)
+(Quote: "CORBA Distributed Objects Using Orbix," p.98, Memory Management for Object References)
 
-#### サーバー側 
+#### Server Side 
 
-呼び出し側に渡す参照の所有権は放棄される(つまり、その参照カウントは一つデクリメントされる。したがって、通常は、参照を返す前に適当な_duplicate()関数を呼び出すことになる)
+Ownership of the reference passed to the caller is abandoned (that is, its reference count is decremented by one. Therefore, normally, an appropriate _duplicate() function is called before returning the reference.)
 
-(引用：　『CORBA分散オブジェクト　Orbixを用いて』　P.98 オブジェクト参照のためのメモリ管理)
+(Quote: "CORBA Distributed Objects Using Orbix," p.98, Memory Management for Object References)
 
-#### 参考文献
-- 『CORBA分散オブジェクト　Orbixを用いて』　著: ショーン・ベーカー　出版社: ピアソン・エデュケーション
+#### References
+- "CORBA Distributed Objects Using Orbix" Author: Sean Baker Publisher: Pearson Education
 
--------jp page!!-------

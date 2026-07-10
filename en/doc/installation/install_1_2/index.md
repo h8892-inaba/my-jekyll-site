@@ -2,7 +2,9 @@
 layout: page
 title: "OpenRTM-aist 1.2系のインストール"
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 - [OpenRTM-aist(C++版)1.2系のインストール](./cpp_1_2)
 - [OpenRTM-aist (Python版)1.2系のインストール](./python_1_2)
@@ -10,4 +12,3 @@ title: "OpenRTM-aist 1.2系のインストール"
 - [OpenRTP 1.2系のインストール](./openrtp_1_2)
 - [OpenRTPの起動手順(1.2系、Windows)](./start_openrtp_proc_windows_1_2)
 - [OpenRTPの起動手順(1.2系、Linux)](./start_openrtp_linux_1_2)
--------jp page!!-------

@@ -2,19 +2,21 @@
 layout: page
 title:  Windowsへのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: Windowsへのインストール -->
 #contents
 
 ## OpenRTM-aistのインストール
 MSIインストーラーによるOpenRTM-aistのインストール手順については下記のページに記載。
-- [OpenRTM-aist1.2系のインストール(Windows、MSIインストーラー使用)]({{ site.baseurl }}/ja/doc/appendix/openrtm-aist_1_2_windows_msi)
+- [OpenRTM-aist1.2系のインストール(Windows、MSIインストーラー使用)]({{ site.baseurl }}/en/doc/appendix/openrtm-aist_1_2_windows_msi)
 より、.msiファイルをダウンロードしてください。ファイル名は、64ビット版なら"x86_64.msi"で、32bit版なら"64.msi"で終端された名前となります。ダウンロードした後は、拡張子.msiのファイルをダブルクリックすればインストールプログラムが起動されます。インストール途中で[標準]を選択するとこの.msiファイルが対応している全ての構成がインストールされます。一部の構成のみをインストールしたい場合は[カスタム]を選択してください。(一部の構成のみの検証は十分にはなされていないので、[標準]でインストールすることを推奨します。）
 
 ## JDK8のインストール
 OpenRTM-aist-Java-1.２.ｘの動作にはJDK8相当のJDK(JDK11では正常動作しません)が前もってインストールされている必要があります。JDK8の入手やインストールについては以下を参照してください。
-- [JDK8のインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8)
+- [JDK8のインストール]({{ site.baseurl }}/en/doc/installation/common/install_jdk8)
 
 ### JDKのインストール確認
 コマンドプロンプトを開き、
@@ -106,4 +108,4 @@ OpenRTM-aist-Java-1.２.ｘの動作にはJDK8相当のJDK(JDK11では正常動�
             + VCVerChanger: 使用しているVisual Studioのバージョンを指定するツール
             + WordContrlpy: PythonベースMicrosoft Office Word用RTC
 ```
--------jp page!!-------
+

@@ -1,37 +1,36 @@
 ---
 layout: page
-title: 画面構成と機能（概要）
+title: Screen Layout and Functions (Overview)
 ---
--------jp page!!-------
 
 <!-- Title: 画面構成と機能（概要） -->
 <!-- #contents -->
-RTCBuilder では、以下のような画面構成となっています。
+RTCBuilder has the following screen layout.
 #clear
 <div align="center"><a href="fig3-1RTCBuilder_1.0.0_ja.png"><img src="fig3-1RTCBuilder_1.0.0_ja.png" width="50%;"></a></div>
-<div align="center"><strong>RTC Builder の画面構成要素</strong></div>
+<div align="center"><strong>RTC Builder Screen Components</strong></div>
 
-<div align="center"><strong>画面要素一覧</strong></div>
+<div align="center"><strong>List of Screen Components</strong></div>
 <table class="table-alt">
   <tr>
-    <th>№</th>
-    <th>画面要素名</th>
-    <th>説明</th>
+    <th>No.</th>
+    <th>Screen Component Name</th>
+    <th>Description</th>
   </tr>
   <tr>
-    <td>１</td>
-    <td>RTC プロファイルエディタ</td>
-    <td>RT コンポーネントの仕様であるプロファイル、データポート定義、サービスポート定義、コンフィギュレーション定義、その他拡張プロファイルを編集します。</td>
+    <td>1</td>
+    <td>RTC Profile Editor</td>
+    <td>Edits profiles, data port definitions, service port definitions, configuration definitions, and other extended profiles that constitute the specifications of an RT component.</td>
   </tr>
   <tr>
-    <td>２</td>
-    <td>ビルドビュー</td>
-    <td>編集中の RT コンポーネントおよびデータポート、サービスポート、サービスインターフェースをアイコンでグラフィカルに表示します。</td>
+    <td>2</td>
+    <td>Build View</td>
+    <td>Graphically displays the RT component being edited, as well as data ports, service ports, and service interfaces, using icons.</td>
   </tr>
   <tr>
-    <td>３</td>
-    <td>リポジトリビュー</td>
-    <td>選択した RT リポジトリの情報を表示します。</td>
+    <td>3</td>
+    <td>Repository View</td>
+    <td>Displays information about the selected RT repository.</td>
   </tr>
 </table>
 <br>
@@ -460,4 +459,3 @@ RTCBuilder では、以下のような画面構成となっています。
 <!-- #br -->
 <!--  -->
 
--------jp page!!-------

@@ -2,7 +2,9 @@
 layout: page
 title: RTSystemEditorのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: RTSystemEditorのインストール -->
 #contents
@@ -91,7 +93,7 @@ RTSystemEditorの動作に必要な環境は以下のとおりです。
 
 ## RTSystemEditorのインストール
 RTSystemEditorはEclipseプラグインであるため、Eclipse本体をインストールする必要があります。さらに、EclipseはJavaアプリケーションなので、Eclipse本体をインストールする前にJava実行環境(あるいはJDK：Java開発環境でもよい）をインストールする必要があります。
-- Java実行環境のインストールについては、[EclipseについてのJDK(Java Development Kit)のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/openrtp_1_2/eclipse#jdk_install)を参照してくだ
+- Java実行環境のインストールについては、[EclipseについてのJDK(Java Development Kit)のインストール]({{ site.baseurl }}/en/doc/installation/install_1_2/openrtp_1_2/eclipse#jdk_install)を参照してくだ
 さい。
 - Eclipseのインストールについては、[EclipseについてのEclipseのインストール](../eclipse#eclipse_install)を参照してください。
 
@@ -99,7 +101,7 @@ RTSystemEditorはEclipseプラグインであるため、Eclipse本体をイン�
 Eclipseを直接導入した場合はRTSystemEditorのビルドが必要です。
 以下のページの手順でプラグインの生成、導入を行ってください。
 
-- [RTCBuilder、RTSystemEditorのビルド]({{ site.baseurl }}/ja/build_12_openrtp)
+- [RTCBuilder、RTSystemEditorのビルド]({{ site.baseurl }}/en/build_12_openrtp)
 
 ### RTSystemEditorのインストールと起動
 
@@ -117,7 +119,7 @@ Eclipseを起動し、メニューから[ウィンドウ]>[パースペクティ
 RTSystemEditorの起動が確認できましたら、いったん、Eclipseを終了してください。再度、同じワークスペースを指定してEclipseを起動すると、RTSystemEditorが起動された状態から始まります。
 
 参考:
-- [**FAQ:**Eclipseの起動方法]({{ site.baseurl }}/ja/doc/faq/faq_rtp_tools)
+- [**FAQ:**Eclipseの起動方法]({{ site.baseurl }}/en/doc/faq/faq_rtp_tools)
 
 
--------jp page!!-------
+

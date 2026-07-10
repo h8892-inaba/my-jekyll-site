@@ -1,9 +1,8 @@
 ---
 layout: page
-title: 
+title: rtshell のインストール
 ---
 
-init
 #contents
 
 ## はじめに

@@ -47,7 +47,7 @@ In addition, the installation scripts (for both the 1.2 series and the 2.0 serie
 To install the 2.0 series, paste the following into the shell prompt and execute it. The C++ version, Python version, Java version, rtshell, and JDK8 (32-bit environment only) will be installed. The script is not saved locally.<br>
 * In a 32-bit environment, even if multiple versions of Java are installed by running the script, it is switched to use Java 8. <br>
 * For a 64-bit environment, see the following. <br>
-- [Installing JDK8: Methods Other Than Obtaining Packages from the Repository]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8#toc9)
+- [Installing JDK8: Methods Other Than Obtaining Packages from the Repository]({{ site.baseurl }}/en/doc/installation/common/install_jdk8#toc9)
 
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_raspbian.sh)

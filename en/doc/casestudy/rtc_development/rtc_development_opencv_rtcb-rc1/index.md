@@ -1,46 +1,42 @@
 ---
 layout: page
-title: RTコンポーネント作成(OpenCV編 for RTCB-RC1)
+title: Creating RT Components (OpenCV Edition for RTCB-RC1)
 ---
--------jp page!!-------
 
 <!-- Title: RTコンポーネント作成(OpenCV編 for RTCB-RC1) -->
 #contents
 
-## はじめに
-ここでは、OpenCV ライブラリを VC９ にて RTコンポーネント化する手順を紹介します。
+## Introduction
+This section introduces the procedure for creating an RT component from the OpenCV library using VC9.
 
-### OpenCVとは 
+### What Is OpenCV? 
 
-[OpenCV](http://opencv.jp/)とはインテルが開発・公開しているオープンソースのコンピュー>タービジョン向けライブラリです。
+[OpenCV](http://opencv.jp/) is an open-source computer vision library developed and released by Intel.
 
-[Wikipedia](http://ja.wikipedia.org/wiki/OpenCV)より抜粋。
+Excerpt from [Wikipedia](http://ja.wikipedia.org/wiki/OpenCV).
 
-### 作成する RTコンポーネント 
+### RT Components to Be Created 
 
-- Flip コンポーネント: OpenCV ライブラリのうち、cvFlip() 関数を用いて画像の反転を行う RTコンポーネント。
+- Flip component: An RT component that flips images using the cvFlip() function from the OpenCV library.
 
-- ObjectTracking コンポーネント: OpenCV ライブラリを使用し、マウスで選択した対象物を追
-跡するコンポーネント。
-追跡中の画像表示、追跡画像を OutPort から出力、追跡対象の移動量を OutPort から出力など
-の機能を持つ。
+- ObjectTracking component: A component that uses the OpenCV library to track an object selected with the mouse.
+It has functions such as displaying the image being tracked, outputting the tracking image from an OutPort, and outputting the displacement of the tracked object from an OutPort.
 
-## OpenCV ライブリの RTコンポーネント化 (Flipコンポーネント) 
-ここでは、OpenCV ライブラリのうち、画像の反転を行う cvFlip() を VC９ にて RTコンポーネ
-ント化します。
+## Creating an RT Component from the OpenCV Library (Flip Component) 
+Here, we create an RT component in VC9 from cvFlip(), a function in the OpenCV library that flips images.
 
-以下は、作業の流れです。
+The following is the workflow.
 
-- cvFlip 関数について
-- コンポーネントの概要
-- 動作環境・開発環境
-- Flip コンポーネントの雛型の生成
-- アクティビティ処理の実装
-- コンポーネントの動作確認
+- About the cvFlip function
+- Component overview
+- Operating environment and development environment
+- Generating the Flip component template
+- Implementing activity processing
+- Checking component operation
 
-### cvFlip 関数について
+### About the cvFlip Function
 
-cvFlip 関数は、2次元配列を垂直、水平、または両軸で反転します。
+The cvFlip function flips a two-dimensional array vertically, horizontally, or along both axes.
 
 ```
  void cvFlip(IplImage* src, IplImage* dst=NULL, int flip_mode=0);
@@ -53,36 +49,34 @@ cvFlip 関数は、2次元配列を垂直、水平、または両軸で反転し
  　flip_mode > 0: Y軸周りでの反転(左右反転)
  　flip_mode < 0: 両軸周りでの反転(上下左右反転)
 ```
-### コンポーネントの概要 
-InPort からの入力画像を反転し OutPort から出力するコンポーネント。
+### Component Overview 
+A component that flips an input image from an InPort and outputs it from an OutPort.
 <br>
-反転の対象軸は、RTCのコンフィギュレーション機能を使用して flip_mode という名前のパラメ
-ーターで指定します。
+The target axis for flipping is specified using the RTC configuration function with a parameter named flip_mode.
 
-flip_mode は、反転したい方向に応じて下記のように指定してください。
+Specify flip_mode as follows according to the direction in which you want to flip the image.
 
-- 上下反転したい場合、0
+- To flip vertically, specify 0
 
-- 左右反転したい場合、1
+- To flip horizontally, specify 1
 
-- 上下左右反転したい場合、-1
+- To flip vertically and horizontally, specify -1
 
 <br>
 
-作成する RTC の仕様は以下のとおりです。
+The specifications of the RTC to be created are as follows.
 
 - InPort
-  - キャプチャされた画像データ (TimedOctetSeq)
+  - Captured image data (TimedOctetSeq)
 
 - OutPort
-  - 反転した画像データ (TimedOctetSeq)
+  - Flipped image data (TimedOctetSeq)
 
 - Configuration
-  - 反転方法の指定 (int)
-※ TimedOctetSeq型は、OpenRTM-aist の BasicDataType.idl にて下記のように定義されている>データ型です。
+  - Flip method specification (int)
+* The TimedOctetSeq type is a data type defined in BasicDataType.idl of OpenRTM-aist as follows.
 
-※ octet型とは、CORBA　IDL の基本型で、転送時にいかなるデータ変換も施されないことが保証
-されている８ビット値です。
+* The octet type is a basic CORBA IDL type, and is an 8-bit value that is guaranteed not to undergo any data conversion during transfer.
 
 ```
    struct Time
@@ -100,112 +94,111 @@ flip_mode は、反転したい方向に応じて下記のように指定して�
 
 
 <br>
-図1は、それぞれのflip_mode での画像処理のイメージ図です。
+Figure 1 shows an image of the image processing for each flip_mode.
 
 <br>
 
 <br>
 
 <div align="center"><a href="cvFlip_and_FlipRTC.png"><img src="cvFlip_and_FlipRTC.png" width="70%;"></a></div>
-<div align="center"><strong>図1. Flip コンポーネントのflip_mode の指定パターン</strong></div>
+<div align="center"><strong>Figure 1. flip_mode specification patterns of the Flip component</strong></div>
 <br>
 
-### 動作環境・開発環境
+### Operating Environment and Development Environment
 - OS: Windows XP SP2
-- コンパイラ: [Visual C++ 2008 Express Edition 日本語版](http://www.microsoft.com/japan/msdn/vstudio/express/default.aspx)
+- Compiler: [Visual C++ 2008 Express Edition Japanese Version](http://www.microsoft.com/japan/msdn/vstudio/express/default.aspx)
 - [omniORB: version 4.1.2](http://www.openrtm.org/pub/Windows/omniORB/omniORB-4.1.2_vc9.msi)
 - [OpenCV: version 1.0](http://downloads.sourceforge.net/opencvlibrary/OpenCV_1.0.exe?modtime=1161287502&big_mirror=1)
 - [OpenRTM-aist: version 1.0.0-RC1](http://www.openrtm.org/pub/Windows/OpenRTM-aist/cxx/OpenRTM-aist-1.0.0-RC1-jp_vc9.msi)
 
-- [OpenCV サンプルRTC](http://www.openrtm.org/OpenRTM-aist/download/IREX2009/OpenCV_RTC-1.0_vc9_jp.msi)
+- [OpenCV sample RTC](http://www.openrtm.org/OpenRTM-aist/download/IREX2009/OpenCV_RTC-1.0_vc9_jp.msi)
 
 - RTSystemEditor 1.0
 - RTCBuilder 1.0
-  - [全部入りパッケージ](http://www.openrtm.org/OpenRTM-aist/download/IREX2009/eclipse.zip_)
+  - [All-in-one package](http://www.openrtm.org/OpenRTM-aist/download/IREX2009/eclipse.zip_)
 
-- [解凍ツール(Lhaplus)](http://www.forest.impress.co.jp/lib/arc/archive/archiver/lhaplus.html)
+- [Extraction tool (Lhaplus)](http://www.forest.impress.co.jp/lib/arc/archive/archiver/lhaplus.html)
 
-### Flip コンポーネントの雛型の生成
+### Generating the Flip Component Template
 
-Flip コンポーネントの雛型の生成は、RTCBuilder を用いて行います。
+The Flip component template is generated using RTCBuilder.
 
-### RTCBuilder の起動
-新規ワークスペースを指定して Eclipse を起動すると、以下の「ようこそ」画面が表示されま>す。
-この 「ようこそ」画面の左上の「X」をクリックすると以下の画面が表示されます。
+### Starting RTCBuilder
+When you start Eclipse by specifying a new workspace, the following "Welcome" screen is displayed.
+Clicking the "X" at the upper left of this "Welcome" screen displays the following screen.
 <br>
 
 <div align="center"><a href="fig1-1EclipseInit.png"><img src="fig1-1EclipseInit.png" width="70%;"></a></div>
 <!-- CENTER:''図 1-1 Eclipseの初期起動時の画面'' -->
-<div align="center"><strong>図2. Eclipse の初期起動時の画面</strong></div>
+<div align="center"><strong>Figure 2. Screen at initial startup of Eclipse</strong></div>
 <br>
-右上の [Open Perspective] ボタンをクリックし、プルダウンの「Other…」を選択します。
+Click the [Open Perspective] button at the upper right and select "Other..." from the pull-down menu.
 <br>
 
 <div align="center"><a href="fig2-2PerspectiveSwitch.png"><img src="fig2-2PerspectiveSwitch.png" width="70%;"></a></div>
 <!-- CENTER:''図 2-2 パースペクティブの切り替え'' -->
-<div align="center"><strong>図3. パースペクティブの切り替え</strong></div>
+<div align="center"><strong>Figure 3. Switching perspectives</strong></div>
 <br>
-「RTC Builder」を選択し、[OK] ボタンをクリックします。
+Select "RTC Builder" and click the [OK] button.
 
 <div align="center"><a href="fig2-3PerspectiveSelection.png"><img src="fig2-3PerspectiveSelection.png" width="30%;"></a></div>
 <!-- CENTER:''図 2-3　パースペクティブの選択'' -->
-<div align="center"><strong>図4. パースペクティブの選択</strong></div>
+<div align="center"><strong>Figure 4. Selecting a perspective</strong></div>
 <br>
-RTCBuilder が起動します。
+RTCBuilder starts.
 <br>
 
 <div align="center"><a href="fig2-4RTCBuilderInit.png"><img src="fig2-4RTCBuilderInit.png" width="80%;"></a></div>
 <!-- CENTER:''図 2-4 RTC Builder の初期起動時画面'' -->
-<div align="center"><strong>図5. RTC Builder の初期起動時画面</strong></div>
+<div align="center"><strong>Figure 5. Screen at initial startup of RTC Builder</strong></div>
 <br>
 
-#### RTCBuilder 用プロジェクトの作成
-まず最初に、RT コンポーネントを作成するための Eclipse プロジェクトを作成します。
-画面上部のメニューから[ファイル] > [新規] > [プロジェクト] を選択します。
+#### Creating an RTCBuilder Project
+First, create an Eclipse project for creating an RT component.
+From the menu at the top of the screen, select [File] > [New] > [Project].
 <br>
 
 <div align="center"><a href="fig2-5CreateProject.png"><img src="fig2-5CreateProject.png" width="70%;"></a></div>
 <!-- CENTER:''図 2-5 RTC Builder 用プロジェクトの作成　１'' -->
-<div align="center"><strong>図6. RTC Builder 用プロジェクトの作成　１</strong></div>
+<div align="center"><strong>Figure 6. Creating an RTC Builder project 1</strong></div>
 <br>
-表示された｢新規プロジェクト｣画面において、[その他] > [RTC ビルダ] を選択し、[次へ] を>クリックします。
+In the displayed "New Project" screen, select [Other] > [RTC Builder], and click [Next].
 <br>
 
 <div align="center"><a href="fig2-6CreateProject2.png"><img src="fig2-6CreateProject2.png" width="70%;"></a></div>
 <!-- CENTER:''図 2-6 RTC Builder 用プロジェクトの作成　２'' -->
-<div align="center"><strong>図7. RTC Builder 用プロジェクトの作成　２</strong></div>
+<div align="center"><strong>Figure 7. Creating an RTC Builder project 2</strong></div>
 <br>
-｢プロジェクト名｣欄に作成するプロジェクト名を入力して [完了] をクリックします。
+Enter the project name to be created in the "Project name" field and click [Finish].
 <br>
 
 <div align="center"><a href="fig2-7CreteProject3.PNG"><img src="fig2-7CreteProject3.PNG" width="70%;"></a></div>
 <!-- CENTER:''図 2-7 RTC Builder 用プロジェクトの作成　３'' -->
-<div align="center"><strong>図8. RTC Builder 用プロジェクトの作成　３</strong></div>
+<div align="center"><strong>Figure 8. Creating an RTC Builder project 3</strong></div>
 <br>
-指定した名称のプロジェクトが生成され、パッケージエクスプローラー内に追加されます。
+A project with the specified name is generated and added to the Package Explorer.
 <br>
 
 <div align="center"><a href="fig2-8CreateProject4.png"><img src="fig2-8CreateProject4.png" width="70%;"></a></div>
 <!-- CENTER:''図 2-8 RTC Builder 用プロジェクトの作成　４'' -->
-<div align="center"><strong>図9. RTC Builder 用プロジェクトの作成　４</strong></div>
+<div align="center"><strong>Figure 9. Creating an RTC Builder project 4</strong></div>
 <br>
-生成したプロジェクト内には、デフォルト値が設定された RTC プロファイル XML(RTC.xml) が>自動的に生成されます。
+Inside the generated project, an RTC profile XML (RTC.xml) with default values is automatically generated.
 
-#### データポートで使用するデータタイプ定義ファイルの在り処の設定
+#### Setting the Location of the Data Type Definition Files Used by Data Ports
 
-データポートやサービスポートで使用するデータ型が定義された IDL ファイルが置いてある場>所を予め設定しておく必要があります。
+You need to set in advance the location of the IDL files in which the data types used by data ports and service ports are defined.
 <br>
-※ ここでの設定内容は、ワークスペースを変更しない限り有効ですので、プロジェクト毎に設定
-する必要はありません。
+* The settings here remain valid unless the workspace is changed, so they do not need to be set for each project.
 <br>
-下記の手順にて、データ型が定義されている IDL ファイルの在り処を設定して下さい。
+Set the location of the IDL files in which data types are defined by following the procedure below.
 <br>
 
 ```
  1. メニューバーの [ウィンドウ] > [設定] をクリックし、設定ダイアログを表示させます。
  2. [RtcBuilder] > [Data Type] をクリックし、図12の Data Type 入力画面を出します。
  3. Data Type入力画面の [Add] ボタンをクリックし、"IDL File Directories"を入力します。
-     OpenRTM-aist で定義されているデータ型の IDL ファイルはデフォルトでは下記にインス>トールされます。
+     OpenRTM-aist で定義されているデータ型の IDL ファイルはデフォルトでは下記にインストールされます。
 
       C:\Program Files\OpenRTM-aist\1.0\rtm\idl
 
@@ -216,30 +209,29 @@ RTCBuilder が起動します。
 
 <div align="center"><a href="RTCBuilder_datatype_setup.png"><img src="RTCBuilder_datatype_setup.png" width="80%;"></a></div>
 <!-- CENTER:''図 2-10 File メニューから Open New Builder Editor'' -->
-<div align="center"><strong>図12. データ型定義ファイルの在り処設定</strong></div>
+<div align="center"><strong>Figure 12. Setting the location of the data type definition files</strong></div>
 
-#### RTC プロファイルエディタの起動
-RTC プロファイルエディタを開くには、ツールバーの [Open New RtcBuilder Editor] ボタンを
-クリックするか、メニューの [ファイル] > [Open New Builder Editor] を選択します。
+#### Starting the RTC Profile Editor
+To open the RTC profile editor, click the [Open New RtcBuilder Editor] button on the toolbar, or select [File] > [Open New Builder Editor] from the menu.
 <br>
 
 <div align="center"><a href="fig2-9ToolsBarOpenNewRtcBuilder.png"><img src="fig2-9ToolsBarOpenNewRtcBuilder.png" width="30%;"></a></div>
 
 <!-- CENTER:''図 2-9 ツールバーから Open New RtcBuilder Editor'' -->
-<div align="center"><strong>図10. ツールバーから Open New RtcBuilder Editor</strong></div>
+<div align="center"><strong>Figure 10. Open New RtcBuilder Editor from the toolbar</strong></div>
 <br>
 <br>
 
 <div align="center"><a href="fig2-10FileMenuOpenNewBuilder.png"><img src="fig2-10FileMenuOpenNewBuilder.png" width="30%;"></a></div>
 <!-- CENTER:''図 2-10 File メニューから Open New Builder Editor'' -->
-<div align="center"><strong>図11. File メニューから Open New Builder Editor</strong></div>
+<div align="center"><strong>Figure 11. Open New Builder Editor from the File menu</strong></div>
 <br>
 
-#### コンポーネントのプロファイル情報入力とコードの生成
+#### Entering Component Profile Information and Generating Code
 
-### コンポーネントのプロファイル情報入力とコードの生成
+### Entering Component Profile Information and Generating Code
 
-1. 「基本」タブを選択し、基本情報を入力します。
+1. Select the "Basic" tab and enter the basic information.
 
 <br>
 - Module name: Flip
@@ -260,22 +252,20 @@ RTC プロファイルエディタを開くには、ツールバーの [Open New
 <br>
 
 <div align="center"><a href="RTCBuilder_base.png"><img src="RTCBuilder_base.png" width="80%;"></a></div>
-<div align="center"><strong>図13. 基本情報の入力</strong></div>
+<div align="center"><strong>Figure 13. Entering basic information</strong></div>
 <br>
 
-2. 「アクティビティ」タブを選択し、使用するアクションコールバックを指定します。
+2. Select the "Activity" tab and specify the action callbacks to use.
 
-Flipコンポーネントでは、onActivated()、onDeactivated()、onExecute() コールバックを使用
-しますので、
-図14のようにon_activated、on_deactivated、on_executeの３つにチェックを入れます。
+Since the Flip component uses the onActivated(), onDeactivated(), and onExecute() callbacks, check on_activated, on_deactivated, and on_execute as shown in Figure 14.
 
 <br>
 
 <div align="center"><a href="RTCBuilder_activity.png"><img src="RTCBuilder_activity.png" width="80%;"></a></div>
-<div align="center"><strong>図14. アクティビティコールバックの選択</strong></div>
+<div align="center"><strong>Figure 14. Selecting activity callbacks</strong></div>
 <br>
 
-3. 「データポート」タブを選択し、データポートの情報を入力します。
+3. Select the "Data Ports" tab and enter the data port information.
 
 <br>
 
@@ -296,10 +286,10 @@ Flipコンポーネントでは、onActivated()、onDeactivated()、onExecute() 
 <br>
 
 <div align="center"><a href="RTCBuilder_dataport.png"><img src="RTCBuilder_dataport.png" width="80%;"></a></div>
-<div align="center"><strong>図15. データポート情報の入力</strong></div>
+<div align="center"><strong>Figure 15. Entering data port information</strong></div>
 <br>
 
-4.　「コンフィギュレーション」タブを選択し、Configuration の変数を入力します。
+4. Select the "Configuration" tab and enter the Configuration variables.
 
 <br>
 
@@ -307,7 +297,7 @@ Flipコンポーネントでは、onActivated()、onDeactivated()、onExecute() 
   - Name: flip_mode
   - TYpe: int
   - Default Value: 1
-  - 変数名: flip_mode
+  - Variable name: flip_mode
 
 <br>
 
@@ -317,7 +307,7 @@ Flipコンポーネントでは、onActivated()、onDeactivated()、onExecute() 
   - Name: image_height
   - TYpe: int
   - Default Value: 240
-  - 変数名: img_height
+  - Variable name: img_height
 
 <br>
 
@@ -325,81 +315,71 @@ Flipコンポーネントでは、onActivated()、onDeactivated()、onExecute() 
   - Name: image_width
   - TYpe: int
   - Default Value: 320
-  - 変数名: img_width
+  - Variable name: img_width
 
 <br>
 
 <div align="center"><a href="RTCBuilder_config.png"><img src="RTCBuilder_config.png" width="80%;"></a></div>
-<div align="center"><strong>図16. コンフィグレーション情報の入力</strong></div>
+<div align="center"><strong>Figure 16. Entering configuration information</strong></div>
 <br>
 
-5.　「言語・環境」タブを選択し、プログラミング言語を選択します。
+5. Select the "Language and Environment" tab and select the programming language.
 
-今回は、C++(言語) を選択します。
+This time, select C++ (language).
 
 <br>
 
 <div align="center"><a href="RTCBuilder_lang.png"><img src="RTCBuilder_lang.png" width="80%;"></a></div>
-<div align="center"><strong>図17. プログラミング言語の選択</strong></div>
+<div align="center"><strong>Figure 17. Selecting the programming language</strong></div>
 <br>
 
-6.　「基本」タブにある [コード生成] ボタンをクリックし、コンポーネントの雛型を生成しま
-す。
+6. Click the [Code Generation] button on the "Basic" tab to generate the component template.
 
 <br>
 
 <div align="center"><a href="RTCBuilder_base.png"><img src="RTCBuilder_base.png" width="80%;"></a></div>
-<div align="center"><strong>図18. 雛型の生成(Generate)</strong></div>
+<div align="center"><strong>Figure 18. Generating the template (Generate)</strong></div>
 <br>
 
-<span style="color:red;">※ 生成されるコード群は、Eclipse 起動時に指定したワークスペー>スフォルダーの中に生成されます。現在のワークスペースは、[ファイル] > [ワークスペースの
-切り替え] で確認することができます。</span>;
+<span style="color:red;">* The generated code files are generated in the workspace folder specified when Eclipse was started. You can check the current workspace from [File] > [Switch Workspace].</span>;
 
-### アクティビティ処理の実装
+### Implementing Activity Processing
 
-Flip コンポーネントでは、InPort から受け取った画像を画像保存用バッファに保存し、その保
-存した画像を OpenCV の cvFlip() 関数にて変換します。その後、変換された画像を OutPort >から送信します。
+In the Flip component, the image received from the InPort is saved in an image storage buffer, and the saved image is converted using the OpenCV cvFlip() function. After that, the converted image is sent from the OutPort.
 <br>
 
 <br>
-onActivated()、onExecute()、onDeactivated()での処理内容を図19に示します。
+Figure 19 shows the processing performed in onActivated(), onExecute(), and onDeactivated().
 <br>
 
 <div align="center"><a href="FlipRTC_State.png"><img src="FlipRTC_State.png" width="70%;"></a></div>
-<div align="center"><strong>図19. アクティビティ処理の概要</strong></div>
+<div align="center"><strong>Figure 19. Overview of activity processing</strong></div>
 <br>
 
-onExecute() での処理を図20に示します。
+Figure 20 shows the processing in onExecute().
 
 <br>
 
 <div align="center"><a href="FlipRTC.png"><img src="FlipRTC.png" width="70%;"></a></div>
-<div align="center"><strong>図20. onExucete()での処理内容</strong></div>
+<div align="center"><strong>Figure 20. Processing in onExecute()</strong></div>
 <br>
 
 
-#### OpenCV 用ユーザープロパティシートのコピー
+#### Copying the User Property Sheet for OpenCV
 
-プロパティシートとは、コンパイルに必要な種々のオプション（インクルードパス、ライブラリ
-ロードバス、ライブラリ）やマクロを記述した VC の設定ファイルの一種です。
-RTCBuilder や rtc-template で生成した VC 用のプロジェクトでは、VC のプロパティシートを
-使用して各種オプションを与えています。また、ユーザーがオプションを追加できるように、ユ
-ーザー定義のプロパティシートもインクルードするようになっています。
-- rtm_config.vsprop：OpenRTM に関する情報を含むプロパティシート。インストールされてい>る OpenRTM-aist に依存するファイルであるため、copyprops.bat を使用して OpenRTM のシス>テムディレクトリーからカレントのプロジェクトへコピーします。
-- user_config.vsprops：ユーザー定義のプロパティシート。デフォルトでは空っぽです。使い>方は、ソースコード：OpenRTM-aist/win32/OpenRTM-aist/example/USBCamera の中に入っている
- user_config.vsprops (OpenCV 用の設定)を参考にしてください。
+A property sheet is a type of VC configuration file that describes various options required for compilation, such as include paths, library load paths, libraries, and macros.
+In VC projects generated by RTCBuilder or rtc-template, VC property sheets are used to provide various options. In addition, a user-defined property sheet is also included so that users can add options.
+- rtm_config.vsprop: A property sheet containing information related to OpenRTM. Since this file depends on the installed OpenRTM-aist, use copyprops.bat to copy it from the OpenRTM system directory to the current project.
+- user_config.vsprops: A user-defined property sheet. It is empty by default. For usage, refer to user_config.vsprops (OpenCV settings) included in the source code: OpenRTM-aist/win32/OpenRTM-aist/example/USBCamera.
 
-以下の内容を user_config.vsprops というファイル名で保存し、Flip フォルダーにコピーして
-ください。
+Save the following content with the file name user_config.vsprops and copy it to the Flip folder.
 
-もしくは、下記より vsprops ファイルをダウンロードし、Flip フォルダーに保存してください
-。
+Alternatively, download the vsprops file from the link below and save it to the Flip folder.
 
 <br>
 [user_config.vsprops](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2009/user_config.vsprops)
 
-※　既にFlipフォルダーには user_config.vsprops ファイルが存在しておりますが、上書きして
-構いません。
+* A user_config.vsprops file already exists in the Flip folder, but you can overwrite it.
 
 <br>
 ```
@@ -452,15 +432,14 @@ RTCBuilder や rtc-template で生成した VC 用のプロジェクトでは、
     />
  </VisualStudioPropertySheet>
 ```
-#### copyprops.bat の実行
+#### Running copyprops.bat
 
-copyprops.bat というファイルを実行することで、rtm_config.vsprops というファイルがコピ>ーされます。
+By executing the file named copyprops.bat, a file named rtm_config.vsprops is copied.
 
-rtm_config.vsprops ファイルは、RTコンポーネントを VC++ でビルドするために必要なインク>ルードパスやリンクするライブラリ等が記述されたファイルです。
+The rtm_config.vsprops file describes the include paths, libraries to link, and other settings required to build RT components with VC++.
 
-#### ヘッダファイルの編集
-- OpenCV のライブラリを使用するため、OpenCV のインクルードファイルをインクルードします
-。
+#### Editing the Header File
+- Include the OpenCV include files in order to use the OpenCV library.
 
 ```
  //OpenCV 用インクルードファイルのインクルード
@@ -469,8 +448,7 @@ rtm_config.vsprops ファイルは、RTコンポーネントを VC++ でビル�
  #include<highgui.h>
 ```
 
-- この cvFlip コンポーネントでは、画像領域の確保、Flip 処理、確保した画像領域の解放の>それぞれの処理を行います。これらの処理は、それぞれ onActivated()、onDeactivated()、onExecute() のコールバック関数で呼ぶことにしますので、これら3つの関数のコメントアウトを解
-除します。
+- This cvFlip component performs each of the following operations: allocating an image area, Flip processing, and releasing the allocated image area. Since these operations will be called in the onActivated(), onDeactivated(), and onExecute() callback functions, uncomment these three functions.
 
 ```
    /***
@@ -513,16 +491,16 @@ rtm_config.vsprops ファイルは、RTコンポーネントを VC++ でビル�
    virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);
 ```
 
-- 反転した画像の保存用にメンバー変数を追加します。
+- Add member variables for saving the flipped image.
 
 ```
    IplImage* m_image_buff;
    IplImage* m_flip_image_buff;
 ```
 
-#### ソースファイルの編集 
+#### Editing the Source File 
 
-下記のように、onActivated()、onDeactivated()、onExecute()を実装します。
+Implement onActivated(), onDeactivated(), and onExecute() as follows.
 
 ```
  RTC::ReturnCode_t Flip::onActivated(RTC::UniqueId ec_id)
@@ -553,7 +531,7 @@ rtm_config.vsprops ファイルは、RTコンポーネントを VC++ でビル�
      // InPortの画像データをIplImageのimageDataにコピー
      memcpy(m_image_buff->imageData,(void *)&(m_image_orig.data[0]),m_image_orig.data.length());
  
-     // InPortからの画像データを反転する。 m_flip_mode 0: X軸周り, 1: Y軸周り, -1: 両>方の軸周り
+     // InPortからの画像データを反転する。 m_flip_mode 0: X軸周り, 1: Y軸周り, -1: 両方の軸周り
      cvFlip(m_image_buff, m_flip_image_buff, m_flip_mode);
  
      // 画像データのサイズ取得
@@ -565,111 +543,104 @@ rtm_config.vsprops ファイルは、RTコンポーネントを VC++ でビル�
  
      // 反転した画像データを OutPort から出力する。
      m_image_flipOut.write();
-   }
+  }
    return RTC::RTC_OK;
  }
 
 ```
-#### ビルドの実行
+#### Running the Build
 
-図21のようにし、コンポーネントのビルドを行います。
+Build the component as shown in Figure 21.
 
 <br>
 
 <div align="center"><a href="VC++_build.png"><img src="VC++_build.png" width="70%;"></a></div>
-<div align="center"><strong>図21. ビルドの実行</strong></div>
+<div align="center"><strong>Figure 21. Running the build</strong></div>
 <br>
 
-#### Flip コンポーネントの動作確認
+#### Checking Operation of the Flip Component
 
-ここでは、OpenRTM-aist のサンプルコンポーネントに含まれている USBCameraAqcuireComp コ>ンポーネントと、USBCameraMonitorCom コンポーネント、それと、Flip コンポーネントを接続>し動作確認を行います。
+Here, we connect and check the operation of the USBCameraAqcuireComp component and the USBCameraMonitorCom component included in the OpenRTM-aist sample components, together with the Flip component.
 
-#### NameService の起動
+#### Starting NameService
 
-omniORB のネームサービスを起動します。
+Start the omniORB name service.
 
 <br>
-[スタート] > [すべてのプログラム] > [OpenRTM-aist] > [C++] > [examples] をクリックし、
-[Start Naming Service] をクリックしてください。
+Click [Start] > [All Programs] > [OpenRTM-aist] > [C++] > [examples], then click [Start Naming Service].
 
-#### rtc.conf の作成
+#### Creating rtc.conf
 
-RTコンポーネントでは、ネームサーバーのアドレスやネームサーバーへの登録フォーマットなど
-の情報を rtc.conf というファイルで指定する必要があります。
+For RT components, information such as the name server address and the registration format for the name server must be specified in a file named rtc.conf.
 
-下記の内容を rtc.conf というファイル名で保存し、Flip\FlipComp\Debug (もしくは、Release) フォルダーに置いてください。
+Save the following content with the file name rtc.conf and place it in the Flip\FlipComp\Debug (or Release) folder.
 
 ```
  corba.nameservers: localhost
  naming.formats: %n.rtc
 ```
 
-#### Flip コンポーネントの起動
+#### Starting the Flip Component
 
-Flip コンポーネントを起動します。
+Start the Flip component.
 
-先程 rtc.conf ファイルを置いたフォルダーにある、FlipComp.exe ファイルを実行してくださ>い。
+Run the FlipComp.exe file located in the folder where you placed the rtc.conf file earlier.
 
-#### USBCameraAqcuire、USBCameraMonitor コンポーネントの起動 
+#### Starting the USBCameraAqcuire and USBCameraMonitor Components 
 
-USB カメラのキャプチャ画像を OutPort から出力する USBCameraAqcuireComp コンポーネント>と、InPort で受け取った画像を画面に表示する USBCameraMonitorCOmp コンポーネントを起動>します。
+Start the USBCameraAqcuireComp component, which outputs captured images from a USB camera from an OutPort, and the USBCameraMonitorCOmp component, which displays images received through an InPort on the screen.
 
-これら２つのコンポーネントは、下記の手順にて起動できます。
+These two components can be started with the following procedure.
 
-[スタート] > [すべてのプログラム] > [OpenRTM-aist] > [C++] > [examples] をクリックし、
-「USBCameraAqcuireComp」と「USBCameraMonitorCOmp」をそれぞれクリックして実行します。
+Click [Start] > [All Programs] > [OpenRTM-aist] > [C++] > [examples], and click "USBCameraAqcuireComp" and "USBCameraMonitorCOmp" respectively to run them.
 
-#### コンポーネントの接続
+#### Connecting the Components
 
-図22のように、RTSystemEditor にて USBCameraAqcuireComp,Flip、USBCameraMonitorComp コン
-ポーネントを接続します。
+Connect the USBCameraAqcuireComp, Flip, and USBCameraMonitorComp components in RTSystemEditor as shown in Figure 22.
 
 <br>
 
 <div align="center"><a href="RTSystemEditor_connection_flip.png"><img src="RTSystemEditor_connection_flip.png" width="70%;"></a></div>
-<div align="center"><strong>図22. コンポーネントの接続</strong></div>
+<div align="center"><strong>Figure 22. Connecting the components</strong></div>
 <br>
 
-#### Flip コンポーネントのコンフィギュレーションの変更
+#### Changing the Configuration of the Flip Component
 
-図23のようにコンフィギュレーションビューにてコンフィギュレーションを変更することができ
-ます。
+As shown in Figure 23, you can change the configuration in the Configuration View.
 
-ELECOM製 の UCAM-DLM 130HWH (白いUSBカメラ) を使用の場合は、image_height と image_width パラメーターを下記のように変更してください。
+If you use the ELECOM UCAM-DLM 130HWH (white USB camera), change the image_height and image_width parameters as follows.
 
 ```
  image_height : 480
  image_width  : 640
 ```
 
-また、ELECOM製 の UCAM-DLM 130HWH (白いUSBカメラ) を使用の場合は、USBCameraMonitor の image_height,image_width パラメーターも
-上記のように変更する必要があります。
+Also, if you use the ELECOM UCAM-DLM 130HWH (white USB camera), you need to change the image_height and image_width parameters of USBCameraMonitor as shown above.
 
 <br>
 
 <div align="center"><a href="RTSystemEditor_config_edit.png"><img src="RTSystemEditor_config_edit.png" width="70%;"></a></div>
-<div align="center"><strong>図23. コンフィギュレーションパラメータの変更</strong></div>
+<div align="center"><strong>Figure 23. Changing configuration parameters</strong></div>
 <br>
 
-#### コンポーネントの Activate
+#### Activating the Components
 
-RTSystemEditor の上部にあります「ALL」というアイコンをクリックし、全てのコンポーネント
-をアクティベートします。
+Click the "ALL" icon at the top of RTSystemEditor to activate all components.
 
-正常にアクティベートされた場合、図24のように黄緑色でコンポーネントが表示されます。
+If they are activated successfully, the components are displayed in yellow-green as shown in Figure 24.
 
 <br>
 
 <div align="center"><a href="RTSystemEditor_activate.png"><img src="RTSystemEditor_activate.png" width="70%;"></a></div>
-<div align="center"><strong>図24. コンポーネントのアクティベート</strong></div>
+<div align="center"><strong>Figure 24. Activating the components</strong></div>
 <br>
 
-#### 動作確認
+#### Operation Check
 
 
-Flip コンポーネントのコンフィギュレーションパラメーター「flip_mode」を「0」や「-1」などに変更し、画像の反転が行われるかを確認してください。
+Change the configuration parameter "flip_mode" of the Flip component to "0" or "-1", etc., and check whether the image is flipped.
 
-## Flip コンポーネントのソースファイル
+## Source File of the Flip Component
 
 ```
  // -*- C++ -*-
@@ -783,7 +754,7 @@ Flip コンポーネントのコンフィギュレーションパラメーター
  
      // 反転した画像データを OutPort から出力する。
      m_image_flipOut.write();
-   }
+  }
    return RTC::RTC_OK;
  }
  
@@ -801,7 +772,7 @@ Flip コンポーネントのコンフィギュレーションパラメーター
  };
 ```
 
-### Flip コンポーネントのヘッダファイル
+### Header File of the Flip Component
 
 ```
  // -*- C++ -*-
@@ -954,53 +925,53 @@ Flip コンポーネントのコンフィギュレーションパラメーター
 ```
 
 
-### Flip コンポーネントのビルド済みパッケージ 
+### Built Package of the Flip Component 
 
-ビルド済みパッケージを下記からダウンロードできます。
+The built package can be downloaded from the following link.
 
-拡張子を"zip_"としてますので、"zip"にリネームしてから解凍して下さい。
+The extension is set to "zip_", so rename it to "zip" before extracting it.
 
 
-- [ビルド済みパッケージ](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2009/Flip.zip_)
+- [Built package](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2009/Flip.zip_)
 
-## おまけ(物体追跡コンポーネント) 
+## Bonus (Object Tracking Component) 
 
-OpenCVのライブラリを用いて、物体追跡を行うコンポーネントです。
+This component performs object tracking using the OpenCV library.
 
-### コンポーネントの概要
+### Component Overview
 
-InPort からの画像データを表示し、マウスで選択されたオブジェクトを追跡するコンポーネント。
+A component that displays image data from an InPort and tracks an object selected with the mouse.
 
-OutPort からは、物体追跡画像と、マウスで選択した位置からの移動量を出力する。
+From the OutPort, it outputs the object tracking image and the amount of movement from the position selected with the mouse.
 
-画像のサイズと、明度、彩度はコンフィグレーションにて変更可能。
+The image size, brightness, and saturation can be changed through the configuration.
 
-作成する RTC の仕様は以下のとおりです。
+The specifications of the RTC to be created are as follows.
 
 - InPort
-  - キャプチャされた画像データ (TimedOctetSeq)
+  - Captured image data (TimedOctetSeq)
 
 - OutPort
-  - 物体追跡画像データ (TimedOctetSeq)
+  - Object tracking image data (TimedOctetSeq)
 
 - OutPort
-  - マウスで選択したオブジェクトの中心位置の移動量 (TimedFloatSeq)
+  - Displacement of the center position of the object selected with the mouse (TimedFloatSeq)
 
 - Configuration
-  - 明度の最大値(int) default: 256
-  - 明度の最小値(int) default: 10
-  - 彩度の最小値(int) default: 30
-  - 画像の高さ(int)   default: 240
-  - 画像の幅(int)     default: 320
+  - Maximum brightness value (int) default: 256
+  - Minimum brightness value (int) default: 10
+  - Minimum saturation value (int) default: 30
+  - Image height (int)   default: 240
+  - Image width (int)     default: 320
 
-### RTCBuilder でのプロファイル情報入力内容
-#### 基本情報
+### Profile Information Input in RTCBuilder
+#### Basic Information
 
 - Module name: ObjectTracking
 - Module description: Object tracking component
 - OutputProject: ObjectTracking
 
-#### データポート
+#### Data Ports
 
 <br>
 
@@ -1024,7 +995,7 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
   - Var Name:  displacement
   - Disp. Position: right
 
-#### コンフィギュレーションパラメーター
+#### Configuration Parameters
 
 <br>
 
@@ -1032,7 +1003,7 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
   - Name: brightness_max
   - TYpe: int
   - Default Value: 256
-  - 変数名: b_max
+  - Variable name: b_max
 
 <br>
 
@@ -1040,7 +1011,7 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
   - Name: brightness_min
   - TYpe: int
   - Default Value: 10
-  - 変数名: b_min
+  - Variable name: b_min
 
 <br>
 
@@ -1048,7 +1019,7 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
   - Name: saturation_min
   - TYpe: int
   - Default Value: 30
-  - 変数名: s_min
+  - Variable name: s_min
 
 <br>
 
@@ -1056,7 +1027,7 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
   - Name: image_height
   - TYpe: int
   - Default Value: 240
-  - 変数名: img_height
+  - Variable name: img_height
 
 <br>
 
@@ -1064,9 +1035,9 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
   - Name: image_width
   - TYpe: int
   - Default Value: 320
-  - 変数名: img_width
+  - Variable name: img_width
 
-### ObjectTracking コンポーネントのソースファイル 
+### Source File of the ObjectTracking Component 
 
 ```
  // -*- C++ -*-
@@ -1201,7 +1172,7 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
      cvReleaseImage(&m_hue);
      cvReleaseImage(&m_mask);
      cvReleaseImage(&m_backproject);
-   }
+  }
    // ウインドウを破棄する
    cvDestroyWindow("ObjectTracking");
    m_init_flag = 0;
@@ -1252,7 +1223,7 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
  	  g_selected_x = m_track_box.center.x;
  	  g_selected_y = m_track_box.center.y;
  	  g_selected_flag = 0;
- 	}
+	}
  
  	// マウスで選択された位置からの移動量をOutPortから出力
  	m_displacement.data[0] = m_track_box.center.x - g_selected_x;
@@ -1282,8 +1253,8 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
      // while無限ループから脱出（プログラムを終了）
      if( (char) c == 27 ) {
        this->exit();
-     }
-   }
+    }
+  }
    return RTC::RTC_OK;
  }
  
@@ -1386,7 +1357,7 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
  	if( g_selection.width > 0 && g_selection.height > 0 ) {
  	  g_track_object = -1;
  	  g_selected_flag = 1;
- 	}
+	}
  	break;
        }
    }
@@ -1395,10 +1366,10 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
 
 ```
 
-### ObjectTracking コンポーネントのヘッダファイル
+### Header File of the ObjectTracking Component
 
 ```
-// -*- C++ -*-
+ // -*- C++ -*-
  /*!
   * @file  ObjectTracking.h
   * @brief Object tracking component
@@ -1590,8 +1561,7 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
    CvHistogram * m_hist; // ヒストグラム処理用構造体
 
   // 処理モード選択用フラグ
-   int m_backproject_mode; // バックプロジェクション画像の表示/非表示用フラグ値 (0: 非
-表示, 1: 表示)
+   int m_backproject_mode; // バックプロジェクション画像の表示/非表示用フラグ値 (0: 非表示, 1: 表示)
 
    // CamShiftトラッキング用変数
    CvRect m_track_window;
@@ -1617,31 +1587,31 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
 
 ```
 
-### コンポーネントの接続
+### Connecting the Components
 
-図25は、USBCameraAcquire,Flip,ObjectTracking,SeqIn コンポーネントの接続例です。
+Figure 25 shows an example connection of the USBCameraAcquire, Flip, ObjectTracking, and SeqIn components.
 
-まず、USBCameraAcquire コンポーネントにて USBカメラの画像を取得します。
+First, the USBCameraAcquire component acquires the image from the USB camera.
 
-次に、Flip コンポーネントにて左右を反転させます。
+Next, the Flip component flips it horizontally.
 
-反転させている理由は、物体追跡コンポーネントの出力をジョイスティックとして使用する場合に、画像が鏡のように表示されていた方が操作しやすいためです。
+The reason for flipping it is that when the output of the object tracking component is used as a joystick, it is easier to operate if the image is displayed like a mirror.
 
-次に、ObjectTracking コンポーネントで、あらかじめ選択された追跡対象物の移動量を OutPort (displacement) から出力し、SeqIn コンポーネントで移動量を表示します。
+Next, the ObjectTracking component outputs the displacement of the tracking target selected in advance from the OutPort (displacement), and the SeqIn component displays the displacement.
 
 
 <br>
 
 <div align="center"><a href="RTSystemEditor_connection.png"><img src="RTSystemEditor_connection.png" width="70%;"></a></div>
-<div align="center"><strong>図25. コンポーネントの接続例</strong></div>
+<div align="center"><strong>Figure 25. Example component connection</strong></div>
 <br>
-## ObjectTrackingコンポーネントのビルド済みパッケージ 
+## Built Package of the ObjectTracking Component 
 
-ビルド済みパッケージを下記からダウンロードできます。
+The built package can be downloaded from the following link.
 
 <!-- 拡張子を"zip_"としてますので、"zip"にリネームしてから解凍して下さい。-->
 
  
-- [ビルド済みパッケージ(No Link)](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2009/ObjectTracking.zip_)
+- [Built package (No Link)](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2009/ObjectTracking.zip_)
 
--------jp page!!-------
+

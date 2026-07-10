@@ -1,56 +1,52 @@
 ---
 layout: page
-title: ビュー（ログビュー編）
+title: Views (Log View)
 ---
--------jp page!!-------
 
 <!-- Title: ビュー（ログビュー編） -->
 <!-- #contents -->
 
-ここではログビューについて説明します。
+This section explains the Log View.
 <br>
 
 <div align="center"><a href="fig31LogView.jpg"><img src="fig31LogView.jpg" width="85%;"></a></div>
-<div align="center"><strong>ログビューの位置</strong></div>
+<div align="center"><strong>Location of the Log View</strong></div>
 <br>
 
-ログビューは、選択したダイアグラム上のログ収集対象の RTC 一覧を表示し、RTC から通知されたログメッセージを表示します。<br>
-表示したい RTC を選択でき、また、ログレベルによって表示をフィルタリングすることもできます。
+The Log View displays a list of RTCs targeted for log collection on the selected diagram, and displays log messages notified from the RTCs.<br>
+You can select the RTCs you want to display, and you can also filter the display by log level.
 <br>
 
 <div align="center"><a href="fig32LogView.png"><img src="fig32LogView.png" width="100%;"></a></div>
-<div align="center"><strong>ログビュー</strong></div>
+<div align="center"><strong>Log View</strong></div>
 <br>
 
-<div align="center"><strong>ログビューの画面構成</strong></div>
+<div align="center"><strong>Screen Layout of the Log View</strong></div>
 <table class="table-alt">
   <tr>
     <th>No.</th>
-    <th>説明</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>①</td>
-    <td>選択中のダイアグラム内の RTC のうち、ログ収集対象となっているものの一覧を表示。<br>ここでチェックをつけた RTC のログが表示される。</td>
+    <td>Displays a list of RTCs in the selected diagram that are targeted for log collection.<br>Logs of RTCs checked here are displayed.</td>
   </tr>
   <tr>
     <td>②</td>
-    <td>表示するログレベルのしきい値を指定。<br>指定されたレベル以上のログメッセージを表示する。</td>
+    <td>Specifies the threshold of the log level to display.<br>Log messages at or above the specified level are displayed.</td>
   </tr>
   <tr>
     <td>③</td>
-    <td>ログメッセージを表示。<br> RTC の選択、およびログレベル指定により、表示をフィルタリングする。<br>表示項目は次のとおり。<br>・タイムスタンプ<br>・ログレベル（SILENT/ERROR/WARN/INFO/DEBUG/TRACE/VERBOSE/PARANOID）<br>・RTC のインスタンス名<br>・ログ通知対象<br>・ログメッセージ</td>
+    <td>Displays log messages.<br> The display is filtered by RTC selection and log level specification.<br>The displayed items are as follows.<br>・Timestamp<br>・Log level (SILENT/ERROR/WARN/INFO/DEBUG/TRACE/VERBOSE/PARANOID)<br>・RTC instance name<br>・Log notification target<br>・Log message</td>
   </tr>
 </table>
 <!-- |③|ログメッセージを表示。&br; RTC の選択、およびログレベル指定により、表示をフィルタリングする。&br;表示項目は次のとおり。&br;・タイムスタンプ&br;・ログレベル（ERROR/WARN/INFO/NORMAL/DEBUG/TRACE/VERBOSE/PARANOID）&br;・RTC のインスタンス名&br;・ログ通知対象&br;・ログメッセージ| -->
 
-ダイアグラムを選択すると、ダイアグラム上のログ収集対象 RTC の一覧を①に表示します。ログは、ログ通知オブザーバー機能により RTC から通知され、オブザーバーを登録したものがログ収集対象となります。<br>
-一覧からログを表示したい RTC を選択（チェック）すると、③のログ表示テーブルにメッセージを表示します。<br>
-また、ログメッセージはログレベルによって表示をフィルタリングすることができます。②のコンボボックスでしきい値となるレベルを選択すると、選択したレベル以上のログのみ表示します。たとえば、コンボボックスで「INFO」を選択すると、「ERROR」「WARN」「INFO」のメッセージのみ表示されます。
+When a diagram is selected, the list of RTCs targeted for log collection on the diagram is displayed in ①. Logs are notified from RTCs by the log notification observer function, and RTCs for which observers have been registered become targets for log collection.<br>
+When you select (check) the RTCs whose logs you want to display from the list, messages are displayed in the log display table in ③.<br>
+Log messages can also be filtered by log level. When you select the threshold level from the combo box in ②, only logs at or above the selected level are displayed. For example, if "INFO" is selected in the combo box, only "ERROR", "WARN", and "INFO" messages are displayed.
 <br>
 
 <div align="center"><a href="fig33LogFiltering.png"><img src="fig33LogFiltering.png" width="100%;"></a></div>
-<div align="center"><strong>ログ表示のフィルタリング</strong></div>
+<div align="center"><strong>Filtering the Log Display</strong></div>
 <br>
-
-
--------jp page!!-------

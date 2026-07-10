@@ -2,7 +2,9 @@
 layout: page
 title: 
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 init
--------jp page!!-------
+

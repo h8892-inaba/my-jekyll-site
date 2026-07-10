@@ -1,332 +1,336 @@
 ---
 layout: page
-title: Ministickコンポーネントの作成
+title: Creating a Ministick Component
 ---
--------jp page!!-------
 
 <!-- Title: Ministickコンポーネントの作成 -->
 <!-- * Ministickコンポーネントの作成 -->
 
 #contents
 
-## Ministickコンポーネントの作成
+## Creating a Ministick Component
 
-Phidgets は Phidgets Inc. から発売されている、IO拡張ボードとセンサ群製品です。
-日本では、ぷらっとほーむなどで購入することができます。
+Phidgets are IO expansion boards and sensor products sold by Phidgets Inc.
+In Japan, they can be purchased from Plat'Home and other suppliers.
 
 - Phidgets Inc.: http://www.phidgets.com/
-- ぷらっとほーむ: http://online.plathome.co.jp/
+- Plat'Home: http://online.plathome.co.jp/
 
-PCにUSB接続の拡張IOボードを接続し、様々なセンサ、アクチュエータユニットを追加して、プログラム等から計測・制御することができるキットです。
+This is a kit that allows you to connect a USB-connected expansion IO board to a PC, add various sensors and actuator units, and perform measurement and control from programs and other software.
 
-PCと接続する場合は、Interface Kitが必要ですが、PiRT-Unitでのみ使用する場合は、Sensor Kitのみでよいでしょう。
+When connecting to a PC, an Interface Kit is required, but when using it only with PiRT-Unit, the Sensor Kit alone should be sufficient.
 
 - [Phidget Interface Kit #1](http://online.plathome.co.jp/item/detail/41595459/Phidgets/Phidget-Interface-Kit-Package--1/2005_1)
 - [Phidget Interface Kit #2](http://online.plathome.co.jp/item/detail/41595460/Phidgets/Phidget-Interface-Kit-Package--2/2006_1)
 - [Phidget Sensor Kit #1](http://online.plathome.co.jp/item/detail/41595256/Phidgets/Phidget-Sensor-Kit--1/42000_1)
 - [Phidget Sensor Kit #2](http://online.plathome.co.jp/item/detail/41595257/Phidgets/Phidget-Sensor-Kit--2/42001_0)
 
-PIRT-UnitのADピンは、Phidgetのセンサが接続可能なピンアサインとなっており、Phidgetデバイスを接続することで、容易に拡張することができるようになっています。
+The AD pins of PIRT-Unit have a pin assignment that allows Phidget sensors to be connected, making it easy to expand by connecting Phidget devices.
 
-ここでは、Phidget の Ministick sensorを利用して、移動ロボットを制御してみます。
-Ministick sensor は Phidget Sensor Kit #2 に含まれています。
+Here, we will try controlling a mobile robot using the Phidget Ministick sensor.
+The Ministick sensor is included in Phidget Sensor Kit #2.
 
-## Ministick sensorとPiRT-Unitの接続
+## Connecting the Ministick sensor and PiRT-Unit
 
-Ministick sensorの出力ピンとPiRT-Unitを以下のように接続します。
+Connect the output pins of the Ministick sensor to PiRT-Unit as follows.
 
-- X軸方向: CN2
-- Y軸方向: CN3
+- X-axis direction: CN2
+- Y-axis direction: CN3
 
 <div align="center"><a href="ministick_connection.png"><img src="ministick_connection.png" width="80%;"></a></div>
-<div align="center"><strong>Ministick sensorとPiRT-Unitの接続</strong></div>
+<div align="center"><strong>Connection between the Ministick sensor and PiRT-Unit</strong></div>
 
-X軸方向 (横向き) がADのCH0に、Y軸方向 (縦向き) がADのCH1に対応します。
+The X-axis direction (horizontal direction) corresponds to AD CH0, and the Y-axis direction (vertical direction) corresponds to AD CH1.
 
-このデータを読むプログラムをPythonで書いてみます。
+Let's write a program in Python to read this data.
 
-### サンプルプログラム
+### Sample Program
 
-```
- #!/usr/bin/env python
- # -*- coding: euc-jp -*- 
- import sys
- import time
- import spidev
- 
- class ADC:
-   def __init__(self):
-     self.spi = spidev.SpiDev()
-     self.spi.open(0, 0)
- 
-   def get_value(self, channel):
-     sned_ch = [0x00,0x08,0x10,0x18]
-     if ((channel > 3) or (channel < 0)):
-       return -1
-     r = self.spi.xfer2([sned_ch[channel],0,0,0])
-     ret = ((r[2] << 6 ) & 0x300) |  ((r[2] << 6) & 0xc0) | ((r[3] >> 2) & 0x3f)
-     return ret     
- 
-   def get_voltage(self, channel):
-     ret = self.get_value(channel) * 5.0 / 1024
-     return ret     
- 
- def main():
-   adc = ADC()
-   while 1:
-     adc1 = adc.get_value(0)
-     msg1 = "%1.5fV(%04x)" % ((float(adc1)*5/1024),adc1)
-     print msg1,
- 
-     adc1 = adc.get_value(1)
-     msg1 = "%1.5fV(%04x)" % ((float(adc1)*5/1024),adc1)
-     print msg1,
- 
-     adc2 = adc.get_value(2)
-     msg2 = "%1.5fV(%04x)" % ((float(adc2)*5/1024),adc2)
-     print msg2,
- 
-     adc3 = adc.get_value(3)
-     msg3 = "%1.5fV(%04x)" % ((float(adc3)*5/1024),adc3)
-     print msg3,
- 
-     sys.stdout.write("\n")
-     time.sleep(0.5)
- 
- if __name__ == '__main__':
-   main()
-```
+```python
 
-このようなプログラムを作成します。TeraTermなどでRaspberry Piにログインして、サンプルプログラムを作成、テストします。
+#!/usr/bin/env python
 
-```
- Linux raspbian-armhf 3.2.27+ #307 PREEMPT Mon Nov 26 23:22:29 GMT 2012 armv6l
- 
- The programs included with the Debian GNU/Linux system are free software;
- the exact distribution terms for each program are described in the
- individual files in /usr/share/doc/*/copyright.
- 
- Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
- permitted by applicable law.
- Last login: Tue May 14 07:07:04 2013 from dhcpe2078.a02.aist.go.jp
- pi@raspbian-armhf ~ $ vi adc_test.py
- pi@raspbian-armhf ~ $ chmod 755 adc_test.py
- pi@raspbian-armhf ~ $ ./adc_test.py
+-- coding: euc-jp --
+
+import sys
+import time
+import spidev
+
+class ADC:
+def init(self):
+self.spi = spidev.SpiDev()
+self.spi.open(0, 0)
+
+def get_value(self, channel):
+sned_ch = [0x00,0x08,0x10,0x18]
+if ((channel > 3) or (channel < 0)):
+return -1
+r = self.spi.xfer2([sned_ch[channel],0,0,0])
+ret = ((r[2] << 6 ) & 0x300) | ((r[2] << 6) & 0xc0) | ((r[3] >> 2) & 0x3f)
+return ret
+
+def get_voltage(self, channel):
+ret = self.get_value(channel) * 5.0 / 1024
+return ret
+
+def main():
+adc = ADC()
+while 1:
+adc1 = adc.get_value(0)
+msg1 = "%1.5fV(%04x)" % ((float(adc1)*5/1024),adc1)
+print msg1,
+
+ adc1 = adc.get_value(1)
+ msg1 = "%1.5fV(%04x)" % ((float(adc1)*5/1024),adc1)
+ print msg1,
+
+ adc2 = adc.get_value(2)
+ msg2 = "%1.5fV(%04x)" % ((float(adc2)*5/1024),adc2)
+ print msg2,
+
+ adc3 = adc.get_value(3)
+ msg3 = "%1.5fV(%04x)" % ((float(adc3)*5/1024),adc3)
+ print msg3,
+
+ sys.stdout.write("\n")
+ time.sleep(0.5)
+
+if name == 'main':
+main()
 ```
 
-サンプルプログラムを実行すると以下のような画面になります。ジョイスティックを倒してみると、Ch0,Ch1のデータが変化します。
+Create a program like this. Log in to the Raspberry Pi using TeraTerm or similar software, then create and test the sample program.
+
+
+```
+Linux raspbian-armhf 3.2.27+ #307 PREEMPT Mon Nov 26 23:22:29 GMT 2012 armv6l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Tue May 14 07:07:04 2013 from dhcpe2078.a02.aist.go.jp
+pi@raspbian-armhf ~ $ vi adc_test.py
+pi@raspbian-armhf ~ $ chmod 755 adc_test.py
+pi@raspbian-armhf ~ $ ./adc_test.py
+
+```
+
+When you run the sample program, the following screen appears. If you move the joystick, the Ch0 and Ch1 data change.
 
 <div align="center"><a href="ministick_teraterm.png"><img src="ministick_teraterm.png" width="50%;"></a></div>
-<div align="center"><strong>ministick sensorの座標軸</strong></div>
+<div align="center"><strong>Coordinate axes of the ministick sensor</strong></div>
 
-それぞれ、X軸は左に倒すと、Y軸は上に倒すと電圧値が上がり、逆に倒すと電圧値が下がることがわかります。
-ministick sensorの座標の関係を図に表わすと以下のようになります。
+You can see that the voltage value increases when the X-axis is tilted to the left and when the Y-axis is tilted upward, and decreases when tilted in the opposite directions.
+The relationship of the coordinates of the ministick sensor is shown in the figure below.
 
 <div align="center"><a href="ministick_axis_ja.png"><img src="ministick_axis_ja.png" width="50%;"></a></div>
-<div align="center"><strong>ministick sensorの座標軸</strong></div>
+<div align="center"><strong>Coordinate axes of the ministick sensor</strong></div>
 
-これは、一般的な座標系とはX軸が逆向きになっていますので、センサ値を処理する際には注意が必要です。
+Since the X-axis is reversed from a typical coordinate system, care must be taken when processing sensor values.
 
-また、中心位置では、それぞれ5.0Vの半分、2.5V程度を指していることもわかると思います。
-ただし、この値はぴったり2.5Vではなく、状況によっても変化するので、使用する前にキャリブレーションが必要なこともわかります。
+You can also see that at the center position, each indicates about half of 5.0V, or approximately 2.5V.
+However, this value is not exactly 2.5V and changes depending on the conditions, so calibration may be necessary before use.
 
-## ジョイスティックコンポーネントの仕様
+## Joystick Component Specifications
 
-ministick sensorを利用したジョイスティックコンポーネントを作成します。
-仕様としては、以下のようにします。
+Create a joystick component using the ministick sensor.
+The specifications are as follows.
 
 <table class="table-alt">
   <tr>
-    <th colspan="2" style="text-align: center;">基本プロファイル</th>
+    <th colspan="2" style="text-align: center;">Basic Profile</th>
   </tr>
   <tr>
-    <td>コンポーネント名</td>
+    <td>Component name</td>
     <td>Ministick</td>
   </tr>
   <tr>
-    <td>モジュール概要</td>
+    <td>Module overview</td>
     <td>Phidget ministick sensor component</td>
   </tr>
   <tr>
-    <td>バージョン</td>
+    <td>Version</td>
     <td>1.0.0</td>
   </tr>
   <tr>
-    <td>ベンダ名</td>
+    <td>Vendor name</td>
     <td>AIST</td>
   </tr>
   <tr>
-    <td>モジュールカテゴリ</td>
+    <td>Module category</td>
     <td>Input Device</td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;">アクティビティ</td>
+    <td colspan="2" style="text-align: center;">Activities</td>
   </tr>
   <tr>
     <td colspan="2" >
     onInitialize, onFinalize, onActivated, onDeactivated, onExecute</td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;">データポート</td>
+    <td colspan="2" style="text-align: center;">Data Ports</td>
   </tr>
   <tr>
     <td colspan="2" >[out] pos</td>
   </tr>
   <tr>
-    <td>概要</td>
-    <td>ジョイスティックのX-Y位置データ</td>
+    <td>Overview</td>
+    <td>X-Y position data of the joystick</td>
   </tr>
   <tr>
-    <td>データ型</td>
+    <td>Data type</td>
     <td>TimedFloatSeq</td>
   </tr>
   <tr>
-    <td>詳細</td>
-    <td>data[0]: x位置, data[1]: y位置</td>
+    <td>Details</td>
+    <td>data[0]: x position, data[1]: y position</td>
   </tr>
   <tr>
-    <td>単位</td>
-    <td>無し</td>
+    <td>Unit</td>
+    <td>None</td>
   </tr>
   <tr>
     <td colspan="2" >[out] vel</td>
   </tr>
   <tr>
-    <td>概要</td>
-    <td>移動ロボットの速度ベクトル</td>
+    <td>Overview</td>
+    <td>Velocity vector of the mobile robot</td>
   </tr>
   <tr>
-    <td>データ型</td>
+    <td>Data type</td>
     <td>TimedVelocity2D</td>
   </tr>
   <tr>
-    <td>詳細</td>
-    <td>vx: 並進速度, vy: 0.0, va: 角速度</td>
+    <td>Details</td>
+    <td>vx: translational velocity, vy: 0.0, va: angular velocity</td>
   </tr>
   <tr>
-    <td>単位</td>
+    <td>Unit</td>
     <td>vx [m/s], va [rad/s]</td>
   </tr>
   <tr>
     <td colspan="2" >[out] wheel_vel</td>
   </tr>
   <tr>
-    <td>概要</td>
-    <td>車輪速度</td>
+    <td>Overview</td>
+    <td>Wheel velocity</td>
   </tr>
   <tr>
-    <td>データ型</td>
+    <td>Data type</td>
     <td>TimedFloatSeq</td>
   </tr>
   <tr>
-    <td>詳細</td>
-    <td>data[0]: 左車輪角速度, data[1]: 右車輪角速度</td>
+    <td>Details</td>
+    <td>data[0]: left wheel angular velocity, data[1]: right wheel angular velocity</td>
   </tr>
   <tr>
-    <td>単位</td>
+    <td>Unit</td>
     <td>[rad/s]</td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;">コンフィギュレーション</td>
+    <td colspan="2" style="text-align: center;">Configuration</td>
   </tr>
   <tr>
     <td colspan="2" >scaling</td>
   </tr>
   <tr>
-    <td>概要</td>
-    <td>スケーリングファクタ</td>
+    <td>Overview</td>
+    <td>Scaling factor</td>
   </tr>
   <tr>
-    <td>データ型</td>
+    <td>Data type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>GUIコントロール</td>
+    <td>GUI control</td>
     <td>slider.0.1</td>
   </tr>
   <tr>
-    <td>制約条件</td>
+    <td>Constraint condition</td>
     <td>0.0<=x<=10.0</td>
   </tr>
   <tr>
     <td colspan="2" >tread</td>
   </tr>
   <tr>
-    <td>概要</td>
-    <td>移動ロボットのトレッド幅</td>
+    <td>Overview</td>
+    <td>Tread width of the mobile robot</td>
   </tr>
   <tr>
-    <td>データ型</td>
+    <td>Data type</td>
     <td>double</td>
   </tr>
   <tr>
-    <td>GUIコントロール</td>
+    <td>GUI control</td>
     <td>slider.0.01</td>
   </tr>
   <tr>
-    <td>制約条件</td>
+    <td>Constraint condition</td>
     <td>0.0<=x<=1.0</td>
   </tr>
   <tr>
     <td colspan="2" >print_xy</td>
   </tr>
   <tr>
-    <td>概要</td>
-    <td>XYデータプリントのデバッグフラグ</td>
+    <td>Overview</td>
+    <td>Debug flag for printing XY data</td>
   </tr>
   <tr>
-    <td>データ型</td>
+    <td>Data type</td>
     <td>string</td>
   </tr>
   <tr>
-    <td>GUIコントロール</td>
+    <td>GUI control</td>
     <td>radio</td>
   </tr>
   <tr>
-    <td>制約条件</td>
+    <td>Constraint condition</td>
     <td>(YES,NO)</td>
   </tr>
   <tr>
     <td colspan="2" >print_vel</td>
   </tr>
   <tr>
-    <td>概要</td>
-    <td>velデータのデバッグプリントフラグ</td>
+    <td>Overview</td>
+    <td>Debug print flag for vel data</td>
   </tr>
   <tr>
-    <td>データ型</td>
+    <td>Data type</td>
     <td>string</td>
   </tr>
   <tr>
-    <td>GUIコントロール</td>
+    <td>GUI control</td>
     <td>radio</td>
   </tr>
   <tr>
-    <td>制約条件</td>
+    <td>Constraint condition</td>
     <td>(YES,NO)</td>
   </tr>
   <tr>
     <td colspan="2" >print_wvel</td>
   </tr>
   <tr>
-    <td>概要</td>
-    <td>wheel_velデータのデバッグプリントフラグ</td>
+    <td>Overview</td>
+    <td>Debug print flag for wheel_vel data</td>
   </tr>
   <tr>
-    <td>データ型</td>
+    <td>Data type</td>
     <td>string</td>
   </tr>
   <tr>
-    <td>GUIコントロール</td>
+    <td>GUI control</td>
     <td>radio</td>
   </tr>
   <tr>
-    <td>制約条件</td>
+    <td>Constraint condition</td>
     <td>(YES,NO)</td>
   </tr>
 </table>
 
-この仕様に従い、RTCBuilderでPythonのテンプレートコードを生成します。
+Following these specifications, generate the Python template code with RTCBuilder.
 
 <div align="center"><a href="ministick_builder_basic.png"><img src="ministick_builder_basic.png" width="30%;"></a>
 <a href="ministick_builder_activity.png"><img src="ministick_builder_activity.png" width="30%;"></a>
@@ -334,220 +338,223 @@ ministick sensorを利用したジョイスティックコンポーネントを�
 <div align="center"><a href="ministick_builder_configuration.png"><img src="ministick_builder_configuration.png" width="30%;"></a>
 <a href="ministick_builder_documentation.png"><img src="ministick_builder_documentation.png" width="30%;"></a>
 <a href="ministick_builder_lang.png"><img src="ministick_builder_lang.png" width="30%;"></a></div>;
-<div align="center"><strong>RTCBuilderの設定画面(クリックすると拡大します)</strong></div>
+<div align="center"><strong>RTCBuilder configuration screens (click to enlarge)</strong></div>
 
 
-## 実装
+## Implementation
 
-コンポーネントにADCの読み込みなどの機能を追加していきます。
+Add functions such as ADC reading to the component.
 
-### SPIモジュールの初期化
-
-
-まず、コンポーネントのコンストラクタでSPIオブジェクトを生成し初期化します。
-
-他の import 文の近くに、spidevをimportする一文を追加します。計算などで使用するのでmathモジュールもインポートします。
+### Initializing the SPI Module
 
 
-```
- # Import RTM module
- import RTC
- import OpenRTM_aist
- 
- import math
- import spidev
-```
+First, create and initialize the SPI object in the component constructor.
 
-さらに、コンストラクタで、必要な変数を初期化子、SPIオブジェクトを生成します。
+Add a line to import spidev near the other import statements. Also import the math module because it is used for calculations and other processing.
+
+```python
+Import RTM module
+
+import RTC
+import OpenRTM_aist
+
+import math
+import spidev
 
 ```
- class Ministick(OpenRTM_aist.DataFlowComponentBase):
-   def __init__(self, manager):
-     OpenRTM_aist.DataFlowComponentBase.__init__(self, manager)
- 
-     self._scaling = [1.0]
-     self._tread = [0.2]
-     self._print_xy = ["NO"]
-     self._print_vel = ["NO"]
-     self._print_wvel = ["NO"]
-     self.x = 0.0
-     self.y = 0.0
-     self.spi = spidev.SpiDev()
-     self.spi.open(0, 0)
-```
 
-### get_adc 関数の追加
+Furthermore, in the constructor, initialize the necessary variables and create the SPI object.
 
-AD変換器からデータを読む関数を Ministickクラスに追加します。
-<u>init</u>() 関数の次あたりに、以下の関数を追記します。
+```python
+class Ministick(OpenRTM_aist.DataFlowComponentBase):
+def init(self, manager):
+OpenRTM_aist.DataFlowComponentBase.init(self, manager)
 
-```
-  def get_adc(self, channel):
-    sned_ch = [0x00,0x08,0x10,0x18]
-    if ((channel > 3) or (channel < 0)):
-      return -1
-    r = self.spi.xfer2([sned_ch[channel],0,0,0])
-    ret = ((r[2] << 6 ) & 0x300) |  ((r[2] << 6) & 0xc0) | ((r[3] >> 2) & 0x3f)
-    return ret
-```
-
-### X-Yの位置→車輪速度変換関数
-
-X-Yの位置から車輪の速度へ変換する関数をMinistickクラスに追加します。
-
-```
- dev xy_to_wvel(self, x, y):
-   th = math.atan2(y, x)
-   v = math.hypot(x, y)
-   vl = v * math.cos(th - (math.pi/4.0))
-   vr = v * math.sin(th - (math.pi/4.0))
-   return (vl, vr)
+ self._scaling = [1.0]
+ self._tread = [0.2]
+ self._print_xy = ["NO"]
+ self._print_vel = ["NO"]
+ self._print_wvel = ["NO"]
+ self.x = 0.0
+ self.y = 0.0
+ self.spi = spidev.SpiDev()
+ self.spi.open(0, 0)
 ```
 
 
-### 車輪速度→速度ベクトル変換関数
+### Adding the get_adc Function
 
-車輪速度から速度ベクトルへ変換する関数をMinistickクラスに追加します。
+Add a function for reading data from the AD converter to the Ministick class.
+Add the following function around immediately after the <u>init</u>() function.
 
-```
- def wvel_to_vel2d(self, vl, vr):
-   v = (vr + vl) / 2.0
-   if v < 0.0:
-     w = - (vr - vl) / self._tread[0]
-   else:
-     w = (vr - vl) / self._tread[0]
-   return RTC.Velocity2D(v, 0.0, w)
-```
+```python
 
-### キャリブレーション
-
-コンポーネント初期化時に、ジョイスティックのニュートラル位置をキャリブレーションします。
-AD変換器からデータを100回程度読み込み平均し、オフセットデータとして保存します。
+def get_adc(self, channel):
+sned_ch = [0x00,0x08,0x10,0x18]
+if ((channel > 3) or (channel < 0)):
+return -1
+r = self.spi.xfer2([sned_ch[channel],0,0,0])
+ret = ((r[2] << 6 ) & 0x300) | ((r[2] << 6) & 0xc0) | ((r[3] >> 2) & 0x3f)
+return ret
 
 ```
- def onInitialize(self):
+
+
+### X-Y Position to Wheel Velocity Conversion Function
+
+Add a function that converts the X-Y position to wheel velocity to the Ministick class.
+
+```python
+dev xy_to_wvel(self, x, y):
+th = math.atan2(y, x)
+v = math.hypot(x, y)
+vl = v * math.cos(th - (math.pi/4.0))
+vr = v * math.sin(th - (math.pi/4.0))
+return (vl, vr)
+
 ```
+
+
+### Wheel Velocity to Velocity Vector Conversion Function
+
+Add a function that converts wheel velocity to a velocity vector to the Ministick class.
+```python
+def wvel_to_vel2d(self, vl, vr):
+v = (vr + vl) / 2.0
+if v < 0.0:
+w = - (vr - vl) / self._tread[0]
+else:
+w = (vr - vl) / self._tread[0]
+return RTC.Velocity2D(v, 0.0, w)
+```
+
+### Calibration
+
+When initializing the component, calibrate the neutral position of the joystick.
+Read data from the AD converter about 100 times, average it, and save it as offset data.
+
+```python
+def onInitialize(self):
      : 中略
-```
-    self.x_offset_v = 0.0
-    self.y_offset_v = 0.0
-    for i in range(1, 100):
-      self.x_offset_v += self.get_adc(0)
-      self.y_offset_v += self.get_adc(1)
-    self.x_offset_v = self.x_offset_v / 100.0
-    self.y_offset_v = self.y_offset_v / 100.0
- 
-    return RTC.RTC_OK
-```
+self.x_offset_v = 0.0
+self.y_offset_v = 0.0
+for i in range(1, 100):
+  self.x_offset_v += self.get_adc(0)
+  self.y_offset_v += self.get_adc(1)
+self.x_offset_v = self.x_offset_v / 100.0
+self.y_offset_v = self.y_offset_v / 100.0
 
-### onExecuteの実装
-
-最後に、onExecute関数を実装します。
-
-```
- def onExecute(self, ec_id):
-    self.x = - (self.get_adc(0) - self.x_offset_v) * self._scaling[0] / 1000.0
-    self.y = (self.get_adc(1) - self.y_offset_v) * self._scaling[0] / 1000.0
-    if self._print_xy[0] != "NO":
-      print "(x, y) = ", self.x, self.y
-    self._d_pos.data = [self.x, self.y]
-    
-    self._d_wvel.data = self.xy_to_wvel(self.x, self.y)
-    if self._print_wvel[0] != "NO":
-      print "(vl, vr) = ", self._d_wvel.data[0], self._d_wvel.data[1]
-    self._d_vel.data = self.wvel_to_vel2d(self._d_wvel.data[0],
-                                          self._d_wvel.data[1])
-    if self._print_vel[0] != "NO":
-      print "(vx, va) = ", self._d_vel.data.vx, self._d_vel.data.va
- 
-    self._posOut.write()
-    self._velOut.write()
-    self._wvelOut.write()
- 
-    return RTC.RTC_OK
+return RTC.RTC_OK
 ```
 
+### Implementing onExecute
+
+Finally, implement the onExecute function.
+
+
+```python
+def onExecute(self, ec_id):
+self.x = - (self.get_adc(0) - self.x_offset_v) * self._scaling[0] / 1000.0
+self.y = (self.get_adc(1) - self.y_offset_v) * self._scaling[0] / 1000.0
+if self._print_xy[0] != "NO":
+print "(x, y) = ", self.x, self.y
+self._d_pos.data = [self.x, self.y]
+
+self._d_wvel.data = self.xy_to_wvel(self.x, self.y)
+if self._print_wvel[0] != "NO":
+  print "(vl, vr) = ", self._d_wvel.data[0], self._d_wvel.data[1]
+self._d_vel.data = self.wvel_to_vel2d(self._d_wvel.data[0],
+                                      self._d_wvel.data[1])
+if self._print_vel[0] != "NO":
+  print "(vx, va) = ", self._d_vel.data.vx, self._d_vel.data.va
+
+self._posOut.write()
+self._velOut.write()
+self._wvelOut.write()
+
+return RTC.RTC_OK
+
+```
 
 <!-- ============================================================ -->
-## テスト
+## Test
 
-Ministickコンポーネントと、いろいろなものを接続してテストしてみます。
+Connect the Ministick component to various things and test it.
 
-### OpenRTM-aist-Pythonに付属のサンプルと接続
+### Connecting to a Sample Included with OpenRTM-aist-Python
 
-TkMobileRobotCanvasと接続してみます。
+Try connecting it to TkMobileRobotCanvas.
 
-Windows上のインストールされているOpenRTM-aist-Pythonのサンプルから TkMobileRobotCanvasを起動します。
-同時に、ネームサービスとRTSystemEditorも起動してください。
+Start TkMobileRobotCanvas from the OpenRTM-aist-Python samples installed on Windows.
+At the same time, start the name service and RTSystemEditor as well.
 
 <div align="center"><a href="tkmobilerobotcanvas.png"><img src="tkmobilerobotcanvas.png" width="80%;"></a></div>
-<div align="center"><strong>Tk Mobile Robot Simulator 画面</strong></div>
+<div align="center"><strong>Tk Mobile Robot Simulator screen</strong></div>
 
-Createボタンを押し、移動ロボットを一つ生成します。
-ネームサーバにコンポーネントが一つ現れるので、SystemEditor上にドラッグアンドドロップします。
+Press the Create button to generate one mobile robot.
+One component appears in the name server, so drag and drop it onto SystemEditor.
 
-次に、Raspberry Pi上でネームサーバとMinistickコンポーネントを起動します。
+Next, start the name server and the Ministick component on the Raspberry Pi.
 
 ```
- $ rtm-naming
- $ ./Ministick.py
- 
+$ rtm-naming
+$ ./Ministick.py
+
 ```
 
-RTSystemEditorから、RaspberryPiのネームサーバに接続すると、Ministickコンポーネントが見えますので、SystemEditor上にドラッグアンドドロップします。
+When you connect to the RaspberryPi name server from RTSystemEditor, the Ministick component is visible, so drag and drop it onto SystemEditor.
 
-Ministick の wvel データポートから先ほど生成した移動ロボットコンポーネントへポートを接続します。
+Connect the port from the Ministick wvel data port to the mobile robot component generated earlier.
 
 <div align="center"><a href="ministick_and_mobilerobot.png"><img src="ministick_and_mobilerobot.png" width="80%;"></a></div>
-<div align="center"><strong>Ministickと移動ロボットコンポーネントの接続</strong></div>
+<div align="center"><strong>Connection between Ministick and the mobile robot component</strong></div>
 
-アクティベートすると、両方のコンポーネントが緑色になり操作可能になります。
+When activated, both components turn green and become operable.
 
-### Kobukiと接続
+### Connecting to Kobuki
 
-前述のKobukiの制御、の節に従ってKobukiコンポーネントをRaspberryPi上で起動します。
+Start the Kobuki component on the RaspberryPi according to the section on controlling Kobuki described earlier.
 
-<!-- - [移動ロボットKobukiの制御]({{ site.baseurl }}/ja/content/raspberrypi_kobuki_control)-->
-- [移動ロボットKobukiの制御]({{ site.baseurl }}/ja/doc/installation/other/raspberrypi_casestudy/control_mobilerobot_kobuki)
+<!-- - [移動ロボットKobukiの制御]({{ site.baseurl }}/en/content/raspberrypi_kobuki_control)-->
+- [Controlling the Kobuki Mobile Robot]({{ site.baseurl }}/en/doc/installation/other/raspberrypi_casestudy/control_mobilerobot_kobuki)
 
-Ministickコンポーネントを別のRaspberry Pi上で起動します。
+Start the Ministick component on another Raspberry Pi.
 
-それぞれのコンポーネントはローカルのネームサーバ(デフォルト)に参照を登録させて、別のPCからこれら2つのネームサーバにRTSystemEditorで接続します。
-Name Service Viewに2つのコンポーネントが見えるはずですので、これら (Ministick の vel と KobukiAIST の targetVelocity) を接続します。(下図参照)
+Have each component register its reference with the local name server (default), and connect to these two name servers with RTSystemEditor from another PC.
+You should see the two components in the Name Service View, so connect them (Ministick vel and KobukiAIST targetVelocity). (See the figure below.)
 
 <div align="center"><a href="ministick_and_kobuki.png"><img src="ministick_and_kobuki.png" width="80%;"></a></div>
-<div align="center"><strong>Ministick RTCとKobukiAIST RTCの接続</strong></div>
+<div align="center"><strong>Connection between Ministick RTC and KobukiAIST RTC</strong></div>
 
-RTSystemEditorのメニューバーの緑色の再生ボタン(全活性化)を押すと、システムが動き出しMinistickでKobukiを操作できます。
+When you press the green play button (Activate All) on the RTSystemEditor menu bar, the system starts running and you can operate Kobuki with Ministick.
 
-## トラブルシューティング
+## Troubleshooting
 
-### Ministickがニュートラル状態でもロボットが動く
+### The Robot Moves Even When Ministick Is in the Neutral State
 
-Ministickがニュートラル状態でも、TkMobileRobotのロボットやKobukiが少しずつ動く場合があります。これは、ニュートラル状態のキャリブレーションが十分ではないためです。
-Ministickコンポーネントを工夫して、使いやすいコンポーネントにしてみましょう。
+Even when Ministick is in the neutral state, the TkMobileRobot robot or Kobuki may move little by little. This is because calibration of the neutral state is not sufficient.
+Improve the Ministick component to make it easier to use.
 
-例えば、キャリブレーションをonActivatedで行うようにすれば、一旦Deactivateして再度Activateすれば零点をリセットできます。
-また、onDeactivatedの時には速度0を出力するようにすれば、JyoistickのDeactivateによりロボットが安全に停止します。
-あるいは、零点付近に不感帯を設けることで、多少キャリブレーションがずれても、ニュートラル状態で必ず0が出力されるようにできます。
+For example, if calibration is performed in onActivated, you can reset the zero point by deactivating once and then activating again.
+Also, if velocity 0 is output during onDeactivated, the robot will stop safely when Jyoistick is deactivated.
+Alternatively, by setting a dead zone near the zero point, you can ensure that 0 is always output in the neutral state even if the calibration is slightly off.
 
-### Permission deniedエラー
+### Permission denied Error
 
-以下のようなパーミッション関係のエラーが出ることがあります。
-上述のudevの設定が正しく行われていない可能性がありますので、見直してください。
+A permission-related error such as the following may occur.
+The udev settings described above may not have been configured correctly, so check them again.
+
 
 ```
- pi@raspbian-armhf ~ $ ./adc_text.py
- Traceback (most recent call last):
-   File "./adc_text.py", line 47, in <module>
-     main()
-   File "./adc_text.py", line 25, in main
-     adc = ADC()
-   File "./adc_text.py", line 10, in __init__
-     self.spi.open(0, 0)
- IOError: [Errno 13] Permission denied
+pi@raspbian-armhf ~ $ ./adc_text.py
+Traceback (most recent call last):
+File "./adc_text.py", line 47, in <module>
+main()
+File "./adc_text.py", line 25, in main
+adc = ADC()
+File "./adc_text.py", line 10, in init
+self.spi.open(0, 0)
+IOError: [Errno 13] Permission denied
 ```
 
-また、sudo を利用しても実行可能です。
-
--------jp page!!-------
+It can also be run using sudo.

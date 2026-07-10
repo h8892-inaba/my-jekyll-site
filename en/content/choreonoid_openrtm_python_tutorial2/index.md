@@ -1,12 +1,9 @@
 ---
 layout: page
-title: "Choreonoid用OpenRTM連携プラグイン Python版 チュートリアル(四足歩行ロボット)"
+title: "OpenRTM Integration Plugin for Choreonoid, Python Version Tutorial (Quadruped Robot)"
 ---
 
-No English version available.
-
-
-このページではRTCEditorアイテム、ComponentListアイテムの利用方法を四足歩行ロボットのシミュレータ作成を例にして解説します。
+This page explains how to use RTCEditor items and ComponentList items, using the creation of a quadruped robot simulator as an example.
 
 
 <br>
@@ -18,31 +15,31 @@ No English version available.
 #contents
 
 
-## アイテム追加
+## Adding Items
 
-### ワールド、シミュレータ
+### World and Simulator
 
-まずはワールドアイテム、シミュレータアイテムを追加します。 ファイル、新規からワールドとAISTシミュレータを選択して追加してください。
+First, add a world item and a simulator item. From File > New, select World and AIST Simulator and add them.
 
-この時点でアイテムツリーは以下のようになります。
+At this point, the item tree is as follows.
 ```
- World(ワールドアイテム)
-    |-AISTSimulator(AISTシミュレータ)
+ World(World item)
+    |-AISTSimulator(AIST Simulator)
 ```
 
 
-### モデル
+### Model
 
-次に地面、四足歩行ロボットのモデルを追加します。
+Next, add the ground and quadruped robot models.
 
-ファイル、読み込みから**OpenHRP モデルファイル**を選択後、以下のファイルを読み込んでください。
+From File > Import, select **OpenHRP Model File**, and then load the following files.
 
-- {Choreonoidインストールディレクトリ}/share/model/QuadrupedRobot/QuadrupedRobot.yaml
-- {Choreonoidインストールディレクトリ}/share/model/house/floor.body
+- {Choreonoid installation directory}/share/model/QuadrupedRobot/QuadrupedRobot.yaml
+- {Choreonoid installation directory}/share/model/house/floor.body
 
 
-すると以下のように3Dモデルが表示されます。
-表示されない場合はアイテムツリー上の該当アイテムのチェックボタンをオンにしてください。
+Then the 3D model will be displayed as follows.
+If it is not displayed, turn on the checkbox of the corresponding item in the item tree.
 
 <br>
 
@@ -51,42 +48,42 @@ No English version available.
 
 
 
-この時点でアイテムツリーは以下のようになります。
+At this point, the item tree is as follows.
 
 ```
- World(ワールドアイテム)
-    |-AISTSimulator(AISTシミュレータ)
+ World(World item)
+    |-AISTSimulator(AIST Simulator)
     |-QuadrupedRobot(model/QuadrupedRobot/QuadrupedRobot.yaml)
     |-floor(model/house/floor.body)
 ```
 
 
-### RTコンポーネント
+### RT Components
 
-#### PyRTCアイテム
-RTコンポーネントを追加します。 ファイル、新規から**PyRTCItem**を選択して追加してください。
+#### PyRTC Item
+Add an RT Component. From File > New, select and add **PyRTCItem**.
 
-QuadrupedRobotアイテムの下にアイテムを追加して、**QuadrupedRobotIO**と名前を付けてください。
+Add the item under the QuadrupedRobot item, and name it **QuadrupedRobotIO**.
 
-この時点でアイテムツリーは以下のようになります。
+At this point, the item tree is as follows.
 
 ```
- World(ワールドアイテム)
-    |-AISTSimulator(AISTシミュレータ)
+ World(World item)
+    |-AISTSimulator(AIST Simulator)
     |-QuadrupedRobot(model/QuadrupedRobot/QuadrupedRobot.yaml)
       |-QuadrupedRobotIO(PyRTCItem)
     |-floor(model/house/floor.body)
 ```
 
-##### Pythonファイルの設定
-**QuadrupedRobotIO**のプロパティから**RTC module**という項目を設定してください。
+##### Setting the Python File
+Set the item named **RTC module** from the properties of **QuadrupedRobotIO**.
 
-ファイル名に**QuadrupedRobot_Choreonoid.py**を設定してください。
-これで四足歩行ロボット用の入出力RTCが起動します。
+Set **QuadrupedRobot_Choreonoid.py** as the file name.
+This starts the input/output RTC for the quadruped robot.
 
 
-#### ComponentListアイテム
-RTCランチャーを起動します。ファイル、アイテムから**ComponentListItem**を選択して追加してください。
+#### ComponentList Item
+Start the RTC launcher. From File > Item, select and add **ComponentListItem**.
 
 
 <br>
@@ -95,7 +92,7 @@ RTCランチャーを起動します。ファイル、アイテムから**Compon
 <br>
 
 
-次にビューの表示から**ComponentList**を選択してください。
+Next, select **ComponentList** from Show View.
 
 <br>
 
@@ -103,7 +100,7 @@ RTCランチャーを起動します。ファイル、アイテムから**Compon
 <br>
 
 
-すると以下のウインドウが表示されます。
+Then the following window will be displayed.
 
 
 <br>
@@ -112,16 +109,16 @@ RTCランチャーを起動します。ファイル、アイテムから**Compon
 <br>
 
 
-RTCはカテゴリ別に分類されており、タブを切り替えることでほかのカテゴリのRTCを表示できます。
-**Controller**のタブを開いて、以下の2つのRTCを起動します。
+RTCs are classified by category, and you can display RTCs in other categories by switching tabs.
+Open the **Controller** tab and start the following two RTCs.
 
-- Foot_Position_Controller(四足歩行ロボット足先位置制御コンポーネント)
-- Intermittent_Crawl_Gait_Controller(四足歩行ロボット間歇クロール歩容コンポーネント)
+- Foot_Position_Controller (quadruped robot foot position control component)
+- Intermittent_Crawl_Gait_Controller (quadruped robot intermittent crawl gait component)
 
-**実行(rtcd、周期実行)**ボタンを押すだけで起動できます。
+You can start them simply by pressing the **Run (rtcd, periodic execution)** button.
 
 
-※本来はトリガー駆動の実行コンテキストを使用したいのですが、OpenRTM-aist C++版のバグにより実現できていません。
+* Originally, we would like to use a trigger-driven execution context, but this has not been realized due to a bug in the OpenRTM-aist C++ version.
 
 <br>
 
@@ -129,7 +126,7 @@ RTCはカテゴリ別に分類されており、タブを切り替えること�
 <br>
 
 
-この時点でRTCリストビューを更新すると以下のように表示されます。
+At this point, if you update the RTC list view, it will be displayed as follows.
 
 <br>
 
@@ -137,9 +134,9 @@ RTCはカテゴリ別に分類されており、タブを切り替えること�
 <br>
 
 
-#### RTCEditorアイテム
+#### RTCEditor Item
 
-RTCエディタを起動します。ファイル、アイテムから**RTCEditorItem**を選択してワールドアイテムの下に追加してください。
+Start the RTC editor. From File > Item, select **RTCEditorItem** and add it under the world item.
 
 
 <br>
@@ -148,7 +145,7 @@ RTCエディタを起動します。ファイル、アイテムから**RTCEditor
 <br>
 
 
-すると以下のウインドウが表示されます。
+Then the following window will be displayed.
 
 <br>
 
@@ -156,27 +153,27 @@ RTCエディタを起動します。ファイル、アイテムから**RTCEditor
 <br>
 
 
-##### データポート追加
-四足歩行ロボットの目標速度を設定するアウトポートを追加します。
-右側のウインドウから以下の設定を行ってください。
+##### Adding a Data Port
+Add an outport for setting the target velocity of the quadruped robot.
+Configure the following settings from the window on the right.
 
 <table class="table-alt">
   <tr>
-    <th>ポート名</th>
+    <th>Port Name</th>
     <th>out</th>
   </tr>
   <tr>
-    <td>ポート</td>
+    <td>Port</td>
     <td>DataOutPort</td>
   </tr>
   <tr>
-    <td>データ型</td>
+    <td>Data Type</td>
     <td>RTC::TimedVelocity2D</td>
   </tr>
 </table>
 
 
-作成ボタンを押すとデータポートを作成します。
+Press the Create button to create the data port.
 
 <br>
 
@@ -184,11 +181,11 @@ RTCエディタを起動します。ファイル、アイテムから**RTCEditor
 <br>
 
 
-#### コード編集
-ソースコードの編集を行います。
+#### Editing Code
+Edit the source code.
 
-##### データポート変数名について
-先ほど作成したデータポートにかかわる変数名については、右側の**データポート変数名**タブからコピーできます。
+##### Data Port Variable Names
+The variable names related to the data port you just created can be copied from the **Data Port Variable Names** tab on the right.
 
 
 <br>
@@ -197,11 +194,11 @@ RTCエディタを起動します。ファイル、アイテムから**RTCEditor
 <br>
 
 
-##### コード記述
+##### Writing Code
 
-左側のコード編集ウインドウは各アクティビティ+α(setBody、inputFromSimulator、outputToSimulator、グローバル)で実行する処理が記述できます。
+In the code editing window on the left, you can write processing to be executed in each activity + α (setBody, inputFromSimulator, outputToSimulator, global).
 
-**onExecute**関数の処理に以下を記述してください。
+Write the following in the processing of the **onExecute** function.
 
 ```
  self._d_out.data.vx = 0.03
@@ -212,7 +209,7 @@ RTCエディタを起動します。ファイル、アイテムから**RTCEditor
 ```
 
 
-変更した内容は更新ボタンを押すと反映されます。
+The changes are reflected when you press the Update button.
 
 <br>
 
@@ -220,11 +217,11 @@ RTCエディタを起動します。ファイル、アイテムから**RTCEditor
 <br>
 
 
-この時点でアイテムツリーは以下のようになります。
+At this point, the item tree is as follows.
 
 ```
- World(ワールドアイテム)
-    -AISTSimulator(AISTシミュレータ)
+ World(World item)
+    -AISTSimulator(AIST Simulator)
     -QuadrupedRobot(model/QuadrupedRobot/QuadrupedRobot.yaml)
     -QuadrupedRobotIO(PyRTCItem)
     -floor(model/house/floor.body)
@@ -232,10 +229,10 @@ RTCエディタを起動します。ファイル、アイテムから**RTCEditor
     -RTCEditor
 ```
 
-### RTシステム構築
-**RTシステム**アイテム追加後、表示、ビューの表示から**RTCダイアグラム**を表示してください。
+### Building the RT System
+After adding the **RT System** item, display **RTC Diagram** from View > Show View.
 
-RTCの各ポートを以下のように接続してください。
+Connect each RTC port as follows.
 
 
 <br>
@@ -244,11 +241,11 @@ RTCの各ポートを以下のように接続してください。
 <br>
 
 
-この時点でアイテムツリーは以下のようになります。
+At this point, the item tree is as follows.
 
 ```
- World(ワールドアイテム)
-    |-AISTSimulator(AISTシミュレータ)
+ World(World item)
+    |-AISTSimulator(AIST Simulator)
     |-QuadrupedRobot(model/QuadrupedRobot/QuadrupedRobot.yaml)
       |-QuadrupedRobotIO(PyRTCItem)
     |-floor(model/house/floor.body)
@@ -257,15 +254,15 @@ RTCの各ポートを以下のように接続してください。
     |-RTSystem
 ```
 
-### シミュレータ起動
+### Starting the Simulator
 
-最後にシミュレーションを開始すると四足歩行ロボットが前進します。
+Finally, when you start the simulation, the quadruped robot moves forward.
 
 
 
-#### 実行中のコード変更
+#### Changing Code During Execution
 
-シミュレータ起動中に例えば以下のようにRTCEditorのonExecute関数のコードを変更して更新ボタンを押すと、シミュレーション実行中に四足歩行ロボットが前進から旋回する運動に変化することが確認できます。
+For example, while the simulator is running, if you change the code of the RTCEditor onExecute function as follows and press the Update button, you can confirm that the quadruped robot changes its motion from moving forward to turning during simulation execution.
 
 
 ```
@@ -275,5 +272,3 @@ RTCの各ポートを以下のように接続してください。
  
  return RTC.RTC_OK
 ```
-
-

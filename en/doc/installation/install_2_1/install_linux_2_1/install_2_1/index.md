@@ -20,7 +20,7 @@ Ubuntu/Debian GNU Linuxへのサポートバージョンや対応の有無は、
 
 ## 2.1系での変更点
 
-新しく [SSM通信機能](/ja/doc/developersguide/advanced_rt_system_programming/ssm_comm_use) をインストールできるようになりました。<br>
+新しく [SSM通信機能](/en/doc/developersguide/advanced_rt_system_programming/ssm_comm_use) をインストールできるようになりました。<br>
 SSMライブラリを静的リンクしているので、別途SSMをインストール必要はありません。openrtm2-ssm-tpのdebパッケージで下記がインストールされます。
 
 ```
@@ -101,7 +101,7 @@ SSMライブラリを静的リンクしているので、別途SSMをインス�
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) --help
 ```
 
-インストールされるパッケージの詳しい内容は「[OpenRTM-aist-2.1 debパッケージの詳しい内容](/ja/doc/installation/install_2_1/install_linux_2_1/install_2_1/install_debpackages_workcontent_2_1) 」で確認できます。
+インストールされるパッケージの詳しい内容は「[OpenRTM-aist-2.1 debパッケージの詳しい内容](/en/doc/installation/install_2_1/install_linux_2_1/install_2_1/install_debpackages_workcontent_2_1) 」で確認できます。
 
 ## ROS用パッケージのインストール
 

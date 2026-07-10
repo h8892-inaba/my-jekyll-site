@@ -2,7 +2,9 @@
 layout: page
 title: 
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: Fedoraへのインストール -->
 Java版OpenRTM-aistはFedora Linuxで利用可能なRPMパッケージが提供されています。
@@ -24,7 +26,7 @@ OpenRTM-aistを開発・実行するために必要なパッケージをもれ�
 オプションを指定することで、目的に合わせたパッケージをインストールできるようになったので、
 初めてOpenRTM-aistをインストールしてみる方にもソースをコンパイルしてみる方にも推奨します。
 
-一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)」のページをご確認ください。
+一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script)」のページをご確認ください。
 
 現状一括インストールスクリプトを-l javaオプションで使った場合、必要なOpenRTM-aistパッケージがインストールされないという問題が報告されています。以下の手順によりインストールしてください。
 ```
@@ -78,7 +80,7 @@ openrtm.repoを作成したら、次の手順でインストールを行いま�
 この設定を有効にするためにはインストール作業終了後、再ログインしてください。
 ### JDK8について
 Fedora用のOpenRTM-aist-Javaパッケージのインストールは自動的にFedoraの標準リポジトリよりOpenJDK8をインストールし、それを使用するJava環境として設定しますが、ライセンス条件やサポート条件のために他のJDKを使いたい場合は、以下のリンクを参照してください。
-- [JDKのインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8)
+- [JDKのインストール]({{ site.baseurl }}/en/doc/installation/common/install_jdk8)
 ### インストールの確認
 
 最後に以下のコマンドでインストールの確認をします。
@@ -314,4 +316,4 @@ openrtpでは大量のファイルがインストールされるため、ここ�
 と入力して各自での確認をしてください。
 
 
--------jp page!!-------
+

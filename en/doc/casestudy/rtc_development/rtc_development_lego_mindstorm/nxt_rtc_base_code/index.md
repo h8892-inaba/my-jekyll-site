@@ -1,15 +1,14 @@
 ---
 layout: page
-title: NXTRTC の雛形を生成
+title: Generating the NXTRTC Template
 ---
--------jp page!!-------
 
 <!-- Title: NXTRTC の雛形を生成 -->
-### NXTRTC の雛形を生成
-RtcTemplateで雛形を作成します。
-雛型を作成する方法には、コマンドライン版の rtc-template を使う方法と、Eclipse版の RtcTemplate を使う方法があります。
+### Generating the NXTRTC Template
+Create the template with RtcTemplate.
+There are two ways to create the template: using the command-line version rtc-template, or using the Eclipse version RtcTemplate.
 
-rtc-template を実行するために、以下のようなバッチファイルを作成します。
+To execute rtc-template, create the following batch file.
 
 
 ```
@@ -24,7 +23,7 @@ rtc-template を実行するために、以下のようなバッチファイル�
 ```
 
 
-Eclipse版 RtcTemplate では下記のようになります。
+In the Eclipse version RtcTemplate, the settings are as follows.
 - Programing language selection: Python
 - Module definition
   - Module name: NXTRTC
@@ -43,7 +42,7 @@ Eclipse版 RtcTemplate では下記のようになります。
 - ConfigurationSet definition
   - Cfg Sets: Name:map, Type:string, Default Value: A,B
 
-rtc-template(gen.bat)の実行
+Executing rtc-template (gen.bat)
 
 ```
  > gen.bat
@@ -60,8 +59,5 @@ rtc-template(gen.bat)の実行
    File "NXTRTC.yaml" was generated.
 ```
 
-以上のように、NXTRTC.py などのひな型ファイルができました。
+As shown above, template files such as NXTRTC.py have been created.
 
-
-
--------jp page!!-------

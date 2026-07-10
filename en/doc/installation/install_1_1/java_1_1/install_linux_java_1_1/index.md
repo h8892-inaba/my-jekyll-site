@@ -2,7 +2,9 @@
 layout: page
 title: Linuxへのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: Linuxへのインストール -->
 #contents
@@ -37,7 +39,7 @@ OpenRTM-aist-Java は、JDK7 上で動作します。oracle の対象プラッ�
 <!-- -[[JDK5 トップ(English):http://java.sun.com/javase/downloads/index_jdk5.jsp]] -->
 
 ### インストールの実行 
-各ディストリビューションについて JDK 7 のインストール方法を[ JDK インストールのためのヒント  ](/ja/content/tipsjava100)にまとめましたので参考にしてください。なお、Java のインストールはスーパーユーザーで実行してください。
+各ディストリビューションについて JDK 7 のインストール方法を[ JDK インストールのためのヒント  ](/en/content/tipsjava100)にまとめましたので参考にしてください。なお、Java のインストールはスーパーユーザーで実行してください。
 
 
 <br>
@@ -46,7 +48,7 @@ OpenRTM-aist-Java は、JDK7 上で動作します。oracle の対象プラッ�
 
 　→ [**FAQ:** Java をインストールする際の FedoraCore での対応について ](/node/1190#javafedora)
 
-　→ [**FAQ:** Q. Fedora Core 上でRtcLink の NameService View にエラーがでる ](/ja/node/248#fedoraNS)
+　→ [**FAQ:** Q. Fedora Core 上でRtcLink の NameService View にエラーがでる ](/en/node/248#fedoraNS)
 <br>
 
 ### インストールの確認
@@ -73,7 +75,7 @@ OpenRTM-aist-Java は、JDK7 上で動作します。oracle の対象プラッ�
 
 &aname(instrtm);
 ### zipファイルのダウンロードと解凍 
-[こちら ](/ja/content/openrtm-aist-java-110-release#winpkg)から「 jar ファイルおよびサンプル」をダウンロードし、zip ファイルを任意の場所に解凍します。
+[こちら ](/en/content/openrtm-aist-java-110-release#winpkg)から「 jar ファイルおよびサンプル」をダウンロードし、zip ファイルを任意の場所に解凍します。
 解凍先は任意でかまいませんが、ディレクトリー構造は変更しないでください**※**。
 また、この解凍先に含まれる「jar」フォルダーへのパスは次に取り上げるシステム環境変数 RTM_JAVA_ROOT に設定しなければなりません。
 
@@ -206,6 +208,6 @@ OpenRTM-aist-Java と 必要な jar ファイルが含まれています。
 ### JavaDocEn
 英語のクラスリファレンス（Javadoc HTML 形式）が含まれています。
 
-ここまで確認できたら[動作確認（Linux 編）](/ja/node/1229)へ進みましょう。
+ここまで確認できたら[動作確認（Linux 編）](/en/node/1229)へ進みましょう。
 
--------jp page!!-------
+

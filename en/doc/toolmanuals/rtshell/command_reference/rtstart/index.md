@@ -2,36 +2,35 @@
 layout: page
 title: rtstart
 ---
--------jp page!!-------
 
 <!-- Title: rtstart -->
 
-## 書式
+## Format
 ```
 rtstart [OPTION ...] [RTSPROFILE_FILE]
 ```
 
-## 概要
-指定されたRTSProfileファイルの情報を元にすべてのコンポーネントをアクティブ化することによりRTシステムを起動します。コンポーネントはRTSProfileファイル内で指定された順番でアクティブ化されます。RTSProfileに”required"とマークされていないコンポ―ネントは無視されます。
+## Overview
+Starts an RT system by activating all components based on the information in the specified RTSProfile file. Components are activated in the order specified in the RTSProfile file. Components that are not marked as "required" in the RTSProfile are ignored.
 
-ファイル名を指定されなかった場合、RTSProfile形式の情報でstdinから読込みます。
+If no file name is specified, RTSProfile-format information is read from stdin.
 
-## オプション(OPTION)
+## Options (OPTION)
 ```
- --dry-run　　 実行する内容を表示する（実際には起動は行われない）
- -x、--xml　　 XMLフォーマットを使う
- -y、--yaml　　YAMLフォーマットを使う
- --version　　 プログラムのバージョン番号を表示して終了する
- -h、--help　　ヘルプを表示して終了する
- -v、--verbose より詳細な情報を出力します
+ --dry-run　　 Displays what will be executed. (The system is not actually started.)
+ -x, --xml　　 Uses XML format.
+ -y, --yaml　　Uses YAML format.
+ --version　　 Displays the program version number and exits.
+ -h, --help　　Displays help and exits.
+ -v, --verbose Outputs more detailed information.
 ```
 
-## ステート変更の実行シーケンス
-RTSProfileファイルでは、RTシステムのコンポーネントの開始/停止の順番を指定するこが可能です。コンポーネント間で依存関係がある場合(例えば、あるコンポーネントの開始前に、別のコンポーネントの実行を開始する必要がある場合など)に、その順番を指定することが可能です。
+## Execution Sequence of State Changes
+In an RTSProfile file, it is possible to specify the order in which components in an RT system are started/stopped. When there are dependencies between components (for example, when one component must be started before another component starts), that order can be specified.
 
-rtstartとrtstopはこの情報を利用します。実際のところrtstartはActivationブロックに含まれている情報を利用し、rtstopはDeactivationブロックに記述されている情報を利用します。ここに記載された情報を元にしたコンポーネントのアクティブ化/非アクティブ化処理は全ての処理が完了するかエラーが発生するまで、継続します。
+rtstart and rtstop use this information. In practice, rtstart uses the information contained in the Activation block, and rtstop uses the information described in the Deactivation block. Based on the information described here, component activation/deactivation processing continues until all processing is completed or an error occurs.
 
-オプション--dry-runが指定された場合、このオプションが指定されなかった場足にどのような処理がなされるかを表示します。実際の処理はなされません。出力は以下のようになります。
+If the --dry-run option is specified, the command displays what processing would be performed if this option were not specified. The actual processing is not performed. The output is as follows.
 ```
  {1} Activate /localhost/ConfigSample0.rtc in execution context 0 (Required) 
  {2} [Order 1] Activate /localhost/Motor0.rtc in execution context 0 (Required)
@@ -40,34 +39,31 @@ rtstartとrtstopはこの情報を利用します。実際のところrtstartは
  {5} [Order 4/After ConfigSample0's action] Activate /localhost/ConsoleIn0.rtc in execution context 0 (Required)
 ```
 
-各ラインの初めの括弧の中の数字は*アクションID*です。これらは実行の時にも表 示され、これによりアクションの簡単な識別が可能です。
-その後に続く角括弧で囲まれた部分はその後に続くアクションを実行するにあたって必要な条件が示されていてその中で使われる特定の単語は以下のような意味を持っています:
+The number in braces at the beginning of each line is the *action ID*. These are also displayed during execution, making it easy to identify actions.
+The part enclosed in square brackets that follows indicates the conditions required to execute the following action. Specific words used in it have the following meanings:
 
 - **Order**
-  - 順番を管理します。RTSProfileのconditionのrts: sequence値で設定可能です。他の前条件がない場合、アクションはこの順番によってなされます。
+  - Manages the order. It can be set with the rts: sequence value of the condition in RTSProfile. If there are no other preconditions, actions are performed according to this order.
 - **Wait**
-  - 指定された時間が経過した後にアクションが実行されます。
+  - The action is executed after the specified time has elapsed.
 - **Sync**
-  - 指定されたコンポーネントがターゲット状態になるまで待ち、その後指定のアクションが実行されます。
+  - Waits until the specified component reaches the target state, and then executes the specified action.
 - **After**
-  - Syncと似てます。違いは、アクションが指定の別のコンポーネント上で行われるまで待つということです。言いかえれば、そのアクションは、指定の別コンポーネントが目標状態に達する前でも、そのコンポーネントでアクションが行われれば実行されます。
-行のその後の部分はアクションの説明です。
+  - Similar to Sync. The difference is that it waits until an action is performed on another specified component. In other words, the action is executed if the action is performed on that component, even before the specified other component reaches the target state.
+The remaining part of the line is the description of the action.
 
-## 返り値
-成功の場合はゼロを返します。失敗の場合はゼロではない値を返します。
+## Return Values
+Returns zero on success. Returns a non-zero value on failure.
 
-デバッグ情報とエラーはstderrに出力されます。
+Debug information and errors are output to stderr.
 
-# 例
-- sys.rtsysというファイルの情報を元にRTシステムを起動します。
+# Examples
+- Starts the RT system based on the information in a file named sys.rtsys.
 ```
  $ rtstart sys.rtsys
 ```
 
-- sys.rtsysというファイルの情報を元にRTシステムを起動するためにどのような処理がなされるかをを表示します。（実際の起動は行われません。）
+- Displays what processing will be performed to start the RT system based on the information in a file named sys.rtsys. (The actual startup is not performed.)
 ```
  $ rtstart sys.rtsys --dry-run
 ```
-
-
--------jp page!!-------

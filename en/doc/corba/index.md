@@ -2,11 +2,10 @@
 layout: page
 title: CORBA
 ---
--------jp page!!-------
 
 - [CCM](./ccm)
-- [IDLコンパイラ](./idlcompiler)
+- [IDL Compiler](./idlcompiler)
 - [MICO_CCM](./mico_ccm)
 - [_var_type, _ptr_type](./type)
-- [変数受渡規則](./rules_to_pass_variable)
--------jp page!!-------
+- [Rules for Passing Variables](./rules_to_pass_variable)
+

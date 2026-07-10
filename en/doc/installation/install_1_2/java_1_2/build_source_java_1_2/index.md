@@ -2,7 +2,9 @@
 layout: page
 title: ソースからのビルド
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: ソースからのビルド -->
 #contents
@@ -25,7 +27,7 @@ OpenRTM-aistのビルドには下記の開発環境およびライブラリが�
 　[MergeDoc Project](https://mergedoc.osdn.jp/)<br>
 
 - JDK8<br>
-　[JDK8のインストール]({{ site.baseurl }}/ja/doc/toolmanuals/rtc_builder-1_2_0/update_rtcb_1_2_0)
+　[JDK8のインストール]({{ site.baseurl }}/en/doc/toolmanuals/rtc_builder-1_2_0/update_rtcb_1_2_0)
 
 それぞれのライブラリなどのドキュメントに従いインストールを行ってください。
 
@@ -100,4 +102,4 @@ JREホームにJDKインストールフォルダー以下のjreフォルダー�
 日本語が文字化けしている場合は、メニューの[実行]→[外部ツール]→[外部ツールの構成]で共通タブを開き、文字コードを**MS932**に変更（[その他]の入力ボックスで手動入力）します。
 
 
--------jp page!!-------
+

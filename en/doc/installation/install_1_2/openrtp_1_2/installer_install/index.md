@@ -2,7 +2,9 @@
 layout: page
 title: インストーラによるインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: インストーラによるインストール -->
 
@@ -11,11 +13,11 @@ title: インストーラによるインストール
 
 
 # Windowsでのインストール
-- [OpenRTM-aist 1.2系のインストール(Windows、msiインストーラー使用)]({{ site.baseurl }}/ja/doc/appendix/openrtm-aist_1_2_windows_msi)
+- [OpenRTM-aist 1.2系のインストール(Windows、msiインストーラー使用)]({{ site.baseurl }}/en/doc/appendix/openrtm-aist_1_2_windows_msi)
 
 を用いてインストールしてください。デフォルトではこのインストーラが対応している全てのソフトウエアがインストールされます。必要に応じてインストール途中で[カスタム]を選択し、OpenRTPと開発に使用する言語に合わせたOpenRTM-aistランタイムや開発環境をインストールしてください。(なお現状ではデフォルト以外のインストールに対する検証は十分なされていないので、一部だけのインストールでは必要なものがインストールされないなどの問題が起こる可能性があります。デフォルトでインストールするか、各自検証しながら必要なものを別途追加インストールしてください。)
 # Linuxでのインストール
-[一括インストールスクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)を使用して、
+[一括インストールスクリプト]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script)を使用して、
 root権限で
 ```
  $ sudo sh pkg_install_xxxx.sh -l openrtp --yes
@@ -27,9 +29,9 @@ root権限で
 
 # JDK8のインストール
 OpenRTPの使用にはJDK8相当のJDKが必要です。インストーラにはOpenRTPを実行するPlatformとなるEclipseの実行をするためにOpen JDK8をインストールするようになっていますが、ライセンス条件やサポート条件を満たすために別のJDKが必要な場合は下記のリンクを参照して、別途JDK8をインストールしてください。また一部のOSではJDK8でないJDKがデフォルトでインストールされるためそれをデフォルト使用からはずす必要があることがああります。そのケースでも下記のリンクを参照してください。
-- [JDK8のインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8)
+- [JDK8のインストール]({{ site.baseurl }}/en/doc/installation/common/install_jdk8)
 
 また、OpenRTPのEclipse環境の実行に使われるJDKはOpenRTP GUI (Eclipse GUI)の中で別途設定する必要があります。OpenRTPを起動後、[Window]>[設定]と選択し、開いたダイアログより、[Java]の横の[>]をクリックし[インストール済みのJRE]クリックして設定してください。
 
 
--------jp page!!-------
+

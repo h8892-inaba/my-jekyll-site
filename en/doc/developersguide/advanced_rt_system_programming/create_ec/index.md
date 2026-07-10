@@ -1,8 +1,7 @@
 ---
 layout: page
-title: "独自実行コンテキストの作成手順"
+title: "Procedure for Creating a Custom Execution Context"
 ---
--------jp page!!-------
 
-準備中
--------jp page!!-------
+Coming soon
+

@@ -2,98 +2,123 @@
 layout: page
 title: "ImageSubtraction"
 ---
--------jp page!!-------
 
 <!-- Title: ImageSubtraction -->
 
 #contents
 
-OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencv_sample_build)に従ってビルドしてインストールしてください。
+Please note that this sample is not included with the Python or Java editions of OpenRTM-aist. On Linux, build and install it according to [Building OpenCV Sample Code on Linux]({{ site.baseurl }}/en/doc/installation/sample_components/opencv_sample_build).
 
-### 概要
-ImageSubtractionを起動することによって入力画像から背景画像を取り出し、前景画像部を判定し、それを取り出すマスク画像を、背景画像を出力します。
-OpenCVCamera、CameraViewerといっしょに使用します。（なおWindows環境では現状このコンポーネントは再ビルドしないと現在正常に動作しないようなので、Ubuntu 18.04環境での使用を推奨いたします。)
+### Overview
 
-### 起動画面
+By starting ImageSubtraction, background images are extracted from the input image, foreground regions are detected, and both a mask image for extracting the foreground and the background image are output.
+
+It is used together with OpenCVCamera and CameraViewer. (Please note that this component does not currently operate correctly on Windows unless it is rebuilt. Therefore, use on Ubuntu 18.04 is recommended.)
+
+### Startup Screen
 
 <div align="center"><a href="ImageSubtract_exe.png"><img src="ImageSubtract_exe.png" width="60%;"></a></div>
-<div align="center"><strong>ImageSubtractionコンポーネンの実行例</strong></div>
+<div align="center"><strong>ImageSubtraction Component Execution Example</strong></div>
 
-### 使い方
-ImageSubtractionは、入力画像から背景画像を取り出すためのコンポーネントです。ここではUSB Cameraから画像を取り込むためのOpenCVCameraと、処理した画像を表示するためのCameraViewerコンポーネントと使用します。
+### Usage
 
-- 手順 (以下はUbuntu 18.04での手順です。)
-  - ターミナルを起動します。
-  - 上記の[[LinuxにおけるOpenCVサンプルコードのビルド手順>//node/6974]に従いサンプルコードのインストールをします。
-  - [OpenRTP]({{ site.baseurl }}/ja/doc/installation/install_1_2/start_openrtp_linux_1_2)に従いOpenRTPを起動しRTSystemEditorを起動し、Name Service ViewにRTCが表示されるようにします。新規SystemEditorを開きます。RTSystemEditorの使用方法の詳細については[RTSystemEditor]({{ site.baseurl }}/ja/doc/toolmanuals/rtsystemeditor-1_2_0)を参照してください。
-  - 新規にターミナル画面を開きます。
-  - 以下のコマンドを実行して、rtc.confを編集します。
+ImageSubtraction is a component for extracting a background image from an input image. In this example, it is used together with the OpenCVCamera component for capturing images from a USB camera and the CameraViewer component for displaying processed images.
+
+- Procedure (The following steps are for Ubuntu 18.04.)
+
+  - Start a terminal.
+
+  - Install the sample code according to [Building OpenCV Sample Code on Linux]({{ site.baseurl }}/en/doc/installation/sample_components/opencv_sample_build).
+
+  - Start OpenRTP and RTSystemEditor according to [OpenRTP]({{ site.baseurl }}/en/doc/installation/install_1_2/start_openrtp_linux_1_2), and make sure RTCs are displayed in the Name Service View. Open a new SystemEditor. For details on using RTSystemEditor, refer to [RTSystemEditor]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_2_0).
+
+  - Open a new terminal window.
+
+  - Execute the following commands to edit rtc.conf.
+
+```bash
+$ cd ImageProcessing/opencv/bin
+$ sudo vi rtc.conf
 ```
- $ cd ImageProcessing/opencv/bin
- $ sudo vi rtc.conf
+
+  - Add the following line to the end of the file.
+
+```text
+manager.components.naming_policy: ns_unique
 ```
-  - 最終行に以下の行を付け加えます。
+
+  - Open a new terminal and execute:
+
+```bash
+$ cd ImageProcessing/opencv/bin
+$ ./CameraViewerComp
 ```
- manager.components.naming_policy: ns_unique
+
+  After starting the terminal, repeat the above command three more times to launch four CameraViewer components.
+
+  - Open a new terminal.
+
+```bash
+$ cd ImageProcessing/opencv/bin
+$ ./OpenCVCameraComp
 ```
-  - 新規にターミナルを起動して
+
+  to start OpenCVCameraComp.
+
+  - Open another terminal and execute:
+
+```bash
+$ cd ImageProcessing/opencv/bin
+$ ./ImageSubtractionComp
 ```
- $ cd ImageProcessing/opencv/bin
- $ ./CameraViewerComp
-```
-ターミナルを起動後の上記コマンドをさらに3回くり返し、4つのCameraViewerコンポーネントを起動します。
-  - 新規にターミナルを起動します。
-```
- $ cd ImageProcessing/opencv/bin
- $ ./OpenCVCameraComp
-```
-としてOpenCVCameraCompを起動します。
-  - さらにもう一度ターミナルを起動して
-```
- $ cd ImageProcessing/opencv/bin
- $ ./ImageSubtractionComp
-```
-と入力してImageSubtractionコンポーネントを起動します。
-  - RTSystemEditorの画面のName Service viewのところの[>]をクリックして、起動したコンポーネントCameraView0, CameraViewer1, CameraViewer2, CameraViewe3, OpenCVCamera0, ImageSubtraction0のコンポーネントが表示されているのを確認します。
-  - RTSystemEditorで上部の[Open New System Editor]ボタン<a href="icon_open_editor_ja.png"><img src="icon_open_editor_ja.png" width="4%;"></a> をクリックし、新規System Editorを開き、[System Dialgram]を新たに表示させます。
-  - 上記の5つのコンポーネントをSystem Diagram上にドラッグ&ドロップします。
-  - 下記の画面のように各コンポーネントのポートを接続します。
+
+  to start the ImageSubtraction component.
+
+  - In the RTSystemEditor Name Service View, click [>] and confirm that the components CameraViewer0, CameraViewer1, CameraViewer2, CameraViewer3, OpenCVCamera0, and ImageSubtraction0 are displayed.
+
+  - In RTSystemEditor, click the [Open New System Editor] button <a href="icon_open_editor_ja.png"><img src="icon_open_editor_ja.png" width="4%;"></a> at the top of the screen to open a new System Editor and display a new [System Diagram].
+
+  - Drag and drop the above components onto the System Diagram.
+
+  - Connect the ports of each component as shown below.
 
 <div align="center"><a href="RTSystemEditor_ImageSubtraction.png"><img src="RTSystemEditor_ImageSubtraction.png" width="100%;"></a></div>
-<div align="center"><strong>ImageSubtractionコンポーネンの実行例</strong></div>
+<div align="center"><strong>ImageSubtraction Component Execution Example</strong></div>
 
-  - どれかのコンポーネントを右クリックし、[Activate Systems]を選択します。
-  - 画面のウィンドウを動かしながら4つのCameraViewerの画面を表示させます。
+  - Right-click any component and select [Activate Systems].
+
+  - Arrange the windows so that all four CameraViewer windows are visible.
+
 <div align="center"><a href="compexec.png"><img src="compexec.png" width="100%;"></a></div>
-<div align="center"><strong>ImageSubtraction出力画像</strong></div>
-  - マウスをcapture_imageのウィンドウから外に移動するとそのタイミングで背景画面が取り込まれ、それがback_imageに表示されます。他の画面もどうなるか確認してください。
+<div align="center"><strong>ImageSubtraction Output Images</strong></div>
 
-なお、コンフィギュレーション・パラメータとして以下のようなものが設定可能です。
+  - Move the mouse cursor out of the capture_image window. At that moment, the background image is captured and displayed in back_image. Observe how the other windows change as well.
+
+The following configuration parameters can be set.
+
 <table class="table-alt">
   <tr>
-    <th>パラメータ名</th>
-    <th>意味</th>
+    <th>Parameter Name</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>control_mode</td>
-    <td>bとmが選択でき、bの時はkeyイベントに伴いバックグラウンドイメージの取り込みが行われ、mの時は画素ごとに閾値を決めるDYNAMIC_MODEと画面全体で一つの閾値を使うCONSTANT_MODEが切り替わります。</td>
+    <td>Either <code>b</code> or <code>m</code> can be selected. When <code>b</code> is selected, a background image is captured in response to a key event. When <code>m</code> is selected, the mode switches between DYNAMIC_MODE, which determines a threshold for each pixel, and CONSTANT_MODE, which uses a single threshold value for the entire image.</td>
   </tr>
   <tr>
     <td>image_height</td>
-    <td>縦方向の画素数を指定しますが、このサンプルでは機能しません。</td>
+    <td>Specifies the vertical pixel count. This parameter is not functional in this sample.</td>
   </tr>
   <tr>
     <td>image_width</td>
-    <td>横方向の画素数を指定しますが、このサンプルでは機能しません。</td>
+    <td>Specifies the horizontal pixel count. This parameter is not functional in this sample.</td>
   </tr>
   <tr>
     <td>threshold_coefficient</td>
-    <td>DYNAMIC_MODEで使う係数</td>
+    <td>Coefficient used in DYNAMIC_MODE.</td>
   </tr>
   <tr>
     <td>constant_threshold</td>
-    <td>CONSTANT_MODEで使う閾値</td>
+    <td>Threshold value used in CONSTANT_MODE.</td>
   </tr>
 </table>
-
--------jp page!!-------

@@ -4,7 +4,9 @@ layout: page
 title: Raspbianへのインストール
 
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Titile: Raspbianへのインストール -->
 <div align="right"><a href="Raspberry_Pi_Logo.svg_.png"><img src="Raspberry_Pi_Logo.svg_.png" width="15%; margin:10px;" align="right"></a></div>
@@ -82,7 +84,7 @@ OpenRTM-aistを開発・実行するために必要なパッケージをもれ�
 
 でインストールできます。
 
-一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)」のページをご確認ください。
+一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script)」のページをご確認ください。
 
 ### apt-getを使う方法
 
@@ -117,7 +119,7 @@ http://www.debian.org/doc/manuals/apt-howto/ch-apt-get.ja.html#s-pin
 を参照してください。
 
 ## rtshellのインストール
-rtshellはPythonのプログラムのため、OpenRTM-Pythonのインストールが必要です。OpenRTM-aist(Python版)のインストールでの[Raspbianへのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/python_1_2/raspbian_python_1_2)のページの手順を実行してください。
+rtshellはPythonのプログラムのため、OpenRTM-Pythonのインストールが必要です。OpenRTM-aist(Python版)のインストールでの[Raspbianへのインストール]({{ site.baseurl }}/en/doc/installation/install_1_2/python_1_2/raspbian_python_1_2)のページの手順を実行してください。
 
 ## インストールの確認
 
@@ -418,4 +420,4 @@ openrtm-aist-docには、日本語と英語のクラスリファレンス、IDL�
 
 
 
--------jp page!!-------
+

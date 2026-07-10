@@ -2,50 +2,94 @@
 layout: page
 title: "TkMotorPosComp/SliderComp"
 ---
--------jp page!!-------
 
 <!-- Title: TkMotorComp/SliderComp -->
 
 #contents
 
 ## TkMotorPosComp
-このサンプルは、OpenRTM-aistのPython版に付属しています。
-C++版、Java版には付属していませんのでご注意ください。
 
-### 概要
-GUI画面を持ったRTコンポーネントのサンプルです。TkMotorPosComp.batを実行することでサンプル・コンポーネントが起動します。TkMotorCompがInPortへの入力で回転速度を制御するのに対して本コンポーネントは回転角をInPortへの入力で制御します。
+This sample is included with the Python edition of OpenRTM-aist.
 
-### 起動画面
+Please note that it is not included with the C++ or Java editions.
+
+### Overview
+
+This is a sample RT Component with a GUI interface. The sample component can be started by running:
+
+```text
+TkMotorPosComp.bat
+```
+
+Unlike TkMotorComp, which controls rotational speed through InPort input values, this component controls the rotational angle through InPort input values.
+
+### Startup Screen
 
 <div align="center"><a href="tkmotorposcomp.png"><img src="tkmotorposcomp.png" width="70%;"></a></div>
-<div align="center"><strong>TkMotorPosComp実行例</strong></div>
+<div align="center"><strong>TkMotorPosComp Execution Example</strong></div>
+
+---
 
 ## SliderComp
-このサンプルは、OpenRTM-aistのPython版に付属しています。
-C++版、Java版には付属していませんのでご注意ください。
 
-### 概要
-GUI画面を持ったRTコンポーネントのサンプルです。SliderComp.batを実行することでサンプル・コンポーネントが起動します。（以下の画面は、Windowsで動作させた場合のものです。）
+This sample is included with the Python edition of OpenRTM-aist.
 
-### 起動画面
+Please note that it is not included with the C++ or Java editions.
+
+### Overview
+
+This is a sample RT Component with a GUI interface. The sample component can be started by running:
+
+```text
+SliderComp.bat
+```
+
+(The screen shown below is from a Windows environment.)
+
+### Startup Screen
 
 <div align="center"><a href="slidercompN.png"><img src="slidercompN.png" width="70%;"></a></div>
-<div align="center"><strong>SliderComp実行例</strong></div>
+<div align="center"><strong>SliderComp Execution Example</strong></div>
 
-## システム構築
+---
+
+## System Configuration
+
 <div align="center"><a href="RTSE_Slider_MotorPos.png"><img src="RTSE_Slider_MotorPos.png" width="70%;"></a></div>
-<div align="center"><strong>RTSystemEditor上のSliderCompとTkMotorPosComp</strong></div>
+<div align="center"><strong>SliderComp and TkMotorPosComp in RTSystemEditor</strong></div>
 
-### 使い方
-SliderCompとTkMotorPosCompでスライドノブでモータの回転の制御をする環境をGUI上でシミュレーションします。
+### Usage
 
-- 手順
-  - RTSystemEditorを起動し、新規SystemEditorを開きます。RTSystemEditorの使用方法の詳細については[RTSystemEditor]({{ site.baseurl }}/ja/doc/toolmanuals/rtsystemeditor-1_2_0)を参照
-  - SliderComp.bat、TkMotorPosComp.bat、両コンポーネントを起動します。
-  - RTSystemEditorのName Service Viewに両コンポーネントが表示されるので、それらをSystemEditor上にドラッグします。
-  - 両コンポーネントの対応ポートを結びます。(上図RTSystemEditor実行例を参照)
-  - どちらかのコンポーネントを右クリックし、[Activate Systems]を選択します。
-  - TkMotorPosCompのGUI上でモータで駆動される円盤を模したものが表示され、その回転角が、SliderCompのGUI上の上下スライドノブで制御できるのを確認してください。それぞれ6つのノブと6つのモータの回転を模しています。
+SliderComp and TkMotorPosComp provide a GUI-based simulation environment for controlling motor rotation angles using slider controls.
 
+- Procedure
 
--------jp page!!-------
+  - Start RTSystemEditor and open a new SystemEditor.
+
+    For details on using RTSystemEditor, refer to:
+
+    [RTSystemEditor]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_2_0)
+
+  - Start both components:
+
+    ```text
+    SliderComp.bat
+    TkMotorPosComp.bat
+    ```
+
+  - Both components will appear in the Name Service View of RTSystemEditor. Drag them onto the SystemEditor.
+
+  - Connect the corresponding ports of the two components. (Refer to the RTSystemEditor example shown above.)
+
+  - Right-click either component and select:
+
+    ```text
+    [Activate Systems]
+    ```
+
+  - In the TkMotorPosComp GUI, disks representing motor-driven actuators will be displayed.
+
+  - Verify that the rotational angle of each disk can be controlled using the vertical slider knobs in the SliderComp GUI.
+
+  - The six slider knobs correspond to six simulated motors, each controlling the rotational angle of its corresponding disk.
+

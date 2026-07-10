@@ -1,140 +1,136 @@
 ---
 layout: page
-title: ビュー（マネージャコントロールビュー編）
+title: Views (Manager Control View)
 ---
--------jp page!!-------
 <!-- Title: ビュー（マネージャコントロールビュー編） -->
 <!-- #contents -->
 
-ここではマネージャコントロールビューについて説明します。
+This section explains the Manager Control View.
 <br>
 
 <div align="center"><a href="fig12ManagerControlView.png"><img src="fig12ManagerControlView.png" width="70%;"></a></div>
-<div align="center"><strong>マネージャコントロールビューの位置</strong></div>
+<div align="center"><strong>Location of the Manager Control View</strong></div>
 <br>
 
-ネームサービスビューでマネージャを選択すると、マネージャコントロールビューがアクティブになり、選択されたマネージャを制御できるようになります。
+When a manager is selected in the Name Service View, the Manager Control View becomes active, and the selected manager can be controlled.
 <br>
 
 <div align="center"><a href="fig13ManagerControlView.png"><img src="fig13ManagerControlView.png" width="100%;"></a></div>
-<div align="center"><strong>マネージャコントロールビュー</strong></div>
+<div align="center"><strong>Manager Control View</strong></div>
 <br>
 
-<div align="center"><strong>マネージャコントロールビューの画面構成</strong></div>
+<div align="center"><strong>Screen Layout of the Manager Control View</strong></div>
 <table class="table-alt">
   <tr>
     <th>No.</th>
-    <th>説明</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>①</td>
-    <td>ロード可能モジュール一覧表示ボタン。</td>
+    <td>Button for displaying the list of loadable modules.</td>
   </tr>
   <tr>
     <td>②</td>
-    <td>ロード済みモジュール一覧表示ボタン。</td>
+    <td>Button for displaying the list of loaded modules.</td>
   </tr>
   <tr>
     <td>③</td>
-    <td>コンポーネント一覧表示ボタン。</td>
+    <td>Button for displaying the component list.</td>
   </tr>
   <tr>
     <td>④</td>
-    <td>コンポーネント生成ボタン。<br>コンポーネント作成ダイアログを開き、新しくコンポーネントを生成します。生成されたコンポーネントは③のコンポーネント一覧表示で表示されます。</td>
+    <td>Component creation button.<br>Opens the component creation dialog and creates a new component. The created component is displayed in the component list display in ③.</td>
   </tr>
   <tr>
     <td>⑤</td>
-    <td>マネージャ複製ボタン。新しいマネージャを起動します。※現在、仕様未定のため使用不可</td>
+    <td>Manager duplication button. Starts a new manager. * Currently unavailable because the specification has not yet been determined.</td>
   </tr>
   <tr>
     <td>⑥</td>
-    <td>マネージャ終了ボタン。選択中のマネージャを終了します。※現在、仕様未定のため使用不可</td>
+    <td>Manager termination button. Terminates the selected manager. * Currently unavailable because the specification has not yet been determined.</td>
   </tr>
   <tr>
     <td>⑦</td>
-    <td>モジュール、およびコンポーネントの一覧を表示するテーブル。</td>
+    <td>Table that displays lists of modules and components.</td>
   </tr>
   <tr>
     <td>⑧</td>
-    <td>モジュールを URL 指定でロードする場合に URL を指定します。</td>
+    <td>Specifies the URL when loading a module by specifying a URL.</td>
   </tr>
   <tr>
     <td>⑨</td>
-    <td>モジュールのロード、アンロードボタン。<br>⑦のテーブルで選択中のモジュール、もしくは URL で指定したモジュールをロード、アンロードします。</td>
+    <td>Module load and unload buttons.<br>Loads or unloads the module selected in the table in ⑦, or the module specified by URL.</td>
   </tr>
 </table>
 
-マネージャにモジュールをロードするには [Loadable Modules] ボタンをクリックし、表示されたロード可能モジュールを選択すると、[Load] ボタンが有効になり、クリックするとモジュールがロードされます。<br>
-また、「URL:」のテキストボックスにモジュールの URL を入力して [Load] ボタンをクリックすることにより、URL 指定でモジュールを追加することもできます。
+To load a module into the manager, click the [Loadable Modules] button. When you select a displayed loadable module, the [Load] button becomes enabled, and clicking it loads the module.<br>
+You can also add a module by specifying a URL by entering the module URL in the "URL:" text box and clicking the [Load] button.
 <br>
 
 <div align="center"><a href="fig14LoadModule.png"><img src="fig14LoadModule.png" width="100%;"></a></div>
-<div align="center"><strong>モジュールのロード</strong></div>
+<div align="center"><strong>Loading a Module</strong></div>
 <br>
 
-モジュールをアンロードするには [Loaded Modules] ボタンをクリックし、表示されたロード済みモジュールを選択すると、[Unload] ボタンが有効になり、クリックするとモジュールがアンロードされます。
+To unload a module, click the [Loaded Modules] button. When you select a displayed loaded module, the [Unload] button becomes enabled, and clicking it unloads the module.
 <br>
 
 <div align="center"><a href="fig15UnLoadModule.png"><img src="fig15UnLoadModule.png" width="100%;"></a></div>
-<div align="center"><strong>モジュールのアンロード</strong></div>
+<div align="center"><strong>Unloading a Module</strong></div>
 <br>
 
-新しくコンポーネントを生成するには [Create] ボタンをクリックして、コンポーネント生成ダイアログを開き、生成するコンポーネントの種別を選択し、[OK] をクリックするとコンポーネントが生成されます。<br>
-生成されたコンポーネントはマネージャによってネームサービスに登録され、[Active Components] ボタンで表示されるコンポーネント一覧に表示されるようになります。
+To create a new component, click the [Create] button to open the component creation dialog, select the type of component to create, and click [OK]. The component is then created.<br>
+The created component is registered with the name service by the manager and appears in the component list displayed by the [Active Components] button.
 <br>
 
 <div align="center"><a href="fig16ComponentDialog.png"><img src="fig16ComponentDialog.png" width="60%;"></a></div>
-<div align="center"><strong>コンポーネント生成ダイアログ</strong></div>
+<div align="center"><strong>Component Creation Dialog</strong></div>
 <br>
 
-コンポーネントの種別は、マネージャにロード済みのモジュールで定義されているコンポーネントから選択します。<br>
-Parameter にはコンポーネント生成パラメーターを指定することができ、「param1=value1&param2=value2」の形式で記述します。以下の共通パラメーターは、すべてのコンポーネントで設定可能です。
+The component type is selected from the components defined in modules already loaded into the manager.<br>
+In Parameter, component creation parameters can be specified in the format "param1=value1&param2=value2". The following common parameters can be set for all components.
 <br>
 
-<div align="center"><strong>コンポーネント生成の共通パラメーター</strong></div>
+<div align="center"><strong>Common Parameters for Component Creation</strong></div>
 <table class="table-alt">
   <tr>
-    <th>パラメーター名</th>
-    <th>説明</th>
+    <th>Parameter Name</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>instance_name</td>
-    <td>コンポーネントのインスタンス名。<br>指定しない場合はコンポーネント種別 (type_name)に通番を付与</td>
+    <td>Instance name of the component.<br>If not specified, a serial number is appended to the component type (type_name).</td>
   </tr>
   <tr>
     <td>type_name</td>
-    <td>コンポーネントの種別</td>
+    <td>Component type</td>
   </tr>
   <tr>
     <td>description</td>
-    <td>コンポーネントの説明</td>
+    <td>Component description</td>
   </tr>
   <tr>
     <td>version</td>
-    <td>コンポーネントのバージョン</td>
+    <td>Component version</td>
   </tr>
   <tr>
     <td>vendor</td>
-    <td>コンポーネントの提供元</td>
+    <td>Component provider</td>
   </tr>
   <tr>
     <td>category</td>
-    <td>コンポーネントのカテゴリ</td>
+    <td>Component category</td>
   </tr>
 </table>
 
 <br>
-また、コンポーネント生成パラメーターで ConfigurationSet の値も指定することができます。<br>
-ConfigurationSet のパラメーターは「conf.NNNN.PPPP=VVVV」の形式で、NNNN には ConfigurationSet 名、PPPP にはパラメーター名、VVVV には設定値をそれぞれ指定します。<br>
-例として、ConsoleIn のコンポーネントを生成し、mode1という名前の ConfigurationSet を作成し、input_mode、input_cycle というパラメーターを指定する場合は以下のようになります。
+You can also specify ConfigurationSet values using component creation parameters.<br>
+ConfigurationSet parameters are specified in the format "conf.NNNN.PPPP=VVVV", where NNNN is the ConfigurationSet name, PPPP is the parameter name, and VVVV is the setting value.<br>
+For example, to create a ConsoleIn component, create a ConfigurationSet named mode1, and specify the parameters input_mode and input_cycle, the settings are as follows.
 <br>
 
 <div align="center"><a href="fig17ConfigurationSet.png"><img src="fig17ConfigurationSet.png" width="100%;"></a></div>
-<div align="center"><strong>コンポーネント生成時に ConfigurationSet パラメーターを指定</strong></div>
+<div align="center"><strong>Specifying ConfigurationSet Parameters When Creating a Component</strong></div>
 <br>
 
-その他にも、コンポーネントによって任意のパラメーターを指定することができます。
+In addition, arbitrary parameters can be specified depending on the component.
 <br>
-
-
--------jp page!!-------

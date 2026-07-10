@@ -91,7 +91,7 @@ In most cases, restarting OpenRTP resolves the problem.
 
 RTSystemEditor may become unresponsive, or it may eventually recover after some time while only one port changes color.
 
-In most cases, this is caused by [communication being blocked by a firewall or similar software](/ja/node/7103#firewall).
+In most cases, this is caused by [communication being blocked by a firewall or similar software](/en/node/7103#firewall).
 
 If that does not resolve the issue, restart the RTCs running on the Raspberry Pi or EV3.
 

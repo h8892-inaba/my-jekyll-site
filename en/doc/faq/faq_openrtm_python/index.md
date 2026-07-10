@@ -1,30 +1,29 @@
 ---
 layout: page
-title: OpenRTM-aist (Python版) に関する FAQ
+title: FAQ on OpenRTM-aist (Python Version)
 ---
--------jp page!!-------
 
 <!-- Title: OpenRTM-aist (Python版) に関する FAQ -->
 #contents(3)
 
 ## Windows
 
-### ネームサーバーのコンソール画面が開かない
-- 原因1：omniORBpy がインストールされていない
-openrtm.org が提供する msi インストーラーには omniORBpy が含まれていますが、手動でインストールした場合には、omniORBpy が入っていない場合も考えられますので、omniORBpy がインストールされているか確認してください。
+### The name server console screen does not open
+- Cause 1: omniORBpy is not installed
+The msi installer provided by openrtm.org includes omniORBpy, but if you installed it manually, omniORBpy may not be installed, so check whether omniORBpy is installed.
 
 <br>
 
-- 原因2：py ファイルの関連付けが違っている
-ネームサーバーを起動するファイルは、C:\Program Files (x86)\OpenRTM-aist\1.1\bin\rtm-naming.py です。（32bit 版 msi でインストールした場合）<br>
-このディレクトリーでコンソール画面を開き、python rtm-naming.py を実行するとネームサーバーは起動するが、rtm-naming.py をダブルクリックして起動できない場合はインストールしている python を確認してください。<br>
-Python の 32bit版、64bit版の両方をインストールしている場合、先にインストールしたものが py ファイルに関連付けられるようなので、OpenRTM-aist-Python のインストーラーと同じアーキテクチャの Python を先にインストールすると解決するかもしれません。
+- Cause 2: The association of py files is different
+The file that starts the name server is C:\Program Files (x86)\OpenRTM-aist\1.1\bin\rtm-naming.py. (When installed with the 32-bit version msi)<br>
+If you open a console screen in this directory and execute python rtm-naming.py, the name server starts, but if it cannot be started by double-clicking rtm-naming.py, check the installed python.<br>
+If both the 32-bit and 64-bit versions of Python are installed, it seems that the one installed first is associated with py files, so installing Python with the same architecture as the OpenRTM-aist-Python installer first may solve the problem.
 
 <br>
 
-- 原因3：ホスト名やアドレス設定の問題で起動できない
-利用している PC の IPアドレスを omniNames.exe  に設定する必要があります。
-環境変数 OMNIORB_USEHOSTNAME を以下のように設定します (以下は自ホストの IPアドレスが192.168.0.11の場合の例)。
+- Cause 3: It cannot be started due to a problem with the host name or address settings
+You need to set the IP address of the PC you are using in omniNames.exe.
+Set the environment variable OMNIORB_USEHOSTNAME as follows (the following is an example where the IP address of the local host is 192.168.0.11).
 
 ```
  変数名(N): OMNIORB_USEHOSTNAME
@@ -34,24 +33,24 @@ Python の 32bit版、64bit版の両方をインストールしている場合�
 <br>
 <br>
 
-### サンプルコンポーネントが起動しない
-rtc.conf の設定に問題があります。rtc.conf の設定を以下のように設定し直して確認してください。
+### Sample components do not start
+There is a problem with the rtc.conf settings. Reset the rtc.conf settings as follows and check again.
 ```
  corba.nameservers: localhost
 ```
-例えば、corba.endpoint/corba.endpoints などの設定が現在実行中の PC のホストアドレスとミスマッチを起こしている場合などは、CORBA が異常終了します。
+For example, if settings such as corba.endpoint/corba.endpoints do not match the host address of the PC currently running, CORBA will terminate abnormally.
 <br>
 <br>
 
 &aname(pythonusage);
-### rtm-naming.py を実行したら、omniNames で "usage:" と表示される  
-**現象：rtm-naming.pyを"C**: \Documents and Settings\Hoge\My Documents"等、空白が入っているディレクトリーから実行した場合、omniNamesは "usage:" を表示して終了してしまいます。
+### When rtm-naming.py is executed, omniNames displays "usage:"  
+**Symptom: When rtm-naming.py is executed from a directory containing spaces, such as "C**: \Documents and Settings\Hoge\My Documents", omniNames displays "usage:" and exits.
 
-:対応方法：上記現象が発生した場合、下記のどちらかの方法で対処してください。
+:Solution: If the above symptom occurs, use one of the following methods to deal with it.
 
-**対処法その1：**C:\の直下(または、パス名に空白が入っていない場所)に"RTMNaming"等適当なフォルダーを作成し rtm-naming.py を実行してください。
+**Solution 1:** Create an appropriate folder such as "RTMNaming" directly under C:\ (or in a location where the path name does not contain spaces), and execute rtm-naming.py.
 
-**対処法その2：**C:\Python<version>\Lib\site-packages\OpenRTM\rtm-namingのrtm-naming.pyの48行目を下記のように編集してください。~
+**Solution 2:** Edit line 48 of rtm-naming.py in C:\Python<version>\Lib\site-packages\OpenRTM\rtm-naming as follows.~
 
 ```
  rtm-naming.py 48行目
@@ -61,30 +60,30 @@ rtc.conf の設定に問題があります。rtc.conf の設定を以下のよ�
 <br>
 
 &aname(pythonexe);
-### python.exeが起動しない  
-環境変数 Path に Python インストールフォルダーを追加しておいてください (C:\Python26など)。
+### python.exe does not start  
+Add the Python installation folder to the environment variable Path (such as C:\Python26).
 <br>
 <br>
 &aname(python);
-### Cygwin をインストールしている環境では python.exe が複数存在する場合がある 
-Cygwin をインストールしている環境では、Cygwin上にも python.exe が存在する場合があります。その場合は、通例 Cygwin上の python.exe へのサーチパスが優先されるよう設定されるため、環境変数 Path を適切に設定しているのにもかかわらず、今回導入したはずの Python とは違うバージョンの（すなわちCygwin上の）python.exe が起動してしまう場合があります。この場合、Python のバージョンの違いによる不具合が発生してしまいます。この問題は非常に原因が特定しづらいのが特徴です。このように Cygwin などをインストールしている環境で OpenRTM-aist Python版を使う場合は、該当バージョンの Pythonインストールフォルダーから python.exe が起動していることを確認してください。
+### In an environment where Cygwin is installed, multiple python.exe files may exist 
+In an environment where Cygwin is installed, python.exe may also exist on Cygwin. In that case, the search path to python.exe on Cygwin is usually set to take precedence, so even if the environment variable Path is set properly, a version of python.exe different from the Python that should have been installed this time (that is, the one on Cygwin) may start. In this case, problems due to differences in Python versions will occur. A characteristic of this problem is that it is very difficult to identify the cause. When using the Python version of OpenRTM-aist in an environment where Cygwin or similar software is installed, make sure that python.exe is being started from the Python installation folder of the relevant version.
 
-**確認方法の例：**「python -V」でバージョンを調べる、(Cygwinのある環境では）which python でどの python.exe が実行されているかを確認する...など
+**Example confirmation methods:** Check the version with "python -V"; in an environment with Cygwin, check which python.exe is being executed with which python; etc.
 
-**この障害が発見された場合の対処：**Pythonインストールフォルダー(C:\Python26など)を**システム環境変数 Path**（*ユーザー環境変数 Path ではなく）の**先頭に追加**することで解決できます。
+**Action when this problem is found:** It can be solved by adding the Python installation folder (such as C:\Python26) to the **beginning** of the **system environment variable Path** (not the *user environment variable Path*).
 <br>
 <br>
 
 &aname(MSVCerror);
-### 「MSVCP71.dll が見つからなかったため、…」というエラーで終了する 
-WINDOWS\system32フォルダー内に msvcp71.dll がないために発生するエラーです。msvcp71.dll を[こちら ](http://www.vector.co.jp/soft/win95/util/se435079.html)から入手してください。
+### It exits with the error "MSVCP71.dll was not found, ..." 
+This error occurs because msvcp71.dll is not in the WINDOWS\system32 folder. Obtain msvcp71.dll from [here ](http://www.vector.co.jp/soft/win95/util/se435079.html).
 <br>
 <br>
 
 &aname(rtc.conf);
-### 「Can't open file: ./rtc.conf」などと表示される
-:現象：RTコンポーネントの起動フォルダー（あるいはサーチパス上）に rtc.conf が見つからないため、起動できない状態です。
-この場合、次のように表示されます。
+### "Can't open file: ./rtc.conf" or similar is displayed
+:Symptom: rtc.conf cannot be found in the startup folder of the RT component (or on the search path), so it cannot be started.
+In this case, the following is displayed.
 ```
  Can't open file: ./rtc.conf
  Can't open file: /etc/rtc.conf
@@ -92,24 +91,22 @@ WINDOWS\system32フォルダー内に msvcp71.dll がないために発生する
  Can't open file: /usr/local/etc/rtc.conf
  Can't open file: /usr/local/etc/rtc/rtc.conf
 ```
-これは rtc.conf を捜すサーチパスがデフォルトの状態であり、上記の順番で探したが見つからないためこのような表示になります。
+This is because the search path for rtc.conf is in the default state, and it was searched in the order above but could not be found, so this display appears.
 
-:対応方法：
-これを避けるためには、たとえば~
+:Solution:
+To avoid this, create a file named rtc.conf with content such as the following:~
 ```
  corba.nameservers: localhost
  naming.formats: %n.rtc
 ```
-という内容のファイル rtc.conf を作成し、上記サーチパス上（通例はカレント＝コンポーネントと同じフォルダー）に配置します。
+and place it on the above search path (usually the current folder, that is, the same folder as the component).
 <br>
 <br>
 
-### コンポーネントがネームサービスに登録されない
-:原因：rtc.conf の改行コードが CRLF になっている可能性がある。
-以下のコマンドにて rtc.conf の確認を行い、CRLF という文字列が表示された場合、新たに rtc.conf の作成を行ってください。
+### The component is not registered with the name service
+:Cause: The line break code of rtc.conf may be CRLF.
+Check rtc.conf with the following command, and if the string CRLF is displayed, create rtc.conf again.
 ```
  $ file rtc.conf
 ```
 <br>
-
--------jp page!!-------

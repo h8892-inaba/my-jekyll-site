@@ -2,7 +2,9 @@
 layout: page
 title: Vine Linuxへのインストール
 ---
--------jp page!!-------
+<br>
+<a>No English version available.
+</a>
 
 <!-- Title: Vine Linuxへのインストール -->
 #contents
@@ -216,4 +218,4 @@ openrtm-aist-example にはスタンドアロン RTC、ローダブル RTC そ�
  /usr/share/OpenRTM-aist/examples/rtcs/ConsoleOut.so.0.0.0
 ```
 
--------jp page!!-------
+
