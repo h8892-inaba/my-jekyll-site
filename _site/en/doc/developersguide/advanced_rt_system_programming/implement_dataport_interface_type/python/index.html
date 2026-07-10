@@ -1,0 +1,1295 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Implementation Procedure for a Custom Interface Type (Python) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Implementation Procedure for a Custom Interface Type (Python)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Implementation Procedure for a Custom Interface Type (Python)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Implementation Procedure for a Custom Interface Type (Python)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Implementation Procedure for a Custom Interface Type (Python) <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#push-communication">Push Communication</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#pull-communication">Pull Communication</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#registering-the-custom-interface">Registering the Custom Interface</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#operation-check">Operation Check</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#part-33">Part 3/3</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#setting-options-at-connection">Setting Options at Connection</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: 独自インターフェース型の実装手順(Python) -->
+<p>#contents</p>
+
+<p>This page explains how to create a custom interface in Python.</p>
+
+<p>Since the non-essential parts are omitted in the following source code examples, please obtain the complete source code from the following repository.</p>
+
+<ul>
+  <li><a href="https://github.com/Nobu19800/openrtm_testinterface">https://github.com/Nobu19800/openrtm_testinterface</a></li>
+</ul>
+
+<h3 id="push-communication">Push Communication</h3>
+
+<p>To implement Push communication, implement TestInPortConsumer (InPortConsumer) and TestInPortProvider (InPortProvider).</p>
+
+<h4 id="implementing-inportconsumer">Implementing InPortConsumer</h4>
+
+<p>First, prepare the following Python file (TestInPortConsumer.py).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+</span>
+<span class="kn">import</span> <span class="nn">OpenRTM_aist</span>
+
+
+<span class="k">class</span> <span class="nc">TestInPortConsumer</span><span class="p">(</span>
+        <span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">InPortConsumer</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">prop</span><span class="p">.</span><span class="n">propertyNames</span><span class="p">():</span>
+            <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">PORT_OK</span>
+
+    <span class="k">def</span> <span class="nf">publishInterfaceProfile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">properties</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">subscribeInterface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">properties</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="k">def</span> <span class="nf">unsubscribeInterface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">properties</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">TestInPortConsumerInit</span><span class="p">():</span>
+    <span class="n">factory</span> <span class="o">=</span> <span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">InPortConsumerFactory</span><span class="p">.</span><span class="n">instance</span><span class="p">()</span>
+    <span class="n">factory</span><span class="p">.</span><span class="n">addFactory</span><span class="p">(</span><span class="s">"testif"</span><span class="p">,</span>
+                       <span class="n">TestInPortConsumer</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In this example, a custom interface that transfers data by reading from and writing to files is implemented here.</p>
+
+<p>First, the <strong>init</strong> function is called when the connector is initialized.
+The variable <strong>prop</strong> contains the connector connection information configured in RTSystemEditor and other tools.
+In the following example, the <strong>testif.filename</strong> parameter is obtained from <strong>prop</strong> and used as the file name.
+Since the <strong>init</strong> function may be called multiple times, this should be taken into consideration.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">prop</span><span class="p">.</span><span class="n">propertyNames</span><span class="p">():</span>
+        <span class="k">return</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="n">prop</span><span class="p">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">"testif.filename"</span><span class="p">,</span> <span class="s">"test.dat"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>put</strong> function is called when data is written.
+The variable <strong>data</strong> contains serialized data of type <strong>bytes</strong>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_filename</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fout</span><span class="p">:</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_dataid</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">fout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'L'</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">_dataid</span><span class="p">))</span>
+            <span class="n">fout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'L'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
+            <span class="n">fout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">except</span> <span class="nb">BaseException</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">PORT_ERROR</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">PORT_OK</span>
+</code></pre></div></div>
+
+<p>In this example, the data ID, data size, and byte stream are written to the file.
+Obtain the data size using the <strong>getDataLength</strong> function of the <strong>data</strong> variable, obtain the byte stream using the <strong>getBuffer</strong> function, and transfer the acquired data to InPortProvider by some method.</p>
+
+<p>The other functions generally do not require implementation. However, if additional information is set on the InPortProvider side, that information must be obtained in the <strong>subscribeInterface</strong> function.
+Since <strong>unsubscribeInterface</strong> is called when the connector is disconnected, describe any necessary cleanup processing related to <strong>subscribeInterface</strong> there.</p>
+
+<h4 id="implementing-inportprovider">Implementing InPortProvider</h4>
+
+<p>First, prepare the following Python file (TestInPortProvider.py).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+</span>
+<span class="kn">import</span> <span class="nn">OpenRTM_aist</span>
+
+
+<span class="k">class</span> <span class="nc">TestInPortProvider</span><span class="p">(</span><span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">InPortProvider</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">InPortProvider</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="p">.</span><span class="n">setInterfaceType</span><span class="p">(</span><span class="s">"testif"</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">exit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">prop</span><span class="p">.</span><span class="n">propertyNames</span><span class="p">():</span>
+            <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">setBuffer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">buffer</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">setListener</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">listeners</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">setConnector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connector</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_connector</span> <span class="o">=</span> <span class="n">connector</span>
+
+
+<span class="k">def</span> <span class="nf">TestInPortProviderInit</span><span class="p">():</span>
+    <span class="n">factory</span> <span class="o">=</span> <span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">InPortProviderFactory</span><span class="p">.</span><span class="n">instance</span><span class="p">()</span>
+    <span class="n">factory</span><span class="p">.</span><span class="n">addFactory</span><span class="p">(</span><span class="s">"testif"</span><span class="p">,</span>
+                       <span class="n">TestInPortProvider</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Processing is added here.
+In this example, the <strong>init</strong> function creates a thread that polls whether the specified file has been modified.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">prop</span><span class="p">.</span><span class="n">propertyNames</span><span class="p">():</span>
+        <span class="k">return</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">prop</span><span class="p">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">"testif.filename"</span><span class="p">,</span> <span class="s">"test.dat"</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">polling</span><span class="p">():</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_running</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">lastid</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="p">.</span><span class="n">_running</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">_connector</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="nb">id</span> <span class="o">=</span> <span class="n">struct</span><span class="p">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">"L"</span><span class="p">,</span> <span class="n">fin</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s">"L"</span><span class="p">)))[</span><span class="mi">0</span><span class="p">]</span>
+                            <span class="k">if</span> <span class="nb">id</span> <span class="o">!=</span> <span class="n">lastid</span><span class="p">:</span>
+                                <span class="n">lastid</span> <span class="o">=</span> <span class="nb">id</span>
+                                <span class="n">size</span> <span class="o">=</span> <span class="n">struct</span><span class="p">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">"L"</span><span class="p">,</span> <span class="n">fin</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s">"L"</span><span class="p">)))[</span><span class="mi">0</span><span class="p">]</span>
+                                <span class="k">if</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                                    <span class="n">data</span> <span class="o">=</span> <span class="n">fin</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+                                    <span class="bp">self</span><span class="p">.</span><span class="n">_connector</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                        <span class="k">except</span> <span class="nb">BaseException</span><span class="p">:</span>
+                            <span class="k">pass</span>
+
+    <span class="bp">self</span><span class="p">.</span><span class="n">_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="p">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">polling</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">_thread</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>After reading the data from the file, the <strong>write</strong> function of <strong>m_connector</strong> is called to pass the data to the InPortConnector.
+By writing the data from InPortConsumer to a file and reading it from the file in InPortProvider, data transfer has been implemented.</p>
+
+<h3 id="pull-communication">Pull Communication</h3>
+
+<p>To implement Pull communication, implement TestOutPortConsumer (OutPortConsumer) and TestOutPortProvider (OutPortProvider).
+If you implement only Push communication, you can skip this section.</p>
+
+<h4 id="implementing-outportconsumer">Implementing OutPortConsumer</h4>
+
+<p>First, prepare the following Python file (TestOutPortConsumer.py).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+</span>
+<span class="kn">import</span> <span class="nn">OpenRTM_aist</span>
+
+
+<span class="k">class</span> <span class="nc">TestOutPortConsumer</span><span class="p">(</span>
+        <span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">OutPortConsumer</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">prop</span><span class="p">.</span><span class="n">propertyNames</span><span class="p">():</span>
+            <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">setBuffer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">buffer</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">setListener</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">listeners</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">PORT_ERROR</span><span class="p">,</span> <span class="s">""</span>
+
+    <span class="k">def</span> <span class="nf">subscribeInterface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">properties</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="k">def</span> <span class="nf">unsubscribeInterface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">properties</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">TestOutPortConsumerInit</span><span class="p">():</span>
+    <span class="n">factory</span> <span class="o">=</span> <span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">OutPortConsumerFactory</span><span class="p">.</span><span class="n">instance</span><span class="p">()</span>
+    <span class="n">factory</span><span class="p">.</span><span class="n">addFactory</span><span class="p">(</span><span class="s">"testif"</span><span class="p">,</span>
+                       <span class="n">TestOutPortConsumer</span><span class="p">)</span>
+    <span class="k">return</span>
+</code></pre></div></div>
+
+<p>In this example, the file names used for reading and writing are specified in the <strong>init</strong> function.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">prop</span><span class="p">.</span><span class="n">propertyNames</span><span class="p">():</span>
+        <span class="k">return</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">_filename_in</span> <span class="o">=</span> <span class="n">prop</span><span class="p">.</span><span class="n">getProperty</span><span class="p">(</span>
+        <span class="s">"testif.filename_in"</span><span class="p">,</span> <span class="s">"test_in.dat"</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">_filename_out</span> <span class="o">=</span> <span class="n">prop</span><span class="p">.</span><span class="n">getProperty</span><span class="p">(</span>
+        <span class="s">"testif.filename_out"</span><span class="p">,</span> <span class="s">"test_out.dat"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Processing is added here.
+In Pull communication, the <strong>get</strong> function is called when data is read. In the following example, the request ID is written to file A.
+Next, the data size and byte stream are read from file B and returned.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_filename_in</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fout</span><span class="p">:</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_dataid</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_dataid</span><span class="p">)</span>
+            <span class="n">fout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'L'</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">_dataid</span><span class="p">))</span>
+        <span class="k">except</span> <span class="nb">BaseException</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">PORT_ERROR</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_filename_out</span><span class="p">):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_filename_out</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="nb">id</span> <span class="o">=</span> <span class="n">struct</span><span class="p">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">"L"</span><span class="p">,</span> <span class="n">fin</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s">"L"</span><span class="p">)))[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="nb">id</span> <span class="o">==</span> <span class="bp">self</span><span class="p">.</span><span class="n">_dataid</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="p">.</span><span class="n">_dataid</span> <span class="o">=</span> <span class="nb">id</span>
+                        <span class="n">size</span> <span class="o">=</span> <span class="n">struct</span><span class="p">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">"L"</span><span class="p">,</span> <span class="n">fin</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s">"L"</span><span class="p">)))[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">data</span> <span class="o">=</span> <span class="n">fin</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+                            <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">PORT_OK</span><span class="p">,</span> <span class="n">data</span>
+                <span class="k">except</span> <span class="nb">BaseException</span><span class="p">:</span>
+                    <span class="k">pass</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">PORT_ERROR</span><span class="p">,</span> <span class="s">""</span>
+</code></pre></div></div>
+
+<h4 id="implementing-outportprovider">Implementing OutPortProvider</h4>
+
+<p>First, prepare the following Python file (TestOutPortProvider.py).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+</span>
+<span class="kn">import</span> <span class="nn">OpenRTM_aist</span>
+
+
+<span class="k">class</span> <span class="nc">TestOutPortProvider</span><span class="p">(</span><span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">OutPortProvider</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">OutPortProvider</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">setInterfaceType</span><span class="p">(</span><span class="s">"testif"</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="p">.</span><span class="n">_thread</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_running</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_connector</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">exit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">_running</span><span class="p">:</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">_running</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">_thread</span><span class="p">.</span><span class="n">join</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">prop</span><span class="p">.</span><span class="n">propertyNames</span><span class="p">():</span>
+            <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">setBuffer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">buffer</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">setListener</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">listeners</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">setConnector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connector</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_connector</span> <span class="o">=</span> <span class="n">connector</span>
+
+
+<span class="k">def</span> <span class="nf">TestOutPortProviderInit</span><span class="p">():</span>
+    <span class="n">factory</span> <span class="o">=</span> <span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">OutPortProviderFactory</span><span class="p">.</span><span class="n">instance</span><span class="p">()</span>
+    <span class="n">factory</span><span class="p">.</span><span class="n">addFactory</span><span class="p">(</span><span class="s">"testif"</span><span class="p">,</span>
+                       <span class="n">TestOutPortProvider</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Processing is added here.
+In the following example, the <strong>init</strong> function starts a thread that polls whether the file has been modified and writes data to another file when a change is detected.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">prop</span><span class="p">.</span><span class="n">propertyNames</span><span class="p">():</span>
+        <span class="k">return</span>
+
+    <span class="n">filename_in</span> <span class="o">=</span> <span class="n">prop</span><span class="p">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">"testif.filename_in"</span><span class="p">,</span> <span class="s">"test_in.dat"</span><span class="p">)</span>
+    <span class="n">filename_out</span> <span class="o">=</span> <span class="n">prop</span><span class="p">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">"testif.filename_out"</span><span class="p">,</span> <span class="s">"test_out.dat"</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">polling</span><span class="p">():</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_running</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">lastid</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="p">.</span><span class="n">_running</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">_connector</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename_in</span><span class="p">):</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename_in</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="nb">id</span> <span class="o">=</span> <span class="n">struct</span><span class="p">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">"L"</span><span class="p">,</span> <span class="n">fin</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s">"L"</span><span class="p">)))[</span><span class="mi">0</span><span class="p">]</span>
+                            <span class="k">if</span> <span class="nb">id</span> <span class="o">==</span> <span class="n">lastid</span><span class="p">:</span>
+                                <span class="k">continue</span>
+                        <span class="k">except</span> <span class="nb">BaseException</span><span class="p">:</span>
+                            <span class="k">continue</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename_out</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fout</span><span class="p">:</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="n">fout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'L'</span><span class="p">,</span> <span class="nb">id</span><span class="p">))</span>
+                            <span class="n">ret</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_connector</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+                            <span class="n">fout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'L'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
+                            <span class="k">if</span> <span class="n">ret</span> <span class="o">==</span> <span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">BufferStatus</span><span class="p">.</span><span class="n">BUFFER_OK</span><span class="p">:</span>
+                                <span class="n">fout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                                <span class="n">lastid</span> <span class="o">=</span> <span class="nb">id</span>
+                        <span class="k">except</span> <span class="nb">BaseException</span><span class="p">:</span>
+                            <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>First, the <strong>read</strong> function of <strong>m_connector</strong> is called to obtain the data to be transferred from OutPortConnector.
+The data size is obtained with the <strong>getDataLength</strong> function, and the byte stream data is obtained with the <strong>getBuffer</strong> function and written to the file.</p>
+
+<p>As a result, after OutPortConsumer writes the data ID to file A, OutPortProvider reads the ID from file A and determines whether it matches the previously read data ID.
+If it determines that the data is new, it writes the data to file B, and OutPortConsumer determines whether file B contains new data and passes the data to OutPortConnector.</p>
+
+<h3 id="registering-the-custom-interface">Registering the Custom Interface</h3>
+
+<p>To make the custom interface implemented so far available, register it with the factory.
+Create <strong>TestIF.py</strong> with the following contents.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# -*- Python -*-
+</span>
+
+<span class="kn">import</span> <span class="nn">TestInPortConsumer</span>
+<span class="kn">import</span> <span class="nn">TestInPortProvider</span>
+<span class="kn">import</span> <span class="nn">TestOutPortConsumer</span>
+<span class="kn">import</span> <span class="nn">TestOutPortProvider</span>
+
+
+<span class="k">def</span> <span class="nf">TestIFInit</span><span class="p">(</span><span class="n">mgr</span><span class="p">):</span>
+    <span class="n">TestInPortConsumer</span><span class="p">.</span><span class="n">TestInPortConsumerInit</span><span class="p">()</span>
+    <span class="n">TestInPortProvider</span><span class="p">.</span><span class="n">TestInPortProviderInit</span><span class="p">()</span>
+    <span class="n">TestOutPortConsumer</span><span class="p">.</span><span class="n">TestOutPortConsumerInit</span><span class="p">()</span>
+    <span class="n">TestOutPortProvider</span><span class="p">.</span><span class="n">TestOutPortProviderInit</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>In the TestInPortProviderInit, TestInPortConsumerInit, TestOutPortProviderInit, and TestOutPortConsumerInit functions, the implemented custom interface is registered using the <strong>addFactory</strong> function of <strong>InPortProviderFactory</strong>, <strong>InPortConsumerFactory</strong>, <strong>OutPortProviderFactory</strong>, and <strong>OutPortConsumerFactory</strong>.
+It can be used by specifying the name <strong>testif</strong> when connecting ports.
+The TestIFInit function is called when the Python module is loaded. For example, if the file is 〇〇.py, name the initialization function <strong>〇〇Init</strong>, using the Python file name + Init.
+If you implement only Push communication or only Pull communication, register only the required modules.</p>
+
+<h3 id="operation-check">Operation Check</h3>
+
+<p>Create the following rtc.conf.
+Specify the path to the folder containing TestIF.py in ${TestIF_DIR}.</p>
+
+<h2 id="part-33">Part 3/3</h2>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">manager</span>.<span class="n">modules</span>.<span class="n">load_path</span>: .
+<span class="n">manager</span>.<span class="n">modules</span>.<span class="n">preload</span>: <span class="n">TestIF</span>.<span class="n">py</span>
+</code></pre></div></div>
+
+<p>Start the ConsoleIn and ConsoleOut sample components by specifying the created rtc.conf. This causes OpenRTM-aist to load TestIF.py.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python ConsoleIn.py <span class="nt">-f</span> rtc.conf
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python ConsoleOut.py <span class="nt">-f</span> rtc.conf
+</code></pre></div></div>
+
+<p>When you try to connect data ports in RTSystemEditor, <strong>testif</strong> can be selected as the Interface Type, as shown below.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="if4.png"><img src="if4.png" width="40%;" /></a></div>
+
+<p><br /></p>
+
+<p>When you select <strong>testif</strong> as the Interface Type and connect the ports, you can confirm that data transfer using the implemented file reading and writing works.</p>
+
+<p>When checking the operation of Pull communication, the <strong>isNew</strong> function of InPort cannot be used in Pull communication, so it is not possible to check whether new data exists.
+Therefore, you need to comment out the part that executes the <strong>isNew</strong> function in the ConsoleOut component.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># if self._inport.isNew():
+</span></code></pre></div></div>
+
+<h3 id="setting-options-at-connection">Setting Options at Connection</h3>
+
+<p>In this example, the file names used for reading and writing can be specified with the options <strong>testif.filename</strong>, <strong>testif.filename_in</strong>, and <strong>testif.filename_out</strong>. You can also add settings so that these option values are obtained from the data port profile. However, this may not be available in the release version of OpenRTM-aist 2.0, so build OpenRTM-aist from source code.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">testifpush_option</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">"filename_in.__value__"</span><span class="p">,</span> <span class="s">"test_in.dat"</span><span class="p">,</span>
+    <span class="s">"filename_in.__widget__"</span><span class="p">,</span> <span class="s">"text"</span><span class="p">,</span>
+    <span class="s">"filename_in.__constraint__"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">,</span>
+    <span class="s">"filename_out.__value__"</span><span class="p">,</span> <span class="s">"test_out.dat"</span><span class="p">,</span>
+    <span class="s">"filename_out.__widget__"</span><span class="p">,</span> <span class="s">"text"</span><span class="p">,</span>
+    <span class="s">"filename_out.__constraint__"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">,</span>
+    <span class="s">""</span>
+<span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">TestInPortProviderInit</span><span class="p">():</span>
+    <span class="n">prop</span> <span class="o">=</span> <span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">Properties</span><span class="p">(</span><span class="n">defaults_str</span><span class="o">=</span><span class="n">testifpush_option</span><span class="p">)</span>
+    <span class="n">factory</span> <span class="o">=</span> <span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">InPortProviderFactory</span><span class="p">.</span><span class="n">instance</span><span class="p">()</span>
+    <span class="n">factory</span><span class="p">.</span><span class="n">addFactory</span><span class="p">(</span><span class="s">"testif"</span><span class="p">,</span>
+                       <span class="n">TestInPortProvider</span><span class="p">,</span>
+                       <span class="n">prop</span><span class="p">)</span>
+</code></pre></div></div>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

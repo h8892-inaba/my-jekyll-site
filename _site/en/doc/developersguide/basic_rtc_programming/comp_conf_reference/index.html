@@ -1,0 +1,1846 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>comp_conf_reference | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="comp_conf_reference" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/developersguide/basic_rtc_programming/comp_conf_reference/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/developersguide/basic_rtc_programming/comp_conf_reference/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="comp_conf_reference" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"comp_conf_reference","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/developersguide/basic_rtc_programming/comp_conf_reference/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/comp_conf_reference/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/comp_conf_reference/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>comp_conf_reference <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/basic_rtc_programming/comp_conf_reference/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/developersguide/basic_rtc_programming/comp_conf_reference/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#basic-settings">Basic Settings</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#basic-profile">Basic Profile</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#execution-context-options">Execution Context Options</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtperiodictype">exec_cxt.periodic.type</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtperiodicrate">exec_cxt.periodic.rate</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_transition">exec_cxt.sync_transition</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_activation">exec_cxt.sync_activation</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_deactivation">exec_cxt.sync_deactivation</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtsync_reset">exec_cxt.sync_reset</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxttransition_timeout">exec_cxt.transition_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtactivation_timeout">exec_cxt.activation_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtdeactivation_timeout">exec_cxt.deactivation_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtreset_timeout">exec_cxt.reset_timeout</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exec_cxtcpu_affinity">exec_cxt.cpu_affinity</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#execution_contexts">execution_contexts</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ecrate">ec.<EC name=""</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ecsynch_transition">ec.<EC name=""</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ectransition_timeout">ec.<EC name=""</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#port-settings">Port Settings</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#inport-options">InPort Options</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#outport-options">OutPort Options</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#service-port-options">Service Port Options</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#rtsystemeditor-configuration-set-gui-settings">RTSystemEditor Configuration Set GUI Settings</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#list-of-available-widgets-widget">List of Available Widgets [<u</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#list-of-available-constraints-constraints">List of Available Constraints [<u</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<p>#contents(3)</p>
+
+<p>This document explains the setting items of the file used to configure each component.
+This file can be given any name, but for convenience it is referred to as component.conf.
+component.conf is specified in rtc.conf as follows, using an option whose key is the component category name and component name or instance name.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;コンポーネントカテゴリ名&gt;.&lt;コンポーネント名&gt;.config_file: &lt;任意のファイル名&gt;.conf
+ or
+ &lt;コンポーネントカテゴリ名&gt;.&lt;コンポーネントインスタンス名&gt;.config_file: &lt;任意のファイル名&gt;.conf
+</code></pre></div></div>
+
+<p>Using the ConsoleIn component included in the samples as an example, the actual specification method is shown below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> example.ConsoleIn.config_file: consolein.conf ← ConsoleInコンポーネント全体の設定
+ example.ConsoleIn0.config_file: consolein0.conf ← 0番目のインスタンスの設定
+ example.ConsoleIn1.config_file: consolein1.conf ← 1番目のインスタンスの設定
+ example.ConsoleIn2.config_file: consolein2.conf ← 2番目のインスタンスの設定
+</code></pre></div></div>
+
+<!-- ============================================================ -->
+<h2 id="basic-settings">Basic Settings</h2>
+<!-- ============================================================ -->
+
+<h3 id="basic-profile">Basic Profile</h3>
+<p>The following items in the RTC Basic Profile (items set on the Basic tab of RTCBuilder) can be overridden with values in component.conf.</p>
+
+<ul>
+  <li>implementation_id</li>
+  <li>type_name</li>
+  <li>description</li>
+  <li>version</li>
+  <li>vendor</li>
+  <li>category</li>
+  <li>activity_type</li>
+  <li>max_instance</li>
+  <li>language</li>
+  <li>lang_type</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="execution-context-options">Execution Context Options</h2>
+<!-- ============================================================ -->
+
+<h3 id="exec_cxtperiodictype">exec_cxt.periodic.type</h3>
+
+<p>Specifies the Periodic-type ExecutionContext.
+Specifies the type of EC to use. The following are available.</p>
+
+<ul>
+  <li>PeriodicExecutionContext: Default. Embedded in the OpenRTM library.</li>
+  <li>ExtTrigExecutionContext:   External trigger EC. Embedded in the OpenRTM library.</li>
+  <li>SynchExtTriggerEC: Synchronous external trigger EC. Embedded in the OpenRTM library. Usually used with OpenHRP3.</li>
+  <li>RTPreemptEC:               Real-time execution context for the Linux RT preemptive patch kernel.</li>
+</ul>
+
+<p>Other ECs</p>
+
+<ul>
+  <li>SimulatorExecutionContext: Parallel external trigger EC. Built into Choreonoid’s OpenRTMPlugin and used automatically within Choreonoid.</li>
+  <li>
+    <p>ArtExecutionContext:       Real-time EC for ARTLinux. Scheduled for deprecation. (http://sourceforge.net/projects/art-linux/)</p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Setting: (PeriodicExecutionContext</td>
+          <td>ExTrigExecutionContext</td>
+          <td>SynchExtTriggerEC</td>
+          <td>RTPreemptEC)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>Default: PeriodicExecutionContext</li>
+  <li>Example:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.periodic.type: PeriodicExecutionContext
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="exec_cxtperiodicrate">exec_cxt.periodic.rate</h3>
+
+<p>ExecutionContext execution cycle
+<!-- The execution cycle of ExecutionContext --></p>
+
+<p>This option specifies the EC cycle specific to the RTC. The execution cycle of this EC overrides the default EC rate of the original RTC.</p>
+
+<ul>
+  <li>Setting: Read/Write, period [Hz]</li>
+  <li>Default: 1000 [Hz]</li>
+  <li>Example:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.periodic.rate: 1000
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="exec_cxtsync_transition">exec_cxt.sync_transition</h3>
+<h3 id="exec_cxtsync_activation">exec_cxt.sync_activation</h3>
+<h3 id="exec_cxtsync_deactivation">exec_cxt.sync_deactivation</h3>
+<h3 id="exec_cxtsync_reset">exec_cxt.sync_reset</h3>
+
+<p>Specifies the state transition mode.
+The state of an RTC transitions through activation, deactivation, and reset.
+Some execution contexts execute the main logic in a different thread.
+If these flags are set to YES, activation, deactivation, and reset are executed synchronously.
+In other words, when these flags are YES, the activation/deactivation/reset processing returns after the state transition is complete.</p>
+
+<p>“synchronous_transition” sets the synchronous transition flag for all other synchronous transition flags (synchronous_activation / deactivation / resetting).</p>
+
+<ul>
+  <li>Setting: YES/NO</li>
+  <li>Default: YES</li>
+  <li>Example:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.sync_transition: YES
+ exec_cxt.sync_activation: YES
+ exec_cxt.sync_deactivation: YES
+ exec_cxt.sync_reset: YES
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="exec_cxttransition_timeout">exec_cxt.transition_timeout</h3>
+<h3 id="exec_cxtactivation_timeout">exec_cxt.activation_timeout</h3>
+<h3 id="exec_cxtdeactivation_timeout">exec_cxt.deactivation_timeout</h3>
+<h3 id="exec_cxtreset_timeout">exec_cxt.reset_timeout</h3>
+
+<p>Timeout time during synchronous transitions.
+When the synchronous transition flag is set to YES, the timeout settings become available. 
+If “transition_timeout” is set, its value is set for all other timeouts for activation/deactivation and reset.</p>
+
+<ul>
+  <li>Setting: timeout time [s]</li>
+  <li>Default: 0.5 [s]</li>
+  <li>Example:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.transition_timeout: 0.5
+ exec_cxt.activation_timeout: 0.5
+ exec_cxt.deactivation_timeout: 0.5
+ exec_cxt.reset_timeout: 0.5
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="exec_cxtcpu_affinity">exec_cxt.cpu_affinity</h3>
+
+<p>Sets the CPU affinity (assignment) of the EC.
+This option binds the EC to a specific CPU. The option must be one or more comma-separated numbers used to identify CPU IDs. CPU IDs start from 0, and the maximum number is the number of CPU cores minus 1. If an invalid CPU ID is specified, all CPUs are used for the EC.</p>
+
+<ul>
+  <li>Setting: CPU number</li>
+  <li>Default: none</li>
+  <li>Example:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> exec_cxt.cpu_affinity: 0
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="execution_contexts">execution_contexts</h3>
+
+<p>Specifies execution contexts.
+An RTC can be attached to zero or more execution contexts. 
+The “execution_contexts” option specifies the ECs to attach specifically to the RTC and their names.
+If the option is not specified, the internal global options or rtc.conf options related to ECs are used. 
+If None is specified, no EC is created.
+The types of ECs that can be specified are the same as those that can be specified with “exec_cxt.type”.
+In addition, when specifying the EC type, its name can also be specified.
+The name is used as the key for options that specify the EC cycle and so on.</p>
+
+<ul>
+  <li>Setting: None or <EC0>,<EC1>,...
+</EC1></EC0>    <ul>
+      <li>&lt;EC?&gt;: ECtype(ECname)</li>
+    </ul>
+  </li>
+  <li>Default: None</li>
+  <li>Example:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> execution_contexts: PeriodicExecutionContext(pec1000Hz), \
+                             PeriodicExecutionContext(pec500Hz)
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="ecrate">ec.<EC name="">.rate</EC></h3>
+<h3 id="ecsynch_transition">ec.<EC name="">.synch_transition</EC></h3>
+<h3 id="ectransition_timeout">ec.<EC name="">.transition_timeout</EC></h3>
+
+<p>EC-specific settings.
+Each EC can have its own configuration. 
+Individual configurations can be specified using the EC type name or EC instance name. 
+An attached EC is specified with the “execution_context” option, such as <EC type="" name="">(<EC instance="" name="">).
+EC-specific options can be specified as follows.</EC></EC></p>
+
+<ul>
+  <li>Setting: ec.<EC type="" name="">.<option> or ec.<EC instance="" name="">.<option></option></EC></option></EC></li>
+  <li>Default: none</li>
+  <li>Example:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ec.PeriodicExecutionContext.sync_transition: NO
+ ec.pec1000Hz.rate: 1000
+ ec.pec1000Hz.synch_transition: YES
+ ec.pec1000Hz.transition_timeout: 0.5
+ ec.pec500Hz.rate: 500
+ ec.pec500Hz.synch_activation: YES
+ ec.pec500Hz.synch_deactivation: NO
+ ec.pec500Hz.synch_reset: YES
+ ec.pec500Hz.activation_timeout: 0.5
+ ec.pec500Hz.reset_timeout: 0.5
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- End of Execution context settings -->
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<h2 id="port-settings">Port Settings</h2>
+<!-- Port configurations -->
+<!-- ============================================================ -->
+
+<h3 id="inport-options">InPort Options</h3>
+
+<ul>
+  <li>Format
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.inport.&lt;port_name&gt;.* -&gt; InPortBase.init() の引数に渡される
+ port.inport.dataport.*    -&gt; InPortBase.init() の引数に渡される
+</code></pre></div>    </div>
+  </li>
+  <li>Example
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.inport.dataport.provider_types: corba_cdr, direct, shm_memory
+ port.inport.dataport.consumer_types: corba_cdr, direct, shm_memory
+ port.inport.dataport.connection_limit: 1
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="outport-options">OutPort Options</h3>
+
+<ul>
+  <li>Format
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.outport.&lt;port_name&gt;.* -&gt; OutPortBase.init() の引数に渡される
+ port.outport.&lt;port_name&gt;.* -&gt; OutPortBase.init() の引数に渡される
+</code></pre></div>    </div>
+  </li>
+  <li>Example
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.inport.dataport.provider_types: corba_cdr, direct, shm_memory
+ port.inport.dataport.consumer_types: corba_cdr, direct, shm_memory
+ port.inport.dataport.connection_limit: 1
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="service-port-options">Service Port Options</h3>
+<ul>
+  <li>Format
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> port.corbaport.&lt;port_name&gt;.* -&gt; CorbaPortBase.init() の引数に渡される
+ port.corba.* -&gt; CorbaPortBase.init() の引数に渡される 
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- End of Port configurations -->
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<h2 id="rtsystemeditor-configuration-set-gui-settings">RTSystemEditor Configuration Set GUI Settings</h2>
+
+<p>Configuration parameters can be operated from the GUI widgets in RTSystemEditor’s Configuration Set settings dialog.
+Usually, when designing an RTC with RTCBuilder, you can specify the type of GUI widget to assign to each parameter, but widget assignments can also be specified from component.conf.</p>
+
+<ul>
+  <li>Example
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> conf.[configuration_set_name].[parameter_name]:
+ conf.__widget__.[parameter_name]: GUI control type for RTSystemEditor
+ conf.__constraint__.[parameter_name]: Constraints for the value
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="list-of-available-widgets-widget">List of Available Widgets [<u>widget</u>]</h3>
+
+<h4 id="format">Format</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> conf.__widget__.[widget_name]: [widget_type].[widget_option]
+</code></pre></div></div>
+
+<h4 id="format-details">Format Details</h4>
+<ul>
+  <li>[widget_name]: widget name = Configuration Set parameter name
+    <ul>
+      <li>text:          Text box (default)</li>
+      <li>slider.<step>: Horizontal slider. <step> is the slider step unit. A range constraint option (described later) is required.</step></step></li>
+      <li>spin:          Spin button. A range constraint option (described later) is required.</li>
+      <li>radio:         Radio button. An enumeration constraint option (described later) is required.</li>
+      <li>checkbox:      Check box. An enumeration constraint option is required. The parameter must be able to interpret a comma-separated list.</li>
+      <li>ordered_list:   Ordered list. An enumeration constraint option is required. The parameter must be able to interpret a comma-separated list. In this control, one or more enumerated elements appear in the list.</li>
+    </ul>
+  </li>
+  <li>[widget_type]: type of widget to use, (text, slider, spin, radio, checkbox, ordered_list,)</li>
+  <li>[widget_option]: step unit can be specified only for slider</li>
+</ul>
+
+<h4 id="example">Example</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> conf.__widget__.int_param0: slider.10
+ conf.__widget__.int_param1: spin
+ conf.__widget__.double_param0: slider.10
+ conf.__widget__.double_param1: text
+ conf.__widget__.str_param0: radio
+ conf.__widget__.vector_param0: checkbox
+ conf.__widget__.vector_param1: ordered_list
+</code></pre></div></div>
+
+<!-- ------------------------------------------------------------ -->
+<h3 id="list-of-available-constraints-constraints">List of Available Constraints [<u>constraints</u>]</h3>
+<!-- GUI control constraint options [__constraints__]: -->
+
+<h4 id="format-1">Format</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> conf.__constraints__.[parameter_name]:
+</code></pre></div></div>
+
+<h4 id="format-details-1">Format Details</h4>
+<ul>
+  <li>none: (blank)</li>
+  <li>literal value: 100 (constraint value)</li>
+  <li>range: &lt;, &gt;, &lt;=, &gt;=, and the variable “x” can be used</li>
+  <li>enumerated values:  (enum0, enum1, …)</li>
+  <li>array: <constraints0>, <constraints1>, ... for only array value</constraints1></constraints0></li>
+  <li>hash value: {key0: value0, key1:, value0, …}</li>
+</ul>
+
+<h4 id="constraint-specification-examples">Constraint Specification Examples</h4>
+<ul>
+  <li>No constraint              : (blank)</li>
+  <li>Literal value                     : 100 (read only)</li>
+  <li>100 or greater                : x &gt;= 100</li>
+  <li>100 or less                : x &lt;= 100</li>
+  <li>Greater than 100       : x &gt; 100</li>
+  <li>Less than 100                : x &lt; 0</li>
+  <li>100 or greater and 200 or less: 100 &lt;= x &lt;= 200</li>
+  <li>Greater than 100 and less than 200 : 100 &lt; x &lt; 200</li>
+  <li>Enumeration constraint                : (9600, 19200, 115200)</li>
+  <li>Array                      : x &lt; 1, x &lt; 10, x &gt; 100</li>
+  <li>
+    <p>Hash                 : {key0: 100&lt;x&lt;200, key1: x&gt;=100}</p>
+  </li>
+  <li>Example
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> conf.__constraints__.int_param0: 0&lt;=x&lt;=150
+ conf.__constraints__.int_param1: 0&lt;=x&lt;=1000
+ conf.__constraints__.double_param0: 0&lt;=x&lt;=100
+ conf.__constraints__.double_param1:
+ conf.__constraints__.str_param0: (default,mode0,mode1)
+ conf.__constraints__.vector_param0: (dog,monkey,pheasant,cat)
+ conf.__constraints__.vector_param1: (pita,gora,switch)
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

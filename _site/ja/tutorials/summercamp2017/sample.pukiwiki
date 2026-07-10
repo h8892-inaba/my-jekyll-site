@@ -1,0 +1,453 @@
+#ref(summercamp_logo2017.png, 50%, center)
+
+#contents
+
+**開催報告
+
+名城大学の大原先生のご尽力と多くの特別講師やサポートスタッフのご支援のおかげで、15名の参加者と共に、今年も、サマーキャンプを作り上げて行くことが出来ました。皆さまに御礼申し上げます。
+この合宿研修の成果を、RTミドルウエアコンテストで発表いただけることを、期待しております。
+
+#ref(summercamp2017-0.jpg, 50%, center)
+
+
+//**開催のご案内
+
+//今年で7回目となりました、RTミドルウエアキャンプを7月31日から8月4日の5日間、茨城県つくば市の産業技術総合研究所において開催いたします。
+//RTミドルウエアやロボット開発に精通する講師陣のもとで、RTミドルウエアを用いた様々なロボットシステム開発を体験する機会を5日間にわたり提供します。RTミドルウエアを用いたプログラミングの方法や、実践的なロボットシステムへの応用、RTミドルウエアコンテストでの必勝法等、様々な講義を予定しています。宿泊施設として産総研のさくら館(要実費)を提供することを予定しており、一緒に参加した仲間とともに密度の濃い開発経験を通して、より実践的なロボットシステム構築方法を身に付けることができます。
+
+//''参加資格は、少なくとも1回以上RTミドルウエア講習会を受講した経験があるか、同等以上のプログラミングスキルを身に着けていることを条件とします。また、参加者は12月に行われるRTミドルウエアコンテストへの参加が期待されています。''
+
+//*** 参加者の声
+
+//- 最初は我々の開発課題が実現可能なのかどうか分からず、不安な気持ちを拭えない状態での参加だったのですが、講師の先生方には質問に対して懇切丁寧にご回答いただき、何とか実装までにこぎつけることができました。今はOpenRTMの中身も多少理解できる程度にまでなり、今回は参加してよかったと思っております。講師の先生方をはじめ、スタッフの皆さま、誠にありがとうございました。(社会人)
+//- 知識ゼロからのスタートでチームの方や講師の方々には大変なご迷惑をお掛けしましたが，5日間で大きく成長できたと思います。
+//RTMのスペシャリストの方々が何人もサポートについて下さり，質問しやすい環境で作業に取り組むことができ充実した毎日でした。
+//終わってしまった今，少し寂しくなっています。RTMロスです。笑（M1）
+//- 意外とかなり楽しかったです(B4)
+//- 自分一人では作ることができないシステムでも，チームで協力してRTミドルウェアを使って構築することができた。
+
+**開催要旨
+
+本サマーキャンプでは、RTミドルウエアやロボット開発に精通する講師陣のもとで、RTミドルウエアを用いた様々なロボットシステム開発を体験する機会を提供します。この企画により、一緒に参加した仲間とともに密度の濃い開発経験を通して、より実践的なロボットシステム構築方法を身に付けることを目的としています。
+
+*** 共同開催
+-産業技術総合研究所　ロボットイノベーション研究センター
+--（公社）計測自動制御学会SI部門　RTシステムインテグレーション部会
+--（一社）日本ロボット工業会・ロボットビジネス推進協議会
+
+*** 後援
+-国立研究開発法人　新エネルギー・産業技術開発機構(NEDO)
+
+// *** 協力企業
+// #ref(rt.png)
+// #ref(ga.png)
+// #ref(sec.png)
+
+***日時・場所
+-2017年7月31日（月）～8月4日（金）
+- 産業技術総合研究所　つくばセンター中央第二　本部・情報棟１階　ネットワーク会議室　
+-- [[ガイドマップ:http://openrtm.org/openrtm/ja/tutorial/guidemap]]
+-- [[google map:https://maps.google.com/maps/ms?msid=202092058111064603321.0004e2699244f546ec525&msa=0&ll=36.05949,140.134263&spn=0.009098,0.011297]]
+- アクセス
+-- 東京駅から並木2丁目:[[高速バス時刻表:http://time.jrbuskanto.co.jp/bk03080.html]]
+--- 東京駅八重洲南口高速バス乗り場からつくばセンター・筑波大学行きに乗り、並木2丁目停留所にて下車してください。
+--- 東京駅から1時間：下りは渋滞が少なくほぼ時間通り到着します。
+-- 秋葉原駅からTXつくば駅経由:[[産総研連絡バス時刻表:https://unit.aist.go.jp/tkb1/to_tsukuba_c_tx_bus20170401.pdf]]
+--- つくばエクスプレス秋葉原駅から終点つくば駅(快速：45分)まで乗車し、つくば駅から産総研連絡バスに乗車、つくば中央第1にて下車してください。
+--- 連絡バス所用時間：20分から25分程度。
+--- [[連絡バス乗り場:http://www.aist.go.jp/aist_j/guidemap/tsukuba/tsukuba_c_express.html]]
+-- 常磐線荒川沖駅から路線バス:[[荒川沖バス時刻表:http://kantetsu.co.jp/bus/timetable_files/tc/tc06.pdf]]
+--- 常磐線荒川沖駅にて降りていただき、関東鉄道バス西４乗り場筑波大学中央・筑波大学病院行きのバスに乗車し、並木2丁目で下車してください。
+--- バスの所要時間は15分程度です。
+// -参加者: 17名（+講師・スタッフ 延べ21名）
+
+
+//***サマーキャンプ2017レジュメ
+
+//サマーキャンプ2017レジュメを公開しました。
+
+
+//- [[サマーキャンプ2017レジュメ:http://www.openrtm.org/openrtm/sites/default/files/6286/%E3%82%B5%E3%83%9E%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%972017%E3%83%AC%E3%82%B8%E3%83%A5%E3%83%A1.pdf]]
+
+***参加資格
+-RTミドルウェア講習会に参加したことがある，もしくは同等程度の経験を有していること．
+
+または，
+
+-下記のサマーキャンプ受講希望者向けの講習会に参加する意思があること
+--[[ROBOMECH2017講習会:http://www.openrtm.org/openrtm/ja/tutorial/robomech2017]](終了)
+--RTM強化月間
+--- [[RTミドルウェア強化月間(第1弾)：早稲田大学・RTミドルウェア講習会>http://www.openrtm.org/openrtm/ja/tutorial/bootcamp_waseda_2017]]
+--- [[RTミドルウェア強化月間(第2弾)：名城大学・RTミドルウェア講習会>http://www.openrtm.org/openrtm/ja/tutorial/bootcamp_meijo_2017]]
+--- [[RTミドルウェア強化月間(第3弾)：都産技研・RTミドルウェア講習会>http://www.openrtm.org/openrtm/ja/tutorial/bootcamp_sangiken_2017]]
+
+*** 参加人数
+- 参加者：15名
+- 講師・スタッフ：20名
+//スタッフ側のボランティアも随時募集
+
+*** 参加費
+無料（ただし，宿泊費や食事代は参加者の自己負担．産総研の宿泊施設を安価で提供）
+
+*** 実施概要
+参加者各自がそれぞれの目的意識を持ち、その目的に向けた開発の初期工程の支援を本サマーキャンプの目的とする。~
+本サマーキャンプで利用するRTコンポーネントは、NEDO知能化プロジェクトの成果，過去のRTミドルウェアコンテストの作品，さらには有志により開発されたRTコンポーネントを再利用することを基本とし，適宜各自の目的にあったRTコンポーネントの開発を促すことで，RTコンポーネントの開発，およびRTミドルウェアを用いたロボットシステム開発を行う．~
+開発だけでなく，RTミドルウェアに見識のある講師を依頼し，RTミドルウェアによるロボットシステムの開発方法，RTミドルウェアでの開発を支援するツール群の利用方法からRTミドルウェアを用いたシステム事例の紹介まで行い，幅広くRTミドルウェアについての知識提供の機会を設ける。サマーキャンプ最終日には成果発表会を行い、その後作品とスライド等はホームページに掲載する．~
+
+（参考）
+- [[サマーキャンプ2011>http://www.openrtm.org/openrtm/ja/node/3850]]
+- [[サマーキャンプ2012>http://www.openrtm.org/openrtm/ja/node/5048]]
+- [[サマーキャンプ2013>http://www.openrtm.org/openrtm/ja/tutorial/summercamp2013]]
+- [[サマーキャンプ2014>http://www.openrtm.org/openrtm/ja/tutorial/summercamp2014]]
+- [[サマーキャンプ2015>http://www.openrtm.org/openrtm/ja/tutorial/summercamp2015]]
+- [[サマーキャンプ2016>http://www.openrtm.org/openrtm/ja/tutorial/summercamp2016]]
+
+** プログラム
+&color(red){事情により変更する可能性もありますので，ご注意ください．};
+|CENTER:150|LEFT:400|LEFT:200|c
+|CENTER: ''7月31日(月) ''|>|CENTER: ''第1日目''|
+|10:30-11:00|受付|-|
+|11:00-11:10| 「NEDO特別講座」 について | 福田有里（NEDO）|
+|11:10-12:00|NEDO特別講座講演１「企業における組織行動事例」''講義資料'':[[企業内の組織行動20170731.pdf:/sites/default/files/6286/企業内の組織行動20170731.pdf]]|西之坊穂&br;(摂南大学)|
+|12:00-13:00|NEDO特別講座講演２「IoT×デザイン思考による商店街の活性化」''講義資料'':[[20170731NEDOつくば（油井）.pdf:http://www.openrtm.org/openrtm/sites/default/files/6286/20170731NEDOつくば（油井）.pdf]]|油井毅&br;(大阪工業大学)|
+|13:00-14:00|休憩||
+|14:00 - 14:10 |開催の挨拶|安藤 慶昭 (産業技術総合研究所)|
+|14:10 - 14:30 |RTミドルウェアサマーキャンプガイダンス|大原賢一&br;(名城大学)|
+|14:30 - 15:50 |産総研見学会 |-|
+|16:00 - 16:50 |自己紹介・決意表明|-|
+|16:50 - 18:00 |講義1: SysML実習|坂本武志&br;(グローバルアシスト) |
+|18:30 - |懇親会＠さくら館|-|
+
+|CENTER:150|LEFT:400|LEFT:200|c
+|CENTER: ''8月1日(火)''|>|CENTER:''第2日目''|
+|09:30 - 10:00| RTミドルウェアツール紹介１：&br;RT Shellを使った効率の良いRTシステム運用&br; ''講義資料'':[[rtshell_2017.pdf :http://openrtm.org/openrtm/sites/default/files/6286/rtshell_2017.pdf]]|ビグス　ジェフ&br;(産業技術総合研究所)|
+|10:00 - 10:30| RTミドルウェアツール紹介2：&br;マネージャーやコンポーネントのコンポジット化&br; ''講義資料'':[[2017SummerCamp-03.pdf:http://openrtm.org/openrtm/sites/default/files/6286/2017SummerCamp-03.pdf]] , [[2017SummerCamp-03.zip:http://openrtm.org/openrtm/sites/default/files/6286/2017SummerCamp-03.zip]] | 宮本信彦&br;(産業技術総合研究所)|
+|10:30 - 11:00| RTミドルウェアツール紹介3：&br;効率の良いRTコンポーネント開発のための支援ツール&br; ''講義資料'':[[2017SummerCamp-04.pdf:http://openrtm.org/openrtm/sites/default/files/6286/2017SummerCamp-04.pdf]]| 高橋三郎&br;(産業技術総合研究所) |
+|11:00 - 11:30| RTシステム構築事例紹介1： &br;東京都立産業技術研究センターのRTMの取り組み &br; T型ロボットデモストレーション|佐々木智典&br; (東京都立産業技術研究センター) |
+|11:30 - 12:00| RTシステム構築事例紹介2：&br;つかえるRTコンポーネントの紹介(課題)&br; ''講義資料'':[[有用なRTCの紹介.pdf:http://www.openrtm.org/openrtm/sites/default/files/6286/有用なRTCの紹介.pdf]]| 菅佑樹&br;(Sugar Sweet Robotics)|
+|12:00 - 13:00|　昼休み|-|
+|13:00 - 15:00|　開発システム検討|-|
+|15:00 - 16:00|　開発目標システム発表|-|
+|16:00 - 18:00|　RTシステム構築実習1|-|
+
+|CENTER:150|LEFT:400|LEFT:200|c
+|CENTER: ''8月2日(水) ''|>|CENTER: ''第3日目''|
+|09:00 - 16:30|RTシステム構築実習2|-|
+|16:30 - 17:00|各チームの進捗報告|-|
+
+|CENTER:150|LEFT:400|LEFT:200|c
+|CENTER: ''8月3日(木) ''|>|CENTER: ''第4日目''|
+|09:00 - 16:30|RTシステム構築実習3|-|
+|16:30 - 17:00|各チームの進捗報告|- |
+
+|CENTER:150|LEFT:400|LEFT:200|c
+|CENTER: ''8月4日(金) ''|>|CENTER: ''第5日目''|
+|  9:00 - 12:00|RTシステム構築実習4|-|
+|13:00 - 16:00|成果報告会|-|
+|16:00 - 16:10|閉会の挨拶|平井成興&br;（ビジ協・NEDO）|
+|16:10 - 17:00|片付け|-|
+|17:00 - 20:00|RTミドルウェア情報交換会（BOFミーティング）|-|
+
+//※本サマーキャンプでの成果物（作品・スライド）や成果発表の動画等は、ホームページで公開します。
+
+*** 産総研見学会
+
+|CENTER:150|LEFT:300|LEFT:300|c
+| 時間 | グループ1 | グループ2 |
+| 14:30-14:45 | 全方向ステレオシステム (ビジョンG) |  移動知能とフィールドロボット研究 (スマモビT) |
+| 14:45-15:00 | ヒューマノイドロボット (HRG) | 全方向ステレオシステム (ビジョンG) |
+| 15:00-15:15 | 移動知能とフィールドロボット研究 (スマモビT) |   ヒューマノイドロボット (HRG) |
+| 15:15-15:30 | 双腕ロボットとティーチングFW (ソフプラT) | 生活支援RTルーム (スマコミT) |
+| 15:30-15:45 | 生活支援RTルーム (スマコミT) | 双腕ロボットとティーチングFW (ソフプラT) |
+
+
+
+//- 生活支援RTルーム（阪口、鍛冶、関山）
+//- 高精度な姿勢検出が可能な視覚マーカ（田中）
+//- アンドロイドを用いたコミュニケーション支援（松本(吉)）
+//- 移動知能とフィールドロボット研究（松本(治)、横塚）
+//- 全方向ステレオシステム（佐藤）
+
+**課題について
+基本的には各参加者に課題を持ち寄っていただき，講師陣は参加者のサポートを行う形態を取ります．~
+//ただし，RTミドルウエア初心者でテーマ設定に悩む場合は，下記のような課題も考えております．~
+
+//***課題例
+//|CENTER:200|LEFT:100|c
+//|Robocup@Homeの競技|[[資料>http://www.openrtm.org/openrtm/sites/default/files/rulehome2015.pdf]]|
+//|MobileRobotiNavigationFrameworkを用いたアプリケーション開発|[[資料>http://ogata-lab.jp/ja/technology_ja/mobile_nav_rtcs_ja.html]]|
+
+
+***課題例
+//|人型ロボット(G-Robot)を使ったモーション生成|
+|Pioneer/Kobukiを用いた課題自律移動ロボットの制御|
+|RTミドルウェアリファレンスハードウェア「OROCHI」を用いた物体把持|
+//|OpenHRIを用いた音声認識を用いた課題|
+//|RTスペース操作用コンポーネントの開発|
+//|レーザレンジファインダを用いた環境認識|
+//|AR Toolkitを用いた拡張現実感|
+
+（注）変更する可能性もございますことご了承下さい．
+
+//**講習会申し込みフォーム
+//以下のフォームからRTミドルウェアサマーキャンプ2017にお申し込み下さい．
+//- 参加登録するまえに当Webページのユーザ登録をお願いします．[[ユーザ登録はこちら:http://openrtm.org/openrtm/ja/user/register]]
+//- 当Webサイトにログイン済みの方は名前の欄にユーザ名が出ますが、必ず、氏名に書き換えてください．
+
+//**講演会のみのご参加について
+//講演会のみご参加される方は，RTミドルウェアサマーキャンプ実行委員会幹事の~
+//名城大学大原(kohara(at)meijo-u.ac.jp)までご連絡ください．
+
+** 実行委員会
+|実行委員長|安藤　慶昭|[[産業技術総合研究所ロボットイノベーション研究センター　ロボットソフトウェアプラットフォーム研究チーム長:https://staff.aist.go.jp/n-ando/index-j.html]]|
+|幹事|大原　賢一|[[名城大学理工学部メカトロニクス工学科　准教授:http://mechatronics.meijo-u.ac.jp/study/ohara.html]]|
+|委員|原　功|[[産業技術総合研究所ロボットイノベーション研究センター　ロボットソフトウェア研究ラボ　ラボ長:http://hara.jpn.com]]|
+|委員|菅　佑樹|[[株式会社SUGAR SWEET ROBOTICS:http://sugarsweetrobotics.com/]]|
+|委員|ジェフ　ビグス|[[産業技術総合研究所ロボットイノベーション研究センター　ロボットソフトウェア研究ラボ　主任研究員:http://staff.aist.go.jp/geoffrey.biggs/]]|
+|委員|平井　成興|日本ロボット工業会・ロボットビジネス推進協議会・RTミドルウェアWG 主査|
+//|委員|平井　成興|[[新エネルギー産業技術総合開発機構 技術戦略研究センター・新領域・融合ユニット長（ロボット・AI）:http://www.furo.org/ja/member/hirai.html]]|
+|委員|神徳　徹雄|[[産業技術総合研究所イノベーション推進本部:https://staff.aist.go.jp/t.kotoku/]]|
+|委員|坂本　武志|[[株式会社グローバルアシスト:http://globalassist.co.jp]]|
+//|委員|岡田　慧|[[東京大学大学院情報理工学系研究科知能機械情報学専攻准教授:http://www.jsk.t.u-tokyo.ac.jp/~k-okada/]]|
+//|委員|岡田　浩之|[[玉川大学工学部機械システム学科教授:http://www.tamagawa.ac.jp/teachers/okada/index.html]]|
+//|委員|琴坂　信哉|[[埼玉大学理工学研究科人間支援・生産科学部門准教授:http://design.mech.saitama-u.ac.jp/people/staff/kotosaka.html]]|
+//|委員|佐々木　毅|[[芝浦工業大学デザイン工学部エンジニアリングデザイン領域准教授:http://www.sic.shibaura-it.ac.jp/~sasaki-t/]]|
+//|委員|中岡　慎太郎|[[産業技術総合研究所知能システム研究部門ヒューマノイド研究グループ主任研究員:https://staff.aist.go.jp/s.nakaoka/]]|
+//|委員|中本　啓之|[[株式会社セック:http://www.sec.co.jp]]|
+//|委員|山下　智輝|[[株式会社前川製作所:http://www.mayekawa.co.jp/ja/]]|
+
+
+//*** サポート＆協力スタッフ
+// |原田　研介|産総研（見学対応御礼）|
+// |阪口　健|産総研（見学対応御礼）|
+// |田中　秀幸|産総研（見学対応御礼）|
+//|谷川　民生|産総研|
+//|宮本　晴美|産総研|
+// |韓 越興|産総研|
+// |橋川　史崇|産総研[明治大]|
+// |山口　渡|産総研[筑波大]|
+// |江崎　伸明|産総研[首都大学東京]|
+// |尾形　仁子|産総研|
+
+** 参加者の方へ
+*** 自己紹介スライドの準備
+
+参加されるかたは、以下の自己紹介用スライドのテンプレートに従って自己紹介を作成してください．
+送付方法は事務局より連絡させていただきます．
+
+- 自己紹介用スライドテンプレート: &ref(RTMサマーキャンプ参加者自己紹介テンプレート);
+
+
+** お問い合わせ
+
+基本的な情報はホームページから提供いたします．
+参加申込みいただいた方は連絡したメールに返信ください．
+
+RTミドルウエアサマーキャンプ実行委員会~
+summercamp2017(at)openrtm.org~
+(at)を＠におきかえてください．~
+
+&aname(entry);
+**講習会申し込みフォーム
+
+以下のフォームから講習会へお申し込みください。
+- 参加登録するまえに当Webページのユーザ登録をお願いします。[[ユーザ登録はこちら:http://openrtm.org/openrtm/ja/user/register]]
+- 当Webサイトにログイン済みの方は&color(red){名前の欄のユーザ名を氏名に書き換えてください};。
+- フォーム送信後、確認メールをお送りいたします。1日たっても確認メールが届かない場合は、こちら support(at)openrtm.org までお問い合わせください。
+
+** 講義資料
+
+*** NEDO特別講座
+
+- ロボットサービス・ビジネススクール　講義資料
+
+<nowiki>
+[video:http://www.slideshare.net/78438623]
+</nowiki>
+
+- [[企業内の組織行動　講義資料(PDF):/sites/default/files/6286/企業内の組織行動20170731.pdf]]
+
+<nowiki>
+[video:http://www.slideshare.net/78432458]
+</nowiki>
+
+- IoT×デザイン思考による商店街の活性化 講義資料
+
+<nowiki>
+[video:http://www.slideshare.net/78438622]
+</nowiki>
+
+** 講座
+- SysML実習
+-- 準備中です。少々お待ちください。
+
+** RTミドルウェアツール紹介
+
+- RT Shellを使った効率の良いRTシステム運用
+<nowiki>
+[video:http://www.slideshare.net/78476564]
+</nowiki>
+
+- マネージャーやコンポーネントのコンポジット化
+<nowiki>
+[video:http://www.slideshare.net/78439481]
+</nowiki>
+
+- 効率の良いRTコンポーネント開発のための支援ツール
+<nowiki>
+[video:http://www.slideshare.net/78439402]
+</nowiki>
+
+** RTシステム構築事例紹介1
+
+- 東京都立産業技術研究センターのRTMの取り組み T型ロボットデモストレーション
+-- 準備中です。少々お待ちください。
+
+- つかえるRTコンポーネントの紹介(課題)
+<nowiki>
+[video:http://www.slideshare.net/78476633]
+</nowiki>
+
+
+** 開発成果
+
+&aname(summercamp2017_group1);
+*** グループ１
+
+- ''課題'': 自撮りロボット！
+- [[プロジェクトページ:/ja/project/SummerCamp2017_group1]]
+
+<nowiki>
+[video:http://www.slideshare.net/78651769]
+</nowiki>
+
+-- 開発モデル発表
+<nowiki>
+[video:http://www.youtube.com/watch?v=m8LZNVZVZ9Y width:560]
+</nowiki>
+
+-- 成果報告
+<nowiki>
+[video:http://www.youtube.com/watch?v=gWYLmccFF7s width:560]
+</nowiki>
+
+&aname(summercamp2017_group2);
+*** グループ2
+
+- ''課題'': 打ち上がれ！オレの花火！～インスタラクティブ花火第１回つくば花火大会～
+- [[プロジェクトページ:/ja/project/SummerCamp2017_group2]]
+
+<nowiki>
+[video:http://www.slideshare.net/78651760]
+</nowiki>
+
+-- 開発モデル発表
+<nowiki>
+[video:http://www.youtube.com/watch?v=Y1Lqnnn4NVo width:560]
+</nowiki>
+
+-- 成果報告
+<nowiki>
+[video:http://www.youtube.com/watch?v=78S534Pva44 width:560]
+</nowiki>
+
+&aname(summercamp2017_group3);
+*** グループ3
+
+- ''課題'': ロボットクエスト
+- [[プロジェクトページ:/ja/project/SummerCamp2017_group3]] 
+
+<nowiki>
+[video:http://www.slideshare.net/78651746]
+</nowiki>
+
+-- 開発モデル発表
+<nowiki>
+[video:http://www.youtube.com/watch?v=Jjbvwq2TAd4 width:560]
+</nowiki>
+
+-- 成果報告
+<nowiki>
+[video:http://www.youtube.com/watch?v=afvd6rpMyx4 width:560]
+</nowiki>
+
+-- 成功時の動作
+<nowiki>
+[video:http://www.youtube.com/watch?v=f-zpkKHFVV4 width:560]
+</nowiki>
+
+&aname(summercamp2017_group4);
+*** グループ4
+
+- ''課題'': 名刺交換ロボット
+- [[プロジェクトページ:/ja/project/SummerCamp2017_group4]]
+
+<nowiki>
+[video:http://www.slideshare.net/78651727]
+</nowiki>
+
+
+-- 開発モデル発表
+<nowiki>
+[video:http://www.youtube.com/watch?v=-i9TpUQ4SGo width:560]
+</nowiki>
+
+-- 成果報告
+<nowiki>
+[video:http://www.youtube.com/watch?v=Ebl0I3brEnU width:560]
+</nowiki>
+
+&aname(summercamp2017_group5);
+*** グループ5
+
+- ''課題'': ちょっと安全なピッキングロボットシステム
+-- 
+-- 
+- [[プロジェクトページ:/ja/project/SummerCamp2017_group5]]
+
+<nowiki>
+[video:http://www.slideshare.net/79007428]
+</nowiki>
+
+-- 開発モデル発表
+<nowiki>
+[video:http://www.youtube.com/watch?v=-Pk-2OuMLWg width:560]
+</nowiki>
+
+-- 成果報告
+<nowiki>
+[video:http://www.youtube.com/watch?v=Iaqhzlu31G4 width:560]
+</nowiki>
+
+
+**講習会の様子
+#ref(sc2017_1.JPG,center,nolink)
+#br
+
+#ref(sc2017_2.JPG,center,nolink)
+#br
+
+#ref(sc2017_3.JPG,center,nolink)
+#br
+
+#ref(sc2017_5.JPG,center,nolink)
+#br
+
+#ref(sc2017_6.JPG,center,nolink)
+#br
+
+#ref(sc2017_7.JPG,center,nolink)
+#br
+
+#ref(sc2017_8.JPG,center,nolink)
+#br
+
+#ref(sc2017_9.JPG,center,nolink)
+#br
+
+#ref(sc2017_10.JPG,center,nolink)
+#br
+
+#ref(sc2017_11.JPG,center,nolink)
+#br
+

@@ -1,0 +1,1244 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Running Sample Components | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Running Sample Components" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/running_sample_comp/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/running_sample_comp/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Running Sample Components" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Running Sample Components","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/running_sample_comp/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/running_sample_comp/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/running_sample_comp/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Running Sample Components <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/running_sample_comp/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/installation/other/raspberrypi_casestudy/running_sample_comp/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#raspberry-pi-gpio">Raspberry Pi GPIO</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#breadboard-wiring-examples">Breadboard Wiring Examples</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#wiring-example-for-digitalin-rtc">Wiring Example for DigitalIn-RTC</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#wiring-example-for-digitalout-rtc">Wiring Example for DigitalOut-RTC</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#compiling-the-components">Compiling the Components</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#compiling-digitalin-rtc">Compiling DigitalIn-RTC</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#compiling-digitalout-rtc">Compiling DigitalOut-RTC</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#running-the-components">Running the Components</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#about-name-server-configuration">About Name Server Configuration</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#creating-a-raspberry-pi-uart-communication-component">Creating a Raspberry Pi UART Communication Component</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: サンプルコンポーネントの実行 -->
+<!-- * GPIOを利用したサンプル -->
+
+<p>#contents</p>
+
+<p>The following example uses GPIO to detect switch ON/OFF states and control LED illumination through RT Components (<strong>DigitalIn-RTC</strong> and <strong>DigitalOut-RTC</strong>). By building and running these components, you can gain a better understanding of how to use the Raspberry Pi’s GPIO functionality.</p>
+
+<p>The sample component source code can be downloaded from:</p>
+
+<ul>
+  <li><a href="RaspberryPi_sample.zip">Sample Component Source Code</a></li>
+</ul>
+
+<h2 id="raspberry-pi-gpio">Raspberry Pi GPIO</h2>
+
+<p>The Raspberry Pi provides GPIO (General Purpose Input/Output) pins that can be used to interface with a variety of external devices.</p>
+
+<p>The GPIO pin assignments are shown below.</p>
+
+<div align="center"><a href="raspberrypi_gpio_pinassign.png"><img src="raspberrypi_gpio_pinassign.png" width="80%;" /></a></div>
+<div align="center"><strong>Raspberry Pi GPIO Pin Assignment</strong></div>
+
+<p>When using GPIO pins, pay close attention to the pin layout. In particular, incorrect wiring involving the <strong>5V pins</strong> may damage the Raspberry Pi itself or the SD card. Proceed with caution.</p>
+
+<h2 id="breadboard-wiring-examples">Breadboard Wiring Examples</h2>
+
+<p>In this example, we will build:</p>
+
+<ul>
+  <li>An LED circuit</li>
+  <li>A switch circuit for detecting ON/OFF states</li>
+</ul>
+
+<p>Using a breadboard makes circuit assembly straightforward. However, since the number of components is small, the circuits can also be built by soldering wires directly.</p>
+
+<p>The required parts are listed below.</p>
+
+<table class="table-alt">
+  <tr>
+    <th colspan="2" style="text-align: center;">Parts List</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">LED Circuit</td>
+  </tr>
+  <tr>
+    <td>LED</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Resistor</td>
+    <td>100Ω (Brown-Black-Brown-Gold) to 330Ω (Orange-Orange-Brown-Gold)</td>
+  </tr>
+  <tr>
+    <td>Wires</td>
+    <td>As needed</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">Switch Circuit</td>
+  </tr>
+  <tr>
+    <td>LED</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Resistor</td>
+    <td>330Ω (Orange-Orange-Brown-Gold) to 1kΩ (Brown-Black-Red-Gold)</td>
+  </tr>
+  <tr>
+    <td>Wires</td>
+    <td>As needed</td>
+  </tr>
+</table>
+
+<p>If you have only one Raspberry Pi, connect both the LED and switch circuits to the same board.</p>
+
+<p>If you have two Raspberry Pis, it may be interesting to connect an LED and switch to each device and communicate between them.</p>
+
+<h3 id="wiring-example-for-digitalin-rtc">Wiring Example for DigitalIn-RTC</h3>
+
+<p><strong>DigitalIn-RTC</strong> outputs a Boolean value (<code class="language-plaintext highlighter-rouge">true</code>/<code class="language-plaintext highlighter-rouge">false</code>) received through its data port to a specified GPIO pin.</p>
+
+<p>To observe the GPIO output, connect an LED and resistor between the <strong>Ground</strong> pin and <strong>GPIO 18</strong>, as shown below.</p>
+
+<div align="center"><a href="gpio_led_circuit.png"><img src="gpio_led_circuit.png" width="80%;" /></a></div>
+<div align="center"><strong>LED Connection Circuit Diagram</strong></div>
+
+<p>The equivalent breadboard wiring is shown below.</p>
+
+<div align="center"><a href="3_rp2.png"><img src="3_rp2.png" width="80%;" /></a></div>
+<div align="center"><strong>Breadboard Example for LED Circuit</strong></div>
+
+<h3 id="wiring-example-for-digitalout-rtc">Wiring Example for DigitalOut-RTC</h3>
+
+<p><strong>DigitalOut-RTC</strong> reads a Boolean value (<code class="language-plaintext highlighter-rouge">true</code>/<code class="language-plaintext highlighter-rouge">false</code>) from a GPIO pin and outputs it through a data port.</p>
+
+<p>To provide input to the GPIO pin, connect a resistor and switch to <strong>Ground</strong>, <strong>3.3V Power</strong>, and <strong>GPIO 17</strong>, as shown below.</p>
+
+<div align="center"><a href="gpio_stiwch_circuit.png"><img src="gpio_stiwch_circuit.png" width="80%;" /></a></div>
+<div align="center"><strong>Tact Switch Connection Circuit Diagram</strong></div>
+
+<p>The corresponding breadboard wiring is shown below.</p>
+
+<div align="center"><a href="3_rp3.png"><img src="3_rp3.png" width="80%;" /></a></div>
+<div align="center"><strong>Breadboard Example for Switch Circuit</strong></div>
+
+<h2 id="compiling-the-components">Compiling the Components</h2>
+
+<p>Download the source code onto the Raspberry Pi and compile the DigitalIn-RTC and DigitalOut-RTC components.</p>
+
+<ul>
+  <li><a href="RaspberryPi_sample.zip">Sample Component Source Code</a></li>
+</ul>
+
+<h3 id="compiling-digitalin-rtc">Compiling DigitalIn-RTC</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>unzip RaspberryPi_sample.zip
+<span class="nv">$ </span><span class="nb">cd </span>RaspberryPi_sample/DigitalInRPI/
+<span class="nv">$ </span>vi CMakeLists.txt
+</code></pre></div></div>
+
+<p>Edit <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code> to disable documentation generation.</p>
+
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">option</span><span class="p">(</span>BUILD_DOCUMENTATION <span class="s2">"Build the documentation"</span> ON<span class="p">)</span>
+ ↓
+<span class="nb">option</span><span class="p">(</span>BUILD_DOCUMENTATION <span class="s2">"Build the documentation"</span> OFF<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Then build the component.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir </span>build
+<span class="nv">$ </span><span class="nb">cd </span>build
+<span class="nv">$ </span>cmake ..
+<span class="nt">--</span> The C compiler identification is GNU 4.6.3
+<span class="nt">--</span> The CXX compiler identification is GNU 4.6.3
+   : omitted
+<span class="nt">--</span> Configuring <span class="k">done</span>
+<span class="nt">--</span> Generating <span class="k">done</span>
+<span class="nt">--</span> Build files have been written to:
+   /home/pi/RaspberryPi_sample/DigitalInRPI/build
+</code></pre></div></div>
+
+<p>If OpenRTM-aist is installed correctly, configuration should complete without errors.</p>
+
+<p>If errors occur indicating that OpenRTM or Coil cannot be found, verify that OpenRTM-aist (C++ version) is installed correctly.</p>
+
+<p>Example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dpkg <span class="nt">-l</span> | <span class="nb">grep </span>openrtm
+</code></pre></div></div>
+
+<p>Build the component:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make
+  : omitted
+Scanning dependencies of target DigitalInComp
+<span class="o">[</span> 66%] Building CXX object ...
+<span class="o">[</span>100%] Building CXX object ...
+Linking CXX executable DigitalInComp
+<span class="o">[</span>100%] Built target DigitalInComp
+<span class="err">$</span>
+</code></pre></div></div>
+
+<p>The compiled executable is located in the <code class="language-plaintext highlighter-rouge">src</code> directory.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls </span>src/
+CMakeFiles  cmake_install.cmake
+DigitalInComp  DigitalIn.so  Makefile
+</code></pre></div></div>
+
+<h3 id="compiling-digitalout-rtc">Compiling DigitalOut-RTC</h3>
+
+<p>Compile DigitalOut-RTC in the same manner.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>RaspberryPi_sample/DigitalOutRPI/
+<span class="nv">$ </span>vi CMakeLists.txt
+</code></pre></div></div>
+
+<p>Edit <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code>:</p>
+
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">option</span><span class="p">(</span>BUILD_DOCUMENTATION <span class="s2">"Build the documentation"</span> ON<span class="p">)</span>
+ ↓
+<span class="nb">option</span><span class="p">(</span>BUILD_DOCUMENTATION <span class="s2">"Build the documentation"</span> OFF<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Then configure the build.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir </span>build
+<span class="nv">$ </span><span class="nb">cd </span>build
+<span class="nv">$ </span>cmake ..
+<span class="nt">--</span> The C compiler identification is GNU 4.6.3
+<span class="nt">--</span> The CXX compiler identification is GNU 4.6.3
+   : omitted
+<span class="nt">--</span> Configuring <span class="k">done</span>
+<span class="nt">--</span> Generating <span class="k">done</span>
+<span class="nt">--</span> Build files have been written to:
+   /home/pi/RaspberryPi_sample/DigitalOutRPI/build
+</code></pre></div></div>
+
+<p>Build the component.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make
+<span class="nt">--</span> OpenRTMConfig.cmake found.
+<span class="nt">--</span> Configured by configuration mode.
+   : omitted
+Scanning dependencies of target DigitalOutComp
+<span class="o">[</span> 66%] Building CXX object ...
+<span class="o">[</span>100%] Building CXX object ...
+Linking CXX executable DigitalOutComp
+<span class="o">[</span>100%] Built target DigitalOutComp
+<span class="err">$</span>
+</code></pre></div></div>
+
+<p>The compiled executable is located in the <code class="language-plaintext highlighter-rouge">src</code> directory.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls </span>src/
+CMakeFiles  cmake_install.cmake
+DigitalOutComp  DigitalOut.so  Makefile
+</code></pre></div></div>
+
+<h2 id="running-the-components">Running the Components</h2>
+
+<p>After both RTCs have been successfully compiled, start the Name Server and launch the components.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rtm-naming
+<span class="nv">$ </span><span class="nb">sudo</span> /home/pi/RaspberryPi_sample/DigitalOutRPI/build/src/DigitalOutComp &amp;
+<span class="nv">$ </span><span class="nb">sudo</span> /home/pi/RaspberryPi_sample/DigitalInRPI/build/src/DigitalInComp &amp;
+</code></pre></div></div>
+
+<p><strong>Because these sample components use GPIO, they must be executed with root privileges.</strong></p>
+
+<p>Start RTSystemEditor on a PC and connect to the Name Server running on the Raspberry Pi.</p>
+
+<p>Place the RTCs in the system diagram, connect their ports, and activate them.</p>
+
+<div align="center"><a href="3_rp4.png"><img src="3_rp4.png" width="80%;" /></a></div>
+<div align="center"><strong>Running the Sample RTCs</strong></div>
+
+<p>When both RTCs are operating correctly, pressing and releasing the tact switch will cause the LED to turn on and off accordingly.</p>
+
+<h1 id="comments">Comments</h1>
+
+<h3 id="about-name-server-configuration">About Name Server Configuration</h3>
+
+<p><strong>Permalink</strong> Submitted by SUZUKAWA Yuichi on Tue, 2013-04-23 00:53.</p>
+
+<table class="table-alt">
+<tr>
+<td>
+
+I tried this method immediately, but although the Naming Server started successfully, it did not appear in Eclipse, which caused some confusion.
+
+As a workaround, I manually configured the Raspberry Pi naming server host address as something like:
+
+```text
+192.168.0.X:100
+```
+
+and forcibly opened the port.
+
+Normally, it uses localhost, which causes it to appear as:
+
+```text
+RaspberryPi:port_number
+```
+
+making it inaccessible from outside.
+
+</td>
+</tr>
+</table>
+
+<h3 id="creating-a-raspberry-pi-uart-communication-component">Creating a Raspberry Pi UART Communication Component</h3>
+
+<p><strong>Permalink</strong> Submitted by SUZUKAWA Yuichi on Tue, 2013-04-23 01:02.</p>
+
+<table class="table-alt">
+<tr>
+<td>
+
+As an additional note, I successfully created a simple UART loopback communication component.
+
+The program was based on the following reference sites and worked with only minor modifications.
+
+Reference sites:
+
+- Chick Lab: *Serial Communication on Raspberry Pi*  
+  http://chicklab.blog84.fc2.com/blog-entry-46.html
+
+- Junk Room of Crafts and Gadgets  
+  http://junkroom2cyberrobotics.blogspot.jp/2013/03/raspberry-pi-uart.html
+
+The code worked almost unchanged after porting.
+
+</td>
+</tr>
+</table>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

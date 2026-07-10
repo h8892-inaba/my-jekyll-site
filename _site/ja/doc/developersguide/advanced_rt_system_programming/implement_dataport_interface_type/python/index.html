@@ -1,0 +1,1249 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>独自インターフェース型の実装手順(Python) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="独自インターフェース型の実装手順(Python)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="独自インターフェース型の実装手順(Python)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"独自インターフェース型の実装手順(Python)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>独自インターフェース型の実装手順(Python) <div class="lang-switch"><a href="/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/advanced_rt_system_programming/implement_dataport_interface_type/python/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#push型通信">Push型通信</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#pull型通信">Pull型通信</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#独自インターフェースの登録">独自インターフェースの登録</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#動作確認">動作確認</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#接続時のオプションを設定">接続時のオプションを設定</h3</a>
+          </li>
+        
+      
+    
+
+    
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: 独自インターフェース型の実装手順(Python) -->
+<p>#contents</p>
+
+<p>このページではPythonで独自インターフェースを作成する手順を説明します。</p>
+
+<p>以下のソースコードのサンプルでは重要でない部分は省略しているため、詳細なソースコードは以下から取得してください。</p>
+
+<ul>
+  <li><a href="https://github.com/Nobu19800/openrtm_testinterface">(https://github.com/Nobu19800/openrtm_testinterface</a></li>
+</ul>
+
+<h3 id="push型通信">Push型通信</h3>
+<p>Push型通信実装のためにTestInPortConsumer(InPortConsumer)、TestInPortProvider(InPortProvider)を実装します。</p>
+
+<h4 id="inportconsumerの実装">InPortConsumerの実装</h4>
+<p>まず以下のようなPythonファイル(TestInPortConsumer.py)を用意します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #!/usr/bin/env python3
+ # -*- coding: utf-8 -*-
+ 
+ 
+ import OpenRTM_aist
+ 
+ 
+ class TestInPortConsumer(
+        OpenRTM_aist.InPortConsumer):
+    
+    def __init__(self):
+        pass
+ 
+    def __del__(self):
+        pass
+ 
+    def init(self, prop):
+        if not prop.propertyNames():
+            return
+ 
+ 
+    def put(self, data):
+            return self.PORT_OK
+ 
+    def publishInterfaceProfile(self, properties):
+        pass
+ 
+    def subscribeInterface(self, properties):
+        return True
+ 
+    def unsubscribeInterface(self, properties):
+        pass
+     
+    
+ def TestInPortConsumerInit():
+    factory = OpenRTM_aist.InPortConsumerFactory.instance()
+    factory.addFactory("testif",
+                       TestInPortConsumer)
+</code></pre></div></div>
+
+<p>今回はここにファイルの読み書きでデータを転送する独自インターフェースを実装します。</p>
+
+<p>まずコネクタの初期化時に<strong>init</strong>関数が呼ばれます。
+変数<strong>prop</strong>にはRTSystemEditor等で設定したコネクタの接続情報が格納されています。
+以下の例ではpropからtestif.filenameのパラメータを取得してファイル名に設定しています。
+init関数は複数回呼ばれる可能性があるので、その点は注意する必要があります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    def init(self, prop):
+        if not prop.propertyNames():
+            return
+        self._filename = prop.getProperty("testif.filename", "test.dat")
+</code></pre></div></div>
+
+<p>データの書き込み時には<strong>put</strong>関数が呼ばれます。
+変数<strong>data</strong>はbytes型のシリアライズしたデータが格納されています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    def put(self, data):
+        with open(self._filename, 'wb') as fout:
+            self._dataid += 1
+            try:
+                fout.write(struct.pack('L', self._dataid))
+                fout.write(struct.pack('L', len(data)))
+                fout.write(data)
+            except BaseException:
+                return self.PORT_ERROR
+            return self.PORT_OK
+</code></pre></div></div>
+
+<p>この例ではファイルにデータのID、データサイズ、バイト列データを書き込んでいます。
+変数dataの<strong>getDataLength</strong>関数でデータサイズ、<strong>getBuffer</strong>関数でバイト列データを取得して、取得したデータを何らかの方法でInPortProviderへ送信します。</p>
+
+<p>その他の関数は基本的に実装の必要はありませんが、InPortProvider側で追加の情報を設定する場合は<strong>subscribeInterface</strong>関数でその情報の取得をする必要があります。
+<strong>unsubscribeInterface</strong>はコネクタ切断時に呼ばれるので、subscribeInterface関数での処理に関して何らかの終了処理が必要な場合は記述します。</p>
+
+<h4 id="inportproviderの実装">InPortProviderの実装</h4>
+
+<p>まず以下のようなPythonファイル(TestInPortProvider.py)を用意します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #!/usr/bin/env python3
+ # -*- coding: utf-8 -*-
+ 
+ 
+ import OpenRTM_aist
+ 
+ 
+ class TestInPortProvider(OpenRTM_aist.InPortProvider):
+ 
+    def __init__(self):
+        OpenRTM_aist.InPortProvider.__init__(self)
+ 
+        self.setInterfaceType("testif")
+ 
+ 
+    def __del__(self):
+        pass
+ 
+    def exit(self):
+        pass
+ 
+    def init(self, prop):
+        if not prop.propertyNames():
+            return
+ 
+    def setBuffer(self, buffer):
+        pass
+ 
+    def setListener(self, info, listeners):
+        pass
+ 
+    def setConnector(self, connector):
+        self._connector = connector
+ 
+ 
+ def TestInPortProviderInit():
+    factory = OpenRTM_aist.InPortProviderFactory.instance()
+    factory.addFactory("testif",
+                       TestInPortProvider)
+</code></pre></div></div>
+
+<p>ここに処理を追加していきます。
+今回の例では、<strong>init</strong>関数で指定ファイルが変更されているかをポーリングするスレッドを作成しています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    def init(self, prop):
+        if not prop.propertyNames():
+            return
+        filename = prop.getProperty("testif.filename", "test.dat")
+        
+        def polling():
+            self._running = True
+            lastid = 0
+            while self._running:
+                if self._connector:
+                    if os.path.exists(filename):
+                        with open(filename, 'rb') as fin:
+                            try:
+                                id = struct.unpack("L", fin.read(struct.calcsize("L")))[0]
+                                if id != lastid:
+                                    lastid = id
+                                    size = struct.unpack("L", fin.read(struct.calcsize("L")))[0]
+                                    if size &gt; 0:
+                                        data = fin.read(size)
+                                        self._connector.write(data)
+                            except BaseException:
+                                pass
+        
+        self._thread = threading.Thread(target=polling)
+        self._thread.start()
+</code></pre></div></div>
+
+<p>ファイルからデータを取得後に、m_connectorの<strong>write</strong>関数を呼び出してデータをInPortConnectorに渡しています。
+InPortConsumerのデータをファイルに書き込んで、InPortProviderでファイルからデータを読み込むというデータ転送を実装できました。</p>
+
+<h3 id="pull型通信">Pull型通信</h3>
+<p>Pull型通信実装のためにTestInPortConsumer(OutPortConsumer)、TestInPortProvider(OutPortProvider)を実装します。
+ただし、Push型通信のみを実装する場合はここは飛ばしてください。</p>
+
+<h4 id="inportconsumerの実装-1">InPortConsumerの実装</h4>
+<p>まず以下のようなPythonファイル(TestOutPortConsumer.py)を用意します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #!/usr/bin/env python3
+ # -*- coding: utf-8 -*-
+ 
+ 
+ import OpenRTM_aist
+ 
+ 
+ class TestOutPortConsumer(
+        OpenRTM_aist.OutPortConsumer):
+ 
+    def __init__(self):
+        pass
+ 
+    def __del__(self):
+        pass
+ 
+    def init(self, prop):
+        if not prop.propertyNames():
+            return
+ 
+ 
+    def setBuffer(self, buffer):
+        pass
+ 
+    def setListener(self, info, listeners):
+        pass
+ 
+    def get(self):
+        return self.PORT_ERROR, ""
+ 
+    def subscribeInterface(self, properties):
+        return True
+ 
+    def unsubscribeInterface(self, properties):
+        pass
+ 
+ 
+ def TestOutPortConsumerInit():
+    factory = OpenRTM_aist.OutPortConsumerFactory.instance()
+    factory.addFactory("testif",
+                       TestOutPortConsumer)
+    return
+</code></pre></div></div>
+
+<p>今回の例では<strong>init</strong>関数で読み書きするファイル名を指定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    def init(self, prop):
+        if not prop.propertyNames():
+            return
+        self._filename_in = prop.getProperty(
+            "testif.filename_in", "test_in.dat")
+        self._filename_out = prop.getProperty(
+            "testif.filename_out", "test_out.dat")
+</code></pre></div></div>
+
+<p>ここに処理を追加していきます。
+Pull型通信ではデータ読み込み時に<strong>get</strong>関数を呼びますが、以下の例ではファイルAに呼び出しのIDを書き込みます。
+次にファイルBからデータサイズとバイト列データを読み込んで値を返しています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    def get(self):
+        with open(self._filename_in, 'wb') as fout:
+            self._dataid += 1
+            try:
+                print(self._dataid)
+                fout.write(struct.pack('L', self._dataid))
+            except BaseException:
+                return self.PORT_ERROR
+        
+        for i in range(100):
+            if os.path.exists(self._filename_out):
+                with open(self._filename_out, 'rb') as fin:
+                    try:
+                        id = struct.unpack("L", fin.read(struct.calcsize("L")))[0]
+                        if id == self._dataid:
+                            self._dataid = id
+                            size = struct.unpack("L", fin.read(struct.calcsize("L")))[0]
+                            if size &gt; 0:
+                                data = fin.read(size)
+                                return self.PORT_OK, data
+                    except BaseException:
+                        pass
+        
+        return self.PORT_ERROR, ""
+</code></pre></div></div>
+
+<h4 id="outportproviderの実装">OutPortProviderの実装</h4>
+<p>まず以下のようなPythonファイル(TestOutPortProvider.py)を用意します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #!/usr/bin/env python3
+ # -*- coding: utf-8 -*-
+ 
+ 
+ import OpenRTM_aist
+ 
+ 
+ class TestOutPortProvider(OpenRTM_aist.OutPortProvider):
+ 
+    def __init__(self):
+        OpenRTM_aist.OutPortProvider.__init__(self)
+        self.setInterfaceType("testif")
+ 
+        self._thread = None
+        self._running = False
+        self._connector = None
+ 
+    def __del__(self):
+        pass
+ 
+    def exit(self):
+        if self._running:
+            self._running = False
+            self._thread.join()
+ 
+    def init(self, prop):
+        if not prop.propertyNames():
+            return
+ 
+    def setBuffer(self, buffer):
+        pass
+ 
+    def setListener(self, info, listeners):
+        pass
+ 
+    def setConnector(self, connector):
+        self._connector = connector
+ 
+ 
+ def TestOutPortProviderInit():
+    factory = OpenRTM_aist.OutPortProviderFactory.instance()
+    factory.addFactory("testif",
+                       TestOutPortProvider)
+</code></pre></div></div>
+
+<p>ここに処理を追加していきます。
+以下の例では<strong>init</strong>関数でファイルが変更されたかをポーリングして、変更時に別のファイルにデータを書き込むスレッドを起動しています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    def init(self, prop):
+        if not prop.propertyNames():
+            return
+        
+        filename_in = prop.getProperty("testif.filename_in", "test_in.dat")
+        filename_out = prop.getProperty("testif.filename_out", "test_out.dat")
+        
+        def polling():
+            self._running = True
+            lastid = 0
+            while self._running:
+                if self._connector:
+                    if os.path.exists(filename_in):
+                        with open(filename_in, 'rb') as fin:
+                            try:
+                                id = struct.unpack("L", fin.read(struct.calcsize("L")))[0]
+                                if id == lastid:
+                                    continue
+                            except BaseException:
+                                continue
+                        with open(filename_out, 'wb') as fout:
+                            try:
+                                fout.write(struct.pack('L', id))
+                                ret, data = self._connector.read()
+                                fout.write(struct.pack('L', len(data)))
+                                if ret == OpenRTM_aist.BufferStatus.BUFFER_OK:
+                                    fout.write(data)
+                                    lastid = id
+                            except BaseException:
+                                pass
+</code></pre></div></div>
+
+<p>まずm_connectorの<strong>read</strong>関数を呼んでOutPortConnectorから転送するデータを取得します。
+getDataLength関数でデータサイズを取得、getBuffer関数でバイト列データを取得してファイルに書き込んでいます。</p>
+
+<p>これにより、OutPortConsumerでファイルAにデータのIDを書き込み後にOutPortProviderでファイルAからIDを読み込んで前回読み込んだデータのIDと一致しているかを判定します。
+新しいデータだと判定したらファイルBにデータを書き込んで、OutPortConsumerでファイルBが新しいデータかを判定してOutPortConnectorにデータを渡します。</p>
+
+<h3 id="独自インターフェースの登録">独自インターフェースの登録</h3>
+<p>ここまでに実装した独自インターフェースを使用可能にするためファクトリに登録します。
+以下の内容の<strong>TestIF.py</strong>を作成してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #!/usr/bin/env python
+ # -*- coding: utf-8 -*-
+ # -*- Python -*-
+ 
+ 
+ import TestInPortConsumer
+ import TestInPortProvider
+ import TestOutPortConsumer
+ import TestOutPortProvider
+ 
+ 
+ def TestIFInit(mgr):
+    TestInPortConsumer.TestInPortConsumerInit()
+    TestInPortProvider.TestInPortProviderInit()
+    TestOutPortConsumer.TestOutPortConsumerInit()
+    TestOutPortProvider.TestOutPortProviderInit()
+</code></pre></div></div>
+
+<p>TestInPortProviderInit、TestInPortConsumerInit、TestOutPortProviderInit、TestOutPortConsumerInit関数では<strong>InPortProviderFactory</strong>、<strong>InPortConsumerFactory</strong>、<strong>OutPortProviderFactory</strong>、<strong>OutPortConsumerFactory</strong>の<strong>addFactory</strong>関数で実装した独自インターフェースを登録しています。
+<strong>testif</strong>という名前をポート接続時に指定することで使用できます。
+TestIFInit関数はPythonモジュールをロードする時に呼び出す関数です。〇〇.pyであれば<strong>〇〇Init</strong>というように、初期化関数はPythonファイルの名前+Initにしてください。
+Push型のみ、もしくはPull型通信のみの実装の場合は、必要なモジュールだけを登録してください。</p>
+
+<h3 id="動作確認">動作確認</h3>
+
+<p>以下のrtc.confを作成してください。
+${TestIF_DIR}にはTestIF.pyのフォルダのパスを指定してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.modules.load_path: .
+ manager.modules.preload: TestIF.py
+</code></pre></div></div>
+
+<p>作成したrtc.confを指定してConsoleIn、ConsoleOutのサンプルコンポーネントを起動します。これでOpenRTM-aistがTestIF.pyをロードします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> python ConsoleIn.py -f rtc.conf
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> python ConsoleOut.py -f rtc.conf
+</code></pre></div></div>
+
+<p>RTSystemEditorでデータポートを接続しようとすると、以下のようにInterface Typeでtestifが選択可能になっています。</p>
+
+<p><br /></p>
+
+<div align="center"><a href="if4.png"><img src="if4.png" width="40%;" /></a></div>
+
+<p><br /></p>
+
+<p>Interface Typeにtestifを選択して接続すると、実装したファイル読み書きによるデータ転送ができることが確認できます。</p>
+
+<p>Pull型通信を動作確認する場合について、Pull型通信ではInPortのisNew関数が使えず新規のデータが存在するかは確認できません。
+このため、ConsoleOutコンポーネントのisNew関数を実行している部分をコメントアウトする必要があります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        # if self._inport.isNew():
+</code></pre></div></div>
+
+<h3 id="接続時のオプションを設定">接続時のオプションを設定</h3>
+<p>今回の例ではtestif.filename、testif.filename_in、testif.filename_outというオプションで読み書きするファイル名を指定できるようにしましたが、これらをデータポートのプロファイルからオプションの情報を取得するように設定を追加できます。ただし、リリース版のOpenRTM-aist 2.0では使えない場合があるので、OpenRTM-aistをソースコードからビルドしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> testifpush_option = [
+    "filename_in.__value__", "test_in.dat",
+    "filename_in.__widget__", "text",
+    "filename_in.__constraint__", "none",
+    "filename_out.__value__", "test_out.dat",
+    "filename_out.__widget__", "text",
+    "filename_out.__constraint__", "none",
+    ""
+ ]
+ 
+ 
+ def TestInPortProviderInit():
+    prop = OpenRTM_aist.Properties(defaults_str=testifpush_option)
+    factory = OpenRTM_aist.InPortProviderFactory.instance()
+    factory.addFactory("testif",
+                       TestInPortProvider,
+                       prop)
+</code></pre></div></div>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

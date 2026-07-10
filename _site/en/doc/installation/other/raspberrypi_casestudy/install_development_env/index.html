@@ -1,0 +1,1254 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Installing the Development Environment | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Installing the Development Environment" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/install_development_env/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/install_development_env/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Installing the Development Environment" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Installing the Development Environment","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/install_development_env/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/install_development_env/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/install_development_env/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Installing the Development Environment <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/install_development_env/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/installation/other/raspberrypi_casestudy/install_development_env/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#installing-openrtm-aist">Installing OpenRTM-aist</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#running-sample-components">Running Sample Components</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#troubleshooting">Troubleshooting</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#installing-cmake">Installing CMake</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#installing-doxygen">Installing Doxygen</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#how-to-disable-document-generation">How to Disable Document Generation</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#installing-doxygen-1">Installing Doxygen</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#installing-subversiongit">Installing Subversion/Git</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#compilation-test">Compilation Test</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#checking-out-the-source-code">Checking Out the Source Code</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: 開発環境のインストール -->
+<!-- * 開発環境のインストール -->
+<p>#contents</p>
+
+<p>By installing the development environment on Raspberry Pi, you can develop using self-compilation directly on the Raspberry Pi. (For embedded Linux boards of this size, development is normally performed by cross-compilation.)</p>
+
+<p>Therefore, RT Component code generated by RTCBuilder on a PC can be compiled and executed on the Raspberry Pi.
+Unfortunately, installing Eclipse and using it at a practical speed appears to be difficult.</p>
+
+<p>This section installs the packages required to develop RT Components.</p>
+
+<!-- ------------------------------------------------------------ -->
+<h2 id="installing-openrtm-aist">Installing OpenRTM-aist</h2>
+<!-- ------------------------------------------------------------ -->
+
+<p>OpenRTM-aist can be installed using apt-get.
+First, modify sources.list.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo vi /etc/apt/sources.list
+</code></pre></div></div>
+
+<p>Add the following line to sources.list.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> deb http://openrtm.org/pub/Linux/raspbian/ wheezy main
+</code></pre></div></div>
+
+<p>Next, install it using the following procedure.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # apt-get update
+ # apt-get -y --force-yes install gcc g++ make uuid-dev
+ # apt-get -y --force-yes install libomniorb4-dev omniidl omniorb-nameserver
+ # apt-get -y --force-yes install openrtm-aist openrtm-aist-dev openrtm-aist-example
+ # apt-get -y --force-yes install openrtm-aist-python openrtm-aist-python-example
+</code></pre></div></div>
+
+<h3 id="running-sample-components">Running Sample Components</h3>
+
+<p>After installing OpenRTM-aist, start the sample components to check whether OpenRTM-aist has been installed correctly.</p>
+
+<p>As shown below, run the name server and the ConsoleIn component on the PC side, and run the name server and the ConsoleOut component on the Raspberry Pi side.
+By default, components connect to the localhost name server. Use this behavior to easily access the components without setting a specific name server in rtc.conf.
+In RTSystemEditor on the PC, connect to the name server on the PC and the name server on the Raspberry Pi, then connect the ConsoleIn component and the ConsoleOut component.</p>
+
+<div align="center"><a href="sample_component_test.png"><img src="sample_component_test.png" width="70%;" /></a></div>
+<div align="center"><strong>Running the Sample</strong></div>
+
+<h4 id="running-consoleout-on-raspberry-pi">Running ConsoleOut on Raspberry Pi</h4>
+
+<p>After connecting to the Raspberry Pi using TeraTerm or a similar tool, start the component.
+Start the naming service first, and then start ConsoleOut.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtm-naming
+ $ /usr/share/OpenRTM-x.y/examples/ConsoleOutComp
+ または
+ $ python /usr/share/OpenRTM-x.y/examples/python/SimpleIO/ConsoleOutComp.py
+</code></pre></div></div>
+
+<p>When omniorb-nameserver is installed above, the omniORB name service is configured to start automatically when the system boots.
+However, depending on the timing of name service startup and network interface startup, the name server may not be accessible correctly from outside.
+In that case, restarting the name server using the rtm-naming command may resolve the problem.</p>
+
+<h4 id="running-consolein-on-the-pc-side">Running ConsoleIn on the PC Side</h4>
+
+<p>First, start the name server.
+On Windows, start it from <strong>Start Naming Service</strong> under “OpenRTM-aist x.y” → “C++” → “tools” in the Start menu.
+Also start RTSystemEditor.</p>
+
+<div align="center"><a href="namingservice_on_windows.png"><img src="namingservice_on_windows.png" width="70%;" /></a></div>
+<div align="center"><strong>Starting the Naming Service</strong></div>
+
+<p>Next, start ConsoleIn.
+Click ConsoleOut under “OpenRTM-aist x.y” → “C++” → “examples” to start the ConsoleOut component.</p>
+
+<h4 id="connecting-with-rtsystemeditor">Connecting with RTSystemEditor</h4>
+
+<p>Click the plug icon in the NameService View on the left side of RTSystemEditor to connect to the name server.
+First, connect to the name server on the local host. Enter localhost in the connection dialog.</p>
+
+<div align="center"><a href="connect_ns_localhost.png"><img src="connect_ns_localhost.png" width="70%;" /></a></div>
+<div align="center"><strong>Connecting to the Name Server (localhost)</strong></div>
+
+<p>Next, connect to the name server on the Raspberry Pi. Click the connection icon in the NameService View again, and enter the Raspberry Pi hostname plus .local in the dialog.</p>
+
+<div align="center"><a href="connect_ns_myhost.png"><img src="connect_ns_myhost.png" width="70%;" /></a></div>
+<div align="center"><strong>Connecting to the Name Server (Raspberry Pi)</strong></div>
+
+<p>The Name Service View displays the status of the two name servers, and you should see two components, ConsoleIn0 and ConsoleOut0, under their respective name servers.
+Click the online editor icon in the RTSystemEditor menu bar (the icon labeled ON) to open the SystemEditor.
+Drag and drop ConsoleIn0 and ConsoleOut0 from the NameService View onto the SystemEditor, then connect the InPort and OutPort.</p>
+
+<div align="center"><a href="rtsystemeditor_consoleinout.png"><img src="rtsystemeditor_consoleinout.png" width="70%;" /></a></div>
+<div align="center"><strong>Connecting ConsoleIn and ConsoleOut with RTSystemEditor</strong></div>
+
+<p>Click the green play button in the menu bar to activate the two components, and the state will become as shown above.</p>
+
+<p>Enter any number in the ConsoleIn component window on the PC side.</p>
+
+<div align="center"><a href="consolein_window.png"><img src="consolein_window.png" width="70%;" /></a></div>
+<div align="center"><strong>Entering a Number from ConsoleIn (PC)</strong></div>
+
+<p>Then, as shown below, the number entered in ConsoleIn appears in the ConsoleOut display on the Raspberry Pi side.</p>
+
+<div align="center"><a href="consoleout_window.png"><img src="consoleout_window.png" width="70%;" /></a></div>
+<div align="center"><strong>ConsoleOut Display on the Raspberry Pi Side</strong></div>
+
+<p>&amp;aname(trouble);</p>
+
+<h3 id="troubleshooting">Troubleshooting</h3>
+
+<p>Depending on the network environment or PC settings, the procedure above may not work correctly. Refer to the following troubleshooting information to resolve problems.</p>
+
+<h4 id="consoleout-does-not-appear-under-the-service-on-the-raspberry-pi-side">ConsoleOut Does Not Appear Under the Service on the Raspberry Pi Side</h4>
+
+<p>:Name server issue|This behavior occurs when the endpoint address of the name server is invalid. Restarting the name server with rtm-naming may resolve the issue.
+In addition, if the Raspberry Pi has two or more network interfaces, such as wired LAN and wireless LAN, the issue may be resolved by configuring it to use only the network interface used for the connection to the PC.</p>
+
+<p><strong>Component issue|The configuration file (rtc.conf) loaded by the component may specify a name server other than localhost. Configure the component to register with the localhost name server, for example by writing corba.nameservers</strong>: localhost.
+In addition, if the Raspberry Pi has two or more network interfaces, such as wired LAN and wireless LAN, the issue may be resolved by configuring it to use only the network interface used for the connection to the PC.</p>
+
+<h4 id="rtsystemeditor-cannot-connect-or-stops-responding">RTSystemEditor Cannot Connect or Stops Responding</h4>
+
+<p>:Component issue on the PC side|If the PC has two or more network interfaces, this behavior may occur when the interface address not used for the Raspberry Pi connection is used as the component reference.
+Check the PC IP address using ipconfig from the command prompt, and set the IP address to be used in rtc.conf as follows.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.endpoints: 192.168.11.20
+</code></pre></div></div>
+
+<p>However, on Windows Vista and later, files under C:\Program Files cannot be edited easily. To work around this, copy ConsoleIn.exe and rtc.conf to an appropriate directory such as c:\tmp, or create new copies there.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>:Component issue on the Raspberry Pi side</td>
+      <td>If the Raspberry Pi has two or more network interfaces, such as wired LAN and wireless LAN, and each is connected to a different network, the same issue as described above for the PC may occur. Use ifconfig to check the IP address to be used, and write it in rtc.conf as follows.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.endpoints: 192.168.11.21
+</code></pre></div></div>
+
+<h2 id="installing-cmake">Installing CMake</h2>
+
+<p>cmake can be installed using apt-get. Install it as a user with root privileges.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo apt-get update
+ $ sudo apt-get install cmake
+</code></pre></div></div>
+
+<h2 id="installing-doxygen">Installing Doxygen</h2>
+
+<p>In CMake-based RT Component projects, document generation using doxygen is enabled by default.
+However, installing doxygen also installs LaTeX and related packages, which consumes significant SD card capacity. Therefore, Doxygen is not installed in this tutorial.</p>
+
+<h3 id="how-to-disable-document-generation">How to Disable Document Generation</h3>
+
+<p>To suppress document generation with doxygen in a CMake-based RTC project, modify the top-level CMakeLists.txt as follows.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> option(BUILD_DOCUMENTATION "Build the documentation" ON)
+    ↓
+ option(BUILD_DOCUMENTATION "Build the documentation" OFF)
+</code></pre></div></div>
+
+<h3 id="installing-doxygen-1">Installing Doxygen</h3>
+
+<p>If there is sufficient space on the SD card, doxygen can be installed with apt-get as follows.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo apt-get install doxygen
+</code></pre></div></div>
+
+<p><span style="color:red;">* It takes about several tens of minutes for Doxygen installation to complete.</span>;</p>
+
+<h2 id="installing-subversiongit">Installing Subversion/Git</h2>
+
+<p>Since subversion/git is frequently used to obtain source code from external repositories, installing them is recommended.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo apt-get install subversion git
+</code></pre></div></div>
+
+<h2 id="compilation-test">Compilation Test</h2>
+
+<p>Test whether components can be compiled.
+The following repository contains components for the Kobuki mobile robot. Check them out and compile them.</p>
+
+<ul>
+  <li><a href="http://svn.openrtm.org/components/trunk/mobile_robots/kobuki">KobukiAIST RTC</a></li>
+</ul>
+
+<h3 id="checking-out-the-source-code">Checking Out the Source Code</h3>
+
+<p>Check out the source code.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ svn co http://svn.openrtm.org/components/trunk/mobile_robots/kobuki
+</code></pre></div></div>
+
+<p>: Omitted</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> A    kobuki/libkobuki/doc/CMakeLists.txt
+ A    kobuki/libkobuki/License.rtf
+ A    kobuki/libkobuki/CMakeLists.txt
+ A    kobuki/rtc.conf
+ A    kobuki/CMakeLists.txt
+ Checked out revision 2.
+ $
+</code></pre></div></div>
+
+<p>The source code has been checked out under the kobuki directory. Create a build directory, then build and install it there.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cd kobuki
+  $ mkdir build
+  $ cd build
+  $ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+  $ make
+  $ cd src
+  $ make install
+</code></pre></div></div>
+
+<p>In this source code, document generation with Doxygen is disabled by default, so it should build even if Doxygen is not installed.</p>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

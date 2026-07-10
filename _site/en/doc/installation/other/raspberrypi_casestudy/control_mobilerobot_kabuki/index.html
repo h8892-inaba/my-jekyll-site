@@ -1,0 +1,1429 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Controlling the Kobuki Mobile Robot | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Controlling the Kobuki Mobile Robot" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/control_mobilerobot_kabuki/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/control_mobilerobot_kabuki/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Controlling the Kobuki Mobile Robot" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Controlling the Kobuki Mobile Robot","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/control_mobilerobot_kabuki/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/control_mobilerobot_kabuki/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/control_mobilerobot_kabuki/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Controlling the Kobuki Mobile Robot <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/control_mobilerobot_kabuki/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/installation/other/raspberrypi_casestudy/control_mobilerobot_kabuki/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#connecting-raspberry-pi-and-kobuki">Connecting Raspberry Pi and Kobuki</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#power-supply">Power Supply</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#usb-connection">USB Connection</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#hardware-setup">Hardware Setup</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#compiling-the-kobukiaist-rt-component">Compiling the KobukiAIST RT Component</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#automatically-starting-the-kobukiaist-component">Automatically Starting the KobukiAIST Component</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#operating-the-kobuki-component">Operating the Kobuki Component</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#using-tkjoystick">Using TkJoystick</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#hint">Hint</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#autonomous-navigation">Autonomous Navigation</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#reference-solutions">Reference Solutions</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: Controlling the Kobuki Mobile Robot -->
+
+<p>#contents</p>
+
+<p>Kobuki is a research mobile robot manufactured by Yujin Robotics.</p>
+
+<p>It is approximately the same size as a Roomba robot vacuum and can be controlled from a PC via a USB serial connection.</p>
+
+<p>Kobuki is equipped with I/O interfaces, serial communication ports, power connectors, buttons, LEDs, and other features, making it suitable as an experimental robot platform.</p>
+
+<p>A script for installing the software required to run the Kobuki sample applications described below can be downloaded from:</p>
+
+<ul>
+  <li>http://svn.openrtm.org/Embedded/trunk/RaspberryPi/tools/rpi.sh</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>wget http://svn.openrtm.org/Embedded/trunk/RaspberryPi/tools/rpi.sh
+<span class="nv">$ </span><span class="nb">chmod </span>755 rpi.sh
+<span class="nv">$ </span><span class="nb">sudo</span> ./rpi.sh <span class="nb">hostname</span> <span class="nt">--type</span> kobuki
+</code></pre></div></div>
+
+<p>This script automatically performs the environment setup and compiles the Kobuki sample applications described in this guide.</p>
+
+<h2 id="connecting-raspberry-pi-and-kobuki">Connecting Raspberry Pi and Kobuki</h2>
+
+<p>The figure below shows the main panel of Kobuki.</p>
+
+<div align="center"><a href="kobuki_panel.png"><img src="kobuki_panel.png" width="70%;" /></a></div>
+<div align="center"><strong>Kobuki DC Output Connector</strong></div>
+
+<p>Use the 5V/1A DC output connector to power the Raspberry Pi, and use the USB connector for communication.</p>
+
+<h3 id="power-supply">Power Supply</h3>
+
+<p>Kobuki provides a DC output connector capable of supplying 5V at 1A, which can be used to power a Raspberry Pi.</p>
+
+<p>The connector specifications are:</p>
+
+<table class="table-alt">
+  <tr>
+    <th colspan="2">Kobuki 5V/1A Connector</th>
+  </tr>
+  <tr>
+    <td>Housing</td>
+    <td>Molex PN: 43645-0200</td>
+  </tr>
+  <tr>
+    <td>Terminal</td>
+    <td>Molex PN: 43030-0001</td>
+  </tr>
+</table>
+
+<div align="center"><a href="kobuki5v_connector.png"><img src="kobuki5v_connector.png" width="70%;" /></a></div>
+<div align="center"><strong>Kobuki DC 5V/1A Connector</strong></div>
+
+<p>These connectors can also be purchased from RT Robot Shop and similar suppliers.</p>
+
+<ul>
+  <li>Kobuki Connector Set (¥450)
+http://www.rt-shop.jp/index.php?main_page=product_info&amp;cPath=1001_1022&amp;products_id=784</li>
+</ul>
+
+<p>By creating a DC-to-USB power cable as shown below, power can be supplied to the Raspberry Pi.</p>
+
+<div align="center"><a href="kobuki_raspberry_dccable.png"><img src="kobuki_raspberry_dccable.png" width="70%;" /></a></div>
+<div align="center"><strong>DC Power Cable for Raspberry Pi</strong></div>
+
+<p>Nowadays, many portable batteries with USB outputs for smartphones are available and can also be used as power sources.</p>
+
+<div align="center"><a href="battery.png"><img src="battery.png" width="70%;" /></a></div>
+<div align="center"><strong>Portable Smartphone Battery</strong></div>
+
+<h3 id="usb-connection">USB Connection</h3>
+
+<p>Use the USB cable included with Kobuki to connect Kobuki and the Raspberry Pi.</p>
+
+<p>On the Raspberry Pi, the device appears as:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> /dev/ttyUSB<span class="k">*</span>
+/dev/ttyUSB0
+</code></pre></div></div>
+
+<h3 id="hardware-setup">Hardware Setup</h3>
+
+<p>Mount the Raspberry Pi on the Kobuki platform and connect both power and USB cables.</p>
+
+<p>If the Raspberry Pi is connected to a wireless LAN, Kobuki can be controlled remotely over Wi-Fi.</p>
+
+<div align="center"><a href="kobuki_and_raspi.png"><img src="kobuki_and_raspi.png" width="70%;" /></a></div>
+<div align="center"><strong>Kobuki Equipped with a Raspberry Pi</strong></div>
+
+<p>Since the Raspberry Pi may come loose while Kobuki is moving, securing it with hook-and-loop tape (Velcro) is recommended.</p>
+
+<h2 id="compiling-the-kobukiaist-rt-component">Compiling the KobukiAIST RT Component</h2>
+
+<p>Although RT component compilation was covered previously, we review it here.</p>
+
+<p>First, check out the KobukiAIST RT component from the repository below and build it.</p>
+
+<ul>
+  <li>KobukiAIST RTC
+http://svn.openrtm.org/components/trunk/mobile_robots/kobuki</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>svn co http://svn.openrtm.org/components/trunk/mobile_robots/kobuki
+<span class="nv">$ </span><span class="nb">cd </span>kobuki
+<span class="nv">$ </span><span class="nb">mkdir </span>build
+<span class="nv">$ </span><span class="nb">cd </span>build
+<span class="nv">$ </span>cmake <span class="nt">-DCMAKE_INSTALL_PREFIX</span><span class="o">=</span>/usr ..
+<span class="nv">$ </span>make
+<span class="nv">$ </span><span class="nb">cd </span>src
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>After installation, the executable should be installed at:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/lib/openrtm-1.1/rtc/KobukiAISTComp
+</code></pre></div></div>
+
+<p>To test it:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rtm-naming
+<span class="nv">$ </span><span class="nb">sudo</span> /usr/lib/openrtm-1.1/rtc/KobukiAISTComp
+</code></pre></div></div>
+
+<p>Root privileges are required because access to <code class="language-plaintext highlighter-rouge">/dev/ttyUSB0</code> is necessary.</p>
+
+<p>Start RTSystemEditor and connect to the Raspberry Pi using its hostname or IP address.</p>
+
+<p>You should see a component named <strong>KobukiAIST0</strong>.</p>
+
+<p>Open its Configuration dialog.</p>
+
+<p>You can control LEDs such as LED1 and LED2 by selecting RED, GREEN, and other options using the radio buttons. The LEDs should illuminate accordingly.</p>
+
+<h2 id="automatically-starting-the-kobukiaist-component">Automatically Starting the KobukiAIST Component</h2>
+
+<p>To automatically start the KobukiAIST component when Raspberry Pi boots, create the following script as:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/etc/kobuki.sh
+</code></pre></div></div>
+
+<p>Create the file:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vi /etc/kobuki.sh
+</code></pre></div></div>
+
+<p>Contents:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="c">#</span>
+<span class="c"># KobukiAIST RTC launch script</span>
+<span class="c">#</span>
+
+<span class="nv">ns</span><span class="o">=</span>/usr/bin/rtm-naming
+<span class="nv">kobukiRTC</span><span class="o">=</span>/usr/lib/openrtm-1.1/rtc/KobukiAISTComp
+<span class="nv">workdir</span><span class="o">=</span>/tmp/kobuki
+
+<span class="nv">$ns</span>
+<span class="nb">sleep </span>5
+
+<span class="k">if </span><span class="nb">test</span> <span class="nt">-d</span> <span class="nv">$workdir</span> <span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">""</span>
+<span class="k">else
+        </span><span class="nb">mkdir</span> <span class="nv">$workdir</span>
+<span class="k">fi
+
+</span><span class="nb">cd</span> <span class="nv">$workdir</span>
+
+<span class="k">while</span> :
+<span class="k">do
+    </span><span class="nb">rm</span> <span class="nt">-f</span> <span class="nv">$workdir</span>/<span class="k">*</span>.log
+    <span class="nv">$kobukiRTC</span>
+    <span class="nb">sleep </span>5
+<span class="k">done</span>
+</code></pre></div></div>
+
+<p>Make it executable:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo chmod </span>755 /etc/kobuki.sh
+</code></pre></div></div>
+
+<p>Then insert the following line into <code class="language-plaintext highlighter-rouge">/etc/rc.local</code>, just before <code class="language-plaintext highlighter-rouge">exit 0</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/etc/kobuki.sh 2&gt;&amp;1 | perl <span class="nt">-p</span> <span class="nt">-e</span> <span class="s1">'s/\n/\r\n/g'</span> 1&gt;&amp;2 &amp;
+<span class="nb">exit </span>0
+</code></pre></div></div>
+
+<p>Now, whenever Raspberry Pi boots, the KobukiAIST component will automatically start.</p>
+
+<p>Even if the component exits, it will automatically restart after 5 seconds.</p>
+
+<p>As long as Kobuki remains powered on, the component will continue running.</p>
+
+<h2 id="operating-the-kobuki-component">Operating the Kobuki Component</h2>
+
+<h3 id="using-tkjoystick">Using TkJoystick</h3>
+
+<p>TkJoystick is a sample component included with OpenRTM-aist-Python.</p>
+
+<p>However, it outputs only joystick X-Y values and differential wheel speeds, and does not provide a 2D velocity vector (<code class="language-plaintext highlighter-rouge">TimedVelocity2D</code>) output.</p>
+
+<p>Try modifying TkJoystick to output a <code class="language-plaintext highlighter-rouge">TimedVelocity2D</code> and connect it to Kobuki.</p>
+
+<p>Original TkJoystick RTC:</p>
+
+<ul>
+  <li>http://svn.openrtm.org/OpenRTM-aist-Python/trunk/OpenRTM-aist-Python/OpenRTM_aist/examples/TkJoyStick/</li>
+</ul>
+
+<p>Windows installation locations:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Program Files (x86)\OpenRTM-aist\x.y\examples\Python\TkJoyStick
+C:\Program Files\OpenRTM-aist\x.y\examples\Python\TkJoyStick
+</code></pre></div></div>
+
+<h3 id="hint">Hint</h3>
+
+<p>Inside <code class="language-plaintext highlighter-rouge">TkJoystick.py</code>, the left and right wheel speeds are already calculated.</p>
+
+<p>Using mobile robot kinematics, you can derive:</p>
+
+<ul>
+  <li>Linear velocity (v)</li>
+  <li>Angular velocity (ω)</li>
+</ul>
+
+<p>Refer to:</p>
+
+<ul>
+  <li>Mathematics of Wheeled Mobile Robots
+http://www.mech.tohoku-gakuin.ac.jp/rde/contents/course/robotics/wheelrobot.html</li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">TimedVelocity2D</code> data structure is:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="nc">Velocity2D</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">va</span><span class="p">;</span> <span class="c1">// angular velocity [rad/s]</span>
+  <span class="kt">double</span> <span class="n">vx</span><span class="p">;</span> <span class="c1">// forward velocity [m/s]</span>
+  <span class="kt">double</span> <span class="n">vy</span><span class="p">;</span> <span class="c1">// lateral velocity [m/s]</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="nc">TimedVelocity2D</span>
+<span class="p">{</span>
+  <span class="n">Time</span> <span class="n">tm</span><span class="p">;</span>
+  <span class="n">Velocity2D</span> <span class="n">data</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>(Translation continues into autonomous movement control, sensor mapping, and the KobukiAutoMove example.)</p>
+
+<h3 id="autonomous-navigation">Autonomous Navigation</h3>
+
+<p>Next, let’s make Kobuki move autonomously using its sensors.</p>
+
+<p>Kobuki is equipped with:</p>
+
+<ul>
+  <li>Bumper sensors</li>
+  <li>Proximity sensors (near/far)</li>
+  <li>Cliff sensors</li>
+</ul>
+
+<p>In this example, we will implement a simple Roomba-like behavior:</p>
+
+<ol>
+  <li>Move forward continuously.</li>
+  <li>When a wall or obstacle is detected:
+    <ul>
+      <li>Move backward slightly.</li>
+      <li>Rotate.</li>
+      <li>Resume moving forward.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>(Actual Roomba robots use more sophisticated algorithms.)</p>
+
+<p>The sensor outputs of the KobukiAIST RTC are shown below.</p>
+
+<p>Note that the IR sensors are intended to receive infrared signals from the docking station and cannot be used for obstacle detection.</p>
+
+<p>Therefore, only the bumper and cliff sensors should be used for obstacle and cliff detection.</p>
+
+<table class="table-alt">
+<tr><th>No.</th><th>Enum</th><th>Description</th></tr>
+<tr><td>0</td><td>RIGHT_BUMPER</td><td>Right bumper</td></tr>
+<tr><td>1</td><td>CENTER_BUMPER</td><td>Center bumper</td></tr>
+<tr><td>2</td><td>LEFT_BUMPER</td><td>Left bumper</td></tr>
+<tr><td>3</td><td>RIGHT_WHEEL_DROP</td><td>Right wheel drop</td></tr>
+<tr><td>4</td><td>LEFT_WHEEL_DROP</td><td>Left wheel drop</td></tr>
+<tr><td>5</td><td>RIGHT_CLIFF</td><td>Right cliff sensor</td></tr>
+<tr><td>6</td><td>CENTER_CLIFF</td><td>Center cliff sensor</td></tr>
+<tr><td>7</td><td>LEFT_CLIFF</td><td>Left cliff sensor</td></tr>
+<tr><td>8</td><td>RIGHT_IRFAR_RIGHT</td><td>Right IR / Dock Right Far</td></tr>
+<tr><td>9</td><td>RIGHT_IRFAR_CENTER</td><td>Right IR / Dock Center Far</td></tr>
+<tr><td>10</td><td>RIGHT_IRFAR_LEFT</td><td>Right IR / Dock Left Far</td></tr>
+<tr><td>11</td><td>RIGHT_IRNEAR_RIGHT</td><td>Right IR / Dock Right Near</td></tr>
+<tr><td>12</td><td>RIGHT_IRNEAR_CENTER</td><td>Right IR / Dock Center Near</td></tr>
+<tr><td>13</td><td>RIGHT_IRNEAR_LEFT</td><td>Right IR / Dock Left Near</td></tr>
+<tr><td>14</td><td>CENTER_IRFAR_RIGHT</td><td>Center IR / Dock Right Far</td></tr>
+<tr><td>15</td><td>CENTER_IRFAR_CENTER</td><td>Center IR / Dock Center Far</td></tr>
+<tr><td>16</td><td>CENTER_IRFAR_LEFT</td><td>Center IR / Dock Left Far</td></tr>
+<tr><td>17</td><td>CENTER_IRNEAR_RIGHT</td><td>Center IR / Dock Right Near</td></tr>
+<tr><td>18</td><td>CENTER_IRNEAR_CENTER</td><td>Center IR / Dock Center Near</td></tr>
+<tr><td>19</td><td>CENTER_IRNEAR_LEFT</td><td>Center IR / Dock Left Near</td></tr>
+<tr><td>20</td><td>LEFT_IRFAR_RIGHT</td><td>Left IR / Dock Right Far</td></tr>
+<tr><td>21</td><td>LEFT_IRFAR_CENTER</td><td>Left IR / Dock Center Far</td></tr>
+<tr><td>22</td><td>LEFT_IRFAR_LEFT</td><td>Left IR / Dock Left Far</td></tr>
+<tr><td>23</td><td>LEFT_IRNEAR_RIGHT</td><td>Left IR / Dock Right Near</td></tr>
+<tr><td>24</td><td>LEFT_IRNEAR_CENTER</td><td>Left IR / Dock Center Near</td></tr>
+<tr><td>25</td><td>LEFT_IRNEAR_LEFT</td><td>Left IR / Dock Left Near</td></tr>
+<tr><td>26</td><td>KOBUKI_DOCKED</td><td>Docking completed</td></tr>
+</table>
+
+<p>To receive these sensor outputs, you will need:</p>
+
+<ul>
+  <li>One InPort of type <code class="language-plaintext highlighter-rouge">RTC::TimedBooleanSeq</code></li>
+  <li>One OutPort of type <code class="language-plaintext highlighter-rouge">TimedVelocity2D</code> for sending velocity commands to Kobuki</li>
+</ul>
+
+<table class="table-alt">
+<tr><th colspan="2" style="text-align:center;">Basic Profile</th></tr>
+<tr><td>Component Name</td><td>KobukiAutoMove</td></tr>
+<tr><td>Module Description</td><td>Kobuki auto move component</td></tr>
+<tr><td>Version</td><td>1.0.0</td></tr>
+<tr><td>Vendor</td><td>AIST</td></tr>
+
+<tr><th colspan="2" style="text-align:center;">Activities</th></tr>
+<tr><td colspan="2">onInitialize, onFinalize, onActivated, onDeactivated, onExecute</td></tr>
+
+<tr><th colspan="2" style="text-align:center;">Data Ports</th></tr>
+
+<tr><td colspan="2">[in] bumper</td></tr>
+<tr><td>Description</td><td>Sensor information (true: obstacle detected; false: no obstacle)</td></tr>
+<tr><td>Data Type</td><td>TimedBooleanSeq</td></tr>
+<tr><td>Details</td><td>data[0]: Right bumper, data[1]: Center bumper, ... data[7]: Left cliff sensor</td></tr>
+
+<tr><td colspan="2">[out] targetVelocity</td></tr>
+<tr><td>Description</td><td>Mobile robot velocity vector</td></tr>
+<tr><td>Data Type</td><td>TimedVelocity2D</td></tr>
+<tr><td>Details</td><td>vx: linear velocity, vy: 0.0, va: angular velocity</td></tr>
+<tr><td>Units</td><td>vx [m/s], va [rad/s]</td></tr>
+</table>
+
+<p>Using the information above, try creating a simple RTC that enables Kobuki to move autonomously.</p>
+
+<p>If you encounter problems connecting components, refer to the Troubleshooting section.</p>
+
+<h4 id="hint-1">Hint</h4>
+
+<p>As shown earlier, Kobuki velocity commands use the <code class="language-plaintext highlighter-rouge">TimedVelocity2D</code> type:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="nc">Velocity2D</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">va</span><span class="p">;</span> <span class="c1">// angular velocity [rad/s]</span>
+  <span class="kt">double</span> <span class="n">vx</span><span class="p">;</span> <span class="c1">// forward velocity [m/s]</span>
+  <span class="kt">double</span> <span class="n">vy</span><span class="p">;</span> <span class="c1">// lateral velocity [m/s]</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="nc">TimedVelocity2D</span>
+<span class="p">{</span>
+  <span class="n">Time</span> <span class="n">tm</span><span class="p">;</span>
+  <span class="n">Velocity2D</span> <span class="n">data</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>For a differential-drive robot:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vy</span> <span class="o">=</span> <span class="mf">0.0</span>
+</code></pre></div></div>
+
+<p>Moving forward:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">va</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">vx</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">;</span>
+<span class="n">vy</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Moving backward:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">va</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">vx</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">;</span>
+<span class="n">vy</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Rotating in place:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">va</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="n">vx</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">vy</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div align="center"><a href="timed_velocity_2d.png"><img src="timed_velocity_2d.png" width="60%;" /></a></div>
+<div align="center"><strong>Mobile Robot Coordinate System and TimedVelocity2D</strong></div>
+
+<p>When data arrives at the InPort, read the bumper information.</p>
+
+<p>The bumper status is stored in the <code class="language-plaintext highlighter-rouge">.data</code> array of the <code class="language-plaintext highlighter-rouge">TimedBooleanSeq</code> object.</p>
+
+<p>From the table above:</p>
+
+<ul>
+  <li>data[0] = Right bumper</li>
+  <li>data[1] = Center bumper</li>
+  <li>data[2] = Left bumper</li>
+</ul>
+
+<p>If any of these values becomes <code class="language-plaintext highlighter-rouge">true</code>, a collision has been detected.</p>
+
+<p>The robot should then:</p>
+
+<ol>
+  <li>Move backward.</li>
+  <li>Rotate.</li>
+  <li>Move forward again.</li>
+</ol>
+
+<p>Set the appropriate values in the <code class="language-plaintext highlighter-rouge">TimedVelocity2D</code> structure and write them to the OutPort to send velocity commands to Kobuki.</p>
+
+<p>The control algorithm is illustrated below.</p>
+
+<div align="center"><a href="kobuki_auto.png"><img src="kobuki_auto.png" width="50%;" /></a></div>
+<div align="center"><strong>Flowchart</strong></div>
+
+<p>Ideally, the robot would measure how far it has moved backward or rotated and use feedback control.</p>
+
+<p>For simplicity, however, you may use sleep functions.</p>
+
+<p>On Linux:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">coil</span><span class="o">::</span><span class="n">sleep</span><span class="p">(</span><span class="n">coil</span><span class="o">::</span><span class="n">TimeValue</span><span class="p">(</span><span class="mf">0.01</span><span class="p">));</span> <span class="c1">// wait 10 ms</span>
+</code></pre></div></div>
+
+<p>On Windows, the accuracy of <code class="language-plaintext highlighter-rouge">coil::sleep()</code> is poor, so the standard <code class="language-plaintext highlighter-rouge">Sleep()</code> function is recommended.</p>
+
+<p>Using these hints, try implementing a control component that enables Kobuki to move autonomously.</p>
+
+<h2 id="reference-solutions">Reference Solutions</h2>
+
+<p>Reference implementations of the modified TkJoyStick component and the autonomous navigation component are provided below:</p>
+
+<ul>
+  <li>
+    <p><a href="TkJoyStick.zip">GUI Joystick:TkJoyStick.zip</a></p>
+  </li>
+  <li>
+    <p><a href="KobukiAutoMove.zip">Kobuki Autonomous Controller:KobukiAutoMove.zip</a></p>
+  </li>
+</ul>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

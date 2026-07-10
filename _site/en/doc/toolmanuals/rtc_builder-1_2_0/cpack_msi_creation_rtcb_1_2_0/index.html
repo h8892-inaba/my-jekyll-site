@@ -1,0 +1,1176 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Creating an msi with CPack (Windows) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Creating an msi with CPack (Windows)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtc_builder-1_2_0/cpack_msi_creation_rtcb_1_2_0/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtc_builder-1_2_0/cpack_msi_creation_rtcb_1_2_0/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Creating an msi with CPack (Windows)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Creating an msi with CPack (Windows)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtc_builder-1_2_0/cpack_msi_creation_rtcb_1_2_0/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtc_builder-1_2_0/cpack_msi_creation_rtcb_1_2_0/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtc_builder-1_2_0/cpack_msi_creation_rtcb_1_2_0/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Creating an msi with CPack (Windows) <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtc_builder-1_2_0/cpack_msi_creation_rtcb_1_2_0/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/toolmanuals/rtc_builder-1_2_0/cpack_msi_creation_rtcb_1_2_0/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#introduction">Introduction</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#creation-procedure-when-not-including-doxygen-documentation">Creation Procedure When Not Including doxygen Documentation</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#creation-procedure-when-including-doxygen-documentation">Creation Procedure When Including doxygen Documentation</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#msi-installer-storage-location-and-file-name">msi Installer Storage Location and File Name</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#installing-and-uninstalling-an-msi">Installing and Uninstalling an msi</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#installation">Installation</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#guid-settings-for-upgrades">GUID Settings for Upgrades</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#uninstallation">Uninstallation</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#idl-compilation-processing-for-python-rtcs-with-service-ports">IDL Compilation Processing for Python RTCs with Service Ports</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: CPack で msi 作成（Windows） -->
+<p>#contents(4)</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The msi installer is created by building with Visual Studio.<br /></p>
+
+<h2 id="creation-procedure-when-not-including-doxygen-documentation">Creation Procedure When Not Including doxygen Documentation</h2>
+<ul>
+  <li>By default, the documentation build is OFF, so it is not generated.</li>
+</ul>
+
+<p>From Solution Explorer in Visual Studio, right-click “PACKAGE”, select “Build”, and execute it.
+<br /></p>
+<div align="center"><a href="doxygenoff1-1.png"><img src="doxygenoff1-1.png" width="50%;" /></a></div>
+
+<p><br /></p>
+
+<h2 id="creation-procedure-when-including-doxygen-documentation">Creation Procedure When Including doxygen Documentation</h2>
+<p>Change the following line in CMakeLists.txt directly under the project folder from OFF to ON.<br />
+For a C++ RTC, this is around line 86, and for a Python RTC, around line 77.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> option(BUILD_DOCUMENTATION "Build the documentation" ON) ※この行の OFF を ON に書き換えます。(デフォルトは OFF)
+</code></pre></div></div>
+
+<ol>
+  <li>From Solution Explorer in Visual Studio, right-click “doc”, select “Build”, and execute it.<br />
+<br /></li>
+</ol>
+<div align="center"><a href="doxygenon1-1.png"><img src="doxygenon1-1.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>After the build of “doc” is complete, right-click “PACKAGE” and select “Build”.<br />
+<br /></li>
+</ol>
+
+<div align="center"><a href="doxygenon1-2.png"><img src="doxygenon1-2.png" width="50%;" /></a></div>
+<p><br /></p>
+
+<p>[Notes]</p>
+<ul>
+  <li>Confirm that “BUILD_DOCUMENTATION” is checked in CMake configure.</li>
+  <li>Build “doc” first, and then build “PACKAGE”. If you build “PACKAGE” without building “doc”, an error will occur.</li>
+</ul>
+
+<h2 id="msi-installer-storage-location-and-file-name">msi Installer Storage Location and File Name</h2>
+<p>If it is created successfully, it will be saved in [build] under the project directory.<br />
+The file name will be “RTC project name + RTC version number_OpenRTM-aist version number_architecture”.<br /><br />
+(Example) Flip100_rtm120_win64.msi<br /></p>
+<ul>
+  <li>The architecture will be [win32] or [win64].<br />
+　The version number is in a format with dots removed; [1.0.0] becomes [100].</li>
+</ul>
+
+<h2 id="installing-and-uninstalling-an-msi">Installing and Uninstalling an msi</h2>
+<h3 id="installation">Installation</h3>
+<ol>
+  <li>Double-click the created msi installer.<br />
+<br /></li>
+  <li>Click [Next].<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_install1-1.png"><img src="msi_install1-1.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>Check [I accept the license agreement] and click [Next].<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_install2-1.png"><img src="msi_install2-1.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>Click [Next].<br />
+The default installation path is as follows.<br />
+(Example) C:\Program Files\OpenRTM-aist\1.2.0\Components\c++\ImageProcessing&lt;br&gt;
+    <ul>
+      <li>ImageProcessing is the name specified in “Module Category” in RTCBuilder.<br />
+<br /></li>
+    </ul>
+  </li>
+</ol>
+<div align="center"><a href="msi_install3-1.png"><img src="msi_install3-1.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>Click [Install] to start the installation.<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_install4-1.png"><img src="msi_install4-1.png" width="50%;" /></a></div>
+<p><br /></p>
+<div align="center"><a href="msi_install4-2.png"><img src="msi_install4-2.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>Click [Finish] to exit the installer. After installation, it will be registered in the Start menu.<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_install5-1.png"><img src="msi_install5-1.png" width="50%;" /></a></div>
+<p><br /></p>
+
+<h3 id="guid-settings-for-upgrades">GUID Settings for Upgrades</h3>
+<p>When upgrading, it is necessary to set a GUID in order to check the version that is already installed.
+Because the GUID is not set by default, a new GUID is assigned every time PACKAGE is built in Visual Studio.
+By setting the GUID in advance, it is possible to determine whether it is an upgrade or a new installation.<br />
+The procedure for setting the GUID is shown below.<br /><br /></p>
+<ol>
+  <li>From Solution Explorer in Visual Studio, right-click “PACKAGE”, select “Build”, and execute it.<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_upgrade1-1.png.png"><img src="msi_upgrade1-1.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>When the build is complete, the GUID will be displayed in the output screen below. Select it and copy it.<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_upgrade2-1.png"><img src="msi_upgrade2-1.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>From Solution Explorer, expand “ALL_BILD” and click CMakeLists.txt.<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_upgrade3-1.png"><img src="msi_upgrade3-1.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>Paste the GUID copied in step 2 as shown in the following screen, and overwrite-save CMakeLists.txt.<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_upgrade4-1.png"><img src="msi_upgrade4-1.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>Again, from Solution Explorer, right-click “PACKAGE”, select “Build”, and execute it.<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_upgrade5-1.png"><img src="msi_upgrade5-1.png" width="50%;" /></a></div>
+<p><br /></p>
+
+<p>[Supplement]<br />
+In addition to the above, there is also a method of creating a new GUID.<br />
+From the Visual Studio menu, select [Tools] &gt; [Create GUID] to display the “Create GUID” dialog.<br />
+<br /></p>
+<ol>
+  <li>In [GUID format], select [4. Registry Format…].<br /></li>
+  <li>Click the [New GUID] button.<br /></li>
+  <li>Click the [Copy] button.<br /></li>
+  <li>Click the [Exit] button to close the dialog.<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_upgrade6-1.png"><img src="msi_upgrade6-1.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>Paste it into CMakeLists.txt as shown in the following screen and overwrite-save it. * Paste only the numbers.<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_upgrade4-1.png"><img src="msi_upgrade4-1.png" width="50%;" /></a></div>
+<p><br /></p>
+
+<h3 id="uninstallation">Uninstallation</h3>
+<p>The uninstallation procedure is as follows.</p>
+<h4 id="how-to-remove-from-control-panel">How to Remove from Control Panel</h4>
+<ol>
+  <li>Open [Control Panel] and click [Uninstall a program].<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_uninstall0-1.png"><img src="msi_uninstall0-1.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>Select the installed package name and click [Uninstall].<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_uninstall0-2.png"><img src="msi_uninstall0-2.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>If the display has disappeared from the list in Control Panel, uninstallation is complete.<br /><br />
+    <h4 id="how-to-remove-from-the-installer">How to Remove from the Installer</h4>
+  </li>
+  <li>Double-click the created msi installer.<br /><br /></li>
+  <li>Click [Remove].<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_uninstall1-1.png"><img src="msi_uninstall1-1.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>Click [Remove].<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_uninstall2-1.png"><img src="msi_uninstall2-1.png" width="50%;" /></a></div>
+<p><br /></p>
+<div align="center"><a href="msi_uninstall2-2.png"><img src="msi_uninstall2-2.png" width="50%;" /></a></div>
+<p><br /></p>
+<ol>
+  <li>Click [Finish] to exit the installer.<br />
+<br /></li>
+</ol>
+<div align="center"><a href="msi_uninstall3-1.png"><img src="msi_uninstall3-1.png" width="50%;" /></a></div>
+<p><br /></p>
+
+<h2 id="idl-compilation-processing-for-python-rtcs-with-service-ports">IDL Compilation Processing for Python RTCs with Service Ports</h2>
+<p>Python RTCs with service ports execute IDL compilation when the package is installed.
+This behavior is implemented by idlcompile.bat and delete.bat in the project folder during IDL compilation execution, so be careful not to delete these files, as the function will stop working.<br />
+By uninstalling from Control Panel, files generated after IDL compilation execution will also be deleted.</p>
+
+<p>The following is a list of files installed by the msi installer. Files marked with ★ are generated by IDL compilation.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> tree /f インストールディレクトリー\OpenRTM-aist\1.2.0\Components\Python\Category\FlipGUI
+ C:\インストールディレクトリー\OpenRTM-aist\1.2.0\Components\Python\Category\FlipGUI
+ │  BasicDataType_idl.py ★
+ │  CalibrationService_idl.py ★
+ │  delete.bat
+ │  ExtendedDataTypes_idl.py ★
+ │  idlcompile.bat
+ │  InterfaceDataTypes_idl.py ★
+ │  RTC.xml
+ │  rtutil.py
+ │  setup.py
+ │  flipgui.py
+ │  FlipGUIComp.py
+ │
+ ├─idl
+ │   BasicDataType.idl
+ │   CalibrationService.idl
+ │   CMakeLists.txt
+ │   ExtendedDataTypes.idl
+ │   InterfaceDataTypes.idl
+ │
+ ├─ImageCalibService ★
+ │   __init__.py ★
+ │
+ ├─ImageCalibService__POA ★
+ │   __init__.py ★
+ │
+ ├─RTC ★
+ │   __init__.py ★
+ │
+ └─RTC__POA ★
+       __init__.py ★
+</code></pre></div></div>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

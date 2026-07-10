@@ -1,0 +1,1605 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Initial Setup of EV3 and ev3dev | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Initial Setup of EV3 and ev3dev" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Initial Setup of EV3 and ev3dev" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Initial Setup of EV3 and ev3dev","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Initial Setup of EV3 and ev3dev <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#installing-batteries-wireless-lan-and-sd-card">Installing Batteries, Wireless LAN, and SD Card</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#batteries">Batteries</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#wireless-lan">Wireless LAN</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#inserting-the-sd-card">Inserting the SD Card</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#starting-ev3dev">Starting ev3dev</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#ssh-login">SSH Login</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#connecting-to-a-network">Connecting to a Network</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#connecting-via-usb-cable">Connecting via USB Cable</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#logging-in">Logging In</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#installing-tera-term-reference">Installing Tera Term (Reference)</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#configuration">Configuration</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#wireless-lan-configuration">Wireless LAN Configuration</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#editing-etcwpa_supplicantwpa_supplicantconf">Editing /etc/wpa_supplicant/wpa_supplicant.conf</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#remote-access-using-a-hostname">Remote Access Using a Hostname</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#installing-avahi-daemon">Installing avahi-daemon</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#installing-bonjour-windows-only">Installing Bonjour (Windows Only)</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: Initial Setup of EV3 and ev3dev -->
+<!-- -*- pukiwiki-edit -*- -->
+<!-- * Initial Setup of EV3 and ev3dev -->
+
+<p>#contents</p>
+
+<h2 id="installing-batteries-wireless-lan-and-sd-card">Installing Batteries, Wireless LAN, and SD Card</h2>
+
+<h3 id="batteries">Batteries</h3>
+
+<p>The EV3 can be powered by six AA batteries or a dedicated battery pack. Insert either six AA batteries or the dedicated battery pack.</p>
+
+<div align="center"><a href="EV3_with_AAAbattery.png"><img src="EV3_with_AAAbattery.png" width="40%;" /></a></div>
+<div align="center"><strong>AA Batteries</strong></div>
+
+<div align="center"><a href="EV3_with_battery.png"><img src="EV3_with_battery.png" width="40%;" /></a></div>
+<div align="center"><strong>Dedicated EV3 Battery Pack</strong></div>
+
+<h3 id="wireless-lan">Wireless LAN</h3>
+
+<p>Prepare a USB wireless LAN adapter. The EV3 can also connect to the Internet through a PC using a wired connection, but this guide assumes a wireless LAN connection.</p>
+
+<p>Most recent wireless LAN dongles should work. The following dongles have been tested and confirmed to work:</p>
+
+<ul>
+  <li>BUFFALO WLI-UC-GNM2 Wireless LAN Adapter</li>
+  <li>BUFFALO WLI-UC-GN Wireless LAN Adapter</li>
+  <li>PLANEX GW-USMicro300</li>
+</ul>
+
+<div align="center"><a href="wlan_dongle.png"><img src="wlan_dongle.png" width="60%;" /></a></div>
+<div align="center"><strong>Example Wireless LAN Dongle</strong></div>
+
+<p>For other connection methods, refer to the ev3dev website.</p>
+
+<ul>
+  <li><a href="http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/">Internet Connection via Bluetooth</a></li>
+  <li><a href="http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/">Connection via USB</a></li>
+  <li><a href="http://www.ev3dev.org/docs/tutorials/using-bluetooth-tethering/">Bluetooth Tethering</a></li>
+  <li><a href="http://www.ev3dev.org/docs/tutorials/using-usb-tethering/">USB Tethering</a></li>
+</ul>
+
+<h3 id="inserting-the-sd-card">Inserting the SD Card</h3>
+
+<p>Insert the SD card containing the ev3dev image into the side of the EV3 controller together with the wireless LAN dongle as shown below.</p>
+
+<div align="center"><a href="ev3_wlan_sdcard.png"><img src="ev3_wlan_sdcard.png" width="60%;" /></a></div>
+<div align="center"><strong>Insert the Wireless LAN Dongle and SD Card into the Side of the EV3</strong></div>
+
+<h2 id="starting-ev3dev">Starting ev3dev</h2>
+
+<p>Insert the SD card and press the power button (the dark gray button in the center of the directional pad) to power on the EV3.</p>
+
+<p>The following boot screen will appear and the LEDs around the directional pad will flash.</p>
+
+<div align="center"><a href="ev3dev_screen_booting.png"><img src="ev3dev_screen_booting.png" width="60%;" /></a></div>
+<div align="center"><strong>ev3dev Boot Screen</strong></div>
+
+<p>After about one minute, startup will complete and the following screen will be displayed.</p>
+
+<div align="center"><a href="ev3dev_screen.png"><img src="ev3dev_screen.png" width="60%;" /></a></div>
+<div align="center"><strong>Screen Immediately After Startup</strong></div>
+
+<h2 id="ssh-login">SSH Login</h2>
+
+<h3 id="connecting-to-a-network">Connecting to a Network</h3>
+
+<p>Immediately after startup, the EV3 is not connected to a network.</p>
+
+<p>From the initial screen, use the directional buttons to select <strong>Wireless and Networks</strong>, then press the Enter button (the dark gray center button).</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+                       V [8.12&gt;
+ ------------------------------
+  File Brower                &gt;
+  Device Browser             &gt;
+ [Wireless and Networks      &gt; ]
+  Battery                    &gt;
+  About                      &gt;
+ ------------------------------
+</code></pre></div></div>
+
+<p>You will see the following screen:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+      Wireless and Network
+ ------------------------------
+        Status: Offline
+ ------------------------------
+ Bluetooth                    &gt;
+ USB                          &gt;
+ Wifi                         &gt;
+ All Network Connections      &gt;
+ Tethering                    &gt;
+ Offline Mode                □
+ ------------------------------
+</code></pre></div></div>
+
+<p>Select <strong>WiFi</strong> to open the following screen:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+           WiFi
+ ------------------------------
+ Powered                      □
+ Start Scan
+            Networks
+ ------------------------------
+ [* MyWirelessNetwork   ?? ]
+
+ ------------------------------
+</code></pre></div></div>
+
+<p>Turn <strong>Powered</strong> ON, scan for available networks, and select the SSID you want to connect to.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+      MyWirelessNetwork
+ ------------------------------
+ Status:                 Online
+ Signal                     83%
+ Security        WPA/2 PSK, WPS
+ IP Address:
+ [    Connect   ]
+ [      Network Connection     ]
+</code></pre></div></div>
+
+<p>Select <strong>Connect</strong> and press Enter. A dialog for entering the key will appear. Press Enter again to display the keyboard shown below and enter the network key.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [_                           ]
+ [ABC] [abc] [123] [!@# ] [INS]
+ [Q][W][E][R][T][Y][U][I][O][P]
+ [A][S][D][F][G][H][J][K][L][ ]
+ [ ][Z][X][C][V][B][N][M][ ][ ]
+ [ Accept ]          [ Cancel ]
+</code></pre></div></div>
+
+<p>After entering the key, select <strong>Accept</strong> and press Enter. The key will appear in the previous dialog. Press <strong>Accept</strong> again.</p>
+
+<p>After a short wait, the EV3 should connect to the specified wireless LAN access point.</p>
+
+<p>Press the Back button (bottom-left button on the screen) several times to return to the home screen.</p>
+
+<p>The assigned IP address should now appear in the upper-left corner.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> --------------------------
+ 192.168.11.3          V [8.12&gt;
+ --------------------------
+  File Brower                &gt;
+  Device Browser             &gt;
+ [Wireless and Networks      &gt; ]
+  Battery                    &gt;
+  About                      &gt;
+
+ --------------------------
+</code></pre></div></div>
+
+<h3 id="connecting-via-usb-cable">Connecting via USB Cable</h3>
+
+<p>If wireless LAN cannot be used for some reason, you can connect via USB cable.</p>
+
+<p>Connect the EV3 and PC using the supplied USB cable.</p>
+
+<div align="center"><a href="s_DSC00467.JPG"><img src="s_DSC00467.JPG" width="40%;" /></a></div>
+
+<p>From the ev3dev home screen, select <strong>Wireless and Networks</strong>.</p>
+
+<p>Next, select <strong>All Network Connections</strong>.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+      Wireless and Network
+ ------------------------------
+        Status: Offline
+ ------------------------------
+ Bluetooth                    &gt;
+ Wifi                         &gt;
+ All Network Connections      &gt; ]
+ Tethering                    &gt;
+ Offline Mode                □
+ ------------------------------
+</code></pre></div></div>
+
+<p>Select <strong>Wired</strong>.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+      All Network Connections
+ ------------------------------
+ Wired                        ψ ]
+ ------------------------------
+</code></pre></div></div>
+
+<p>Select <strong>Connect</strong> to establish the connection.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+             Wired
+ ------------------------------
+        Status: Offline
+ ------------------------------
+ Connect                        ]
+ Connect automatically       □
+ IPv4                         &gt;
+ DNS                          &gt;
+ ENET                         &gt;
+ ------------------------------
+</code></pre></div></div>
+
+<h4 id="configuring-usb-tethering">Configuring USB Tethering</h4>
+
+<p>This section explains how to configure USB tethering on the EV3.</p>
+
+<p>First, select <strong>Wireless and Networks</strong> from the ev3dev home screen.</p>
+
+<p>Next, select <strong>Tethering</strong>.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+      Wireless and Network
+ ------------------------------
+        Status: Offline
+ ------------------------------
+ Bluetooth                    &gt;
+ Wifi                         &gt;
+ All Network Connections      &gt;
+ Tethering                    &gt; ]
+ Offline Mode                □
+ ------------------------------
+</code></pre></div></div>
+
+<p>Enable <strong>Gadget</strong>.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ------------------------------
+           Tethering
+ ------------------------------
+ Bluetooth                   □
+ Gadget                      ■
+ Network Info                 &gt;
+ ------------------------------
+</code></pre></div></div>
+
+<h3 id="logging-in">Logging In</h3>
+
+<p>Connect to the EV3 via SSH using the assigned IP address.</p>
+
+<p>By default, ev3dev uses the following credentials:</p>
+
+<table class="table-alt">
+  <tr>
+    <td>ID</td>
+    <td>robot</td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td>maker</td>
+  </tr>
+</table>
+
+<p>On Windows, use terminal software such as Tera Term.</p>
+
+<p>On Linux, connect from a terminal using:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh robot@&lt;IP address&gt;
+</code></pre></div></div>
+
+<p>After logging in, you should see a screen similar to the following:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>             _____     _
+   _____   _|___ /  __| | _____   __
+  / _ \ \ / / |_ \ / _` |/ _ \ \ / /
+ |  __/\ V / ___) | (_| |  __/\ V /
+  \___| \_/ |____/ \__,_|\___| \_/
+
+ Debian jessie on LEGO MINDSTORMS EV3!
+
+ The programs included with the Debian GNU/Linux system are free software;
+ the exact distribution terms for each program are described in the
+ individual files in /usr/share/doc/*/copyright.
+
+ Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+ permitted by applicable law.
+ Last login: Tue Aug  4 01:34:12 2015 from openrtm.org
+ root@ev3dev:~#
+</code></pre></div></div>
+
+<h3 id="installing-tera-term-reference">Installing Tera Term (Reference)</h3>
+
+<p>To log in to the EV3 from Windows via SSH, an SSH client must be installed.</p>
+
+<p>Many SSH clients are available for Windows; here we introduce Tera Term.</p>
+
+<ul>
+  <li><a href="http://sourceforge.jp/projects/ttssh2/">Tera Term</a></li>
+</ul>
+
+<p>Download and install Tera Term from the link above.</p>
+
+<div align="center"><a href="teraterm_connect.png"><img src="teraterm_connect.png" width="60%;" /></a></div>
+<div align="center"><strong>Connecting with Tera Term</strong></div>
+
+<p>After installation, start Tera Term. The connection dialog will appear.</p>
+
+<p>Enter the hostname configured earlier followed by <strong>.local</strong> in the Host field and click OK.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<h3 id="wireless-lan-configuration">Wireless LAN Configuration</h3>
+
+<p>The wireless LAN settings configured above will be lost after rebooting.</p>
+
+<p>To automatically reconnect after startup, log in to the EV3 and configure the wireless LAN connection.</p>
+
+<h3 id="editing-etcwpa_supplicantwpa_supplicantconf">Editing /etc/wpa_supplicant/wpa_supplicant.conf</h3>
+
+<p>Register the ESSID and key for your wireless LAN.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd /etc/wpa_supplicant</span>
+<span class="c"># wpa_passphrase ESSID pass &gt;&gt; wpa_supplicant.conf</span>
+</code></pre></div></div>
+
+<p>Replace <code class="language-plaintext highlighter-rouge">ESSID</code> with your wireless LAN ESSID and <code class="language-plaintext highlighter-rouge">pass</code> with the network key.</p>
+
+<p>Be careful to use <strong>»</strong> (append) rather than <strong>&gt;</strong> (overwrite).</p>
+
+<p>The resulting file should look similar to this:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network={
+        ssid="OpenRTM"
+        #psk="4332221111"
+        psk=142914b76be167767055ff945898baaaf83c42b3ad3b99afb0ae531e8fb15e5e
+}
+</code></pre></div></div>
+
+<p>Normally this is sufficient, but depending on your wireless access point configuration, additional settings may be required.</p>
+
+<p>Example:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network={
+        ssid="OpenRTM"
+        proto=WPA2
+        key_mgmt=WPA-PSK
+        pairwise=TKIP CCMP
+        group=TKIP CCMP
+        #psk="4332221111"
+        psk=142914b76be167767055ff945898baaaf83c42b3ad3b99afb0ae531e8fb15e5e
+}
+</code></pre></div></div>
+
+<p>Finally, reinitialize the interface:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ifdown wlan0 ; ifup wlan0</span>
+</code></pre></div></div>
+
+<p>To verify the configuration, reboot the EV3:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># reboot</span>
+</code></pre></div></div>
+
+<p>After rebooting, if everything is configured correctly, the IP address should appear in the upper-left corner of the screen.</p>
+
+<h3 id="remote-access-using-a-hostname">Remote Access Using a Hostname</h3>
+
+<p>You can connect to the EV3 using the IP address displayed in the upper-left corner after connecting to a wireless LAN.</p>
+
+<p>However, because the IP address is assigned by DHCP, it may change each time you connect.</p>
+
+<p>ev3dev includes <strong>avahi</strong>, a Bonjour-compatible service.</p>
+
+<p>Bonjour is a service proposed by Apple that automatically discovers services on a network.</p>
+
+<p>Using avahi, you can access an EV3 with a dynamically assigned IP address by hostname.</p>
+
+<h4 id="setting-the-hostname">Setting the Hostname</h4>
+
+<p>By default, ev3dev uses the hostname <strong>ev3dev</strong>.</p>
+
+<p>Other machines with avahi or Bonjour installed can access it using the hostname <strong>ev3dev.local</strong>.</p>
+
+<p>If multiple EV3 units are connected to the same network, configure unique hostnames.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vi /etc/hostname
+</code></pre></div></div>
+
+<p>Enter the hostname on the first line of <code class="language-plaintext highlighter-rouge">/etc/hostname</code>.</p>
+
+<h3 id="installing-avahi-daemon">Installing avahi-daemon</h3>
+
+<p>To access the EV3 from a Linux host, avahi must be installed.</p>
+
+<p>Most modern Linux distributions already include it, but if not, install it as follows (for Debian-based distributions):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get update
+<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>avahi-daemon
+</code></pre></div></div>
+
+<p>Test the connection by pinging the EV3:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ping ev3dev.local
+</code></pre></div></div>
+
+<p>If you receive replies, avahi is configured correctly.</p>
+
+<h3 id="installing-bonjour-windows-only">Installing Bonjour (Windows Only)</h3>
+
+<p>To access the EV3 from a PC, avahi or Bonjour must also be installed on the PC side.</p>
+
+<p>Bonjour is not installed by default on Windows.</p>
+
+<p>The easiest way to install Bonjour is by installing iTunes.</p>
+
+<ul>
+  <li><a href="http://www.apple.com/jp/itunes/download/">Download iTunes</a></li>
+</ul>
+
+<p>If you do not want to install iTunes, you can extract <code class="language-plaintext highlighter-rouge">BonjourSetup.exe</code> from the downloaded <code class="language-plaintext highlighter-rouge">iTunesSetup.exe</code> using an archive utility.</p>
+
+<p>Bonjour is also included in Apple’s Bonjour Print Services package.</p>
+
+<ul>
+  <li><a href="http://www.apple.com/jp/support/bonjour/">Apple Bonjour</a>
+    <ul>
+      <li><a href="http://support.apple.com/kb/DL999">Bonjour Print Services (v2.0.2.0)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Apple no longer distributes Bonjour for Windows as a standalone package, but some third-party sites redistribute older versions. Use them at your own risk.</p>
+
+<ul>
+  <li><a href="http://www.download3k.com/Install-Bonjour.html">BonjourSetup.exe (v1.0.6.2)</a></li>
+  <li><a href="http://download.techworld.com/760/apple-bonjour-for-windows-106-64-bit/">Bonjour64Setup.exe (v1.0.6.2)</a></li>
+  <li><a href="https://developer.apple.com/downloads/index.action?q=Bonjour%20SDK%20for%20Windows">Apple Bonjour SDK (requires Apple Developer login)</a></li>
+</ul>
+
+<h4 id="if-bonjour-does-not-work-properly">If Bonjour Does Not Work Properly</h4>
+
+<p>If a firewall is enabled, Bonjour may not function correctly.</p>
+
+<p>In that case, open UDP port 5353 or disable the firewall.</p>
+
+<ul>
+  <li><a href="http://support.apple.com/kb/TS2235?viewlocale=ja_JP">Bonjour for Windows does not work because of firewall settings</a></li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

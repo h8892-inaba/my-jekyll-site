@@ -1,0 +1,1284 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Code Generation, Save, and Load | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Code Generation, Save, and Load" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtc_builder-1_2_0/codegen_rtcb_1_2_0/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtc_builder-1_2_0/codegen_rtcb_1_2_0/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Code Generation, Save, and Load" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Code Generation, Save, and Load","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtc_builder-1_2_0/codegen_rtcb_1_2_0/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtc_builder-1_2_0/codegen_rtcb_1_2_0/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtc_builder-1_2_0/codegen_rtcb_1_2_0/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Code Generation, Save, and Load <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtc_builder-1_2_0/codegen_rtcb_1_2_0/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/toolmanuals/rtc_builder-1_2_0/codegen_rtcb_1_2_0/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#code-generation">Code Generation</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#output-selection">Output Selection</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#perspective-switching">Perspective Switching</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#packaging-function-for-generated-files">Packaging Function for Generated Files</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#saving-and-loading-settings">Saving and Loading Settings</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#save">Save</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#load">Load</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: コード生成・セーブとロード -->
+<p>#contents</p>
+
+<h2 id="code-generation">Code Generation</h2>
+<p>After setting various profile information for the RT component to be generated, generate the template code.
+When you click the [Generate Code] button on the Basic Profile input page, template code corresponding to the entered profile information is generated.
+<br /></p>
+
+<div align="center"><a href="CodeGen.png"><img src="CodeGen.png" width="60%;" /></a></div>
+<div align="center"><strong>Generating Template Code</strong></div>
+<p><br /></p>
+
+<p>The template files generated when code generation is executed after selecting each language are as follows.</p>
+
+<div align="center"><strong>List of Generated Files</strong></div>
+
+<ul>
+  <li>C++ (when the “Use old build environment.” checkbox is not selected)</li>
+</ul>
+
+<table class="table-alt">
+  <tr style="text-align: center;">
+    <td>File Name</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt; Comp.cpp</td>
+    <td>Code for starting the RT component.</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt;.h</td>
+    <td>Header of the RT component body.</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt;.cpp</td>
+    <td>Code of the RT component body.</td>
+  </tr>
+  <tr>
+    <td>&lt;service type name&gt;SVC_impl.h</td>
+    <td>Header of the service provider. (*)<br />Only the Type specified in ServiceProvider is output.</td>
+  </tr>
+  <tr>
+    <td>&lt;service type name&gt;SVC_impl. cpp</td>
+    <td>Implementation code of the service provider. (*)<br />Only the Type specified in ServiceProvider is output.</td>
+  </tr>
+  <tr>
+    <td>CMakeLists.txt</td>
+    <td>Configuration file for CMake.</td>
+  </tr>
+  <tr>
+    <td>doc/</td>
+  </tr>
+  <tr>
+    <td>doxyfile.in</td>
+    <td>Configuration file for Doxygen.</td>
+  </tr>
+  <tr>
+    <td>cmake/</td>
+  </tr>
+  <tr>
+    <td>uninstall_target.cmake.in</td>
+    <td>Template file for adding an uninstall target (for CMake)</td>
+  </tr>
+  <tr>
+    <td>cpack_options.cmake</td>
+    <td>Module for creating WiX packages (for CMake/WiX)</td>
+  </tr>
+  <tr>
+    <td>License.rtf</td>
+    <td>License display included in package information (for CMake/WiX)</td>
+  </tr>
+  <tr>
+    <td>wix.xsl.in</td>
+    <td>Template for specifying files to include in the WiX package (for CMake/WiX)</td>
+  </tr>
+  <tr>
+    <td>cmake/Modules/</td>
+  </tr>
+  <tr>
+    <td>FindOpenRTM.cmake</td>
+    <td>Module for obtaining OpenRTM-aist environment settings (for CMake)</td>
+  </tr>
+</table>
+
+<p><br /></p>
+
+<ul>
+  <li>C++ (when the [Use old build environment.] checkbox is selected)</li>
+</ul>
+<table class="table-alt">
+  <tr style="text-align: center;">
+    <td>File Name</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt; Comp.cpp</td>
+    <td>Code for starting the RT component.</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt;.h</td>
+    <td>Header of the RT component body.</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt;.cpp</td>
+    <td>Code of the RT component body.</td>
+  </tr>
+  <tr>
+    <td>&lt;service type name&gt;SVC_impl.h</td>
+    <td>Header of the service provider. (*)<br />Only the Type specified in ServiceProvider is output.</td>
+  </tr>
+  <tr>
+    <td>&lt;service type name&gt;SVC_impl. cpp</td>
+    <td>Implementation code of the service provider. (*)<br />Only the Type specified in ServiceProvider is output.</td>
+  </tr>
+  <tr>
+    <td>Makefile.&lt;RTC name&gt;</td>
+    <td>Makefile for compiling.</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt; _vc8.sln </td>
+    <td>Solution file for Visual Studio 2005.</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt;_vc8.vcproj</td>
+    <td>RT component project file for Visual Studio 2005.</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt;Comp_vc8.vcproj</td>
+    <td>Project file for startup code for Visual Studio 2005.</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt;_vc9.sln</td>
+    <td>Solution file for Visual Studio 2008.</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt;_vc9.vcproj</td>
+    <td>RT component project file for Visual Studio 2008.</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt;Comp_vc9.vcproj</td>
+    <td>Project file for startup code for Visual Studio 2008.</td>
+  </tr>
+  <tr>
+    <td>Copyprops.bat</td>
+    <td>Batch file for copying property files.</td>
+  </tr>
+  <tr>
+    <td>User_config.vsprops</td>
+    <td>User-defined property file.</td>
+  </tr>
+  <tr>
+    <td>OpenRTM-aist.vsprops</td>
+    <td>Property file for OpenRTM-aist.</td>
+  </tr>
+</table>
+
+<p><br /></p>
+
+<ul>
+  <li>Java</li>
+</ul>
+
+<p><br /></p>
+<table class="table-alt">
+  <tr style="text-align: center;">
+    <td>File Name</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt;Comp.java</td>
+    <td>Class for starting the RT component.</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt;.java</td>
+    <td>Class that defines the RT component's Component Profile, initialization processing, and so on.</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt;Impl.java</td>
+    <td>Main body of the RT component.</td>
+  </tr>
+  <tr>
+    <td>build_&lt;RTC name&gt;.xml</td>
+    <td>Build file for the RT component.</td>
+  </tr>
+  <tr>
+    <td>&lt;service type name&gt; SVC_impl.java</td>
+    <td>Implementation class of the service provider. (*)</td>
+  </tr>
+  <tr>
+    <td>CMakeLists.txt</td>
+    <td>Configuration file for CMake.</td>
+  </tr>
+  <tr>
+    <td>doc/</td>
+  </tr>
+  <tr>
+    <td>doxyfile.in</td>
+    <td>Configuration file for Doxygen.</td>
+  </tr>
+  <tr>
+    <td>cmake_modules/</td>
+  </tr>
+  <tr>
+    <td>cmake_javacompile.cmake.in</td>
+    <td>Template file for adding a Java compile target (for CMake)</td>
+  </tr>
+  <tr>
+    <td>FindOpenRTMJava.cmake</td>
+    <td>Module for obtaining OpenRTM-aist-Java environment settings (for CMake)</td>
+  </tr>
+  <tr>
+    <td>cmake/</td>
+  </tr>
+  <tr>
+    <td>uninstall_target.cmake.in</td>
+    <td>Template file for adding an uninstall target (for CMake)</td>
+  </tr>
+  <tr>
+    <td>cpack_options.cmake</td>
+    <td>Module for creating WiX packages (for CMake/WiX)</td>
+  </tr>
+  <tr>
+    <td>License.rtf</td>
+    <td>License display included in package information (for CMake/WiX)</td>
+  </tr>
+  <tr>
+    <td>cpack_resources/</td>
+  </tr>
+  <tr>
+    <td>wix.xsl.in</td>
+    <td>Template for specifying files to include in the WiX package (for CMake/WiX)</td>
+  </tr>
+</table>
+
+<p><br /></p>
+
+<ul>
+  <li>Python</li>
+</ul>
+
+<table class="table-alt">
+  <tr style="text-align: center;">
+    <td>File Name</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>&lt;RTC name&gt;.py</td>
+    <td>Code of the RT component.</td>
+  </tr>
+  <tr>
+    <td>&lt;service type name&gt;_idl.py</td>
+  </tr>
+  <tr>
+    <td>&lt;service type name&gt;_idl_example.py</td>
+    <td>Implementation file of the service provider. (*)</td>
+  </tr>
+  <tr>
+    <td>CMakeLists.txt</td>
+    <td>Configuration file for CMake.</td>
+  </tr>
+  <tr>
+    <td>doc/</td>
+  </tr>
+  <tr>
+    <td>doxyfile.in</td>
+    <td>Configuration file for Doxygen.</td>
+  </tr>
+  <tr>
+    <td>cmake_modules/</td>
+  </tr>
+  <tr>
+    <td>FindOpenRTMPython.cmake</td>
+    <td>Module for obtaining OpenRTM-aist-Python environment settings (for CMake)</td>
+  </tr>
+  <tr>
+    <td>cmake/</td>
+  </tr>
+  <tr>
+    <td>uninstall_target.cmake.in</td>
+    <td>Template file for adding an uninstall target (for CMake)</td>
+  </tr>
+  <tr>
+    <td>cpack_options.cmake</td>
+    <td>Module for creating WiX packages (for CMake/WiX)</td>
+  </tr>
+  <tr>
+    <td>License.rtf</td>
+    <td>License display included in package information (for CMake/WiX)</td>
+  </tr>
+  <tr>
+    <td>cpack_resources/</td>
+  </tr>
+  <tr>
+    <td>Description.txt</td>
+    <td>Description included in package information (for CMake)</td>
+  </tr>
+  <tr>
+    <td>License.txt</td>
+    <td>License display included in package information (for CMake/Linux)</td>
+  </tr>
+  <tr>
+    <td>wix.xsl.in</td>
+    <td>Template for specifying files to include in the WiX package (for CMake/WiX)</td>
+  </tr>
+</table>
+
+<p><br /></p>
+
+<ul>
+  <li>When outputting the service provider implementation file, RtcBuilder parses the IDL in order to generate operation templates. However, this parsing function has the following limitations.</li>
+  <li>In the preprocessor, only the #include directive can be used. (#ifdef and similar directives are simply ignored.)</li>
+  <li>The generated operations are only the operations of the directly specified interface, and do not include operations inherited from parent interfaces.</li>
+</ul>
+
+<h3 id="output-selection">Output Selection</h3>
+<p>If a file with the same name as a generated file already exists in the output destination, and there is a difference in output content between the existing file and the generated file, RtcBuilder displays a confirmation screen for selecting which output to use.
+<br /></p>
+
+<div align="center"><a href="fig4-2SelectOutPut_ja.png"><img src="fig4-2SelectOutPut_ja.png" width="50%;" /></a></div>
+<div align="center"><strong>Output Selection Screen</strong></div>
+<p><br /></p>
+
+<p>In output selection, select from the following three output candidates.</p>
+<ul>
+  <li>Original: Leave the existing file as-is</li>
+  <li>Merge: Perform merging using merge blocks (<strong>Note 1</strong>)</li>
+  <li>Generate: Overwrite with the newly generated content
+<!-- -Cancel ： 既に存在するファイルをそのまま残す --></li>
+</ul>
+
+<p><strong>Note 1</strong> In Merge, only the range enclosed by the <code class="language-plaintext highlighter-rouge">&lt;rtc-template block=”block”&gt;</code> tag is overwritten with the latest generated content. In the generated template, the range that users should not modify is enclosed with this tag in advance.
+Anything inside this tag will disappear after modification when merged, so do not modify it.</p>
+
+<h3 id="perspective-switching">Perspective Switching</h3>
+<p>If a development environment plugin for the target generation language is installed, a confirmation message for switching perspectives is displayed after code generation is executed.
+If the target plugin is installed, a message like the following is displayed, so select whether or not to switch perspectives.
+<br /></p>
+
+<div align="center"><a href="fig4-3MessagePerspectiveSwitch_ja.png"><img src="fig4-3MessagePerspectiveSwitch_ja.png" width="70%;" /></a></div>
+<div align="center"><strong>Perspective Switching Confirmation Message</strong></div>
+<p><br />
+The relationship between the generation language and the development environment plugin is as follows.</p>
+<ul>
+  <li>Java: JDT (Java Development Tools) → A development environment included in Eclipse in advance.</li>
+  <li>C++: CDT (C/C++ Development Tooling)</li>
+  <li>Python: PyDev</li>
+</ul>
+
+<p><strong>Note:</strong> If a development environment plugin for each language is installed and the output target project is a newly created project, the attributes of the target language are set in the properties of each project.</p>
+
+<h2 id="packaging-function-for-generated-files">Packaging Function for Generated Files</h2>
+<p>This function archives generated template files, executable binary files of RT components created based on template files, and other artifacts in various formats.
+When you click the [Package] button on the Basic Profile input page, the “RT Component Packaging” screen for setting packaging details is displayed.
+<br /></p>
+
+<div align="center"><a href="fig6-1FunctionPack_ja.png"><img src="fig6-1FunctionPack_ja.png" width="60%;" /></a></div>
+<!-- CENTER:''図 6-1 各種成果物のパッケージング機能'' -->
+<div align="center"><strong>Packaging Function for Various Artifacts</strong></div>
+<p><br />
+<br /></p>
+
+<div align="center"><a href="fig6-2ExportRTC_ja.png"><img src="fig6-2ExportRTC_ja.png" width="60%;" /></a></div>
+<!-- CENTER:''図 6-2 RTコンポーネント エクスポート画面'' -->
+<div align="center"><strong>RT Component Packaging Screen</strong></div>
+<p><br />
+Each item is explained below.</p>
+<div align="center"><strong>RT Component Packaging Screen Item Descriptions</strong></div>
+<table class="table-alt">
+  <tr>
+    <td>Item</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Target Project</td>
+    <td>Select the project to be packaged.</td>
+  </tr>
+  <tr>
+    <td>Destination Directory</td>
+    <td>Enter the directory to output the packaged artifacts. By using the "Browse" button, a directory selection dialog is displayed.</td>
+  </tr>
+  <tr>
+    <td>Archive Method</td>
+    <td>Select the format of the archive to be created.</td>
+  </tr>
+  <tr>
+    <td>Options</td>
+    <td>Overview description of the behavior within each action. This item can be omitted.</td>
+  </tr>
+  <tr>
+    <td>Archive Format</td>
+    <td>It is possible to create archives using the ZIP format and archives using the tar format. Select the format to use.</td>
+  </tr>
+  <tr>
+    <td>Compress Archive Contents</td>
+    <td>If you want to compress the archive contents, turn on the checkbox.</td>
+  </tr>
+  <tr>
+    <td>Directory Structure</td>
+    <td>Select whether to archive while preserving the directory structure of the target project as-is, or to archive with everything placed in the root directory.</td>
+  </tr>
+</table>
+<p><strong>Note:</strong> For each archive method (“source”, “binary”, “source + binary”), which file types are included in the archive can be configured on the “Settings Screen” described later.</p>
+
+<p><br /></p>
+
+<h2 id="saving-and-loading-settings">Saving and Loading Settings</h2>
+<p>RTCBuilder can save the content entered in the RTC Profile Editor to an RTC profile XML (RTC.xml), and can load the saved content again.</p>
+
+<h3 id="save">Save</h3>
+<p>The content entered in the RTC Profile Editor can be saved to an RTC profile XML (RTC.xml). The entered content can be saved by the following operations.</p>
+<ul>
+  <li>Right-click the editor and select [Save] or [Save As…] from the displayed context menu</li>
+  <li>Select [File] &gt; [Save…] or [File] &gt; [Save As…] from the menu bar</li>
+</ul>
+
+<p><strong>Note:</strong> If [Save As…] is selected, it can be saved in any project.
+<br /></p>
+
+<table class="table-alt">
+  <tr>
+    <td><div align="center"><a href="fig5-1Save_ja.png"><img src="fig5-1Save_ja.png" width="60%;" /></a></div></td>
+    <td><div align="center"><a href="fig5-1Save2_ja.png"><img src="fig5-1Save2_ja.png" width="60%;" /></a></div></td>
+  </tr>
+  <tr>
+    <th colspan="2">Save</th>
+  </tr>
+</table>
+<p><br /></p>
+
+<!-- ''　※''任意のプロジェクト以外のディレクトリーを保存先に指定した場合は、以下のメッセージが表示され保存されません。保存先を任意のプロジェクト内のディレクトリーに指定し直してください。 -->
+<!-- #br -->
+<!--  -->
+<!-- #ref(SaveError.png,nolink,center) -->
+<!-- CENTER:''保存先の指定が不正の場合のエラー'' -->
+<!--  -->
+<h3 id="load">Load</h3>
+<p>The RTC profile XML (RTC.xml) that stores the content of the RTC Profile Editor can be loaded by the following operations.</p>
+<ul>
+  <li>Right-click the editor and select [Open] from the context menu</li>
+  <li>Select [File] &gt; [Open File…] from the menu bar
+<br /></li>
+</ul>
+
+<table class="table-alt">
+  <tr>
+    <td><div align="center"><a href="fig5-2Load_ja.png"><img src="fig5-2Load_ja.png" width="60%;" /></a></div></td>
+    <td><div align="center"><a href="fig5-2Load2_ja.png"><img src="fig5-2Load2_ja.png" width="60%;" /></a></div></td>
+  </tr>
+  <tr>
+    <th colspan="2">Load</th>
+  </tr>
+</table>
+<p><br /></p>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

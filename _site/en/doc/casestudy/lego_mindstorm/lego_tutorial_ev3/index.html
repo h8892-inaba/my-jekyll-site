@@ -1,0 +1,2505 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tutorial (EV3) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Tutorial (EV3)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_tutorial_ev3/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_tutorial_ev3/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Tutorial (EV3)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Tutorial (EV3)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_tutorial_ev3/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_tutorial_ev3/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_tutorial_ev3/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Tutorial (EV3) <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_tutorial_ev3/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/casestudy/lego_mindstorm/lego_tutorial_ev3/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#specifications">Specifications</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#devices">Devices</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#download">Download</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#assembling-the-ev3">Assembling the EV3</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#powering-on-and-off">Powering On and Off</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#power-on">Power On</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#power-off">Power Off</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#reboot">Reboot</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#reset">Reset</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#connecting-to-the-ev3">Connecting to the EV3</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#connecting-to-the-wi-fi-access-point">Connecting to the Wi-Fi Access Point</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#connecting-via-usb-cable">Connecting via USB Cable</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#preparation">Preparation</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#adding-the-name-server">Adding the Name Server</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#starting-the-sample-components">Starting the Sample Components</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#operation-check">Operation Check</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#controlling-with-your-own-rtc">Controlling with Your Own RTC</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#creating-template-code">Creating Template Code</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#generating-the-project">Generating the Project</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#editing-the-source-code">Editing the Source Code</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#operation-check-1">Operation Check</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#saving-an-rt-system">Saving an RT System</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#restoring-an-rt-system">Restoring an RT System</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#exiting-an-rtc">Exiting an RTC</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#supplement">Supplement</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#about-the-script-files">About the Script Files</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: Tutorial (EV3) -->
+<p>#contents</p>
+
+<p>This page explains the EV3 operation procedures used in the RTM seminar.</p>
+
+<p><br /></p>
+
+<p>In this hands-on session, you will control the following modified Educator Vehicle.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="s_DSC00443.JPG"><img src="s_DSC00443.JPG" width="50%;" /></a></div>
+<p><br /></p>
+
+<p>LEGO Mindstorms EV3 is a new package in the LEGO Mindstorms series. The main EV3 controller comes with Linux preinstalled, enabling robot development in a variety of programming languages.</p>
+
+<h2 id="specifications">Specifications</h2>
+
+<ul>
+  <li><a href="http://www.afrel.co.jp/">Afrel Website</a></li>
+</ul>
+
+<table class="table-alt">
+  <tr>
+    <td colspan="2" style="text-align: center;"><strong>LEGO Mindstorms EV3 Specifications</strong></td>
+  </tr>
+  <tr>
+    <td>Processor</td>
+    <td>ARM9 300MHz</td>
+  </tr>
+  <tr>
+    <td>Memory (ROM)</td>
+    <td>16MB Flash</td>
+  </tr>
+  <tr>
+    <td>Memory (RAM)</td>
+    <td>64MB RAM</td>
+  </tr>
+  <tr>
+    <td>OS</td>
+    <td>Linux-based</td>
+  </tr>
+  <tr>
+    <td>Display</td>
+    <td>178 x 128 pixels</td>
+  </tr>
+  <tr>
+    <td>Output Ports</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>Input Ports</td>
+    <td>4 <br /> Analog <br /> Digital 460.8kbit/s</td>
+  </tr>
+  <tr>
+    <td>USB Communication Speed</td>
+    <td>High Speed (480Mbps)</td>
+  </tr>
+  <tr>
+    <td>USB Interface</td>
+    <td>Can connect EV3 units together (up to 4 units) <br /> Wi-Fi communication dongles supported</td>
+  </tr>
+  <tr>
+    <td>SD Card Slot</td>
+    <td>Supports Micro SD cards up to 32GB</td>
+  </tr>
+  <tr>
+    <td>Smart Device Connectivity</td>
+    <td>iOS, Android, Windows</td>
+  </tr>
+  <tr>
+    <td>User Interface</td>
+    <td>6 buttons, illumination function</td>
+  </tr>
+  <tr>
+    <td>Program Size (Line Tracing Example)</td>
+    <td>0.950KB</td>
+  </tr>
+  <tr>
+    <td>Sensor Communication Performance</td>
+    <td>1000 times/sec, 1ms</td>
+  </tr>
+  <tr>
+    <td>Data Logging</td>
+    <td>Up to 1,000 samples/sec</td>
+  </tr>
+  <tr>
+    <td>Bluetooth Communication</td>
+    <td>Can connect up to 7 slave devices</td>
+  </tr>
+  <tr>
+    <td>Power Source</td>
+    <td>Rechargeable battery or six AA batteries</td>
+  </tr>
+</table>
+
+<h2 id="devices">Devices</h2>
+
+<p>The EV3 includes the following devices.</p>
+
+<table class="table-alt">
+  <tr>
+    <td>Gyro Sensor</td>
+    <td>Angle Mode: Accuracy +/- 3°<br /> Angular Velocity Mode: Up to 440 deg/sec <br /> Sampling Rate: 1,000 Hz</td>
+  </tr>
+  <tr>
+    <td>Color Sensor</td>
+    <td>Measures reflected red light, ambient brightness, and color <br /> Detectable Colors: 8 (None, Black, Blue, Green, Yellow, Red, White, Brown)<br /> Sampling Rate: 1,000 Hz <br /> Distance: Approx. 1mm–18mm (Afrel measurement)</td>
+  </tr>
+  <tr>
+    <td>Touch Sensor</td>
+    <td>On (1), Off (0) <br /> Switch Travel Distance: Approx. 4mm</td>
+  </tr>
+  <tr>
+    <td>Ultrasonic Sensor</td>
+    <td>Measurement Range: 3cm–250cm <br /> Accuracy: +/- 1cm <br /> Front Indicator: Solid = transmitting, Flashing = receiving</td>
+  </tr>
+  <tr>
+    <td>EV3 Large Motor</td>
+    <td>Feedback Resolution: 1° <br /> Rotation Speed: 160–170RPM <br /> Rated Torque: 0.21 N·m <br /> Stall Torque: 0.42 N·m <br /> Weight: 76g</td>
+  </tr>
+  <tr>
+    <td>EV3 Medium Motor</td>
+    <td>Feedback Resolution: 1° <br /> Rotation Speed: 240–250RPM <br /> Rated Torque: 0.08 N·m <br /> Stall Torque: 0.12 N·m <br /> Weight: 36g</td>
+  </tr>
+</table>
+
+<h2 id="download">Download</h2>
+
+<p>First, download the RTCs and related tools used on the PC side.</p>
+
+<ul>
+  <li><a href="https://github.com/OpenRTM/RTM_Tutorial_EV3/archive/master.zip">RTM_Tutorial_EV3.zip</a></li>
+</ul>
+
+<p>Extract the ZIP file using a tool such as Lhaplus.</p>
+
+<h2 id="assembling-the-ev3">Assembling the EV3</h2>
+
+<p>Participants receive the EV3 in a disassembled state.</p>
+
+<p>Follow the assembly instructions below.</p>
+
+<p><em>The ultrasonic sensor, color sensor, and gyro sensor are not used during the seminar and do not need to be installed. Steps marked with ※ may be completed if time permits.</em></p>
+
+<p>First, take out the base assembly.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="s_DSC00463.JPG"><img src="s_DSC00463.JPG" width="50%;" /></a></div>
+<p><br /></p>
+
+<p>Connect a 25cm cable to the Medium Motor first. ※</p>
+
+<p><br /></p>
+
+<div align="center"><a href="s_DSC00446.JPG"><img src="s_DSC00446.JPG" width="50%;" /></a></div>
+<p><br /></p>
+
+<p>Next, attach the EV3 main unit.</p>
+
+<p>If you connected the cable to the Medium Motor, route it through the opening on the left side.</p>
+
+<p><br /></p>
+
+<div align="center"><div align="center"><a href="s_DSC00448.JPG"><img src="s_DSC00448.JPG" width="50%;" /></a></div>;  <div align="center"><a href="s_DSC00450.JPG"><img src="s_DSC00450.JPG" width="50%;" /></a></div>;</div>
+<p><br />
+<br /></p>
+
+<p>Attach the right touch sensor.</p>
+
+<p><br /></p>
+
+<div align="center"><div align="center"><a href="s_DSC00451.JPG"><img src="s_DSC00451.JPG" width="50%;" /></a></div>;  <div align="center"><a href="s_DSC00452.JPG"><img src="s_DSC00452.JPG" width="50%;" /></a></div>;</div>
+<p><br />
+<br /></p>
+
+<p>Attach the ultrasonic sensor. ※</p>
+
+<p><br /></p>
+
+<div align="center"><a href="s_DSC00454.JPG"><img src="s_DSC00454.JPG" width="50%;" /></a></div>
+<p><br /></p>
+
+<p>Connect the cables.</p>
+
+<p>The required devices are:</p>
+
+<ul>
+  <li>Right Large Motor</li>
+  <li>Left Large Motor</li>
+  <li>Touch Sensor</li>
+</ul>
+
+<table class="table-alt">
+  <tr>
+    <td>Right Large Motor</td>
+    <td>Port C</td>
+    <td>25cm cable</td>
+  </tr>
+  <tr>
+    <td>Left Large Motor</td>
+    <td>Port B</td>
+    <td>25cm cable</td>
+  </tr>
+  <tr>
+    <td>Medium Motor ※</td>
+    <td>Port A</td>
+    <td>25cm cable</td>
+  </tr>
+  <tr>
+    <td>Right Touch Sensor</td>
+    <td>Port 3</td>
+    <td>35cm cable</td>
+  </tr>
+  <tr>
+    <td>Left Touch Sensor</td>
+    <td>Port 1</td>
+    <td>35cm cable</td>
+  </tr>
+  <tr>
+    <td>Ultrasonic Sensor ※</td>
+    <td>Port 4</td>
+    <td>50cm cable</td>
+  </tr>
+  <tr>
+    <td>Gyro Sensor ※</td>
+    <td>Port 2</td>
+    <td>25cm cable</td>
+  </tr>
+</table>
+
+<p>The EV3 has ports A–D and 1–4 on the top and bottom. Connect the cables to the appropriate ports.</p>
+
+<h2 id="powering-on-and-off">Powering On and Off</h2>
+
+<h3 id="power-on">Power On</h3>
+
+<p>Press the center button to turn on the EV3.</p>
+
+<h3 id="power-off">Power Off</h3>
+
+<p>From the main screen, press the Back button (upper-left button on the EV3) and select <strong>Power Off</strong>.</p>
+
+<h3 id="reboot">Reboot</h3>
+
+<p>From the main screen, press the Back button and select <strong>Reboot</strong>.</p>
+
+<h3 id="reset">Reset</h3>
+
+<p>If ev3dev stops during startup, press and hold the Center, Back (upper-left), and Left buttons simultaneously. When the screen turns off, release the Back button to reboot.</p>
+
+<h2 id="connecting-to-the-ev3">Connecting to the EV3</h2>
+
+<p><span style="color:red;">As a general rule, connect to the EV3 via Wi-Fi.</span></p>
+
+<h3 id="connecting-to-the-wi-fi-access-point">Connecting to the Wi-Fi Access Point</h3>
+
+<p>Press the center button to power on the EV3.</p>
+
+<p>Before powering it on, make sure the Wi-Fi adapter is attached.</p>
+
+<p>Execute the provided script to start the access point.</p>
+
+<p>From the EV3 menu, select <strong>File Browser</strong> and press the center button.</p>
+
+<p>Then select the <strong>scripts</strong> folder.</p>
+
+<p>From the next screen, select <strong>start_ap.sh</strong> and press the center button.</p>
+
+<p>After a short time, the wireless access point will start.</p>
+
+<p>Connect to the designated SSID.</p>
+
+<p>The SSID and password are written on the label attached to the EV3.</p>
+
+<h3 id="connecting-via-usb-cable">Connecting via USB Cable</h3>
+
+<p><span style="color:red;">The following procedure is only required for wired connections. If you are using Wi-Fi, skip this section.</span></p>
+
+<p>Connect the EV3 to the PC using the supplied USB cable.</p>
+
+<p>Press the center button to power on the EV3.</p>
+
+<p>Before powering on, remove the Wi-Fi adapter.</p>
+
+<p>If the ev3dev startup screen appears, startup was successful.</p>
+
+<p>If startup freezes, perform the reset procedure described earlier.</p>
+
+<p>If “EV3+ev3dev” appears under “Other Devices” in Device Manager, update the device driver according to the instructions provided in the document.</p>
+
+<h2 id="preparation">Preparation</h2>
+
+<p>Follow the procedure on <a href="/my-jekyll-site/en/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2#toc1">this page</a> to start the Name Server and RT System Editor.</p>
+
+<p>If the Name Server is already running, restart it before proceeding.</p>
+
+<p>If two or more network interfaces are available, communication may fail. Therefore, when using a wired connection, disable other network devices before starting the Name Server.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="tu_ev3_16.png"><img src="tu_ev3_16.png" width="50%;" /></a></div>
+<p><br /></p>
+
+<p><br /></p>
+
+<div align="center"><a href="raspi_tu25.png"><img src="raspi_tu25.png" width="60%;" /></a></div>
+<p><br /></p>
+
+<h3 id="adding-the-name-server">Adding the Name Server</h3>
+
+<p>Next, use the <strong>Add Name Server</strong> button in RT System Editor and add <strong>192.168.0.1</strong> (or <strong>192.168.11.1</strong> when connecting via wireless LAN).</p>
+
+<p><br /></p>
+
+<div align="center"><div align="center"><a href="tutorial_raspimouse0.png"><img src="tutorial_raspimouse0.png" width="50%;" /></a></div>;  <div align="center"><a href="tu_ev3_25.png"><img src="tu_ev3_25.png" width="70%;" /></a></div>;</div>
+<p><br />
+<br /></p>
+
+<p>An RTC named <strong>EducatorVehicle0</strong> will then become visible.</p>
+
+<div align="center"><a href="tutorial_ev3_irex29.png"><img src="tutorial_ev3_irex29.png" width="50%;" /></a></div>
+
+<ul>
+  <li><a href="../../raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0">EducatorVehicle</a></li>
+</ul>
+
+<p>EducatorVehicle is a component used for inputting EV3 driving speeds, outputting sensor data, and related functions.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="EducatorVehicle.png"><img src="EducatorVehicle.png" width="50%;" /></a></div>
+<p><br /></p>
+
+<table class="table-alt">
+  <tr>
+    <th colspan="3" style="text-align: center;">EducatorVehicle</th>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">InPort</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>velocity2D</td>
+    <td>RTC::TimedVelocity2D</td>
+    <td>Target velocity</td>
+  </tr>
+  <tr>
+    <td>angle</td>
+    <td>RTC::TimedDouble</td>
+    <td>M motor angle</td>
+  </tr>
+  <tr>
+    <td>lcd</td>
+    <td>RTC::TimedString</td>
+    <td>Image file name to display on the LCD</td>
+  </tr>
+  <tr>
+    <td>sound</td>
+    <td>RTC::TimedString</td>
+    <td>Audio to output</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">OutPort</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>odometry</td>
+    <td>RTC::TimedPose2D</td>
+    <td>Current position and orientation</td>
+  </tr>
+  <tr>
+    <td>ultrasonic</td>
+    <td>RTC::RangeData</td>
+    <td>Distance measured by the ultrasonic sensor</td>
+  </tr>
+  <tr>
+    <td>gyro</td>
+    <td>RTC::TimedDouble</td>
+    <td>Angle measured by the gyro sensor</td>
+  </tr>
+  <tr>
+    <td>color</td>
+    <td>RTC::TimedString</td>
+    <td>Color measured by the color sensor</td>
+  </tr>
+  <tr>
+    <td>light_reflect</td>
+    <td>RTC::TimedDouble</td>
+    <td>Reflected light intensity measured by the color sensor</td>
+  </tr>
+  <tr>
+    <td>touch</td>
+    <td>RTC::TimedBoolean</td>
+    <td>Touch sensor ON/OFF state. The right side is element 0 and the left side is element 1.</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">Configuration Parameters</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Default Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>wheelRadius</td>
+    <td>0.028</td>
+    <td>Wheel radius</td>
+  </tr>
+  <tr>
+    <td>wheelDistance</td>
+    <td>0.054</td>
+    <td>Half of the distance between the wheels</td>
+  </tr>
+  <tr>
+    <td>medium_motor_speed</td>
+    <td>1.6</td>
+    <td>M motor speed</td>
+  </tr>
+</table>
+
+<h4 id="about-the-timedvelocity2d-type">About the TimedVelocity2D Type</h4>
+
+<p>The TimedVelocity2D type is defined as follows.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="k">struct</span> <span class="nc">Velocity2D</span>
+     <span class="p">{</span>
+         <span class="kt">double</span> <span class="n">vx</span><span class="p">;</span>
+         <span class="kt">double</span> <span class="n">vy</span><span class="p">;</span>
+         <span class="kt">double</span> <span class="n">va</span><span class="p">;</span>
+     <span class="p">};</span>
+</code></pre></div></div>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="k">struct</span> <span class="nc">TimedVelocity2D</span>
+     <span class="p">{</span>
+         <span class="n">Time</span> <span class="n">tm</span><span class="p">;</span>
+         <span class="n">Velocity2D</span> <span class="n">data</span><span class="p">;</span>
+     <span class="p">};</span>
+</code></pre></div></div>
+
+<p>vx, vy, and va represent velocities in the robot-centered coordinate system.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="tu_ev3_19.png"><img src="tu_ev3_19.png" width="50%;" /></a></div>
+<p><br /></p>
+
+<p>vx represents velocity in the X direction, vy represents velocity in the Y direction, and va represents angular velocity around the Z axis.</p>
+
+<p>For a robot such as the Educator Vehicle, which has two wheels mounted on the left and right sides, vy becomes 0 if side-slipping is assumed not to occur.</p>
+
+<p>The robot is controlled by specifying vx and va.</p>
+
+<ul>
+  <li><a href="http://openrtm.org/openrtm/sites/default/files/Automobile_Interface1.0.zip">Common Interface Specification</a></li>
+</ul>
+
+<h4 id="audio-output">Audio Output</h4>
+
+<p>The following commands can be used for audio input through the sound port.</p>
+
+<ul>
+  <li>beep
+    <ul>
+      <li>Entering <code class="language-plaintext highlighter-rouge">beep</code> produces a beep sound.</li>
+    </ul>
+  </li>
+  <li>tone
+    <ul>
+      <li>Enter tone, frequency, and duration as shown below to play a sound at the specified frequency for the specified number of milliseconds.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tone,100,1000
+</code></pre></div></div>
+
+<ul>
+  <li>Other strings
+    <ul>
+      <li>Any other string will be spoken as speech.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="images-displayed-on-the-lcd">Images Displayed on the LCD</h4>
+
+<p>For images displayed on the LCD, use images converted by:</p>
+
+<p><code class="language-plaintext highlighter-rouge">software/saveBinaryImage/EXE/saveBinaryImage.exe</code></p>
+
+<p>included in the distributed materials.</p>
+
+<p>Drag and drop an image file onto <code class="language-plaintext highlighter-rouge">saveBinaryImage.exe</code> to perform the conversion.</p>
+
+<h3 id="starting-the-sample-components">Starting the Sample Components</h3>
+
+<p>Start <strong>start_component_ev3.bat</strong> included in the distributed materials.</p>
+
+<p><em>If the Python version of OpenRTM-aist is not installed, or if the installation failed, a USB memory containing standalone executables will be distributed separately. In that case, use <strong>start_component_ev3_exe.bat</strong>.</em></p>
+
+<p>The following two RTCs will start.</p>
+
+<div align="center"><a href="tu_ev3_24.png"><img src="tu_ev3_24.png" width="70%;" /></a></div>
+
+<ul>
+  <li><a href="../lego_sample_rts_exec#toc2">FloatSeqToVelocity</a></li>
+  <li><a href="/my-jekyll-site/en/doc/installation/sample_components/tkjoystick_mobilerobotsimulator#toc0">TkJoyStick</a></li>
+</ul>
+
+<h2 id="operation-check">Operation Check</h2>
+
+<p>First, try controlling the EV3 using the joystick.</p>
+
+<p>Connect <strong>EducatorVehicle</strong>, <strong>FloatSeqToVelocity</strong>, and <strong>TkJoyStick</strong> in RT System Editor as shown below.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="tutorial_ev3_16.png"><img src="tutorial_ev3_16.png" width="70%;" /></a></div>
+<p><br /></p>
+
+<p>After activating the RTCs, you will be able to control the EV3 using the joystick.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="tutorial_ev3_21.png"><img src="tutorial_ev3_21.png" width="70%;" /></a></div>
+<p><br /></p>
+
+<h2 id="controlling-with-your-own-rtc">Controlling with Your Own RTC</h2>
+
+<p>First, disconnect the connector between <strong>FloatSeqToVelocity::out</strong> and <strong>EducatorVehicle::target_velocity_in</strong>.</p>
+
+<div align="center"><a href="tutorial_ev3_17.png"><img src="tutorial_ev3_17.png" width="70%;" /></a></div>
+
+<p>Connect your own RTC between <strong>FloatSeqToVelocity</strong> and <strong>EducatorVehicle</strong>, and implement behavior that stops the robot and plays a sound when the touch sensor is activated.</p>
+
+<h3 id="creating-template-code">Creating Template Code</h3>
+
+<p>Start RTC Builder.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="tutorial_raspimouse8.png"><img src="tutorial_raspimouse8.png" width="70%;" /></a></div>
+<p><br /></p>
+
+<p>After RTC Builder starts, create a new project.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="tutorial_raspimouse9.png"><img src="tutorial_raspimouse9.png" width="70%;" /></a></div>
+<p><br /></p>
+
+<p>Set the project name to <strong>TestEV3CPP</strong> (or <strong>TestEV3Py</strong>).</p>
+
+<p>Configure the settings as shown below.</p>
+
+<p>Create the component in either <strong>C++</strong> or <strong>Python</strong>.</p>
+
+<table class="table-alt">
+  <tr>
+    <th colspan="3" style="text-align: center;">Basic</th>
+  </tr>
+  <tr>
+    <td>Module Name</td>
+    <td colspan="2" style="text-align;">TestEV3CPP or TestEV3Py</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">Activity</td>
+  </tr>
+  <tr>
+    <td>Enabled Actions</td>
+    <td colspan="2" style="text-align;">onInitialize, onExecute, onActivated, onDeactivated</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">Data Ports</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">InPort</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>velocity_in</td>
+    <td>RTC::TimedVelocity2D</td>
+    <td>Input target velocity</td>
+  </tr>
+  <tr>
+    <td>touch</td>
+    <td>RTC::TimedBooleanSeq</td>
+    <td>Touch sensor ON/OFF state</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">OutPort</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>velocity_out</td>
+    <td>RTC::TimedVelocity2D</td>
+    <td>Output target velocity</td>
+  </tr>
+  <tr>
+    <td>sound</td>
+    <td>RTC::TimedString</td>
+    <td>Audio output</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">Configuration</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Type</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>sound_output</td>
+    <td>string</td>
+    <td>Audio played when the touch sensor is ON. The default value is beep.</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">Language / Environment</td>
+  </tr>
+  <tr>
+    <td>Language</td>
+    <td colspan="2" style="text-align;">C++ or Python</td>
+  </tr>
+</table>
+
+<p>Click the <strong>[Generate Code]</strong> button to generate the source code.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="tutorial_raspimouse10.png"><img src="tutorial_raspimouse10.png" width="70%;" /></a></div>
+<p><br /></p>
+
+<h3 id="generating-the-project">Generating the Project</h3>
+
+<p>After the code has been generated, use CMake to generate a Visual Studio project (or Code::Blocks project on Ubuntu) if you are using C++.</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/en/doc/toolmanuals/rtcbuilder-1_1_0/compile_win_cmake_cpp_rtcb_1_1_0">Windows</a></li>
+  <li><a href="/my-jekyll-site/en/content/build_ubuntu_codeblocks">Ubuntu</a></li>
+</ul>
+
+<p>First, start <strong>CMake (cmake-gui)</strong>.</p>
+
+<ul>
+  <li>Windows 7</li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="tu_ev3_10.png"><img src="tu_ev3_10.png" width="50%;" /></a></div>
+<p><br /></p>
+
+<ul>
+  <li>Windows 8.1</li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="tutorial_raspimouse12.png"><img src="tutorial_raspimouse12.png" width="60%;" /></a></div>
+<p><br /></p>
+
+<p>After starting CMake, specify the source code directory and build directory as shown below.</p>
+
+<p>The values in parentheses are examples assuming the Eclipse workspace directory is <strong>C:\workspace</strong>.</p>
+
+<table class="table-alt">
+  <tr>
+    <td>Where is the source code</td>
+    <td>Folder containing the code generated by RTCBuilder (C:\workspace\TestEV3CPP)</td>
+  </tr>
+  <tr>
+    <td>Where to build the binaries</td>
+    <td>build folder created under the folder containing the code generated by RTCBuilder (C:\workspace\TestEV3CPP\build)</td>
+  </tr>
+</table>
+
+<p><br /></p>
+
+<div align="center"><a href="tutorial_ev3_24.png"><img src="tutorial_ev3_24.png" width="50%;" /></a></div>
+<p><br /></p>
+
+<p>Click <strong>[Configure]</strong> and then <strong>[Generate]</strong> to generate the <strong>Visual Studio</strong> project.</p>
+
+<h3 id="editing-the-source-code">Editing the Source Code</h3>
+
+<p>Open <strong>TestEV3CPP.sln</strong> in the build directory.</p>
+
+<p>Next, edit the source code.</p>
+
+<p>For <strong>Python</strong>, first modify the variable initialization section.</p>
+
+<ul>
+  <li>TestEV3Py.py</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="p">):</span>
+ 		<span class="c1">#self._d_velocity_in = RTC.TimedVelocity2D(*velocity_in_arg)
+</span> 		<span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_in</span> <span class="o">=</span> <span class="n">RTC</span><span class="p">.</span><span class="n">TimedVelocity2D</span><span class="p">(</span><span class="n">RTC</span><span class="p">.</span><span class="n">Time</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">RTC</span><span class="p">.</span><span class="n">Velocity2D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 		<span class="c1">#self._d_distance_sensor = RTC.TimedShortSeq(*distance_sensor_arg)
+</span> 		<span class="bp">self</span><span class="p">.</span><span class="n">_d_distance_sensor</span> <span class="o">=</span> <span class="n">RTC</span><span class="p">.</span><span class="n">TimedShortSeq</span><span class="p">(</span><span class="n">RTC</span><span class="p">.</span><span class="n">Time</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),[])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 		<span class="c1">#self._d_velocity_out = RTC.TimedVelocity2D(*velocity_out_arg)
+</span> 		<span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_out</span> <span class="o">=</span> <span class="n">RTC</span><span class="p">.</span><span class="n">TimedVelocity2D</span><span class="p">(</span><span class="n">RTC</span><span class="p">.</span><span class="n">Time</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">RTC</span><span class="p">.</span><span class="n">Velocity2D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 		<span class="c1">#self._d_buzzer = RTC.TimedShort(*buzzer_arg)
+</span> 		<span class="bp">self</span><span class="p">.</span><span class="n">_d_buzzer</span> <span class="o">=</span> <span class="n">RTC</span><span class="p">.</span><span class="n">TimedShort</span><span class="p">(</span><span class="n">RTC</span><span class="p">.</span><span class="n">Time</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>First, write code in <strong>onExecute</strong> that outputs the input velocity unchanged.</p>
+
+<p><br /></p>
+
+<p>For <strong>C++</strong>, it is implemented as follows.</p>
+
+<p><br /></p>
+
+<p>Use the <strong>isNew</strong> function to check whether new input data exists, and store it in the variable (<strong>m_velocity_in</strong>) using the <strong>read</strong> function.</p>
+
+<p>Then store the output data in <strong>m_velocity_out</strong> and call the <strong>write</strong> function to transmit the data.</p>
+
+<ul>
+  <li>src/TestEV3CPP.cpp</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 	<span class="k">if</span> <span class="p">(</span><span class="n">m_velocity_inIn</span><span class="p">.</span><span class="n">isNew</span><span class="p">())</span>
+ 	<span class="p">{</span>
+ 		<span class="n">m_velocity_inIn</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+ 		<span class="c1">// Output the input velocity unchanged</span>
+ 		<span class="n">m_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vx</span> <span class="o">=</span> <span class="n">m_velocity_in</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vx</span><span class="p">;</span>
+ 		<span class="n">m_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vy</span> <span class="o">=</span> <span class="n">m_velocity_in</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vy</span><span class="p">;</span>
+ 		<span class="n">m_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">va</span> <span class="o">=</span> <span class="n">m_velocity_in</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">va</span><span class="p">;</span>
+ 		<span class="n">setTimestamp</span><span class="p">(</span><span class="n">m_velocity_out</span><span class="p">);</span>
+ 		<span class="n">m_velocity_outOut</span><span class="p">.</span><span class="n">write</span><span class="p">();</span>
+ 	<span class="p">}</span>
+</code></pre></div></div>
+
+<p>For <strong>Python</strong>, it is implemented as follows.</p>
+
+<ul>
+  <li>TestEV3Py.py</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 		<span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">_velocity_inIn</span><span class="p">.</span><span class="n">isNew</span><span class="p">():</span>
+ 			<span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_velocity_inIn</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+ 			<span class="c1"># Output the input velocity unchanged
+</span> 			<span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vx</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vx</span>
+ 			<span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vy</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vy</span>
+ 			<span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">va</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">va</span>
+ 			<span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">setTimestamp</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_out</span><span class="p">)</span>
+ 			<span class="bp">self</span><span class="p">.</span><span class="n">_velocity_outOut</span><span class="p">.</span><span class="n">write</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Next, implement processing that stops the robot when the touch sensor is ON.</p>
+
+<p><br /></p>
+
+<p>Since touch sensor data is not always received continuously, declare a variable to store the sensor state.</p>
+
+<p><br /></p>
+
+<p>For <strong>C++</strong>, add the following to <strong>TestEV3CPP.h</strong>.</p>
+
+<ul>
+  <li>include/TestEV3CPP/TestEV3CPP.h</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nl">private:</span>
+ 	 <span class="kt">bool</span> <span class="n">m_last_sensor_data</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>For <strong>Python</strong>, add the following to the constructor.</p>
+
+<ul>
+  <li>TestEV3Py.py</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="p">):</span>
+ 		<span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">DataFlowComponentBase</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="p">)</span>
+
+ 		<span class="bp">self</span><span class="p">.</span><span class="n">_last_sensor_data</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Next, add the stop-processing logic to <strong>onExecute</strong>.</p>
+
+<p><br /></p>
+
+<p>For <strong>C++</strong>, the implementation is shown below.</p>
+
+<p><br /></p>
+
+<p>First, check whether new data has arrived on the <strong>touch</strong> InPort using <strong>isNew</strong>. If new data exists, read it using <strong>read</strong> and store it in <strong>m_last_sensor_data</strong>.</p>
+
+<p>Then, if <strong>vx</strong> of the data received from <strong>velocity_in</strong> is greater than or equal to 0, the robot is considered to be moving forward and may collide with an obstacle. If the touch sensor is ON, the robot stops and a buzzer sound is played.</p>
+
+<ul>
+  <li>src/TestEV3CPP.cpp</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">RTC</span><span class="o">::</span><span class="n">ReturnCode_t</span> <span class="n">TestEV3CPP</span><span class="o">::</span><span class="n">onExecute</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">UniqueId</span> <span class="n">ec_id</span><span class="p">)</span>
+ <span class="p">{</span>
+ 	<span class="c1">// Store newly received sensor data in m_last_sensor_data</span>
+ 	<span class="k">if</span> <span class="p">(</span><span class="n">m_touchIn</span><span class="p">.</span><span class="n">isNew</span><span class="p">())</span>
+ 	<span class="p">{</span>
+ 		<span class="n">m_touchIn</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+ 		<span class="k">if</span> <span class="p">(</span><span class="n">m_touch</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+ 		<span class="p">{</span>
+ 			<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+ 			<span class="p">{</span>
+ 				<span class="c1">// Play a sound when the touch sensor changes from OFF to ON</span>
+ 				<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_last_sensor_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">m_touch</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+ 				<span class="p">{</span>
+ 					<span class="n">m_sound</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">m_sound_output</span><span class="p">.</span><span class="n">c_str</span><span class="p">();</span>
+ 					<span class="n">setTimestamp</span><span class="p">(</span><span class="n">m_sound</span><span class="p">);</span>
+ 					<span class="n">m_soundOut</span><span class="p">.</span><span class="n">write</span><span class="p">();</span>
+
+ 				<span class="p">}</span>
+ 				<span class="n">m_last_sensor_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_touch</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+ 			<span class="p">}</span>
+ 		<span class="p">}</span>
+ 	<span class="p">}</span>
+ 	<span class="k">if</span> <span class="p">(</span><span class="n">m_velocity_inIn</span><span class="p">.</span><span class="n">isNew</span><span class="p">())</span>
+ 	<span class="p">{</span>
+ 		<span class="n">m_velocity_inIn</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+ 		<span class="c1">// Determine whether to stop only when vx &gt;= 0 (moving forward)</span>
+ 		<span class="k">if</span> <span class="p">(</span><span class="n">m_velocity_in</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vx</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+ 		<span class="p">{</span>
+ 			<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+ 			<span class="p">{</span>
+ 				<span class="c1">// Stop when the touch sensor is ON</span>
+ 				<span class="k">if</span> <span class="p">(</span><span class="n">m_last_sensor_data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+ 				<span class="p">{</span>
+ 					<span class="c1">// Stop the robot</span>
+ 					<span class="n">m_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+ 					<span class="n">m_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+ 					<span class="n">m_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">va</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+ 					<span class="n">setTimestamp</span><span class="p">(</span><span class="n">m_velocity_out</span><span class="p">);</span>
+ 					<span class="n">m_velocity_outOut</span><span class="p">.</span><span class="n">write</span><span class="p">();</span>
+
+
+ 					<span class="k">return</span> <span class="n">RTC</span><span class="o">::</span><span class="n">RTC_OK</span><span class="p">;</span>
+ 				<span class="p">}</span>
+ 			<span class="p">}</span>
+ 		<span class="p">}</span>
+ 		<span class="c1">// Output the input velocity unchanged</span>
+ 		<span class="n">m_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vx</span> <span class="o">=</span> <span class="n">m_velocity_in</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vx</span><span class="p">;</span>
+ 		<span class="n">m_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vy</span> <span class="o">=</span> <span class="n">m_velocity_in</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vy</span><span class="p">;</span>
+ 		<span class="n">m_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">va</span> <span class="o">=</span> <span class="n">m_velocity_in</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">va</span><span class="p">;</span>
+ 		<span class="n">setTimestamp</span><span class="p">(</span><span class="n">m_velocity_out</span><span class="p">);</span>
+ 		<span class="n">m_velocity_outOut</span><span class="p">.</span><span class="n">write</span><span class="p">();</span>
+   <span class="k">return</span> <span class="n">RTC</span><span class="o">::</span><span class="n">RTC_OK</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+
+<p>For <strong>Python</strong>, the implementation is as follows.</p>
+
+<ul>
+  <li>TestEV3Py.py</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 	<span class="k">def</span> <span class="nf">onExecute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ec_id</span><span class="p">):</span>
+ 		<span class="c1"># Store newly received sensor data in m_last_sensor_data
+</span> 		<span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">_touchIn</span><span class="p">.</span><span class="n">isNew</span><span class="p">():</span>
+ 			<span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_touchIn</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+ 			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+ 				<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+ 					<span class="c1"># Play a sound when the touch sensor changes from OFF to ON
+</span> 					<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="p">.</span><span class="n">_last_sensor_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">and</span> <span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+ 						<span class="bp">self</span><span class="p">.</span><span class="n">_d_sound</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_sound_output</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+ 						<span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">setTimestamp</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_d_sound</span><span class="p">)</span>
+ 						<span class="bp">self</span><span class="p">.</span><span class="n">_soundOut</span><span class="p">.</span><span class="n">write</span><span class="p">()</span>
+ 				<span class="bp">self</span><span class="p">.</span><span class="n">_last_sensor_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">[:]</span>
+
+ 		<span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">_velocity_inIn</span><span class="p">.</span><span class="n">isNew</span><span class="p">():</span>
+ 			<span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_velocity_inIn</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+ 			<span class="c1"># Determine whether to stop only when vx &gt;= 0 (moving forward)
+</span> 			<span class="k">if</span> <span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vx</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+ 				<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">_last_sensor_data</span><span class="p">:</span>
+ 					<span class="c1"># Stop when the touch sensor is ON
+</span> 					<span class="k">if</span> <span class="n">d</span><span class="p">:</span>
+ 						<span class="c1"># Stop the robot
+</span> 						<span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vx</span> <span class="o">=</span> <span class="mi">0</span>
+ 						<span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vy</span> <span class="o">=</span> <span class="mi">0</span>
+ 						<span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">va</span> <span class="o">=</span> <span class="mi">0</span>
+ 						<span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">setTimestamp</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_out</span><span class="p">)</span>
+ 						<span class="bp">self</span><span class="p">.</span><span class="n">_velocity_outOut</span><span class="p">.</span><span class="n">write</span><span class="p">()</span>
+
+ 						<span class="k">return</span> <span class="n">RTC</span><span class="p">.</span><span class="n">RTC_OK</span>
+
+ 			<span class="c1"># Output the input velocity unchanged
+</span> 			<span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vx</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vx</span>
+ 			<span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vy</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">vy</span>
+ 			<span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_out</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">va</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">va</span>
+ 			<span class="n">OpenRTM_aist</span><span class="p">.</span><span class="n">setTimestamp</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_d_velocity_out</span><span class="p">)</span>
+ 			<span class="bp">self</span><span class="p">.</span><span class="n">_velocity_outOut</span><span class="p">.</span><span class="n">write</span><span class="p">()</span>
+ 		<span class="k">return</span> <span class="n">RTC</span><span class="p">.</span><span class="n">RTC_OK</span>
+</code></pre></div></div>
+
+<p>After editing the code, build the project if you are using <strong>C++</strong>.</p>
+
+<p><br /></p>
+
+<p>If the build succeeds, <strong>TestEV3CPPComp.exe</strong> will be generated in:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build\src\Release
+</code></pre></div></div>
+
+<p>(or <code class="language-plaintext highlighter-rouge">build\src\Debug</code>).</p>
+
+<h3 id="operation-check-1">Operation Check</h3>
+
+<p>Start <strong>TestEV3CPPComp.exe</strong> (or <strong>TestEV3CPPComp.py</strong>) by double-clicking it.</p>
+
+<p><br /></p>
+
+<p>Connect <strong>TestEV3CPP</strong> (or <strong>TestEV3Py</strong>) as shown below.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="tutorial_ev3_18.png"><img src="tutorial_ev3_18.png" width="70%;" /></a></div>
+<p><br /></p>
+
+<p>Finally, activate the RTCs and verify that the system operates correctly.</p>
+
+<h3 id="saving-an-rt-system">Saving an RT System</h3>
+
+<p>To save the RT System, right-click on the <strong>System Diagram</strong> and select <strong>Save As…</strong></p>
+
+<p><br /></p>
+
+<div align="center"><a href="tutorial_ev3_20.png"><img src="tutorial_ev3_20.png" width="70%;" /></a></div>
+
+<p><br /></p>
+
+<div align="center"><a href="tutorial_raspimouse14.png"><img src="tutorial_raspimouse14.png" width="70%;" /></a></div>
+
+<p><br /></p>
+
+<h3 id="restoring-an-rt-system">Restoring an RT System</h3>
+
+<p>To restore a saved RT System, select <strong>Open and Restore</strong> and choose the file you saved earlier.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="raspi_tu28.png"><img src="raspi_tu28.png" width="50%;" /></a></div>
+<p><br /></p>
+
+<h3 id="exiting-an-rtc">Exiting an RTC</h3>
+
+<p>To terminate an RTC, execute <strong>Exit</strong> on the RTC from RT System Editor.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="tutorial_ev3_19.png"><img src="tutorial_ev3_19.png" width="70%;" /></a></div>
+
+<h2 id="supplement">Supplement</h2>
+
+<h3 id="about-the-script-files">About the Script Files</h3>
+
+<p>By selecting <strong>File Browser</strong> from the EV3 button menu, you can operate files and directories under:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/robot
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>The following operations can be performed by executing shell scripts in the <strong>scripts</strong> folder.</p>
+
+<table class="table-alt">
+  <tr>
+    <td>Script File Name</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>run_rtcs.sh</td>
+    <td>Start RTCs</td>
+  </tr>
+  <tr>
+    <td>stop_rtcs.sh</td>
+    <td>Stop RTCs</td>
+  </tr>
+</table>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

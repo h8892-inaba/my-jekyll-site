@@ -1,0 +1,1149 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>System Editor (Basic Operations) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="System Editor (Basic Operations)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_basic_operation/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_basic_operation/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="System Editor (Basic Operations)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"System Editor (Basic Operations)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_basic_operation/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_basic_operation/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_basic_operation/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>System Editor (Basic Operations) <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_basic_operation/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_basic_operation/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#overview">Overview</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#basic-operations">Basic Operations</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#opening-the-system-editor">Opening the System Editor</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#placing-an-rtc-in-the-system-editor">Placing an RTC in the System Editor</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#changing-the-state-of-an-rtc">Changing the State of an RTC</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#connecting-ports">Connecting Ports</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#disconnecting-a-port-connection">Disconnecting a Port Connection</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#disconnecting-all-port-connections">Disconnecting All Port Connections</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#setting-a-single-port-connection">Setting a Single Port Connection</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#collecting-logs">Collecting Logs</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: システムエディタ（基本操作編） -->
+<p>#contents</p>
+
+<p>This section explains the overview and basic operations of the System Editor.</p>
+
+<h2 id="overview">Overview</h2>
+<p>In the System Editor, the state of RTCs is displayed in real time. You can also build systems and verify operation by connecting ports and changing the state of RTCs.
+#clear</p>
+
+<table class="table-alt">
+  <tr>
+    <th><div align="center"><a href="SystemEditor_011.jpg"><img src="SystemEditor_011.jpg" width="45%;" /></a></div></th>
+    <th><div align="center"><a href="SystemEditor_012.jpg"><img src="SystemEditor_012.jpg" width="80%;" /></a></div></th>
+  </tr>
+  <tr>
+    <th style="text-align: center;">System Editor Location</th>
+    <th style="text-align: center;">System Editor</th>
+  </tr>
+</table>
+<p><br /></p>
+
+<h2 id="basic-operations">Basic Operations</h2>
+<p>This section explains how to connect ports between RTCs and how to execute RTCs.</p>
+
+<h3 id="opening-the-system-editor">Opening the System Editor</h3>
+<p>To open a new System Editor, click the [Open New System Editor] button on the toolbar, or select [File] &gt; [Open New System Editor] from the menu bar.
+<br /></p>
+
+<div align="center"><a href="SystemEditor_013.jpg"><img src="SystemEditor_013.jpg" width="70%;" /></a></div>
+<div align="center"><strong>Open New System Editor from the Toolbar</strong></div>
+<p><br /></p>
+
+<div align="center"><a href="SystemEditor_014.jpg"><img src="SystemEditor_014.jpg" width="70%;" /></a></div>
+<div align="center"><strong>Open New System Editor from the File Menu</strong></div>
+<p><br /></p>
+
+<h3 id="placing-an-rtc-in-the-system-editor">Placing an RTC in the System Editor</h3>
+<p>To place an RTC in the System Editor, drag and drop the RTC from the Name Service View.
+<br /></p>
+
+<div align="center"><a href="fig40EditorComponentDnD.png"><img src="fig40EditorComponentDnD.png" width="70%;" /></a></div>
+<div align="center"><strong>Placing an RTC in the System Editor</strong></div>
+<p><br /></p>
+
+<p>If you click RTCs in the name service while holding down the [Ctrl] key and select multiple RTCs, you can place them all together in the System Editor.
+<br /></p>
+
+<div align="center"><a href="fig41EditorComponentMultiDnD.png"><img src="fig41EditorComponentMultiDnD.png" width="70%;" /></a></div>
+<div align="center"><strong>Placing Multiple RTCs Together in the System Editor</strong></div>
+<p><br /></p>
+
+<p>Note that RTCs that have already been placed in the System Editor, or parent RTCs and child RTCs of a composite RTC, cannot be added redundantly.
+When placing multiple RTCs, duplicate RTCs are skipped, and when placing a single RTC, an error dialog is displayed.
+<br /></p>
+
+<div align="center"><a href="fig42DeployComponentError.png"><img src="fig42DeployComponentError.png" width="70%;" /></a></div>
+<div align="center"><strong>Duplicate RTC Placement Error Dialog</strong></div>
+<p><br /></p>
+
+<h3 id="changing-the-state-of-an-rtc">Changing the State of an RTC</h3>
+<p>This section explains how to change the state of an RTC.<br />
+In the System Diagram, you can select an RTC and execute “Activate”, “Deactivate”, “Reset”, “Finalize”, “Exit”, “Start”, and “Stop”.
+You can also execute them in the same way from the Name Service View.
+<br /></p>
+
+<table class="table-alt">
+  <tr>
+    <th><div align="center"><a href="fig51RTCStatusChangeNS.png"><img src="fig51RTCStatusChangeNS.png" width="85%;" /></a></div></th>
+    <th><div align="center"><a href="fig51RTCStatusChangeEditor.png"><img src="fig51RTCStatusChangeEditor.png" width="85%;" /></a></div></th>
+  </tr>
+</table>
+<div align="center"><strong>Changing the RTC State from the Name Service View (left) and the System Editor (right)</strong></div>
+<p><br /></p>
+
+<p>The meanings of these actions are as follows. Please pay attention to the execution target.
+<br /></p>
+
+<div align="center"><strong>Actions for Changing the RTC State</strong></div>
+<table class="table-alt">
+  <tr>
+    <th>No.</th>
+    <th>Action Name</th>
+    <th>Execution Target</th>
+    <th>Meaning</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Activate</td>
+    <td>Executed for the selected RTC and its first ExecutionContext</td>
+    <td>Requests Activate</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Deactivate</td>
+    <td>〃</td>
+    <td>Requests Deactivate</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Reset</td>
+    <td>〃</td>
+    <td>Requests Reset</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Exit</td>
+    <td>Executed for the selected RTC</td>
+    <td>Requests Exit</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Start</td>
+    <td>Executed for the first ExecutionContext of the selected RTC</td>
+    <td>Requests Start</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Stop</td>
+    <td>〃</td>
+    <td>Requests Activate</td>
+  </tr>
+</table>
+
+<p>If confirmation of action execution is enabled in the online editor item of “<a href="/en/node/4885/">Settings Screen</a>”, a confirmation dialog is displayed before the action is executed.</p>
+
+<div align="center"><a href="fig52RTCStatusChangeConfirm.png"><img src="fig52RTCStatusChangeConfirm.png" width="70%;" /></a></div>
+<div align="center"><strong>Action Execution Confirmation Dialog</strong></div>
+<p><br /></p>
+
+<p>By default, advance confirmation is disabled.<br />
+Shortcut keys are assigned to Activate and Deactivate. By default, they are set as follows.<br />
+・Activate → Ctrl + Alt + A <br />
+・Deactivate → Ctrl + Alt + D <br />
+To change the key bindings, use “General” → “Keys” in the standard Eclipse settings menu.
+<br /></p>
+
+<p>Also, as a function for easily operating the system, you can request Activate, Deactivate, Start, Stop, and changes for all RTCs included in the System Editor from the toolbar and context menu.
+<br /></p>
+
+<div align="center"><a href="fig53AllExec.png"><img src="fig53AllExec.png" width="85%;" /></a></div>
+<div align="center"><strong>All Execution (Toolbar, from left: All Activate, All Deactivate, All Start, All Stop)</strong></div>
+<p><br /></p>
+
+<p>All-type actions are also performed for ExecutionContexts other than the first one. Please note that the results differ from activating or starting each RTC on the screen one by one.</p>
+
+<h3 id="connecting-ports">Connecting Ports</h3>
+<p>In the System Editor, you can connect RTC ports to each other.<br />
+To connect ports, drag and drop one port to another port.
+<br /></p>
+
+<div align="center"><a href="fig54ConnectPort.png"><img src="fig54ConnectPort.png" width="70%;" /></a></div>
+<div align="center"><strong>Port Connection</strong></div>
+<p><br /></p>
+
+<p>After the drag and drop is completed, a dialog prompting you to enter the information required for connection is displayed.
+<br /></p>
+
+<div align="center"><a href="SystemEditor_015.jpg"><img src="SystemEditor_015.jpg" width="70%;" /></a></div>
+<div align="center"><strong>Example of the ConnectorProfile Dialog</strong></div>
+<p><br /></p>
+
+<p>In this dialog, a ConnectorProfile is created. The ConnectorProfile must be created so that the conditions required by each port are satisfied. This dialog prompts you with pull-down menus so that only values satisfying the required conditions can be entered.
+For a connection that cannot satisfy the required conditions, a prohibited mark is displayed during the drag-and-drop connection, and drag and drop cannot be performed.
+<br /></p>
+
+<div align="center"><a href="fig56ConnectedProhibitionMark.png"><img src="fig56ConnectedProhibitionMark.png" width="50%;" /></a></div>
+<div align="center"><strong>Connection Prohibited Mark</strong></div>
+<p><br /></p>
+
+<p>Port connections are broadly divided into data port connections and service port connections. For details, please refer to “<a href="/en/node/4885/">System Editor (Connecting Ports)</a>”.</p>
+
+<h3 id="disconnecting-a-port-connection">Disconnecting a Port Connection</h3>
+<p>To disconnect a port connection, select the connection and click the [Delete] button, or click [Delete] displayed in the context menu.
+<br /></p>
+
+<div align="center"><a href="fig61Disconnect.png"><img src="fig61Disconnect.png" width="70%;" /></a></div>
+<div align="center"><strong>Deleting a Connection</strong></div>
+<p><br /></p>
+
+<h3 id="disconnecting-all-port-connections">Disconnecting All Port Connections</h3>
+<p>To disconnect all port connections, select a port, right-click it, and execute “All Disconnect”.
+<br /></p>
+
+<div align="center"><a href="fig62AllDisconnect.png"><img src="fig62AllDisconnect.png" width="70%;" /></a></div>
+<div align="center"><strong>Disconnecting All Connections</strong></div>
+<p><br /></p>
+
+<h3 id="setting-a-single-port-connection">Setting a Single Port Connection</h3>
+<p>You can set a ConnectorProfile for a single port connection.<br />
+Right-click a port and select “Connect” from the context menu. The ConnectorProfile settings dialog opens in the same way as for a port-to-port connection.
+<br /></p>
+
+<div align="center"><a href="fig63ConnectSinglePort.png"><img src="fig63ConnectSinglePort.png" width="70%;" /></a></div>
+<div align="center"><strong>Single Port Connection</strong></div>
+<p><br /></p>
+
+<p>To delete a single port connection, similarly select “Disconnect” from the right-click context menu and operate from the port disconnection dialog.
+Delete the target from the list of ConnectorProfiles displayed in the dialog, and click the [OK] button to perform the disconnection process.
+<br /></p>
+
+<div align="center"><a href="fig64DisconnectPort.png"><img src="fig64DisconnectPort.png" width="70%;" /></a></div>
+<div align="center"><strong>Port Disconnection</strong></div>
+<p><br /></p>
+
+<div align="center"><a href="fig65DisconnectPortDialog.png"><img src="fig65DisconnectPortDialog.png" width="70%;" /></a></div>
+<div align="center"><strong>Port Disconnection Dialog</strong></div>
+<p><br /></p>
+
+<p>The port disconnection dialog displays a list of all ConnectorProfiles for single port connections and normal port-to-port connections, so it can also be used to check single port connections that are not drawn in the diagram.
+<br /></p>
+
+<h3 id="collecting-logs">Collecting Logs</h3>
+<p>With the log notification observer, RTC log messages can be collected by the tool. (OpenRTM-aist 1.1 or later)<br />
+Right-click an RTC on the diagram and select “Start Logging” from the context menu to start log collection.
+For an RTC that has already started log collection, the menu display changes to “Stop Logging”, and log collection is stopped.<br />
+For an RTC that does not support observers, the menu is disabled.
+<br /></p>
+
+<table class="table-alt">
+  <tr>
+    <td style="text-align: center;">Starting Log Collection</td>
+    <td style="text-align: center;">Stopping Log Collection</td>
+  </tr>
+  <tr>
+<td><div align="center"><a href="fig79LoggingStart.png"><img src="fig79LoggingStart.png" width="50%;" /></a></div></td>
+<td><div align="center"><a href="fig79LoggingStop.png"><img src="fig79LoggingStop.png" width="50%;" /></a></div></td>
+  </tr>
+</table>
+<div align="center"><strong>Starting/Stopping Log Collection</strong></div>
+
+<p>For log collection, as with the state notification observer, a reference to the log notification observer is registered with the RTC and notifications are received.
+The observer is registered when log collection is started from the context menu, and the observer is unregistered when log collection is stopped.
+Also, as with the state notification observer, the observer is unregistered when an RTC is removed from the diagram.<br />
+In log notification, a data structure including the time and log level (log record) is sent from the RTC, and the tool accumulates the log data.
+The accumulated logs can be viewed using the Log View.
+<br /></p>
+
+<div align="center"><a href="fig80LogObserver.png"><img src="fig80LogObserver.png" width="70%;" /></a></div>
+<div align="center"><strong>Log Notification Observer</strong></div>
+<p><br /></p>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

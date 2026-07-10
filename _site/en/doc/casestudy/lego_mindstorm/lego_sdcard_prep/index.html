@@ -1,0 +1,1211 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Preparing the SD Card | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Preparing the SD Card" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_sdcard_prep/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_sdcard_prep/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Preparing the SD Card" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Preparing the SD Card","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_sdcard_prep/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_sdcard_prep/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_sdcard_prep/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Preparing the SD Card <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_sdcard_prep/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/casestudy/lego_mindstorm/lego_sdcard_prep/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#introduction">Introduction</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#sd-card">SD Card</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#downloading-the-os-image">Downloading the OS Image</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#downloading-the-ev3dev-os-image">Downloading the ev3dev OS Image</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#image-with-sample-components">Image with Sample Components</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#extracting-the-image">Extracting the Image</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#writing-the-image">Writing the Image</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#writing-the-image-windows">Writing the Image (Windows)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#writing-the-image-linux">Writing the Image (Linux)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#writing-the-image-mac-os-x">Writing the Image (Mac OS X)</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: Preparing the SD Card -->
+<!-- -*- pukiwiki-edit -*- -->
+<p>#contents</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This section explains how to install the runtime environment required to run OpenRTM-aist and its components on LEGO Mindstorms EV3.</p>
+
+<p>Here, we will explain how to download the OS image provided by openrtm.org that includes OpenRTM-aist and perform the necessary setup.</p>
+
+<p>The overall procedure for enabling OpenRTM on EV3 is as follows:</p>
+
+<ul>
+  <li>Write the OS image to an SD card</li>
+  <li>Perform basic OS setup</li>
+  <li>Test execution of components</li>
+</ul>
+
+<h2 id="sd-card">SD Card</h2>
+
+<p>The EV3 has one micro SD card slot. By inserting a micro SD card containing a bootable OS, you can start the EV3 with an arbitrary operating system.</p>
+
+<p>The SD card must be a <strong>micro SD card</strong> with a capacity between <strong>2 GB and 32 GB</strong>. Please note that mini SD cards and standard SD cards cannot be inserted.</p>
+
+<p>The image file is approximately 2 GB in size, so at least 2 GB of capacity is required. EV3 does not support SDXC cards larger than 32 GB.</p>
+
+<ul>
+  <li>Required SD Card
+    <ul>
+      <li>micro SD card</li>
+      <li>2 GB or larger, up to 32 GB</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="downloading-the-os-image">Downloading the OS Image</h2>
+
+<p>To run OpenRTM-aist on EV3, an operating system called <strong>ev3dev</strong> is used.</p>
+
+<ul>
+  <li>ev3dev Website: http://www.ev3dev.org</li>
+</ul>
+
+<p>Download <strong>ev3-ev3dev-jessie-2015-12-30.img.zip</strong> from the following site.</p>
+
+<p>There are many similarly named files available, so be careful to download the correct one.</p>
+
+<ul>
+  <li>https://github.com/ev3dev/ev3dev/releases</li>
+</ul>
+
+<h3 id="downloading-the-ev3dev-os-image">Downloading the ev3dev OS Image</h3>
+
+<p>ev3dev is a Debian GNU/Linux distribution for EV3.</p>
+
+<p>To run OpenRTM-aist, write ev3dev to a micro SD card and boot EV3 from that SD card.</p>
+
+<p>Although the ev3dev OS image can be downloaded from the official website, it does not include OpenRTM-aist.</p>
+
+<p>In most cases, download the ev3dev image containing OpenRTM-aist (C++ and Python) from the following link.</p>
+
+<ul>
+  <li><a href="http://openrtm.org">2015-08-05-ev3dev-openrtm.zip</a></li>
+</ul>
+
+<h3 id="image-with-sample-components">Image with Sample Components</h3>
+
+<p>This image includes sample components such as Educator Vehicle.</p>
+
+<ul>
+  <li><a href="https://drive.google.com/a/nobu777.net/uc?export=download&amp;confirm=A1zJ&amp;id=1nJ552cMdYkgDdRtF0RHYfkL1Bqu300Kv">ev3-openrtm.img</a></li>
+</ul>
+
+<p>If the wireless LAN access point mode does not work correctly after replacing the EV3 wireless LAN adapter, connect to another access point and edit <strong>70-persistent-net.rules</strong> using the following command.</p>
+
+<p>Log in with username <strong>robot</strong> and password <strong>maker</strong>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/udev/rules.d/70-persistent-net.rules
+</code></pre></div></div>
+
+<p>Specifically, comment out all lines beginning with <strong>SUBSYSTEM</strong> in <strong>70-persistent-net.rules</strong>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># USB device 0x:0x (rtl8192cu)</span>
+<span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">"net"</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">"add"</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">"?*"</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">"00:22:cf:f6:52:a5"</span>, ATTR<span class="o">{</span>dev_id<span class="o">}==</span><span class="s2">"0x0"</span>, ATTR<span class="o">{</span><span class="nb">type</span><span class="o">}==</span><span class="s2">"1"</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">"wlan*"</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">"wlan1"</span>
+</code></pre></div></div>
+
+<h3 id="extracting-the-image">Extracting the Image</h3>
+
+<p>Extract the downloaded file <strong>YYYY-MM-DD-ev3dev-openrtm.zip</strong>.</p>
+
+<p>A file named <strong>YYYY-MM-DD-ev3dev-openrtm.img</strong> of approximately 2 GB should be extracted.</p>
+
+<h4 id="windows">Windows</h4>
+
+<p>Right-click the file and select <strong>Extract All</strong>.</p>
+
+<h4 id="linux">Linux</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>unzip &lt;image file&gt;
+</code></pre></div></div>
+
+<p>If the <strong>unzip</strong> command is not installed, install it first.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>unzip 2015-08-06-ev3dev-openrtm.zip
+Archive:  2015-08-06-ev3dev-openrtm.zip
+  inflating: 2015-08-06-ev3dev-openrtm.img
+
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span>
+total 2321300
+
+<span class="nt">-rw-rw-r--</span> 1 n-ando n-ando 1887436800 Aug  4 21:37 2015-08-06-ev3dev-openrtm.img
+<span class="nt">-rw-rw-r--</span> 1 n-ando n-ando  489565916 Aug  5 10:13 2015-08-06-ev3dev-openrtm.zip
+</code></pre></div></div>
+
+<p>If extraction fails, the downloaded file may be corrupted. Delete the damaged file and download it again.</p>
+
+<h2 id="writing-the-image">Writing the Image</h2>
+
+<p>The extracted file <strong>yyyy-mm-dd-ev3dev-openrtm.img</strong> is a disk image file containing a byte-for-byte copy of the bootable disk.</p>
+
+<p><span style="color:red;">Simply copying this file to the SD card will NOT work!</span></p>
+
+<p>Write the image to the SD card using one of the methods described below.</p>
+
+<h3 id="writing-the-image-windows">Writing the Image (Windows)</h3>
+
+<p>On Windows, you can use <strong>Win32DiskImager</strong> to write the image.</p>
+
+<p>Download the binary package from:</p>
+
+<ul>
+  <li>Win32DiskImager: http://sourceforge.jp/projects/sfnet_win32diskimager/</li>
+</ul>
+
+<div align="center"><a href="win32diskimager_site.png"><img src="win32diskimager_site.png" width="80%;" /></a></div>
+<div align="center"><strong>Downloading Win32DiskImager</strong></div>
+
+<p>Extract the downloaded archive (<strong>win32diskimager-vX.X-binary.zip</strong>).</p>
+
+<p><span style="color:red;">Win32DiskImager does not support double-byte characters. Extract the image file to a location whose path contains no non-ASCII characters or spaces.</span></p>
+
+<p>Insert the SD card into the PC and start Win32DiskImager.</p>
+
+<p><span style="color:red;">The SD card must be recognized as a drive. Format it as FAT32 beforehand.</span></p>
+
+<p>Select the extracted image file (<strong>YYYY-MM-DD-ev3dev-openrtm.img</strong>) in <strong>Image File</strong>, choose the SD card drive in <strong>Drive</strong>, and click <strong>Write</strong>.</p>
+
+<div align="center"><a href="win32diskimager.png"><img src="win32diskimager.png" width="70%;" /></a></div>
+<div align="center"><strong>Writing the Image Data</strong></div>
+
+<p>The SD card is now ready.</p>
+
+<p>After writing is complete, insert the SD card into the EV3 and power it on.</p>
+
+<h3 id="writing-the-image-linux">Writing the Image (Linux)</h3>
+
+<p>On Linux, use the <strong>dd</strong> command.</p>
+
+<p>The <strong>dd</strong> command is installed by default on most UNIX-like systems.</p>
+
+<p>Insert the SD card and identify the device name using:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dmesg
+</code></pre></div></div>
+
+<p>Example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>333478.822170] sd 3:0:0:0: <span class="o">[</span>sdb] Assuming drive cache: write through
+<span class="o">[</span>333478.822174]  sdb: sdb1 sdb2
+<span class="o">[</span>333478.839563] sd 3:0:0:0: <span class="o">[</span>sdb] Assuming drive cache: write through
+<span class="o">[</span>333478.839567] sd 3:0:0:0: <span class="o">[</span>sdb] Attached SCSI removable disk
+</code></pre></div></div>
+
+<p>In this example, the SD card device appears to be <strong>sdb</strong>.</p>
+
+<p>Check under <code class="language-plaintext highlighter-rouge">/dev</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-al</span> /dev/sd<span class="k">*</span>
+</code></pre></div></div>
+
+<p><strong>Never touch <code class="language-plaintext highlighter-rouge">/dev/sda</code></strong>, as it is usually the system disk.</p>
+
+<p>Some distributions automatically mount SD card partitions. If so, unmount them before writing.</p>
+
+<div align="center"><a href="ubuntu_adcard_mount.png"><img src="ubuntu_adcard_mount.png" width="50%;" /></a></div>
+<div align="center"><strong>SD Card Mounted on Ubuntu (can be removed via right-click menu)</strong></div>
+
+<p>Write the image:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo dd </span><span class="k">if</span><span class="o">=</span>2015-08-05-ev3dev-openrtm.img <span class="nv">of</span><span class="o">=</span>/dev/sdb <span class="nv">bs</span><span class="o">=</span>1M
+</code></pre></div></div>
+
+<p>You can monitor progress using <strong>iostat</strong>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>iostat <span class="nt">-mx</span> 1
+</code></pre></div></div>
+
+<p>If write speeds are around 6 MB/s for a Class 6 card or 10 MB/s for a Class 10 card, the process is working normally.</p>
+
+<p>After completion, unmount the card if it is automatically mounted and remove it safely.</p>
+
+<h3 id="writing-the-image-mac-os-x">Writing the Image (Mac OS X)</h3>
+
+<p>Mac OS X also uses the <strong>dd</strong> command.</p>
+
+<p>However, the SD card is automatically mounted when inserted, so it must first be unmounted.</p>
+
+<p>Locate the SD card in Finder and note its volume name (e.g., <strong>Untitled</strong>).</p>
+
+<p>Use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">df</span> <span class="nt">-k</span>
+</code></pre></div></div>
+
+<p>Find the mounted SD card, for example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/dev/disk1s1 ... /Volumes/Untitled
+</code></pre></div></div>
+
+<p>Unmount it:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>diskutil umount /Volumes/Untitled
+</code></pre></div></div>
+
+<p>Then write the image:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo dd </span><span class="k">if</span><span class="o">=</span>2015-08-05-ev3dev-openrtm.img <span class="nv">of</span><span class="o">=</span>/dev/rdisk1 <span class="nv">bs</span><span class="o">=</span>1m
+</code></pre></div></div>
+
+<p>Here, <code class="language-plaintext highlighter-rouge">/dev/rdisk1</code> is derived from <code class="language-plaintext highlighter-rouge">/dev/disk1s1</code> by removing <code class="language-plaintext highlighter-rouge">s1</code> and adding the <code class="language-plaintext highlighter-rouge">r</code> prefix.</p>
+
+<p>Example output:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo dd </span><span class="k">if</span><span class="o">=</span>2015-08-05-ev3dev-openrtm.img <span class="nv">of</span><span class="o">=</span>/dev/rdisk1 <span class="nv">bs</span><span class="o">=</span>1m
+1850+0 records <span class="k">in
+</span>1850+0 records out
+1939865600 bytes transferred <span class="k">in </span>302.377337 secs <span class="o">(</span>6415380 bytes/sec<span class="o">)</span>
+<span class="err">$</span>
+</code></pre></div></div>
+
+<p>You can monitor write activity using <strong>Activity Monitor</strong>.</p>
+
+<p>If the write speed is approximately 6 MB/s for a Class 6 card or 10 MB/s for a Class 10 card, writing is proceeding normally.</p>
+
+<p>After writing completes, the SD card will be automatically remounted. This time, use Finder’s eject button and remove the SD card safely.</p>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

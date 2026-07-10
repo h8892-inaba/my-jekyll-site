@@ -1,0 +1,1282 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Basics of Creating RT Components | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Basics of Creating RT Components" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/casestudy/rtc_development/rtc_development_basic/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/casestudy/rtc_development/rtc_development_basic/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Basics of Creating RT Components" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Basics of Creating RT Components","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/casestudy/rtc_development/rtc_development_basic/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_basic/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_basic/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Basics of Creating RT Components <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_basic/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/casestudy/rtc_development/rtc_development_basic/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#source-generation-using-rtc-template">Source Generation Using rtc-template</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#implementing-consolein">Implementing ConsoleIn</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#consoleinh">ConsoleIn.h</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#consoleincpp">ConsoleIn.cpp</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#implementing-consoleout">Implementing ConsoleOut</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#callback-object">Callback Object</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#consoleouth">ConsoleOut.h</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#consoleoutcpp">ConsoleOut.cpp</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#compilation">Compilation</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#execution">Execution</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: RTコンポーネント作成の基本 -->
+<p>#contents</p>
+
+<h1 id="components-with-data-ports">Components with Data Ports</h1>
+<p>Here, we will create two components with data ports and try sending and receiving data between the two components.
+The specifications of the components to be created are as follows.</p>
+
+<ul>
+  <li>Component 1
+    <ul>
+      <li>Has one OutPort</li>
+      <li>The data type of the OutPort is TimedLong</li>
+      <li>Outputs the value entered from the console from the OutPort</li>
+    </ul>
+  </li>
+  <li>Component 2
+    <ul>
+      <li>Has one InPort</li>
+      <li>The data type of the InPort is TimeLong</li>
+      <li>Has one configuration parameter</li>
+      <li>The configuration parameter is of type int</li>
+      <li>The default value of the configuration parameter is 1</li>
+      <li>When reading from the InPort variable, reads the value multiplied by the parameter</li>
+      <li>Outputs the value read from the InPort to the console</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="source-generation-using-rtc-template">Source Generation Using rtc-template</h2>
+<p>To create components with the above specifications, prepare the following shell script named gen.sh.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #!/bin/sh
+ 
+ rtc-template -bcxx \
+     --module-name=ConsoleIn --module-type='DataFlowComponent' \
+     --module-desc='Console input component' \
+     --module-version=1.0 --module-vendor='MyName' \
+     --module-category=example \
+     --module-comp-type=DataFlowComponent --module-act-type=SPORADIC \
+     --module-max-inst=10 --outport=out:TimedLong
+ 
+ rtc-template -bcxx \
+     --module-name=ConsoleOut --module-type='DataFlowComponent' \
+     --module-desc='Console output component' \
+     --module-version=1.0 --module-vendor='MyName' \
+     --module-category=example \
+     --module-comp-type=DataFlowComponent --module-act-type=SPORADIC \
+     --module-max-inst=10 --inport=in:TimedLong \
+     --config="multiply:int:1"
+</code></pre></div></div>
+
+<p>The first execution of rtc-template creates Component 1: ConsoleInComp, and the next execution of rtc-template creates Component 2: ConsoleOutComp.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt; sh gen.sh 
+   File "ConsoleIn.h" was generated.
+   File "ConsoleIn.cpp" was generated.
+   File "ConsoleInComp.cpp" was generated.
+   File "Makefile.ConsoleIn" was generated.
+   File "ConsoleInComp_vc8.vcproj" was generated.
+   File "ConsoleIn_vc8.vcproj" was generated.
+   File "ConsoleInComp_vc9.vcproj" was generated.
+   File "ConsoleIn_vc9.vcproj" was generated.
+   File "ConsoleIn_vc8.sln" was generated.
+   File "ConsoleIn_vc9.sln" was generated.
+   File "copyprops.bat" was generated.
+   File "user_config.vsprops" was generated.
+   File "README.ConsoleIn" was generated.
+   File "ConsoleIn.yaml" was generated.
+   File "ConsoleOut.h" was generated.
+   File "ConsoleOut.cpp" was generated.
+   File "ConsoleOutComp.cpp" was generated.
+   File "Makefile.ConsoleOut" was generated.
+   File "ConsoleOutComp_vc8.vcproj" was generated.
+   File "ConsoleOut_vc8.vcproj" was generated.
+   File "ConsoleOutComp_vc9.vcproj" was generated.
+   File "ConsoleOut_vc9.vcproj" was generated.
+   File "ConsoleOut_vc8.sln" was generated.
+   File "ConsoleOut_vc9.sln" was generated.
+ "copyprops.bat" already exists. Overwrite? (y/n)y
+   File "copyprops.bat" was generated.
+ "user_config.vsprops" already exists. Overwrite? (y/n)y
+   File "user_config.vsprops" was generated.
+   File "README.ConsoleOut" was generated.
+   File "ConsoleOut.yaml" was generated.
+</code></pre></div></div>
+<h2 id="implementing-consolein">Implementing ConsoleIn</h2>
+<p>Edit the generated source files and implement the ConsoleIn component.</p>
+
+<h3 id="consoleinh">ConsoleIn.h</h3>
+<p>This component waits for input when activated and outputs the entered value from the OutPort.
+Therefore, it is only necessary to implement the onExecute member function, which is executed repeatedly in the active state. Remove the comment from the commented-out onExecute function in the generated ConsoleIn.h as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     :略
+   // The execution action that is invoked periodically
+   // former rtc_active_do()
+   virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);
+     :略
+</code></pre></div></div>
+
+<p>Also, near the bottom of ConsoleIn.h, there are variable declarations for the OutPort specified by rtc-template.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     :略
+   // DataOutPort declaration
+   // &lt;rtc-template block="outport_declare"&gt;
+   TimedLong m_out;
+   OutPort&lt;TimedLong&gt; m_outOut;
+   // &lt;/rtc-template&gt;
+</code></pre></div></div>
+
+<p>The variable declared as <strong>TimedLong m_out</strong> is the variable bound to the OutPort.</p>
+
+<p>The variable declared as <strong>OutPort&lt;TimedLong&gt; m_outOut</strong> is the OutPort instance.</p>
+
+<h3 id="consoleincpp">ConsoleIn.cpp</h3>
+<p>The implementation of ConsoleIn is simple.
+Remove the comment from the commented-out onExecute and implement it as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::ReturnCode_t ConsoleIn::onExecute(RTC::UniqueId ec_id)
+ {
+   std::cout &lt;&lt; "Please input number: ";
+   std::cin &gt;&gt; m_out.data;
+   std::cout &lt;&lt; "Sending to subscriber: " &lt;&lt; m_out.data &lt;&lt; std::endl;
+   m_outOut.write();
+ 
+   return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<p>The following operations are performed here:</p>
+<ol>
+  <li>Wait for input from the user with cin » m_out.data.</li>
+  <li>Store the entered value in m_out.data (long type).</li>
+  <li>Display the entered value for confirmation.</li>
+  <li>Output data from the OutPort with m_outOut.write().</li>
+</ol>
+
+<h2 id="implementing-consoleout">Implementing ConsoleOut</h2>
+<p>The ConsoleOut component is slightly more complex.
+It must store the value obtained by multiplying the data entering the InPort by the configuration parameter multiply.
+This can be achieved by setting a callback object on the InPort.</p>
+
+<h3 id="callback-object">Callback Object</h3>
+<p>A callback object is an object in which <strong>operator()</strong> is defined and is called when an event occurs in the buffer of an InPort or OutPort.
+This time, we will use the callback OnWriteConvert to convert the value when it is written to the InPort buffer.</p>
+
+<p>Define the following class by inheriting RTC::OnWriteConvert.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> class Multiply
+   : public RTC::OnWriteConvert&lt;RTC::TimedLong&gt;
+ {
+   int&amp; m_mul;
+ public:
+   Multiply(int&amp; multiply) : m_mul(multiply) {};
+   RTC::TimedLong operator()(const RTC::TimedLong&amp; value)
+   {
+     RTC::TimedLong ret(value);
+     ret.data = value.data * m_mul;
+     return ret;
+   };
+ };
+</code></pre></div></div>
+
+<h3 id="consoleouth">ConsoleOut.h</h3>
+<p>Insert the above callback class immediately after the include lines in ConsoleOut.h.
+In addition, declare an instance of this callback class as a member variable of the ConsoleOut class.
+A suitable location is just below private.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> private:
+   Multiply m_owc;
+   int dummy;
+</code></pre></div></div>
+
+<p>This component reads data from the InPort when activated and displays the data on standard output.
+Therefore, it is only necessary to implement the onExecute member function, which is executed repeatedly in the active state. Remove the comment from the commented-out onExecute function in the generated ConsoleOut.h as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     :略
+   // The execution action that is invoked periodically
+   // former rtc_active_do()
+   virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);
+     :略
+</code></pre></div></div>
+
+<p>Also, near the bottom of ConsoleOut.h, there are declarations for the configuration variable specified by rtc-template and the InPort variable.</p>
+
+<p>Since ConsoleOut uses RingBuffer as the InPort buffer, it is necessary to include <strong>RingBuffer.h</strong>.
+Include <strong>RingBuffer.h</strong> near the beginning of ConsoleOut.h as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include &lt;rtm/idl/BasicDataTypeSkel.h&gt;
+ #include &lt;rtm/Manager.h&gt;
+ #include &lt;rtm/DataFlowComponentBase.h&gt;
+ #include &lt;rtm/CorbaPort.h&gt;
+ #include &lt;rtm/DataInPort.h&gt;
+ #include &lt;rtm/DataOutPort.h&gt;
+ #include &lt;rtm/RingBuffer.h&gt; //これを追加する
+</code></pre></div></div>
+
+<p>Also, in the InPort declaration section, change the default <strong>InPort&lt;TimedLong&gt; m_inIn</strong> to <strong>InPort&lt;TimedLong, RTC::RingBuffer&gt; m_inIn</strong> so that the InPort uses RingBuffer.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     :略
+   // Configuration variable declaration
+   // &lt;rtc-template block="config_declare"&gt;
+   int m_multiply;
+     
+   // &lt;/rtc-template&gt;
+   
+   // DataInPort declaration
+   // &lt;rtc-template block="inport_declare"&gt;
+   TimedLong m_in;
+   InPort&lt;TimedLong, RTC::RingBuffer&gt; m_inIn;
+</code></pre></div></div>
+
+<p>The variable declared as <strong>int m_multiply</strong> is the variable bound to the configuration “multiply”.</p>
+
+<p>The variable declared as <strong>TimedLong m_in</strong> is the variable bound to the InPort.</p>
+
+<p>The variable declared as <strong>InPort&lt;TimedLong&gt; m_inIn</strong> is the InPort instance.</p>
+<h3 id="consoleoutcpp">ConsoleOut.cpp</h3>
+<p>In the constructor of the ConsoleOut class, add initialization of the Multiply instance defined earlier.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ConsoleOut::ConsoleOut(RTC::Manager* manager)
+   : RTC::DataFlowComponentBase(manager),
+     // &lt;rtc-template block="initializer"&gt;
+     m_inIn("in", m_in),
+     
+     // &lt;/rtc-template&gt;
+     m_owc(m_multiply), 
+     dummy(0)
+</code></pre></div></div>
+<p><strong>Remark:</strong></p>
+
+<p>Do not only add the part “m_owc(m_multiply),dummy(0)”, but also remember to change “m_inIn(“in”, m_in)” to “m_inIn(“in”, m_in)<span style="color:red;"><strong>,</strong></span>;” (be careful not to forget to add the comma “,”).</p>
+
+<p><br /></p>
+
+<p>Furthermore, to add the callback object to the InPort, write the following in the constructor.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   m_inIn.setOnWriteConvert(&amp;m_owc); //これを追加
+   // Registration: InPort/OutPort/Service
+   // &lt;rtc-template block="registration"&gt;
+   // Set InPort buffers
+   registerInPort("in", m_inIn);
+</code></pre></div></div>
+
+<p>Remove the comment from the commented-out onExecute and implement it as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::ReturnCode_t ConsoleOut::onExecute(RTC::UniqueId ec_id)
+ {
+   if (m_inIn.isNew())
+     {
+       m_inIn.read();
+       std::cout &lt;&lt; "Received: " &lt;&lt; m_in.data &lt;&lt; std::endl;
+       std::cout &lt;&lt; "TimeStamp: " &lt;&lt; m_in.tm.sec &lt;&lt; "[s] ";
+       std::cout &lt;&lt; m_in.tm.nsec &lt;&lt; "[ns]" &lt;&lt; std::endl;
+     }
+   usleep(1000);
+ 
+   return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<p>The following operations are performed here:</p>
+<ol>
+  <li>Check whether data has entered the InPort with m_inIn.isNew().
+    <ul>
+      <li>The member function isNew() is defined in RingBuffer.</li>
+    </ul>
+  </li>
+  <li>If new data has entered, read the data into the variable with m_inIn.read().</li>
+  <li>Display that data (m_in.data).</li>
+</ol>
+
+<h2 id="compilation">Compilation</h2>
+<p>After completing the implementation, compile the source as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt; make -f Makefile.ConsoleIn
+ &gt; make -f Makefile.ConsoleOut
+</code></pre></div></div>
+
+<p>If a compilation error occurs, check for spelling mistakes and other errors, then compile again.</p>
+
+<h2 id="execution">Execution</h2>
+<ul>
+  <li>Confirm that the name server is running.</li>
+  <li>Create an appropriate rtc.conf * in advance.~
+    <ul>
+      <li>An appropriate rtc.conf is… The following is one example.
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.nameservers: localhost
+ naming.formats: %h.host_cxt/%n.rtc
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Execute ConsoleInComp and ConsoleOutComp from two terminals.</li>
+  <li>Start RtcLink, connect the two components, and activate them.</li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="ConsoleInConsoleOut2.png"><img src="ConsoleInConsoleOut2.png" width="70%;" /></a></div>
+
+<p><br /></p>
+
+<p>In the terminal where ConsoleIn was executed, the prompt <strong>Please input number:</strong> is displayed, so enter an appropriate number.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Please input number: 1
+ Sending to subscriber: 1
+ Please input number: 2
+ Sending to subscriber: 2
+ Please input number: 3
+ Sending to subscriber: 3
+</code></pre></div></div>
+
+<p>In the terminal where ConsoleOut was executed, it should be displayed as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Received: 1
+ TimeStamp: 0[s] 0[ns]
+ Received: 2
+ TimeStamp: 0[s] 0[ns]
+ Received: 3
+ TimeStamp: 0[s] 0[ns]
+</code></pre></div></div>
+
+<p>Next, try changing the value of multiply to 10 in the RtcLink configuration view. Then, when input is entered from ConsoleIn as shown above, values multiplied by 10 should be output as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Received: 10
+ TimeStamp: 0[s] 0[ns]
+ Received: 20
+ TimeStamp: 0[s] 0[ns]
+ Received: 30
+ TimeStamp: 0[s] 0[ns]
+</code></pre></div></div>
+
+<p><br /></p>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>
