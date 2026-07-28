@@ -27,7 +27,7 @@ SICE システムインテグレーション部会学術講演会において毎
   - [投稿作品の紹介ページ](/contests/2021)(no_link)
 - [RTミドルウエアコンテスト2020](./rtmcontest2020)
   - [投稿作品の紹介ページ](/contests/2020)(no_link)
-- [RTミドルウエアコンテスト2019](/rtmcontest2019)
+- [RTミドルウエアコンテスト2019](./rtmcontest2019)
   - [投稿作品の紹介ページ](/contests/2019)(no_link)
 - [RTミドルウエアコンテスト2018](./rtmcontest2018)
   - [投稿作品の紹介ページ](/contests/2018)(no_link)

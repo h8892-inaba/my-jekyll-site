@@ -27,6 +27,11 @@ We make announcements about up-coming tutorials and informational posts about ne
 &aname(past-training);
 
 ## Past training sessions (Japanese)
+
+<br>
+No English version available.<br>
+<br>
+
 <!-- - [[:/ja/node/]] -->
 - [第57回計測自動制御学会北海道支部学術講演会 特別講演](./sice_hokkaido_2025)
 - [RTミドルウェアサマーキャンプ2025](./summercamp2025)

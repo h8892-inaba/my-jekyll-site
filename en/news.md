@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "News"
-permalink: /ja/news/
+permalink: /en/news/
 ---
 
 <ul class="news-archive">

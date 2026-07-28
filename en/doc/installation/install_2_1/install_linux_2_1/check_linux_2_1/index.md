@@ -1,16 +1,15 @@
 ---
 layout: page
-title: 動作確認(Linux編)
+title: Operation Check (Linux)
 ---
--------jp page!!-------
 
 <!-- Titile: 動作確認(Linux編) -->
 
 #contents
 
-## サンプルコンポーネントを実行する
+## Running the Sample Components
 
-インストールが正常に終了したら、付属のサンプルコンポーネントで動作を確認できます。 サンプルコンポーネントのインストール先は以下です。
+After the installation has completed successfully, you can verify the operation using the included sample components. The sample components are installed in the following locations.
 
 ```
  /usr/share/openrtm-2.1/components/c++/examples
@@ -18,9 +17,9 @@ title: 動作確認(Linux編)
  /usr/share/openrtm-2.1/components/java
 ```
 
-RTCの操作、RTシステムの構築を行うためのツールOpenRTPを起動します。
+Start OpenRTP, the tool used to operate RTCs and build RT systems.
 
-- OpenRTM-aist 2.x系は、openrtp2 コマンドで起動します
+- For OpenRTM-aist 2.x, start it with the `openrtp2` command.
 
 ```
  $ openrtp2
@@ -31,23 +30,25 @@ RTCの操作、RTシステムの構築を行うためのツールOpenRTPを起�
 <!--  -->
 <!-- ※OpenRTPは1.2系と2.0系の共存が可能です。このため、openrtp と openrtp2 の両方を実行することは可能です。  -->
 
-付属のサンプルコンポーネントについては、以下のページでWindows版の一覧を記載しています。コンポーネントの動作についてはWindows版・Linux版に違いはございません。
-- [サンプルコンポーネント一覧](/node/6633#toc1)
+The Windows version of the included sample components is listed on the following page. There is no difference in the behavior of the components between the Windows and Linux versions.
 
-Linux環境でのサンプルコンポーネントの実行手順について、もう少し詳しく知りたい場合は、以下の1.2系の解説ページをご覧ください。コンポーネントのパスを読み替えていただければ実行手順は2.x系も同じです。
-- [OpenRTM-aist(C++版)1.2系・動作確認(Linux編)](/node/6613)
-- [OpenRTM-aist(Python版)1.2系・動作確認(Linux編)](/node/6621)
-- [OpenRTM-aist(Java版)1.2系・動作確認(Linux編)](/node/6628)
+- [List of Sample Components](/node/6633#toc1)
 
-## OpenCVサンプルコンポーネントのインストール
+If you would like more detailed instructions on how to run the sample components in a Linux environment, please refer to the following pages for Version 1.2. The execution procedure is the same for Version 2.x; simply replace the component paths accordingly.
 
-OpenCVのC++サンプルコンポーネントはインストール用debパッケージを提供しておりません。ソースからdebパッケージを生成するスクリプトを提供しておりますのでビルド・インストールしてください。
+- [OpenRTM-aist (C++ Edition) 1.2 - Operation Check (Linux)](/node/6613)
+- [OpenRTM-aist (Python Edition) 1.2 - Operation Check (Linux)](/node/6621)
+- [OpenRTM-aist (Java Edition) 1.2 - Operation Check (Linux)](/node/6628)
 
-### OpenCV4.5.4のインストール例
+## Installing the OpenCV Sample Components
 
-バージョン4.5.4のOpenCV本体と拡張モジュール群（opencv_contrib）を合わせてビルド・インストールする例です。
+A deb package is not provided for the OpenCV C++ sample components. Instead, a script is provided to generate the deb package from the source code. Please build and install it.
 
-- まず、/etc/apt/sources.listの以下の deb-src 行をコメントインしておきます。
+### Example: Installing OpenCV 4.5.4
+
+The following example builds and installs OpenCV Version 4.5.4 together with the OpenCV extra modules (opencv_contrib).
+
+- First, uncomment the following `deb-src` line in `/etc/apt/sources.list`.
 
 ```
  $ sudo vi /etc/apt/sources.list
@@ -57,7 +58,7 @@ OpenCVのC++サンプルコンポーネントはインストール用debパッ�
  deb-src http://us.archive.ubuntu.com/ubuntu/ *** universe
 ```
 
-- 下記コマンドの実行でOpenCVのインストールが完了します。
+- Run the following commands to install OpenCV.
 
 ```
  sudo apt build-dep opencv
@@ -74,9 +75,9 @@ OpenCVのC++サンプルコンポーネントはインストール用debパッ�
  sudo ldconfig
 ```
 
-### OpenCVサンプルコンポーネントのビルド手順
+### Building the OpenCV Sample Components
 
-ソースのImageProcessingを取得してビルドし、debパッケージを生成します。
+Obtain the ImageProcessing source code, build it, and generate the deb package.
 
 ```
  git clone https://github.com/OpenRTM/ImageProcessing
@@ -87,7 +88,7 @@ OpenCVのC++サンプルコンポーネントはインストール用debパッ�
  ./build_linux_package.sh
 ```
 
-これで、imageprocessing_2.x.x_amd64.deb が生成されますのでインストールします。
+This generates `imageprocessing_2.x.x_amd64.deb`. Install it as follows.
 
 ```
  sudo dpkg -i imageprocessing_2.x.x_amd64.deb
@@ -97,10 +98,6 @@ OpenCVのC++サンプルコンポーネントはインストール用debパッ�
  Binarization                 DilationErosion  Flip         ImageCalibration  OpenCVCamera      Rotate             SubtractCaptureImage  rtc.conf
 ```
 
-各サンプルディレクトリ下に実行ファイル（`***Comp`）がインストールされていますので、実行してみてください。 
+Executable files (`***Comp`) are installed in each sample directory. Try running them.
+```
 
-
-
-
-
--------jp page!!-------

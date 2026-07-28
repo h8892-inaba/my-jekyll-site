@@ -17,6 +17,7 @@ batファイルを用意していますので、それをダブルクリック�
 batファイルは、スタートメニューの [OpenRTM-aist 2.0.* x86_64] からスタートメニューフォルダーを開くとアクセスしやすいです。<br>
 「C++_Examples」「C++_OpenCV-Examples」「Python_Examples」「Java_Examples」の各フォルダ下にbatファイルがあります。
 詳細は、10分で始めようページの解説をご覧ください。 <br>
+
 - [OpenRTM-aistを10分で始めよう！・サンプルコンポーネントを実行する]({{ site.baseurl }}/ja/doc/installation/lets_start#toc5) 
 
 <br>

@@ -14,6 +14,9 @@ This event is held annually at the SICE System Integration Division Conference.
 
 
 ### Past Contests
+<br>
+<a>No English version available.
+</a>
 
 - [RT Middleware Contest 2025](./rtmcontest2025)
   - [Introduction page of submitted works](/contests/2025)(no_link)
@@ -60,6 +63,9 @@ This event is held annually at the SICE System Integration Division Conference.
 <br>
 
 ## AIST Open Lab
+<br>
+<a>No English version available.
+</a>
 
 - [AISTOpenLab2013](./openrlab2013)
 - [AISTOpenLab2012](./openrlab2012)
@@ -67,4 +73,3 @@ This event is held annually at the SICE System Integration Division Conference.
 - [AISTOpenLab2010](./openrlab2010)
 - [AISTOpenLab2009](./openrlab2009)
 - [AISTOpenLab2008](./openrlab2008)
--------jp page!!-------

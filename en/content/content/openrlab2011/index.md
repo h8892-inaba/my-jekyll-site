@@ -180,7 +180,7 @@ OpenRTM-aist用のシステム構築ツールセットです。コマンドラ�
 
 **プロジェクトページ**
 
-http://openrtm.org/openrtm/ja/project/opencv_rtcs
+http://openrtm.org/openrtm/ja/project/opencv_rtcs(no_link)
 
 <!-- :''ダウンロード''| -->
 <!-- 以下からソースとVC9用のバイナリセットがダウンロードできます。 -->
@@ -214,7 +214,7 @@ http://openrtm.org/openrtm/ja/project/opencv_rtcs
 
 **プロジェクトページ**
 
-http://openrtm.org/openrtm/ja/project/ARToolkit_DCI_AIST
+http://openrtm.org/openrtm/ja/project/ARToolkit_DCI_AIST(no_link)
 
 <!-- :''ダウンロード''| -->
 <!-- 以下からソースとVC9用のバイナリセットがダウンロードできます。 -->

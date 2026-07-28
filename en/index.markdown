@@ -12,13 +12,13 @@ excerpt: "OpenRTM-aist | The power to connect"
 
 swiper_images:
   - src: /assets/images/swiper/10min-startup_ja.png
-    link: /ja/doc/installation/lets_start
+    link: /doc/installation/lets_start
   - src: /assets/images/swiper/202release.png
-    link: /ja/download
+    link: /download
   - src: /assets/images/swiper/contest2025_2.png
-    link: /ja/content/content/rtmcontest2025/
+    link: /content/content/rtmcontest2025/
   - src: /assets/images/swiper/what_is_openrtm_ja2.jpg
-    link: /ja/doc/aboutopenrtm/rtmiddleware
+    link: /doc/aboutopenrtm/rtmiddleware
 ---
 
 {%- assign current_lang = site.default_lang | default: 'ja' -%}
@@ -83,14 +83,14 @@ document.addEventListener('DOMContentLoaded', function () {
               {{ post.excerpt | strip_html | truncate: 100 }}
      </p>
      <div class="news-more-wrap">
-      <a class="news-more" href="{{ post.url | relative_url }}">続きを読む</a>
+      <a class="news-more" href="{{ post.url | relative_url }}">Read More</a>
     </div>
     </article>
   {% endfor %}
 </div>
 <br>
 <div class="news-more-wrap">
-  <a class="news-more" href="{{ site.baseurl }}/ja/news/">その他のnews</a>
+  <a class="news-more" href="{{ site.baseurl }}/en/news/">More News</a>
 </div>
 <hr>
 <!-- /section -->

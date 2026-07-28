@@ -205,7 +205,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 ## 講義資料
 
 #### 第1部 RTミドルウエアで始めるロボットプログラミング
-- [講義資料(PDF))](/sites/default/files/171129-irex2017.pdf)
+- [講義資料(PDF))](171129-irex2017.pdf)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/83033353 -->
 

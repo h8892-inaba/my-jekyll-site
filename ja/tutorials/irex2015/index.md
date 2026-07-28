@@ -53,7 +53,7 @@ title: iREX2015 （国際ロボット展） RTM講習会
   </tr>
   <tr>
     <td>12:00 -12:30</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/content/1st_rtm_roboness_award">RTミドルウェア普及貢献賞授賞式</a></td>
+    <td>RTミドルウェア普及貢献賞授賞式</td>
   </tr>
   <tr>
     <td>12:00 -13:00</td>

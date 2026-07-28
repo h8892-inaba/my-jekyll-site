@@ -3,7 +3,7 @@ layout: page
 title: RTミドルウェアコンテスト2016
 ---
 
-<div align="left"><a href="/openrtm/content/rtmcontest2016"><img src="contest2016.png" width="80%;" align="center"></a></div>
+<div align="left"><img src="contest2016.png" width="80%;" align="center"></div>
 
 <br>
 

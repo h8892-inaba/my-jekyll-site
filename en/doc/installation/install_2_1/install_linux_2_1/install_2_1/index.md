@@ -1,66 +1,65 @@
 ---
 layout: page
-title: インストール
+title: Installation
 ---
--------jp page!!-------
 
 <!-- Title: インストール -->
 
 <div align="right"><a href="ubuntu_logo2.png"><img src="ubuntu_logo2.png" width="100;" align="right"></a></div>
 
 
-OpenRTM-aistは、UbuntuやDebian GNU Linuxにおいて利用可能なdebパッケージが提供されています。
+OpenRTM-aist provides deb packages that can be used on Ubuntu and Debian GNU/Linux.
 <!-- ２.０は現在、Debian、Ubuntu、Raspbian OSのディストリビューションに対応しています。 -->
 
 
 #contents
 
-2.1 は現在、Ubuntu 22.04, 24.04 (各amd64, arm64）に対応しています。
-Ubuntu/Debian GNU Linuxへのサポートバージョンや対応の有無は、予告なしに変更されることがありますので、あらかじめご了承ください。
+Version 2.1 currently supports Ubuntu 22.04 and 24.04 (amd64 and arm64).
+Please note that the supported versions of Ubuntu/Debian GNU/Linux and platform compatibility are subject to change without prior notice.
 
-## 2.1系での変更点
+## Changes in Version 2.1
 
-新しく [SSM通信機能](/en/doc/developersguide/advanced_rt_system_programming/ssm_comm_use) をインストールできるようになりました。<br>
-SSMライブラリを静的リンクしているので、別途SSMをインストール必要はありません。openrtm2-ssm-tpのdebパッケージで下記がインストールされます。
+You can now install the new [SSM Communication Feature](/ja/doc/developersguide/advanced_rt_system_programming/ssm_comm_use).<br>
+Since the SSM library is statically linked, you do not need to install SSM separately. The following files are installed by the openrtm2-ssm-tp deb package.
 
 ```
  usr/
  ├── bin
- │   ├── killssm
- │   ├── lsssm
- │   ├── psssm
- │   ├── ssm-advance-player
- │   ├── ssm-coordinator
- │   ├── ssm-date
- │   ├── ssm-graph
- │   ├── ssm-logger
- │   ├── ssm-monitor
- │   ├── ssm-player
- │   ├── ssm-proxy
- │   ├── ssm-transporter
- │   └── topssm
+ │   ├── killssm
+ │   ├── lsssm
+ │   ├── psssm
+ │   ├── ssm-advance-player
+ │   ├── ssm-coordinator
+ │   ├── ssm-date
+ │   ├── ssm-graph
+ │   ├── ssm-logger
+ │   ├── ssm-monitor
+ │   ├── ssm-player
+ │   ├── ssm-proxy
+ │   ├── ssm-transporter
+ │   └── topssm
  ├── etc
- │   └── transport
- │       └── rtc.ssm.conf
+ │   └── transport
+ │       └── rtc.ssm.conf
  └── share
      └── openrtm-2.1
          └── transport
              └── SSMTransport.so
 ```
 
-この機能は次の項で説明している「一括インストールスクリプト」をオプション無しで実行した場合はインストールされません。<br>
-オプションとして「-l c++ --ssm」と指定するとインストールできます。 --help で確認できます。
+This feature is **not** installed when the "Bulk Installation Script" described in the next section is executed without any options.<br>
+It can be installed by specifying the option `-l c++ --ssm`. You can check the available options with `--help`.
 
-## 一括インストールスクリプト
+## Bulk Installation Script
 
-2.0系のインストールは、下記をシェルプロンプトに貼り付けて実行してください。　C++版、 Python版、 Java版、 OpenRTP(amd64のみ)、 rtshell、JDK8 がインストールされます。　スクリプトはローカルに保存されません。<br>
-※スクリプトの実行で、Javaの複数バージョンがインストールされても、Java８ 使用に切り替わっています
+To install Version 2.0, paste and execute the following command at the shell prompt. It installs the C++ edition, Python edition, Java edition, OpenRTP (amd64 only), rtshell, and JDK 8. The script is not saved locally.<br>
+*Even if multiple Java versions are installed by the script, the default Java version is automatically switched to Java 8.*
 
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
 ```
 
-この実行により以下のパッケージがインストールされます。
+The following packages will be installed.
 
 ```
  $ dpkg -l | grep openrt
@@ -76,8 +75,8 @@ SSMライブラリを静的リンクしているので、別途SSMをインス�
  ii  openrtm2-python3-example          2.1.0-0            arm64        OpenRTM-aist-Python examples
 ```
 
-デフォルトのpipバージョン利用で、 rtshellのインストールに失敗します。<br>
-インストールスクリプトが表示している黄文字のメッセージに従い、　/etc/pip.conf へ（存在しなければ 新規作成して）下記を追記して下さい。
+The installation of rtshell fails when using the default pip version.<br>
+Follow the yellow message displayed by the installation script and add the following lines to `/etc/pip.conf` (create the file if it does not exist).
 
 ```
  $ vi /etc/pip.conf
@@ -85,7 +84,7 @@ SSMライブラリを静的リンクしているので、別途SSMをインス�
  break-system-packages = true
 ```
 
-上記設定後に再度インストールスクリプトを実行するとrtshellをインストールできます。
+After applying the above setting, run the installation script again to install rtshell.
 
 ```
  $ pip3 list | grep aist
@@ -95,38 +94,38 @@ SSMライブラリを静的リンクしているので、別途SSMをインス�
  rtsprofile-aist                    4.1.6
 ```
 
-オプションを指定することで、目的に合わせたパッケージをインストールすることが可能です。 help は下記で確認できます。
+By specifying options, you can install packages that match your requirements. The available options can be checked with the following command.
 
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) --help
 ```
 
-インストールされるパッケージの詳しい内容は「[OpenRTM-aist-2.1 debパッケージの詳しい内容](/en/doc/installation/install_2_1/install_linux_2_1/install_2_1/install_debpackages_workcontent_2_1) 」で確認できます。
+For detailed information about the installed packages, see "[Details of OpenRTM-aist-2.1 deb Packages](/ja/doc/installation/install_2_1/install_linux_2_1/install_2_1/install_debpackages_workcontent_2_1)".
 
-## ROS用パッケージのインストール
+## Installing ROS Packages
 
-2.1系ではROS通信機能用パッケージをインストールできます。（ROS2用)  <br>
-ここでは、ROS2 をインストールしている環境へのパッケージインストール方法を説明します。
+In Version 2.1, packages for the ROS communication feature (for ROS2) can be installed.<br>
+This section describes how to install the packages in an environment where ROS2 has already been installed.
 
-help に記載しているように、ROSパッケージインストールオプションは以下で対応しています。<br>
+As described in the help message, the ROS package installation options are as follows.<br>
 
 '''
 [-e ros2|all] [--ros2]
 '''
 
-すでにインストールスクリプトをオプション無しで実行済みで、追加でROS2用パッケージを追加インストールする場合は、「-l c++ --ros2」で可能です。
+If you have already executed the installation script without any options and want to install the ROS2 packages afterward, use the `-l c++ --ros2` option.
 
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) -l c++ --ros2
 ```
 
-最初からROS2用パッケージも加えてすべてインストールしたい場合は、「 -l all --ros2」で可能です。
+If you want to install all packages including the ROS2 packages from the beginning, use the `-l all --ros2` option.
 
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) -l all --ros2
 ```
 
-インストールされたパッケージを確認します。
+Verify the installed packages.
 
 ```
  $ dpkg -l | grep openrt
@@ -143,6 +142,3 @@ help に記載しているように、ROSパッケージインストールオプ
  ii  openrtm2-ros2-tp:amd64               2.1.0-0      amd64        OpenRTM-aist extension ROS2 package
  ii  openrtp2:amd64                            2.1.0-0      amd64        OpenRTP, Open RT Platform distributed by AIST
 ```
-
-
--------jp page!!-------

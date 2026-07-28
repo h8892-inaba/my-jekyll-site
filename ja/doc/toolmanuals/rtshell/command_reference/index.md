@@ -114,7 +114,7 @@ title: rtshellコマンド・リファレンス
     <td>RTSProfielデータを用いてRTシステムを停止します。</td>
   </tr>
   <tr>
-    <td><a href="/rtteardown">rtteardown</a></td>
+    <td><a href="./rtteardown">rtteardown</a></td>
     <td>RTSProfileデータを用いてRTシステムを削除する。</td>
   </tr>
 </table>

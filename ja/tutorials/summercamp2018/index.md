@@ -142,7 +142,7 @@ title: RTミドルウェアサマーキャンプ2018
   </tr>
   <tr>
     <td>16:00 - 17:30</td>
-    <td>講義1: SysML実習 <a href="/sites/default/files/6548/2018SummerCamp-01.pdf ">講義資料</a></td>
+    <td>講義1: SysML実習 <a href="2018SummerCamp-01.pdf ">講義資料</a></td>
     <td>坂本武志<br>(グローバルアシスト)</td>
   </tr>
   <tr>
@@ -160,17 +160,17 @@ title: RTミドルウェアサマーキャンプ2018
   </tr>
   <tr>
     <td>09:30-10:00</td>
-    <td>RTミドルウェアツール紹介１：<br> RT Shellを使った効率の良いRTシステム運用 <br> <a href="/sites/default/files/6548/2018SummerCamp-02.pdf ">講義資料</a></td>
+    <td>RTミドルウェアツール紹介１：<br> RT Shellを使った効率の良いRTシステム運用 <br> <a href="./2018SummerCamp-02.pdf ">講義資料</a></td>
     <td>ビグス　ジェフ<br>(産業技術総合研究所)</td>
   </tr>
   <tr>
     <td>10:00-10:30</td>
-    <td>RTミドルウェアツール紹介2：<br> 表計算ソフトによるRTコンポーネントの動作確認手順について<br> <a href="/sites/default/files/6548/2018SummerCamp-03.pdf ">講義資料</a></td>
+    <td>RTミドルウェアツール紹介2：<br> 表計算ソフトによるRTコンポーネントの動作確認手順について<br> <a href="2018SummerCamp-03.pdf ">講義資料</a></td>
     <td>宮本 信彦<br> (産業技術総合研究所)</td>
   </tr>
   <tr>
     <td>10:30-11:00</td>
-    <td>RTミドルウェアツール紹介3：<br> 効率の良いRTコンポーネント開発のための支援ツール<br> <a href="/sites/default/files/6548/2018SummerCamp-04.pdf ">講義資料</a></td>
+    <td>RTミドルウェアツール紹介3：<br> 効率の良いRTコンポーネント開発のための支援ツール<br> <a href="./2018SummerCamp-04.pdf ">講義資料</a></td>
     <td>黒瀬 竜一 <br>(産業技術総合研究所)</td>
   </tr>
   <tr>
@@ -180,7 +180,7 @@ title: RTミドルウェアサマーキャンプ2018
   </tr>
   <tr>
     <td>11:30-12:00</td>
-    <td>RTシステム構築事例紹介2：<br> つかえるRTコンポーネントの紹介<br> <a href="/sites/default/files/6548/2018SummerCamp-05.pdf ">講義資料</a></td>
+    <td>RTシステム構築事例紹介2：<br> つかえるRTコンポーネントの紹介<br> <a href="./2018SummerCamp-05.pdf ">講義資料</a></td>
     <td>原 功 <br>(産業技術総合研究所)</td>
   </tr>
   <tr>
@@ -462,20 +462,20 @@ title: RTミドルウェアサマーキャンプ2018
 ## 講義資料
 
 ## 講座
-- [SysML実習](/sites/default/files/6548/2018SummerCamp-01.pdf )
+- [SysML実習](./2018SummerCamp-01.pdf )
 <!-- Invalid YouTube URL: http://www.slideshare.net/108196432 -->
 
 ## RTミドルウェアツール紹介
-- [RT Shellを使った効率の良いRTシステム運用](/sites/default/files/6548/2018SummerCamp-02.pdf )
+- [RT Shellを使った効率の良いRTシステム運用](./2018SummerCamp-02.pdf )
 <!-- Invalid YouTube URL: http://www.slideshare.net/108197316 -->
 
-- [表計算ソフトによるRTコンポーネントの動作確認手順について](/sites/default/files/6548/2018SummerCamp-03.pdf )
+- [表計算ソフトによるRTコンポーネントの動作確認手順について](./2018SummerCamp-03.pdf )
 <!-- Invalid YouTube URL: http://www.slideshare.net/108197497 -->
 
-- [開発プロセスと RT コンポーネントのデバッグ･テスト手法](/sites/default/files/6548/2018SummerCamp-04.pdf )
+- [開発プロセスと RT コンポーネントのデバッグ･テスト手法](./2018SummerCamp-04.pdf )
 <!-- Invalid YouTube URL: http://www.slideshare.net/108197695 -->
 
-- [つかえるRTコンポーネントの紹介](/sites/default/files/6548/2018SummerCamp-05.pdf )
+- [つかえるRTコンポーネントの紹介](./2018SummerCamp-05.pdf )
 <!-- Invalid YouTube URL: http://www.slideshare.net/108197806 -->
 
 ## 開発成果
@@ -484,7 +484,7 @@ title: RTミドルウェアサマーキャンプ2018
 ### グループ1
 
 - **課題**: モバイルロボットゲームパック
-  - [プロジェクトページ](/ja/project/SummerCamp2018_group1)
+  - [プロジェクトページ](/ja/project/SummerCamp2018_group1)(no_link)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/108736729 -->
 
@@ -502,7 +502,7 @@ title: RTミドルウェアサマーキャンプ2018
 ### グループ2
 
 - **課題**:NAOの大冒険
-- [プロジェクトページ](/ja/project/SummerCamp2018_group2)
+- [プロジェクトページ](/ja/project/SummerCamp2018_group2)(no_link)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/108735739 -->
 
@@ -519,7 +519,7 @@ title: RTミドルウェアサマーキャンプ2018
 &aname(summercamp2018_group3);
 ### グループ3
 - **課題**:じゃんけんロボットシステム
-  - [プロジェクトページ](/ja/project/SummerCamp2018_group3)
+  - [プロジェクトページ](/ja/project/SummerCamp2018_group3)(no_link)
 <!-- Invalid YouTube URL: http://www.slideshare.net/108736424 -->
 
   - 開発モデル発表
@@ -536,7 +536,7 @@ title: RTミドルウェアサマーキャンプ2018
 &aname(summercamp2018_group4);
 ### グループ4
 - **課題**:T型自律走行ロボット
-  - [プロジェクトページ](/ja/project/SummerCamp2018_group4)
+  - [プロジェクトページ](/ja/project/SummerCamp2018_group4)(no_link)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/108736510 -->
 

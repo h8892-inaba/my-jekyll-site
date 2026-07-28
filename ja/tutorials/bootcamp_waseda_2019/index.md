@@ -98,13 +98,13 @@ RTミドルウェア強化月間として、早稲田大学西早稲田キャン
 
 ### 講義資料
 #### 第1部 RTミドルウエア: OpenRTM-aist概要 
-- [第1部 講義資料(PDF)](/sites/default/files/6707/190605-01.pdf )
+- [第1部 講義資料(PDF)](190605-01.pdf )
 
 <!-- Invalid YouTube URL: https://www.slideshare.net/149148327 -->
 
 
 #### 第2部 RTコンポーネントの作成入門 
-- [第2部 講義資料(PDF)](/sites/default/files/6711/190711-02.pdf )
+- [第2部 講義資料(PDF)](190711-02.pdf )
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/156215551 -->
 

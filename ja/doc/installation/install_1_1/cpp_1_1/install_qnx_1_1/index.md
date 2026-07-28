@@ -39,13 +39,13 @@ QNX にはパッケージ管理システムはなく、QNX のユーザーフォ
 
 
 OS をインストール後、pkgsrc をリポジトリからチェックアウトするなどして、システムに配置します。(リポジトリへのアクセスには、QNX forum のアカウントが必要になります。)
-svnリポジトリからのチェックアウトは大変時間がかかるので、[pkgsrc_HEAD650_r396.tgz](/sites/default/files/5056/pkgsrc_HEAD650_r396.tgz) をダウンロードして利用することもできますが、事前に pkgsrc の最新バージョンをチェックすることをおすすめします。
+svnリポジトリからのチェックアウトは大変時間がかかるので、[pkgsrc_HEAD650_r396.tgz](pkgsrc_HEAD650_r396.tgz) をダウンロードして利用することもできますが、事前に pkgsrc の最新バージョンをチェックすることをおすすめします。
 
 - [QNX アカウント](https://www.qnx.com/account/login.html)
 - [QNX フォーラム](https://www.qnx.com/account/index.html)
 - [bootstrap](http://community.qnx.com/sf/wiki/do/viewPage/projects.pkgsrc/wiki/Bootstrap)
-- [pkgsrc HEAD650(r396)のアーカイブ(.svn削除済み)](/sites/default/files/5056/pkgsrc_HEAD650_r396.tgz)
-- [pkgsrc HEAD650(r396)のアーカイブ(.svn含む)](/sites/default/files/5056/pkgsrc_HEAD650_r396.tgz)
+- [pkgsrc HEAD650(r396)のアーカイブ(.svn削除済み)](pkgsrc_HEAD650_r396.tgz)
+- [pkgsrc HEAD650(r396)のアーカイブ(.svn含む)](pkgsrc_HEAD650_r396.tgz)
 
 
 ```

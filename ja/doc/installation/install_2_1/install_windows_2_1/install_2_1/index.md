@@ -4,7 +4,7 @@ title: インストール
 ---
 
 <!-- Title: インストール -->
-<div align="right"><a href="windows10-logo.png"><img src="windows10-logo.png" width="30%; margin:30 30 30 30px;" align="right"></a></div>
+<div align="right"><a href="windows10-logo.png"><img src="windows10-logo.png" width="15%; margin:30 30 30 30px;" align="right"></a></div>
 #contents
 
 <!-- ** インストールの準備 -->

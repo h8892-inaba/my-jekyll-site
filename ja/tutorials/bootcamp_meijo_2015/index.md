@@ -114,7 +114,7 @@ title: RTミドルウェア強化月間2015 in 名城大学・RTミドルウェ�
 
 ### 講義資料
 #### 第1部 RTミドルウエア: OpenRTM-aist概要 
-- [第1部 講義資料(PDF)](/sites/default/files/5810/150629-01.pdf)
+- [第1部 講義資料(PDF)](150629-01.pdf)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/50030951 -->
 {% include slideshare.html
@@ -123,7 +123,7 @@ title: RTミドルウェア強化月間2015 in 名城大学・RTミドルウェ�
 
 
 #### 第2部 RTコンポーネントの作成入門 
-- [第2部 講義資料(PDF)](/sites/default/files/5810/150629-02.pdf)
+- [第2部 講義資料(PDF)](150629-02.pdf)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/50031753 -->
 
@@ -132,7 +132,7 @@ title: RTミドルウェア強化月間2015 in 名城大学・RTミドルウェ�
 %}
 
 #### 第3部 プログラミング実習 
-- [第3部 講義資料(PDF)](/sites/default/files/5810/150629-03.pdf)
+- [第3部 講義資料(PDF)](150629-03.pdf)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/50031775 -->
 {% include slideshare.html

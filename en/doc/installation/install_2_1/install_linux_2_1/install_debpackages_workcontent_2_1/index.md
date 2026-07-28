@@ -1,21 +1,20 @@
 ---
 layout: page
-title: OpenRTM-aist-2.0 debパッケージの詳しい内容
+title: Detailed Contents of the OpenRTM-aist-2.0 deb Packages
 ---
--------jp page!!-------
 
 <!-- OpenRTM-aist-2.0 debパッケージの詳しい内容 -->
 
 #contents
 
-## OpenRTM-2.1 debパッケージの詳しい内容
+## Detailed Contents of the OpenRTM-2.1 deb Packages
 
-各パッケージの内容は以下の通りです。
+The contents of each package are as follows.
 
 ### openrtm2
-openrtm2 にはランタイムライブラリとコマンド群が含まれています。
+openrtm2 includes runtime libraries and commands.
 
-- コマンド
+- Commands
 ```
  /usr/bin/openrtmNames
  /usr/bin/rtcd2
@@ -23,7 +22,7 @@ openrtm2 にはランタイムライブラリとコマンド群が含まれて�
  /usr/bin/rtm2-config
 ```
 
-- 設定ファイルサンプルなど
+- Sample configuration files, etc.
 ```
  /usr/etc/http/rtc.http.conf
  /usr/etc/http/rtc.https.conf
@@ -36,7 +35,7 @@ openrtm2 にはランタイムライブラリとコマンド群が含まれて�
 ```
 
 
-- ライブラリなど
+- Libraries, etc.
 ```
  /usr/lib/x86_64-linux-gnu/libRTC2.a
  /usr/lib/x86_64-linux-gnu/libRTC2.so.2.1.0
@@ -54,21 +53,21 @@ openrtm2 にはランタイムライブラリとコマンド群が含まれて�
 ```
 
 ### openrtm2-naming
-ネームサーバを起動 
+Starts the name server.
 
 ```
  /usr/bin/rtm2-naming
 ```
 
 ### openrtm2-dev 
-openrtm2-devには、開発に必要なコマンド群とヘッダが含まれています。
+openrtm2-dev includes the commands and headers required for development.
 
-- コマンド
+- Commands
 ```
  /usr/bin/rtm2-skelwrapper
 ```
 
-- ヘッダなど
+- Headers, etc.
 ```
  /usr/include/coil-2.1/coil/Affinity.h
  /usr/include/coil-2.1/coil/Async.h
@@ -86,7 +85,7 @@ openrtm2-devには、開発に必要なコマンド群とヘッダが含まれ�
  /usr/include/openrtm-2.1/rtm/version.h
 ```
 
-- ライブラリ・その他
+- Libraries and other files
 ```
  /usr/lib/x86_64-linux-gnu/cmake/openrtm-2.1/OpenRTMConfig.cmake
  /usr/lib/x86_64-linux-gnu/cmake/openrtm-2.1/OpenRTMConfigVersion.cmake
@@ -95,9 +94,9 @@ openrtm2-devには、開発に必要なコマンド群とヘッダが含まれ�
 ```
 
 ### openrtm2-example
-openrtm2-example にはスタンドアロン RTC、ローダブル RTC それぞれのサンプルが含まれています。
+openrtm2-example includes samples of both standalone RTCs and loadable RTCs.
 
-- サンプル(スタンドアロンRTC)
+- Samples (standalone RTCs)
 ```
  /usr/share/openrtm-2.1/components/c++/examples/CompositeComp
  /usr/share/openrtm-2.1/components/c++/examples/ConfigSampleComp
@@ -105,7 +104,7 @@ openrtm2-example にはスタンドアロン RTC、ローダブル RTC それぞ
  /usr/share/openrtm-2.1/components/c++/examples/rtc.conf
 ```
 
-- サンプル(ローダブルRTC)
+- Samples (loadable RTCs)
 ```
  /usr/share/openrtm-2.1/components/c++/examples/rtc/ConfigSample.so
  /usr/share/openrtm-2.1/components/c++/examples/rtc/ConsoleIn.so
@@ -115,7 +114,7 @@ openrtm2-example にはスタンドアロン RTC、ローダブル RTC それぞ
 
 ### openrtm2-ros2-tp
 
-ROS2通信機能ライブラリがインストールされます。
+The ROS2 communication feature libraries are installed.
 
 ```
  /usr/lib/x86_64-linux-gnu/openrtm-2.1/transport/FastRTPSTransport.so
@@ -124,7 +123,7 @@ ROS2通信機能ライブラリがインストールされます。
 
 ### openrtm2-ssm-tp
 
-SSMとSSM通信機能ライブラリがインストールされます。
+SSM and the SSM communication feature library are installed.
 
 ```
  /usr/bin/ssm-coordinator
@@ -134,9 +133,9 @@ SSMとSSM通信機能ライブラリがインストールされます。
 ```
 
 ### openrtm2-doc
-openrtm2-doc には、日本語と英語のクラスリファレンス、IDL インターフェース定義リファレンスが含まれています。
+openrtm2-doc includes Japanese and English class references and IDL interface definition references.
 
-- クラスリファレンス
+- Class reference
 ```
  /usr/share/openrtm-2.1/doc/c++/ClassReference/html/BufferBase_8h.html
  /usr/share/openrtm-2.1/doc/c++/ClassReference/html/BufferBase_8h__dep__incl.map
@@ -144,7 +143,7 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
  /usr/share/openrtm-2.1/doc/c++/ClassReference/html/structSDOPackage_1_1Organization__impl_1_1sdo__id.html
 ```
 
-- IDL リファレンス
+- IDL reference
 ```
  /usr/share/openrtm-2.1/doc/idl/IDLReference/html/BasicDataType_8idl.html
  /usr/share/openrtm-2.1/doc/idl/IDLReference/html/BasicDataType_8idl_dep_incl.map
@@ -152,7 +151,7 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
  /usr/share/openrtm-2.1/doc/idl/IDLReference/html/unionSDOPackage_1_1Numeric.html
 ```
 
-- クラスリファレンス(英語)
+- Class reference (English)
 ```
  /usr/share/openrtm-2.1/doc/c++/ClassReference-en/html/BufferBase_8h.html
  /usr/share/openrtm-2.1/doc/c++/ClassReference-en/html/BufferBase_8h__dep__incl.map
@@ -160,7 +159,7 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
  /usr/share/openrtm-2.1/doc/C++/ClassReference-en/html/version_8h_source.html
 ```
 
-- IDL リファレンス(英語)
+- IDL reference (English)
 ```
  /usr/share/openrtm-2.1/doc/idl/IDLReference-en/html/BasicDataType_8idl.html
  /usr/share/openrtm-2.1/doc/idl/IDLReference-en/html/BasicDataType_8idl__dep__incl.map
@@ -170,7 +169,7 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
 
 ### openrtm2-idl
 
-- idlファイルなど
+- IDL files, etc.
 ```
  /etc/profile.d/openrtm2-idl.sh
  /usr/include/openrtm-2.1/rtm/idl/BasicDataType.idl
@@ -185,21 +184,21 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
 
 ### openrtm2-python3
 
-- コマンド
+- Commands
 ```
  /usr/bin/rtcd2_python3
  /usr/bin/rtcprof2_python3
 ```
 
-- OpenRTM-aist 本体の Python モジュール
+- Python modules for OpenRTM-aist
 ```
  /usr/lib/python3/dist-packages/OpenRTM_aist/* 
 ```
-- OpenRTM-aist用Python検索パスファイル
+- Python search path file for OpenRTM-aist
 ```
  /usr/lib/python3/dist-packages/OpenRTM-aist.pth 
 ```
-- ユーティリティ
+- Utilities
 ```
  /usr/lib/python3/dist-packages/OpenRTM_aist/utils/__init__.py
  /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/*
@@ -253,7 +252,7 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
 
 ### openrtm2-java-example
 
-Java版サンプルRTC、Classファイル、ソースファイル、起動スクリプト
+Java sample RTCs, class files, source files, and startup scripts
 ```
  /usr/share/openrtm-2.1/components/java/* 
  /usr/share/openrtm-2.1/components/java/RTMExamples/AutoTest/*
@@ -274,7 +273,7 @@ Java版サンプルRTC、Classファイル、ソースファイル、起動ス�
 
 ### openrtm2-java-doc
 
-openrtm2-java-doc には、日本語と英語のクラスリファレンスが含まれています。
+openrtm2-java-doc includes Japanese and English class references.
 
 ```
  /usr/share/openrtm-2.1/doc/java/JavaDoc/OpenRTM/class-use/*
@@ -293,9 +292,8 @@ openrtm2-java-doc には、日本語と英語のクラスリファレンスが�
 
 
 ### openrtp2
-openrtpでは大量のファイルがインストールされるため、ここではリストしません。必要に応じて
+Since openrtp installs a large number of files, they are not listed here. To check them as needed, enter the following command:
+
 ```
  $ dpkg -L openrtp2
 ```
-と入力して各自での確認をしてください。
--------jp page!!-------

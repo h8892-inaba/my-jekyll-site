@@ -1,77 +1,72 @@
 ---
 layout: page
-title: Raspberry Pi OSへのインストール
+title: Installation on Raspberry Pi OS
 ---
--------jp page!!-------
 
 <!-- Title: Raspberry Pi OSへのインストール -->
 
 #contents
 
-## 対応バージョン
+## Supported Version
 
-現在パッケージが用意されている Raspberry Pi OS のバージョンは
+The currently supported version of Raspberry Pi OS is:
 
-- Bookworm (64bit)
+- Bookworm (64-bit)
 
-です。
+## Preparing the SD Card
 
-## SDカードの準備
-
-OSイメージの書き込みは、公式サイトでダウンロードできるツール、Raspberry Pi Imager を使うのが便利です。<br>
+To write the OS image, it is convenient to use Raspberry Pi Imager, which can be downloaded from the official website.<br>
 https://www.raspberrypi.com/software/
 
+You can select and download the following options:
 
-下記を選択してダウンロード、書き込みが可能です。
-- ベースのDebian GNU/Linuxのバージョン (最新 / Legacy)
-- GUI の有無 (Desktop / Lite)
-- システムアーキテクチャー (32-bit / 64-bit)
+- Base Debian GNU/Linux version (Latest / Legacy)
+- GUI option (Desktop / Lite)
+- System architecture (32-bit / 64-bit)
 
-## 2.1系での変更点
+## Changes in Version 2.1
 
-新しく [SSM通信機能](/en/doc/developersguide/advanced_rt_system_programming/ssm_comm_use) をインストールできるようになりました。<br>
-SSMライブラリを静的リンクしているので、別途SSMをインストール必要はありません。openrtm2-ssm-tpのdebパッケージで下記がインストールされます。
+You can now install the new [SSM Communication Feature](/ja/doc/developersguide/advanced_rt_system_programming/ssm_comm_use).<br>
+Since the SSM library is statically linked, you do not need to install SSM separately. The following files are installed by the openrtm2-ssm-tp deb package.
 
 ```
  usr/
  ├── bin
- │   ├── killssm
- │   ├── lsssm
- │   ├── psssm
- │   ├── ssm-advance-player
- │   ├── ssm-coordinator
- │   ├── ssm-date
- │   ├── ssm-graph
- │   ├── ssm-logger
- │   ├── ssm-monitor
- │   ├── ssm-player
- │   ├── ssm-proxy
- │   ├── ssm-transporter
- │   └── topssm
+ │   ├── killssm
+ │   ├── lsssm
+ │   ├── psssm
+ │   ├── ssm-advance-player
+ │   ├── ssm-coordinator
+ │   ├── ssm-date
+ │   ├── ssm-graph
+ │   ├── ssm-logger
+ │   ├── ssm-monitor
+ │   ├── ssm-player
+ │   ├── ssm-proxy
+ │   ├── ssm-transporter
+ │   └── topssm
  ├── etc
- │   └── transport
- │       └── rtc.ssm.conf
+ │   └── transport
+ │       └── rtc.ssm.conf
  └── share
      └── openrtm-2.1
          └── transport
              └── SSMTransport.so
 ```
 
-この機能は次の項で説明している「一括インストールスクリプト」をオプション無しで実行した場合はインストールされません。<br>
-オプションとして「-l c++ --ssm」と指定するとインストールできます。 --help で確認できます。
+This feature is **not** installed when the "Bulk Installation Script" described in the next section is executed without any options.<br>
+It can be installed by specifying the option `-l c++ --ssm`. You can check the available options with `--help`.
 
+## Bulk Installation Script
 
-## 一括インストールスクリプト
-
-2.1系のインストールは、下記をシェルプロンプトに貼り付けて実行してください。　C++版、 Python版、 Java版、 rtshell、JDK8 がインストールされます。　スクリプトはローカルに保存されません。<br>
-※Javaの複数バージョンがインストールされても、Java８ 使用に切り替わっています。 <br>
-
+To install Version 2.1, paste and execute the following command at the shell prompt. It installs the C++ edition, Python edition, Java edition, rtshell, and JDK 8. The script is not saved locally.<br>
+*Even if multiple Java versions are installed, the default Java version is automatically switched to Java 8.*<br>
 
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_raspbian.sh)
 ```
 
-この実行により以下のパッケージがインストールされます。
+The following packages will be installed.
 
 ```
  $ dpkg -l | grep openrt
@@ -87,8 +82,8 @@ SSMライブラリを静的リンクしているので、別途SSMをインス�
  ii  openrtm2-python3-example          2.1.0-0            arm64        OpenRTM-aist-Python examples
 ```
 
-デフォルトのpipバージョン利用で、 rtshellのインストールに失敗します。<br>
-インストールスクリプトが表示している黄文字のメッセージに従い、　/etc/pip.conf へ（存在しなければ 新規作成して）下記を追記して下さい。
+The installation of rtshell fails when using the default pip version.<br>
+Follow the yellow message displayed by the installation script and add the following lines to `/etc/pip.conf` (create the file if it does not exist).
 
 ```
  $ vi /etc/pip.conf
@@ -96,7 +91,7 @@ SSMライブラリを静的リンクしているので、別途SSMをインス�
  break-system-packages = true
 ```
 
-上記設定後に再度インストールスクリプトを実行するとrtshellをインストールできます。
+After applying the above setting, run the installation script again to install rtshell.
 
 ```
  $ pip3 list | grep aist
@@ -106,18 +101,21 @@ SSMライブラリを静的リンクしているので、別途SSMをインス�
  rtsprofile-aist                    4.1.6
 ```
 
-オプションを指定することで、目的に合わせたパッケージをインストールすることが可能です。 help は下記で確認できます。
+By specifying options, you can install packages that match your requirements. The available options can be checked with the following command.
 
 ```
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_raspbian.sh) --help
 ```
 
-## パッケージの詳細
-各パッケージの内容は以下の通りです。
-### openrtm2
-openrtm-aistにはランタイムライブラリとコマンド群が含まれています。
+## Package Details
 
-- コマンド
+The contents of each package are as follows.
+
+### openrtm2
+
+openrtm-aist includes runtime libraries and commands.
+
+- Commands
 ```
  /usr/bin/openrtmNames
  /usr/bin/rtcd2
@@ -125,7 +123,7 @@ openrtm-aistにはランタイムライブラリとコマンド群が含まれ�
  /usr/bin/rtm2-config
 ```
 
-- 設定ファイルサンプル
+- Sample configuration files
 ```
  /usr/etc/rtc.conf.sample2
  /usr/etc/rtc.names.ssl.conf
@@ -133,8 +131,7 @@ openrtm-aistにはランタイムライブラリとコマンド群が含まれ�
  /usr/lib/aarch64-linux-gnu/pkgconfig/openrtm2.pc
 ```
 
-
-- ライブラリなど
+- Libraries, etc.
 ```
  /usr/lib/aarch64-linux-gnu/libRTC2.a
  /usr/lib/aarch64-linux-gnu/libRTC2.so.2.1.0
@@ -152,16 +149,16 @@ openrtm-aistにはランタイムライブラリとコマンド群が含まれ�
  /usr/lib/aarch64-linux-gnu/openrtm-2.1/sdo/LoggerConsumer.so
 ```
 
-
 ### openrtm2-dev
-開発に必要なコマンド群とヘッダが含まれています。
 
-- コマンド
+Includes the commands and headers required for development.
+
+- Commands
 ```
  /usr/bin/rtm2-skelwrapper
 ```
 
-- ヘッダ
+- Headers
 ```
  /usr/include/coil-2.1/coil/Affinity.h
  /usr/include/coil-2.1/coil/Async.h
@@ -170,172 +167,209 @@ openrtm-aistにはランタイムライブラリとコマンド群が含まれ�
  /usr/include/openrtm-2.1/rtm/BufferStatus.h
  中略
  /usr/include/openrtm-2.1/rtm/config_rtc.h
- /usr/include/openrtm-2.1/rtm/idl/BasicDataType.hh 
+ /usr/include/openrtm-2.1/rtm/idl/BasicDataType.hh
  /usr/include/openrtm-2.1/rtm/idl/BasicDataTypeSkel.h
  中略
  /usr/include/openrtm-2.1/rtm/idl/SharedMemoryStub.h
  /usr/include/openrtm-2.1/rtm/version.h
 ```
 
-- ライブラリ・その他
+- Libraries and other files
 ```
  /usr/lib/aarch64-linux-gnu/cmake/openrtm-2.1/OpenRTMConfig.cmake
  /usr/lib/aarch64-linux-gnu/cmake/openrtm-2.1/OpenRTMConfigVersion.cmake
  /usr/share/openrtm-2.1/py_helper/skel_wrapper.py
  /usr/share/openrtm-2.1/py_helper/yat.py
 ```
+````
+
+```markdown
+## Part 2/2
 
 ### openrtm2-idl
-- idlファイルなど
+
+- IDL files, etc.
 ```
- /usr/include/openrtm-2.1/rtm/idl/BasicDataType.idl
- /usr/include/openrtm-2.1/rtm/idl/CameraCommonInterface.idl
- 中略
- /usr/include/openrtm-2.1/rtm/idl/SharedMemory.idl
- /usr/share/openrtm-2.1/idl/BasicDataType.idl
- /usr/share/openrtm-2.1/idl/CameraCommonInterface.idl
- 中略
- /usr/share/openrtm-2.1/idl/SharedMemory.idl
+
+/usr/include/openrtm-2.1/rtm/idl/BasicDataType.idl
+/usr/include/openrtm-2.1/rtm/idl/CameraCommonInterface.idl
+中略
+/usr/include/openrtm-2.1/rtm/idl/SharedMemory.idl
+/usr/share/openrtm-2.1/idl/BasicDataType.idl
+/usr/share/openrtm-2.1/idl/CameraCommonInterface.idl
+中略
+/usr/share/openrtm-2.1/idl/SharedMemory.idl
+
 ```
 
 ### openrtm2-example
-openrtm-aist-exampleにはスタンドアロンRTC、ローダブルRTCそれぞれのサンプルと、サンプルRTCのソースが含まれています。
 
-- サンプル(スタンドアロンRTC)
-```
- /usr/share/openrtm-2.1/components/c++/examples/CompositeComp
- /usr/share/openrtm-2.1/components/c++/examples/ConfigSampleComp
- 中略
- /usr/share/openrtm-2.1/components/c++/examples/rtc.conf
+openrtm-aist-example includes samples of standalone RTCs, loadable RTCs, and the source code for the sample RTCs.
+
+- Samples (standalone RTCs)
 ```
 
-- サンプル(ローダブルRTC)
+/usr/share/openrtm-2.1/components/c++/examples/CompositeComp
+/usr/share/openrtm-2.1/components/c++/examples/ConfigSampleComp
+中略
+/usr/share/openrtm-2.1/components/c++/examples/rtc.conf
+
 ```
- /usr/share/openrtm-2.1/components/c++/examples/rtc/ConfigSample.so
- /usr/share/openrtm-2.1/components/c++/examples/rtc/ConsoleIn.so
- 中略
- /usr/share/openrtm-2.1/components/c++/examples/rtc/Throughput.so
+
+- Samples (loadable RTCs)
+```
+
+/usr/share/openrtm-2.1/components/c++/examples/rtc/ConfigSample.so
+/usr/share/openrtm-2.1/components/c++/examples/rtc/ConsoleIn.so
+中略
+/usr/share/openrtm-2.1/components/c++/examples/rtc/Throughput.so
+
 ```
 
 ### openrtm2-doc
-openrtm-aist-docには、日本語と英語のクラスリファレンス、IDLインターフェース定義リファレンスが含まれています。
 
-- クラスリファレンス
-```
- /usr/share/openrtm-2.1/doc/c++/ClassReference/html/BufferBase_8h.html
- /usr/share/openrtm-2.1/doc/c++/ClassReference/html/BufferBase_8h__dep__incl.map
- 中略
- /usr/share/openrtm-2.1/doc/c++/ClassReference/html/structSDOPackage_1_1Organization__impl_1_1sdo__id.html
+openrtm-aist-doc includes Japanese and English class references and IDL interface definition references.
+
+- Class reference
 ```
 
-- IDLリファレンス
-```
- /usr/share/openrtm-2.1/doc/idl/IDLReference/html/BasicDataType_8idl.html
- /usr/share/openrtm-2.1/doc/idl/IDLReference/html/BasicDataType_8idl_dep_incl.map
- 中略
- /usr/share/openrtm-2.1/doc/idl/IDLReference/html/unionSDOPackage_1_1Numeric.html
+/usr/share/openrtm-2.1/doc/c++/ClassReference/html/BufferBase_8h.html
+/usr/share/openrtm-2.1/doc/c++/ClassReference/html/BufferBase_8h__dep__incl.map
+中略
+/usr/share/openrtm-2.1/doc/c++/ClassReference/html/structSDOPackage_1_1Organization__impl_1_1sdo__id.html
+
 ```
 
-- クラスリファレンス(英語)
-```
- /usr/share/openrtm-2.1/doc/c++/ClassReference-en/html/BufferBase_8h.html
- /usr/share/openrtm-2.1/doc/c++/ClassReference-en/html/BufferBase_8h__dep__incl.map
- 中略
- /usr/share/openrtm-2.1/doc/C++/ClassReference-en/html/version_8h_source.html
+- IDL reference
 ```
 
-- IDLリファレンス(英語)
+/usr/share/openrtm-2.1/doc/idl/IDLReference/html/BasicDataType_8idl.html
+/usr/share/openrtm-2.1/doc/idl/IDLReference/html/BasicDataType_8idl_dep_incl.map
+中略
+/usr/share/openrtm-2.1/doc/idl/IDLReference/html/unionSDOPackage_1_1Numeric.html
+
 ```
- /usr/share/openrtm-2.1/doc/idl/IDLReference-en/html/BasicDataType_8idl.html
- /usr/share/openrtm-2.1/doc/idl/IDLReference-en/html/BasicDataType_8idl__dep__incl.map
- 中略
- /usr/share/openrtm-2.1/doc/idl/IDLReference-en/html/unionSDOPackage_1_1Numeric.html
+
+- Class reference (English)
+```
+
+/usr/share/openrtm-2.1/doc/c++/ClassReference-en/html/BufferBase_8h.html
+/usr/share/openrtm-2.1/doc/c++/ClassReference-en/html/BufferBase_8h__dep__incl.map
+中略
+/usr/share/openrtm-2.1/doc/C++/ClassReference-en/html/version_8h_source.html
+
+```
+
+- IDL reference (English)
+```
+
+/usr/share/openrtm-2.1/doc/idl/IDLReference-en/html/BasicDataType_8idl.html
+/usr/share/openrtm-2.1/doc/idl/IDLReference-en/html/BasicDataType_8idl__dep__incl.map
+中略
+/usr/share/openrtm-2.1/doc/idl/IDLReference-en/html/unionSDOPackage_1_1Numeric.html
+
 ```
 
 ### openrtm2-python3
 
-- コマンド
-```
- /usr/bin/rtcd2_python3
- /usr/bin/rtcprof2_python3
+- Commands
 ```
 
-- OpenRTM-aist 本体の Python モジュール
+/usr/bin/rtcd2_python3
+/usr/bin/rtcprof2_python3
+
 ```
- /usr/lib/python3/dist-packages/OpenRTM_aist/* 
+
+- Python modules for OpenRTM-aist
 ```
-- OpenRTM-aist用Python検索パスファイル
+
+/usr/lib/python3/dist-packages/OpenRTM_aist/*
+
 ```
- /usr/lib/python3/dist-packages/OpenRTM-aist.pth 
+
+- Python search path file for OpenRTM-aist
 ```
-- ユーティリティ
+
+/usr/lib/python3/dist-packages/OpenRTM-aist.pth
+
 ```
- /usr/lib/python3/dist-packages/OpenRTM_aist/utils/__init__.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/*
- /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcd/*
- /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcprof/*
- /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtm-naming/*
+
+- Utilities
+```
+
+/usr/lib/python3/dist-packages/OpenRTM_aist/utils/**init**.py
+/usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/*
+/usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcd/*
+/usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcprof/*
+/usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtm-naming/*
+
 ```
 
 ### openrtm2-python3-example
 
 ```
- /usr/share/openrtm-2.1/components/python3/__init__.py
- /usr/share/openrtm-2.1/components/python3/component.conf
- /usr/share/openrtm-2.1/components/python3/rtcd.conf
- /usr/share/openrtm-2.1/components/python3/AutoControl/*
- /usr/share/openrtm-2.1/components/python3/AutoTest/*
- /usr/share/openrtm-2.1/components/python3/CSPSample/*
- /usr/share/openrtm-2.1/components/python3/CSPSelectSample/*
- /usr/share/openrtm-2.1/components/python3/CSPStaticFsmSample/*
- /usr/share/openrtm-2.1/components/python3/Composite/*
- /usr/share/openrtm-2.1/components/python3/ConfigSample/*
- /usr/share/openrtm-2.1/components/python3/ExtTrigger/*
- /usr/share/openrtm-2.1/components/python3/MobileRobotCanvas/*
- /usr/share/openrtm-2.1/components/python3/SeqIO/*
- /usr/share/openrtm-2.1/components/python3/Serializer/*
- /usr/share/openrtm-2.1/components/python3/SimpleIO/*
- /usr/share/openrtm-2.1/components/python3/SimpleService/*
- /usr/share/openrtm-2.1/components/python3/Slider_and_Motor/*
- /usr/share/openrtm-2.1/components/python3/Throughput/*
- /usr/share/openrtm-2.1/components/python3/TkJoyStick/
- /usr/share/openrtm-2.1/components/python3/TkLRFViewer/*
-```
 
+/usr/share/openrtm-2.1/components/python3/**init**.py
+/usr/share/openrtm-2.1/components/python3/component.conf
+/usr/share/openrtm-2.1/components/python3/rtcd.conf
+/usr/share/openrtm-2.1/components/python3/AutoControl/*
+/usr/share/openrtm-2.1/components/python3/AutoTest/*
+/usr/share/openrtm-2.1/components/python3/CSPSample/*
+/usr/share/openrtm-2.1/components/python3/CSPSelectSample/*
+/usr/share/openrtm-2.1/components/python3/CSPStaticFsmSample/*
+/usr/share/openrtm-2.1/components/python3/Composite/*
+/usr/share/openrtm-2.1/components/python3/ConfigSample/*
+/usr/share/openrtm-2.1/components/python3/ExtTrigger/*
+/usr/share/openrtm-2.1/components/python3/MobileRobotCanvas/*
+/usr/share/openrtm-2.1/components/python3/SeqIO/*
+/usr/share/openrtm-2.1/components/python3/Serializer/*
+/usr/share/openrtm-2.1/components/python3/SimpleIO/*
+/usr/share/openrtm-2.1/components/python3/SimpleService/*
+/usr/share/openrtm-2.1/components/python3/Slider_and_Motor/*
+/usr/share/openrtm-2.1/components/python3/Throughput/*
+/usr/share/openrtm-2.1/components/python3/TkJoyStick/
+/usr/share/openrtm-2.1/components/python3/TkLRFViewer/*
+
+```
 
 ### openrtm2-java
 
 ```
- /usr/bin/rtcd2_java
- /usr/bin/rtcprof2_java
- /usr/share/openrtm-2.1/jar/License.txt
- /usr/share/openrtm-2.1/jar/LogicalTimeTriggeredEC.jar
- /usr/share/openrtm-2.1/jar/NameserviceFile.jar
- /usr/share/openrtm-2.1/jar/OpenRTM-aist-2.1.0.jar
- /usr/share/openrtm-2.1/jar/commons-cli-1.1.jar
- /usr/share/openrtm-2.1/jar/jna-4.2.2.jar
- /usr/share/openrtm-2.1/jar/jna-platform-4.2.2.jar
- /usr/share/openrtm-2.1/jar/rtcd.jar
- /usr/share/openrtm-2.1/jar/rtcprof.jar
+
+/usr/bin/rtcd2_java
+/usr/bin/rtcprof2_java
+/usr/share/openrtm-2.1/jar/License.txt
+/usr/share/openrtm-2.1/jar/LogicalTimeTriggeredEC.jar
+/usr/share/openrtm-2.1/jar/NameserviceFile.jar
+/usr/share/openrtm-2.1/jar/OpenRTM-aist-2.1.0.jar
+/usr/share/openrtm-2.1/jar/commons-cli-1.1.jar
+/usr/share/openrtm-2.1/jar/jna-4.2.2.jar
+/usr/share/openrtm-2.1/jar/jna-platform-4.2.2.jar
+/usr/share/openrtm-2.1/jar/rtcd.jar
+/usr/share/openrtm-2.1/jar/rtcprof.jar
+
 ```
 
 ### openrtm2-java-example
 
 ```
- /usr/share/openrtm-2.1/components/java/* 
- /usr/share/openrtm-2.1/components/java/RTMExamples/AutoTest/*
- /usr/share/openrtm-2.1/components/java/RTMExamples/Composite/*
- /usr/share/openrtm-2.1/components/java/RTMExamples/ConfigSample/*
- /usr/share/openrtm-2.1/components/java/RTMExamples/ExtTrigger/*
- /usr/share/openrtm-2.1/components/java/RTMExamples/Fsm/*
- /usr/share/openrtm-2.1/components/java/RTMExamples/GUIIn/*
- /usr/share/openrtm-2.1/components/java/RTMExamples/MyService.idl
- /usr/share/openrtm-2.1/components/java/RTMExamples/SeqIO/*
- /usr/share/openrtm-2.1/components/java/RTMExamples/SimpleIO/*
- /usr/share/openrtm-2.1/components/java/RTMExamples/SimpleService/*
- /usr/share/openrtm-2.1/components/java/RTMExamples/SinCosOut/*
- /usr/share/openrtm-2.1/components/java/RTMExamples/StaticFsm/*
- /usr/share/openrtm-2.1/components/java/RTMExamples/Throughput/*
- /usr/share/openrtm-2.1/components/java/RTMExamples/TopicTest/*
+
+/usr/share/openrtm-2.1/components/java/*
+/usr/share/openrtm-2.1/components/java/RTMExamples/AutoTest/*
+/usr/share/openrtm-2.1/components/java/RTMExamples/Composite/*
+/usr/share/openrtm-2.1/components/java/RTMExamples/ConfigSample/*
+/usr/share/openrtm-2.1/components/java/RTMExamples/ExtTrigger/*
+/usr/share/openrtm-2.1/components/java/RTMExamples/Fsm/*
+/usr/share/openrtm-2.1/components/java/RTMExamples/GUIIn/*
+/usr/share/openrtm-2.1/components/java/RTMExamples/MyService.idl
+/usr/share/openrtm-2.1/components/java/RTMExamples/SeqIO/*
+/usr/share/openrtm-2.1/components/java/RTMExamples/SimpleIO/*
+/usr/share/openrtm-2.1/components/java/RTMExamples/SimpleService/*
+/usr/share/openrtm-2.1/components/java/RTMExamples/SinCosOut/*
+/usr/share/openrtm-2.1/components/java/RTMExamples/StaticFsm/*
+/usr/share/openrtm-2.1/components/java/RTMExamples/Throughput/*
+/usr/share/openrtm-2.1/components/java/RTMExamples/TopicTest/*
+
 ```
--------jp page!!-------
+
+
