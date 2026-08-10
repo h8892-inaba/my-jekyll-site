@@ -1,0 +1,29 @@
+#ref(forum.png,right,around,60%,url=/ja/node/281)
+OpenRTM-aist および RTミドルウエア全般に関しての情報共有のための Web 上で議論できるフォーラムです。
+いくつかのフォーラムはメーリングリストと連携しています。
+フォーラムへ投稿するにはユーザー登録が必要です。
+
+#clear
+<!--break-->
+**[[フォーラム:/forum]]
+|LEFT:150|LEFT|CENTER:200|c
+|CENTER:''フォーラム''|CENTER:''トピック''|''メーリングリスト''|
+|>|>|CENTER: [[OpenRTM-aist関係:/forum/31]]|
+|[[OpenRTM-users:/forum/37]]|OpenRTM-aist のユーザー間の情報交換のためのフォーラムです。一般的な内容はここで議論します。|''openrtm-users@openrtm.org''|
+|[[OpenRTM-beginners:/forum/38]]|OpenRTM-aist のビギナーユーザーのためのフォーラムです。どんな些細な内容でも OK です。|''openrtm-beginners@openrtm.org''|
+|[[OpenRTM-devel:/forum/32]]|OpenRTM-aist の開発者向けのフォーラムです。OpenRTM-aist やツールの内部仕様に関する議論を行います。|''openrtm-beginners@openrtm.org''|
+|>|>|CENTER: [[RTコンポーネント関係:/forum/33]]|
+|[[RT-Component:/forum/34]]|配布されている RTコンポーネント一般に関する議論のためのフォーラムです。|N/A|
+|>|>|CENTER: [[標準化関係:/forum/40]]|
+|[[インターフェース:/forum/39]]|RTコンポーネントのサービスポートのためのインターフェースに関する議論のためのフォーラムです。|''openrtm-interfaces@openrtm.org''|
+|[[OMG標準化:/forum/35]]|OMG での標準化に関する議論のためのフォーラムです。|N/A|
+
+
+
+**フォーラム参加にあたって
+フォーラムへの参加もメーリングリスト同様、建設的な議論をお願いします。
+特にルールは設けていませんが、結城浩さんが公開されている技術系メーリングリストへの投稿に関するアドバイスご一読されることをお勧めします。
+
+-[[技術系メーリングリストで質問するときのパターン・ランゲージ>http://www.hyuki.com/writing/techask.html]]
+
+&br;

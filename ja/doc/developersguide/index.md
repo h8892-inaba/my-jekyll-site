@@ -60,6 +60,8 @@ RTコンポーネント開発者向けのドキュメント。RTCを作る方法
 - [独自シリアライザの実装手順](./advanced_rt_system_programming/implement_original_serializer)
 - [マネージャの機能](./advanced_rt_system_programming/manager_functions)
 - [Choreonoid OpenRTMプラグインの利用方法](./advanced_rt_system_programming/choreonoid_openrtm_plugin)
+  - [Choreonoid入門](./advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial)
+  - [myCobot280の制御](./advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial_serviceport)
 - [OpenRTM-aist(C++版)のCMakeによるビルド手順](./advanced_rt_system_programming/openrtm_cpp_cmake_build)
 - [TAO関連の設定](./advanced_rt_system_programming/tao_setting)
 - [マスターマネージャ、スレーブマネージャ](./advanced_rt_system_programming/mastermanager_slavemanager)

@@ -1,9 +1,8 @@
 ---
 layout: page
-title: 
+title: ケーススタディ
 ---
 
-init
 <!-- Title: ケーススタディ -->
 <div align="right"><a href="/ja/node/110"><img src="tribot.png" width="15%;" align="right"></a></div>
 - [画像処理コンポーネントの作成](./opencv_comp_development)

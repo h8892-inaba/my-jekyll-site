@@ -1,0 +1,89 @@
+#contents
+
+** RTミドルウエアスプリングキャンプ
+
+芝浦工業大学葉山セミナーハウスにて、学生を対象としたRTミドルウエアスプリングキャンプが開催されました。
+3日間にわたり、RTミドルウエアを利用したロボットシステム構築を体験しました。
+プログラミング初心者も多かったですが、既存のRTコンポーネントをうまく再利用してそれぞれユニークなロボットシステムを構築しました。
+
+
+*** 主催・共催
+
+- 主催：芝浦工業大学
+- 共催：産業技術総合研究所
+
+*** 概要・日時
+
+- 内容：RTミドルウエアの基本的な使い方の講習とプロジェクト課題による実習
+- 日時：2013年3月26日（火）～3月28日（木）
+- 場所：葉山セミナーハウス
+-- 〒240-0112 神奈川県三浦郡葉山町堀内162-1
+-- TEL: 0468(75)3522
+-- http://www.shibaura-it.ac.jp/about/campus/facilities.html#hayama
+- 参加費：無料（ただし、交通費、宿泊費、食事代は参加者負担）
+
+*** スケジュール
+
+|LEFT:50|LEFT:300|c
+|>|CENTER:  ''3月26日'' |
+| 13:50 | 集合 |
+|14:30-17:00 | RTミドルウエア講習 |
+|>|CENTER: ''3月27日'' |
+| 9:00-17:00 | グループワーク |
+|>|CENTER: ''3月28日'' |
+| 9:00-12:00 | 成果発表会 |
+| 12:00 | 解散 |
+
+** 開発成果
+
+*** 1班
+
+- ''課題'': 甘えん坊ロボット
+- URGセンサを使って、近くにいる人を追従するロボット。別のPCに接続されたジョイスティックをつかって割り込み操作も可能。ロボットに搭載されたカメラの画像を遠隔から監視しながらジョイスティックで操作します。
+- プロジェクトページ: http://www.openrtm.org/openrtm/ja/project/following_robot
+
+
+
+<nowiki>
+[video:http://www.youtube.com/watch?v=bmIF1q_0aHU width:640]
+</nowiki>
+
+<nowiki>
+[video:http://www.slideshare.net/17833341 width:640]
+</nowiki>
+
+*** 2班
+
+- ''課題'': かくれんぼロボット
+- ロボットに搭載されたカメラが黒い物体を認識して追跡、もう1台のKobukiを見つけるまで探し回ります。オニKobukiが子Kobukiにタッチするとオニと子が入れ替わります。
+- プロジェクトページ: http://www.openrtm.org/openrtm/ja/project/kakurenbo
+
+<nowiki>
+[video:http://www.youtube.com/watch?v=155PkMl8iN4 width:640]
+</nowiki>
+
+<nowiki>
+[video:http://www.slideshare.net/18956360 width:640]
+</nowiki>
+
+
+*** 3班
+
+- ''課題'': OROCHIとKobukiの連携システム
+- OROCHIがピックアップした荷物をKobukiに積み、Kobukiが届けてくれるシステム。お使いをした後、KobukiはOROCHIのところに戻ってきて、OROCHIに荷物を返します。バンパーのセンサを工夫して、位置決め精度を上げています。
+- プロジェクトページ: http://www.openrtm.org/openrtm/ja/project/orochi_and_kobuki
+
+
+<nowiki>
+[video:http://www.youtube.com/watch?v=tSL3BOCOp6A width:640]
+</nowiki>
+
+** 講習会の様子
+
+LEFT: &ref(130326-01.jpg,80%);
+LEFT: &ref(130326-02.jpg,80%);
+LEFT: &ref(130326-03.jpg,80%);
+LEFT: &ref(130327-01.jpg,80%);
+LEFT: &ref(130327-02.jpg,80%);
+LEFT: &ref(130328-01.jpg,80%);
+LEFT: &ref(130328-02.jpg,80%);

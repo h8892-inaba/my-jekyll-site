@@ -1,0 +1,126 @@
+#ref(RasPiMouse_LiDAR.png,90%,right,margin=10,around)
+
+
+#contents(4)
+
+** 開催概要
+
+2024年11月21日(木)～11月22日(金)の日程で、高度ポリテクセンターの能力開発セミナーの一環として、「RTミドルウェアによるロボットプログラミング技術」講習会を開催いたします。
+
+
+** 日時・場所
+
+-''日時'': 2024年11月21日(木), 22日(金), 10時00分～16時45分
+-''場所'': [[高度ポリテクセンター:https://www.apc.jeed.go.jp/]]
+--[[交通アクセス:https://www.apc.jeed.go.jp/04_02.html]]
+-''主催'': 高度ポリテクセンター
+-- [[コース案内:https://www.apc.jeed.go.jp/zaishoku/2024/E0771.html]]
+//  -''参加者''：7名
+-''参加費'': 21,000円
+
+** プログラム
+
+|CENTER:100|LEFT:500|c
+|>|CENTER: ''11月21日（木）''|
+| 10:00 -10:50 | ''１．コース概要''&br;　（１）ロボットシステムプログラミングの現状 &br;　（２）ロボットOS・ミドルウェア &br;　（３）RTミドルウェア(RTM)を用いたロボット開発 &br; 　''資料:'' [[241121-01.pdf:/sites/default/files/7295/241121_1_コース概要(印刷用).pdf]]|
+| 11:00 -11:45 | ''２．プログラミングの基礎'' &br; 　（１）OpenRTM-aistのインストール &br;　（２）RTCプログラミング概要 &br; 　・[[インストールするソフトウェア:/ja/node/7295#toc4]] &br;　・[[(参考)Windowsへのインストール:/ja/node/6629]] &br;　・[[OpenRTMを10分で始めよう:/ja/node/7057]]&br;　''資料:'' [[241121-02.pdf:/sites/default/files/7295/241121_2_RTCプログラミングの基礎.pdf]] |
+| 11:45 -12:30 | 昼食 |
+| 12:30-16:45 | ''３．RTCプログラミング演習'' &br;　（１）RTCBuilderによるひな形コードの生成 &br;　（２）プログラムの作成とコンパイル &br;　（３）シミュレータロボットと接続してテスト &br; 　（４）実機ロボットと接続してテスト &br; 　・[[チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows):/ja/node/6550]] &br; 　・[[チュートリアル（RaspberryPiマウス、Joystick操作）>/ja/node/6042]] &br; 　　 ''資料:'' [[241121-03.pdf:/sites/default/files/7295/241121_3_RTCプログラミング演習.pdf]] &br; 　 ''シミュレータ等:'' [[RTM_Tutorial.zip:https://github.com/OpenRTM/RTM_Tutorial/releases/download/tutorial20241121/RTM_Tutorial.zip]] |
+
+|CENTER:100|LEFT:500|c
+|>|CENTER: ''11月22日（金）''|
+| 10:00 -11:45 | ''４．総合演習（１）'' &br;　（１）画像処理コンポーネントの作成 &br; 　（２）システム構築とテスト &br; 　・[[チュートリアル(画像処理実習):/ja/node/7197]]  &br; 　　''資料:'' [[241122-04.pdf:/sites/default/files/7295/241122_4_総合演習(1).pdf]]|
+| 11:45 -12:30 | 昼食 |
+| 12:30 -16:45 | ''５．総合演習（２）'' &br;　（１）SLAMについて &br; 　（２）地図作成・ナビゲーション実習 &br; 　・[[チュートリアル（MRPT RTC群によるSLAMナビゲーションシステム）:/ja/node/7098]] &br; 　''資料:'' [[241122-05.pdf:/sites/default/files/7295/241122_5_総合演習(2).pdf]] &br; 　 ''SLAM用RTC等''(RTCプログラミング演習のRTM_Tutorial.zipと同じ)'':'' [[RTM_Tutorial.zip:https://github.com/OpenRTM/RTM_Tutorial/releases/download/tutorial20241121/RTM_Tutorial.zip]]|
+
+&br;
+
+&color(red){小型ロボットを使って実習を行います。};
+
+*** RaspberryPiマウス
+RaspberryPiマウスは、株式会社アールティから発売されているメインボードにRaspberry Piを使った左右独立二輪方式の小型移動プラットフォームロボットです。
+RaspberryPiを利用しているので、実機上で開発したり、容易に拡張したりすることが可能です。今回は、あらかじめマウス制御用コンポーネントがインストールされている状態で、これを制御するRTコンポーネントを作成していただきます。
+
+
+#ref(http://www.rt-net.jp/wp-content/uploads/2015/08/DSC_0025.png,20%,margin=10,nolink)
+
+- [[Raspberry Pi Mouse 活用事例:http://openrtm.org/openrtm/ja/content/raspberry_pi_mouse]]
+- [[MRPT RTC群によるSLAMナビゲーションシステム:https://openrtm.github.io/RasPiMouse_with_MRPT/]]
+-- [[Githubリポジトリ:https://github.com/OpenRTM/RasPiMouse_with_MRPT]]
+
+*** インストールするソフトウエア
+
+以下のソフトウェアをインストールしてください。リンクが切れている場合は、最新バージョンをインストールしてください。
+なお、通常はすべて64bit版をインストールしてください。（互換性のためにOpenRTMには32bit版も用意してありますが使用しないでください。）
+
+- [[Visual Studio 2022:/ja/node/6650]]
+-- 無償版（Community版）が利用できます。Visual C++がインストールされているかは必ず確認してください。
+-- ポリテクセンターのPCにはインストール済みです。
+- [[Python 3.11:https://www.python.org/downloads/windows/]]
+-- [[python-3.11.9-amd64.exe (64bit版):https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe]]
+- [[CMake:https://cmake.org/download/]]
+-- [[cmake-3.31.0-windows-x86_64.msi (64bit版):https://github.com/Kitware/CMake/releases/download/v3.31.0/cmake-3.31.0-windows-x86_64.msi]]
+- [[Doxygen:http://www.doxygen.nl/download.html]] (32bit, 64bitの別なし）
+-- [[doxygen-1.12.0-setup.exe:https://www.doxygen.nl/files/doxygen-1.12.0-setup.exe]]
+//- [[Graphviz:https://graphviz.gitlab.io/download/]]
+//-- [[stable_windows_10_cmake_Release_x64_graphviz-install-2.49.3-win64.exe:https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/2.49.3/stable_windows_10_cmake_Release_x64_graphviz-install-2.49.3-win64.exe]]
+- [[OpenRTM-aist-2.0.2-RELEASE:https://openrtm.org/openrtm/ja/download]]
+-- [[OpenRTM-aist-2.0.2-RELEASE_x86_64.msi (64bit版):https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.2-RELEASE_x86_64.msi]]
+- [[TeraTerm:https://teratermproject.github.io/]]
+-- [[teraterm-5.3.exe:https://github.com/TeraTermProject/teraterm/releases/download/v5.3/teraterm-5.3.exe]]
+- 使い慣れたエディタ: EclipseやPythonに付属のエディタでも構いませんが、使い慣れたエディタが入っていた方が良いでしょう
+-- [[VScode:https://azure.microsoft.com/ja-jp/products/visual-studio-code/]]
+
+
+
+//** 資料
+
+//*** １．コース概要
+
+//<nowiki>
+//[video:http://www.slideshare.net/239167582]
+//</nowiki>
+
+//*** ２．プログラミングの基礎 
+
+//<nowiki>
+//[video:http://www.slideshare.net/239167653]
+//</nowiki>
+
+//*** 	３．RTCプログラミング演習
+
+//<nowiki>
+//[video:http://www.slideshare.net/239167718]
+//</nowiki>
+
+//*** ４．総合演習（１）
+
+//<nowiki>
+//[video:http://www.slideshare.net/239167762]
+//</nowiki>
+
+
+//*** ５．総合演習 （２）
+
+//<nowiki>
+//[video:http://www.slideshare.net/239167799]
+//</nowiki>
+
+
+//** コースの様子
+//#ref(161110-00.jpg,center,nolink)
+#br
+
+//#ref(161110-01.jpg,center,nolink)
+#br
+
+//#ref(161019-03.jpg,center,nolink)
+#br
+
+//#ref(161019-04.jpg,center,nolink)
+#br
+
+//#ref(161019-05.jpg,center,nolink)
+
+
+

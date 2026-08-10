@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "独自実行コンテキストの作成手順"
+title: "Choreonoid OpenRTMプラグインの利用方法"
 ---
 
 <!-- Choreonoid OpenRTMプラグインの利用方法 -->
@@ -388,4 +388,7 @@ CMakeの設定項目はOpenRTMプラグインと同じです。
 - [OpenRTMプラグイン](https://choreonoid.org/ja/documents/1.7/openrtm/index.html)
 - [Choreonoid用OpenRTM連携プラグイン Python版 マニュアル]({{ site.baseurl }}/ja/content/choreonoid_openrtm_python_manual)
 
+<hr>
+- [Choreonoid入門](./tutorial)
+- [myCobot280の制御](./tutorial_serviceport)
 
