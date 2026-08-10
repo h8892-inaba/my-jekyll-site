@@ -1,0 +1,997 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>OpenRTM-aist-Python-1.1.0-RC1 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="OpenRTM-aist-Python-1.1.0-RC1" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/download/openrtm-aist-python/openrtm-aist-python_1_1_0_rc1/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/download/openrtm-aist-python/openrtm-aist-python_1_1_0_rc1/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="OpenRTM-aist-Python-1.1.0-RC1" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"OpenRTM-aist-Python-1.1.0-RC1","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/download/openrtm-aist-python/openrtm-aist-python_1_1_0_rc1/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/en/download/openrtm-aist-python/openrtm-aist-python_1_1_0_rc1/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/en/download/openrtm-aist-python/openrtm-aist-python_1_1_0_rc1/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>OpenRTM-aist-Python-1.1.0-RC1 <div class="lang-switch"><a href="/my-jekyll-site/en/download/openrtm-aist-python/openrtm-aist-python_1_1_0_rc1/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/download/openrtm-aist-python/openrtm-aist-python_1_1_0_rc1/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#注意事項">注意事項</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#ソースコード">ソースコード</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#パッケージ">パッケージ</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#windowsインストーラ-python-242526-共通">Windowsインストーラ (Python 2.4,2.5,2.6 共通)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#linuxパッケージ">Linuxパッケージ</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#リリースノート-110-rc1">リリースノート: 1.1.0-RC1</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- OpenRTM-aist-Python-1.1.0-RC1 -->
+<div align="left"><a href="python-logo.png"><img src="python-logo.png" width="15%;" align="left" /></a></div>
+<p>#contents
+#clear
+<br />
+<br />
+<br /></p>
+<h2 id="注意事項">注意事項</h2>
+
+<p>バージョン0.4系をインストール済みの環境に1.x系をインストールする場合は、一度0.4系を削除してから1.x系のインストールを行ってください。
+0.4系をアンインストールした後に0.4系の残骸が残っている場合がございますので、残骸が残っている場合は手動でOpenRTMフォルダの削除を行って下さい。</p>
+
+<p>:削除するフォルダ|</p>
+<ul>
+  <li>Windows環境の場合:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> C:\Python[24,25,26]\Lib\site-packages\OpenRTM
+</code></pre></div>    </div>
+  </li>
+  <li>Linux環境の場合:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/lib/python[2.4,2.5,2.6]/site-packages/OpenRTM
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="ソースコード">ソースコード</h2>
+<table class="table-alt">
+  <tr>
+    <td>Python版ソースコード</td>
+    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.1.0/OpenRTM-aist-Python-1.1.0-RC1.tar.gz">OpenRTM-aist-Python-1.1.0-RC1.tar.gz</a> <br /> MD5:bbc9c4915d13cef0f5a925a070bab0aa</td>
+    <td>11/10/04</td>
+  </tr>
+  <tr>
+    <td>Python版ソースコード(Win32)</td>
+    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.1.0/OpenRTM-aist-Python-1.1.0-RC1.zip">OpenRTM-aist-Python-1.1.0-RC1.zip</a> <br /> MD5:513f9a80ab7ce3c4d831c509e2252a8b</td>
+    <td>11/10/04</td>
+  </tr>
+</table>
+
+<p><br /></p>
+<h2 id="パッケージ">パッケージ</h2>
+<h3 id="windowsインストーラ-python-242526-共通">Windowsインストーラ (Python 2.4,2.5,2.6 共通)</h3>
+
+<p>OpenRTM-aist-Python-1.1.0-RC1.msiを使用してOpenRTM-aist-Pythonをインストールする場合、Pythonのバージョン2.4、2.5、2.6のいずれかが必要です。
+OpenRTM-aist-Python-1.1.0-RC1.msiでは、インストールされているPythonのバージョンを検出し、それぞれにOpenRTM-aist-Python-1.1.0とomniORBpyをインストールします。別途omniORBpyをインストールする必要はありません。</p>
+
+<table class="table-alt">
+  <tr>
+    <td>Windows用インストーラ</td>
+    <td><a href="http://www.openrtm.org/pub/Windows/OpenRTM-aist/python/OpenRTM-aist-Python-1.1.0-RC1.msi">OpenRTM-aist-Python-1.1.0-RC1.msi</a> <br /> MD5:1faaf9c25bcb879628da3d23f851a4cd</td>
+    <td>11/010/04</td>
+  </tr>
+  <tr>
+    <td>Python-2.4.4</td>
+    <td><a href="http://www.python.org/ftp/python/2.4.4/python-2.4.4.msi">python-2.4.4.msi</a></td>
+    <td><a href="http://www.python.org">python.org</a></td>
+  </tr>
+  <tr>
+    <td>Python-2.5.4</td>
+    <td><a href="http://www.python.org/ftp/python/2.5.4/python-2.5.4.msi">python-2.5.1.msi</a></td>
+    <td><a href="http://www.python.org">python.org</a></td>
+  </tr>
+  <tr>
+    <td>Python-2.6.6</td>
+    <td><a href="http://www.python.org/ftp/python/2.6.6/python-2.6.6.msi">python-2.6.2.msi</a></td>
+    <td><a href="http://www.python.org">python.org</a></td>
+  </tr>
+  <tr>
+    <td>Java: Windows (32bit) 用 JRE</td>
+    <td><a href="http://javadl.sun.com/webapps/download/AutoDL?BundleId=63691">インストーラ</a></td>
+    <td><a href="http://java.com/ja/download/manual.jsp">java.com</a></td>
+  </tr>
+</table>
+
+<ul>
+  <li>&amp;color(red){※ RTSystemEditor(RCP 版 ) を動作させるために、32 ビット版の Java 動作環境 (JRE) または Java 開発環境 (JDK) が必要となります。</li>
+  <li><span style="color:red;">※ Pythonのバージョンによってpython.exe にパスが通らないケースがあります。パスをチェックしてください。</span>;</li>
+</ul>
+
+<h4 id="omnipy-が-importできない旨のエラーが出る場合">omnipy が importできない旨のエラーが出る場合</h4>
+
+<p>MSVCR71.dll, MSVCP71.dll がインストールされていないため、omnipy が importできない旨のエラーが出る場合があります。
+下記よりMSVCR71.dll, MSVCP71.dllをダウンロードしてインストールしてください。</p>
+
+<ul>
+  <li>http://www.vector.co.jp/soft/win95/util/se435079.html</li>
+</ul>
+
+<p>ダウンロード後解凍して、MSVCR71.dll, MSVCP71.dllを</p>
+<ul>
+  <li>32bit Windows の場合 C:\Windows\system32</li>
+  <li>64bit Windows の場合 C:\Windows\SysWow64
+にインストールしてください。</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="linuxパッケージ">Linuxパッケージ</h3>
+<p>Ubuntu, Debianの各ディストリビューション用のパッケージを www.openrtm.org 上のリポジトリサーバにて配布しています。
+詳細は、以下のドキュメントを参照してください。~
+Fedora版は、もうしばらくお待ちください。</p>
+
+<ul>
+  <li><a href="/ja/node/1187">Vine Linuxへのインストール</a></li>
+  <li><a href="/ja/node/1186">Fedoraへのインストール</a></li>
+  <li><a href="/ja/node/1182">Ubuntu/Debianへのインストール</a></li>
+</ul>
+
+<table class="table-alt">
+  <tr>
+    <th>ディストリビューション</th>
+    <th>対応バージョン</th>
+    <th>一括インストールスクリプト</th>
+  </tr>
+<!-- | Fedora | 11, 12 (共にi386/x86_64) |[[pkg_install_python_fedora.sh >http://www.openrtm.org/pub/OpenRTM-aist/python/install_scripts/pkg_install_python_fedora.sh]]| -->
+  <tr>
+    <th>Ubuntu</th>
+    <th>8.04, 10.04, 10.10, 11.04 (共にi386/x86_64)</th>
+    <th><a href="http://svn.openrtm.org/OpenRTM-aist-Python/trunk/OpenRTM-aist-Python/installer/install_scripts/pkg_install_python_ubuntu.sh">pkg_install_python_ubuntu.sh </a></th>
+  </tr>
+  <tr>
+    <td>Debian</td>
+    <td>5.0 (i386, x86_64)</td>
+    <td><a href="http://svn.openrtm.org/OpenRTM-aist-Python/trunk/OpenRTM-aist-Python/installer/install_scripts/pkg_install_python_debian.sh">pkg_install_python_debian.sh </a></td>
+  </tr>
+</table>
+
+<p><br /></p>
+
+<h2 id="リリースノート-110-rc1">リリースノート: 1.1.0-RC1</h2>
+
+<p>RTミドルウエア：OpenRTM-aist のPython言語版最新バージョン 1.1.0-RC1 を10月4日にリリースいたしました。</p>
+
+<p>OpenRTM-aist Official Website からソースコード、Windowsインストーラ、Linux用パッケージ等が LGPL ライセンスもしくは産総研との個別契約のうち一つから選択するデュアルライセンス方式で利用可能です。</p>
+
+<p>これまでは、実行・開発環境を構築するには、いくつかのパッケージをインストールする必要がありましたが、今回のリリースでは、特にWindows用には、omniORBpyやツール等を含むインストーラを提供することにより、どなたでもすぐにサンプルを実行して試用可能となりました。ぜひお試しください。</p>
+
+<ul>
+  <li><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.1.0/OpenRTM-aist-Python-1.1.0-RC1.tar.gz">OpenRTM-aist-Python-1.1.0-RC1.tar.gz</a> – 2011.10.04リリース
+    <ul>
+      <li>APIの追加
+        <ul>
+          <li>コールバックAPI</li>
+          <li>実行コンテキストに関するコールバック</li>
+        </ul>
+      </li>
+      <li>rtc.conf新オプション(-o)の導入</li>
+      <li>ECのrateをrtc.confで与えられるよう変更</li>
+      <li>SDOサービスフレームワーク</li>
+      <li>オブザーバSDOサービスの導入(実験的)</li>
+      <li>
+        <p>雑多なバグフィックス</p>
+      </li>
+      <li>動作条件</li>
+      <li>サポートするPythonバージョン
+        <ul>
+          <li>2.4</li>
+          <li>2.5</li>
+          <li>2.6</li>
+        </ul>
+      </li>
+      <li>動作確認済みOS
+        <ul>
+          <li>Debian5.0-i386</li>
+          <li>Ubuntu 8.04-i386</li>
+          <li>Ubuntu 10.04LTS-i386</li>
+          <li>Ubuntu 10.10-i386</li>
+          <li>Ubuntu 11.04-i386</li>
+          <li>Windows XP</li>
+          <li>Windows Vista</li>
+          <li>Windows7</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

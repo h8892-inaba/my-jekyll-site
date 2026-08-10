@@ -148,7 +148,7 @@ title: ROBOMECH2014講習会(2014年5月25日)
 <!-- - Bonjour: インストール方法については[[こちら:http://openrtm.org/openrtm/ja/node/266#toc8]] -->
 <!-- -- [[iTunes:http://www.apple.com/jp/itunes/download/]]や[[Bonjour Print Services for Windows:http://support.apple.com/kb/DL999?viewlocale=ja_JP]]がインストールされていれば不要です。 -->
 - 使い慣れたエディタ: EclipseやPythonに付属のエディタでも構いませんが、使い慣れたエディタが入っていた方が良いでしょう
-- [RTC.xml](http://www.openrtm.org/openrtm/sites/default/files/5235/RTC.xml) 第2部で使用します。
+- [RTC.xml](./RTC.xml) 第2部で使用します。
 
 ### 講義資料
 

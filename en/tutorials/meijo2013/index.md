@@ -91,7 +91,7 @@ title: RTミドルウェア強化月間(第3弾)：名城大学・RTミドルウ
   - [Windows用32bit版全部入り](http://openrtm.org/pub/openrtp/packages/1.1.0.rc4v20130216/eclipse381-openrtp110rc4v20130216-ja-win32.zip)を推奨します。
   - インストール後、メニューの「ヘルプ」→「新規ソフトウエアのインストール」を選択、更新サイトに http://openrtm.org/pub/openrtp/releases/updates を入力してRTSystemEditorとRTCBuilderをアップデートしておくことをお勧めします。
 - 使い慣れたエディタ: EclipseやPythonに付属のエディタでも構いませんが、使い慣れたエディタが入っていた方が良いでしょう
-- [RTC.xml](http://www.openrtm.org/openrtm/sites/default/files/5235/RTC.xml) 第2部で使用します。
+- [RTC.xml](./RTC.xml) 第2部で使用します。
 
 ### 講義資料
 

@@ -152,7 +152,7 @@ Windows推奨ですが、Linuxでも実習可能です。
 
 ### 実習で必要なファイル
 
-- [RTC.xml](http://www.openrtm.org/openrtm/sites/default/files/4965/RTC.xml)
+- [RTC.xml](./RTC.xml)
 - [Flipコンポーネントの作成](http://www.openrtm.org/openrtm/ja/node/5022)
 
 ### Linuxで必要なソフトウエア

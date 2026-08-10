@@ -1,0 +1,1282 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>RTコンポーネント作成の基本 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="RTコンポーネント作成の基本" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_basic/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_basic/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="RTコンポーネント作成の基本" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"RTコンポーネント作成の基本","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_basic/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/en/doc/casestudy/rtc_development/rtc_development_basic/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/en/doc/casestudy/rtc_development/rtc_development_basic/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>RTコンポーネント作成の基本 <div class="lang-switch"><a href="/my-jekyll-site/en/doc/casestudy/rtc_development/rtc_development_basic/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/casestudy/rtc_development/rtc_development_basic/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#rtc-template-によるソース生成">rtc-template によるソース生成</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#consolein-の実装">ConsoleIn の実装</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#consoleinh">ConsoleIn.h</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#consoleincpp">ConsoleIn.cpp</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#consoleout-の実装">ConsoleOut の実装</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#コールバックオブジェクト">コールバックオブジェクト</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#consoleouth">ConsoleOut.h</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#consoleoutcpp">ConsoleOut.cpp</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#コンパイル">コンパイル</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#実行">実行</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: RTコンポーネント作成の基本 -->
+<p>#contents</p>
+
+<h1 id="データポートのあるコンポーネント">データポートのあるコンポーネント</h1>
+<p>ここでは、データポートのあるコンポーネントを二つ作成し、二つのコンポーネント間でデータの送受信を行ってみます。
+作成するコンポーネントの仕様は以下の通りです。</p>
+
+<ul>
+  <li>コンポーネント1
+    <ul>
+      <li>OutPort を一つもつ</li>
+      <li>OutPort のデータ型は TimedLong</li>
+      <li>コンソールから入力した値を OutPort から出力</li>
+    </ul>
+  </li>
+  <li>コンポーネント2
+    <ul>
+      <li>InPort を一つ持つ</li>
+      <li>InPort のデータ型は TimeLong</li>
+      <li>コンフィギュレーションパラメーターを一つ持つ</li>
+      <li>コンフィギュレーションパラーメーターは int型</li>
+      <li>コンフィギュレーションパラーメーターのデフォルト値は1</li>
+      <li>InPort 変数から読み出すときはパラメーターを掛けた値を読み出す</li>
+      <li>InPort から読み出した値をコンソールへ出力</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="rtc-template-によるソース生成">rtc-template によるソース生成</h2>
+<p>上記の仕様を持つコンポーネントを作成する為に以下のようなシェルスクリプトを gen.sh という名前で用意します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #!/bin/sh
+ 
+ rtc-template -bcxx \
+     --module-name=ConsoleIn --module-type='DataFlowComponent' \
+     --module-desc='Console input component' \
+     --module-version=1.0 --module-vendor='MyName' \
+     --module-category=example \
+     --module-comp-type=DataFlowComponent --module-act-type=SPORADIC \
+     --module-max-inst=10 --outport=out:TimedLong
+ 
+ rtc-template -bcxx \
+     --module-name=ConsoleOut --module-type='DataFlowComponent' \
+     --module-desc='Console output component' \
+     --module-version=1.0 --module-vendor='MyName' \
+     --module-category=example \
+     --module-comp-type=DataFlowComponent --module-act-type=SPORADIC \
+     --module-max-inst=10 --inport=in:TimedLong \
+     --config="multiply:int:1"
+</code></pre></div></div>
+
+<p>最初の rtc-template の実行でコンポーネント1:ConsoleInComp、次の rtc-template の実行でコンポーネント2:ConsoleOutComp が作成されます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt; sh gen.sh 
+   File "ConsoleIn.h" was generated.
+   File "ConsoleIn.cpp" was generated.
+   File "ConsoleInComp.cpp" was generated.
+   File "Makefile.ConsoleIn" was generated.
+   File "ConsoleInComp_vc8.vcproj" was generated.
+   File "ConsoleIn_vc8.vcproj" was generated.
+   File "ConsoleInComp_vc9.vcproj" was generated.
+   File "ConsoleIn_vc9.vcproj" was generated.
+   File "ConsoleIn_vc8.sln" was generated.
+   File "ConsoleIn_vc9.sln" was generated.
+   File "copyprops.bat" was generated.
+   File "user_config.vsprops" was generated.
+   File "README.ConsoleIn" was generated.
+   File "ConsoleIn.yaml" was generated.
+   File "ConsoleOut.h" was generated.
+   File "ConsoleOut.cpp" was generated.
+   File "ConsoleOutComp.cpp" was generated.
+   File "Makefile.ConsoleOut" was generated.
+   File "ConsoleOutComp_vc8.vcproj" was generated.
+   File "ConsoleOut_vc8.vcproj" was generated.
+   File "ConsoleOutComp_vc9.vcproj" was generated.
+   File "ConsoleOut_vc9.vcproj" was generated.
+   File "ConsoleOut_vc8.sln" was generated.
+   File "ConsoleOut_vc9.sln" was generated.
+ "copyprops.bat" already exists. Overwrite? (y/n)y
+   File "copyprops.bat" was generated.
+ "user_config.vsprops" already exists. Overwrite? (y/n)y
+   File "user_config.vsprops" was generated.
+   File "README.ConsoleOut" was generated.
+   File "ConsoleOut.yaml" was generated.
+</code></pre></div></div>
+<h2 id="consolein-の実装">ConsoleIn の実装</h2>
+<p>生成されたソースを編集して、ConsoleIn コンポーネントを実装していきます。</p>
+
+<h3 id="consoleinh">ConsoleIn.h</h3>
+<p>このコンポーネントはアクティブ化されたときに、入力待ちを行い入力された値を OutPort から出力するコンポーネントです。
+従って、アクティブ状態の時にループ実行される onExecute メンバ関数のみ実装すればよいので、生成された ConsoleIn.h を以下のようにコメントアウトされている onExecute 関数のコメントをはずします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     :略
+   // The execution action that is invoked periodically
+   // former rtc_active_do()
+   virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);
+     :略
+</code></pre></div></div>
+
+<p>また、ConsoleIn.h の下の方に、rtc-template で指定した OutPort の変数宣言があります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     :略
+   // DataOutPort declaration
+   // &lt;rtc-template block="outport_declare"&gt;
+   TimedLong m_out;
+   OutPort&lt;TimedLong&gt; m_outOut;
+   // &lt;/rtc-template&gt;
+</code></pre></div></div>
+
+<p><strong>TimedLong m_out</strong> と宣言されているのが、OutPort にバインドされる変数。</p>
+
+<p><strong>OutPort&lt;TimedLong&gt; m_outOut</strong> と宣言されているのが、OutPort のインスタンスです。</p>
+
+<h3 id="consoleincpp">ConsoleIn.cpp</h3>
+<p>ConsoleInの 実装は簡単です。
+コメントアウトされている onExecute のコメントをはずし、以下のように実装します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::ReturnCode_t ConsoleIn::onExecute(RTC::UniqueId ec_id)
+ {
+   std::cout &lt;&lt; "Please input number: ";
+   std::cin &gt;&gt; m_out.data;
+   std::cout &lt;&lt; "Sending to subscriber: " &lt;&lt; m_out.data &lt;&lt; std::endl;
+   m_outOut.write();
+ 
+   return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<p>ここで行われていることは、</p>
+<ol>
+  <li>cin » m_out.data でユーザーからの入力待ちをする。</li>
+  <li>入力された値を、m_out.data(long型) へ格納</li>
+  <li>入力された値を確認の為表示</li>
+  <li>m_outOut.write() で OutPort からデータを出力。</li>
+</ol>
+
+<h2 id="consoleout-の実装">ConsoleOut の実装</h2>
+<p>ConsoleOut コンポーネントは少し複雑です。
+InPort に入ってきたデータにコンフィギュレーションパラメーター multiply を掛けた値を格納しなければなりません。
+これは、InPort にコールバックオブジェクトをセットするという方法で実現できます。</p>
+
+<h3 id="コールバックオブジェクト">コールバックオブジェクト</h3>
+<p>コールバックオブジェクトとは、InPort や OutPort のバッファにあるイベントが発生したときに呼ばれる<strong>operator()</strong>が定義されたオブジェクトです。
+今回は、InPort のバッファに書き込まれるときに値を変換する為のコールバック OnWriteConvert を使用します。</p>
+
+<p>RTC::OnWriteConvert を継承して以下のようなクラスを定義します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> class Multiply
+   : public RTC::OnWriteConvert&lt;RTC::TimedLong&gt;
+ {
+   int&amp; m_mul;
+ public:
+   Multiply(int&amp; multiply) : m_mul(multiply) {};
+   RTC::TimedLong operator()(const RTC::TimedLong&amp; value)
+   {
+     RTC::TimedLong ret(value);
+     ret.data = value.data * m_mul;
+     return ret;
+   };
+ };
+</code></pre></div></div>
+
+<h3 id="consoleouth">ConsoleOut.h</h3>
+<p>上記のコールバッククラスを ConsoleOut.h の include の行の直後に挿入します。
+さらに、このコールバッククラスのインスタンスを ConsoleOut クラスのメンバ変数として宣言します。
+場所は、private のすぐ下辺りでよいでしょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> private:
+   Multiply m_owc;
+   int dummy;
+</code></pre></div></div>
+
+<p>このコンポーネントはアクティブ化されたときに、InPort からデータを読み込み標準出力にデータを表示するコンポーネントです。
+従って、アクティブ状態の時にループ実行される onExecute メンバ関数のみ実装すればよいので、生成された ConsoleOut.h を以下のようにコメントアウトされている onExecute 関数のコメントをはずします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     :略
+   // The execution action that is invoked periodically
+   // former rtc_active_do()
+   virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);
+     :略
+</code></pre></div></div>
+
+<p>また、ConsoleOut.h の下の方に、rtc-template で指定したコンフィギュレーション変数の宣言と InPort の変数宣言があります。</p>
+
+<p>ConsoleOut では InPort のバッファとして RingBuffer を使用するので、<strong>RingBuffer.h</strong> をインクルードする必要があります。
+ConsoleOut.h の先頭部分をで以下のように <strong>RingBuffer.h</strong> をインクルードしてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include &lt;rtm/idl/BasicDataTypeSkel.h&gt;
+ #include &lt;rtm/Manager.h&gt;
+ #include &lt;rtm/DataFlowComponentBase.h&gt;
+ #include &lt;rtm/CorbaPort.h&gt;
+ #include &lt;rtm/DataInPort.h&gt;
+ #include &lt;rtm/DataOutPort.h&gt;
+ #include &lt;rtm/RingBuffer.h&gt; //これを追加する
+</code></pre></div></div>
+
+<p>また、InPort の宣言部分でデフォルトでは <strong>InPort&lt;TimedLong&gt; m_inIn</strong> となっているところを <strong>InPort&lt;TimedLong, RTC::RingBuffer&gt; m_inIn</strong> のように書き換えて、InPort が RingBuffer を使用するように変更してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     :略
+   // Configuration variable declaration
+   // &lt;rtc-template block="config_declare"&gt;
+   int m_multiply;
+     
+   // &lt;/rtc-template&gt;
+   
+   // DataInPort declaration
+   // &lt;rtc-template block="inport_declare"&gt;
+   TimedLong m_in;
+   InPort&lt;TimedLong, RTC::RingBuffer&gt; m_inIn;
+</code></pre></div></div>
+
+<p><strong>int m_multiply</strong>と宣言されているのが、コンフィギュレーション「multiply」にバインドされる変数。</p>
+
+<p><strong>TimedLong m_in</strong> と宣言されているのが、InPort にバインドされる変数。</p>
+
+<p><strong>InPort&lt;TimedLong&gt; m_inIn</strong> と宣言されているのが、InPort のインスタンスです。</p>
+<h3 id="consoleoutcpp">ConsoleOut.cpp</h3>
+<p>ConsoleOutクラスのコンストラクタで、先ほど定義した Multiply のインスタンスの初期化を追加します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ConsoleOut::ConsoleOut(RTC::Manager* manager)
+   : RTC::DataFlowComponentBase(manager),
+     // &lt;rtc-template block="initializer"&gt;
+     m_inIn("in", m_in),
+     
+     // &lt;/rtc-template&gt;
+     m_owc(m_multiply), 
+     dummy(0)
+</code></pre></div></div>
+<p><strong>※ Remark :</strong></p>
+
+<p>「m_owc(m_multiply),dummy(0)」 の部分を追加するだけでなく、「m_inIn(“in”, m_in)」を「m_inIn(“in”, m_in)<span style="color:red;"><strong>,</strong></span>;」と変更することも忘れずに（カンマ「,」の追加もれに注意）。</p>
+
+<p><br /></p>
+
+<p>　さらに、コールバックオブジェクトを InPort に追加する為、コンストラクタ内で以下のように記述します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   m_inIn.setOnWriteConvert(&amp;m_owc); //これを追加
+   // Registration: InPort/OutPort/Service
+   // &lt;rtc-template block="registration"&gt;
+   // Set InPort buffers
+   registerInPort("in", m_inIn);
+</code></pre></div></div>
+
+<p>コメントアウトされている onExecute のコメントをはずし、以下のように実装します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::ReturnCode_t ConsoleOut::onExecute(RTC::UniqueId ec_id)
+ {
+   if (m_inIn.isNew())
+     {
+       m_inIn.read();
+       std::cout &lt;&lt; "Received: " &lt;&lt; m_in.data &lt;&lt; std::endl;
+       std::cout &lt;&lt; "TimeStamp: " &lt;&lt; m_in.tm.sec &lt;&lt; "[s] ";
+       std::cout &lt;&lt; m_in.tm.nsec &lt;&lt; "[ns]" &lt;&lt; std::endl;
+     }
+   usleep(1000);
+ 
+   return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<p>ここで行われていることは、</p>
+<ol>
+  <li>m_inIn.isNew() で InPort にデータが入ってきているかチェックする。
+    <ul>
+      <li>isNew() というメンバ関数は RingBuffer に定義されている関数です。</li>
+    </ul>
+  </li>
+  <li>新しいデータが入っていたら、m_inIn.read() で変数にデータを読み込む。</li>
+  <li>そのデータ (m_in.data) を表示する。</li>
+</ol>
+
+<h2 id="コンパイル">コンパイル</h2>
+<p>実装が終わったら以下のようにソースをコンパイルします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt; make -f Makefile.ConsoleIn
+ &gt; make -f Makefile.ConsoleOut
+</code></pre></div></div>
+
+<p>コンパイルエラーが出た場合はスペルミスなどがないかどうかチェックして再度コンパイルを行ってください。</p>
+
+<h2 id="実行">実行</h2>
+<ul>
+  <li>ネームサーバ起動していることを確認します。</li>
+  <li>適切な rtc.conf * を作成しておきます。~
+    <ul>
+      <li>適切な rtc.conf とは…　次に一例をしめします。
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.nameservers: localhost
+ naming.formats: %h.host_cxt/%n.rtc
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>二つのターミナルから、ConsoleInComp および ConsoleOutComp を実行します。</li>
+  <li>RtcLink を起動して、二つのコンポーネントを接続し、アクティブ化します。</li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="ConsoleInConsoleOut2.png"><img src="ConsoleInConsoleOut2.png" width="70%;" /></a></div>
+
+<p><br /></p>
+
+<p>　ConsoleIn を実行したターミナルで、入力を促す <strong>Please input number:</strong> という表示が出るので、適当な数字を入力します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Please input number: 1
+ Sending to subscriber: 1
+ Please input number: 2
+ Sending to subscriber: 2
+ Please input number: 3
+ Sending to subscriber: 3
+</code></pre></div></div>
+
+<p>　ConsoleOut を実行したターミナルでは、以下のように表示されるはずです。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Received: 1
+ TimeStamp: 0[s] 0[ns]
+ Received: 2
+ TimeStamp: 0[s] 0[ns]
+ Received: 3
+ TimeStamp: 0[s] 0[ns]
+</code></pre></div></div>
+
+<p>　次に RtcLink のコンフィギュレーションビューで multiply の値を10に変更してみましょう。すると、ConsoleIn から上記のように入力すると、以下のようにそれぞれ10倍された値が出力されるはずです。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Received: 10
+ TimeStamp: 0[s] 0[ns]
+ Received: 20
+ TimeStamp: 0[s] 0[ns]
+ Received: 30
+ TimeStamp: 0[s] 0[ns]
+</code></pre></div></div>
+
+<p><br /></p>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

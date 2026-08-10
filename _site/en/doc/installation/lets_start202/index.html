@@ -1,0 +1,1649 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Getting Started with OpenRTM-aist in 10 Minutes! | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Getting Started with OpenRTM-aist in 10 Minutes!" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/installation/lets_start202/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/installation/lets_start202/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Getting Started with OpenRTM-aist in 10 Minutes!" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Getting Started with OpenRTM-aist in 10 Minutes!","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/installation/lets_start202/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/lets_start202/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/lets_start202/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Getting Started with OpenRTM-aist in 10 Minutes! <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/lets_start202/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/installation/lets_start202/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#installing-python">Installing Python</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#downloading-openrtm-aist">Downloading OpenRTM-aist</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#installing-openrtm-aist">Installing OpenRTM-aist</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#running-vcverchanger">Running VCVerChanger</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#running-sample-components">Running Sample Components</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#preparation">Preparation</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#starting-the-naming-service">Starting the Naming Service</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#sample-components">Sample Components</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#using-consoleincomp-and-consoleoutcomp">Using ConsoleInComp and ConsoleOutComp</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#starting-the-sample-components">Starting the Sample Components</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#starting-openrtp">Starting OpenRTP</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#using-rtsystemeditor">Using RTSystemEditor</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#verifying-operation-from-the-component-console-windows">Verifying Operation from the Component Console Windows</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#using-rtshell">Using rtshell</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#whats-next">What’s Next?</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: Getting Started with OpenRTM-aist in 10 Minutes! -->
+<p>#contents</p>
+
+<p>The latest version, OpenRTM-aist-2.0.2-RELEASE, installs the C++, Python, and Java editions, as well as OpenRTP and rtshell.</p>
+
+<h1 id="prerequisites">Prerequisites</h1>
+
+<h2 id="installing-python">Installing Python</h2>
+
+<p>If Python is not installed, OpenRTM-aist cannot be installed.</p>
+
+<p>Please install Python before installing OpenRTM-aist. Supported versions are “3.12”, “3.11”, “3.10”, “3.9”, and “3.8”.</p>
+
+<p>For downloading Python, please refer to <a href="/my-jekyll-site/en/doc/installation/install_2_0/install_windows_2_0/install_2_0">Installing OpenRTM-aist 2.0 on Windows</a>.</p>
+
+<p>The Python installation location corresponds to the [Customize installation] option during installation.</p>
+
+<p>Configure the search path automatically using the following procedure. This will add both the directory containing python.exe and the Scripts directory to the PATH environment variable.<br />
+(Example: Path=C:\Python38;C:\Python38\Scripts;…)</p>
+
+<p><strong>[Installation Procedure]</strong></p>
+
+<ul>
+  <li>Launch the Python installer. Version 3.8 is used as an example here.</li>
+  <li>On the first screen, check [add python *** to PATH] at the bottom and select [Customize installation].</li>
+</ul>
+
+<div align="center"><img src="python38-install001_.png" width="50%;" /></div>
+
+<ul>
+  <li>No changes are required on the [Optional Features] screen. Click [Next] to continue.</li>
+</ul>
+
+<div align="center"><a href="python38-install002.png"><img src="python38-install002.png" width="50%;" /></a></div>
+
+<ul>
+  <li>On the [Advanced Options] screen, check [Install for all users] and specify the installation location in [Customize install location].
+(Example: Path=C:\Python38;C:\Python38\Scripts;…)</li>
+</ul>
+
+<div align="center"><a href="python38-install003.png"><img src="python38-install003.png" width="50%;" /></a></div>
+
+<ul>
+  <li>Click [Install] to complete the installation.</li>
+</ul>
+
+<h2 id="downloading-openrtm-aist">Downloading OpenRTM-aist</h2>
+
+<p>For downloading the installer, please refer to <a href="/my-jekyll-site/en/download">Download</a>.</p>
+
+<p>If you are using Microsoft Edge and cannot download the installer because of the message shown below, follow these steps.</p>
+
+<div align="center"><a href="msi-download-01.png"><img src="msi-download-01.png" width="50%;" /></a></div>
+
+<ul>
+  <li>Click the “…” button displayed when you hover over the download item.</li>
+</ul>
+
+<div align="center"><a href="msi-download-02.png"><img src="msi-download-02.png" width="40%;" /></a></div>
+
+<ul>
+  <li>Click “Save”.</li>
+</ul>
+
+<div align="center"><a href="msi-download-03.png"><img src="msi-download-03.png" width="40%;" /></a></div>
+
+<ul>
+  <li>Click “Show more”.</li>
+</ul>
+
+<div align="center"><a href="msi-download-04.png"><img src="msi-download-04.png" width="40%;" /></a></div>
+
+<ul>
+  <li>Click “Keep”.</li>
+</ul>
+
+<div align="center"><a href="msi-download-05.png"><img src="msi-download-05.png" width="40%;" /></a></div>
+
+<ul>
+  <li>The download is now complete. Click “Open file” to launch the installer.</li>
+</ul>
+
+<div align="center"><a href="msi-download-06.png"><img src="msi-download-06.png" width="40%;" /></a></div>
+
+<h2 id="installing-openrtm-aist">Installing OpenRTM-aist</h2>
+
+<p><strong>[Installation Procedure]</strong></p>
+
+<ol>
+  <li>
+    <p>Launch the installer. If the [Windows protected your PC] screen appears, click [More info] to display the [Run] button, then click [Run]. (This screen appears when installing applications that are not registered with Microsoft Corp. on certain versions of Windows. Since this software is not registered, this screen is displayed.)</p>
+  </li>
+  <li>
+    <p>Click [Next]. The screenshots below use version 2.0.0, but the procedure is the same for version 2.0.2.</p>
+  </li>
+</ol>
+
+<div align="center"><a href="RTM2.0.0-msi-1.png"><img src="RTM2.0.0-msi-1.png" width="50%;" /></a></div>
+
+<p><br /></p>
+
+<ol>
+  <li>This is the license agreement page. Accept the software license terms and click [Next].</li>
+</ol>
+
+<div align="center"><a href="RTM2.0.0-msi-2.png"><img src="RTM2.0.0-msi-2.png" width="50%;" /></a></div>
+
+<p><br /></p>
+
+<ol>
+  <li>Select the installation type. Leave the default settings and click [Next].</li>
+</ol>
+
+<div align="center"><a href="RTM2.0.0-msi-3.png"><img src="RTM2.0.0-msi-3.png" width="50%;" /></a></div>
+
+<p><br /></p>
+
+<ol>
+  <li>
+    <p>Select the version of Visual Studio.</p>
+
+    <ul>
+      <li>The Visual Studio version used by the C++ edition will be configured in the system environment variables.</li>
+      <li>
+        <p>Select the installed version of Visual Studio and click [Next].</p>
+
+        <ul>
+          <li>For downloading Visual Studio, please refer to <a href="/my-jekyll-site/en/doc/installation/install_2_0/install_windows_2_0/install_2_0">Installing OpenRTM-aist 2.0 on Windows</a>.</li>
+          <li>The Visual Studio version can be changed after installation using the VCVerChanger tool. <a href="/my-jekyll-site/en/content/vc_version_changer">(How to Use VCVerChanger)</a></li>
+          <li>This setting is irrelevant for the Python and Java editions, so you may simply leave the default setting and click [Next].</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<div align="center"><a href="RTM2.0.0-msi-4.png"><img src="RTM2.0.0-msi-4.png" width="50%;" /></a></div>
+
+<p><br /></p>
+
+<ol>
+  <li>Select the setup type.</li>
+</ol>
+
+<p>If you select [Typical], the following components will be installed:</p>
+
+<ul>
+  <li>OpenRTM-aist C++</li>
+  <li>OpenRTM-aist Java</li>
+  <li>OpenRTM-aist Python</li>
+  <li>OpenRTP</li>
+  <li>RTSystemEditorRCP</li>
+  <li>RTShell</li>
+  <li>Runtime libraries for OpenRTM-aist C++ (Visual Studio 2015–2022)</li>
+  <li>Runtime libraries for OpenRTM-aist versions 1.0.0 through 2.0.0</li>
+</ul>
+
+<p>Unless you have a specific reason to change the configuration, click [Typical].</p>
+
+<p><br /></p>
+
+<div align="center"><a href="RTM2.0.0-msi-5.png"><img src="RTM2.0.0-msi-5.png" width="50%;" /></a></div>
+
+<p><br /></p>
+
+<ol>
+  <li>Click [Install] to begin installation.</li>
+</ol>
+
+<div align="center"><a href="RTM2.0.0-msi-6.png"><img src="RTM2.0.0-msi-6.png" width="50%;" /></a></div>
+
+<p><br /></p>
+
+<div align="center"><a href="RTM2.0.0-msi-7.png"><img src="RTM2.0.0-msi-7.png" width="50%;" /></a></div>
+
+<p><br /></p>
+
+<ol>
+  <li>Installation is complete. Click [Finish] to exit the installer.</li>
+</ol>
+
+<div align="center"><a href="RTM2.0.0-msi-8.png"><img src="RTM2.0.0-msi-8.png" width="50%;" /></a></div>
+
+<p><br /></p>
+
+<h2 id="running-vcverchanger">Running VCVerChanger</h2>
+
+<p>The installer registers the system environment variables used by OpenRTM-aist in the Windows registry. Some of these environment variables include another environment variable, %RTM_VC_VERSION%.</p>
+
+<p>In some cases, nested environment variables like this may not be expanded recursively.</p>
+
+<p>To resolve this issue, run VCVerChanger. Clicking the [Confirm] button expands the environment variables and writes the expanded values back to the registry.</p>
+
+<p><a href="/my-jekyll-site/en/content/vc_version_changer">(How to Use VCVerChanger)</a></p>
+
+<h2 id="running-sample-components">Running Sample Components</h2>
+
+<h3 id="preparation">Preparation</h3>
+
+<ul>
+  <li>
+    <p>Although not required, many applications registered in the Start Menu will be launched in the following steps. Navigating through the Start Menu every time can be inconvenient.</p>
+
+    <p>Open the Start Menu, navigate to [OpenRTM-aist 2.0.2 x86_64] &gt; [C++_Examples], right-click it, and select [Open file location].</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="start-menu.png"><img src="start-menu.png" width="50%;" /></a></div>
+<div align="center"><strong>Open File Location</strong></div>
+
+<p><br /></p>
+
+<div align="center"><a href="start-menu-folder.png"><img src="start-menu-folder.png" width="50%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><strong>Start Menu Folder</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li>This will open the Start Menu folder, making it easier to access the applications registered in the menu.</li>
+</ul>
+
+<h2 id="starting-the-naming-service">Starting the Naming Service</h2>
+
+<ul>
+  <li>Double-click <strong>Start Naming Service</strong>. A console window similar to the one below will appear.</li>
+</ul>
+
+<div align="center"><a href="StartNameService122-001.png"><img src="StartNameService122-001.png" width="50%;" /></a></div>
+<div align="center"><strong>Start Naming Service</strong></div>
+
+<p><br /></p>
+
+<h2 id="sample-components">Sample Components</h2>
+
+<h3 id="using-consoleincomp-and-consoleoutcomp">Using ConsoleInComp and ConsoleOutComp</h3>
+
+<p>ConsoleInComp and ConsoleOutComp are sample components that demonstrate how to use DataInPort and DataOutPort.</p>
+
+<p>Numbers entered in ConsoleIn are displayed in ConsoleOut.</p>
+
+<p>In this section, we will use these two components to verify operation.</p>
+
+<h3 id="starting-the-sample-components">Starting the Sample Components</h3>
+
+<ul>
+  <li>Double-click <strong>ConsoleIn.bat</strong> and <strong>ConsoleOut.bat</strong> in the [OpenRTM-aist 2.0.2 x86_64] &gt; [C++_Examples] folder.</li>
+</ul>
+
+<p>If the [Windows Security Alert] dialog appears, check [Private networks (such as home or work networks)] and click [Allow access].</p>
+
+<p>The following console windows will appear.</p>
+
+<!-- CENTER:&ref(ConsoleIn001.png,center,90%);&ref(ConsoleOut001.png,center,90%); -->
+
+<div align="center"><div align="center"><a href="ConsoleInOut122-001.png"><img src="ConsoleInOut122-001.png" width="90%;" /></a></div>;</div>
+
+<div align="center"><strong>ConsoleIn.bat and ConsoleOut.bat</strong></div>
+
+<p><br /></p>
+
+<p>&amp;aname(openrtp_start);</p>
+
+<h2 id="starting-openrtp">Starting OpenRTP</h2>
+
+<ul>
+  <li>Launch OpenRTP by clicking the desktop shortcut.</li>
+</ul>
+
+<p>From the Start Menu, select:</p>
+
+<p>[OpenRTM-aist 2.0.2 x86_64] &gt; [OpenRTP]</p>
+
+<p>You can also launch it by double-clicking OpenRTP in the folder opened earlier.</p>
+
+<ul>
+  <li>Select any convenient location as the workspace.</li>
+</ul>
+
+<div align="center"><a href="OpenRTP122-001.png"><img src="OpenRTP122-001.png" width="50%;" /></a></div>
+
+<div align="center"><strong>Selecting a Workspace</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li>The Welcome screen is not required. Click the [×] button on the [Welcome] tab in the upper-left corner to close it.</li>
+</ul>
+
+<div align="center"><a href="OpenRTP122-002.png"><img src="OpenRTP122-002.png" width="50%;" /></a></div>
+
+<div align="center"><strong>Initial Startup Screen</strong></div>
+
+<p><br /></p>
+
+<h2 id="using-rtsystemeditor">Using RTSystemEditor</h2>
+
+<ul>
+  <li>Click [Open Perspective] in the upper-right corner of the screen.</li>
+</ul>
+
+<p>In the dialog that appears, select [RT System Editor] and click [Open] to launch RTSystemEditor.</p>
+
+<div align="center"><div align="center"><a href="OpenRTP122-003.png"><img src="OpenRTP122-003.png" width="30%;" /></a></div>;  <div align="center"><a href="OpenRTP122-004.png"><img src="OpenRTP122-004.png" width="30%;" /></a></div>;</div>
+
+<div align="center"><strong>Switching Perspectives</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li>Components will be displayed in [NameServiceView].</li>
+</ul>
+
+<p>Initially, the tree is collapsed and the components are not visible. Expand the tree by clicking [&gt;] to view the host context and the ConsoleIn and ConsoleOut components.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Depending on the configuration, the host context (the hierarchy shown as “hostname</td>
+      <td>host_cxt”, such as “TPAD-RTM-NO13</td>
+      <td>host_cxt” in the figure) may not be displayed, and the components may appear directly.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div align="center"><a href="OpenRTP122-005.png"><img src="OpenRTP122-005.png" width="30%;" /></a></div>
+
+<div align="center"><strong>Verifying Component Startup</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li>If the Name Server does not appear in NameServiceView, add localhost manually.</li>
+</ul>
+
+<p>Click [Add Name Server] as shown in the figure to open the dialog.</p>
+
+<p>Enter “localhost” and click [OK].</p>
+
+<p>If the components still do not appear, close all console windows and repeat the procedure starting from <strong>Starting the Naming Service</strong>.</p>
+
+<div align="center"><div align="center"><a href="OpenRTP122-006.png"><img src="OpenRTP122-006.png" width="30%;" /></a></div>;  <div align="center"><a href="OpenRTP122-007.png"><img src="OpenRTP122-007.png" width="30%;" /></a></div>;</div>
+
+<div align="center"><strong>Adding a Name Server</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li>Click [Open New System Editor] from the toolbar to display the [System Diagram].</li>
+</ul>
+
+<div align="center"><a href="OpenRTP122-008.png"><img src="OpenRTP122-008.png" width="30%;" /></a></div>
+
+<div align="center"><strong>Displaying the System Diagram</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li>Drag and drop the ConsoleIn and ConsoleOut components from [NameServiceView] onto the [System Diagram].</li>
+</ul>
+
+<p>The components will appear as shown below.</p>
+
+<div align="center"><a href="OpenRTP122-009.png"><img src="OpenRTP122-009.png" width="30%;" /></a></div>
+
+<div align="center"><strong>Dragging and Dropping Components</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li>Connect the components by dragging and dropping between their data ports.</li>
+</ul>
+
+<p>A dialog requesting the information required for the connection will appear. Click [OK].</p>
+
+<div align="center"><div align="center"><a href="OpenRTP122-010.png"><img src="OpenRTP122-010.png" width="30%;" /></a></div>;  <div align="center"><a href="OpenRTP122-011.png"><img src="OpenRTP122-011.png" width="30%;" /></a></div>;</div>
+
+<div align="center"><strong>Connecting Components</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li>The components will be connected as shown below.</li>
+</ul>
+
+<div align="center"><a href="OpenRTP122-012.png"><img src="OpenRTP122-012.png" width="30%;" /></a></div>
+
+<div align="center"><strong>Connection Complete</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li>Change the component state to Active.</li>
+</ul>
+
+<p>Click [All Activate].</p>
+
+<p>If the component color changes from blue to light green, activation has succeeded.</p>
+
+<p>Components can also be activated individually by selecting a component, right-clicking it, and choosing the activation command.</p>
+
+<p>(If [All Activate] is not displayed, try restarting OpenRTP. Alternatively, activate the components individually.)</p>
+
+<div align="center"><a href="OpenRTP122-013.png"><img src="OpenRTP122-013.png" width="30%;" /></a></div>
+
+<p><br /></p>
+
+<div align="center"><a href="OpenRTP122-014.png"><img src="OpenRTP122-014.png" width="30%;" /></a></div>
+
+<div align="center"><strong>Activation Complete</strong></div>
+
+<p><br /></p>
+
+<h3 id="verifying-operation-from-the-component-console-windows">Verifying Operation from the Component Console Windows</h3>
+
+<ul>
+  <li>Next, verify the operation using the console windows.</li>
+</ul>
+
+<p>After connecting the components in RTSystemEditor, the message <strong>“Please input number:”</strong> will be displayed in the ConsoleIn window.</p>
+
+<div align="center"><a href="Console122-001.png"><img src="Console122-001.png" width="30%;" /></a></div>
+
+<div align="center"><strong>"Please input number:" is displayed</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li>Enter any numeric value in the ConsoleIn window and press [Enter].</li>
+</ul>
+
+<p>The entered value will then be displayed in the ConsoleOut window.</p>
+
+<div align="center"><div align="center"><a href="Console122-002.png"><img src="Console122-002.png" width="50%;" /></a></div>;</div>
+
+<div align="center"><strong>Operation Verification</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>Entering non-numeric values or excessively large numbers may cause unexpected behavior.</p>
+
+    <p>In that case, stop the batch file by pressing Ctrl-C, then restart the procedure from launching the batch files again.</p>
+  </li>
+  <li>
+    <p>To terminate the components, click [All Deactivate] on the toolbar.</p>
+
+    <p>Then right-click each component and select [Exit].</p>
+
+    <ul>
+      <li>
+        <p>If deactivation takes a long time, ConsoleIn is likely waiting for numeric input.</p>
+
+        <p>In that case, enter any numeric value.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div align="center"><a href="Console122-004.png"><img src="Console122-004.png" width="50%;" /></a></div>
+
+<div align="center"><strong>Component Deactivation</strong></div>
+
+<p><br /></p>
+
+<div align="center"><a href="Console122-005.png"><img src="Console122-005.png" width="50%;" /></a></div>
+
+<div align="center"><strong>Exiting Components</strong></div>
+
+<p><br /></p>
+
+<ul>
+  <li>This completes the operation verification using ConsoleIn and ConsoleOut.</li>
+</ul>
+
+<h2 id="using-rtshell">Using rtshell</h2>
+
+<p>rtshell is installed as a standard component of OpenRTM-aist.</p>
+
+<p>By using rtshell, you can Activate, Deactivate, Exit, and perform other RTC operations from the command line.<br /></p>
+
+<p>Please refer to:</p>
+
+<p><a href="/my-jekyll-site/en/doc/installation/install_rtshell/check_windows">rtshell Installation and Operation Verification (Windows)</a></p>
+
+<h2 id="whats-next">What’s Next?</h2>
+
+<p>Please see the following links.</p>
+
+<ul>
+  <li>
+    <p><strong>Try More Sample Components &amp;t;：</strong> <a href="/my-jekyll-site/en/node/811">Sample Components</a></p>
+  </li>
+  <li>
+    <p><strong>Create Your Own Components &amp;t;：</strong> <a href="/my-jekyll-site/en/node/110">Case Studies</a></p>
+  </li>
+  <li>
+    <p><strong>Learn OpenRTM from the Basics &amp;t;：</strong> <a href="/my-jekyll-site/en/node/113">Developer’s Guide</a></p>
+  </li>
+  <li>
+    <p><strong>Join the Community &amp;t;：</strong> <a href="/my-jekyll-site/en/node/624">Community</a></p>
+  </li>
+  <li>
+    <p><strong>Explore Public Components &amp;t;：</strong> <a href="/my-jekyll-site/en/node/123">Projects</a></p>
+  </li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

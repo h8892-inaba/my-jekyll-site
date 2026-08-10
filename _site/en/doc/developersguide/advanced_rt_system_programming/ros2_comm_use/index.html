@@ -1,0 +1,1918 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Using the ROS2 Communication Feature | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Using the ROS2 Communication Feature" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/ros2_comm_use/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/ros2_comm_use/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Using the ROS2 Communication Feature" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Using the ROS2 Communication Feature","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/ros2_comm_use/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/ros2_comm_use/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/ros2_comm_use/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Using the ROS2 Communication Feature <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/ros2_comm_use/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/developersguide/advanced_rt_system_programming/ros2_comm_use/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#c-version">C++ Version</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#windows">Windows</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ubuntu">Ubuntu</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#python-version">Python Version</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#windows-1">Windows</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ubuntu-1">Ubuntu</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#startup-options">Startup Options</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#c">C++</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#python">Python</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#connection-options">Connection Options</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#c-1">C++</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#python-1">Python</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#simple-operation-check">Simple Operation Check</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Using the ROS2 Communication Feature -->
+<p>#contents</p>
+
+<h2 id="c-version">C++ Version</h2>
+
+<h3 id="windows">Windows</h3>
+
+<h4 id="installing-chocolatey">Installing Chocolatey</h4>
+
+<p>Install it by following the instructions on the following page.</p>
+
+<ul>
+  <li><a href="https://chocolatey.org/install#installing-chocolatey">Chocolatey</a></li>
+</ul>
+
+<h4 id="installing-python3">Installing Python3</h4>
+
+<p>Install it using the following command.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; choco install -y python
+</code></pre></div></div>
+
+<h4 id="installing-openssl">Installing OpenSSL</h4>
+
+<p>Download <strong>Win64OpenSSL-1_0_2r.exe</strong> from the following page, then run it to install.</p>
+
+<ul>
+  <li><a href="https://slproweb.com/products/Win32OpenSSL.html">OpenSSL</a></li>
+</ul>
+
+<p>Set the following environment variable.</p>
+
+<table class="table-alt">
+  <tr>
+    <td>OPENSSL_CONF</td>
+    <td>C:\OpenSSL-Win64\bin\openssl.cfg</td>
+  </tr>
+</table>
+
+<p><br /></p>
+
+<p>Add <strong>C:\OpenSSL-Win64\bin</strong> to the PATH environment variable.</p>
+
+<h4 id="installing-asio-eigen-tinyxml-tinyxml-usestl-and-log4cxx">Installing asio, eigen, tinyxml, tinyxml-usestl, and log4cxx</h4>
+
+<p>Download the NuGet package (<strong>.nupkg</strong>) files from the following page.</p>
+
+<ul>
+  <li>https://github.com/ros2/choco-packages/releases</li>
+</ul>
+
+<p>Install them using the following command. Since additional dependent NuGet packages may be required, modify the command as appropriate.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; choco install -y -s &lt;**'Downloaded path**'&gt; asio eigen tinyxml-usestl tinyxml2 log4cxx
+</code></pre></div></div>
+
+<h4 id="installing-python-packages">Installing Python Packages</h4>
+
+<p>Install them using the following command.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; python -m pip install -U catkin_pkg empy pyparsing pyyaml setuptools
+</code></pre></div></div>
+
+<h4 id="installing-ros2">Installing ROS2</h4>
+
+<p>Download <strong>ros2-</strong><strong>-</strong><strong>**</strong>-windows-release-amd64.zip** from the following page.</p>
+
+<ul>
+  <li>https://github.com/ros2/ros2/releases</li>
+</ul>
+
+<p>Extract it to <strong>C:\dev\ros2</strong> or another suitable location to complete the installation.</p>
+
+<h4 id="building-openrtm-aist">Building OpenRTM-aist</h4>
+
+<p>Before running CMake, execute the script to configure the ROS2 environment.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; call C:\dev\ros2\local_setup.bat
+</code></pre></div></div>
+
+<p>Turn ON the <strong>FASTRTPS_ENABLE</strong> and <strong>ROS2_ENABLE</strong> options when running CMake.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; cmake -DORB_ROOT=C:/workspace/omniORB-4.2.3-win64-vc14 -G "Visual Studio 16 2019" -A x64 -DFASTRTPS_ENABLE=ON -DROS2_ENABLE=ON ..
+</code></pre></div></div>
+
+<p>The remaining steps are the same as the standard build procedure.</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build">OpenRTM-aist Build Procedure</a></li>
+</ul>
+
+<p>Install it to an appropriate location.</p>
+
+<p>Specify the installation directory using the <strong>CMAKE_INSTALL_PREFIX</strong> option.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; cmake .. -DCMAKE_INSTALL_PREFIX=C:/workspace/OpenRTM-aist/build_omni/install
+&gt; cmake --build . --config Release --target install
+</code></pre></div></div>
+
+<h4 id="operation-check">Operation Check</h4>
+
+<p>Run the sample components located in <strong>&lt;</strong>‘Installation path<strong>’&gt;\2.0.0\Components\C++\Examples\vc14</strong>.</p>
+
+<p>Create an rtc.conf file with the following contents.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>manager.modules.load_path: {Installation path}\\2.0.0\\ext\\transport
+manager.modules.preload: FastRTPSTransport.dll, ROS2Transport.dll
+manager.components.preconnect: ConsoleOut0.in?interface_type=fast-rtps&amp;marshaling_type=ros2:std_msgs/Float32&amp;fast-rtps.topic=chatter, ConsoleIn0.out?interface_type=fast-rtps&amp;marshaling_type=ros2:std_msgs/Float32&amp;fast-rtps.topic=chatter
+manager.components.preactivation: ConsoleOut0, ConsoleIn0
+</code></pre></div></div>
+
+<table>
+  <tbody>
+    <tr>
+      <td>: manager.module.load_path</td>
+      <td>Location where the serializer modules (FastRTPSTransport.dll and ROS2Transport.dll) are stored</td>
+    </tr>
+    <tr>
+      <td>: manager.modules.preload</td>
+      <td>Specifies the order in which the serializer modules are loaded</td>
+    </tr>
+    <tr>
+      <td>: manager.components.preconnect</td>
+      <td>Describes the settings for connector creation. Specify <strong>fast-rtps</strong> for interface_type (interface type), the corresponding serializer name for marshaling_type (marshaling type), and any arbitrary name for fast-rtps.topic (topic).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The relationship between the serializers for ROS/ROS2 and the corresponding ROS/ROS2 message types is shown at the following link.</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/ros_comm_use/ros_ros2_default_support_message_types">Serializer Names and ROS/ROS2 Message Types</a></li>
+</ul>
+
+<p>Connector creation is configured using the <strong>manager.components.preconnect</strong> option.</p>
+
+<p>In this example, connectors are created for the <strong>in</strong> port of the <strong>ConsoleOut0</strong> component and the <strong>out</strong> port of the <strong>ConsoleIn0</strong> component.</p>
+
+<p>Before execution, add the following directories to the PATH environment variable.</p>
+
+<ul>
+  <li>&lt;<strong>‘Installation path</strong>’&gt;\2.0.0\bin\vc14</li>
+  <li>&lt;<strong>‘Installation path</strong>’&gt;\2.0.0\omniORB\4.2.3_vc14\bin\x86_win32</li>
+  <li>C:\dev\ros2\bin</li>
+  <li>C:\ProgramData\chocolatey\lib\tinyxml2\lib</li>
+  <li>C:\ProgramData\chocolatey\lib\log4cxx\lib</li>
+</ul>
+
+<p>Communication becomes available after running <strong>ConsoleInComp.exe</strong> and <strong>ConsoleOutComp.exe</strong>.</p>
+
+<h3 id="ubuntu">Ubuntu</h3>
+
+<h4 id="installing-ros2-1">Installing ROS2</h4>
+
+<p>Install it using the following commands.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl http://repo.ros2.org/repos.key | sudo apt-key add -
+$ sudo sh -c 'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main $(lsb_release -cs) main" &gt; /etc/apt/sources.list.d/ros2-latest.list'
+$ export ROS_DISTRO=crystal
+$ sudo apt update
+$ sudo apt install ros-${ROS_DISTRO}-ros-core
+</code></pre></div></div>
+
+<p>Configure bash for ROS2 as follows. (This sets up both future bash sessions and the currently running bash session.)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "source /opt/ros/crystal/setup.bash" &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre></div></div>
+
+<h4 id="building-openrtm-aist-1">Building OpenRTM-aist</h4>
+
+<p>Turn ON the <strong>FASTRTPS_ENABLE</strong> and <strong>ROS2_ENABLE</strong> options when running CMake.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cmake -DCORBA=omniORB -DCMAKE_BUILD_TYPE=Release -DFASTRTPS_ENABLE=ON -DROS2_ENABLE=ON ..
+</code></pre></div></div>
+
+<p>The remaining steps are the same as the standard build procedure.</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build">OpenRTM-aist Build Procedure</a></li>
+</ul>
+
+<p>Install it after building.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cmake --build . --target install
+</code></pre></div></div>
+
+<h4 id="operation-check-1">Operation Check</h4>
+
+<p>Create the following rtc.conf.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>manager.modules.load_path: /usr/local/lib/openrtm-2.0/transport/
+manager.modules.preload: FastRTPSTransport.so, ROS2Transport.so
+manager.components.preconnect: ConsoleOut0.in?interface_type=fast-rtps&amp;marshaling_type=ros2:std_msgs/Float32&amp;fast-rtps.topic=chatter, ConsoleIn0.out?interface_type=fast-rtps&amp;marshaling_type=ros2:std_msgs/Float32&amp;fast-rtps.topic=chatter
+manager.components.preactivation: ConsoleOut0, ConsoleIn0
+</code></pre></div></div>
+
+<table>
+  <tbody>
+    <tr>
+      <td>: manager.module.load_path</td>
+      <td>Location where the serializer modules (FastRTPSTransport.so and ROS2Transport.so) are stored</td>
+    </tr>
+    <tr>
+      <td>: manager.modules.preload</td>
+      <td>Specifies the order in which the serializer modules are loaded</td>
+    </tr>
+    <tr>
+      <td>: manager.components.preconnect</td>
+      <td>Describes the settings for connector creation. Specify <strong>fast-rtps</strong> for interface_type (interface type), the corresponding serializer name for marshaling_type (marshaling type), and any arbitrary name for fast-rtps.topic (topic).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The message types supported by the OpenRTM-aist serializers are shown below.</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/ros_comm_use/ros_ros2_default_support_message_types">Serializer Names and ROS/ROS2 Message Types</a></li>
+</ul>
+
+<p>Start the RTCs to verify operation.</p>
+
+<p>Start each one from a separate terminal.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/share/openrtm-2.0/components/c++/examples/ConsoleInComp
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/share/openrtm-2.0/components/c++/examples/ConsoleOutComp
+</code></pre></div></div>
+
+<h2 id="python-version">Python Version</h2>
+
+<h3 id="windows-1">Windows</h3>
+
+<p>Install ROS2 using the same procedure as for the C++ version.</p>
+
+<h4 id="installing-openrtm-aist">Installing OpenRTM-aist</h4>
+
+<p>Install OpenRTM-aist 1.2 or later using the installer.</p>
+
+<p>Obtain the source code for the Python version of OpenRTM-aist.</p>
+
+<ul>
+  <li><a href="https://github.com/OpenRTM/OpenRTM-aist-Python">Python Source Code</a></li>
+</ul>
+
+<p>Install the Python version of OpenRTM-aist using the following commands.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python setup.py build
+python setup.py <span class="nb">install</span>
+</code></pre></div></div>
+
+<h4 id="operation-check-2">Operation Check</h4>
+
+<p>Execute the following command before running.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>call C:<span class="se">\d</span>ev<span class="se">\r</span>os2<span class="se">\s</span>etup.bat
+</code></pre></div></div>
+
+<p>Create an rtc.conf file as shown below, load <strong>ROS2Transport.py</strong>, and start it with <strong>opensplice</strong> specified as the interface type.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>manager.modules.load_path: C:\\Python37\\Lib\\site-packages\\OpenRTM_aist\\ext\\transport\\ROS2Transport
+manager.modules.preload: ROS2Transport.py
+manager.components.preconnect: ConsoleOut0.in?interface_type=ros2&amp;marshaling_type=ros2:std_msgs/Float32&amp;ros2.topic=chatter, ConsoleIn0.out?interface_type=ros2&amp;marshaling_type=ros2:std_msgs/Float32&amp;ros2.topic=chatter
+manager.components.preactivation: ConsoleOut0, ConsoleIn0
+</code></pre></div></div>
+
+<table>
+  <tbody>
+    <tr>
+      <td>: manager.module.load_path</td>
+      <td>Location where the serializer module (ROS2Transport.py) is stored</td>
+    </tr>
+    <tr>
+      <td>: manager.modules.preload</td>
+      <td>Specifies the order in which the serializer module is loaded</td>
+    </tr>
+    <tr>
+      <td>: manager.components.preconnect</td>
+      <td>Describes the settings for connector creation. Specify <strong>ros2</strong> for interface_type (interface type), the corresponding serializer name for marshaling_type (marshaling type), and any arbitrary name for ros2.topic (topic).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ubuntu-1">Ubuntu</h3>
+
+<h4 id="installing-ros2-2">Installing ROS2</h4>
+
+<p>Install it using the following commands.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://repo.ros2.org/repos.key | <span class="nb">sudo </span>apt-key add -
+<span class="nv">$ </span><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main $(lsb_release -cs) main" &gt; /etc/apt/sources.list.d/ros2-latest.list'</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">ROS_DISTRO</span><span class="o">=</span>crystal
+<span class="nv">$ </span><span class="nb">sudo </span>apt update
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>ros-<span class="k">${</span><span class="nv">ROS_DISTRO</span><span class="k">}</span><span class="nt">-desktop</span>
+</code></pre></div></div>
+
+<p>Configure bash to load the ROS2 environment.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"source /opt/ros/crystal/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nv">$ </span><span class="nb">source</span> ~/.bashrc
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>python-omniorb-omg omniidl-python doxygen
+</code></pre></div></div>
+
+<h4 id="installing-openrtm-aist-1">Installing OpenRTM-aist</h4>
+
+<p>Obtain the source code for the Python version of OpenRTM-aist.</p>
+
+<ul>
+  <li><a href="https://github.com/OpenRTM/OpenRTM-aist-Python">Python Source Code</a></li>
+</ul>
+
+<p>Build and install the Python version of OpenRTM-aist using the following commands.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python setup.py build
+<span class="nv">$ </span>python setup.py <span class="nb">install</span>
+</code></pre></div></div>
+
+<h4 id="operation-check-3">Operation Check</h4>
+
+<p>Executing ros2’s setup.bash appears to overwrite PYTHONPATH, so execute the following commands.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:/usr/local/lib/python3.6/site-packages
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/lib/python3.6/site-packages/
+</code></pre></div></div>
+
+<p>Modify the paths according to the directory where omniORBpy is installed.</p>
+
+<p>Create an rtc.conf file as shown below, load <strong>ROS2Transport.py</strong>, and configure it to start with <strong>ros2</strong> as the interface type and <strong>ros2:std_msgs/Float32</strong> as the serializer.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>manager.modules.load_path: /usr/local/lib/python3.6/site-packages/OpenRTM_aist/ext/transport/ROS2Transport/
+manager.modules.preload: ROS2Transport.py
+manager.components.preconnect: ConsoleOut0.in?interface_type=ros2&amp;marshaling_type=ros2:std_msgs/Float32&amp;ros2.topic=chatter, ConsoleIn0.out?interface_type=ros2&amp;marshaling_type=ros2:std_msgs/Float32&amp;ros2.topic=chatter
+manager.components.preactivation: ConsoleOut0, ConsoleIn0
+</code></pre></div></div>
+
+<p>The message types supported by the OpenRTM-aist serializers are shown below.</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/ros_comm_use/ros_ros2_default_support_message_types">Serializer Names and ROS/ROS2 Message Types</a></li>
+</ul>
+
+<p>Verify operation by starting the RTCs with the following commands.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python /usr/local/share/openrtm-2.0/components/python/SimpleIO/ConsoleIn.py
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python /usr/local/share/openrtm-2.0/components/python/SimpleIO/ConsoleOut.py
+</code></pre></div></div>
+
+<h2 id="startup-options">Startup Options</h2>
+
+<h3 id="c">C++</h3>
+
+<p>Configure the <a href="/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/dds_comm_use/fast-rtps#起動時のオプション">Fast DDS Communication Feature Options</a>.</p>
+
+<h3 id="python">Python</h3>
+
+<p>The following options can be configured.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Option Name</th>
+    <th>Example Setting</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>ros2.args</td>
+    <td></td>
+    <td><strong>args</strong> argument of <code>rclpy.init</code></td>
+  </tr>
+  <tr>
+    <td>ros2.node.name</td>
+    <td>node_name</td>
+    <td>Node name</td>
+  </tr>
+</table>
+
+<h2 id="connection-options">Connection Options</h2>
+
+<h3 id="c-1">C++</h3>
+
+<p>Configure the <a href="/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/dds_comm_use/fast-rtps#接続時のオプション">Fast DDS Communication Feature Options</a>.</p>
+
+<h3 id="python-1">Python</h3>
+
+<p>The items that can be configured at connection time are as follows.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Option Name</th>
+    <th>Default Value</th>
+    <th>Option</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>marshaling_type</td>
+    <td></td>
+    <td></td>
+    <td>Type of serializer. Values such as <strong>ros:std_msgs/Float32</strong> can be set.</td>
+  </tr>
+  <tr>
+    <td>ros2.topic</td>
+    <td>chatter</td>
+    <td></td>
+    <td>DDS topic name</td>
+  </tr>
+  <tr>
+    <td>ros2.reader_qos.durability.kind</td>
+    <td>TRANSIENT_DURABILITY_QOS</td>
+    <td>VOLATILE_DURABILITY_QOS, TRANSIENT_LOCAL_DURABILITY_QOS, SYSTEM_DEFAULT_QOS</td>
+    <td>Durability on the sending side (VOLATILE_DURABILITY_QOS: volatile, TRANSIENT_LOCAL_DURABILITY_QOS: transient local setting)</td>
+  </tr>
+  <tr>
+    <td>ros2.reader_qos.deadline.period.sec</td>
+    <td>0</td>
+    <td></td>
+    <td>Minimum period on the receiving side</td>
+  </tr>
+  <tr>
+    <td>ros2.reader_qos.deadline.period.nanosec</td>
+    <td>0</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ros2.reader_qos.liveliness.kind</td>
+    <td>AUTOMATIC_LIVELINESS_QOS</td>
+    <td>AUT0TOMATIC_LIVELINESS_QOS, MANUAL_BY_TOPIC_LIVELINESS_QOS, SYSTEM_DEFAULT_LIVELINESS_QOS</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ros2.reader_qos.liveliness.lease_duration.sec</td>
+    <td>0</td>
+    <td></td>
+    <td>Heartbeat period on the receiving side</td>
+  </tr>
+  <tr>
+    <td>ros2.reader_qos.liveliness.lease_duration.nanosec</td>
+    <td>0</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ros2.reader_qos.reliability.kind</td>
+    <td>RELIABLE_RELIABILITY_QOS</td>
+    <td>BEST_EFFORT_RELIABILITY_QOS, RELIABLE_RELIABILITY_QOS, SYSTEM_DEFAULT_RELIABILITY_QOS</td>
+    <td>Reliability on the receiving side (RELIABLE_RELIABILITY_QOS: high reliability, BEST_EFFORT_RELIABILITY_QOS: maximum speed)</td>
+  </tr>
+  <tr>
+    <td>ros2.reader_qos.history.kind</td>
+    <td>KEEP_LAST_HISTORY_QOS</td>
+    <td>KEEP_LAST_HISTORY_QOS, KEEP_ALL_HISTORY_QOS, SYSTEM_DEFAULT_HISTORY_QOS</td>
+    <td>How received data is retained (KEEP_ALL_HISTORY_QOS: retain all data, KEEP_LAST_HISTORY_QOS: retain only the number of data items specified)</td>
+    <td>KEEP_LAST</td>
+  </tr>
+  <tr>
+    <td>ros2.reader_qos.history.depth</td>
+    <td>1</td>
+    <td></td>
+    <td>Number of data items retained on the receiving side</td>
+  </tr>
+  <tr>
+    <td>ros2.reader_qos.lifespan.duration.sec</td>
+    <td>0</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ros2.reader_qos.lifespan.duration.nanosec</td>
+    <td>0</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ros2.reader_qos.avoid_ros_namespace_conventions</td>
+    <td>YES</td>
+    <td>YES, NO</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ros2.writer_qos.durability.kind</td>
+    <td>TRANSIENT_DURABILITY_QOS</td>
+    <td>VOLATILE_DURABILITY_QOS, TRANSIENT_LOCAL_DURABILITY_QOS, SYSTEM_DEFAULT_QOS</td>
+    <td>Durability on the sending side (VOLATILE_DURABILITY_QOS: volatile, TRANSIENT_LOCAL_DURABILITY_QOS: transient local setting)</td>
+  </tr>
+  <tr>
+    <td>ros2.writer_qos.deadline.period.sec</td>
+    <td>0</td>
+    <td></td>
+    <td>Minimum period on the sending side</td>
+  </tr>
+  <tr>
+    <td>ros2.writer_qos.deadline.period.nanosec</td>
+    <td>0</td>
+    <td></td>
+    <td></td>
+  </tr>
+
+
+  <tr>
+    <td>ros2.writer_qos.liveliness.kind</td>
+    <td>AUTOMATIC_LIVELINESS_QOS</td>
+    <td>AUTOMATIC_LIVELINESS_QOS, MANUAL_BY_TOPIC_LIVELINESS_QOS, SYSTEM_DEFAULT_LIVELINESS_QOS</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ros2.writer_qos.liveliness.lease_duration.sec</td>
+    <td>0</td>
+    <td></td>
+    <td>Heartbeat period on the sending side</td>
+  </tr>
+  <tr>
+    <td>ros2.writer_qos.liveliness.lease_duration.nanosec</td>
+    <td>0</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ros2.writer_qos.reliability.kind</td>
+    <td>RELIABLE_RELIABILITY_QOS</td>
+    <td>BEST_EFFORT_RELIABILITY_QOS, RELIABLE_RELIABILITY_QOS, SYSTEM_DEFAULT_RELIABILITY_QOS</td>
+    <td>Reliability on the sending side (RELIABLE_RELIABILITY_QOS: high reliability, BEST_EFFORT_RELIABILITY_QOS: maximum speed)</td>
+  </tr>
+  <tr>
+    <td>ros2.writer_qos.history.kind</td>
+    <td>KEEP_LAST_HISTORY_QOS</td>
+    <td>KEEP_LAST_HISTORY_QOS, KEEP_ALL_HISTORY_QOS, SYSTEM_DEFAULT_HISTORY_QOS</td>
+    <td>How sent data is retained (KEEP_ALL_HISTORY_QOS: retain all data, KEEP_LAST_HISTORY_QOS: retain only the number of data items specified)</td>
+  </tr>
+  <tr>
+    <td>ros2.writer_qos.history.depth</td>
+    <td>1</td>
+    <td></td>
+    <td>Number of data items retained on the sending side</td>
+  </tr>
+  <tr>
+    <td>ros2.writer_qos.lifespan.duration.sec</td>
+    <td>0</td>
+    <td></td>
+    <td>Retention time for unsent data on the sending side</td>
+  </tr>
+  <tr>
+    <td>ros2.writer_qos.lifespan.duration.nanosec</td>
+    <td>0</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ros2.writer_qos.avoid_ros_namespace_conventions</td>
+    <td>YES</td>
+    <td>YES, NO</td>
+    <td></td>
+  </tr>
+</table>
+
+<p>The following shows a configuration example.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>manager.components.preconnect: ConsoleOut0.in?interface_type=ros2&amp;marshaling_type=ros2:std_msgs/Float32, ConsoleIn0.out?interface_type=ros2&amp;marshaling_type=ros2:std_msgs/Float32
+</code></pre></div></div>
+
+<h2 id="simple-operation-check">Simple Operation Check</h2>
+
+<p>When OpenRTM-aist is built and installed, a configuration file for a simple operation check of ROS2Transport is installed.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\ros2-windows\setup.bat
+%RTM_ROOT%\ext\environment-setup.omniorb.vc16.bat
+%RTM_ROOT%\Components\C++\Examples\vc16\ConsoleOutComp.exe -f %RTM_ROOT%\ext\transport\rtc.ros2.conf
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source /opt/ros/dashing/setup.sh
+source ${OPENRTM_INSTALL_DIR}/etc/environment-setup.sh
+${OPENRTM_INSTALL_DIR}/share/openrtm-2.0/components/c++/examples/ConsoleOutComp -f ${OPENRTM_INSTALL_DIR}/etc/transport/rtc.ros2.conf
+</code></pre></div></div>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

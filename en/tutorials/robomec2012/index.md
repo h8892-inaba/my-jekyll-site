@@ -232,7 +232,7 @@ Windows推奨ですが、Linuxでも実習可能です。
 
 ### 実習で必要なファイル
 
-- [RTC.xml](http://www.openrtm.org/openrtm/sites/default/files/4965/RTC.xml)
+- [RTC.xml](./RTC.xml)
 
 ### Linuxで必要なソフトウエア
 

@@ -1,0 +1,1029 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Building from Source (C++ Version) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Building from Source (C++ Version)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/installation/install_2_0/install_windows_2_0/build_source_windows_2_0/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/installation/install_2_0/install_windows_2_0/build_source_windows_2_0/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Building from Source (C++ Version)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Building from Source (C++ Version)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/installation/install_2_0/install_windows_2_0/build_source_windows_2_0/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/install_2_0/install_windows_2_0/build_source_windows_2_0/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/install_2_0/install_windows_2_0/build_source_windows_2_0/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Building from Source (C++ Version) <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/install_2_0/install_windows_2_0/build_source_windows_2_0/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/installation/install_2_0/install_windows_2_0/build_source_windows_2_0/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#required-software-and-libraries">Required Software and Libraries</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#build-and-installation-commands">Build and Installation Commands</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#batch-processing-using-a-script">Batch Processing Using a Script</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#cxx_src_buildbat">cxx_src_build.bat</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#reference-build-script-for-msi-generation">Reference: Build Script for MSI Generation</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: Building from Source (C++ Version) -->
+
+<p>If you want to modify the OpenRTM-aist core and use it on Windows, you can obtain the OpenRTM-aist source code and build it yourself. Since OpenRTM-aist 2.0, CMake is supported, so the procedure differs from that used for versions up to 1.2.</p>
+
+<p>#contents</p>
+
+<!-- ------------------------------------------------------------ -->
+
+<h2 id="required-software-and-libraries">Required Software and Libraries</h2>
+
+<p>The following software is required. For details, see <a href="/my-jekyll-site/en/doc/installation/install_2_0/install_windows_2_0/install_2_0">Installing OpenRTM-aist 2.0 on Windows</a>.</p>
+
+<ul>
+  <li>Visual Studio</li>
+  <li>Python</li>
+  <li>CMake</li>
+  <li>Doxygen &amp; Graphviz (if you also want to build documentation)</li>
+</ul>
+
+<p>The omniORB library is also required.</p>
+
+<ul>
+  <li>omniORB 4.2.5 (as of June 2022)</li>
+</ul>
+
+<p>Prebuilt binary packages provided by openrtm.org are available at the link below under names such as omniORB-4.2.5-x64-vc14-pyXX.zip.</p>
+
+<p>Replace XX with the version of Python you have installed, download the appropriate package, and extract it to a suitable location (C:\workspace\omniORB is used in the examples below).</p>
+
+<ul>
+  <li><a href="https://openrtm.org/pub/omniORB/win32/omniORB-4.2.5/">Binary Packages Provided by openrtm.org</a></li>
+</ul>
+
+<p>For information on building with other libraries, see <a href="/my-jekyll-site/en/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build">RT System Development (Advanced) - Building OpenRTM-aist (C++ Version) with CMake</a>.</p>
+
+<h2 id="build-and-installation-commands">Build and Installation Commands</h2>
+
+<p>Obtain the source code. For the latest OpenRTM-aist 2.0 source, use the master branch. For the OpenRTM-aist 2.0.0 release source, check out the v2.0.0 tag.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/OpenRTM/OpenRTM-aist
+ <span class="nb">cd </span>OpenRTM-aist
+ git checkout <span class="nt">-b</span> v200-src refs/tags/v2.0.0
+</code></pre></div></div>
+
+<p>Run CMake with the following options:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-DORB_ROOT</code> : Path to the downloaded and extracted omniORB</li>
+  <li><code class="language-plaintext highlighter-rouge">-G</code> : Visual Studio version (e.g., “Visual Studio 17 2022”, “Visual Studio 16 2019”)</li>
+  <li><code class="language-plaintext highlighter-rouge">-DCMAKE_INSTALL_PREFIX</code> : Installation destination path</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">mkdir </span>build
+ <span class="nb">cd </span>build
+ cmake <span class="nt">-DORB_ROOT</span><span class="o">=</span>C:/workspace/omniORB-4.2.5-x64-vc14-py310 <span class="nt">-G</span> <span class="s2">"Visual Studio 17 2022"</span> <span class="nt">-DCMAKE_INSTALL_PREFIX</span><span class="o">=</span>C:/workspace/openrtminstall ..
+</code></pre></div></div>
+
+<p>Next, execute the following command. If the message below is displayed at the end, the build was successful.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake <span class="nt">--build</span> <span class="nb">.</span> <span class="nt">--verbose</span> <span class="nt">--config</span> Release
+
+ Build succeeded.
+     0 Warning<span class="o">(</span>s<span class="o">)</span>
+     0 Error<span class="o">(</span>s<span class="o">)</span>
+</code></pre></div></div>
+
+<p>After a successful build, complete the installation with the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake <span class="nt">--build</span> <span class="nb">.</span> <span class="nt">--config</span> Release <span class="nt">--target</span> <span class="nb">install</span>
+</code></pre></div></div>
+
+<h2 id="batch-processing-using-a-script">Batch Processing Using a Script</h2>
+
+<p>The following script (<code class="language-plaintext highlighter-rouge">cxx_src_build.bat</code>) performs the entire process from downloading omniORB to building and installing OpenRTM-aist from source. Place it under the cloned OpenRTM-aist directory and execute it.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cd </span>OpenRTM-aist
+ cxx_src_build.bat <span class="o">&gt;</span> 1.log
+</code></pre></div></div>
+
+<p>Before running the script, modify the following three settings to match your environment:</p>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">set</span> <span class="kd">CMAKE_GENERATOR</span><span class="o">=</span><span class="s2">"Visual Studio 16 2019"</span>
+ <span class="kd">set</span> <span class="kd">PY_VERSION</span><span class="o">=</span><span class="m">39</span>    ... <span class="kd">Specify</span> <span class="kd">one</span> <span class="kd">of</span> <span class="m">37</span><span class="o">,</span> <span class="m">38</span><span class="o">,</span> <span class="m">39</span><span class="o">,</span> <span class="kd">or</span> <span class="m">310</span>
+ <span class="kd">set</span> <span class="kd">INSTALL_PREFIX</span><span class="o">=</span><span class="kd">C</span>:\localRTM<span class="na">-test
+</span></code></pre></div></div>
+
+<h3 id="cxx_src_buildbat">cxx_src_build.bat</h3>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> @echo <span class="na">off</span>
+ <span class="c">@rem</span>
+ <span class="c">@rem ---------- Environment-specific settings (begin) -------</span>
+ <span class="kd">set</span> <span class="kd">CMAKE_GENERATOR</span><span class="o">=</span><span class="s2">"Visual Studio 16 2019"</span>
+ <span class="kd">set</span> <span class="kd">PY_VERSION</span><span class="o">=</span><span class="m">39</span>
+ <span class="kd">set</span> <span class="kd">INSTALL_PREFIX</span><span class="o">=</span><span class="kd">C</span>:\localRTM<span class="na">-test
+ </span><span class="c">@rem ---------- Environment-specific settings (end) -------</span>
+ <span class="kd">set</span> <span class="kd">OMNI_VERSION</span><span class="o">=</span><span class="m">4</span>.2.5
+ <span class="kd">set</span> <span class="kd">VC_VERSION</span><span class="o">=</span><span class="kd">vc14</span>
+ <span class="k">if</span> <span class="ow">exist</span> <span class="nv">%INSTALL_PREFIX%</span> <span class="nb">rmdir</span> <span class="na">/s/q </span><span class="nv">%INSTALL_PREFIX%</span>
+ <span class="c">@rem</span>
+ <span class="c">@rem Convert "\" in paths to "/"</span>
+ <span class="kd">set</span> <span class="kd">current_dir</span><span class="o">=</span><span class="vm">%~dp0</span>
+ <span class="kd">set</span> <span class="kd">RTM_ROOT</span><span class="o">=</span><span class="vm">%current</span>_dir:\<span class="o">=</span>/<span class="err">%</span>
+ <span class="kd">set</span> <span class="kd">INSTALL_PREFIX</span><span class="o">=</span><span class="vm">%INSTALL</span>_PREFIX:\<span class="o">=</span>/<span class="err">%</span>
+ <span class="c">@rem</span>
+ <span class="c">@rem omniORB download</span>
+ <span class="kd">set</span> <span class="kd">base_omni_url</span><span class="o">=</span><span class="s2">"https://openrtm.org/pub/omniORB/win32/omniORB-</span><span class="nv">%OMNI_VERSION%</span><span class="s2">/"</span>
+ <span class="kd">set</span> <span class="kd">OMNIORB_DIR</span><span class="o">=</span><span class="kd">omniORB</span><span class="o">-</span><span class="nv">%OMNI_VERSION%</span><span class="na">-x</span><span class="m">64</span><span class="o">-</span><span class="nv">%VC_VERSION%</span><span class="na">-py</span><span class="nv">%PY_VERSION%</span>
+ <span class="kd">set</span> <span class="kd">OMNIORB_ZIP</span><span class="o">=</span><span class="nv">%OMNIORB_DIR%</span>.zip
+ <span class="kd">set</span> <span class="kd">OMNIORB_URL</span><span class="o">=</span><span class="nv">%base_omni_url%</span>/<span class="nv">%OMNIORB_ZIP%</span>
+ <span class="k">if</span> <span class="ow">not</span> <span class="ow">exist</span> <span class="nv">%OMNIORB_ZIP%</span> <span class="o">(</span>
+   <span class="kd">powershell</span> <span class="nb">wget</span> <span class="na">-O </span><span class="nv">%OMNIORB_ZIP%</span> <span class="nv">%OMNIORB_URL%</span>
+ <span class="o">)</span>
+ <span class="k">if</span> <span class="ow">exist</span> <span class="nv">%OMNIORB_DIR%</span> <span class="nb">rmdir</span> <span class="na">/s/q </span><span class="nv">%OMNIORB_DIR%</span>
+ <span class="kd">powershell</span> <span class="kd">Expand</span><span class="na">-Archive </span>.\<span class="nv">%OMNIORB_ZIP%</span> <span class="na">-DestinationPath </span>.\\
+
+ <span class="kd">set</span> <span class="kd">OMNIORB_ROOT</span><span class="o">=</span><span class="nv">%RTM_ROOT%</span>/<span class="nv">%OMNIORB_DIR%</span>
+ <span class="c">@rem</span>
+ <span class="c">@rem set cmake parameter</span>
+ <span class="kd">set</span> <span class="kd">CMAKE_OPT</span><span class="o">=</span><span class="na">-DORB</span>_ROOT<span class="o">=</span><span class="nv">%OMNIORB_ROOT%</span> <span class="se">^
+</span></code></pre></div></div>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="na">-DCMAKE</span>_INSTALL_PREFIX<span class="o">=</span><span class="nv">%INSTALL_PREFIX%</span> <span class="se">^
+</span>   <span class="na">-G </span><span class="nv">%CMAKE_GENERATOR%</span> <span class="se">^
+</span>   <span class="na">-A </span><span class="kd">x64</span> ..
+</code></pre></div></div>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">call</span> <span class="nl">:CMAKE</span>_Release
+ <span class="k">exit</span> <span class="na">/b
+ </span><span class="c">@rem</span>
+</code></pre></div></div>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nl">:CMAKE</span>_Release
+</code></pre></div></div>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">if</span> <span class="ow">exist</span> <span class="kd">build</span><span class="na">-release </span><span class="nb">rmdir</span> <span class="na">/s/q </span><span class="kd">build</span><span class="na">-release
+ </span><span class="nb">mkdir</span> <span class="kd">build</span><span class="na">-release
+ </span><span class="nb">cd</span> <span class="kd">build</span><span class="na">-release
+ </span><span class="kd">cmake</span> <span class="nv">%CMAKE_OPT%</span>
+ <span class="kd">cmake</span> <span class="na">--build </span>. <span class="na">--verbose --config </span><span class="kd">Release</span>
+ <span class="kd">cmake</span> <span class="na">--install </span>.
+ <span class="nb">cd</span> ..
+ <span class="k">exit</span> <span class="na">/b
+</span></code></pre></div></div>
+
+<h2 id="reference-build-script-for-msi-generation">Reference: Build Script for MSI Generation</h2>
+
+<p>The following build script is used to create MSM files (for VC2019 and VC2022) to be included in MSI installers.</p>
+
+<p>The following libraries are used:</p>
+
+<ul>
+  <li>Boost Library 1.78.0</li>
+  <li>OpenSSL 3.0.1</li>
+  <li>Fluent Bit v1.8.9 (built from source)</li>
+</ul>
+
+<p>OpenRTM-aist is built in both Release and Debug configurations. Although omniORB binaries built with VC14 work correctly, VC16-specific binaries are prepared and used.</p>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> @echo <span class="na">off</span>
+ <span class="c">@rem</span>
+ <span class="kd">set</span> <span class="kd">CMAKE_GENERATOR</span><span class="o">=</span><span class="s2">"Visual Studio 16 2019"</span>
+ <span class="kd">set</span> <span class="kd">VC_VERSION</span><span class="o">=</span><span class="kd">vc16</span>
+ <span class="kd">set</span> <span class="kd">SSL_VC_VERSION</span><span class="o">=</span><span class="kd">vc14</span>
+ <span class="kd">set</span> <span class="kd">PY_VERSION</span><span class="o">=</span><span class="m">39</span>
+ <span class="kd">set</span> <span class="kd">INSTALL_PREFIX</span><span class="o">=</span><span class="kd">C</span>:\localRTM
+ <span class="kd">set</span> <span class="kd">OMNI_VERSION</span><span class="o">=</span><span class="m">4</span>.2.5
+ <span class="kd">set</span> <span class="kd">SSL_VERSION</span><span class="o">=</span><span class="m">3</span>.0.1
+ <span class="kd">set</span> <span class="kd">BOOST_PATH</span><span class="o">=</span><span class="kd">C</span>:\local\boost_1_78_0
+ <span class="kd">set</span> <span class="kd">FLB_ROOT</span><span class="o">=</span><span class="kd">C</span>:\localFLB
+ <span class="c">@rem</span>
+ <span class="k">if</span> <span class="ow">exist</span> <span class="nv">%INSTALL_PREFIX%</span> <span class="nb">rmdir</span> <span class="na">/s/q </span><span class="nv">%INSTALL_PREFIX%</span>
+ <span class="c">@rem ------------</span>
+ <span class="c">@rem Convert "\" in paths to "/"</span>
+ <span class="kd">set</span> <span class="kd">current_dir</span><span class="o">=</span><span class="vm">%~dp0</span>
+ <span class="kd">set</span> <span class="kd">RTM_ROOT</span><span class="o">=</span><span class="vm">%current</span>_dir:\<span class="o">=</span>/<span class="err">%</span>
+ <span class="kd">set</span> <span class="kd">BOOST_PATH</span><span class="o">=</span><span class="vm">%BOOST</span>_PATH:\<span class="o">=</span>/<span class="err">%</span>
+ <span class="kd">set</span> <span class="kd">INSTALL_PREFIX</span><span class="o">=</span><span class="vm">%INSTALL</span>_PREFIX:\<span class="o">=</span>/<span class="err">%</span>
+ <span class="kd">set</span> <span class="kd">FLB_ROOT</span><span class="o">=</span><span class="vm">%FLB</span>_ROOT:\<span class="o">=</span>/<span class="err">%</span>
+ <span class="c">@rem ------------</span>
+ <span class="c">@rem omniORB download</span>
+ <span class="kd">set</span> <span class="kd">base_omni_url</span><span class="o">=</span><span class="s2">"https://openrtm.org/pub/omniORB/win32/omniORB-</span><span class="nv">%OMNI_VERSION%</span><span class="s2">/"</span>
+ <span class="kd">set</span> <span class="kd">OMNIORB_DIR</span><span class="o">=</span><span class="kd">omniORB</span><span class="o">-</span><span class="nv">%OMNI_VERSION%</span><span class="na">-x</span><span class="m">64</span><span class="o">-</span><span class="nv">%VC_VERSION%</span><span class="na">-py</span><span class="nv">%PY_VERSION%</span>
+ <span class="kd">set</span> <span class="kd">OMNIORB_ZIP</span><span class="o">=</span><span class="nv">%OMNIORB_DIR%</span>.zip
+ <span class="kd">set</span> <span class="kd">OMNIORB_URL</span><span class="o">=</span><span class="nv">%base_omni_url%</span>/<span class="nv">%OMNIORB_ZIP%</span>
+ <span class="k">if</span> <span class="ow">not</span> <span class="ow">exist</span> <span class="nv">%OMNIORB_ZIP%</span> <span class="o">(</span>
+   <span class="kd">powershell</span> <span class="nb">wget</span> <span class="na">-O </span><span class="nv">%OMNIORB_ZIP%</span> <span class="nv">%OMNIORB_URL%</span>
+ <span class="o">)</span>
+ <span class="k">if</span> <span class="ow">exist</span> <span class="nv">%OMNIORB_DIR%</span> <span class="nb">rmdir</span> <span class="na">/s/q </span><span class="nv">%OMNIORB_DIR%</span>
+ <span class="kd">powershell</span> <span class="kd">Expand</span><span class="na">-Archive </span>.\<span class="nv">%OMNIORB_ZIP%</span> <span class="na">-DestinationPath </span>.\\
+</code></pre></div></div>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">set</span> <span class="kd">OMNIORB_ROOT</span><span class="o">=</span><span class="nv">%RTM_ROOT%</span>/<span class="nv">%OMNIORB_DIR%</span>
+ <span class="c">@rem ------------</span>
+ <span class="c">@rem OpenSSL download</span>
+ <span class="kd">set</span> <span class="kd">base_ssl_url</span><span class="o">=</span><span class="s2">"https://openrtm.org/pub/OpenSSL/</span><span class="nv">%SSL_VERSION%</span><span class="s2">"</span>
+ <span class="kd">set</span> <span class="kd">OPENSSL_ZIP</span><span class="o">=</span><span class="kd">openssl</span><span class="o">-</span><span class="nv">%SSL_VERSION%</span><span class="na">-win</span><span class="m">64</span><span class="o">-</span><span class="nv">%SSL_VC_VERSION%</span>.zip
+ <span class="kd">set</span> <span class="kd">OPENSSL_URL</span><span class="o">=</span><span class="nv">%base_ssl_url%</span>/<span class="nv">%OPENSSL_ZIP%</span>
+ <span class="k">if</span> <span class="ow">not</span> <span class="ow">exist</span> <span class="nv">%OPENSSL_ZIP%</span> <span class="o">(</span>
+   <span class="kd">powershell</span> <span class="nb">wget</span> <span class="na">-O </span><span class="nv">%OPENSSL_ZIP%</span> <span class="nv">%OPENSSL_URL%</span>
+ <span class="o">)</span>
+ <span class="k">if</span> <span class="ow">exist</span> <span class="kd">OpenSSL</span> <span class="nb">rmdir</span> <span class="na">/s/q </span><span class="kd">OpenSSL</span>
+ <span class="kd">powershell</span> <span class="kd">Expand</span><span class="na">-Archive </span>.\<span class="nv">%OPENSSL_ZIP%</span> <span class="na">-DestinationPath </span>.\\
+</code></pre></div></div>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">set</span> <span class="kd">SSL_ROOT</span><span class="o">=</span><span class="nv">%RTM_ROOT%</span><span class="kd">OpenSSL</span><span class="na">/build
+ </span><span class="c">@rem ------------</span>
+ <span class="c">@rem set cmake parameter</span>
+ <span class="kd">set</span> <span class="kd">CMAKE_OPT</span><span class="o">=</span><span class="na">-DRTM</span>_VC_VER<span class="o">=</span><span class="nv">%VC_VERSION%</span> <span class="se">^
+</span></code></pre></div></div>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="na">-DORB</span>_ROOT<span class="o">=</span><span class="nv">%OMNIORB_ROOT%</span> <span class="se">^
+</span>   <span class="na">-DCORBA</span><span class="o">=</span><span class="kd">omniORB</span> <span class="se">^
+</span>   <span class="na">-DSSL</span>_ENABLE<span class="o">=</span><span class="kd">ON</span> <span class="se">^
+</span>   <span class="na">-DOPENSSL</span>_ROOT<span class="o">=</span><span class="nv">%SSL_ROOT%</span> <span class="se">^
+</span>   <span class="na">-DCMAKE</span>_INSTALL_PREFIX<span class="o">=</span><span class="nv">%INSTALL_PREFIX%</span> <span class="se">^
+</span>   <span class="na">-DWINDOWS</span>_MSM_BUILD<span class="o">=</span><span class="kd">ON</span> <span class="se">^
+</span>   <span class="na">-DBOOST</span>_ROOT<span class="o">=</span><span class="nv">%BOOST_PATH%</span> <span class="se">^
+</span>   <span class="na">-DFLUENTBIT</span>_ENABLE<span class="o">=</span><span class="kd">ON</span> <span class="se">^
+</span>   <span class="na">-DFLUENTBIT</span>_ROOT<span class="o">=</span><span class="nv">%FLB_ROOT%</span> <span class="se">^
+</span>   <span class="na">-G </span><span class="nv">%CMAKE_GENERATOR%</span> <span class="se">^
+</span>   <span class="na">-A </span><span class="kd">x64</span> ..
+</code></pre></div></div>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">call</span> <span class="nl">:CMAKE</span>_Debug
+ <span class="k">call</span> <span class="nl">:CMAKE</span>_Release
+ <span class="k">exit</span> <span class="na">/b
+ </span><span class="c">@rem ------------</span>
+</code></pre></div></div>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nl">:CMAKE</span>_Release
+</code></pre></div></div>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">if</span> <span class="ow">exist</span> <span class="kd">build</span><span class="na">-release </span><span class="nb">rmdir</span> <span class="na">/s/q </span><span class="kd">build</span><span class="na">-release
+ </span><span class="nb">mkdir</span> <span class="kd">build</span><span class="na">-release
+ </span><span class="nb">cd</span> <span class="kd">build</span><span class="na">-release
+ </span><span class="kd">cmake</span> <span class="nv">%CMAKE_OPT%</span>
+ <span class="kd">cmake</span> <span class="na">--build </span>. <span class="na">--verbose --config </span><span class="kd">Release</span>
+ <span class="kd">cmake</span> <span class="na">--install </span>.
+ <span class="nb">cd</span> ..
+ <span class="k">exit</span> <span class="na">/b
+ </span><span class="c">@rem ------------</span>
+</code></pre></div></div>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nl">:CMAKE</span>_Debug
+</code></pre></div></div>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">if</span> <span class="ow">exist</span> <span class="kd">build</span><span class="na">-debug </span><span class="nb">rmdir</span> <span class="na">/s/q </span><span class="kd">build</span><span class="na">-debug
+ </span><span class="nb">mkdir</span> <span class="kd">build</span><span class="na">-debug
+ </span><span class="nb">cd</span> <span class="kd">build</span><span class="na">-debug
+ </span><span class="kd">cmake</span> <span class="nv">%CMAKE_OPT%</span>
+ <span class="kd">cmake</span> <span class="na">--build </span>. <span class="na">--verbose --config </span><span class="kd">Debug</span>
+ <span class="kd">cmake</span> <span class="na">--install </span>. <span class="na">--config </span><span class="kd">Debug</span>
+ <span class="nb">cd</span> ..
+ <span class="k">exit</span> <span class="na">/b
+</span></code></pre></div></div>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

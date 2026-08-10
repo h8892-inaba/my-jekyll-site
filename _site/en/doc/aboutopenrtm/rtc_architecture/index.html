@@ -1,0 +1,967 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>RT Component Architecture | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="RT Component Architecture" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/aboutopenrtm/rtc_architecture/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/aboutopenrtm/rtc_architecture/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="RT Component Architecture" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"RT Component Architecture","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/aboutopenrtm/rtc_architecture/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtc_architecture/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtc_architecture/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>RT Component Architecture <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtc_architecture/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/aboutopenrtm/rtc_architecture/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#rt-component-framework">RT Component Framework</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#rt-component-architecture">RT Component Architecture</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#metadata-acquisition">Metadata Acquisition</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#activity">Activity</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#execution-context">Execution Context</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#data-ports">Data Ports</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#service-ports">Service Ports</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#configuration">Configuration</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: RT Component Architecture -->
+<p>#contents</p>
+
+<h2 id="rt-component-framework">RT Component Framework</h2>
+
+<p>The RT Component Framework is a framework for creating RT Components.</p>
+
+<p>When modularizing the elements that make up a robotic system, various levels of granularity can be considered. For example, modules may represent single-function devices such as motors and sensors, complex systems such as mobile robots and robot arms, or algorithms that perform various types of processing. Systems are constructed through the hierarchical integration of these modules.</p>
+
+<p>In RT Middleware, the essential software portion of these RT functional elements is referred to as the <em>core logic</em>. The RT Component Framework provides a mechanism for uniformly handling these modules by wrapping the core logic with a common interface.</p>
+
+<div align="center"><a href="./rtc_framework_ja_0.png"><img src="./rtc_framework_ja_0.png" style="width:30%;" /></a></div>
+<div align="center"><strong>RT Component Framework and Core Logic</strong></div>
+
+<p>As shown in the figure above, consider the example of componentizing a stereo vision algorithm. The program implementing the algorithm itself corresponds to the core logic. By implementing the stereo vision algorithm within an RT Component Framework configured with appropriate ports, a stereo vision component can be created.</p>
+
+<p>A module in which a component developer implements core logic based on the component framework and integrates it into a system is called an RT Component.</p>
+
+<p>The RT Component Framework hides the implementation of common interfaces from both component developers and system integrators who build systems by combining components. This allows component developers to focus on implementing the core logic, while integrators can concentrate on overall system design without being concerned with implementation details.</p>
+
+<h2 id="rt-component-architecture">RT Component Architecture</h2>
+
+<p>RT systems must coordinate processing at various levels, ranging from low-level sensor processing and actuator control to high-level perception, decision making, and behavior control.</p>
+
+<p>Low-level control programs require programming languages capable of meeting performance and real-time requirements, while high-level programs benefit from languages that provide higher abstraction and expressiveness.</p>
+
+<p>In addition, modern RT systems are increasingly composed of multiple CPUs, requiring support for parallel execution and network-based cooperation.</p>
+
+<p>To modularize these functional elements, RT Components provide a distributed component framework that supports modularization at various levels of granularity and can operate across different programming languages and operating systems.</p>
+
+<p>The figure below illustrates the basic architecture of an RTC. The main functions of an RTC are described below.</p>
+
+<div align="center"><a href="./rtc_architecture_ja.png"><img src="./rtc_architecture_ja.png" style="width:30%;" /></a></div>
+<div align="center"><strong>RT Component Architecture</strong></div>
+
+<h3 id="metadata-acquisition">Metadata Acquisition</h3>
+
+<p>RTCs provide an interface for acquiring metadata (RTC Profiles), referred to as an introspection function.</p>
+
+<p>An RTC Profile is a collection of information describing the characteristics of a component, such as the component name and the profiles of its ports.</p>
+
+<p>This capability is essential when dynamically configuring systems at runtime.</p>
+
+<blockquote>
+  <p>Introspection: A mechanism for obtaining metadata about objects or components. Although definitions vary, it is similar to Java Reflection. In the OMG RTC specification, this capability is defined as <em>introspection</em>.</p>
+</blockquote>
+
+<div align="center"><a href="./rtc_arch_introspection_ja.png"><img src="./rtc_arch_introspection_ja.png" style="width:40%;" /></a></div>
+<div align="center"><strong>Metadata Acquisition</strong></div>
+
+<h3 id="activity">Activity</h3>
+
+<p>An Activity is the mechanism that executes the primary logic within a component.</p>
+
+<p>For unified RTC management, common states such as Inactive (OFF), Active (ON), and Error are defined.</p>
+
+<p>RTC developers create RTCs primarily by implementing desired functionality in functions (callback functions) assigned to each state and state-transition event.</p>
+
+<div align="center"><a href="./rtc_arch_activity_ja.png"><img src="./rtc_arch_activity_ja.png" style="width:40%;" /></a></div>
+<div align="center"><strong>Activity and Execution Context</strong></div>
+
+<h3 id="execution-context">Execution Context</h3>
+
+<p>The callback functions that make up an Activity are executed by a thread called an Execution Context (EC).</p>
+
+<p>ECs can be dynamically attached to or detached from RTCs. A single EC may be attached to multiple RTCs and execute them synchronously in sequence.</p>
+
+<p>It is also possible to replace an EC with a real-time-capable EC, enabling real-time execution of RTCs.</p>
+
+<h3 id="data-ports">Data Ports</h3>
+
+<p>Data-oriented ports used for continuous data transmission and reception.</p>
+
+<p>There are two types of Data Ports:</p>
+
+<ul>
+  <li>Input Ports (InPort)</li>
+  <li>Output Ports (OutPort)</li>
+</ul>
+
+<p>As long as the data types are compatible, components can be connected and communicate over a network regardless of differences in programming language or operating system.</p>
+
+<div align="center"><a href="./rtc_arch_dataport_ja.png"><img src="./rtc_arch_dataport_ja.png" style="width:40%;" /></a></div>
+<div align="center"><strong>Data Ports</strong></div>
+
+<h3 id="service-ports">Service Ports</h3>
+
+<p>Ports used to provide and consume command-level functionality.</p>
+
+<p>Service Ports support user-defined Providers (Provided Interfaces) and Consumers (Required Interfaces).</p>
+
+<ul>
+  <li>A <strong>Provided Interface</strong> exposes functionality to external components.</li>
+  <li>A <strong>Required Interface</strong> requests and uses functionality provided by external components.</li>
+</ul>
+
+<p>Like Data Ports, Service Ports can connect and invoke functions across different languages and operating systems as long as the interface types are compatible.</p>
+
+<div align="center"><a href="./rtc_arch_serviceport_ja.png"><img src="./rtc_arch_serviceport_ja.png" style="width:40%;" /></a></div>
+<div align="center"><strong>Service Ports</strong></div>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>A mechanism that allows user-defined parameters to be modified externally at runtime.</p>
+
+<p>Configurations can contain multiple parameter sets, which can be switched collectively.</p>
+
+<p>By making parameters configurable in advance, RTCs can be reused in a variety of systems.</p>
+
+<div align="center"><a href="./rtc_arch_configuration_ja.png"><img src="./rtc_arch_configuration_ja.png" style="width:40%;" /></a></div>
+<div align="center"><strong>Configuration</strong></div>
+
+<p>In general, the lower levels of RT systems consist primarily of fine-grained, data-oriented, tightly coupled subsystems such as servo controllers. In contrast, higher-level layers responsible for decision making and behavior control are typically composed of coarse-grained, service-oriented subsystems.</p>
+
+<p>Because RTCs provide a common framework that supports modularization at a wide range of granularities, the inter-layer coupling issues commonly found in hierarchical frameworks are avoided.</p>
+
+<p>Transparent cooperation among RTCs running on different programming languages and operating systems is achieved through CORBA (Common Object Request Broker Architecture), the standard distributed object middleware specification.</p>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

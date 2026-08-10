@@ -119,7 +119,7 @@ Configure が正常終了したら、[Generate] ボタンをクリックしま�
 パッケージ生成には、CMake に同梱されている cpack と Wix を使用していますが、 cpack は、Wix に対応しておらず、通常のままですと、パッケージを生成することができません。
 その対応として、以下ファイルを展開して、C:\Program Files\CMake 2.8 のものと差し替えてください。
 
-[CMake patch (for Wix 3.0)](http://www.openrtm.org/openrtm/sites/default/files/4623/cmake-2.8-WiX-patch_v30.zip)
+[CMake patch (for Wix 3.0)](./cmake-2.8-WiX-patch_v30.zip)
 
 ### doxygen の実行
 ソリューションエクスプローラで「doxygen」を選び、右クリックします。

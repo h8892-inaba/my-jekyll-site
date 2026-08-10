@@ -174,7 +174,7 @@ Windows推奨ですが、Linuxでも実習可能です。
   - cmake-2.8-WiX-patch\share\cmake-2.8\Modules\CPackWIX.cmakeをC:\Program Files\CMake 2.8\share\cmake-2.8\Modulesにコピー（上書き）する。
 
 - 第4部で使用するファイル
-  - [RTC.xml](http://www.openrtm.org/openrtm/sites/default/files/4597/RTC.xml)
+  - [RTC.xml](./RTC.xml)
 
 
 ## 講習会の様子

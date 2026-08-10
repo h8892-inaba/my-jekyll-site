@@ -1,0 +1,1792 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Creating an Image Processing Component (Ubuntu 16.04, OpenRTM-aist-1.1.2-RELEASE, OpenRTP-1.1.2, CMake-3.5.1, Code::Blocks-16.01) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Creating an Image Processing Component (Ubuntu 16.04, OpenRTM-aist-1.1.2-RELEASE, OpenRTP-1.1.2, CMake-3.5.1, Code::Blocks-16.01)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/casestudy/opencv_comp_development/opencv_ubuntu_1604/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/casestudy/opencv_comp_development/opencv_ubuntu_1604/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Creating an Image Processing Component (Ubuntu 16.04, OpenRTM-aist-1.1.2-RELEASE, OpenRTP-1.1.2, CMake-3.5.1, Code::Blocks-16.01)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Creating an Image Processing Component (Ubuntu 16.04, OpenRTM-aist-1.1.2-RELEASE, OpenRTP-1.1.2, CMake-3.5.1, Code::Blocks-16.01)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/casestudy/opencv_comp_development/opencv_ubuntu_1604/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/opencv_comp_development/opencv_ubuntu_1604/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/opencv_comp_development/opencv_ubuntu_1604/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Creating an Image Processing Component (Ubuntu 16.04, OpenRTM-aist-1.1.2-RELEASE, OpenRTP-1.1.2, CMake-3.5.1, Code::Blocks-16.01) <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/opencv_comp_development/opencv_ubuntu_1604/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/casestudy/opencv_comp_development/opencv_ubuntu_1604/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#introduction">Introduction</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#what-is-opencv">What is OpenCV?</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rt-component-to-be-created">RT Component to be Created</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#converting-the-cvflip-function-into-an-rt-component">Converting the cv::flip Function into an RT Component</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#about-the-cvflip-function">About the cv::flip Function</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#component-specifications">Component Specifications</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#runtime-environment-and-development-environment">Runtime Environment and Development Environment</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#generating-the-flip-component-template">Generating the Flip Component Template</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#inport-profile">InPort Profile</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#outport-profile">OutPort Profile</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#flipmode">flipMode</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#generating-files-required-for-building-with-cmake">Generating Files Required for Building with CMake</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: Creating an Image Processing Component (Ubuntu 16.04, OpenRTM-aist-1.1.2-RELEASE, OpenRTP-1.1.2, CMake-3.5.1, Code::Blocks-16.01) -->
+<p>#contents</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This case study introduces how to componentize simple image processing.</p>
+
+<p>Using an existing camera component and image display component, a component is created that performs horizontal (or vertical) image flipping on images from a camera, and a system is built to display the flipped camera image.</p>
+
+<p>Although image flipping can be implemented easily, OpenCV is used here to simplify implementation further and create a more versatile RT Component.</p>
+
+<h3 id="what-is-opencv">What is OpenCV?</h3>
+
+<p><a href="http://opencv.jp/">OpenCV</a> is an open-source computer vision library that was formerly developed and released by Intel and is currently developed and maintained by Itseez.</p>
+
+<p>Excerpted from <a href="https://ja.wikipedia.org/wiki/OpenCV">Wikipedia</a>.</p>
+
+<h3 id="rt-component-to-be-created">RT Component to be Created</h3>
+
+<ul>
+  <li>Flip Component: An RT Component that performs image flipping using the <code class="language-plaintext highlighter-rouge">cv::flip()</code> function, one of the various image processing functions provided by the OpenCV library.</li>
+</ul>
+
+<h2 id="converting-the-cvflip-function-into-an-rt-component">Converting the cv::flip Function into an RT Component</h2>
+
+<p>An RT Component that flips input images horizontally or vertically and outputs the result is created using the OpenCV library’s <code class="language-plaintext highlighter-rouge">cv::flip</code> function. The development and execution environment assumes Code::Blocks (gcc compiler) running on Ubuntu.</p>
+
+<p>The target version of OpenRTM-aist is 1.1.2.</p>
+
+<p>The overall procedure is as follows.</p>
+
+<ul>
+  <li>Verify the runtime and development environments</li>
+  <li>Review OpenCV and the cv::flip function</li>
+  <li>Define the component specifications</li>
+  <li>Generate a source code template using RTCBuilder</li>
+  <li>Implement activity processing</li>
+  <li>Verify component operation</li>
+</ul>
+
+<h3 id="about-the-cvflip-function">About the cv::flip Function</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">cv::flip</code> function flips image data of type <code class="language-plaintext highlighter-rouge">cv::Mat</code>, which is commonly used in OpenCV, around the vertical axis (horizontal flip), horizontal axis (vertical flip), or both axes (horizontal and vertical flip).</p>
+
+<p>The function prototype and the meanings of its input/output arguments are as follows.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">void</span> <span class="n">flip</span><span class="p">(</span><span class="k">const</span> <span class="n">Mat</span><span class="o">&amp;</span> <span class="n">src</span><span class="p">,</span> <span class="n">Mat</span><span class="o">&amp;</span> <span class="n">dst</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flipMode</span><span class="p">)</span>
+
+ <span class="n">src</span>       <span class="n">Input</span> <span class="n">array</span>
+ <span class="n">dst</span>       <span class="n">Output</span> <span class="n">array</span><span class="p">.</span> <span class="n">If</span> <span class="n">dst</span><span class="o">=</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">src</span> <span class="n">is</span> <span class="n">overwritten</span><span class="p">.</span>
+ <span class="n">flipMode</span>  <span class="n">Specifies</span> <span class="n">how</span> <span class="n">the</span> <span class="n">array</span> <span class="n">is</span> <span class="n">flipped</span><span class="o">:</span>
+   <span class="n">flipMode</span> <span class="o">=</span> <span class="mi">0</span><span class="o">:</span> <span class="n">Flip</span> <span class="n">around</span> <span class="n">the</span> <span class="n">X</span> <span class="n">axis</span> <span class="p">(</span><span class="n">vertical</span> <span class="n">flip</span><span class="p">)</span>
+   <span class="n">flipMode</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">:</span> <span class="n">Flip</span> <span class="n">around</span> <span class="n">the</span> <span class="n">Y</span> <span class="n">axis</span> <span class="p">(</span><span class="n">horizontal</span> <span class="n">flip</span><span class="p">)</span>
+   <span class="n">flipMode</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">:</span> <span class="n">Flip</span> <span class="n">around</span> <span class="n">both</span> <span class="n">axes</span> <span class="p">(</span><span class="n">horizontal</span> <span class="n">and</span> <span class="n">vertical</span> <span class="n">flip</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="component-specifications">Component Specifications</h3>
+
+<p>The component to be created will be called the Flip Component.</p>
+
+<p>This component has an image data input port (InPort) and an output port (OutPort) for outputting the flipped image.</p>
+
+<p>The names of the ports are:</p>
+
+<ul>
+  <li>Input Port (InPort): <strong>originalImage</strong></li>
+  <li>Output Port (OutPort): <strong>flippedImage</strong></li>
+</ul>
+
+<p>OpenRTM-aist includes sample vision-related components that use OpenCV.</p>
+
+<p>The data ports of these components use the following <code class="language-plaintext highlighter-rouge">CameraImage</code> type for image input and output.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">struct</span> <span class="nc">CameraImage</span>
+     <span class="p">{</span>
+            <span class="c1">/// Time stamp.</span>
+            <span class="n">Time</span> <span class="n">tm</span><span class="p">;</span>
+            <span class="c1">/// Image pixel width.</span>
+            <span class="kt">unsigned</span> <span class="kt">short</span> <span class="n">width</span><span class="p">;</span>
+            <span class="c1">/// Image pixel height.</span>
+            <span class="kt">unsigned</span> <span class="kt">short</span> <span class="n">height</span><span class="p">;</span>
+            <span class="c1">/// Bits per pixel.</span>
+            <span class="kt">unsigned</span> <span class="kt">short</span> <span class="n">bpp</span><span class="p">;</span>
+            <span class="c1">/// Image format (e.g. bitmap, jpeg, etc.).</span>
+            <span class="n">string</span> <span class="n">format</span><span class="p">;</span>
+            <span class="c1">/// Scale factor for images, such as disparity maps,</span>
+            <span class="c1">/// where the integer pixel value should be divided</span>
+            <span class="c1">/// by this factor to get the real pixel value.</span>
+            <span class="kt">double</span> <span class="n">fDiv</span><span class="p">;</span>
+            <span class="c1">/// Raw pixel data.</span>
+            <span class="n">sequence</span><span class="o">&lt;</span><span class="n">octet</span><span class="o">&gt;</span> <span class="n">pixels</span><span class="p">;</span>
+     <span class="p">};</span>
+</code></pre></div></div>
+
+<p>This Flip component also uses the same <code class="language-plaintext highlighter-rouge">CameraImage</code> type for its InPort and OutPort so that it can exchange data with these sample components.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">CameraImage</code> type is defined in <code class="language-plaintext highlighter-rouge">InterfaceDataTypes.idl</code>, and in C++ it becomes available by including <code class="language-plaintext highlighter-rouge">InterfaceDataTypesSkel.h</code>.</p>
+
+<p>In addition, there are three possible image flip directions: horizontal flip, vertical flip, and horizontal+vertical flip.</p>
+
+<p>To allow this to be specified at runtime, the RT Component configuration mechanism will be used.</p>
+
+<p>The parameter name will be <strong>flipMode</strong>.</p>
+
+<p>To match the specification of the <code class="language-plaintext highlighter-rouge">cv::flip</code> function, <code class="language-plaintext highlighter-rouge">flipMode</code> is defined as type <code class="language-plaintext highlighter-rouge">int</code>, and the values 0, 1, and -1 are assigned to vertical flip, horizontal flip, and horizontal+vertical flip respectively.</p>
+
+<p>The image processing behavior for each value of <code class="language-plaintext highlighter-rouge">flipMode</code> is shown below.</p>
+
+<div align="center"><a href="cvFlip_and_FlipRTC.png"><img src="cvFlip_and_FlipRTC.png" width="60%;" /></a></div>
+<div align="center"><strong>Image Flip Patterns of the Flip Component for Each flipMode Setting</strong></div>
+
+<p>The specifications of the Flip component are summarized below.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Component Name</th>
+    <th>Flip</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">InPort</td>
+  </tr>
+  <tr>
+    <td>Port Name</td>
+    <td>originalImage</td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>CameraImage</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>Input image</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">OutPort</td>
+  </tr>
+  <tr>
+    <td>Port Name</td>
+    <td>flippedImage</td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>CameraImage</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>Flipped image</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">Configuration</td>
+  </tr>
+  <tr>
+    <td>Parameter Name</td>
+    <td>flipMode</td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>int</td>
+  </tr>
+  <tr>
+    <td>Default Value</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>Constraint</td>
+    <td>(0,-1,1)</td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td>radio</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td><strong>Flip Mode</strong><br /> Vertical Flip: 0 <br /> Horizontal Flip: 1 <br /> Horizontal and Vertical Flip: -1</td>
+  </tr>
+</table>
+
+<h3 id="runtime-environment-and-development-environment">Runtime Environment and Development Environment</h3>
+
+<p>A development environment is built on Linux (Ubuntu 16.04 is assumed here).</p>
+
+<p>Install using the installation script.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>wget http://svn.openrtm.org/OpenRTM-aist/tags/RELEASE_1_1_1/OpenRTM-aist/build/pkg_install_ubuntu.sh
+ <span class="nv">$ </span><span class="nb">sudo </span>sh pkg_install_ubuntu.sh
+</code></pre></div></div>
+
+<h4 id="installing-openrtp">Installing OpenRTP</h4>
+
+<p>Download and install the Linux version of OpenRTP (integrated environment for component development tools and system development tools) from <a href="/my-jekyll-site/en/download/tools/openrtp_1_1_2">this URL</a>.</p>
+
+<p>Java is also required to run OpenRTP, so install the <code class="language-plaintext highlighter-rouge">default-jre</code> package.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>apt-get <span class="nb">install </span>default-jre
+ <span class="nv">$ </span>wget http://openrtm.org/pub/openrtp/packages/1.1.2.v20160526/eclipse442-openrtp112v20160526-ja-linux-gtk-x86_64.tar.gz
+ <span class="nv">$ </span><span class="nb">tar </span>xvzf eclipse442-openrtp112v20160526-ja-linux-gtk-x86_64.tar.gz
+</code></pre></div></div>
+
+<!-- $ cd eclipse -->
+<!-- $ ./eclipse -->
+<!-- $ ./openrtp -->
+
+<p><span style="color:red;">After starting Eclipse, RTSystemEditor may not be able to connect to the Name Server. In that case, add your host name to the localhost entry in <code class="language-plaintext highlighter-rouge">/etc/hosts</code>.</span>;</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">hostname
+ </span>ubuntu1404 ← The host name is ubuntu1404
+ <span class="nv">$ </span><span class="nb">sudo </span>vi /etc/hosts
+</code></pre></div></div>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 127.0.0.1       localhost
+ Change it as follows:
+ 127.0.0.1       localhost ubuntu1404
+</code></pre></div></div>
+
+<h4 id="installing-cmake">Installing CMake</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>cmake cmake-gui
+</code></pre></div></div>
+
+<h4 id="installing-opencv-and-opencv-components">Installing OpenCV and OpenCV Components</h4>
+
+<p>Install OpenCV and the OpenCV components.</p>
+
+<p>First, install the OpenCV packages provided by Ubuntu as follows.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>libopencv-dev libcv2.4 libcvaux2.4 libhighgui2.4
+</code></pre></div></div>
+
+<p>Next, check out the source code from the repository and compile it manually.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>svn  co http://svn.openrtm.org/ImageProcessing/trunk/ImageProcessing/opencv/
+ <span class="nv">$ </span><span class="nb">cd </span>opencv
+ <span class="nv">$ </span><span class="nb">mkdir </span>work
+ <span class="nv">$ </span><span class="nb">cd </span>work
+ <span class="nv">$ </span>cmake ..
+ <span class="nv">$ </span>make
+ <span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install
+ </span>AffineComp                       FlipComp               RockPaperScissorsComp
+ Affine.so                        Flip.so                RockPaperScissors.so
+ BackGroundSubtractionSimpleComp  HistogramComp          RotateComp
+ BackGroundSubtractionSimple.so   Histogram.so           Rotate.so
+ BinarizationComp                 HoughComp              ScaleComp
+ Binarization.so                  Hough.so               Scale.so
+ CameraViewerComp                 ImageCalibrationComp   SepiaComp
+ CameraViewer.so                  ImageCalibration.so    Sepia.so
+ ChromakeyComp                    ImageSubstractionComp  SubStractCaptureImageComp
+ Chromakey.so                     ImageSubstraction.so   SubStractCaptureImage.so
+ DilationErosionComp              ObjectTrackingComp     TemplateComp
+ DilationErosion.so               ObjectTracking.so      Template.so
+ EdgeComp                         OpenCVCameraComp       TranslateComp
+ Edge.so                          OpenCVCamera.so        Translate.so
+ FindcontourComp                  PerspectiveComp
+ Findcontour.so                   Perspective.so
+</code></pre></div></div>
+
+<h4 id="installing-codeblocks">Installing Code::Blocks</h4>
+
+<p>Code::Blocks is an integrated development environment (IDE) that supports C/C++.</p>
+
+<p>It can be installed using the following command.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>codeblocks
+</code></pre></div></div>
+
+<p>If you want to install the latest version, enter the following commands.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>add-apt-repository ppa:damien-moore/codeblocks-stable
+ <span class="nv">$ </span><span class="nb">sudo </span>apt-get update
+ <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>codeblocks
+</code></pre></div></div>
+
+<h3 id="generating-the-flip-component-template">Generating the Flip Component Template</h3>
+
+<p>The Flip component template is generated using RTCBuilder.</p>
+
+<h4 id="starting-rtcbuilder">Starting RTCBuilder</h4>
+
+<p>In Eclipse, the folder used for development work is called the <strong>workspace</strong>, and in principle all generated files are stored under this folder.</p>
+
+<p>The workspace can be created anywhere that is accessible, but this tutorial assumes the following workspace.</p>
+
+<ul>
+  <li>/home/<username>/workspace</username></li>
+</ul>
+
+<p>First, start Eclipse.</p>
+
+<p>Move to the directory where OpenRTP was extracted and enter the following command.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>./openrtp
+</code></pre></div></div>
+
+<p>You will first be prompted to specify the workspace location. Specify the workspace shown above.</p>
+
+<div align="center"><a href="workspace_ubuntu.png"><img src="workspace_ubuntu.png" width="80%;" /></a></div>
+
+<p><br /></p>
+
+<p>A Welcome screen similar to the one below will appear.<br />
+Since the Welcome screen is not needed, click the [×] button in the upper-left corner to close it.
+<br /></p>
+
+<div align="center"><a href="install41.png"><img src="install41.png" width="60%;" /></a></div>
+<div align="center"><strong>Initial Eclipse Startup Screen</strong></div>
+
+<p>Click the [Open Perspective] button in the upper-right corner.</p>
+
+<div align="center"><a href="install42.png"><img src="install42.png" width="60%;" /></a></div>
+<div align="center"><strong>Switching Perspectives</strong></div>
+
+<p>Select <strong>RTC Builder</strong> and click the [OK] button to start RTCBuilder.</p>
+
+<div align="center"><a href="SelectRTCBuilder.png"><img src="SelectRTCBuilder.png" width="30%;" /></a></div>
+<div align="center"><strong>Selecting a Perspective</strong></div>
+
+<h4 id="creating-a-new-project">Creating a New Project</h4>
+
+<p>To create the Flip component, you must create a new project in RTCBuilder.</p>
+
+<p>Click the [Open New RTCBuilder Editor] icon in the upper-left corner.</p>
+
+<div align="center"><a href="CreateProject_0.png"><img src="CreateProject_0.png" width="60%;" /></a></div>
+<div align="center"><strong>Creating an RTC Builder Project</strong></div>
+
+<p>Enter the project name to create (<strong>Flip</strong> in this example) in the “Project Name” field and click [Finish].</p>
+
+<div align="center"><a href="RT-Component-BuilderProject_0.png"><img src="RT-Component-BuilderProject_0.png" width="60%;" /></a></div>
+
+<p>A project with the specified name is generated and added to the Package Explorer.</p>
+
+<div align="center"><a href="PackageExplolrer_0.png"><img src="PackageExplolrer_0.png" width="40%;" /></a></div>
+
+<p>Within the generated project, an RTC Profile XML file (<code class="language-plaintext highlighter-rouge">RTC.xml</code>) with default values is automatically generated.</p>
+
+<h4 id="starting-the-rtc-profile-editor">Starting the RTC Profile Editor</h4>
+
+<p>When <code class="language-plaintext highlighter-rouge">RTC.xml</code> is generated, the RTCBuilder editor associated with this project should open automatically.</p>
+
+<p>If it does not start, double-click <code class="language-plaintext highlighter-rouge">RTC.xml</code> in the Package Explorer.</p>
+
+<div align="center"><a href="Open_RTCBuilder_0.png"><img src="Open_RTCBuilder_0.png" width="60%;" /></a></div>
+
+<h4 id="entering-profile-information-and-generating-code">Entering Profile Information and Generating Code</h4>
+
+<p>First, select the <strong>Basic</strong> tab on the far left and enter the basic information.</p>
+
+<p>In addition to the Flip component specifications (name) defined earlier, enter information such as the description and version.</p>
+
+<p>Items with red labels are required.</p>
+
+<p>The remaining items may be left at their default values.</p>
+
+<table class="table-alt">
+<tr>
+<td>Module Name</td>
+<td>Flip</td>
+</tr>
+<tr>
+<td>Module Description</td>
+<td>Flip image component</td>
+</tr>
+<tr>
+<td>Version</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>Vendor Name</td>
+<td>AIST</td>
+</tr>
+<tr>
+<td>Module Category</td>
+<td>Category</td>
+</tr>
+<tr>
+<td>Component Type</td>
+<td>STATIC</td>
+</tr>
+<tr>
+<td>Activity Type</td>
+<td>PERIODIC</td>
+</tr>
+<tr>
+<td>Component Kind</td>
+<td>DataFlowComponent</td>
+</tr>
+<tr>
+<td>Maximum Number of Instances</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Execution Type</td>
+<td>PeriodicExecutionContext</td>
+</tr>
+<tr>
+<td>Execution Period</td>
+<td>0.0 <span style="color:RED;">(The figure below shows 1.0, but set this to 0.0.)</span></td>
+</tr>
+</table>
+
+<p><br /></p>
+
+<div align="center"><a href="Basic.png"><img src="Basic.png" width="70%;" /></a></div>
+<div align="center"><strong>Entering Basic Information</strong></div>
+
+<p><br /></p>
+
+<p>Next, select the <strong>Activity</strong> tab and specify the action callbacks to use.</p>
+
+<p>The Flip component uses the following callbacks:</p>
+
+<ul>
+  <li>onActivated()</li>
+  <li>onDeactivated()</li>
+  <li>onExecute()</li>
+</ul>
+
+<p>As shown in the figure below, first click ① <strong>onActivated</strong>, then select <strong>[ON]</strong> using radio button ②.</p>
+
+<p>Perform the same operation for <strong>onDeactivated</strong> and <strong>onExecute</strong>.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="Activity.png"><img src="Activity.png" width="70%;" /></a></div>
+<div align="center"><strong>Selecting Activity Callbacks</strong></div>
+
+<p><br /></p>
+
+<p>Next, select the <strong>Data Ports</strong> tab and enter the data port information.</p>
+
+<p>Enter the values below according to the specifications defined earlier.</p>
+
+<p>The variable names and display positions are optional and may be left unchanged.</p>
+
+<h3 id="inport-profile">InPort Profile</h3>
+
+<ul>
+  <li>Port Name: originalImage</li>
+  <li>Data Type: RTC::CameraImage</li>
+  <li>Variable Name: originalImage</li>
+  <li>Display Position: left</li>
+</ul>
+
+<h3 id="outport-profile">OutPort Profile</h3>
+
+<ul>
+  <li>Port Name: flippedImage</li>
+  <li>Data Type: RTC::CameraImage</li>
+  <li>Variable Name: flippedImage</li>
+  <li>Display Position: right</li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="DataPort_0.png"><img src="DataPort_0.png" width="70%;" /></a></div>
+<div align="center"><strong>Entering Data Port Information</strong></div>
+
+<p><br /></p>
+
+<p>Next, select the <strong>Configuration</strong> tab and enter the configuration information based on the specifications defined earlier.</p>
+
+<p>The constraint conditions and Widget settings are used when displaying component configuration parameters in RTSystemEditor, allowing values to be changed through GUI controls such as sliders, spin buttons, and radio buttons.</p>
+
+<p>Since <code class="language-plaintext highlighter-rouge">flipMode</code> was defined earlier to take only three possible values (-1, 0, and 1), a radio button will be used.</p>
+
+<h3 id="flipmode">flipMode</h3>
+
+<ul>
+  <li>Name: flipMode</li>
+  <li>Data Type: int</li>
+  <li>Default Value: 1</li>
+  <li>Variable Name: flipMode</li>
+  <li>Constraint: (-1, 0, 1)
+<span style="color:RED;">* (-1: horizontal and vertical flip, 0: vertical flip, 1: horizontal flip)</span></li>
+  <li>Widget: radio</li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="Configuration_0.png"><img src="Configuration_0.png" width="70%;" /></a></div>
+<div align="center"><strong>Entering Configuration Information</strong></div>
+
+<p><br /></p>
+
+<p>Next, select the <strong>Language / Environment</strong> tab and specify the programming language.</p>
+
+<p>Here, select <strong>C++</strong>.</p>
+
+<p>The language/environment fields have no default values. If you forget to specify the language, an error will occur during code generation, so be sure to specify it.</p>
+
+<p>For C++, the default build system is CMake. If you want RTCBuilder to directly generate old-style Code::Blocks projects, check <strong>[Use old build environment]</strong>.</p>
+
+<div align="center"><a href="Language_0.png"><img src="Language_0.png" width="70%;" /></a></div>
+<div align="center"><strong>Selecting the Programming Language</strong></div>
+
+<p><br /></p>
+
+<p>Finally, click the <strong>[Generate Code]</strong> button on the <strong>Basic</strong> tab to generate the component template.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="Generate_0.png"><img src="Generate_0.png" width="70%;" /></a></div>
+<div align="center"><strong>Generating the Template (Generate)</strong></div>
+
+<p><br /></p>
+
+<p>&amp;color(Red){ The generated code files are created in the workspace folder specified when Eclipse was started. You can check the current workspace from [File] → [Switch Workspace]. };</p>
+
+<h3 id="generating-files-required-for-building-with-cmake">Generating Files Required for Building with CMake</h3>
+
+<p>The code generated by RTC Builder includes a <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code> file for generating the various files required for building with CMake.</p>
+
+<p>By using CMake, project files, solution files for Visual Studio, Makefiles, and other build-related files can be generated automatically from <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code>.</p>
+
+<h4 id="editing-cmakeliststxt">Editing CMakeLists.txt</h4>
+
+<p>Open and edit <code class="language-plaintext highlighter-rouge">src/CMakeLists.txt</code> using gedit or another editor.</p>
+
+<p>Alternatively, in Eclipse, you can edit it by double-clicking <code class="language-plaintext highlighter-rouge">src/CMakeLists.txt</code> in the Package Explorer on the left side of the screen, or by dragging and dropping it into the editor.</p>
+
+<div align="center"><a href="EditCmakeLists_0.png"><img src="EditCmakeLists_0.png" width="70%;" /></a></div>
+<div align="center"><strong>Editing CMakeLists.txt</strong></div>
+
+<p>Since this component uses OpenCV, it is necessary to specify the OpenCV header include paths, libraries, and library search paths.</p>
+
+<p>Fortunately, OpenCV supports CMake, so simply adding/modifying the following two lines enables linking and use of the OpenCV libraries.</p>
+
+<ul>
+  <li>Modify <code class="language-plaintext highlighter-rouge">src/CMakeLists.txt</code>
+    <ul>
+      <li>Double-click <code class="language-plaintext highlighter-rouge">src/CMakeLists.txt</code> in Eclipse’s Package Explorer.</li>
+    </ul>
+  </li>
+  <li>Add <code class="language-plaintext highlighter-rouge">find_package(OpenCV REQUIRED)</code></li>
+  <li>Add <code class="language-plaintext highlighter-rouge">${OpenCV_LIBS}</code> to the first <code class="language-plaintext highlighter-rouge">target_link_libraries</code>
+    <ul>
+      <li>There are two <code class="language-plaintext highlighter-rouge">target_link_libraries</code> entries. The upper one specifies the DLL library, and the lower one specifies the executable library.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> set(comp_srcs Flip.cpp )
+ set(standalone_srcs FlipComp.cpp)
+ 
+ find_package(OpenCV REQUIRED) ← Add this line
+   ：omitted
+ add_dependencies(${PROJECT_NAME} ALL_IDL_TGT)
+ target_link_libraries(${PROJECT_NAME} ${OPENRTM_LIBRARIES} ${OpenCV_LIBS}) ← Add OpenCV_LIBS
+   ：omitted
+ add_executable(${PROJECT_NAME}Comp ${standalone_srcs}
+   ${comp_srcs} ${comp_headers} ${ALL_IDL_SRCS})
+ target_link_libraries(${PROJECT_NAME}Comp ${OPENRTM_LIBRARIES} ${OpenCV_LIBS}) ← Add OpenCV_LIBS
+</code></pre></div></div>
+
+<h4 id="using-cmake-cmake-gui">Using CMake (cmake-gui)</h4>
+
+<p>Use CMake to configure the build environment.</p>
+
+<p>First, start CMake (<code class="language-plaintext highlighter-rouge">cmake-gui</code>).</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ cmake-gui
+</code></pre></div></div>
+
+<div align="center"><a href="CMakeGUI0_0_ubuntu.png"><img src="CMakeGUI0_0_ubuntu.png" width="80%;" /></a></div>
+<div align="center"><strong>Starting CMake GUI and Specifying Directories</strong></div>
+
+<p>At the top of the screen there are text boxes similar to the following. Specify the location of the source code (where <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code> is located) and the build directory.</p>
+
+<ul>
+  <li><strong>Where is the source code</strong></li>
+  <li><strong>Where to build the binaries</strong></li>
+</ul>
+
+<p>The source code location is the directory where the Flip component source code was generated and where <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code> exists.</p>
+
+<p>By default, this is:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;workspace directory&gt;/Flip
+</code></pre></div></div>
+
+<p>The build directory is where project files, object files, and binaries used for building are stored.</p>
+
+<p>The location can be anywhere, but in this case it is recommended to specify a subdirectory of Flip with an easy-to-understand name, such as:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;workspace directory&gt;/Flip/build
+</code></pre></div></div>
+
+<table class="table-alt">
+  <tr>
+    <td><strong>Where is the source code</strong></td>
+    <td><code>/home/&lt;username&gt;/workspace/Flip</code></td>
+  </tr>
+  <tr>
+    <td><strong>Where to build the binaries</strong></td>
+    <td><code>/home/&lt;username&gt;/workspace/Flip/build</code></td>
+  </tr>
+</table>
+
+<p>After specifying the directories, click the <strong>Configure</strong> button at the bottom.</p>
+
+<p>A dialog like the one shown below will appear, where you specify the type of project to generate.</p>
+
+<p>This time, select <strong>CodeBlocks - Unix Makefiles</strong>.</p>
+
+<p>If you are not using Code::Blocks, select <strong>Unix Makefiles</strong>.</p>
+
+<div align="center"><a href="CMakeGUI1_0_ubuntu.png"><img src="CMakeGUI1_0_ubuntu.png" width="80%;" /></a></div>
+<div align="center"><strong>Selecting the Type of Project to Generate</strong></div>
+
+<p>If you do not use cmake-gui, you can generate the files using the following commands.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ mkdir build
+ $ cd build
+ $ cmake .. -G "CodeBlocks - Unix Makefiles"
+</code></pre></div></div>
+
+<p>When you click <strong>[Finish]</strong> in the dialog, Configure begins.</p>
+
+<p>If there are no problems, <strong>“Configuring done”</strong> will be displayed in the log window at the bottom. Then click the <strong>[Generate]</strong> button.</p>
+
+<p>When <strong>“Generating done”</strong> is displayed, generation of the project file (<code class="language-plaintext highlighter-rouge">.cbp</code>), Makefile, and related files is complete.</p>
+
+<p>Note that CMake generates cache files during the Configure stage. Therefore, if you change settings or modify the environment while troubleshooting, delete the cache via <strong>[File] &gt; [Delete Cache]</strong> and rerun Configure from the beginning.</p>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

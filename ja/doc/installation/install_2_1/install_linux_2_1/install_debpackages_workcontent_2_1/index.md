@@ -1,9 +1,9 @@
 ---
 layout: page
-title: OpenRTM-aist-2.0 debパッケージの詳しい内容
+title: OpenRTM-aist-2.1 debパッケージの詳しい内容
 ---
 
-<!-- OpenRTM-aist-2.0 debパッケージの詳しい内容 -->
+<!-- OpenRTM-aist-2.1 debパッケージの詳しい内容 -->
 
 #contents
 

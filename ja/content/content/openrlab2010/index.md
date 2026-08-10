@@ -181,7 +181,7 @@ OpenRTM-aist用のシステム構築ツールセットです。コマンドラ�
 
 以下からソースとVC9用のバイナリセットがダウンロードできます。
 
-[OpenCV_RTC.zip(ソース)](http://www.openrtm.org/openrtm/sites/default/files/158/OpenCVRTC-1.0.0.zip)
+[OpenCV_RTC.zip(ソース)](./OpenCVRTC-1.0.0.zip)
 
 <br>
 

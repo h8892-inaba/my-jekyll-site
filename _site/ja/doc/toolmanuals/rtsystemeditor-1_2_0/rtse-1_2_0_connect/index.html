@@ -1,0 +1,870 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>システムエディタ（ポート間の接続 編） | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="システムエディタ（ポート間の接続 編）" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_connect/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_connect/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="システムエディタ（ポート間の接続 編）" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"システムエディタ（ポート間の接続 編）","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_connect/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/en/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_connect/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/en/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_connect/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>システムエディタ（ポート間の接続 編） <div class="lang-switch"><a href="/my-jekyll-site/en/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_connect/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/toolmanuals/rtsystemeditor-1_2_0/rtse-1_2_0_connect/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#データポート間接続">データポート間接続</h3</a>
+          </li>
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+          <li class="toc-item toc-h3">
+            <a href="#サービスポート間接続">サービスポート間接続</h3</a>
+          </li>
+        
+      
+    
+
+    
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: システムエディタ（ポート間の接続 編） -->
+<p>#contents</p>
+
+<p>データポート間、サービスポート間の接続について説明します。</p>
+
+<h3 id="データポート間接続">データポート間接続</h3>
+<p>データポートの接続で、「InPort」と「OutPort」を接続します。これらの間をドラッグ＆ドロップでつなぐと以下のダイアログが表示されます。なお、初期表示時には「Buffer」の設定項目は隠れています。
+<br /></p>
+
+<div align="center"><a href="fig57DataConnectDialog.png"><img src="fig57DataConnectDialog.png" width="50%;" /></a></div>
+<div align="center"><strong>データポートのコネクタプロファイルダイアログ</strong></div>
+<p><br /></p>
+
+<p>ダイアログの項目と条件は以下のとおりです。
+<br /></p>
+
+<div align="center"><strong>データポート接続のダイアログ項目と必要条件</strong></div>
+<table class="table-alt">
+  <tr>
+    <th>№</th>
+    <th>ダイアログ項目名</th>
+    <th>ConnectorProfile</th>
+    <th>必要条件</th>
+  </tr>
+  <tr>
+    <td>①</td>
+    <td>Name</td>
+    <td>name</td>
+    <td>特になし</td>
+  </tr>
+  <tr>
+    <td>②</td>
+    <td>Data Type</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />dataport.data_type</td>
+    <td>このコネクタで接続されているデータポート間で送受信するデータ型を指定します。<br />それぞれのポートで互いに送受信可能なデータ型から選択します。ただし、Any を含む場合は相手ポートのどのような値も許容します。</td>
+  </tr>
+  <tr>
+    <td>③</td>
+    <td>Instance Type</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />dataport.interface_type</td>
+    <td>RTシステム設計者が想定する、もしくは RTC が動作する RTミドルウェア上でサポートされているインターフェース種別を指定します。<br />それぞれのポートで互いにサポートしているインターフェース種別から選択します。ただし、Any を含む場合は相手ポートのどのようなインターフェースも許容します。</td>
+  </tr>
+  <tr>
+    <td>④</td>
+    <td>Dataflow Type</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />dataport.dataflow_type</td>
+    <td>RTシステム設計者が想定する、もしくは RTC が動作する RTミドルウェア上でサポートされているデータフロー型を指定します。<br />それぞれのポートで互いにサポートしているデータフロー型から選択します。ただし、Any を含む場合は相手ポートのどのようなデータフローも許容します。</td>
+  </tr>
+  <tr>
+    <td>⑤</td>
+    <td>Subscription Type</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />dataport.subscription_type</td>
+    <td>[Dataflow Typeの値がPushの時に必要な条件]<br />RTシステム設計者が想定する、もしくはRTCが動作するRTミドルウェア上でサポートされているサブスクリプション種別を指定します。<br />それぞれのポートで互いにサポートしているサブスクリプション種別から選択します。ただし、Anyを含む場合は相手のどのようなサブスクリプション種別も許容します。</td>
+  </tr>
+  <tr>
+    <td>⑥</td>
+    <td>Push Rate(Hz)</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />dataport.push_interval</td>
+    <td>[Dataflow Typeの値が”Push”でかつSubscription Typeが”Periodic”の時に必要な条件]<br />サブスクリプション種別が「Periodic」な場合にデータの送信周期を指定します。送信周期は正数値（小数可）で指定します。</td>
+  </tr>
+  <tr>
+    <td>⑦</td>
+    <td>Push Policy</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />dataport.publisher.push_policy</td>
+    <td>データ送信ポリシー。[Dataflow Typeの値が”Push”でかつSubscription Typeが”Periodic”の時に必要な条件]all、fifo、skip、new から選択します。<br />**all**:バッファ内のデータを一括送信<br />**fifo**:バッファ内のデータをFIFOで１個ずつ送信<br />**skip**:バッファ内のデータを間引いて送信<br />**new**:バッファ内のデータの最新値を送信（古い値は捨てられます。）</td>
+  </tr>
+  <tr>
+    <td>⑧</td>
+    <td>Skip Count</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />dataport.publisher.skip_count</td>
+    <td>送信データスキップ数。[Push Policy の値が”skip”の時に必要な条件]バッファ内のデータがこの設定値で間引されて送信されます。</td>
+  </tr>
+  <tr>
+    <td>⑨</td>
+    <td>詳細</td>
+    <td>―</td>
+    <td>チェックボックスをチェックすると、入出力ポートのバッファの詳細設定項目が表示されます。<br />ダイアログの初期表示時は隠れています。</td>
+  </tr>
+  <tr>
+    <td>⑩<br />⑮</td>
+    <td>Buffer length<br />(OutPort/InPort)</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />buffer.length</td>
+    <td>バッファの長さ</td>
+  </tr>
+  <tr>
+    <td>⑪<br />⑯</td>
+    <td>Buffer full policy<br />(OutPort/InPort)</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />buffer.write.full_policy</td>
+    <td>バッファへのデータ書き込み時に、バッファフルだった場合の挙動。overwrite、do_nothing、block から選択します。<br />**overwrite**:データを上書きします。<br />**do_nothing**:何もしません。<br />**block**:ブロックします。<br />block を指定した場合、次の timeout 値を指定すれば、指定時間後書き込み不可能であればタイムアウトします。 デフォルトは  overwrite (上書き)です。</td>
+  </tr>
+  <tr>
+    <td>⑫<br />⑰</td>
+    <td>Buffer write timeout<br />(OutPort/InPort)</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />buffer.write.timeout</td>
+    <td>バッファへのデータ書き込み時に、タイムアウトアウトイベントを発生させるまでの時間（単位:秒）<br />デフォルトは 1.0 [sec]です。0.0を設定した場合はタイムアウトしません。</td>
+  </tr>
+  <tr>
+    <td>⑬<br />⑱</td>
+    <td>Buffer empty policy<br />(OutPort/InPort)</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />buffer.read.empty_policy</td>
+    <td>バッファからのデータ読み出し時に、バッファが空だった場合の挙動。readblock、do_nothing、block から選択します。<br />**readblock**:最後の要素を再読み出します。<br />**do_nothing**:何もしません。<br />**block**:ブロックします。<br />block を指定した場合、次の timeout 値を指定すれば、指定時間後読み出し不可能であればタイムアウトします。 デフォルトは readbackです。</td>
+  </tr>
+  <tr>
+    <td>⑭<br />⑲</td>
+    <td>Buffer read timeout<br />(OutPort/InPort)</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />buffer.read.timeout</td>
+    <td>バッファからのデータ読み出し時に、タイムアウトイベントを発生させるための時間（単位:秒）<br />デフォルトは 1.0 [sec]です。0.0 を設定した場合はタイムアウトしません。</td>
+  </tr>
+  <tr>
+    <td>⑳<br />21</td>
+    <td>Name/Value</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />Name</td>
+    <td>任意のプロパティを設定<br />[追加] ボタンで項目の追加、[削除] ボタンで項目の削除が可能です。<br />入力された項目は NVList の形式で ConnectorProfileのProperties に設定されます。<br />同一 Key の Property は設定する事はできません。</td>
+  </tr>
+</table>
+
+<p>②～⑤までの項目について、RT System Editor は指定可能な値を、それぞれのポートの値リストから文字列のマッチングを行って作成します。
+双方のポートに対して ANY しか指定されていないような場合には、入力可能な値を判断することができません。
+このため、双方のポートに ANY が含まれている場合に、RT System Editor は任意の文字列を入力できるようにしています。任意の文字列が入力可能な項目には、「任意入力可」と表示されます。
+<br /></p>
+
+<div align="center"><a href="fig58ConnectParamAny.png"><img src="fig58ConnectParamAny.png" width="70%;" /></a></div>
+<div align="center"><strong>任意入力可のときの表示</strong></div>
+<p><br /></p>
+
+<h3 id="サービスポート間接続">サービスポート間接続</h3>
+<p>サービスポート間の接続では、「ServicePort」と「ServicePort」を接続します。これらの間をドラッグ＆ドロップでつなぐと以下のダイアログが表示されます。
+<br /></p>
+
+<div align="center"><a href="fig59ServiceConnectDailog.png"><img src="fig59ServiceConnectDailog.png" width="70%;" /></a></div>
+<div align="center"><strong>サービスポートのコネクタプロファイルダイアログ</strong></div>
+<p><br /></p>
+
+<p>ダイアログの項目と条件は以下のとおりです。
+<br /></p>
+
+<div align="center"><strong>サービスポート接続のダイアログ項目と必要条件</strong></div>
+
+<table class="table-alt">
+  <tr>
+    <td>№</td>
+    <td>ダイアログ項目名</td>
+    <td>ConnectorProfile</td>
+    <td>必要条件</td>
+  </tr>
+  <tr>
+    <td>①</td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>特になし</td>
+  </tr>
+  <tr>
+    <td>②</td>
+    <td>詳細</td>
+    <td>―</td>
+    <td>チェックボックスをチェックすると、Consumer/Provider の詳細設定項目が表示されます。<br />ダイアログの初期表示時は隠れています。</td>
+  </tr>
+  <tr>
+    <td>③</td>
+    <td>Consumer</td>
+    <td>―</td>
+    <td>
+接続するサービスポートに設定されたインターフェースの Consumer のリストから選択します。
+ComboBox の選択リストには&lt;コンポーネント名&gt;:&lt;インターフェース名&gt;:&lt;インスタンス名&gt;の形式で表示されます。
+<br />
+追加された Consumer/Provider のペアは、ConsumerのIDをプロパティのキー、Provider の ID をプロパティの値として、ConnectorProfile に格納されます。
+<br />
+なお、Consumer/Provider の ID は以下の形式で表現します。
+&lt;rtc_name&gt;.port.&lt;port_name&gt;.&lt;if_polality&gt;.&lt;if_tname&gt;.&lt;if_iname&gt;
+<br />
+<ul>
+<li>rtc_nameはコンポーネント名</li>
+<li>port_name はポート名</li>
+<li>if_polalityは Consumer は「required」、Provider は「provided」</li>
+<li>if_tnameはインターフェースのタイプ名</li>
+<li>if_inameはインターフェースのインスタンス名</li>
+</ul>
+</td>
+  </tr>
+  <tr>
+    <td>④</td>
+    <td>Provider</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />Consumer の ID をキーとして設定</td>
+    <td>Consumerと同様、接続するサービスポートに設定されたインターフェースの Provider のリストから選択します。</td>
+  </tr>
+  <tr>
+    <td>⑤</td>
+    <td>Add</td>
+    <td>―</td>
+    <td>Consumer/Provider の新規エントリを追加します。</td>
+  </tr>
+  <tr>
+    <td>⑥</td>
+    <td>Delete</td>
+    <td>―</td>
+    <td>選択中の Consumer/Provider のエントリを削除します。</td>
+  </tr>
+  <tr>
+    <td>⑦<br />⑧</td>
+    <td>Name/Value</td>
+    <td>&lt;&lt;properties&gt;&gt;<br />Name</td>
+    <td>任意のプロパティを設定<br />[追加] ボタンで項目の追加、[削除] ボタンで項目の削除が可能です。<br />入力された項目は NVList の形式で ConnectorProfile の Properties に設定されます。<br />同一 Key の Property は設定する事はできません。</td>
+  </tr>
+</table>
+
+<p>サービスポートの場合、必須となる接続の条件はありません。しかし、 ServicePort 間での PortInterfaceProfile が完全にマッチング（※１）しない場合、接続ダイアログにて警告を表示します。
+<br /></p>
+
+<div align="center"><a href="fig60ServicePortWarningDialog.png"><img src="fig60ServicePortWarningDialog.png" width="60%;" /></a></div>
+<div align="center"><strong>サービスポートの接続ダイアログの警告表示</strong></div>
+<p><br /></p>
+
+<p><strong>※１</strong></p>
+
+<p>ここでいう完全なマッチングとは、PortInterfaceProfile の「type」が同じで、「polarity」がお互いに PROVIDED と REQUIred になっていること。
+また余りなく（PortInterfaceProfile はそれぞれのポートに複数存在する）すべての PortInterfaceProfile がマッチングすることを指しています。</p>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

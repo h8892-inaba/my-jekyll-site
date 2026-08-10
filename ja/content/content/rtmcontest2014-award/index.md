@@ -39,7 +39,7 @@ RTシステムの技術の蓄積と共有を促進することを狙って優れ
 以上の２つの視点から審査いたします．
 
 ### HOTMOCK賞【提供: [株式会社ホロンクリエイト](http://www.hol-on.com)】
-<div align="left"><a href="http://www.openrtm.org/openrtm/sites/default/files/5627/HOTMOCK_AnalogKit.png"><img src="http://www.openrtm.org/openrtm/sites/default/files/5627/HOTMOCK_AnalogKit.png" width="20%;" align="center"></a></div>
+<div align="left"><img src="HOTMOCK_AnalogKit.png" width="20%;" align="center"></div>
 **「フィジカル・ラピッド・プロトタイピング」HOTMOCK** <br>
 **「新しい使い方・体験のアイデアを誰でもすぐ形にできる開発用電子キット」** <br>
 

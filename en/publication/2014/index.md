@@ -16,5 +16,5 @@ On this page, we publish paper manuscripts as much as possible in accordance wit
 - [Japan Society of Mechanical Engineers](http://www.jsme.or.jp/conrule.htm)
  - Publication is permitted as long as the author publishes it on their own or their affiliated institution’s web page.
 - [The Society of Instrument and Control Engineers](http://www.sice.jp/)
- - Publication is possible if a reprint (reuse) permission request is submitted to the SICE office and approval is obtained. [Reprint Permission Certificate](tensai_kyoka_201311.pdf)
+ - Publication is possible if a reprint (reuse) permission request is submitted to the SICE office and approval is obtained. [Reprint Permission Certificate](../tensai_kyoka_201311.pdf)
 

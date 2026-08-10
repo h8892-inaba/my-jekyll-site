@@ -1,0 +1,2142 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>RTミドルウェアサマーキャンプ2018 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="RTミドルウェアサマーキャンプ2018" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/tutorials/summercamp2018/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/tutorials/summercamp2018/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="RTミドルウェアサマーキャンプ2018" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"RTミドルウェアサマーキャンプ2018","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/tutorials/summercamp2018/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/en/tutorials/summercamp2018/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/en/tutorials/summercamp2018/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>RTミドルウェアサマーキャンプ2018 <div class="lang-switch"><a href="/my-jekyll-site/en/tutorials/summercamp2018/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/tutorials/summercamp2018/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#開催報告">開催報告</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#開催要旨">開催要旨</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#共同開催">共同開催</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#後援">後援</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#日時場所">日時・場所</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#参加資格">参加資格</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#参加人数">参加人数</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#参加費">参加費</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#実施概要">実施概要</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#プログラム">プログラム</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#産総研見学会">産総研見学会</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#課題について">課題について</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#課題例">課題例</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#実行委員会">実行委員会</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#サポート協力スタッフ">サポート＆協力スタッフ</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#参加者の方へ">参加者の方へ</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#自己紹介スライドの準備">自己紹介スライドの準備</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#講義資料">講義資料</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#講座">講座</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#rtミドルウェアツール紹介">RTミドルウェアツール紹介</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#開発成果">開発成果</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#グループ1">グループ1</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#グループ2">グループ2</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#グループ3">グループ3</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#グループ4">グループ4</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#サマーキャンプの様子">サマーキャンプの様子</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#お問い合わせ">お問い合わせ</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<div align="center"><a href="summercamp2018_title.png"><img src="summercamp2018_title.png" width="60%;" /></a></div>
+
+<p>#contents</p>
+
+<h2 id="開催報告">開催報告</h2>
+
+<p>名城大学の大原先生のご尽力と多くの特別講師やサポートスタッフのご支援のおかげで、12名の参加者と共に、今年も、サマーキャンプを作り上げて行くことが出来ました。皆さまに御礼申し上げます。
+この合宿研修の成果を、RTミドルウエアコンテストで発表いただけることを、期待しております。</p>
+
+<div align="center"><a href="syuugou2.jpg"><img src="syuugou2.jpg" width="80%;" /></a></div>
+
+<!-- **開催のご案内 -->
+
+<!-- 今年で8回目となりました、RTミドルウエアキャンプを7月末日から8月上旬の5日間、茨城県つくば市の産業技術総合研究所において開催いたします。/RTミドルウエアやロボット開発に精通する講師陣のもとで、RTミドルウエアを用いた様々なロボットシステム開発を体験する機会を5日間にわたり提供します。RTミドルウエアを用いたプログラミングの方法や、実践的なロボットシステムへの応用、RTミドルウエアコンテストでの必勝法等、様々な講義を予定しています。宿泊施設として産総研のさくら館(要実費)を提供することを予定しており、一緒に参加した仲間とともに密度の濃い開発経験を通して、より実践的なロボットシステム構築方法を身に付けることができます。 -->
+
+<!-- ''参加資格は、少なくとも1回以上RTミドルウエア講習会を受講した経験があるか、同等以上のプログラミングスキルを身に着けていることを条件とします。また、参加者は12月に行われるRTミドルウエアコンテストへの参加が期待されています。'' -->
+
+<!-- *** 参加者の声 -->
+
+<!-- - 最初は我々の開発課題が実現可能なのかどうか分からず、不安な気持ちを拭えない状態での参加だったのですが、講師の先生方には質問に対して懇切丁寧にご回答いただき、何とか実装までにこぎつけることができました。今はOpenRTMの中身も多少理解できる程度にまでなり、今回は参加してよかったと思っております。講師の先生方をはじめ、スタッフの皆さま、誠にありがとうございました。(社会人) -->
+<!-- - 知識ゼロからのスタートでチームの方や講師の方々には大変なご迷惑をお掛けしましたが，5日間で大きく成長できたと思います。 -->
+<!-- RTMのスペシャリストの方々が何人もサポートについて下さり，質問しやすい環境で作業に取り組むことができ充実した毎日でした。 -->
+<!-- 終わってしまった今，少し寂しくなっています。RTMロスです。笑（M1） -->
+<!-- - 意外とかなり楽しかったです(B4) -->
+<!-- - 自分一人では作ることができないシステムでも，チームで協力してRTミドルウェアを使って構築することができた。 -->
+
+<h2 id="開催要旨">開催要旨</h2>
+
+<p>本サマーキャンプでは、RTミドルウエアやロボット開発に精通する講師陣のもとで、RTミドルウエアを用いた様々なロボットシステム開発を体験する機会を提供します。この企画により、一緒に参加した仲間とともに密度の濃い開発経験を通して、より実践的なロボットシステム構築方法を身に付けることを目的としています。</p>
+
+<h3 id="共同開催">共同開催</h3>
+<ul>
+  <li>産業技術総合研究所　ロボットイノベーション研究センター
+    <ul>
+      <li>（公社）計測自動制御学会SI部門　RTシステムインテグレーション部会</li>
+      <li>（一社）日本ロボット工業会・ロボットビジネス推進協議会</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="後援">後援</h3>
+<ul>
+  <li>国立研究開発法人　新エネルギー・産業技術開発機構(NEDO)</li>
+</ul>
+
+<!-- *** 協力企業 -->
+<!-- #ref(rt.png) -->
+<!-- #ref(ga.png) -->
+<!-- #ref(sec.png) -->
+
+<h3 id="日時場所">日時・場所</h3>
+<ul>
+  <li>2018年7月30日～8月3日</li>
+  <li>産業技術総合研究所　つくばセンター中央第二　本部・情報棟１階　ネットワーク会議室　
+    <ul>
+      <li><a href="/ja/tutorial/guidemap">ガイドマップ</a></li>
+      <li><a href="https://maps.google.com/maps/ms?msid=202092058111064603321.0004e2699244f546ec525&amp;msa=0&amp;ll=36.05949,140.134263&amp;spn=0.009098,0.011297">google map</a></li>
+    </ul>
+  </li>
+  <li>アクセス
+    <ul>
+      <li>東京駅から並木2丁目:<a href="http://time.jrbuskanto.co.jp/bk03080.html">高速バス時刻表</a>
+        <ul>
+          <li>東京駅八重洲南口高速バス乗り場からつくばセンター・筑波大学行きに乗り、並木2丁目停留所にて下車してください。</li>
+          <li>東京駅から1時間：下りは渋滞が少なくほぼ時間通り到着します。</li>
+        </ul>
+      </li>
+      <li>秋葉原駅からTXつくば駅経由:<a href="https://unit.aist.go.jp/tkb1/to_tsukuba_c_tx_bus20170401.pdf">産総研連絡バス時刻表</a>
+        <ul>
+          <li>つくばエクスプレス秋葉原駅から終点つくば駅(快速：45分)まで乗車し、つくば駅から産総研連絡バスに乗車、つくば中央第1にて下車してください。</li>
+          <li>連絡バス所用時間：20分から25分程度。</li>
+          <li><a href="http://www.aist.go.jp/aist_j/guidemap/tsukuba/tsukuba_c_express.html">連絡バス乗り場</a></li>
+        </ul>
+      </li>
+      <li>常磐線荒川沖駅から路線バス:<a href="http://kantetsu.co.jp/bus/timetable_files/tc/tc06.pdf">荒川沖バス時刻表</a>
+        <ul>
+          <li>常磐線荒川沖駅にて降りていただき、関東鉄道バス西４乗り場筑波大学中央・筑波大学病院行きのバスに乗車し、並木2丁目で下車してください。</li>
+          <li>バスの所要時間は15分程度です。
+<!-- -参加者: 17名（+講師・スタッフ 延べ21名） --></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- ***サマーキャンプ2018レジュメ -->
+
+<!-- サマーキャンプ2018レジュメを公開しました。 -->
+
+<!-- - [[サマーキャンプ2017レジュメ:http://www.openrtm.org/openrtm/sites/default/files/6286/%E3%82%B5%E3%83%9E%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%972017%E3%83%AC%E3%82%B8%E3%83%A5%E3%83%A1.pdf]] -->
+
+<h3 id="参加資格">参加資格</h3>
+<ul>
+  <li>RTミドルウェア講習会に参加したことがある，もしくは同等程度の経験を有していること．</li>
+</ul>
+
+<p>または，</p>
+
+<ul>
+  <li>下記のサマーキャンプ受講希望者向けの講習会に参加する意思があること
+    <ul>
+      <li><a href="/my-jekyll-site/ja/tutorial/robomech2018">ROBOMECH2018講習会</a>(終了)</li>
+      <li>RTM強化月間
+        <ul>
+          <li>RTミドルウェア強化月間(第1弾)：早稲田大学・RTミドルウェア講習会(終了)</li>
+          <li>RTミドルウェア強化月間(第2弾)：名城大学・RTミドルウェア講習会(終了)</li>
+          <li>RTミドルウェア強化月間(第3弾)：都産技研・RTミドルウェア講習会(終了)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="参加人数">参加人数</h3>
+<ul>
+  <li>参加者：13名 (欠席1名)
+<!-- - 講師・スタッフ：20名 -->
+<!-- スタッフ側のボランティアも随時募集 --></li>
+</ul>
+
+<h3 id="参加費">参加費</h3>
+<p>無料（ただし，宿泊費や食事代は参加者の自己負担．産総研の宿泊施設を安価で提供）</p>
+
+<h3 id="実施概要">実施概要</h3>
+<p>参加者各自がそれぞれの目的意識を持ち、その目的に向けた開発の初期工程の支援を本サマーキャンプの目的とする。~
+本サマーキャンプで利用するRTコンポーネントは、NEDO知能化プロジェクトの成果，過去のRTミドルウェアコンテストの作品，さらには有志により開発されたRTコンポーネントを再利用することを基本とし，適宜各自の目的にあったRTコンポーネントの開発を促すことで，RTコンポーネントの開発，およびRTミドルウェアを用いたロボットシステム開発を行う．~
+開発だけでなく，RTミドルウェアに見識のある講師を依頼し，RTミドルウェアによるロボットシステムの開発方法，RTミドルウェアでの開発を支援するツール群の利用方法からRTミドルウェアを用いたシステム事例の紹介まで行い，幅広くRTミドルウェアについての知識提供の機会を設ける。サマーキャンプ最終日には成果発表会を行い、その後作品とスライド等はホームページに掲載する．~</p>
+
+<p>（参考）</p>
+<ul>
+  <li><a href="/my-jekyll-site/ja/tutorial/summercamp2011">サマーキャンプ2011</a></li>
+  <li><a href="/my-jekyll-site/ja/tutorial/summercamp2012">サマーキャンプ2012</a></li>
+  <li><a href="/my-jekyll-site/ja/tutorial/summercamp2013">サマーキャンプ2013</a></li>
+  <li><a href="/my-jekyll-site/ja/tutorial/summercamp2014">サマーキャンプ2014</a></li>
+  <li><a href="/my-jekyll-site/ja/tutorial/summercamp2015">サマーキャンプ2015</a></li>
+  <li><a href="/my-jekyll-site/ja/tutorial/summercamp2016">サマーキャンプ2016</a></li>
+  <li><a href="/my-jekyll-site/ja/tutorial/summercamp2017">サマーキャンプ2017</a></li>
+</ul>
+
+<h2 id="プログラム">プログラム</h2>
+
+<p><span style="color:red;">事情により変更する可能性もありますので，ご注意ください．</span>;</p>
+
+<table class="table-alt">
+  <tr>
+    <td>CENTER: **7月30日(月)** </td>
+    <td></td>
+    <td>CENTER: **第1日目**</td>
+  </tr>
+  <tr>
+    <td>12:30-13:00</td>
+    <td>受付開始</td>
+  </tr>
+  <tr>
+    <td>13:00-13:05</td>
+    <td>開催の挨拶</td>
+    <td>安藤 慶昭 <br />(産業技術総合研究所)</td>
+  </tr>
+  <tr>
+    <td>13:05-13:25</td>
+    <td>RTミドルウェアサマーキャンプガイダンス</td>
+    <td>大原賢一<br />(名城大)</td>
+  </tr>
+  <tr>
+    <td>13:30-15:00</td>
+    <td>産総研見学会</td>
+  </tr>
+  <tr>
+    <td>15:00 - 15:50</td>
+    <td>自己紹介・決意表明</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>16:00 - 17:30</td>
+    <td>講義1: SysML実習 <a href="2018SummerCamp-01.pdf ">講義資料</a></td>
+    <td>坂本武志<br />(グローバルアシスト)</td>
+  </tr>
+  <tr>
+    <td>18:00 -</td>
+    <td>懇親会＠さくら館</td>
+    <td>-</td>
+  </tr>
+</table>
+
+<table class="table-alt">
+  <tr>
+    <td>CENTER: **7月31日(火)**</td>
+    <td></td>
+    <td>CENTER:**第2日目**</td>
+  </tr>
+  <tr>
+    <td>09:30-10:00</td>
+    <td>RTミドルウェアツール紹介１：<br /> RT Shellを使った効率の良いRTシステム運用 <br /> <a href="./2018SummerCamp-02.pdf ">講義資料</a></td>
+    <td>ビグス　ジェフ<br />(産業技術総合研究所)</td>
+  </tr>
+  <tr>
+    <td>10:00-10:30</td>
+    <td>RTミドルウェアツール紹介2：<br /> 表計算ソフトによるRTコンポーネントの動作確認手順について<br /> <a href="2018SummerCamp-03.pdf ">講義資料</a></td>
+    <td>宮本 信彦<br /> (産業技術総合研究所)</td>
+  </tr>
+  <tr>
+    <td>10:30-11:00</td>
+    <td>RTミドルウェアツール紹介3：<br /> 効率の良いRTコンポーネント開発のための支援ツール<br /> <a href="./2018SummerCamp-04.pdf ">講義資料</a></td>
+    <td>黒瀬 竜一 <br />(産業技術総合研究所)</td>
+  </tr>
+  <tr>
+    <td>11:00-11:30</td>
+    <td>RTシステム構築事例紹介1： <br /> 東京都立産業技術研究センターのRTMの取り組みT型ロボットデモストレーション</td>
+    <td>佐々木智典 <br />(東京都立産業技術<br />研究センター)</td>
+  </tr>
+  <tr>
+    <td>11:30-12:00</td>
+    <td>RTシステム構築事例紹介2：<br /> つかえるRTコンポーネントの紹介<br /> <a href="./2018SummerCamp-05.pdf ">講義資料</a></td>
+    <td>原 功 <br />(産業技術総合研究所)</td>
+  </tr>
+  <tr>
+    <td>12:00-13:00</td>
+    <td>昼休み</td>
+  </tr>
+  <tr>
+    <td>13:00-15:00</td>
+    <td>開発システム検討</td>
+    <td>坂本武志 (グローバルアシスト)</td>
+  </tr>
+  <tr>
+    <td>15:00-16:00</td>
+    <td>開発目標システム発表</td>
+  </tr>
+  <tr>
+    <td>16:00-18:00</td>
+    <td>RTシステム構築実習1</td>
+  </tr>
+</table>
+
+<table class="table-alt">
+  <tr>
+    <td>CENTER: **8月1日(水)** </td>
+    <td></td>
+    <td>CENTER: **第3日目**</td>
+  </tr>
+  <tr>
+    <td>09:00 - 16:30</td>
+    <td>RTシステム構築実習2</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>16:30 - 17:00</td>
+    <td>各チームの進捗報告</td>
+    <td>-</td>
+  </tr>
+</table>
+
+<table class="table-alt">
+  <tr>
+    <td>CENTER: **8月2日(木)** </td>
+    <td></td>
+    <td>CENTER: **第4日目**</td>
+  </tr>
+  <tr>
+    <td>09:00 - 16:30</td>
+    <td>RTシステム構築実習3</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>16:30 - 17:00</td>
+    <td>各チームの進捗報告</td>
+    <td>-</td>
+  </tr>
+</table>
+
+<table class="table-alt">
+  <tr>
+    <td>CENTER: ** 8月3日(金) ** </td>
+    <td> </td>
+    <td>CENTER: **第5日目**</td>
+  </tr>
+  <tr>
+    <td>09:00 - 12:00</td>
+    <td>RTシステム構築実習4</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>13:00 - 16:00</td>
+    <td>成果報告会</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>16:00 - 16:10</td>
+    <td>閉会の挨拶</td>
+    <td>平井成興<br />（ビジ協・NEDO）</td>
+  </tr>
+  <tr>
+    <td>16:10 - 17:00</td>
+    <td>片付け</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>18:00 - 20:00</td>
+    <td>RTミドルウェア情報交換会（BOFミーティング）</td>
+    <td>-</td>
+  </tr>
+</table>
+
+<p>※本サマーキャンプでの成果物（作品・スライド）や成果発表の動画等は、ホームページで公開します。</p>
+
+<h3 id="産総研見学会">産総研見学会</h3>
+
+<table class="table-alt">
+  <tr>
+    <td>時間</td>
+    <td>グループ1</td>
+    <td>グループ2</td>
+  </tr>
+  <tr>
+    <td>13:30-13:45</td>
+    <td>フィールド(E-421-2)</td>
+    <td>スマモビ（本部情報棟 1F）</td>
+  </tr>
+  <tr>
+    <td>13:50-14:05</td>
+    <td>RSP(E-413-2)</td>
+    <td>フィールド(E-421-2)</td>
+  </tr>
+  <tr>
+    <td>14:10-14:25</td>
+    <td>スマコミ（RT-Room: E-234）</td>
+    <td>RSP(E-413-2)</td>
+  </tr>
+  <tr>
+    <td>14:30-14:45</td>
+    <td>スマモビ（本部情報棟 1F）</td>
+    <td>スマコミ（RT-Room: E-234)</td>
+  </tr>
+</table>
+
+<!-- - 生活支援RTルーム（阪口、鍛冶、関山） -->
+<!-- - 高精度な姿勢検出が可能な視覚マーカ（田中） -->
+<!-- - アンドロイドを用いたコミュニケーション支援（松本(吉)） -->
+<!-- - 移動知能とフィールドロボット研究（松本(治)、横塚） -->
+<!-- - 全方向ステレオシステム（佐藤） -->
+
+<h2 id="課題について">課題について</h2>
+<p>基本的には各参加者に課題を持ち寄っていただき，講師陣は参加者のサポートを行う形態を取ります．~
+<!-- ただし，RTミドルウエア初心者でテーマ設定に悩む場合は，下記のような課題も考えております．~ --></p>
+
+<!-- ***課題例 -->
+<!-- |CENTER:200|LEFT:100|c -->
+<!-- |Robocup@Homeの競技|[[資料>http://www.openrtm.org/openrtm/sites/default/files/rulehome2015.pdf]]| -->
+<!-- |MobileRobotiNavigationFrameworkを用いたアプリケーション開発|[[資料>http://ogata-lab.jp/ja/technology_ja/mobile_nav_rtcs_ja.html]]| -->
+
+<h3 id="課題例">課題例</h3>
+<!-- |人型ロボット(G-Robot)を使ったモーション生成| -->
+<table class="table-alt">
+  <tr>
+    <th>Pioneer/Kobukiを用いた課題自律移動ロボットの制御</th>
+  </tr>
+  <tr>
+    <td>RTミドルウェアリファレンスハードウェア「OROCHI」を用いた物体把持</td>
+  </tr>
+</table>
+<!-- |OpenHRIを用いた音声認識を用いた課題| -->
+<!-- |RTスペース操作用コンポーネントの開発| -->
+<!-- |レーザレンジファインダを用いた環境認識| -->
+<!-- |AR Toolkitを用いた拡張現実感| -->
+
+<p>（注）変更する可能性もございますことご了承下さい．</p>
+
+<!-- **講習会申し込みフォーム -->
+<!-- 以下のフォームからRTミドルウェアサマーキャンプ2017にお申し込み下さい． -->
+<!-- - 参加登録するまえに当Webページのユーザ登録をお願いします．[[ユーザ登録はこちら:http://openrtm.org/openrtm/ja/user/register]] -->
+<!-- - 当Webサイトにログイン済みの方は名前の欄にユーザ名が出ますが、必ず、氏名に書き換えてください． -->
+
+<!-- **講演会のみのご参加について -->
+<!-- 講演会のみご参加される方は，RTミドルウェアサマーキャンプ実行委員会幹事の~ -->
+<!-- 名城大学大原(kohara(at)meijo-u.ac.jp)までご連絡ください． -->
+
+<h2 id="実行委員会">実行委員会</h2>
+<table class="table-alt">
+  <tr>
+    <th>実行委員長</th>
+    <th>安藤　慶昭</th>
+    <th><a href="https://staff.aist.go.jp/n-ando/index-j.html">産業技術総合研究所ロボットイノベーション研究センター　ロボットソフトウェアプラットフォーム研究チーム長</a></th>
+  </tr>
+  <tr>
+    <td>幹事</td>
+    <td>大原　賢一</td>
+    <td><a href="http://mechatronics.meijo-u.ac.jp/study/ohara.html">名城大学理工学部メカトロニクス工学科　准教授</a></td>
+  </tr>
+  <tr>
+    <td>委員</td>
+    <td>原　功</td>
+    <td><a href="http://hara.jpn.com">産業技術総合研究所ロボットイノベーション研究センター　ロボットソフトウェア研究ラボ　ラボ長</a></td>
+  </tr>
+  <tr>
+    <td>委員</td>
+    <td>菅　佑樹</td>
+    <td><a href="http://sugarsweetrobotics.com/">株式会社SUGAR SWEET ROBOTICS</a></td>
+  </tr>
+  <tr>
+    <td>委員</td>
+    <td>ジェフ　ビグス</td>
+    <td><a href="http://staff.aist.go.jp/geoffrey.biggs/">産業技術総合研究所ロボットイノベーション研究センター　ロボットソフトウェア研究ラボ　主任研究員</a></td>
+  </tr>
+  <tr>
+    <td>委員</td>
+    <td>平井　成興</td>
+    <td>日本ロボット工業会・ロボットビジネス推進協議会・RTミドルウェアWG 主査</td>
+  </tr>
+  <tr>
+    <td>委員</td>
+    <td>神徳　徹雄</td>
+    <td>産業技術総合研究所</td>
+  </tr>
+  <tr>
+    <td>委員</td>
+    <td>坂本　武志</td>
+    <td>(株)グローバルアシスト</td>
+  </tr>
+  <tr>
+    <td>委員</td>
+    <td>佐々木　毅</td>
+    <td>芝浦工業大学</td>
+  </tr>
+  <tr>
+    <td>委員</td>
+    <td>ジェフ　ビグス</td>
+    <td>産業技術総合研究所</td>
+  </tr>
+  <tr>
+    <td>委員</td>
+    <td>菅　祐樹</td>
+    <td>(株)Sugar Sweet Robotics</td>
+  </tr>
+  <tr>
+    <td>委員</td>
+    <td>原　功</td>
+    <td>産業技術総合研究所</td>
+  </tr>
+  <tr>
+    <td>委員</td>
+    <td>平井　成興</td>
+    <td>NEDO、ロボットビジネス推進協議会</td>
+  </tr>
+</table>
+
+<h3 id="サポート協力スタッフ">サポート＆協力スタッフ</h3>
+<!-- |原田　研介|産総研（見学対応御礼）| -->
+<!-- |阪口　健|産総研（見学対応御礼）| -->
+<!-- |田中　秀幸|産総研（見学対応御礼）| -->
+<table class="table-alt">
+  <tr>
+    <th>相川　小弓</th>
+    <th>産総研</th>
+  </tr>
+  <tr>
+    <td>河内　のぶ</td>
+    <td>産総研</td>
+  </tr>
+  <tr>
+    <td>黒瀬　竜一</td>
+    <td>産総研</td>
+  </tr>
+  <tr>
+    <td>宮本　信彦</td>
+    <td>産総研</td>
+  </tr>
+  <tr>
+    <td>稲葉　晴美</td>
+    <td>産総研</td>
+  </tr>
+</table>
+
+<h2 id="参加者の方へ">参加者の方へ</h2>
+<h3 id="自己紹介スライドの準備">自己紹介スライドの準備</h3>
+
+<p>参加されるかたは、自己紹介用スライドのテンプレートに従って自己紹介を作成してください．
+送付方法は事務局より連絡させていただきます．
+※テンプレートは準備中です。もう少々お待ちください。
+<!-- - 自己紹介用スライドテンプレート: &ref(RTMサマーキャンプ参加者自己紹介テンプレート); --></p>
+
+<!-- &aname(entry); -->
+<!-- **講習会申し込みフォーム -->
+<!-- 準備中です。少々お待ちください -->
+
+<!-- 以下のフォームから講習会へお申し込みください。 -->
+<!-- - 参加登録するまえに当Webページのユーザ登録をお願いします。[[ユーザ登録はこちら:http://openrtm.org/openrtm/ja/user/register]] -->
+<!-- - 当Webサイトにログイン済みの方は&color(red){名前の欄のユーザ名を氏名に書き換えてください};。 -->
+<!-- - フォーム送信後、確認メールをお送りいたします。1日たっても確認メールが届かない場合は、こちら support(at)openrtm.org までお問い合わせください。 -->
+
+<h2 id="講義資料">講義資料</h2>
+
+<h2 id="講座">講座</h2>
+<ul>
+  <li><a href="./2018SummerCamp-01.pdf">SysML実習</a>
+<!-- Invalid YouTube URL: http://www.slideshare.net/108196432 --></li>
+</ul>
+
+<h2 id="rtミドルウェアツール紹介">RTミドルウェアツール紹介</h2>
+<ul>
+  <li>
+    <p><a href="./2018SummerCamp-02.pdf">RT Shellを使った効率の良いRTシステム運用</a>
+<!-- Invalid YouTube URL: http://www.slideshare.net/108197316 --></p>
+  </li>
+  <li>
+    <p><a href="./2018SummerCamp-03.pdf">表計算ソフトによるRTコンポーネントの動作確認手順について</a>
+<!-- Invalid YouTube URL: http://www.slideshare.net/108197497 --></p>
+  </li>
+  <li>
+    <p><a href="./2018SummerCamp-04.pdf">開発プロセスと RT コンポーネントのデバッグ･テスト手法</a>
+<!-- Invalid YouTube URL: http://www.slideshare.net/108197695 --></p>
+  </li>
+  <li>
+    <p><a href="./2018SummerCamp-05.pdf">つかえるRTコンポーネントの紹介</a>
+<!-- Invalid YouTube URL: http://www.slideshare.net/108197806 --></p>
+  </li>
+</ul>
+
+<h2 id="開発成果">開発成果</h2>
+
+<p>&amp;aname(summercamp2018_group1);</p>
+<h3 id="グループ1">グループ1</h3>
+
+<ul>
+  <li><strong>課題</strong>: モバイルロボットゲームパック
+    <ul>
+      <li><a href="/ja/project/SummerCamp2018_group1">プロジェクトページ</a>(no_link)</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Invalid YouTube URL: http://www.slideshare.net/108736729 -->
+
+<ul>
+  <li>開発モデル発表</li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ir7IzYPpSz0" frameborder="0" allowfullscreen=""></iframe>
+
+<ul>
+  <li>成果報告</li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FWxefLb69HU" frameborder="0" allowfullscreen=""></iframe>
+
+<p>&amp;aname(summercamp2018_group2);</p>
+<h3 id="グループ2">グループ2</h3>
+
+<ul>
+  <li><strong>課題</strong>:NAOの大冒険</li>
+  <li><a href="/ja/project/SummerCamp2018_group2">プロジェクトページ</a>(no_link)</li>
+</ul>
+
+<!-- Invalid YouTube URL: http://www.slideshare.net/108735739 -->
+
+<ul>
+  <li>開発モデル発表</li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bc2Fg0u0iQM" frameborder="0" allowfullscreen=""></iframe>
+
+<ul>
+  <li>成果報告</li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RtAw4KkpQPo" frameborder="0" allowfullscreen=""></iframe>
+
+<p>&amp;aname(summercamp2018_group3);</p>
+<h3 id="グループ3">グループ3</h3>
+<ul>
+  <li><strong>課題</strong>:じゃんけんロボットシステム
+    <ul>
+      <li>
+        <p><a href="/ja/project/SummerCamp2018_group3">プロジェクトページ</a>(no_link)
+<!-- Invalid YouTube URL: http://www.slideshare.net/108736424 --></p>
+      </li>
+      <li>
+        <p>開発モデル発表</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/47vOBBoKiNA" frameborder="0" allowfullscreen=""></iframe>
+
+<ul>
+  <li>成果報告</li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B45teQvMjpY" frameborder="0" allowfullscreen=""></iframe>
+
+<p>&amp;aname(summercamp2018_group4);</p>
+<h3 id="グループ4">グループ4</h3>
+<ul>
+  <li><strong>課題</strong>:T型自律走行ロボット
+    <ul>
+      <li><a href="/ja/project/SummerCamp2018_group4">プロジェクトページ</a>(no_link)</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Invalid YouTube URL: http://www.slideshare.net/108736510 -->
+
+<ul>
+  <li>開発モデル発表</li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WQZwcAaY7Zs" frameborder="0" allowfullscreen=""></iframe>
+
+<ul>
+  <li>成果報告</li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yMCdjIn_QSc" frameborder="0" allowfullscreen=""></iframe>
+
+<h2 id="サマーキャンプの様子">サマーキャンプの様子</h2>
+<div align="center"><a href="pic-00.jpg"><img src="pic-00.jpg" width="60%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><a href="pic-01.jpg"><img src="pic-01.jpg" width="60%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><a href="pic-02.jpg"><img src="pic-02.jpg" width="60%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><a href="pic-03.jpg"><img src="pic-03.jpg" width="60%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><a href="pic-04.jpg"><img src="pic-04.jpg" width="60%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><a href="pic-05.jpg"><img src="pic-05.jpg" width="60%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><a href="pic-05-01.jpg"><img src="pic-05-01.jpg" width="60%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><a href="pic-06.jpg"><img src="pic-06.jpg" width="60%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><a href="pic-06-01.jpg"><img src="pic-06-01.jpg" width="60%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><a href="pic-07.jpg"><img src="pic-07.jpg" width="60%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><a href="pic-08-01.jpg"><img src="pic-08-01.jpg" width="60%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><a href="pic-09.jpg"><img src="pic-09.jpg" width="60%;" /></a></div>
+<p><br /></p>
+
+<h2 id="お問い合わせ">お問い合わせ</h2>
+
+<p>基本的な情報はホームページから提供いたします．
+参加申込みいただいた方は連絡したメールに返信ください．</p>
+
+<p>RTミドルウエアサマーキャンプ実行委員会~
+summercamp(at)aist.go.jp~
+(at)を＠におきかえてください．~</p>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

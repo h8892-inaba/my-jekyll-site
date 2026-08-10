@@ -1,0 +1,1264 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Creating RT Components (NXTway Edition) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Creating RT Components (NXTway Edition)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/casestudy/rtc_development/rtc_development_nxtway/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/casestudy/rtc_development/rtc_development_nxtway/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Creating RT Components (NXTway Edition)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Creating RT Components (NXTway Edition)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/casestudy/rtc_development/rtc_development_nxtway/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_nxtway/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_nxtway/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Creating RT Components (NXTway Edition) <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/rtc_development/rtc_development_nxtway/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/casestudy/rtc_development/rtc_development_nxtway/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#introduction">Introduction</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#environment-setup">Environment Setup</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#assembling-lego">Assembling LEGO</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#nxtosek-environment-setup-windows-xpvista">nxtOSEK Environment Setup (Windows XP/Vista)</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#uploading-the-enhanced-nxt-firmware-to-nxt">Uploading the Enhanced NXT Firmware to NXT</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#modifying-and-compiling-the-nxtway-source">Modifying and Compiling the NXTway Source</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#modifying-compiling-and-uploading-the-source-on-the-nxt-side">Modifying, compiling, and uploading the source on the NXT side</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#operation-check">Operation Check</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#starting-on-the-nxt-side">Starting on the NXT Side</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#starting-the-rtc-on-the-pc-side">Starting the RTC on the PC Side</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: RTコンポーネント作成(NXTway編) -->
+<p>#contents
+#clear</p>
+
+<h2 id="introduction">Introduction</h2>
+<ul>
+  <li>This section explains how to connect NXT MINDSTORM with an OpenRTM Bluetooth component and control NXT MINDSTORM.</li>
+  <li>It explains how to install software on NXT MINDSTORM, basic operations, and how to connect it to RT components.</li>
+</ul>
+
+<div align="center"><a href="gaiyou.png"><img src="gaiyou.png" width="70%;" /></a></div>
+
+<h2 id="environment-setup">Environment Setup</h2>
+<h3 id="assembling-lego">Assembling LEGO</h3>
+<ul>
+  <li>Required parts
+    <ul>
+      <li>LEGO MINDSTORMS Education NXT Base Set
+        <ul>
+          <li>Product ID: W979797</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div align="center"><a href="XL_979797withtrays.jpg"><img src="XL_979797withtrays.jpg" width="70%;" /></a></div>
+<ul>
+  <li>LEGO Education Resource Set
+    <ul>
+      <li>Product ID: W979648</li>
+    </ul>
+  </li>
+</ul>
+<div align="center"><a href="XL_9648Kit.jpg"><img src="XL_9648Kit.jpg" width="70%;" /></a></div>
+<ul>
+  <li>NXT Gyro Sensor
+    <ul>
+      <li>Part No : NGY1044</li>
+    </ul>
+  </li>
+</ul>
+<div align="center"><a href="Mindstorms_Gyro.jpg"><img src="Mindstorms_Gyro.jpg" width="70%;" /></a></div>
+<ul>
+  <li>How to assemble LEGO
+    <ul>
+      <li>Refer to “NXTway-GS_Building_Instructions.pdf”</li>
+      <li>Download : http://lejos-osek.sourceforge.net/NXTway-GS_Building_Instructions.pdf</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="nxtosek-environment-setup-windows-xpvista">nxtOSEK Environment Setup (Windows XP/Vista)</h3>
+
+<div align="center"><a href="kannkyousetumei.png"><img src="kannkyousetumei.png" width="70%;" /></a></div>
+
+<ul>
+  <li>Installing Cygwin
+    <ul>
+      <li>Cygwin makes it possible to run various Linux software in a Windows environment</li>
+      <li>Download : <a href="http://www.cygwin.com/">http://www.cygwin.com/</a></li>
+      <li>Configuration options
+        <ul>
+          <li>Root Directory : <code class="language-plaintext highlighter-rouge">c:\cygwin</code></li>
+          <li>Select Packages : Select and install “make 3.81-1” in the Devel category and “libintl3” in the Libs category</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Installing GNU ARM (must be 4.0.2)
+    <ul>
+      <li>GNU ARM is a GCC compiler package that supports the ARM7 core processor (AT91SAM7S256) of NXT</li>
+      <li>Download : <a href="http://www.gnuarm.com/bu-2.16.1_gcc-4.0.2-c-c++_nl-1.14.0_gi-6.4.exe">bu-2.16.1_gcc-4.0.2-c-c++_nl-1.14.0_gi-6.4.exe </a></li>
+      <li>Configuration options
+        <ul>
+          <li>Diriectory : <code class="language-plaintext highlighter-rouge">c:\cygwin\GNUARM</code></li>
+          <li>Select Components : Do not select “Floating Point Unit”</li>
+          <li>Select Additional Tasks : Do not select “Install Cygwin DLLs…”</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Installing the LEGO MINDSTORMS NXT Driver
+    <ul>
+      <li>This is a USB communication driver for NXT provided by LEGO</li>
+      <li>Download : http://mindstorms.lego.com/en-us/support/files/Driver.aspx</li>
+      <li>Install the PC version of Driver 1.02</li>
+    </ul>
+  </li>
+  <li>Downloading NeXTTool
+    <ul>
+      <li>NeXTTool is a PC console for communication with NXT, and can upload i*.rxe (apps) and *.rfw (firmware) to NXT</li>
+      <li>Download : <a href="http://bricxcc.sourceforge.net/nexttool.zip">http://bricxcc.sourceforge.net/nexttool.zip</a></li>
+      <li>Configuration options
+        <ul>
+          <li>Extraction directory : “c:\cygwin\nexttool”</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Downloading the enhanced NXT firmware
+    <ul>
+      <li>The enhanced NXT firmware is based on the standard NXT firmware and extends its functionality</li>
+      <li>It can also execute native code for the ARM7 core CPU of NXT</li>
+      <li>Download : <a href="http://bricxcc.sourceforge.net/lms_arm_jch.zip">http://bricxcc.sourceforge.net/nexttool.zip</a></li>
+      <li>Configuration options
+        <ul>
+          <li>Copy only <code class="language-plaintext highlighter-rouge">lms_arm_nbcnxc_107.rfw</code></li>
+          <li>Copy directory : <code class="language-plaintext highlighter-rouge">c:\cygwin\nexttool</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Downloading nxtOSEK
+    <ul>
+      <li>Download version 2.13</li>
+      <li>Download : <a href="http://sourceforge.net/projects/lejos-osek/files/nxtOSEK/">http://bricxcc.sourceforge.net/nexttool.zip</a></li>
+      <li>Configuration options
+        <ul>
+          <li>Extraction directory : <code class="language-plaintext highlighter-rouge">c:\cygwin\nxtOSEK</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Adding the “sg.exe” file
+    <ul>
+      <li>Download : <a href="http://www.toppers.jp/download.cgi/osek_os-1.1.lzh">http://www.toppers.jp/download.cgi/osek_os-1.1.lzh</a></li>
+      <li>Extract it, and copy the “sg.exe” file located under the “sg” folder inside the “toppers_osek” folder to the “c:\cygwin\nxtOSEK\toppers_osek\sg” folder</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="uploading-the-enhanced-nxt-firmware-to-nxt">Uploading the Enhanced NXT Firmware to NXT</h2>
+<ul>
+  <li>NXT firmware update mode
+    <ul>
+      <li>With the power ON, keep pressing the reset button with the tip of a safety pin for about 5 seconds</li>
+    </ul>
+  </li>
+</ul>
+<div align="center"><a href="resetButton.jpg"><img src="resetButton.jpg" width="70%;" /></a></div>
+<ul>
+  <li>You will hear a small clicking sound from the NXT speaker</li>
+  <li>Connect NXT and the PC via USB</li>
+  <li>Starting Cygwin and uploading the enhanced firmware
+<a href="cygwin-icon.gif"><img src="cygwin-icon.gif" width="5%;" /></a>
+Start cygwin
+    <ul>
+      <li>Enter the following commands
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $cd c:\cygwin\nexttool
+ $./NeXTTool.exe /COM=usb -firmware=lms_arm_nbcnxc_107.rfw
+</code></pre></div>        </div>
+      </li>
+      <li>When the upload is complete, the NXT LCD screen will look like static noise</li>
+      <li>If the NXT buttons cannot be operated, remove the NXT battery and attach it again to start the enhanced NXT firmware</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="modifying-and-compiling-the-nxtway-source">Modifying and Compiling the NXTway Source</h2>
+<h3 id="modifying-compiling-and-uploading-the-source-on-the-nxt-side">Modifying, compiling, and uploading the source on the NXT side</h3>
+<ul>
+  <li>Source modification
+    <ul>
+      <li>In “sample.cpp” in the “c:\cygwin\nxtOSEK\samples_c++\cpp\NXTway_GS++” folder</li>
+    </ul>
+  </li>
+</ul>
+<div align="center"><a href="samplecpp.png"><img src="samplecpp.png" width="70%;" /></a></div>
+
+<ul>
+  <li>If you search for “btConnection.connect”, you can find the function in the following “Main Task”</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> //=============================================================================
+ // Main Task
+ TASK(TaskMain)
+ {
+ 	// establish blutooth connection with a PC to use a PC HID GamePad controller
+ 	BTConnection btConnection(bt, lcd, nxt);
+ 	(void)btConnection.connect(BT_PASS_KEY);
+ 
+ 	for (U32 i = 5; i &lt;= Lcd::MAX_CURSOR_Y; i++) lcd.clearRow(i);
+ 	lcd.cursor(0,5);
+ 	lcd.putf("snsns", "TOUCH:START/STOP", "STAND IT UP AND", "WAIT FOR A BEEP.");
+ 	lcd.disp();
+ 	SetRelAlarm(Alarm4msec, 1, 4); // Set 4msec periodical Alarm for the drive event
+ 
+ 	while(1)
+ 	{
+ 		sonarDriver.checkObstacles(sonar);
+ 		clock.wait(40); // 40msec wait
+ 	}
+ }
+</code></pre></div></div>
+
+<ul>
+  <li>Modify “(void)btConnection.connect(BT_PASS_KEY);” as follows</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> (void)btConnection.connect(BT_PASS_KEY, "alias")
+</code></pre></div></div>
+
+<ul>
+  <li>Enter a name that you can identify in the “alias” part</li>
+  <li>Compilation
+<a href="cygwin-icon.gif"><img src="cygwin-icon.gif" width="5%;" /></a>Start cygwin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $cd c:\cygwin\nxtOSEK\samples_c++\cpp\NXTway_GS++
+</code></pre></div>    </div>
+
+    <ul>
+      <li>On cygwin, in the folder above, “C:\cygwin\nxtOSEK\samples_c++\cpp\NXTway_GS++”
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $make all
+ ...
+ Generating binary image file: nxtway_gs++_rom.bin
+ Generating binary image file: nxtway_gs++_ram.bin
+ Generating binary image file: nxtway_gs++_.rxe
+ $
+</code></pre></div>        </div>
+      </li>
+      <li>If you see a message like the one above, compilation is complete</li>
+    </ul>
+  </li>
+  <li>Uploading to NXT
+    <ul>
+      <li>Connect the NXT containing the enhanced NXT firmware via USB</li>
+      <li>In the compiled cygwin state
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $sh ./rxeflash.sh
+ Executing NeXTTool to upload nxtway_gs++.rxe...
+ nxtway_gs++.rxe=34240
+ NeXTTool is terminated.
+ $
+</code></pre></div>        </div>
+      </li>
+      <li>If you see a message like the one above, the upload is complete</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="operation-check">Operation Check</h2>
+<h3 id="starting-on-the-nxt-side">Starting on the NXT Side</h3>
+<ul>
+  <li>Wait in state ⑦ in the figure below</li>
+</ul>
+<div align="center"><a href="NXTStart.jpg"><img src="NXTStart.jpg" width="70%;" /></a></div>
+<p>;</p>
+
+<h3 id="starting-the-rtc-on-the-pc-side">Starting the RTC on the PC Side</h3>
+<ul>
+  <li>Start the OpenRTM-aist Naming Service</li>
+</ul>
+<div align="center"><a href="NamingServiceStart.png"><img src="NamingServiceStart.png" width="70%;" /></a></div>
+<ul>
+  <li>Start the TkJoyStickComp component</li>
+</ul>
+<div align="center"><a href="TkJoyStickCompStart.png"><img src="TkJoyStickCompStart.png" width="70%;" /></a></div>
+<ul>
+  <li>Bluetooth connection
+    <ul>
+      <li>Connect Bluetooth to the PC</li>
+    </ul>
+  </li>
+</ul>
+<div align="center"><a href="BluetoothPlus.png"><img src="BluetoothPlus.png" width="70%;" /></a></div>
+<ul>
+  <li>Connect the Bluetooth device with the name entered in the “alias” part</li>
+</ul>
+<div align="center"><a href="BluetoothPlus2.png"><img src="BluetoothPlus2.png" width="100;" /></a></div>
+<ul>
+  <li>The Password is basically set to “1234”</li>
+</ul>
+<div align="center"><a href="BluetoothPass.png"><img src="BluetoothPass.png" width="70%;" /></a></div>
+<ul>
+  <li>Check the connected Bluetooth Comport</li>
+</ul>
+<div align="center"><a href="BluetoothComport.png"><img src="BluetoothComport.png" width="70%;" /></a></div>
+<ul>
+  <li>Starting the Bluetooth component
+    <ul>
+      <li>Download <a href="http://www.openrtm.org/OpenRTM-aist/download/SC2010/NXTBlueTooth.zip">BluetoothComp.zip</a></li>
+      <li>After extracting BluetoothComp.zip, execute the “NXTBlueToothComp.exe” file in the “components” folder</li>
+    </ul>
+  </li>
+</ul>
+<div align="center"><a href="NXTBluetoothCompStart.png"><img src="NXTBluetoothCompStart.png" width="70%;" /></a></div>
+
+<ul>
+  <li>Starting RT System Editor
+    <ul>
+      <li>Start RT System Editor as shown in the figure below</li>
+    </ul>
+  </li>
+</ul>
+<div align="center"><a href="RTSystemEditorStart.png"><img src="RTSystemEditorStart.png" width="70%;" /></a></div>
+<ul>
+  <li>Adding Naming Service
+    <ul>
+      <li>Click the add button as shown in the figure below and add “127.0.0.1”</li>
+    </ul>
+  </li>
+</ul>
+<div align="center"><a href="NamingServicetuika.png"><img src="NamingServicetuika.png" width="70%;" /></a></div>
+<ul>
+  <li>Placing components
+    <ul>
+      <li>Place the components as shown in the figure below</li>
+    </ul>
+  </li>
+</ul>
+<div align="center"><a href="Componenthiichi.png"><img src="Componenthiichi.png" width="70%;" /></a></div>
+<ul>
+  <li>Connect TkJoyStickComp and the Bluetooth component
+    <ul>
+      <li>Connect TkJoyStickComp and BluetoothComp as shown in the figure below</li>
+    </ul>
+  </li>
+</ul>
+<div align="center"><a href="Componentsetuzoku.png"><img src="Componentsetuzoku.png" width="70%;" /></a></div>
+<ul>
+  <li>In the Configuration View of the Bluetooth component, enter the confirmed Comport number in the “m_COM” variable</li>
+</ul>
+<div align="center"><a href="Setupm_COM.jpg"><img src="Setupm_COM.jpg" width="70%;" /></a></div>
+<ul>
+  <li>Activate</li>
+</ul>
+<div align="center"><a href="Activate.png"><img src="Activate.png" width="50%;" /></a></div>
+<ul>
+  <li>When the connection is complete, the NXT side will look like the figure below</li>
+</ul>
+<div align="center"><a href="8.png"><img src="8.png" width="70%;" /></a></div>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

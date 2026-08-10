@@ -1,0 +1,1146 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Fedoraへのインストール | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Fedoraへのインストール" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/installation/install_1_1/cpp_1_1/install_fedora_1_1/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/installation/install_1_1/cpp_1_1/install_fedora_1_1/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Fedoraへのインストール" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Fedoraへのインストール","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/installation/install_1_1/cpp_1_1/install_fedora_1_1/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/install_1_1/cpp_1_1/install_fedora_1_1/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/install_1_1/cpp_1_1/install_fedora_1_1/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Fedoraへのインストール <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/install_1_1/cpp_1_1/install_fedora_1_1/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/installation/install_1_1/cpp_1_1/install_fedora_1_1/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#一括インストールスクリプト">一括インストール・スクリプト</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#yum-を使う方法">yum を使う方法</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#etcyumreposdopenrtmrepoの作成">/etc/yum.repos.d/openrtm.repoの作成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#yum-によるインストール">yum によるインストール</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#インストールの確認">インストールの確認</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#パッケージの詳細">パッケージの詳細</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist">OpenRTM-aist</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-devel">OpenRTM-aist-devel</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-doc">OpenRTM-aist-doc</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-example">OpenRTM-aist-example</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<p><br />
+<a>No English version available.
+</a></p>
+
+<!-- Title: Fedoraへのインストール -->
+<div align="right"><a href="fedora_logo.png"><img src="fedora_logo.png" width="15%;" align="right" /></a></div>
+
+<p>C++版 OpenRTM-aist は Fedora Linux で利用可能な RPM パッケージが提供されています。
+対応している Fedora Linux のバージョンは、ダウンロードページから確認できます。
+Fedora Linux への対応およびそのバージョンは、予告なしに変更または停止されることがありますので、予めご了承ください。</p>
+
+<p>※ OpenRTM-aist 1.2.0版以降、一括インストール・スクリプト対応予定です。</p>
+
+<p>Fedora Linux へのインストールの方法には大きく分けて以下の二種類のインストール方法があります。</p>
+<ul>
+  <li>openrtm.org が提供する一括インストールスクリプトを使用</li>
+  <li>yum パッケージマネージャを使用</li>
+</ul>
+
+<p>#contents</p>
+
+<h2 id="一括インストールスクリプト">一括インストール・スクリプト</h2>
+
+<p>openrtm.org が提供するインストール・スクリプト <strong>pkg_install_fedora.sh</strong> をダウンロードページからダウンロードし、root 権限で実行します。
+このスクリプトは、必要なパッケージを順次 yum でインストールしていきます。</p>
+
+<!-- -[[パッケージインストールスクリプト:http://svn.openrtm.org/OpenRTM-aist/tags/RELEASE_1_1_1/OpenRTM-aist/build/pkg_install_fedora.sh]] -->
+
+<!-- -[[新パッケージインストールスクリプト:http://svn.openrtm.org/OpenRTM-aist/trunk/OpenRTM-aist/build/pkg_install_fedora.sh]] -->
+
+<p>OpenRTM-aist を開発・実行するために必要なパッケージをもれなくインストールしてくれるので大変便利です。
+<!-- //初めて OpenRTM-aist をインストールしてみる方にお勧めします。 -->
+オプションを指定することで、目的に合わせたパッケージをインストールできるようになったので、
+初めて OpenRTM-aist をインストールしてみる方にもソースをコンパイルしてみる方にもお勧めします。</p>
+
+<p>ただし、OpenRTM-aist 関係のすべてのパッケージをインストールするので、必要ないものもインストールされる可能性があります。
+詳しく理解している人は、手動でインストールした方がよいでしょう。</p>
+
+<p>詳しいオプションやパッケージの種類につきましては、「<a href="/en/node/6345">一括インストール・スクリプト</a>」のページをご確認ください</p>
+
+<!-- また、次のパッケージは対応していませんのでyumコマンドでインストールしてください。 -->
+
+<!-- - OpenRTM-aist-1.1.2-RELEASE -->
+<!-- - rtshell -->
+
+<!-- 以下、一括インストールスクリプトを使用したインストールの手順です。 -->
+
+<!-- > wget [pkg_install_fedora.sh のダウンロードURL] -->
+<!-- > su -->
+<!-- # sh pkg_install_fedora.sh -l c++ -->
+<!-- //途中、いくつかの質問をたずねられるので、''y'' あるいは ''Y'' を入力しながら完了させる。 -->
+<!-- //オプション "--yes" を追加することで、省略も可能。 -->
+
+<h2 id="yum-を使う方法">yum を使う方法</h2>
+
+<h3 id="etcyumreposdopenrtmrepoの作成">/etc/yum.repos.d/openrtm.repoの作成</h3>
+
+<p>openrtm.org では yum から利用可能なパッケージリポジトリを提供しています。
+ただし、デフォルトのパッケージリポジトリには含まれていませんので、yum の設定を変更する必要があります。</p>
+
+<p>以下のような設定を記録したファイル <strong>/etc/yum.repos.d/openrtm.repo</strong> を作成しておきます。作成には通常 root 権限が必要です。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [openrtm]
+ name=Fedora $releasever - $basearch
+ failovermethod=priority
+ baseurl=http://openrtm.org/pub/Linux/Fedora/releases/$releasever/Fedora/$basearch/os/Packages
+ enabled=1
+ gpgcheck=0
+ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora file:///etc/pki/rpm-gpg/RPM-GPG-KEY
+</code></pre></div></div>
+<div align="center"><strong>/etc/yum.repos.d/openrtm.repo</strong></div>
+
+<h3 id="yum-によるインストール">yum によるインストール</h3>
+
+<p>openrtm.repo を作成したら、次の手順でインストールを行います。
+途中、いくつかの応答を求められるので、<strong>y</strong> を入力しながら完了させます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ &gt; su
+ # yum install gcc-c++ python
+ # yum install omniORB omniORB-devel omniORB-doc omniORB-servers omniORB-utils
+ # yum install OpenRTM-aist OpenRTM-aist-devel OpenRTM-aist-doc OpenRTM-aist-example
+</code></pre></div></div>
+
+<h3 id="インストールの確認">インストールの確認</h3>
+
+<p>最後に以下のコマンドでインストールの確認をします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # rpm -q OpenRTM-aist
+ OpenRTM-aist-1.0.0-0.fcX
+</code></pre></div></div>
+
+<h2 id="パッケージの詳細">パッケージの詳細</h2>
+<p>各パッケージの内容は以下の通りです</p>
+
+<h3 id="openrtm-aist">OpenRTM-aist</h3>
+<p>openrtm-aist にはランタイムライブラリとコマンド群が含まれています。</p>
+
+<ul>
+  <li>サンプル設定ファイル
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /etc/rtc.conf.sample
+</code></pre></div>    </div>
+  </li>
+  <li>ライブラリ
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/lib/libRTC-1.0.0.so.0
+ /usr/lib/libRTC-1.0.0.so.0.0.4
+ /usr/lib/libRTC.a
+ /usr/lib/libRTC.la
+ /usr/lib/libRTC.so
+ /usr/lib/libcoil.a
+ /usr/lib/libcoil.la
+ /usr/lib/libcoil.so
+ /usr/lib/libcoil.so.0
+ /usr/lib/libcoil.so.0.0.0
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="openrtm-aist-devel">OpenRTM-aist-devel</h3>
+<p>openrtm-aist-dev には、開発に必要なコマンド群とヘッダが含まれています。</p>
+
+<ul>
+  <li>コマンド
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/bin/coil-config
+ /usr/bin/rtc-template
+ /usr/bin/rtcd
+ /usr/bin/rtcprof
+ /usr/bin/rtm-config
+ /usr/bin/rtm-naming
+ /usr/bin/rtm-skelwrapper
+</code></pre></div>    </div>
+  </li>
+  <li>ヘッダ
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/include/coil/Allocator.h
+ /usr/include/coil/Async.h
+ 中略
+ /usr/include/coil/memory.h
+ /usr/include/coil/stringutil.h
+ 中略
+ /usr/include/rtm/BufferBase.h
+ /usr/include/rtm/BufferStatus.h
+ 中略
+ /usr/include/rtm/Typename.h
+ /usr/include/rtm/config_rtc.h
+</code></pre></div>    </div>
+  </li>
+  <li>IDL およびスタブ・スケルトン
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/include/rtm/idl/BasicDataType.hh
+ /usr/include/rtm/idl/BasicDataType.idl
+ 中略
+ /usr/include/rtm/idl/device_interfaces/RFID.idl
+ /usr/include/rtm/idl/device_interfaces/Ranger.idl
+</code></pre></div>    </div>
+  </li>
+  <li>ライブラリ
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/lib/openrtm-1.1/py_helper/README_gen.py
+ /usr/lib/openrtm-1.1/py_helper/README_gen.pyc
+ 中略
+ /usr/lib/openrtm-1.1/py_helper/yat.pyc
+ /usr/lib/openrtm-1.1/py_helper/yat.pyo
+ /usr/lib/pkgconfig/libcoil.pc
+ /usr/lib/pkgconfig/openrtm-aist.pc
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="openrtm-aist-doc">OpenRTM-aist-doc</h3>
+<p>openrtm-aist-doc には、日本語と英語のクラスリファレンス、IDL インターフェース定義リファレンスが含まれています。</p>
+
+<ul>
+  <li>クラスリファレンス
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.1/docs/ClassReference/html/ConnectorBase_8h-source.html
+ /usr/share/openrtm-1.1/docs/ClassReference/html/RTC_8h.html
+ 中略
+ /usr/share/openrtm-1.1/docs/ClassReference/html/FactoryInit_8h-source.html
+</code></pre></div>    </div>
+  </li>
+  <li>IDL リファレンス
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.1/docs/IDLReference/html/BasicDataType_8idl-source.html
+ 中略
+ /usr/share/openrtm-1.1/docs/IDLReference/html/interfaceOpenRTM_1_1InPortCdr-members.html
+</code></pre></div>    </div>
+  </li>
+  <li>クラスリファレンス(英語)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.1/docs/ClassReference-en/html/ConnectorBase_8h-source.html
+ /usr/share/openrtm-1.1/docs/ClassReference-en/html/RTC_8h.html
+ 中略
+ /usr/share/openrtm-1.1/docs/ClassReference-en/html/FactoryInit_8h-source.html
+</code></pre></div>    </div>
+  </li>
+  <li>IDL リファレンス(英語)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.1/docs/IDLReference-en/html/BasicDataType_8idl-source.html
+ /usr/share/openrtm-1.1/docs/IDLReference-en/html/structRTC_1_1FsmProfile.html
+ 中略
+ /usr/share/openrtm-1.1/docs/IDLReference-en/html/interfaceOpenRTM_1_1InPortCdr-members.html
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="openrtm-aist-example">OpenRTM-aist-example</h3>
+<p>openrtm-aist-example にはスタンドアロン RTC、ローダブル RTC それぞれのサンプルと、サンプル RTC のソースが含まれています。</p>
+
+<ul>
+  <li>サンプル(スタンドアロン RTC)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.1/examples/ConsoleOutComp
+ /usr/share/openrtm-1.1/examples/ConsoleInComp
+ 中略
+</code></pre></div>    </div>
+  </li>
+  <li>サンプル(ソース)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.1/examples/src/Composite/README.Motor
+ /usr/share/openrtm-1.1/examples/src/Composite/Makefile.Sensor
+ /usr/share/openrtm-1.1/examples/src/Composite/Motor.cpp
+ 中略
+ /usr/share/openrtm-1.1/examples/src/SimpleService/Makefile.MyServiceProvider
+ /usr/share/openrtm-1.1/examples/src/SimpleService/rtc.conf
+</code></pre></div>    </div>
+  </li>
+  <li>サンプル(ローダブル RTC)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.1/examples/rtc/MyServiceConsumer.so.0.0.0
+ /usr/share/openrtm-1.1/examples/rtc/SeqIn.so.0.0.0
+ 中略
+ /usr/share/openrtm-1.1/examples/rtc/ConfigSample.so.0.0.0
+ /usr/share/openrtm-1.1/examples/rtc/ConsoleOut.so.0.0.0
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

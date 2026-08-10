@@ -1,0 +1,1055 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Using XBee Modules with PiRT-Unit | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Using XBee Modules with PiRT-Unit" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/xbee_use_pirt-unit/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/xbee_use_pirt-unit/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Using XBee Modules with PiRT-Unit" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Using XBee Modules with PiRT-Unit","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/xbee_use_pirt-unit/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/xbee_use_pirt-unit/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/xbee_use_pirt-unit/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Using XBee Modules with PiRT-Unit <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/xbee_use_pirt-unit/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/installation/other/raspberrypi_casestudy/io_programming_pirt-unit/xbee_use_pirt-unit/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#using-xbee-modules-with-pirt-unit">Using XBee Modules with PiRT-Unit</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#connecting-xbee-and-a-pc">Connecting XBee and a PC</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#configuring-the-xbee-module">Configuring the XBee Module</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#if-xbee-stops-responding-completely">If XBee Stops Responding Completely</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: PiRT-UnitによるXBeeモジュールの利用 -->
+<p>#contents</p>
+
+<h2 id="using-xbee-modules-with-pirt-unit">Using XBee Modules with PiRT-Unit</h2>
+
+<p>PiRT-Unit has a connector for connecting the ZigBee module XBee.
+It can be used from RaspberryPi via a serial device for communication with other ZigBee modules, and can also be used to make the serial console wireless.
+In Raspbian Wheesy, it is configured as the serial console by default.
+This guide explains how to make the serial console wireless using XBee.</p>
+
+<h3 id="connecting-xbee-and-a-pc">Connecting XBee and a PC</h3>
+
+<p>To connect an XBee module to a PC, you need to use an XBee-USB Explorer.
+It has an XBee module connector and a USB connector, and by connecting it to a PC, you can configure various XBee settings from the PC and use XBee as a serial port.</p>
+
+<p>XBee-USB Explorers are sold by various manufacturers.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Product name</th>
+    <th>Manufacturer</th>
+    <th>Price</th>
+    <th>URL</th>
+  </tr>
+  <tr>
+    <td>AE-XBEE-USB</td>
+    <td>Akizuki Denshi Tsusho</td>
+    <td>1,280 yen</td>
+    <td>http://akizukidenshi.com/catalog/g/gK-06188/</td>
+  </tr>
+  <tr>
+    <td>SFE-WRL-08687</td>
+    <td>Sparkfun <br /> Switch Science</td>
+    <td>2,619 yen</td>
+    <td>http://www.switch-science.com/catalog/30/ <br /> Also available from http://strawberry-linux.com/catalog/items?code=18128</td>
+  </tr>
+  <tr>
+    <td>SFE-WRL-09819</td>
+    <td>Sparkfun <br /> Switch Science</td>
+    <td>2,619 yen</td>
+    <td>http://www.switch-science.com/catalog/344/</td>
+  </tr>
+</table>
+
+<div align="center"><a href="xbee-usb.png"><img src="xbee-usb.png" width="70%;" /></a></div>
+<div align="center"><strong>XBee-USB Explorer (Sparkfun (left), Akizuki Denshi Tsusho (right))</strong></div>
+
+<h4 id="open-device-manager-windows">Open Device Manager (Windows)</h4>
+
+<p>Open Device Manager.
+In Windows 7, you can open it from <strong>“Control Panel” -&gt; “System and Security” -&gt; “System” -&gt; “Device Manager”</strong>.
+If “Computer” is on the desktop, the quickest way is probably to open it from <strong>right-click -&gt; “Properties (R)” -&gt; “Device Manager”</strong>.</p>
+
+<h4 id="connecting-the-xbee-usb-explorer">Connecting the XBee-USB Explorer</h4>
+
+<p>Connect the XBee-USB Explorer to a USB port on the PC.
+When connecting it for the first time, it may take some time for the device to be recognized and for the device driver to be installed.
+After the device driver installation is complete, it appears as a COM port in Device Manager as shown below.
+At this time, remember which COM port it has been assigned to. (In the example below, it was assigned to COM8.)</p>
+
+<div align="center"><a href="debice_manager_xbbcomport.png"><img src="debice_manager_xbbcomport.png" width="70%;" /></a></div>
+<div align="center"><strong>XBee-USB Explorer device appearing in Device Manager</strong></div>
+
+<h4 id="if-the-device-is-not-recognized">If the Device Is Not Recognized</h4>
+
+<p>If the driver is unfortunately not installed automatically, for an XBee-USB Explorer using an FTDI chip (FT232B, etc.), download and install the driver directly from FTDI.</p>
+
+<ul>
+  <li>FTDI driver download site: http://www.ftdichip.com/Drivers/VCP.htm</li>
+</ul>
+
+<p>For the Akizuki and Sparkfun XBee-USB Explorers, driver installation was not required on Windows 7.</p>
+
+<h3 id="configuring-the-xbee-module">Configuring the XBee Module</h3>
+
+<p>XBee modules are broadly divided into parent units and child units, and whether an XBee module is used as a parent unit or a child unit is configured from the PC via the XBee-USB Explorer.</p>
+
+<p>Each XBee network always requires one parent unit, “Coordinator”, and multiple child units are connected under the parent unit.
+On the other hand, immediately after purchase, XBee modules are configured as child units, “Router”, so when creating an XBee network for the first time, one of them must be set as the parent unit, “Coordinator”.</p>
+
+<p>To configure an XBee module, you need to download the configuration software called X-CTU from Digi’s web page and install it on the PC.</p>
+
+<h4 id="downloading-and-installing-x-ctu">Downloading and Installing X-CTU</h4>
+
+<p>Go to Digi’s X-CTU download site (if the link is broken due to updates or other reasons, please let us know via the ML or similar means).</p>
+
+<ul>
+  <li><a href="http://www.digi.com/support/productdetail?pid=3352">Digi X-CTU download site</a></li>
+</ul>
+
+<p>Click the <strong>Diagnostics, Utilities and MIBs</strong> item on the page. A link to the X-CTU installer appears, so click it to download. (It is about 63 MB.)</p>
+
+<div align="center"><a href="digi_xctu_webpage_xctu_link.png"><img src="digi_xctu_webpage_xctu_link.png" width="70%;" /></a></div>
+<div align="center"><strong>Downloading the X-CTU installer</strong></div>
+
+<p>Click and run the downloaded executable file <strong>40003002_C.exe</strong> (this file name may change due to version upgrades, etc.), and the installer will start. Follow the instructions to complete the installation.</p>
+
+<div align="center"><a href="xctu_setup0.png"><img src="xctu_setup0.png" width="70%;" /></a></div>
+<div align="center"><strong>Running the X-CTU installer</strong></div>
+
+<p>Finally, you may be asked whether to update the firmware, but skip it if it is not especially necessary. (It takes quite a bit of time.)</p>
+
+<h4 id="starting-x-ctu">Starting X-CTU</h4>
+
+<p>After installation is complete, start X-CTU. After startup, a screen like the following is displayed.</p>
+
+<div align="center"><a href="xctu0.png"><img src="xctu0.png" width="70%;" /></a></div>
+<div align="center"><strong>Screen after starting X-CTU</strong></div>
+
+<p>Select <strong>“PC-Settings”</strong> in X-CTU.
+In <strong>Select Com Port</strong> within the tab, select the COM port to which the XBee-USB Explorer device is connected. (In this example, it is COM8.)
+If you do not know the COM port to which the XBee-USB Explorer device is connected, temporarily disconnect the device from the PC and observe which COM port disappears in Device Manager, or restart X-CTU and find the COM port that disappeared, to identify the corresponding COM port.</p>
+
+<p>After selecting the target COM port in <strong>Select Com Port</strong>, press the <strong>Test/Query</strong> button at the bottom right. It communicates with the XBee and displays the serial number and other information as shown below.</p>
+
+<div align="center"><a href="xctu1.png"><img src="xctu1.png" width="70%;" /></a></div>
+<div align="center"><strong>Connection test</strong></div>
+
+<h4 id="loading-firmware-configuration-information">Loading Firmware Configuration Information</h4>
+
+<p>Next, load the firmware information to check the current configuration of the connected XBee.
+Click the <strong>“Modem Configuration”</strong> tab in X-CTU, then click the <strong>“Read”</strong> button in the <strong>Modem Parameter and Firmware</strong> area below.
+Then communication with the XBee starts, and after a short while, the XBee configuration information is displayed in a tree in the lower area as shown below.</p>
+
+<div align="center"><a href="xctu2.png"><img src="xctu2.png" width="70%;" /></a></div>
+<div align="center"><strong>Loading firmware configuration information</strong></div>
+
+<p>The XBee module type is displayed in the <strong>“Modem”</strong> section, the firmware type is displayed in the <strong>“Function Set”</strong> section, and the firmware version is displayed in “Version”.</p>
+
+<p>The <strong>“Function Set”</strong> section is probably <strong>ZIGBEE ROUTER AT</strong>, which means that this XBee module is configured as a “Router”, that is, a child unit.</p>
+
+<h4 id="changing-from-router-to-coordinator">Changing from Router to Coordinator</h4>
+
+<p>Here, change the child unit “Router” to the parent unit “Coordinator”.
+To change it to the parent unit, that is, <strong>“Coordinator”</strong>, select <strong>ZIGBEE COORDINATOR AT</strong> from the pull-down menu.</p>
+
+<div align="center"><a href="xctu3.png"><img src="xctu3.png" width="70%;" /></a></div>
+<div align="center"><strong>Changing the firmware to ZIGBEE COORDINATOR AT</strong></div>
+
+<p>Press the <strong>“Write”</strong> button to start writing to the XBee. Writing completes in about 1 to 2 minutes.</p>
+
+<div align="center"><a href="xctu6.png"><img src="xctu6.png" width="70%;" /></a></div>
+<div align="center"><strong>Writing the firmware</strong></div>
+
+<h4 id="difference-between-at-and-api">Difference Between AT and API</h4>
+
+<p>When selecting the firmware earlier, you may have noticed that in addition to <strong>ZIGBEE COORDINATOR AT</strong>, there was firmware called <strong>ZIGBEE COORDINATOR API</strong>.
+Firmware with <strong>AT</strong> means the type of firmware that configures the XBee using AT commands, while firmware with <strong>API</strong> means the type of firmware that configures the XBee via an API.</p>
+
+<h2 id="if-xbee-stops-responding-completely">If XBee Stops Responding Completely</h2>
+
+<p>If XBee stops responding completely, forcibly overwrite the firmware and restore it to the factory state.
+Follow the procedure below to restore it to the factory default state.</p>
+
+<ol>
+  <li>Remove XBee from the XBee-USB Explorer device</li>
+  <li>In that state, connect the XBee-USB Explorer device to the PC</li>
+  <li>Start X-CTU</li>
+  <li>Click the “Modem Configuration” tab</li>
+  <li>Click the “Always update firmware” checkbox</li>
+  <li>Select the appropriate “Modem” type</li>
+  <li>Select the appropriate “Function Set”</li>
+  <li>Click “Write”. After a short while, an error dialog appears, so insert XBee into the XBee-USB Explorer device</li>
+  <li>Firmware writing starts</li>
+</ol>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

@@ -1,0 +1,1432 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>チュートリアル(SLAM実習) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="チュートリアル(SLAM実習)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_slam_raspberrypimouse/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_slam_raspberrypimouse/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="チュートリアル(SLAM実習)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"チュートリアル(SLAM実習)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_slam_raspberrypimouse/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_slam_raspberrypimouse/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_slam_raspberrypimouse/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>チュートリアル(SLAM実習) <div class="lang-switch"><a href="/my-jekyll-site/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_slam_raspberrypimouse/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_slam_raspberrypimouse/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#はじめに">はじめに</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#事前準備">事前準備</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#lidarの取り付け">LiDARの取り付け</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#slamによるナビゲーション地図生成システム">SLAMによるナビゲーション地図生成システム</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#mapperシステムの起動raspberry-pi">Mapperシステムの起動(Raspberry Pi)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#navigationmanagerの起動pc">NavigationManagerの起動(PC)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ポートの接続rtcのアクティブ化">ポートの接続、RTCのアクティブ化</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#地図作成">地図作成</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#ナビゲーション経路計画システムの実行">ナビゲーション(経路計画)システムの実行</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#pathplanシステムの起動raspberry-pi">PathPlanシステムの起動(Raspberry Pi)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#navigationmanagermapserverの起動pc">NavigationManager、MapServerの起動(PC)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ポートの接続rtcのアクティブ化-1">ポートの接続、RTCのアクティブ化</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#経路生成">経路生成</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#経路追従">経路追従</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<p>init
+<!-- チュートリアル(SLAM実習) -->
+#contents</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>このページではLiDAR付RaspberryPiマウスを用いてSLAMによるナビゲーションを行います。</p>
+
+<div align="center"><a href="https://rt-net.jp/mobility/wp-content/uploads/2019/12/23b47429c42d672e7f94ae0a3c9c9d6c.png"><img src="https://rt-net.jp/mobility/wp-content/uploads/2019/12/23b47429c42d672e7f94ae0a3c9c9d6c.png" width="70%;" /></a></div>
+
+<p>SLAMはSimultaneous Localization and Mappingの略で、環境地図作成と自己位置推定を同時に実行することを指し、本チュートリアルでは[[
+移動ロボットのナビゲーションに関わるRTコンポーネント群:https://ogata-lab.jp/ja/technology_ja/mobile_nav_rtcs_ja.html]]を使用します。</p>
+
+<p>移動ロボットのナビゲーションに関わるRTコンポーネント群は<a href="https://www.mrpt.org/">MRPT</a>という自己位置推定、環境地図作成、経路計画などの機能を提供するクロスプラットフォームなライブラリを使用しています。</p>
+
+<h2 id="事前準備">事前準備</h2>
+
+<h3 id="lidarの取り付け">LiDARの取り付け</h3>
+<p>まずRaspberryPiマウスにLiDARを取り付けます。</p>
+
+<p>LiDARマウントには2種類あります。以下に記載の(1)専用LiDARマウント、(2)マルチLiDARマウントの取付手順を参考にしてRaspberry Piマウス本体に取り付けてください。</p>
+
+<h4 id="専用lidarマウント">専用LiDARマウント</h4>
+
+<p>以下の画像のように2本のねじで止めるマウントの場合、下記の手順で取り付けてください。</p>
+
+<div align="center"><a href="DSC04139.JPG"><img src="DSC04139.JPG" width="50%;" /></a></div>
+
+<p>以下のRaspberry Piマウス本体、LiDAR、タッピングビスを用意してください。</p>
+
+<div align="center"><a href="slam29_2.png"><img src="slam29_2.png" width="50%;" /></a></div>
+
+<p>次にRaspberry Piマウス底面のねじを外してください。</p>
+
+<div align="center"><a href="slam30.png"><img src="slam30.png" width="50%;" /></a></div>
+
+<p>基盤部分をフレームごとずらしてください。</p>
+
+<div align="center"><a href="slam31.png"><img src="slam31.png" width="50%;" /></a></div>
+
+<p>次にスペーサーを手で回して外してください。</p>
+
+<div align="center"><a href="slam32.png"><img src="slam32.png" width="50%;" /></a></div>
+
+<p>センサ基盤を外してください。</p>
+
+<div align="center"><a href="slam33.png"><img src="slam33.png" width="50%;" /></a></div>
+<div align="center"><a href="slam34.png"><img src="slam34.png" width="50%;" /></a></div>
+
+<p>LiDARをRaspberry Piマウスの上部分に載せてビスで固定してください。</p>
+
+<div align="center"><a href="slam35.png"><img src="slam35.png" width="50%;" /></a></div>
+<div align="center"><a href="slam36.png"><img src="slam36.png" width="50%;" /></a></div>
+<div align="center"><a href="slam37.png"><img src="slam37.png" width="50%;" /></a></div>
+
+<p>Raspberry PiマウスとLiDARをUSBポートで接続してください。</p>
+
+<div align="center"><a href="slam38.png"><img src="slam38.png" width="50%;" /></a></div>
+<div align="center"><a href="slam39.png"><img src="slam39.png" width="50%;" /></a></div>
+
+<p>外したパーツを元に戻せば完成です。</p>
+
+<h4 id="マルチlidarマウント">マルチLiDARマウント</h4>
+
+<p>以下の画像のように4つのツメを引っかけるマウントの場合、下記の手順で取り付けてください。</p>
+
+<div align="center"><a href="DSC04142.JPG"><img src="DSC04142.JPG" width="50%;" /></a></div>
+
+<p>以下のように4つのツメをRaspberry Piマウス本体に引っかけます。</p>
+
+<p>まず、前方の2つのツメを引っかけてください。</p>
+
+<div align="center"><a href="DSC04145.JPG"><img src="DSC04145.JPG" width="50%;" /></a></div>
+
+<p>次に後ろのツメを引っかけます。</p>
+
+<div align="center"><a href="DSC04146.JPG"><img src="DSC04146.JPG" width="50%;" /></a></div>
+
+<p>そして、マルチLiDARマウントの前方2か所をなべタッピングネジ3-8で固定すれば取付完了です。</p>
+
+<div align="center"><a href="DSC04151.JPG"><img src="DSC04151.JPG" width="50%;" /></a></div>
+
+<div align="center"><a href="DSC04147.JPG"><img src="DSC04147.JPG" width="50%;" /></a></div>
+
+<p>Raspberry PiマウスとLiDARをUSBポートで接続してください。</p>
+
+<div align="center"><a href="DSC04148.JPG"><img src="DSC04148.JPG" width="50%;" /></a></div>
+
+<p>LiDARの取り付け作業が完了したらRaspberryPiマウスの電源スイッチをオンにしてアクセスポイントに接続してください。</p>
+
+<!-- *** MapServer、NavigationManagerのダウンロード -->
+
+<!-- 講習会でUSBメモリを配布している場合は、ダウンロードは不要です。 -->
+
+<!-- MapServer、NavigationManagerはGUIで操作します。 -->
+<!-- Raspberry Piでも起動可能ですが、その場合Raspberry Piをディスプレイに接続するか、X Window Systemで他のPCに画面を表示するかする必要があります。 -->
+<!-- 今回はMapServer、NavigationManagerをPC上で起動するため、以下から実行に必要なファイルをダウンロードしてください。 -->
+
+<!-- - [[RTM_Tutorial.zip:https://github.com/OpenRTM/RTM_Tutorial/releases/download/20220930/RTM_Tutorial.zip]] -->
+
+<!-- MapServer、NavigationManagerはRTM_Tutorial.zipを展開したフォルダの''Navigation''フォルダに含まれています。 -->
+
+<!-- *** 起動済みのRTC終了 -->
+
+<!-- RobotController、RaspberryPiMouseRTCなどが起動済みの場合は終了します。 -->
+
+<!-- RaspberryPiMouseRTCはWEBブラウザの操作でStopをクリックしてください。 -->
+
+<!-- #ref(slam47.png,/jp/node/7098,center) -->
+
+<h2 id="slamによるナビゲーション地図生成システム">SLAMによるナビゲーション地図生成システム</h2>
+
+<p>この章では自己位置推定をしながら環境地図生成を行うシステムを試してみます。
+MRPTは<a href="https://www.mrpt.org/List_of_SLAM_algorithms">ICP-SLAM、RBPF-SLAM</a>などのアルゴリズムが使用可能ですが、移動ロボットのナビゲーションに関わるRTコンポーネント群ではICP-SLAMを使用します。
+ICPアルゴリズムは2つの点群データ(地図データ、LRFで取得した最新のデータ)を平行移動、回転を繰り返すことで、対応関係にある点の距離が最短になるように位置合わせをするアルゴリズムです。
+ICPアルゴリズムで作成中の地図データの点群データとLRFで取得したデータを位置合わせすることで現在の位置を計算します。</p>
+
+<h3 id="mapperシステムの起動raspberry-pi">Mapperシステムの起動(Raspberry Pi)</h3>
+<p>まずはWEBブラウザの操作でMapperシステムを起動します。</p>
+
+<div align="center"><a href="slam1.png"><img src="slam1.png" width="50%;" /></a></div>
+
+<p>元の画面に戻らない場合は「Back to the top page.」を押してください。</p>
+
+<div align="center"><a href="slam2.png"><img src="slam2.png" width="50%;" /></a></div>
+
+<h3 id="navigationmanagerの起動pc">NavigationManagerの起動(PC)</h3>
+<p>次にNavigationManagerを起動します。
+Navigationフォルダ内の以下のバッチファイル、シェルスクリプトを実行してください。</p>
+
+<ul>
+  <li>NavigationManager.bat(Windows)</li>
+  <li>NavigationManager.sh(Ubuntu)</li>
+</ul>
+
+<p>すると以下のGUIが起動します。</p>
+
+<div align="center"><a href="slam48.png"><img src="slam48.png" width="50%;" /></a></div>
+
+<h3 id="ポートの接続rtcのアクティブ化">ポートの接続、RTCのアクティブ化</h3>
+
+<p>RTSystemEditorのネームサービスビューは以下の状態になっているはずです。</p>
+
+<div align="center"><a href="slam28.png"><img src="slam28.png" width="50%;" /></a></div>
+
+<p>まずはWEBブラウザの操作で<strong>Connect</strong>ボタンを押してください。
+これでRaspberry Pi上のRTCのポートは接続されます。</p>
+
+<div align="center"><a href="slam14.png"><img src="slam14.png" width="50%;" /></a></div>
+
+<p>システムダイアグラム上で以下のように接続してください。</p>
+
+<div align="center"><a href="slam46.png"><img src="slam46.png" width="50%;" /></a></div>
+
+<p>NavigationManagerに関わる部分以外は接続済みのため、以下のポートを接続します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>コンポーネント名</th>
+    <th>ポート名</th>
+    <th>コンポーネント名</th>
+    <th>ポート名</th>
+  </tr>
+  <tr>
+    <td>NavigationManager0</td>
+    <td>mapperService</td>
+    <td>Mapper_MRPT0</td>
+    <td>gridMapper</td>
+  </tr>
+  <tr>
+    <td>NavigationManager0</td>
+    <td>currentPose</td>
+    <td>Mapper_MRPT0</td>
+    <td>estimatedPose</td>
+  </tr>
+  <tr>
+    <td>NavigationManager0</td>
+    <td>targetVelocity</td>
+    <td>RaspberryPiMouseRTC0</td>
+    <td>target_velocity_in</td>
+  </tr>
+  <tr>
+    <td>NavigationManager0</td>
+    <td>range</td>
+    <td>RPLiderRTC0(RobotisLDSensor0)</td>
+    <td>range</td>
+  </tr>
+</table>
+
+<p>接続したらRTCをアクティブ化してください。</p>
+<div align="center"><a href="slam5.png"><img src="slam5.png" width="50%;" /></a></div>
+
+<h3 id="地図作成">地図作成</h3>
+
+<p>NavigationManagerのGUIの<strong>Start Mapping</strong>ボタンを押してください。</p>
+
+<div align="center"><a href="slam6.png"><img src="slam6.png" width="50%;" /></a></div>
+
+<p>次にRTCをアクティブ化した時に以下のジョイスティックGUIが起動しているため、黄色い円をマウスで操作してください。
+それでRaspberry Piマウスが移動します。</p>
+
+<div align="center"><a href="slam8.png"><img src="slam8.png" width="50%;" /></a></div>
+
+<p>しばらく操作すると以下のように環境地図が得られます。</p>
+
+<div align="center"><a href="testMap.png"><img src="testMap.png" width="50%;" /></a></div>
+
+<p>地図生成が終了したら<strong>Stop Mapping</strong>ボタンを押してください。</p>
+
+<div align="center"><a href="slam10.png"><img src="slam10.png" width="50%;" /></a></div>
+
+<p>次に地図データを保存します。
+<strong>Save Map</strong>ボタンを押してください。</p>
+
+<div align="center"><a href="slam11.png"><img src="slam11.png" width="50%;" /></a></div>
+
+<p>ファイル名を<strong>testMap</strong>と設定して、Navigationフォルダに保存してください。
+<br />※<strong>開く</strong>ボタンをクリックすると保存されます。</p>
+
+<div align="center"><a href="slam45.png"><img src="slam45.png" width="50%;" /></a></div>
+
+<p>最後にWEBブラウザの操作でMapperシステムを終了させます。</p>
+
+<div align="center"><a href="slam13.png"><img src="slam13.png" width="50%;" /></a></div>
+
+<h2 id="ナビゲーション経路計画システムの実行">ナビゲーション(経路計画)システムの実行</h2>
+
+<p>ここからは作成した環境地図データを用いてRaspberry Piマウスの経路計画を試してみます。</p>
+
+<h3 id="pathplanシステムの起動raspberry-pi">PathPlanシステムの起動(Raspberry Pi)</h3>
+<p>WEBブラウザの操作でPathPlanシステムを起動します。</p>
+
+<div align="center"><a href="slam15.png"><img src="slam15.png" width="50%;" /></a></div>
+
+<p>元の画面に戻らない場合は「Back to the top page.」を押してください。</p>
+
+<h3 id="navigationmanagermapserverの起動pc">NavigationManager、MapServerの起動(PC)</h3>
+<p>次にNavigationManagerとMapServerを起動します。
+NavigationManagerが起動済みの場合はMapServerのみを起動してください。
+Navigationフォルダ内の以下のバッチファイル、シェルスクリプトを実行してください。</p>
+
+<ul>
+  <li>NavigationManager.bat(Windows)、NavigationManager.sh(Ubuntu)</li>
+  <li>MapServer.bat(Windows)、MapServer.sh(Ubuntu)</li>
+</ul>
+
+<h3 id="ポートの接続rtcのアクティブ化-1">ポートの接続、RTCのアクティブ化</h3>
+
+<p>RTSystemEditorのネームサービスビューは以下の状態になっているはずです。</p>
+
+<div align="center"><a href="slam18.png"><img src="slam18.png" width="50%;" /></a></div>
+
+<p>まずはWEBブラウザの操作で<strong>Connect</strong>ボタンを押してください。
+これでRaspberry Pi上のRTCのポートは接続されます。</p>
+
+<div align="center"><a href="slam16.png"><img src="slam16.png" width="50%;" /></a></div>
+
+<p>システムダイアグラム上で以下のように接続してください。</p>
+
+<div align="center"><a href="slam19.png"><img src="slam19.png" width="50%;" /></a></div>
+
+<table class="table-alt">
+  <tr>
+    <th>コンポーネント名</th>
+    <th>ポート名</th>
+    <th>コンポーネント名</th>
+    <th>ポート名</th>
+  </tr>
+  <tr>
+    <td>NavigationManager0</td>
+    <td>mapServer</td>
+    <td>MapServer0</td>
+    <td>mapServer</td>
+  </tr>
+  <tr>
+    <td>NavigationManager0</td>
+    <td>pathPlanner</td>
+    <td>PathPlanner_MRPT0</td>
+    <td>pathPlanner</td>
+  </tr>
+  <tr>
+    <td>NavigationManager0</td>
+    <td>pathFollower</td>
+    <td>SimplePathFollower0</td>
+    <td>PathFollower</td>
+  </tr>
+  <tr>
+    <td>NavigationManager0</td>
+    <td>currentPose</td>
+    <td>Localization_MRPT0</td>
+    <td>estimatedPose</td>
+  </tr>
+  <tr>
+    <td>NavigationManager0</td>
+    <td>range</td>
+    <td>RPLiderRTC0(RobotisLDSensor0)</td>
+    <td>range</td>
+  </tr>
+  <tr>
+    <td>MapServer0</td>
+    <td>mapServer</td>
+    <td>Localization_MRPT</td>
+    <td>mapServer</td>
+  </tr>
+</table>
+
+<p>接続したらRTCをアクティブ化してください。</p>
+
+<div align="center"><a href="slam20.png"><img src="slam20.png" width="50%;" /></a></div>
+
+<h3 id="経路生成">経路生成</h3>
+<p>まずはRaspberry Piマウスの目標位置、目標姿勢角を設定します。
+NavigationManagerのGUIの地図上の目標位置となる場所をクリックしてください。
+地図上の白い部分が障害物を検出しなかった範囲のため、白い範囲のどこかをクリックしてください。</p>
+
+<div align="center"><a href="slam21.png"><img src="slam21.png" width="50%;" /></a></div>
+
+<p>以下の画面が表示されるので、目標角度を設定します。</p>
+
+<div align="center"><a href="slam22.png"><img src="slam22.png" width="50%;" /></a></div>
+
+<p>適当な場所をクリックすると中心から延びる赤い線の角度が変化するので、適当な角度に設定してください。</p>
+
+<div align="center"><a href="path23.png"><img src="path23.png" width="50%;" /></a></div>
+
+<p><strong>OK</strong>ボタンを押すと地図上に目標位置が表示されます。</p>
+
+<div align="center"><a href="slam23.png"><img src="slam23.png" width="50%;" /></a></div>
+
+<p>次に<strong>Plan Path</strong>ボタンを押してください。</p>
+
+<div align="center"><a href="slam24.png"><img src="slam24.png" width="50%;" /></a></div>
+
+<p>これで目標位置までの目標経路が計算されました。</p>
+
+<div align="center"><a href="slam25.png"><img src="slam25.png" width="50%;" /></a></div>
+
+<h3 id="経路追従">経路追従</h3>
+
+<p><strong>Follow</strong>ボタンを押すと経路追従を開始します。</p>
+
+<div align="center"><a href="slam26.png"><img src="slam26.png" width="50%;" /></a></div>
+
+<p>動作確認が終了したら、WEBブラウザのStopボタンからPathPlanシステムを終了してください。
+<!-- [[Raspberry Piマウスの電源をオフ:/ja/node/6550#shutdown]]にしてください。 --></p>
+
+<div align="center"><a href="slam27.png"><img src="slam27.png" width="50%;" /></a></div>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

@@ -1,0 +1,1245 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Installing RTCs for the Educator Vehicle (EV3) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Installing RTCs for the Educator Vehicle (EV3)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_ev3_rtc_install/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_ev3_rtc_install/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Installing RTCs for the Educator Vehicle (EV3)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Installing RTCs for the Educator Vehicle (EV3)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/casestudy/lego_mindstorm/lego_ev3_rtc_install/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_ev3_rtc_install/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_ev3_rtc_install/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Installing RTCs for the Educator Vehicle (EV3) <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/lego_mindstorm/lego_ev3_rtc_install/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/casestudy/lego_mindstorm/lego_ev3_rtc_install/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#educatorvehicle">EducatorVehicle</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#touch-sensor-output">Touch Sensor Output</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#audio-output">Audio Output</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#images-displayed-on-the-lcd">Images Displayed on the LCD</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#controleducatorvehicle">ControlEducatorVehicle</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#obstacle-avoidance-using-touch-sensor-input">Obstacle Avoidance Using Touch Sensor Input</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#measuring-the-distance-to-the-ground-using-the-ultrasonic-sensor">Measuring the Distance to the Ground Using the Ultrasonic Sensor</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#batch-installation">Batch Installation</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Installing RTCs for the Educator Vehicle (EV3) -->
+<p>#contents</p>
+
+<p>This page explains how to install the various RTCs used to control the Educator Vehicle.</p>
+
+<h2 id="educatorvehicle">EducatorVehicle</h2>
+
+<p>EducatorVehicle is a component for controlling the driving speed of the EV3 and outputting sensor data.</p>
+
+<ul>
+  <li><a href="https://github.com/Nobu19800/EducatorVehicle">https://github.com/Nobu19800/EducatorVehicle</a></li>
+</ul>
+
+<p>Enter the following commands in the cross-development environment.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+git clone https://github.com/Nobu19800/EducatorVehicle
+cd EducatorVehicle
+cmake .
+make
+
+</code></pre></div></div>
+
+<p>Transfer the generated <code class="language-plaintext highlighter-rouge">src/EducatorVehicleComp</code> to the EV3.</p>
+
+<table class="table-alt">
+  <tr>
+    <th colspan="3" style="text-align: center;">EducatorVehicle</th>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">InPort</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>velocity2D</td>
+    <td>RTC::TimedVelocity2D</td>
+    <td>Target velocity</td>
+  </tr>
+  <tr>
+    <td>angle</td>
+    <td>RTC::TimedDouble</td>
+    <td>Motor M angle</td>
+  </tr>
+  <tr>
+    <td>lcd</td>
+    <td>RTC::CameraImage</td>
+    <td>Image data to be displayed on the LCD</td>
+  </tr>
+  <tr>
+    <td>sound</td>
+    <td>RTC::TimedString</td>
+    <td>Audio output</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">OutPort</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>odometry</td>
+    <td>RTC::TimedPose2D</td>
+    <td>Current position and orientation</td>
+  </tr>
+  <tr>
+    <td>current_vel</td>
+    <td>RTC::TimedVelocity2D</td>
+    <td>Current velocity and angular velocity</td>
+  </tr>
+  <tr>
+    <td>ultrasonic</td>
+    <td>RTC::RangeData</td>
+    <td>Distance measured by the ultrasonic sensor</td>
+  </tr>
+  <tr>
+    <td>gyro</td>
+    <td>RTC::TimedDouble</td>
+    <td>Angle measured by the gyro sensor</td>
+  </tr>
+  <tr>
+    <td>color</td>
+    <td>RTC::TimedString</td>
+    <td>Color measured by the color sensor</td>
+  </tr>
+  <tr>
+    <td>light_reflect</td>
+    <td>RTC::TimedDouble</td>
+    <td>Reflected light intensity measured by the color sensor</td>
+  </tr>
+  <tr>
+    <td>touch</td>
+    <td>RTC::TimedBoolean</td>
+    <td>Touch sensor ON/OFF state. The right sensor corresponds to element 0, and the left sensor corresponds to element 1.</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">Configuration Parameters</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Default Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>wheelRadius</td>
+    <td>0.028</td>
+    <td>Wheel radius</td>
+  </tr>
+  <tr>
+    <td>wheelDistance</td>
+    <td>0.054</td>
+    <td>Half the distance between the wheels</td>
+  </tr>
+  <tr>
+    <td>medium_motor_speed</td>
+    <td>1.6</td>
+    <td>Speed of Motor M</td>
+  </tr>
+</table>
+
+<div align="center"><a href="simulator_ev3_2.png"><img src="simulator_ev3_2.png" width="50%;" /></a></div>
+
+<h3 id="touch-sensor-output">Touch Sensor Output</h3>
+
+<p>For the data received through <code class="language-plaintext highlighter-rouge">touch</code>, element 0 corresponds to the right touch sensor (Port 3), and element 1 corresponds to the left touch sensor (Port 1).</p>
+
+<h3 id="audio-output">Audio Output</h3>
+
+<p>The following commands can be used as input to the <code class="language-plaintext highlighter-rouge">sound</code> port.</p>
+
+<ul>
+  <li>beep
+    <ul>
+      <li>Entering <code class="language-plaintext highlighter-rouge">beep</code> produces a beep sound.</li>
+    </ul>
+  </li>
+  <li>tone
+    <ul>
+      <li>Enter <code class="language-plaintext highlighter-rouge">tone</code>, followed by a frequency and duration, as shown below, to play a tone at the specified frequency for the specified number of milliseconds.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+tone,100,1000
+
+</code></pre></div></div>
+
+<ul>
+  <li>Other strings
+    <ul>
+      <li>Any other string will be spoken using text-to-speech.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="images-displayed-on-the-lcd">Images Displayed on the LCD</h3>
+
+<p>Image files can be converted by dragging and dropping them onto <code class="language-plaintext highlighter-rouge">saveBinaryImage.exe</code>.</p>
+
+<p>The image data displayed on the LCD can be supplied after conversion using the following component.</p>
+
+<p>When using Windows, start it using <code class="language-plaintext highlighter-rouge">ImageConversionLCDComp.exe</code> in the release folder.</p>
+
+<ul>
+  <li><a href="https://github.com/Nobu19800/ImageConversionLCD">https://github.com/Nobu19800/ImageConversionLCD</a></li>
+</ul>
+
+<table class="table-alt">
+  <tr>
+    <th colspan="3" style="text-align: center;">ImageConversionLCD</th>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">InPort</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>out</td>
+    <td>RTC::CameraImage</td>
+    <td>Image data before conversion</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">OutPort</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>out</td>
+    <td>RTC::CameraImage</td>
+    <td>Converted image data</td>
+  </tr>
+</table>
+
+<div align="center"><a href="ImageConversionLCD.png"><img src="ImageConversionLCD.png" width="70%;" /></a></div>
+
+<p>For example, by connecting it to the OpenRTM-aist sample component <strong>OpenCVCamera</strong>, camera images can be displayed on the EV3 LCD.</p>
+
+<div align="center"><a href="system_lcd.png"><img src="system_lcd.png" width="60%;" /></a></div>
+
+<div align="center"><a href="s_DSC00796.JPG"><img src="s_DSC00796.JPG" width="50%;" /></a></div>
+
+<p>Alternatively, a specific image can be displayed.</p>
+
+<div align="center"><a href="s_DSC00797.JPG"><img src="s_DSC00797.JPG" width="50%;" /></a></div>
+<p><br /></p>
+
+<div align="center"><a href="s_DSC00798.JPG"><img src="s_DSC00798.JPG" width="50%;" /></a></div>
+
+<h2 id="controleducatorvehicle">ControlEducatorVehicle</h2>
+
+<p>ControlEducatorVehicle can be used to control the following mobile robot (modified Educator Vehicle). Refer to <a href="/en/node/6038">this page</a> for assembly instructions.</p>
+
+<ul>
+  <li><a href="https://github.com/Nobu19800/ControlEducatorVehicle">https://github.com/Nobu19800/ControlEducatorVehicle</a></li>
+</ul>
+
+<div align="center"><a href="s_DSC00443.JPG"><img src="s_DSC00443.JPG" width="50%;" /></a></div>
+<p><br /></p>
+<div align="center"><a href="s_DSC00440.JPG"><img src="s_DSC00440.JPG" width="50%;" /></a></div>
+
+<p>Features:</p>
+
+<ul>
+  <li>Avoids obstacles when a touch sensor is pressed.</li>
+  <li>Stops when the reflected light intensity measured by the color sensor falls below a specified threshold.</li>
+  <li>Measures the distance to the ground using the ultrasonic sensor, stops when the measured value exceeds a threshold, rotates the ultrasonic sensor, and searches for drivable ground.</li>
+</ul>
+
+<p>If the ultrasonic sensor is not used, it can also be used to control a standard Educator Vehicle.</p>
+
+<p>Enter the following commands in the cross-development environment.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+git clone https://github.com/Nobu19800/ControlEducatorVehicle
+cd ControlEducatorVehicle
+cmake .
+make
+
+</code></pre></div></div>
+
+<p>Transfer the generated <code class="language-plaintext highlighter-rouge">src/ControlEducatorVehicleComp</code> to the EV3.</p>
+
+<table class="table-alt">
+  <tr>
+    <th colspan="3" style="text-align: center;">ControlEducatorVehicle</th>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">InPort</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>target_velocity_in</td>
+    <td>RTC::TimedVelocity2D</td>
+    <td>Target velocity</td>
+  </tr>
+  <tr>
+    <td>current_pose</td>
+    <td>RTC::TimedPose2D</td>
+    <td>Current position and orientation</td>
+  </tr>
+  <tr>
+    <td>ultrasonic</td>
+    <td>RTC::TimedRangeData</td>
+    <td>Distance measured by the ultrasonic sensor</td>
+  </tr>
+  <tr>
+    <td>light_reflect</td>
+    <td>RTC::TimedDouble</td>
+    <td>Reflected light intensity measured by the color sensor</td>
+  </tr>
+  <tr>
+    <td>touch</td>
+    <td>TimedBoolean</td>
+    <td>Touch sensor ON/OFF state</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">OutPort</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Data Type</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>target_velocity_out</td>
+    <td>RTC::TimedVelocity2D</td>
+    <td>Corrected target velocity</td>
+  </tr>
+  <tr>
+    <td>angle</td>
+    <td>RTC::TimedDouble</td>
+    <td>Motor M angle</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">Configuration Parameters</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Default Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>sensor_height</td>
+    <td>0.2</td>
+    <td>Ultrasonic sensor threshold used to determine whether drivable ground exists</td>
+  </tr>
+  <tr>
+    <td>back_speed</td>
+    <td>0.1</td>
+    <td>Reverse movement speed</td>
+  </tr>
+  <tr>
+    <td>back_time</td>
+    <td>1.0</td>
+    <td>Duration of reverse movement</td>
+  </tr>
+  <tr>
+    <td>rotate_speed</td>
+    <td>0.8</td>
+    <td>Rotation speed</td>
+  </tr>
+  <tr>
+    <td>rotate_time</td>
+    <td>2.0</td>
+    <td>Rotation duration</td>
+  </tr>
+  <tr>
+    <td>medium_motor_range</td>
+    <td>1.6</td>
+    <td>Operating range of Motor M</td>
+  </tr>
+</table>
+
+<div align="center"><a href="ControlEducatorVehicle.png"><img src="ControlEducatorVehicle.png" width="60%;" /></a></div>
+
+<h3 id="obstacle-avoidance-using-touch-sensor-input">Obstacle Avoidance Using Touch Sensor Input</h3>
+
+<div align="center"><a href="ev3_4.png"><img src="ev3_4.png" width="60%;" /></a></div>
+
+<p>When a touch sensor is activated, the robot first moves backward at the speed specified by <code class="language-plaintext highlighter-rouge">back_speed</code> for the duration specified by <code class="language-plaintext highlighter-rouge">back_time</code>, as shown in step ③.</p>
+
+<p>It then rotates at the angular velocity specified by <code class="language-plaintext highlighter-rouge">rotate_speed</code> for the duration specified by <code class="language-plaintext highlighter-rouge">rotate_time</code>, as shown in step ④.</p>
+
+<p>The direction of rotation is opposite to the side on which the activated touch sensor is located.</p>
+
+<h3 id="measuring-the-distance-to-the-ground-using-the-ultrasonic-sensor">Measuring the Distance to the Ground Using the Ultrasonic Sensor</h3>
+
+<p>To perform the operation of measuring the distance to the ground, stopping, and rotating the ultrasonic sensor to search for drivable ground, the EV3 Education Vehicle must be assembled with the ultrasonic sensor mounted on a rotating mechanism.</p>
+
+<p>The operation sequence is as follows.</p>
+
+<div align="center"><a href="ev3_sensor.png"><img src="ev3_sensor.png" width="60%;" /></a></div>
+
+<p>Suppose the robot is driving on a desk and reaches the edge as shown in step ②.</p>
+
+<p>If the distance measured by the ultrasonic sensor exceeds <code class="language-plaintext highlighter-rouge">sensor_height</code>, the robot stops.</p>
+
+<p>Then, as shown in step ③, the ultrasonic sensor rotates 90 degrees to the right and checks whether the distance to the ground is less than <code class="language-plaintext highlighter-rouge">sensor_height</code>.</p>
+
+<p>If the measured value is still greater than <code class="language-plaintext highlighter-rouge">sensor_height</code>, the sensor rotates 180 degrees to the left as shown in step ④ and checks again.</p>
+
+<p>If a direction is found where the measured distance is less than <code class="language-plaintext highlighter-rouge">sensor_height</code>, the Education Vehicle rotates toward that direction.</p>
+
+<h2 id="batch-installation">Batch Installation</h2>
+
+<p>To install all of the RTCs described above at once, enter the following commands.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+git clone https://github.com/Nobu19800/EducatorVehicle_script_ev3dev
+cd EducatorVehicle_script_ev3dev
+sh Component/install_rtc.sh
+
+</code></pre></div></div>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

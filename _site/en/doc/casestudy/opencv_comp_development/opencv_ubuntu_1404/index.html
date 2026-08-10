@@ -1,0 +1,2937 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Creating an Image Processing Component (OpenRTM-aist-1.1, CMake, Linux Ubuntu 14.04) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Creating an Image Processing Component (OpenRTM-aist-1.1, CMake, Linux Ubuntu 14.04)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/casestudy/opencv_comp_development/opencv_ubuntu_1404/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/casestudy/opencv_comp_development/opencv_ubuntu_1404/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Creating an Image Processing Component (OpenRTM-aist-1.1, CMake, Linux Ubuntu 14.04)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Creating an Image Processing Component (OpenRTM-aist-1.1, CMake, Linux Ubuntu 14.04)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/casestudy/opencv_comp_development/opencv_ubuntu_1404/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/opencv_comp_development/opencv_ubuntu_1404/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/opencv_comp_development/opencv_ubuntu_1404/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Creating an Image Processing Component (OpenRTM-aist-1.1, CMake, Linux Ubuntu 14.04) <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/opencv_comp_development/opencv_ubuntu_1404/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/casestudy/opencv_comp_development/opencv_ubuntu_1404/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#introduction">Introduction</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#what-is-opencv">What is OpenCV?</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rt-component-to-be-created">RT Component to be Created</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#converting-the-cvflip-function-into-an-rt-component">Converting the cvFlip Function into an RT Component</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#verifying-the-runtime-environment">Verifying the Runtime Environment</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#about-the-cvflip-function">About the cvFlip Function</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#component-specifications">Component Specifications</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#runtime-environment-and-development-environment">Runtime Environment and Development Environment</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#generating-the-flip-component-template">Generating the Flip Component Template</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#editing-the-header-and-source-files">Editing the Header and Source Files</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#editing-the-header-file-fliph">Editing the Header File (Flip.h)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#editing-the-source-file-flipcpp">Editing the Source File (Flip.cpp)</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#generating-files-required-for-building-with-cmake">Generating Files Required for Building with CMake</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#build">Build</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#verifying-operation-of-the-flip-component">Verifying Operation of the Flip Component</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#connecting-the-components">Connecting the Components</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#complete-source-code-of-the-flip-component">Complete Source Code of the Flip Component</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#complete-source-code-of-the-flip-component-1">Complete Source Code of the Flip Component</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: Creating an Image Processing Component (OpenRTM-aist-1.1, CMake, Linux Ubuntu 14.04) -->
+<p>#contents</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This case study introduces how to componentize simple image processing.</p>
+
+<p>Using an existing camera component and image display component, a component is created that performs horizontal (or vertical) image flipping on camera images, and a system is built to display the flipped camera image.</p>
+
+<p>Although image flipping can be implemented easily, this tutorial uses the OpenCV library to simplify the implementation further and create a more versatile RT Component.</p>
+
+<h3 id="what-is-opencv">What is OpenCV?</h3>
+
+<p><a href="http://opencv.jp/">OpenCV</a> is an open-source computer vision library originally developed and released by Intel and currently maintained by Willow Garage.</p>
+
+<p>Excerpted from <a href="https://ja.wikipedia.org/wiki/OpenCV">Wikipedia</a>.</p>
+
+<h3 id="rt-component-to-be-created">RT Component to be Created</h3>
+
+<ul>
+  <li>Flip Component: An RT Component that performs image flipping using the <code class="language-plaintext highlighter-rouge">cvFlip()</code> function, one of the many image processing functions provided by the OpenCV library.</li>
+</ul>
+
+<h2 id="converting-the-cvflip-function-into-an-rt-component">Converting the cvFlip Function into an RT Component</h2>
+
+<p>An RT Component that flips input images horizontally or vertically and outputs the result is created using the OpenCV library’s <code class="language-plaintext highlighter-rouge">cvFlip</code> function.</p>
+
+<p>The development and execution environment assumes Visual C++ on Windows. The target OpenRTM-aist version is 1.1.</p>
+
+<p>The overall development procedure is as follows:</p>
+
+<ul>
+  <li>Verify the runtime and development environments</li>
+  <li>Review OpenCV and the cvFlip function</li>
+  <li>Define the component specifications</li>
+  <li>Generate a source code template using RTCBuilder</li>
+  <li>Implement activity processing</li>
+  <li>Verify component operation</li>
+</ul>
+
+<h3 id="verifying-the-runtime-environment">Verifying the Runtime Environment</h3>
+
+<p>A development environment is built on Linux (Ubuntu 14.04 is assumed here).</p>
+
+<h4 id="installing-openrtm-aist">Installing OpenRTM-aist</h4>
+
+<p>&amp;color(red){
+When using Choreonoid, install OpenRTM-aist from the PPA as shown below.</p>
+
+<p>If you have already executed the all-in-one installation script, comment out the openrtm.org repository entries added near the bottom of <code class="language-plaintext highlighter-rouge">/etc/apt/sources.list</code>, and then run <code class="language-plaintext highlighter-rouge">apt-get update</code>.
+};</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>add-apt-repository ppa:hrg/daily
+ <span class="nv">$ </span><span class="nb">sudo </span>apt-get update
+ <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>openrtm-aist openrtm-aist-dev doxygen
+</code></pre></div></div>
+
+<h4 id="installing-openrtp">Installing OpenRTP</h4>
+
+<p>Download and install the Linux version of OpenRTP (integrated component development and system development environment) from <a href="/my-jekyll-site/en/download/openrtp/openrtp-110-rc5-ja">this URL</a>.</p>
+
+<p>Java is also required to run OpenRTP, so install the <code class="language-plaintext highlighter-rouge">default-jre</code> package.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>apt-get <span class="nb">install </span>default-jre
+ <span class="nv">$ </span>wget http://openrtm.org/pub/openrtp/packages/1.1.0.rc5v20150317/eclipse381-openrtp110rc5v20150317-ja-linux-gtk-x86_64.tar.gz
+ <span class="nv">$ </span><span class="nb">tar </span>xvzf eclipse381-openrtp110rc5v20150317-ja-linux-gtk-x86_64.tar.gz
+ <span class="nv">$ </span><span class="nb">cd </span>eclipse
+</code></pre></div></div>
+
+<!-- $ ./eclipse -->
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>./openrtp
+</code></pre></div></div>
+
+<p><span style="color:red;">After starting Eclipse, RTSystemEditor may not be able to connect to the Name Server. In that case, add your host name to the localhost entry in <code class="language-plaintext highlighter-rouge">/etc/hosts</code>.</span>;</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">hostname
+ </span>ubuntu1404 ← The host name is ubuntu1404
+ <span class="nv">$ </span><span class="nb">sudo </span>vi /etc/hosts
+</code></pre></div></div>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 127.0.0.1       localhost
+ Change it as follows:
+ 127.0.0.1       localhost ubuntu1404
+</code></pre></div></div>
+
+<h4 id="installing-opencv-and-opencv-components">Installing OpenCV and OpenCV Components</h4>
+
+<p>Install OpenCV and the OpenCV components.</p>
+
+<p>First, install the OpenCV packages provided by Ubuntu as follows:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>libopencv-dev libcv2.4 libcvaux2.4 libhighgui2.4
+</code></pre></div></div>
+
+<p>The OpenCV RTC package is available at the URL below. Download it manually and install it using the <code class="language-plaintext highlighter-rouge">dpkg</code> command.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>wget http://openrtm.org/pub/Linux/ubuntu/dists/trusty/main/binary-amd64/imageprocessing-1.1.0.deb
+ <span class="nv">$ </span><span class="nb">sudo </span>dpkg <span class="nt">-i</span> imageprocessing-1.1.0.deb
+ <span class="nv">$ </span><span class="nb">ls</span> /usr/share/openrtm-1.1/components/c++/opencv-rtcs/
+ AffineComp                       FlipComp               RockPaperScissorsComp
+ Affine.so                        Flip.so                RockPaperScissors.so
+ BackGroundSubtractionSimpleComp  HistogramComp          RotateComp
+ BackGroundSubtractionSimple.so   Histogram.so           Rotate.so
+ BinarizationComp                 HoughComp              ScaleComp
+ Binarization.so                  Hough.so               Scale.so
+ CameraViewerComp                 ImageCalibrationComp   SepiaComp
+ CameraViewer.so                  ImageCalibration.so    Sepia.so
+ ChromakeyComp                    ImageSubstractionComp  SubStractCaptureImageComp
+ Chromakey.so                     ImageSubstraction.so   SubStractCaptureImage.so
+ DilationErosionComp              ObjectTrackingComp     TemplateComp
+ DilationErosion.so               ObjectTracking.so      Template.so
+ EdgeComp                         OpenCVCameraComp       TranslateComp
+ Edge.so                          OpenCVCamera.so        Translate.so
+ FindcontourComp                  PerspectiveComp
+ Findcontour.so                   Perspective.so
+</code></pre></div></div>
+
+<h3 id="about-the-cvflip-function">About the cvFlip Function</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">cvFlip</code> function flips image data of type <code class="language-plaintext highlighter-rouge">IplImage</code>, which is commonly used in OpenCV, around the vertical axis (horizontal flip), horizontal axis (vertical flip), or both axes (horizontal and vertical flip). The function prototype and the meanings of its arguments are as follows.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">void</span> <span class="nf">cvFlip</span><span class="p">(</span><span class="n">IplImage</span><span class="o">*</span> <span class="n">src</span><span class="p">,</span> <span class="n">IplImage</span><span class="o">*</span> <span class="n">dst</span><span class="o">=</span><span class="nb">NULL</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flipMode</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+ <span class="cp">#define cvMirror cvFlip
+</span>
+ <span class="n">src</span>       <span class="n">Input</span> <span class="n">array</span>
+ <span class="n">dst</span>       <span class="n">Output</span> <span class="n">array</span><span class="p">.</span> <span class="n">If</span> <span class="n">dst</span><span class="o">=</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">src</span> <span class="n">is</span> <span class="n">overwritten</span><span class="p">.</span>
+ <span class="n">flipMode</span>  <span class="n">Specifies</span> <span class="n">the</span> <span class="n">flip</span> <span class="n">operation</span><span class="o">:</span>
+   <span class="n">flipMode</span> <span class="o">=</span> <span class="mi">0</span><span class="o">:</span> <span class="n">Flip</span> <span class="n">around</span> <span class="n">the</span> <span class="n">X</span> <span class="n">axis</span> <span class="p">(</span><span class="n">vertical</span> <span class="n">flip</span><span class="p">)</span>
+   <span class="n">flipMode</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">:</span> <span class="n">Flip</span> <span class="n">around</span> <span class="n">the</span> <span class="n">Y</span> <span class="n">axis</span> <span class="p">(</span><span class="n">horizontal</span> <span class="n">flip</span><span class="p">)</span>
+   <span class="n">flipMode</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">:</span> <span class="n">Flip</span> <span class="n">around</span> <span class="n">both</span> <span class="n">axes</span> <span class="p">(</span><span class="n">horizontal</span> <span class="n">and</span> <span class="n">vertical</span> <span class="n">flip</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="component-specifications">Component Specifications</h3>
+
+<p>The component to be created will be called the <strong>Flip Component</strong>.</p>
+
+<p>This component has an image data input port (InPort) and an output port (OutPort) for outputting the flipped image.</p>
+
+<p>The port names are defined as follows:</p>
+
+<ul>
+  <li>Input Port (InPort): <strong>originalImage</strong></li>
+  <li>Output Port (OutPort): <strong>flippedImage</strong></li>
+</ul>
+
+<p>OpenRTM-aist includes sample vision-related components that use OpenCV.</p>
+
+<p>The data ports of these components use the following <code class="language-plaintext highlighter-rouge">CameraImage</code> type for image input and output.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">struct</span> <span class="nc">CameraImage</span>
+     <span class="p">{</span>
+         <span class="c1">/// Time stamp.</span>
+         <span class="n">Time</span> <span class="n">tm</span><span class="p">;</span>
+         <span class="c1">/// Image pixel width.</span>
+         <span class="kt">unsigned</span> <span class="kt">short</span> <span class="n">width</span><span class="p">;</span>
+         <span class="c1">/// Image pixel height.</span>
+         <span class="kt">unsigned</span> <span class="kt">short</span> <span class="n">height</span><span class="p">;</span>
+         <span class="c1">/// Bits per pixel.</span>
+         <span class="kt">unsigned</span> <span class="kt">short</span> <span class="n">bpp</span><span class="p">;</span>
+         <span class="c1">/// Image format (e.g. bitmap, jpeg, etc.).</span>
+         <span class="n">string</span> <span class="n">format</span><span class="p">;</span>
+         <span class="c1">/// Scale factor for images, such as disparity maps,</span>
+         <span class="c1">/// where the integer pixel value should be divided</span>
+         <span class="c1">/// by this factor to get the real pixel value.</span>
+         <span class="kt">double</span> <span class="n">fDiv</span><span class="p">;</span>
+         <span class="c1">/// Raw pixel data.</span>
+         <span class="n">sequence</span><span class="o">&lt;</span><span class="n">octet</span><span class="o">&gt;</span> <span class="n">pixels</span><span class="p">;</span>
+     <span class="p">};</span>
+</code></pre></div></div>
+
+<p>This Flip component will also use the <code class="language-plaintext highlighter-rouge">CameraImage</code> type for both its InPort and OutPort so that it can exchange data with these sample components.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">CameraImage</code> type is defined in <code class="language-plaintext highlighter-rouge">InterfaceDataTypes.idl</code>, and in C++ it becomes available by including <code class="language-plaintext highlighter-rouge">InterfaceDataTypesSkel.h</code>.</p>
+
+<p>In addition, there are three possible flip directions: horizontal flip, vertical flip, and horizontal + vertical flip.</p>
+
+<p>To allow this to be specified at runtime, the RT Component configuration mechanism will be used.</p>
+
+<p>The parameter name will be <strong>flipMode</strong>.</p>
+
+<p>To match the specification of the <code class="language-plaintext highlighter-rouge">cvFlip</code> function, the type will be <code class="language-plaintext highlighter-rouge">int</code>, and the following values will be assigned:</p>
+
+<ul>
+  <li>0: Vertical flip</li>
+  <li>1: Horizontal flip</li>
+  <li>-1: Horizontal and vertical flip</li>
+</ul>
+
+<p>The image processing behavior for each value of <code class="language-plaintext highlighter-rouge">flipMode</code> is shown below.</p>
+
+<div align="center"><a href="cvFlip_and_FlipRTC.png"><img src="cvFlip_and_FlipRTC.png" width="60%;" /></a></div>
+<div align="center"><strong>Image Flip Patterns for the Flip Component Depending on flipMode</strong></div>
+
+<p>The specifications of the Flip component are summarized as follows.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Component Name</th>
+    <th>Flip</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">InPort</td>
+  </tr>
+  <tr>
+    <td>Port Name</td>
+    <td>originalImage</td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>CameraImage</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>Input image</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">OutPort</td>
+  </tr>
+  <tr>
+    <td>Port Name</td>
+    <td>flippedImage</td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>CameraImage</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>Flipped image</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">Configuration</td>
+  </tr>
+  <tr>
+    <td>Parameter Name</td>
+    <td>flipMode</td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>int</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td><strong>Flip Mode</strong><br />Vertical flip: 0<br />Horizontal flip: 1<br />Horizontal and vertical flip: -1</td>
+  </tr>
+</table>
+
+<h3 id="runtime-environment-and-development-environment">Runtime Environment and Development Environment</h3>
+
+<p>Let’s verify the runtime and development environment.</p>
+
+<ul>
+  <li>OS: Windows XP SP3 (Vista and Windows 7 are also supported)</li>
+  <li>
+    <p>Compiler: <a href="http://go.microsoft.com/fwlink/?LinkId=190491&amp;clcid=0x411">Visual C++ 2010 Express Edition Japanese Version</a></p>
+  </li>
+  <li>
+    <p><a href="/my-jekyll-site/en/download/openrtm-aist-content/110-rc3">OpenRTM-aist-1.1.0-RC3 (C++ Version), Win32 VC2010</a></p>
+  </li>
+  <li>RTSystemEditor 1.1</li>
+  <li>RTCBuilder 1.1
+    <ul>
+      <li><a href="http://www.openrtm.org/pub/OpenRTM-aist/tools/1.1.0/eclipse342_rtmtools110-rc2_win32_ja.zip">Eclipse 3.4.2 + RTSE + RTCB (1.1.0-RC2) All-in-One Package for Windows</a></li>
+    </ul>
+  </li>
+  <li><a href="http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.11-setup.exe">Doxygen</a> Required for document generation</li>
+  <li>
+    <p><a href="https://cmake.org/files/v2.8/cmake-2.8.5-win32-x86.exe">CMake</a></p>
+  </li>
+  <li><a href="http://www.forest.impress.co.jp/lib/arc/archive/archiver/lhaplus.html">Archive Extraction Tool (Lhaplus)</a></li>
+</ul>
+
+<p>From OpenRTM-aist 1.1 onward, CMake is used to build components.</p>
+
+<p>In addition, RTCBuilder can automatically generate component manuals by passing documentation to Doxygen.</p>
+
+<p>For this reason, Doxygen is required when running Configure with CMake and must be installed beforehand.</p>
+
+<h3 id="generating-the-flip-component-template">Generating the Flip Component Template</h3>
+
+<p>The Flip component template is generated using RTCBuilder.</p>
+
+<h4 id="starting-rtcbuilder">Starting RTCBuilder</h4>
+
+<p>In Eclipse, the folder used for development work is called a <strong>workspace</strong>, and in principle all generated files are stored under this folder.</p>
+
+<p>The workspace may be located anywhere that is accessible, but this tutorial assumes the following workspace:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">/workspace</code> (meaning <code class="language-plaintext highlighter-rouge">/home/&lt;username&gt;/workspace</code>)</li>
+</ul>
+
+<p>When Eclipse starts, it prompts for the workspace location.</p>
+
+<p>When Eclipse is started for the first time, or when started with the <code class="language-plaintext highlighter-rouge">-clean</code> option, the directory above is specified by default. Simply click the <strong>[OK]</strong> button.</p>
+
+<p>The following Welcome screen will be displayed.</p>
+
+<p>Since the Welcome screen is not needed at this point, click the <strong>×</strong> button in the upper-left corner to close it.</p>
+
+<div align="center"><a href="fig1-1EclipseInit.png"><img src="fig1-1EclipseInit.png" width="60%;" /></a></div>
+<div align="center"><strong>Screen Displayed When Eclipse Starts for the First Time</strong></div>
+
+<p>Click the <strong>[Open Perspective]</strong> button in the upper-right corner and select <strong>Other…</strong> from the pull-down menu.</p>
+
+<div align="center"><a href="fig2-2PerspectiveSwitch.png"><img src="fig2-2PerspectiveSwitch.png" width="60%;" /></a></div>
+<div align="center"><strong>Switching Perspectives</strong></div>
+
+<p>Select <strong>RTC Builder</strong> to start RTCBuilder.</p>
+
+<p>The RTCBuilder icon (hammer and RT symbol) will appear on the menu bar.</p>
+
+<div align="center"><a href="fig2-3PerspectiveSelection.png"><img src="fig2-3PerspectiveSelection.png" width="30%;" /></a></div>
+<div align="center"><strong>Selecting a Perspective</strong></div>
+
+<h4 id="creating-a-new-project">Creating a New Project</h4>
+
+<p>To create the Flip component, a new project must be created in RTCBuilder.</p>
+
+<p>There are two methods for creating a project.</p>
+
+<ol>
+  <li>Select <strong>[File] &gt; [New] &gt; [Project]</strong> from the menu at the top of the screen (standard Eclipse operation)
+    <ul>
+      <li>In the <strong>New Project</strong> screen, select <strong>[Other] &gt; [RTC Builder]</strong> and click <strong>[Next]</strong>.</li>
+    </ul>
+  </li>
+  <li>Click the <strong>RTCBuilder</strong> icon on the menu bar.</li>
+</ol>
+
+<div align="center"><a href="fig2-5CreateProject.png"><img src="fig2-5CreateProject.png" width="60%;" /></a></div>
+<div align="center"><strong>Creating an RTC Builder Project 1 (From the File Menu)</strong></div>
+
+<div align="center"><a href="fig2-6CreateProject2.png"><img src="fig2-6CreateProject2.png" width="30%;" /></a></div>
+<div align="center"><strong>Creating an RTC Builder Project 2 (From the File Menu)</strong></div>
+
+<p>Either method launches the project creation wizard shown below.</p>
+
+<p>Enter the project name (<strong>Flip</strong> in this example) in the <strong>Project Name</strong> field and click the <strong>[Finish]</strong> button.</p>
+
+<div align="center"><a href="RT-Component-BuilderProject.png"><img src="RT-Component-BuilderProject.png" width="30%;" /></a></div>
+<div align="center"><strong>Creating an RTC Builder Project 3</strong></div>
+
+<p>A project with the specified name is generated and added to the Package Explorer.</p>
+
+<div align="center"><a href="PackageExplolrer.png"><img src="PackageExplolrer.png" width="30%;" /></a></div>
+<div align="center"><strong>Creating an RTC Builder Project 4</strong></div>
+
+<p>An RTC profile XML file (<code class="language-plaintext highlighter-rouge">RTC.xml</code>) with default values is automatically generated within the created project.</p>
+
+<h4 id="starting-the-rtc-profile-editor">Starting the RTC Profile Editor</h4>
+
+<p>When <code class="language-plaintext highlighter-rouge">RTC.xml</code> is generated, the RTCBuilder editor associated with the project workspace should open automatically.</p>
+
+<p>If it does not open, click the <strong>Open New RtcBuilder Editor</strong> button on the toolbar, or select <strong>[File] &gt; [Open New Builder Editor]</strong> from the menu bar.</p>
+
+<div align="center"><a href="Open_RTCBuilder.png"><img src="Open_RTCBuilder.png" width="30%;" /></a></div>
+<div align="center"><strong>Open New RtcBuilder Editor from the Toolbar</strong></div>
+
+<div align="center"><a href="fig2-10FileMenuOpenNewBuilder.png"><img src="fig2-10FileMenuOpenNewBuilder.png" width="30%;" /></a></div>
+<div align="center"><strong>Open New Builder Editor from the File Menu</strong></div>
+
+<h4 id="entering-profile-information-and-generating-code">Entering Profile Information and Generating Code</h4>
+
+<p>First, select the <strong>Basic</strong> tab on the far left and enter the basic information.</p>
+
+<p>In addition to the Flip component specifications (name) defined earlier, enter information such as the description and version.</p>
+
+<p>Items with red labels are required.</p>
+
+<p>The other items may be left at their default values.</p>
+
+<ul>
+  <li>Module Name: Flip</li>
+  <li>Module Description: Flip image component</li>
+  <li>Version: 1.0.0</li>
+  <li>Vendor Name: AIST</li>
+  <li>Module Category: Category</li>
+  <li>Component Type: STATIC</li>
+  <li>Activity Type: PERIODIC</li>
+  <li>Component Kind: DataFlowComponent</li>
+  <li>Maximum Number of Instances: 1</li>
+  <li>Execution Type: PeriodicExecutionContext</li>
+  <li>Execution Period: 0.0 (<span style="color:RED;">The figure below shows 1.0, but set this to 0.0.</span>;)</li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="Basic.png"><img src="Basic.png" width="70%;" /></a></div>
+<div align="center"><strong>Entering Basic Information</strong></div>
+<p><br /></p>
+
+<p>Next, select the <strong>Activity</strong> tab and specify the action callbacks to use.</p>
+
+<p>The Flip component uses the <code class="language-plaintext highlighter-rouge">onActivated()</code>, <code class="language-plaintext highlighter-rouge">onDeactivated()</code>, and <code class="language-plaintext highlighter-rouge">onExecute()</code> callbacks.</p>
+
+<p>As shown in the figure below, first click ① <code class="language-plaintext highlighter-rouge">onActivated</code>, then select <strong>[ON]</strong> using radio button ②.</p>
+
+<p>Perform the same operation for <code class="language-plaintext highlighter-rouge">onDeactivated</code> and <code class="language-plaintext highlighter-rouge">onExecute</code>.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="Activity.png"><img src="Activity.png" width="70%;" /></a></div>
+<div align="center"><strong>Selecting Activity Callbacks</strong></div>
+<p><br /></p>
+
+<p>Next, select the <strong>Data Ports</strong> tab and enter the data port information.</p>
+
+<p>Enter the following values according to the specifications defined earlier.</p>
+
+<p>The variable names and display positions are optional, so they may be left unchanged.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>InPort Profile:
+    <ul>
+      <li>Port Name: originalImage</li>
+      <li>Data Type: CameraImage</li>
+      <li>Variable Name: originalImage</li>
+      <li>Display Position: left</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>OutPort Profile:
+    <ul>
+      <li>Port Name: flippedImage</li>
+      <li>Data Type: CameraImage</li>
+      <li>Variable Name: flippedImage</li>
+      <li>Display Position: right</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="DataPort.png"><img src="DataPort.png" width="70%;" /></a></div>
+<div align="center"><strong>Entering Data Port Information</strong></div>
+<p><br /></p>
+
+<p>Next, select the <strong>Configuration</strong> tab and enter the Configuration information based on the specifications defined earlier.</p>
+
+<p>The constraint conditions and Widget settings are used when displaying component configuration parameters in RTSystemEditor, allowing values to be changed through GUI controls such as sliders, spin buttons, and radio buttons.</p>
+
+<p>Here, when the specifications were defined earlier, <code class="language-plaintext highlighter-rouge">flipMode</code> was set to take only three possible values: -1, 0, and 1. Therefore, a radio button will be used.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>flipMode
+    <ul>
+      <li>Name: flipMode</li>
+      <li>Data Type: int</li>
+      <li>Default Value: 1</li>
+      <li>Variable Name: flipMode</li>
+      <li>Constraint: (-1, 0, 1) <span style="color:RED;">* (-1: horizontal and vertical flip, 0: vertical flip, 1: horizontal flip)</span>;</li>
+      <li>Widget: radio</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<div align="center"><a href="Configuration.png"><img src="Configuration.png" width="70%;" /></a></div>
+<div align="center"><strong>Entering Configuration Information</strong></div>
+<p><br /></p>
+
+<p>Next, select the <strong>Language / Environment</strong> tab and choose the programming language.</p>
+
+<p>Here, select <strong>C++</strong> as the language.</p>
+
+<p>The language/environment fields have no default values. If you forget to specify the language, an error will occur during code generation, so be sure to specify it.</p>
+
+<p>Also, for C++, the default is to build using CMake. If you want RTCBuilder to directly generate old-style VC projects or solution files, check <strong>[Use old build environment]</strong>.</p>
+
+<div align="center"><a href="Language.png"><img src="Language.png" width="70%;" /></a></div>
+<div align="center"><strong>Selecting the Programming Language</strong></div>
+<p><br /></p>
+
+<p>Finally, click the <strong>[Generate Code]</strong> button on the <strong>Basic</strong> tab to generate the component template.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="Generate.png"><img src="Generate.png" width="70%;" /></a></div>
+<div align="center"><strong>Generating the Template (Generate)</strong></div>
+<p><br /></p>
+
+<p>&amp;color(Red){<em>The generated code files are created in the workspace folder specified when Eclipse was started.
+You can check the current workspace from [File] &gt; [Switch Workspace].</em>};</p>
+
+<h4 id="temporary-build">Temporary Build</h4>
+
+<p>At this point, the source code for the Flip component has been generated.</p>
+
+<p>Since the processing itself has not yet been implemented, nothing will be output even if an image is input to the InPort. However, the source code immediately after generation can still be compiled and executed.</p>
+
+<p><em>For components that have service ports and providers, some may not build successfully unless their implementation is completed.</em></p>
+
+<p>Now, first use CMake to configure the build environment.</p>
+
+<p>On Linux, in the directory where the Flip component source code was generated:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">cd </span>workspace/Flip
+ <span class="nv">$ </span><span class="nb">mkdir </span>build
+ <span class="nv">$ </span><span class="nb">cd </span>build
+ <span class="nv">$ </span>cmake ..
+ <span class="nv">$ </span>make
+</code></pre></div></div>
+
+<p>This should complete Configure and build.</p>
+
+<p>After the build finishes, try starting the generated <code class="language-plaintext highlighter-rouge">FlipComp</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">cd </span>src
+ <span class="nv">$ </span>./FlipComp
+</code></pre></div></div>
+
+<p>After startup, try accessing it using RTSystemEditor or a similar tool.</p>
+
+<p>A component named <strong>Flip</strong> should be displayed.</p>
+
+<p>It can also be connected to a camera component (<code class="language-plaintext highlighter-rouge">OpenCVCameraComp</code>) or display component (<code class="language-plaintext highlighter-rouge">CameraViewerComp</code>), but since no processing is performed inside yet, nothing will be displayed in the display component.</p>
+
+<p>From the next section, the component source code will be created and its internal processing will be implemented.</p>
+
+<h3 id="editing-the-header-and-source-files">Editing the Header and Source Files</h3>
+
+<p>Next, edit the header file (<code class="language-plaintext highlighter-rouge">include/Flip/Flip.h</code>) and source file (<code class="language-plaintext highlighter-rouge">src/Flip.cpp</code>).</p>
+
+<p>The files can be opened in Eclipse by double-clicking them in the Package Explorer.</p>
+
+<div align="center"><a href="EditSource.png"><img src="EditSource.png" width="70%;" /></a></div>
+<div align="center"><strong>Editing Source Files</strong></div>
+
+<h3 id="editing-the-header-file-fliph">Editing the Header File (Flip.h)</h3>
+
+<p>First, include the OpenCV header files.</p>
+
+<p>Add the following include statements.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cp">#include</span> <span class="cpf">&lt;cv.h&gt;</span><span class="cp">
+</span> <span class="cp">#include</span> <span class="cpf">&lt;cxcore.h&gt;</span><span class="cp">
+</span> <span class="cp">#include</span> <span class="cpf">&lt;highgui.h&gt;</span><span class="cp">
+</span></code></pre></div></div>
+
+<p>Next, add variables to store image data.</p>
+
+<p>Add the following declarations to the private section.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nl">private:</span>
+   <span class="n">IplImage</span><span class="o">*</span> <span class="n">m_imageBuff</span><span class="p">;</span>
+   <span class="n">IplImage</span><span class="o">*</span> <span class="n">m_flipImageBuff</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>The purpose of these variables is as follows.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">m_imageBuff</code>
+    <ul>
+      <li>Stores the image received from the InPort.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">m_flipImageBuff</code>
+    <ul>
+      <li>Stores the image after flipping.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="editing-the-source-file-flipcpp">Editing the Source File (Flip.cpp)</h3>
+
+<h4 id="initialization-processing">Initialization Processing</h4>
+
+<p>Initialize the image buffers when the component becomes active.</p>
+
+<p>Edit <code class="language-plaintext highlighter-rouge">onActivated()</code> as follows.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">RTC</span><span class="o">::</span><span class="n">ReturnCode_t</span> <span class="n">Flip</span><span class="o">::</span><span class="n">onActivated</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">UniqueId</span> <span class="n">ec_id</span><span class="p">)</span>
+ <span class="p">{</span>
+   <span class="c1">// Initialize image memory</span>
+   <span class="n">m_imageBuff</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+   <span class="n">m_flipImageBuff</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+   <span class="c1">// Initialize output image size</span>
+   <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="k">return</span> <span class="n">RTC</span><span class="o">::</span><span class="n">RTC_OK</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="cleanup-processing">Cleanup Processing</h4>
+
+<p>Release the allocated image memory when the component is deactivated.</p>
+
+<p>Edit <code class="language-plaintext highlighter-rouge">onDeactivated()</code> as follows.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">RTC</span><span class="o">::</span><span class="n">ReturnCode_t</span> <span class="n">Flip</span><span class="o">::</span><span class="n">onDeactivated</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">UniqueId</span> <span class="n">ec_id</span><span class="p">)</span>
+ <span class="p">{</span>
+   <span class="k">if</span><span class="p">(</span><span class="n">m_imageBuff</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+   <span class="p">{</span>
+     <span class="n">cvReleaseImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_imageBuff</span><span class="p">);</span>
+     <span class="n">cvReleaseImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_flipImageBuff</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">return</span> <span class="n">RTC</span><span class="o">::</span><span class="n">RTC_OK</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="image-processing">Image Processing</h4>
+
+<p>The main image processing is implemented in <code class="language-plaintext highlighter-rouge">onExecute()</code>.</p>
+
+<p>First, check whether new image data has arrived at the InPort.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">if</span> <span class="p">(</span><span class="n">m_originalImageIn</span><span class="p">.</span><span class="n">isNew</span><span class="p">())</span>
+ <span class="p">{</span>
+   <span class="n">m_originalImageIn</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+
+<p>The received image is stored in <code class="language-plaintext highlighter-rouge">m_originalImage</code>.</p>
+
+<h4 id="allocating-image-buffers">Allocating Image Buffers</h4>
+
+<p>The image size may change depending on the camera.</p>
+
+<p>Therefore, before processing, verify whether the image size has changed.</p>
+
+<p>If it has changed, release the existing buffers and allocate new ones.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">if</span><span class="p">(</span> <span class="n">m_originalImage</span><span class="p">.</span><span class="n">width</span> <span class="o">!=</span> <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">width</span> <span class="o">||</span>
+     <span class="n">m_originalImage</span><span class="p">.</span><span class="n">height</span> <span class="o">!=</span> <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">height</span><span class="p">)</span>
+ <span class="p">{</span>
+   <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">m_originalImage</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+   <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">m_originalImage</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+
+   <span class="k">if</span><span class="p">(</span><span class="n">m_imageBuff</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+   <span class="p">{</span>
+     <span class="n">cvReleaseImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_imageBuff</span><span class="p">);</span>
+     <span class="n">cvReleaseImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_flipImageBuff</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="n">m_imageBuff</span> <span class="o">=</span>
+     <span class="n">cvCreateImage</span><span class="p">(</span>
+       <span class="n">cvSize</span><span class="p">(</span>
+         <span class="n">m_originalImage</span><span class="p">.</span><span class="n">width</span><span class="p">,</span>
+         <span class="n">m_originalImage</span><span class="p">.</span><span class="n">height</span><span class="p">),</span>
+       <span class="n">IPL_DEPTH_8U</span><span class="p">,</span>
+       <span class="mi">3</span><span class="p">);</span>
+
+   <span class="n">m_flipImageBuff</span> <span class="o">=</span>
+     <span class="n">cvCreateImage</span><span class="p">(</span>
+       <span class="n">cvSize</span><span class="p">(</span>
+         <span class="n">m_originalImage</span><span class="p">.</span><span class="n">width</span><span class="p">,</span>
+         <span class="n">m_originalImage</span><span class="p">.</span><span class="n">height</span><span class="p">),</span>
+       <span class="n">IPL_DEPTH_8U</span><span class="p">,</span>
+       <span class="mi">3</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="copying-image-data">Copying Image Data</h4>
+
+<p>Copy the image data received through the data port into the OpenCV image buffer.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">memcpy</span><span class="p">(</span>
+   <span class="n">m_imageBuff</span><span class="o">-&gt;</span><span class="n">imageData</span><span class="p">,</span>
+   <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m_originalImage</span><span class="p">.</span><span class="n">pixels</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+   <span class="n">m_originalImage</span><span class="p">.</span><span class="n">pixels</span><span class="p">.</span><span class="n">length</span><span class="p">());</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">pixels</code> member of <code class="language-plaintext highlighter-rouge">CameraImage</code> contains the actual image data.</p>
+
+<h4 id="executing-the-flip-operation">Executing the Flip Operation</h4>
+
+<p>Perform image flipping using the OpenCV <code class="language-plaintext highlighter-rouge">cvFlip()</code> function.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">cvFlip</span><span class="p">(</span>
+   <span class="n">m_imageBuff</span><span class="p">,</span>
+   <span class="n">m_flipImageBuff</span><span class="p">,</span>
+   <span class="n">m_flipMode</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The meaning of <code class="language-plaintext highlighter-rouge">m_flipMode</code> is as follows.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  0 : Vertical flip
+  1 : Horizontal flip
+ -1 : Horizontal and vertical flip
+</code></pre></div></div>
+
+<p>Since <code class="language-plaintext highlighter-rouge">m_flipMode</code> is bound to a configuration parameter, the user can change it at runtime through RTSystemEditor.</p>
+
+<h4 id="preparing-output-data">Preparing Output Data</h4>
+
+<p>After processing is completed, copy the flipped image into the output data structure.</p>
+
+<p>First, determine the image data size.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span>
+   <span class="n">m_flipImageBuff</span><span class="o">-&gt;</span><span class="n">nChannels</span> <span class="o">*</span>
+   <span class="n">m_flipImageBuff</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">*</span>
+   <span class="n">m_flipImageBuff</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Resize the output image buffer.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">pixels</span><span class="p">.</span><span class="n">length</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Copy the processed image data.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">memcpy</span><span class="p">(</span>
+   <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m_flippedImage</span><span class="p">.</span><span class="n">pixels</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+   <span class="n">m_flipImageBuff</span><span class="o">-&gt;</span><span class="n">imageData</span><span class="p">,</span>
+   <span class="n">len</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="writing-data-to-the-outport">Writing Data to the OutPort</h4>
+
+<p>Finally, output the flipped image.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">m_flippedImageOut</span><span class="p">.</span><span class="n">write</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h4 id="complete-onexecute-processing">Complete onExecute() Processing</h4>
+
+<p>Combining the processing described above results in the following implementation.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">RTC</span><span class="o">::</span><span class="n">ReturnCode_t</span> <span class="n">Flip</span><span class="o">::</span><span class="n">onExecute</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">UniqueId</span> <span class="n">ec_id</span><span class="p">)</span>
+ <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">m_originalImageIn</span><span class="p">.</span><span class="n">isNew</span><span class="p">())</span>
+   <span class="p">{</span>
+     <span class="n">m_originalImageIn</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+
+     <span class="k">if</span><span class="p">(</span> <span class="n">m_originalImage</span><span class="p">.</span><span class="n">width</span> <span class="o">!=</span> <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">width</span> <span class="o">||</span>
+         <span class="n">m_originalImage</span><span class="p">.</span><span class="n">height</span> <span class="o">!=</span> <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">height</span><span class="p">)</span>
+     <span class="p">{</span>
+       <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">m_originalImage</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+       <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">m_originalImage</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+
+       <span class="k">if</span><span class="p">(</span><span class="n">m_imageBuff</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+       <span class="p">{</span>
+         <span class="n">cvReleaseImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_imageBuff</span><span class="p">);</span>
+         <span class="n">cvReleaseImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_flipImageBuff</span><span class="p">);</span>
+       <span class="p">}</span>
+
+       <span class="n">m_imageBuff</span> <span class="o">=</span>
+         <span class="n">cvCreateImage</span><span class="p">(</span>
+           <span class="n">cvSize</span><span class="p">(</span>
+             <span class="n">m_originalImage</span><span class="p">.</span><span class="n">width</span><span class="p">,</span>
+             <span class="n">m_originalImage</span><span class="p">.</span><span class="n">height</span><span class="p">),</span>
+           <span class="n">IPL_DEPTH_8U</span><span class="p">,</span>
+           <span class="mi">3</span><span class="p">);</span>
+
+       <span class="n">m_flipImageBuff</span> <span class="o">=</span>
+         <span class="n">cvCreateImage</span><span class="p">(</span>
+           <span class="n">cvSize</span><span class="p">(</span>
+             <span class="n">m_originalImage</span><span class="p">.</span><span class="n">width</span><span class="p">,</span>
+             <span class="n">m_originalImage</span><span class="p">.</span><span class="n">height</span><span class="p">),</span>
+           <span class="n">IPL_DEPTH_8U</span><span class="p">,</span>
+           <span class="mi">3</span><span class="p">);</span>
+     <span class="p">}</span>
+
+     <span class="n">memcpy</span><span class="p">(</span>
+       <span class="n">m_imageBuff</span><span class="o">-&gt;</span><span class="n">imageData</span><span class="p">,</span>
+       <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m_originalImage</span><span class="p">.</span><span class="n">pixels</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+       <span class="n">m_originalImage</span><span class="p">.</span><span class="n">pixels</span><span class="p">.</span><span class="n">length</span><span class="p">());</span>
+
+     <span class="n">cvFlip</span><span class="p">(</span>
+       <span class="n">m_imageBuff</span><span class="p">,</span>
+       <span class="n">m_flipImageBuff</span><span class="p">,</span>
+       <span class="n">m_flipMode</span><span class="p">);</span>
+
+     <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span>
+       <span class="n">m_flipImageBuff</span><span class="o">-&gt;</span><span class="n">nChannels</span> <span class="o">*</span>
+       <span class="n">m_flipImageBuff</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">*</span>
+       <span class="n">m_flipImageBuff</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">;</span>
+
+     <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">pixels</span><span class="p">.</span><span class="n">length</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
+
+     <span class="n">memcpy</span><span class="p">(</span>
+       <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m_flippedImage</span><span class="p">.</span><span class="n">pixels</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+       <span class="n">m_flipImageBuff</span><span class="o">-&gt;</span><span class="n">imageData</span><span class="p">,</span>
+       <span class="n">len</span><span class="p">);</span>
+
+     <span class="n">m_flippedImageOut</span><span class="p">.</span><span class="n">write</span><span class="p">();</span>
+   <span class="p">}</span>
+
+   <span class="k">return</span> <span class="n">RTC</span><span class="o">::</span><span class="n">RTC_OK</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="generating-files-required-for-building-with-cmake">Generating Files Required for Building with CMake</h3>
+
+<h4 id="editing-cmakeliststxt">Editing CMakeLists.txt</h4>
+
+<p>Double-click <code class="language-plaintext highlighter-rouge">src/CMakeLists.txt</code> in the Package Explorer on the left side of the Eclipse screen, or drag and drop it into the editor to edit it.</p>
+
+<div align="center"><a href="EditCmakeLists.png"><img src="EditCmakeLists.png" width="70%;" /></a></div>
+<div align="center"><strong>Editing CMakeLists.txt</strong></div>
+
+<p>Since this component uses OpenCV, you need to provide the include path for the OpenCV headers, the libraries, and the library search paths.</p>
+
+<p>Fortunately, OpenCV supports CMake, so OpenCV libraries can be linked and used simply by adding or modifying the following two lines.</p>
+
+<ul>
+  <li>Modify <code class="language-plaintext highlighter-rouge">src/CMakeLists.txt</code>
+    <ul>
+      <li>Double-click <code class="language-plaintext highlighter-rouge">src/CMakeLists.txt</code> in Eclipse’s Package Explorer.
+    1. Add <code class="language-plaintext highlighter-rouge">find_package(OpenCV REQUIRED)</code>.
+    1. Add <code class="language-plaintext highlighter-rouge">${OpenCV_LIBS}</code> to the first <code class="language-plaintext highlighter-rouge">target_link_libraries</code>.</li>
+      <li>There are two <code class="language-plaintext highlighter-rouge">target_link_libraries</code> entries. The upper one specifies the DLL library, and the lower one specifies the executable file library.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">set</span><span class="p">(</span>comp_srcs Flip.cpp <span class="p">)</span>
+ <span class="nb">set</span><span class="p">(</span>standalone_srcs FlipComp.cpp<span class="p">)</span>
+
+ <span class="nb">find_package</span><span class="p">(</span>OpenCV REQUIRED<span class="p">)</span> ← Add this line
+   ：omitted
+ <span class="nb">add_dependencies</span><span class="p">(</span><span class="si">${</span><span class="nv">PROJECT_NAME</span><span class="si">}</span> ALL_IDL_TGT<span class="p">)</span>
+ <span class="nb">target_link_libraries</span><span class="p">(</span><span class="si">${</span><span class="nv">PROJECT_NAME</span><span class="si">}</span> <span class="si">${</span><span class="nv">OPENRTM_LIBRARIES</span><span class="si">}</span> <span class="si">${</span><span class="nv">OpenCV_LIBS</span><span class="si">}</span><span class="p">)</span> ← Add OpenCV_LIBS
+   ：omitted
+ <span class="nb">add_executable</span><span class="p">(</span><span class="si">${</span><span class="nv">PROJECT_NAME</span><span class="si">}</span>Comp <span class="si">${</span><span class="nv">standalone_srcs</span><span class="si">}</span>
+   <span class="si">${</span><span class="nv">comp_srcs</span><span class="si">}</span> <span class="si">${</span><span class="nv">comp_headers</span><span class="si">}</span> <span class="si">${</span><span class="nv">ALL_IDL_SRCS</span><span class="si">}</span><span class="p">)</span>
+ <span class="nb">target_link_libraries</span><span class="p">(</span><span class="si">${</span><span class="nv">PROJECT_NAME</span><span class="si">}</span>Comp <span class="si">${</span><span class="nv">OPENRTM_LIBRARIES</span><span class="si">}</span> <span class="si">${</span><span class="nv">OpenCV_LIBS</span><span class="si">}</span><span class="p">)</span> ← Add OpenCV_LIBS
+</code></pre></div></div>
+
+<h3 id="build">Build</h3>
+
+<h4 id="executing-the-build">Executing the Build</h4>
+
+<p>Since <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code> has been edited, run Configure and Generate again with CMake.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">cd </span>workspace/Flip <span class="o">(</span>move to the Flip directory under the Eclipse workspace<span class="o">)</span>
+ <span class="nv">$ </span><span class="nb">rm</span> <span class="nt">-rf</span> build <span class="o">(</span>delete the directory created during the temporary build just <span class="k">in case</span><span class="p">)</span>
+ <span class="nv">$ </span><span class="nb">mkdir </span>build <span class="o">(</span>create the build directory again<span class="o">)</span>
+ <span class="nv">$ </span><span class="nb">cd </span>build
+ <span class="nv">$ </span>cmake ..
+ <span class="nv">$ </span>make
+</code></pre></div></div>
+
+<p>Confirm that CMake Generate has completed successfully, then run <code class="language-plaintext highlighter-rouge">make</code>.</p>
+
+<p>If there is a problem during Configure, there may be an error in the <code class="language-plaintext highlighter-rouge">Flip/src/CMakeLists.txt</code> file edited earlier.</p>
+
+<p>If an error occurs during <code class="language-plaintext highlighter-rouge">make</code>, there may be an error in the source code or header file edits.</p>
+
+<p>Carefully check the error messages and correct the problem.</p>
+
+<h3 id="verifying-operation-of-the-flip-component">Verifying Operation of the Flip Component</h3>
+
+<p>Here, operation is verified by connecting the camera component (<code class="language-plaintext highlighter-rouge">OpenCVCameraComp</code> or <code class="language-plaintext highlighter-rouge">DirectShowCamComp</code>) and the viewer component (<code class="language-plaintext highlighter-rouge">CameraViewerComp</code>), which have been included since OpenRTM-aist 1.1.</p>
+
+<h4 id="starting-nameservice">Starting NameService</h4>
+
+<p>Start the Name Service used to register component references.</p>
+
+<p><br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>rtm-naming
+</code></pre></div></div>
+
+<h4 id="creating-rtcconf">Creating rtc.conf</h4>
+
+<p>In RT Components, information such as the Name Server address and the registration format for the Name Server must be specified in a file named <code class="language-plaintext highlighter-rouge">rtc.conf</code>.</p>
+
+<p>Save the following content in a file named <code class="language-plaintext highlighter-rouge">rtc.conf</code> and place it in the <code class="language-plaintext highlighter-rouge">workspace/Flip/build/src/</code> directory.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.nameservers: localhost
+ naming.formats: %n.rtc
+</code></pre></div></div>
+
+<h4 id="starting-the-flip-component">Starting the Flip Component</h4>
+
+<p>Start the Flip component.</p>
+
+<p>Run the <code class="language-plaintext highlighter-rouge">FlipComp.exe</code> file in the folder where you placed the <code class="language-plaintext highlighter-rouge">rtc.conf</code> file earlier.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">cd </span>workspace/Flip/build/src <span class="o">(</span><span class="k">if </span>you are currently somewhere other than build/src<span class="o">)</span>
+ <span class="nv">$ </span>./FlipComp
+</code></pre></div></div>
+
+<h4 id="starting-the-camera-component-and-viewer-component">Starting the Camera Component and Viewer Component</h4>
+
+<p>Start <code class="language-plaintext highlighter-rouge">OpenCVCameraComp</code>, which outputs captured images from a USB camera through an OutPort, and <code class="language-plaintext highlighter-rouge">CameraViewerComp</code>, which displays images received through an InPort on the screen.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>/usr/share/openrtm-1.1/components/c++/opencv-rtcs/OpenCVCameraComp
+ <span class="nv">$ </span>/usr/share/openrtm-1.1/components/c++/opencv-rtcs/CameraViewerComp
+</code></pre></div></div>
+
+<h3 id="connecting-the-components">Connecting the Components</h3>
+
+<p>In RTSystemEditor, connect <code class="language-plaintext highlighter-rouge">OpenCVCameraComp</code> (or <code class="language-plaintext highlighter-rouge">DirectShowcomp</code>), <code class="language-plaintext highlighter-rouge">Flip</code>, and <code class="language-plaintext highlighter-rouge">CameraviewerComp</code> as shown below.</p>
+
+<div align="center"><a href="RTSE_Connect.png"><img src="RTSE_Connect.png" width="70%;" /></a></div>
+<div align="center"><strong>Connecting the Components</strong></div>
+
+<p><span style="color:red;">After starting Eclipse, RTSystemEditor may fail to connect to the Name Server. In that case, add your host name to the localhost entry in <code class="language-plaintext highlighter-rouge">/etc/hosts</code>.</span>;</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">hostname
+ </span>ubuntu1404 ← The host name is ubuntu1404
+ <span class="nv">$ </span><span class="nb">sudo </span>vi /etc/hosts
+</code></pre></div></div>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 127.0.0.1       localhost
+ Change it as follows:
+ 127.0.0.1       localhost ubuntu1404
+</code></pre></div></div>
+
+<h4 id="activating-the-components">Activating the Components</h4>
+
+<p>Click the <strong>ALL</strong> icon at the top of RTSystemEditor to activate all components.</p>
+
+<p>If activation is successful, the components will be displayed in yellow-green as shown below.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="RTSE_Activate.png"><img src="RTSE_Activate.png" width="70%;" /></a></div>
+<div align="center"><strong>Activating the Components</strong></div>
+<p><br /></p>
+
+<h4 id="operation-check">Operation Check</h4>
+
+<p>As shown below, the configuration can be changed in the Configuration View.</p>
+
+<p>Change the Flip component’s configuration parameter <code class="language-plaintext highlighter-rouge">flipMode</code> to values such as <code class="language-plaintext highlighter-rouge">0</code> or <code class="language-plaintext highlighter-rouge">-1</code>, and verify that the image is flipped.</p>
+
+<p><br /></p>
+
+<div align="center"><a href="RTSE_Configuration.png"><img src="RTSE_Configuration.png" width="70%;" /></a></div>
+<div align="center"><strong>Changing Configuration Parameters</strong></div>
+<p><br /></p>
+
+<h3 id="complete-source-code-of-the-flip-component">Complete Source Code of the Flip Component</h3>
+
+<h4 id="flip-component-source-file-flipcpp">Flip Component Source File (Flip.cpp)</h4>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">// -*- C++ -*-</span>
+ <span class="cm">/*!
+  * @file  Flip.cpp
+  * @brief Flip image component
+  * @date $Date$
+  *
+  * $Id$
+  */</span>
+
+ <span class="cp">#include</span> <span class="cpf">"Flip.h"</span><span class="cp">
+</span>
+ <span class="c1">// Module specification</span>
+ <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">flip_spec</span><span class="p">[]</span> <span class="o">=</span>
+   <span class="p">{</span>
+     <span class="s">"implementation_id"</span><span class="p">,</span> <span class="s">"Flip"</span><span class="p">,</span>
+     <span class="s">"type_name"</span><span class="p">,</span>         <span class="s">"Flip"</span><span class="p">,</span>
+     <span class="s">"description"</span><span class="p">,</span>       <span class="s">"Flip image component"</span><span class="p">,</span>
+     <span class="s">"version"</span><span class="p">,</span>           <span class="s">"1.0.0"</span><span class="p">,</span>
+     <span class="s">"vendor"</span><span class="p">,</span>            <span class="s">"AIST"</span><span class="p">,</span>
+     <span class="s">"category"</span><span class="p">,</span>          <span class="s">"Category"</span><span class="p">,</span>
+     <span class="s">"activity_type"</span><span class="p">,</span>     <span class="s">"PERIODIC"</span><span class="p">,</span>
+     <span class="s">"kind"</span><span class="p">,</span>              <span class="s">"DataFlowComponent"</span><span class="p">,</span>
+     <span class="s">"max_instance"</span><span class="p">,</span>      <span class="s">"1"</span><span class="p">,</span>
+     <span class="s">"language"</span><span class="p">,</span>          <span class="s">"C++"</span><span class="p">,</span>
+     <span class="s">"lang_type"</span><span class="p">,</span>         <span class="s">"compile"</span><span class="p">,</span>
+     <span class="c1">// Configuration variables</span>
+     <span class="s">"conf.default.flipMode"</span><span class="p">,</span> <span class="s">"1"</span><span class="p">,</span>
+     <span class="c1">// Widget</span>
+     <span class="s">"conf.__widget__.flipMode"</span><span class="p">,</span> <span class="s">"radio"</span><span class="p">,</span>
+     <span class="c1">// Constraints</span>
+     <span class="s">"conf.__constraints__.flip_mode"</span><span class="p">,</span> <span class="s">"(-1,0,1)"</span><span class="p">,</span>
+     <span class="s">""</span>
+   <span class="p">};</span>
+
+ <span class="cm">/*!
+  * @brief constructor
+  * @param manager Maneger Object
+  */</span>
+ <span class="n">Flip</span><span class="o">::</span><span class="n">Flip</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">Manager</span><span class="o">*</span> <span class="n">manager</span><span class="p">)</span>
+   <span class="o">:</span> <span class="n">RTC</span><span class="o">::</span><span class="n">DataFlowComponentBase</span><span class="p">(</span><span class="n">manager</span><span class="p">),</span>
+     <span class="n">m_originalImageIn</span><span class="p">(</span><span class="s">"originalImage"</span><span class="p">,</span> <span class="n">m_originalImage</span><span class="p">),</span>
+     <span class="n">m_flippedImageOut</span><span class="p">(</span><span class="s">"flippedImage"</span><span class="p">,</span> <span class="n">m_flippedImage</span><span class="p">)</span>
+ <span class="p">{</span>
+ <span class="p">}</span>
+
+ <span class="cm">/*!
+  * @brief destructor
+  */</span>
+ <span class="n">Flip</span><span class="o">::~</span><span class="n">Flip</span><span class="p">()</span>
+ <span class="p">{</span>
+ <span class="p">}</span>
+
+
+ <span class="n">RTC</span><span class="o">::</span><span class="n">ReturnCode_t</span> <span class="n">Flip</span><span class="o">::</span><span class="n">onInitialize</span><span class="p">()</span>
+ <span class="p">{</span>
+   <span class="c1">// Registration: InPort/OutPort/Service</span>
+   <span class="c1">// Set InPort buffers</span>
+   <span class="n">addInPort</span><span class="p">(</span><span class="s">"originalImage"</span><span class="p">,</span> <span class="n">m_originalImageIn</span><span class="p">);</span>
+
+   <span class="c1">// Set OutPort buffer</span>
+   <span class="n">addOutPort</span><span class="p">(</span><span class="s">"flippedImage"</span><span class="p">,</span> <span class="n">m_flippedImageOut</span><span class="p">);</span>
+
+   <span class="c1">// Bind variables and configuration variable</span>
+   <span class="n">bindParameter</span><span class="p">(</span><span class="s">"flipMode"</span><span class="p">,</span> <span class="n">m_flipMode</span><span class="p">,</span> <span class="s">"1"</span><span class="p">);</span>
+
+   <span class="k">return</span> <span class="n">RTC</span><span class="o">::</span><span class="n">RTC_OK</span><span class="p">;</span>
+ <span class="p">}</span>
+
+
+ <span class="n">RTC</span><span class="o">::</span><span class="n">ReturnCode_t</span> <span class="n">Flip</span><span class="o">::</span><span class="n">onActivated</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">UniqueId</span> <span class="n">ec_id</span><span class="p">)</span>
+ <span class="p">{</span>
+   <span class="c1">// Initialize image memory</span>
+   <span class="n">m_imageBuff</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+   <span class="n">m_flipImageBuff</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+   <span class="c1">// Initialize the OutPort image size</span>
+   <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="k">return</span> <span class="n">RTC</span><span class="o">::</span><span class="n">RTC_OK</span><span class="p">;</span>
+ <span class="p">}</span>
+
+
+ <span class="n">RTC</span><span class="o">::</span><span class="n">ReturnCode_t</span> <span class="n">Flip</span><span class="o">::</span><span class="n">onDeactivated</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">UniqueId</span> <span class="n">ec_id</span><span class="p">)</span>
+ <span class="p">{</span>
+   <span class="k">if</span><span class="p">(</span><span class="n">m_imageBuff</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+   <span class="p">{</span>
+     <span class="c1">// Release image memory</span>
+     <span class="n">cvReleaseImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_imageBuff</span><span class="p">);</span>
+     <span class="n">cvReleaseImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_flipImageBuff</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">return</span> <span class="n">RTC</span><span class="o">::</span><span class="n">RTC_OK</span><span class="p">;</span>
+ <span class="p">}</span>
+
+
+ <span class="n">RTC</span><span class="o">::</span><span class="n">ReturnCode_t</span> <span class="n">Flip</span><span class="o">::</span><span class="n">onExecute</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">UniqueId</span> <span class="n">ec_id</span><span class="p">)</span>
+ <span class="p">{</span>
+   <span class="c1">// Check for new data</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">m_originalImageIn</span><span class="p">.</span><span class="n">isNew</span><span class="p">())</span> <span class="p">{</span>
+     <span class="c1">// Read InPort data</span>
+     <span class="n">m_originalImageIn</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+
+     <span class="c1">// Process the InPort and OutPort image sizes and allocate image memory</span>
+     <span class="k">if</span><span class="p">(</span> <span class="n">m_originalImage</span><span class="p">.</span><span class="n">width</span> <span class="o">!=</span> <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">width</span> <span class="o">||</span> <span class="n">m_originalImage</span><span class="p">.</span><span class="n">height</span> <span class="o">!=</span> <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">height</span><span class="p">)</span>
+       <span class="p">{</span>
+         <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">m_originalImage</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+         <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">m_originalImage</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+
+         <span class="c1">// If the image size of the InPort has changed</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">m_imageBuff</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+           <span class="p">{</span>
+             <span class="n">cvReleaseImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_imageBuff</span><span class="p">);</span>
+             <span class="n">cvReleaseImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_flipImageBuff</span><span class="p">);</span>
+           <span class="p">}</span>
+
+         <span class="c1">// Allocate image memory</span>
+         <span class="n">m_imageBuff</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvSize</span><span class="p">(</span><span class="n">m_originalImage</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_originalImage</span><span class="p">.</span><span class="n">height</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+         <span class="n">m_flipImageBuff</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvSize</span><span class="p">(</span><span class="n">m_originalImage</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_originalImage</span><span class="p">.</span><span class="n">height</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+       <span class="p">}</span>
+
+     <span class="c1">// Copy the InPort image data to the imageData of IplImage</span>
+     <span class="n">memcpy</span><span class="p">(</span><span class="n">m_imageBuff</span><span class="o">-&gt;</span><span class="n">imageData</span><span class="p">,(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m_originalImage</span><span class="p">.</span><span class="n">pixels</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">m_originalImage</span><span class="p">.</span><span class="n">pixels</span><span class="p">.</span><span class="n">length</span><span class="p">());</span>
+
+     <span class="c1">// Flip the image data from the InPort. m_flipMode 0: around the X axis, 1: around the Y axis, -1: around both axes</span>
+     <span class="n">cvFlip</span><span class="p">(</span><span class="n">m_imageBuff</span><span class="p">,</span> <span class="n">m_flipImageBuff</span><span class="p">,</span> <span class="n">m_flipMode</span><span class="p">);</span>
+
+     <span class="c1">// Get the image data size</span>
+     <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">m_flipImageBuff</span><span class="o">-&gt;</span><span class="n">nChannels</span> <span class="o">*</span> <span class="n">m_flipImageBuff</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">*</span> <span class="n">m_flipImageBuff</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">;</span>
+     <span class="n">m_flippedImage</span><span class="p">.</span><span class="n">pixels</span><span class="p">.</span><span class="n">length</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
+
+     <span class="c1">// Copy the flipped image data to the OutPort</span>
+     <span class="n">memcpy</span><span class="p">((</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m_flippedImage</span><span class="p">.</span><span class="n">pixels</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">m_flipImageBuff</span><span class="o">-&gt;</span><span class="n">imageData</span><span class="p">,</span><span class="n">len</span><span class="p">);</span>
+
+     <span class="c1">// Output the flipped image data from the OutPort.</span>
+     <span class="n">m_flippedImageOut</span><span class="p">.</span><span class="n">write</span><span class="p">();</span>
+   <span class="p">}</span>
+
+   <span class="k">return</span> <span class="n">RTC</span><span class="o">::</span><span class="n">RTC_OK</span><span class="p">;</span>
+ <span class="p">}</span>
+
+
+ <span class="k">extern</span> <span class="s">"C"</span>
+ <span class="p">{</span>
+
+   <span class="kt">void</span> <span class="n">FlipInit</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">Manager</span><span class="o">*</span> <span class="n">manager</span><span class="p">)</span>
+   <span class="p">{</span>
+     <span class="n">coil</span><span class="o">::</span><span class="n">Properties</span> <span class="n">profile</span><span class="p">(</span><span class="n">flip_spec</span><span class="p">);</span>
+     <span class="n">manager</span><span class="o">-&gt;</span><span class="n">registerFactory</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span>
+                              <span class="n">RTC</span><span class="o">::</span><span class="n">Create</span><span class="o">&lt;</span><span class="n">Flip</span><span class="o">&gt;</span><span class="p">,</span>
+                              <span class="n">RTC</span><span class="o">::</span><span class="n">Delete</span><span class="o">&lt;</span><span class="n">Flip</span><span class="o">&gt;</span><span class="p">);</span>
+   <span class="p">}</span>
+
+ <span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="flip-component-header-file-fliph">Flip Component Header File (Flip.h)</h4>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">// -*- C++ -*-</span>
+ <span class="cm">/*!
+  * @file  Flip.h
+  * @brief Flip image component
+  * @date  $Date$
+  *
+  * $Id$
+  */</span>
+
+ <span class="cp">#ifndef FLIP_H
+</span> <span class="cp">#define FLIP_H
+</span>
+ <span class="cp">#include</span> <span class="cpf">&lt;rtm/Manager.h&gt;</span><span class="cp">
+</span> <span class="cp">#include</span> <span class="cpf">&lt;rtm/DataFlowComponentBase.h&gt;</span><span class="cp">
+</span> <span class="cp">#include</span> <span class="cpf">&lt;rtm/CorbaPort.h&gt;</span><span class="cp">
+</span> <span class="cp">#include</span> <span class="cpf">&lt;rtm/DataInPort.h&gt;</span><span class="cp">
+</span> <span class="cp">#include</span> <span class="cpf">&lt;rtm/DataOutPort.h&gt;</span><span class="cp">
+</span> <span class="cp">#include</span> <span class="cpf">&lt;rtm/idl/BasicDataTypeSkel.h&gt;</span><span class="cp">
+</span> <span class="cp">#include</span> <span class="cpf">&lt;rtm/idl/ExtendedDataTypesSkel.h&gt;</span><span class="cp">
+</span> <span class="cp">#include</span> <span class="cpf">&lt;rtm/idl/InterfaceDataTypesSkel.h&gt;</span><span class="cp">
+</span>
+ <span class="c1">// Include OpenCV include files</span>
+ <span class="cp">#include</span><span class="cpf">&lt;cv.h&gt;</span><span class="cp">
+</span> <span class="cp">#include</span><span class="cpf">&lt;cxcore.h&gt;</span><span class="cp">
+</span> <span class="cp">#include</span><span class="cpf">&lt;highgui.h&gt;</span><span class="cp">
+</span>
+ <span class="k">using</span> <span class="k">namespace</span> <span class="n">RTC</span><span class="p">;</span>
+
+ <span class="cm">/*!
+  * @class Flip
+  * @brief Flip image component
+  *
+  */</span>
+ <span class="k">class</span> <span class="nc">Flip</span>
+   <span class="o">:</span> <span class="k">public</span> <span class="n">RTC</span><span class="o">::</span><span class="n">DataFlowComponentBase</span>
+ <span class="p">{</span>
+  <span class="nl">public:</span>
+   <span class="cm">/*!
+    * @brief constructor
+    * @param manager Maneger Object
+    */</span>
+   <span class="n">Flip</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">Manager</span><span class="o">*</span> <span class="n">manager</span><span class="p">);</span>
+
+   <span class="cm">/*!
+    * @brief destructor
+    */</span>
+   <span class="o">~</span><span class="n">Flip</span><span class="p">();</span>
+
+   <span class="cm">/***
+    *
+    * The initialize action (on CREATED-&gt;ALIVE transition)
+    * former rtc_init_entry()
+    *
+    * @return RTC::ReturnCode_t
+    *
+    *
+    */</span>
+    <span class="k">virtual</span> <span class="n">RTC</span><span class="o">::</span><span class="n">ReturnCode_t</span> <span class="n">onInitialize</span><span class="p">();</span>
+
+   <span class="cm">/***
+    *
+    * The activated action (Active state entry action)
+    * former rtc_active_entry()
+    *
+    * @param ec_id target ExecutionContext Id
+    *
+    * @return RTC::ReturnCode_t
+    *
+    *
+    */</span>
+    <span class="k">virtual</span> <span class="n">RTC</span><span class="o">::</span><span class="n">ReturnCode_t</span> <span class="n">onActivated</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">UniqueId</span> <span class="n">ec_id</span><span class="p">);</span>
+
+   <span class="cm">/***
+    *
+    * The deactivated action (Active state exit action)
+    * former rtc_active_exit()
+    *
+    * @param ec_id target ExecutionContext Id
+    *
+    * @return RTC::ReturnCode_t
+    *
+    *
+    */</span>
+    <span class="k">virtual</span> <span class="n">RTC</span><span class="o">::</span><span class="n">ReturnCode_t</span> <span class="n">onDeactivated</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">UniqueId</span> <span class="n">ec_id</span><span class="p">);</span>
+
+   <span class="cm">/***
+    *
+    * The execution action that is invoked periodically
+    * former rtc_active_do()
+    *
+    * @param ec_id target ExecutionContext Id
+    *
+    * @return RTC::ReturnCode_t
+    *
+    *
+    */</span>
+    <span class="k">virtual</span> <span class="n">RTC</span><span class="o">::</span><span class="n">ReturnCode_t</span> <span class="n">onExecute</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">UniqueId</span> <span class="n">ec_id</span><span class="p">);</span>
+
+  <span class="nl">protected:</span>
+
+   <span class="c1">// Configuration variable declaration</span>
+
+   <span class="cm">/*!
+    *
+    * - Name:  flipMode
+    * - DefaultValue: 1
+    */</span>
+   <span class="kt">int</span> <span class="n">m_flipMode</span><span class="p">;</span>
+
+
+   <span class="c1">// DataInPort declaration</span>
+
+   <span class="n">CameraImage</span> <span class="n">m_originalImage</span><span class="p">;</span>
+
+   <span class="cm">/*!
+    */</span>
+   <span class="n">InPort</span><span class="o">&lt;</span><span class="n">CameraImage</span><span class="o">&gt;</span> <span class="n">m_originalImageIn</span><span class="p">;</span>
+
+
+   <span class="c1">// DataOutPort declaration</span>
+
+   <span class="n">CameraImage</span> <span class="n">m_flippedImage</span><span class="p">;</span>
+
+   <span class="cm">/*!
+    */</span>
+   <span class="n">OutPort</span><span class="o">&lt;</span><span class="n">CameraImage</span><span class="o">&gt;</span> <span class="n">m_flippedImageOut</span><span class="p">;</span>
+
+
+  <span class="nl">private:</span>
+
+   <span class="c1">// Buffer for processed images</span>
+   <span class="n">IplImage</span><span class="o">*</span> <span class="n">m_imageBuff</span><span class="p">;</span>
+   <span class="n">IplImage</span><span class="o">*</span> <span class="n">m_flipImageBuff</span><span class="p">;</span>
+
+ <span class="p">};</span>
+
+
+ <span class="k">extern</span> <span class="s">"C"</span>
+ <span class="p">{</span>
+   <span class="n">DLL_EXPORT</span> <span class="kt">void</span> <span class="n">FlipInit</span><span class="p">(</span><span class="n">RTC</span><span class="o">::</span><span class="n">Manager</span><span class="o">*</span> <span class="n">manager</span><span class="p">);</span>
+ <span class="p">};</span>
+
+ <span class="cp">#endif // FLIP_H
+</span></code></pre></div></div>
+
+<h3 id="complete-source-code-of-the-flip-component-1">Complete Source Code of the Flip Component</h3>
+
+<p>The complete source code of the Flip component is attached below.</p>
+
+<ul>
+  <li><a href="Flip.zip">Flip.zip</a></li>
+</ul>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

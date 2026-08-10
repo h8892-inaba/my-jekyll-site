@@ -36,5 +36,5 @@ On this page, we make efforts to provide the manuscripts of our papers to the ex
  - Publication is permitted as long as the author posts it on their own personal or institutional website.
 
 - [The Society of Instrument and Control Engineers (SICE):](http://www.sice.jp/)
- - Publication is possible upon submitting a request for permission to reprint/use to the SICE secretariat and receiving approval. [Reprint Permission Certificate](tensai_kyoka_201311.pdf)
+ - Publication is possible upon submitting a request for permission to reprint/use to the SICE secretariat and receiving approval. [Reprint Permission Certificate](../tensai_kyoka_201311.pdf)
 

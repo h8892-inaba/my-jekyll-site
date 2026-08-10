@@ -54,7 +54,7 @@ title: RTミドルウェア強化月間(第1弾)：中央大学・RTミドルウ
 <br>
 <br>
 
-- [RTC.xml](http://www.openrtm.org/openrtm/sites/default/files/4965/RTC.xml)
+- [RTC.xml](./RTC.xml)
 - [Flipコンポーネントの作成](http://openrtm.org/openrtm/ja/node/5286)
 
 <!-- ** 講習会に参加される方へ -->

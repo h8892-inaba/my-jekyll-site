@@ -1,0 +1,4514 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>RTC Operation Function (CORBA_RTCUtil) User Manual | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="RTC Operation Function (CORBA_RTCUtil) User Manual" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/corba_rtcutil_usersmanual/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/corba_rtcutil_usersmanual/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="RTC Operation Function (CORBA_RTCUtil) User Manual" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"RTC Operation Function (CORBA_RTCUtil) User Manual","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/corba_rtcutil_usersmanual/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/corba_rtcutil_usersmanual/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/corba_rtcutil_usersmanual/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>RTC Operation Function (CORBA_RTCUtil) User Manual <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/corba_rtcutil_usersmanual/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/developersguide/advanced_rt_system_programming/corba_rtcutil_usersmanual/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#preparation">Preparation</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#c">C++</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#python">Python</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#creating-rtcconf">Creating rtc.conf</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#starting-sample-components">Starting Sample Components</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#using-corba_rtcutil">Using CORBA_RTCUtil</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#port-operations">Port Operations</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtc-state-operations">RTC State Operations</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#execution-context-operations">Execution Context Operations</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#configuration-parameter-operations">Configuration Parameter Operations</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#getting-rtc-and-port-information">Getting RTC and Port Information</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtcの状態操作">RTCの状態操作</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#実行コンテキストの操作">実行コンテキストの操作</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#コンフィギュレーションパラメータの操作">コンフィギュレーションパラメータの操作</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtcポートの情報取得">RTC、ポートの情報取得</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<p>#contents</p>
+
+<p>This page explains how to use the <strong>CORBA_RTCUtil</strong> RTC operation function group of OpenRTM-aist.</p>
+
+<p>The source code used here can be obtained from the following.</p>
+
+<ul>
+  <li>https://github.com/Nobu19800/testCORBA_RTCUtil</li>
+</ul>
+
+<h2 id="preparation">Preparation</h2>
+<h3 id="c">C++</h3>
+<p>For C++, you need an environment for building programs linked with OpenRTM-aist.</p>
+
+<p>Create the following CMakeLists.txt.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmake_minimum_required(VERSION 3.1)
+ 
+ set(target CORBA_RTCUtil_test)
+ project(${target} CXX)
+ 
+ find_package(OpenRTM REQUIRED)
+ 
+ add_definitions(${OPENRTM_CFLAGS})
+ link_directories(${OPENRTM_LIBRARY_DIRS})
+ 
+ add_executable(${target} ${target}.cpp)
+ target_link_libraries(${target} ${OPENRTM_LIBRARIES})
+ target_include_directories(${target} SYSTEM PRIVATE ${OPENRTM_INCLUDE_DIRS})
+</code></pre></div></div>
+
+<p>Also, create the source file <strong>CORBA_RTCUtil_test.cpp</strong> and run CMake.
+If you are using OpenRTM-aist built from source code, run <strong>environment-setup.omniorb.vc</strong>.bat**.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> %OPENRTM_INSTALL_DIR%\2.0.0\ext\environment-setup.omniorb.vc16.bat
+ mkdir build
+ cd build
+ cmake ..
+</code></pre></div></div>
+
+<p>Write the following content in CORBA_RTCUtil_test.cpp.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #include &lt;rtm/Manager.h&gt;
+ #include &lt;rtm/NamingManager.h&gt;
+ #include &lt;rtm/CORBA_RTCUtil.h&gt;
+ #include &lt;iostream&gt;
+ 
+ 
+ int main (int argc, char** argv)
+{
+  RTC::Manager* manager;
+  manager = RTC::Manager::init(argc, argv);
+ 
+  manager-&gt;activateManager();
+  manager-&gt;runManager(true);
+ 
+  RTC::RTObject_var consolein = RTC::RTObject::_nil();
+  RTC::RTObject_var consoleout = RTC::RTObject::_nil();
+ 
+  RTC::NamingManager* nm = RTC::Manager::instance().getNaming();
+  RTC::RTCList consoleinlist = nm-&gt;string_to_component("rtcname://localhost:2809/*/ConsoleIn0");
+ 
+  if (consoleinlist.length() &gt; 0)
+  {
+    consolein = consoleinlist[0];
+  }
+  else
+  {
+    std::cout &lt;&lt; "Could not found ConsoleIn0" &lt;&lt; std::endl;
+    return 1;
+  }
+ 
+  RTC::RTCList consoleoutlist = nm-&gt;string_to_component("rtcname://localhost:2809/*/ConsoleOut0");
+  
+  if (consoleoutlist.length() &gt; 0)
+  {
+    consoleout = consoleoutlist[0];
+  }
+  else
+  {
+    std::cout &lt;&lt; "Could not found ConsoleOut0" &lt;&lt; std::endl;
+    return 1;
+  }
+  
+  RTC::RTObject_var configsample = RTC::RTObject::_nil();
+  RTC::RTCList configsamplelist = nm-&gt;string_to_component("rtcname://localhost:2809/*/ConfigSample0");
+ 
+  if (configsamplelist.length() &gt; 0)
+  {
+    configsample = configsamplelist[0];
+  }
+  else
+  {
+    std::cout &lt;&lt; "Could not found ConfigSample0" &lt;&lt; std::endl;
+    return 1;
+  }
+  
+  RTC::RTObject_var myserviceprovider = RTC::RTObject::_nil();
+  RTC::RTCList myserviceproviderlist = nm-&gt;string_to_component("rtcname://localhost:2809/*/MyServiceProvider0");
+ 
+  if (myserviceproviderlist.length() &gt; 0)
+  {
+    myserviceprovider = myserviceproviderlist[0];
+  }
+  else
+  {
+    std::cout &lt;&lt; "Could not found MyServiceProvider0" &lt;&lt; std::endl;
+    return 1;
+  }
+  
+  RTC::RTObject_var myserviceconsumer = RTC::RTObject::_nil();
+  RTC::RTCList myserviceconsumerlist = nm-&gt;string_to_component("rtcname://localhost:2809/*/MyServiceConsumer0");
+ 
+  if (myserviceconsumerlist.length() &gt; 0)
+  {
+    myserviceconsumer = myserviceconsumerlist[0];
+  }
+  else
+  {
+    std::cout &lt;&lt; "Could not found MyServiceConsumer0" &lt;&lt; std::endl;
+    return 1;
+  }
+ 
+  //以降の処理はここに記述する
+ 
+  manager-&gt;terminate();
+  manager-&gt;join();
+ 
+  return 0;
+}
+</code></pre></div></div>
+
+<h3 id="python">Python</h3>
+<p>For Python, prepare the following <strong>CORBA_RTCUtil_test.py</strong>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #!/usr/bin/env python
+ # -*- coding: utf-8 -*-
+ # -*- Python -*-
+ 
+ import sys
+ 
+ import OpenRTM_aist
+ import OpenRTM_aist.CORBA_RTCUtil
+ from omniORB import CORBA
+ 
+ def main():
+    mgr = OpenRTM_aist.Manager.init(sys.argv)
+    mgr.activateManager()
+    mgr.runManager(True)
+ 
+ 
+    nm = OpenRTM_aist.Manager.instance().getNaming()
+    consoleinlist = nm.string_to_component(
+        "rtcname://localhost:2809/*/ConsoleIn0")
+ 
+    if consoleinlist:
+        consolein = consoleinlist[0]
+    else:
+        print("Could not found ConsoleIn0")
+        sys.exit(1)
+ 
+    consoleoutlist = nm.string_to_component(
+        "rtcname://localhost:2809/*/ConsoleOut0")
+    if consoleoutlist:
+        consoleout = consoleoutlist[0]
+    else:
+        print("Could not found ConsoleOut0")
+        sys.exit(1)
+    
+    configsamplelist = nm.string_to_component(
+        "rtcname://localhost:2809/*/ConfigSample0")
+    if consoleoutlist:
+        configsample = consoleoutlist[0]
+    else:
+        print("Could not found ConfigSample0")
+        sys.exit(1)
+ 
+    myserviceproviderlist = nm.string_to_component(
+        "rtcname://localhost:2809/*/MyServiceProvider0")
+    if myserviceproviderlist:
+        myserviceprovider = myserviceproviderlist[0]
+    else:
+        print("Could not found MyServiceProvider0")
+        sys.exit(1)
+ 
+    myserviceconsumerlist = nm.string_to_component(
+        "rtcname://localhost:2809/*/ConsoleOut0")
+    if myserviceconsumerlist:
+        myserviceconsumer = myserviceconsumerlist[0]
+    else:
+        print("Could not found ConsoleOut0")
+        sys.exit(1)
+ 
+    #以降の処理はここに記述する
+ 
+    mgr.shutdown()
+ 
+ 
+ if __name__ == "__main__":
+    main()
+</code></pre></div></div>
+
+<h3 id="creating-rtcconf">Creating rtc.conf</h3>
+<p>Create rtc.conf with the following content.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> manager.shutdown_auto: NO
+</code></pre></div></div>
+
+<h3 id="starting-sample-components">Starting Sample Components</h3>
+
+<p>Start the sample components ConsoleIn, ConsoleOut, ConfiguSample, MyServiceProvider, and MyServiceConsumer.</p>
+
+<h2 id="using-corba_rtcutil">Using CORBA_RTCUtil</h2>
+<h3 id="port-operations">Port Operations</h3>
+<h4 id="getting-a-port-object-reference">Getting a Port Object Reference</h4>
+
+<p>To connect data ports, use the <strong>get_port_by_name</strong> function to obtain the port object reference.</p>
+
+<table class="table-alt">
+  <tr>
+    <th colspan="2">Function Name</th>
+    <th>get_port_by_name</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>std::string&amp;</td>
+    <td>RTC name.port name</td>
+  </tr>
+  <tr>
+    <td colspan="2">Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::PortService_ptr</td>
+    <td colspan="2">Port object reference</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  RTC::PortService_var port_in_var = CORBA_RTCUtil::get_port_by_name(consoleout.in(), "ConsoleOut0.in");
+ 
+  if (CORBA::is_nil(port_in_var))
+  {
+    std::cout &lt;&lt; "Could not found ConsoleOut0.in" &lt;&lt; std::endl;
+    return 1;
+  }
+ 
+  RTC::PortService_var port_out_var = CORBA_RTCUtil::get_port_by_name(consolein.in(), "ConsoleIn0.out");
+ 
+  if (CORBA::is_nil(port_out_var))
+  {
+    std::cout &lt;&lt; "Could not found ConsoleIn0.out" &lt;&lt; std::endl;
+    return 1;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    port_in_var = OpenRTM_aist.CORBA_RTCUtil.get_port_by_name(
+        consoleout, "ConsoleOut0.in")
+    if CORBA.is_nil(port_in_var):
+        print("Could not found ConsoleOut0.in")
+        sys.exit(1)
+ 
+    port_out_var = OpenRTM_aist.CORBA_RTCUtil.get_port_by_name(
+        consolein, "ConsoleIn0.out")
+    if CORBA.is_nil(port_out_var):
+        print("Could not found ConsoleOut0.in")
+        sys.exit(1)
+</code></pre></div></div>
+
+<p>Also, by using the <strong>get_port_by_url</strong> function, you can obtain an object reference from a string in <strong>rtcname</strong> format or <strong>rtcloc</strong> format.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">get_port_by_url</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>port_name</td>
+    <td>std::string&amp;</td>
+    <td>Port URI</td>
+  </tr>
+  <tr>
+    <td colspan="3">Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::PortService_ptr</td>
+    <td>&gt;</td>
+    <td>Port object reference</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  RTC::PortService_var port_in_var = CORBA_RTCUtil::get_port_by_url("rtcname://localhost:2809/*/ConsoleOut0.in");
+ 
+  if (CORBA::is_nil(port_in_var))
+  {
+    std::cout &lt;&lt; "Could not found ConsoleOut0.in" &lt;&lt; std::endl;
+    return 1;
+  }
+ 
+  RTC::PortService_var port_out_var = CORBA_RTCUtil::get_port_by_url("rtcname://localhost:2809/*/ConsoleIn0.out");
+ 
+  if (CORBA::is_nil(port_out_var))
+  {
+    std::cout &lt;&lt; "Could not found ConsoleIn0.out" &lt;&lt; std::endl;
+    return 1;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    port_in_var = OpenRTM_aist.CORBA_RTCUtil.get_port_by_url(
+        "rtcname://localhost:2809/*/ConsoleOut0.in")
+    if CORBA.is_nil(port_in_var):
+        print("Could not found ConsoleOut0.in")
+        sys.exit(1)
+ 
+    port_out_var = OpenRTM_aist.CORBA_RTCUtil.get_port_by_url(
+        "rtcname://localhost:2809/*/ConsoleIn0.out")
+    if CORBA.is_nil(port_out_var):
+        print("Could not found ConsoleOut0.in")
+        sys.exit(1)
+</code></pre></div></div>
+
+<h4 id="connector-creation">Connector Creation</h4>
+
+<p>Connect the acquired data ports with the <strong>connect</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">connect</th>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>std::string&amp;</td>
+    <td>Connector name</td>
+  </tr>
+  <tr>
+    <td>prop</td>
+    <td>coil::Properties&amp;</td>
+    <td>Connector setting information</td>
+  </tr>
+  <tr>
+    <td>port0</td>
+    <td>RTC::PortService_ptr</td>
+    <td>Port 1 to connect</td>
+  </tr>
+  <tr>
+    <td>port1</td>
+    <td>RTC::PortService_ptr</td>
+    <td>Port 2 to connect</td>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  coil::Properties prop;
+  prop["dataport.dataflow_type"] = "push";
+  prop["dataport.interface_type"] = "corba_cdr";
+  prop["dataport.subscription_type"] = "new";
+  CORBA_RTCUtil::connect("test_connector", prop, port_in_var.in(), port_out_var.in());
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    prop = OpenRTM_aist.Properties()
+    prop.setProperty("dataport.dataflow_type", "push")
+    prop.setProperty("dataport.interface_type", "corba_cdr")
+    prop.setProperty("dataport.subscription_type", "new")
+    OpenRTM_aist.CORBA_RTCUtil.connect(
+        "test_connector", prop, port_in_var, port_out_var)
+</code></pre></div></div>
+
+<h4 id="connector-deletion">Connector Deletion</h4>
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">disconnect_connector_name</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>port_ref</td>
+    <td>RTC::PortService_ptr</td>
+    <td>Connected port</td>
+  </tr>
+  <tr>
+    <td>conn_name</td>
+    <td>std::string&amp;</td>
+    <td>Connector name</td>
+  </tr>
+  <tr>
+    <td colspan="3">Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+</table>
+
+<p>To delete a connector by specifying the connector name, use the <strong>disconnect_connector_name</strong> function.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::disconnect_connector_name(port_in_var.in(), "test_connector");
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.disconnect_by_portref_connector_name(
+        port_in_var, "test_connector")
+</code></pre></div></div>
+
+<p>When obtaining an object reference from a connector URI and deleting the connector, use the <strong>disconnect_connector_name</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">disconnect_connector_name</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>port_name</td>
+    <td>std::string&amp;</td>
+    <td>Port URI</td>
+  </tr>
+  <tr>
+    <td>conn_name</td>
+    <td>std::string&amp;</td>
+    <td>Connector name</td>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::disconnect_connector_name("rtcname://localhost:2809/*/ConsoleOut0.in", "test_connector");
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.disconnect_by_portname_connector_name(
+        "rtcname://localhost:2809/*/ConsoleOut0.in", "test_connector")
+</code></pre></div></div>
+
+<h4 id="connecting-multiple-ports-at-once">Connecting Multiple Ports at Once</h4>
+<p>To connect multiple ports at once, use the <strong>connect_multi</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">connect_multi</th>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>std::string&amp;</td>
+    <td>Connector name</td>
+  </tr>
+  <tr>
+    <td>prop</td>
+    <td>coil::Properties&amp;</td>
+    <td>Connector setting information</td>
+  </tr>
+  <tr>
+    <td>port0</td>
+    <td>RTC::PortService_ptr</td>
+    <td>Port 1 to connect</td>
+  </tr>
+  <tr>
+    <td>target_ports</td>
+    <td>RTC::PortServiceList&amp;</td>
+    <td>List of ports to connect to port 1</td>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  RTC::PortServiceList target_ports;
+  target_ports.length(1);
+  target_ports[0] = RTC::PortService::_duplicate(port_out_var.in());
+  CORBA_RTCUtil::connect_multi("test_connector", prop, port_in_var.in(), target_ports);
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.connect_multi(
+        "test_connector", prop, port_in_var, [port_out_var])
+</code></pre></div></div>
+
+<h4 id="deleting-all-connectors">Deleting All Connectors</h4>
+<p>To delete all connectors of the target port, use the <strong>disconnect_all</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">disconnect_all</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>port_ref</td>
+    <td>RTC::PortService_ptr</td>
+    <td>Connected port</td>
+  </tr>
+  <tr>
+    <td colspan="3">Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::disconnect_all(port_in_var.in());
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.disconnect_all_by_ref(port_in_var)
+</code></pre></div></div>
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">disconnect_all</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>port_name</td>
+    <td>std::string&amp;</td>
+    <td>Port URI</td>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::disconnect_all("rtcname://localhost:2809/*/ConsoleIn0.out");
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.disconnect_all_by_name(
+        "rtcname://localhost:2809/*/ConsoleIn0.out")
+</code></pre></div></div>
+
+<h3 id="rtc-state-operations">RTC State Operations</h3>
+<h4 id="activation">Activation</h4>
+<p>To activate an RTC, use the <strong>activate</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">activate</th>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>Execution context ID</td>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+</table>
+
+<p>Since an RTC has a state for each execution context, specify ec_id when changing the state in an execution context other than the default execution context (ID: 0).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::activate(consolein.in(), 0);
+  CORBA_RTCUtil::activate(consoleout.in(), 0);
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.activate(consoleout, 0)
+    OpenRTM_aist.CORBA_RTCUtil.activate(consolein, 0)
+</code></pre></div></div>
+
+<h4 id="deactivation">Deactivation</h4>
+<p>To deactivate an RTC, use the <strong>deactivate</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">deactivate</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>Execution context ID</td>
+  </tr>
+  <tr>
+    <td colspan="3">Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::deactivate(consolein.in(), 0);
+  CORBA_RTCUtil::deactivate(consoleout.in(), 0);
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.deactivate(consoleout, 0)
+    OpenRTM_aist.CORBA_RTCUtil.deactivate(consolein, 0)
+</code></pre></div></div>
+
+<h4 id="reset">Reset</h4>
+<p>To reset an RTC, use the <strong>reset</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">reset</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>Execution context ID</td>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::reset(consolein.in(), 0);
+  CORBA_RTCUtil::reset(consoleout.in(), 0);
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.reset(consoleout, 0)
+    OpenRTM_aist.CORBA_RTCUtil.reset(consolein, 0)
+</code></pre></div></div>
+
+<h4 id="getting-the-rtc-state">Getting the RTC State</h4>
+<p>To get the current state of an RTC, use the <strong>get_state</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>Function Name</th>
+    <th colspan="2">get_state</th>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>Argument Name</td>
+    <td>Type Name</td>
+    <td>Meaning</td>
+  </tr>
+  <tr>
+    <td>state</td>
+    <td>RTC::LifeCycleState</td>
+    <td>State</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>Execution context ID</td>
+  </tr>
+  <tr>
+    <td colspan="3">Return Value</td>
+  </tr>
+  <tr>
+    <td>Type Name</td>
+    <td colspan="2">Meaning</td>
+  </tr>
+  <tr>
+    <td>bool</td>
+    <td colspan="2">true: state retrieval succeeded, false: state retrieval failed</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  RTC::LifeCycleState state;
+  CORBA_RTCUtil::get_state(state, consoleout.in(), 0);
+  std::cout &lt;&lt; state &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ret, state = OpenRTM_aist.CORBA_RTCUtil.get_state(consoleout, 0)
+    print(state)
+</code></pre></div></div>
+
+<p>Also, you can determine whether the current state is inactive, active, or error using the <strong>is_in_inactive</strong>, <strong>is_in_active</strong>, and <strong>is_in_error</strong> functions.</p>
+
+<p>if (CORBA_RTCUtil::is_in_inactive(consoleout.in()))</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {
+    std::cout &lt;&lt; "Inactive State" &lt;&lt; std::endl;
+  }
+  else if (CORBA_RTCUtil::is_in_active(consoleout.in()))
+  {
+    std::cout &lt;&lt; "Active State" &lt;&lt; std::endl;
+  }
+  else if (CORBA_RTCUtil::is_in_error(consoleout.in()))
+  {
+    std::cout &lt;&lt; "Error State" &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    if OpenRTM_aist.CORBA_RTCUtil.is_in_inactive(consoleout):
+        print("Inactive State")
+    elif OpenRTM_aist.CORBA_RTCUtil.is_in_active(consoleout):
+        print("Active State")
+    elif OpenRTM_aist.CORBA_RTCUtil.is_in_error(consoleout):
+        print("Error State")
+</code></pre></div></div>
+
+<h3 id="execution-context-operations">Execution Context Operations</h3>
+<h4 id="operating-the-execution-period">Operating the Execution Period</h4>
+<p>To change the execution period of an execution context, use the <strong>set_default_rate</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>set_default_rate</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>rate</td>
+    <td>CORBA::Double</td>
+    <td>Execution period</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td>&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::set_default_rate(consoleout.in(), 20.0);
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.set_default_rate(consoleout, 20.0)
+</code></pre></div></div>
+
+<p>The set_default_rate function gets the execution period of the default execution context, but to get the execution period from the execution context with the specified ID, use the <strong>set_current_rate</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>set_current_rate</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>Execution context ID</td>
+  </tr>
+  <tr>
+    <td>rate</td>
+    <td>CORBA::Double</td>
+    <td>Execution period</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td>&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::set_current_rate(consoleout.in(), 0, 50.0);
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.set_current_rate(consoleout, 0, 50.0)
+</code></pre></div></div>
+
+<p>To get the current execution period, use the <strong>get_default_rate</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>get_default_rate</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>CORBA::Double</td>
+    <td>&gt;</td>
+    <td>Execution period</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_default_rate(consoleout.in()) &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_default_rate(consoleout))
+</code></pre></div></div>
+
+<p>To get the execution period from the execution context with the specified ID, use the <strong>get_current_rate</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>get_current_rate</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>Execution context ID</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>CORBA::Double</td>
+    <td>&gt;</td>
+    <td>Execution period</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_current_rate(consoleout.in(), 0) &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_current_rate(consoleout, 0))
+</code></pre></div></div>
+
+<h4 id="attaching-and-detaching-execution-contexts">Attaching and Detaching Execution Contexts</h4>
+
+<p>Normally, the execution context generated by the RTC at startup is associated (attached), but by attaching an external execution context to the RTC, the RTC can be driven by the attached execution context.</p>
+
+<p>To attach an execution context to the specified RTC, use the <strong>add_rtc_to_default_ec</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>add_rtc_to_default_ec</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>localcomp</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC that has the execution context to attach as its default execution context</td>
+  </tr>
+  <tr>
+    <td>othercomp</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC to attach</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td>&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::add_rtc_to_default_ec(consoleout.in(), consolein.in());
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.add_rtc_to_default_ec(consoleout, consolein)
+</code></pre></div></div>
+
+<p>To detach the attached execution context, use the <strong>remove_rtc_to_default_ec</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>remove_rtc_to_default_ec</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>localcomp</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC that has the execution context to detach as its default execution context</td>
+  </tr>
+  <tr>
+    <td>othercomp</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC to detach</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td>&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::remove_rtc_to_default_ec(consoleout.in(), consolein.in());
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.remove_rtc_to_default_ec(consoleout, consolein)
+</code></pre></div></div>
+
+<p>To get a list of attached external RTCs, use the <strong>get_participants_rtc</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>get_participants_rtc</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC that has the target execution context as its default execution context</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>RTC::RTCList</td>
+    <td>&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  RTC::RTCList rtclist = CORBA_RTCUtil::get_participants_rtc(consoleout.in());
+  for(CORBA::ULong i=0;i &lt; rtclist.length();i++)
+  {
+    
+    std::cout &lt;&lt; i &lt;&lt; "\t" &lt;&lt; CORBA_RTCUtil::get_component_profile(rtclist[i].in()) &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   i = 0
+    for rtc in OpenRTM_aist.CORBA_RTCUtil.get_participants_rtc(consoleout):
+        print(i, OpenRTM_aist.CORBA_RTCUtil.get_component_profile(rtc))
+        i += 1
+</code></pre></div></div>
+
+<h3 id="configuration-parameter-operations">Configuration Parameter Operations</h3>
+<p>To set configuration parameters, use the <strong>set_active_configuration</strong> function.
+This function sets the parameters of the currently active configuration set.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>set_active_configuration</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>value_name</td>
+    <td>std::string&amp;</td>
+    <td>Parameter name</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>std::string&amp;</td>
+    <td>Set value</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>bool</td>
+    <td>&gt;</td>
+    <td>true: setting succeeded, false: setting failed</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::set_active_configuration(configsample.in(), "int_param1", "100");
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.set_active_configuration(
+        configsample, "int_param1", "100")
+</code></pre></div></div>
+
+<p>When setting a parameter by specifying a configuration set, use the <strong>set_configuration</strong> function.
+When this function is executed, the active configuration set is changed.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>set_configuration</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>confset_name</td>
+    <td>std::string&amp;</td>
+    <td>Configuration set name</td>
+  </tr>
+  <tr>
+    <td>value_name</td>
+    <td>std::string&amp;</td>
+    <td>Parameter name</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>std::string&amp;</td>
+    <td>Set value</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>bool</td>
+    <td>&gt;</td>
+    <td>true: setting succeeded, false: setting failed</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::set_configuration(configsample.in(), "mode0", "str_param1", "test");
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.set_configuration(
+        configsample, "mode0", "str_param1", "test")
+</code></pre></div></div>
+
+<p>To get the name of the currently active configuration set, use the <strong>get_active_configuration_name</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>get_active_configuration_name</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>std::string</td>
+    <td>&gt;</td>
+    <td>Configuration set name</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_active_configuration_name(configsample.in()) &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_active_configuration_name(configsample))
+</code></pre></div></div>
+
+<p>To get a list of parameters in the active configuration set, use the <strong>get_active_configuration</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>get_active_configuration</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>coil::Properties</td>
+    <td>&gt;</td>
+    <td>Parameter list</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_active_configuration(configsample.in()) &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_active_configuration(configsample))
+</code></pre></div></div>
+
+<p>To get a list of parameters by specifying a configuration set, use the <strong>get_configuration</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>get_configuration</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>conf_name</td>
+    <td>std::string&amp;</td>
+    <td>Configuration set name</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>coil::Properties</td>
+    <td>&gt;</td>
+    <td>Parameter list</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_configuration(configsample.in(), "mode1") &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_configuration(configsample, "mode1"))
+</code></pre></div></div>
+
+<p>To get only a specified parameter, use the <strong>get_parameter_by_key</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>get_parameter_by_key</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>conf_name</td>
+    <td>std::string&amp;</td>
+    <td>Configuration set name</td>
+  </tr>
+  <tr>
+    <td>value_name</td>
+    <td>std::string&amp;</td>
+    <td>Parameter name</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>std::string</td>
+    <td>&gt;</td>
+    <td>Parameter value</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_parameter_by_key(configsample.in(), "mode1", "int_param1") &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_parameter_by_key(
+        configsample, "mode1", "int_param1"))
+</code></pre></div></div>
+
+<h3 id="getting-rtc-and-port-information">Getting RTC and Port Information</h3>
+
+<h4 id="getting-rtc-information">Getting RTC Information</h4>
+
+<p>To get a component profile, use the <strong>get_component_profile</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>get_component_profile</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>coil::Properties</td>
+    <td>&gt;</td>
+    <td>Component profile information</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_component_profile(consolein.in()) &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_component_profile(consolein))
+</code></pre></div></div>
+
+<h4 id="getting-port-names">Getting Port Names</h4>
+
+<p>To get a list of names of ports held by the specified RTC, use the <strong>get_port_names</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>get_port_names</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>coil::vstring</td>
+    <td>&gt;</td>
+    <td>Port name list</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  coil::vstring portlist = CORBA_RTCUtil::get_port_names(consolein.in());
+  for (auto&amp; port : portlist)
+  {
+    std::cout &lt;&lt; port &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    for port in OpenRTM_aist.CORBA_RTCUtil.get_port_names(consolein):
+        print(port)
+</code></pre></div></div>
+
+<p>To get a list of InPort names, use the <strong>get_inport_names</strong> function. To get a list of OutPort names, use the <strong>get_outport_names</strong> function. To get a list of service port names, use the <strong>get_svcport_names</strong> function.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  coil::vstring inportlist = CORBA_RTCUtil::get_inport_names(consoleout.in());
+  for (auto&amp; port : inportlist)
+  {
+    std::cout &lt;&lt; port &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  coil::vstring outportlist = CORBA_RTCUtil::get_outport_names(consolein.in());
+  for (auto&amp; port : outportlist)
+  {
+    std::cout &lt;&lt; port &lt;&lt; std::endl;
+  }
+  
+  coil::vstring svcportlist = CORBA_RTCUtil::get_svcport_names(myserviceprovider.in());
+  for (auto&amp; port : svcportlist)
+  {
+    std::cout &lt;&lt; port &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    for port in OpenRTM_aist.CORBA_RTCUtil.get_inport_names(consoleout):
+        print(port)
+    for port in OpenRTM_aist.CORBA_RTCUtil.get_outport_names(consolein):
+        print(port)
+    for port in OpenRTM_aist.CORBA_RTCUtil.get_svcport_names(myserviceprovider):
+        print(port)
+</code></pre></div></div>
+
+<h4 id="getting-a-list-of-connector-names">Getting a List of Connector Names</h4>
+
+<p>To get a list of connector names for a specified port, use the <strong>get_connector_names</strong> function.</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:Function Name</th>
+    <th>&gt;</th>
+    <th>get_connector_names</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>port</td>
+    <td>RTC::PortService_ptr</td>
+    <td>Port object reference</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>coil::vstring</td>
+    <td>&gt;</td>
+    <td>Connector name list</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  coil::vstring inconlist = CORBA_RTCUtil::get_connector_names(port_in_var.in());
+  for (auto&amp; connector : inconlist)
+  {
+    std::cout &lt;&lt; connector &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    for connector in OpenRTM_aist.CORBA_RTCUtil.get_connector_names_by_portref(port_in_var):
+        print(connector)
+</code></pre></div></div>
+
+<p>You can also get a list of connector names by specifying the port name.</p>
+
+<table class="table-alt">
+  <tr>
+    <th colspan="2">Function Name</th>
+  </tr>
+  <tr>
+    <td colspan="3">Arguments</td>
+  </tr>
+  <tr>
+    <td>CENTER:Argument Name</td>
+    <td>CENTER:Type Name</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTC object reference</td>
+  </tr>
+  <tr>
+    <td>port_name</td>
+    <td>std::string&amp;</td>
+    <td>Port name</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:Return Value</td>
+  </tr>
+  <tr>
+    <td>CENTER:Type Name</td>
+    <td>&gt;</td>
+    <td>CENTER:Meaning</td>
+  </tr>
+  <tr>
+    <td>coil::vstring</td>
+    <td>&gt;</td>
+    <td>Connector name list</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  coil::vstring outconlist = CORBA_RTCUtil::get_connector_names(consolein.in(), "ConsoleIn0.out");
+  for (auto&amp; connector : outconlist)
+  {
+    std::cout &lt;&lt; connector &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    for connector in OpenRTM_aist.CORBA_RTCUtil.get_connector_names(consolein, "ConsoleIn0.out"):
+        print(connector)
+</code></pre></div></div>
+
+<p>&lt;/tr&gt;</p>
+<tr>
+    <td colspan="3">引数</td>
+  </tr>
+<tr>
+    <td>引数名</td>
+    <td>型名</td>
+    <td>意味</td>
+  </tr>
+<tr>
+    <td>port_ref</td>
+    <td>RTC::PortService_ptr</td>
+    <td>接続中のポート</td>
+  </tr>
+<tr>
+    <td colspan="3">戻り値</td>
+  </tr>
+<tr>
+    <td>型名</td>
+    <td colspan="2">意味</td>
+  </tr>
+<tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+<p>&lt;/table&gt;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::disconnect_all(port_in_var.in());
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.disconnect_all_by_ref(port_in_var)
+</code></pre></div></div>
+
+<table class="table-alt">
+  <tr>
+    <th>関数名</th>
+    <th colspan="2">disconnect_all</th>
+  </tr>
+  <tr>
+    <td colspan="3">引数</td>
+  </tr>
+  <tr>
+    <td>引数名</td>
+    <td>型名</td>
+    <td>意味</td>
+  </tr>
+  <tr>
+    <td>port_name</td>
+    <td>std::string&amp;</td>
+    <td>ポートのURI</td>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>型名</td>
+    <td colspan="2">意味</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::disconnect_all("rtcname://localhost:2809/*/ConsoleIn0.out");
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.disconnect_all_by_name(
+        "rtcname://localhost:2809/*/ConsoleIn0.out")
+</code></pre></div></div>
+
+<h3 id="rtcの状態操作">RTCの状態操作</h3>
+<h4 id="アクティブ化">アクティブ化</h4>
+<p>RTCをアクティブ化するためには<strong>activate</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>関数名</th>
+    <th colspan="2">activate</th>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>引数名</td>
+    <td>型名</td>
+    <td>意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>実行コンテキストのID</td>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>型名</td>
+    <td colspan="2">意味</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+</table>
+
+<p>RTCは状態を実行コンテキストごとに持っているため、デフォルトの実行コンテキスト(ID:0)以外で状態を変更する場合はec_idを指定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::activate(consolein.in(), 0);
+  CORBA_RTCUtil::activate(consoleout.in(), 0);
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.activate(consoleout, 0)
+    OpenRTM_aist.CORBA_RTCUtil.activate(consolein, 0)
+</code></pre></div></div>
+
+<h4 id="非アクティブ化">非アクティブ化</h4>
+<p>RTCを非アクティブ化するためには<strong>deactivate</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>関数名</th>
+    <th colspan="2">deactivate</th>
+  </tr>
+  <tr>
+    <td colspan="3">引数</td>
+  </tr>
+  <tr>
+    <td>引数名</td>
+    <td>型名</td>
+    <td>意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>実行コンテキストのID</td>
+  </tr>
+  <tr>
+    <td colspan="3">戻り値</td>
+  </tr>
+  <tr>
+    <td>型名</td>
+    <td colspan="2">意味</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::deactivate(consolein.in(), 0);
+  CORBA_RTCUtil::deactivate(consoleout.in(), 0);
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.deactivate(consoleout, 0)
+    OpenRTM_aist.CORBA_RTCUtil.deactivate(consolein, 0)
+</code></pre></div></div>
+
+<h4 id="リセット">リセット</h4>
+<p>RTCをリセットするためには<strong>reset</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>関数名</th>
+    <th colspan="2">reset</th>
+  </tr>
+  <tr>
+    <td colspan="3">引数</td>
+  </tr>
+  <tr>
+    <td>引数名</td>
+    <td>型名</td>
+    <td>意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>実行コンテキストのID</td>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>型名</td>
+    <td colspan="2">意味</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td colspan="2">&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::reset(consolein.in(), 0);
+  CORBA_RTCUtil::reset(consoleout.in(), 0);
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.reset(consoleout, 0)
+    OpenRTM_aist.CORBA_RTCUtil.reset(consolein, 0)
+</code></pre></div></div>
+
+<h4 id="rtcの状態取得">RTCの状態取得</h4>
+<p>RTCの現在の状態を取得するためには<strong>get_state</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>関数名</th>
+    <th colspan="2">get_state</th>
+  </tr>
+  <tr>
+    <td colspan="3">CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>引数名</td>
+    <td>型名</td>
+    <td>意味</td>
+  </tr>
+  <tr>
+    <td>state</td>
+    <td>RTC::LifeCycleState</td>
+    <td>状態</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>実行コンテキストのID</td>
+  </tr>
+  <tr>
+    <td colspan="3">戻り値</td>
+  </tr>
+  <tr>
+    <td>型名</td>
+    <td colspan="2">意味</td>
+  </tr>
+  <tr>
+    <td>bool</td>
+    <td colspan="2">true：状態取得成功、false：状態取得失敗</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  RTC::LifeCycleState state;
+  CORBA_RTCUtil::get_state(state, consoleout.in(), 0);
+  std::cout &lt;&lt; state &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ret, state = OpenRTM_aist.CORBA_RTCUtil.get_state(consoleout, 0)
+    print(state)
+</code></pre></div></div>
+
+<p>また、<strong>is_in_inactive</strong>関数、<strong>is_in_active</strong>関数、<strong>is_in_error</strong>関数で現在の状態が非アクティブ状態、アクティブ状態、エラー状態かを判定できます。</p>
+
+<p>if (CORBA_RTCUtil::is_in_inactive(consoleout.in()))</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+    std::cout &lt;&lt; "Inactive State" &lt;&lt; std::endl;
+  }
+  else if (CORBA_RTCUtil::is_in_active(consoleout.in()))
+  {
+    std::cout &lt;&lt; "Active State" &lt;&lt; std::endl;
+  }
+  else if (CORBA_RTCUtil::is_in_error(consoleout.in()))
+  {
+    std::cout &lt;&lt; "Error State" &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    if OpenRTM_aist.CORBA_RTCUtil.is_in_inactive(consoleout):
+        print("Inactive State")
+    elif OpenRTM_aist.CORBA_RTCUtil.is_in_active(consoleout):
+        print("Active State")
+    elif OpenRTM_aist.CORBA_RTCUtil.is_in_error(consoleout):
+        print("Error State")
+</code></pre></div></div>
+
+<h3 id="実行コンテキストの操作">実行コンテキストの操作</h3>
+<h4 id="実行周期の操作">実行周期の操作</h4>
+<p>実行コンテキストの実行周期を変更するには、<strong>set_default_rate</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>set_default_rate</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>rate</td>
+    <td>CORBA::Double</td>
+    <td>実行周期</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td>&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::set_default_rate(consoleout.in(), 20.0);
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.set_default_rate(consoleout, 20.0)
+</code></pre></div></div>
+
+<p>set_default_rate関数はデフォルトの実行コンテキストの実行周期を取得しますが、指定IDの実行コンテキストから実行周期を取得するためには<strong>set_current_rate</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>set_current_rate</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>実行コンテキストのID</td>
+  </tr>
+  <tr>
+    <td>rate</td>
+    <td>CORBA::Double</td>
+    <td>実行周期</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td>&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::set_current_rate(consoleout.in(), 0, 50.0);
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.set_current_rate(consoleout, 0, 50.0)
+</code></pre></div></div>
+
+<p>現在の実行周期を取得するためには、<strong>get_default_rate</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>get_default_rate</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>CORBA::Double</td>
+    <td>&gt;</td>
+    <td>実行周期</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_default_rate(consoleout.in()) &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_default_rate(consoleout))
+</code></pre></div></div>
+
+<p>指定IDの実行コンテキストから実行周期を取得するためには<strong>get_current_rate</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>get_current_rate</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>ec_id</td>
+    <td>RTC::UniqueId</td>
+    <td>実行コンテキストのID</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>CORBA::Double</td>
+    <td>&gt;</td>
+    <td>実行周期</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_current_rate(consoleout.in(), 0) &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_current_rate(consoleout, 0))
+</code></pre></div></div>
+
+<h4 id="実行コンテキストのアタッチデタッチ">実行コンテキストのアタッチ、デタッチ</h4>
+
+<p>通常はRTCが起動時に生成する実行コンテキストが関連付け(アタッチ)されていますが、、外部の実行コンテキストをRTCにアタッチすると、アタッチした実行コンテキストでRTCを駆動できるようになります。</p>
+
+<p>実行コンテキストを指定のRTCにアタッチするためには<strong>add_rtc_to_default_ec</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>add_rtc_to_default_ec</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>localcomp</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>アタッチする実行コンテキストをデフォルト実行コンテキストとして持つRTC</td>
+  </tr>
+  <tr>
+    <td>othercomp</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>アタッチするRTC</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td>&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::add_rtc_to_default_ec(consoleout.in(), consolein.in());
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.add_rtc_to_default_ec(consoleout, consolein)
+</code></pre></div></div>
+
+<p>アタッチした実行コンテキストの関連付け解除(デタッチ)するためには<strong>remove_rtc_to_default_ec</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>remove_rtc_to_default_ec</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>localcomp</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>デタッチする実行コンテキストをデフォルト実行コンテキストとして持つRTC</td>
+  </tr>
+  <tr>
+    <td>othercomp</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>デタッチするRTC</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>RTC::ReturnCode_t</td>
+    <td>&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::remove_rtc_to_default_ec(consoleout.in(), consolein.in());
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.remove_rtc_to_default_ec(consoleout, consolein)
+</code></pre></div></div>
+
+<p>アタッチした外部RTCの一覧を取得するためには<strong>get_participants_rtc</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>get_participants_rtc</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>対象の実行コンテキストをデフォルト実行コンテキストとして持つRTC</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>RTC::RTCList</td>
+    <td>&gt;</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  RTC::RTCList rtclist = CORBA_RTCUtil::get_participants_rtc(consoleout.in());
+  for(CORBA::ULong i=0;i &lt; rtclist.length();i++)
+  {
+    
+    std::cout &lt;&lt; i &lt;&lt; "\t" &lt;&lt; CORBA_RTCUtil::get_component_profile(rtclist[i].in()) &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    i = 0
+    for rtc in OpenRTM_aist.CORBA_RTCUtil.get_participants_rtc(consoleout):
+        print(i, OpenRTM_aist.CORBA_RTCUtil.get_component_profile(rtc))
+        i += 1
+</code></pre></div></div>
+
+<h3 id="コンフィギュレーションパラメータの操作">コンフィギュレーションパラメータの操作</h3>
+<p>コンフィギュレーションパラメータの設定をするためには<strong>set_active_configuration</strong>関数を使用します。
+この関数では現在アクティブなコンフィギュレーションセットのパラメータが設定されます。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>set_active_configuration</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>value_name</td>
+    <td>std::string&amp;</td>
+    <td>パラメータ名</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>std::string&amp;</td>
+    <td>設定値</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>bool</td>
+    <td>&gt;</td>
+    <td>true：設定成功、false：設定失敗</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::set_active_configuration(configsample.in(), "int_param1", "100");
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.set_active_configuration(
+        configsample, "int_param1", "100")
+</code></pre></div></div>
+
+<p>コンフィギュレーションセットを指定してパラメータを設定する場合は<strong>set_configuration</strong>関数を使用します。
+この関数を実行すると、アクティブなコンフィギュレーションセットが変更されます。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>set_configuration</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>confset_name</td>
+    <td>std::string&amp;</td>
+    <td>コンフィギュレーションセット名</td>
+  </tr>
+  <tr>
+    <td>value_name</td>
+    <td>std::string&amp;</td>
+    <td>パラメータ名</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>std::string&amp;</td>
+    <td>設定値</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>bool</td>
+    <td>&gt;</td>
+    <td>true：設定成功、false：設定失敗</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CORBA_RTCUtil::set_configuration(configsample.in(), "mode0", "str_param1", "test");
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    OpenRTM_aist.CORBA_RTCUtil.set_configuration(
+        configsample, "mode0", "str_param1", "test")
+</code></pre></div></div>
+
+<p>現在アクティブなコンフィギュレーションセットの名前を取得するには<strong>get_active_configuration_name</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>get_active_configuration_name</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>std::string</td>
+    <td>&gt;</td>
+    <td>コンフィギュレーションセット名</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_active_configuration_name(configsample.in()) &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_active_configuration_name(configsample))
+</code></pre></div></div>
+
+<p>アクティブなコンフィギュレーションセットのパラメータ一覧を取得するには<strong>get_active_configuration</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>get_active_configuration</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>coil::Properties</td>
+    <td>&gt;</td>
+    <td>パラメータ一覧</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_active_configuration(configsample.in()) &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_active_configuration(configsample))
+</code></pre></div></div>
+
+<p>コンフィギュレーションセットを指定してパラメータ一覧を取得するには<strong>get_configuration</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>get_configuration</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>conf_name</td>
+    <td>std::string&amp;</td>
+    <td>コンフィギュレーションセット名</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>coil::Properties</td>
+    <td>&gt;</td>
+    <td>パラメータ一覧</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_configuration(configsample.in(), "mode1") &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_configuration(configsample, "mode1"))
+</code></pre></div></div>
+
+<p>指定のパラメータのみを取得する場合は<strong>get_parameter_by_key</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>get_parameter_by_key</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>conf_name</td>
+    <td>std::string&amp;</td>
+    <td>コンフィギュレーションセット名</td>
+  </tr>
+  <tr>
+    <td>value_name</td>
+    <td>std::string&amp;</td>
+    <td>パラメータ名</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>std::string</td>
+    <td>&gt;</td>
+    <td>パラメータの値</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_parameter_by_key(configsample.in(), "mode1", "int_param1") &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_parameter_by_key(
+        configsample, "mode1", "int_param1"))
+</code></pre></div></div>
+
+<h3 id="rtcポートの情報取得">RTC、ポートの情報取得</h3>
+
+<h4 id="rtcの情報取得">RTCの情報取得</h4>
+
+<p>コンポーネントプロファイルを取得するには<strong>get_component_profile</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>get_component_profile</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>coil::Properties</td>
+    <td>&gt;</td>
+    <td>コンポーネントプロファイルの情報</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  std::cout &lt;&lt; CORBA_RTCUtil::get_component_profile(consolein.in()) &lt;&lt; std::endl;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    print(OpenRTM_aist.CORBA_RTCUtil.get_component_profile(consolein))
+</code></pre></div></div>
+
+<h4 id="ポート名取得">ポート名取得</h4>
+
+<p>指定のRTCが保持しているポートの名前一覧を取得するには<strong>get_port_names</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>get_port_names</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>coil::vstring</td>
+    <td>&gt;</td>
+    <td>ポート名一覧</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  coil::vstring portlist = CORBA_RTCUtil::get_port_names(consolein.in());
+  for (auto&amp; port : portlist)
+  {
+    std::cout &lt;&lt; port &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    for port in OpenRTM_aist.CORBA_RTCUtil.get_port_names(consolein):
+        print(port)
+</code></pre></div></div>
+
+<p>InPortの名前一覧を取得するには<strong>get_inport_names</strong>関数、OutPortの名前一覧を取得するには<strong>get_outport_names</strong>関数、サービスポートの名前一覧を取得するには<strong>get_svcport_names</strong>関数を使用します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  coil::vstring inportlist = CORBA_RTCUtil::get_inport_names(consoleout.in());
+  for (auto&amp; port : inportlist)
+  {
+    std::cout &lt;&lt; port &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  coil::vstring outportlist = CORBA_RTCUtil::get_outport_names(consolein.in());
+  for (auto&amp; port : outportlist)
+  {
+    std::cout &lt;&lt; port &lt;&lt; std::endl;
+  }
+  
+  coil::vstring svcportlist = CORBA_RTCUtil::get_svcport_names(myserviceprovider.in());
+  for (auto&amp; port : svcportlist)
+  {
+    std::cout &lt;&lt; port &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    for port in OpenRTM_aist.CORBA_RTCUtil.get_inport_names(consoleout):
+        print(port)
+    for port in OpenRTM_aist.CORBA_RTCUtil.get_outport_names(consolein):
+        print(port)
+    for port in OpenRTM_aist.CORBA_RTCUtil.get_svcport_names(myserviceprovider):
+        print(port)
+</code></pre></div></div>
+
+<h4 id="コネクタの名前一覧取得">コネクタの名前一覧取得</h4>
+
+<p>指定ポートのコネクタの名前一覧を取得するには<strong>get_connector_names</strong>関数を使用します。</p>
+
+<table class="table-alt">
+  <tr>
+    <th>CENTER:関数名</th>
+    <th>&gt;</th>
+    <th>get_connector_names</th>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>port</td>
+    <td>RTC::PortService_ptr</td>
+    <td>ポートのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>coil::vstring</td>
+    <td>&gt;</td>
+    <td>コネクタ名一覧</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  coil::vstring inconlist = CORBA_RTCUtil::get_connector_names(port_in_var.in());
+  for (auto&amp; connector : inconlist)
+  {
+    std::cout &lt;&lt; connector &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    for connector in OpenRTM_aist.CORBA_RTCUtil.get_connector_names_by_portref(port_in_var):
+        print(connector)
+</code></pre></div></div>
+
+<p>ポート名を指定してコネクタの名前一覧を取得することもできます。</p>
+
+<table class="table-alt">
+  <tr>
+    <th colspan="2">関数名</th>
+  </tr>
+  <tr>
+    <td colspan="3">引数</td>
+  </tr>
+  <tr>
+    <td>CENTER:引数名</td>
+    <td>CENTER:型名</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>rtc</td>
+    <td>RTC::RTObject_ptr</td>
+    <td>RTCのオブジェクトリファレンス</td>
+  </tr>
+  <tr>
+    <td>port_name</td>
+    <td>std::string&amp;</td>
+    <td>ポート名</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&gt;</td>
+    <td>CENTER:戻り値</td>
+  </tr>
+  <tr>
+    <td>CENTER:型名</td>
+    <td>&gt;</td>
+    <td>CENTER:意味</td>
+  </tr>
+  <tr>
+    <td>coil::vstring</td>
+    <td>&gt;</td>
+    <td>コネクタ名一覧</td>
+  </tr>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  coil::vstring outconlist = CORBA_RTCUtil::get_connector_names(consolein.in(), "ConsoleIn0.out");
+  for (auto&amp; connector : outconlist)
+  {
+    std::cout &lt;&lt; connector &lt;&lt; std::endl;
+  }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    for connector in OpenRTM_aist.CORBA_RTCUtil.get_connector_names(consolein, "ConsoleIn0.out"):
+        print(connector)
+</code></pre></div></div>
+
+<p>——-jp page!!——-</p>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

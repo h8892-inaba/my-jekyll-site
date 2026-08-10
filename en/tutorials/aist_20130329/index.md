@@ -106,7 +106,7 @@ title: 産総研・RTミドルウエア講習会（2013年3月29日）
 
 ### 実習で必要なファイル
 
-- [RTC.xml](http://www.openrtm.org/openrtm/sites/default/files/4965/RTC.xml)
+- [RTC.xml](./RTC.xml)
 - [Flipコンポーネントの作成](http://openrtm.org/openrtm/ja/node/5286)
 
 <!-- ***Linuxで必要なソフトウエア -->

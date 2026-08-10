@@ -1,0 +1,1608 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Raspbianへのインストール | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Raspbianへのインストール" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/installation/install_1_2/cpp_1_2/install_raspbian_1_2/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/installation/install_1_2/cpp_1_2/install_raspbian_1_2/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Raspbianへのインストール" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Raspbianへのインストール","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/installation/install_1_2/cpp_1_2/install_raspbian_1_2/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/en/doc/installation/install_1_2/cpp_1_2/install_raspbian_1_2/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/en/doc/installation/install_1_2/cpp_1_2/install_raspbian_1_2/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Raspbianへのインストール <div class="lang-switch"><a href="/my-jekyll-site/en/doc/installation/install_1_2/cpp_1_2/install_raspbian_1_2/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/installation/install_1_2/cpp_1_2/install_raspbian_1_2/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#対応バージョン">対応バージョン</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#sdカードの準備">SDカードの準備</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#osイメージのダウンロード">OSイメージのダウンロード</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#sdカードへの書き込み">SDカードへの書き込み</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#openrtm-aist-cインストール">OpenRTM-aist (C++)インストール</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#一括インストールスクリプトを使う方法">一括インストールスクリプトを使う方法</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#apt-getを使う方法">apt-getを使う方法</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#rtshellのインストール">rtshellのインストール</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#インストールの確認">インストールの確認</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#パッケージの詳細">パッケージの詳細</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist">openrtm-aist</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-dev">openrtm-aist-dev</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-idl">openrtm-aist-idl</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-example">openrtm-aist-example</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-idl-1">openrtm-aist-idl</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#openrtm-aist-doc">openrtm-aist-doc</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Titile: Raspbianへのインストール -->
+<div align="right"><a href="Raspberry_Pi_Logo.svg_.png"><img src="Raspberry_Pi_Logo.svg_.png" width="15%; margin:10px;" align="right" /></a></div>
+
+<p>#contents</p>
+
+<p>C++版OpenRTM-aistはRaspberry Pi用Raspbianl用debパッケージが提供されています。
+Raspbianへの対応およびそのバージョンは、予告なしに変更または停止されることがありますので、あらかじめご了承ください。</p>
+
+<h2 id="対応バージョン">対応バージョン</h2>
+
+<p>現在パッケージが用意されているRaspbianのバージョンは</p>
+
+<ul>
+  <li>Buster</li>
+</ul>
+
+<p>です。</p>
+
+<h2 id="sdカードの準備">SDカードの準備</h2>
+
+<h3 id="osイメージのダウンロード">OSイメージのダウンロード</h3>
+<p>以下のリンクからRasbianのイメージ(「Raspbian Buster with desktop and recommended software」のイメージを推奨しますが、必要に応じて他のイメージを選択してもかまいません)をダウンロードし、解凍し、SDカードに書き込みます。SDカードの容量は4GB以上はあったほうがよいでしょう。</p>
+<ul>
+  <li><a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian Downloads</a></li>
+</ul>
+
+<h3 id="sdカードへの書き込み">SDカードへの書き込み</h3>
+<p>SDカードへの書き込み方法については <a href="http://elinux.org/RPi_Easy_SD_Card_Setup">RPi Easy SD Card Setup</a> を参照してください。</p>
+
+<p>このリンクではいくつかの方法が説明されています。そのうちのいくつかの概要を示すと:</p>
+
+<h4 id="windowsの場合">Windowsの場合</h4>
+<ul>
+  <li><a href="https://forest.watch.impress.co.jp/docs/review/1067836.html">Win32 Disk Imager</a>などを利用して書き込みます。</li>
+</ul>
+
+<p>Windowsを用いる方法の方がLinuxやMac OSを用いるより簡単なので、初心者にはWindowsを用いる方法を推奨します。</p>
+
+<h4 id="linuxやmac-osの場合">LinuxやMac OSの場合</h4>
+<ul>
+  <li><strong>dd</strong>コマンドを以下のように利用して書き込みます。</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo dd of=/dev/&lt;SDカードのデバイスファイル&gt; if=&lt;ダウンロード・解凍したイメージファイル&gt; bs=4M status=progress
+ $ sudo sync
+</code></pre></div></div>
+
+<p>上記コマンドによるSDカードへの書き込みはかなり長い時間を必要とします。(数分から10数分)。また、SDカードのデバイスファイル名を見つけるには</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ df -h
+</code></pre></div></div>
+<p>と入力し、表示されるデバイスのサイズからどのデバイスがSDカードかを見つけます。例えば、現在Rasbianがインストールされている16GBのSDカードを用いている場合、あるデバイスが14GBのデバイスとして表示され、そのデバイスが/dev/sdf7と表示されます。他にも/dev/sdf5、/dev/sdf6などの後尾の数字だけが違うデバイスが表示されます。これらがSDカードで使われているデバイス名です。これらのデバイス全て以下のようにumountしてください。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ umount /dev/sdf5
+ $ umount /dev/sdf6
+ $ umount /dev/sdf7
+</code></pre></div></div>
+
+<p>その後、上記の<strong>dd</strong>コマンドを実行しますが、この例でのデバイスファイル名は/dev/sdfになります。</p>
+
+<h2 id="openrtm-aist-cインストール">OpenRTM-aist (C++)インストール</h2>
+
+<p>OpenRTM-aist (C++)のインストールの方法には大きく分けて以下の2種類のインストール方法があります。</p>
+
+<ul>
+  <li>openrtm.orgが提供する一括インストールスクリプトを使用</li>
+  <li>apt-getやsynapticパッケージマネージャを使用</li>
+</ul>
+
+<p>好みの方法でインストールしてください。</p>
+
+<h3 id="一括インストールスクリプトを使う方法">一括インストールスクリプトを使う方法</h3>
+
+<p>openrtm.orgが提供するインストールスクリプト<strong>pkg_install_raspbian.sh</strong>をダウンロードページからダウンロードし、root権限で実行します。このスクリプトは、必要なパッケージを順次apt-getでインストールしていきます。</p>
+
+<p>OpenRTM-aistを開発・実行するために必要なパッケージをもれなくインストールしてくれるので大変便利です。初めてOpenRTM-aistをインストールしてみる方に推奨します。</p>
+
+<p>一括インストール・スクリプトをダウンロードした後、ダウンロードしたディレクトリに移動して</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ sudo sh pkg_install_raspbian.sh -l c++ --yes
+</code></pre></div></div>
+
+<p>でインストールできます。</p>
+
+<p>一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「<a href="/my-jekyll-site/ja/doc/appendix/bulk_installation_script">一括インストールスクリプト</a>」のページをご確認ください。</p>
+
+<h3 id="apt-getを使う方法">apt-getを使う方法</h3>
+
+<h4 id="sourcelistの編集">source.listの編集</h4>
+
+<p>openrtm.orgではapt-getから利用可能なパッケージリポジトリを提供しています。ただし、デフォルトのパッケージリポジトリには含まれていませんので、apt-getの設定を変更する必要があります。そのためには/etc/apt/sources.listを編集して以下の行を追加します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  deb http://www.openrtm.org/pub/Linux/raspbian/ buster main
+</code></pre></div></div>
+
+<h4 id="apt-getによるインストール">apt-getによるインストール</h4>
+
+<p>次の手順でインストールを行います。途中、いくつかの応答を求められるので、<strong>y</strong>を入力しながら完了させてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # apt-get update
+ # apt-get install gcc g++ make uuid-dev
+ # apt-get install libomniorb4-1 libomniorb4-dev omniidl omniorb-nameserver
+ # apt-get install openrtm-aist openrtm-aist-doc openrtm-aist-dev openrtm-aist-example
+</code></pre></div></div>
+
+<p>なお、インストール済みのOpenRTM-aistを特定バージョンのまま保持したい場合には、<strong>/etc/apt/preferences</strong>を編集して以下の行を追加します。（この例では1.1系列にバージョンを固定します。）</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Package: OpenRTM-aist
+ Pin: version 1.1.*
+</code></pre></div></div>
+
+<p>詳しくは
+http://www.debian.org/doc/manuals/apt-howto/ch-apt-get.ja.html#s-pin
+を参照してください。</p>
+
+<h2 id="rtshellのインストール">rtshellのインストール</h2>
+<p>rtshellはPythonのプログラムのため、OpenRTM-Pythonのインストールが必要です。OpenRTM-aist(Python版)のインストールでの<a href="/my-jekyll-site/ja/doc/installation/install_1_2/python_1_2/raspbian_python_1_2">Raspbianへのインストール</a>のページの手順を実行してください。</p>
+
+<h2 id="インストールの確認">インストールの確認</h2>
+
+<p>インストールを確認します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> pi@raspberrypi ~ $ dpkg -l 'openrt*'
+ 要望=(U)不明/(I)インストール/(R)削除/(P)完全削除/(H)保持
+    状態=(N)無/(I)インストール済/(C)設定/(U)展開/(F)設定失敗/(H)半インストール/(W)トリガ待ち/(T)トリガ保留
+    / エラー?=(空欄)無/(R)要再インストール (状態,エラーの大文字=異常)
+    / 名前                       バージョン   アーキテクチ 説明
+ +++-==========================-============-============-===============================================
+ ii  openrtm-aist:armhf         1.2.1-0      armhf        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm-aist-dev:armhf     1.2.1-0      armhf        OpenRTM-aist headers for development
+ ii  openrtm-aist-doc           1.2.1-0      all          Documentation for openrtm-aist
+ ii  openrtm-aist-example:armhf 1.2.1-0      armhf        OpenRTM-aist examples
+ ii  openrtm-aist-idl:armhf     1.2.1-0      armhf        OpenRTM-aist idls for development
+</code></pre></div></div>
+
+<h2 id="パッケージの詳細">パッケージの詳細</h2>
+<p>各パッケージの内容は以下の通りです。</p>
+<h3 id="openrtm-aist">openrtm-aist</h3>
+<p>openrtm-aistにはランタイムライブラリとコマンド群が含まれています。</p>
+
+<ul>
+  <li>コマンド
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/bin/rtcd
+ /usr/bin/rtcprof
+ /usr/bin/rtm-config
+ /usr/bin/rtm-naming
+</code></pre></div>    </div>
+  </li>
+  <li>ライセンスなど
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/doc/openrtm-aist/changelog.gz
+ /usr/share/doc/openrtm-aist/README.Debian
+ /usr/share/doc/openrtm-aist/README
+ /usr/share/doc/openrtm-aist/README.jp
+ /usr/share/doc/openrtm-aist/copyright
+ /usr/share/doc/openrtm-aist/changelog.Debian.gz
+</code></pre></div>    </div>
+  </li>
+  <li>設定ファイルサンプル
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/etc/rtc.conf.sample
+ /usr/lib/arm-linux-gnueabihf/pkgconfig/openrtm-aist.pc
+ /usr/etc/fluent-bit/fluent-bit.conf
+ /usr/etc/fluent-bit/parsers.conf
+</code></pre></div>    </div>
+  </li>
+  <li>ライブラリ
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/lib/arm-linux-gnueabihf/libRTC-1.2.1.so
+ /usr/lib/arm-linux-gnueabihf/libRTC.a
+ 中略
+ /usr/lib/arm-linux-gnueabihf/librtmManipulator.so.0.0.0
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/ec/FileNameservice.la
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/ec/FileNameservice.so
+ 中略
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/ec/RTPreemptEC.so.0.0.0
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/logger/FluentBit.la
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/logger/FluentBit.so
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/logger/FluentBit.so.0
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/logger/FluentBit.so.0.0.0
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/sdo/LoggerConsumer.a
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/sdo/LoggerConsumer.la
+ 中略
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/sdo/LoggerConsumer.so.0.0.0
+ /usr/lib/libfluent-bit.so
+</code></pre></div>    </div>
+  </li>
+  <li>ヘッダ
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/include/fluent-bit/flb_api.h
+ /usr/include/fluent-bit/flb_bits.h
+ 中略
+ /usr/include/fluent-bit/flb_worker.h
+ /usr/include/fluent-bit.h
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="openrtm-aist-dev">openrtm-aist-dev</h3>
+<p>openrtm-aist-devには、開発に必要なコマンド群とヘッダが含まれています。</p>
+
+<ul>
+  <li>コマンド
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/bin/coil-config
+ /usr/bin/rtc-template
+ /usr/bin/rtm-skelwrapper
+</code></pre></div>    </div>
+  </li>
+  <li>ライセンスなど
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/doc/README
+ /usr/share/doc/README.Debian
+ /usr/share/doc/README.jp
+ /usr/share/doc/openrtm-aist-dev/changelog.Debian.gz
+ /usr/share/doc/openrtm-aist-dev/changelog.gz
+ /usr/share/doc/openrtm-aist-dev/copyright
+</code></pre></div>    </div>
+  </li>
+  <li>ヘッダ
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/include/coil-1.2/coil/Affinity.h
+ /usr/include/coil-1.2/coil/Allocator.h
+ 中略
+ /usr/include/coil-1.2/coil/stringutil.h
+ /usr/include/openrtm-1.2/rtm/BufferBase.h
+ /usr/include/openrtm-1.2/rtm/BufferStatus.h
+ 中略
+ /usr/include/openrtm-1.2/rtm/config_rtc.h
+ /usr/include/openrtm-1.2/rtm/ext/CameraCommonInterface.hh
+ /usr/include/openrtm-1.2/rtm/ext/CameraCommonInterfaceDynSK.cc
+ 中略
+ /usr/include/openrtm-1.2/rtm/ext/ManipulatorCommonInterface_MiddleStub.h
+ /usr/include/openrtm-1.2/rtm/ext/ec/artlinux/ArtExecutionContext.h
+ /usr/include/openrtm-1.2/rtm/ext/ec/artlinux/rtc.conf.sample
+ /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/LogicalTimeTriggeredEC.h
+ /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/LogicalTimeTriggeredEC.idl
+ 中略
+ /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/LogicalTimeTriggeredECStub.h
+ /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredEC.hh
+ /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredEC.idl
+ /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredECDynSK.cc
+ /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredECSK.cc
+ /usr/include/openrtm-1.2/rtm/ext/ec/rtpreempt/RTPreemptEC.h
+ /usr/include/openrtm-1.2/rtm/ext/ec/rtpreempt/rtc.conf.sample
+ /usr/include/openrtm-1.2/rtm/ext/local_service/nameservice_file
+ /usr/include/openrtm-1.2/rtm/ext/local_service/nameservice_file/FileNameservice.h
+ /usr/include/openrtm-1.2/rtm/ext/logger/fluentbit_stream/FluentBit.h
+ /usr/include/openrtm-1.2/rtm/ext/logger/fluentbit_stream/fluentbit.conf
+ /usr/include/openrtm-1.2/rtm/ext/sdo/logger/Logger.hh
+ /usr/include/openrtm-1.2/rtm/ext/sdo/logger/Logger.idl
+ 中略
+ /usr/include/openrtm-1.2/rtm/ext/sdo/logger/LoggerStub.h
+ /usr/include/openrtm-1.2/rtm/ext/sdo/observer/ComponentObserver.idl
+ /usr/include/openrtm-1.2/rtm/ext/sdo/observer/ComponentObserverConsumer.h
+ 中略
+ /usr/include/openrtm-1.2/rtm/ext/sdo/observer/ComponentObserverStub.h
+ /usr/include/openrtm-1.2/rtm/ext/sdo/observer/idl/ComponentObserver.hh
+ /usr/include/openrtm-1.2/rtm/ext/sdo/observer/idl/ComponentObserver.idl
+ /usr/include/openrtm-1.2/rtm/ext/sdo/observer/idl/ComponentObserverDynSK.cc
+ /usr/include/openrtm-1.2/rtm/ext/sdo/observer/idl/ComponentObserverSK.cc
+ /usr/include/openrtm-1.2/rtm/idl/BasicDataType.hh
+ /usr/include/openrtm-1.2/rtm/idl/BasicDataTypeDynSK.cc
+ 中略
+ /usr/include/openrtm-1.2/rtm/idl/SharedMemoryStub.h
+ /usr/include/openrtm-1.2/rtm/version.h
+ /usr/include/openrtm-1.2/rtm/version.txt
+</code></pre></div>    </div>
+  </li>
+  <li>ライブラリ・その他
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/lib/arm-linux-gnueabihf/openrtm-1.2/cmake/OpenRTMConfig.cmake
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/py_helper/README_gen.py
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/py_helpver/cxx_gen.py
+ 中略
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/py_helpver/yat.py
+ /usr/lib/arm-linux-gnueabihf/pkgconfig/libcoil.pc
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="openrtm-aist-idl">openrtm-aist-idl</h3>
+<ul>
+  <li>スクリプトファイル
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /etc/profile.d/openrtm-aist-idl.sh
+</code></pre></div>    </div>
+  </li>
+  <li>ライセンスなど
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/doc/openrtm-aist-idl/changelog.Debian.gz
+ /usr/share/doc/openrtm-aist-idl/changelog.gz
+ /usr/share/doc/openrtm-aist-idl/copyright
+</code></pre></div>    </div>
+  </li>
+  <li>idlファイル
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/include/openrtm-1.2/rtm/idl/BasicDataType.idl
+ /usr/include/openrtm-1.2/rtm/idl/CameraCommonInterface.idl
+ 中略
+ /usr/include/openrtm-1.2/rtm/idl/SharedMemory.idl
+ /usr/share/openrtm-1.2/idl/BasicDataType.idl
+ /usr/share/openrtm-1.2/idl/CameraCommonInterface.idl
+ /usr/share/openrtm-1.2/idl/DataPort.idl
+ 中略
+ /usr/share/openrtm-1.2/idl/SharedMemory.idl
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="openrtm-aist-example">openrtm-aist-example</h3>
+<p>openrtm-aist-exampleにはスタンドアロンRTC、ローダブルRTCそれぞれのサンプルと、サンプルRTCのソースが含まれています。</p>
+
+<ul>
+  <li>サンプル(スタンドアロンRTC)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.2/components/c++/examples/ConsoleOutComp
+ /usr/share/openrtm-1.2/components/c++/examples/ConsoleInComp
+ 中略
+ /usr/share/openrtm-1.2/components/c++/examples/consout.conf
+ /usr/share/openrtm-1.2/components/c++/examples/rtc.composite.linux.conf
+ /usr/share/openrtm-1.2/components/c++/examples/rtc.conf
+</code></pre></div></div>
+
+<ul>
+  <li>サンプル(ソース)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.2/components/c++/examples/src/Composite/README.Motor
+ /usr/share/openrtm-1.2/components/c++/examples/src/Composite/Makefile.Sensor
+ /usr/share/openrtm-1.2/components/c++/examples/src/Composite/Motor.cpp
+ 中略
+ /usr/share/openrtm-1.2/components/c++/examples/src/Throughput/rtc.conf
+ /usr/share/openrtm-1.2/Components/c++/examples/src/Throughput/run.sh
+ /usr/share/openrtm-1.2/Componnets/c++/examples/templates/AIO.xml
+ /usr/share/openrtm-1.2/Components/c++/examples/templates/ActArray.xml
+ 中略
+ /usr/share/openrtm-1.2/Components/c++/examples/templates/VelocityControl3D.xml
+</code></pre></div></div>
+
+<ul>
+  <li>サンプル(ローダブルRTC)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.2/components/c++/examples/rtc/ConfigSample.a
+ /usr/share/openrtm-1.2/components/c++/examples/rtc/ConfigSample.la
+ 中略
+ /usr/share/openrtm-1.2/components/c++/examples/rtc/Throughput.so.X.X.X
+ /usr/share/openrtm-1.2/components/c++/examples/rtc/Cofig.sample.so
+ /usr/share/openrtm-1.2/components/c++/examples/rtc/Cofig.sample.so.X
+ 中略
+ /usr/share/openrtm-1.2/components/c++/examples/rtc/Troughput.so.X
+</code></pre></div></div>
+
+<ul>
+  <li>ライセンスなど
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/doc/openrtm-aist-example/changelog.Debian.gz
+ /usr/share/doc/openrtm-aist-example/changelog.gz
+ /usr/share/doc/openrtm-aist-example/copyright
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="openrtm-aist-idl-1">openrtm-aist-idl</h3>
+<ul>
+  <li>idlファイルなど
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /etc/profile.d/openrtm-aist-idl.sh
+ /usr/include/openrtm-1.2/rtm/idl/BasicDataType.idl
+ /usr/include/openrtm-1.2/rtm/idl/CameraCommonInterface.idl
+ 中略
+ /usr/include/openrtm-1.2/rtm/idl/SharedMemory.idl
+ /usr/share/openrtm-1.2/idl/BasicDataType.idl
+ /usr/share/openrtm-1.2/idl/CameraCommonInterface.idl
+ 中略
+ /usr/share/openrtm-1.2/idl/SharedMemory.idl
+</code></pre></div>    </div>
+  </li>
+  <li>ライセンスなど
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/doc/openrtm-aist-idl/changelog.Debian.gz
+ /usr/share/doc/openrtm-aist-idl/changelog.gz
+ /usr/share/doc/openrtm-aist-idl/copyright
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="openrtm-aist-doc">openrtm-aist-doc</h3>
+<p>openrtm-aist-docには、日本語と英語のクラスリファレンス、IDLインターフェース定義リファレンスが含まれています。</p>
+
+<ul>
+  <li>クラスリファレンス
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.2/doc/c++/ClassReference/html/Affinity_8h.html
+ /usr/share/openrtm-1.2/doc/c++/ClassReference/html/Affinity_8h__dep__incl.dot
+ 中略
+ /usr/share/openrtm-1.2/doc/c++/ClassReference/html/version_8h_source.html
+</code></pre></div>    </div>
+  </li>
+  <li>IDLリファレンス
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.2/doc/idl/IDLReference/html/BasicDataType_8idl.html
+ /usr/share/openrtm-1.2/doc/idl/IDLReference/html/BasicDataType_8idl__dep__incl.dot
+ 中略
+ /usr/share/openrtm-1.2/doc/idl/IDLReference/html/unionSDOPackage_1_1Numeric.html
+</code></pre></div>    </div>
+  </li>
+  <li>クラスリファレンス(英語)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.2/doc/c++/ClassReference-en/html/Affinity_8h.html
+ /usr/share/openrtm-1.2/doc/c++/ClassReference-en/html/Affinity_8h__dep__incl.dot
+ 中略
+ /usr/share/openrtm-1.2/doc/c++/ClassReference-en/html/version_8h_source.html
+</code></pre></div>    </div>
+  </li>
+  <li>IDLリファレンス(英語)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/openrtm-1.2/doc/idl/IDLReference-en/html/BasicDataType_8idl.html
+ /usr/share/openrtm-1.2/doc/idl/IDLReference-en/html/BasicDataType_8idl__dep__incl.dot
+ 中略
+ /usr/share/openrtm-1.2/doc/idl/IDLReference-en/html/unionSDOPackage_1_1Numeric.html
+</code></pre></div>    </div>
+  </li>
+  <li>ライセンスなど
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/doc/openrtm-aist-doc/changelog.Debian.gz
+ /usr/share/doc/openrtm-aist-doc/changelog.gz
+ /usr/share/doc/openrtm-aist-doc/copyright
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

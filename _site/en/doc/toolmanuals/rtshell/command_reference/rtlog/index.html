@@ -1,0 +1,1106 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>rtlog | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="rtlog" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtshell/command_reference/rtlog/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtshell/command_reference/rtlog/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="rtlog" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"rtlog","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/toolmanuals/rtshell/command_reference/rtlog/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtshell/command_reference/rtlog/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtshell/command_reference/rtlog/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>rtlog <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/toolmanuals/rtshell/command_reference/rtlog/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/toolmanuals/rtshell/command_reference/rtlog/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#format">Format</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#overview">Overview</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#options">Options</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#paths">Paths</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#example">Example:</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#environment-variables">Environment Variables</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#return-values">Return Values</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#examples">Examples</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!-- Title: rtlog -->
+
+<h2 id="format">Format</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rtlog [OPTION ...] PATH:PORT [PATH:PORT ...]
+</code></pre></div></div>
+
+<h2 id="overview">Overview</h2>
+<p>Saves data sent by a component through a data port to a log file, or sends data recorded in a log file to a component (playback). Recording is also possible for multiple ports. You can also play back a log file and send it to a component in order to reproduce the output data of the logged component.</p>
+
+<p>You can select a stream played back from multiple data streams in the log. For example, if data from multiple laser sensors is saved in a log, you can play back only one specific laser sensor data stream from among them. Playback can be performed not only from the beginning of the log, but also from partway through to partway through, and the playback rate can also be changed. You can also edit the timestamp of the output data.</p>
+
+<p>The default is log recording. All ports specified by the command must be OutPorts. In playback mode, all ports must be InPorts, and the types accepted by the ports must match the types of the logged data.</p>
+
+<p>Each port recorded in the log creates one data stream. During playback, each of these data streams can be sent to multiple InPorts. Data streams are distinguished by name. The name can be specified on the command line, but if it is not specified, a default name is automatically used.</p>
+
+<p>Connections from the log tool to the target ports are created with default properties.</p>
+
+<h2 id="options">Options</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> -a, --absolute-times
+ 　　　　　　Timestamps from the log data are sent using the values as recorded.
+ 　　　　　　If not specified, timestamps are offset by the current time.
+ -d, --display-info
+ 　　　　　　Displays log information and exits.
+ -e END, --end=END
+ 　　　　　　Specifies the timestamp or index at which to stop recording or playback. For playback,
+ 　　　　　　specify a value between the first and last data in the recorded log.
+ 　　　　　　If -1 is specified, recording continues until forcibly terminated, or playback continues
+ 　　　　　　until the end of the log. If you want to specify an index, also specify --index.
+ -f FILENAME, --filename=FILENAME
+ 　　　　　　Specifies the name of the log file. If not specified, the current time is used as the file name.
+ 　　　　　　This is required for playback.
+ --path=PATHS	
+ 　　　　　　Specifies the module search path. It is added to Python's PYTHONPATH variable.
+ -i, --index
+ 　　　　　　Treats the values specified with the --start and --end options as indexes instead of
+ 　　　　　　timestamps.
+ -l LOGGER, --logger=LOGGER
+ 　　　　　　Selects the log type. The default is SimplePickle (simpkl). Text logs
+ 　　　　　　(text) can also be used. Text logs cannot be played back.
+ -m MODULES, --mod=MODULES
+ 　　　　　　Specifies Python modules to import. If a module required to handle the data
+ 　　　　　　is not loaded automatically, specify it with this option.
+ 　　　　　　The module and its __POA module are also imported.
+ -n, --ignore-times
+ 　　　　　　(Playback only) Ignores timestamps recorded in the log and plays back log data
+ 　　　　　　at a fixed period. To change the period, use --exec-rate.
+ -p, --play　Enables playback mode.
+ -r RATE, --rate=RATE
+ 　　　　　　(Playback only) Specifies the playback speed multiplier.
+ -s START, --start=START
+ 　　　　　　(Playback only) Specifies the timestamp or index at which to start playback. It must be
+ 　　　　　　between the first and last data in the log. If specifying an index,
+ 　　　　　　also specify --index.
+ -t TIMEOUT, --timeout=TIMEOU
+ 　　　　　　Specifies the timeout time for recording or playback. When using this option,
+ 　　　　　　--start and --end cannot be used.
+ -x EXEC_RATE, --exec-rate=EXEC_RATE
+ 　　　　　　Specifies the component execution rate. The unit is hertz.
+ --version　 Displays the program version number and exits.
+ -h, --help　Displays help and exits.
+ -v, --verbose Outputs more detailed information.
+</code></pre></div></div>
+
+<h2 id="paths">Paths</h2>
+<p>rtshell indicates objects in the RTC tree using paths. Name servers and name contexts are specified as directory names, and managers and RT Components are specified as file names. Paths passed to commands are specified based on the current working directory of rtshell (for relative paths). The current working directory of rtshell is stored in an environment variable named RTCSH_CWD, and can be changed with the rtcwd command. (At present, the rtcwd command does not work in Linux environments.)</p>
+
+<p>Available paths depend on the name servers referenced when commands are executed. The host name where a name server is running can be specified with the RTCTREE_NAMESERVERS environment variable. You can also specify the host where a name server is running directly as a path under the root, such as /<host name="">/....</host></p>
+
+<p>For example, /localhost/comp0.rtc indicates an RT Component named comp0.rtc registered with the name server on localhost. /localhost/manager/comp0.rtc indicates an RT Component named comp0.rtc registered in a directory named manager under the name server on localhost. ./comp0.rtc indicates an RT Component named comp0.rtc in the current working directory.</p>
+
+<p>To indicate a port of an RT Component, specify it after the path separated by a colon (“:”). For example, /localhost/comp0.rtc:data means the port named data of the RT Component named comp0.rtc.</p>
+
+<p>Some commands can create new ports. In this case, you can add them to the path with options. The available options are the name of the created port and the formatter. Specify them as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;path&gt;:&lt;port&gt;.&lt;new_port_name&gt;#&lt;formatter&gt;
+</code></pre></div></div>
+
+<h3 id="example">Example:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /localhost/blurg.host_cxt/comp0.rtc:input.stuff#a_printer
+</code></pre></div></div>
+
+<p>This specifies that the name of the newly created port is stuff, and that the data is displayed on the terminal using a function (formatter) named a_printer. (The a_printer function must exist somewhere Python can use it. Normally, the user provides it in a module.) The created port is connected to the input port of comp0.rtc. This is also used to specify the stream name.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;new_port_name&gt;</code> part is not required. If it is not specified, do not specify “.” either. Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /localhost/blurg.host_cxt/comp0.rtc:input#a_printer
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;formatter&gt;</code> part is not required. If it is not written, do not specify “.” either. Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /localhost/blurg.host_cxt/comp0.rtc:input.stuff
+</code></pre></div></div>
+
+<h2 id="environment-variables">Environment Variables</h2>
+<ul>
+  <li><strong>RTCTREE_ORB_ARGS</strong>
+    <ul>
+      <li>Variables passed when creating the ORB. Separate them with semicolons. This is not required.</li>
+    </ul>
+  </li>
+  <li><strong>RTCTREE_NAMESERVERS</strong>
+    <ul>
+      <li>Addresses of name servers referenced when creating the RTC tree. Separate addresses with semicolons. The listed addresses are added to the RTC tree and can be referenced by rtshell. This is not required because they can also be specified as directory names under the root in paths.</li>
+    </ul>
+  </li>
+  <li><strong>RTSH_CWD</strong>
+    <ul>
+      <li>The current working directory of rtshell. rtshell sets it automatically. Do not set it manually.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>In typical use, the only variable that users set is RTCTREE_NAMESERVERS. It is convenient to set frequently used name servers. For example, in the Bash shell, the following command allows rtshell to reference name servers on localhost, port 192.168.0.1:65346, and host example.com.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ export RTCTREE_NAMESERVERS=localhost;192.168.0.1:65346;example.com
+</code></pre></div></div>
+
+<h2 id="return-values">Return Values</h2>
+<p>Returns zero on success. Returns a non-zero value on failure.</p>
+
+<p>Debug information and errors are output to stderr.</p>
+
+<h2 id="examples">Examples</h2>
+<ul>
+  <li>Records data from the out port of the ConsoleIn0.rtc component to the file log.rtlog. The data stream is named numbers.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog /localhost/ConsoleIn0.rtc:out.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Plays back the data stream named numbers from the log file log.rtlog and sends it to the ConsoleOut0.rtc:in port.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p /localhost/ConsoleOut0.rtc:in.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Displays log information. This includes the log start time, end time, data streams, and other information.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -d
+</code></pre></div>    </div>
+  </li>
+  <li>Records until the computer clock reaches “1292489690”, then exits.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -e 1292489690 /localhost/ConsoleIn0.rtc:out.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Records 10 data items, then exits.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -e 10 -i /localhost/ConsoleIn0.rtc:out.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Records for 10 seconds, then exits.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -t 10 /localhost/ConsoleIn0.rtc:out.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Starts playback from the timestamp “1292489690”.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p -s 1292489690 /localhost/ConsoleOut0.rtc:in.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Plays back from the first data to the timestamp “1292489700”.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p -e 1292489700 /localhost/ConsoleOut0.rtc:in.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Plays back from the timestamp “1292489690” to the timestamp “1292489700”. (Approximately 10 seconds of data.)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p -s 1292489690 -e 1292489700 /localhost/ConsoleOut0.rtc:in.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Starts playback from the 5th data item.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p -s 5 -i /localhost/ConsoleOut0.rtc:in.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Plays back from the first data item to the 10th data item.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p -e 10 /localhost/ConsoleOut0.rtc:in.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Plays back from the 5th data item to the 10th data item.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p -s 5 -e 10 /localhost/ConsoleOut0.rtc:in.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Plays back 10 seconds of data from the beginning.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p -t 10 /localhost/ConsoleOut0.rtc:in.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Plays back the log at 5x speed.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p -r 5 /localhost/ConsoleOut0.rtc:in.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Plays back the log at 0.2x speed.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p -r 0.2 /localhost/ConsoleOut0.rtc:in.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Plays back one data item per second, and finally plays back 5 data items.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p -n 5 -x 1 /localhost/ConsoleOut0.rtc:in.numbers
+</code></pre></div>    </div>
+  </li>
+  <li>Records three data streams into one file. The stream names are sensor, ctrl, and motor.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog /localhost/Sensor0.rtc:out.sensor /localhost/Controller0.rtc:out.ctrl /localhost/Motor0.rtc:out.motor
+</code></pre></div>    </div>
+  </li>
+  <li>Plays back two data streams from one log and sends each to a different port.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p /localhost/Sensor0.rtc:in.motor /localhost/Motor0.rtc:in.ctrl
+</code></pre></div>    </div>
+  </li>
+  <li>Plays back two data streams from one log and sends them to the same port.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p /localhost/Controller0.rtc:in.sensor /localhost/Controller0.rtc:in.motor
+</code></pre></div>    </div>
+  </li>
+  <li>Plays back one data stream from the log and sends it to multiple ports.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rtlog -f log.rtlog -p /localhost/Sensor0.rtc:in.motor /localhost/Controller0.rtc:in.motor
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

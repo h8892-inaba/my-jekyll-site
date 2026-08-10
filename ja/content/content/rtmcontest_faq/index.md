@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 
+title: コンテストFAQ
 ---
 
 <div align="right"><img src="contest2016.png" width="40%;" align="left"></div>

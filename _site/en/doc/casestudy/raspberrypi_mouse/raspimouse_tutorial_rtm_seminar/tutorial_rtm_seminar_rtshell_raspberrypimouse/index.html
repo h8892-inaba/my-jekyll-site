@@ -1,0 +1,1177 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tutorial (Introduction to rtshell, Raspberry Pi Mouse) | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Tutorial (Introduction to rtshell, Raspberry Pi Mouse)" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="Tutorial (Introduction to rtshell, Raspberry Pi Mouse)" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"Tutorial (Introduction to rtshell, Raspberry Pi Mouse)","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/" >Home</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/">
+		    Home
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/download/" >Download</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/download/">
+		    Download
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/" >Documentation</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/">
+		    Documentation
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/doc/aboutopenrtm/rtmiddleware/">What's OpenRTM-aist?</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/installation/">Installation</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/toolmanuals/">Tool manuals</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/developersguide/">Developersguide</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/openrtm-aist_class_reference/">Class Reference</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/casestudy/">Casestudy</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/en/faq/">FAQ</a></li>
+				
+				<li><a href="/my-jekyll-site/en/doc/old_document/">Old Documents</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/community/" >Community</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/community/">
+		    Community
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/en/tutorials/">Workshop</a></li>
+				
+				<li><a href="/my-jekyll-site/en/content/content/">Event</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" >Research and Development</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/doc/aboutopenrtm/researchanddevel">
+		    Research and Development
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/publication" >Press</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/publication">
+		    Press
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/project/" >Project</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/project/">
+		    Project
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/en/hardware/" >Hardware</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/en/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/en/hardware/">
+		    Hardware
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+	    <a>foo-----</a>
+	<div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>Tutorial (Introduction to rtshell, Raspberry Pi Mouse) <div class="lang-switch"><a href="/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/" class="lang-link" aria-label="Japanese page">
+      <img src="/my-jekyll-site/assets/images/lang/ja.png" alt="日本語">
+    </a></div>
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#introduction">Introduction</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#rtshell">rtshell</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#automating-rt-system-startup">Automating RT System Startup</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#preparation">Preparation</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#automating-port-connections">Automating Port Connections</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#automating-rtc-activation">Automating RTC Activation</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#automating-rtc-shutdown">Automating RTC Shutdown</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#creating-batch-files-and-shell-scripts">Creating Batch Files and Shell Scripts</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <a href="#summary">Summary</h2</a>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<!--  チュートリアル(rtshell入門、Raspberry Pi Mouse) -->
+
+<p>#contents</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This section explains how to create batch files and shell scripts that automate the startup and shutdown of an RT system that controls a Raspberry Pi Mouse running in a simulator.</p>
+
+<p>Previously, you had to start executable files by double-clicking them and connect ports manually through RTSystemEditor. By executing a script, all processing required to start the system can be performed automatically.</p>
+
+<p>In this exercise, the RobotController component created in <a href="/en/node/6550">Introduction to RT Component Development</a> will be used.</p>
+
+<p>You will create batch files and shell scripts that automate RTC startup and operations normally performed in RTSystemEditor.</p>
+
+<div align="center"><a href="rtshell1_tutorial.png"><img src="rtshell1_tutorial.png" width="50%;" /></a></div>
+
+<h3 id="rtshell">rtshell</h3>
+
+<p>rtshell is a tool for operating RTCs from the command line and provides functionality equivalent to RTSystemEditor.</p>
+
+<ul>
+  <li><a href="/en/node/5014">Managing RT Systems with rtshell</a></li>
+  <li><a href="https://openrtm.org/openrtm/sites/default/files/5620/rtshell.pdf">Introduction to rtshell</a></li>
+</ul>
+
+<h2 id="automating-rt-system-startup">Automating RT System Startup</h2>
+
+<p>The startup and shutdown procedure for a system that controls a Raspberry Pi Mouse in a simulator using the RobotController component is as follows.</p>
+
+<ol>
+  <li>Start the RaspberryPiMouseSimulator component and RobotController component.</li>
+  <li>Connect ports using connectors.</li>
+  <li>Activate the RTCs.</li>
+  <li>Exit the RTCs.</li>
+</ol>
+
+<h3 id="preparation">Preparation</h3>
+
+<p>Since this exercise uses command-line operations, start Command Prompt (Windows) or Terminal (Ubuntu).</p>
+
+<ul>
+  <li><a href="https://pc-karuma.net/windows10-open-command-prompt-window/">How to Open Command Prompt in Windows 10</a></li>
+  <li><a href="https://linuxfan.info/ubuntu-open-terminal-emulator">Linux FAQ: How to Open a Terminal and Execute Commands in Ubuntu</a></li>
+</ul>
+
+<p>After starting Command Prompt or Terminal, enter <strong>rtls</strong>.</p>
+
+<p>If the message <strong>‘rtls’ is not recognized as an internal or external command, operable program or batch file.</strong> appears, the Python Scripts folder (for example, <code class="language-plaintext highlighter-rouge">C:\Python38\Scripts</code>) is not configured in the Path environment variable.</p>
+
+<p>Check the Python installation location and configure the environment variable.</p>
+
+<ul>
+  <li><a href="https://gammasoft.jp/blog/python-install-location/">Python Installation Location (Windows)</a></li>
+  <li><a href="https://www.atmarkit.co.jp/ait/articles/1805/11/news035.html">Setting/Editing the Path Environment Variable in Windows 10</a></li>
+</ul>
+
+<h3 id="automating-port-connections">Automating Port Connections</h3>
+
+<p>The procedure for automating data port connections is as follows.</p>
+
+<ul>
+  <li>Connect ports using RTSystemEditor (or the rtshell rtcon command).</li>
+  <li>Save the connection information to a file using the rtshell <strong>rtcryo</strong> command.</li>
+  <li>Restore the connections after restart using the rtshell <strong>rtresurrect</strong> command.</li>
+</ul>
+
+<p>As preparation, save the connection information to an XML file and restore the state with the rtresurrect command during automatic startup.</p>
+
+<p>After starting <strong>RobotControllerComp</strong> and <strong>RaspberryPiMouseSimulatorComp</strong>, connect the ports in RTSystemEditor.</p>
+
+<p>The current state is as follows.</p>
+
+<div align="center"><a href="rtshell3_tutorial.png"><img src="rtshell3_tutorial.png" width="70%;" /></a></div>
+
+<p>After connecting the ports, save the XML file with the following command.</p>
+
+<p>Change the XML file save location to a location of your choice.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtcryo <span class="nt">-o</span> C:<span class="se">\w</span>ork<span class="se">\r</span>obotcontroller.xml localhost
+</code></pre></div></div>
+
+<p>Next, try the rtresurrect command.</p>
+
+<p>First, delete all connectors.</p>
+
+<p>In RTSystemEditor, click a connector and press the Delete key, or right-click it and select Delete.</p>
+
+<div align="center"><a href="rtshell2_tutorial.png"><img src="rtshell2_tutorial.png" width="70%;" /></a></div>
+
+<p>The current state is now as follows.</p>
+
+<div align="center"><a href="rtshell4_tutorial.png"><img src="rtshell4_tutorial.png" width="70%;" /></a></div>
+
+<p>Enter the following command.</p>
+
+<p>Change the XML file path to the location where you saved it.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtresurrect C:<span class="se">\w</span>ork<span class="se">\r</span>obotcontroller.xml
+</code></pre></div></div>
+
+<p>Verify that the ports have returned to the connected state.</p>
+
+<p>The current state should now be as follows.</p>
+
+<div align="center"><a href="rtshell3_tutorial.png"><img src="rtshell3_tutorial.png" width="70%;" /></a></div>
+
+<h3 id="automating-rtc-activation">Automating RTC Activation</h3>
+
+<p>Use the rtshell <strong>rtstart</strong> command to activate RTCs.</p>
+
+<p>Enter the following command.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtstart C:<span class="se">\w</span>ork<span class="se">\r</span>obotcontroller.xml
+</code></pre></div></div>
+
+<p>The current state should now be as shown below, and the Raspberry Pi Mouse in the simulator should be controllable.</p>
+
+<div align="center"><a href="rtshell5_tutorial.png"><img src="rtshell5_tutorial.png" width="70%;" /></a></div>
+
+<p>Next, try deactivating the RTCs.</p>
+
+<p>Enter the following <strong>rtstop</strong> command.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtstop C:<span class="se">\w</span>ork<span class="se">\r</span>obotcontroller.xml
+</code></pre></div></div>
+
+<p>The RTCs should now be deactivated and return to the following state.</p>
+
+<div align="center"><a href="rtshell3_tutorial.png"><img src="rtshell3_tutorial.png" width="70%;" /></a></div>
+
+<h3 id="automating-rtc-shutdown">Automating RTC Shutdown</h3>
+
+<p>Use the rtshell <strong>rtexit</strong> command to exit RTCs.</p>
+
+<p>Try the following commands.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtexit localhost/RaspberryPiMouseSimulator0.rtc
+ rtexit localhost/%COMPUTERNAME%.host_cxt/RobotController0.rtc
+</code></pre></div></div>
+
+<p>By default, RTCs register their components under the context named <code class="language-plaintext highlighter-rouge">hostname.host_cxt</code>.</p>
+
+<div align="center"><a href="rtshell6_tutorial.png"><img src="rtshell6_tutorial.png" width="50%;" /></a></div>
+
+<p><em>For Ubuntu, add <strong>HOSTNAME=<code class="language-plaintext highlighter-rouge">hostname</code></strong> and replace <strong>%COMPUTERNAME%</strong> with <strong>${HOSTNAME}</strong>.</em></p>
+
+<p>The RTCs should now have exited.</p>
+
+<h3 id="creating-batch-files-and-shell-scripts">Creating Batch Files and Shell Scripts</h3>
+
+<p>Create batch files and shell scripts for starting and stopping the RT system.</p>
+
+<p>For Windows, create the following batch files.</p>
+
+<ul>
+  <li>robotcontroller_start.bat</li>
+  <li>robotcontroller_exit.bat</li>
+</ul>
+
+<p>The procedure for creating batch files is as follows.</p>
+
+<ul>
+  <li><a href="https://jj-blues.com/cms/wantto-howtomakebatforbeginer/">How to Create Batch Files: For Beginners Using Windows Batch Files</a></li>
+</ul>
+
+<p>When renaming files, be careful if Explorer is configured to hide file extensions.</p>
+
+<p>Open the batch files using Notepad or another text editor.</p>
+
+<p>For Ubuntu, create the following shell scripts.</p>
+
+<ul>
+  <li>robotcontroller_start.sh</li>
+  <li>robotcontroller_exit.sh</li>
+</ul>
+
+<h4 id="creating-the-startup-script">Creating the Startup Script</h4>
+
+<p>First, edit <strong>robotcontroller_start.bat</strong> and <strong>robotcontroller_start.sh</strong>.</p>
+
+<p>Open robotcontroller_start.bat in Notepad or another editor, and write the procedure for starting RobotControllerComp and RaspberryPiMouseSimulatorComp in the batch file or shell script.</p>
+
+<p>For Windows, enter the following commands.</p>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">start</span> <span class="s2">""</span> <span class="na">/d </span><span class="kd">C</span>:\workspace\RobotController\build\src\Release <span class="kd">RobotControllerComp</span><span class="err">.exe</span>
+ <span class="nb">start</span> <span class="s2">""</span> <span class="na">/d </span><span class="kd">C</span>:\work\RTM_Tutorial\EXE <span class="kd">RaspberryPiMouseSimulatorComp</span><span class="err">.exe</span>
+ <span class="nb">timeout</span> <span class="m">2</span>
+</code></pre></div></div>
+
+<p>For Ubuntu, enter the following commands.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cd</span> ~/workspace/RobotController/build/src/
+ ./RobotControllerComp&amp;
+ <span class="nb">cd</span> ~/RasPiMouseSimulatorRTC/build
+ src/RaspberryPiMouseSimulatorComp&amp;
+ <span class="nb">sleep </span>2
+</code></pre></div></div>
+
+<p>Change the paths to RobotControllerComp and RaspberryPiMouseSimulatorComp according to your environment.</p>
+
+<p>Since subsequent commands cannot be executed until the RTCs have started, the timeout and sleep commands are used to wait.</p>
+
+<p>Next, add the commands for connecting ports and activating RTCs.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rtresurrect C:<span class="se">\w</span>ork<span class="se">\r</span>obotcontroller.xml
+ rtstart C:<span class="se">\w</span>ork<span class="se">\r</span>obotcontroller.xml
+</code></pre></div></div>
+
+<p>After editing, execute robotcontroller_start.bat or robotcontroller_start.sh.</p>
+
+<p>If everything is configured correctly, the RTCs should start automatically and the simulator should begin running.</p>
+
+<p>If the RTCs do not start or the ports are not connected, check the paths to the executable files and the XML file.</p>
+
+<h4 id="creating-the-shutdown-script">Creating the Shutdown Script</h4>
+
+<p>Next, edit <strong>robotcontroller_exit.bat</strong> and <strong>robotcontroller_exit.sh</strong>.</p>
+
+<p>Enter the following commands.</p>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">rtexit</span> <span class="kd">localhost</span><span class="na">/RaspberryPiMouseSimulator</span><span class="m">0</span>.rtc
+ <span class="kd">rtexit</span> <span class="kd">localhost</span>/<span class="nv">%COMPUTERNAME%</span>.host_cxt/RobotController0.rtc
+</code></pre></div></div>
+
+<p>For Ubuntu, enter the following commands.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">HOSTNAME</span><span class="o">=</span><span class="sb">`</span><span class="nb">hostname</span><span class="sb">`</span>
+ rtexit localhost/RaspberryPiMouseSimulator0.rtc
+ rtexit localhost/<span class="k">${</span><span class="nv">HOSTNAME</span><span class="k">}</span>.host_cxt/RobotController0.rtc
+</code></pre></div></div>
+
+<p>After editing, execute robotcontroller_exit.bat or robotcontroller_exit.sh.</p>
+
+<p>If everything is configured correctly, the running RTCs should terminate.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>In this tutorial, you learned:</p>
+
+<ul>
+  <li>How to use rtshell to operate RTCs from the command line.</li>
+  <li>How to automate RT system startup and shutdown procedures.</li>
+  <li>How to save and restore port connection information using rtcryo and rtresurrect.</li>
+  <li>How to activate and deactivate RTCs using rtstart and rtstop.</li>
+  <li>How to terminate RTCs using rtexit.</li>
+  <li>How to create batch files for Windows and shell scripts for Ubuntu.</li>
+  <li>How to automate component startup, port restoration, RTC activation, and RTC shutdown using scripts.</li>
+  <li>How to verify automatic startup and shutdown of a Raspberry Pi Mouse simulation system.</li>
+</ul>
+
+<p>By completing this tutorial, you have learned how to automate the startup, operation, and shutdown of an RT system using rtshell, batch files, and shell scripts.</p>
+
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>
