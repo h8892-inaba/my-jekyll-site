@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Linuxへのインストール
+title: linuxへのインストール
 ---
 
 - [インストール](./install_2_1)

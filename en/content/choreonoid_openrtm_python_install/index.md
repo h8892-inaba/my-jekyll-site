@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Installation Procedure for the OpenRTM Integration Plugin for Choreonoid, Python Version"
+title: "installation procedure for the openrtm integration plugin for choreonoid, python version"
 ---
 
 #contents

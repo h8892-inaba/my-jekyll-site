@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist Installer Operations
+title: openrtm-aist installer operations
 ---
 
 <!-- Title: OpenRTM-aistインストーラ作業内容 -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Initial Setup
+title: initial setup
 ---
 
 <!-- Title: Initial Setup -->
@@ -8,7 +8,7 @@ title: Initial Setup
 
 # Raspbian
 
-Follow the instructions on [this page](http://openrtm.org/openrtm/ja/content/raspberrypi_sdcard) to write Raspbian to an SD card.
+Follow the instructions on [this page]({{ site.baseurl }}/en/doc/installation/other/raspberrypi_casestudy/prep_sdc) to write Raspbian to an SD card.
 
 *If you are using the SD card included with the full kit, this step is not required.*
 
@@ -119,15 +119,15 @@ To install the C++ version of OpenRTM-aist on Raspbian, run the following comman
  sudo sh pkg_install_debian.sh
 ```
 
-For more information, refer to [this page](/en/node/120).
+For more information, refer to [this page]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/install_rasbian_1_1).
 
 *The host PC is assumed to be running Windows.*
 
-For instructions on installing OpenRTM-aist on Windows, refer to [this page](/en/node/999).
+For instructions on installing OpenRTM-aist on Windows, refer to [this page]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1).
 
 Since the sample RT systems also use Python-based sample components, install the Python version as well.
 
-In addition, the sample RT systems use `rtshell`, so install it by following the instructions on [this page](/en/node/5013).
+In addition, the sample RT systems use `rtshell`, so install it by following the instructions on [this page]({{ site.baseurl }}/en/doc/old_documents/install_rtshell).
 
 # Python Version
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(Raspberry Pi Mouse、Python、Windows、強化月間用)
+title: チュートリアル(raspberry pi mouse、python、windows、強化月間用)
 ---
 
 <!-- Title: チュートリアル(Raspberry Pi Mouse、Python、Windows、強化月間用) -->
@@ -25,7 +25,7 @@ ZIPファイルは [Lhaplus](http://forest.watch.impress.co.jp/library/software/
 
 ### シミュレーター
 
-- [RaspberryPiMouseSimulator コンポーネント](http://www.openrtm.org/openrtm/ja/content/simulator_rtc_raspbian_raspimouse)
+- [RaspberryPiMouseSimulator コンポーネント]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use)
 
 シミュレーターは [Open Dynamics Engine(ODE)](http://www.ode.org/) という物理演算エンジンと ODE 付属の描画ライブラリ(drawstuff)を使用して開発しています。
 OpenGL が動作すれば動くので、大抵の環境で動作するはずです。

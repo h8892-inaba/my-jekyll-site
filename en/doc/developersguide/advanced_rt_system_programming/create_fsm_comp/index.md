@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Procedure for Creating an FSM Component"
+title: "procedure for creating an fsm component"
 
 ---
 <!-- Title: FSMコンポーネント作成手順 -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: コンテストFAQ
+title: コンテストfaq
 ---
 
 <div align="right"><img src="contest2016.png" width="40%;" align="left"></div>
@@ -68,32 +68,32 @@ title: コンテストFAQ
 ## RTミドルウエアについて
 
 ### Q: そもそもRTミドルウエアって何ですか？
-[RTミドルウエア(OpenRTM-aist)のホームページ](http://www.openrtm.org/openrtm/ja/content/openrtm-aist%E3%81%A8%E3%81%AF%EF%BC%9F)を参照ください。
+[RTミドルウエア(OpenRTM-aist)のホームページ]({{ site.baseurl }}/ja/doc/aboutopenrtm)を参照ください。
 
 ### Q: RTミドルウエアのユーザメーリングリストに登録するには？
-[RTミドルウエアのメーリングリスト](http://www.openrtm.org/openrtm/ja/content/%E3%83%A1%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%AA%E3%82%B9%E3%83%88-0)のページを参照ください。
+[RTミドルウエアのメーリングリスト]()（リンク切れです）のページを参照ください。
 
 ### Q: RTミドルウエアを使った開発で使用するプログラム言語は何ですか？
-コンセプトとしては、いろいろな言語をサポートしたいと考えております。現時点で産総研からご提供可能なC++ 版、Java版、Python版を利用することができます。詳細は、[OpenRTM-aist諸元のページ](http://www.openrtm.org/openrtm/ja/content/openrtm-aist-%E8%AB%B8%E5%85%83)、[プロジェクトのＲＴミドルウエアページ](http://www.openrtm.org/openrtm/ja/content/rt%E3%83%9F%E3%83%89%E3%83%AB%E3%82%A6%E3%82%A7%E3%82%A2)を参照ください。
+コンセプトとしては、いろいろな言語をサポートしたいと考えております。現時点で産総研からご提供可能なC++ 版、Java版、Python版を利用することができます。詳細は、[OpenRTM-aist諸元のページ]({{ site.baseurl }}/ja/doc/aboutopenrtm/specification)、[プロジェクトのＲＴミドルウエアページ]()（リンク切れです）を参照ください。
 
 ### Q: コンポーネント化って具体的にはどうするの？
-講習会資料を参考にしてください。 また、少し古い情報ですが、学習推論ライブラリを RTミドルウエアを使ってコンポーネント化した[学習推論コンポーネントの例](http://www.openrtm.org/OpenRTM-aist/html/E382B3E383B3E3839DE383BCE3838DE383B3E38388/E5ADA6E7BF92E383BBE68EA8E8AB96E382B3E383B3E3839DE383BCE3838DE383B3E38388.html)を公開しております。参考にしていただければ幸いです。また、[過去のコンテスト作品](http://www.openrtm.org/openrtm/ja/node/230)を参考にしてください。
+講習会資料を参考にしてください。 また、少し古い情報ですが、学習推論ライブラリを RTミドルウエアを使ってコンポーネント化した[学習推論コンポーネントの例]()（リンク切れです）を公開しております。参考にしていただければ幸いです。また、[過去のコンテスト作品]({{ site.baseurl }}/ja/content/content)を参考にしてください。
 
 ### Q: すでに開発されているRTコンポーネントは？
-[OpenRTM-aistのコンポーネントページ](http://www.openrtm.org/openrtm/ja/node/1546)を探してみてください。また、過去の資料も参考にしてください。
+[OpenRTM-aistのコンポーネントページ](http://www.openrtm.org/openrtm/ja/node/1546)（Projectページはリンク切れです）を探してみてください。また、過去の資料も参考にしてください。
 
-- [RTミドルウエア技術カタログ2010](http://www.openrtm.org/rt/RTMcatalog2010_v2.pdf)　（産総研）
+- [RTミドルウエア技術カタログ2010]()（リンク切れです）　（産総研）
 - [NEDO国際ロボット展2009：知能化モジュール集](http://www.nedo.go.jp/library/pamphlets/ZZ_pamphlets_02kikai_chinou.html) (NEDO)
-- [RTミドルウエア技術カタログ2009](http://www.openrtm.org/rt/RTMcatalog2009.pdf)　（産総研）
+- [RTミドルウエア技術カタログ2009]()（リンク切れです）　（産総研）
 
 ### Q: RTミドルウエアを勉強するには？
-まずは、[OpenRTM-aistを10分で始めよう！](http://www.openrtm.org/openrtm/ja/node/850)を体験してみてください。
+まずは、[OpenRTM-aistを10分で始めよう！]()（リンク切れです）を体験してみてください。
 毎年春のロボティクス・メカトロニクス講演会にて一日講習会を、夏には産総研つくばセンターにて
 合宿制のサマーキャンプを開催しておりますので、是非、ご参加下さい。
 ある程度の人数を集めていただき、講師の旅費を工面いただければ、出張講習も可能です。
 ご相談ください。
 
-過去の講習会情報や資料が**[講習会ページ](http://www.openrtm.org/openrtm/ja/node/130)**にまとめてありますので、自習も可能です。
+過去の講習会情報や資料が**[講習会ページ]({{ site.baseurl }}/ja/tutorials)**にまとめてありますので、自習も可能です。
 
 ### Q: RTミドルウエアの公式ホームページ以外のユーザの立場からの有益な情報は？
 以下のアクティブユーザのホームページを参考にしてください。

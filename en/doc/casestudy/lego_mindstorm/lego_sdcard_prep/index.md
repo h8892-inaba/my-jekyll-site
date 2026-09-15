@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Preparing the SD Card
+title: preparing the sd card
 ---
 
 <!-- Title: Preparing the SD Card -->
@@ -53,7 +53,7 @@ Although the ev3dev OS image can be downloaded from the official website, it doe
 
 In most cases, download the ev3dev image containing OpenRTM-aist (C++ and Python) from the following link.
 
-- [2015-08-05-ev3dev-openrtm.zip](http://openrtm.org)
+- [2015-08-05-ev3dev-openrtm.zip]({{ site.baseurl }}/en/)
 
 ### Image with Sample Components
 

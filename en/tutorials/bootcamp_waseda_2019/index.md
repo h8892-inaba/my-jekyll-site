@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェア強化月間 in 早稲田大学・RTミドルウェア講習会
+title: rtミドルウェア強化月間 in 早稲田大学・rtミドルウェア講習会
 ---
 <br>
 <a>No English version available.
@@ -36,7 +36,7 @@ RTミドルウェア強化月間として、早稲田大学西早稲田キャン
 ### 他の強化月間講習会
 
 <!-- - [[RTミドルウェア強化月間2019 in早稲田大学・RTミドルウェア講習会:/ja/tutorial/bootcamp_waseda_2019]] -->
-- [RTミドルウェア強化月間2019 in名城大学・RTミドルウェア講習会](/ja/tutorial/bootcamp_meijo_2019)
+- [RTミドルウェア強化月間2019 in名城大学・RTミドルウェア講習会]({{ site.baseurl }}/en/tutorials/bootcamp_meijo_2019)
 - [RTミドルウェア強化月間2019 in都産技研・OpenRTM-aistによるロボット・ソフトウェア開発](https://www.iri-tokyo.jp/seminar/190709.html)
 
 ## プログラム(プログラムは変更になる可能性があります）
@@ -48,7 +48,7 @@ RTミドルウェア強化月間として、早稲田大学西早稲田キャン
   </tr>
   <tr>
     <td>14:15 -17:00</td>
-    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：宮本信彦(産総研)<br> **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。 <br><a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_cpp_windows">チュートリアル（Raspberry Pi Mouse、Windows編）</a> <br><a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_cpp_ubuntu">チュートリアル（Raspberry Pi Mouse、Ubuntu編）</a> <br> **講義資料**： <a href="./190711-02.pdf">190711-02.pdf</a></td>
+    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：宮本信彦(産総研)<br> **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。 <br><a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_cpp_windows">チュートリアル（Raspberry Pi Mouse、Windows編）</a> <br><a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_cpp_ubuntu">チュートリアル（Raspberry Pi Mouse、Ubuntu編）</a> <br> **講義資料**： <a href="./190711-02.pdf">190711-02.pdf</a></td>
   </tr>
 </table>
 
@@ -74,7 +74,7 @@ RTミドルウェア強化月間として、早稲田大学西早稲田キャン
 
 - Visual Studio 2017推奨：[Visual Studio のダウンロード](https://visualstudio.microsoft.com/ja/downloads/?utm_source=mscom&utm_campaign=msdocs) 
   - **Visual C++がインストールされているかは必ず確認してください。**
-  - これからダウンロードされる場合、バージョンが2019となります。 [Visual Studio Community 2019のインストール](/ja/vs_install_2019) ページの手順でダウンロードできます。
+  - これからダウンロードされる場合、バージョンが2019となります。 [Visual Studio Community 2019のインストール]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022) ページの手順でダウンロードできます。
 - [Python 2.7](https://www.python.org/ftp/python/2.7.16/python-2.7.16.amd64.msi)
 - [CMake](https://github.com/Kitware/CMake/releases/download/v3.14.1/cmake-3.14.1-win64-x64.msi)
 - [Doxygen](http://doxygen.nl/files/doxygen-1.8.14-setup.exe)
@@ -82,7 +82,7 @@ RTミドルウェア強化月間として、早稲田大学西早稲田キャン
   - **Visual Studio 2019を使用する場合は [OpenRTM-aist-1.2.1-RC190514](https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1-RC190514/OpenRTM-aist-1.2.1-RC190514_x86_64.msi)をインストールしてください。**
   - デフォルト設定のままインストールして下さい。
 
-- [OpenRTM-aistを10分で始めよう！](https://openrtm.org/openrtm/ja/node/6521) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
+- [OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/en/doc/installation/lets_start121) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
 
 <br>
 

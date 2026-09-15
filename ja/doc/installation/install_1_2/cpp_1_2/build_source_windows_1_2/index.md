@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  ソースからのビルド(Windows編)
+title:  ソースからのビルド(windows編)
 ---
 
 <!-- Title: ソースからのビルド(Windows編) -->

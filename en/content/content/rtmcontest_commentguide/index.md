@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Comment Guide for RTM Contest Entries
+title: comment guide for rtm contest entries
 ---
 
 #contents
@@ -53,7 +53,7 @@ If you find such a comment, please contact us at the following address:
 
 ## How to Post a Comment
 
-To enter a comment, you must first [register as a user](http://www.openrtm.org/openrtm/ja/user/register) at http://www.openrtm.org/.
+To enter a comment, you must first [register as a user]()(No corresponding page available.) at http://www.openrtm.org/.
 After logging in and visiting a project page, a comment section will appear at the bottom of the page. It is not displayed unless you are logged in. Please enter your comment there.
 We look forward to receiving your comments.
 

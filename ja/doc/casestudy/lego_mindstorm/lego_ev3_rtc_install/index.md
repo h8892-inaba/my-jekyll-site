@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Educator Vehicle用 RTC のインストール (EV3)
+title: educator vehicle用 rtc のインストール (ev3)
 ---
 
 <!-- Educator Vehicle用 RTC のインストール (EV3) -->
@@ -213,7 +213,7 @@ Windows で使用する場合は、release フォルダーの ImageConversionLCD
 
 
 ## ControlEducatorVehicle
-ControlEducatorVehicle を用いることによって以下の移動ロボット(Educator Vehicle 改)の制御ができます。組み立て方は [このページ](/ja/node/6038) を参考にしてください。
+ControlEducatorVehicle を用いることによって以下の移動ロボット(Educator Vehicle 改)の制御ができます。組み立て方は [このページ]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_howtobuild) を参考にしてください。
 
 
 - [https://github.com/Nobu19800/ControlEducatorVehicle](https://github.com/Nobu19800/ControlEducatorVehicle)

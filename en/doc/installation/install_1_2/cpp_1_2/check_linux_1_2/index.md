@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 動作確認(Linux編)
+title: 動作確認(linux編)
 ---
 <br>
 <a>No English version available.

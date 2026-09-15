@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  ソースからのビルド(Windows編)
+title:  ソースからのビルド(windows編)
 ---
 <br>
 <a>No English version available.

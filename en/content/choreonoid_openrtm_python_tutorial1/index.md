@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "OpenRTM Integration Plugin for Choreonoid, Python Version Tutorial (TankJoystick)"
+title: "openrtm integration plugin for choreonoid, python version tutorial (tankjoystick)"
 ---
 
 This page explains the procedure for operating the Tank model with a gamepad using the Choreonoid OpenRTM integration plugin Python version.

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Procedure for Operating EV3 as a Wireless LAN Access Point
+title: procedure for operating ev3 as a wireless lan access point
 ---
 
 <!-- Title: Procedure for Operating EV3 as a Wireless LAN Access Point -->
@@ -158,7 +158,7 @@ Finally, add the following entries to `rc.local`.
  service isc-dhcp-server start
 ```
 
-Before rebooting, if you have configured wireless LAN according to the procedure on [this page](/en/node/5861#toc6), set **Wireless and Networks → Wifi → Powered** to **OFF**. Also set **Wireless and Networks → Offline Mode** to **ON**.
+Before rebooting, if you have configured wireless LAN according to the procedure on [this page]({{ site.baseurl }}/en/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev#toc6), set **Wireless and Networks → Wifi → Powered** to **OFF**. Also set **Wireless and Networks → Offline Mode** to **ON**.
 
 All procedures are now complete. Reboot the EV3 and verify that you can connect successfully.
 

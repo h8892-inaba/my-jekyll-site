@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 動作確認 (Windows編)
+title: 動作確認 (windows編)
 ---
 
 <!-- Title: 動作確認 (Windows編) -->
@@ -19,7 +19,7 @@ batファイルは、スタートメニューの [OpenRTM-aist 2.1.* x86_64] か
 
 詳細は、10分で始めようページの解説をご覧ください。 <br>
 
-- [OpenRTM-aistを10分で始めよう！・サンプルコンポーネントを実行する](/ja/node/7323#toc5) 
+- [OpenRTM-aistを10分で始めよう！・サンプルコンポーネントを実行する]({{ site.baseurl }}/ja/doc/installation/lets_start#toc5) 
 <br>
 
 <div align="center"><a href="start-menu-folder.png"><img src="start-menu-folder.png" width="90%;"></a></div><br>

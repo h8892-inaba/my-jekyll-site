@@ -1,13 +1,13 @@
 ---
 layout: page
-title: "TkCalibGUI"
+title: "tkcalibgui"
 ---
 
 <!-- Title: TkCalibGUI -->
 
 #contents
 ## TkCalibGUI
-OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencv_sample_build)に従ってビルドしてインストールしてください。
+OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencvcamera/opencv_sample_build/)に従ってビルドしてインストールしてください。
 
 ### 概要 
 GUI画面を持ったRTコンポーネントのサンプルです。TkCalibGUI.batを実行することでサンプル・コンポーネントが起動します。
@@ -62,7 +62,7 @@ OpenRTM-aist C++のWindows用インストーラーを使ってインストール
   </tr>
   <tr>
     <td>OpenRTM-aist Python is not installed.</td>
-    <td><a href="http://openrtm.org/openrtm/ja/content/openrtm-aist-python-110-release">OpenRTM-aist Python版</a>のページから一括インストールスクリプトをダウンロードできます。</td>
+    <td><a href="{{ site.baseurl }}/ja/download/openrtm-aist-python/openrtm-aist-python_1_1_0_release">OpenRTM-aist Python版</a>のページから一括インストールスクリプトをダウンロードできます。</td>
   </tr>
   <tr>
     <td>Ttk is not installed.</td>

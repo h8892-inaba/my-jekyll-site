@@ -1,12 +1,12 @@
 ---
 layout: page
-title: "OpenCVCamera/CameraViewerとシンプルOpenCVサンプル"
+title: "opencvcamera/cameraviewerとシンプルopencvサンプル"
 ---
 
 <!-- Title: OpenCVCamera/CameraViewerとシンプルOpenCVサンプル -->
 #contents
 
-OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencv_sample_build)に従ってビルドしてインストールしてください。
+OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencvcamera/opencv_sample_build)に従ってビルドしてインストールしてください。
 
 ### 概要
 OpenCVCamera、CameraViewerを起動することで、USBカメラの画像をモニターに表示します。OpenCV画像処理サンプルRTCコンポーネントを接続し、エフェクトをかけられます。
@@ -39,7 +39,7 @@ OpenCVのRTサンプルコンポーネントを間に接続し、画像データ
   - Flipコンポーネントをスタート＞OpenRTM-aist 1.2.1 x86_64＞C++_OpenCV-Examplesから(32bit環境では、スタート>OpenRTM-aist 1.2.1 x86>C++_OpenCV-Examplesから)起動してください。
   - SystemEditor上にドラッグして表示し、OpenCVCameraとCameraViewer両コンポーネントと接続し「Activate」します。（下図Flip実行例を参照）
   - FlipはConfigure「flip_mode」の値を変更する事で、出力データを変更することも可能です。（下図flip_modeの変更を参照）
-    - Flipの詳しい使い方・解説は[こちら](http://www.openrtm.org/openrtm/ja/node/6057)をご確認ください。
+    - Flipの詳しい使い方・解説は[こちら]({{ site.baseurl }}/ja/doc/casestudy/opencv_comp_development/opencv_win81_vs2015)をご確認ください。
 
 <div align="center"><a href="new_05.png"><img src="new_05.png" width="60%;"></a></div>
 <div align="center"><strong>Flip実行例(RTSystemEditor)</strong></div>

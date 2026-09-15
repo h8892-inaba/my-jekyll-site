@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアコンテスト2016
+title: rtミドルウェアコンテスト2016
 ---
 No English version available.
 
@@ -10,7 +10,7 @@ No English version available.
 
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>
 <a href="#program"><img src="../images/contest2013_program.png" width="10%;"></a>
-<a href="/contests/2016"><img src="../images/contest2013_worklist.png" width="10%;"></a>
+<a href="/contests/2016"><img src="../images/contest2013_worklist.png" width="10%;"></a>(No corresponding English project page available.)(No corresponding English project page available.)
 <a href="#evaluation"><img src="../images/contest2013_evaluation.png" width="10%;"></a></div>
 <div align="center"><a href="#award"><img src="../images/contest2013_award.png" width="10%;"></a>
 <a href="#pastwork"><img src="../images/contest2013_pastworks.png" width="10%;"></a>
@@ -92,19 +92,19 @@ RTミドルウエアは、ロボットを構成する様々な要素をモジュ
   </tr>
   <tr>
     <td>1N1-1 <br>（09:30 - 09:45）</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_01">四足歩行ロボット制御用RTコンポーネント群の開発</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_01">四足歩行ロボット制御用RTコンポーネント群の開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>宮本 信彦（産総研），高橋 三郎（産総研）</td>
     <td>計測自動制御学会学会␋RTミドルウェア賞</td>
   </tr>
   <tr>
     <td>1N1-2 <br>（09:45 - 10:00）</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_02">小型移動ロボットによるRTミドルウェア学習教材の開発</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_02">小型移動ロボットによるRTミドルウェア学習教材の開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>宮本 信彦（産総研）</td>
     <td>ベストサポート賞<br>教育版レゴマインドストームEV3賞</td>
   </tr>
   <tr>
     <td>1N1-3 <br>（10:00 - 10:15）</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_03">Kinect v2のマイクアレイを用いた音源方向推定RTCとその応用</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_03">Kinect v2のマイクアレイを用いた音源方向推定RTCとその応用</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>佐古 奈津希（東京理科大），陳 祐樹（東京理科大），溝口 博（東京理科大）</td>
     <td>女流RTコンポーネント賞␋</td>
   </tr>
@@ -120,37 +120,37 @@ RTミドルウエアは、ロボットを構成する様々な要素をモジュ
   </tr>
   <tr>
     <td>1N2-1 <br>（13:30 - 13:45）</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_04">ZumoとRaspberryPiを用いた教育ロボット環境</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_04">ZumoとRaspberryPiを用いた教育ロボット環境</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>青木 哲（甲南大），榊原 洋之（甲南大），清瀬 大貴（甲南大），林 拓実（甲南大），原口 和貴（甲南大），梅谷 智弘（甲南大），北村 達也（甲南大）</td>
     <td>帰ってきた世界一軽い␋RTコンポーネント賞</td>
   </tr>
   <tr>
     <td>1N2-2 <br>（13:45 - 14:00）</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_05">RaspberryPiと複数台のArduino Dueを用いたアナログ入出力を増設するためのRTC</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_05">RaspberryPiと複数台のArduino Dueを用いたアナログ入出力を増設するためのRTC</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>松田 怜（東京理科大），野村 健太（東京理科大），溝口 博（東京理科大），竹村 裕（東京理科大）</td>
     <td>システムズエンジニアリング賞</td>
   </tr>
   <tr>
     <td>1N2-3 <br>（14:00 - 14:15）</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_06">アンケートの入力時間の違いを利用した重みづけの評価RTC</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_06">アンケートの入力時間の違いを利用した重みづけの評価RTC</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>池田 貴政（芝浦工大），安田 福啓（芝浦工大），松日楽 信人（芝浦工大）</td>
     <td>ロボットサービスイニシアチブ(RSi)賞</td>
   </tr>
   <tr>
     <td>1N2-4 <br>（14:15 - 14:30）</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_07">教育用ロボットアームコンポーネントの開発</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_07">教育用ロボットアームコンポーネントの開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>真崎 聡士（名城大学），大原 賢一（名城大学）</td>
     <td>グローバルアシスト賞</td>
   </tr>
   <tr>
     <td>1N2-5 <br>（14:30 - 14:45）</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_08">移動ロボット開発支援のためのRTコンポーネント群</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_08">移動ロボット開発支援のためのRTコンポーネント群</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>村瀬 裕司（名城大），大原 賢一（名城大）</td>
     <td>SUGAR SWEET ROBOTICS賞</td>
   </tr>
   <tr>
     <td>1N2-6 <br>（14:45 - 15:00）</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_09">物体認識系コンポーネント群</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_09">物体認識系コンポーネント群</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>高御堂 優樹（名城大），大原 賢一（名城大）</td>
     <td>サマーキャンプ賞</td>
   </tr>
@@ -166,25 +166,25 @@ RTミドルウエアは、ロボットを構成する様々な要素をモジュ
   </tr>
   <tr>
     <td>1N3-1 <br>（15:15 - 15:30）</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_10">RTコンポーネントを用いたセンサデータ収集基盤の開発</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_10">RTコンポーネントを用いたセンサデータ収集基盤の開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>井上 千徳（会津大），矢口 勇一（会津大），成瀬 継太郎（会津大），渡部 有隆（会津大），嶺田 築（会津大），Pham, Cuong, Hung（会津大），濱谷 圭輔（会津大），Pathberiyage, Venushka, Thisara Dharmasiri（会津大），大山 良明（会津大），中澤 遙菜（会津大），間宮 隆瑛（会津大），松本 拓（会津大），安間 奎伍（会津大），吉野 大志（会津大），中村 啓太（会津大）</td>
     <td>組込みシステム技術協会賞<br>アドイン賞</td>
   </tr>
   <tr>
     <td>1N3-2 <br>（15:30 - 15:45）</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_11">教室内の注目度計測RTコンポーネント</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_11">教室内の注目度計測RTコンポーネント</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>下山 未来（芝浦工大），松日楽 信人（芝浦工大）</td>
     <td>RTミドルウェア普及しま賞</td>
   </tr>
   <tr>
     <td>1N3-3 <br>（15:45 - 16:00）</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_12">RTミドルウェア入門用コンポーネント群StarTnoの開発</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_12">RTミドルウェア入門用コンポーネント群StarTnoの開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>小舘 彩誠（産業技術短期大），野田 卓也（産業技術短期大），二井見 博文（産業技術短期大）</td>
     <td>チェンジビジョン賞</td>
   </tr>
   <tr>
     <td>1N3-4 <br>（16:00 - 16:15）</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_13">RTミドルウェアを用いたメディアアート制作及びウェブサイトによる支援</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2016_13">RTミドルウェアを用いたメディアアート制作及びウェブサイトによる支援</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>中沢 真太郎（芝浦工大），猪瀬 将也（芝浦工大），片桐 大地（芝浦工大），小山 拓馬（芝浦工大），伏見 学（芝浦工大），神戸 菜緒（芝浦工大），土屋 彩茜（東京工大），佐々木 毅（芝浦工大）</td>
     <td>日本ロボット工業会賞<br>ウィン電子工業賞␋</td>
   </tr>
@@ -251,7 +251,7 @@ RTミドルウエアは、ロボットを構成する様々な要素をモジュ
 ※申し込み締切日が決まってますので、**エントリー登録を決意した方はSI2016の講演申し込みを先に進めてください**。
 
 - ** 当webサイトでのエントリー登録 **~
-このページの一番下に連絡先の登録フォームを設けます。先にOpenRTMユーザIDでログインを行ってから登録フォームに必要事項を記入してください。なお、OpenRTM webサイトのユーザIDを持ってない方はこちら[(OpenRTMユーザ登録サイト)](http://www.openrtm.org/openrtm/ja/user/register)にアクセスしてユーザ登録を行って下さい。~
+このページの一番下に連絡先の登録フォームを設けます。先にOpenRTMユーザIDでログインを行ってから登録フォームに必要事項を記入してください。なお、OpenRTM webサイトのユーザIDを持ってない方はこちら[(OpenRTMユーザ登録サイト)]()(No corresponding page available.)にアクセスしてユーザ登録を行って下さい。~
 なお、コンテストに関する重要情報を連絡するための連絡先登録も兼ねてますので、エントリーを迷っている方は先にこちらだけ登録いただいても構いません。
 
 <!-- SI2016での登録が完了しましたら、以下の必要事項を記入の上、RTMコンテスト実行委員会 (contest2016<at>openrtm.org．スパムメール対策のため@を<at>と表記してます)までメールでご一報いただければ幸いです．~ -->
@@ -287,7 +287,7 @@ SI2016の申込方法、申込および原稿〆切および具体的な開催�
 ### OpenRTM-aist Webサイトへの作品の登録
 発表する作品は、
 
-- OpenRTM-aist Webサイトの[プロジェクト](http://www.openrtm.org/openrtm/ja/content/%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88-0)として登録すること。（プロジェクトページに紹介ビデオを掲載することを推奨）
+- OpenRTM-aist Webサイトの[プロジェクト]()(No corresponding page available.)として登録すること。（プロジェクトページに紹介ビデオを掲載することを推奨）
 - ソースコードをオープンにすること。
 - 分かりやすいマニュアルを添付し、できるだけ第三者が結果を再現できるようにすること。
 - 参考にしたRTコンポーネントやソースコードがある場合は、マニュアル・論文中で出典を明記してオリジナル作者に敬意を払うこと。
@@ -302,10 +302,10 @@ SI2016の申込方法、申込および原稿〆切および具体的な開催�
 
 - [RTミドルウエアコンテスト2007](../rtmcontest2007/)
   - （[応募作品]()(no_link)）
-<!-- （[応募作品](http://www.openrtm.org/rt/RTMcontest/2007/entry_public.html)）-->
+<!-- （[応募作品]({{ site.baseurl }}/en/content/content/rtmcontest2007/entry_public)）-->
 - [RTミドルウエアコンテスト2008](../rtmcontest2008/)
   - （[応募作品]()(no_link)）
-<!-- （[応募作品](http://www.openrtm.org/rt/RTMcontest/2008/entry.html)）-->
+<!-- （[応募作品]({{ site.baseurl }}/en/content/content/rtmcontest2008/entry_public)）-->
 - [RTミドルウエアコンテスト2009](../rtmcontest2009/)
   - （[応募作品]()(no_link)）
 <!-- （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2009?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
@@ -314,19 +314,19 @@ SI2016の申込方法、申込および原稿〆切および具体的な開催�
 <!-- （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2010?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
 - [RTミドルウエアコンテスト2011](../rtmcontest2011/) 
   - （[応募作品]()(no_link)）
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2011)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)(No corresponding English project page available.)）-->
 - [RTミドルウエアコンテスト2012](../rtmcontest2012/) 
   - （[応募作品]()(no_link)）
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)(No corresponding English project page available.)）-->
 - [RTミドルウエアコンテスト2013](../rtmcontest2013)
   - （[応募作品]()(no_link)）
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2013)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2013)(No corresponding English project page available.)(No corresponding English project page available.)）-->
 - [RTミドルウエアコンテスト2014](../rtmcontest2014) 
   - （[応募作品]()(no_link)）
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2014)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2014)(No corresponding English project page available.)(No corresponding English project page available.)）-->
 - [RTミドルウエアコンテスト2015](../rtmcontest2015) 
   - （[応募作品]()(no_link)）
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2015)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2015)(No corresponding English project page available.)(No corresponding English project page available.)）-->
 
 &aname(registration){};
 ## コンテスト作品のwebへの登録方法 
@@ -362,7 +362,7 @@ SI2016の申込方法、申込および原稿〆切および具体的な開催�
 &aname(contact){};
 ## お問い合わせ 
 
-まず、[コンテストのFAQ](http://www.openrtm.org/openrtm/ja/node/5121)を確認いただき、問い合わせ内容に応じて下記に連絡ください。<br>
+まず、[コンテストのFAQ]({{ site.baseurl }}/en/content/content/rtmcontest_faq)を確認いただき、問い合わせ内容に応じて下記に連絡ください。<br>
 ※スパムメール対策のため、以下に記載したメールアドレスで<at>の部分は@に読み替えて下さい。
 
 - 応募に関すること：~
@@ -372,8 +372,8 @@ RTミドルウエアコンテスト事務局: contest2016<at>openrtm.org
 ロボットビジネス推進協議会事務局: contest2016<at>openrtm.org
 
 - RTミドルウエアの技術的なご相談：~
-RTミドルウエアの[フォーラム](http://www.openrtm.org/openrtm/ja/node/281)や、
-[メーリングリスト](http://www.openrtm.org/openrtm/ja/node/275) [ rtm-users<at>openrtm.org ：要事前登録] にお問い合わせいただき、情報の共有に御協力ください。
+RTミドルウエアの[フォーラム]({{ site.baseurl }}/en/community/forum)や、
+[メーリングリスト]()(No corresponding page (mailinglist) available.) [ rtm-users<at>openrtm.org ：要事前登録] にお問い合わせいただき、情報の共有に御協力ください。
 
 ```
  RTミドルウエアコンテスト2016 事務局

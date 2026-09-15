@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (Introduction to rtshell, Raspberry Pi Mouse)
+title: tutorial (introduction to rtshell, raspberry pi mouse)
 ---
 <!--  チュートリアル(rtshell入門、Raspberry Pi Mouse) -->
 
@@ -12,7 +12,7 @@ This section explains how to create batch files and shell scripts that automate 
 
 Previously, you had to start executable files by double-clicking them and connect ports manually through RTSystemEditor. By executing a script, all processing required to start the system can be performed automatically.
 
-In this exercise, the RobotController component created in [Introduction to RT Component Development](/en/node/6550) will be used.
+In this exercise, the RobotController component created in [Introduction to RT Component Development]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2) will be used.
 
 You will create batch files and shell scripts that automate RTC startup and operations normally performed in RTSystemEditor.
 
@@ -22,8 +22,8 @@ You will create batch files and shell scripts that automate RTC startup and oper
 
 rtshell is a tool for operating RTCs from the command line and provides functionality equivalent to RTSystemEditor.
 
-- [Managing RT Systems with rtshell](/en/node/5014)
-- [Introduction to rtshell](https://openrtm.org/openrtm/sites/default/files/5620/rtshell.pdf)
+- [Managing RT Systems with rtshell]({{ site.baseurl }}/en/content/rtshell_managing_rt_systems)
+- [Introduction to rtshell]({{ site.baseurl }}/en/./rtshell.pdf)
 
 ## Automating RT System Startup
 

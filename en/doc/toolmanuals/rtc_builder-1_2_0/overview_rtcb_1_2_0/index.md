@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Screen Layout and Functions (Overview)
+title: screen layout and functions (overview)
 ---
 
 <!-- Title: 画面構成と機能（概要） -->

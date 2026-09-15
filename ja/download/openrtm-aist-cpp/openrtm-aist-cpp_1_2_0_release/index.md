@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist C++ 1.2.0-RELEASE
+title: openrtm-aist c++ 1.2.0-release
 ---
 
 <!-- Title: OpenRTM-aist C++ 1.2.0-RELEASE -->
@@ -12,7 +12,7 @@ title: OpenRTM-aist C++ 1.2.0-RELEASE
 <br>
 インストール手順については以下のページを参照してください。
 
-- [OpenRTM-aist (C++版) 1.2系のインストール](/ja/node/6600)
+- [OpenRTM-aist (C++版) 1.2系のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2)
 
 ## パッケージ
 ### Windows インストーラー
@@ -93,7 +93,7 @@ title: OpenRTM-aist C++ 1.2.0-RELEASE
 - <span style="color:red;">※ Python は、"2.7"  "3.6"  "3.7" のいずれかのバージョンをインストールして下さい。</span>;
 - <span style="color:red;">※ 古い rtshell は事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiでインストールしている場合は対応不要です。</span>;
 
-インストールについては、[OpenRTM-aistを10分で始めよう！](/ja/node/6521) のページで手順を紹介しています。<br>
+インストールについては、[OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/lets_start121) のページで手順を紹介しています。<br>
 
 #### （重要なお知らせ）OpenRTM-aistインストール後の設定
 
@@ -108,7 +108,7 @@ title: OpenRTM-aist C++ 1.2.0-RELEASE
 #### Visual Studio のバージョン指定
 
 インストールされている Visual Studio のバージョンに合わせて、システム環境変数 **RTM_VC_VERSION** を設定しています。
-インストール後に変更する場合は、GUI ツールを使って設定することができます。使い方は [VCVerChanger](/ja/node/6136) のページで解説しています。
+インストール後に変更する場合は、GUI ツールを使って設定することができます。使い方は [VCVerChanger]({{ site.baseurl }}/ja/content/vc_version_changer) のページで解説しています。
 <br>
 
 <table class="table-alt">
@@ -149,7 +149,7 @@ title: OpenRTM-aist C++ 1.2.0-RELEASE
   </tr>
 </table>
 
-- <span style="color:red;">※ インストール後、Visual Studio のバージョンを変更しない場合でも、一度 [VCVerChanger](/ja/node/6136) で システム環境変数の設定を確認して下さい。不要なパスが残っていた場合はこれを削除します。</span>;
+- <span style="color:red;">※ インストール後、Visual Studio のバージョンを変更しない場合でも、一度 [VCVerChanger]({{ site.baseurl }}/ja/content/vc_version_changer) で システム環境変数の設定を確認して下さい。不要なパスが残っていた場合はこれを削除します。</span>;
 <br>
 <!-- **** 手動での「 RTM_VC_VERSION 」設定手順 -->
 <!--  -->
@@ -178,7 +178,7 @@ title: OpenRTM-aist C++ 1.2.0-RELEASE
 Microsoftのダウンロードページから Visual Studio Community 2017 をダウンロードできます。
 - [https://visualstudio.microsoft.com/ja/downloads/](https://visualstudio.microsoft.com/ja/downloads/)
 
-インストールについては、[Visual Studio 2017 インストール方法](/ja/node/6178) のページで手順を紹介しています。<br>
+インストールについては、[Visual Studio 2017 インストール方法]()（リンク切れです） のページで手順を紹介しています。<br>
 
 Microsoftのダウンロードページでは、Visual Studio の最新バージョンしかダウンロードできません。<br>
 サポート対象の別バージョンの Visual Studio をダウンロード・インストールしたい方は、無償プログラムの <br>
@@ -211,7 +211,7 @@ vc2013 のインストール方法を紹介します。
 プロジェクト名を入力後にOKをクリックするとVisual C++のプロジェクトが生成されます。
 
 
-**Visual C++**を選択できない場合は、[Visual Studio 2017 インストール方法](/ja/node/6178) の手順に従って「C++によるデスクトップ開発」をインストールしてください。
+**Visual C++**を選択できない場合は、[Visual Studio 2017 インストール方法]()（リンク切れです） の手順に従って「C++によるデスクトップ開発」をインストールしてください。
 
 
 またVisual Studio 2017以外を使用の場合にも、念のためにVisual C++のプロジェクトが作成できるかの確認することをお勧めします。
@@ -229,14 +229,14 @@ vc2013 のインストール方法を紹介します。
 Windows10などの高解像度モードを利用すると、Eclipse のアイコンなどが縮小表示される場合があります。
 以下のFAQで解決方法を説明しています。
 <br>
-[Windows10 などで、高解像度モードのときにアイコン等が小さくなる](/ja/content/tool_trouble_shooting_ja#toc1)
+[Windows10 などで、高解像度モードのときにアイコン等が小さくなる]({{ site.baseurl }}/ja/doc/faq/faq_rtp_tools#toc1)
 
 
 #### インストール環境の設定を確認する方法
 
 windows_installer_test.bat スクリプトで確認することができます。使い方は下記ページで解説しています。
 <br>
-[windows_installer_test.batの利用方法](/ja/content/rtm-install-check-script)
+[windows_installer_test.batの利用方法]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/windows_install_test_bat)
 
 
 <!-- - 1.1.2版を「標準」インストールすると、C++版だけでなく、Python版、Java版、rtshell もインストールされますので、 -->
@@ -274,7 +274,7 @@ windows_installer_test.bat スクリプトで確認することができます�
 
 
 
-オプションを指定することで、目的に合わせたパッケージをインストールすることができるようになりました。インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト](/ja/node/6345) をご確認ください。
+オプションを指定することで、目的に合わせたパッケージをインストールすることができるようになりました。インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script) をご確認ください。
 
 
 1.1.2-RELEASE を既にインストールしている場合はアップデートが可能です。
@@ -292,7 +292,7 @@ Fedora　の場合
  # dnf update
 ```
 
-ダウンロード方法・インストール方法については、[OpenRTM-aist (C++版) 1.x系のインストール](/ja/node/999) をご覧くだい。
+ダウンロード方法・インストール方法については、[OpenRTM-aist (C++版) 1.x系のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1) をご覧くだい。
 
 &aname(src);
 ## ソースコード
@@ -317,7 +317,7 @@ Fedora　の場合
 
 ### ソースからのビルド
 
-ソースからビルドする方法については、[ソースからのビルド(Windows編)](/ja/node/793) または [ソースからのビルド(Linux編)](/ja/node/788) をご覧くだい。
+ソースからビルドする方法については、[ソースからのビルド(Windows編)]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/build_source_windows_1_1) または [ソースからのビルド(Linux編)]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/build_source_linux_1_1) をご覧くだい。
 
 ### deb/rpm パッケージ作成
 
@@ -335,7 +335,7 @@ Fedora　の場合
 パッケージは pacakges ディレクトリー内に作成されます。
 
 <span style="color:red;">※ Ubuntu や Debian にて deb パッケージを作成する場合は "dpkg-dev build-essential debhelper devscripts"、Fedora にて rpm パッケージを作成する場合は "rpm-build createrepo" といったツールを予めインストールしておく必要があります。</span>;
-これらは、[一括インストール・スクリプト](/ja/node/6345)  を -c オプションで実行すればインストールされます。
+これらは、[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)  を -c オプションで実行すればインストールされます。
 
 <!-- &br; -->
 <!-- ***MacPorts -->

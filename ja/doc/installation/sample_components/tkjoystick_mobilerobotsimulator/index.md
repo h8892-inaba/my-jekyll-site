@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "TkJoyStick/TkMobileRobotSimulator"
+title: "tkjoystick/tkmobilerobotsimulator"
 ---
 
 <!-- Title: TkJoyStick/TkMobileRobotSimulator -->

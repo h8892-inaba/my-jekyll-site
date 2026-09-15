@@ -1,9 +1,9 @@
 ---
 layout: page
-title: ROBOMECH2020講習会 (2020年5月27日(水))
+title: robomech2020講習会 (2020年5月27日(水))
 ---
 
-<div align="left"><a href="/ja/tutorial/robomech2020"><img src="https://robomech.org/2020/wp-content/uploads/2019/09/head000.jpg" width="100%; margin:10px;" align="left"></a></div>
+<div align="left"><a href="{{ site.baseurl }}/ja/tutorials/robomech2020"><img src="https://robomech.org/2020/wp-content/uploads/2019/09/head000.jpg" width="100%; margin:10px;" align="left"></a></div>
 <!-- #ref(robomech2019_title.png,left,60%,margin=10,url=/ja/tutorial/robomech2019) -->
 
 #contents
@@ -85,7 +85,7 @@ title: ROBOMECH2020講習会 (2020年5月27日(水))
   </tr>
   <tr>
     <td>13:10 -16:00</td>
-    <td>第2部：RTコンポーネントの作成入門 <br> - 担当：宮本 信彦 氏(産総研) <br> - 概要：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="/ja/node/6550">チュートリアル(第2部、Windows)</a> <br> <a href="/ja/node/6551">チュートリアル(第2部、Ubuntu)</a> <br>**講義資料**:<a href="190605-02.pdf">190605-02.pdf</a></td>
+    <td>第2部：RTコンポーネントの作成入門 <br> - 担当：宮本 信彦 氏(産総研) <br> - 概要：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2">チュートリアル(第2部、Windows)</a> <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2">チュートリアル(第2部、Ubuntu)</a> <br>**講義資料**:<a href="190605-02.pdf">190605-02.pdf</a></td>
   </tr>
 </table>
 <!-- |14:30 -16:30|第3部：RTシステム構築実習 &br; - 担当：宮本信彦(産総研) &br; - 概要：OpenRTM-aistを利用して移動ロボット実機を制御するプログラムを作成します。  &br; [[チュートリアル(第3部):/ja/node/6552]] &br;''講義資料'':[[190605-03.pdf:/sites/default/files/6707/190605-03.pdf]]| -->
@@ -104,7 +104,7 @@ title: ROBOMECH2020講習会 (2020年5月27日(水))
 
 ### 参考資料
 
-- [Raspberry Pi Mouse 活用事例](/ja/node/6005)
+- [Raspberry Pi Mouse 活用事例]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse)
 
 
 ## 事前準備
@@ -124,7 +124,7 @@ title: ROBOMECH2020講習会 (2020年5月27日(水))
 以下のソフトウェアをインストールしてください。リンクが切れている場合は、最新バージョンをインストールしてください。
 なお、Windowsが64bit版の場合はそれぞれ64bit版のものを、32bit版の場合は32bit版のものをダウンロードします。
 
-- [Visual Studio 2019](/ja/node/6650)
+- [Visual Studio 2019]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
   - Visual C++がインストールされているかは必ず確認してください。
 - [Python 3.7](https://www.python.org/downloads/windows/)
   - [python-3.7.4-amd64.exe (64bit版)](https://www.python.org/ftp/python/3.7.4/python-3.7.4-amd64.exe)
@@ -134,7 +134,7 @@ title: ROBOMECH2020講習会 (2020年5月27日(水))
   - [cmake-3.17.2-win32-x86.msi (32bit版)](https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2-win32-x86.msi)
 - [Doxygen](http://www.doxygen.nl/download.html) (32bit, 64bitの別なし）
   - [doxygen-1.8.18-setup.exe](http://doxygen.nl/files/doxygen-1.8.18-setup.exe)
-- [OpenRTM-aist-1.2.1-RELEASE](https://openrtm.org/openrtm/ja/download)
+- [OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl }}/ja/download)
   - [OpenRTM-aist-1.2.1-RELEASE_x86_64.msi (64bit版)](https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86_64.msi)
   - [OpenRTM-aist-1.2.1-RELEASE_x86.msi (32bit版)](https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86.msi)
 

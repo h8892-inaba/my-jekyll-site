@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Java-1.2.0-RELEASE
+title: openrtm-aist-java-1.2.0-release
 ---
 
 <!-- Title: OpenRTM-aist-Java-1.2.0-RELEASE -->
@@ -13,7 +13,7 @@ title: OpenRTM-aist-Java-1.2.0-RELEASE
 <br>
 インストール手順については以下のページを参照してください。
 
-- [OpenRTM-aist (Java版) 1.2系のインストール](/ja/node/6602)
+- [OpenRTM-aist (Java版) 1.2系のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/java_1_2)
 ## パッケージ
 ### Windows インストーラー
 
@@ -73,7 +73,7 @@ title: OpenRTM-aist-Java-1.2.0-RELEASE
 - <span style="color:red;">※ Python は、"2.7"  "3.6"  "3.7" のいずれかのバージョンをインストールして下さい。</span>;
 - <span style="color:red;">※ 古い rtshell は事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版msiでインストールした場合は事前の削除は不要です。</span>;
 
-インストールについては、[OpenRTM-aistを10分で始めよう！](/ja/node/6521) のページで手順を紹介しています。<br>
+インストールについては、[OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/lets_start121) のページで手順を紹介しています。<br>
 
 ### （重要なお知らせ）OpenRTM-aistインストール後の設定
 
@@ -112,7 +112,7 @@ title: OpenRTM-aist-Java-1.2.0-RELEASE
 
 <!-- ※Fedora用一括インストール・スクリプトはOpenRTM-aist 1.2.0版以降対応予定です。 -->
 
-オプションを指定することで、目的に合わせたパッケージをインストールすることができるようになりました。インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト](/ja/node/6345) をご確認ください。
+オプションを指定することで、目的に合わせたパッケージをインストールすることができるようになりました。インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script) をご確認ください。
 
 
 

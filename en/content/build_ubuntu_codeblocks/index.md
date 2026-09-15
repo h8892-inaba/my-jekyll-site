@@ -1,6 +1,6 @@
 ---
 layout: page
-title: How to compile (using Ubuntu, CMake, and Code::Blocks)
+title: how to compile (using ubuntu, cmake, and code::blocks)
 ---
 <!-- Title: How to Compile (Ubuntu, CMake, Code::Blocks) -->
 This page explains how to build using Code::Blocks on Ubuntu.

@@ -45,7 +45,7 @@ OpenRTM-aistがサポートしているPythonは 3.10, 3.11, 3.12, 3.13, 3.14 �
   - Pythonのインストール先は、インストール時の選択 [Customize installation]に対応しています。
   - [Customize installation]でインストール先を指定する手順は、下記ページの解説をご覧ください。
 <!-- --- [[OpenRTM-aistを10分で始めよう！・Pythonのインストール:/ja/doc/installation/lets_start#toc1]]  -->
-    - [OpenRTM-aistを10分で始めよう！・Pythonのインストール](/ja/node/7323#toc1) 
+    - [OpenRTM-aistを10分で始めよう！・Pythonのインストール]({{ site.baseurl }}/ja/doc/installation/lets_start#toc1) 
 
 ### CMake
 CMakeはWindowsやLinux等様々な環境でビルドに必要なファイル（Visual Studioのプロジェクトファイル、Linux上のMakefile等）を自動生成するために必要です。 <br>
@@ -66,7 +66,7 @@ OpenRTM-aistでは、RTCBuilderでRTCの設計時に様々な設計情報を記�
 - [Doxygen](https://doxygen.nl/download.html#latestsrc)
   - [doxygen-1.17.0-setup.exe ](https://www.doxygen.nl/files/doxygen-1.17.0-setup.exe) (32bit, 64bitの別なし）
   - Microsoft Edge をお使いでダウンロードできない場合は、OpenRTM-aistの場合の解説をご覧ください。
-    - [OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード](/ja/node/7323#toc2) 
+    - [OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード]({{ site.baseurl }}/ja/doc/installation/lets_start#toc2) 
 
 
 &aname(Graphviz);
@@ -90,7 +90,7 @@ OpenRTM-aistでは、RTCBuilderでRTCの設計時に様々な設計情報を記�
 ### JDK8
 
 Javaで開発される場合に必要となります。下記ページの解説をご覧ください。
-    - [JDK8のインストール](/ja/node/6911) 
+    - [JDK8のインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8) 
 
 
 
@@ -111,7 +111,7 @@ OpenRTM-aistのWindows版のインストーラ（msi形式）をダウンロー�
 </table>
 
 Microsoft Edge をお使いでダウンロードできない場合は、下記ページの解説をご覧ください。
-- [OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード](/ja/node/7323#toc2) 
+- [OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード]({{ site.baseurl }}/ja/doc/installation/lets_start#toc2) 
 
 このインストーラには、以下の内容が含まれています。
 
@@ -130,10 +130,10 @@ Microsoft Edge をお使いでダウンロードできない場合は、下記�
 ### インストール
 
 インストール過程の詳細は、下記ページをご覧ください。
-    - [OpenRTM-aistを10分で始めよう！・OpenRTM-aistのインストール](/ja/node/7323#toc3) 
+    - [OpenRTM-aistを10分で始めよう！・OpenRTM-aistのインストール]({{ site.baseurl }}/ja/doc/installation/lets_start#toc3) 
 
 正しくインストールされているかどうかの確認として、サンプルコンポーネントを実行してみてください。
-    - [OpenRTM-aistを10分で始めよう！・サンプルコンポーネントを実行する](/ja/node/7323#toc5) 
+    - [OpenRTM-aistを10分で始めよう！・サンプルコンポーネントを実行する]({{ site.baseurl }}/ja/doc/installation/lets_start#toc5) 
 
 インストーラが設定するシステム環境変数、インストールするファイル等の詳細は、下記ページをご覧ください。
     - [OpenRTM-aistインストーラの作業内容](/ja/doc/installation/install_2_1/install_windows_2_1/install_workcontent_2_1)

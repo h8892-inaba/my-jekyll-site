@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Using Callback Functions for Manager Actions"
+title: "using callback functions for manager actions"
 ---
 
 Coming soon

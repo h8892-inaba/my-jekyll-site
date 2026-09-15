@@ -1,6 +1,6 @@
 ---
 layout: page
-title: System Editor (RTC Display / Drawing Editing)
+title: system editor (rtc display / drawing editing)
 ---
 <!-- Title: システムエディタ（RTC の表示 / 描画編集 編） -->
 #contents

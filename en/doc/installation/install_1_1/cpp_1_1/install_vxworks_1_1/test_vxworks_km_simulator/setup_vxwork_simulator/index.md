@@ -1,19 +1,18 @@
 ---
 layout: page
-title: VxWorksシミュレータの設定
+title: configuring the vxworks simulator
 ---
 
-------jp page-------
 <!-- Title: VxWorksシミュレータの設定 -->
 #contents
 
-このページではWind River Workbench上で動作するVxWorksシミュレータの設定について説明します。
+This page explains how to configure the VxWorks simulator that runs on Wind River Workbench.
 
-## シミュレータの追加
-Workbenchデフォルトのシミュレータはlinux_diabシミュレータです。
-OpenRTM-aistはgnuコンパイラを使用しているため、linux_gnuシミュレータを使用する必要があります。
+## Adding a Simulator
+The default simulator in Workbench is the linux_diab simulator.
+Because OpenRTM-aist uses the GNU compiler, you need to use the linux_gnu simulator.
 
-Define a connection to remote systemボタンを押してシミュレータを追加してください。
+Click the Define a connection to remote system button to add a simulator.
 
 
 
@@ -24,7 +23,7 @@ Define a connection to remote systemボタンを押してシミュレータを�
 <br>
 
 
-New ConnectionウインドウのSelect Remote System Typeで""Wind River VxWorks 6.x Simulator Connection""を選択して次へ進んでください。
+In Select Remote System Type in the New Connection window, select ""Wind River VxWorks 6.x Simulator Connection"" and proceed to the next step.
 
 <br>
 
@@ -35,9 +34,9 @@ New ConnectionウインドウのSelect Remote System Typeで""Wind River VxWorks
 
 
 
-VxWorks Boot parametersではCustom simulatorにlinux_gnuシミュレータを指定します。
+In VxWorks Boot parameters, specify the linux_gnu simulator for Custom simulator.
 
-- 例：/home/openrtm/WindRiver/vxworks-6.9/target/proj/linux_gnu/default/vxWorks
+- Example: /home/openrtm/WindRiver/vxworks-6.9/target/proj/linux_gnu/default/vxWorks
 
 <br>
 
@@ -46,8 +45,8 @@ VxWorks Boot parametersではCustom simulatorにlinux_gnuシミュレータを�
 <br>
 
 
-Network Optionsまで進んだら、ネットワークをFull Networkに設定してIPアドレスを設定してください。
-Finishボタンをクリックするとシミュレータを作成します。
+When you reach Network Options, set the network to Full Network and configure the IP address.
+Click the Finish button to create the simulator.
 
 
 <br>
@@ -57,18 +56,20 @@ Finishボタンをクリックするとシミュレータを作成します。
 <br>
 
 
-## ネットワークインターフェースの起動
-シミュレータ用のネットワークインターフェースを起動します。
-以下のコマンドを実行してください。
+## Starting the Network Interface
+Start the network interface for the simulator.
+Execute the following command.
 
 ```
- sudo ${WIND_BASE}/host/${WIND_HOST_TYPE}/bin/vxsimnetd
+sudo ${WIND_BASE}/host/${WIND_HOST_TYPE}/bin/vxsimnetd
 ```
 
-**tap0**というネットワークインターフェースが追加されます。
 
-Ubuntu側で起動したネームサーバーを使う場合は、以下のコマンドでネームサーバーを再起動してください。
+A network interface named **tap0** is added.
+
+If you want to use the Naming Service started on Ubuntu, restart the Naming Service with the following command.
+
 
 ```
- sudo rtm-naming
+sudo rtm-naming
 ```

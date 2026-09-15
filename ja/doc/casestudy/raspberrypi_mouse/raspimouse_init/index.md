@@ -9,7 +9,7 @@ title: 初期設定等
 
 # Raspbian
 
-[このページ](http://openrtm.org/openrtm/ja/content/raspberrypi_sdcard) の手順に従ってRaspbian を SDカードに書き込んでください。
+[このページ]({{ site.baseurl }}/ja/doc/installation/other/raspberrypi_casestudy/prep_sdc) の手順に従ってRaspbian を SDカードに書き込んでください。
 ※フルキットに付属の SDカードを使用する場合はこの作業は不要です。
 
 # 組み立て方
@@ -96,12 +96,12 @@ Raspbian に C++版 OpenRTM-aist のインストールには以下のコマン�
 
 
 
-詳しくは [このページ](/ja/node/120) を参考にしてください。
+詳しくは [このページ]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_rasbian_1_1) を参考にしてください。
 
 ※母艦 PC の OS は Windows を想定しています。
-Windows に OpenRTM-aist をインストールする手順については [このページ](/ja/node/999) を参考にしてください。
+Windows に OpenRTM-aist をインストールする手順については [このページ]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1) を参考にしてください。
 Python版のサンプルコンポーネントも利用するので、Python版もインストールしてください。
-またサンプルの RTシステムで rtshell を使用するため、[このページ](/ja/node/5013) を参考にしてインストールしてください。
+またサンプルの RTシステムで rtshell を使用するため、[このページ]({{ site.baseurl }}/ja/doc/old_documents/install_rtshell) を参考にしてインストールしてください。
 
 # Python版
 Python版のインストールには最初に以下のコマンドを入力してください。

@@ -46,7 +46,7 @@ title: 11/7-8 高度ポリテクセンター
   </tr>
   <tr>
     <td>14:00 -16:30</td>
-    <td>**３．RTMによるプログラミング** <br> （１）RTコンポーネントの設計 <br> （２）RTコンポーネントの実装 <br> （３）テスト	<br> <a href="/ja/node/6057">チュートリアル（画像処理コンポーネントの作成 Windows編）</a> <br> <a href="/ja/node/6058">チュートリアル（画像処理コンポーネントの作成 Linux編）</a> <br> **資料:** <a href="171107-03.pdf">171107-03.pdf</a></td>
+    <td>**３．RTMによるプログラミング** <br> （１）RTコンポーネントの設計 <br> （２）RTコンポーネントの実装 <br> （３）テスト	<br> <a href="{{ site.baseurl }}/ja/doc/casestudy/opencv_comp_development/opencv_win81_vs2015">チュートリアル（画像処理コンポーネントの作成 Windows編）</a> <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/opencv_comp_development/opencv_ubuntu_1604">チュートリアル（画像処理コンポーネントの作成 Linux編）</a> <br> **資料:** <a href="171107-03.pdf">171107-03.pdf</a></td>
   </tr>
 </table>
 
@@ -65,7 +65,7 @@ title: 11/7-8 高度ポリテクセンター
   </tr>
   <tr>
     <td>13:00 -16:30</td>
-    <td>**５．総合演習** <br>　（１）ロボットシステムの設計 <br> 　（２）ロボット制御プログラムの作成 <br> <a href="/ja/node/6310">チュートリアル（Raspberry Pi Mouseシミュレータ、Windows編）</a>  <br> <a href="/ja/node/6042">チュートリアル（RaspberryPiマウス）</a> <br> **資料:** <a href="171108-05.pdf">171108-05.pdf</a></td>
+    <td>**５．総合演習** <br>　（１）ロボットシステムの設計 <br> 　（２）ロボット制御プログラムの作成 <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_cpp_windows">チュートリアル（Raspberry Pi Mouseシミュレータ、Windows編）</a>  <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial">チュートリアル（RaspberryPiマウス）</a> <br> **資料:** <a href="171108-05.pdf">171108-05.pdf</a></td>
   </tr>
 </table>
 
@@ -80,7 +80,7 @@ RaspberryPiを利用しているので、実機上で開発したり、容易に
 
 <div align="center"><a href="http://www.rt-net.jp/wp-content/uploads/2015/08/DSC_0025.png"><img src="http://www.rt-net.jp/wp-content/uploads/2015/08/DSC_0025.png" width="20%; margin:10px;"></a></div>
 
-- [Raspberry Pi Mouse 活用事例](http://openrtm.org/openrtm/ja/content/raspberry_pi_mouse)
+- [Raspberry Pi Mouse 活用事例]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse)
 
 
 ### インストールするソフトウエア
@@ -103,7 +103,7 @@ RaspberryPiを利用しているので、実機上で開発したり、容易に
 #### OpenRTM-aist 1.1.2-RELEASE版 (C++版、Python版）
 
 - インストーラには 32bit/64bit の区別がありますが今回は32bit版を使用します。
-  - [Windows用インストーラ(32bit)](/ja/content/openrtm-aist-c-112-release#toc2)
+  - [Windows用インストーラ(32bit)]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#toc2)
 
 
 #### その他

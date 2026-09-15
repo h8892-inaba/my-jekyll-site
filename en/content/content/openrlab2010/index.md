@@ -140,14 +140,14 @@ OpenRTM-aist用のシステム構築ツールセットです。コマンドラ�
 
 <br>
 
-<!-- div align="center"><div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/rtc_stage.jpg"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/rtc_stage.jpg" width="70%;"></a></div></div>
+<!-- div align="center"><div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/rtc_stage.jpg" width="70%;"></a>(No corresponding page available.)</div></div>
 <div align="center"><strong>RTC:Stage</strong></div-->
 <br>
 
 ### OpenHRI
 **出展者**
 
-[産総研・知能システム研究部門・松坂 要佐](http](//unit.aist.go.jp/is/index_j.html)
+[産総研・知能システム研究部門・松坂 要佐]()(No corresponding page available.)
 
 **概要**
 
@@ -182,11 +182,11 @@ OpenRTM-aist用のシステム構築ツールセットです。コマンドラ�
 
 以下からソースとVC9用のバイナリセットがダウンロードできます。
 
-[OpenCV_RTC.zip(ソース)](http://www.openrtm.org/openrtm/sites/default/files/158/OpenCVRTC-1.0.0.zip)
+[OpenCV_RTC.zip(ソース)]({{ site.baseurl }}/en/./OpenCVRTC-1.0.0.zip)
 
 <br>
 
-<!-- div align="center"><div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/OpenCV.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/OpenCV.png" width="50%;"></a></div>;</div>
+<!-- div align="center"><div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/OpenCV.png" width="50%;"></a>(No corresponding page available.)</div>;</div>
 <div align="center"><strong>OpenCV RTCを用いた画像処理システム例</strong></div-->
 
 <br>
@@ -217,7 +217,7 @@ OpenRTM-aist用のシステム構築ツールセットです。コマンドラ�
 
 <br>
 
-<!-- div align="center"><div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ARRTC_System.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ARRTC_System.png" width="70%;"></a></div>;</div>
+<!-- div align="center"><div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ARRTC_System.png" width="70%;"></a>(No corresponding page available.)</div>;</div>
 <div align="center"><strong>OpenCV RTCとARToolKit RTCとの連携</strong></div-->
 
 <br>
@@ -243,7 +243,7 @@ UMLモデリングツールをベースとしたRTコンポーネントの設計
 
 <br>
 
-<!-- div align="center"><div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2008/pw_for_rtm.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2008/pw_for_rtm.png" width="60%;"></a></div>;</div>
+<!-- div align="center"><div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2008/pw_for_rtm.png" width="60%;"></a>(No corresponding page available.)</div>;</div>
 <div align="center"><strong>PatterWeaver for RT-Middleware</strong></div-->
 <br>
 
@@ -261,7 +261,7 @@ UMLモデリングツールをベースとしたRTコンポーネントの設計
 
 <br>
 
-<!-- div align="center"><div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/kunii_lab.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/kunii_lab.png" width="50%;"></a></div>;</div>
+<!-- div align="center"><div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/kunii_lab.png" width="50%;"></a>(No corresponding page available.)</div>;</div>
 <div align="center"><strong>共有メモリコンポーネントを用いた遠隔可変型ソフトウェアアーキテクチャ</strong></div-->
 <br>
 
@@ -289,7 +289,7 @@ UMLモデリングツールをベースとしたRTコンポーネントの設計
 
 <!-- table class="table-alt">
   <tr>
-    <th>CENTER:<div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ITC_Architecture.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ITC_Architecture.png" width="50%;"></a></div>;</th>
+    <th>CENTER:<div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ITC_Architecture.png" width="50%;"></a>(No corresponding page available.)</div>;</th>
   </tr>
   <tr>
     <td>CENTER:**構成図**</td>
@@ -300,8 +300,8 @@ UMLモデリングツールをベースとしたRTコンポーネントの設計
     <th></th>
   </tr>
 </table>
-<div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ITC_WiiRTC.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ITC_WiiRTC.png" width="50%;"></a></div>|
-<div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ITC_ArmRTC.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ITC_ArmRTC.png" width="50%;"></a></div>|
+<div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ITC_WiiRTC.png" width="50%;"></a>(No corresponding page available.)</div>|
+<div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ITC_ArmRTC.png" width="50%;"></a>(No corresponding page available.)</div>|
 <table class="table-alt">
   <tr>
     <th>CENTER:**Wiiコンポーネント**</th>
@@ -323,7 +323,7 @@ RTC-CANopenとは，安全バスシステムとして広く使用されている
 
 <br>
 
-<!-- div align="center"><div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/RTC-CANopen.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/RTC-CANopen.png" width="60%;"></a></div>;</div>
+<!-- div align="center"><div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/RTC-CANopen.png" width="60%;"></a>(No corresponding page available.)</div>;</div>
 <div align="center"><strong>RTC-CANopen System</strong></div-->
 
 <br>
@@ -374,8 +374,8 @@ RTコンポーネントを拡張したDAQコンポーネントによる汎用で
     <th></th>
   </tr>
 </table>
-<div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/rt_reuse_center.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/rt_reuse_center.png" width="20%;"></a></div>|
-<div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/rt_reuse_platform.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/rt_reuse_platform.png" width="20%;"></a></div>|
+<div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/rt_reuse_center.png" width="20%;"></a>(No corresponding page available.)</div>|
+<div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/rt_reuse_platform.png" width="20%;"></a>(No corresponding page available.)</div>|
 <table class="table-alt">
   <tr>
     <th>CENTER:**NEDO知能化プロジェクト・RTC再利用技術研究センター**</th>
@@ -403,7 +403,7 @@ RTコンポーネントを拡張したDAQコンポーネントによる汎用で
 
 <br>
 
-<!-- div align="center"><div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/InformationRobot-SEC.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/InformationRobot-SEC.png" width="40%;"></a></div>;</div>
+<!-- div align="center"><div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/InformationRobot-SEC.png" width="40%;"></a>(No corresponding page available.)</div>;</div>
 <div align="center"><strong>RTミドルウェア技術を活用したインフォメーションロボットシステム</strong></div>--->
 
 <br>
@@ -426,7 +426,7 @@ RTコンポーネントを拡張したDAQコンポーネントによる汎用で
 
 <br>
 
-<!-- div align="center"><div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/HashimotoLab.jpg"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/HashimotoLab.jpg" width="90%;"></a></div>;</div>
+<!-- div align="center"><div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/HashimotoLab.jpg" width="90%;"></a>(No corresponding page available.)</div>;</div>
 <div align="center"><strong>VIRCAによる知能化空間ネットワーク構成図</strong></div-->
 
 <br>
@@ -451,8 +451,8 @@ RTコンポーネントを拡張したDAQコンポーネントによる汎用で
     <th></th>
   </tr>
 </table>
-<div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/revast1.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/revast1.png" width="20%;"></a></div>|
-<div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/revast2.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/revast2.png" width="20%;"></a></div>|
+<div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/revast1.png" width="20%;"></a>(No corresponding page available.)</div>|
+<div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/revast2.png" width="20%;"></a>(No corresponding page available.)</div>|
 <table class="table-alt">
   <tr>
     <th>CENTER:**対応製品でのRTシステム構成**</th>
@@ -476,7 +476,7 @@ RTコンポーネントを拡張したDAQコンポーネントによる汎用で
 
 <br>
 
-<!-- div align="center"><div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/FTL.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/FTL.png" width="50%;"></a></div>;</div>
+<!-- div align="center"><div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/FTL.png" width="50%;"></a>(No corresponding page available.)</div>;</div>
 <div align="center"><strong>組込み向けRTコンポーネントの構成例</strong></div-->
 
 <br>
@@ -501,7 +501,7 @@ RTコンポーネントを拡張したDAQコンポーネントによる汎用で
 
 <br>
 
-<!-- div align="center"><div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/RTUnit_Yasukawa.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/RTUnit_Yasukawa.png" width="20%;"></a></div>;</div>
+<!-- div align="center"><div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/RTUnit_Yasukawa.png" width="20%;"></a>(No corresponding page available.)</div>;</div>
 <div align="center"><strong>RTユニットによるロボットシステム</strong></div-->
 
 <br>
@@ -510,7 +510,7 @@ RTコンポーネントを拡張したDAQコンポーネントによる汎用で
 
 **出展者**
 
-[株式会社 アドイン研究所**](http//www.adin.co.jp)
+[株式会社 アドイン研究所**]({{ site.baseurl }}/en/http//adin.co.jp)
 
 **概要**
 
@@ -523,7 +523,7 @@ RTコンポーネントを拡張したDAQコンポーネントによる汎用で
 
 <br>
 
-<!-- div align="center"><div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/Adin.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/Adin.png" width="50%;"></a></div>;</div>
+<!-- div align="center"><div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/Adin.png" width="50%;"></a>(No corresponding page available.)</div>;</div>
 <div align="center"><strong>学習・推論コンポーネント利用システム</strong></div-->
 <br>
 

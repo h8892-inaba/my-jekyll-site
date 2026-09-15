@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Data Port (Basics)"
+title: "data port (basics)"
 toc: true
 toc_levels: "h2,h3"
 #toc: false

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Python-1.0.0-RELEASE
+title: openrtm-aist-python-1.0.0-release
 ---
 <!-- Title: OpenRTM-aist-Python-1.0.0-RELEASE -->
 #contents
@@ -23,12 +23,12 @@ If you already have version 0.4.x installed, it must be uninstalled prior to ins
 <table class="table-alt">
   <tr>
     <td>Python source code</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.0/OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz">OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz</a> <br> MD5:dd11ef6a2e6277fa095e0fbd3210a2a5</td>
+    <td><a href="">OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz</a>(No corresponding page available.) <br> MD5:dd11ef6a2e6277fa095e0fbd3210a2a5</td>
     <td>10/05/07</td>
   </tr>
   <tr>
     <td>Python source code (Windows)</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.0/OpenRTM-aist-Python-1.0.0-RELEASE.zip">OpenRTM-aist-Python-1.0.0-RELEASE.zip</a> <br> MD5:371b427288cb0f69ab3dcf71d8eda169</td>
+    <td><a href="">OpenRTM-aist-Python-1.0.0-RELEASE.zip</a>(No corresponding page available.) <br> MD5:371b427288cb0f69ab3dcf71d8eda169</td>
     <td>10/05/07</td>
   </tr>
 </table>
@@ -65,9 +65,9 @@ To install using OpenRTM-aist-Python-1.0.0.msi, Python version 2.4, 2.5 or 2.6 i
 
 Openrtm.org provides repositories containing packages for Debian, Fedora, Ubuntu and Vine Linux. Please see the following pages for details.
 
-- [Fedora](/en/node/1310)
-- [Ubuntu/Debian](/en/node/1309)
-- [Vine Linux](/en/node/1311)
+- [Fedora]({{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/install_fedora_python_1_1/)
+- [Ubuntu/Debian]({{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/install_ubuntu_python_1_1/)
+- [Vine Linux]({{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/install_vine_python_1_1/)
 
 <table class="table-alt">
   <tr>
@@ -105,7 +105,7 @@ Source code, Windows installers, and Linux packages are available from the OpenR
 
 Prior releases required installing many tools to create the build environment. This release includes installers, particularly for Windows, that combine all tools and necessary libraries, such as omniORBpy, into one. It is simple to install the entire OpenRTM-aist environment with a single action.
 
-- [OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz](http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.0/OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz) -- released 2010.05.07
+- [OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz]()(No corresponding page available.) -- released 2010.05.07
   - Compliant with the OMG RTC specification version 1.0.
   - New data port has been introduced. 
     - Push/pull data flow types are supported.

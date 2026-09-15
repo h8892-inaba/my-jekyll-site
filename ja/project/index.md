@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Project"
+title: "project"
 ---
 
 ここでは、オフィシャルリリースのソフトウエアだけでなく、ユーザーが作成した様々なコンポーネントやツールを探すことができます。
@@ -24,8 +24,9 @@ title: "Project"
  どのようなプロジェクトを作成する予定か：
 ```
 
-- **[プロジェクト作成マニュアル]({{ site.baseurl }}/ja/node/1554)**
-- **[新規プロジェクトの作成]({{ site.baseurl }}/ja/node/1553)**
+- **[プロジェクト作成マニュアル]({{ site.baseurl }}/ja/node/1554)（Projectページ（登録方法）はリンク切れです）**
+- **[新規プロジェクトの作成]({{ site.baseurl }}/ja/node/1553)（Projectページ（作成方法）はリン
+ク切れです）**
 
 
 <!-- |CENTER: OpenRTC-aist |CENTER: NEDO RTC | -->

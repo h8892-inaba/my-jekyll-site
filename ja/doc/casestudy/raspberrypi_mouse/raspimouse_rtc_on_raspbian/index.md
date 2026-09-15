@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ラズパイマウス用 RTC のインストール(Raspbian)
+title: ラズパイマウス用 rtc のインストール(raspbian)
 ---
 
 <!-- Title: ラズパイマウス用 RTC のインストール(Raspbian) -->

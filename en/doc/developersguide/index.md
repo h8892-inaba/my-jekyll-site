@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Developer's Guide"
+title: "developer's guide"
 ---
 
 <!-- Title: デベロッパーズガイド -->

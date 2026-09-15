@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Visual Studio Community 2022のインストール
+title: visual studio community 2022のインストール
 ---
 
 <!-- Title: Visual Studio Community 2022のインストール -->

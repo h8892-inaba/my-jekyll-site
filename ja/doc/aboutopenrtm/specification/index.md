@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "OpenRTM-aist 諸元"
+title: "openrtm-aist 諸元"
 ---
 <!-- Title: OpenRTM-aist 諸元 -->
 #contents

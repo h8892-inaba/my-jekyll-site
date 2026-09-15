@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "TAO-Related Settings"
+title: "tao-related settings"
 ---
 
 <!-- Title: TAO-Related Settings -->

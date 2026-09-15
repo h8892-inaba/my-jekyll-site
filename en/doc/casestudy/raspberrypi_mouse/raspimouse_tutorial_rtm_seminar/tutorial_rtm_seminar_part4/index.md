@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (RTM Workshop, Part 4)
+title: tutorial (rtm workshop, part 4)
 ---
 
 <!-- Title: チュートリアル(RTM講習会、第4部) -->
@@ -18,16 +18,6 @@ In the RTM workshop, a portable version of LibreOffice and RTCs are distributed 
 
 They can be executed on Windows.
 
-<br>
-
-For Ubuntu, they can be installed using the following commands.
-
-```sh
- sudo apt install libreoffice-script-provider-python
- git clone https://github.com/Nobu19800/OOoRTCs
- cd OOoRTCs
- sh install.sh
-```
 
 In this exercise, the RobotController component created in [Part 2](../tutorial_rtm_seminar_win_part2) will be used.
 

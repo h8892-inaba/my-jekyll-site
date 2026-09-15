@@ -1,6 +1,6 @@
 ---
 layout: page
-title: The 57th SICE Hokkaido Branch Academic Conference Special Lecture (March 7, 2025)
+title: the 57th sice hokkaido branch academic conference special lecture (march 7, 2025)
 ---
 <br>
 <a>No English version available.

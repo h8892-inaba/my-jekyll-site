@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist 2.1系のインストール
+title: openrtm-aist 2.1系のインストール
 ---
 
 - [Windowsへのインストール](./install_windows_2_1)

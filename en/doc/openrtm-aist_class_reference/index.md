@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Class Reference
+title: class reference
 ---
 
 <!-- Title: クラスリファレンス -->

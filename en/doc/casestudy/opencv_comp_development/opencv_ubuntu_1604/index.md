@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creating an Image Processing Component (Ubuntu 16.04, OpenRTM-aist-1.1.2-RELEASE, OpenRTP-1.1.2, CMake-3.5.1, Code::Blocks-16.01)
+title: creating an image processing component (ubuntu 16.04, openrtm-aist-1.1.2-release, openrtp-1.1.2, cmake-3.5.1, code::blocks-16.01)
 ---
 
 <!-- Title: Creating an Image Processing Component (Ubuntu 16.04, OpenRTM-aist-1.1.2-RELEASE, OpenRTP-1.1.2, CMake-3.5.1, Code::Blocks-16.01) -->

@@ -32,7 +32,7 @@ XXをインストールするpythonのバージョンに読み替えて適切な
 
 - [openrtm.org提供バイナリパッケージ](https://openrtm.org/pub/omniORB/win32/omniORB-4.2.5/)
 
-他のライブラリを使ってのビルドについては、 [RTシステム開発 (応用編)・OpenRTM-aist(C++版)のCMakeによるビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build) をご覧ください。
+他のライブラリを使ってのビルドについては、 [RTシステム開発 (応用編)・OpenRTM-aist(C++版)のCMakeによるビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build) をご覧ください。
 
 ## ビルド・インストール時のコマンド手順
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creating RTCs for EV3 (Python Edition)
+title: creating rtcs for ev3 (python edition)
 ---
 
 init
@@ -62,7 +62,7 @@ For an introduction to mobile robot kinematics, the following page by Professor 
 
 Following the Common Interface Specification for Autonomous Mobile Functions,
 
-- [http://openrtm.org/openrtm/ja/project/Recommendation_CommonIF](http://openrtm.org/openrtm/ja/project/Recommendation_CommonIF)
+- [http://openrtm.org/openrtm/ja/project/Recommendation_CommonIF](http://openrtm.org/openrtm/ja/project/Recommendation_CommonIF)(No corresponding English project page available.)(No corresponding English project page available.)
 
 we assume a right-handed coordinate system with the robot's forward direction as the X-axis.
 

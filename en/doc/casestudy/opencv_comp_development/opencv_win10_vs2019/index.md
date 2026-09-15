@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Image Processing Component Development (Windows 10, OpenRTM-aist-2.0.0, OpenRTP-2.0.0, CMake-3.19.8, VS2019)
+title: image processing component development (windows 10, openrtm-aist-2.0.0, openrtp-2.0.0, cmake-3.19.8, vs2019)
 ---
 
 <!-- Title: Image Processing Component Development (Windows 10, OpenRTM-aist-2.0.0, OpenRTP-2.0.0, CMake-3.19.8, VS2019) -->
@@ -205,7 +205,7 @@ Let's first verify the runtime and development environment.
 
 - OS: Windows 10 (Windows 11 and Windows 8.1 are also supported)
 - Compiler: [Visual Studio 2019 Community]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
-- [OpenRTM-aist-2.0.0-RC220404_x86_64](https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.0-RC220404_x86_64.msi)
+- [OpenRTM-aist-2.0.0-RC220404_x86_64]()(No corresponding page available.)
 - [CMake](https://github.com/Kitware/CMake/releases/download/v3.23.1/cmake-3.23.1-windows-x86_64.msi)
 
 Since OpenRTM-aist 1.1, CMake has been used to build components.

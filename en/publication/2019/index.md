@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Paper (2019)
+title: paper (2019)
 ---
 
 No English version available.

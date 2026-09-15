@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアサマーキャンプ2022
+title: rtミドルウェアサマーキャンプ2022
 ---
 <br>
 <a>No English version available.
@@ -49,8 +49,8 @@ RTミドルウェア講習会に参加したことがある，もしくは同等
 <!-- なお、例年強化月間と称して、7月に事前講習会を実施していますが、今年は原則実施ことといたします。&color(red){ (確認) } -->
 これまで講習会を受講したことがない場合は、以下のチュートリアルを自習することで参加資格を満たしたことにいたします。
 
-- [RTミドルウェアを10分で始めよう](/doc/installation/lets_start122) (インストールとサンプルの動作確認)
-- [画像処理コンポーネントの作成](https://www.openrtm.org/openrtm/ja/node/6057) (画像処理コンポーネントの作成練習、USBカメラor内蔵カメラが必要)
+- [RTミドルウェアを10分で始めよう]({{ site.baseurl }}/en/doc/installation/lets_start122) (インストールとサンプルの動作確認)
+- [画像処理コンポーネントの作成]({{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_win81_vs2015) (画像処理コンポーネントの作成練習、USBカメラor内蔵カメラが必要)
 - [ROBOMECH2022RTM講習会](../robomech2022) (移動ロボット実機を制御するコンポーネントの作成)
 
 <!-- または， -->
@@ -393,7 +393,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
   - 今回作成したシステムを第三者が再現できる情報をマニュアル化してください。
   - 過去のサマーキャンプやコンテストのプロジェクトを参照してください
     - [RTMサマーキャンプ2021作品一覧](../summercamp2021#toc15)
-    - [RTMコンテスト2021作品一覧](https://openrtm.org/openrtm/ja/contests/2021)(no_page)
+    - [RTMコンテスト2021作品一覧](https://openrtm.org/openrtm/ja/contests/2021)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
 - **SysMLやＵＭＬなどのモデルをつくったらそのデータ** → プロジェクトページに自分で格納
   - モデリングツールでモデル作成をした場合はそのデータ
   - 最終成果報告会の発表資料にモデルが含まれていればそれでも結構です
@@ -444,7 +444,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### 名城大グループ1
 
 - **課題**: ピッキングシステム
-  - [プロジェクトページ](/ja/project/SummerCamp2022_group1)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2022_group1)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
   - [最終成果発表資料](https://www.slideshare.net/openrtm/ss-252721420)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/252721420 -->
@@ -460,7 +460,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### 名城大グループ2
 
 - **課題**: 商品自動補充ロボットシステム
-  - [プロジェクトページ](/ja/project/SummerCamp2022_group2)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2022_group2)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
   - [最終成果発表資料](https://www.slideshare.net/openrtm/ss-252710121)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/252710121 -->
@@ -476,7 +476,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### 岡山大グループ
 
 - **課題**: GNGを使った未知環境における経路計画
-  - [プロジェクトページ](/ja/project/SummerCamp2022_group3)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2022_group3)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
   - [最終成果発表資料](https://www.slideshare.net/openrtm/gng-252710439)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/252710439 -->
@@ -492,7 +492,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### 早稲田大グループ
 
 - **課題**: まねっこロボット
-  - [プロジェクトページ](/ja/project/SummerCamp2022_group4)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2022_group4)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
   - [最終成果発表資料](https://www.slideshare.net/openrtm/ss-252710179)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/252710179 -->
@@ -509,7 +509,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### 東京都立大グループ
 
 - **課題**: おにぎりトレーサー
-  - [プロジェクトページ](/ja/project/SummerCamp2022_group5)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2022_group5)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
   - [最終成果発表資料](https://www.slideshare.net/openrtm/rt2022pptx)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/252709966 -->

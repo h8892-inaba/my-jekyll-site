@@ -1,13 +1,13 @@
 ---
 layout: page
-title: VPNを利用したRTMネットワーク設定方法
+title: vpnを利用したrtmネットワーク設定方法
 ---
 
 <!-- Title: VPNを利用したRTMネットワーク設定方法 -->
 #contents
 
 OpenRTM-aist を利用していると、ルーター・Firewall や NAT の内と外の RTC 同士を接続したい場合があります。
-NAT の設定を自分で変えることができる場合、NAT のポートフォワーディング機能を利用し、rtc.conf の [corba.alternate_iiop_addresses](http://www.openrtm.org/openrtm/ja/content/rtcconf_reference_ja#toc23) オプションを指定することで NA T内外の RTC 同士を連携させることも可能です。
+NAT の設定を自分で変えることができる場合、NAT のポートフォワーディング機能を利用し、rtc.conf の [corba.alternate_iiop_addresses]()（リンク切れです） オプションを指定することで NA T内外の RTC 同士を連携させることも可能です。
 しかし、RTC の数だけポートフォワーディングの設定が必要であり、また自分で設定できない NAT や会社や学校の Firewall に対してはこの方法を利用できません。
 
 そこで、VPN により仮想ネットワークを構築し RTC 間の通信をすべて VPN で行うことにより、Firewall などがあってもその内外の RTC 同士を連携させることができます。

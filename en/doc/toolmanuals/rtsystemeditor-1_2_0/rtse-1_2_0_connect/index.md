@@ -1,6 +1,6 @@
 ---
 layout: page
-title: System Editor (Connecting Ports)
+title: system editor (connecting ports)
 ---
 
 <!-- Title: システムエディタ（ポート間の接続 編） -->

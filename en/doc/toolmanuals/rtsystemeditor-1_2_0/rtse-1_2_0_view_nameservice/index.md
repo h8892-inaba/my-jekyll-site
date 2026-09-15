@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Views (Name Service View)
+title: views (name service view)
 ---
 <!-- Title: ビュー（ネームサービスビュー編 -->
 #contents

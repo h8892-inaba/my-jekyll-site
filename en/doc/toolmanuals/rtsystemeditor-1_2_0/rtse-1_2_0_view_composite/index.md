@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Views (Composite Component View)
+title: views (composite component view)
 ---
 <!-- Title: ビュー（複合コンポーネントビュー編） -->
 <!-- #contents -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "SSLTransportの使用方法"
+title: "ssltransportの使用方法"
 ---
 
 <!-- Title: SSLTransportの使用方法 -->

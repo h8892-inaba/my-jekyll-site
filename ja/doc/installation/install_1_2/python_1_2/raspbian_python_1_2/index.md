@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Raspbianへのインストール
+title: raspbianへのインストール
 ---
 <!-- node/6924-->
 <!-- Title: Raspbianへのインストール -->

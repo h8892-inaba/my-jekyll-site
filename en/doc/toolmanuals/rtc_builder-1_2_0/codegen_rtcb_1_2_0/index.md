@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Code Generation, Save, and Load
+title: code generation, save, and load
 ---
 <!-- Title: コード生成・セーブとロード -->
 #contents

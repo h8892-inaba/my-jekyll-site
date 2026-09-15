@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 自作の RTC で制御
+title: 自作の rtc で制御
 ---
 
 <!-- Title: 自作の RTC で制御 -->
@@ -164,7 +164,7 @@ Python(RasPiMouseSamplePy.py)
  		return RTC.RTC_OK
 ```
 
-[共通インターフェース仕様書](/ja/node/3853) では進行方向をX軸正方向にしているため、Velocity2D型の vx に直進速度、va に回転速度を入力します。
+[共通インターフェース仕様書](/ja/node/3853)（Projectページはリンク切れです） では進行方向をX軸正方向にしているため、Velocity2D型の vx に直進速度、va に回転速度を入力します。
 
 
 Python ではさらにコンストラクタの以下の部分を修正してください。
@@ -525,7 +525,7 @@ forward_velocity を0.2等に設定して前進させてください。その状
 ### onExecute 関数の実装
 
 onExecute 関数の実装を以下のように実装します。
-ここで [動作確認の項目](/ja/node/6018#toc6) で述べたように距離センサーは距離が短くなるほど大きな値を出力するので注意してください。
+ここで [動作確認の項目]({{ site.baseurl }}/ja/content/rtc_create_raspimouse#toc6) で述べたように距離センサーは距離が短くなるほど大きな値を出力するので注意してください。
 
 ```
  RTC::ReturnCode_t RaspberryPiMouseController_DistanceSensor::onExecute(RTC::UniqueId ec_id)

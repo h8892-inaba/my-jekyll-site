@@ -63,8 +63,8 @@ RTミドルウェア講習会に参加したことがある，もしくは同等
 
 
 
-- [RTミドルウェアを10分で始めよう](/doc/installation/lets_start122) (インストールとサンプルの動作確認)
-- [画像処理コンポーネントの作成](/ja/node/7151) (画像処理コンポーネントの作成練習、USBカメラor内蔵カメラが必要)
+- [RTミドルウェアを10分で始めよう]({{ site.baseurl }}/ja/doc/installation/lets_start122) (インストールとサンプルの動作確認)
+- [画像処理コンポーネントの作成]({{ site.baseurl }}/ja/doc/casestudy/opencv_comp_development/opencv_win10_vs2019) (画像処理コンポーネントの作成練習、USBカメラor内蔵カメラが必要)
 <!-- - [[ROBOMECH2024RTM講習会>https://www.openrtm.org/openrtm/ja/tutorial/robomech2024]] (移動ロボット実機を制御するコンポーネントの作成) -->
 
 <!-- または， -->
@@ -98,8 +98,8 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 過去のサマーキャンプの様子は以下のリンクからご覧いただけますので参考にしてください。
 
 （参考）
-- [サマーキャンプ2011](/ja/node/3850)
-- [サマーキャンプ2012](/ja/node/5048)
+- [サマーキャンプ2011]({{ site.baseurl }}/ja/tutorials/summercamp2011)
+- [サマーキャンプ2012]({{ site.baseurl }}/ja/tutorials/summercamp2012)
 - [サマーキャンプ2013](./summercamp2013)
 - [サマーキャンプ2014](./summercamp2014)
 - [サマーキャンプ2015](./summercamp2015)
@@ -450,13 +450,13 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
   - 今回作成したシステムを第三者が再現できる情報をマニュアル化してください。
   - 過去のサマーキャンプやコンテストのプロジェクトを参照してください
     - [RTMサマーキャンプ2021作品一覧](./summercamp2021#toc13)
-    - [RTMコンテスト2021作品一覧](https://openrtm.org/openrtm/ja/contests/2021)(no_page)
+    - [RTMコンテスト2021作品一覧](https://openrtm.org/openrtm/ja/contests/2021)（Projectページはリンク切れです）(no_page)
     - [RTMサマーキャンプ2022作品一覧](./summercamp2022#toc18)
-    - [RTMコンテスト2022作品一覧](https://openrtm.org/openrtm/ja/contests/2022)(no_page)
+    - [RTMコンテスト2022作品一覧](https://openrtm.org/openrtm/ja/contests/2022)（Projectページはリンク切れです）(no_page)
     - [RTMサマーキャンプ2023作品一覧](./summercamp2023#toc18)
-    - [RTMコンテスト2023作品一覧](https://openrtm.org/openrtm/ja/contests/2023)(no_page)
+    - [RTMコンテスト2023作品一覧](https://openrtm.org/openrtm/ja/contests/2023)（Projectページはリンク切れです）(no_page)
     - [RTMサマーキャンプ2024作品一覧](./summercamp2024#toc18)
-    - [RTMコンテスト2024作品一覧](https://openrtm.org/openrtm/ja/contests/2024)(no_page)
+    - [RTMコンテスト2024作品一覧](https://openrtm.org/openrtm/ja/contests/2024)（Projectページはリンク切れです）(no_page)
 
 - **SysMLやＵＭＬなどのモデルをつくったらそのデータ** → プロジェクトページに自分で格納
   - モデリングツールでモデル作成をした場合はそのデータ
@@ -510,7 +510,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 &aname(summercamp2024_group1);
 ### グループ1
 - **課題**: ペットロボット「ポンポン」- 主人をお出迎え! (＞ω＜)
-  - [プロジェクトページ](/ja/project/summercamp20251)(no_page)
+  - [プロジェクトページ](/ja/project/summercamp20251)（Projectページはリンク切れです）(no_page)
 
   - [最終成果発表資料](https://www.scribd.com/document/911601061/%E3%82%B5%E3%83%9E%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%95-2025-1%E7%8F%AD-%E7%99%BA%E8%A1%A8%E8%B3%87%E6%96%99)
 
@@ -532,7 +532,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 &aname(summercamp2024_group2);
 ### グループ2
 - **課題**: 異種ハードウェア遠隔操作可能双腕システム
-  - [プロジェクトページ](/ja/project/summercamp20252)(no_page)
+  - [プロジェクトページ](/ja/project/summercamp20252)（Projectページはリンク切れです）(no_page)
 
   - [最終成果発表資料](https://www.scribd.com/document/911600718/%E3%82%B5%E3%83%9E%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%95-2025-2%E7%8F%AD-%E7%99%BA%E8%A1%A8%E8%B3%87%E6%96%99)
 
@@ -550,7 +550,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 &aname(summercamp2024_group3);
 ### グループ3
 - **課題**: 音声駆動マニピュレーションシステム
-  - [プロジェクトページ](/ja/project/summercamp20253)(no_page)
+  - [プロジェクトページ](/ja/project/summercamp20253)（Projectページはリンク切れです）(no_page)
 
   - [最終成果発表資料](https://www.scribd.com/document/914174477/%E3%82%B5%E3%83%9E%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%95-2025-3%E7%8F%AD-%E7%99%BA%E8%A1%A8%E8%B3%87%E6%96%99)
 

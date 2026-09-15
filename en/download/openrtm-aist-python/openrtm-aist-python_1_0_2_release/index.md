@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Python-1.0.2-RELEASE
+title: openrtm-aist-python-1.0.2-release
 ---
 
 No English version available.
@@ -33,12 +33,12 @@ No English version available.
 <table class="table-alt">
   <tr>
     <td>Python版ソースコード</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.2/OpenRTM-aist-Python-1.0.2-RELEASE.tar.gz">OpenRTM-aist-Python-1.0.2-RELEASE.tar.gz</a> <br> MD5:f0305d41777a0397ea2beed85e3f5c27</td>
+    <td><a href="">OpenRTM-aist-Python-1.0.2-RELEASE.tar.gz</a>(No corresponding page available.) <br> MD5:f0305d41777a0397ea2beed85e3f5c27</td>
     <td>12/02/20</td>
   </tr>
   <tr>
     <td>Python版ソースコード(Win32)</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.2/OpenRTM-aist-Python-1.0.2-RELEASE.zip">OpenRTM-aist-Python-1.0.2-RELEASE.zip</a> <br> MD5:1d139a712614487c13b47315c878dddf</td>
+    <td><a href="">OpenRTM-aist-Python-1.0.2-RELEASE.zip</a>(No corresponding page available.) <br> MD5:1d139a712614487c13b47315c878dddf</td>
     <td>12/02/20</td>
   </tr>
 </table>
@@ -65,9 +65,9 @@ No English version available.
 Vine Linux、Fedora、Ubuntu、Debian の各ディストリビューション用のパッケージを www.openrtm.org 上のリポジトリサーバーにて配布しています。
 詳細は、以下のドキュメントを参照してください。
 
-- [Vine Linux へのインストール](/ja/node/1187)
-- [Fedora へのインストール](/ja/node/1186)
-- [Ubuntu/Debian へのインストール](/ja/node/1182)
+- [Vine Linux へのインストール]({{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/install_vine_python_1_1)
+- [Fedora へのインストール]({{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/install_fedora_python_1_1)
+- [Ubuntu/Debian へのインストール]({{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/install_ubuntu_python_1_1)
 
 
 <table class="table-alt">
@@ -103,7 +103,7 @@ Vine Linux、Fedora、Ubuntu、Debian の各ディストリビューション用
 &aname(note);
 ## リリースノート: 1.0.2-RELEASE
 
-- [OpenRTM-aist-Python-1.0.2-RELEASE.tar.gz](http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.2/OpenRTM-aist-Python-1.0.2-RELEASE.tar.gz) -- 2012.02.20リリース
+- [OpenRTM-aist-Python-1.0.2-RELEASE.tar.gz]()(No corresponding page available.) -- 2012.02.20リリース
   - Python 2.7 での SystemLogger の問題修正
   - 動作条件
   - サポートする Python バージョン

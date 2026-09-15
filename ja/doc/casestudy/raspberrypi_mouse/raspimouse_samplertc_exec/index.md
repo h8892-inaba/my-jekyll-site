@@ -1,6 +1,6 @@
 ---
 layout: page
-title: サンプルの RTシステムの実行
+title: サンプルの rtシステムの実行
 ---
 
 <!-- Title: サンプルの RTシステムの実行 -->
@@ -26,10 +26,10 @@ DirectInputRTC のアウトポートからの出力(TimedLongSeq型)を TimedVel
 #### ネームサーバー、RTシステムエディタの起動
 ##### Windows
 まず最初に Windows でネームサーバー、RTシステムエディタを起動してください。
-詳しい手順は [このページ](/ja/node/794) を参考にしてください。
+詳しい手順は [このページ]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/test_windows_1_1) を参考にしてください。
 
 ##### Raspbian
-Raspbianの [一括インストールの項目](/ja/node/6015#toc4) でダウンロードしたファイルの中に rtc.conf があるので、rtc.conf の以下の ppp.pp.pp.ppp の部分を Windows側の IPアドレスに変更してください。
+Raspbianの [一括インストールの項目]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc4) でダウンロードしたファイルの中に rtc.conf があるので、rtc.conf の以下の ppp.pp.pp.ppp の部分を Windows側の IPアドレスに変更してください。
 
 ```
  corba.nameservers: ppp.pp.pp.ppp
@@ -46,7 +46,7 @@ Windows で IPアドレスを確認するには以下のコマンドを入力し
 
 ## RTC の起動
 ### Windows
-Windows側のRTCは [スクリプトファイルの項目](/ja/node/6016#toc0) でダウンロードしたファイルの中に start_component.bat というバッチファイルがあるのでそれを実行すれば以下の RTC が起動します。
+Windows側のRTCは [スクリプトファイルの項目]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_windows#toc0) でダウンロードしたファイルの中に start_component.bat というバッチファイルがあるのでそれを実行すれば以下の RTC が起動します。
 
 
 ```
@@ -58,11 +58,11 @@ Windows側のRTCは [スクリプトファイルの項目](/ja/node/6016#toc0) �
 
 
 ※64bit版 Windows、32bit版 OpenRTM-aist を対象にしています。32bit版 Windows の場合は start_component_32.bat、64bit版 OpenRTM-aist を利用する場合は start_component_64.bat を起動してください。
-※Python のインストールしたディレクトリーにパスが通っていない場合、TkJoyStick は起動できません。お手数ですが [このページ](/ja/node/1225#toc7) の手順を参考にして手動で起動してください。
+※Python のインストールしたディレクトリーにパスが通っていない場合、TkJoyStick は起動できません。お手数ですが [このページ]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/test_windows_python_1_1#toc7) の手順を参考にして手動で起動してください。
 
 ### Raspbian
 
-[一括インストールの項目](/ja/node/6015#toc4) でダウンロードしたフォルダーの中の start_rtc.sh を実行することで起動できます。
+[一括インストールの項目]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc4) でダウンロードしたフォルダーの中の start_rtc.sh を実行することで起動できます。
 
 ```
  cd RaspberryPiMouseRTSystem_script_Raspbian
@@ -79,7 +79,7 @@ Windows側のRTCは [スクリプトファイルの項目](/ja/node/6016#toc0) �
 ```
 
 ## RTシステムの復元、開始
-Windows側で [スクリプトファイルの項目](/ja/node/6016#toc0) でダウンロードしたファイルのSimpleControlRasPiMouse フォルダー内の SimpleControlRasPiMouse_resurrect.bat を実行してください。
+Windows側で [スクリプトファイルの項目]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_windows#toc0) でダウンロードしたファイルのSimpleControlRasPiMouse フォルダー内の SimpleControlRasPiMouse_resurrect.bat を実行してください。
 これでデータポートの接続、コンフィギュレーションパラメーターの設定などが行われます。
 次に SimpleControlRasPiMouse_activate.bat を実行すると RTC をアクティブ化します。
 SimpleControlRasPiMouseはGUI からラズパイマウスを操作する RTシステムです。
@@ -127,7 +127,7 @@ SimpleControlRasPiMouse 以外のサンプルも****_resurrect.bat で RTシス�
 ### JoystickControlRasPiMouse
 このサンプルは OpenRTM-aist-Python のサンプルコンポーネント TkJoyStick で傾けた方角にラズパイマウスを操作するRTシステムです。
 このサンプルの動作には USB出力9軸 IMUセンサモジュールを Raspberry Pi に接続しておく必要があります。
-[センサのキャリブレーション](/ja/node/6015#toc3) はラズパイマウスに装着した状態で行ってください。
+[センサのキャリブレーション]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc3) はラズパイマウスに装着した状態で行ってください。
 
 <div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/JoystickControlRasPiMouse/JoystickControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/JoystickControlRasPiMouse/JoystickControlRasPiMouse.png" width="70%;"></a></div>
 

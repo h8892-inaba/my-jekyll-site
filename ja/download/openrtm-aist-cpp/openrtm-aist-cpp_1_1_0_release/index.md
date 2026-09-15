@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-1.1.0-RELEASE
+title: openrtm-aist-1.1.0-release
 ---
 
 <!-- Title: 1.1.0-RELEASE -->
@@ -206,11 +206,11 @@ Visual C++ 2010 Express版では(デフォルトでは)64bitバイナリのビ�
 ```
 
 
-ダウンロード方法・インストール方法については、[こちら(C++)](/ja/node/1001)をご覧くだい。
+ダウンロード方法・インストール方法については、[こちら(C++)]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_ubuntu_1_1)をご覧くだい。
 
 
 ### ソースからのビルド
-- [ソースからのビルド](/ja/node/788)
+- [ソースからのビルド]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/build_source_linux_1_1)
 
 なお、1.1から上記配布ソースからのUbuntu, Debian 用debパッケージ、Fedora, Vine用 rpmパッケージの作成が正式にサポートされました。
 以下の手順でパッケージを作成することができます。パッケージ作成に当たっては、以下のインストールスクリプトを利用して必要なパッケージを予めインストールしておいてください。
@@ -273,22 +273,22 @@ Visual C++ 2010 Express版では(デフォルトでは)64bitバイナリのビ�
   </tr>
   <tr>
     <td>Eclipse3.4.2+RTSE+RTCB<br>Windows用全部入り</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/tools/1.1.0/eclipse342_rtmtools110-rc3_win32_ja.zip">eclipse342_rtmtools110-rc3_win32_ja.zip</a><br>MD5:d79780ecb24afee725ca2d9a858a3629</td>
+    <td><a href="">eclipse342_rtmtools110-rc3_win32_ja.zip</a>（リンク切れです）<br>MD5:d79780ecb24afee725ca2d9a858a3629</td>
     <td>2012.05.24</td>
   </tr>
   <tr>
     <td>Eclipse3.4.2+RTSE+RTCB<br>Linux用全部入り</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/tools/1.1.0/eclipse342_rtmtools110-rc3_linux_ja.tar.gz">eclipse342_rtmtools110-rc3_linux_ja.tar.gz</a><br>MD5:f1eee7758b81a99c417d0cc26c9af118</td>
+    <td><a href="">eclipse342_rtmtools110-rc3_linux_ja.tar.gz</a>（リンク切れです）<br>MD5:f1eee7758b81a99c417d0cc26c9af118</td>
     <td>2012.05.24</td>
   </tr>
   <tr>
     <td>Eclipse3.4.2+RTSE+RTCB<br>MacOSX用全部入り</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/tools/1.1.0/eclipse342_rtmtools110-rc3_macosx_ja.tar.gz">eclipse342_rtmtools110-rc3_macosx_ja.tar.gz</a><br>MD5:37b28a1454ab95290d0d7431cede52ef</td>
+    <td><a href="">eclipse342_rtmtools110-rc3_macosx_ja.tar.gz</a>（リンク切れです）<br>MD5:37b28a1454ab95290d0d7431cede52ef</td>
     <td>2012.05.24</td>
   </tr>
   <tr>
     <td>Eclipse3.4.2+RTSE+RTCB<br>64bit版Linux用全部入り</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/tools/1.1.0/eclipse342_rtmtools110-rc3_x86_64_ja.tar.gz">eclipse342_rtmtools110-rc3_x86_64_ja.tar.gz</a><br>MD5:418643f102e78845d29220b778a87477</td>
+    <td><a href="">eclipse342_rtmtools110-rc3_x86_64_ja.tar.gz</a>（リンク切れです）<br>MD5:418643f102e78845d29220b778a87477</td>
     <td>2012.05.24</td>
   </tr>
 </table>

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Other
+title: other
 ---
 
 <!-- Title: その他 -->

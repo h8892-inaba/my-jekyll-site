@@ -1,6 +1,6 @@
 ---
 layout: page
-title: PiRT-UnitによるXBeeモジュールの利用
+title: pirt-unitによるxbeeモジュールの利用
 ---
 
 <!-- Title: PiRT-UnitによるXBeeモジュールの利用 -->

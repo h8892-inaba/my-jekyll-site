@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist(Python版) 1.1系のインストール
+title: openrtm-aist(python版) 1.1系のインストール
 ---
 
 ここでは OpenRTM-aist (Python) の Windows へのインストール方法を説明します。 ※以降の説明は便宜上 OpenRTM-aist-1.0.0 について書かれています。

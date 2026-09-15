@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "RTC Development Process"
+title: "rtc development process"
 ---
 
 <!-- Title: RTC Development Process -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Raspberry Pi の初期設定
+title: raspberry pi の初期設定
 ---
 
 <!-- Title: Raspberry Pi の初期設定 -->

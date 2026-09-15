@@ -1,6 +1,6 @@
 ---
 layout: page
-title: System Settings for PiRT-Unit
+title: system settings for pirt-unit
 ---
 
 <!-- Title: PiRT-Unitのためのシステム設定 -->
@@ -64,7 +64,7 @@ rpi.sh kobuki --type kobuki
 ## Changing System Configuration Files
 
 The method for loading the spi and i2c device modules changed from kernel 3.18. It appears that Raspbian, the OS for Raspberry Pi, applies to this from the 2015 version onward, but check the kernel version to determine this.<br>
-To use spi and i2c, enable them with raspi-config. See the [Initial Settings for Raspberry Pi](http://openrtm.org/openrtm/ja/node/266/) page.
+To use spi and i2c, enable them with raspi-config. See the [Initial Settings for Raspberry Pi]({{ site.baseurl }}/en/doc/installation/other/raspberrypi_casestudy/raspi_init_setting) page.
 
 For versions older than this, configure the following files.
 

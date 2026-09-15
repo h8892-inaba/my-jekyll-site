@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Log Collection with Fluent Logger"
+title: "log collection with fluent logger"
 ---
 
 <!-- Title: Fluent Loggerによるログ収集 -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ROBOMECH2019講習会
+title: robomech2019講習会
 ---
 
 <div align="center"><img src="robomech2019_title.png" width="60%; margin:10px;" align="center"></div>
@@ -67,15 +67,15 @@ title: ROBOMECH2019講習会
   </tr>
   <tr>
     <td>13:00 -14:30</td>
-    <td>第2部：RTコンポーネントの作成入門 <br> - 担当：宮本 信彦(産総研) <br> - 概要：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="/ja/node/6550">チュートリアル(第2部、Windows)</a> <br> <a href="/ja/node/6551">チュートリアル(第2部、Ubuntu)</a> <br>**講義資料**:<a href="./190605-02.pdf">190605-02.pdf</a></td>
+    <td>第2部：RTコンポーネントの作成入門 <br> - 担当：宮本 信彦(産総研) <br> - 概要：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2">チュートリアル(第2部、Windows)</a> <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2">チュートリアル(第2部、Ubuntu)</a> <br>**講義資料**:<a href="./190605-02.pdf">190605-02.pdf</a></td>
   </tr>
   <tr>
     <td>14:30 -15:30</td>
-    <td>第3部：RTシステム構築実習 <br> - 担当：宮本 信彦(産総研) <br> - 概要：OpenRTM-aistを利用して移動ロボット実機を制御するプログラムを作成します。  <br> <a href="/ja/node/6552">チュートリアル(第3部)</a> <br>**講義資料**:<a href="./190605-03.pdf">190605-03.pdf</a></td>
+    <td>第3部：RTシステム構築実習 <br> - 担当：宮本 信彦(産総研) <br> - 概要：OpenRTM-aistを利用して移動ロボット実機を制御するプログラムを作成します。  <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_part3">チュートリアル(第3部)</a> <br>**講義資料**:<a href="./190605-03.pdf">190605-03.pdf</a></td>
   </tr>
   <tr>
     <td>15:30 -17:00</td>
-    <td>第4部：RTミドルウェア応用実習 <br> - 担当：宮本 信彦(産総研) <br> - 概要：ポータブル版LibreOffice用RTCの利用方法について解説を行うとともに、表計算ソフトによるRTCのテストの実行についての実習を行います。 <br> <a href="/ja/node/6586">チュートリアル(第4部)</a> <br>**講義資料**:<a href="./190605-04.pdf">190605-04.pdf</a></td>
+    <td>第4部：RTミドルウェア応用実習 <br> - 担当：宮本 信彦(産総研) <br> - 概要：ポータブル版LibreOffice用RTCの利用方法について解説を行うとともに、表計算ソフトによるRTCのテストの実行についての実習を行います。 <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_part4">チュートリアル(第4部)</a> <br>**講義資料**:<a href="./190605-04.pdf">190605-04.pdf</a></td>
   </tr>
 </table>
 
@@ -222,7 +222,7 @@ RaspberryPiを利用しているので、実機上で開発したり、容易に
 
 <div align="center"><a href="s_DSC00444.JPG"><img src="s_DSC00444.JPG" width="50%; margin:10px;"></a></div>
 
-- [Raspberry Pi Mouse 活用事例](http://openrtm.org/openrtm/ja/content/raspberry_pi_mouse)
+- [Raspberry Pi Mouse 活用事例]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse)
 
 ### LEGO Mindstorms EV3
 
@@ -231,7 +231,7 @@ LEGO Mindstorms EV3 は LEGO の Mindstorms シリーズの新しいパッケー
 
 <div align="center"><a href="s_DSC00443.JPG"><img src="s_DSC00443.JPG" width="50%; margin:10px;"></a></div>
 
-- [LEGO Mindstorms EV3 活用事例](/ja/casestudy/lego_mindstorm_ev3)
+- [LEGO Mindstorms EV3 活用事例]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm)
 
 
 <!-- &aname(entry); -->

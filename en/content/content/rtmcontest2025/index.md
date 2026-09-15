@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアコンテスト2025
+title: rtミドルウェアコンテスト2025
 ---
 
 No English version available.
@@ -9,7 +9,7 @@ No English version available.
 
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>
 <a href="#program"><img src="../images/contest2013_program.png" width="10%;"></a>
-<a href="/contests/2025"><img src="../images/contest2013_worklist.png" width="10%;"></a>
+<a href="/contests/2025"><img src="../images/contest2013_worklist.png" width="10%;"></a>(No corresponding English project page available.)(No corresponding English project page available.)
 <a href="#evaluation"><img src="../images/contest2013_evaluation.png" width="10%;"></a></div>
 <div align="center"><a href="#award"><img src="../images/contest2013_award.png" width="10%;"></a>
 <a href="#pastwork"><img src="../images/contest2013_pastworks.png" width="10%;"></a>
@@ -99,28 +99,28 @@ RTミドルウエアは、ロボットを構成する様々な要素をモジュ
   <tr>
     <td>si2025-0026</td>
     <td>10:40-10:55</td>
-    <td><a href="/ja/project/contest2025-si2025-0026">利用者の肌の情報と気象情報を用いたAI化粧品選出システムの開発 </a></td>
+    <td><a href="/ja/project/contest2025-si2025-0026">利用者の肌の情報と気象情報を用いたAI化粧品選出システムの開発 </a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>山田　留里花 、烏田　美歌 、鈴木　悠花 <br>（芝浦工業大学附属高等学校 ） <br>佐々木　毅 （芝浦工業大学 ）<br> 山岡　佳代 、米川　大地 <br> （芝浦工業大学附属中学高等学校 ）</td>
     <td>フレッシャーズ賞<br> チェンジビジョン賞</td>
   </tr>
   <tr>
     <td>si2025-0048</td>
     <td>10:55-11:10</td>
-    <td><a href="/ja/project/contest2025-si2025-0048">大型小売店向け自動走行案内ロボ『スマートカート』の開発</a></td>
+    <td><a href="/ja/project/contest2025-si2025-0048">大型小売店向け自動走行案内ロボ『スマートカート』の開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>平松　蓮 、河合　航希 、森尾　太一 <br> （芝浦工業大学附属中学校） <br> 山岡　佳代、米川　大地<br> （芝浦工業大学附属中学高等学校）<br> 佐々木　毅 （芝浦工業大学 ）</td>
     <td>ベストサポート賞<br> ロボットサービスイニシアチブ賞<br> 日本ロボット工業会賞</td>
   </tr>
   <tr>
     <td>si2025-1059</td>
     <td>11:10-11:25</td>
-    <td><a href="/ja/project/contest2025-si2025-1059">RTミドルウェア対応組み込み機器開発をサポートするためツール「RTno2」の開発</a></td>
+    <td><a href="/ja/project/contest2025-si2025-1059">RTミドルウェア対応組み込み機器開発をサポートするためツール「RTno2」の開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>菅　佑樹 、尾形　哲也 （早稲田大学 ）</td>
     <td>RTM技術賞<br>帰ってきた「世界一小さなRTコンポーネント賞」</td>
   </tr>
   <tr>
     <td>si2025-1336</td>
     <td>11:25-11:40</td>
-    <td><a href="/ja/project/contest2025-si2025-1336">コンテナ技術を活用したソフトウェアプロファイルに基づくソフトウェアモジュール生成・運用に関する研究</a></td>
+    <td><a href="/ja/project/contest2025-si2025-1336">コンテナ技術を活用したソフトウェアプロファイルに基づくソフトウェアモジュール生成・運用に関する研究</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
     <td>斎藤　雅弘 、大原　賢一 （名城大学 ）</td>
     <td><span style="color:red;">計測自動制御学会学会RTミドルウエア賞（最優秀賞）</span>;<br>グローバルアシスト賞<br>システムエンジニアンリング賞<br> SUGAR SWEET ROBOTICS賞</td>
   </tr>
@@ -151,7 +151,7 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 
 応募作品を実際に動かしてみるなどして試していただき、どのような環境で動作したか/しなかったか、バグやその修正のためのパッチ情報、作品に対するコメントや感想を作品のプロジェクトページに書き込み、作者にフィードバックすることが出来ます。コメントの受付はGitHubのissue等を使う事もできます。その場合は、プロジェクトページにその旨を記載してください。
 これらのフィードバックを元に応募者が改良を加え、SI2025でのプレゼンテーションまでに、より良い作品になるようご協力ください。
-- [コメントの書き方ガイド](/node/4569)
+- [コメントの書き方ガイド]({{ site.baseurl }}/en/content/content/rtmcontest_commentguide)
 
 - コンテスト作品一覧へ（ただいま準備中です）
 <!-- - [[コンテスト作品一覧へ:/contests/2021]] -->
@@ -234,59 +234,59 @@ SI2025の申込方法、申込および原稿〆切および具体的な開催�
 &aname(pastwork){};
 ## 過去のコンテスト情報 
 
-- [RTミドルウエアコンテスト2007](http://www.openrtm.org/rt/RTMcontest/2007/)(no_link)
-<!-- （[応募作品](http://www.openrtm.org/rt/RTMcontest/2007/entry_public.html)）-->
+- [RTミドルウエアコンテスト2007]({{ site.baseurl }}/en/content/content/rtmcontest2007)(no_link)
+<!-- （[応募作品]({{ site.baseurl }}/en/content/content/rtmcontest2007/entry_public)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2008](http://www.openrtm.org/rt/RTMcontest/2008/)(no_link)
-<!--（[応募作品](http://www.openrtm.org/rt/RTMcontest/2008/entry.html)）-->
+- [RTミドルウエアコンテスト2008]({{ site.baseurl }}/en/content/content/rtmcontest2008)(no_link)
+<!--（[応募作品]({{ site.baseurl }}/en/content/content/rtmcontest2008/entry_public)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2009](http://www.openrtm.org/rt/RTMcontest/2009/)(no_link)
+- [RTミドルウエアコンテスト2009]({{ site.baseurl }}/en/content/content/rtmcontest2009)(no_link)
 <!--（[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2009?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2010](http://www.openrtm.org/rt/RTMcontest/2010/)(no_link)
+- [RTミドルウエアコンテスト2010]({{ site.baseurl }}/en/content/content/rtmcontest2010)(no_link)
 <!-- （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2010?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2011](http://www.openrtm.org/rt/RTMcontest/2011/) (no_link)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2011)）-->
+- [RTミドルウエアコンテスト2011]({{ site.baseurl }}/en/content/content/rtmcontest2011) (no_link)
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2012](http://www.openrtm.org/openrtm/ja/node/5079) (no_link)
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)）-->
+- [RTミドルウエアコンテスト2012]({{ site.baseurl }}/en/content/content/rtmcontest2012) (no_link)
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2013](../rtmcontest2013)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2013)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2013)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2014](../rtmcontest2014)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2014)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2014)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2015](../rtmcontest2015)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2015)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2015)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2016](../rtmcontest2016)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2016)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2016)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2017](../rtmcontest2017)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2017)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2017)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2018](../rtmcontest2018)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2018)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2018)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2019](../rtmcontest2019)
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2019)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2019)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2020](../rtmcontest2020)       
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2020)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2020)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2022](../rtmcontest2021)        
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2022)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2022)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2023](../rtmcontest2023)      
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2023)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2023)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2024](../rtmcontest2024)      
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2024)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2024)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2025](../rtmcontest2025)      
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2025)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2025)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 
 <!-- &aname(registration){}; -->
@@ -296,8 +296,8 @@ SI2025の申込方法、申込および原稿〆切および具体的な開催�
 <!-- &color(red){事務局よりID発行後より，作品登録が可能になります．連絡があるまで，しばらくお待ちください．};~ -->
 応募作品は期日までにプロジェクトページに登録する必要があります。
 
-- [プロジェクトページ](http://openrtm.org/openrtm/ja/project/projects_ja)
-  - [プロジェクト作成マニュアル](http://openrtm.org/openrtm/ja/node/1554)
+- [プロジェクトページ]()(No corresponding page available.)
+  - [プロジェクト作成マニュアル](http://openrtm.org/openrtm/ja/node/1554)(No corresponding English project page (How to Register) available.)(No corresponding English project page (How to Register) available.)
 <!-- -- [[新規プロジェクトの作成:http://openrtm.org/openrtm/ja/node/1553]] -->
 
 上記のプロジェクト作成マニュアルに則り、作品を登録してください。

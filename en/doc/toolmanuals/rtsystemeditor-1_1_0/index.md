@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTSystemEditor-1.1.0
+title: rtsystemeditor-1.1.0
 ---
 -------jp page!!-------
 

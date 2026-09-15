@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアコンテスト2023奨励賞一覧
+title: rtミドルウェアコンテスト2023奨励賞一覧
 ---
 
 #contents(3)

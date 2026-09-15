@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTコンポーネント作成(OpenCV編 CameraImage型の使用)
+title: rtコンポーネント作成(opencv編 cameraimage型の使用)
 ---
 
 <!-- Title: RTコンポーネント作成(OpenCV編 CameraImage型の使用) -->
@@ -122,7 +122,7 @@ flipMode は、反転したい方向に応じて下記のように指定して�
 
 - RTSystemEditor 1.0
 - RTCBuilder 1.0
-  - [Eclipse3.4.2+RTSE(1.0.0-RELEASE)+RTCB(1.0.0-RELEASE)Windows用全部入り](http://www.openrtm.org/pub/OpenRTM-aist/tools/1.0.0/eclipse342_rtmtools100release_win32_ja.zip)
+  - [Eclipse3.4.2+RTSE(1.0.0-RELEASE)+RTCB(1.0.0-RELEASE)Windows用全部入り]()（リンク切れです）
 
 - [解凍ツール(Lhaplus)](http://www.forest.impress.co.jp/lib/arc/archive/archiver/lhaplus.html)
 
@@ -339,7 +339,7 @@ RTCBuilder や rtc-template で生成した VC用のプロジェクトでは、V
 もしくは、下記より vsprops ファイルをダウンロードし、Flip フォルダーに保存してください。
 
 <br>
-[user_config.vsprops](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2010/user_config.vsprops)
+[user_config.vsprops]()（リンク切れです）
 
 ※　既に Flip フォルダーには user_config.vsprops ファイルが存在していますが、上書きして構いません。
 
@@ -933,6 +933,6 @@ Flip コンポーネントのコンフィギュレーションパラメーター
 拡張子を"zip_"としてますので、"zip"にリネームしてから解凍してください。
 
 
-- [ビルド済みパッケージ](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2010/Flip.zip_)
+- [ビルド済みパッケージ]()（リンク切れです）
 
 

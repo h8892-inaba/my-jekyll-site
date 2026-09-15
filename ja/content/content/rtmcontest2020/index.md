@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアコンテスト2020
+title: rtミドルウェアコンテスト2020
 ---
 
 <div align="left"><img src="contest2020_title.png" width="80%;" align="center"></div>
@@ -13,7 +13,7 @@ RTMコンテスト2020 受賞者が決定しました！！詳細は[こちら](
 
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>
 <a href="#program"><img src="../images/contest2013_program.png" width="10%;"></a>
-<a href="/contests/2020"><img src="../images/contest2013_worklist.png" width="10%;"></a>
+<a href="/contests/2020"><img src="../images/contest2013_worklist.png" width="10%;"></a>（Projectページはリンク切れです）
 <a href="#evaluation"><img src="../images/contest2013_evaluation.png" width="10%;"></a></div>
 <div align="center"><a href="#award"><img src="../images/contest2013_award.png" width="10%;"></a>
 <a href="#pastwork"><img src="../images/contest2013_pastworks.png" width="10%;"></a>
@@ -100,35 +100,35 @@ RTミドルウエアは、ロボットを構成する様々な要素をモジュ
   <tr>
     <td>1S1-01</td>
     <td>14:15-14:30</td>
-    <td><a href="/ja/node/7086">RTMとROSを用いた物体操作システム</a> <br>&nbsp;・<a href="/ja/node/7086">プロジェクトページ</a> <br>&nbsp;・<a href="https://github.com/Kazufumi-Kobayashi/OpenRTM_ROS_interoperability_system">github</a> (コメントはissueへ)</td>
+    <td><a href="/ja/node/7086">RTMとROSを用いた物体操作システム</a>（Projectページはリンク切れです） <br>&nbsp;・<a href="/ja/node/7086">プロジェクトページ</a>（Projectページはリンク切れです） <br>&nbsp;・<a href="https://github.com/Kazufumi-Kobayashi/OpenRTM_ROS_interoperability_system">github</a> (コメントはissueへ)</td>
     <td>名城大学　小林 和史、冨川 竜誠、四位 茉祐果</td>
     <td>RT技術賞​ <br> 便利ツール賞, ダイナミクセル トライアル賞​</td>
   </tr>
   <tr>
     <td>1S1-02</td>
     <td>14:30-14:45</td>
-    <td><a href="/ja/node/7071">シリアルリンクロボットアームを直感的に制御可能なRTC群の開発</a> <br>&nbsp;・<a href="/ja/node/7071">プロジェクトページ</a> <br>&nbsp;・<a href="https://github.com/soutaFeb/RobotArmControl_RTC.git/">github</a> (コメントはissueへ)</td>
+    <td><a href="/ja/node/7071">シリアルリンクロボットアームを直感的に制御可能なRTC群の開発</a>（Projectページはリンク切れです） <br>&nbsp;・<a href="/ja/node/7071">プロジェクトページ</a>（Projectページはリンク切れです） <br>&nbsp;・<a href="https://github.com/soutaFeb/RobotArmControl_RTC.git/">github</a> (コメントはissueへ)</td>
     <td>東京都立大学　手塚 蒼太</td>
     <td>サマーキャンプ賞 <br> ベストサポート賞​ <br> パナソニックアドバンスト​テクノロジー 株式会社賞, チェンジビジョン賞​​, 日本ロボット工業会賞 , ダイナミクセル トライアル賞</td>
   </tr>
   <tr>
     <td>1S1-03</td>
     <td>14:45-15:00</td>
-    <td><a href="/ja/node/7085">受付など通過歩行時の人数推定RTCの開発</a> <br>&nbsp;・<a href="/ja/node/7085">プロジェクトページ</a> <br>&nbsp;・<a href="https://github.com/TajimaNina/Reception_trajectory_estimation_system">github</a> (コメントはissueへ)</td>
+    <td><a href="/ja/node/7085">受付など通過歩行時の人数推定RTCの開発</a>（Projectページはリンク切れです） <br>&nbsp;・<a href="/ja/node/7085">プロジェクトページ</a>（Projectページはリンク切れです） <br>&nbsp;・<a href="https://github.com/TajimaNina/Reception_trajectory_estimation_system">github</a> (コメントはissueへ)</td>
     <td>芝浦工業大学　田島 仁奈、加藤 宏一朗、黒川 大悟、松日楽 信人、東京女子大学 天野 可奈子、加藤 由花</td>
     <td>RTミドルウェアを普及しま賞 <br> 女流RTコンポーネント賞​, ダイナミクセル トライアル賞​</td>
   </tr>
   <tr>
     <td>1S1-04</td>
     <td>15:00-15:15</td>
-    <td><a href="/ja/node/7083">人との共存を目指した遠隔操作ロボットの音声インタフェースRTCの開発</a> <br>&nbsp;・<a href="/ja/node/7083">プロジェクトページ</a> <br>&nbsp;・<a href="https://github.com/IidaYuki0/Voicing_RTC_for_teleoperation">github</a> (コメントはissueへ)</td>
+    <td><a href="/ja/node/7083">人との共存を目指した遠隔操作ロボットの音声インタフェースRTCの開発</a>（Projectページはリンク切れです） <br>&nbsp;・<a href="/ja/node/7083">プロジェクトページ</a>（Projectページはリンク切れです） <br>&nbsp;・<a href="https://github.com/IidaYuki0/Voicing_RTC_for_teleoperation">github</a> (コメントはissueへ)</td>
     <td>芝浦工業大学　飯田 悠貴、三木 理、西岡 拓哉、松日楽 信人</td>
     <td>ロボットサービスイニシアチブ賞 <br>  ホンダ・​フロンティアロボティクス賞 , ダイナミクセル トライアル賞​</td>
   </tr>
   <tr>
     <td>1S1-05</td>
     <td>15:15-15:30</td>
-    <td><a href="/ja/node/7084">OpenRTM-aist用MQTT通信モジュール群とMosquitto MQTT brokerの組み合わせによるIoTシステムの構築方法</a> <br>&nbsp;・<a href="/ja/node/7084">プロジェクトページ</a> <br>&nbsp;・ <a href="https://github.com/dyubicuoa/OpenRTM_aist_paho_mqtt_interface">github</a> (コメントはissueへ)</td>
+    <td><a href="/ja/node/7084">OpenRTM-aist用MQTT通信モジュール群とMosquitto MQTT brokerの組み合わせによるIoTシステムの構築方法</a>（Projectページはリンク切れです） <br>&nbsp;・<a href="/ja/node/7084">プロジェクトページ</a>（Projectページはリンク切れです） <br>&nbsp;・ <a href="https://github.com/dyubicuoa/OpenRTM_aist_paho_mqtt_interface">github</a> (コメントはissueへ)</td>
     <td>会津大学　吉野 大志、渡部 有隆、矢口 勇一、中村 啓太、成瀬 継太郎</td>
     <td>**<span style="color:red;">計測自動制御学会学会​RTミドルウェア賞</span>;** <br> アドイン賞​ <br>  グローバルアシスト賞 <br>  システムズエンジニアリング賞 , ダイナミクセル トライアル賞​​</td>
   </tr>
@@ -160,7 +160,7 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 
 応募作品を実際に動かしてみるなどして試していただき、どのような環境で動作したか/しなかったか、バグやその修正のためのパッチ情報、作品に対するコメントや感想を作品のプロジェクトページに書き込み、作者にフィードバックすることが出来ます。
 これらのフィードバックを元に応募者が改良を加え、SI2020でのプレゼンテーションまでに、より良い作品になるようご協力ください。
-- [コメントの書き方ガイド](/node/4569)
+- [コメントの書き方ガイド]({{ site.baseurl }}/ja/content/content/rtmcontest_commentguide)
 <!--  -->
 - コンテスト作品一覧へ（ただいま準備中です）
 <!-- - [[コンテスト作品一覧へ:/contests/2020]] -->
@@ -242,44 +242,44 @@ SI2020の申込方法、申込および原稿〆切および具体的な開催�
 &aname(pastwork){};
 ## 過去のコンテスト情報 
 
-- [RTミドルウエアコンテスト2007](http://www.openrtm.org/rt/RTMcontest/2007/)(no_link)
-<!-- （[応募作品](http://www.openrtm.org/rt/RTMcontest/2007/entry_public.html)）-->
+- [RTミドルウエアコンテスト2007]({{ site.baseurl }}/ja/content/content/rtmcontest2007)(no_link)
+<!-- （[応募作品]({{ site.baseurl }}/ja/content/content/rtmcontest2007/entry_public)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2008](http://www.openrtm.org/rt/RTMcontest/2008/)(no_link)
-<!--（[応募作品](http://www.openrtm.org/rt/RTMcontest/2008/entry.html)）-->
+- [RTミドルウエアコンテスト2008]({{ site.baseurl }}/ja/content/content/rtmcontest2008)(no_link)
+<!--（[応募作品]({{ site.baseurl }}/ja/content/content/rtmcontest2008/entry_public)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2009](http://www.openrtm.org/rt/RTMcontest/2009/)(no_link)
+- [RTミドルウエアコンテスト2009]({{ site.baseurl }}/ja/content/content/rtmcontest2009)(no_link)
 <!--（[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2009?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2010](http://www.openrtm.org/rt/RTMcontest/2010/)(no_link)
+- [RTミドルウエアコンテスト2010]({{ site.baseurl }}/ja/content/content/rtmcontest2010)(no_link)
 <!-- （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2010?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2011](http://www.openrtm.org/rt/RTMcontest/2011/) (no_link)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2011)）-->
+- [RTミドルウエアコンテスト2011]({{ site.baseurl }}/ja/content/content/rtmcontest2011) (no_link)
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2011)（Projectページはリンク切れです））-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2012](http://www.openrtm.org/openrtm/ja/node/5079) (no_link)
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)）-->
+- [RTミドルウエアコンテスト2012]({{ site.baseurl }}/ja/content/content/rtmcontest2012) (no_link)
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)（Projectページはリンク切れです））-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2013](../rtmcontest2013)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2013)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2013)（Projectページはリンク切れです））-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2014](../rtmcontest2014)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2014)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2014)（Projectページはリンク切れです））-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2015](../rtmcontest2015)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2015)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2015)（Projectページはリンク切れです））-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2016](../rtmcontest2016)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2016)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2016)（Projectページはリンク切れです））-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2017](../rtmcontest2017)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2017)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2017)（Projectページはリンク切れです））-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2018](../rtmcontest2018)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2018)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2018)（Projectページはリンク切れです））-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2019](../rtmcontest2019) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2019)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2019)（Projectページはリンク切れです））-->
   - （[応募作品]()）(no_link)
 
 <!-- &aname(registration){}; -->
@@ -289,9 +289,9 @@ SI2020の申込方法、申込および原稿〆切および具体的な開催�
 <span style="color:red;">事務局よりID発行後より，作品登録が可能になります．連絡があるまで，しばらくお待ちください．</span>;~
 応募作品は期日までにプロジェクトページに登録する必要があります。
 
-- [プロジェクトページ](http://openrtm.org/openrtm/ja/project/projects_ja)
-  - [プロジェクト作成マニュアル](http://openrtm.org/openrtm/ja/node/1554)
-  - [新規プロジェクトの作成](http://openrtm.org/openrtm/ja/node/1553)
+- [プロジェクトページ]()（「プロジェクトページとは」のページはリンク切れです）
+  - [プロジェクト作成マニュアル](http://openrtm.org/openrtm/ja/node/1554)（Projectページ（登録方法）はリンク切れです）
+  - [新規プロジェクトの作成](http://openrtm.org/openrtm/ja/node/1553)（Projectページ（作成方法）はリンク切れです）
 
 上記のプロジェクト作成マニュアルに則り、作品を登録してください。
 RTミドルウエアコンテストでは、プロジェクト登録されたコンポーネントなどがコンテスト応募作品であるかどうかを明確にするために以下のルールを取っております。下記ルールに従い作品を登録してください。
@@ -335,7 +335,7 @@ RTミドルウエアコンテスト事務局: rtm-contest<at>aist.go.jp
 <!-- &color(red){既に終了しました。}; -->
 エントリー希望者は、個別に連絡が取れるように、以下のフォームを使って事前登録して下さい（SI2020の講演申込も確認できた時点で正式登録となります）。また、重要な案内をお送りするための事前登録も兼ねてますので、**エントリを迷っている時は先にこちらだけ事前登録**してください）
 
-- 当webサイトにてユーザログインしないと入力フォームが表示されませんので、ユーザ登録がまだの方は当Webページのユーザ登録をお願いします。[ユーザ登録はこちら](http://openrtm.org/openrtm/ja/user/register)
+- 当webサイトにてユーザログインしないと入力フォームが表示されませんので、ユーザ登録がまだの方は当Webページのユーザ登録をお願いします。[ユーザ登録はこちら]()（リンク切れです）
 - 当Webサイトにログイン済みの方は<span style="color:red;">名前の欄にユーザ登録されたユーザ名が出ますが、必ず、氏名に書き換え</span>;てください。~
 <span style="color:red;">※お手数ですが、ログインしていただくと、登録フォームが表示されます</span>;
 - そのほか、入力フォームにしたがって性別、エントリー歴（該当する年にチェック。初めての方はチェックを入れないでください）、奨励賞受賞歴（あり/なし）も入力して下さい。[各種奨励賞](../rtmcontest2020-award)選考の参考とさせていただきます。

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creating RT Components (VC++ Edition)
+title: creating rt components (vc++ edition)
 ---
 
 <!-- Title: RTコンポーネント作成(VC++編) -->

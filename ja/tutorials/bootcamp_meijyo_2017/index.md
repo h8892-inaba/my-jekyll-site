@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェア強化月間 in 名城大学・RTミドルウェア講習会
+title: rtミドルウェア強化月間 in 名城大学・rtミドルウェア講習会
 ---
 
 <div align="center"><img src="bootcamp_meijo2014.jpg" width="75%;" align="center"></div>
@@ -74,12 +74,12 @@ RTミドルウェア強化月間として、名城大学において，RTミド�
 #### Visual Studio 
 
 <!-- - Visual Studio 2013推奨：[[こちらのページ:https://www.visualstudio.com/ja-jp/downloads/download-visual-studio-vs#DownloadFamilies_2]] から無償版をダウンロードできます。 -->
-- Visual Studio 2013推奨：[こちらのページ](/ja/content/openrtm-aist-c-112-release#vc2013_install) の手順で無償版をダウンロードできます。
+- Visual Studio 2013推奨：[こちらのページ]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#vc2013_install) の手順で無償版をダウンロードできます。
 <!-- -- 左のメニューから「Visual Studio 2013」→「Community 2013」のWebインストーラを選択。 -->
   - インストールには時間がかかりますので、事前にインストールしておいてください。
 
 - 1.1.2 からは一つのインストーラですべての言語とVisual Studioのバージョンに対応しいます。32bit/64bitのみ選択してください。（32bit推奨）
-  - [Windows用インストーラ(32bit)](/content/openrtm-aist-c-112-release#toc2)
+  - [Windows用インストーラ(32bit)]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#toc2)
 - 1.1.2 は インストールしているVisual Studioのバージョンをシステム環境変数で指定しますので、設定を確認して下さい。デフォルトはvc2013の設定になっています。
 <!-- -- [[Visual Studio のバージョン指定:/content/openrtm-aist-c-112-release#toc4]] -->
 - デフォルト設定のままインストールして下さい。

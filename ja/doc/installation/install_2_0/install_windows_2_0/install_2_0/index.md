@@ -112,7 +112,7 @@ The plugin configuration file:
 ### JDK8
 
 Javaで開発される場合に必要となります。下記ページの解説をご覧ください。
-    - [JDK8のインストール]({{ site.baseurl }}/ja/node/6911) 
+    - [JDK8のインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8) 
 
 
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Processing Use Cases"
+title: "processing use cases"
 ---
 
 #contents
@@ -276,7 +276,7 @@ Use either:
 
 You will also use **RobotController**, created in the following tutorial:
 
-* [Tutorial (Introduction to RT Component Development, Raspberry Pi Mouse, Windows)](/en/node/6550)
+* [Tutorial (Introduction to RT Component Development, Raspberry Pi Mouse, Windows)]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2)
 
 Start the **drawGraph** component created in Processing.
 

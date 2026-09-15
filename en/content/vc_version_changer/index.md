@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "How to use the system environment variable setting tool"
+title: "how to use the system environment variable setting tool"
 ---
 
 <!-- Title: How to use the system environment variable setting tool -->

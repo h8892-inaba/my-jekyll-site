@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Troubleshooting Failed Port Connections
+title: troubleshooting failed port connections
 ---
 
 <!-- ポートの接続に失敗した場合の対処方法 -->
@@ -91,7 +91,7 @@ In most cases, restarting OpenRTP resolves the problem.
 
 RTSystemEditor may become unresponsive, or it may eventually recover after some time while only one port changes color.
 
-In most cases, this is caused by [communication being blocked by a firewall or similar software](/en/node/7103#firewall).
+In most cases, this is caused by [communication being blocked by a firewall or similar software]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_connect_error#firewall).
 
 If that does not resolve the issue, restart the RTCs running on the Raspberry Pi or EV3.
 

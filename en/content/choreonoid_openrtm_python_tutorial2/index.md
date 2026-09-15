@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "OpenRTM Integration Plugin for Choreonoid, Python Version Tutorial (Quadruped Robot)"
+title: "openrtm integration plugin for choreonoid, python version tutorial (quadruped robot)"
 ---
 
 This page explains how to use RTCEditor items and ComponentList items, using the creation of a quadruped robot simulator as an example.

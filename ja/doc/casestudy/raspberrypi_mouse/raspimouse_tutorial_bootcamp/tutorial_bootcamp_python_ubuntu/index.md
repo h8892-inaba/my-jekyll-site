@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(Raspberry Pi Mouse、Python、Ubuntu、強化月間用)
+title: チュートリアル(raspberry pi mouse、python、ubuntu、強化月間用)
 ---
 
 <!-- Title: チュートリアル(Raspberry Pi Mouse、Python、Ubuntu、強化月間用) -->
@@ -866,8 +866,8 @@ Edge、Chrome、Firefox等のWEBブラウザで**192.168.11.1**のアドレス�
 
 <div align="center"><a href="tutorial_raspimouse2.png"><img src="tutorial_raspimouse2.png" width="60%;"></a></div>
 
-- [RaspberryPiMouseRTC](/ja/node/6015#toc0)
-- [RaspberryPiMouseController_DistanceSensor](/ja/node/6015#toc1)
+- [RaspberryPiMouseRTC]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0)
+- [RaspberryPiMouseController_DistanceSensor]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc1)
 
 RaspberryPiMouseRTC は名城大学のロボットシステムデザイン研究室で開発されているラズパイマウス制御用の RTコンポーネントです。
 

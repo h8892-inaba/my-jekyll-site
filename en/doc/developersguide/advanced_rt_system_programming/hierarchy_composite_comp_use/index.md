@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "How to Use Multilevel Composite Components"
+title: "how to use multilevel composite components"
 ---
 
 Coming soon

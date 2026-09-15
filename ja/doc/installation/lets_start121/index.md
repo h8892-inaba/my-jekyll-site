@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "OpenRTM-aistを10分で始めよう！(1.2系)"
+title: "openrtm-aistを10分で始めよう！(1.2系)"
 ---
 <!-- Title: OpenRTM-aistを10分で始めよう！ -->
 #contents
@@ -11,7 +11,7 @@ title: "OpenRTM-aistを10分で始めよう！(1.2系)"
 Pythonをインストールしていない場合は、OpenRTM-aistをインストールできません。
 OpenRTM-aistをインストールする前に、Pythonをインストールしてください。バージョンは、"3.7"、"3.6"、"2.7"に対応しています。
 
-Pythonのダウンロードは[OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl }}/ja/node/6877)をご覧ください。
+Pythonのダウンロードは[OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_1_release)をご覧ください。
 
 <!-- http://opensource.org/licenses/eclipse-1.0.php -->
 <!-- http://sourceforge.jp/projects/opensource/wiki/licenses%2FEclipse_Public_License(日本語訳) -->
@@ -31,7 +31,7 @@ Pythonのインストール先は、3.6または3.7の場合はインストー�
 ## OpenRTM-aistのインストール
 ここではWindows 10で64bit用インストーラーOpenRTM-aist-1.2.1-RELEASE_x86_64.msiを使ったインストール手順を紹介します。
 
-インストーラーのダウンロードは[OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl }}/ja/node/6877)をご覧ください。
+インストーラーのダウンロードは[OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_1_release)をご覧ください。
 
 **[インストール手順]**
 1. インストーラーを起動します。[WindowsによってPCが保護されました]の画面が表示されたら[詳細情報]をクリックして[実行]ボタンを表示させて、[実行]をクリックします。(この画面はWindowsのあるバージョン以降でMicrosoft Corp.に登録されていないアプリケーションのインストール時に表示される画面で、本ソフトウエアは登録をしていないため、この画面が表示されます。)
@@ -47,7 +47,7 @@ Pythonのインストール先は、3.6または3.7の場合はインストー�
 5. Visual Studioのバージョンを選択します。
   - C++版で使用するVisual Studioのバージョンをシステム環境変数に設定します。
   - インストールされている Visual Studioのバージョンを選択して[次へ]をクリックします。
-    - Visual Studioのダウンロードは[OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl }}/ja/node/6877)をご覧ください。
+    - Visual Studioのダウンロードは[OpenRTM-aist-1.2.1-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_1_release)をご覧ください。
     - Visual Studioのバージョンは、インストール終了後にツールのVCVerChangerで変更できます。[(VCVerChangerの使い方)]({{ site.baseurl }}/ja/content/vc_version_changer)
     - Python版、Java版では無関係ですのでデフォルトのまま[次へ]をクリックしてください。
 <div align="center"><a href="OpenRTM121-install004.png"><img src="OpenRTM121-install004.png" width="50%;"></a></div>
@@ -237,9 +237,9 @@ rtshellを利用することでコマンドラインからRTCのActivate、Deact
 ```
 ## 次は...
 下記リンク先をご覧ください。
-- **もっとサンプルを動かしてみる　&t;：　**[サンプルコンポーネント]({{ site.baseurl }}/ja/node/811)
-- **コンポーネントを作ってみる　　&t;：　**[ケーススタディー]({{ site.baseurl }}/ja/node/110)
-- **OpenRTMの基礎から学ぶ　　　&t;：　**[デベロッパーズガイド]({{ site.baseurl }}/ja/node/113)
-- **コミュニティーに参加する　　　&t;：　**[コミュニティー]({{ site.baseurl }}/ja/node/624)
-- **公開コンポーネントを見てみる　&t;：　**[プロジェクト]({{ site.baseurl }}/ja/node/123)
+- **もっとサンプルを動かしてみる　&t;：　**[サンプルコンポーネント]({{ site.baseurl }}/ja/doc/installation/sample_components)
+- **コンポーネントを作ってみる　　&t;：　**[ケーススタディー]({{ site.baseurl }}/ja/doc/casestudy)
+- **OpenRTMの基礎から学ぶ　　　&t;：　**[デベロッパーズガイド]({{ site.baseurl }}/ja/doc/developersguide)
+- **コミュニティーに参加する　　　&t;：　**[コミュニティー]({{ site.baseurl }}/ja/community)
+- **公開コンポーネントを見てみる　&t;：　**[プロジェクト]({{ site.baseurl }}/ja/node/123)（Projectページ(プロジェクト,node/123)はリンク切れです）
 

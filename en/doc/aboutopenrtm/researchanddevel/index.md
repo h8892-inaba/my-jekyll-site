@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Research and Development"
+title: "research and development"
 ---
 
 <!-- Title: Research and Development -->

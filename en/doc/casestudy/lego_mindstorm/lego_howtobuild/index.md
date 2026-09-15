@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Assembly Instructions
+title: assembly instructions
 ---
 
 <!-- Title: Assembly Instructions -->

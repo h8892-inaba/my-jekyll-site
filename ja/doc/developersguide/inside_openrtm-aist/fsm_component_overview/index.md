@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "FSMコンポーネントの概要"
+title: "fsmコンポーネントの概要"
 ---
 
 準備中

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(EV3)
+title: チュートリアル(ev3)
 ---
 
 <!-- Title: チュートリアル(EV3) -->

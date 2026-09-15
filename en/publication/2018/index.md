@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Paper (2018)
+title: paper (2018)
 ---
 
 ## Journal

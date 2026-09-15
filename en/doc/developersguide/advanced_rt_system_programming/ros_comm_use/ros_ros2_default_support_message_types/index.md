@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Developer's Guide"
+title: "developer's guide"
 ---
 <!-- Title: Serializer Names and ROS/ROS2 Message Types -->
 #contents

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Choreonoid用OpenRTM連携プラグイン Python版(備考)"
+title: "choreonoid用openrtm連携プラグイン python版(備考)"
 ---
 #contents
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Running Sample RT Systems
+title: running sample rt systems
 ---
 
 <!-- Title: Running Sample RT Systems -->
@@ -38,7 +38,7 @@ First, start the Name Server and RT System Editor on Windows.
 
 For detailed instructions, refer to the following page:
 
-- [This page](/en/node/794)
+- [This page]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/test_windows_1_1)
 
 ##### Raspbian
 
@@ -78,7 +78,7 @@ TkJoyStick0
 > - This script is intended for **64-bit Windows** with **32-bit OpenRTM-aist**.
 > - For **32-bit Windows**, use **start_component_32.bat**.
 > - For **64-bit OpenRTM-aist**, use **start_component_64.bat**.
-> - If the Python installation directory is not included in the system PATH, **TkJoyStick** cannot be started automatically. In that case, start it manually by following the instructions on [this page](/en/node/1225#toc7).
+> - If the Python installation directory is not included in the system PATH, **TkJoyStick** cannot be started automatically. In that case, start it manually by following the instructions on [this page]({{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/test_windows_python_1_1#toc7).
 
 ### Raspbian
 
@@ -166,7 +166,7 @@ This sample uses the **TkJoyStick** sample component from OpenRTM-aist-Python to
 
 To use this sample, a **USB-output 9-axis IMU sensor module** must be connected to the Raspberry Pi.
 
-Perform the [sensor calibration](/en/node/6015#toc3) while the sensor is mounted on the Raspberry Pi Mouse.
+Perform the [sensor calibration]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc3) while the sensor is mounted on the Raspberry Pi Mouse.
 
 <div align="center"><a href="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/JoystickControlRasPiMouse/JoystickControlRasPiMouse.png"><img src="https://raw.githubusercontent.com/Nobu19800/RaspberryPiMouseRTSystem_script/master/JoystickControlRasPiMouse/JoystickControlRasPiMouse.png" width="70%;"></a></div>
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Controlling the Kobuki Mobile Robot
+title: controlling the kobuki mobile robot
 ---
 
 <!-- Title: Controlling the Kobuki Mobile Robot -->

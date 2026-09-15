@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (Raspberry Pi Mouse, RTM Seminar)
+title: tutorial (raspberry pi mouse, rtm seminar)
 ---
 <hr>
 

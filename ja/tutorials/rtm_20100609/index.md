@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 東京大学JSK講習会(2010年6月9日)
+title: 東京大学jsk講習会(2010年6月9日)
 ---
 
 東京大学大学院 情報理工学系研究科 創造情報学特論IIとして、RTミドルウエアの講習会を行いました。
@@ -81,7 +81,7 @@ Windows推奨ですが、Linuxでも実習可能です。
   - [Python2.6](http://www.python.org/ftp/python/2.6.2/python-2.6.2.msi)
 
 - RTSystemEditor,RTCBilder
-  - [Eclipse3.4.2+RTSE(1.0.0-RELEASE)+RTCB(1.0.0-RELEASE)Windows用全部入り](http://www.openrtm.org/pub/OpenRTM-aist/tools/1.0.0/eclipse342_rtmtools100release_win32_ja.zip)
+  - [Eclipse3.4.2+RTSE(1.0.0-RELEASE)+RTCB(1.0.0-RELEASE)Windows用全部入り]()（リンク切れです）
 
 #### Linuxで必要なソフトウエア 
 基本的に、[ダウンロード]({{ site.baseurl }}/ja/download/)ページを参照して、必要なソフトウエアをダウンロードしてください。

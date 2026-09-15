@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Managing RT Systems with rtshell
+title: managing rt systems with rtshell
 ---
 
 #contents
@@ -12,7 +12,7 @@ By designing the system with RTSystemEditor and using rtshell together with shel
 
 ### What is rtshell?
 
-[rtshell](http://www.openrtm.org/openrtm/ja/node/1005) is a tool that allows you to manage RT Components registered with a Naming Service from the command line. You can activate, deactivate, and reset components, as well as connect their ports.
+[rtshell]({{ site.baseurl }}/en/doc/toolmanuals/rtshell) is a tool that allows you to manage RT Components registered with a Naming Service from the command line. You can activate, deactivate, and reset components, as well as connect their ports.
 In addition, it can manage an entire RT system.
 
 ### Workflow

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: How to Use TETRIX
+title: how to use tetrix
 ---
 
 <!-- Title: How to Use TETRIX -->

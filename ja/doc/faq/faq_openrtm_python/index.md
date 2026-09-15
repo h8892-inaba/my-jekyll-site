@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist (Python版) に関する FAQ
+title: openrtm-aist (python版) に関する faq
 ---
 
 <!-- Title: OpenRTM-aist (Python版) に関する FAQ -->

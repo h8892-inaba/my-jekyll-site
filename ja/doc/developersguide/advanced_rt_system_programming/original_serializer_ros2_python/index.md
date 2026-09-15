@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "独自シリアライザの実装手順(ROS2、Python)"
+title: "独自シリアライザの実装手順(ros2、python)"
 ---
 
 準備中

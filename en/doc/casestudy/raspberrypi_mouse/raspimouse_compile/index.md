@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Build Procedure (Ubuntu, Using CMake and Code::Blocks)
+title: build procedure (ubuntu, using cmake and code::blocks)
 ---
 
 <!-- Title: Build Procedure (Ubuntu, Using CMake and Code::Blocks) -->

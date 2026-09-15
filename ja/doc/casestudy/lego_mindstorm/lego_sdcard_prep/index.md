@@ -1,6 +1,6 @@
 ---
 layout: page
-title: SD カードの準備
+title: sd カードの準備
 ---
 
 <!-- Title: SD カードの準備 -->
@@ -49,7 +49,7 @@ OpenRTM-aist を動作させるには、この ev3dev を micro SDカードに�
 基本的には、以下のリンクから OpenRTM-aist (C++、Python) 入りの ev3dev イメージファイルをダウンロードしてください。
 
 
-- [2015-08-05-ev3dev-openrtm.zip](http://openrtm.org)
+- [2015-08-05-ev3dev-openrtm.zip]({{ site.baseurl }}/ja/)
 
 ### サンプルコンポーネント入りのイメージ
 Educator Vehicle等のサンプルコンポーネント入りのイメージです。

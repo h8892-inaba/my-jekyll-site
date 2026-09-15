@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTPの起動手順(1.2系、Linux)
+title: openrtpの起動手順(1.2系、linux)
 ---
 <br>
 <a>No English version available.

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "RTC Programming Flow"
+title: "rtc programming flow"
 ---
 
 <!-- Tilte: RTCプログラミングの流れ -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Supplementary Information
+title: supplementary information
 ---
 
 <!-- Title: Supplementary Information -->

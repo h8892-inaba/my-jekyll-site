@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Implementation Procedure for a Custom Interface Type (C++)"
+title: "implementation procedure for a custom interface type (c++)"
 ---
 
 <!-- Title: 独自インターフェース型の実装手順(C++) -->

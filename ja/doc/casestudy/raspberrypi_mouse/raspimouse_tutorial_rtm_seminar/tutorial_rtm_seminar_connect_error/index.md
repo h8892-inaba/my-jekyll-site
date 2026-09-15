@@ -87,7 +87,7 @@ RTCを選択してDeleteキーを押すか、右クリックしてDeleteを選�
 
 ## RTSystemEditorが応答なしになる場合
 RTSystemEditorが応答なしになる場合、もしくはしばらく待てば動くが片方のポートの色が変化しない場合等があります。
-この場合は、[ファイアウォールなどで通信が遮断されていることが原因](/ja/node/7103#firewall)であることがほとんどです。
+この場合は、[ファイアウォールなどで通信が遮断されていることが原因]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_connect_error#firewall)であることがほとんどです。
 
 それで解決しない場合はRaspberry Pi、EV3側のRTCを再起動してください。RTCの実行中の問題で応答なしになっている可能性があります。
 

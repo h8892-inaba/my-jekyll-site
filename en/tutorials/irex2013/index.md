@@ -1,6 +1,6 @@
 ---
 layout: page
-title: iREX2013 （国際ロボット展） RTM講習会
+title: irex2013 （国際ロボット展） rtm講習会
 ---
 <br>
 <a>No English version available.
@@ -46,7 +46,7 @@ title: iREX2013 （国際ロボット展） RTM講習会
   </tr>
   <tr>
     <td>11:00 -11:50</td>
-    <td>**第2部：RTコンポーネントの作成入門** <br> **担当**：安藤慶昭氏 (産総研)<br> **概要**：RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。 <br> <a href="http://www.openrtm.org/openrtm/ja/node/5022">講義資料</a></td>
+    <td>**第2部：RTコンポーネントの作成入門** <br> **担当**：安藤慶昭氏 (産総研)<br> **概要**：RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。 <br> <a href="{{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_winxp_rtmtools_vc2010">講義資料</a></td>
   </tr>
   <tr>
     <td>11:50 -12:00</td>
@@ -128,7 +128,7 @@ G-ROBOTを操作するインターフェースを実際に作ってみたり、�
   - 無料のExpress版が [こちら](http://www.microsoft.com/visualstudio/jpn/downloads#d-2010-express) からダウンロードできます。
   - インストールには時間がかかりますので、ご注意ください。
   - VC2012には対応していません。また、VC2008は少々古いのでお勧めいたしません。
-- [OpenRTM-aist-1.1.0 C++版](http://www.openrtm.org/openrtm/ja/node/5012)
+- [OpenRTM-aist-1.1.0 C++版]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_0_release)
   - <span style="color:red;">インストールされているVCに一致するバージョンをダウンロードしてください。</span>;
   - 64bit版はPythonとの相性が悪いので、32bit版をお勧めします。
 - [OpenRTM-aist-1.1.0-RC1 Python](http://www.openrtm.org/pub/Windows/OpenRTM-aist/python/OpenRTM-aist-Python-1.1.0-RC1.msi)
@@ -138,11 +138,11 @@ G-ROBOTを操作するインターフェースを実際に作ってみたり、�
 - [Doxygen](http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.1-setup.exe)
 - [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
   - 32bit版をお勧めします。
-- [Eclipse全部入り](http://www.openrtm.org/openrtm/ja/node/30)
-  - [Windows用32bit版全部入り](http://openrtm.org/pub/openrtp/packages/1.1.0.rc4v20130216/eclipse381-openrtp110rc4v20130216-ja-win32.zip)を推奨します。
+- [Eclipse全部入り]()(No corresponding page available.)
+  - [Windows用32bit版全部入り]()(No corresponding page available.)を推奨します。
   - インストール後、メニューの「ヘルプ」→「新規ソフトウエアのインストール」を選択、更新サイトに http://openrtm.org/pub/openrtp/releases/updates/ を入力してRTSystemEditorとRTCBuilderをアップデートしておくことをお勧めします。
 - [TeraTerm](http://sourceforge.jp/projects/ttssh2/downloads/58215/teraterm-4.77.exe/)
-- Bonjour: インストール方法については[こちら](http://openrtm.org/openrtm/ja/node/266#toc8)
+- Bonjour: インストール方法については[こちら]({{ site.baseurl }}/en/doc/installation/other/raspberrypi_casestudy/raspi_init_setting#toc8)
   - [iTunes](http://www.apple.com/jp/itunes/download/)や[Bonjour Print Services for Windows](http://support.apple.com/kb/DL999?viewlocale=ja_JP)がインストールされていれば不要です。
 - 使い慣れたエディタ: EclipseやPythonに付属のエディタでも構いませんが、使い慣れたエディタが入っていた方が良いでしょう
 <!-- - [[RTC.xml:http://www.openrtm.org/openrtm/sites/default/files/5235/RTC.xml]] 第2部で使用します。 -->

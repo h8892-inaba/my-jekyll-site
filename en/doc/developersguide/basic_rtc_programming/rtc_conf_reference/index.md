@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "List of rtc.conf Setting Items"
+title: "list of rtc.conf setting items"
 ---
 
 #contents(3)

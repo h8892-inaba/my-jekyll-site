@@ -1,6 +1,6 @@
 ---
 layout: page
-title: rtshell によるRTシステムの管理
+title: rtshell によるrtシステムの管理
 ---
 
 #contents
@@ -12,7 +12,7 @@ title: rtshell によるRTシステムの管理
 
 ### rtshell とは
 
-[rtshell](http://www.openrtm.org/openrtm/ja/node/1005) はネームサーバー上に登録されている RTコンポーネントをシェルから管理することができるツールです。コンポーネントを activate/deactivate/reset したり、ポートの接続を行うことができます。
+[rtshell]({{ site.baseurl }}/ja/doc/toolmanuals/rtshell) はネームサーバー上に登録されている RTコンポーネントをシェルから管理することができるツールです。コンポーネントを activate/deactivate/reset したり、ポートの接続を行うことができます。
 さらに、RTシステム全体を管理することもできます。
 
 ### 流れ

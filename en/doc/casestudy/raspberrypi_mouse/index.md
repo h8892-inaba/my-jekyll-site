@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Raspberry Pi Mouse Use Cases
+title: raspberry pi mouse use cases
 ---
 
 <!-- Title: Raspberry Pi Mouse Use Cases -->

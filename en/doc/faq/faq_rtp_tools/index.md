@@ -1,6 +1,6 @@
 ---
 layout: page
-title: FAQ on Tools Such as RTSystemEditor, RTCBuilder, and rtshell
+title: faq on tools such as rtsystemeditor, rtcbuilder, and rtshell
 ---
 
 <!-- Title: RTSystemEditor、RTCBuilder、rtshell 等ツールに関する FAQ -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Windowsへのインストール
+title: windowsへのインストール
 ---
 - [インストール](./install_2_1)
 - [動作確認 (Windows編)](./check_windows_2_1)

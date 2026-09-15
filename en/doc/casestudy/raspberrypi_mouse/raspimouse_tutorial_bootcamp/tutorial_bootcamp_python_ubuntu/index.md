@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (Raspberry Pi Mouse, Python, Ubuntu, Reinforcement Month Edition)
+title: tutorial (raspberry pi mouse, python, ubuntu, reinforcement month edition)
 ---
 
 <!-- Title: チュートリアル(Raspberry Pi Mouse、Python、Ubuntu、強化月間用) -->

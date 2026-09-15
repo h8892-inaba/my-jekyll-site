@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creating RT Components (OpenCV Edition for RTCB-RC1)
+title: creating rt components (opencv edition for rtcb-rc1)
 ---
 
 <!-- Title: RTコンポーネント作成(OpenCV編 for RTCB-RC1) -->
@@ -109,13 +109,13 @@ Figure 1 shows an image of the image processing for each flip_mode.
 - Compiler: [Visual C++ 2008 Express Edition Japanese Version](http://www.microsoft.com/japan/msdn/vstudio/express/default.aspx)
 - [omniORB: version 4.1.2](http://www.openrtm.org/pub/Windows/omniORB/omniORB-4.1.2_vc9.msi)
 - [OpenCV: version 1.0](http://downloads.sourceforge.net/opencvlibrary/OpenCV_1.0.exe?modtime=1161287502&big_mirror=1)
-- [OpenRTM-aist: version 1.0.0-RC1](http://www.openrtm.org/pub/Windows/OpenRTM-aist/cxx/OpenRTM-aist-1.0.0-RC1-jp_vc9.msi)
+- [OpenRTM-aist: version 1.0.0-RC1]()(No corresponding page available.)
 
-- [OpenCV sample RTC](http://www.openrtm.org/OpenRTM-aist/download/IREX2009/OpenCV_RTC-1.0_vc9_jp.msi)
+- [OpenCV sample RTC]()(No corresponding page available.)
 
 - RTSystemEditor 1.0
 - RTCBuilder 1.0
-  - [All-in-one package](http://www.openrtm.org/OpenRTM-aist/download/IREX2009/eclipse.zip_)
+  - [All-in-one package]()(No corresponding page available.)
 
 - [Extraction tool (Lhaplus)](http://www.forest.impress.co.jp/lib/arc/archive/archiver/lhaplus.html)
 
@@ -377,7 +377,7 @@ Save the following content with the file name user_config.vsprops and copy it to
 Alternatively, download the vsprops file from the link below and save it to the Flip folder.
 
 <br>
-[user_config.vsprops](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2009/user_config.vsprops)
+[user_config.vsprops]()(No corresponding page available.)
 
 * A user_config.vsprops file already exists in the Flip folder, but you can overwrite it.
 
@@ -932,7 +932,7 @@ The built package can be downloaded from the following link.
 The extension is set to "zip_", so rename it to "zip" before extracting it.
 
 
-- [Built package](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2009/Flip.zip_)
+- [Built package]()(No corresponding page available.)
 
 ## Bonus (Object Tracking Component) 
 
@@ -1612,6 +1612,6 @@ The built package can be downloaded from the following link.
 <!-- 拡張子を"zip_"としてますので、"zip"にリネームしてから解凍して下さい。-->
 
  
-- [Built package (No Link)](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2009/ObjectTracking.zip_)
+- [Built package (No Link)]()(No corresponding page available.)
 
 

@@ -64,9 +64,9 @@ RTミドルウェア講習会に参加したことがある，もしくは同等
 なお、例年強化月間と称して、7月に事前講習会を実施していますが、今年は原則実施ことといたします。
 これまで講習会を受講したことがない場合は、以下のチュートリアルを自習することで参加資格を満たしたことにいたします。
 
-- [RTミドルウェアを10分で始めよう](https://www.openrtm.org/openrtm/ja/node/6521) (インストールとサンプルの動作確認)
-- [画像処理コンポーネントの作成](https://www.openrtm.org/openrtm/ja/node/6057) (画像処理コンポーネントの作成練習、USBカメラor内蔵カメラが必要)
-- [ROBOMECH2020RTM講習会](https://www.openrtm.org/openrtm/ja/tutorial/robomech2020) (シミュレータのロボットを動かすコンポーネントの作成)
+- [RTミドルウェアを10分で始めよう]({{ site.baseurl }}/en/doc/installation/lets_start121) (インストールとサンプルの動作確認)
+- [画像処理コンポーネントの作成]({{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_win81_vs2015) (画像処理コンポーネントの作成練習、USBカメラor内蔵カメラが必要)
+- [ROBOMECH2020RTM講習会]({{ site.baseurl }}/en/tutorials/robomech2020) (シミュレータのロボットを動かすコンポーネントの作成)
 
 チュートリアル開催を希望する場合は、申込みフォームにその旨記入してください。
 希望人数が5名以上の場合オンラインチュートリアル（上記、ROBOMECH2020 RTM講習会の内容）を開催します。
@@ -308,7 +308,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 <table class="table-alt">
   <tr>
     <td>Robocup@Homeの競技</td>
-    <td><a href="http://www.openrtm.org/openrtm/sites/default/files/rulehome2015.pdf">資料</a></td>
+    <td><a href="">資料</a>(No corresponding page available.)</td>
   </tr>
   <tr>
     <td>MobileRobotiNavigationFrameworkを用いたアプリケーション開発</td>
@@ -451,8 +451,8 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 - **マニュアル，ドキュメント** → プロジェクトページに自分で格納
   - 今回作成したシステムを第三者が再現できる情報をマニュアル化してください。
   - 過去のサマーキャンプやコンテストのプロジェクトを参照してください
-    - [RTMサマーキャンプ2019作品一覧](https://openrtm.org/openrtm/ja/tutorial/summercamp2019#toc15)
-    - [RTMコンテスト2019作品一覧](https://openrtm.org/openrtm/ja/contests/2019)
+    - [RTMサマーキャンプ2019作品一覧]({{ site.baseurl }}/en/tutorials/summercamp2019#toc15)
+    - [RTMコンテスト2019作品一覧](https://openrtm.org/openrtm/ja/contests/2019)(No corresponding English project page available.)(No corresponding English project page available.)
 - **SysMLやＵＭＬなどのモデルをつくったらそのデータ** → プロジェクトページに自分で格納
   - モデリングツールでモデル作成をした場合はそのデータ
   - 最終成果報告会の発表資料にモデルが含まれていればそれでも結構です
@@ -500,7 +500,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### グループ1
 
 - **課題**:ジェンガを行うロボット
-  - [プロジェクトページ](/ja/project/SummerCamp2020_group1)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2020_group1)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
   - 最終成果発表資料
 <!-- Invalid YouTube URL: http://www.slideshare.net/238360572 -->
 
@@ -518,7 +518,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### グループ2
 
 - **課題**: お宝探しゲーム
-  - [プロジェクトページ](/ja/project/SummerCamp2020_group2)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2020_group2)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
   - 最終成果発表資料
 <!-- Invalid YouTube URL: http://www.slideshare.net/238367796 -->
 
@@ -541,7 +541,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### グループ3
 
 - **課題**: ロボットPK対決
-  - [プロジェクトページ](/ja/project/SummerCamp2020_group3)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2020_group3)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
   - 最終成果発表資料
 <!-- Invalid YouTube URL: http://www.slideshare.net/238333023 -->
 
@@ -564,7 +564,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### グループ4
 
 - **課題**: FALCONを用いたRaspberryPi Mouseの遠隔制御
-  - [プロジェクトページ](/ja/project/SummerCamp2020_group4)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2020_group4)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
   - 最終成果発表資料
 <!-- Invalid YouTube URL: http://www.slideshare.net/238367798 -->
 

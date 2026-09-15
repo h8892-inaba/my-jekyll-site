@@ -1,6 +1,6 @@
 ---
 layout: page
-title: NXT RTC 動作確認
+title: nxt rtc 動作確認
 ---
 
 <!-- Title: NXT RTC 動作確認 -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 画像処理コンポーネントの作成 (Windows 8.1、OpenRTM-aist-1.1.2-RELEASE、OpenRTP-1.1.2、CMake-3.5.2、VS2015)
+title: 画像処理コンポーネントの作成 (windows 8.1、openrtm-aist-1.1.2-release、openrtp-1.1.2、cmake-3.5.2、vs2015)
 ---
 
 <!-- Title: チュートリアル(EV3、Ubuntu、第2部) -->

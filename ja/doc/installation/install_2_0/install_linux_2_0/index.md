@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Linuxへのインストール
+title: linuxへのインストール
 ---
 
 <hr>

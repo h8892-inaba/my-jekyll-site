@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTSystemEditor のインストール
+title: rtsystemeditor のインストール
 ---
 <br>
 <a>No English version available.
@@ -88,8 +88,8 @@ RTSystemEditor の動作に必要な環境は以下のとおりです。
 
 ## RTSystemEditor のインストール
 RTSystemEditor は Eclipse プラグインであるため、 Eclipse 本体をインストールする必要があります。さらに、 Eclipse は Java アプリケーションなので、Eclipse 本体をインストールする前に Java 実行環境（あるいは JDK：Java 開発環境でもよい）をインストールする必要があります。
-- Java 実行環境のインストールについては、[Eclipseについて の Java 実行環境 (JRE) のインストール](/node/1377#jre_install) を参照願います。
-- Eclipse のインストールについては、[Eclipse について の Eclipse のインストール](/node/1377#eclipse_install) を参照願います。
+- Java 実行環境のインストールについては、[Eclipseについて の Java 実行環境 (JRE) のインストール]({{ site.baseurl }}/en/doc/installation/install_1_1/openrtm_eclipse_tools_1_1/about_eclipse_1_1#jre_install) を参照願います。
+- Eclipse のインストールについては、[Eclipse について の Eclipse のインストール]({{ site.baseurl }}/en/doc/installation/install_1_1/openrtm_eclipse_tools_1_1/about_eclipse_1_1#eclipse_install) を参照願います。
 
 <!-- *** Java実行環境(JRE)のインストール -->
 <!-- Eclipse は Java アプリケーションなので、SunのJava実行環境[[(JRE: Java Runtime Environment):http://www.java.com/ja/download/manual.jsp]] をインストールする必要があります。すでに、JDK（Java 開発環境、ただし、''1.6以上''）がインストールされている環境では JRE のインストールは必要ありません。（RTCBuilder で、Java のコードを生成させる場合には JRE でなく JDK が必要となります。） -->
@@ -236,7 +236,7 @@ RTSystemEditor は Eclipse プラグインであるため、 Eclipse 本体を�
 <!-- +Reflesh -->
 
 
-[バイナリ(日本語版 jar ファイル(RTSE+RTCB)) ](/node/941#binary) をダウンロードして、  Eclipse の plugin ディレクトリー( Eclipse のアーカイブを展開すると通常 eclipse というディレクトリーが作成されますが、 その中の plugin というディレクトリー)にダウンロードした jar ファイルをそのままコピーします。
+[バイナリ(日本語版 jar ファイル(RTSE+RTCB)) ]()(No corresponding page available.) をダウンロードして、  Eclipse の plugin ディレクトリー( Eclipse のアーカイブを展開すると通常 eclipse というディレクトリーが作成されますが、 その中の plugin というディレクトリー)にダウンロードした jar ファイルをそのままコピーします。
 
 Eclipse を起動し、 メニューから [ウインドウ] > [パースペクティブを開く] > [その他] を選択すると、 次のようなパースペクティブ選択画面が表示されます。
 
@@ -254,7 +254,7 @@ RTSystemEditor の起動が確認できましたら、一旦、Eclipse を終了
 <br>
 <br>
 参考：
-　→ [**FAQ:** Eclipseの起動方法 ](/en/node/248#toc9)
+　→ [**FAQ:** Eclipseの起動方法 ]({{ site.baseurl }}/en/doc/faq/faq_rtp_tools#toc9)
 <br>
 <br>
 

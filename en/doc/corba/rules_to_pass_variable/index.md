@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Rules for Passing Variables
+title: rules for passing variables
 ---
 
 <!-- Title: 変数受渡規則 -->

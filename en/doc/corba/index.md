@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CORBA
+title: corba
 ---
 
 - [CCM](./ccm)

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Paper (2016)
+title: paper (2016)
 ---
 
 ## International Conference

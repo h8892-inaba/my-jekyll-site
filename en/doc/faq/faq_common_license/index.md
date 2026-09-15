@@ -1,6 +1,6 @@
 ---
 layout: page
-title: FAQ on General Matters and Licenses
+title: faq on general matters and licenses
 ---
 
 <!-- Title: 一般・ライセンスに関する FAQ -->
@@ -30,7 +30,7 @@ For details, please refer to the FAQ on "Licenses" below.
 OpenRTM-aist is an LGPL open-source product, so you do not need to obtain permission from AIST at all in order to use it.
 You are free to download and use it.
 Also, as long as you comply with the LGPL license, you are free to incorporate it into products and sell them. You do not need to obtain permission from AIST.
-However, if you would like to use it in a product, we would appreciate it if you could let us know via the mailing list or the [contact form on the Web page](http://openrtm.org/openrtm/contact).
+However, if you would like to use it in a product, we would appreciate it if you could let us know via the mailing list or the [contact form on the Web page]()(No corresponding page available.).
 
 
 ### Is support provided? Is there any warranty?
@@ -41,8 +41,8 @@ This is equivalent to the no-warranty clauses commonly included in software lice
 
 However, AIST provides the following for information sharing among users:
 
-- [Mailing list](/community/mailinglist_ja)
-- [Web forum](/community/forum_ja)
+- [Mailing list]()(No corresponding page (mailinglist) available.)
+- [Web forum]()(No corresponding page (forum) available.)
 
 Through questions posted there, we make efforts to answer questions as much as possible.
 Furthermore, we hold training courses, summer camps, contests, and other events to promote the acquisition of RT component development and system development skills, and we make efforts to respond to questions and feedback as much as possible through those opportunities.
@@ -164,7 +164,7 @@ You can also search for and download components you need from there.
 To register your own components on the project page, you need to elevate your user privileges.
 For details, please see:
 
-- [Project creation manual](http://openrtm.org/openrtm/ja/node/1554)
+- [Project creation manual](http://openrtm.org/openrtm/ja/node/1554)(No corresponding English project page (How to Register) available.)(No corresponding English project page (How to Register) available.)
 
 ### How can I participate in the RT Middleware Contest?
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Views (Overview)
+title: views (overview)
 ---
 
 <!-- Title: ビュー（概要） -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CPack で deb 作成 （Linux）
+title: cpack で deb 作成 （linux）
 ---
 -------jp page!!-------
 

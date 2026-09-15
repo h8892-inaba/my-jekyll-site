@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Python-1.1.0-RC1
+title: openrtm-aist-python-1.1.0-rc1
 ---
 
 <!-- OpenRTM-aist-Python-1.1.0-RC1 -->
@@ -29,12 +29,12 @@ title: OpenRTM-aist-Python-1.1.0-RC1
 <table class="table-alt">
   <tr>
     <td>Python版ソースコード</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.1.0/OpenRTM-aist-Python-1.1.0-RC1.tar.gz">OpenRTM-aist-Python-1.1.0-RC1.tar.gz</a> <br> MD5:bbc9c4915d13cef0f5a925a070bab0aa</td>
+    <td><a href="">OpenRTM-aist-Python-1.1.0-RC1.tar.gz</a>（リンク切れです） <br> MD5:bbc9c4915d13cef0f5a925a070bab0aa</td>
     <td>11/10/04</td>
   </tr>
   <tr>
     <td>Python版ソースコード(Win32)</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.1.0/OpenRTM-aist-Python-1.1.0-RC1.zip">OpenRTM-aist-Python-1.1.0-RC1.zip</a> <br> MD5:513f9a80ab7ce3c4d831c509e2252a8b</td>
+    <td><a href="">OpenRTM-aist-Python-1.1.0-RC1.zip</a>（リンク切れです） <br> MD5:513f9a80ab7ce3c4d831c509e2252a8b</td>
     <td>11/10/04</td>
   </tr>
 </table>
@@ -100,9 +100,9 @@ Ubuntu, Debianの各ディストリビューション用のパッケージを ww
 詳細は、以下のドキュメントを参照してください。~
 Fedora版は、もうしばらくお待ちください。
 
-- [Vine Linuxへのインストール](/ja/node/1187)
-- [Fedoraへのインストール](/ja/node/1186)
-- [Ubuntu/Debianへのインストール](/ja/node/1182)
+- [Vine Linuxへのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_vine_python_1_1)
+- [Fedoraへのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_fedora_python_1_1)
+- [Ubuntu/Debianへのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_ubuntu_python_1_1)
 
 
 <table class="table-alt">
@@ -135,7 +135,7 @@ OpenRTM-aist Official Website からソースコード、Windowsインストー�
 
 これまでは、実行・開発環境を構築するには、いくつかのパッケージをインストールする必要がありましたが、今回のリリースでは、特にWindows用には、omniORBpyやツール等を含むインストーラを提供することにより、どなたでもすぐにサンプルを実行して試用可能となりました。ぜひお試しください。
 
-- [OpenRTM-aist-Python-1.1.0-RC1.tar.gz](http://www.openrtm.org/pub/OpenRTM-aist/python/1.1.0/OpenRTM-aist-Python-1.1.0-RC1.tar.gz) -- 2011.10.04リリース
+- [OpenRTM-aist-Python-1.1.0-RC1.tar.gz]()（リンク切れです） -- 2011.10.04リリース
   - APIの追加
     - コールバックAPI
     - 実行コンテキストに関するコールバック

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Choreonoid用OpenRTM連携プラグイン Python版 チュートリアル(四足歩行ロボット)"
+title: "choreonoid用openrtm連携プラグイン python版 チュートリアル(四足歩行ロボット)"
 ---
 
 このページではRTCEditorアイテム、ComponentListアイテムの利用方法を四足歩行ロボットのシミュレータ作成を例にして解説します。

@@ -1,10 +1,10 @@
 ---
 layout: page
-title: OpenRTM-aist (Java版)
+title: openrtm-aist (java版)
 ---
 
 <!-- Title: OpenRTM-aist (Java版) -->
-<div align="right"><a href="/node/117"><img src="java_logo.png" width="10%;" align="right"></a></div>
+<div align="right"><a href="{{ site.baseurl }}/en/download/openrtm-aist-java"><img src="java_logo.png" width="10%;" align="right"></a></div>
 
 Libraries for RTC development in Java language. Source code, a Windows installer and jar files are available.
 
@@ -24,7 +24,7 @@ Libraries for RTC development in Java language. Source code, a Windows installer
 - [svn/RELENG_1_2](https://github.com/OpenRTM/OpenRTM-aist-Java/tree/svn/RELENG_1_2)
 
 ### Repository Status
-- [statsvn](http://www.openrtm.org/svnstat/java)
+- [statsvn]()(No corresponding page available.)
 
 ### Bug tracking
 - [redmine](http://redmine.openrtm.org/projects/openrtm-aist-java)

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "FSMコンポーネント作成手順"
+title: "fsmコンポーネント作成手順"
 
 ---
 <!-- Title: FSMコンポーネント作成手順 -->
@@ -52,7 +52,7 @@ title: "FSMコンポーネント作成手順"
 ビルドにはOpenRTM-aist 2.0が必要です。
 以下の手順でOpenRTM-aistでビルドしてください。
 
-- [https://openrtm.org/openrtm/ja/content/cmake_build_rtm](https://openrtm.org/openrtm/ja/content/cmake_build_rtm)
+- [https://openrtm.org/openrtm/ja/content/cmake_build_rtm]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build)
 
 その後、INSTALLのプロジェクトをビルドして適当な場所にインストールしてください。
 インストールする場所を変更するためにはCMAKE_INSTALL_PREFIXのオプションを変更します。

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 中央大学RTミドルウエア講習会(2007年6月4日)
+title: 中央大学rtミドルウエア講習会(2007年6月4日)
 ---
 <br>
 <a>No English version available.

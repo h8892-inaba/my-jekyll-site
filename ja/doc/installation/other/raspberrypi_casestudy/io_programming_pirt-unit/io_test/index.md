@@ -1,6 +1,6 @@
 ---
 layout: page
-title: IOのテスト
+title: ioのテスト
 ---
 
 <!-- Title: IOのテスト -->

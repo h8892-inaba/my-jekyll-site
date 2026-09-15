@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aistを10分で始めよう！
+title: openrtm-aistを10分で始めよう！
 ---
 
 <!-- Title: OpenRTM-aistを10分で始めよう！ -->
@@ -39,7 +39,7 @@ Pythonのインストール先は、インストール時の選択 [Customize in
 
 ## OpenRTM-aistのダウンロード
 
-インストーラーのダウンロードは [ダウンロード](/ja/node/7332) をご覧ください。
+インストーラーのダウンロードは [ダウンロード]({{ site.baseurl }}/ja/download) をご覧ください。
 
 Microsoft Edge をお使いで、下記メッセージが出てダウンロードできない場合の手順を紹介します。
 
@@ -85,7 +85,7 @@ Microsoft Edge をお使いで、下記メッセージが出てダウンロー�
 ## システム環境変数確認
 
 ネストされた環境変数が再帰的に展開されないケースが発生することを確認していますが、ツールのVerChangerで解決できます。詳細は下記ページをご覧ください。
-    - [システム環境変数確認](/ja/doc/installation/install_2_1/install_win_2_1/install_2_1#toc9)
+    - [システム環境変数確認]({{ site.baseurl }}/ja/doc/installation/install_2_1/install_windows_2_1/install_2_1#toc9)
 
 ## サンプルコンポーネントを実行する
 
@@ -189,11 +189,11 @@ rtshellを利用することでコマンドラインからRTCのActivate、Deact
 
 ## 次は...
 下記リンク先をご覧ください。
-- **もっとサンプルを動かしてみる　&t;：　**[サンプルコンポーネント](/ja/node/811)
-- **コンポーネントを作ってみる　　&t;：　**[ケーススタディー](/ja/node/110)
-- **OpenRTMの基礎から学ぶ　　　&t;：　**[デベロッパーズガイド](/ja/node/113)
-- **コミュニティーに参加する　　　&t;：　**[コミュニティー](/ja/node/624)
-- **公開コンポーネントを見てみる　&t;：　**[プロジェクト](/ja/node/123)
+- **もっとサンプルを動かしてみる　&t;：　**[サンプルコンポーネント]({{ site.baseurl }}/ja/doc/installation/sample_components)
+- **コンポーネントを作ってみる　　&t;：　**[ケーススタディー]({{ site.baseurl }}/ja/doc/casestudy)
+- **OpenRTMの基礎から学ぶ　　　&t;：　**[デベロッパーズガイド]({{ site.baseurl }}/ja/doc/developersguide)
+- **コミュニティーに参加する　　　&t;：　**[コミュニティー]({{ site.baseurl }}/ja/community)
+- **公開コンポーネントを見てみる　&t;：　**[プロジェクト](/ja/node/123)（Projectページ(プロジェクト,node/123)はリンク切れです）
 
 
 

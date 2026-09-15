@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウエアサマーキャンプ2011
+title: rtミドルウエアサマーキャンプ2011
 ---
 <br>
 <a>No English version available.
@@ -261,9 +261,9 @@ RTミドルウエアコンテスト参加を目指して開発案件を抱えて
 
 ### その他
 
-- [特別講演１で使用するファイル(RTC.xml)](http://www.openrtm.org/OpenRTM-aist/download/RTMSC2011/RTC.xml)
+- [特別講演１で使用するファイル(RTC.xml)]()(No corresponding page available.)
 - [コンポーネント作成演習で使用するサンプルコンポーネント(USBCamera.zip)](./USBCamera.zip)
 - [Pioneer 3DX制御のための参照コンポーネント](http://210.154.184.16/pukiwiki/?ID_363)
-- [OpenCV_RTC.zip(ソース)](http://www.openrtm.org/openrtm/sites/default/files/158/OpenCVRTC-1.0.0.zip)
+- [OpenCV_RTC.zip(ソース)]({{ site.baseurl }}/en/./OpenCVRTC-1.0.0.zip)
 - [受付システムについて](http://210.154.184.16/pukiwiki/?SYS_001_V100)
 <!-- -------jp page!!------- -->

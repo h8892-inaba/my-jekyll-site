@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Eclipse について
+title: eclipse について
 ---
 
 <!-- Title: Eclipse について -->
@@ -44,7 +44,7 @@ Eclipse は Java アプリケーションですので、Oracle の Java 実行�
 
 
 **参考：**
-→　<span style="color:red;">**cool!**</span>; [UNIX系環境で簡易に Oracle の Java(JRE) を Eclipse に適用する方法 ](/ja/node/248#rtclinksunjava)
+→　<span style="color:red;">**cool!**</span>; [UNIX系環境で簡易に Oracle の Java(JRE) を Eclipse に適用する方法 ]({{ site.baseurl }}/ja/doc/faq/faq_rtp_tools#rtclinksunjava)
 
 
 
@@ -66,7 +66,7 @@ Eclipse の[ダウンロードサイト](http://www.eclipse.org/downloads/index.
 <br>
 
 **参考**
-→ [**FAQ:** Eclipse の起動方法 ](/ja/node/248#eclipse)
+→ [**FAQ:** Eclipse の起動方法 ]({{ site.baseurl }}/ja/doc/faq/faq_rtp_tools#eclipse)
 
 - Ubuntu8.04、Ubuntu9.10 で Linux 用 Eclipse3.4.2 が動作しない不具合が報告されています。
   - Ubuntu8.04では、**apt-get install xulrunner-1.9** として xulrunninerをアップデートしてください。
@@ -111,7 +111,7 @@ Eclipse の[ダウンロードサイト](http://www.eclipse.org/downloads/index.
 <br>
 
 参考：
-　→ [**FAQ:** Eclipseの起動方法 ](/ja/node/248#eclipse)
+　→ [**FAQ:** Eclipseの起動方法 ]({{ site.baseurl }}/ja/doc/faq/faq_rtp_tools#eclipse)
 
 ### プラグインのインストール
 RTCBuilder と RTSystemEditor  は下記の Eclipse プラグインを使用しています。

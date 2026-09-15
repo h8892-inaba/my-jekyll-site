@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Fluent Loggerによるログ収集"
+title: "fluent loggerによるログ収集"
 ---
 
 <!-- Title: Fluent Loggerによるログ収集 -->
@@ -88,7 +88,7 @@ PowerShellで以下のコマンドを実行するとFluent Bitをビルドしま
 
 #### OpenRTM-aistのビルド
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build)
 
 CMake実行時に**FLUENTBIT_ENABLE**、**FLUENTBIT_ROOT**のオプションを設定します。
 
@@ -174,7 +174,7 @@ RTCを実行するとログを送信する。
 
 #### OpenRTM-aistのビルド
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build)
 
 CMake実行時に**FLUENTBIT_ENABLE**、**FLUENTBIT_ROOT**のオプションを設定します。
 
@@ -504,7 +504,7 @@ PowerShellで以下のコマンドを実行するとFluent Bitをビルドしま
 
 #### OpenRTM-aistのビルド
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build)
 
 CMake実行時に**FLUENTBIT_ENABLE**、**FLUENTBIT_ROOT**のオプションを設定します。
 
@@ -590,7 +590,7 @@ RTCを実行するとログを送信する。
 
 #### OpenRTM-aistのビルド
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build)
 
 CMake実行時に**FLUENTBIT_ENABLE**、**FLUENTBIT_ROOT**のオプションを設定します。
 

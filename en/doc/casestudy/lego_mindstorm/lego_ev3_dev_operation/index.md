@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Operating EV3 Devices
+title: operating ev3 devices
 ---
 
 <!-- Title: Operating EV3 Devices -->

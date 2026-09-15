@@ -1,6 +1,6 @@
 ---
 layout: page
-title: SI2019 RTミドルウエア講習会(2019年12月14日)
+title: si2019 rtミドルウエア講習会(2019年12月14日)
 ---
 <br>
 <a>No English version available.
@@ -52,7 +52,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 こちらから、過去の講習会の資料および写真などがご覧いただけます。
 
 
-- [過去の講習会](/ja/node/130#past-training)
+- [過去の講習会]({{ site.baseurl }}/en/tutorials#past-training)
 
 ## プログラム
 
@@ -63,7 +63,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
   </tr>
   <tr>
     <td>11:00 -12:30</td>
-    <td>**第2部(前半)：RTコンポーネントの作成入門** <br> - **担当**：宮本 信彦(産総研) <br> - **概要**：RTシステムを設計するツールRTSystemEditor、およびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="/ja/node/6550">チュートリアル(第2部、Windows)</a> <br> <a href="/ja/node/6551">チュートリアル(第2部、Ubuntu)</a> <br>**講義資料**:<a href="191214-02.pdf">191214-02.pdf</a></td>
+    <td>**第2部(前半)：RTコンポーネントの作成入門** <br> - **担当**：宮本 信彦(産総研) <br> - **概要**：RTシステムを設計するツールRTSystemEditor、およびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2">チュートリアル(第2部、Windows)</a> <br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2">チュートリアル(第2部、Ubuntu)</a> <br>**講義資料**:<a href="191214-02.pdf">191214-02.pdf</a></td>
   </tr>
   <tr>
     <td>12:30 -13:30</td>
@@ -87,7 +87,7 @@ Raspberry Piを利用しているので、実機上で開発したり、容易�
 
 <div align="center"><a href="s_DSC00444.JPG"><img src="s_DSC00444.JPG" width="50%; margin:10px;"></a></div>
 
-- [Raspberry Pi Mouse 活用事例](/ja/node/6005)
+- [Raspberry Pi Mouse 活用事例]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse)
 
 
 
@@ -110,7 +110,7 @@ Raspberry Piを利用しているので、実機上で開発したり、容易�
 #### Windowsの場合
 以下のソフトウェアをインストールしてください。
 
-- [Visual Studio 2019](/ja/node/6650)
+- [Visual Studio 2019]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
   - Visual C++がインストールされているかは必ず確認してください。
 - [Python 3.7](https://www.python.org/ftp/python/3.7.4/python-3.7.4-amd64.exe)
 - [CMake](https://github.com/Kitware/CMake/releases/download/v3.15.4/cmake-3.15.4-win64-x64.msi)

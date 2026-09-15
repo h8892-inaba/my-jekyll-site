@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Using OpenSplice Communication Functions"
+title: "using opensplice communication functions"
 ---
 <!-- Title: OpenSplice通信機能の利用 -->
 #contents

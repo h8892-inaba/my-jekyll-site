@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist Use Cases on Raspberry Pi
+title: openrtm-aist use cases on raspberry pi
 ---
 
 <!-- Title: OpenRTM-aist Use Cases on Raspberry Pi -->

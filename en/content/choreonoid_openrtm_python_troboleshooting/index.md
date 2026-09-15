@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Troubleshooting for the OpenRTM Integration Plugin for Choreonoid, Python Version"
+title: "troubleshooting for the openrtm integration plugin for choreonoid, python version"
 ---
 #contents
 

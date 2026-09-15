@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "tkLRFViewer"
+title: "tklrfviewer"
 ---
 
 <!-- Title: tkLRFViewer -->
@@ -13,7 +13,7 @@ This sample is included only with the Python edition.
 
 tkLRFViewer is an example RTC that displays output from a Laser Range Finder (LRF) sensor.
 
-It is used by connecting it to an RTC that acquires input from a laser range finder. The RTC used for connection depends on the specific sensor device being used. For example, refer to the documentation for the [Hokuyo Electric URG Series]({{ site.baseurl }}/node/4974).
+It is used by connecting it to an RTC that acquires input from a laser range finder. The RTC used for connection depends on the specific sensor device being used. For example, refer to the documentation for the [Hokuyo Electric URG Series]().(No corresponding English project page available.)
 
 An LRF sensor scans the surrounding environment by rotating a laser distance sensor and continuously outputs measured distance data. The output data typically consists of:
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  PiRT-UnitによるI2Cデバイスの利用
+title:  pirt-unitによるi2cデバイスの利用
 ---
 
 <!-- Title: PiRT-UnitによるI2Cデバイスの利用 -->

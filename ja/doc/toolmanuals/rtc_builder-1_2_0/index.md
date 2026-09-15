@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTCBuilder-1.2.0
+title: rtcbuilder-1.2.0
 ---
 <!-- // Title: RTCBuilder-1.2.0-->
 

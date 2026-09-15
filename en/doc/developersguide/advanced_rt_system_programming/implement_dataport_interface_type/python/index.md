@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Implementation Procedure for a Custom Interface Type (Python)"
+title: "implementation procedure for a custom interface type (python)"
 ---
 
 <!-- Title: 独自インターフェース型の実装手順(Python) -->

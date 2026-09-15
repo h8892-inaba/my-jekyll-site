@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installation on Raspberry Pi OS
+title: installation on raspberry pi os
 ---
 
 <hr>

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: MICO_CCM
+title: mico_ccm
 ---
 
 <!-- Title: MICO_CCM -->

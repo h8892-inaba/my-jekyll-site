@@ -17,7 +17,7 @@ C++版、Java版には付属していませんのでご注意ください。
 NXTRTC.pyは、LEGO Mindstorm NXTのモーター制御や、センサーデータを出力するコンポーネントです。
 
 - 参考
-  - [RTコンポーネント作成(LEGO Mindstorm編)](/node/752)
+  - [RTコンポーネント作成(LEGO Mindstorm編)]({{ site.baseurl }}/en/doc/casestudy/rtc_development/rtc_development_lego_mindstorm)
 
 ### 起動画面
 
@@ -35,14 +35,14 @@ NXTRTC.pyは、LEGO Mindstorm NXTのモーター制御や、センサーデー�
 #### 使い方
 GUIをもったTkJoystick(入力デバイス)と、TkMotor(出力デバイス)に接続し、LEGOのモータ制御と値の確認をします。
 
-※詳細は[RTコンポーネント作成(LEGO Mindstorm編)](/node/752)マニュアルでごご覧ください。
+※詳細は[RTコンポーネント作成(LEGO Mindstorm編)]({{ site.baseurl }}/en/doc/casestudy/rtc_development/rtc_development_lego_mindstorm)マニュアルでごご覧ください。
 
 <br>
 
 
 - 手順
-  - RTSystemEditorを起動し、新規SystemEditorを開きます。RTSystemEditorの使用方法の詳細については[RTSystemEditor](/node/6401)を参照
-  - [こちら](/node/753)を参考にPCとLEGO MindstormをBluetooth、又はUSB接続してください。
+  - RTSystemEditorを起動し、新規SystemEditorを開きます。RTSystemEditorの使用方法の詳細については[RTSystemEditor]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_2_0)を参照
+  - [こちら]({{ site.baseurl }}/en/doc/casestudy/rtc_development/rtc_development_lego_mindstorm/midstorm_nxt_setup)を参考にPCとLEGO MindstormをBluetooth、又はUSB接続してください。
   - NXTRTC.py、入力デバイスTkJoyStickComp.py、TkMotorComp、各コンポーネントを起動します。
   - RTSystemEditorのName Service Viewにコンポーネントが表示されるので、それらをSystemEditor上にドラッグします。
   - 両コンポーネントの対応ポートを結びます。(上図SystemEditor実行例を参照)

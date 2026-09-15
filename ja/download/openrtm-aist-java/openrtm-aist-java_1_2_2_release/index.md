@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Java-1.2.2-RELEASE
+title: openrtm-aist-java-1.2.2-release
 ---
 
 <!-- Title: OpenRTM-aist-Java-1.2.2-RELEASE -->
@@ -10,7 +10,7 @@ title: OpenRTM-aist-Java-1.2.2-RELEASE
 <br>
 インストール手順については以下のページを参照してください。
 
-- [OpenRTM-aist(Java版)1.2系のインストール](/ja/node/6602)
+- [OpenRTM-aist(Java版)1.2系のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/java_1_2)
 ## パッケージ
 ### Windowsインストーラー
 msiファイルは800MBのサイズがあります。ダウンロードを数分で行うためにはある程度高速な回線(50Mbps以上)を用いてください。
@@ -121,7 +121,7 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
 
 <!-- ※Fedora用一括インストール・スクリプトはOpenRTM-aist 1.2.0版以降対応予定です。 -->
 
-オプションを指定することで、目的に合わせたパッケージをインストールできるようになりました。インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト](/ja/node/6345)をご確認ください。
+オプションを指定することで、目的に合わせたパッケージをインストールできるようになりました。インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)をご確認ください。
 
 1.2.1-RELEASEを既にインストールしている場合はアップデートが可能です。
 
@@ -136,13 +136,13 @@ Ubuntu/Debianの場合
 <!--  -->
 <!-- # dnf update -->
 
-ダウンロード方法・インストール方法については、[OpenRTM-aist(Java版)1.2系のインストール](/ja/node/6602)をご覧くだい。
+ダウンロード方法・インストール方法については、[OpenRTM-aist(Java版)1.2系のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/java_1_2)をご覧くだい。
 
 
 ## Java開発環境
 
 OpenRTM-aist-Java-1.2.2の動作および開発には以下のJDKが必要です。
-- JDK8(1.8): [JDK8のインストール](/ja/node/6911)
+- JDK8(1.8): [JDK8のインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8)
 
 &aname(src);
 ## ソースコード
@@ -163,7 +163,7 @@ OpenRTM-aist-Java-1.2.2の動作および開発には以下のJDKが必要です
 
 ### ソースからのビルド
 
-ソースからビルドする方法については、[ソースからのビルド](/ja/node/6625)をご覧くだい。
+ソースからビルドする方法については、[ソースからのビルド]({{ site.baseurl }}/ja/doc/installation/install_1_2/java_1_2/build_source_java_1_2)をご覧くだい。
 
 ### deb/rpmパッケージ作成
 
@@ -191,7 +191,7 @@ jarファイルおよびサンプルからのUbuntu、Debian用debパッケー�
 パッケージはpacakgesディレクトリ内に作成されます。
 
 <span style="color:red;">※UbuntuやDebianにてdebパッケージを作成する場合は"dpkg-dev build-essential debhelper devscripts"、Fedoraにてrpmパッケージを作成する場合は"rpm-build createrepo"といったツールをあらかじめインストールしておく必要があります。</span>;
-これらは、[一括インストール・スクリプト](/ja/node/6345)を-cオプションで実行すればインストールされます。
+これらは、[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)を-cオプションで実行すればインストールされます。
 
 ## リリースノート
 - [1.2.2-RELEASE ](https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v1.2.2)

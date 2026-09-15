@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "About the Sample Components Included with OpenRTM"
+title: "about the sample components included with openrtm"
 ---
 
 <!-- Title: OpenRTM-aist付属のサンプルについて -->
@@ -17,7 +17,7 @@ This chapter describes the sample components included with OpenRTM-aist. If you 
 To run the Name Server on Windows, locate the corresponding file in Explorer and double-click it. If OpenRTM-aist was installed using the installer, the Name Service can also be started from [Start Menu] > [OpenRTM-aist] > [Start Naming Service].
 
 This chapter assumes an environment where RTSystemEditor has been installed.
-For details on installing RTSystemEditor, refer to [Installing OpenRTP](/node/6655).
+For details on installing RTSystemEditor, refer to [Installing OpenRTP]({{ site.baseurl }}/en/doc/installation/install_1_2/openrtp_1_2/).
 
 - [SimpleIO](./simpleio)
 - [SeqIO](./seqio)

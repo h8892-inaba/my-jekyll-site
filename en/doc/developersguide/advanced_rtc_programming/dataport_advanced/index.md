@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Data Port (Advanced)"
+title: "data port (advanced)"
 ---
 
 <!-- Title: データポート (応用編) -->

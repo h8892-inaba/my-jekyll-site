@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "RTシステム開発入門"
+title: "rtシステム開発入門"
 ---
 -------jp page!!-------
 

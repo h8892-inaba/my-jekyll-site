@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTSystemEditorのインストール
+title: rtsystemeditorのインストール
 ---
 <br>
 <a>No English version available.

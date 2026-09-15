@@ -1,6 +1,6 @@
 ---
 layout: page
-title: インストールに関する FAQ
+title: インストールに関する faq
 ---
 
 <!-- Title:  インストールに関する FAQ -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: システムエディタ（RTC の表示 / 描画編集 編）
+title: システムエディタ（rtc の表示 / 描画編集 編）
 ---
 -------jp page!!-------
 
@@ -136,7 +136,7 @@ RTC の表示と RTC の描画編集の操作を説明します。
   </tr>
 </table>
 
-**'※各状態の色は、設定画面の [表示色](/en/node/4885#color) にて変更することができます。**'
+**'※各状態の色は、設定画面の [表示色]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_1_0/rtse-1_1_0_setting#color) にて変更することができます。**'
 
 また、RTC の種別やカテゴリに合わせてアイコン画像をつけることができます。
 <br>
@@ -145,7 +145,7 @@ RTC の表示と RTC の描画編集の操作を説明します。
 <div align="center"><strong>RTC のアイコン画像表示の例</strong></div>
 <br>
 
-**'※アイコン画像は、設定画面の [アイコン](/en/node/4885#icon) にて変更することができます。**'
+**'※アイコン画像は、設定画面の [アイコン]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_1_0/rtse-1_1_0_setting#icon) にて変更することができます。**'
 
 
 ### RTC の同期

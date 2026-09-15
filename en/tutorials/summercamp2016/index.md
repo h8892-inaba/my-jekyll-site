@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアサマーキャンプ2016
+title: rtミドルウェアサマーキャンプ2016
 ---
 <br>
 <a>No English version available.
@@ -73,7 +73,7 @@ RTMのスペシャリストの方々が何人もサポートについて下さ�
 または，
 
 - 下記のサマーキャンプ受講希望者向けの講習会に参加する意思があること
-  - [ROBOMECH2015講習会](/ja/node/5784)(終了)
+  - [ROBOMECH2015講習会]({{ site.baseurl }}/en/tutorials/robomech2015)(終了)
   - RTM強化月間：6月下旬から7月の間に東京（2回）、名城大（1回）講習会を開催予定
     - [RTミドルウェア強化月間(第1弾)：名城大学・RTミドルウェア講習会](../bootcamp_meijo_2016)
     - [RTミドルウェア強化月間(第2弾)：早稲田大学・RTミドルウェア講習会](../bootcamp_waseda_2016)

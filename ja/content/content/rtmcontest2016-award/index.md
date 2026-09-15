@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアコンテスト2016奨励賞一覧
+title: rtミドルウェアコンテスト2016奨励賞一覧
 ---
 
 #contents(2)
@@ -16,7 +16,7 @@ RTシステムの技術の蓄積と共有を促進することを狙って優れ
 自社の製品を商品としてご提供いただいております。
 
 ### 教育版 レゴ マインドストーム EV3賞 【提供：[株式会社 アフレル](http://www.afrel.co.jp/)】
-<div align="left"><a href="http://www.openrtm.org/openrtm/sites/default/files/6131/LEGO.jpg"><img src="http://www.openrtm.org/openrtm/sites/default/files/6131/LEGO.jpg" width="80%;" align="center"></a></div>
+<div align="left"><a href="{{ site.baseurl }}/ja/./LEGO.jpg"><img src="http://www.openrtm.org/openrtm/sites/default/files/6131/LEGO.jpg" width="80%;" align="center"></a></div>
 **教育用 LEGO マインドストーム EV3提供** <br>
 
 OpenRTM-aistを利用して LEGO Mindstorms EV3　を制御するプログラミンを作成できます。RTミドルウェアを使って、LEGO Mindstorms EV3 をプログラム・制御できることを知っていただきたい。また、上記の活用例をSNSやWEBで広く発信いただける方に、賞を受賞してほしい。動くものを連携することで、今秋の応募作品がより光る提案になりそうな方に賞を送りたいと考えています。

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Raspberry Pi (Rasbian) へのインストール
+title: raspberry pi (rasbian) へのインストール
 ---
 <br>
 <a>No English version available.
@@ -65,7 +65,7 @@ openrtm.org が提供するインストール・スクリプト **pkg_install_ra
 
 OpenRTM-aist を開発・実行するために必要なパッケージをもれなくインストールしてくれるので大変便利です。初めて OpenRTM-aist をインストールしてみる方やソースをコンパイルしてみる方にもお勧めします。
 
-詳しいインストール方法や、オプション・パッケージの種類につきましては、「[一括インストール・スクリプト](/en/node/6345)」のページをご確認ください。
+詳しいインストール方法や、オプション・パッケージの種類につきましては、「[一括インストール・スクリプト]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script/)」のページをご確認ください。
 
 <!-- 以下、一括インストールスクリプトを使用したインストールの手順です。 -->
 

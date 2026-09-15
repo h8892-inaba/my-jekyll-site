@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "OpenRTM-aistを10分で始めよう！"
+title: "openrtm-aistを10分で始めよう！"
 ---
 
 <!-- Title: OpenRTM-aistを10分で始めよう！ -->
@@ -213,10 +213,10 @@ rtshellを利用することでコマンドラインからRTCのActivate、Deact
 
 ## 次は...
 下記リンク先をご覧ください。
-- **もっとサンプルを動かしてみる　&t;：　**[サンプルコンポーネント]({{ site.baseurl }}/ja/node/811)
-- **コンポーネントを作ってみる　　&t;：　**[ケーススタディー]({{ site.baseurl }}/ja/node/110)
-- **OpenRTMの基礎から学ぶ　　　&t;：　**[デベロッパーズガイド]({{ site.baseurl }}/ja/node/113)
-- **コミュニティーに参加する　　　&t;：　**[コミュニティー]({{ site.baseurl }}/ja/node/624)
-- **公開コンポーネントを見てみる　&t;：　**[プロジェクト]({{ site.baseurl }}/ja/node/123)
+- **もっとサンプルを動かしてみる　&t;：　**[サンプルコンポーネント]({{ site.baseurl }}/ja/doc/installation/sample_components)
+- **コンポーネントを作ってみる　　&t;：　**[ケーススタディー]({{ site.baseurl }}/ja/doc/casestudy)
+- **OpenRTMの基礎から学ぶ　　　&t;：　**[デベロッパーズガイド]({{ site.baseurl }}/ja/doc/developersguide)
+- **コミュニティーに参加する　　　&t;：　**[コミュニティー]({{ site.baseurl }}/ja/community)
+- **公開コンポーネントを見てみる　&t;：　**[プロジェクト]({{ site.baseurl }}/ja/node/123)（Projectページ(プロジェクト,node/123)はリンク切れです）
 
 

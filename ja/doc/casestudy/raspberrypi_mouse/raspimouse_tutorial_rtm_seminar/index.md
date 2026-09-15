@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(Raspberry Pi Mouse、RTM講習会)
+title: チュートリアル(raspberry pi mouse、rtm講習会)
 ---
 
 <hr>

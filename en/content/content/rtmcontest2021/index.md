@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアコンテスト2021
+title: rtミドルウェアコンテスト2021
 ---
 
 No English version available.
@@ -12,7 +12,7 @@ No English version available.
 
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>
 <a href="#program"><img src="../images/contest2013_program.png" width="10%;"></a>
-<a href="/contests/2021"><img src="../images/contest2013_worklist.png" width="10%;"></a>
+<a href="/contests/2021"><img src="../images/contest2013_worklist.png" width="10%;"></a>(No corresponding English project page available.)(No corresponding English project page available.)
 <a href="#evaluation"><img src="../images/contest2013_evaluation.png" width="10%;"></a></div>
 <div align="center"><a href="#award"><img src="../images/contest2013_award.png" width="10%;"></a>
 <a href="#pastwork"><img src="../images/contest2013_pastworks.png" width="10%;"></a>
@@ -111,42 +111,42 @@ RTミドルウエアは、ロボットを構成する様々な要素をモジュ
   <tr>
     <td>1S3-02</td>
     <td>14:10-14:25</td>
-    <td><a href="/ja/node/7124">RTミドルウエアを用いた自動ホワイトボード消しの開発</a> <br>&nbsp;・<a href="/ja/node/7124">プロジェクトページ</a> <br>&nbsp;・<a href="https://github.com/Ruchi12377/RT">github</a> (コメントはissueへ)</td>
+    <td><a href="/ja/node/7124">RTミドルウエアを用いた自動ホワイトボード消しの開発</a>(No corresponding English project page available.)(No corresponding English project page available.) <br>&nbsp;・<a href="/ja/node/7124">プロジェクトページ</a>(No corresponding English project page available.)(No corresponding English project page available.) <br>&nbsp;・<a href="https://github.com/Ruchi12377/RT">github</a> (コメントはissueへ)</td>
     <td>芝浦工業大学附属高等学校 山﨑 路真 <br> 芝浦工業大学附属中学校 亀井 達朗, 林 蒼二朗, 檜垣 葵, 福田 啓太, 和田 崇志, 中村 嶺介, 村上 和豊, 良知 航星 <br> 芝浦工業大学附属中学高等学校 山岡 佳代, 横山 浩司 <br> 芝浦工業大学 佐々木 毅</td>
     <td>ダイナミクセルトライアル賞</td>
   </tr>
   <tr>
     <td>1S3-03</td>
     <td>14:25-14:40</td>
-    <td><a href="/ja/node/7123">感染症予防と衛生的手洗い推進のためのハンドドライヤ併用式自動アルコール消毒器の開発</a> <br>&nbsp;・<a href="/ja/node/7123">プロジェクトページ</a> <br>&nbsp;・<a href="https://github.com/alcoholshibaura/alcohol_shibaura">github</a> (コメントはissueへ)</td>
+    <td><a href="/ja/node/7123">感染症予防と衛生的手洗い推進のためのハンドドライヤ併用式自動アルコール消毒器の開発</a>(No corresponding English project page available.)(No corresponding English project page available.) <br>&nbsp;・<a href="/ja/node/7123">プロジェクトページ</a>(No corresponding English project page available.)(No corresponding English project page available.) <br>&nbsp;・<a href="https://github.com/alcoholshibaura/alcohol_shibaura">github</a> (コメントはissueへ)</td>
     <td>芝浦工業大学附属高校 鈴木 成一郎, 辻 健人, 原 晃志, 三宅 莞楓 <br> 芝浦工業大学附属中学校 小谷 真輝, 古山 陽翔 <br> 芝浦工業大学附属中学高等学校 山岡 佳代, 横山 浩司 <br> 芝浦工業大学 佐々木 毅</td>
     <td>カーボンニュートラルロボティクス賞</td>
   </tr>
   <tr>
     <td>1S3-04</td>
     <td>14:40-14:55</td>
-    <td><a href="/ja/node/7122">会議における聴覚障碍者補助コンポーネント郡の開発</a> <br>&nbsp;・<a href="/ja/node/7122">プロジェクトページ</a> <br>&nbsp;・<a href="https://github.com/tbou30897/OpenRTM_meeting_assistance">github</a> (コメントはissueへ)</td>
+    <td><a href="/ja/node/7122">会議における聴覚障碍者補助コンポーネント郡の開発</a>(No corresponding English project page available.)(No corresponding English project page available.) <br>&nbsp;・<a href="/ja/node/7122">プロジェクトページ</a>(No corresponding English project page available.)(No corresponding English project page available.) <br>&nbsp;・<a href="https://github.com/tbou30897/OpenRTM_meeting_assistance">github</a> (コメントはissueへ)</td>
     <td>芝浦工業大学 附属中学校　束田 繁洸, 須山 莉於, 須山 怜於, 土井 将歳 <br> 芝浦工業大学附属中学高等学校 山岡 佳代, 横山 浩司 <br> 芝浦工業大学 佐々木 毅</td>
     <td>**計測自動制御学会学会␋RTミドルウェア賞** <br> RT技術賞 <br> システムズエンジニアリング賞 <br> グローバルアシスト賞 <br> チェンジビジョン賞</td>
   </tr>
   <tr>
     <td>1S3-05</td>
     <td>14:55-15:10</td>
-    <td><a href="/ja/node/7119">障害物のポテンシャル化コンポーネントの開発</a> <br>&nbsp;・<a href="/ja/node/7119">プロジェクトページ</a> <br>&nbsp;・ <a href="https://github.com/tantal-831/PotentialMap">github</a> (コメントはissueへ)</td>
+    <td><a href="/ja/node/7119">障害物のポテンシャル化コンポーネントの開発</a>(No corresponding English project page available.)(No corresponding English project page available.) <br>&nbsp;・<a href="/ja/node/7119">プロジェクトページ</a>(No corresponding English project page available.)(No corresponding English project page available.) <br>&nbsp;・ <a href="https://github.com/tantal-831/PotentialMap">github</a> (コメントはissueへ)</td>
     <td>芝浦工業大学 谷川 朋生, 後藤 優太, 加藤 宏一朗,  <br> 中村 真吾, 菅谷 みどり, 松日楽 信人</td>
     <td>パナソニック アドバンスト␋テクノロジー 株式会社賞​</td>
   </tr>
   <tr>
     <td>1S4-01</td>
     <td>15:10-15:25</td>
-    <td><a href="/ja/node/7116">遠隔操作ロボットの操作情報表示RTCの開発</a> <br>&nbsp;・<a href="/ja/node/7116">プロジェクトページ</a> <br>&nbsp;・ <a href="https://github.com/Y-Yamamoto0/Robot_operation_support">github</a> (コメントはissueへ)</td>
+    <td><a href="/ja/node/7116">遠隔操作ロボットの操作情報表示RTCの開発</a>(No corresponding English project page available.)(No corresponding English project page available.) <br>&nbsp;・<a href="/ja/node/7116">プロジェクトページ</a>(No corresponding English project page available.)(No corresponding English project page available.) <br>&nbsp;・ <a href="https://github.com/Y-Yamamoto0/Robot_operation_support">github</a> (コメントはissueへ)</td>
     <td>芝浦工業大学 山本 優灯, 飯田 悠貴, 松日楽 信人</td>
     <td>ベストサポート賞 <br> ロボットサービスイニシアチブ賞​ <br> 日本ロボット工業会賞</td>
   </tr>
   <tr>
     <td>1S4-02</td>
     <td>15:25-15:40</td>
-    <td><a href="/ja/node/7125">ロボットとの協働作業のための人検知モジュールと応用システム</a> <br>&nbsp;・<a href="/ja/node/7125">プロジェクトページ</a> <br>&nbsp;・ <a href="https://github.com/Hisanori-Suito/HumanDetection">github</a> (コメントはissueへ)</td>
+    <td><a href="/ja/node/7125">ロボットとの協働作業のための人検知モジュールと応用システム</a>(No corresponding English project page available.)(No corresponding English project page available.) <br>&nbsp;・<a href="/ja/node/7125">プロジェクトページ</a>(No corresponding English project page available.)(No corresponding English project page available.) <br>&nbsp;・ <a href="https://github.com/Hisanori-Suito/HumanDetection">github</a> (コメントはissueへ)</td>
     <td>名城大学 水藤 久憲, 鈴木 麻友, 竹村 勇馬,  <br> 小林 和史, 大原 賢一</td>
     <td>ホンダフロンティアロボティクス賞​</td>
   </tr>
@@ -176,7 +176,7 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 
 応募作品を実際に動かしてみるなどして試していただき、どのような環境で動作したか/しなかったか、バグやその修正のためのパッチ情報、作品に対するコメントや感想を作品のプロジェクトページに書き込み、作者にフィードバックすることが出来ます。
 これらのフィードバックを元に応募者が改良を加え、SI2021でのプレゼンテーションまでに、より良い作品になるようご協力ください。
-- [コメントの書き方ガイド](/node/4569)
+- [コメントの書き方ガイド]({{ site.baseurl }}/en/content/content/rtmcontest_commentguide)
 
 - コンテスト作品一覧へ（ただいま準備中です）
 <!-- - [[コンテスト作品一覧へ:/contests/2021]] -->
@@ -257,47 +257,47 @@ SI2021の申込方法、申込および原稿〆切および具体的な開催�
 &aname(pastwork){};
 ## 過去のコンテスト情報 
 
-- [RTミドルウエアコンテスト2007](http://www.openrtm.org/rt/RTMcontest/2007/)(no_link)
-<!-- （[応募作品](http://www.openrtm.org/rt/RTMcontest/2007/entry_public.html)）-->
+- [RTミドルウエアコンテスト2007]({{ site.baseurl }}/en/content/content/rtmcontest2007)(no_link)
+<!-- （[応募作品]({{ site.baseurl }}/en/content/content/rtmcontest2007/entry_public)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2008](http://www.openrtm.org/rt/RTMcontest/2008/)(no_link)
-<!--（[応募作品](http://www.openrtm.org/rt/RTMcontest/2008/entry.html)）-->
+- [RTミドルウエアコンテスト2008]({{ site.baseurl }}/en/content/content/rtmcontest2008)(no_link)
+<!--（[応募作品]({{ site.baseurl }}/en/content/content/rtmcontest2008/entry_public)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2009](http://www.openrtm.org/rt/RTMcontest/2009/)(no_link)
+- [RTミドルウエアコンテスト2009]({{ site.baseurl }}/en/content/content/rtmcontest2009)(no_link)
 <!--（[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2009?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2010](http://www.openrtm.org/rt/RTMcontest/2010/)(no_link)
+- [RTミドルウエアコンテスト2010]({{ site.baseurl }}/en/content/content/rtmcontest2010)(no_link)
 <!-- （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2010?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2011](http://www.openrtm.org/rt/RTMcontest/2011/) (no_link)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2011)）-->
+- [RTミドルウエアコンテスト2011]({{ site.baseurl }}/en/content/content/rtmcontest2011) (no_link)
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2012](http://www.openrtm.org/openrtm/ja/node/5079) (no_link)
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)）-->
+- [RTミドルウエアコンテスト2012]({{ site.baseurl }}/en/content/content/rtmcontest2012) (no_link)
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2013](../rtmcontest2013)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2013)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2013)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2014](../rtmcontest2014)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2014)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2014)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2015](../rtmcontest2015)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2015)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2015)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2016](../rtmcontest2016)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2016)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2016)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2017](../rtmcontest2017)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2017)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2017)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2018](../rtmcontest2018)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2018)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2018)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2019](../rtmcontest2019)
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2019)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2019)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2020](../rtmcontest2020) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2020)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2020)(No corresponding English project page available.)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 
 <!-- &aname(registration){}; -->
@@ -307,9 +307,9 @@ SI2021の申込方法、申込および原稿〆切および具体的な開催�
 <span style="color:red;">事務局よりID発行後より，作品登録が可能になります．連絡があるまで，しばらくお待ちください．</span>;~
 応募作品は期日までにプロジェクトページに登録する必要があります。
 
-- [プロジェクトページ](http://openrtm.org/openrtm/ja/project/projects_ja)
-  - [プロジェクト作成マニュアル](http://openrtm.org/openrtm/ja/node/1554)
-  - [新規プロジェクトの作成](http://openrtm.org/openrtm/ja/node/1553)
+- [プロジェクトページ]()(No corresponding page available.)
+  - [プロジェクト作成マニュアル](http://openrtm.org/openrtm/ja/node/1554)(No corresponding English project page (How to Register) available.)(No corresponding English project page (How to Register) available.)
+  - [新規プロジェクトの作成](http://openrtm.org/openrtm/ja/node/1553)(No corresponding English project page (How to Create) available.)(No corresponding English project page (How to Create) available.)
 
 上記のプロジェクト作成マニュアルに則り、作品を登録してください。
 RTミドルウエアコンテストでは、プロジェクト登録されたコンポーネントなどがコンテスト応募作品であるかどうかを明確にするために以下のルールを取っております。下記ルールに従い作品を登録してください。
@@ -357,7 +357,7 @@ RTミドルウエアコンテスト事務局: rtm-contest<at>aist.go.jp, rtmcont
 <!-- &color(red){既に終了しました。}; -->
 エントリー希望者は、個別に連絡が取れるように、以下のフォームを使って事前登録して下さい（SI2021の講演申込も確認できた時点で正式登録となります）。また、重要な案内をお送りするための事前登録も兼ねてますので、**エントリを迷っている時は先にこちらだけ事前登録**してください）
 
-- 当webサイトにてユーザログインしないと入力フォームが表示されませんので、ユーザ登録がまだの方は当Webページのユーザ登録をお願いします。[ユーザ登録はこちら](http://openrtm.org/openrtm/ja/user/register)
+- 当webサイトにてユーザログインしないと入力フォームが表示されませんので、ユーザ登録がまだの方は当Webページのユーザ登録をお願いします。[ユーザ登録はこちら]()(No corresponding page available.)
 - 当Webサイトにログイン済みの方は<span style="color:red;">名前の欄にユーザ登録されたユーザ名が出ますが、必ず、氏名に書き換え</span>;てください。~
 <span style="color:red;">※お手数ですが、ログインしていただくと、登録フォームが表示されます</span>;
 - そのほか、入力フォームにしたがって性別、エントリー歴（該当する年にチェック。初めての方はチェックを入れないでください）、奨励賞受賞歴（あり/なし）も入力して下さい。[各種奨励賞](../rtmcontest2021-award)選考の参考とさせていただきます。

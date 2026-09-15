@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTCBuilder-1.1.0
+title: rtcbuilder-1.1.0
 ---
 
 <!-- https://openrtm.org/openrtm/ja/doc/toolmanuals/rtcbuilder-1_1_0

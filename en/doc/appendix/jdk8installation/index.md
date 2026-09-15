@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Installing JDK 8"
+title: "installing jdk 8"
 ---
 
 <!-- Title: Installing JDK 8 -->

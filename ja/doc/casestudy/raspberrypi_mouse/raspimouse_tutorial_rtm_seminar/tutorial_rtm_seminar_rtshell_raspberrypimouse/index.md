@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(rtshell入門、Raspberry Pi Mouse)
+title: チュートリアル(rtshell入門、raspberry pi mouse)
 ---
 <!--  チュートリアル(rtshell入門、Raspberry Pi Mouse) -->
 
@@ -10,7 +10,7 @@ title: チュートリアル(rtshell入門、Raspberry Pi Mouse)
 ここではシミュレータ上のRaspberry Piマウスを操作するRTシステムの起動、終了を自動化するバッチファイル、シェルスクリプトの作成方法について説明します。
 今まで実行ファイルをダブルクリックして起動したり、RTSystemEditorから操作してポートを接続したりしていたのが、スクリプトを実行するだけでシステムの起動に必要な処理を全て実行してくれます。
 
-この実習では[RTコンポーネントの作成入門](/ja/node/6550)で作成したRobotControllerコンポーネントを使用します。
+この実習では[RTコンポーネントの作成入門]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2)で作成したRobotControllerコンポーネントを使用します。
 
 RTCの起動とRTSystemEditor上での操作を自動化するバッチファイル、シェルスクリプトを作成する実習を行います。
 
@@ -20,8 +20,8 @@ RTCの起動とRTSystemEditor上での操作を自動化するバッチファイ
 
 rtshellはコマンドラインからRTCを操作するためのツールで、RTSystemEditorと同等の機能を持ちます。
 
-- [rtshell によるRTシステムの管理](/ja/node/5014)
-- [rtshell入門](https://openrtm.org/openrtm/sites/default/files/5620/rtshell.pdf)
+- [rtshell によるRTシステムの管理]({{ site.baseurl }}/ja/content/rtshell_managing_rt_systems)
+- [rtshell入門]({{ site.baseurl }}/ja/./rtshell.pdf)
 
 ## RTシステム起動の自動化
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "RTC（EC）の状態を取得する"
+title: "rtc（ec）の状態を取得する"
 ---
 
 <!-- Title: RTC（EC）の状態を取得する -->

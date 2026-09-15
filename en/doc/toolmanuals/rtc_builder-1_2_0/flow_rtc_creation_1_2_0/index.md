@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Overview and RTC Creation Flow
+title: overview and rtc creation flow
 
 ---
 

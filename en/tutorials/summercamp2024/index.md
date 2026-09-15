@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Summer Camp 2024
+title: summer camp 2024
 ---
 
 <div align="center"><a href="summercamp2023_slider.png"><img src="summercamp2023_slider.png" width="80%;"></a></div>
@@ -39,8 +39,8 @@ Participants must have attended an RT Middleware workshop previously or possess 
 <!-- In previous years, preliminary workshops were held in July as part of an “Intensive Training Month,” but this year they will generally not be held. &color(red){ (Confirmation) } -->
 If you have never attended a workshop before, you may satisfy the participation requirements by self-studying the following tutorials.
 
-- [Get Started with RT Middleware in 10 Minutes]({{ site.baseurl }}/ja/doc/installation/lets_start122) (Installation and sample operation check)
-- [Creating an Image Processing Component](https://www.openrtm.org/openrtm/ja/node/6057) (Practice creating image processing components; requires a USB camera or built-in camera)
+- [Get Started with RT Middleware in 10 Minutes]({{ site.baseurl }}/en/doc/installation/lets_start) (Installation and sample operation check)
+- [Creating an Image Processing Component]({{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_win81_vs2015) (Practice creating image processing components; requires a USB camera or built-in camera)
 - [ROBOMECH2024RTM Workshop](../robomech2024) (Creating components to control an actual mobile robot)
 
 ### Participation Fee
@@ -277,11 +277,11 @@ Participants are requested to prepare the following deliverables and present the
   - Please prepare documentation containing sufficient information for third parties to reproduce the system developed during this camp.
   - Please refer to projects from previous summer camps and contests
     - [RTM Summer Camp 2021 Project List](../summercamp2021#toc13)
-    - [RTM Contest 2021 Project List](/contests/2021)(no_page)
+    - [RTM Contest 2021 Project List](/contests/2021)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
     - [RTM Summer Camp 2022 Project List](../summercamp2022#toc18)
-    - [RTM Contest 2022 Project List](https://openrtm.org/openrtm/ja/contests/2022)(no_page)
+    - [RTM Contest 2022 Project List](https://openrtm.org/openrtm/ja/contests/2022)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
     - [RTM Summer Camp 2023 Project List](../summercamp2023#toc18)
-    - [RTM Contest 2023 Project List](https://openrtm.org/openrtm/ja/contests/2023)(no_page)
+    - [RTM Contest 2023 Project List](https://openrtm.org/openrtm/ja/contests/2023)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
 
 - **If SysML, UML, or other models were created, submit the model data as well** → Upload to your project page
   - If modeling tools were used, please upload the original model data
@@ -294,7 +294,7 @@ Participants are requested to prepare the following deliverables and present the
 ### Group 1
 
 - **Theme**: Tag Game
-  - [Project Page](/ja/project/summercamp20241)(no_page)
+  - [Project Page](/ja/project/summercamp20241)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
 <!-- -- [[Final Presentation Slides:https://www.slideshare.net/openrtm/ss-252721420]] -->
 
 <!-- <nowiki> -->
@@ -309,7 +309,7 @@ Participants are requested to prepare the following deliverables and present the
 ### Group 2
 
 - **Theme**: Automatic Parking Robot
-  - [Project Page](/ja/project/summercamp20242)(no_page)
+  - [Project Page](/ja/project/summercamp20242)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
 <!-- -- [[Final Presentation Slides:https://www.slideshare.net/openrtm/ss-252710121]] -->
 
 <!-- <nowiki> -->
@@ -325,7 +325,7 @@ Participants are requested to prepare the following deliverables and present the
 ### Group 3
 
 - **Theme**: Remote Management System for Autonomous Mobile Robots
-  - [Project Page](/ja/project/summercamp20243)(no_page)
+  - [Project Page](/ja/project/summercamp20243)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
 <!-- -- [[Final Presentation Slides:https://www.slideshare.net/openrtm/gng-252710439]] -->
 
 <!-- <nowiki> -->
@@ -346,7 +346,7 @@ Participants are requested to prepare the following deliverables and present the
 ### Group 4
 
 - **Theme**: A Robot That Can Automatically Escape from a Maze
-  - [Project Page](/ja/project/summercamp20244)(no_page)
+  - [Project Page](/ja/project/summercamp20244)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
 <!-- -- [[Final Presentation Slides:https://www.slideshare.net/openrtm/ss-252710179]] -->
 
 <!-- <nowiki> -->

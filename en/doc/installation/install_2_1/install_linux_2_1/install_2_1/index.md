@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installation
+title: installation
 ---
 
 <!-- Title: インストール -->
@@ -19,7 +19,7 @@ Please note that the supported versions of Ubuntu/Debian GNU/Linux and platform 
 
 ## Changes in Version 2.1
 
-You can now install the new [SSM Communication Feature](/ja/doc/developersguide/advanced_rt_system_programming/ssm_comm_use).<br>
+You can now install the new [SSM Communication Feature]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/ssm_comm_use).<br>
 Since the SSM library is statically linked, you do not need to install SSM separately. The following files are installed by the openrtm2-ssm-tp deb package.
 
 ```
@@ -100,7 +100,7 @@ By specifying options, you can install packages that match your requirements. Th
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) --help
 ```
 
-For detailed information about the installed packages, see "[Details of OpenRTM-aist-2.1 deb Packages](/ja/doc/installation/install_2_1/install_linux_2_1/install_2_1/install_debpackages_workcontent_2_1)".
+For detailed information about the installed packages, see "[Details of OpenRTM-aist-2.1 deb Packages]({{ site.baseurl }}/en/doc/installation/install_2_1/install_linux_2_1/install_debpackages_workcontent_2_1)".
 
 ## Installing ROS Packages
 

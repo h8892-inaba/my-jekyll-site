@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Windowsへのインストール
+title: windowsへのインストール
 ---
 
 <br>

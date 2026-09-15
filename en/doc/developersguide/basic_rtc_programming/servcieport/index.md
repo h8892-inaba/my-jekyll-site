@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Service Port (Basics)"
+title: "service port (basics)"
 ---
 
 <!-- Title: サービスポート (基礎編) -->

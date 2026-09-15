@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Views (Log View)
+title: views (log view)
 ---
 
 <!-- Title: ビュー（ログビュー編） -->

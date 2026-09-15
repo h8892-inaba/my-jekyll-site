@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(SLAM実習)
+title: チュートリアル(slam実習)
 ---
 
 init

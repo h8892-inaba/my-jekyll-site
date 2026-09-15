@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェア強化月間（第2弾）早稲田大学・RTミドルウェア講習会
+title: rtミドルウェア強化月間（第2弾）早稲田大学・rtミドルウェア講習会
 ---
 
 <div align="center"><a href="bootcamp_waseda2014.jpg"><img src="bootcamp_waseda2014.jpg" width="75%;"></a></div>
@@ -74,7 +74,7 @@ title: RTミドルウェア強化月間（第2弾）早稲田大学・RTミド�
   - インストールには時間がかかりますので、ご注意ください。
   - <span style="color:red;">Visual Studio 2010 SP1を[こちら](http://www.microsoft.com/ja-jp/download/details.aspx?id=23691) からインストールしておいてください。</span>;
   - VC2012には対応していません。また、VC2008は少々古いのでお勧めいたしません。
-- [OpenRTM-aist-1.1.0 C++版](http://www.openrtm.org/openrtm/ja/node/5012)
+- [OpenRTM-aist-1.1.0 C++版]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_0_release)
   - <span style="color:red;">インストールされているVCに一致するバージョンをダウンロードしてください。</span>;
   - 64bit版はPythonとの相性が悪いので、32bit版をインストールしてください。
 - [OpenRTM-aist-1.1.0-RC1 Python](http://www.openrtm.org/pub/Windows/OpenRTM-aist/python/OpenRTM-aist-Python-1.1.0-RC1.msi)
@@ -84,11 +84,11 @@ title: RTミドルウェア強化月間（第2弾）早稲田大学・RTミド�
 - [Doxygen](http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.1-setup.exe)
 - [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
   - 32bit版をインストールしてください。
-- [Eclipse全部入り](http://www.openrtm.org/openrtm/ja/node/30)
-  - [Windows用32bit版全部入り](http://openrtm.org/pub/openrtp/packages/1.1.0.rc4v20130216/eclipse381-openrtp110rc4v20130216-ja-win32.zip)を推奨します。
+- [Eclipse全部入り]()（リンク切れです）
+  - [Windows用32bit版全部入り]()（リンク切れです）を推奨します。
   - インストール後、メニューの「ヘルプ」→「新規ソフトウエアのインストール」を選択、更新サイトに http://openrtm.org/pub/openrtp/releases/updates を入力してRTSystemEditorとRTCBuilderをアップデートしておくことをお勧めします。
 - [TeraTerm](http://sourceforge.jp/projects/ttssh2/downloads/58215/teraterm-4.77.exe/)
-- Bonjour: インストール方法については[こちら](http://openrtm.org/openrtm/ja/node/266#toc8)
+- Bonjour: インストール方法については[こちら]({{ site.baseurl }}/ja/doc/installation/other/raspberrypi_casestudy/raspi_init_setting#toc8)
   - [iTunes](http://www.apple.com/jp/itunes/download/)や[Bonjour Print Services for Windows](http://support.apple.com/kb/DL999?viewlocale=ja_JP)がインストールされていれば不要です。
 - 使い慣れたエディタ: EclipseやPythonに付属のエディタでも構いませんが、使い慣れたエディタが入っていた方が良いでしょう
 <!-- - [[RTC.xml:http://www.openrtm.org/openrtm/sites/default/files/5235/RTC.xml]] 第2部で使用します。 -->

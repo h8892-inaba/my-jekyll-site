@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Autocontrol"
+title: "autocontrol"
 ---
 
 <!-- Title: Autocontrol -->

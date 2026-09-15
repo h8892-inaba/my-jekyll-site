@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 玄箱PROへのインストール
+title: 玄箱proへのインストール
 ---
 <br>
 <a>No English version available.

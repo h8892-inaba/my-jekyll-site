@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Building from Source (Linux)
+title: building from source (linux)
 ---
 
 <!-- Title: ソースからのビルド (Linux編) -->

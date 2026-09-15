@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Tool Manuals"
+title: "tool manuals"
 ---
 
 # Tools

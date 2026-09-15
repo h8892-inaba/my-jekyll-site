@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Manager Functions"
+title: "manager functions"
 ---
 
 Under preparation.

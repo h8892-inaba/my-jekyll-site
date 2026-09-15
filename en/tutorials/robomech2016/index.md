@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ROBOMECH2016講習会(2016年6月8日(水))
+title: robomech2016講習会(2016年6月8日(水))
 ---
 <br>
 <a>No English version available.
@@ -76,12 +76,12 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
   <tr>
     <td>13:00 -14:30</td>
     <td>></td>
-    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：原功氏、安藤慶昭氏（産業技術総合研究所）坂本武志 氏 (株式会社グローバルアシスト)<br> **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。<br> <a href="/ja/node/5022">チュートリアル（画像処理コンポーネントの作成 Windows編）</a> <br> <a href="/ja/node/430">チュートリアル（画像処理コンポーネントの作成 Linux編）</a></td>
+    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：原功氏、安藤慶昭氏（産業技術総合研究所）坂本武志 氏 (株式会社グローバルアシスト)<br> **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。<br> <a href="{{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_winxp_rtmtools_vc2010">チュートリアル（画像処理コンポーネントの作成 Windows編）</a> <br> <a href="{{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_ubuntu_1404">チュートリアル（画像処理コンポーネントの作成 Linux編）</a></td>
   </tr>
   <tr>
     <td>14:45 -16:45</td>
     <td>></td>
-    <td>**第3部：プログラミング実習** <br> 担当：宮本信彦 氏 (産総研) 他 <br> **概要**：OpenRTM-aistを利用して<a href="http://products.rt-net.jp/micromouse/raspberry-pi-mouse">RaspberryPiマウス</a> または <a href="http://www.afrel.co.jp/lineup/mindstorm-ev3">LEGO Mindstorms EV3</a> を制御するプログラムを実際に作成します。 <br><a href="/ja/node/6042">チュートリアル（RaspberryPiマウス）</a> <br><a href="/ja/node/6041">チュートリアル（EV3）</a></td>
+    <td>**第3部：プログラミング実習** <br> 担当：宮本信彦 氏 (産総研) 他 <br> **概要**：OpenRTM-aistを利用して<a href="http://products.rt-net.jp/micromouse/raspberry-pi-mouse">RaspberryPiマウス</a> または <a href="http://www.afrel.co.jp/lineup/mindstorm-ev3">LEGO Mindstorms EV3</a> を制御するプログラムを実際に作成します。 <br><a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial">チュートリアル（RaspberryPiマウス）</a> <br><a href="{{ site.baseurl }}/en/doc/casestudy/lego_mindstorm/lego_tutorial_ev3">チュートリアル（EV3）</a></td>
   </tr>
 </table>
 
@@ -96,7 +96,7 @@ RaspberryPiを利用しているので、実機上で開発したり、容易に
 
 <div align="center"><a href="http://www.rt-net.jp/wp-content/uploads/2015/08/DSC_0025.png"><img src="http://www.rt-net.jp/wp-content/uploads/2015/08/DSC_0025.png" width="20%; margin:10px;"></a></div>
 
-- [Raspberry Pi Mouse 活用事例](http://openrtm.org/openrtm/ja/content/raspberry_pi_mouse)
+- [Raspberry Pi Mouse 活用事例]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse)
 
 ### LEGO Mindstorms EV3
 
@@ -105,7 +105,7 @@ LEGO Mindstorms EV3 は LEGO の Mindstorms シリーズの新しいパッケー
 
 <div align="center"><a href="http://bloximages.chicago2.vip.townnews.com/andovertownsman.com/content/tncms/assets/v3/editorial/6/c6/6c6c0ea3-07ce-5d5c-a6e0-2bc28bc0f29d/54190063e4839.image.jpg"><img src="http://bloximages.chicago2.vip.townnews.com/andovertownsman.com/content/tncms/assets/v3/editorial/6/c6/6c6c0ea3-07ce-5d5c-a6e0-2bc28bc0f29d/54190063e4839.image.jpg" width="40%; margin:10px;"></a></div>
 
-- [LEGO Mindstorms EV3 活用事例](http://openrtm.org/openrtm/ja/casestudy/lego_mindstorm_ev3)
+- [LEGO Mindstorms EV3 活用事例]({{ site.baseurl }}/en/doc/casestudy/lego_mindstorm)
 
 
 <!-- ** 講習会に参加される方へ -->
@@ -138,14 +138,14 @@ LEGO Mindstorms EV3 は LEGO の Mindstorms シリーズの新しいパッケー
 #### OpenRTM-aist 1.1.2-RELEASE版 (C++版、Python版）
 
 - 1.1.2 からは一つのインストーラですべての言語とVisual Studioのバージョンに対応しいます。32bit/64bitのみ選択してください。（32bit推奨）
-  - [Windows用インストーラ(32bit)](/content/openrtm-aist-c-112-release#toc2)
+  - [Windows用インストーラ(32bit)]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#toc2)
 - 1.1.2 は インストールしているVisual Studioのバージョンをシステム環境変数で指定しますので、設定を確認して下さい。デフォルトはvc2013の設定になっています。
-  - [Visual Studio のバージョン指定](/content/openrtm-aist-c-112-release#toc4)
+  - [Visual Studio のバージョン指定]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#toc4)
 - 1.1.2の使用を推奨しますが、1.1.0, 1.1.1でも受講可能です。
 - 1.1.1/1.1.0 をお使いの場合は<span style="color:red;">必ず</span>; Visual Studio のバージョンと一致させてください。
 <!-- -- 他のバージョン用は、[[こちらのページ:http://openrtm.org/openrtm/ja/content/openrtm-aist-c-112-release]] からダウンロードできます。(非推奨) -->
 - デフォルト設定のままインストールして下さい。
-- [OpenRTM-aistを10分で始めよう！](http://openrtm.org/openrtm/ja/content/lets_start) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
+- [OpenRTM-aistを10分で始めよう！]()(No corresponding page available.) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
 
 #### Python
 

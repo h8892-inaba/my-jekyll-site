@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Visual Studio Community 2026のインストール
+title: visual studio community 2026のインストール
 ---
 
 <!-- Title: Visual Studio Community 2022のインストール -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: How to Use windows_installer_test.bat
+title: how to use windows_installer_test.bat
 ---
 
 

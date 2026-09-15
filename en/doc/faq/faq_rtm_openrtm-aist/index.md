@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About RT Middleware / OpenRTM-aist
+title: about rt middleware / openrtm-aist
 ---
 
 <!-- Title: RTミドルウェア / OpenRTM-aist について -->

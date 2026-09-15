@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Bulk Installation Scripts"
+title: "bulk installation scripts"
 
 ---
 

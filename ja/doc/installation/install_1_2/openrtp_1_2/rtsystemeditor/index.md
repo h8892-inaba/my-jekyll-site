@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTSystemEditorのインストール
+title: rtsystemeditorのインストール
 ---
 
 <!-- Title: RTSystemEditorのインストール -->

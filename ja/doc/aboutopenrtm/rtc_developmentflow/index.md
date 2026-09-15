@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "RTC開発の流れ"
+title: "rtc開発の流れ"
 ---
 
 <!-- Title: RTC開発の流れ -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installation Procedure
+title: installation procedure
 ---
 <!-- Title: インストール方法 -->
 

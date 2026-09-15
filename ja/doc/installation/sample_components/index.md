@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "OpenRTM付属のサンプルについて"
+title: "openrtm付属のサンプルについて"
 ---
 
 <!-- Title: OpenRTM-aist付属のサンプルについて -->
@@ -16,7 +16,7 @@ OpenRTM-aistにはいくつかのサンプルコンポーネントが付属し�
 
 Windowsでネーム・サーバーを実行するには、該当するファイルをエクスプローラーで見つけダブルクリックしてください。インストーラーを用いてインストールした場合は、[スタートメニュー]>[OpenRTM-aist]>[Start Naming Service]としてもネームサービスを起動できます。
 なお、本章ではRTSystemEditorがインストールされた環境であることを想定して説明しています。
-RTSystemEditorのインストールについての詳細は、[OpenRTPのインストール](//ja/node/6655)を参照してください。
+RTSystemEditorのインストールについての詳細は、[OpenRTPのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/openrtp_1_2)を参照してください。
 
 
 

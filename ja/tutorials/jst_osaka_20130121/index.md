@@ -1,6 +1,6 @@
 ---
 layout: page
-title: JSTソフトウェアプロジェクト教育プログラム (2013年1月21,22日)
+title: jstソフトウェアプロジェクト教育プログラム (2013年1月21,22日)
 ---
 
 ## 開催要旨
@@ -117,7 +117,7 @@ Windows推奨ですが、Linuxでも実習可能です。
     <td>CENTER: OpenRTM-aist 1.1.0 C++ 関連</td>
   </tr>
   <tr>
-    <td><a href="/ja/node/5012">C++, RELEASE版</a></td>
+    <td><a href="{{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_0_release">C++, RELEASE版</a></td>
     <td>OpenRTM-aist C++版パッケージ。ダウンロードページに従い、自分の環境に合ったパッケージ、 PythonおよびPyYAML をインストールします。</td>
   </tr>
   <tr>
@@ -137,7 +137,7 @@ Windows推奨ですが、Linuxでも実習可能です。
     <td>CENTER: OpenRTM-aist 1.1.0 Python 関連</td>
   </tr>
   <tr>
-    <td><a href="http://openrtm.org/openrtm/node/4526">Python, RC1版</a></td>
+    <td><a href="{{ site.baseurl }}/ja/download/openrtm-aist-python/openrtm-aist-python_1_1_0_rc1">Python, RC1版</a></td>
     <td>OpenRTM-aist Python版パッケージ。ダウンロードページに従い、自分の環境にあったパッケージ、 Pythonをインストールします。</td>
   </tr>
   <tr>
@@ -145,7 +145,7 @@ Windows推奨ですが、Linuxでも実習可能です。
     <td>CENTER: Eclipseツール</td>
   </tr>
   <tr>
-    <td><a href="http://openrtm.org/openrtm/ja/node/4557">Eclipseツール</a></td>
+    <td><a href="">Eclipseツール</a></td>
     <td>コンポーネントを設計するツール: RTCBUilder, コンポーネントを操作するツール: RTSystemEditor が同梱されています。</td>
   </tr>
 </table>
@@ -153,7 +153,7 @@ Windows推奨ですが、Linuxでも実習可能です。
 ### 実習で必要なファイル
 
 - [RTC.xml](./RTC.xml)
-- [Flipコンポーネントの作成](http://www.openrtm.org/openrtm/ja/node/5022)
+- [Flipコンポーネントの作成]({{ site.baseurl }}/ja/doc/casestudy/opencv_comp_development/opencv_winxp_rtmtools_vc2010)
 
 ### Linuxで必要なソフトウエア
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CPack で rpm 作成 （Linux）
+title: cpack で rpm 作成 （linux）
 ---
 -------jp page!!-------
 

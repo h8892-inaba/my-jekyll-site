@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Using ROS Communication Features"
+title: "using ros communication features"
 ---
 
 <!-- Title: ROS通信機能の利用 -->

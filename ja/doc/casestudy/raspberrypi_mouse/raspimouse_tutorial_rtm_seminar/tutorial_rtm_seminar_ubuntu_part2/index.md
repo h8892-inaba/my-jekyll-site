@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Ubuntu)
+title: チュートリアル(rtコンポーネントの作成入門、raspberry pi mouse、ubuntu)
 ---
 
 #contents
@@ -30,7 +30,7 @@ title: チュートリアル(RTコンポーネントの作成入門、Raspberry 
 
 ### シミュレーター
 
-- [RaspberryPiMouseSimulatorコンポーネント](/ja/node/6198)
+- [RaspberryPiMouseSimulatorコンポーネント]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use)
 
 シミュレーターは [Open Dynamics Engine(ODE)](http://www.ode.org/) という物理演算エンジンと ODE 付属の描画ライブラリ(drawstuff)を使用して開発しています。
 OpenGL が動作すれば動くので、大抵の環境で動作するはずです。
@@ -1080,7 +1080,7 @@ Edge、Chrome、Firefox等のWEBブラウザで**192.168.11.1**のアドレス�
 <br>
 <br>
 
-すると[RaspberryPiMouseRTC](/ja/node/6015#toc0)という RTC が見えるようになります。
+すると[RaspberryPiMouseRTC]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0)という RTC が見えるようになります。
 
 <div align="center"><a href="tutorial_raspimouse2.png"><img src="tutorial_raspimouse2.png" width="70%;"></a></div>
 

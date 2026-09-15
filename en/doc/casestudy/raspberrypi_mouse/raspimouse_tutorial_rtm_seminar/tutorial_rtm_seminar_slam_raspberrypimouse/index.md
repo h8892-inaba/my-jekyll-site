@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (SLAM Exercise)
+title: tutorial (slam exercise)
 ---
 
 init

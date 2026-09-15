@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTPの起動手順(1.2系、Windows)
+title: openrtpの起動手順(1.2系、windows)
 ---
 <br>
 <a>No English version available.

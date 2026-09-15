@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "RTC Operation Function (CORBA_RTCUtil) User Manual"
+title: "rtc operation function (corba_rtcutil) user manual"
 ---
 
 #contents

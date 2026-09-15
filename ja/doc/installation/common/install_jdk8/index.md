@@ -1,7 +1,7 @@
 ---
 
 layout: page
-title: JDK8のインストール
+title: jdk8のインストール
 
 ---
 

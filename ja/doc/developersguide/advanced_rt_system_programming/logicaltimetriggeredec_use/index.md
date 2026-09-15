@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "LogicalTimeTriggeredECの使用方法"
+title: "logicaltimetriggeredecの使用方法"
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Using Fast DDS Communication Functions"
+title: "using fast dds communication functions"
 ---
 
 <!-- Title: Fast DDS通信機能の利用 -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアコンテスト2017奨励賞一覧
+title: rtミドルウェアコンテスト2017奨励賞一覧
 ---
 
 #contents(3)

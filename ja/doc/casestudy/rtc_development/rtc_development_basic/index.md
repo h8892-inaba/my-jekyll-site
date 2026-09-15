@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTコンポーネント作成の基本
+title: rtコンポーネント作成の基本
 ---
 
 <!-- Title: RTコンポーネント作成の基本 -->

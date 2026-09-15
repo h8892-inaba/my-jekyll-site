@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Ubuntu/Debianへのインストール
+title:  ubuntu/debianへのインストール
 ---
 
 <!-- Title: Ubuntu/Debianへのインストール -->
@@ -32,7 +32,7 @@ Debianの場合はsuでroot権限を得た後に
 ```
 でインストールできます。
 
-一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト](http://openrtm.org/openrtm/ja/node/6345)」のページをご確認ください。
+一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[一括インストールスクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)」のページをご確認ください。
 
 ## OpenRTPのインストール
 一般的なUbuntu/Debian環境での開発にはRTC BuilderやRTSystem Editorを使用しますが、その場合にはOpenRTPが必要です。一括インストールスクリプトを用いてOpenRTPをインストールしてください。Ubuntuではpkg_install_ubuntu.shが置いてあるディレクトリで
@@ -52,7 +52,7 @@ Debianの場合はsuでroot権限を得た後に
 ## JDK8のインストール
 
 Java版OpenRTM-aistの使用にはJDK8相当のJava環境が必要です。(デフォルトの環境でJDK8がインストールされている場合もありますが、Ubuntu 18.04ではJDK11がインストールされているため、JDK8のインストールが必要です。)　JDK8の入手やインストールについては以下を参照してください。
-- [JDK8のインストール](/ja/node/6911)
+- [JDK8のインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8)
 
 ### インストールの確認
 インストールを確認します。

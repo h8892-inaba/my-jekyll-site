@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Installing OpenRTM-aist 1.2 on Windows (Using the MSI Installer)"
+title: "installing openrtm-aist 1.2 on windows (using the msi installer)"
 ---
 
 <!-- Title: Installing OpenRTM-aist 1.2 on Windows (Using the MSI Installer) -->

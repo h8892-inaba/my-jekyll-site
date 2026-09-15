@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "独自インターフェース型の実装手順(Python)"
+title: "独自インターフェース型の実装手順(python)"
 ---
 
 <!-- Title: 独自インターフェース型の実装手順(Python) -->

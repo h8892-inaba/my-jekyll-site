@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Implementation Procedure for a Custom Serializer"
+title: "implementation procedure for a custom serializer"
 ---
 
 <!-- Title: 独自シリアライザの実装手順 -->

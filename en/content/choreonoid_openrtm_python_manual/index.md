@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "OpenRTM Integration Plugin for Choreonoid, Python Version Manual"
+title: "openrtm integration plugin for choreonoid, python version manual"
 ---
 
 #contents

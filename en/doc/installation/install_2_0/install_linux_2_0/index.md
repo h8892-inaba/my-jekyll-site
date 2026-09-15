@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installation on Linux
+title: installation on linux
 ---
 
 <hr>

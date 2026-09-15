@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 画像処理コンポーネントの作成 (Windows 10、OpenRTM-aist-2.0.0、OpenRTP-2.0.0、CMake-3.19.8、VS2019)
+title: 画像処理コンポーネントの作成 (windows 10、openrtm-aist-2.0.0、openrtp-2.0.0、cmake-3.19.8、vs2019)
 ---
 
 <!-- Title: 画像処理コンポーネントの作成 (Windows 10、OpenRTM-aist-2.0.0、OpenRTP-2.0.0、CMake-3.19.8、VS2019) -->
@@ -178,7 +178,7 @@ flipMode の各値での画像処理のイメージを下図に示します。
 
 - OS: Windows 10(11、8.1 でも可能)
 - コンパイラ: [Visual Studio 2019 Community]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
-- [OpenRTM-aist-2.0.0-RC220404_x86_64](https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.0-RC220404_x86_64.msi)
+- [OpenRTM-aist-2.0.0-RC220404_x86_64]()（リンク切れです）
 - [CMake](https://github.com/Kitware/CMake/releases/download/v3.23.1/cmake-3.23.1-windows-x86_64.msi)
 
 

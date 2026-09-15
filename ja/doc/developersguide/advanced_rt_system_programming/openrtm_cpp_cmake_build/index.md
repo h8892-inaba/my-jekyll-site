@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "OpenRTM-aist(C++版)のCMakeによるビルド手順"
+title: "openrtm-aist(c++版)のcmakeによるビルド手順"
 ---
 
 <!-- Title: OpenRTM-aist(C++版)のCMakeによるビルド手順 -->

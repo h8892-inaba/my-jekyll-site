@@ -13,7 +13,7 @@ RTCBuilder は Eclipse プラグインであるため、 Eclipse 本体および
 <!-- [[動作環境:RTCBuilder]]を参照の上、これらをダウンロードします。 -->
 <!-- Eclipse のインストールは解凍するだけです。また、 Eclipse のプラグインは解凍後、Eclipse フォルダ内に上書きするだけです。 -->
 <!-- RTCBuilder のインストールは RTCBuilder のプラグイン jar ファイル（jp.go.aist.rtm.rtcbuilder_X.X.X.jar）を eclipse/plugins フォルダーに配置するだけで完了です。 -->
-インストールに関しては、[OpenRTM Eclipse tools のインストール](/node/676) を参照願います。
+インストールに関しては、[OpenRTM Eclipse tools のインストール]({{ site.baseurl }}/en/doc/installation/install_1_1/openrtm_eclipse_tools_1_1) を参照願います。
 ### RTCBuilder の起動
 インストール後、Eclipse を初めて起動すると、以下のような「ようこそ」画面が表示されます。
 <br>

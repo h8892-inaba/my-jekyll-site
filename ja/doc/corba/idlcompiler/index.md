@@ -1,6 +1,6 @@
 ---
 layout: page
-title: IDLコンパイラ
+title: idlコンパイラ
 ---
 
 <!-- Title: IDLコンパイラ -->

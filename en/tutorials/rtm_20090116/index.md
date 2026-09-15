@@ -24,7 +24,7 @@ Windows版OpenRTM-aist-0.4.2を対象とした講習会を1月16日、(財)石�
 
 - [**(財)石川県産業創出支援機構のセミナー案内ページ**](http://dgnet.isico.or.jp/etc/view.phtml?uk=00031233)
 - [**石川県工業試験場の案内ページ**](http://www.irii.jp/kenshu/sandai.html#schedule)
-- [セミナー開催案内(FAX申込用紙)](http://www.openrtm.org/OpenRTM-aist/download/resume/090116/irii_seminar.pdf)
+- [セミナー開催案内(FAX申込用紙)]()(No corresponding page available.)
 
 <br>
 
@@ -39,7 +39,7 @@ Windows版OpenRTM-aist-0.4.2を対象とした講習会を1月16日、(財)石�
   - e-mail: seminar@irii.go.jp
   - TEL: (076)267-8081
   - FAX: (076)267-8090
-  - [セミナー開催案内(FAX申込用紙)](http://www.openrtm.org/OpenRTM-aist/download/resume/090116/irii_seminar.pdf)
+  - [セミナー開催案内(FAX申込用紙)]()(No corresponding page available.)
 
 - **プログラム**:
 <table class="table-alt">
@@ -110,20 +110,20 @@ Windows版OpenRTM-aist-0.4.2を対象とした講習会を1月16日、(財)石�
 - PythonからBluetoothを使うために必要なモジュール(exeを実行してインストール)
   - [pyBlues](http://pybluez.googlecode.com/files/PyBluez-0.15.win32-py2.5.exe)
 - PythonからLEGO Mindstorm NXTを使うために必要なモジュール(下の指示に従ってインストール)
-  - [nxtpython](http://www.openrtm.org/OpenRTM-aist/download/resume/080820/libusb-win32-filter-bin-0.1.12.1.exe)
+  - [nxtpython]()(No corresponding page available.)
  zipを展開後、展開したフォルダの中(setup.pyがあるフォルダ)でコマンドプロンプトから
 ```
  > c:\python25\python setup.py install
 ```
  と入力
 - USB汎用ドライバ、NXTをUSB経由で使うために必要(exeを実行してインストール)
-  - [libusb](http://www.openrtm.org/OpenRTM-aist/download/resume/080820/libusb-win32-filter-bin-0.1.12.1.exe)
+  - [libusb]()(No corresponding page available.)
 - PythonからUSBを使うために必要なモジュール(exeを実行してインストール)
-  - [pyusb](http://www.openrtm.org/OpenRTM-aist/download/resume/080820/pyusb-0.4.1.win32-py2.5.exe)
+  - [pyusb]()(No corresponding page available.)
 - RtcLink、RTミドルウエアを使うためのツール(zipを展開して出てきたフォルダのeclipse.exeを実行して起動)
-  - [eclipse](http://www.openrtm.org/pub/OpenRTM-aist/tools/0.4.2/eclipse32_rtclink041_rtctemplate042_win32.zip)
+  - [eclipse]()(No corresponding page available.)
 - RTミドルウエアのC++版(exeを実行してインストール)
-  - [OpenRTM-aist-C++](http://www.openrtm.org/pub/Windows/OpenRTM-aist/cxx/OpenRTM-aist-0.4.2-jp_vc9.msi)
+  - [OpenRTM-aist-C++]()(No corresponding page available.)
 - RTミドルウエアC++版を使うために必要なライブラリ(exeを実行してインストール)
   - [omniORB](http://www.openrtm.org/pub/Windows/omniORB/omniORB-4.1.2_vc9.msi)
 - RTミドルウエアC++版を使うために必要なライブラリ(exeを実行してインストール)
@@ -132,7 +132,7 @@ Windows版OpenRTM-aist-0.4.2を対象とした講習会を1月16日、(財)石�
   - [VC2008DLL](http://www.microsoft.com/downloads/details.aspx?displaylang=ja&FamilyID=9b2da534-3e03-4391-8a4d-074b9f2bc1bf)
 
 - 講習会用サンプル(USBドライバも入っています。)
-  - [講習会用サンプル](http://www.openrtm.org/OpenRTM-aist/download/resume/080820/ScienceCamp.zip)
+  - [講習会用サンプル]()(No corresponding page available.)
   - NXTをUSBで接続したら、デバイスドライバのインストールウィザードが表示されるので、「接続しない」を選んで「特定の場所からインストールするを選び」フォルダの参照ボタンを押してUSBDriverフォルダを選択して「次へ」を押すとインストールできます。
 
 # 講習会の様子

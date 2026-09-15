@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Basics of Creating RT Components
+title: basics of creating rt components
 ---
 
 <!-- Title: RTコンポーネント作成の基本 -->

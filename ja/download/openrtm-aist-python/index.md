@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist (Python版)
+title: openrtm-aist (python版)
 ---
 
 <!-- Title: OpenRTM-aist (Python版) -->
@@ -20,7 +20,7 @@ Python で RTコンポーネントを作成するためのライブラリです�
 - [svn/RELENG_1_2](https://github.com/OpenRTM/OpenRTM-aist-Python/tree/svn/RELENG_1_2)
 
 ### リポジトリステータス
-- [statsvn](http://www.openrtm.org/svnstat/python)
+- [statsvn]()（リンク切れです）
 
 ### バグトラッキング
 - [redmine](http://redmine.openrtm.org/projects/openrtm-aist-python)

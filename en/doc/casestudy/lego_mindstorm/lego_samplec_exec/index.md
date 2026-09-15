@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Running Sample Components
+title: running sample components
 ---
 
 <!-- Title: Running Sample Components -->

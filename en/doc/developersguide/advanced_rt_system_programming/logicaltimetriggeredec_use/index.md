@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "How to Use LogicalTimeTriggeredEC"
+title: "how to use logicaltimetriggeredec"
 
 ---
 

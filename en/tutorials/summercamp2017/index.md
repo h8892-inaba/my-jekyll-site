@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアサマーキャンプ2017
+title: rtミドルウェアサマーキャンプ2017
 ---
 <br>
 <a>No English version available.
@@ -36,7 +36,7 @@ title: RTミドルウェアサマーキャンプ2017
 ### 日時・場所
 - 2017年7月31日（月）～8月4日（金）
 - 産業技術総合研究所　つくばセンター中央第二　本部・情報棟１階　ネットワーク会議室　
-  - [ガイドマップ](http://openrtm.org/openrtm/ja/tutorial/guidemap)
+  - [ガイドマップ]({{ site.baseurl }}/en/tutorial/guidemap)
   - [google map](https://maps.google.com/maps/ms?msid=202092058111064603321.0004e2699244f546ec525&msa=0&ll=36.05949,140.134263&spn=0.009098,0.011297)
 - アクセス
   - 東京駅から並木2丁目:[高速バス時刻表](http://time.jrbuskanto.co.jp/bk03080.html)
@@ -443,7 +443,7 @@ summercamp2017(at)openrtm.org~
 ## 講習会申し込みフォーム
 
 以下のフォームから講習会へお申し込みください。
-- 参加登録するまえに当Webページのユーザ登録をお願いします。[ユーザ登録はこちら](http://openrtm.org/openrtm/ja/user/register)
+- 参加登録するまえに当Webページのユーザ登録をお願いします。[ユーザ登録はこちら]()(No corresponding page available.)
 - 当Webサイトにログイン済みの方は<span style="color:red;">名前の欄のユーザ名を氏名に書き換えてください</span>;。
 - フォーム送信後、確認メールをお送りいたします。1日たっても確認メールが届かない場合は、こちら support(at)openrtm.org までお問い合わせください。
 
@@ -522,7 +522,7 @@ summercamp2017(at)openrtm.org~
 ### グループ１
 
 - **課題**: 自撮りロボット！
-- [プロジェクトページ](/ja/project/SummerCamp2017_group1)
+- [プロジェクトページ](/ja/project/SummerCamp2017_group1)(No corresponding English project page available.)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/78651769 -->
 {% include slideshare.html
@@ -544,7 +544,7 @@ summercamp2017(at)openrtm.org~
 ### グループ2
 
 - **課題**: 打ち上がれ！オレの花火！～インスタラクティブ花火第１回つくば花火大会～
-- [プロジェクトページ](/ja/project/SummerCamp2017_group2)
+- [プロジェクトページ](/ja/project/SummerCamp2017_group2)(No corresponding English project page available.)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/78651760 -->
 {% include slideshare.html
@@ -566,7 +566,7 @@ summercamp2017(at)openrtm.org~
 ### グループ3
 
 - **課題**: ロボットクエスト
-- [プロジェクトページ](/ja/project/SummerCamp2017_group3) 
+- [プロジェクトページ](/ja/project/SummerCamp2017_group3)(No corresponding English project page available.)(No corresponding English project page available.) 
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/78651746 -->
 {% include slideshare.html
@@ -593,7 +593,7 @@ summercamp2017(at)openrtm.org~
 ### グループ4
 
 - **課題**: 名刺交換ロボット
-- [プロジェクトページ](/ja/project/SummerCamp2017_group4)
+- [プロジェクトページ](/ja/project/SummerCamp2017_group4)(No corresponding English project page available.)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/78651727 -->
 {% include slideshare.html
@@ -619,7 +619,7 @@ summercamp2017(at)openrtm.org~
 - **課題**: ちょっと安全なピッキングロボットシステム
   - 
   - 
-- [プロジェクトページ](/ja/project/SummerCamp2017_group5)
+- [プロジェクトページ](/ja/project/SummerCamp2017_group5)(No corresponding English project page available.)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/79007428 -->
 {% include slideshare.html

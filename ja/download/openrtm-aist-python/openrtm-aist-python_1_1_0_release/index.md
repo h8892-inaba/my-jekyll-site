@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Python-1.1.0-RELEASE
+title: openrtm-aist-python-1.1.0-release
 ---
 
 <!-- Title: OpenRTM-aist-Python-1.1.0-RELEASE -->
@@ -14,12 +14,12 @@ title: OpenRTM-aist-Python-1.1.0-RELEASE
 <table class="table-alt">
   <tr>
     <td>Python 版ソースコード</td>
-    <td><a href="http://openrtm.org/pub/OpenRTM-aist/python/1.1.0/OpenRTM-aist-Python-1.1.0-RELEASE.tar.gz">OpenRTM-aist-Python-1.1.0-RELEASE.tar.gz</a><br>MD5:745cc9a2de717f52ef63b614cf4ad68d</td>
+    <td><a href="">OpenRTM-aist-Python-1.1.0-RELEASE.tar.gz</a>（リンク切れです）<br>MD5:745cc9a2de717f52ef63b614cf4ad68d</td>
     <td>2015/03/03</td>
   </tr>
   <tr>
     <td>Python 版ソースコード(Win32)</td>
-    <td><a href="http://openrtm.org/pub/OpenRTM-aist/python/1.1.0/OpenRTM-aist-Python-1.1.0-RELEASE.zip">OpenRTM-aist-Python-1.1.0-RELEASE.zip</a><br>MD5:cfb11e4111108759265909428e34d91c</td>
+    <td><a href="">OpenRTM-aist-Python-1.1.0-RELEASE.zip</a>（リンク切れです）<br>MD5:cfb11e4111108759265909428e34d91c</td>
     <td>2015/03/03</td>
   </tr>
 </table>
@@ -85,8 +85,8 @@ MSVCR71.dll、MSVCP71.dll がインストールされていないため、omnipy
 Ubuntu、Debian、Fedora の各ディストリビューション用パッケージを openrtm.org 上のリポジトリサーバーにて配布しています。
 詳細は、以下のドキュメントを参照してください。~
 
-- [Ubuntu/Debian へのインストール](/ja/node/1182)
-- [Fedora へのインストール](/ja/node/1186)
+- [Ubuntu/Debian へのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_ubuntu_python_1_1)
+- [Fedora へのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_fedora_python_1_1)
 
 
 <table class="table-alt">

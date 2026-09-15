@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist C++ 1.1.2-RELEASE
+title: openrtm-aist c++ 1.1.2-release
 ---
 
 <!-- Title: OpenRTM-aist C++ 1.1.2-RELEASE -->
@@ -196,7 +196,7 @@ For Fedora
 
 ### Build from sourcecode
 
-ソースからビルドする方法については、[ソースからのビルド(Windows編)](/ja/node/793) または [ソースからのビルド(Linux編)](/ja/node/788) をご覧くだい。
+ソースからビルドする方法については、[ソースからのビルド(Windows編)]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/build_source_windows_1_1) または [ソースからのビルド(Linux編)]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/build_source_linux_1_1) をご覧くだい。
 
 ### deb/rpmパッケージ作成
 

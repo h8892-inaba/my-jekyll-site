@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creating RT Components (OpenCV Edition Using the CameraImage Type)
+title: creating rt components (opencv edition using the cameraimage type)
 ---
 
 <!-- Title: RTコンポーネント作成(OpenCV編 CameraImage型の使用) -->
@@ -122,7 +122,7 @@ Figure 1 shows an image of the image processing for each flipMode.
 
 - RTSystemEditor 1.0
 - RTCBuilder 1.0
-  - [All-in-one package for Windows: Eclipse3.4.2+RTSE(1.0.0-RELEASE)+RTCB(1.0.0-RELEASE)](http://www.openrtm.org/pub/OpenRTM-aist/tools/1.0.0/eclipse342_rtmtools100release_win32_ja.zip)
+  - [All-in-one package for Windows: Eclipse3.4.2+RTSE(1.0.0-RELEASE)+RTCB(1.0.0-RELEASE)]()(No corresponding page available.)
 
 - [Extraction tool (Lhaplus)](http://www.forest.impress.co.jp/lib/arc/archive/archiver/lhaplus.html)
 
@@ -339,7 +339,7 @@ Save the following content with the file name user_config.vsprops and copy it to
 Alternatively, download the vsprops file from the link below and save it to the Flip folder.
 
 <br>
-[user_config.vsprops](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2010/user_config.vsprops)
+[user_config.vsprops]()(No corresponding page available.)
 
 * A user_config.vsprops file already exists in the Flip folder, but you can overwrite it.
 
@@ -933,4 +933,4 @@ The built package can be downloaded from the following link.
 The extension is set to "zip_", so rename it to "zip" before extracting it.
 
 
-- [Built package](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2010/Flip.zip_)
+- [Built package]()(No corresponding page available.)

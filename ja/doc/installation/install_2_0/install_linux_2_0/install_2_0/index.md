@@ -70,7 +70,7 @@ C++と OpenRTP は 1.2系と2.0系の共存が可能となりました。　こ�
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) --help
 ```
 
-インストールされるパッケージの詳しい内容は「[OpenRTM-aist-2.0 debパッケージの詳しい内容]({{ site.baseurl }}/ja/node/6665) 」で確認できます。
+インストールされるパッケージの詳しい内容は「[OpenRTM-aist-2.0 debパッケージの詳しい内容]({{ site.baseurl }}/ja/doc/installation/install_2_0/install_linux_2_0/install_debpackages_workcontent_2_0) 」で確認できます。
 
 ## ROS用パッケージのインストール
 

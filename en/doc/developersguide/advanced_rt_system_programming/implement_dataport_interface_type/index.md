@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Procedure for Implementing a Custom Interface Type for Data Ports"
+title: "procedure for implementing a custom interface type for data ports"
 ---
 
 <!-- Title: データポートの独自インターフェース型の実装手順 -->

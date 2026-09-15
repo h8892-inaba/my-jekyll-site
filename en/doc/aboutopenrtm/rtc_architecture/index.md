@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "RT Component Architecture"
+title: "rt component architecture"
 ---
 
 <!-- Title: RT Component Architecture -->

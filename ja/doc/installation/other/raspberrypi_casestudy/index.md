@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Raspberry PiでのOpenRTM-aist活用事例
+title: raspberry piでのopenrtm-aist活用事例
 ---
 
 <!-- Title: Raspberry PiでのOpenRTM-aist活用事例 -->

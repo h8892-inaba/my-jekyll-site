@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "SSM通信機能の利用"
+title: "ssm通信機能の利用"
 ---
 
 <!-- Title: SSM通信機能の利用 -->
@@ -34,7 +34,7 @@ CMake実行時に**SSM_ENABLE**のオプションをONにします。SSMのイ�
 
 その他の手順は通常と同じです。
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build)
 
 ビルド後にインストールしてください。
 

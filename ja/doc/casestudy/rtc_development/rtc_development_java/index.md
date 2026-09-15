@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTコンポーネント作成(Java版)
+title: rtコンポーネント作成(java版)
 ---
 
 <!-- Title: RTコンポーネント作成(Java版) -->
@@ -30,23 +30,23 @@ title: RTコンポーネント作成(Java版)
 </table>
 <br>
 <br>
-　OpenRTM-aist-Java のインストール方法の詳細につきましては、[「OpenRTM-aist-Java インストールマニュアル(UNIX)」](/ja/node/804)あるいは[「OpenRTM-aist-Java インストールマニュアル(Windows)」](/ja/node/807)を参照してください。特に、次のことを確認してから以下の作業に移ってください。
+　OpenRTM-aist-Java のインストール方法の詳細につきましては、[「OpenRTM-aist-Java インストールマニュアル(UNIX)」]({{ site.baseurl }}/ja/doc/installation/install_1_1/java_1_1/install_linux_java_1_1)あるいは[「OpenRTM-aist-Java インストールマニュアル(Windows)」]({{ site.baseurl }}/ja/doc/installation/install_1_1/java_1_1/install_windows_java_1_1)を参照してください。特に、次のことを確認してから以下の作業に移ってください。
 - 「java -version」を実行したときのバージョンが上記 JDKと一致すること
 <!-- ---環境変数 JAVA_HOME に上記JDKのインストールフォルダーが設定されていること -->
 - 環境変数 RTM_JAVA_ROOT に OpenRTM-aist-Java のライブラリへのパス（ベースパス）が設定されていること
 <!-- ---<JAVA_HOME>\jre\lib\ext\にOpenRTM-aist-0.4.x.jarとcommons-cli-1.1.jar が存在すること -->
 - <RTM_JAVA_ROOT>で設定されるパスの直下のディレクトリー「jar」内にライブラリファイル OpenRTM-aist-0.4.x.jar と commons-cli-1.1.jar が存在すること（クラスパスとして設定するため）**※**
-:　**※** [こちら ](/ja/node/6426#Antbuild)を参考に独自のクラスパスの設定も可能です。|
+:　**※** [こちら ]({{ site.baseurl }}/ja/doc/faq/faq_rtc_creation#Antbuild)を参考に独自のクラスパスの設定も可能です。|
 
 <br>
 
 **◆参考:**
-  - [ JDK 5 インストール方法（UNIX） ](/ja/node/805/)、[ JDK 5 インストール方法（Windows） ](/ja/node/807)
-  - [ システム環境変数の設定方法（UNIX）](/ja/node/804#hensu)、[ システム環境変数の設定方法（Windows） ](/ja/node/807#javazip)
+  - [ JDK 5 インストール方法（UNIX） ]({{ site.baseurl }}/ja/doc/installation/install_1_1/java_1_1/tips_jdk)、[ JDK 5 インストール方法（Windows） ]({{ site.baseurl }}/ja/doc/installation/install_1_1/java_1_1/install_windows_java_1_1)
+  - [ システム環境変数の設定方法（UNIX）]({{ site.baseurl }}/ja/doc/installation/install_1_1/java_1_1/install_linux_java_1_1#hensu)、[ システム環境変数の設定方法（Windows） ]({{ site.baseurl }}/ja/doc/installation/install_1_1/java_1_1/install_windows_java_1_1#javazip)
 <!-- --[[OpenRTM-aist-Java-0.4 のインストール（UNIX） >/ja/node/659#instjava04]][[OpenRTM-aist-Java-0.4のインストール（Windows） >/ja/node/666#instjava04]] -->
 <!-- --[[FAQ: 「java -version」がインストールした JDK とは違うバージョンとなります（Windows） >/ja/node/1190#JDKver]] -->
-  - [FAQ: Javaをインストールする際の FedoraCore での対応 ](/ja/node/6425#javafedora)
-  - [FAQ: 任意のフォルダーにクラスパスを設定してAnt ビルドを行う方法は？ ](/ja/node/6426#Antbuild)
+  - [FAQ: Javaをインストールする際の FedoraCore での対応 ]({{ site.baseurl }}/ja/doc/faq/faq_openrtm_java#javafedora)
+  - [FAQ: 任意のフォルダーにクラスパスを設定してAnt ビルドを行う方法は？ ]({{ site.baseurl }}/ja/doc/faq/faq_rtc_creation#Antbuild)
 <br>
 
 &aname(javacomp);
@@ -160,7 +160,7 @@ title: RTコンポーネント作成(Java版)
 
 
 ## GUI を用いた場合の RTコンポーネントの開発手順 
-　GUI ツールである RtcTemlate を用いて、RTコンポーネントを開発手順を説明します。RtcTemplate の詳細については[RtcLink・RtcTemplateのインストール](/node/)および[RtcTemplate](/node/)を参照してください。
+　GUI ツールである RtcTemlate を用いて、RTコンポーネントを開発手順を説明します。RtcTemplate の詳細については[RtcLink・RtcTemplateのインストール]()（リンク切れです）および[RtcTemplate]()（リンク切れです）を参照してください。
 ### RtcTemplate と JDT の連携
 - **Eclipse を「新規」に開く**<br>
 　RTコンポーネントの開発は、統合開発環境 Eclipse のプロジェクトから行うことも可能です。新しいワークスペースを指定して [OK] ボタンをクリックします。Eclipse が起動します。（このとき「ようこそ」という画面が表示される場合がありますが、これは閉じます。）<br>
@@ -181,7 +181,7 @@ title: RTコンポーネント作成(Java版)
 <div align="center"><strong>図 2-4 ビルド用プロジェクトの作成　２</strong></div>
 <br>
 
-　｢新規プロジェクト｣ウィザードの次のステップで、作成する｢プロジェクト名｣を入力します。｢JDK準拠｣グループ内の設定が｢5.0｣以上（あるいは1.5以上）となっていることを確認した上で、[次へ] ボタンをクリックします（**図 2-5**）。一方、環境によっては「JDK準拠」フレームであるところが「JRE」フレームとなっており、プルダウンメニューから JDK5（あるいはJDK1.5）が選択できない場合があります（**図 2-5**'）。その場合は、[こちら ](/ja/node/159#errorjavaJDK)を参照してJDKを選択できるようにします。|<br>
+　｢新規プロジェクト｣ウィザードの次のステップで、作成する｢プロジェクト名｣を入力します。｢JDK準拠｣グループ内の設定が｢5.0｣以上（あるいは1.5以上）となっていることを確認した上で、[次へ] ボタンをクリックします（**図 2-5**）。一方、環境によっては「JDK準拠」フレームであるところが「JRE」フレームとなっており、プルダウンメニューから JDK5（あるいはJDK1.5）が選択できない場合があります（**図 2-5**'）。その場合は、[こちら ]({{ site.baseurl }}/ja/doc/casestudy/rtc_development/about_rtc_creation#errorjavaJDK)を参照してJDKを選択できるようにします。|<br>
 <div align="center"><a href="MakeProjectForBulid3.png"><img src="MakeProjectForBulid3.png" width="60%;"></a></div>
 <div align="center"><strong>図 2-5 ビルド用プロジェクトの作成　３</strong></div>
 <br>
@@ -194,7 +194,7 @@ title: RTコンポーネント作成(Java版)
 
 
 - **参考：**
-  - → [FAQ: Q. 新規 Java プロジェクトが JDK5 (1.5) 準拠として作成できない ](/ja/node/159#errorjavaJDK)|
+  - → [FAQ: Q. 新規 Java プロジェクトが JDK5 (1.5) 準拠として作成できない ]({{ site.baseurl }}/ja/doc/casestudy/rtc_development/about_rtc_creation#errorjavaJDK)|
 <br>
 <br>
 <br>
@@ -227,8 +227,8 @@ title: RTコンポーネント作成(Java版)
 <br>
 
 - **参考：**
-  - →　[RtcTemplate を直接起動する](/ja/node/737#startTemplate)
-**※** RtcTemplate の使用方法等につきましては、[RtcTemplate](/node)を参照してください。
+  - →　[RtcTemplate を直接起動する]()（リンク切れです）
+**※** RtcTemplate の使用方法等につきましては、[RtcTemplate]()（リンク切れです）を参照してください。
 <br>
 <br>
 
@@ -306,7 +306,7 @@ title: RTコンポーネント作成(Java版)
 ### Eclipseを用いたビルド
 
 - **Antビルド**~
-　パッケージ・エクスプローラー内の build_Sample.xml を右クリックし、表示されるコンテキストメニュー中から [実行] > [Antビルド] を選択することで、対象 RTコンポーネントのビルドを行うことが可能です。自作の jar ライブラリ等を使う必要があったり、OpenRTM-aist を違う場所にインストールしたなどの事情でクラスパスを任意の場所に設定してビルドするには[こちら ](/ja/node/159#Antbuild)を参照してください。<br>
+　パッケージ・エクスプローラー内の build_Sample.xml を右クリックし、表示されるコンテキストメニュー中から [実行] > [Antビルド] を選択することで、対象 RTコンポーネントのビルドを行うことが可能です。自作の jar ライブラリ等を使う必要があったり、OpenRTM-aist を違う場所にインストールしたなどの事情でクラスパスを任意の場所に設定してビルドするには[こちら ]({{ site.baseurl }}/ja/doc/casestudy/rtc_development/about_rtc_creation#Antbuild)を参照してください。<br>
 
 <div align="center"><a href="BuildProject.png"><img src="BuildProject.png" width="70%;"></a></div>
 <div align="center"><strong>図 2-14 プロジェクトのビルド</strong></div>
@@ -320,7 +320,7 @@ title: RTコンポーネント作成(Java版)
 <br>
 <br>
 - **参考**
-  - [**FAQ**:Q. 任意のフォルダーにクラスパスを設定して Ant ビルドを行う方法は？ ](/ja/node/159#Antbuild)|
+  - [**FAQ**:Q. 任意のフォルダーにクラスパスを設定して Ant ビルドを行う方法は？ ]({{ site.baseurl }}/ja/doc/casestudy/rtc_development/about_rtc_creation#Antbuild)|
 <br>
 <br>
 <br>
@@ -343,10 +343,10 @@ title: RTコンポーネント作成(Java版)
 <br>
 <br>
 - **ネームサーバーと RtcLink の起動**~
-　OpenRTM-aist-0.4-Java に付属のツールで「bin」ディレクトリー内にある start-orbd.vbs をダブルクリック（Windows）し、あるいは、start-orbd.sh を実行（UNIX）し、ネームサーバーを起動しておきます。また、[RtcLink](/node/)を起動しておきます。
+　OpenRTM-aist-0.4-Java に付属のツールで「bin」ディレクトリー内にある start-orbd.vbs をダブルクリック（Windows）し、あるいは、start-orbd.sh を実行（UNIX）し、ネームサーバーを起動しておきます。また、[RtcLink]()（リンク切れです）を起動しておきます。
   - 参考：
-    - [ ネームサーバの起動(UNIX) ](/ja/node/660#samplecomponent)、[ ネームサーバの起動(Windows) ](/ja/node/667#javasample)
-    - [RtcLink の起動 >RtcLink#startRtcLink](/node/)
+    - [ ネームサーバの起動(UNIX) ]()（リンク切れです）、[ ネームサーバの起動(Windows) ]()（リンク切れです）
+    - [RtcLink の起動 >RtcLink#startRtcLink]()（リンク切れです）
 <br>
 <br>
 - **RTコンポーネントの実行**<br>

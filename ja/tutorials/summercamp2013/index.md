@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウエアサマーキャンプ2013
+title: rtミドルウエアサマーキャンプ2013
 ---
 
 <div align="center"><img src="summercamp2013_banner.png" width="60%;"</div>
@@ -314,7 +314,7 @@ title: RTミドルウエアサマーキャンプ2013
 
 ## rtshellの環境構築について
 Windows上でrtshellを動かすためには，下記のソフトも必要になりますので，インストールを行ってください．
-[rtctree・rtcprofile](http://openrtm.org/openrtm/ja/node/1323)
+[rtctree・rtcprofile]()
 
 なお，Pythonにパスを通す必要があるので，環境変数に下記を追加してください．
 (Pythonが下記にインストールされている場合．)

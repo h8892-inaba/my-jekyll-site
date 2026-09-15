@@ -37,7 +37,7 @@ HoughCirclesはハフ変換を用いてグレースケール画像から円を�
 以降はRTCの基本的な作成方法を理解している前提で進めます。
 基本的な作成手順は以下のページを参照。
 
-- [チュートリアル(Raspberry Pi Mouse、RTM講習会)](https://openrtm.org/openrtm/ja/node/6549)
+- [チュートリアル(Raspberry Pi Mouse、RTM講習会)]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar)
 
 ### RTCBuilderによるひな型コード生成
 
@@ -505,8 +505,8 @@ find_packageの行を追加してください。
 Raspberry Piマウスを使用する場合は、Raspberry Piのアクセスポイントに接続した状態で作業してください。
 以下のページのRobotControllerコンポーネントが必要なため、実機での動作確認まで進めておいてください。
 
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)](/ja/node/6550)
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Ubuntu)](/ja/node/6551)
+- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2)
+- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Ubuntu)]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2)
 
 
 ### 事前準備
@@ -554,8 +554,8 @@ PCとUSBカメラをUSBポートで接続してください。
 
 RaspberryPiMouseRTCとRobotControllerコンポーネントの起動ついては、以下のページの手順を参考にしてください。
 
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)](/ja/node/6550)
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Ubuntu)](/ja/node/6551)
+- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2)
+- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Ubuntu)]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2)
 
 OpenCVCamera、CameraViewerはOpenRTM-aist付属のサンプルコンポーネントです。
 Windows 10の場合は、画面左下の「ここに入力して検索」に**C++_OpenCV-Examples**と入力して、C++_OpenCV-Examplesを選択したら起動するエクスプローラから**CameraViewer.bat**と**OpenCVCamera.bat**をダブルクリックして実行してください。
@@ -564,7 +564,7 @@ Windows 10の場合は、画面左下の「ここに入力して検索」に**C+
 
 Ubuntuの場合はビルドとインストール作業が必要です。
 
-- [LinuxにおけるOpenCVサンプルのビルド手順](/ja/node/6974)
+- [LinuxにおけるOpenCVサンプルのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencvcamera/opencv_sample_build)
 
 CircleTrackingはビルドで生成したCircleTrackingComp.exeを実行してください。
 

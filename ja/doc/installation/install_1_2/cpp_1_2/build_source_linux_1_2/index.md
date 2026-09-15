@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ソースからのビルド(Linux編)
+title: ソースからのビルド(linux編)
 ---
 
 <!-- Title: ソースからのビルド(Linux編) -->
@@ -104,7 +104,7 @@ OpenRTM-aistは開発に利用しているgithubリポジトリを一般に公�
 - libtool
 - atoconf
 
-などのツールが必要ですのであらかじめインストールしておきます。これらの必要なツールやOmniORBなどのライブラリをインストールするのにあたって、Ubuntuなどでは上記で説明した[一括インストール・スクリプト](/node/6345)を利用可能です。このスクリプトをあらかじめ実行しておくことを推奨します。
+などのツールが必要ですのであらかじめインストールしておきます。これらの必要なツールやOmniORBなどのライブラリをインストールするのにあたって、Ubuntuなどでは上記で説明した[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)を利用可能です。このスクリプトをあらかじめ実行しておくことを推奨します。
 
 - https://github.com/OpenRTM/OpenRTM-aist
 

@@ -1,13 +1,13 @@
 ---
 layout: page
-title: "SubtractCaptureImage"
+title: "subtractcaptureimage"
 ---
 
 <!-- Title: SubtractCaptureImage -->
 
 #contents
 
-OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencv_sample_build)に従ってビルドしてインストールしてください。
+OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencvcamera/opencv_sample_build)に従ってビルドしてインストールしてください。
 
 ### 概要
 SubtractCaptureImageは入力画像から、変化のない部分を背景と判断して、前景(移動物)を取り出すマスク画像を出力するコンポーネントで、動的な背景差分法でリアルタイムな背景更新をするコンポーネントのサンプルです。OpenCVCamera、CameraViewerコンポーネントと共に使用します。

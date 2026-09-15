@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ROBOMECH2021オンライン講習会 (2021年6月6日(日))
+title: robomech2021オンライン講習会 (2021年6月6日(日))
 ---
 <br>
 <a>No English version available.
@@ -103,15 +103,15 @@ title: ROBOMECH2021オンライン講習会 (2021年6月6日(日))
   </tr>
   <tr>
     <td>13:10 -15:00</td>
-    <td>第2部：RTコンポーネントの作成入門 <br> - 担当：宮本 信彦 氏(産総研) <br> - 概要：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="/ja/node/6550">チュートリアル(第2部、Windows)</a> <br> <a href="/ja/node/6551">チュートリアル(第2部、Ubuntu)</a> <br>**講義資料**:<a href="RTコンポーネント作成入門.pdf">RTコンポーネント作成入門.pdf</a></td>
+    <td>第2部：RTコンポーネントの作成入門 <br> - 担当：宮本 信彦 氏(産総研) <br> - 概要：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2">チュートリアル(第2部、Windows)</a> <br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2">チュートリアル(第2部、Ubuntu)</a> <br>**講義資料**:<a href="RTコンポーネント作成入門.pdf">RTコンポーネント作成入門.pdf</a></td>
   </tr>
   <tr>
     <td>15:00 -16:00</td>
-    <td>第3部：rtshell入門 <br> - 担当：宮本 信彦 氏(産総研) <br> - 概要：RTシステムの起動、終了を自動化するスクリプトファイルの作成方法を解説します。 <br> <a href="/ja/node/7097">チュートリアル(第3部)</a> <br>**講義資料**:<a href="rtshell入門.pdf">rtshell入門.pdf</a></td>
+    <td>第3部：rtshell入門 <br> - 担当：宮本 信彦 氏(産総研) <br> - 概要：RTシステムの起動、終了を自動化するスクリプトファイルの作成方法を解説します。 <br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse">チュートリアル(第3部)</a> <br>**講義資料**:<a href="rtshell入門.pdf">rtshell入門.pdf</a></td>
   </tr>
   <tr>
     <td>16:00 -17:00</td>
-    <td>第4部：RTコンポーネント作成入門-Ⅱ(希望者のみ) <br> - 担当：宮本 信彦 氏(産総研) <br> - 概要：OpenRTM-aistを利用して移動ロボット実機を制御するプログラムを作成します。希望者にRaspberry Piマウスを貸し出します。希望する場合は申し込みフォームに郵便番号・住所・受取担当者を入力してください。<br> <a href="/ja/node/6550#realrobot">チュートリアル(第4部、Windows)</a>  <br> <a href="/ja/node/6551#realrobot">チュートリアル(第4部、Ubuntu)</a><br> <a href="/ja/node/7098">チュートリアル(SLAM実習)</a> <br>**講義資料**:<a href="SLAM実習.pdf">SLAM実習.pdf</a></td>
+    <td>第4部：RTコンポーネント作成入門-Ⅱ(希望者のみ) <br> - 担当：宮本 信彦 氏(産総研) <br> - 概要：OpenRTM-aistを利用して移動ロボット実機を制御するプログラムを作成します。希望者にRaspberry Piマウスを貸し出します。希望する場合は申し込みフォームに郵便番号・住所・受取担当者を入力してください。<br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2#realrobot">チュートリアル(第4部、Windows)</a>  <br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2#realrobot">チュートリアル(第4部、Ubuntu)</a><br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_slam_raspberrypimouse">チュートリアル(SLAM実習)</a> <br>**講義資料**:<a href="SLAM実習.pdf">SLAM実習.pdf</a></td>
   </tr>
 </table>
 
@@ -173,7 +173,7 @@ title: ROBOMECH2021オンライン講習会 (2021年6月6日(日))
 以下のソフトウェアをインストールしてください。リンクが切れている場合は、最新バージョンをインストールしてください。
 なお、Windowsが64bit版の場合はそれぞれ64bit版のものを、32bit版の場合は32bit版のものをダウンロードします。
 
-- [Visual Studio 2019](/ja/node/6650)
+- [Visual Studio 2019]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
   - Visual C++がインストールされているかは必ず確認してください。
 - [Python 3.8](https://www.python.org/downloads/windows/)(Python 3.9はOpenRTM-aistが未対応のため不可)
   - [python-3.8.10-amd64.exe (64bit版)](https://www.python.org/ftp/python/3.8.10/python-3.8.10-amd64.exe)
@@ -184,7 +184,7 @@ title: ROBOMECH2021オンライン講習会 (2021年6月6日(日))
 - [Doxygen](http://www.doxygen.nl/download.html) 
 <!-- (32bit, 64bitの別なし） -->
   - [doxygen-1.9.1-setup.exe](https://doxygen.nl/files/doxygen-1.9.1-setup.exe)
-- [OpenRTM-aist-1.2.2-RELEASE](https://openrtm.org/openrtm/ja/download)
+- [OpenRTM-aist-1.2.2-RELEASE]({{ site.baseurl }}/en/download)
   - [OpenRTM-aist-1.2.2-RELEASE_x86_64.msi (64bit版)](https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi)
 <!-- -- [[OpenRTM-aist-1.2.2-RELEASE_x86.msi (32bit版):https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86.msi]] -->
 

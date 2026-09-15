@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "SubtractCaptureImage"
+title: "subtractcaptureimage"
 ---
 
 <!-- Title: SubtractCaptureImage -->

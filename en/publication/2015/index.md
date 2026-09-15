@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Paper (2015)
+title: paper (2015)
 ---
 
 ### Journal

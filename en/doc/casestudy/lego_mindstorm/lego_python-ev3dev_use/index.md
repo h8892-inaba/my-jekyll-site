@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Using python-ev3dev
+title: using python-ev3dev
 ---
 
 <!-- Title: Using python-ev3dev -->

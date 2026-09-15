@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 山形大学RTミドルウェア講習会
+title: 山形大学rtミドルウェア講習会
 ---
 
 #contents
@@ -10,7 +10,7 @@ title: 山形大学RTミドルウェア講習会
 ## 資料
 - [第1部：RTミドルウエアの現状と今後の展望について(PDF)](./20110121YamagatadaiWorkshop_2up.pdf)
 - [第2,3部：OpenRTM-aist開発支援ツールの紹介とその利用法(PDF)](./RTMworkshopTools.pdf)
-- [第4部:コンポーネント開発実習資料](/ja/node/1486)
+- [第4部:コンポーネント開発実習資料]()（リンク切れです）
 
 ## 開催案内: 山形大学RTミドルウェア講習会(2011年1月21日)
 <!-- RTミドルウエア講習会を開催いたします。  -->
@@ -147,7 +147,7 @@ Windows推奨ですが、Linuxでも実習可能です。
 
 - RTSystemEditor,RTCBuilder
 <br><span style="color:red;">下記のツールについては、ダウンロード後にデスクトップに解凍しておいてください。</span>;
-  - [Eclipse3.4.2+RTSE(1.0.0-RELEASE)+RTCB(1.0.0-RELEASE)Windows用全部入り](http://www.openrtm.org/pub/OpenRTM-aist/tools/1.0.0/eclipse342_rtmtools100release_win32_ja.zip)
+  - [Eclipse3.4.2+RTSE(1.0.0-RELEASE)+RTCB(1.0.0-RELEASE)Windows用全部入り]()（リンク切れです）
 <br><span style="color:red;">Eclipseでは、Javaが必要です。下記よりJDKをダウンロード後、インストーラに従ってインストールを行って下さい。（2010/11/25 追記）</span>;
   - [Java Development Kit 6](http://java.sun.com/javase/ja/6/download.html)
 
@@ -164,7 +164,7 @@ Windows推奨ですが、Linuxでも実習可能です。
 <span style="color:red;">講習会でLinux PCを使用される方向けの情報ですので、Windows PCをご使用の方は、ここは読み飛ばして下さい。</span>;
 
 
-基本的に、[ダウンロード](http://www.openrtm.org/OpenRTM-aist/html/E38380E382A6E383B3E383ADE383BCE38389.html)ページを参照して、必要なソフトウエアをダウンロードしてください。
+基本的に、[ダウンロード]()（リンク切れです）ページを参照して、必要なソフトウエアをダウンロードしてください。
 Ubuntu, Fedora などメジャーなディストリビューション用のパッケージが用意されています。
 また、これ等の加えてOpenCV2.0をインストールしてください。
 

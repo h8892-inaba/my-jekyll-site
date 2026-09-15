@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 動作確認 (Linux編)
+title: 動作確認 (linux編)
 ---
 <br>
 <a>No English version available.
@@ -168,15 +168,15 @@ oebd はブロックします。
 ### RTSystemEditor の起動
 
 RTSystemEditor を使って、RTコンポーネントの接続とアクティブ化を行います。
-[こちら](/en/node/5778)から Eclipse 全部入りパッケージをダウンロードし解凍してください。
+[こちら]({{ site.baseurl }}/en/download/tools/openrtp_1_1_0_rc5)から Eclipse 全部入りパッケージをダウンロードし解凍してください。
 
 RTSystemEditor は Java Development Kit7 を使用します。以下のマニュアルを参考にインストールしてください。
 また、Ubuntu 等では、デフォルトの Java 環境は OpenJDK が推奨されています。そうした場合、OpenJDK でも利用することは可能です。
 
   - [Java SE Development Kit 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
-  - [JDKインストールのためのヒント ](/node/805)
+  - [JDKインストールのためのヒント ]({{ site.baseurl }}/en/doc/installation/install_1_1/java_1_1/tips_jdk)
 
-[こちら](/en/node/4870)のページを参考にRTSystemEditorの起動してください。
+[こちら]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_1_0)のページを参考にRTSystemEditorの起動してください。
 
 ### ネームサーバーの参照と確認
 

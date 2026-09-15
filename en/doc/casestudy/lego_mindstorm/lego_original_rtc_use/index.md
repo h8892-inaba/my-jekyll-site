@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Control with a Custom RTC
+title: control with a custom rtc
 ---
 
 <!-- Title: Control with a Custom RTC -->
@@ -12,7 +12,7 @@ title: Control with a Custom RTC
 
 This section explains the procedure for connecting a newly created RTC to EducatorVehicle and controlling it.
 
-First, create an RTC on Windows or Ubuntu by following the instructions on [this page](/en/node/4601).
+First, create an RTC on Windows or Ubuntu by following the instructions on [this page]({{ site.baseurl }}/en/doc/toolmanuals/rtcbuilder-1_1_0).
 
 Enter the RTC specifications as follows.
 
@@ -101,8 +101,8 @@ In addition, the touch sensor status is obtained through `touch`. When the touch
 
 The procedure for generating projects and building with CMake is described on the following pages:
 
-- [Windows](/en/node/4623)
-- [Ubuntu](/en/node/6033)
+- [Windows]({{ site.baseurl }}/en/doc/toolmanuals/rtcbuilder-1_1_0/compile_win_cmake_cpp_rtcb_1_1_0)
+- [Ubuntu]({{ site.baseurl }}/en/content/build_ubuntu_codeblocks)
 
 ### Editing the Code
 
@@ -167,7 +167,7 @@ Python (EV3SamplePy.py)
  		return RTC.RTC_OK
 ```
 
-According to the [Common Interface Specification](/en/node/3853), the positive X-axis represents the forward direction. Therefore, set the forward velocity in `vx` and the rotational velocity in `va` of the `Velocity2D` type.
+According to the [Common Interface Specification](/ja/node/3853)(No corresponding English project page available.), the positive X-axis represents the forward direction. Therefore, set the forward velocity in `vx` and the rotational velocity in `va` of the `Velocity2D` type.
 
 For Python, also modify the following parts of the constructor.
 

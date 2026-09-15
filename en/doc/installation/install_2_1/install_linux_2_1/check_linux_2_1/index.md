@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Operation Check (Linux)
+title: operation check (linux)
 ---
 
 <!-- Titile: 動作確認(Linux編) -->
@@ -32,13 +32,13 @@ Start OpenRTP, the tool used to operate RTCs and build RT systems.
 
 The Windows version of the included sample components is listed on the following page. There is no difference in the behavior of the components between the Windows and Linux versions.
 
-- [List of Sample Components](/node/6633#toc1)
+- [List of Sample Components]({{ site.baseurl }}/en/doc/installation/install_2_0/install_windows_2_0/check_windows_2_0#toc1)
 
 If you would like more detailed instructions on how to run the sample components in a Linux environment, please refer to the following pages for Version 1.2. The execution procedure is the same for Version 2.x; simply replace the component paths accordingly.
 
-- [OpenRTM-aist (C++ Edition) 1.2 - Operation Check (Linux)](/node/6613)
-- [OpenRTM-aist (Python Edition) 1.2 - Operation Check (Linux)](/node/6621)
-- [OpenRTM-aist (Java Edition) 1.2 - Operation Check (Linux)](/node/6628)
+- [OpenRTM-aist (C++ Edition) 1.2 - Operation Check (Linux)]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/check_linux_1_2)
+- [OpenRTM-aist (Python Edition) 1.2 - Operation Check (Linux)]({{ site.baseurl }}/en/doc/installation/install_1_2/python_1_2/check_python_linux_1_2)
+- [OpenRTM-aist (Java Edition) 1.2 - Operation Check (Linux)]({{ site.baseurl }}/en/doc/installation/install_1_2/java_1_2/check_linux_java_1_2)
 
 ## Installing the OpenCV Sample Components
 

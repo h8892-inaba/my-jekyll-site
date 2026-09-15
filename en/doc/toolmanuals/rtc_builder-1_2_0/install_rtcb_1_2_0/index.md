@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installation and Startup
+title: installation and startup
 ---
 <!-- Title: インストールおよび起動 -->
 #contents(4)

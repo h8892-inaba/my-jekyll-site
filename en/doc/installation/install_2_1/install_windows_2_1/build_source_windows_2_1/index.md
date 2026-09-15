@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Building from Source (C++ Version)
+title: building from source (c++ version)
 ---
 
 <!-- Title: ソースからのビルド（C++版） -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Overview and System Construction Flow
+title: overview and system construction flow
 ---
 
 <!-- Title: 概要・システム構築の流れ -->

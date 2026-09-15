@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist (C++版) 1.1系のインストール
+title: openrtm-aist (c++版) 1.1系のインストール
 ---
 <br>
 <a>No English version available.

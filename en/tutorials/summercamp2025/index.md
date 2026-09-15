@@ -43,16 +43,16 @@ Alternatively, please participate in the online workshop below.
 <!-- In previous years, we held preliminary workshops in July under the name of “Intensive Training Month,” but this year, as a general rule, they will not be held. &color(red){ (Confirmation) } -->
 If you have never attended a workshop before, you may satisfy the participation requirements by self-studying the following tutorials.
 
-- [Get Started with RT Middleware in 10 Minutes](/doc/installation/lets_start122) (Installation and sample operation check)
-- [Creating an Image Processing Component](/ja/node/7151) (Practice creating image processing components; requires a USB camera or built-in camera)
+- [Get Started with RT Middleware in 10 Minutes]({{ site.baseurl }}/en/doc/installation/lets_start122) (Installation and sample operation check)
+- [Creating an Image Processing Component]({{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_win10_vs2019) (Practice creating image processing components; requires a USB camera or built-in camera)
 <!-- - [[ROBOMECH2024RTM Workshop>https://www.openrtm.org/openrtm/ja/tutorial/robomech2024]] (Creating components to control an actual mobile robot) -->
 
-- [Get Started with RT Middleware in 10 Minutes](/doc/installation/lets_start122) (Installation and sample operation check)
-- [Creating an Image Processing Component](/ja/node/7151) (Practice creating image processing components; requires a USB camera or built-in camera)
+- [Get Started with RT Middleware in 10 Minutes]({{ site.baseurl }}/en/doc/installation/lets_start122) (Installation and sample operation check)
+- [Creating an Image Processing Component]({{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_win10_vs2019) (Practice creating image processing components; requires a USB camera or built-in camera)
 <!-- - [[ROBOMECH2024RTM Workshop>https://www.openrtm.org/openrtm/ja/tutorial/robomech2024]] (Creating components to control an actual mobile robot) -->
 
-- [Get Started with RT Middleware in 10 Minutes](/doc/installation/lets_start122) (Installation and sample operation check)
-- [Creating an Image Processing Component](/ja/node/7151) (Practice creating image processing components; requires a USB camera or built-in camera)
+- [Get Started with RT Middleware in 10 Minutes]({{ site.baseurl }}/en/doc/installation/lets_start122) (Installation and sample operation check)
+- [Creating an Image Processing Component]({{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_win10_vs2019) (Practice creating image processing components; requires a USB camera or built-in camera)
 <!-- - [[ROBOMECH2024RTM Workshop>https://www.openrtm.org/openrtm/ja/tutorial/robomech2024]] (Creating components to control an actual mobile robot) -->
 
 In the IT field, there are gatherings commonly known as “mokumoku-kai,” where individuals gather and quietly focus on coding independently; this camp is envisioned in a similar style.
@@ -63,8 +63,8 @@ Additionally, we will conduct interviews in advance regarding grouping and devel
 Please refer to the following links for examples of previous summer camps.
 
 (Reference)
-- [Summer Camp 2011](/ja/node/3850)
-- [Summer Camp 2012](/ja/node/5048)
+- [Summer Camp 2011]({{ site.baseurl }}/en/tutorials/summercamp2011)
+- [Summer Camp 2012]({{ site.baseurl }}/en/tutorials/summercamp2012)
 - [Summer Camp 2013](./summercamp2013)
 - [Summer Camp 2014](./summercamp2014)
 - [Summer Camp 2015](./summercamp2015)
@@ -348,13 +348,13 @@ Participants are requested to prepare the following deliverables and present the
   - Please prepare documentation containing sufficient information for third parties to reproduce the system developed during this camp.
   - Please refer to projects from previous summer camps and contests
     - [RTM Summer Camp 2021 Project List](./summercamp2021#toc13)
-    - [RTM Contest 2021 Project List](https://openrtm.org/openrtm/ja/contests/2021)(no_page)
+    - [RTM Contest 2021 Project List](https://openrtm.org/openrtm/ja/contests/2021)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
     - [RTM Summer Camp 2022 Project List](./summercamp2022#toc18)
-    - [RTM Contest 2022 Project List](https://openrtm.org/openrtm/ja/contests/2022)(no_page)
+    - [RTM Contest 2022 Project List](https://openrtm.org/openrtm/ja/contests/2022)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
     - [RTM Summer Camp 2023 Project List](./summercamp2023#toc18)
-    - [RTM Contest 2023 Project List](https://openrtm.org/openrtm/ja/contests/2023)(no_page)
+    - [RTM Contest 2023 Project List](https://openrtm.org/openrtm/ja/contests/2023)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
     - [RTM Summer Camp 2024 Project List](./summercamp2024#toc18)
-    - [RTM Contest 2024 Project List](https://openrtm.org/openrtm/ja/contests/2024)(no_page)
+    - [RTM Contest 2024 Project List](https://openrtm.org/openrtm/ja/contests/2024)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
 
 - **If SysML, UML, or other models were created, submit the model data as well** → Upload to your project page
   - If modeling tools were used, please upload the original model data
@@ -369,7 +369,7 @@ Participants are requested to prepare the following deliverables and present the
 &aname(summercamp2024_group1);
 ### Group 1
 - **Theme**: Pet Robot “PonPon” – Welcome Home, Master! (＞ω＜)
-  - [Project Page](/ja/project/summercamp20251)(no_page)
+  - [Project Page](/ja/project/summercamp20251)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
 
   - [Final Presentation Slides](https://www.scribd.com/document/911601061/%E3%82%B5%E3%83%9E%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%95-2025-1%E7%8F%AD-%E7%99%BA%E8%A1%A8%E8%B3%87%E6%96%99)
 
@@ -390,7 +390,7 @@ Participants are requested to prepare the following deliverables and present the
 &aname(summercamp2024_group2);
 ### Group 2
 - **Theme**: Heterogeneous Hardware Teleoperable Dual-Arm System
-  - [Project Page](/ja/project/summercamp20252)(no_page)
+  - [Project Page](/ja/project/summercamp20252)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
 
   - [Final Presentation Slides](https://www.scribd.com/document/911600718/%E3%82%B5%E3%83%9E%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%95-2025-2%E7%8F%AD-%E7%99%BA%E8%A1%A8%E8%B3%87%E6%96%99)
 
@@ -407,7 +407,7 @@ Participants are requested to prepare the following deliverables and present the
 &aname(summercamp2024_group3);
 ### Group 3
 - **Theme**: Voice-Driven Manipulation System
-  - [Project Page](/ja/project/summercamp20253)(no_page)
+  - [Project Page](/ja/project/summercamp20253)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
 
   - [Final Presentation Slides](https://www.scribd.com/document/914174477/%E3%82%B5%E3%83%9E%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%95-2025-3%E7%8F%AD-%E7%99%BA%E8%A1%A8%E8%B3%87%E6%96%99)
 

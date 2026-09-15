@@ -1,6 +1,6 @@
 ---
 layout: page
-title: NXT Python のインストール
+title: nxt python のインストール
 ---
 
 <!-- Title: NXT Python のインストール -->

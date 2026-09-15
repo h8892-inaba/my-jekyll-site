@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Sample Code Explanation
+title: sample code explanation
 ---
 
 <!-- Title: サンプルコードの説明 -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installing RTCs for the Educator Vehicle (EV3)
+title: installing rtcs for the educator vehicle (ev3)
 ---
 
 <!-- Installing RTCs for the Educator Vehicle (EV3) -->
@@ -211,7 +211,7 @@ Alternatively, a specific image can be displayed.
 
 ## ControlEducatorVehicle
 
-ControlEducatorVehicle can be used to control the following mobile robot (modified Educator Vehicle). Refer to [this page](/en/node/6038) for assembly instructions.
+ControlEducatorVehicle can be used to control the following mobile robot (modified Educator Vehicle). Refer to [this page]({{ site.baseurl }}/en/doc/casestudy/lego_mindstorm/lego_howtobuild) for assembly instructions.
 
 - [https://github.com/Nobu19800/ControlEducatorVehicle](https://github.com/Nobu19800/ControlEducatorVehicle)
 

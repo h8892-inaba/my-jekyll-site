@@ -53,7 +53,7 @@ Windows版OpenRTM-aist-0.4.0を対象とした講習会を8月27日、産総研�
     - USBカメラコンポーネントが動くことを予めご確認された上でご参加ください。
   - RtcLink/RtcTemplate on Eclipse および PatternWeaver
     - マニュアルに従い予めJavaをインストールしておいてください。 
-    - [PatternWeaver(試用版、Eclipseを含む)](http://www.openrtm.org/OpenRTM-aist/download/PatternWeaverCE22iforRTM.EXE)をダウンロードしてください。自己解凍アーカイブになっています。任意のディレクトリ(C:\を推奨)に展開してください。
+    - [PatternWeaver(試用版、Eclipseを含む)]()(No corresponding page available.)をダウンロードしてください。自己解凍アーカイブになっています。任意のディレクトリ(C:\を推奨)に展開してください。
     - こちらから[[RtcLink:RtcLink・RtcTemplate]]をダウンロードしjp.go.aist.rtm.rtclink_0.4.0.jarをPatternWeaverを解凍したディレクトリ内のpluginディレクトリにそのままコピーしてください。
     - ブラウザによってはjp.go.aist.rtm.rtclink_0.4.0.jarの拡張子がzipになることがありますが、その場合jarに戻した上でコピーしてください。
   - USBカメラ

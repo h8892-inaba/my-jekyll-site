@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist 2.0 Series Installation
+title: openrtm-aist 2.0 series installation
 ---
 
 <hr>

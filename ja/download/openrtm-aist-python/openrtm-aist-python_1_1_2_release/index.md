@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Python-1.1.2-RELEASE
+title: openrtm-aist-python-1.1.2-release
 ---
 
 <!-- Title: OpenRTM-aist-Python-1.1.2-RELEASE -->
@@ -58,7 +58,7 @@ title: OpenRTM-aist-Python-1.1.2-RELEASE
 - <span style="color:red;">※ Python 2.7.10 推奨。2.7.11は PYTHONPATH 等環境変数の設定が必要な場合があります。</span>;
 - <span style="color:red;">※ 古い rtshell は事前に削除しておいてください。</span>;
 
-インストールについては、[OpenRTM-aistを10分で始めよう！](http://openrtm.org/openrtm/ja/node/6026) のページで手順を紹介しています。<br>
+インストールについては、[OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2) のページで手順を紹介しています。<br>
 
 
 <!-- **** omnipy が import できない旨のエラーが出る場合 -->
@@ -80,8 +80,8 @@ title: OpenRTM-aist-Python-1.1.2-RELEASE
 Ubuntu、Debian、Fedora の各ディストリビューション用パッケージを openrtm.org 上のリポジトリサーバーにて配布しています。
 詳細は、以下のドキュメントを参照してください。~
 
-- [Ubuntu/Debian へのインストール](/ja/node/1182)
-- [Fedora へのインストール](/ja/node/1186)
+- [Ubuntu/Debian へのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_ubuntu_python_1_1)
+- [Fedora へのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_fedora_python_1_1)
 
 <!-- [[古pkg_install_ubuntu.sh >http://svn.openrtm.org/OpenRTM-aist/tags/RELEASE_1_1_2/OpenRTM-aist/build/pkg_install_ubuntu.sh]]  -->
 <!-- [[古pkg_install_debian.sh >http://svn.openrtm.org/OpenRTM-aist/tags/RELEASE_1_1_2/OpenRTM-aist/build/pkg_install_debian.sh]] -->
@@ -108,7 +108,7 @@ Ubuntu、Debian、Fedora の各ディストリビューション用パッケー�
 
 <!-- ※ Fedora用一括インストール・スクリプトはOpenRTM-aist 1.2.0版以降対応予定です。 -->
 
-オプションを指定することで、目的に合わせたパッケージをインストールすることができるようになりました。インストール方法やオプション、パッケージの種類につきましては、[こちら](http://openrtm.org/openrtm/ja/node/6345)をご確認ください。
+オプションを指定することで、目的に合わせたパッケージをインストールすることができるようになりました。インストール方法やオプション、パッケージの種類につきましては、[こちら]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)をご確認ください。
 
 <!-- | ディストリビューション・バージョン | 一括インストールスクリプト | -->
 <!-- | Ubuntu 12.04 (precise) i386/amd64 &br; Ubuntu 14.04 (trusty) i386/amd64/arm64 &br; Ubuntu 15.10 (wily) i386/amd64 &br; Ubuntu 16.04 (xenial) i386/amd64/arm64| [[pkg_install_python_ubuntu.sh >http://svn.openrtm.org/OpenRTM-aist-Python/tags/RELEASE_1_1_2/OpenRTM-aist-Python/installer/install_scripts/pkg_install_python_ubuntu.sh]] | -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: LeapMotion で Choreonoid の制御
+title: leapmotion で choreonoid の制御
 ---
 
 <!-- Title: LeapMotion で Choreonoid の制御 -->
@@ -12,7 +12,7 @@ title: LeapMotion で Choreonoid の制御
 
 以下のアーカイブをダウンロードし解凍してください。
 
-[robomec2015_openrtm_tutorial_part3.zip](http://openrtm.org/pub/OpenRTM-aist/ROBOMEC2015/part3_0/robomec2015_openrtm_tutorial_part3.zip) <span style="color:red;">2015/05/20更新</span>;
+[robomec2015_openrtm_tutorial_part3.zip]()（リンク切れです） <span style="color:red;">2015/05/20更新</span>;
 
 アーカイブの内容にある主なるファイルは以下のとおりです。
 
@@ -31,7 +31,7 @@ https://www.leapmotion.com/setup/windows
 
 ここでは、デモシステムを機動し動作を確認します。以下の手順にしたがってデモシステムを起動させてください。
 
-1. スタートメニューの「Start Naming Service」でネームサーバーを機動する（[OpenRTMのドキュメント](http://openrtm.org/openrtm/ja/content/openrtm-aist%E3%82%9210%E5%88%86%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%88%E3%81%86%EF%BC%81#toc2)に参照してください）
+1. スタートメニューの「Start Naming Service」でネームサーバーを機動する（[OpenRTMのドキュメント]()（リンク切れです）に参照してください）
 1. スタートメニューから「RTSystemEditorRCP」または「OpenRTP 1.1.1」を起動する
 1. Demo/rtc_handle.batを実行してデモシステムのランチャーを起動する
 <div align="center"><a href="start_launcher.png"><img src="start_launcher.png" width="75%;"></a></div>

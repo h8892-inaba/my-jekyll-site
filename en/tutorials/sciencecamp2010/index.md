@@ -24,7 +24,7 @@ title: サイエンスキャンプ(2010年8月25日)
 ## 資料 
 - [講義資料「RTで自分のアイディアを実現しよう](./SC2010_text.pdf)
 
-- [RTコンポーネント作成(NXTway編)](/ja/node/268)
+- [RTコンポーネント作成(NXTway編)]({{ site.baseurl }}/en/doc/casestudy/rtc_development/rtc_development_nxtway)
 
 
 ## 参加者全体発表資料 
@@ -167,12 +167,12 @@ title: サイエンスキャンプ(2010年8月25日)
   - [OpenRTM-aist-C++](http://www.openrtm.org/pub/Windows/OpenRTM-aist/cxx/OpenRTM-aist-1.0.0-RELEASE_vc9_100212.msi)
 
 - TkJoyStickからの入力データをBlueToothを介してNXTにセットするためのコンポーネント
-  - [NXTBlueTooth.zip](http://www.openrtm.org/OpenRTM-aist/download/SC2010/NXTBlueTooth.zip)
+  - [NXTBlueTooth.zip]()(No corresponding page available.)
 
 - TkJoyStickからの出力を車輪速度に変換しOutPortから出力するコンポーネント(宿題の回答を埋め込んだプログラム)
-  - [MRCConvertor.zip](http://www.openrtm.org/OpenRTM-aist/download/SC2010/MRCConvertor.zip)
+  - [MRCConvertor.zip]()(No corresponding page available.)
 
 これ等をインストールした後、以下のドキュメントに従ってロボットを動かします。
-- [RTコンポーネント作成(NXTway編)](/ja/node/268)
+- [RTコンポーネント作成(NXTway編)]({{ site.baseurl }}/en/doc/casestudy/rtc_development/rtc_development_nxtway)
 
 <!-- -------jp page!!------- -->

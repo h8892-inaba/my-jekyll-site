@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTコンポーネント作成(NXTway編)
+title: rtコンポーネント作成(nxtway編)
 ---
 <!-- Title: RTコンポーネント作成(NXTway編) -->
 #contents
@@ -180,7 +180,7 @@ cygwinを起動する
   - 接続した Bluetooth の Comport を確認する
 <div align="center"><a href="BluetoothComport.png"><img src="BluetoothComport.png" width="70%;"></a></div>
 - Bluetooth コンポーネントを起動
-  - [BluetoothComp.zip](http://www.openrtm.org/OpenRTM-aist/download/SC2010/NXTBlueTooth.zip)をダウンロード
+  - [BluetoothComp.zip]()（リンク切れです）をダウンロード
   - BluetoothComp.zipを解凍した後、「components」フォルダーにある「NXTBlueToothComp.exe」ファイルを実行する
 <div align="center"><a href="NXTBluetoothCompStart.png"><img src="NXTBluetoothCompStart.png" width="70%;"></a></div>
 

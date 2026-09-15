@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウエアサマーキャンプ2011
+title: rtミドルウエアサマーキャンプ2011
 ---
 
 #contents

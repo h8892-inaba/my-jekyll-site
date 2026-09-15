@@ -1,6 +1,6 @@
 ---
 layout: page
-title: システムエディタ（RTC の表示 / 描画編集 編）
+title: システムエディタ（rtc の表示 / 描画編集 編）
 ---
 <!-- Title: システムエディタ（RTC の表示 / 描画編集 編） -->
 #contents

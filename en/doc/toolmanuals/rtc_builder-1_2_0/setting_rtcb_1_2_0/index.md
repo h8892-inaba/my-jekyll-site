@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Various Settings
+title: various settings
 ---
 
 <!-- Title: 各種設定 -->

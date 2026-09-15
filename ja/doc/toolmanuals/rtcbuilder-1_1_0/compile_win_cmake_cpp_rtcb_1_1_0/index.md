@@ -1,6 +1,6 @@
 ---
 layout: page
-title: コンパイル方法 (Windows、CMake 利用、C++ 編 )
+title: コンパイル方法 (windows、cmake 利用、c++ 編 )
 ---
 
 <!-- Title: コンパイル方法 (Windows、CMake 利用、C++ 編 ) -->

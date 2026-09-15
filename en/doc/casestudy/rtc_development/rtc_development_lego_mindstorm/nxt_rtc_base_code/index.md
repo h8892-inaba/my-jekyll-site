@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Generating the NXTRTC Template
+title: generating the nxtrtc template
 ---
 
 <!-- Title: NXTRTC の雛形を生成 -->

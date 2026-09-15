@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Master Manager and Slave Manager"
+title: "master manager and slave manager"
 ---
 
 <!-- Title: マスターマネージャ、スレーブマネージャ -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Configuration (Basics) "
+title: "configuration (basics) "
 ---
 <!-- Title: コンフィギュレーション(基礎編) -->
 

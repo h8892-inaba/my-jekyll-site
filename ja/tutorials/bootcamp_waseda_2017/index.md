@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェア強化月間(第1弾)：早稲田大学・RTミドルウェア講習会
+title: rtミドルウェア強化月間(第1弾)：早稲田大学・rtミドルウェア講習会
 ---
 
 <div align="center"><img src="bootcamp_waseda2014.jpg" width="75%;" align="center"></div>
@@ -46,7 +46,7 @@ RTミドルウェア強化月間として、早稲田大学西早稲田キャン
   </tr>
   <tr>
     <td>14:15 -17:00</td>
-    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：宮本信彦(産総研)<br> **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。<br><a href="/ja/node/6310">チュートリアル（Raspberry Pi Mouseシミュレータ、Windows編）</a> <br> <a href="/ja/node/6311">チュートリアル（Raspberry Pi Mouseシミュレータ、 Ubuntu編）</a> <br> **講義資料**：<a href="./170622-02.pdf">170622-02.pdf </a></td>
+    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：宮本信彦(産総研)<br> **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。<br><a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_cpp_windows">チュートリアル（Raspberry Pi Mouseシミュレータ、Windows編）</a> <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_cpp_ubuntu">チュートリアル（Raspberry Pi Mouseシミュレータ、 Ubuntu編）</a> <br> **講義資料**：<a href="./170622-02.pdf">170622-02.pdf </a></td>
   </tr>
 </table>
 
@@ -71,16 +71,16 @@ RTミドルウェア強化月間として、早稲田大学西早稲田キャン
 #### Visual Studio 
 
 <!-- - Visual Studio 2013推奨：[[こちらのページ:https://www.visualstudio.com/ja-jp/downloads/download-visual-studio-vs#DownloadFamilies_2]] から無償版をダウンロードできます。 -->
-- Visual Studio 2013推奨：[こちらのページ](/ja/content/openrtm-aist-c-112-release#vc2013_install) の手順で無償版をダウンロードできます。
+- Visual Studio 2013推奨：[こちらのページ]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#vc2013_install) の手順で無償版をダウンロードできます。
 <!-- -- 左のメニューから「Visual Studio 2013」→「Community 2013」のWebインストーラを選択。 -->
   - インストールには時間がかかりますので、事前にインストールしておいてください。
 
 #### OpenRTM-aist 1.1.2-RELEASE版 (C++版、Python版）
 
 - 1.1.2 からは一つのインストーラですべての言語とVisual Studioのバージョンに対応しいます。32bit/64bitのみ選択してください。（32bit推奨）
-  - [Windows用インストーラ(32bit)](/content/openrtm-aist-c-112-release#toc2node)
+  - [Windows用インストーラ(32bit)]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#toc2node)
 - 1.1.2 は インストールしているVisual Studioのバージョンをシステム環境変数で指定しますので、設定を確認して下さい。デフォルトはvc2013の設定になっています。
-  - [Visual Studio のバージョン指定](/content/openrtm-aist-c-112-release#toc4 node)
+  - [Visual Studio のバージョン指定]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#toc4 node)
 - 1.1.2の使用を推奨しますが、1.1.0, 1.1.1でも受講可能です。
 - 1.1.1/1.1.0 をお使いの場合は<span style="color:red;">必ず</span>; Visual Studio のバージョンと一致させてください。
 <!-- -- 他のバージョン用は、[[こちらのページ:http://openrtm.org/openrtm/ja/content/openrtm-aist-c-112-release]] からダウンロードできます。(非推奨) -->

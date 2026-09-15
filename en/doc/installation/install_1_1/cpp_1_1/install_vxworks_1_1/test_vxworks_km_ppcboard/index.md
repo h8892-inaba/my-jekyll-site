@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist動作確認(VxWorks、カーネルモジュール、PowerPC搭載ボード>利用の場合)
+title: openrtm-aist動作確認(vxworks、カーネルモジュール、powerpc搭載ボード>利用の場合)
 ---
 <br>
 <a>No English version available.
@@ -19,7 +19,7 @@ init
 
 以下の手順でWorkbenchとVxWorksの接続を生成してください。
 
-- [VxWorksターゲットサーバ－接続の生成手順](/en/node/6379)
+- [VxWorksターゲットサーバ－接続の生成手順]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/install_vxworks_1_1/test_vxworks_km_ppcboard/vxworks_target_server_setup)
 
 WorkbenchのRemote Systemでターゲットサーバを選択後にconnect 'xxxxx'ボタンを押すとVxWorksと接続します。
 
@@ -144,7 +144,7 @@ Ubuntuで起動したRTシステムエディタでRTCが起動したかを確認
 RTCの接続、アクティブ化等の手順はUbuntuで動作確認する場合と同じです。
 
 
-- [動作確認 (Linux編)](/en/node/789)
+- [動作確認 (Linux編)]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/test_linux_1_1)
 
 ただしORBexpressを使用した場合にはデータポートのコネクタ接続時にエンディアンをbigに設定する必要があります。
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Operation Check (Linux)
+title: operation check (linux)
 ---
 
 <hr>
@@ -28,17 +28,17 @@ Start OpenRTP, a tool for operating RTCs and building RT systems.
 ```
 
 OpenRTM-aist 1.2 series is started with the openrtp command. Although the command name is different, the startup procedure and usage are the same as in the 1.2 series, so please refer to the following page for details.
-- [OpenRTP Startup Procedure (1.2 Series, Linux)](/node/6654)
+- [OpenRTP Startup Procedure (1.2 Series, Linux)]({{ site.baseurl }}/en/doc/installation/install_1_2/start_openrtp_linux_1_2)
 
 * OpenRTP can coexist between the 1.2 series and the 2.0 series. Therefore, it is possible to run both openrtp and openrtp2. 
 
 For the included sample components, a list for the Windows version is provided on the following page. There is no difference in component operation between the Windows version and the Linux version.
-- [Sample Component List](/node/6633#toc1)
+- [Sample Component List]({{ site.baseurl }}/en/doc/installation/install_2_0/install_windows_2_0/check_windows_2_0#toc1)
 
 If you would like to know a little more about the procedure for running sample components in a Linux environment, please refer to the following explanation pages for the 1.2 series. If you replace the component paths accordingly, the execution procedure is the same for the 2.0 series.
-- [OpenRTM-aist (C++ Version) 1.2 Series: Operation Check (Linux)](/node/6613)
-- [OpenRTM-aist (Python Version) 1.2 Series: Operation Check (Linux)](/node/6621)
-- [OpenRTM-aist (Java Version) 1.2 Series: Operation Check (Linux)](/node/6628)
+- [OpenRTM-aist (C++ Version) 1.2 Series: Operation Check (Linux)]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/check_linux_1_2)
+- [OpenRTM-aist (Python Version) 1.2 Series: Operation Check (Linux)]({{ site.baseurl }}/en/doc/installation/install_1_2/python_1_2/check_python_linux_1_2)
+- [OpenRTM-aist (Java Version) 1.2 Series: Operation Check (Linux)]({{ site.baseurl }}/en/doc/installation/install_1_2/java_1_2/check_linux_java_1_2)
 
 ## Installing OpenCV Sample Components
 

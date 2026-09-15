@@ -1,13 +1,13 @@
 ---
 layout: page
-title: RTM Network Setup Method Using VPN
+title: rtm network setup method using vpn
 ---
 
 <!-- Title: VPNを利用したRTMネットワーク設定方法 -->
 #contents
 
 When using OpenRTM-aist, there may be cases where you want to connect RTCs inside and outside a router, firewall, or NAT.
-If you can change the NAT settings yourself, it is also possible to make RTCs inside and outside NAT work together by using the NAT port forwarding function and specifying the [corba.alternate_iiop_addresses](http://www.openrtm.org/openrtm/ja/content/rtcconf_reference_ja#toc23) option in rtc.conf.
+If you can change the NAT settings yourself, it is also possible to make RTCs inside and outside NAT work together by using the NAT port forwarding function and specifying the [corba.alternate_iiop_addresses]()(No corresponding page available.) option in rtc.conf.
 However, port forwarding settings are required for each RTC, and this method cannot be used for NATs that you cannot configure yourself or for company or school firewalls.
 
 Therefore, by constructing a virtual network using VPN and performing all communication between RTCs over the VPN, RTCs inside and outside firewalls and similar environments can work together.

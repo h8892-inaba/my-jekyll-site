@@ -1,6 +1,6 @@
 ---
 layout: page
-title: QNX  へのインストール
+title: qnx  へのインストール
 ---
 
 <!-- Title: QNX  へのインストール -->
@@ -35,7 +35,7 @@ pkgsrc自体は、特定の OS に依存するものではなく、NetBSD、Sola
 QNX にはパッケージ管理システムはなく、QNX のユーザーフォーラムにおいて QNX 用の pkgsrc がメンテナンスされています。
 
 - [QNX Community pkgsrc Project](http://community.qnx.com/sf/projects/pkgsrc/)
-- [Binary packages:ftp](//ftp.netbsd.org/pub/pkgsrc/packages/QNX)
+- [Binary packages:ftp]()（リンク切れです）
 
 
 OS をインストール後、pkgsrc をリポジトリからチェックアウトするなどして、システムに配置します。(リポジトリへのアクセスには、QNX forum のアカウントが必要になります。)
@@ -73,7 +73,7 @@ OpenRTM-aist は、openrtm.org の以下の URL においてバイナリパッ�
 
 - http://www.openrtm.org/pub/pkgsrc/packages/QNX/i386/6.5.0/All/
 
-OpenRTM-aist で必要な omniORB も上述の[配布サイト:ftp](//ftp.netbsd.org/pub/pkgsrc/packages/QNX)にはバイナリパッケージが無いため、openrtm.org で提供されています。
+OpenRTM-aist で必要な omniORB も上述の[配布サイト:ftp]()（リンク切れです）にはバイナリパッケージが無いため、openrtm.org で提供されています。
 
 ### インストール
 

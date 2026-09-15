@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTP 1.2.2
+title: openrtp 1.2.2
 ---
 <!-- Title: OpenRTP 1.2.2 -->
 <div align="right"><a href="eclipse_logo.png"><img src="eclipse_logo.png" width="15%;" align="right"></a></div>
@@ -120,7 +120,7 @@ You can use the installation script distributed below to install the required pa
 
 <!-- * The batch installation script for Fedora will be compatible with OpenRTM-aist 1.2.0 or later. -->
 
-By specifying options, you can now install packages that meet your needs. Please refer to [Bulk installation script](/ja/node/6345) for installation method, options and package types.
+By specifying options, you can now install packages that meet your needs. Please refer to [Bulk installation script]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script) for installation method, options and package types.
 
 If you have already installed 1.2.1-RELEASE, you can update it.
 
@@ -136,7 +136,7 @@ See [Install OpenRTP 1.2](/en/doc/installation/install_1_2/openrtp_1_2) for down
 ### Java development environment
 
 The following JDK is required for the operation of OpenRTP-1.2.2.
-- JDK8 (1.8): [Install JDK8](/ja/node/6911)
+- JDK8 (1.8): [Install JDK8]({{ site.baseurl }}/en/doc/installation/common/install_jdk8)
 
 ### How to start OpenRTP
 &aname(dl_allinone_win);
@@ -144,7 +144,7 @@ The following JDK is required for the operation of OpenRTP-1.2.2.
 #### Start on Windows
 
 Click the desktop shortcut to launch it. In the Start menu, click [OpenRTM-aist 1.2.2 ***], and then click OpenRTP from the menu that appears.
-[Start OpenRTM-aist in 10 minutes!](/ja/doc/installation/lets_start122) page for instructions. <br>
+[Start OpenRTM-aist in 10 minutes!]({{ site.baseurl }}/en/doc/installation/lets_start) page for instructions. <br>
 
 #### Start on Linux
 

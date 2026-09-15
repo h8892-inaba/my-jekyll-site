@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Java-1.0.0-RELEASE
+title: openrtm-aist-java-1.0.0-release
 ---
 
 <!-- Title: OpenRTM-aist-Java-1.0.0-RELEASE  -->
@@ -10,7 +10,7 @@ Current OpenRTM-aist(Java) version is OpenRTM-aist-1.0.0-RELEASE.
 #clear
 
 ## Download
-Use [RTSystemEditor 1.0.0](/en/node/368) and OpenRTM-aist-Java-1.0.0.
+Use [RTSystemEditor 1.0.0]()(No corresponding page available.) and OpenRTM-aist-Java-1.0.0.
 (OpenRTM-aist-Java-1.0.0 and RTSystemEditor 0.4.2 can't move normally.)
 
 <br>

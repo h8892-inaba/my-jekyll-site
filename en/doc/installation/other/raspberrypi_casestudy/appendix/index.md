@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Appendix
+title: appendix
 ---
 
 <!-- Title: Appendix -->

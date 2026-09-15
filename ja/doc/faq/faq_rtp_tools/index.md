@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTSystemEditor、RTCBuilder、rtshell 等ツールに関する FAQ
+title: rtsystemeditor、rtcbuilder、rtshell 等ツールに関する faq
 ---
 
 <!-- Title: RTSystemEditor、RTCBuilder、rtshell 等ツールに関する FAQ -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ROBOMEC09講習会(2009年5月24日)
+title: robomec09講習会(2009年5月24日)
 ---
 <br>
 <a>No English version available.

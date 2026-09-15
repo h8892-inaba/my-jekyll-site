@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Implementation Procedure for a Custom Interface Type (Java)"
+title: "implementation procedure for a custom interface type (java)"
 ---
 
 Under preparation.

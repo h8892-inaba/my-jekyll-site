@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアサマーキャンプ2014
+title: rtミドルウェアサマーキャンプ2014
 ---
 <br>
 <a>No English version available.
@@ -64,7 +64,7 @@ title: RTミドルウェアサマーキャンプ2014
 
 - 下記のサマーキャンプ受講希望者向けの講習会に参加する意思があること
 
-  - [Robomec2014講習会](http://www.openrtm.org/openrtm/ja/node/5586)
+  - [Robomec2014講習会]({{ site.baseurl }}/en/tutorials/robomech2014)
   - [RTミドルウェア強化月間(第1弾)：名城大学・RTミドルウェア講習会(2014年6月24日)](../meijo2014)
   - [RTミドルウェア強化月間(第2弾)：早稲田大学・RTミドルウェア講習会(2014年6月25日)](../waseda2014)
   - [RTミドルウェア強化月間(第3弾)：中央大学・RTミドルウェア講習会(2014年6月26日)](../chuo2014)

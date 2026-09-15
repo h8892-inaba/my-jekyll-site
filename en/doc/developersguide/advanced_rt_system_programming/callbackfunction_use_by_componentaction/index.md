@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Using Callback Functions for Component Actions"
+title: "using callback functions for component actions"
 ---
 
 Coming soon

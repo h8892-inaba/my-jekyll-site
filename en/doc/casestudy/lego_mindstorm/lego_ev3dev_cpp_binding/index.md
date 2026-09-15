@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Using EV3 Device C++ Bindings
+title: using ev3 device c++ bindings
 ---
 
 <!-- Title: Using EV3 Device C++ Bindings -->

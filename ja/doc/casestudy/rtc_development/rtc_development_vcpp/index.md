@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTコンポーネント作成(VC++編)
+title: rtコンポーネント作成(vc++編)
 ---
 
 <!-- Title: RTコンポーネント作成(VC++編) -->

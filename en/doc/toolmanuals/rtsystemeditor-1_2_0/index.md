@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "RTSystemEditor-1.2.0"
+title: "rtsystemeditor-1.2.0"
 ---
 <!-- Title: RTSystemEditor-1.2.0 -->
 ## What Is RTSystemEditor?

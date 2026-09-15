@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Operation Check (Linux Edition)
+title: operation check (linux edition)
 ---
 
 <!-- /node/6996 -->

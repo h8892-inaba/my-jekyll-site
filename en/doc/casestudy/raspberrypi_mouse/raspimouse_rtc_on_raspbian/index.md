@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installing RTCs for Raspberry Pi Mouse (Raspbian)
+title: installing rtcs for raspberry pi mouse (raspbian)
 ---
 
 <!-- Title: Installing RTCs for Raspberry Pi Mouse (Raspbian) -->

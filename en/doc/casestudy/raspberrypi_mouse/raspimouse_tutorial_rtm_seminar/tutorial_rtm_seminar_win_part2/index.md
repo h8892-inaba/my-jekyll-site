@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (Introduction to RT-Component Development, Raspberry Pi Mouse, Windows)
+title: tutorial (introduction to rt-component development, raspberry pi mouse, windows)
 ---
 
 
@@ -20,7 +20,7 @@ This page explains the procedure for creating a component to operate the Raspber
 
 ### Simulator
 
-- [RaspberryPiMouseSimulator Component](/en/node/6198)
+- [RaspberryPiMouseSimulator Component]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use)
 
 The simulator was developed using the physics engine [Open Dynamics Engine (ODE)](http://www.ode.org/) and the rendering library (drawstuff) included with ODE.
 
@@ -103,14 +103,14 @@ The procedure is as follows:
 The following environment is assumed:
 
 - OS: Windows 10 (Windows 7, 8.1, and 11 are also supported)
-- [Install Visual Studio Community 2022](/en/node/6650)
+- [Install Visual Studio Community 2022]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
 - [Python 3.10](https://www.python.org/downloads/windows/)
   - [python-3.10.7-amd64.exe (64-bit)](https://www.python.org/ftp/python/3.10.7/python-3.10.7-amd64.exe)
 - [CMake](https://cmake.org/download/)
   - [cmake-3.24.2-windows-x86_64.msi (64-bit)](https://github.com/Kitware/CMake/releases/download/v3.24.2/cmake-3.24.2-windows-x86_64.msi)
 - [Doxygen](http://www.doxygen.nl/download.html)
   - [doxygen-1.9.5-setup.exe](https://www.doxygen.nl/files/doxygen-1.9.5-setup.exe)
-- [OpenRTM-aist-2.0.0-RELEASE](https://openrtm.org/openrtm/ja/download)
+- [OpenRTM-aist-2.0.0-RELEASE]({{ site.baseurl }}/en/download)
   - [OpenRTM-aist-2.0.0-RELEASE_x86_64.msi (64-bit)](https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.0-RELEASE_x86_64.msi)
 
 ### Component Specification
@@ -991,7 +991,7 @@ Next, click the **[Add Name Server]** button in RT System Editor and add:
 <br>
 <br>
 
-You should then be able to see the RTC named [RaspberryPiMouseRTC](/en/node/6015#toc0).
+You should then be able to see the RTC named [RaspberryPiMouseRTC]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0).
 
 <div align="center"><a href="robomech2018_7.jpg"><img src="robomech2018_7.jpg" width="70%;"></a></div>
 

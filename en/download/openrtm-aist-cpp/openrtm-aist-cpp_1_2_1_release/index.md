@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist C++ 1.2.1-RELEASE
+title: openrtm-aist c++ 1.2.1-release
 ---
 
 <!-- Title: OpenRTM-aist C++ 1.2.1-RELEASE -->
@@ -9,7 +9,7 @@ title: OpenRTM-aist C++ 1.2.1-RELEASE
 
 (G)Please refer to the following page for the installation procedure.
 
-- [OpenRTM-aist (C ++ version) 1.2 Family installation](/ja/node/6600)
+- [OpenRTM-aist (C ++ version) 1.2 Family installation]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2)
 
 ## Package
 ### Windows Installer
@@ -137,7 +137,7 @@ You can use the installation script distributed below to install the required pa
   </tr>
 </table>
 
-By specifying options, you can now install packages that meet your needs. Please refer to [Bulk installation script](/ja/node/6345) for installation method, options and package types.
+By specifying options, you can now install packages that meet your needs. Please refer to [Bulk installation script]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script) for installation method, options and package types.
 
 If you have already installed 1.2.0-RELEASE, you can update it.
 
@@ -145,7 +145,7 @@ Ubuntu / Debian
  $ sudo apt-get update
  $ sudo apt-get dist-upgrade
 
-Please see [OpenRTM-aist (C ++ version) 1.2 family installation](/ja/node/6600) for download method and installation method.
+Please see [OpenRTM-aist (C ++ version) 1.2 family installation]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2) for download method and installation method.
 
 &aname(src);
 ## Source code
@@ -170,7 +170,7 @@ Please see [OpenRTM-aist (C ++ version) 1.2 family installation](/ja/node/6600) 
 
 ### Build from source
 
-For details on how to build from source, see [Building from Source (Windows)](/ja/node/6611) or [Building from Source (Linux)](/ja/node/6612) .
+For details on how to build from source, see [Building from Source (Windows)]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/build_source_windows_1_2) or [Building from Source (Linux)]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/build_source_linux_1_2) .
 
 ### Create deb / rpm package
 
@@ -187,7 +187,7 @@ You can create a package by following the steps below. When creating a package, 
 Packages are created in the pacakges directory.
 
 <span style="color:red;">* Install tools such as "dpkg-dev build-essential debhelper devscripts" when creating deb packages on Ubuntu and Debian, and "rpm-build createrepo" before creating rpm packages on Fedora. Must be kept. </span>;
-These can be installed by executing [Bulk installation script](/ja/node/6345) with the -c option.
+These can be installed by executing [Bulk installation script]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script) with the -c option.
 
 ## Release notes
 OpenRTM-aist Official Website can use source code, Windows installer, Linux package, etc. in dual license system which can be selected from LGPL license or individual contract with AIST.

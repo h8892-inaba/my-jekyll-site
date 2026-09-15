@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 動作確認 (Linux編)
+title: 動作確認 (linux編)
 ---
 
 <!-- Title: 動作確認 (Linux編) -->
@@ -177,14 +177,14 @@ omniNames が起動していない場合、rtm-naming コマンドでネーム�
 
 ### RTSystemEditor の起動
 
-RTSystemEditor を使って、RTコンポーネントの接続とアクティブ化を行います。RTSystemEditor はツール OpenRTP に含まれておりますので、[こちら](/ja/node/5778)から Eclipse 全部入りパッケージをダウンロードし解凍してください。
+RTSystemEditor を使って、RTコンポーネントの接続とアクティブ化を行います。RTSystemEditor はツール OpenRTP に含まれておりますので、[こちら]({{ site.baseurl }}/ja/download/tools/openrtp_1_1_0_rc5)から Eclipse 全部入りパッケージをダウンロードし解凍してください。
 
 RTSystemEditor は Java Development Kit7 を使用します。以下のマニュアルを参考にインストールしてください。また、Ubuntu 等では、デフォルトの Java 環境は OpenJDK が推奨されています。そうした場合、OpenJDK でも利用することは可能です。
 
   - [Java SE Development Kit 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)~
-  - [JDKインストールのためのヒント ](/node/805)
+  - [JDKインストールのためのヒント ]({{ site.baseurl }}/ja/doc/installation/install_1_1/java_1_1/tips_jdk)
 
-[こちら](/ja/node/6741)のページを参考に RTSystemEditor の起動してください。
+[こちら]({{ site.baseurl }}/ja/doc/toolmanuals/rtsystemeditor-1_1_0)のページを参考に RTSystemEditor の起動してください。
 
 ### ネームサーバーの参照と確認
 

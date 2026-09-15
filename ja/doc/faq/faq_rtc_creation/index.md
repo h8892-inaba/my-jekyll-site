@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTコンポーネント作成に関する FAQ
+title: rtコンポーネント作成に関する faq
 ---
 
 

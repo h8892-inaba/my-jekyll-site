@@ -1,7 +1,7 @@
 ---
 
 layout: page
-title: "Hardware"
+title: "hardware"
 
 ---
 RTC-available hardwares. If you have some information of RTC-available hardware, please send an email to us: support[at]openrtm.org
@@ -15,9 +15,9 @@ RTC-available hardwares. If you have some information of RTC-available hardware,
 <a href=""><img src="randd_humanoid.png" width="15%;" style="margin:10px;"></a></div>
 
 If you had any question of these RTCs, please contact below:
-- [Forum](http://www.openrtm.org/openrtm/ja/node/281)
-- [Mailing Lists](http://www.openrtm.org/openrtm/ja/node/275)
-- [Issue Tracking](http://www.openrtm.org/openrtm/ja/node/add/project-issue)
+- [Forum]({{ site.baseurl }}/en/community/forum)
+- [Mailing Lists]()(No corresponding page (mailinglist) available.)
+- [Issue Tracking]()(No corresponding page available.)
 
 
 <span style="color:red;">※Never contact with the robots' makers.</span>;

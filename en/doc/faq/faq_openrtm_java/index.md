@@ -1,6 +1,6 @@
 ---
 layout: page
-title: FAQ on OpenRTM-aist (Java Version) 
+title: faq on openrtm-aist (java version) 
 ---
 
 <!-- Title: OpenRTM-aist (Java版) に関する FAQ -->
@@ -78,6 +78,6 @@ If the OS is FedoraCore, installing Java with yum may install GCJ (The GNU Compi
 If problems occur, first check whether Oracle Java is being used.
 
 - References 
-  - [[Hints for JDK installation: /ja/node/805#fedora]]
-  - |[[A simple method for applying Oracle Java to Eclipse in UNIX-like environments: /ja/node/248#rtclinksunjava]]
+  - [Hints for JDK installation]({{ site.baseurl }}/en/doc/installation/install_1_1/java_1_1/tips_jdk#fedora)
+  - [A simple method for applying Oracle Java to Eclipse in UNIX-like environments]({{ site.baseurl }}/en/doc/faq/faq_rtp_tools#rtclinksunjava)
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "ObjectTracking"
+title: "objecttracking"
 ---
 
 <!-- Title: ObjectTracking -->

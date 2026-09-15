@@ -1,13 +1,13 @@
 ---
 layout: page
-title: "Chromakey"
+title: "chromakey"
 ---
 
 <!-- Title: Chromakey -->
 
 #contents
 
-OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencv_sample_build)に従ってビルドしてインストールしてください。
+OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencvcamera/opencv_sample_build/)に従ってビルドしてインストールしてください。
 
 ### 概要
 Chromakeyは、2つの画面をクロマキー合成をするOpenCVコンポーネントのサンプルです。

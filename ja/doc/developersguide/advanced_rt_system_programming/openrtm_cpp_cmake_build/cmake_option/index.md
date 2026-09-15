@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "CMakeのオプション一覧"
+title: "cmakeのオプション一覧"
 ---
 <!-- Title: CMakeのオプション一覧 -->
 #contents

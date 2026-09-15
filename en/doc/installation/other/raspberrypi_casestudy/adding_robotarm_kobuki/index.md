@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Procedure for Mounting a Robot Arm on Kobuki
+title: procedure for mounting a robot arm on kobuki
 ---
 
 <!-- Title: Procedure for Mounting a Robot Arm on Kobuki -->
@@ -15,7 +15,7 @@ The Academic SCARA Robot is a horizontally articulated robotic arm sold by Vston
 
 For information about RTCs for controlling the Academic SCARA Robot, refer to:
 
-- [Robot Education Tool Using a Portable RTM Environment Installed on a USB Memory Device]({{ site.baseurl }}/en/node/5943)
+- [Robot Education Tool Using a Portable RTM Environment Installed on a USB Memory Device]({{ site.baseurl }}/ja/node/5943)(No corresponding English project page available.)
 
 This section explains how to mount the Academic SCARA Robot onto the Kobuki platform.
 
@@ -174,7 +174,7 @@ This section describes how to mount the 4-DOF robot arm sold by SainSmart onto K
 
 For information on RTCs for controlling the 4-DOF robot arm, refer to:
 
-- [RT Components for Educational Robot Arm Control Using RT Middleware]({{ site.baseurl }}/en/node/5933)
+- [RT Components for Educational Robot Arm Control Using RT Middleware]({{ site.baseurl }}/ja/node/5933)(No corresponding English project page available.)
 
 The following items are required:
 

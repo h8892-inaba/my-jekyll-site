@@ -48,7 +48,7 @@ RT System Editor の設定画面は、メニューの [window] > [preferences] >
 &aname(color);
 ### 表示色
 表示色の設定画面では、システムエディタにて表示される RTC と ExecutionContext 状態の色を設定することができます。
-それぞれの状態の意味については、[システムエディタのRTCの表示](/node/4882#RTCcolor)をご覧ください。
+それぞれの状態の意味については、[システムエディタのRTCの表示]({{ site.baseurl }}/ja/doc/toolmanuals/rtsystemeditor-1_1_0/rtse-1_1_0_display#RTCcolor)をご覧ください。
 <br>
 
 <div align="center"><a href="fig88DisplayColorSettingScreen.png"><img src="fig88DisplayColorSettingScreen.png" width="60%;"></a></div>
@@ -60,7 +60,7 @@ RT System Editor の設定画面は、メニューの [window] > [preferences] >
 ### アイコン
 アイコンの設定画面では、システムエディタで表示する RTC に付与されるアイコン画像と、表示対象のパターンを設定することができます。
 表示対象は RTC の種別、もしくはカテゴリのパターンを設定します。
-アイコン画像の表示イメージは、[システムエディタのRTCの表示](/node/4882#RTCcolor)をご覧ください。
+アイコン画像の表示イメージは、[システムエディタのRTCの表示]({{ site.baseurl }}/ja/doc/toolmanuals/rtsystemeditor-1_1_0/rtse-1_1_0_display#RTCcolor)をご覧ください。
 <br>
 
 <div align="center"><a href="fig89IconSettingScreen.png"><img src="fig89IconSettingScreen.png" width="60%;"></a></div>

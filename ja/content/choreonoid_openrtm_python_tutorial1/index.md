@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Choreonoid用OpenRTM連携プラグイン Python版 チュートリアル(TankJoystick)"
+title: "choreonoid用openrtm連携プラグイン python版 チュートリアル(tankjoystick)"
 ---
 
 このページではChoreonoid OpenRTM連携プラグイン Python版でTankモデルをゲームパッドで操作するまでの手順を説明します。

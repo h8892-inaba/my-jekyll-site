@@ -1,7 +1,7 @@
 ---
 
 layout: page
-title: "Hardware"
+title: "hardware"
 
 ---
 RTコンポーネントとして利用可能なハードウエアに関する情報。
@@ -27,9 +27,9 @@ RTコンポーネントとして利用可能なハードウエアに関する情
 -->
 
 本ページで公開されている RTC に関する質問等は、
-- [フォーラム](http://www.openrtm.org/openrtm/ja/node/281)
-- [メーリングリスト](http://www.openrtm.org/openrtm/ja/node/275)
-- [Issue Tracking](http://www.openrtm.org/openrtm/ja/node/add/project-issue)
+- [フォーラム]({{ site.baseurl }}/ja/community/forum)
+- [メーリングリスト]()（「メーリングリスト」のページはリンク切れです）
+- [Issue Tracking]()（リンク切れです）
 
 に対して行なってください。
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Japan Robot Week 2018 RTM講習会
+title: japan robot week 2018 rtm講習会
 ---
 
 <!-- #ref(dl_logo_wrob.jpg,60%,right,margin=10,around,url=http://biz.nikkan.co.jp/eve/s-robot/index.html) -->
@@ -54,11 +54,11 @@ title: Japan Robot Week 2018 RTM講習会
   </tr>
   <tr>
     <td>12:30 -15:00</td>
-    <td>**第2部：RTコンポーネントの作成入門** <br> **担当**：宮本信彦 氏(産総研)<br> **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。 <br> <a href="/ja/node/6550">チュートリアル(第2部、Windows)</a><br> <a href="/ja/node/6551">チュートリアル(第2部、Ubuntu)</a></td>
+    <td>**第2部：RTコンポーネントの作成入門** <br> **担当**：宮本信彦 氏(産総研)<br> **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。 <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2">チュートリアル(第2部、Windows)</a><br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2">チュートリアル(第2部、Ubuntu)</a></td>
   </tr>
   <tr>
     <td>15:00 -16:30</td>
-    <td>**第3部：RTシステム構築実習** <br> **担当**：宮本信彦 氏(産総研)<br> **概要**：OpenRTM-aistを利用してロボットを制御するプログラムを実際に作成します。<br> <a href="/ja/node/6552">チュートリアル(第3部)</a></td>
+    <td>**第3部：RTシステム構築実習** <br> **担当**：宮本信彦 氏(産総研)<br> **概要**：OpenRTM-aistを利用してロボットを制御するプログラムを実際に作成します。<br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_part3">チュートリアル(第3部)</a></td>
   </tr>
 </table>
 
@@ -82,7 +82,7 @@ title: Japan Robot Week 2018 RTM講習会
 - インストールするソフトウェア
   - OS: Windowsの場合
     - 以下のソフトウェアをインストールしてください。
-    - [Visual Studio 2017](https://openrtm.org/vs_install)
+    - [Visual Studio 2017]()（リンク切れです）
       - Visual C++がインストールされているかは必ず確認してください。
     - [Python 2.7](https://www.python.org/ftp/python/2.7.15/python-2.7.15.amd64.msi)
      - [CMake](https://cmake.org/files/v3.11/cmake-3.11.4-win64-x64.msi)
@@ -94,7 +94,7 @@ title: Japan Robot Week 2018 RTM講習会
      - OpenRTM-aist
 
       - 下記のインストール手順は古い情報です。　必要なdebパッケージとインストールスクリプトをまとめたtar.gzファイルを用意しています。
-[こちら ](http://openrtm.org/#linux_packages) のページをご覧ください。
+[こちら ]({{ site.baseurl }}/ja/#linux_packages) のページをご覧ください。
 
 ```
  $ git clone https://github.com/n-ando/xenial_package.git

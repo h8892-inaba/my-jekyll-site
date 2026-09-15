@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "OpenRTM-aistのビルド、動作確認手順"
+title: "openrtm-aistのビルド、動作確認手順"
 ---
 <br>
 <a>No English version available.
@@ -14,7 +14,7 @@ title: "OpenRTM-aistのビルド、動作確認手順"
 
 まず、以下の手順でomniORBをビルドしてください。
 
-- [omniORBのビルド]({{ site.baseurl }}/en/node/7130#windows)
+- [omniORBのビルド]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/omniorb_build#windows)
 
 
 次にOpenRTM-aistをビルドします。
@@ -35,7 +35,7 @@ title: "OpenRTM-aistのビルド、動作確認手順"
 
 まずは環境変数**PATH**と**PYTHONPATH**を設定します。
 
-- [環境変数の設定]({{ site.baseurl }}/en/node/7130#windows_env)
+- [環境変数の設定]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/omniorb_build#windows_env)
 
 ```
  set OpenRTMPython_INSTALL_DIR=C:/work/python_install
@@ -50,7 +50,7 @@ title: "OpenRTM-aistのビルド、動作確認手順"
 
 環境変数**PATH**と**PYTHONPATH**を設定します。
 
-- [環境変数の設定]({{ site.baseurl }}/en/node/7130#windows_env)
+- [環境変数の設定]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/omniorb_build#windows_env)
 
 ```
  git clone https://github.com/OpenRTM/rtctree
@@ -82,7 +82,7 @@ title: "OpenRTM-aistのビルド、動作確認手順"
 
 まず、以下の手順でTAOをビルドしてください。
 
-- [TAOのビルド]({{ site.baseurl }}/en/node/7131#windows)
+- [TAOのビルド]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/tao_build#windows)
 
 
 次にOpenRTM-aistをビルドします。
@@ -193,11 +193,11 @@ Pythonのホームフォルダ(**C:\Python37**等)にインストールした場
 
 まず、以下の手順でomniORBをビルドしてください。
 
-- [omniORBのビルド]({{ site.baseurl }}/en/node/7130#ubuntu)
+- [omniORBのビルド]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/omniorb_build#ubuntu)
 
 以下の手順で環境変数**PKG_CONFIG**を設定します。
 
-- [環境変数の設定]({{ site.baseurl }}/en/node/7130#ubuntu_env)
+- [環境変数の設定]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/omniorb_build#ubuntu_env)
 
 次にOpenRTM-aistをビルドします。
 
@@ -217,7 +217,7 @@ Pythonのホームフォルダ(**C:\Python37**等)にインストールした場
 
 まずは環境変数**PATH**と**LD_LIBRARY_PATH**、**PYTHONPATH**を設定します。
 
-- [環境変数の設定]({{ site.baseurl }}/en/node/7130#ubuntu_env)
+- [環境変数の設定]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/omniorb_build#ubuntu_env)
 
 ```
  export OPENRTMPYTHON_INSTALL_DIR=$OMNIORB_INSTALL_DIR
@@ -231,7 +231,7 @@ Pythonのホームフォルダ(**C:\Python37**等)にインストールした場
 
 環境変数**PATH**と**LD_LIBRARY_PATH**、**PYTHONPATH**を設定します。
 
-- [環境変数の設定]({{ site.baseurl }}/en/node/7130#ubuntu_env)
+- [環境変数の設定]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/omniorb_build#ubuntu_env)
 
 ```
  git clone https://github.com/OpenRTM/rtctree
@@ -262,12 +262,12 @@ Pythonのホームフォルダ(**C:\Python37**等)にインストールした場
 
 まず、以下の手順でTAOをビルドしてください。
 
-- [TAOのビルド]({{ site.baseurl }}/en/node/7131#ubuntu)
+- [TAOのビルド]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/tao_build#ubuntu)
 
 
 以下の手順で環境変数**PKG_CONFIG**を設定します。
 
-- [環境変数の設定]({{ site.baseurl }}/en/node/7131#ubuntu_env)
+- [環境変数の設定]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build/tao_build#ubuntu_env)
 
 次にOpenRTM-aistをビルドします。
 

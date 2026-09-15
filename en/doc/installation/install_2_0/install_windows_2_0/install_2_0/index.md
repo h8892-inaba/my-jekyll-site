@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installation
+title: installation
 ---
 
 <!-- Title: Installation -->
@@ -93,7 +93,7 @@ The plugin configuration file:
 
 Required for Java development. Please refer to the following page:
 
-- [Installing JDK8]({{ site.baseurl }}/en/node/6911)
+- [Installing JDK8]({{ site.baseurl }}/en/doc/installation/common/install_jdk8)
 
 ## Installing OpenRTM-aist
 

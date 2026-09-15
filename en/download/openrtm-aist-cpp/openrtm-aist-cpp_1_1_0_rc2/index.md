@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist C++ 1.1.0-RC2
+title: openrtm-aist c++ 1.1.0-rc2
 ---
 <!-- Title: 1.1.0-RC2 -->
 <div align="right"><a href="cpp_logo.png"><img src="cpp_logo.png" width="15%;" align="right"></a></div>
@@ -16,17 +16,17 @@ title: OpenRTM-aist C++ 1.1.0-RC2
 <table class="table-alt">
   <tr>
     <td>C++ source code</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/cxx/1.1/OpenRTM-aist-1.1.0-RC2.tar.bz2">OpenRTM-aist-1.1.0-RC2.tar.bz2</a><br>MD5:fba1dbc10b99381d6c46afd33be4f9ca</td>
+    <td><a href="">OpenRTM-aist-1.1.0-RC2.tar.bz2</a>(No corresponding page available.)<br>MD5:fba1dbc10b99381d6c46afd33be4f9ca</td>
     <td>2011.06.06</td>
   </tr>
   <tr>
     <td>C++ source code</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/cxx/1.1/OpenRTM-aist-1.1.0-RC2.tar.gz">OpenRTM-aist-1.1.0-RC2.tar.gz</a><br>MD5:86bab7c5153e9d0a3ab12311471e36d3</td>
+    <td><a href="">OpenRTM-aist-1.1.0-RC2.tar.gz</a>(No corresponding page available.)<br>MD5:86bab7c5153e9d0a3ab12311471e36d3</td>
     <td>2011.06.06</td>
   </tr>
   <tr>
     <td>C++ source code for Windows</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/cxx/1.1/OpenRTM-aist-1.1.0-RC2-win32.zip">OpenRTM-aist-1.1.0-RC2-win32.zip</a><br>MD5:5dfb2359c90f86e4674483b19839eaac</td>
+    <td><a href="">OpenRTM-aist-1.1.0-RC2-win32.zip</a>(No corresponding page available.)<br>MD5:5dfb2359c90f86e4674483b19839eaac</td>
     <td>2011.06.06</td>
   </tr>
 </table>
@@ -40,7 +40,7 @@ title: OpenRTM-aist C++ 1.1.0-RC2
   </tr>
   <tr>
     <td>Windows installer</td>
-    <td><a href="http://www.openrtm.org/pub/Windows/OpenRTM-aist/cxx/1.1/OpenRTM-aist-1.1.0-RC2_vc9.msi">OpenRTM-aist-1.1.0-RC2_vc9.msi</a><br>MD5:f4f605d8ff3375929a7ab296d792d8bc</td>
+    <td><a href="">OpenRTM-aist-1.1.0-RC2_vc9.msi</a>(No corresponding page available.)<br>MD5:f4f605d8ff3375929a7ab296d792d8bc</td>
     <td>2011.06.06</td>
   </tr>
   <tr>
@@ -73,7 +73,7 @@ title: OpenRTM-aist C++ 1.1.0-RC2
 
 Linux packages will be provided in the RELEASE version. See the following instructions to build OpenRTM-aist from source code.
 
-- [Building from source](/en/node/899)
+- [Building from source]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/build_source_linux_1_1/)
 
 Now the deb packages for Ubuntu and Debian, and the rpm packages for Fedora and Vine, are officially supported by distribution source code.
 You can build OpenRTM-aist packages from source code according to the following process.
@@ -138,12 +138,12 @@ You can install all dependent packages at once by using the following scripts.
 <table class="table-alt">
   <tr>
     <td>Windows all in one<br>(RTSystemEditor1.1.0+RTCBUilder1.1.0)</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/tools/1.1.0/eclipse342_rtmtools110release_win32_ja.zip">eclipse342_rtmtools110release_win32_ja.zip</a><br>MD5:f5619616be753fef7bae9ef863e5b33f</td>
+    <td><a href="">eclipse342_rtmtools110release_win32_ja.zip</a>(No corresponding page available.)<br>MD5:f5619616be753fef7bae9ef863e5b33f</td>
     <td>2011.05.24</td>
   </tr>
   <tr>
     <td>Linux all in one<br>(RTSystemEditor1.1.0+RTCBUilder1.1.0)</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/tools/1.1.0/eclipse342_rtmtools110release_linux_ja.tar.gz">eclipse342_rtmtools110release_linux_ja.tar.gz</a><br>MD5:062355b5963cd0f0a42fb3b8ad43ddc2</td>
+    <td><a href="">eclipse342_rtmtools110release_linux_ja.tar.gz</a>(No corresponding page available.)<br>MD5:062355b5963cd0f0a42fb3b8ad43ddc2</td>
     <td>2011.05.24</td>
   </tr>
 </table>

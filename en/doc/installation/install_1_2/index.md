@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "OpenRTM-aist 1.2系のインストール"
+title: "openrtm-aist 1.2系のインストール"
 ---
 <br>
 <a>No English version available.

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: iREX2017 （国際ロボット展） RTM講習会
+title: irex2017 （国際ロボット展） rtm講習会
 ---
 <br>
 <a>No English version available.
@@ -52,7 +52,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
   </tr>
   <tr>
     <td>11:00 -11:50</td>
-    <td>**第2部：RTコンポーネント作成入門** <br> **担当**：宮本信彦氏 (産業技術総合研究所)<br> **概要**：RTコンポーネント設計ツールRTCBuilderとRTシステム構築ツールRTSystemEditorの利用方法を解説するとともに、移動ロボットシミュレータを用いた実習によりRTコンポーネントの開発手順、動作確認手順を学習します。 <br> <a href="/ja/node/6381">チュートリアル(第2部、Windows)</a> <br> <a href="/ja/node/6382">チュートリアル(第2部、Ubuntu)</a></td>
+    <td>**第2部：RTコンポーネント作成入門** <br> **担当**：宮本信彦氏 (産業技術総合研究所)<br> **概要**：RTコンポーネント設計ツールRTCBuilderとRTシステム構築ツールRTSystemEditorの利用方法を解説するとともに、移動ロボットシミュレータを用いた実習によりRTコンポーネントの開発手順、動作確認手順を学習します。 <br> <a href="{{ site.baseurl }}/en/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_win">チュートリアル(第2部、Windows)</a> <br> <a href="{{ site.baseurl }}/en/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_ubuntu">チュートリアル(第2部、Ubuntu)</a></td>
   </tr>
   <tr>
     <td>11:50 -12:00</td>
@@ -68,7 +68,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
   </tr>
   <tr>
     <td>13:00 -16:30</td>
-    <td>**第3部：RTシステム構築実習** <br> **担当**：宮本信彦氏 (産業技術総合研究所) <br>  **概要**：移動ロボット実機を複数台用いたシステムの構築実習により、ネットワークに複数接続されたロボットを用いたRTシステムの構築方法を学習します。 <br> <a href="/ja/node/6384">チュートリアル(第3部)</a></td>
+    <td>**第3部：RTシステム構築実習** <br> **担当**：宮本信彦氏 (産業技術総合研究所) <br>  **概要**：移動ロボット実機を複数台用いたシステムの構築実習により、ネットワークに複数接続されたロボットを用いたRTシステムの構築方法を学習します。 <br> <a href="{{ site.baseurl }}/en/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_part3">チュートリアル(第3部)</a></td>
   </tr>
 </table>
 
@@ -144,7 +144,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 #### Visual Studio 
 
 <!-- - Visual Studio Express 2013推奨：[[こちらのページ:https://www.microsoft.com/ja-jp/download/details.aspx?id=44914]] から無償版をダウンロードできます。 -->
-- Visual Studio Express 2013推奨：[こちらのページ](/ja/content/openrtm-aist-c-112-release#vc2013_install) の手順で無償版をダウンロードできます。
+- Visual Studio Express 2013推奨：[こちらのページ]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#vc2013_install) の手順で無償版をダウンロードできます。
   - インストールには時間がかかりますので、事前にインストールしておいてください。
 
 サポートされるVisual Studioは2015までで、<span style="color:red;">Visual Studio 2017 はサポートされていません。</span>;
@@ -157,19 +157,19 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 
 念のためにVisual C++のプロジェクトが作成できるかの確認をお願いします。
 
-- [Visual C++が正常にインストールできたかの確認](http://openrtm.org/openrtm/ja/node/6034#toc8)
+- [Visual C++が正常にインストールできたかの確認]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#toc8)
 
 #### OpenRTM-aist 1.1.2-RELEASE版 (C++版、Python版）
 
 - 1.1.2 からは一つのインストーラですべての言語とVisual Studioのバージョンに対応しいます。32bit/64bitのみ選択してください。（32bit推奨）
-  - [Windows用インストーラ(32bit)](/content/openrtm-aist-c-112-release#toc2)
+  - [Windows用インストーラ(32bit)]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#toc2)
 - 1.1.2 は インストールしているVisual Studioのバージョンをシステム環境変数で指定しますので、設定を確認して下さい。デフォルトはvc2013の設定になっています。
-  - [Visual Studio のバージョン指定](/content/openrtm-aist-c-112-release#toc4)
+  - [Visual Studio のバージョン指定]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#toc4)
 <!-- - 1.1.2の使用を推奨しますが、1.1.0, 1.1.1でも受講可能です。 -->
 <!-- - 1.1.1/1.1.0 をお使いの場合は&color(red){必ず}; Visual Studio のバージョンと一致させてください。 -->
 <!-- -- 他のバージョン用は、[[こちらのページ:http://openrtm.org/openrtm/ja/content/openrtm-aist-c-112-release]] からダウンロードできます。(非推奨) -->
 - デフォルト設定のままインストールして下さい。
-- [OpenRTM-aistを10分で始めよう！](http://openrtm.org/openrtm/ja/node/6026) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
+- [OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
 
 #### Python
 

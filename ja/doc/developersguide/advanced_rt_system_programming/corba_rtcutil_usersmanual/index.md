@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "RTC操作関数(CORBA_RTCUtil)利用マニュアル"
+title: "rtc操作関数(corba_rtcutil)利用マニュアル"
 ---
 
 #contents

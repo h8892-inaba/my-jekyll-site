@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installing rtshell
+title: installing rtshell
 ---
 
 <!-- Title: rtshellのインストール -->

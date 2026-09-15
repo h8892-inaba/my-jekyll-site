@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist C++ 1.1.2-RELEASE
+title: openrtm-aist c++ 1.1.2-release
 ---
 
 <!-- Title: OpenRTM-aist C++ 1.1.2-RELEASE -->
@@ -84,7 +84,7 @@ title: OpenRTM-aist C++ 1.1.2-RELEASE
 - <span style="color:red;">※ 古い rtshell は事前に削除しておいてください。</span>;
 - Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[doxygen](http://www.doxygen.nl/index.html)のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
 
-インストールについては、[OpenRTM-aistを10分で始めよう！](http://openrtm.org/openrtm/ja/node/6026) のページで手順を紹介しています。<br>
+インストールについては、[OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2) のページで手順を紹介しています。<br>
 
 #### Visual Studio のバージョン指定
 
@@ -157,7 +157,7 @@ title: OpenRTM-aist C++ 1.1.2-RELEASE
 
 GUI ツールを使って設定することができます。使い方は下記ページで解説しています。
 
-- [http://openrtm.org/openrtm/ja/content/vc_version_changer](http://openrtm.org/openrtm/ja/content/vc_version_changer)
+- [http://openrtm.org/openrtm/ja/content/vc_version_changer]({{ site.baseurl }}/ja/content/vc_version_changer)
 
 
 &aname(vc2013_install);
@@ -229,13 +229,13 @@ Visual Studio 2015でVisual C++をインストールしていない場合につ�
 Windows10などの高解像度モードを利用すると、Eclipse のアイコンなどが縮小表示される場合があります。
 以下のFAQで解決方法を説明しています。
 
-- [http://openrtm.org/openrtm/ja/content/tool_trouble_shooting_ja#toc1](http://openrtm.org/openrtm/ja/content/tool_trouble_shooting_ja#toc1)
+- [http://openrtm.org/openrtm/ja/content/tool_trouble_shooting_ja#toc1]({{ site.baseurl }}/ja/doc/faq/faq_rtp_tools#toc1)
 
 #### インストール環境の設定を確認する方法
 
 windows_installer_test.bat スクリプトで確認することができます。使い方は下記ページで解説しています。
 
-- [http://openrtm.org/openrtm/ja/content/rtm-install-check-script](http://openrtm.org/openrtm/ja/content/rtm-install-check-script)
+- [http://openrtm.org/openrtm/ja/content/rtm-install-check-script]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/windows_install_test_bat)
 
 
 <!-- - 1.1.2版を「標準」インストールすると、C++版だけでなく、Python版、Java版、rtshell もインストールされますので、 -->
@@ -274,7 +274,7 @@ windows_installer_test.bat スクリプトで確認することができます�
 
 <!-- ※Fedora用一括インストール・スクリプトはOpenRTM-aist 1.2.0版以降対応予定です。 -->
 
-オプションを指定することで、目的に合わせたパッケージをインストールすることができるようになりました。インストール方法やオプション、パッケージの種類につきましては、「[一括インストール・スクリプト](http://openrtm.org/openrtm/ja/node/6345)」のページをご確認ください。
+オプションを指定することで、目的に合わせたパッケージをインストールすることができるようになりました。インストール方法やオプション、パッケージの種類につきましては、「[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)」のページをご確認ください。
 
 
 <!-- --- Ubuntu 用スクリプト pkg_install_ubuntu.sh は、以下のいずれかのオプションを指定して実行します。 -->
@@ -306,7 +306,7 @@ Fedora　の場合
  # dnf update
 ```
 
-ダウンロード方法・インストール方法については、[こちら(C++)](/ja/node/999) をご覧くだい。
+ダウンロード方法・インストール方法については、[こちら(C++)]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1) をご覧くだい。
 
 &aname(src);
 ## ソースコード
@@ -335,7 +335,7 @@ Fedora　の場合
 
 ### ソースからのビルド
 
-ソースからビルドする方法については、[ソースからのビルド(Windows編)](/ja/node/793) または [ソースからのビルド(Linux編)](/ja/node/788) をご覧くだい。
+ソースからビルドする方法については、[ソースからのビルド(Windows編)]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/build_source_windows_1_1) または [ソースからのビルド(Linux編)]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/build_source_linux_1_1) をご覧くだい。
 
 ### deb/rpm パッケージ作成
 

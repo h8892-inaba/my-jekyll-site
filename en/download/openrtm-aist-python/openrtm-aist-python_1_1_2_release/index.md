@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Python-1.1.2-RELEASE
+title: openrtm-aist-python-1.1.2-release
 ---
 <!-- Title: OpenRTM-aist-Python-1.1.2-RELEASE -->
 <div align="right"><a href="python-logo.png"><img src="python-logo.png" width="15%;" align="right"></a></div>
@@ -69,7 +69,7 @@ title: OpenRTM-aist-Python-1.1.2-RELEASE
 <!-- -&color(red){※ Python 2.7.10 推奨。2.7.11は PYTHONPATH 等環境変数の設定が必要な場合があります。}; -->
 <!-- -&color(red){※ 古い rtshell は事前に削除しておいてください。}; -->
 
-For installation, [OpenRTM-aist in 10 minutes!](http://openrtm.org/openrtm/en/node/6026) page introduces the procedure. <br>
+For installation, [OpenRTM-aist in 10 minutes!]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2/) page introduces the procedure. <br>
 <!-- インストールについては、[[OpenRTM-aistを10分で始めよう！:http://openrtm.org/openrtm/ja/node/6026]] のページで手順を紹介しています。&br; -->
 
 
@@ -95,8 +95,8 @@ For details, refer to the following documents. ~
 <!-- Ubuntu、Debian、Fedora の各ディストリビューション用パッケージを openrtm.org 上のリポジトリサーバーにて配布しています。 -->
 <!-- 詳細は、以下のドキュメントを参照してください。~ -->
 
-- [Installation on Ubuntu/Debian](/en/node/1309)
-- [Installation on Fedora](/en/node/1310)
+- [Installation on Ubuntu/Debian](/{{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/install_ubuntu_python_1_1/)
+- [Installation on Fedora]({{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/install_fedora_python_1_1/)
 <!-- -[[Ubuntu/Debian へのインストール:/ja/node/1182]] -->
 <!-- -[[Fedora へのインストール:/ja/node/1186]] -->
 
@@ -125,7 +125,7 @@ For details, refer to the following documents. ~
 
 <!-- ※ Fedora用一括インストール・スクリプトはOpenRTM-aist 1.2.0版以降対応予定です。 -->
 
-By specifying the option, it is now possible to install the package according to the purpose. Please check [here](http://openrtm.org/openrtm/en/node/6345) about the installation method, option, package type.
+By specifying the option, it is now possible to install the package according to the purpose. Please check [here]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script/) about the installation method, option, package type.
 <!-- オプションを指定することで、目的に合わせたパッケージをインストールすることができるようになりました。インストール方法やオプション、パッケージの種類につきましては、[[こちら:http://openrtm.org/openrtm/ja/node/6345]]をご確認ください。 -->
 
 <!-- | ディストリビューション・バージョン | 一括インストールスクリプト | -->

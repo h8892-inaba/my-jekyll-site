@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Views (Configuration View)
+title: views (configuration view)
 ---
 
 <!-- Title: ビュー（コンフィグレーションビュー編） -->

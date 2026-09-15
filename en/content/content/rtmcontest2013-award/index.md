@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウエアコンテスト2013表彰
+title: rtミドルウエアコンテスト2013表彰
 ---
 
 No English version available.
@@ -34,7 +34,7 @@ RTシステムの技術の蓄積と共有を促進することを狙って優れ
 
 ### ウィン電子工業賞【提供：[有限会社ウィン電子工業](http://www.win-ei.com/)】 
 
-<div align="left"><a href="http://www.openrtm.org/openrtm/sites/default/files/5406/Award-win-ei.jpg"><img src="http://www.openrtm.org/openrtm/sites/default/files/5406/Award-win-ei.jpg" width="20%;" align="center"></a></div>
+<div align="left"><a href="{{ site.baseurl }}/en/./Award-win-ei.jpg"><img src="http://www.openrtm.org/openrtm/sites/default/files/5406/Award-win-ei.jpg" width="20%;" align="center"></a></div>
 
 **名刺サイズの組込CPUボードとIOボードとのセット**（RaspberryPi、PiRT-Unit、Xbee、SDカード他　一式） 1式提供<br> 
 

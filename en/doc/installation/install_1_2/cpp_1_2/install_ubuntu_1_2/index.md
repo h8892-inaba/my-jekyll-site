@@ -1,7 +1,7 @@
 ---
 layout: page
 
-title: Ubuntu/Debianへのインストール
+title: ubuntu/debianへのインストール
 ---
 <br>
 <a>No English version available.

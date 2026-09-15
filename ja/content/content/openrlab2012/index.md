@@ -79,7 +79,7 @@ RTミドルウエア、RTコンポーネントに関する展示を募集いた�
 パネルおよびデモ展示の形でご協力いただける場合、間口1.6m程度のスペースを提供させていただきます。
 例年、RTミドルウエアに興味のある来場者および他の展示協力者との情報交換や議論ができるよい機会となっております。
 
-<!-- div align="left"><a href="/ja/content/openlab2012_exhibitor"><img src="openlab2012_exhibitor.png" width="80%;" align="left"></a></div-->
+<!-- div align="left"><a href=""><img src="openlab2012_exhibitor.png" width="80%;" align="left"></a>（リンク切れです）</div-->
 
 
 

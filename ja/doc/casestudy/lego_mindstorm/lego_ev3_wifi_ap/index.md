@@ -1,6 +1,6 @@
 ---
 layout: page
-title: EV3 を無線LANアクセスポイントとして動作させるまでの手順
+title: ev3 を無線lanアクセスポイントとして動作させるまでの手順
 ---
 
 <!-- Title: EV3 を無線LANアクセスポイントとして動作させるまでの手順 -->
@@ -165,7 +165,7 @@ ssid、wpa_passphrase は適宜変更してください。
 ```
 
 
-再起動する前に [このページ](/ja/node/5861#toc6)の手順で無線LANを設定している場合は、Wireless and Networks→Wifi→Powered を OFF に設定してください。また Wireless and Networks→Offline Mode を ON にしてください。
+再起動する前に [このページ]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_setup_ev3_ev3dev#toc6)の手順で無線LANを設定している場合は、Wireless and Networks→Wifi→Powered を OFF に設定してください。また Wireless and Networks→Offline Mode を ON にしてください。
 
 これで全ての手順が終了したので、再起動して接続できるかを確認してください。
 失敗する場合は有線で EV3 と接続して設定が正しく行われているかを確認してください。

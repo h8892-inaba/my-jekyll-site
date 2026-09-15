@@ -1,6 +1,6 @@
 ---
 layout: page
-title: NXT Python Facade Class
+title: nxt python facade class
 ---
 
 <!-- Title: NXT Python RTC 化 -->

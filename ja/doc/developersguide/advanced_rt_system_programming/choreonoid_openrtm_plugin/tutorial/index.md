@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Choreonoid入門
+title: choreonoid入門
 ---
 
 #contents
@@ -142,8 +142,8 @@ Choreonoid上でRTSystemEditorの一部機能を使用するためのRTSystemア
 ### RobotControllerコンポーネント追加
 以下のページで作成したRobotControllerコンポーネントをシミュレータで利用可能にします。
 
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)](/ja/node/6550)
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Ubuntu)](/ja/node/6551)
+- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2)
+- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Ubuntu)]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2)
 
 RTCを表現するRTCアイテムを追加してください。
 

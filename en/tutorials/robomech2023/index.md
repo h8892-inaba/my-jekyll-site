@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ROBOMECH2023
+title: robomech2023
 ---
 <br>
 <a>No English version available.
@@ -90,7 +90,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
   </tr>
   <tr>
     <td>11:00-12:00</td>
-    <td><strong>第2部：RTコンポーネントの作成入門-Ⅰ</strong> <br> - <strong>担当</strong>：宮本信彦 氏(産総研) <br> - 概要：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="/ja/node/6550">チュートリアル(第2部、Windows)</a> <br> <a href="/ja/node/6551">チュートリアル(第2部、Ubuntu)</a> <br><strong>講義資料</strong>:<a href="RTコンポーネント作成入門.pdf">RTコンポーネント作成入門.pdf</a></td>
+    <td><strong>第2部：RTコンポーネントの作成入門-Ⅰ</strong> <br> - <strong>担当</strong>：宮本信彦 氏(産総研) <br> - 概要：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2">チュートリアル(第2部、Windows)</a> <br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2">チュートリアル(第2部、Ubuntu)</a> <br><strong>講義資料</strong>:<a href="RTコンポーネント作成入門.pdf">RTコンポーネント作成入門.pdf</a></td>
   </tr>
   <tr>
     <td>12:00-13:00</td>
@@ -98,11 +98,11 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
   </tr>
   <tr>
     <td>13:00-14:30</td>
-    <td><strong>第3部：rtshell入門</strong> <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：RTシステムの起動、終了を自動化するスクリプトファイルの作成方法を解説します。 <br> <a href="/ja/node/7097">チュートリアル(第3部)</a> <br><strong>講義資料</strong>:<a href="rtshell入門.pdf">rtshell入門.pdf</a></td>
+    <td><strong>第3部：rtshell入門</strong> <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：RTシステムの起動、終了を自動化するスクリプトファイルの作成方法を解説します。 <br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse">チュートリアル(第3部)</a> <br><strong>講義資料</strong>:<a href="rtshell入門.pdf">rtshell入門.pdf</a></td>
   </tr>
   <tr>
     <td>14:30-15:30</td>
-    <td><strong>第4部：RTコンポーネント作成入門-Ⅱ</strong> <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：OpenRTM-aistを利用して移動ロボット実機を制御するプログラムを作成します。<br> <a href="/ja/node/6550#realrobot">チュートリアル(第4部、Windows)</a>  <br> <a href="/ja/node/6551#realrobot">チュートリアル(第4部、Ubuntu)</a></td>
+    <td><strong>第4部：RTコンポーネント作成入門-Ⅱ</strong> <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：OpenRTM-aistを利用して移動ロボット実機を制御するプログラムを作成します。<br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2#realrobot">チュートリアル(第4部、Windows)</a>  <br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2#realrobot">チュートリアル(第4部、Ubuntu)</a></td>
   </tr>
   <tr>
     <td>15:30-15:40</td>
@@ -110,7 +110,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
   </tr>
   <tr>
     <td>15:40-17:00</td>
-    <td><strong>第5部：Processing実習</strong> <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：初心者向けのプログラミング言語のProcessingでRTCを作成します。<br> <a href="/ja/node/7232">Processing 活用事例</a> <br><strong>講義資料</strong>:<a href="Processing実習.pdf">Processing実習.pdf</a></td>
+    <td><strong>第5部：Processing実習</strong> <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：初心者向けのプログラミング言語のProcessingでRTCを作成します。<br> <a href="{{ site.baseurl }}/en/doc/casestudy/processing">Processing 活用事例</a> <br><strong>講義資料</strong>:<a href="Processing実習.pdf">Processing実習.pdf</a></td>
   </tr>
 </table>
 
@@ -160,7 +160,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 以下のソフトウェアをインストールしてください。
 <!-- なお、Windowsが64bit版の場合はそれぞれ64bit版のものを、32bit版の場合は32bit版のものをダウンロードします。 -->
 
-- [Visual Studio 2022](/ja/node/6650)
+- [Visual Studio 2022]({{ site.baseurl }}/en/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
   - Visual C++がインストールされているかは必ず確認してください。
   - Visual Studio 2013、2015、2017、2019でも可
 - [Python 3.10.2](https://www.python.org/downloads/windows/)
@@ -256,7 +256,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 <!-- &br; -->
 <!-- &color(red){このサイトにログイン後、下方に参加登録フォームが現れます。}; -->
 
-1. **ユーザ登録:** 参加登録するまえに当Webページのユーザ登録をお願いします。[ユーザ登録はこちら](http://openrtm.org/openrtm/ja/user/register)
+1. **ユーザ登録:** 参加登録するまえに当Webページのユーザ登録をお願いします。[ユーザ登録はこちら]()(No corresponding page available.)
   - 当Webサイトにログイン済みの方は名前の欄にユーザ名が出ますが、氏名に書き換えてください。
 1. **ログイン:** ユーザ登録後 openrtm.org のサイトにログインします。
 1. **参加登録:** 下記の登録フォームに必要事項を記入し登録してください。

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアサマーキャンプ2023
+title: rtミドルウェアサマーキャンプ2023
 ---
 
 <div align="center"><a href="sammercamp2023_r2.png"><img src="sammercamp2023_r2.png" width="100%;"></a></div>
@@ -52,9 +52,9 @@ RTミドルウェア講習会に参加したことがある，もしくは同等
 <!-- なお、例年強化月間と称して、7月に事前講習会を実施していますが、今年は原則実施ことといたします。&color(red){ (確認) } -->
 これまで講習会を受講したことがない場合は、以下のチュートリアルを自習することで参加資格を満たしたことにいたします。
 
-- [RTミドルウェアを10分で始めよう](/doc/installation/lets_start122) (インストールとサンプルの動作確認)
-- [画像処理コンポーネントの作成](https://www.openrtm.org/openrtm/ja/node/6057) (画像処理コンポーネントの作成練習、USBカメラor内蔵カメラが必要)
-- [ROBOMECH2022RTM講習会](https://www.openrtm.org/openrtm/ja/tutorial/robomech2022) (移動ロボット実機を制御するコンポーネントの作成)
+- [RTミドルウェアを10分で始めよう]({{ site.baseurl }}/ja/doc/installation/lets_start122) (インストールとサンプルの動作確認)
+- [画像処理コンポーネントの作成]({{ site.baseurl }}/ja/doc/casestudy/opencv_comp_development/opencv_win81_vs2015) (画像処理コンポーネントの作成練習、USBカメラor内蔵カメラが必要)
+- [ROBOMECH2022RTM講習会]({{ site.baseurl }}/ja/tutorials/robomech2022) (移動ロボット実機を制御するコンポーネントの作成)
 
 <!-- または， -->
 <!-- -下記のサマーキャンプ受講希望者向けの講習会に参加する意思があること -->
@@ -410,9 +410,9 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
   - 今回作成したシステムを第三者が再現できる情報をマニュアル化してください。
   - 過去のサマーキャンプやコンテストのプロジェクトを参照してください
     - [RTMサマーキャンプ2021作品一覧](../summercamp2021#toc13)
-    - [RTMコンテスト2021作品一覧](https://openrtm.org/openrtm/ja/contests/2021)(no_page)
+    - [RTMコンテスト2021作品一覧](https://openrtm.org/openrtm/ja/contests/2021)（Projectページはリンク切れです）(no_page)
     - [RTMサマーキャンプ2022作品一覧](../summercamp2022#toc18)
-    - [RTMコンテスト2022作品一覧](https://openrtm.org/openrtm/ja/contests/2022)(no_page)
+    - [RTMコンテスト2022作品一覧](https://openrtm.org/openrtm/ja/contests/2022)（Projectページはリンク切れです）(no_page)
 - **SysMLやＵＭＬなどのモデルをつくったらそのデータ** → プロジェクトページに自分で格納
   - モデリングツールでモデル作成をした場合はそのデータ
   - 最終成果報告会の発表資料にモデルが含まれていればそれでも結構です
@@ -468,7 +468,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### グループ1
 
 - **課題**: 集荷ロボット
-  - [プロジェクトページ](/ja/project/SummerCamp20231)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp20231)（Projectページはリンク切れです）(no_page)
 <!-- -- [[最終成果発表資料:https://www.slideshare.net/openrtm/ss-252721420]] -->
 
 <!-- <nowiki> -->
@@ -489,7 +489,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### グループ2
 
 - **課題**: 
-  - [プロジェクトページ](/ja/project/SummerCamp20232)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp20232)（Projectページはリンク切れです）(no_page)
 <!-- -- [[最終成果発表資料:https://www.slideshare.net/openrtm/ss-252710121]] -->
 
 <!-- <nowiki> -->

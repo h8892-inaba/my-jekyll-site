@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTコンポーネント作成(OpenCV編 for RTCB-RC1)
+title: rtコンポーネント作成(opencv編 for rtcb-rc1)
 ---
 
 <!-- Title: RTコンポーネント作成(OpenCV編 for RTCB-RC1) -->
@@ -114,13 +114,13 @@ flip_mode は、反転したい方向に応じて下記のように指定して�
 - コンパイラ: [Visual C++ 2008 Express Edition 日本語版](http://www.microsoft.com/japan/msdn/vstudio/express/default.aspx)
 - [omniORB: version 4.1.2](http://www.openrtm.org/pub/Windows/omniORB/omniORB-4.1.2_vc9.msi)
 - [OpenCV: version 1.0](http://downloads.sourceforge.net/opencvlibrary/OpenCV_1.0.exe?modtime=1161287502&big_mirror=1)
-- [OpenRTM-aist: version 1.0.0-RC1](http://www.openrtm.org/pub/Windows/OpenRTM-aist/cxx/OpenRTM-aist-1.0.0-RC1-jp_vc9.msi)
+- [OpenRTM-aist: version 1.0.0-RC1]()（リンク切れです）
 
-- [OpenCV サンプルRTC](http://www.openrtm.org/OpenRTM-aist/download/IREX2009/OpenCV_RTC-1.0_vc9_jp.msi)
+- [OpenCV サンプルRTC]()（リンク切れです）
 
 - RTSystemEditor 1.0
 - RTCBuilder 1.0
-  - [全部入りパッケージ](http://www.openrtm.org/OpenRTM-aist/download/IREX2009/eclipse.zip_)
+  - [全部入りパッケージ]()（リンク切れです）
 
 - [解凍ツール(Lhaplus)](http://www.forest.impress.co.jp/lib/arc/archive/archiver/lhaplus.html)
 
@@ -395,7 +395,7 @@ RTCBuilder や rtc-template で生成した VC 用のプロジェクトでは、
 。
 
 <br>
-[user_config.vsprops](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2009/user_config.vsprops)
+[user_config.vsprops]()（リンク切れです）
 
 ※　既にFlipフォルダーには user_config.vsprops ファイルが存在しておりますが、上書きして
 構いません。
@@ -960,7 +960,7 @@ Flip コンポーネントのコンフィギュレーションパラメーター
 拡張子を"zip_"としてますので、"zip"にリネームしてから解凍して下さい。
 
 
-- [ビルド済みパッケージ](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2009/Flip.zip_)
+- [ビルド済みパッケージ]()（リンク切れです）
 
 ## おまけ(物体追跡コンポーネント) 
 
@@ -1641,5 +1641,5 @@ OutPort からは、物体追跡画像と、マウスで選択した位置から
 <!-- 拡張子を"zip_"としてますので、"zip"にリネームしてから解凍して下さい。-->
 
  
-- [ビルド済みパッケージ(No Link)](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2009/ObjectTracking.zip_)
+- [ビルド済みパッケージ(No Link)]()（リンク切れです）
 

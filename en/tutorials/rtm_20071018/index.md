@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 東京大学・学際理数情報学特論XIV(2007年10月18日)
+title: 東京大学・学際理数情報学特論xiv(2007年10月18日)
 ---
 <br>
 <a>No English version available.

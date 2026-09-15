@@ -1,9 +1,9 @@
 ---
 layout: page
-title: OpenRTM-aist (C++版)
+title: openrtm-aist (c++版)
 ---
 <!-- Title: OpenRTM-aist (C++版) -->
-<div align="right"><a href="/node/116"><img src="cpp_logo.png" width="10%;" align="right"></a></div>
+<div align="right"><a href="{{ site.baseurl }}/ja/download/openrtm-aist-cpp"><img src="cpp_logo.png" width="10%;" align="right"></a></div>
 C++ 言語で RTコンポーネントを作成するためのライブラリです。Linux、Windows、Mac OS X、FreeBSD に対応しています。
 ソースコード、Windows 用インストーラー、各種Linuxパッケージ、MacPorts がダウンロードできます。
 
@@ -22,7 +22,7 @@ C++ 言語で RTコンポーネントを作成するためのライブラリで�
 - [svn/RELENG_1_2](https://github.com/OpenRTM/OpenRTM-aist/tree/svn/RELENG_1_2)
 
 ### リポジトリステータス
-- [statsvn](http://www.openrtm.org/svnstat/cxx)
+- [statsvn]()（リンク切れです）
 
 ### バグトラッキング
 - [redmine](http://redmine.openrtm.org/projects/openrtm-aist-cxx)

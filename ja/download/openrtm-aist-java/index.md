@@ -1,10 +1,10 @@
 ---
 layout: page
-title: OpenRTM-aist (Java版)
+title: openrtm-aist (java版)
 ---
 
 <!-- Title: OpenRTM-aist (Java版) -->
-<div align="right"><a href="/node/117"><img src="java_logo.png" width="10%;" align="right"></a></div>
+<div align="right"><a href="{{ site.baseurl }}/ja/download/openrtm-aist-java"><img src="java_logo.png" width="10%;" align="right"></a></div>
 Java で RTコンポーネントをプログラミングするためのライブラリです。Windows インストーラーとビルド済みの jar ファイルがダウンロードできます。
 
 - [1.2.2-RELESE](./openrtm-aist-java_1_2_2_release)
@@ -23,7 +23,7 @@ Java で RTコンポーネントをプログラミングするためのライブ
 - [svn/RELENG_1_2](https://github.com/OpenRTM/OpenRTM-aist-Java/tree/svn/RELENG_1_2)
 
 ### リポジトリステータス
-- [statsvn](http://www.openrtm.org/svnstat/java)
+- [statsvn]()（リンク切れです）
 
 ### バグトラッキング
 - [redmine](http://redmine.openrtm.org/projects/openrtm-aist-java)

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Mindstorm NXT 設定
+title: mindstorm nxt 設定
 ---
 
 <!-- Title: Mindstorm NXT 設定 -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist 2.0系のインストール
+title: openrtm-aist 2.0系のインストール
 ---
 
 <hr>

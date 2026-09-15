@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Frequently Asked Questions
+title: frequently asked questions
 ---
 
 We have briefly summarized frequently asked questions.

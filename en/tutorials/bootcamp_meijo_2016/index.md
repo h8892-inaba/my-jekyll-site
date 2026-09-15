@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェア強化月間2016 in 名城大学・RTミドルウェア講習会
+title: rtミドルウェア強化月間2016 in 名城大学・rtミドルウェア講習会
 ---
 <br>
 <a>No English version available.
@@ -87,14 +87,14 @@ RTミドルウェア強化月間として、名城大学において，RTミド�
 #### OpenRTM-aist 1.1.2-RELEASE版 (C++版、Python版）
 
 - 1.1.2 からは一つのインストーラですべての言語とVisual Studioのバージョンに対応しいます。32bit/64bitのみ選択してください。（32bit推奨）
-  - [Windows用インストーラ(32bit)](/content/openrtm-aist-c-112-release#toc2)
+  - [Windows用インストーラ(32bit)]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#toc2)
 - 1.1.2 は インストールしているVisual Studioのバージョンをシステム環境変数で指定しますので、設定を確認して下さい。デフォルトはvc2013の設定になっています。
-  - [Visual Studio のバージョン指定](/content/openrtm-aist-c-112-release#toc4)
+  - [Visual Studio のバージョン指定]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#toc4)
 - 1.1.2の使用を推奨しますが、1.1.0, 1.1.1でも受講可能です。
 - 1.1.1/1.1.0 をお使いの場合は<span style="color:red;">必ず</span>; Visual Studio のバージョンと一致させてください。
 <!-- -- 他のバージョン用は、[[こちらのページ:http://openrtm.org/openrtm/ja/content/openrtm-aist-c-112-release]] からダウンロードできます。(非推奨) -->
 - デフォルト設定のままインストールして下さい。
-- [OpenRTM-aistを10分で始めよう！](http://openrtm.org/openrtm/ja/content/lets_start) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
+- [OpenRTM-aistを10分で始めよう！]()(No corresponding page available.) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
 
 #### Python
 

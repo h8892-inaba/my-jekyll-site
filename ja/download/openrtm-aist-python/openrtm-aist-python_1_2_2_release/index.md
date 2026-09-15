@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Python 1.2.2-RELEASE
+title: openrtm-aist-python 1.2.2-release
 ---
 
 <!-- Title: OpenRTM-aist-Python 1.2.2-RELEASE -->
@@ -13,7 +13,7 @@ title: OpenRTM-aist-Python 1.2.2-RELEASE
 <br>
 インストール手順については以下のページを参照してください。
 
-- [OpenRTM-aist(Python)1.2系のインストール](/ja/node/6601)
+- [OpenRTM-aist(Python)1.2系のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/python_1_2)
 
 ## パッケージ
 ### Windowsインストーラー
@@ -132,7 +132,7 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
 
 オプションを指定することで、目的に合わせたパッケージをインストールできるようになりました。<br>
 <span style="color:red;">※古いバージョンである「1.2.1」をインストールすることができます。「1.2.2」から「1.2.1」へのダウングレードもできます。</span>; <br>
-インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト](/ja/node/6345)をご確認ください。
+インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)をご確認ください。
 
 
 1.2.1-RELEASEを既にインストールしている場合は、以下の手順でPython3用パッケージをインストールして下さい。
@@ -155,7 +155,7 @@ Ubuntu16.04の場合
 <!--  -->
 <!-- # dnf update -->
 
-ダウンロード方法・インストール方法については、[OpenRTM-aist(Python版)1.2系のインストール](/ja/node/6601)をご覧くだい。
+ダウンロード方法・インストール方法については、[OpenRTM-aist(Python版)1.2系のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/python_1_2)をご覧くだい。
 
 &aname(src);
 ## ソースコード
@@ -176,7 +176,7 @@ Ubuntu16.04の場合
 
 ### ソースからのビルド
 
-ソースからビルドする方法については、[ソースからのビルド(Windows編)](/ja/node/6618)または[ソースからのビルド(Linux編)](/ja/node/6651)をご覧くだい。
+ソースからビルドする方法については、[ソースからのビルド(Windows編)]({{ site.baseurl }}/ja/doc/installation/install_1_2/python_1_2/build_source_python_windows_1_2)または[ソースからのビルド(Linux編)]({{ site.baseurl }}/ja/doc/installation/install_1_2/python_1_2/build_source_python_linux_1_2)をご覧くだい。
 
 ### deb/rpmパッケージ作成
 
@@ -192,7 +192,7 @@ Ubuntu16.04の場合
 パッケージはpacakgesディレクトリ内に作成されます。
 
 <span style="color:red;">※UbuntuやDebianにてdebパッケージを作成する場合は"dpkg-dev build-essential debhelper devscripts"、Fedoraにてrpmパッケージを作成する場合は"rpm-build createrepo"といったツールをあらかじめインストールしておく必要があります。</span>;
-これらは、[一括インストール・スクリプト](/ja/node/6345)を-cオプションで実行すればインストールされます。
+これらは、[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)を-cオプションで実行すればインストールされます。
 
 <!-- &br; -->
 <!-- ***MacPorts -->

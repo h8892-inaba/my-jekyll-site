@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(EV3、Windows、第2部)
+title: チュートリアル(ev3、windows、第2部)
 ---
 
 <!-- Title: チュートリアル(EV3、Windows、第2部) -->

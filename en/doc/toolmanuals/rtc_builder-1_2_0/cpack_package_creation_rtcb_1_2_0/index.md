@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Package Creation Using CPack (Common Settings for Windows/Linux)
+title: package creation using cpack (common settings for windows/linux)
 ---
 <!-- Title: CPack を使ったパッケージ作成（Windows/Linux での共通設定） -->
 #contents(4)

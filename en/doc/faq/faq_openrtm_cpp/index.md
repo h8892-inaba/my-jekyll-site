@@ -1,6 +1,6 @@
 ---
 layout: page
-title: FAQ on OpenRTM-aist (C++ Version)
+title: faq on openrtm-aist (c++ version)
 ---
 
 <!-- Title: OpenRTM-aist (C++版) に関する FAQ -->

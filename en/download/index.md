@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Download"
+title: "download"
 ---
 
 <!-- Title: Download -->

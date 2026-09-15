@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Troubleshooting for OpenRTM-aist (C++ Version, Python Version, Java Version)
+title: troubleshooting for openrtm-aist (c++ version, python version, java version)
 ---
 
 <!-- Title: OpenRTM-aist(C++版、Python版、Java版)に関するトラブルシューティング -->
@@ -222,7 +222,7 @@ The following error may occur during build with Visual C++ 2005 Express Edition.
 This is thought to be caused by **1. Microsoft Platform SDK is not installed**, or **2. include file path / library path settings are incomplete**.
 
 ##### 1. Microsoft Platform SDK is not installed
-- Solution: Install Microsoft Platform SDK. At that time, refer to [here](/en/node/640#2005SDKattention). Alternatively, follow **2.** below.
+- Solution: Install Microsoft Platform SDK. At that time, refer to [here]()(No corresponding page available.). Alternatively, follow **2.** below.
 ##### 2. Include file path / library path settings are incomplete
 - Solution: Due to the installation order or similar reasons, Microsoft Platform SDK may have been installed in a location different from the installation directory of Visual C++ 2005 Express Edition, and the Visual C++ 2005 Express Edition compiler may not be able to find the include files or libraries of Microsoft Platform SDK. In this case, the problem can be solved by adding the Microsoft Platform SDK installation directory to the include file search path and library search path.
   - How to add the include file search path: From the menu bar of Visual C++ 2005 Express Edition, select "Tools" → "Options" to open the "Options" window. From the tree view on the left, select "Projects and Solutions" → "VC++ Directories."~
@@ -494,5 +494,5 @@ If a JRE (Java Runtime Environment) newer than the JDK is already installed, "ja
 If the OS is FedoraCore, installing Java with yum may install GCJ (The GNU Compiler for Java), and using that GCJ may cause several problems.~
 If problems occur, first check whether Oracle Java is being used.
 - References
-  - [Hints for JDK installation](/en/node/805#fedora)
-  - [A simple method for applying Oracle Java to Eclipse in UNIX-like environments](/en/node/248#rtclinksunjava)
+  - [Hints for JDK installation]({{ site.baseurl }}/en/doc/installation/install_1_1/java_1_1/tips_jdk#fedora)
+  - [A simple method for applying Oracle Java to Eclipse in UNIX-like environments]({{ site.baseurl }}/en/doc/faq/faq_rtp_tools#rtclinksunjava)

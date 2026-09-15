@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 動作確認(Windows編)
+title: 動作確認(windows編)
 ---
 
 <!-- Title: 動作確認(Windows編) -->
@@ -28,7 +28,7 @@ ConsoleInのOutPortからConsoleOutのInPortへ接続し、これらの2つの�
 ### RTSystemEditor、ネームサーバーの起動
 以下の手順に従ってRTSystemEditor、ネームサーバーを起動してください。
 
-- [OpenRTP起動手順](/ja/node/6653)
+- [OpenRTP起動手順]({{ site.baseurl }}/ja/doc/installation/install_1_2/start_openrtp_proc_windows_1_2)
 
 ### サンプルコンポーネントの起動
 ネームサーバー起動後、適当なサンプルコンポーネントを起動します。

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ROBOMECH2025講習会 (2025年6月4日(水))
+title: robomech2025講習会 (2025年6月4日(水))
 ---
 
 <div align="left"><img src="robomech2025_slider2.png" width="80%; margin:10px;" align="left"></div>
@@ -78,15 +78,15 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
   </tr>
   <tr>
     <td>14:00-15:00</td>
-    <td><strong>第2部：RTコンポーネントの作成入門-Ⅰ</strong> <br>  - 概要：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="/ja/node/6550">チュートリアル(第2部、Windows)</a> <br> <a href="/ja/node/6551">チュートリアル(第2部、Ubuntu)</a> <br>講義資料:<a href="RTコンポーネント作成入門.pdf">RTコンポーネント作成入門.pdf</a></td>
+    <td><strong>第2部：RTコンポーネントの作成入門-Ⅰ</strong> <br>  - 概要：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2">チュートリアル(第2部、Windows)</a> <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2">チュートリアル(第2部、Ubuntu)</a> <br>講義資料:<a href="RTコンポーネント作成入門.pdf">RTコンポーネント作成入門.pdf</a></td>
   </tr>
   <tr>
     <td>15:00-16:00</td>
-    <td><strong>第3部：Processing実習</strong><br> - 概要：初心者向けのプログラミング言語のProcessingでRTコンポーネントを作成します。 <br> <a href="/ja/node/7232">チュートリアル(第3部)</a> <br><strong>講義資料</strong>:<a href="Processing実習.pdf">Processing実習.pdf</a></td>
+    <td><strong>第3部：Processing実習</strong><br> - 概要：初心者向けのプログラミング言語のProcessingでRTコンポーネントを作成します。 <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/processing">チュートリアル(第3部)</a> <br><strong>講義資料</strong>:<a href="Processing実習.pdf">Processing実習.pdf</a></td>
   </tr>
   <tr>
     <td>16:00-17:00</td>
-    <td><strong>第4部：RTコンポーネント作成入門-Ⅱ</strong>  <br>- 概要：OpenRTM-aistを利用して移動ロボット実機を制御するプログラムを作成します。現地参加でのみの実施です。<br> <a href="/ja/node/6550#realrobot">チュートリアル(第4部、Windows)</a>  <br> <a href="/ja/node/6551#realrobot">チュートリアル(第4部、Ubuntu)</a></td>
+    <td><strong>第4部：RTコンポーネント作成入門-Ⅱ</strong>  <br>- 概要：OpenRTM-aistを利用して移動ロボット実機を制御するプログラムを作成します。現地参加でのみの実施です。<br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2#realrobot">チュートリアル(第4部、Windows)</a>  <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2#realrobot">チュートリアル(第4部、Ubuntu)</a></td>
   </tr>
 </table>
 
@@ -138,7 +138,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 以下のソフトウェアをインストールしてください。
 <!-- なお、Windowsが64bit版の場合はそれぞれ64bit版のものを、32bit版の場合は32bit版のものをダウンロードします。 -->
 
-- [Visual Studio 2022](/ja/node/6650)
+- [Visual Studio 2022]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
   - Visual C++がインストールされているかは必ず確認してください。
   - Visual Studio 2019でも可
 - [Python 3.11.9](https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe)
@@ -152,7 +152,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 - [Doxygen](http://www.doxygen.nl/download.html) 
 <!-- (32bit, 64bitの別なし） -->
 <!-- -- [[doxygen-1.9.1-setup.exe:https://doxygen.nl/files/doxygen-1.9.1-setup.exe]] -->
-- [OpenRTM-aist-2.1.0-RC](https://openrtm.org/pub/Windows/OpenRTM-aist/2.1/RC/)
+- [OpenRTM-aist-2.1.0-RC]()（リンク切れです）
   - OpenRTM-aist 2.0.2以前のバージョンは不可
 <!-- - [[OpenRTM-aist-2.0.1-RELEASE:https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/]] -->
 <!-- -- OpenRTM-aist-1.2.2でも可 -->
@@ -248,7 +248,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 
 下記はopenrtm.orgから申し込む手順です。[connpass](https://connpass.com/event/344120/)上でも募集をしておりますので、そちらからの登録も受け付けております。
 
-1. **ユーザ登録:** 参加登録するまえに当Webページのユーザ登録をお願いします。[ユーザ登録はこちら](http://openrtm.org/openrtm/ja/user/register)
+1. **ユーザ登録:** 参加登録するまえに当Webページのユーザ登録をお願いします。[ユーザ登録はこちら]()（リンク切れです）
   - 当Webサイトにログイン済みの方は名前の欄にユーザ名が出ますが、氏名に書き換えてください。
 1. **ログイン:** ユーザ登録後 openrtm.org のサイトにログインします。
 1. **参加登録:** 下記の登録フォームに必要事項を記入し登録してください。

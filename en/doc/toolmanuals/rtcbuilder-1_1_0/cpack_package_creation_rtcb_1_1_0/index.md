@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CPack を使ったパッケージ作成（Windows/Linux での共通設定）
+title: cpack を使ったパッケージ作成（windows/linux での共通設定）
 ---
 -------jp page!!-------
 

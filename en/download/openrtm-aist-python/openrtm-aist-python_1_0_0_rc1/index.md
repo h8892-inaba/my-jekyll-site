@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Python-1.0.0-RC1
+title: openrtm-aist-python-1.0.0-rc1
 ---
 <!-- Title: OpenRTM-aist-Python-1.0.0-RC1_en -->
 <div align="left"><a href="python-logo.png"><img src="python-logo.png" width="10%;" align="left"></a></div>
@@ -119,9 +119,9 @@ title: OpenRTM-aist-Python-1.0.0-RC1
 ## Pre-built package (UNIX) 
 You can install rpm/deb packages with apt-get and yum from OpenRTM-aist's repository. Refer to Documents for C++.
 
-- [Using apt-get in Vine Linux to install OpenRTM-aist](/en/node/1311#vine)
-- [Using yum in Fedora to install OpenRTM-aist](/en/node/1310#fedora)
-- [Using apt-get in Debian or Ubuntu to install OpenRTM-aist](/en/node/1309#debiubu)
+- [Using apt-get in Vine Linux to install OpenRTM-aist](/{{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/install_vine_python_1_1#vine)
+- [Using yum in Fedora to install OpenRTM-aist]({{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/install_fedora_python_1_1#fedora)
+- [Using apt-get in Debian or Ubuntu to install OpenRTM-aist]({{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/install_ubuntu_python_1_1#debiubu)
 
 <!-- ***For Vine Linux  -->
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Java-1.1.0-RC1
+title: openrtm-aist-java-1.1.0-rc1
 ---
 <!-- Title: OpenRTM-aist-Java-1.1.0-RC1 -->
 <div align="right"><a href="java_logo.png"><img src="java_logo.png" width="10%;" align="right"></a></div>
@@ -51,10 +51,10 @@ OpenRTM-aist-Java-1.1.0-RC1 needs this JDK for development and movement. Install
 
 <!-- 
 ## Previous versions
-- [1.0.0-RELEASE](/en/node/953)
-- [1.0.0-RC1](/en/node/832)
-- [Java-0.4.2-RELEASE](/node/90)
-- [Java-0.4.1-RELEASE](/en/node/526)
-- [0.4.1-RC1](/en/node/527)
+- [1.0.0-RELEASE](/ja/node/953)
+- [1.0.0-RC1](/ja/node/832)
+- [Java-0.4.2-RELEASE]()(No corresponding page available.)
+- [Java-0.4.1-RELEASE](/ja/node/526)
+- [0.4.1-RC1](/ja/node/527)
 -->
 

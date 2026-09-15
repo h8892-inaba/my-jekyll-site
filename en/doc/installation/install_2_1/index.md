@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installing OpenRTM-aist 2.1 Series
+title: installing openrtm-aist 2.1 series
 ---
 
 - [Installation on Windows](./install_windows_2_1)

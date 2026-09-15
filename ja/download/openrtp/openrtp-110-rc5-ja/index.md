@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTP 1.1.0-RC5
+title: openrtp 1.1.0-rc5
 ---
 
 init

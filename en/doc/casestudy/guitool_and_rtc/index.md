@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Integrating GUI Toolkits with RTCs"
+title: "integrating gui toolkits with rtcs"
 ---
 
 <!-- Title: Integrating GUI Toolkits with RTCs -->

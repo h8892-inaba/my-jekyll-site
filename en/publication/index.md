@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Publications and Awards
+title: publications and awards
 ---
 <div align="right"><img src="paper.png" width="15%;" align="right"></div>
 This page shows publications and award information related to RT-Middleware. Papers that we can distribute are available from this web site.

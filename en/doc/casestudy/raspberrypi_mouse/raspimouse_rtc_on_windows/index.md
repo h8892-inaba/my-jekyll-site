@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installing RTCs for Raspberry Pi Mouse (Windows)
+title: installing rtcs for raspberry pi mouse (windows)
 ---
 
 <!-- Title: Installing RTCs for Raspberry Pi Mouse (Windows) -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Python 1.2.2-RELEASE
+title: openrtm-aist-python 1.2.2-release
 ---
 
 <!-- Title: OpenRTM-aist-Python 1.2.1-RELEASE -->
@@ -10,7 +10,7 @@ title: OpenRTM-aist-Python 1.2.2-RELEASE
 <br>
 (G) Please refer to the following page for the installation procedure.
 
-- [OpenRTM-aist (Python) 1.2 installation](/ja/node/6601)
+- [OpenRTM-aist (Python) 1.2 installation]({{ site.baseurl }}/en/doc/installation/install_1_2/python_1_2)
 
 ## Package
 ### Windows Installer
@@ -125,7 +125,7 @@ We currently offer packages in the following distribution versions. You can use 
 
 By specifying options, you can now install packages that meet your needs. <br>
 <span style="color:red;">※You can install the old version "1.2.1". You can also downgrade from "1.2.2" to "1.2.1".</span>; <br>
-Please refer to [Bulk installation script](/ja/node/6345) for installation method, options and package types.
+Please refer to [Bulk installation script]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script) for installation method, options and package types.
 
 
 If you have already installed 1.2.1-RELEASE, please install the package for Python3 by the following procedure.
@@ -149,7 +149,7 @@ For Ubuntu 16.04
 <!--  -->
 <!-- # dnf update -->
 
-See [OpenRTM-aist (Python version) 1.2 system installation](/ja/node/6601) for download and installation methods.
+See [OpenRTM-aist (Python version) 1.2 system installation]({{ site.baseurl }}/en/doc/installation/install_1_2/python_1_2) for download and installation methods.
 
 &aname(src);
 ## Source code
@@ -170,7 +170,7 @@ See [OpenRTM-aist (Python version) 1.2 system installation](/ja/node/6601) for d
 
 ### Build from source
 
-For details on how to build from source, see [Building from source (Windows)](/ja/node/6618) or [Building from source (Linux)](/ja/node/6651) .
+For details on how to build from source, see [Building from source (Windows)]({{ site.baseurl }}/en/doc/installation/install_1_2/python_1_2/build_source_python_windows_1_2) or [Building from source (Linux)]({{ site.baseurl }}/en/doc/installation/install_1_2/python_1_2/build_source_python_linux_1_2) .
 
 ### Create deb / rpm package
 
@@ -186,7 +186,7 @@ You can create a package by following the steps below. When creating a package, 
 Packages are created in the pacakges directory.
 
 <span style="color:red;">* Install tools such as "dpkg-dev build-essential debhelper devscripts" when creating deb packages on Ubuntu and Debian, and "rpm-build createrepo" before creating rpm packages on Fedora. Must be kept. </span>;
-These can be installed by executing [Bulk nstallation script](/ja/node/6345) with the -c option.
+These can be installed by executing [Bulk nstallation script]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script) with the -c option.
 
 
 ## Release notes

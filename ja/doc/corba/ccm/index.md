@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CCM
+title: ccm
 ---
 
 <!-- Title: CCM -->

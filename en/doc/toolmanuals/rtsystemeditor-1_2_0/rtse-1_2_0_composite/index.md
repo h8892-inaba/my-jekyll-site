@@ -1,6 +1,6 @@
 ---
 layout: page
-title: System Editor (Composite Components)
+title: system editor (composite components)
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェア / OpenRTM-aist について
+title: rtミドルウェア / openrtm-aist について
 ---
 
 <!-- Title: RTミドルウェア / OpenRTM-aist について -->

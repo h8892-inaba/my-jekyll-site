@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (Introduction to RT-Component Development, Raspberry Pi Mouse, Ubuntu)
+title: tutorial (introduction to rt-component development, raspberry pi mouse, ubuntu)
 ---
 
 #contents
@@ -23,7 +23,7 @@ Seminars may sometimes be conducted in environments without Internet access. In 
 
 ### Simulator
 
-- [RaspberryPiMouseSimulator Component](/en/node/6198)
+- [RaspberryPiMouseSimulator Component]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use)
 
 The simulator was developed using the physics engine [Open Dynamics Engine (ODE)](http://www.ode.org/) and the rendering library (drawstuff) included with ODE.
 
@@ -1041,7 +1041,7 @@ Next, click the **[Add Name Server]** button in RT System Editor and add:
 <br>
 <br>
 
-You should then be able to see the RTC named [RaspberryPiMouseRTC](/en/node/6015#toc0).
+You should then be able to see the RTC named [RaspberryPiMouseRTC]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0).
 
 <div align="center"><a href="tutorial_raspimouse2.png"><img src="tutorial_raspimouse2.png" width="70%;"></a></div>
 

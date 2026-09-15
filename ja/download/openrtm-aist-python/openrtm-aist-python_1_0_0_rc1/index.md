@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Python-1.0.0-RC1
+title: openrtm-aist-python-1.0.0-rc1
 ---
 
 <!-- Title: OpenRTM-aist-Python-1.0.0-RC1 -->
@@ -136,9 +136,9 @@ title: OpenRTM-aist-Python-1.0.0-RC1
 rpm/debパッケージをapt-get, yumなどを使用してOpenRTM-aistのリポジトリサーバから直接インストールすることができます。
 以下のC++版インストールマニュアルを参考にしてください。
 
-- [Vine Linuxへのインストール](/ja/node/1187)
-- [Fedoraへのインストール](/ja/node/1186)
-- [Ubuntu/Debianへのインストール](/ja/node/1182)
+- [Vine Linuxへのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_vine_python_1_1)
+- [Fedoraへのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_fedora_python_1_1)
+- [Ubuntu/Debianへのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_ubuntu_python_1_1)
 
 ### Vine Linux 用 
 <table class="table-alt">
@@ -147,12 +147,12 @@ rpm/debパッケージをapt-get, yumなどを使用してOpenRTM-aistのリポ�
   </tr>
   <tr>
     <td>Vine Linux 4.2 RPMパッケージ</td>
-    <td><a href="http://www.openrtm.org/pub/Linux/Vine/apt/4.2/i386/RPMS.main/">リポジトリ </a></td>
+    <td><a href="">リポジトリ </a>（リンク切れです）</td>
     <td>09/08/27</td>
   </tr>
   <tr>
     <td>Vine Linux 5.0 RPMパッケージ</td>
-    <td><a href="http://www.openrtm.org/pub/Linux/Vine/apt/5.0/i386/RPMS.main/">リポジトリ </a></td>
+    <td><a href="">リポジトリ </a>（リンク切れです）</td>
     <td>09/08/27</td>
   </tr>
 </table>
@@ -164,12 +164,12 @@ rpm/debパッケージをapt-get, yumなどを使用してOpenRTM-aistのリポ�
   </tr>
   <tr>
     <td>Fedora 10 RPMパッケージ</td>
-    <td><a href="http://www.openrtm.org/pub/Linux/Fedora/releases/10/Fedora/i386/os/Packages/OpenRTM-aist-Python-1.0/">リポジトリ </a></td>
+    <td><a href="">リポジトリ </a>（リンク切れです）</td>
     <td>09/08/27</td>
   </tr>
   <tr>
     <td>Fedora 11 RPMパッケージ</td>
-    <td><a href="http://www.openrtm.org/pub/Linux/Fedora/releases/11/Fedora/i386/os/Packages/OpenRTM-aist-Python-1.0/">リポジトリ </a></td>
+    <td><a href="">リポジトリ </a>（リンク切れです）</td>
     <td>09/08/27</td>
   </tr>
 </table>
@@ -181,17 +181,17 @@ rpm/debパッケージをapt-get, yumなどを使用してOpenRTM-aistのリポ�
   </tr>
   <tr>
     <td>Ubuntu 8.04 debパッケージ</td>
-    <td><a href="http://www.openrtm.org/pub/Linux/ubuntu/dists/hardy/main/binary-i386/">リポジトリ </a></td>
+    <td><a href="">リポジトリ </a>（リンク切れです）</td>
     <td>09/08/27</td>
   </tr>
   <tr>
     <td>Ubuntu 8.10 debパッケージ</td>
-    <td><a href="http://www.openrtm.org/pub/Linux/ubuntu/dists/intrepid/main/binary-i386/">リポジトリ </a></td>
+    <td><a href="">リポジトリ </a>（リンク切れです）</td>
     <td>09/08/27</td>
   </tr>
   <tr>
     <td>Ubuntu 9.04 debパッケージ</td>
-    <td><a href="http://www.openrtm.org/pub/Linux/ubuntu/dists/jaunty/main/binary-i386/">リポジトリ </a></td>
+    <td><a href="">リポジトリ </a>（リンク切れです）</td>
     <td>09/08/27</td>
   </tr>
 </table>
@@ -203,12 +203,12 @@ rpm/debパッケージをapt-get, yumなどを使用してOpenRTM-aistのリポ�
   </tr>
   <tr>
     <td>Debian 4.0 etch  debパッケージ</td>
-    <td><a href="http://www.openrtm.org/pub/Linux/debian/dists/etch/main/binary-i386/">リポジトリ </a></td>
+    <td><a href="">リポジトリ </a>（リンク切れです）</td>
     <td>09/08/27</td>
   </tr>
   <tr>
     <td>Debian 5.0 lenny debパッケージ</td>
-    <td><a href="http://www.openrtm.org/pub/Linux/debian/dists/lenny/main/binary-i386/">リポジトリ </a></td>
+    <td><a href="">リポジトリ </a>（リンク切れです）</td>
     <td>09/08/27</td>
   </tr>
 </table>

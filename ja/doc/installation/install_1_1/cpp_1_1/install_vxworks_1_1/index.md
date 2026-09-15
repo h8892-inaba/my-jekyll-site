@@ -1,6 +1,6 @@
 ---
 layout: page
-title: VxWorksへのインストール
+title: vxworksへのインストール
 ---
 
 <!-- Title: VxWorksへのインストール -->

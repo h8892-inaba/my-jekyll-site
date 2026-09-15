@@ -36,8 +36,8 @@ title: "インストール"
 - [Python]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1)
 - [Java]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1)
 - [OpenRTP]({{ site.baseurl }}/ja/doc/installation/install_1_1/openrtm_eclipse_tools_1_1)
-- [OpneRTM付属のサンプルについて]({{ site.baseurl }}/ja/node/811)
-- [rtshell]({{ site.baseurl }}/ja/node/6996)
+- [OpneRTM付属のサンプルについて]({{ site.baseurl }}/ja/doc/installation/sample_components)
+- [rtshell]({{ site.baseurl }}/ja/doc/installation/install_rtshell/check_linux)
 
 <!--break-->
 ### その他

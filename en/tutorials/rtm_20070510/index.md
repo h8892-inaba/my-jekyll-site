@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ROBOMEC07講習会(2007年5月10日)
+title: robomec07講習会(2007年5月10日)
 ---
 <br>
 <a>No English version available.

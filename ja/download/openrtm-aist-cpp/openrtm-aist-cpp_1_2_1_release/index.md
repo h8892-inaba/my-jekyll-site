@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist C++ 1.2.1-RELEASE
+title: openrtm-aist c++ 1.2.1-release
 ---
 
 <!-- Title: OpenRTM-aist C++ 1.2.1-RELEASE -->
@@ -10,7 +10,7 @@ title: OpenRTM-aist C++ 1.2.1-RELEASE
 <br>
 インストール手順については以下のページを参照してください。
 
-- [OpenRTM-aist(C++版)1.2系のインストール](/ja/node/6600)
+- [OpenRTM-aist(C++版)1.2系のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2)
 
 ## パッケージ
 ### Windowsインストーラー
@@ -95,12 +95,12 @@ msiファイルは900MB以上のサイズがあります。ダウンロードを
 - Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[doxygen](http://www.doxygen.nl/index.html)のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
 
 
-インストールについては、[OpenRTM-aistを10分で始めよう！](/ja/node/6521)のページで手順を紹介しています。<br>
+インストールについては、[OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/lets_start121)のページで手順を紹介しています。<br>
 
 #### Visual Studioのバージョン指定
 
 インストールされているVisual Studioのバージョンに合わせて、システム環境変数**RTM_VC_VERSION**を設定しています。
-インストール後に変更する場合は、GUIツールを使って設定できます。使い方は[VCVerChanger](/ja/node/6136)のページで解説しています。
+インストール後に変更する場合は、GUIツールを使って設定できます。使い方は[VCVerChanger]({{ site.baseurl }}/ja/content/vc_version_changer)のページで解説しています。
 <br>
 
 <table class="table-alt">
@@ -128,7 +128,7 @@ msiファイルは900MB以上のサイズがあります。ダウンロードを
 </table>
 
 
-- <span style="color:red;">※インストール後、Visual Studioのバージョンを変更しない場合でも、一度[VCVerChanger](/ja/node/6136)でシステム環境変数の設定を確認してください。不要なパスが残っていた場合はこれを削除します。</span>;
+- <span style="color:red;">※インストール後、Visual Studioのバージョンを変更しない場合でも、一度[VCVerChanger]({{ site.baseurl }}/ja/content/vc_version_changer)でシステム環境変数の設定を確認してください。不要なパスが残っていた場合はこれを削除します。</span>;
 <br>
 
 
@@ -138,7 +138,7 @@ msiファイルは900MB以上のサイズがあります。ダウンロードを
 MicrosoftのダウンロードページからVisual Studio Community 2019をダウンロードできます。
 - https://visualstudio.microsoft.com/ja/downloads/
 
-インストールについては、[Visual Studio Community 2019インストール方法](/ja/node/6650/)のページで手順を紹介しています。<br>
+インストールについては、[Visual Studio Community 2019インストール方法]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)のページで手順を紹介しています。<br>
 
 <!-- Microsoftのダウンロードページでは、Visual Studioの最新バージョンしかダウンロードできません。&br; -->
 <!-- サポート対象の別バージョンの Visual Studioをダウンロード・インストールしたい方は、無償プログラムの &br; -->
@@ -171,7 +171,7 @@ MicrosoftのダウンロードページからVisual Studio Community 2019をダ�
 プロジェクト名を入力後にOKをクリックするとVisual C++のプロジェクトが生成されます。
 
 
-**Visual C++**を選択できない場合は、[Visual Studio Community 2019のインストール方法](/ja/node/6650)の手順に従って「C++によるデスクトップ開発」をインストールしてください。
+**Visual C++**を選択できない場合は、[Visual Studio Community 2019のインストール方法]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)の手順に従って「C++によるデスクトップ開発」をインストールしてください。
 
 
 またVisual Studio 2019以外を使用の場合にも、念のためにVisual C++のプロジェクトが作成できるかの確認することを推奨します。
@@ -187,7 +187,7 @@ MicrosoftのダウンロードページからVisual Studio Community 2019をダ�
 #### Windows10などの高解像度(HiDPI)モードでOpenRTP/RTSystemEditorが縮小表示される場合の対処方法
 
 Windows10などの高解像度モードを利用すると、Eclipseのアイコンなどが縮小表示される場合があります。以下のFAQで解決方法を説明しています。
-- [Windows10 などで、高解像度モードのときにアイコンなどが小さすぎて見にくくなる](/ja/content/tool_trouble_shooting_ja#toc1)
+- [Windows10 などで、高解像度モードのときにアイコンなどが小さすぎて見にくくなる]({{ site.baseurl }}/ja/doc/faq/faq_rtp_tools#toc1)
 
 
 <!-- **** インストール環境の設定を確認する方法 -->
@@ -230,7 +230,7 @@ Windows10などの高解像度モードを利用すると、Eclipseのアイコ�
 
 
 
-オプションを指定することで、目的に合わせたパッケージをインストールできるようになりました。インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト](/ja/node/6345)をご確認ください。
+オプションを指定することで、目的に合わせたパッケージをインストールできるようになりました。インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)をご確認ください。
 
 
 1.2.0-RELEASEを既にインストールしている場合はアップデートが可能です。
@@ -246,7 +246,7 @@ Ubuntu / Debianの場合
 <!--  -->
 <!-- # dnf update -->
 
-ダウンロード方法・インストール方法については、[OpenRTM-aist(C++版)1.2系のインストール](/ja/node/6600)をご覧くだい。
+ダウンロード方法・インストール方法については、[OpenRTM-aist(C++版)1.2系のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2)をご覧くだい。
 
 &aname(src);
 ## ソースコード
@@ -271,7 +271,7 @@ Ubuntu / Debianの場合
 
 ### ソースからのビルド
 
-ソースからビルドする方法については、[ソースからのビルド(Windows編)](/ja/node/6611)または[ソースからのビルド(Linux編)](/ja/node/6612)をご覧くだい。
+ソースからビルドする方法については、[ソースからのビルド(Windows編)]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/build_source_windows_1_2)または[ソースからのビルド(Linux編)]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/build_source_linux_1_2)をご覧くだい。
 
 ### deb/rpmパッケージ作成
 
@@ -290,7 +290,7 @@ Ubuntu / Debianの場合
 パッケージはpacakgesディレクトリ内に作成されます。
 
 <span style="color:red;">※UbuntuやDebianにてdebパッケージを作成する場合は"dpkg-dev build-essential debhelper devscripts"、Fedoraにてrpmパッケージを作成する場合は"rpm-build createrepo"といったツールをあらかじめインストールしておく必要があります。</span>;
-これらは、[一括インストール・スクリプト](/ja/node/6345)を-cオプションで実行すればインストールされます。
+これらは、[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)を-cオプションで実行すればインストールされます。
 
 <!-- &br; -->
 <!-- ***MacPorts -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Settings Screen
+title: settings screen
 ---
 <!-- Title: 設定画面 -->
 #contents

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist動作確認(VxWorks、RTP、シミュレータ利用の場合)
+title: openrtm-aist動作確認(vxworks、rtp、シミュレータ利用の場合)
 ---
 <br>
 <a>No English version available.
@@ -16,7 +16,7 @@ title: OpenRTM-aist動作確認(VxWorks、RTP、シミュレータ利用の場�
 
 以下の手順でシミュレータの設定を行ってください。
 
-- [VxWorksシミュレータの設定](/en/node/6378)
+- [VxWorksシミュレータの設定]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/install_vxworks_1_1/test_vxworks_km_simulator/setup_vxwork_simulator)
 
 ## シミュレータの接続
 
@@ -122,7 +122,7 @@ VxWorksのネームサーバーにはネームサービス接続ボタンをク�
 RTCの接続、アクティブ化等の手順はUbuntuで動作確認する場合と同じです。
 
 
-- [動作確認 (Linux編)](/en/node/789)
+- [動作確認 (Linux編)]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/test_linux_1_1)
 
 
 ### コマンドラインによる操作について

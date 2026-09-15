@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tips
+title: tips
 ---
 <br>
 <a>No English version available.

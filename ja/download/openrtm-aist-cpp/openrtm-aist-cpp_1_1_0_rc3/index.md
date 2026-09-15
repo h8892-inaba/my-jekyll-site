@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist C++ 1.1.0-RC3
+title: openrtm-aist c++ 1.1.0-rc3
 ---
 
 <!-- OpenRTM-aist C++ 1.1.0-RC3 -->
@@ -39,7 +39,7 @@ title: OpenRTM-aist C++ 1.1.0-RC3
   </tr>
   <tr>
     <td>Windowsインストーラ</td>
-    <td><a href="http://www.openrtm.org/pub/Windows/OpenRTM-aist/cxx/1.1/OpenRTM-aist-1.1.0-RC3_vc9.msi">OpenRTM-aist-1.1.0-RC3_vc9.msi</a><br>MD5:7fb431b64d2ac9a27956fba447fd9e8c</td>
+    <td><a href="">OpenRTM-aist-1.1.0-RC3_vc9.msi</a>（リンク切れです）<br>MD5:7fb431b64d2ac9a27956fba447fd9e8c</td>
     <td>2011.07.22</td>
   </tr>
   <tr>
@@ -57,12 +57,12 @@ title: OpenRTM-aist C++ 1.1.0-RC3
   </tr>
   <tr>
     <td>Windowsインストーラ</td>
-    <td><a href="http://www.openrtm.org/pub/Windows/OpenRTM-aist/cxx/1.1/OpenRTM-aist-1.1.0-RC3_vc10.msi">OpenRTM-aist-1.1.0-RC3_vc10.msi</a><br>MD5:01b40e8c43b739621273bd70f3e398b6</td>
+    <td><a href="">OpenRTM-aist-1.1.0-RC3_vc10.msi</a>（リンク切れです）<br>MD5:01b40e8c43b739621273bd70f3e398b6</td>
     <td>2011.10.27</td>
   </tr>
   <tr>
     <td>Windowsインストーラ（64bit）</td>
-    <td><a href="http://www.openrtm.org/pub/Windows/OpenRTM-aist/cxx/1.1/OpenRTM-aist-1.1.0-RC3_vc10_x64.msi">OpenRTM-aist-1.1.0-RC3_vc10_x64.msi</a><br>MD5:2b3e589e276c8ef516f2e6103f53cda7</td>
+    <td><a href="">OpenRTM-aist-1.1.0-RC3_vc10_x64.msi</a>（リンク切れです）<br>MD5:2b3e589e276c8ef516f2e6103f53cda7</td>
     <td>2011.12.13</td>
   </tr>
 </table>
@@ -85,7 +85,7 @@ title: OpenRTM-aist C++ 1.1.0-RC3
 
 LinuxパッケージはRELEASE版で提供される予定です。ソースからのビルドの仕方は以下を参考にしてください。
 
-- [ソースからのビルド](/ja/node/788)
+- [ソースからのビルド]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/build_source_linux_1_1)
 
 なお、1.1から上記配布ソースからのUbuntu, Debian 用debパッケージ、Fedora, Vine用 rpmパッケージの作成が正式にサポートされました。
 以下の手順でパッケージを作成することができます。パッケージ作成に当たっては、以下のインストールスクリプトを利用して必要なパッケージを予めインストールしておいてください。
@@ -153,7 +153,7 @@ LinuxパッケージはRELEASE版で提供される予定です。ソースか�
   </tr>
   <tr>
     <td>Eclipse3.4.2+RTSE+RTCB<br>**Windows用全部入り**</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/tools/1.1.0/eclipse342_rtmtools110-rc2_win32_ja.zip">eclipse342_rtmtools110-rc2_win32_ja.zip</a><br>MD5:2e6f9fa3e370b6e7ac1f9340d36c7abf</td>
+    <td><a href="">eclipse342_rtmtools110-rc2_win32_ja.zip</a>（リンク切れです）<br>MD5:2e6f9fa3e370b6e7ac1f9340d36c7abf</td>
     <td>2011.07.22</td>
   </tr>
 </table>

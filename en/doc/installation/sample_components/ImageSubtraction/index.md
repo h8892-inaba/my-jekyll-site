@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "ImageSubtraction"
+title: "imagesubtraction"
 ---
 
 <!-- Title: ImageSubtraction -->

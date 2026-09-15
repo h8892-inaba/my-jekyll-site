@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Getting Started with OpenRTM-aist in 10 Minutes!
+title: getting started with openrtm-aist in 10 minutes!
 ---
 
 <!-- Title: OpenRTM-aistを10分で始めよう！ -->
@@ -41,7 +41,7 @@ Configure the search path automatically using the following method. This adds th
 
 ## Downloading OpenRTM-aist
 
-For downloading the installer, see [Download](/en/node/7332).
+For downloading the installer, see [Download]({{ site.baseurl }}/en/download).
 
 If you are using Microsoft Edge and cannot download because the following message appears, follow the procedure below.
 
@@ -237,8 +237,8 @@ See [Installing and Verifying rtshell Operation (Windows Edition)](/en/doc/insta
 
 Please refer to the links below.
 
-- **Try running more samples　　　&t;：　**[Sample Components](/en/node/811)
-- **Try creating a component　　　&t;：　**[Case Study](/en/node/110)
-- **Learn OpenRTM from the basics　&t;：　**[Developer's Guide](/en/node/113)
-- **Join the community　　　　　&t;：　**[Community](/en/node/624)
-- **Browse published components　&t;：　**[Projects](/en/node/123)
+- **Try running more samples　　　&t;：　**[Sample Components]({{ site.baseurl }}/en/doc/installation/sample_components)
+- **Try creating a component　　　&t;：　**[Case Study]({{ site.baseurl }}/en/doc/casestudy)
+- **Learn OpenRTM from the basics　&t;：　**[Developer's Guide]({{ site.baseurl }}/en/doc/developersguide)
+- **Join the community　　　　　&t;：　**[Community]({{ site.baseurl }}/en/community)
+- **Browse published components　&t;：　**[Projects](/ja/node/123)(No corresponding English project page available.)

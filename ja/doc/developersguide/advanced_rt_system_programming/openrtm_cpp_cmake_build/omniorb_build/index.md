@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "omniORBのビルド"
+title: "omniorbのビルド"
 ---
 <!-- Title: omniORBのビルド -->
 #contents

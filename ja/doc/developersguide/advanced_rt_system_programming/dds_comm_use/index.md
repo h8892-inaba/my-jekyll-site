@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "DDS通信機能の利用"
+title: "dds通信機能の利用"
 ---
 
 <!-- Title: DDS通信機能の利用 -->

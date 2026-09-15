@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 概要・RTC作成の流れ
+title: 概要・rtc作成の流れ
 ---
 
 init

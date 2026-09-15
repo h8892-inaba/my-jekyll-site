@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Java-1.2.2-RELEASE
+title: openrtm-aist-java-1.2.2-release
 ---
 
 <!-- Title: OpenRTM-aist-Java-1.2.1-RELEASE -->
@@ -11,7 +11,7 @@ title: OpenRTM-aist-Java-1.2.2-RELEASE
 <br>
 (G) Please refer to the following page for the installation procedure.
 
-- [Installing OpenRTM-aist (Java version) 1.2 series](/ja/node/6602)
+- [Installing OpenRTM-aist (Java version) 1.2 series]({{ site.baseurl }}/en/doc/installation/install_1_2/java_1_2)
 
 ## Package
 ### Windows Installer
@@ -126,7 +126,7 @@ You can use the installation script distributed below to install the required pa
 
 <!-- * The batch installation script for Fedora will be compatible with OpenRTM-aist 1.2.0 or later. -->
 
-By specifying options, you can now install packages that meet your needs. Please refer to [Bulk installation script](/ja/node/6345) for installation method, options and package types.
+By specifying options, you can now install packages that meet your needs. Please refer to [Bulk installation script]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script) for installation method, options and package types.
 
 If you have already installed 1.2.1-RELEASE, you can update it.
 
@@ -141,12 +141,12 @@ For Ubuntu / Debian
 <!--  -->
 <!-- # dnf update -->
 
-See [OpenRTM-aist (Java version) 1.2 system installation](/ja/node/6602) for download and installation methods.
+See [OpenRTM-aist (Java version) 1.2 system installation]({{ site.baseurl }}/en/doc/installation/install_1_2/java_1_2) for download and installation methods.
 
 ## Java development environment
 
 The following JDK is required for the operation and development of OpenRTM-aist-Java-1.2.1.
-- JDK8 (1.8): [Install JDK8](/ja/node/6911)
+- JDK8 (1.8): [Install JDK8]({{ site.baseurl }}/en/doc/installation/common/install_jdk8)
 
 &aname(src);
 ## Source code
@@ -167,7 +167,7 @@ The following JDK is required for the operation and development of OpenRTM-aist-
 
 ### Build from source
 
-For information on how to build from source, see [Building from source](/ja/node/6625).
+For information on how to build from source, see [Building from source]({{ site.baseurl }}/en/doc/installation/install_1_2/java_1_2/build_source_java_1_2).
 
 ### Create deb / rpm package
 
@@ -195,7 +195,7 @@ You can create a package by following the steps below. When creating a package, 
 Packages are created in the pacakges directory.
 
 <span style="color:red;">* Install tools such as "dpkg-dev build-essential debhelper devscripts" when creating deb packages on Ubuntu and Debian, and "rpm-build createrepo" before creating rpm packages on Fedora. Must be kept. </span>;
-These can be installed by executing [batch installation script](/ja/node/6345) with the -c option.
+These can be installed by executing [batch installation script]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script) with the -c option.
 
 ## Release notes
 - [1.2.2-RELEASE](https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v1.2.2)

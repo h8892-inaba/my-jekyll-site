@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "SimpleService"
+title: "simpleservice"
 ---
 
 <!-- Title: SimpleService -->

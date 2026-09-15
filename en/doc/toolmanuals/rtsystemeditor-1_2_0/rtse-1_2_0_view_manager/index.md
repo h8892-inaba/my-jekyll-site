@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Views (Manager Control View)
+title: views (manager control view)
 ---
 <!-- Title: ビュー（マネージャコントロールビュー編） -->
 <!-- #contents -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Installation"
+title: "installation"
 ---
 <!-- Title Installation -->
 
@@ -36,8 +36,8 @@ title: "Installation"
 - [Python]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1)
 - [Java]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1)
 - [OpenRTP]({{ site.baseurl }}/en/doc/installation/install_1_1/openrtm_eclipse_tools_1_1)
-- [About the Sample Components Included with OpenRTM]({{ site.baseurl }}/en/node/811)
-- [rtshell]({{ site.baseurl }}/en/node/6996)
+- [About the Sample Components Included with OpenRTM]({{ site.baseurl }}/en/doc/installation/sample_components)
+- [rtshell]({{ site.baseurl }}/en/doc/installation/install_rtshell/check_linux)
 
 <!--break-->
 ### Others

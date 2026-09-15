@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Screen Layout and Functions (RT Profile Editor)
+title: screen layout and functions (rt profile editor)
 ---
 
 <!-- Title: 画面構成と機能（RTプロファイルエディタ 編） -->

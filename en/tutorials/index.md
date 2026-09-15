@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Training
+title: training
 ---
 
 <div align="right"><a href="training.png"><img src="training.png" width="15%;" align="right"></a></div>

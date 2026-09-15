@@ -1,6 +1,6 @@
 ---
 layout: page
-title: EV3用RTCの作成 (Python編)
+title: ev3用rtcの作成 (python編)
 ---
 
 init
@@ -63,7 +63,7 @@ EV3 の標準セットを購入すると、移動ロボット (Educator Vehicle)
 
 座標系としては、自律移動機能共通インターフェース仕様書に従って、
 
-- [http://openrtm.org/openrtm/ja/project/Recommendation_CommonIF](http://openrtm.org/openrtm/ja/project/Recommendation_CommonIF)
+- [http://openrtm.org/openrtm/ja/project/Recommendation_CommonIF](http://openrtm.org/openrtm/ja/project/Recommendation_CommonIF)（Projectページはリンク切れです）
 
 ロボット進行方向をX軸とした右手系を想定する。速度指令は座標系にならって、(v_x、v_y、v_a)とする。独立二輪駆動式の移動ロボットなので、v_y は常に0となり、実質的に v_x および v_a を指定することになる。
 

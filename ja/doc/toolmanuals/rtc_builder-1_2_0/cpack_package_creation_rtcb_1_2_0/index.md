@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CPack を使ったパッケージ作成（Windows/Linux での共通設定）
+title: cpack を使ったパッケージ作成（windows/linux での共通設定）
 ---
 <!-- Title: CPack を使ったパッケージ作成（Windows/Linux での共通設定） -->
 #contents(4)
@@ -74,7 +74,7 @@ OpenRTM-aist を インストールする際に使ったスクリプトで必要
 </table>
 
 #### 一括インストール
-Ubuntu、Debian、Fedora、Raspbian の [一括インストール手順はこちら](/ja/content/about_installscript) をご覧ください。
+Ubuntu、Debian、Fedora、Raspbian の [一括インストール手順はこちら]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script) をご覧ください。
 
 ## Windows/Linux での共通設定
 

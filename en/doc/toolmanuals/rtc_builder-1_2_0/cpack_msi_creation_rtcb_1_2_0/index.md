@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creating an msi with CPack (Windows)
+title: creating an msi with cpack (windows)
 ---
 <!-- Title: CPack で msi 作成（Windows） -->
 #contents(4)

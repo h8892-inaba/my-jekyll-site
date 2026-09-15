@@ -1,6 +1,6 @@
 ---
 layout: page
-Title: "OpenRTM-aist(C++版)1.2系のインストール"
+title: openrtm-aist(c++版)1.2系のインストール
 ---
 
 <!--- Title: OpenRTM-aist(C++版)1.2系のインストール--->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (Introduction to RT Component Development, EV3, Ubuntu)
+title: tutorial (introduction to rt component development, ev3, ubuntu)
 ---
 
 <!-- Title: Tutorial (EV3, Ubuntu, Part 2) -->

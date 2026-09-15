@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Profile Export/Import
+title: profile export/import
 ---
 <!-- Title: プロファイルのエクスポート/インポート -->
 <!-- #contents -->

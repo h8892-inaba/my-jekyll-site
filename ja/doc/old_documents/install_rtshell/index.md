@@ -12,7 +12,7 @@ title: rtshell のインストール
 
 ### rtshellとは
 
-[rtshell](http://www.openrtm.org/openrtm/ja/node/1005) はネームサーバー上に登録されている RTコンポーネントを、シェル (コマンドプロンプト) から管理することができるツールです。
+[rtshell]({{ site.baseurl }}/ja/doc/toolmanuals/rtshell) はネームサーバー上に登録されている RTコンポーネントを、シェル (コマンドプロンプト) から管理することができるツールです。
 コンポーネントを activate/deactivate/reset したり、ポートの接続を行うことができます。RTシステム全体を管理することも可能です。
 
 
@@ -30,14 +30,14 @@ title: rtshell のインストール
 rtshell の一部の機能（システム管理）には OpenRTM-aist-Python が必要です。
 
 OpenRTM-aist-Python のインストールドキュメントに従って Python 2.6 または 2.7と OpenRTM-aist-Python をインストールします。
-[ドキュメント](http://openrtm.org/openrtm/ja/content/windows%E3%81%B8%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB-0) を参照してください。
+[ドキュメント]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_windows_python_1_1) を参照してください。
 
 PyYAML は[PyYAMLのウェブサイト](http://pyyaml.org/) からダウンロードしてインストールします。バージョンは一番最新でも大丈夫です。
 
 
 ### rtctree のインストール
 
-openrtm.org の[ダウンロードサイト](http://openrtm.org/openrtm/ja/node/1323)から
+openrtm.org の[ダウンロードサイト]()から
 rtctree-3.1 のパッケージ (rtctree-3.1.0.win32.exe) をダウンロードします。
 
 パッケージを実行すると、以下のようなダイアログが表示されるので、[次へ] をクリックします。
@@ -60,7 +60,7 @@ Python のバージョンを選択するダイアログが表示されます。P
 
 ### rtsprofile のインストール
 
-openrtm.org の[ダウンロードサイト](http://openrtm.org/openrtm/ja/node/1323)から
+openrtm.org の[ダウンロードサイト]()から
 rtsprofile-3.1 のパッケージ (rtsprofile-3.1.0.win32.exe) をダウンロードします。
 
 パッケージを実行すると、以下のようなダイアログが表示されるので、[次へ] をクリックします。
@@ -83,7 +83,7 @@ Python のバージョンを選択するダイアログが表示されます。P
 
 ### rtshell のインストール
 
-openrtm.org の [ダウンロードサイト](http://openrtm.org/openrtm/ja/node/869) から
+openrtm.org の [ダウンロードサイト]() から
 rtshell-3.0.0 のパッケージ (rtshell-3.1.0.win32.exe)をダウンロードします。
 
 パッケージを実行すると、以下のようなダイアログが表示されるので、[次へ] をクリックします。

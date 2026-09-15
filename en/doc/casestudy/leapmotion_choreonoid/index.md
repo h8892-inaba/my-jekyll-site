@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Controlling Choreonoid with Leap Motion"
+title: "controlling choreonoid with leap motion"
 ---
 
 <!-- Title: Controlling Choreonoid with Leap Motion -->
@@ -16,7 +16,7 @@ First, you will verify operation using the provided components (demo system and 
 
 Download and extract the following archive:
 
-[robomec2015_openrtm_tutorial_part3.zip](http://openrtm.org/pub/OpenRTM-aist/ROBOMEC2015/part3_0/robomec2015_openrtm_tutorial_part3.zip) <span style="color:red;">Updated: 2015/05/20</span>
+[robomec2015_openrtm_tutorial_part3.zip]()(No corresponding page available.) <span style="color:red;">Updated: 2015/05/20</span>
 
 The main contents of the archive are:
 
@@ -37,7 +37,7 @@ In this section, you will start the demo system and verify its operation.
 
 Follow the steps below:
 
-1. Start the Name Server using **"Start Naming Service"** from the Start Menu (refer to the [OpenRTM documentation](http://openrtm.org/openrtm/ja/content/openrtm-aist%E3%82%9210%E5%88%86%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%88%E3%81%86%EF%BC%81#toc2)).
+1. Start the Name Server using **"Start Naming Service"** from the Start Menu (refer to the [OpenRTM documentation]()(No corresponding page available.)).
 2. Launch **RTSystemEditorRCP** or **OpenRTP 1.1.1** from the Start Menu.
 3. Run **Demo/rtc_handle.bat** to start the demo launcher.
 4. In RtcHandle, click the following buttons to launch the components:

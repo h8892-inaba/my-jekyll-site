@@ -96,7 +96,7 @@ Subclipse：Eclipse のプラグイン（http://subclipse.tigris.org/update_1.0.
 ant4eclipse：Eclipse のプラグイン(http://ant4eclipse.sourceforge.net)<br>
 
 Windows ではこれに加えて、<br>
-Python 及び PyYAML が必要です。[OpenRTM-aist の C++版のダウンロードのページ](http://openrtm.org/openrtm/ja/content/openrtm-aist-c-111-release) からダウンロードして、
+Python 及び PyYAML が必要です。[OpenRTM-aist の C++版のダウンロードのページ]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_1_release) からダウンロードして、
 環境変数を設定してください。 
 PATH に追加 C:\Python27 など<br>
 [JSmooth](https://ja.osdn.net/projects/sfnet_jsmooth/) が必要です。インストールして環境変数 JSMOOTH_HOME を設定してください。JSMOOTH_HOME=C:\Program Files (x86)\JSmooth 0.9.9-7 など<br>

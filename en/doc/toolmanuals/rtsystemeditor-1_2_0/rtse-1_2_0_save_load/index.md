@@ -1,6 +1,6 @@
 ---
 layout: page
-title: System Editor (Save)
+title: system editor (save)
 ---
 <!-- Title: システムエディタ（セーブ編） -->
 #contents

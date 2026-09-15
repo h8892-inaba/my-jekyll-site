@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  PiRT-Unitを利用したIOプログラミング
+title:  pirt-unitを利用したioプログラミング
 ---
 
 <!-- Title: PiRT-Unitを利用したIOプログラミング -->

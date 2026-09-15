@@ -4,15 +4,15 @@ title: ケーススタディ
 ---
 
 <!-- Title: ケーススタディ -->
-<div align="right"><a href="/ja/node/110"><img src="tribot.png" width="15%;" align="right"></a></div>
+<div align="right"><a href="{{ site.baseurl }}/ja/doc/casestudy"><img src="tribot.png" width="15%;" align="right"></a></div>
 - [画像処理コンポーネントの作成](./opencv_comp_development)
   - [Windows 8.1, OpenRTM-aist-1.1.2, OpenRTP-1.1.2, CMake-3.5.2, VS2015](./opencv_comp_development/opencv_win81_vs2015)
   - [Windows 10, OpenRTM-aist-1.2.2, OpenRTP-1.2.2, CMake-3.18.1, VS2019](./opencv_comp_development/opencv_win10_vs2019)
   - [Ubuntu 16.04, OpenRTM-aist-1.1.2-RELEASE, OpenRTP-1.1.2, CMake-3.5.1, Code::Blocks-16.01](./opencv_comp_development/opencv_ubuntu_1604)
 <!-- --[[Ubuntu 14.04, OpenRTM-aist-1.1, CMake:/ja/node/430]] -->
 - [RTコンポーネントの作成](./rtc_development)
-  - [Chainerを用いたコンポーネント(1) 推論結果の検証](./rtc_development/node/6388)
-  - [Chainerを用いたコンポーネント(2) データ収集・蓄積](./rtc_development/node/6389)
+  - [Chainerを用いたコンポーネント(1) 推論結果の検証]({{ site.baseurl }}/ja/tutorials/171128_jsai/tutorials_verify_inference)
+  - [Chainerを用いたコンポーネント(2) データ収集・蓄積]({{ site.baseurl }}/ja/tutorials/171128_jsai/tutorials_data_collection)
   - [RTコンポーネントの作成の基本](./rtc_development/rtc_development_basic)
   - [OpenCV編 CameraImage型の使用](./rtc_development/opencv_camera_image_type_use)
   - [VC++編](./rtc_development/rtc_development_vcpp)

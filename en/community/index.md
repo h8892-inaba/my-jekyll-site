@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Community"
+title: "community"
 ---
 
 top_comm_dir 

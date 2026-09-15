@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Documentation"
+title: "documentation"
 ---
 
 OpenRTM-aist is a software platform for component-oriented development of robotic systems.

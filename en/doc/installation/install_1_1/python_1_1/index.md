@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist(Python版) 1.1系のインストール
+title: openrtm-aist(python版) 1.1系のインストール
 ---
 <br>
 <a>No English version available.

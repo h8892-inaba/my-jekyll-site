@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "ExtTrigger"
+title: "exttrigger"
 ---
 <!-- Title: ExtTrigger -->
 

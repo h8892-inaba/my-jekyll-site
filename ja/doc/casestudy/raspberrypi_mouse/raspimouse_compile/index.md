@@ -1,6 +1,6 @@
 ---
 layout: page
-title: コンパイル方法 (Ubuntu、CMake、Code::Blocks利用)
+title: コンパイル方法 (ubuntu、cmake、code::blocks利用)
 ---
 
 <!-- Title: コンパイル方法 (Ubuntu、CMake、Code::Blocks利用) -->

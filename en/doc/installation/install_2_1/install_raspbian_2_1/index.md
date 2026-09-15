@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installation on Raspberry Pi OS
+title: installation on raspberry pi os
 ---
 
 <!-- Title: Raspberry Pi OSへのインストール -->
@@ -26,7 +26,7 @@ You can select and download the following options:
 
 ## Changes in Version 2.1
 
-You can now install the new [SSM Communication Feature](/ja/doc/developersguide/advanced_rt_system_programming/ssm_comm_use).<br>
+You can now install the new [SSM Communication Feature]({{ site.baseurl }}/en/doc/developersguide/advanced_rt_system_programming/ssm_comm_use).<br>
 Since the SSM library is statically linked, you do not need to install SSM separately. The following files are installed by the openrtm2-ssm-tp deb package.
 
 ```

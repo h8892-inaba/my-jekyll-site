@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Screen Layout and Functions (Build View)
+title: screen layout and functions (build view)
 ---
 
 <!-- Title: Screen Layout and Functions (Build View) -->

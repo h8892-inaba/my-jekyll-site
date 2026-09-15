@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "OpenSplice通信機能の利用"
+title: "opensplice通信機能の利用"
 ---
 <!-- Title: OpenSplice通信機能の利用 -->
 #contents
@@ -50,7 +50,7 @@ CMake実行時に**OPENSPLICE_ENABLE**オプションを**ON**に設定し、**R
 
 その他の手順は通常と同じです。
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build)
 
 適当な場所にインストールしてください。
 
@@ -119,7 +119,7 @@ CMake実行時に**OPENSPLICE_ENABLE**オプションを**ON**に設定します
 
 その他の手順は通常と同じです。
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build)
 
 適当な場所にインストールしてください。
 

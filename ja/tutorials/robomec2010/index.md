@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ROBOMEC2010講習会(2010年6月14日) 
+title: robomec2010講習会(2010年6月14日) 
 ---
 
 #contents
@@ -100,7 +100,7 @@ title: ROBOMEC2010講習会(2010年6月14日)
 ## 資料
 - [第1部：OpenRTM-aist-1.0.0の新機能と今後の展望について(PDF)](./100614-01.pdf)(no_link)
 - [第2部：OpenRTM-aist開発支援ツールの紹介とその利用法(PDF)](./100614-03.pdf)(no_link)
-- [第3部:コンポーネント開発実習(OpenCVサンプル)](/ja/node/744)
+- [第3部:コンポーネント開発実習(OpenCVサンプル)]({{ site.baseurl }}/ja/doc/casestudy/opencv_comp_development)
 
 ## 講習会に参加される方へ
 実習形式の講習会に参加される方は、以下の準備をお願いいたします。
@@ -123,7 +123,7 @@ Windows推奨ですが、Linuxでも実習可能です。
   - C++: WindowsではVisual C++ 2008 (Express版でもOK、2010は未対応)
   - Python: Python 2.6 推奨
 
-詳細は、[ダウンロード](node)ページをご覧ください。
+詳細は、[ダウンロード]()（リンク切れです）ページをご覧ください。
 
 ### Windowsで必要なソフトウエア
 
@@ -141,7 +141,7 @@ Windows推奨ですが、Linuxでも実習可能です。
 <span style="color:red;">OpenCV1.0とOpenCV2.1は共存可能です。OpenRTMに付属しているサンプルを動作させるのにOpenCV1.0が必要になります。実習では、OpenCV2.1ベースのコンポーネント群を使用します。</span>;
 
 - RTSystemEditor,RTCBilder
-  - [Eclipse3.4.2+RTSE(1.0.0-RELEASE)+RTCB(1.0.0-RELEASE)Windows用全部入り](http://www.openrtm.org/pub/OpenRTM-aist/tools/1.0.0/eclipse342_rtmtools100release_win32_ja.zip)
+  - [Eclipse3.4.2+RTSE(1.0.0-RELEASE)+RTCB(1.0.0-RELEASE)Windows用全部入り]()（リンク切れです）
 
 - サンプルRTC群
   - [OpenCV用RTC群(新しいデータタイプを使用)](http://www.openrtm.org/pub/OpenRTM-aist/components/OpenCV/OpenCV-RTC-0.0.1.msi)

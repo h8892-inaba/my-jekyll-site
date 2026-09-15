@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Mac OS X への MacPorts によるインストール
+title: mac os x への macports によるインストール
 ---
 <br>
 <a>No English version available.
@@ -41,8 +41,8 @@ dmg パケージは MacPorts の Webページ、または下記リンクから�
 
 Portfile のダウンロード、展開、ビルドを一括でおこなうスクリプトが以下に用意されています。
 
-- [Portfile](http://www.openrtm.org/pub/MacOSX/macports/ports.tgz)
-- [インストールスクリプト](http://www.openrtm.org/pub/MacOSX/macports/port_install.sh): ports.tgz のダウンロード、OpenRTM-aistのビルド・インストールまで自動で行います。
+- [Portfile]()(No corresponding page available.)
+- [インストールスクリプト]()(No corresponding page available.): ports.tgz のダウンロード、OpenRTM-aistのビルド・インストールまで自動で行います。
 
 適当なディレクトリーで、以下のようにスクリプトを実行します。実行は一般ユーザーで構いません。ただし、途中で当該ユーザーのパスワードを聞かれることがあります。
 

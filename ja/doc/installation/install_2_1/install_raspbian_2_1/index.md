@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Raspberry Pi OSへのインストール
+title: raspberry pi osへのインストール
 ---
 
 <!-- Title: Raspberry Pi OSへのインストール -->
@@ -28,7 +28,7 @@ https://www.raspberrypi.com/software/
 
 ## 2.1系での変更点
 
-新しく [SSM通信機能](/ja/doc/developersguide/advanced_rt_system_programming/ssm_comm_use) をインストールできるようになりました。<br>
+新しく [SSM通信機能]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/ssm_comm_use) をインストールできるようになりました。<br>
 SSMライブラリを静的リンクしているので、別途SSMをインストール必要はありません。openrtm2-ssm-tpのdebパッケージで下記がインストールされます。
 
 ```

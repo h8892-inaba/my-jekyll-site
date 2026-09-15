@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "What is OpenRTM-aist?"
+title: "what is openrtm-aist?"
 ---
 <!-- Title: What is OpenRTM-aist? -->
 <div align="right"><img src="piping_rtm_logo2.png" width="30%;" align="right"></div>

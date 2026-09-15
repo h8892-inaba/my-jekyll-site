@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installing the Development Environment
+title: installing the development environment
 ---
 
 <!-- Title: 開発環境のインストール -->

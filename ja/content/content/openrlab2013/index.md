@@ -256,7 +256,7 @@ OpenHRIは、音声認識、音声合成、対話制御などのロボットの�
 
 <div align="center"><a href="BBB.jpg"><img src="BBB.jpg" width="60%;"></a></div>
 
-http://www.openrtm.org/openrtm/ja/node/5420/
+<!-- http://www.openrtm.org/openrtm/ja/node/5420/ -->
 
 
 #### 特徴
@@ -344,7 +344,7 @@ RTC-CANopenとは、安全バスシステムとして広く使用されている
 RTC-CANopenは、ネイティブバスであるCANを介して接続される各種デバイスと汎用PC上のEthernetで接続されるデバイスやアルゴリズムと相互に接続することが可能となっているうえに、PnP機能をサポートしており柔軟なロボットシステムの構築が可能です。
 RTC-CANopenはRenesas社製のSHシリーズ、H8SXといったマイコンやMaxon社製EPOSなどのCANopen準拠製品に適用することが可能です。
 
-<div align="center"><a href="/ja/node/5177"><img src="RTC-CANopen.png" width="60%;"></a></div>
+<div align="center"><a href=""><img src="RTC-CANopen.png" width="60%;"></a>（リンク切れです）</div>
 <div align="center"><strong>RTC-CANOpen アーキテクチャ</strong></div>
 
 #### 特徴
@@ -539,7 +539,7 @@ TECS とは、TOPPERS (http://www.toppers.jp/)プ ロジェクトに よって�
 
 ## オープンラボの様子
 
-<div align="center"><a href="/node/5445"><img src="131031-01.jpg" width="60%;" align="center"></a></div>
+<div align="center"><a href=""><img src="131031-01.jpg" width="60%;" align="center"></a>（リンク切れです）</div>
 
 <div align="center"><a href="131031-02.jpg"><img src="131031-02.jpg" width="60%;" align="center"></a></div>
 

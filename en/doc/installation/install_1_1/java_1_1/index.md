@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist (Java版) 1.1系のインストール
+title: openrtm-aist (java版) 1.1系のインストール
 ---
 <br>
 <a>No English version available.

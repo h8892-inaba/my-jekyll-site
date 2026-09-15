@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(RTM講習会、第4部)
+title: チュートリアル(rtm講習会、第4部)
 ---
 
 <!-- Title: チュートリアル(RTM講習会、第4部) -->
@@ -17,17 +17,7 @@ Calcのセルの値をInPortに入力、OutPortの出力した値をセルに表
 RTM講習会ではUSBメモリでポータブル版LibreOfficeとRTCを配布します。
 Windowsで実行できます。
 
-<br>
-
-Ubuntuの場合は以下のコマンドでインストールできます。
-
-```
- sudo apt install libreoffice-script-provider-python
- git clone https://github.com/Nobu19800/OOoRTCs
- cd OOoRTCs
- sh install.sh
-```
-
+UbuntuはPython3用のomniORBのパッケージがないため実行できません。講習会ではノートPCを貸し出します。
 
 この実習では[第2部](../tutorial_rtm_seminar_win_part2)で作成したRobotControllerコンポーネントを使用します。
 

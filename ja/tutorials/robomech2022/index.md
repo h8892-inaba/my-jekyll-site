@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ROBOMECH2022講習会 (2022年6月1日(水))
+title: robomech2022講習会 (2022年6月1日(水))
 ---
 
 <!-- #ref(https://robomech.org/2020/wp-content/uploads/2019/09/head000.jpg,left,100%,margin=10,url=/ja/tutorial/robomech2020) -->
@@ -83,7 +83,7 @@ title: ROBOMECH2022講習会 (2022年6月1日(水))
   </tr>
   <tr>
     <td>11:00 -12:00</td>
-    <td>第2部：RTコンポーネントの作成入門-Ⅰ <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="/ja/node/6550">チュートリアル(第2部、Windows)</a> <br> <a href="/ja/node/6551">チュートリアル(第2部、Ubuntu)</a> <br>**講義資料**:<a href="RTコンポーネント作成入門.pdf">RTコンポーネント作成入門.pdf</a></td>
+    <td>第2部：RTコンポーネントの作成入門-Ⅰ <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2">チュートリアル(第2部、Windows)</a> <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2">チュートリアル(第2部、Ubuntu)</a> <br>**講義資料**:<a href="RTコンポーネント作成入門.pdf">RTコンポーネント作成入門.pdf</a></td>
   </tr>
   <tr>
     <td>12:00 -13:00</td>
@@ -91,11 +91,11 @@ title: ROBOMECH2022講習会 (2022年6月1日(水))
   </tr>
   <tr>
     <td>13:00 -14:30</td>
-    <td>第3部：rtshell入門 <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：RTシステムの起動、終了を自動化するスクリプトファイルの作成方法を解説します。 <br> <a href="/ja/node/7097">チュートリアル(第3部)</a> <br>**講義資料**:<a href="rtshell入門.pdf">rtshell入門.pdf</a></td>
+    <td>第3部：rtshell入門 <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：RTシステムの起動、終了を自動化するスクリプトファイルの作成方法を解説します。 <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse">チュートリアル(第3部)</a> <br>**講義資料**:<a href="rtshell入門.pdf">rtshell入門.pdf</a></td>
   </tr>
   <tr>
     <td>14:30 -15:30</td>
-    <td>第4部：RTコンポーネント作成入門-Ⅱ <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：OpenRTM-aistを利用して移動ロボット実機を制御するプログラムを作成します。<br> <a href="/ja/node/6550#realrobot">チュートリアル(第4-1部、Windows)</a>  <br> <a href="/ja/node/6551#realrobot">チュートリアル(第4-1部、Ubuntu)</a> <br> <a href="/ja/node/6552">チュートリアル(第4-2部)</a></td>
+    <td>第4部：RTコンポーネント作成入門-Ⅱ <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：OpenRTM-aistを利用して移動ロボット実機を制御するプログラムを作成します。<br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2#realrobot">チュートリアル(第4-1部、Windows)</a>  <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2#realrobot">チュートリアル(第4-1部、Ubuntu)</a> <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_part3">チュートリアル(第4-2部)</a></td>
   </tr>
   <tr>
     <td>15:30 -15:40</td>
@@ -103,7 +103,7 @@ title: ROBOMECH2022講習会 (2022年6月1日(水))
   </tr>
   <tr>
     <td>15:40 -17:00</td>
-    <td>第5部：Choreonoid入門 <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：ロボット用シミュレーションソフトウェアChoreonoidと連携するRTCを作成方法を解説します。<br> <a href="/ja/node/7150">チュートリアル(第5部)</a> <br>**講義資料**:<a href="Choreonoid入門.pdf">Choreonoid入門.pdf</a></td>
+    <td>第5部：Choreonoid入門 <br> - 担当：宮本信彦 氏(産総研) <br> - 概要：ロボット用シミュレーションソフトウェアChoreonoidと連携するRTCを作成方法を解説します。<br> <a href="{{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial">チュートリアル(第5部)</a> <br>**講義資料**:<a href="Choreonoid入門.pdf">Choreonoid入門.pdf</a></td>
   </tr>
 </table>
 
@@ -168,7 +168,7 @@ title: ROBOMECH2022講習会 (2022年6月1日(水))
 以下のソフトウェアをインストールしてください。
 <!-- なお、Windowsが64bit版の場合はそれぞれ64bit版のものを、32bit版の場合は32bit版のものをダウンロードします。 -->
 
-- [Visual Studio 2019](/ja/node/6650)
+- [Visual Studio 2019]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
   - Visual C++がインストールされているかは必ず確認してください。
   - Visual Studio 2013、2015、2017、2022でも可
 - [Python 3.10.2](https://www.python.org/downloads/windows/)

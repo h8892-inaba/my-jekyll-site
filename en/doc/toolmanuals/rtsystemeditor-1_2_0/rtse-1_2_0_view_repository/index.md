@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Views (Repository View)
+title: views (repository view)
 ---
 
 <!-- Title: ビュー（リポジトリビュー編） -->

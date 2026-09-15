@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウエアコンテスト2015奨励賞
+title: rtミドルウエアコンテスト2015奨励賞
 ---
 
 No English version available.
@@ -19,7 +19,7 @@ RTシステムの技術の蓄積と共有を促進することを狙って優れ
 （お申し込み順に掲載させていただいております）
 
 ### ウィン電子工業賞 【提供：[有限会社ウィン電子工業](http://www.win-ei.com/)】
-<div align="left"><a href="http://www.openrtm.org/openrtm/sites/default/files/5858/WinEle2015_01.jpg"><img src="http://www.openrtm.org/openrtm/sites/default/files/5858/WinEle2015_01.jpg" width="100%;" align="center"></a></div>
+<div align="left"><a href="{{ site.baseurl }}/en/./WinEle2015_01.jpg"><img src="http://www.openrtm.org/openrtm/sites/default/files/5858/WinEle2015_01.jpg" width="100%;" align="center"></a></div>
 **Raspberry Pi IO拡張ボード(PiRT-Unit)(モデルB用) および1-Wire/I2Cインターフェイスボード(モデルB+用)提供 **<br>
 ウィン電子工業は、RTミドルウエアがロボット分野を越えて普及し、それに伴い分野を越えた技術の交換がなされ発展して行く事を望んでおります。RTミドルウエアコンテストでは、
 - RTミドルウエアを導入していない技術者に対して、導入したいと思わせる魅力ある作品

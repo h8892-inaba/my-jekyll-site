@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTCBuilder のインストール
+title: rtcbuilder のインストール
 ---
 <br>
 <a>No English version available.
@@ -98,8 +98,8 @@ RTCBuilderの動作に必要な環境は以下のとおりです。
 RTCBuilder は Eclipse プラグインであるため、 Eclipse 本体をインストールする必要があります。
 さらに、Eclipse は Java アプリケーションなので、Eclipse 本体をインストールする前に Java 実行環境（あるいはJDK：Java開発環境でもよい）をインストールする必要があります。
 <!-- また、RTCBuilder をインストールする場合は、RTSystemEditor もインストールしておいた方がよいでしょう。 -->
-- Java 実行環境のインストールについては、[EclipseについてのJava実行環境(JRE)のインストール](/node/1377#jre_install) を参照願います。
-- Eclipseのインストールについては、[Eclipseについて の Eclipseのインストール](/node/1377#eclipse_install) を参照願います。
+- Java 実行環境のインストールについては、[EclipseについてのJava実行環境(JRE)のインストール]({{ site.baseurl }}/en/doc/installation/install_1_1/openrtm_eclipse_tools_1_1/about_eclipse_1_1#jre_install) を参照願います。
+- Eclipseのインストールについては、[Eclipseについて の Eclipseのインストール]({{ site.baseurl }}/en/doc/installation/install_1_1/openrtm_eclipse_tools_1_1/about_eclipse_1_1#eclipse_install) を参照願います。
 
 <!-- ***Java 実行環境インストール -->
 <!-- 「RTSysyemEditor のインストール」の[[Java実行環境インストール :RTSystemEditor のインストール]]を参照してください。すでに、JDK（Java開発環境、ただし、''1.6以上''）がインストールされている場合はJava 実行環境(JRE)のインストールは必要ありません。RTCBuilderを用いてJavaのコードを生成する場合には、 JDK が必要にまります。~ -->
@@ -122,7 +122,7 @@ RTCBuilder は Eclipse プラグインであるため、 Eclipse 本体をイン
 <!--  -->
 
 ### RTCBuilder のインストールと起動
-[バイナリ(日本語版 jar ファイル(RTSE+RTCB)) ](/en/node/941#binary)をダウンロードして、 Eclipse の plugin ディレクトリ(eclipse ディレクトリー以下の plugin というディレクトリー)にダウンロードした jar ファイルをそのままコピーします。
+[バイナリ(日本語版 jar ファイル(RTSE+RTCB)) ]()(No corresponding page available.)をダウンロードして、 Eclipse の plugin ディレクトリ(eclipse ディレクトリー以下の plugin というディレクトリー)にダウンロードした jar ファイルをそのままコピーします。
 
 Eclipse を起動し、メニューから [ウインドウ] > [パースペクティブを開く] > [その他] を選択すると、 次のようなパースペクティブ選択画面が表示されます。
 <br>
@@ -148,7 +148,7 @@ Eclipse を起動し、メニューから [ウインドウ] > [パースペク�
 <!-- #ref(fig2-4RTCBuilderInit.png,80%,center) -->
 <br>
 
-参考：[**FAQ:** Eclipseの起動方法 ](/en/node/248#eclipse)
+参考：[**FAQ:** Eclipseの起動方法 ]({{ site.baseurl }}/en/doc/faq/faq_rtp_tools#eclipse)
 <br>
 <br>
 

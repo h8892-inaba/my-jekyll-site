@@ -1,6 +1,6 @@
 ---
 layout: page
-title: サンプルの RTシステムの実行
+title: サンプルの rtシステムの実行
 ---
 
 <!-- ~/jekyll_workdir/openrtm_test/ja/doc/casestudy/lego_mindstorm/lego_sample_rts_exec-->

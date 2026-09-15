@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "SDO サービス編"
+title: "sdo サービス編"
 ---
 <!-- Title: SDO サービス編 -->
 <!-- -*- pukiwiki-edit -*- -->

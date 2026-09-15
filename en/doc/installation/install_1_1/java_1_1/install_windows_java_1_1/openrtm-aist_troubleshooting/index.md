@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist(C++版、Python版、Java版)に関するトラブルシューティング
+title: openrtm-aist(c++版、python版、java版)に関するトラブルシューティング
 ---
 <br>
 <a>No English version available.
@@ -228,7 +228,7 @@ Visual C++ 2005 Express Edition でビルド時に次のようなエラーが出
 ##### １．Microsoft Platform SDK がインストールがされていない
 - **対応方法**
 
-Microsoft Platform SDK をインストールする。その際は、[[こちら**: /ja/node/640#2005SDKattention]]を参考にしてください。あるいは、次の**２．**にしたがってください。
+Microsoft Platform SDK をインストールする。その際は、[こちら]()(No corresponding page available.)を参考にしてください。あるいは、次の**２．**にしたがってください。
 
 ##### ２．インクルードファイルパス・ライブラリパスの設定不備
 - **対応方法**
@@ -525,6 +525,6 @@ Java の CORBA ではデータを100kBで分割するので、これを超える
 #### FedoraCore で Java をインストールする際の対応 
 OS が FedoraCore の場合、yum にて Java をインストールすると GCJ (The GNU Compiler for Java ) がインストールされてしまい、その GCJ を使用するといくつかの不具合が生じる事があります。~
 不具合が発生した場合は、まず、Oracle の Java が使用されているかの確認をしてください。
-- **参考**[JDKインストールのためのヒント](/en/node/805#fedora)
-- [**UNIX系環境で簡易に Oracle の Java を Eclipse に適用する方法**](/en/node/248#rtclinksunjava)
+- **参考**[JDKインストールのためのヒント]({{ site.baseurl }}/en/doc/installation/install_1_1/java_1_1/tips_jdk#fedora)
+- [**UNIX系環境で簡易に Oracle の Java を Eclipse に適用する方法**]({{ site.baseurl }}/en/doc/faq/faq_rtp_tools#rtclinksunjava)
 

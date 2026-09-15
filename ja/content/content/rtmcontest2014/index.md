@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウエアコンテスト2014
+title: rtミドルウエアコンテスト2014
 ---
 
 <div align="left"><img src="rtmcontest2014.png" width="80%;" align="center"></a></div>
@@ -9,7 +9,7 @@ title: RTミドルウエアコンテスト2014
 
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>
 <a href="#program"><img src="../images/contest2013_program.png" width="10%;"></a>
-<a href="/contests/2014"><img src="../images/contest2013_worklist.png" width="10%;"></a>
+<a href="/contests/2014"><img src="../images/contest2013_worklist.png" width="10%;"></a>（Projectページはリンク切れです）
 <a href="#evaluation"><img src="../images/contest2013_evaluation.png" width="10%;"></a></div>
 <div align="center"><a href="#award"><img src="../images/contest2013_award.png" width="10%;"></a>
 <a href="#pastwork"><img src="../images/contest2013_pastworks.png" width="10%;"></a>
@@ -96,7 +96,7 @@ SI2014の申込方法、申込および原稿〆切および具体的な開催�
 ### OpenRTM-aist Webサイトへの作品の登録
 発表する作品は、
 
-- OpenRTM-aist Webサイトの[プロジェクト](http://www.openrtm.org/openrtm/ja/content/%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88-0)として登録すること。（プロジェクトページに紹介ビデオを掲載することを推奨）
+- OpenRTM-aist Webサイトの[プロジェクト]()（リンク切れです）として登録すること。（プロジェクトページに紹介ビデオを掲載することを推奨）
 - ソースコードをオープンにすること。
 - 分かりやすいマニュアルを添付し、できるだけ第三者が結果を再現できるようにすること。
 - 参考にしたRTコンポーネントやソースコードがある場合は、マニュアル・論文中で出典を明記してオリジナル作者に敬意を払うこと。
@@ -109,7 +109,7 @@ SI2014の申込方法、申込および原稿〆切および具体的な開催�
 - [共同共催］ [（社）計測自動制御学会](http://www.sice.jp/)　[システムインテグレーション部門](http://www.si-sice.org/si_div/)
 - [共同共催］ [（独）産業技術総合研究所](http://www.aist.go.jp/) [知能システム研究部門](http://unit.aist.go.jp/is/ci/index_j.html)
 - [協賛］ 奨励賞を提供いただく団体、個人など　(協賛賞募集中)
-（詳細は**[表彰(協賛)ページ](http://www.openrtm.org/openrtm/ja/node/5406/)**参照）
+（詳細は**[表彰(協賛)ページ]({{ site.baseurl }}/ja/content/content/rtmcontest2013-award)**参照）
 
 ### 実行委員会
 - 実行委員長　：平井成興 (ロボットビジネス推進協議会）
@@ -129,25 +129,25 @@ SI2014の申込方法、申込および原稿〆切および具体的な開催�
   </tr>
   <tr>
     <td>1A1-2 <br>(10:45 - 11:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_18">ORiNとの連携によるRTMの産業機器用ハードウェアRTCの拡充</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_18">ORiNとの連携によるRTMの産業機器用ハードウェアRTCの拡充</a>（Projectページはリンク切れです）</td>
     <td>藤間瑞樹（埼玉大），程島竜一（埼玉大），犬飼利宏（デンソーウェーブ），琴坂信哉（埼玉大）</td>
     <td>ベストコンセプト賞<br>優秀RT技術賞</td>
   </tr>
   <tr>
     <td>1A1-3 <br>(11:00 - 11:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_1">低価格患者見守りシステムの開発</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_1">低価格患者見守りシステムの開発</a>（Projectページはリンク切れです）</td>
     <td>谷山功紀（奈良先端大），音田恭宏（奈良高専），島田健史（奈良先端大），池田篤俊（奈良先端大），上田悦子（奈良高専），小笠原司（奈良先端大）</td>
   </tr>
     <td></td>
   <tr>
     <td>1A1-4 <br>(11:15 - 11:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_2">視覚脳科学研究を目的としたRTミドルウェアの応用と結果</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_2">視覚脳科学研究を目的としたRTミドルウェアの応用と結果</a>（Projectページはリンク切れです）</td>
     <td>中村大樹（電通大），佐藤俊治（電通大），韓雪花（電通大），占部一輝（電通大）</td>
     <td>日本ロボット工業会賞<br>ベストサポート賞</td>
   </tr>
   <tr>
     <td>1A1-5 <br>(11:30 - 11:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_4">屋内地図モデルの簡易生成コンポーネント群</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_4">屋内地図モデルの簡易生成コンポーネント群</a>（Projectページはリンク切れです）</td>
     <td>立川将（芝浦工大），土屋彩茜（芝浦工大），奥野万丈（芝浦工大），佐々木毅（芝浦工大）</td>
     <td>チェンジビジョン賞<br>RTミドルウェアを普及しま賞</td>
   </tr>
@@ -161,31 +161,31 @@ SI2014の申込方法、申込および原稿〆切および具体的な開催�
   </tr>
   <tr>
     <td>1A2-1 <br>(13:00 - 13:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_6">オフィスソフトを操作するためのRTコンポーネント群</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_6">オフィスソフトを操作するためのRTコンポーネント群</a>（Projectページはリンク切れです）</td>
     <td>宮本信彦</td>
     <td>計測自動制御学会RTミドルウェア賞<br>SUGAR SWEET ROBOTICS賞</td>
   </tr>
   <tr>
     <td>1A2-2 <br>(13:15 - 13:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_7">複数台の移動ロボットを対象とした経路計画法の検証用RTC</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_7">複数台の移動ロボットを対象とした経路計画法の検証用RTC</a>（Projectページはリンク切れです）</td>
     <td>布垣俊武（立命館），朴鐘承（立命館），李周浩（立命館）</td>
     <td></td>
   </tr>
   <tr>
     <td>1A2-3 <br>(13:30 - 13:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_8">ロボットによるWebコンテンツ配信コンポーネントの開発</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_8">ロボットによるWebコンテンツ配信コンポーネントの開発</a>（Projectページはリンク切れです）</td>
     <td>浦野羅馬（芝浦工大），佐々木毅（芝浦工大）</td>
     <td></td>
   </tr>
   <tr>
     <td>1A2-4 <br>(13:45 - 14:00)</td>
-    <td><a href="http://openrtm.org/openrtm/ja/project/contest2014_9">ロボットとインタラクションを行うためのつま先の位置推定コンポーネント</a></td>
+    <td><a href="http://openrtm.org/openrtm/ja/project/contest2014_9">ロボットとインタラクションを行うためのつま先の位置推定コンポーネント</a>（Projectページはリンク切れです）</td>
     <td>能口友伸（立命館），李周浩（立命館）</td>
     <td></td>
   </tr>
   <tr>
     <td>1A2-5 <br>(14:00 - 14:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_10">ユーザによる指差し指示のためのコンポーネント</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_10">ユーザによる指差し指示のためのコンポーネント</a>（Projectページはリンク切れです）</td>
     <td>竹内龍（立命館），李周浩（立命館）</td>
     <td></td>
   </tr>
@@ -199,43 +199,43 @@ SI2014の申込方法、申込および原稿〆切および具体的な開催�
   </tr>
   <tr>
     <td>1A3-1 <br>(14:30 - 14:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_11">RTMによるカメラマンロボットの動作確実性の向上</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_11">RTMによるカメラマンロボットの動作確実性の向上</a>（Projectページはリンク切れです）</td>
     <td>生田目祥吾（芝浦工大），藤本一真（芝浦工大），松日楽信人（芝浦工大）</td>
     <td>トヨタ自動車(株)パートナーロボット賞</td>
   </tr>
   <tr>
     <td>1A3-2 <br>(14:45 - 15:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_12">メディアアートコミュニティ実現に向けたRTコンポーネントの開発と提案</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_12">メディアアートコミュニティ実現に向けたRTコンポーネントの開発と提案</a>（Projectページはリンク切れです）</td>
     <td>土屋彩茜（芝浦工大），立川将（芝浦工大），遠藤太貴（芝浦工大），佐々木毅（芝浦工大）</td>
     <td>NTTデータ賞<br>女流RTC賞</td>
   </tr>
   <tr>
     <td>1A3-3 <br>(15:00 - 15:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_13">コサイン類似度を用いた日常動作認識のためのテンプレート作成および動作認識RTコンポーネント群</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_13">コサイン類似度を用いた日常動作認識のためのテンプレート作成および動作認識RTコンポーネント群</a>（Projectページはリンク切れです）</td>
     <td>柴田佳幸（中央大），新妻実保子（中央大）</td>
     <td></td>
   </tr>
   <tr>
     <td>1A3-4 <br>(15:15 - 15:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_14">実用的なKobuki利用のためのRTC群の開発</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_14">実用的なKobuki利用のためのRTC群の開発</a>（Projectページはリンク切れです）</td>
     <td>Wu Shih-En（Tamkang University），松田啓明（電通大），林直宏（電通大），末廣尚士（電通大），工藤俊亮（電通大）</td>
     <td>RTC再利用賞</td>
   </tr>
   <tr>
     <td>1A3-5 <br>(15:30 - 15:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_15">OpenRTMにより複数台Kinectを連携させた室内人物位置計測コンポーネント</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_15">OpenRTMにより複数台Kinectを連携させた室内人物位置計測コンポーネント</a>（Projectページはリンク切れです）</td>
     <td>久原太志（東京理科大），陳祐樹（東京理科大），小木津武樹（東京理科大），竹村裕（東京理科大），溝口博（東京理科大）</td>
     <td>ロボットビジネス賞</td>
   </tr>
   <tr>
     <td>1A3-6 <br>(15:45 - 16:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_16">楽器演奏のためのMIDI RTコンポーネントの開発</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_16">楽器演奏のためのMIDI RTコンポーネントの開発</a>（Projectページはリンク切れです）</td>
     <td>松田啓明（電通大），二瓶陽介（電通大），田附雄一（電通大），工藤俊介（電通大），末廣尚士（電通大）</td>
     <td>ウィン電子工業賞<br>HOTMOCK賞<br>グローバルアシスト賞</td>
   </tr>
   <tr>
     <td>1A3-7 <br>(16:00 - 16:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_17">LeapMotionを用いたロボットマニピュレータの操作支援コンポーネント</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_17">LeapMotionを用いたロボットマニピュレータの操作支援コンポーネント</a>（Projectページはリンク切れです）</td>
     <td>三好智之（立命館），奥野和也（立命館），李周浩（立命館）</td>
     <td></td>
   </tr>
@@ -249,26 +249,26 @@ SI2014の申込方法、申込および原稿〆切および具体的な開催�
   </tr>
   <tr>
     <td>1A4-1 <br>(16:30 - 16:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_19">RTミドルウェアを用いたLEDキャンドルの協調動作の実現</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_19">RTミドルウェアを用いたLEDキャンドルの協調動作の実現</a>（Projectページはリンク切れです）</td>
     <td>遠藤太貴（芝浦工大），近藤貴大（芝浦工大），佐々木毅（芝浦工大）</td>
     <td>サマーキャンプ賞</td>
   </tr>
   <tr>
     <td>1A4-2 <br>(16:45 - 17:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_20">AR Drone用OPEN-RTM通信コンポーネントの実装</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_20">AR Drone用OPEN-RTM通信コンポーネントの実装</a>（Projectページはリンク切れです）</td>
     <td>川名雄樹（奈良先端大），Ricardez Gustavo（奈良先端大），Alfonso Garcia（奈良先端大），向山寛人（奈良先端大），高松淳（奈良先端大），小笠原司（奈良先端大）</td>
     <td>組込システム技術協会賞<br>便利ツール賞</td>
     <td></td>
   </tr>
   <tr>
     <td>1A4-3 <br>(17:00 - 17:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_21">RTM-RSNPによる人数管理システム</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_21">RTM-RSNPによる人数管理システム</a>（Projectページはリンク切れです）</td>
     <td>野見山大基（芝浦工大），石田真一（芝浦工大），生田目祥吾（芝浦工大），松日楽信人（芝浦工大）</td>
     <td>アドイン賞<br>ロボットサービスイニシアチブ(RSi)賞</td>
   </tr>
   <tr>
     <td>1A4-4 <br>(17:15 - 17:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_22">HMDを用いたPTカメラのインターネット遠隔操作</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2014_22">HMDを用いたPTカメラのインターネット遠隔操作</a>（Projectページはリンク切れです）</td>
     <td>萩谷浩史（芝浦工大），石田真一（芝浦工大），安田福啓（芝浦工大），松日楽信人（芝浦工大）</td>
     <td></td>
   </tr>
@@ -284,7 +284,7 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 応募作品が集まりましたら、本Webサイト上で掲示いたします。
 応募作品を実際に動かしてみるなどして試していただき、どのような環境で動作したか/しなかったか、バグやその修正のためのパッチ情報、作品に対するコメントや感想を作品のプロジェクトページに書き込み、作者にフィードバックすることが出来ます。
 これらのフィードバックを元に応募者が改良を加え、SI2014でのプレゼンテーションまでに、より良い作品になるようご協力ください。
-- [コメントの書き方ガイド](http://www.openrtm.org/openrtm/ja/node/4569)
+- [コメントの書き方ガイド]({{ site.baseurl }}/ja/content/content/rtmcontest_commentguide)
 <!-- - [[コンテスト作品一覧へ:/contests/2014]] -->
 
 ### 奨励賞を提供する
@@ -325,10 +325,10 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 
 - [RTミドルウエアコンテスト2007](../rtmcontest2007/)
  - （[応募作品]()(no_link)）
-<!-- （[応募作品](http://www.openrtm.org/rt/RTMcontest/2007/entry_public.html)）-->
+<!-- （[応募作品]({{ site.baseurl }}/ja/content/content/rtmcontest2007/entry_public)）-->
 - [RTミドルウエアコンテスト2008](../rtmcontest2008/)
  - （[応募作品]()(no_link)）
-<!-- （[応募作品](http://www.openrtm.org/rt/RTMcontest/2008/entry.html)）-->
+<!-- （[応募作品]({{ site.baseurl }}/ja/content/content/rtmcontest2008/entry_public)）-->
 - [RTミドルウエアコンテスト2009](../rtmcontest2009/)
  - （[応募作品]()(no_link)）
 <!-- （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2009?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
@@ -337,13 +337,13 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 <!-- （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2010?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
 - [RTミドルウエアコンテスト2011](../rtmcontest2011/) 
  - （[応募作品]()(no_link)）
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2011)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2011)（Projectページはリンク切れです））-->
 - [RTミドルウエアコンテスト2012](../rtmcontest2012/) 
  - （[応募作品]()(no_link)）
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2012)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2012)（Projectページはリンク切れです））-->
 - [RTミドルウエアコンテスト2013](../rtmcontest2013/) 
  - （[応募作品]()(no_link)）
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2013)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2013)（Projectページはリンク切れです））-->
 
 
 <!-- ------------------------------------------------------------- -->
@@ -359,8 +359,8 @@ RTミドルウエアコンテスト事務局: contest2014@openrtm.org
 ロボットビジネス推進協議会事務局: contest2014@openrtm.org
 
 - RTミドルウエアの技術的なご相談：~
-RTミドルウエアの[フォーラム](http://www.openrtm.org/openrtm/ja/node/281)や、
-[メーリングリスト](http://www.openrtm.org/openrtm/ja/node/275) [ rtm-users<at>openrtm.org ：要事前登録] にお問い合わせいただき、情報の共有に御協力ください。
+RTミドルウエアの[フォーラム]({{ site.baseurl }}/ja/community/forum)や、
+[メーリングリスト]()（「メーリングリスト」のページはリンク切れです） [ rtm-users<at>openrtm.org ：要事前登録] にお問い合わせいただき、情報の共有に御協力ください。
 
 ```
  RTミドルウエアコンテスト2014 事務局
@@ -376,7 +376,7 @@ RTミドルウエアの[フォーラム](http://www.openrtm.org/openrtm/ja/node/
 ### ユーザ登録
 エントリ希望者は、個別に連絡が取れるように、以下のフォームを使って事前登録して下さい。（SI2014の講演申込を済ませてから正式登録となります。重要な案内をお送りするための事前登録ですので、**エントリを迷っている時は気軽に事前登録**してください）
 
-- 事前登録するまえにwww.openrtm.orgサイトのユーザ登録をお願いします。[ユーザ登録はこちら](http://openrtm.org/openrtm/ja/user/register)
+- 事前登録するまえにwww.openrtm.orgサイトのユーザ登録をお願いします。[ユーザ登録はこちら]()（リンク切れです）
 - 当サイトに登録済みの方は<span style="color:red;">名前の欄にユーザ登録されたユーザ名が出ますが、必ず、氏名に書き換え</span>;てください。
 
 <span style="color:red;">※お手数ですが、ユーザ登録したユーザ名でログインしていただくと、登録フォームが表示されます</span>;
@@ -385,9 +385,9 @@ RTミドルウエアの[フォーラム](http://www.openrtm.org/openrtm/ja/node/
 <span style="color:red;">事務局よりID発行後より，作品登録が可能になります．連絡があるまで，しばらくお待ちください．</span>;~
 応募作品はプロジェクトページに登録する必要があります。
 
-- [プロジェクトページ](http://openrtm.org/openrtm/ja/project/projects_ja)
-  - [プロジェクト作成マニュアル](http://openrtm.org/openrtm/ja/node/1554)
-  - [新規プロジェクトの作成](http://openrtm.org/openrtm/ja/node/1553)
+- [プロジェクトページ]()（「プロジェクトページとは」のページはリンク切れです）
+  - [プロジェクト作成マニュアル](http://openrtm.org/openrtm/ja/node/1554)（Projectページ（登録方法）はリンク切れです）
+  - [新規プロジェクトの作成](http://openrtm.org/openrtm/ja/node/1553)（Projectページ（作成方法）はリンク切れです）
 
 上記のプロジェクト作成マニュアルに則り、作品を登録してください。
 RTミドルウエアコンテストでは、プロジェクト登録されたコンポーネントなどがコンテスト応募作品であるかどうかを明確にするために以下のルールを取っております。下記ルールに従い作品を登録してください。

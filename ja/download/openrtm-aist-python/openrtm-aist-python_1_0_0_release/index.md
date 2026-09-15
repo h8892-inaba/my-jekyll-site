@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Python-1.0.0-RELEASE
+title: openrtm-aist-python-1.0.0-release
 ---
 <!-- Title: OpenRTM-aist-Python-1.0.0-RELEASE -->
 <div align="left"><a href="python-logo.png"><img src="python-logo.png" width="15%;" align="left"></a></div>
@@ -30,12 +30,12 @@ title: OpenRTM-aist-Python-1.0.0-RELEASE
 <table class="table-alt">
   <tr>
     <td>Python版ソースコード</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.0/OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz">OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz</a> <br> MD5:dd11ef6a2e6277fa095e0fbd3210a2a5</td>
+    <td><a href="">OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz</a>（リンク切れです） <br> MD5:dd11ef6a2e6277fa095e0fbd3210a2a5</td>
     <td>10/05/07</td>
   </tr>
   <tr>
     <td>Python版ソースコード(Win32)</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.0/OpenRTM-aist-Python-1.0.0-RELEASE.zip">OpenRTM-aist-Python-1.0.0-RELEASE.zip</a> <br> MD5:371b427288cb0f69ab3dcf71d8eda169</td>
+    <td><a href="">OpenRTM-aist-Python-1.0.0-RELEASE.zip</a>（リンク切れです） <br> MD5:371b427288cb0f69ab3dcf71d8eda169</td>
     <td>10/05/07</td>
   </tr>
 </table>
@@ -51,12 +51,12 @@ title: OpenRTM-aist-Python-1.0.0-RELEASE
 <table class="table-alt">
   <tr>
     <td>Python版ソースコード</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.1/OpenRTM-aist-Python-1.0.1.tar.gz">OpenRTM-aist-Python-1.0.1.tar.gz</a> <br> MD5:00cde340c2903f455b62f1e64d5c968d</td>
+    <td><a href="">OpenRTM-aist-Python-1.0.1.tar.gz</a>（リンク切れです） <br> MD5:00cde340c2903f455b62f1e64d5c968d</td>
     <td>11/02/23</td>
   </tr>
   <tr>
     <td>Python版ソースコード(Win32)</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.1/OpenRTM-aist-Python-1.0.1.zip">OpenRTM-aist-Python-1.0.1.zip</a> <br> MD5:8ed1fc66b6b49f605103fc61d1e9b750</td>
+    <td><a href="">OpenRTM-aist-Python-1.0.1.zip</a>（リンク切れです） <br> MD5:8ed1fc66b6b49f605103fc61d1e9b750</td>
     <td>11/02/23</td>
   </tr>
 </table>
@@ -106,9 +106,9 @@ OpenRTM-aist-Python-1.0.0.msiでは、インストールされているPythonの
 Vine Linux, Fedora, Ubuntu, Debianの各ディストリビューション用のパッケージを www.openrtm.org 上のリポジトリサーバにて配布しています。
 詳細は、以下のドキュメントを参照してください。
 
-- [Vine Linuxへのインストール](/ja/node/1187)
-- [Fedoraへのインストール](/ja/node/1186)
-- [Ubuntu/Debianへのインストール](/ja/node/1182)
+- [Vine Linuxへのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_vine_python_1_1)
+- [Fedoraへのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_fedora_python_1_1)
+- [Ubuntu/Debianへのインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/python_1_1/install_ubuntu_python_1_1)
 
 
 <table class="table-alt">
@@ -150,7 +150,7 @@ OpenRTM-aist Official Website からソースコード、Windowsインストー�
 
 これまでは、実行・開発環境を構築するには、いくつかのパッケージをインストールする必要がありましたが、今回のリリースでは、特にWindows用には、omniORBpyやツール等を含むインストーラを提供することにより、どなたでもすぐにサンプルを実行して試用可能となりました。ぜひお試しください。
 
-- [OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz](http://www.openrtm.org/pub/OpenRTM-aist/python/1.0.0/OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz) -- 2010.05.07リリース
+- [OpenRTM-aist-Python-1.0.0-RELEASE.tar.gz]()（リンク切れです） -- 2010.05.07リリース
   - OMG RTC Specification v1.0 準拠
   - 新データポート導入 (corba_cdrインターフェース型)
     - push型・pull型データフローの導入

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Using the Simulator
+title: using the simulator
 ---
 
 <!-- Title: Using the Simulator -->

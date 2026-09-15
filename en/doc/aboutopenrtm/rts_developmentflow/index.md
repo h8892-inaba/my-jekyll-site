@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "RT System Development Process"
+title: "rt system development process"
 ---
 
 <!-- Title: RT System Development Process -->

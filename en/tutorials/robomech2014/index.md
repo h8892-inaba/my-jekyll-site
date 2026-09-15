@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ROBOMECH2014講習会(2014年5月25日)
+title: robomech2014講習会(2014年5月25日)
 ---
 <br>
 <a>No English version available.
@@ -136,7 +136,7 @@ title: ROBOMECH2014講習会(2014年5月25日)
   - 無料のExpress版が [こちら](http://www.microsoft.com/visualstudio/jpn/downloads#d-2010-express) からダウンロードできます。
   - インストールには時間がかかりますので、ご注意ください。
   - VC2012, VC2013には対応していません。また、VC2008は少々古いのでお勧めいたしません。
-- [OpenRTM-aist-1.1.0 C++版](http://www.openrtm.org/openrtm/ja/node/5012)
+- [OpenRTM-aist-1.1.0 C++版]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_0_release)
   - <span style="color:red;">インストールされているVCに一致するバージョンをダウンロードしてください。</span>;
   - 64bit版はPythonとの相性が悪いので、32bit版をお勧めします。
 - [OpenRTM-aist-1.1.0-RC1 Python](http://www.openrtm.org/pub/Windows/OpenRTM-aist/python/OpenRTM-aist-Python-1.1.0-RC1.msi)
@@ -146,8 +146,8 @@ title: ROBOMECH2014講習会(2014年5月25日)
 - [Doxygen](http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.1-setup.exe)
 - [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
   - 32bit版をお勧めします。
-- [Eclipse全部入り](http://www.openrtm.org/openrtm/ja/node/30)
-  - [Windows用32bit版全部入り](http://openrtm.org/pub/openrtp/packages/1.1.0.rc4v20130216/eclipse381-openrtp110rc4v20130216-ja-win32.zip)を推奨します。
+- [Eclipse全部入り]()(No corresponding page available.)
+  - [Windows用32bit版全部入り]()(No corresponding page available.)を推奨します。
   - インストール後、メニューの「ヘルプ」→「新規ソフトウエアのインストール」を選択、更新サイトに http://openrtm.org/pub/openrtp/releases/updates を入力してRTSystemEditorとRTCBuilderをアップデートしておくことをお勧めします。
 <!-- - [[TeraTerm:http://sourceforge.jp/projects/ttssh2/downloads/58215/teraterm-4.77.exe/]] -->
 <!-- - Bonjour: インストール方法については[[こちら:http://openrtm.org/openrtm/ja/node/266#toc8]] -->

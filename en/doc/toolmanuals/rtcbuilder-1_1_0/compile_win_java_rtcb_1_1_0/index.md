@@ -1,6 +1,6 @@
 ---
 layout: page
-title: コンパイル方法 (Windows、Java 編 )
+title: コンパイル方法 (windows、java 編 )
 ---
 -------jp page!!-------
 
@@ -36,9 +36,9 @@ Java 言語の場合は、JDT(Java Development Tools) があらかじめ Eclipse
 <div align="center"><a href="Python-lang_07.png"><img src="Python-lang_07.png" width="50%;"></a></div>
 <br><br>
 **参照**
-- [新規 Java プロジェクトが JDK6(1.6)準拠として作成できない](https://openrtm.org/openrtm/ja/node/6426#errorjavaJDK)
-- [任意のフォルダーにクラスパスを設定して Ant ビルドを行う方法は？](https://openrtm.org/openrtm/ja/node/6426#Antbuild)
-- [Java で Ant を使ってコマンドラインからビルドするときに例外が表示される](https://openrtm.org/openrtm/ja/node/6426#Antbuilderror)
+- [新規 Java プロジェクトが JDK6(1.6)準拠として作成できない]({{ site.baseurl }}/en/doc/faq/faq_rtc_creation#errorjavaJDK)
+- [任意のフォルダーにクラスパスを設定して Ant ビルドを行う方法は？]({{ site.baseurl }}/en/doc/faq/faq_rtc_creation#Antbuild)
+- [Java で Ant を使ってコマンドラインからビルドするときに例外が表示される]({{ site.baseurl }}/en/doc/faq/faq_rtc_creation#Antbuilderror)
 
 ## コマンドプロンプトからのビルド手順
 1. Apache Ant を以下のサイトからダウンロードします。Apache Ant とはビルドを実行するためのソフトウェアです。Eclipse には Ant プラグインが標準で内蔵されていますが、コマンドプロンプトからビルドを実行するためにはダウンロードする必要があります。<br><br>

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Paper(2007)
+title: paper(2007)
 ---
 
 ## Domestic Conference

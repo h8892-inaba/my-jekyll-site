@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Building a Development Environment
+title: building a development environment
 ---
 
 <!-- Title: Building a Development Environment -->

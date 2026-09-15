@@ -1,7 +1,7 @@
 ---
 
 layout: page
-title: OpenRTM-aist (Python版)1.2系のインストール
+title: openrtm-aist (python版)1.2系のインストール
 
 ---
 <br>

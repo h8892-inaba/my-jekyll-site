@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist (C++)
+title: openrtm-aist (c++)
 ---
 
 <!-- Title: OpenRTM-aist(C++) -->

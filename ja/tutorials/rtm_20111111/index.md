@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 国際ロボット展－RTミドルウエア体験セミナー
+title: 国際ロボット展－rtミドルウエア体験セミナー
 ---
 
 #contents(4)
@@ -126,7 +126,7 @@ Windows推奨ですが、Linuxでも実習可能です。
 &aname(install);
 ### Windowsで必要なソフトウエア
 
-<span style="color:red;">ソフトウエアのインストールなどあまり行ったことが無い方は、[「RTM講習会参加者の事前準備(Windows編)」](http://www.openrtm.org/openrtm/ja/node/1689)にインストール方法をまとめておりますのでそちらを参考にインストールをお願い致します。</span>;
+<span style="color:red;">ソフトウエアのインストールなどあまり行ったことが無い方は、[「RTM講習会参加者の事前準備(Windows編)」]()（リンク切れです）にインストール方法をまとめておりますのでそちらを参考にインストールをお願い致します。</span>;
 
 <!-- -Python版で必要なもの -->
 <!-- --[[Python2.6:http://www.python.org/ftp/python/2.6.2/python-2.6.2.msi]] -->
@@ -137,19 +137,19 @@ Windows推奨ですが、Linuxでも実習可能です。
 <!-- --[[OpenCV1.0:http://downloads.sourceforge.net/opencvlibrary/OpenCV_1.0.exe?modtime=1161287502&big_mirror=1]] -->
 <!-- --[[OpenCV2.1(VC2008用):http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.1/OpenCV-2.1.0-win32-vs2008.exe/download]] -->
 <!-- --[[PyYAML(rtc-templateで使用):http://pyyaml.org/download/pyyaml/PyYAML-3.09.win32-py2.6.exe]] -->
-  - [OpenRTM-aist-1.1.0-RC3(C++版), Win32 VC2008](http://www.openrtm.org/OpenRTM-aist/download/RTMTutorial201107/OpenRTM-aist-1.1.0-RC3_vc9.msi)~
+  - [OpenRTM-aist-1.1.0-RC3(C++版), Win32 VC2008]()（リンク切れです）~
 (MD5:7fb431b64d2ac9a27956fba447fd9e8c)
 <!-- --[[OpenCVコンポーネント群:http://www.openrtm.org/pub/OpenRTM-aist/ROBOMEC2011/opencv-rtcs.zip]] -->
 <!-- &color(red){OpenCV1.0とOpenCV2.1は共存可能です。OpenRTMに付属しているサンプルを動作させるのにOpenCV1.0が必要になります。実習では、OpenCV2.1ベースのコンポーネント群を使用します。}; -->
 
-  - [Eclipse3.4.2+RTSE(1.1.0-RC2)+RTCB(1.1.0-RC2)Windows用全部入り](http://www.openrtm.org/OpenRTM-aist/download/RTMTutorial201107/eclipse342_rtmtools110-rc2_win32_ja.zip)~
+  - [Eclipse3.4.2+RTSE(1.1.0-RC2)+RTCB(1.1.0-RC2)Windows用全部入り]()（リンク切れです）~
 (MD5:2e6f9fa3e370b6e7ac1f9340d36c7abf)
 
 - パッケージングで必要なもの
   - [cmake-2.8.5-win32-x86.exe](http://www.cmake.org/files/v2.8/cmake-2.8.5-win32-x86.exe)
-  - [cmake-2.8-WiX-patch.zip](http://www.openrtm.org/OpenRTM-aist/download/RTMTutorial201107/cmake-2.8-WiX-patch.zip)
-  - [doxygen-1.7.3-setup.exe](http://www.openrtm.org/pub/OpenRTM-aist/ROBOMEC2011/doxygen-1.7.3-setup.exe)
-  - [Wix3.msi](http://www.openrtm.org/pub/OpenRTM-aist/ROBOMEC2011/Wix3.msi)
+  - [cmake-2.8-WiX-patch.zip]()（リンク切れです）
+  - [doxygen-1.7.3-setup.exe]()（リンク切れです）
+  - [Wix3.msi]()（リンク切れです）
   - [Java Development Kit6](https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=jdk-6u24-oth-JPR@CDS-CDS_Developer)
 
 - cmake-2.8-WiX-patchの適用方法

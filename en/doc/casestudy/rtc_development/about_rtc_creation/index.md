@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Creating RT Components
+title: about creating rt components
 ---
 
 <!-- Title: RTコンポーネント作成について -->

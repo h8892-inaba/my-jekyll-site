@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Configuration Files and Command-Line Options (Basics)"
+title: "configuration files and command-line options (basics)"
 ---
 <!-- Title: 設定ファイルとコマンドラインオプション (基礎編) -->
 #contents

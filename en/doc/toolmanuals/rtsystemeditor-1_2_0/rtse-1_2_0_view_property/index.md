@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Views (Property View)
+title: views (property view)
 ---
 <!-- Title: ビュー（プロパティビュー編） -->
 <!-- #contents -->

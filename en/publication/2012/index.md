@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Paper(2012)
+title: paper(2012)
 ---
 <!-- ** 論文誌 -->
 <!-- ** 国際学会 -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 動作確認(Linux編)
+title: 動作確認(linux編)
 ---
 
 <!-- Titile: 動作確認(Linux編) -->
@@ -31,12 +31,12 @@ RTCの操作、RTシステムの構築を行うためのツールOpenRTPを起�
 <!-- ※OpenRTPは1.2系と2.0系の共存が可能です。このため、openrtp と openrtp2 の両方を実行することは可能です。  -->
 
 付属のサンプルコンポーネントについては、以下のページでWindows版の一覧を記載しています。コンポーネントの動作についてはWindows版・Linux版に違いはございません。
-- [サンプルコンポーネント一覧](/node/6633#toc1)
+- [サンプルコンポーネント一覧]({{ site.baseurl }}/ja/doc/installation/install_2_0/install_windows_2_0/check_windows_2_0#toc1)
 
 Linux環境でのサンプルコンポーネントの実行手順について、もう少し詳しく知りたい場合は、以下の1.2系の解説ページをご覧ください。コンポーネントのパスを読み替えていただければ実行手順は2.x系も同じです。
-- [OpenRTM-aist(C++版)1.2系・動作確認(Linux編)](/node/6613)
-- [OpenRTM-aist(Python版)1.2系・動作確認(Linux編)](/node/6621)
-- [OpenRTM-aist(Java版)1.2系・動作確認(Linux編)](/node/6628)
+- [OpenRTM-aist(C++版)1.2系・動作確認(Linux編)]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/check_linux_1_2)
+- [OpenRTM-aist(Python版)1.2系・動作確認(Linux編)]({{ site.baseurl }}/ja/doc/installation/install_1_2/python_1_2/check_python_linux_1_2)
+- [OpenRTM-aist(Java版)1.2系・動作確認(Linux編)]({{ site.baseurl }}/ja/doc/installation/install_1_2/java_1_2/check_linux_java_1_2)
 
 ## OpenCVサンプルコンポーネントのインストール
 

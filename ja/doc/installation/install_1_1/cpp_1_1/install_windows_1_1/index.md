@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Windowsへのインストール
+title: windowsへのインストール
 ---
 
 <!-- Title: Windowsへのインストール -->
@@ -16,18 +16,18 @@ msi パッケージを利用することで、依存ライブラリである omn
 
 ## msi パッケージによるインストール
 
-openrtm.org の[ダウンロードサイト](/ja/node/6034)から、msi パッケージをダウンロードします。Python、PyYAML、CMake、Doxygen も必要ですのでインストールしてください。<br>
+openrtm.org の[ダウンロードサイト]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release)から、msi パッケージをダウンロードします。Python、PyYAML、CMake、Doxygen も必要ですのでインストールしてください。<br>
 コンポーネントの開発を行う場合は、Visual Studio が必要です。[こちらのページ](https://www.visualstudio.com/ja-jp/downloads/download-visual-studio-vs#DownloadFamilies_2) から無償版をダウンロードできます。
 
 
 1.1.2 版からは一つの Windows 用インストーラーに3言語（C++、Java、Python）＋ツール（Eclipse＋rtshell）すべてが同梱されています。古いバージョンは予めアンインストールすることをお勧めします。
-また、[ダウンロードサイト](/ja/node/6034)での赤字表記の注意書きをご覧ください。
+また、[ダウンロードサイト]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release)での赤字表記の注意書きをご覧ください。
 
 ### インストーラーの起動
 
 手順については、1.1.2 版用の [OpenRTM-aistを10分で始めよう！](./quick_start_1_1_2) のページをご覧ください。<br>
-1.1.1 版をご利用の場合は、[OpenRTM-aistを10分で始めよう！(OpenRTM-aist 1.1.1)](/ja/node/5710) のページをご覧ください。<br>
-1.0.0 版をご利用の場合は、[OpenRTM-aistを10分で始めよう！(OpenRTM-aist 1.0.0)](/ja/node/850) のページをご覧ください。
+1.1.1 版をご利用の場合は、[OpenRTM-aistを10分で始めよう！(OpenRTM-aist 1.1.1)]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2) のページをご覧ください。<br>
+1.0.0 版をご利用の場合は、[OpenRTM-aistを10分で始めよう！(OpenRTM-aist 1.0.0)]()（リンク切れです） のページをご覧ください。
 
 
 ## インストールの詳細
@@ -74,11 +74,11 @@ openrtm.org の[ダウンロードサイト](/ja/node/6034)から、msi パッ�
 
 インストール環境の設定を確認するスクリプトを提供しています。スクリプトの使い方、確認できる内容について下記ページで解説しています。
 
-- [http://openrtm.org/openrtm/ja/content/rtm-install-check-script](http://openrtm.org/openrtm/ja/content/rtm-install-check-script)
+- [http://openrtm.org/openrtm/ja/content/rtm-install-check-script]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/windows_install_test_bat)
 
 ### インストールされるファイル
 ファイルは以下のような構造でインストールされます。<br>
-上記のインストール環境の設定を確認する[スクリプト](/ja/node/6092)を実行すると、tree コマンドによる OpenRTM-aist 下のディレクトリー構造をログファイルに保存しますので、詳細を確認することができます。 
+上記のインストール環境の設定を確認する[スクリプト]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/windows_install_test_bat)を実行すると、tree コマンドによる OpenRTM-aist 下のディレクトリー構造をログファイルに保存しますので、詳細を確認することができます。 
 
 ```
  <install_dir>

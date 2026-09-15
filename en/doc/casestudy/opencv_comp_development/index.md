@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creating Image Processing Components
+title: creating image processing components
 ---
 
 <!-- Title: Creating Image Processing Components -->

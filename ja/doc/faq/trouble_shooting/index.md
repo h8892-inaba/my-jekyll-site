@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist(C++版、Python版、Java版)に関するトラブルシューティング
+title: openrtm-aist(c++版、python版、java版)に関するトラブルシューティング
 ---
 
 <!-- Title: OpenRTM-aist(C++版、Python版、Java版)に関するトラブルシューティング -->
@@ -221,7 +221,7 @@ Visual C++ 2005 Express Edition でビルド時に次のようなエラーが出
 これは**１．Microsoft Platform SDK がインストールがされていない、**あるいは**２．インクルードファイルパス・ライブラリパスの設定不備**が原因と考えられます。
 
 ##### １．Microsoft Platform SDK がインストールがされていない
-- 対応方法：Microsoft Platform SDK をインストールする。その際は、[こちら](/ja/node/640#2005SDKattention)を参考にしてください。あるいは、次の**２．**にしたがってください。
+- 対応方法：Microsoft Platform SDK をインストールする。その際は、[こちら]()（リンク切れです）を参考にしてください。あるいは、次の**２．**にしたがってください。
 ##### ２．インクルードファイルパス・ライブラリパスの設定不備
 - 対応方法：インストールをする順序などの関係で、Visual C++ 2005 Express Edition のインストールディレクトリとは違う場所に Microsoft Platform SDK がインストールされてしまうなどの事情で、Visual C++ 2005 Express Edition のコンパイラが Microsoft Platform SDK のインクルードファイルやライブラリをたぐれなくなっている場合があります。この場合は、インクルードファイルサーチパスやライブラリサーチパスに Microsoft Platform SDK のインストールディレクトリを追加することで問題を解決できます。
   - インクルードファイルサーチパスの追加方法:Visual C++ 2005 Express Edition のメニューバー→「ツール」→「オプション」を選択し、「オプション」ウィンドウを開きます。左のツリービューから「プロジェクトおよびソリューション」→「VC++ディレクトリ」を選択します。~
@@ -494,6 +494,6 @@ Java の CORBA ではデータを100kBで分割するので、これを超える
 OS が FedoraCore の場合、yum にて Java をインストールすると GCJ (The GNU Compiler for Java ) がインストールされてしまい、その GCJ を使用するといくつかの不具合が生じる事があります。~
 不具合が発生した場合は、まず、Oracle の Java が使用されているかの確認をしてください。
 - 参考
-  - [JDKインストールのためのヒント](/ja/node/805#fedora)
-  - [UNIX系環境で簡易に Oracle の Java を Eclipse に適用する方法](/ja/node/248#rtclinksunjava)
+  - [JDKインストールのためのヒント]({{ site.baseurl }}/ja/doc/installation/install_1_1/java_1_1/tips_jdk#fedora)
+  - [UNIX系環境で簡易に Oracle の Java を Eclipse に適用する方法]({{ site.baseurl }}/ja/doc/faq/faq_rtp_tools#rtclinksunjava)
 

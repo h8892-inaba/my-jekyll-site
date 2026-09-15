@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Project"
+title: "project"
 ---
 
 You can find not only official RT-Components but also third party RT-Components in this section. By creating an account on this web site, you can also create your own project pages to distribute your RT-Components, tools and so on.

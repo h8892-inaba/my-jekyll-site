@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ラズパイマウス用 RTC のインストール(Windows)
+title: ラズパイマウス用 rtc のインストール(windows)
 ---
 
 <!-- Title: ラズパイマウス用 RTC のインストール(Windows) -->

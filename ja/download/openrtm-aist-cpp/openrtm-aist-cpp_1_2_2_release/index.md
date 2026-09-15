@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist C++ 1.2.1-RELEASE
+title: openrtm-aist c++ 1.2.1-release
 ---
 
 <!-- Title: OpenRTM-aist C++ 1.2.1-RELEASE -->
@@ -188,7 +188,7 @@ MicrosoftのダウンロードページからVisual Studio Community 2019をダ�
 #### Windows10などの高解像度(HiDPI)モードでOpenRTP/RTSystemEditorが縮小表示される場合の対処方法
 
 Windows10などの高解像度モードを利用すると、Eclipseのアイコンなどが縮小表示される場合があります。以下のFAQで解決方法を説明しています。
-- [Windows10 などで、高解像度モードのときにアイコンなどが小さすぎて見にくくなる]({{ site.baseurl }}/ja/content/tool_trouble_shooting_ja)
+- [Windows10 などで、高解像度モードのときにアイコンなどが小さすぎて見にくくなる]({{ site.baseurl }}/ja/doc/faq/faq_rtp_tools)
 
 
 <!-- **** インストール環境の設定を確認する方法 -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: TETRIX の利用方法
+title: tetrix の利用方法
 ---
 
 <!-- Title: TETRIX の利用方法 -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(Raspberry Pi Mouse、C++、Ubuntu、強化月間用)
+title: チュートリアル(raspberry pi mouse、c++、ubuntu、強化月間用)
 ---
 
 <!-- Title: チュートリアル(Raspberry Pi Mouse、C++、Ubuntu、強化月間用) -->
@@ -31,7 +31,7 @@ title: チュートリアル(Raspberry Pi Mouse、C++、Ubuntu、強化月間用
 
 ### シミュレーター
 
-- [RaspberryPiMouseSimulatorコンポーネント](http://www.openrtm.org/openrtm/ja/content/simulator_rtc_raspbian_raspimouse)
+- [RaspberryPiMouseSimulatorコンポーネント]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use)
 
 シミュレーターは [Open Dynamics Engine(ODE)](http://www.ode.org/) という物理演算エンジンと ODE 付属の描画ライブラリ(drawstuff)を使用して開発しています。
 OpenGL が動作すれば動くので、大抵の環境で動作するはずです。
@@ -1007,8 +1007,8 @@ SSID、パスワードは Rasoberry Pi マウスに貼り付けたシールに�
 
 <div align="center"><a href="tutorial_raspimouse2.png"><img src="tutorial_raspimouse2.png" width="70%;"></a></div>
 
-- [RaspberryPiMouseRTC](/ja/node/6015#toc0)
-- [RaspberryPiMouseController_DistanceSensor](/ja/node/6015#toc1)
+- [RaspberryPiMouseRTC]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0)
+- [RaspberryPiMouseController_DistanceSensor]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc1)
 
 RaspberryPiMouseRTC は名城大学のロボットシステムデザイン研究室で開発されているラズパイマウス制御用の RTコンポーネントです。
 

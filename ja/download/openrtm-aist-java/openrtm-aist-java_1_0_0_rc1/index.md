@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Java-1.0.0-RC1
+title: openrtm-aist-java-1.0.0-rc1
 ---
 
 <!-- Title: 1.0.0-RC1 -->

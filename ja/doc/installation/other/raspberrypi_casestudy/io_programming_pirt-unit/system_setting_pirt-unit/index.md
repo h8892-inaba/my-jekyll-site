@@ -1,6 +1,6 @@
 ---
 layout: page
-title: PiRT-Unitのためのシステム設定
+title: pirt-unitのためのシステム設定
 ---
 
 <!-- Title: PiRT-Unitのためのシステム設定 -->
@@ -54,7 +54,7 @@ Raspberry Pi のサイトからダウンロードしたイメージの適当な�
 ## システム設定ファイルの変更
 
 spi と i2c のデバイスモジュールをロードする方法は、カーネルの3.18から変更になりました。Raspberry Pi用 OS Raspbian が2015年のバージョンから該当するようですが、カーネルのバージョンを確認して判断してください。<br>
-spi と i2c を利用するためには、raspi-config で Enable に設定します。[Raspberry Pi の初期設定](http://openrtm.org/openrtm/ja/node/266/) のページをご覧ください。
+spi と i2c を利用するためには、raspi-config で Enable に設定します。[Raspberry Pi の初期設定]({{ site.baseurl }}/ja/doc/installation/other/raspberrypi_casestudy/raspi_init_setting) のページをご覧ください。
 
 これより古いバージョンでは、以下のファイルを設定します。
 

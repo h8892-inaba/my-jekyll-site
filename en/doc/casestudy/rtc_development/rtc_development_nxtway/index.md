@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creating RT Components (NXTway Edition)
+title: creating rt components (nxtway edition)
 ---
 <!-- Title: RTコンポーネント作成(NXTway編) -->
 #contents
@@ -180,7 +180,7 @@ Start cygwin
   - Check the connected Bluetooth Comport
 <div align="center"><a href="BluetoothComport.png"><img src="BluetoothComport.png" width="70%;"></a></div>
 - Starting the Bluetooth component
-  - Download [BluetoothComp.zip](http://www.openrtm.org/OpenRTM-aist/download/SC2010/NXTBlueTooth.zip)
+  - Download [BluetoothComp.zip]()(No corresponding page available.)
   - After extracting BluetoothComp.zip, execute the "NXTBlueToothComp.exe" file in the "components" folder
 <div align="center"><a href="NXTBluetoothCompStart.png"><img src="NXTBluetoothCompStart.png" width="70%;"></a></div>
 

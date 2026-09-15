@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ROBOMECH2015講習会(2015年5月17日)
+title: robomech2015講習会(2015年5月17日)
 ---
 <br>
 <a>No English version available.
@@ -74,11 +74,11 @@ title: ROBOMECH2015講習会(2015年5月17日)
   <tr>
     <td>13:00 -14:30</td>
     <td>></td>
-    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：原功氏、安藤慶昭氏（産業技術総合研究所）坂本武志 氏 (株式会社グローバルアシスト)<br> **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。<br> <a href="/ja/node/5022">チュートリアル（画像処理コンポーネントの作成 Windows編）</a> <br> <a href="/ja/node/430">チュートリアル（画像処理コンポーネントの作成 Linux編）</a></td>
+    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：原功氏、安藤慶昭氏（産業技術総合研究所）坂本武志 氏 (株式会社グローバルアシスト)<br> **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。<br> <a href="{{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_winxp_rtmtools_vc2010">チュートリアル（画像処理コンポーネントの作成 Windows編）</a> <br> <a href="{{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_ubuntu_1404">チュートリアル（画像処理コンポーネントの作成 Linux編）</a></td>
   </tr>
   <tr>
     <td>14:45 -16:45</td>
-    <td>**第3部：プログラミング実習(ロボット制御コース)** <br> 担当：原功 氏 (産総研)、Geoffrey Biggs 氏 (産総研) <br> **概要**：OpenRTM-aistを利用してHIDセンサー「LeapMotion」とロボットシミュレータ「Choreonoid」をつなぎ、オペレータの異図に対してバーチャルロボットの制御するコンポーネントを作成します。<br> **講義資料**:<a href="./150517-03.pdf">150517-03.pdf</a><br> <a href="/ja/node/5794">オンラインチュートリアル</a></td>
+    <td>**第3部：プログラミング実習(ロボット制御コース)** <br> 担当：原功 氏 (産総研)、Geoffrey Biggs 氏 (産総研) <br> **概要**：OpenRTM-aistを利用してHIDセンサー「LeapMotion」とロボットシミュレータ「Choreonoid」をつなぎ、オペレータの異図に対してバーチャルロボットの制御するコンポーネントを作成します。<br> **講義資料**:<a href="./150517-03.pdf">150517-03.pdf</a><br> <a href="{{ site.baseurl }}/en/doc/casestudy/leapmotion_choreonoid">オンラインチュートリアル</a></td>
     <td>**第3部：プログラミング実習(JVRC参加コース)** <br> 担当： 木村哲也先生（長岡技科大）、松坂要佐氏（MID Academic Promotions Inc.） <br> **概要**：災害対応ロボットのシミュレーションによる競技会、ジャパンバーチャルロボティクスチャレンジ（JVRC）の概要説明、JVRCで公式シミュレータとして用いられるChoreonoidのシミュレータとしての利用方法について体験していただきます。<br> **講義資料**:<a href="./150517-04.pdf">150517-04.pdf</a><br> <a href="http://jvrc.github.io/tutorials/html-ja/index.html">オンラインチュートリアル</a></td>
   </tr>
 </table>
@@ -122,15 +122,15 @@ title: ROBOMECH2015講習会(2015年5月17日)
 - OpenRTM-aist C++ 1.1.1-RELEASE版
   - <span style="color:red;">インストールされているVisual Studioに一致するバージョンをダウンロードしてください。</span>;
   - 上記Visual C++ 2013用のインストーラは[こちら](http://openrtm.org/pub/Windows/OpenRTM-aist/cxx/1.1/OpenRTM-aist-1.1.1-RELEASE_x86_vc12.msi)
-  - 他のバージョン用は、[こちらのページ](http://openrtm.org/openrtm/ja/content/openrtm-aist-c-111-release) からダウンロードできます。
+  - 他のバージョン用は、[こちらのページ]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_1_release) からダウンロードできます。
   - インストーラは、デフォルトでOpenRTPとJREを一緒にインストールします。デフォルト設定のままインストールして下さい。
-  - [OpenRTM-aistを10分で始めよう！](http://openrtm.org/openrtm/ja/content/lets_start) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
+  - [OpenRTM-aistを10分で始めよう！]()(No corresponding page available.) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
 - [Python2.7(32bit)](https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi)
   - <span style="color:red;">OpenRTM-aistのPython版やPyYAMLをインストールする前にインストールしてください</span>;
   - OpenRTM-aist Python の64bit版をインストールされる場合は、[Python2.7(64bit)](https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi) をインストールしてください。　
 - OpenRTM-aist Python 1.1.0-RELEASE
   - 32bit版インストーラは、[こちら](http://openrtm.org/pub/Windows/OpenRTM-aist/python/OpenRTM-aist-Python_1.1.0-RELEASE_x86.msi) からダウンロードできます。
-  - 64bit版インストーラは、[こちらのページ](http://openrtm.org/openrtm/ja/content/openrtm-aist-python-110-release) からダウンロードできます。　　
+  - 64bit版インストーラは、[こちらのページ]({{ site.baseurl }}/en/download/openrtm-aist-python/openrtm-aist-python_1_1_0_release) からダウンロードできます。　　
 - [PyYAML(32bit)](http://pyyaml.org/download/pyyaml/PyYAML-3.11.win32-py2.7.exe)
   - Python2.7(64bit)をインストールされた場合は、[PyYAML(64bit)](http://pyyaml.org/download/pyyaml/PyYAML-3.11.win-amd64-py2.7.exe) をインストールしてください。　
 - [CMake](http://www.cmake.org/files/v3.2/cmake-3.2.1-win32-x86.exe)
@@ -149,13 +149,13 @@ Ubuntu14.04 x64 の環境へ以下をインストールして下さい。
 <!-- -- [[こちらのページ:http://openrtm.org/openrtm/ja/content/openrtm-aist-python-110-release]] からダウンロードできます。 -->
 
 - OpenRTP
-  - [こちらのページ](http://openrtm.org/openrtm/ja/download/openrtp/openrtp-110-rc5-ja) からLinux用の全部入りパッケージをダウンロードできます。
+  - [こちらのページ]({{ site.baseurl }}/en/download/tools/openrtp_1_1_0_rc5) からLinux用の全部入りパッケージをダウンロードできます。
 インストール方法も解説しています。
 - OpenCV
   - 下記パッケージをインストールして下さい。<br>
 $ sudo apt-get install libopencv-dev libcv2.4 libcvaux2.4 libhighgui2.4
 - OpenCVサンプルコンポーネント(ImageProcessing)
-  - [こちら](http://openrtm.org/pub/Linux/ubuntu/dists/trusty/main/binary-amd64/imageprocessing-1.1.0.deb) からdebパッケージをダウンロード・インストールして下さい。<br>
+  - [こちら]()(No corresponding page available.) からdebパッケージをダウンロード・インストールして下さい。<br>
 $ sudo dpkg -i imageprocessing-1.1.0.deb
 
 

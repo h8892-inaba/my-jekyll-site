@@ -1,6 +1,6 @@
 ---
 layout: page
-title: サンプルの RTシステムの実行
+title: サンプルの rtシステムの実行
 ---
 
 No English version available.

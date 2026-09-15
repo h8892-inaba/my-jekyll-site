@@ -1,6 +1,6 @@
 ---
 layout: page
-title: SDカードの準備
+title: sdカードの準備
 ---
 <!-- Title: SDカードの準備 -->
 <!-- -*- pukiwiki-edit -*- -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-1.0.0-RELEASE
+title: openrtm-aist-1.0.0-release
 ---
 
 <!-- Title: OpenRTM-aist-1.0.0-RELEASE -->
@@ -144,15 +144,15 @@ Vine Linux, Fedora, Ubuntu, Debianの各ディストリビューション用の�
 <br>
 ### MacPorts
 MacPorts用Portfileが利用可能です。あらかじめXcodeおよびMacPortsをインストールした上でご利用ください。
-- [Portfile (ports.tgz) ](http://www.openrtm.org/pub/MacOSX/macports/ports.tgz)
-- [インストールスクリプト (port_install.sh) ](http://www.openrtm.org/pub/MacOSX/macports/port_install.sh): ports.tgz のダウンロード、OpenRTM-aistのビルド・インストールまで自動で行います。
+- [Portfile (ports.tgz) ]()(No corresponding page available.)
+- [インストールスクリプト (port_install.sh) ]()(No corresponding page available.): ports.tgz のダウンロード、OpenRTM-aistのビルド・インストールまで自動で行います。
 
 <br>
 ## ツール
 <table class="table-alt">
   <tr>
     <td>Windows用全部入り</td>
-    <td><a href="http://www.openrtm.org/pub/OpenRTM-aist/tools/1.0.0/eclipse342_rtmtools100release_win32_ja.zip">eclipse342_rtmtools100release_win32_ja.zip</a><br>MD5:A52450B24F0A1C59402D5340D9FA8D56</td>
+    <td><a href="">eclipse342_rtmtools100release_win32_ja.zip</a>(No corresponding page available.)<br>MD5:A52450B24F0A1C59402D5340D9FA8D56</td>
     <td>2010.06.01</td>
   </tr>
 </table>

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Implementation Procedure for a Custom Serializer (ROS2, Python)"
+title: "implementation procedure for a custom serializer (ros2, python)"
 ---
 
 Under preparation.

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Getting Started with OpenRTM-aist in 10 Minutes!"
+title: "getting started with openrtm-aist in 10 minutes!"
 ---
 
 <!-- Title: Getting Started with OpenRTM-aist in 10 Minutes! -->
@@ -396,14 +396,14 @@ Please refer to:
 
 Please see the following links.
 
-- **Try More Sample Components &t;：** [Sample Components]({{ site.baseurl }}/en/node/811)
+- **Try More Sample Components &t;：** [Sample Components]({{ site.baseurl }}/en/doc/installation/sample_components)
 
-- **Create Your Own Components &t;：** [Case Studies]({{ site.baseurl }}/en/node/110)
+- **Create Your Own Components &t;：** [Case Studies]({{ site.baseurl }}/en/doc/casestudy)
 
-- **Learn OpenRTM from the Basics &t;：** [Developer's Guide]({{ site.baseurl }}/en/node/113)
+- **Learn OpenRTM from the Basics &t;：** [Developer's Guide]({{ site.baseurl }}/en/doc/developersguide)
 
-- **Join the Community &t;：** [Community]({{ site.baseurl }}/en/node/624)
+- **Join the Community &t;：** [Community]({{ site.baseurl }}/en/community)
 
-- **Explore Public Components &t;：** [Projects]({{ site.baseurl }}/en/node/123)
+- **Explore Public Components &t;：** [Projects]({{ site.baseurl }}/ja/node/123)(No corresponding English project page available.)
 
 

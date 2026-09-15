@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウエアコンテスト2012表彰（協賛）
+title: rtミドルウエアコンテスト2012表彰（協賛）
 ---
 
 <div align="left"><img src="rtmcontest2012.png" width="60%;" align="center"></div>

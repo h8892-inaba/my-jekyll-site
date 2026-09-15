@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "TkCalibGUI"
+title: "tkcalibgui"
 ---
 
 <!-- Title: TkCalibGUI -->

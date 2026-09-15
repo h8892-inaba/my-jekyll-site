@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist C++ 1.2.2-RELEASE
+title: openrtm-aist c++ 1.2.2-release
 ---
 
 <!-- Title: OpenRTM-aist C++ 1.2.1-RELEASE -->

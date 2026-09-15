@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 画像処理コンポーネントの作成(OpenRTM-aist-1.1、CMake、Linux Ubuntu 14.04) 
+title: 画像処理コンポーネントの作成(openrtm-aist-1.1、cmake、linux ubuntu 14.04) 
 ---
 
 <!-- Title: 画像処理コンポーネントの作成(OpenRTM-aist-1.1、CMake、Linux Ubuntu 14.04) -->
@@ -55,7 +55,7 @@ Linux (ここでは Ubuntu 14.04 を仮定) 上に開発環境を構築します
 
 #### OpenRTP のインストール
 
-[こちらのURL]({{ site.baseurl }}/ja/download/openrtp/openrtp-110-rc5-ja) から Linux版の OpenRTP (コンポーネント開発ツール、システム開発ツール統合環境) をダウンロード、インストールします。
+[こちらのURL]()（リンク切れです） から Linux版の OpenRTP (コンポーネント開発ツール、システム開発ツール統合環境) をダウンロード、インストールします。
 OepnRTP の実行には Java も必要となりますので default-jre パッケージをインストールします。
 
 ```
@@ -243,7 +243,7 @@ flipModeの各値での画像処理のイメージを下図に示します。
 
 - RTSystemEditor 1.1
 - RTCBuilder 1.1
-  - [Eclipse3.4.2+RTSE+RTCB(1.1.0-RC2) Windows用全部入り](http://www.openrtm.org/pub/OpenRTM-aist/tools/1.1.0/eclipse342_rtmtools110-rc2_win32_ja.zip)
+  - [Eclipse3.4.2+RTSE+RTCB(1.1.0-RC2) Windows用全部入り]()（リンク切れです）
 
 - [Doxygen](http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.11-setup.exe) ドキュメント生成に必要
 - [CMake](https://cmake.org/files/v2.8/cmake-2.8.5-win32-x86.exe)

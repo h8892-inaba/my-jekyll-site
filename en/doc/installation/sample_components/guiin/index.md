@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "GUIIn"
+title: "guiin"
 ---
 
 <!-- Title: GUIIn -->

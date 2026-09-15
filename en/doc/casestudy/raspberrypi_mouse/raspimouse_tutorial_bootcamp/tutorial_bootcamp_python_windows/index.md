@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (Raspberry Pi Mouse, Python, Windows, Reinforcement Month Edition)
+title: tutorial (raspberry pi mouse, python, windows, reinforcement month edition)
 ---
 
 <!-- Title: チュートリアル(Raspberry Pi Mouse、Python、Windows、強化月間用) -->
@@ -24,7 +24,7 @@ Workshops may sometimes be conducted in environments without Internet access. In
 
 ### Simulator
 
-- [RaspberryPiMouseSimulator Component](http://www.openrtm.org/openrtm/ja/content/simulator_rtc_raspbian_raspimouse)
+- [RaspberryPiMouseSimulator Component]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use)
 
 The simulator was developed using a physics engine called [Open Dynamics Engine (ODE)](http://www.ode.org/) and the drawing library (drawstuff) included with ODE.
 

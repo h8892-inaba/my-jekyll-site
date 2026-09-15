@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアサマーキャンプ2018
+title: rtミドルウェアサマーキャンプ2018
 ---
 <br>
 <a>No English version available.
@@ -55,7 +55,7 @@ title: RTミドルウェアサマーキャンプ2018
 ### 日時・場所
 - 2018年7月30日～8月3日
 - 産業技術総合研究所　つくばセンター中央第二　本部・情報棟１階　ネットワーク会議室　
-  - [ガイドマップ](/ja/tutorial/guidemap)
+  - [ガイドマップ]({{ site.baseurl }}/en/tutorial/guidemap)
   - [google map](https://maps.google.com/maps/ms?msid=202092058111064603321.0004e2699244f546ec525&msa=0&ll=36.05949,140.134263&spn=0.009098,0.011297)
 - アクセス
   - 東京駅から並木2丁目:[高速バス時刻表](http://time.jrbuskanto.co.jp/bk03080.html)
@@ -489,7 +489,7 @@ title: RTミドルウェアサマーキャンプ2018
 ### グループ1
 
 - **課題**: モバイルロボットゲームパック
-  - [プロジェクトページ](/ja/project/SummerCamp2018_group1)
+  - [プロジェクトページ](/ja/project/SummerCamp2018_group1)(No corresponding English project page available.)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/108736729 -->
 
@@ -507,7 +507,7 @@ title: RTミドルウェアサマーキャンプ2018
 ### グループ2
 
 - **課題**:NAOの大冒険
-- [プロジェクトページ](/ja/project/SummerCamp2018_group2)
+- [プロジェクトページ](/ja/project/SummerCamp2018_group2)(No corresponding English project page available.)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/108735739 -->
 
@@ -524,7 +524,7 @@ title: RTミドルウェアサマーキャンプ2018
 &aname(summercamp2018_group3);
 ### グループ3
 - **課題**:じゃんけんロボットシステム
-  - [プロジェクトページ](/ja/project/SummerCamp2018_group3)
+  - [プロジェクトページ](/ja/project/SummerCamp2018_group3)(No corresponding English project page available.)(No corresponding English project page available.)
 <!-- Invalid YouTube URL: http://www.slideshare.net/108736424 -->
 
   - 開発モデル発表
@@ -541,7 +541,7 @@ title: RTミドルウェアサマーキャンプ2018
 &aname(summercamp2018_group4);
 ### グループ4
 - **課題**:T型自律走行ロボット
-  - [プロジェクトページ](/ja/project/SummerCamp2018_group4)
+  - [プロジェクトページ](/ja/project/SummerCamp2018_group4)(No corresponding English project page available.)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/108736510 -->
 

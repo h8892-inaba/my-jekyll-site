@@ -1,6 +1,6 @@
 ---
 layout: page
-title: EV3 デバイスの利用
+title: ev3 デバイスの利用
 ---
 
 <!-- -*- pukiwiki-edit -*- -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: How to Use xfinder
+title: how to use xfinder
 ---
 
 <!-- Title: How to Use xfinder -->

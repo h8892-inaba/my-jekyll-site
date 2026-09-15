@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Python 1.2.1-RELEASE
+title: openrtm-aist-python 1.2.1-release
 ---
 <!-- Title: OpenRTM-aist-Python 1.2.1-RELEASE -->
 <div align="right"><a href="python-logo.png"><img src="python-logo.png" width="10%;" align="right"></a></div>
@@ -9,7 +9,7 @@ title: OpenRTM-aist-Python 1.2.1-RELEASE
 <br>
 (G) Please refer to the following page for the installation procedure.
 
-- [OpenRTM-aist (Python) 1.2 installation](/ja/node/6601)
+- [OpenRTM-aist (Python) 1.2 installation]({{ site.baseurl }}/en/doc/installation/install_1_2/python_1_2)
 
 ## Package
 ### Windows Installer
@@ -93,7 +93,7 @@ The msi file is over 900MB in size. Use a high-speed line (50Mbps or more) to do
 - The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [[doxygen: http: //www.doxygen.nl/index.html]] and download and install the latest "doxygen-X.X.X-setup.exe".
 
 
-For installation, [Start OpenRTM-aist in 10 minutes!](/ja/node/6521) page for instructions. 
+For installation, [Start OpenRTM-aist in 10 minutes!]({{ site.baseurl }}/en/doc/installation/lets_start121) page for instructions. 
 
 ### Linux package
 <!-- Linux packages will be provided sequentially. Please refer to the following for how to build from source. -->
@@ -122,7 +122,7 @@ We currently offer packages in the following distribution versions. You can use 
 
 
 
-By specifying options, you can now install packages that meet your needs. Please refer to [Bulk installation script](/ja/node/6345) for installation method, options and package types.
+By specifying options, you can now install packages that meet your needs. Please refer to [Bulk installation script]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script) for installation method, options and package types.
 
 
 If you have already installed 1.2.0-RELEASE, you can update it.
@@ -136,7 +136,7 @@ $ sudo apt-get update
 <!--  -->
 <!-- # dnf update -->
 
-See [OpenRTM-aist (Python version) 1.2 system installation](/ja/node/6601) for download and installation methods.
+See [OpenRTM-aist (Python version) 1.2 system installation]({{ site.baseurl }}/en/doc/installation/install_1_2/python_1_2) for download and installation methods.
 
 &aname(src);
 ## Source code
@@ -157,7 +157,7 @@ See [OpenRTM-aist (Python version) 1.2 system installation](/ja/node/6601) for d
 
 ### Build from source
 
-For details on how to build from source, see [Building from source (Windows)](/ja/node/6618) or [Building from source (Linux)](/ja/node/6651) .
+For details on how to build from source, see [Building from source (Windows)]({{ site.baseurl }}/en/doc/installation/install_1_2/python_1_2/build_source_python_windows_1_2) or [Building from source (Linux)]({{ site.baseurl }}/en/doc/installation/install_1_2/python_1_2/build_source_python_linux_1_2) .
 
 ### Create deb / rpm package
 
@@ -171,7 +171,7 @@ You can create a package by following the steps below. When creating a package, 
 Packages are created in the pacakges directory.
 
 <span style="color:red;">* Install tools such as "dpkg-dev build-essential debhelper devscripts" when creating deb packages on Ubuntu and Debian, and "rpm-build createrepo" before creating rpm packages on Fedora. Must be kept. </span>;
-These can be installed by executing [Bulk nstallation script](/ja/node/6345) with the -c option.
+These can be installed by executing [Bulk nstallation script]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script) with the -c option.
 
 
 ## Release notes

@@ -1,13 +1,13 @@
 ---
 layout: page
-title: "ObjectTracking"
+title: "objecttracking"
 ---
 
 <!-- Title: ObjectTracking -->
 
 #contents
 
-OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencv_sample_build)に従ってビルドしてインストールしてください。
+OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencvcamera/opencv_sample_build)に従ってビルドしてインストールしてください。
 
 ### 概要
 ObjectTrackingは、画面上から選択したオブジェクトを追跡して、その位置を赤い楕円形でかこんでしめすOpenCVコンポーネントのサンプルです。

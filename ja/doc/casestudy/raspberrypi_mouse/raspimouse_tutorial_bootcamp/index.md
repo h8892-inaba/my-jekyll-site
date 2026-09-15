@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(Raspberry Pi Mouse、強化月間用)
+title: チュートリアル(raspberry pi mouse、強化月間用)
 ---
 
 <!-- チュートリアル(Raspberry Pi Mouse、強化月間用) -->

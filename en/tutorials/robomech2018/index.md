@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ROBOMECH2018講習会(2018年6月3日(日))
+title: robomech2018講習会(2018年6月3日(日))
 ---
 <br>
 <a>No English version available.
@@ -74,11 +74,11 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
   </tr>
   <tr>
     <td>13:00 -14:30</td>
-    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：宮本信彦 氏 (産総研) <br> **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。 <br> <a href="/ja/node/6550">チュートリアル(第2部、Windows)</a> <br> <a href="/ja/node/6551">チュートリアル(第2部、Ubuntu)</a>   <br> <a href="https://github.com/Nobu19800/RTM_Tutorial_ROBOMECH2018/archive/master.zip">資料(zipファイル)</a></td>
+    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：宮本信彦 氏 (産総研) <br> **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、RTCBuilderを使用したRTコンポーネントの作成方法を実習形式で体験していただきます。 <br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2">チュートリアル(第2部、Windows)</a> <br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2">チュートリアル(第2部、Ubuntu)</a>   <br> <a href="https://github.com/Nobu19800/RTM_Tutorial_ROBOMECH2018/archive/master.zip">資料(zipファイル)</a></td>
   </tr>
   <tr>
     <td>14:45 -17:00</td>
-    <td>**第3部：RTシステム構築実習** <br> **担当**：宮本信彦 氏 (産総研) <br> **概要**：OpenRTM-aistを利用してロボットを制御するプログラムを実際に作成します。 <br> <a href="/ja/node/6552">チュートリアル(第3部)</a></td>
+    <td>**第3部：RTシステム構築実習** <br> **担当**：宮本信彦 氏 (産総研) <br> **概要**：OpenRTM-aistを利用してロボットを制御するプログラムを実際に作成します。 <br> <a href="{{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_part3">チュートリアル(第3部)</a></td>
   </tr>
 </table>
 
@@ -129,7 +129,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 #### Visual Studio 
 
 - Visual Studio 2017推奨
-  - インストールには時間がかかりますので、「[VisualStudio2017インストール方法](/ja/content/how_to_install_VS2017)」を参考に事前にインストール・初回起動を完了しておこしください。
+  - インストールには時間がかかりますので、「[VisualStudio2017インストール方法]()(No corresponding page available.)」を参考に事前にインストール・初回起動を完了しておこしください。
 
 #### OpenRTM-aist 1.2.0-RC1版
 

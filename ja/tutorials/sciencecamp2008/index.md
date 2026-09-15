@@ -70,7 +70,7 @@ title: サイエンスキャンプ(2008年8月21日)
 - PythonからBluetoothを使うために必要なモジュール(exeを実行してインストール)
   - [pyBlues](http://pybluez.googlecode.com/files/PyBluez-0.15.win32-py2.5.exe)
 - PythonからLEGO Mindstorm NXTを使うために必要なモジュール(下の指示に従ってインストール)
-  - [nxtpython](http://www.openrtm.org/OpenRTM-aist/download/resume/080820/nxt_python-0.7.zip)
+  - [nxtpython]()（リンク切れです）
  zipを展開後、展開したフォルダの中(setup.pyがあるフォルダ)でコマンドプロンプトから
 
 ```
@@ -78,13 +78,13 @@ title: サイエンスキャンプ(2008年8月21日)
 ```
 と入力
 - USB汎用ドライバ、NXTをUSB経由で使うために必要(exeを実行してインストール)
-  - [libusb](http://www.openrtm.org/OpenRTM-aist/download/resume/080820/libusb-win32-filter-bin-0.1.12.1.exe)
+  - [libusb]()（リンク切れです）
 - PythonからUSBを使うために必要なモジュール(exeを実行してインストール)
-  - [pyusbhttp](//www.openrtm.org/OpenRTM-aist/download/resume/080820/pyusb-0.4.1.win32-py2.5.exe)
+  - [pyusbhttp]()（リンク切れです）
 - RtcLink、RTミドルウエアを使うためのツール(zipを展開して出てきたフォルダのeclipse.exeを実行して起動)
-  - [eclipse](http://www.openrtm.org/pub/OpenRTM-aist/tools/0.4.2/eclipse32_rtclink041_rtctemplate042_win32.zip)
+  - [eclipse]()（リンク切れです）
 - RTミドルウエアのC++版(exeを実行してインストール)
-  - [OpenRTM-aist-C++](http://www.openrtm.org/pub/Windows/OpenRTM-aist/cxx/OpenRTM-aist-0.4.2-jp_vc9.msi)
+  - [OpenRTM-aist-C++]()（リンク切れです）
 - RTミドルウエアC++版を使うために必要なライブラリ(exeを実行してインストール)
   - [omniORB](http://www.openrtm.org/pub/Windows/omniORB/omniORB-4.1.2_vc9.msi)
 - RTミドルウエアC++版を使うために必要なライブラリ(exeを実行してインストール)

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Choreonoid OpenRTMプラグインの利用方法"
+title: "choreonoid openrtmプラグインの利用方法"
 ---
 
 <!-- Choreonoid OpenRTMプラグインの利用方法 -->
@@ -30,7 +30,7 @@ OpenRTM-aist 2.0.0以上のバージョンのインストールが必要です�
 OpenRTM-aist+omniORBを以下の手順でビルド、インストールしてください。
 ※インストーラーでOpenRTM-aistをインストールしている場合は不要。
 
-- [OpenRTM-aist(C++版)のCMakeによるビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build#windowsomniorb)
+- [OpenRTM-aist(C++版)のCMakeによるビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build#windowsomniorb)
 
 ただし、CMake実行時にOpenRTM-aistのインストールフォルダは指定してそこにインストールするようにしてください。
 
@@ -245,7 +245,7 @@ omniORB、OpenRTM-aistをインストールする必要があるため、以下�
 
 OpenRTM-aist+omniORBを以下の手順でビルド、インストールしてください。
 
-- [OpenRTM-aist(C++版)のCMakeによるビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build#ubuntuomniorb)
+- [OpenRTM-aist(C++版)のCMakeによるビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build#ubuntuomniorb)
 
 ```
  export OPENRTM_INSTALL_PATH=~/work/openrtm_install

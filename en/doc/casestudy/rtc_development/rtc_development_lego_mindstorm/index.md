@@ -1,6 +1,6 @@
 ---
 layout: page
-title: LEGO Mindstorm NXT RT Component
+title: lego mindstorm nxt rt component
 ---
 
 <!-- Title: LEGO Mindstorm NXT RTコンポーネント -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 第12回AIツール入門講座（人工知能学会） RTM講習会
+title: 第12回aiツール入門講座（人工知能学会） rtm講習会
 ---
 
 <div align="right"><a href="http://www.ai-gakkai.or.jp/wp-content/uploads/2016/09/jsai_logo_base_outlined_fix.png"><img src="http://www.ai-gakkai.or.jp/wp-content/uploads/2016/09/jsai_logo_base_outlined_fix.png" width="15%; margin:10px;" align="right"></a></div>
@@ -52,7 +52,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
   </tr>
   <tr>
     <td>11:00 -11:50</td>
-    <td>**第2部：RTコンポーネント作成入門** <br> **担当**：宮本信彦氏 (産業技術総合研究所)<br> **概要**：RTコンポーネント設計ツールRTCBuilderとRTシステム構築ツールRTSystemEditorの利用方法を解説するとともに、移動ロボットシミュレータを用いた実習によりRTコンポーネントの開発手順、動作確認手順を学習します。 また、作成したコンポーネントを利用し、移動ロボット実機（RaspberryPiマウス）を制御する方法についても学習します。 <br> <a href="/ja/node/6386">チュートリアル(第2部、Windows)</a> <br> <a href="/ja/node/6387">チュートリアル(第2部、Ubuntu)</a></td>
+    <td>**第2部：RTコンポーネント作成入門** <br> **担当**：宮本信彦氏 (産業技術総合研究所)<br> **概要**：RTコンポーネント設計ツールRTCBuilderとRTシステム構築ツールRTSystemEditorの利用方法を解説するとともに、移動ロボットシミュレータを用いた実習によりRTコンポーネントの開発手順、動作確認手順を学習します。 また、作成したコンポーネントを利用し、移動ロボット実機（RaspberryPiマウス）を制御する方法についても学習します。 <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_python_windows">チュートリアル(第2部、Windows)</a> <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_bootcamp/tutorial_bootcamp_python_ubuntu">チュートリアル(第2部、Ubuntu)</a></td>
   </tr>
   <tr>
     <td>11:50 -12:00</td>
@@ -64,7 +64,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
   </tr>
   <tr>
     <td>13:00 -16:30</td>
-    <td>**第3部：プログラミング実習** <br> **担当**：髙橋三郎氏 (産業技術総合研究所)  <br> **概要**：深層学習による画像認識を利用した移動ロボット制御システムを作成することで、実際の研究、開発へのアプリケーション応用について学びます。 <br> <a href="/ja/node/6388">チュートリアル(第３部 推論結果の検証)</a><br> <a href="/ja/node/6389">チュートリアル(第３部 データ収集・蓄積)</a></td>
+    <td>**第3部：プログラミング実習** <br> **担当**：髙橋三郎氏 (産業技術総合研究所)  <br> **概要**：深層学習による画像認識を利用した移動ロボット制御システムを作成することで、実際の研究、開発へのアプリケーション応用について学びます。 <br> <a href="{{ site.baseurl }}/ja/tutorials/171128_jsai/tutorials_verify_inference">チュートリアル(第３部 推論結果の検証)</a><br> <a href="{{ site.baseurl }}/ja/tutorials/171128_jsai/tutorials_data_collection">チュートリアル(第３部 データ収集・蓄積)</a></td>
   </tr>
 </table>
 
@@ -147,14 +147,14 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 #### OpenRTM-aist 1.1.2-RELEASE版 (C++版、Python版）
 
 - 1.1.2 からは一つのインストーラですべての言語とVisual Studioのバージョンに対応しいます。32bit/64bitのみ選択してください。（32bit推奨）
-  - [Windows用インストーラ(32bit)](/content/openrtm-aist-c-112-release#toc2)
+  - [Windows用インストーラ(32bit)]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#toc2)
 - 1.1.2 は インストールしているVisual Studioのバージョンをシステム環境変数で指定しますので、設定を確認して下さい。デフォルトはvc2013の設定になっています。
-  - [Visual Studio のバージョン指定](/content/openrtm-aist-c-112-release#toc4)
+  - [Visual Studio のバージョン指定]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release#toc4)
 <!-- - 1.1.2の使用を推奨しますが、1.1.0, 1.1.1でも受講可能です。 -->
 <!-- - 1.1.1/1.1.0 をお使いの場合は&color(red){必ず}; Visual Studio のバージョンと一致させてください。 -->
 <!-- -- 他のバージョン用は、[[こちらのページ:http://openrtm.org/openrtm/ja/content/openrtm-aist-c-112-release]] からダウンロードできます。(非推奨) -->
 - デフォルト設定のままインストールして下さい。
-- [OpenRTM-aistを10分で始めよう！](http://openrtm.org/openrtm/ja/node/6026) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
+- [OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
 
 #### Python
 
@@ -225,3 +225,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 
 <!-- #ref(151202-05.jpg,center,nolink) -->
 <!-- #br -->
+<hr>
+- [チュートリアル(AIツール、第3部、「推論結果の検証」の実習)](./tutorials_verify_inference/)
+- [チュートリアル(AIツール、第3部、「データ収集・蓄積」の実習)](./tutorials_data_collection/)
+

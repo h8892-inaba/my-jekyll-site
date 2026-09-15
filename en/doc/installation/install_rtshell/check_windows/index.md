@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Operation Check (Windows Edition)
+title: operation check (windows edition)
 ---
 
 <!-- Title: 動作確認(Windows編) -->

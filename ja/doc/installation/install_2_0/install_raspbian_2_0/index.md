@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Raspberry Pi OSへのインストール
+title: raspberry pi osへのインストール
 ---
 
 <hr>

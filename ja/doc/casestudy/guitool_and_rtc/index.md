@@ -1,6 +1,6 @@
 ---
 layout: page
-title: GUI ツールキットとRTCの連携
+title: gui ツールキットとrtcの連携
 ---
 
 <!-- Title: GUI ツールキットとRTCの連携 -->

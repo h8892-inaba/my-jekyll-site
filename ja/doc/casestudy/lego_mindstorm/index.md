@@ -1,6 +1,6 @@
 ---
 layout: page
-title: LEGO Mindstorms EV3 活用事例
+title: lego mindstorms ev3 活用事例
 ---
 
 <!-- Title: LEGO Mindstorms EV3 活用事例 -->

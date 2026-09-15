@@ -188,7 +188,7 @@ http://openrtm.org/openrtm/ja/project/opencv_rtcs
 <!--  -->
 <br>
 
-<!-- div align="center"><div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/OpenCV.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/OpenCV.png" width="60%;"></a></div>;</div>-->
+<!-- div align="center"><div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/OpenCV.png" width="60%;"></a>（リンク切れです）</div>;</div>-->
 <div align="center"><strong>OpenCV RTCを用いた画像処理システム例</strong></div>
 
 <br>
@@ -222,7 +222,7 @@ http://openrtm.org/openrtm/ja/project/ARToolkit_DCI_AIST
 <!--  -->
 <br>
 
-<!-- div align="center"><div align="center"><a href="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ARRTC_System.png"><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ARRTC_System.png" width="70%;"></a></div>;</div>
+<!-- div align="center"><div align="center"><a href=""><img src="http://www.openrtm.org/OpenRTM-aist/figs/OpenLab2010/ARRTC_System.png" width="70%;"></a>（リンク切れです）</div>;</div>
 <div align="center"><strong>OpenCV RTCとARToolKit RTCとの連携</strong></div-->
 
 <br>

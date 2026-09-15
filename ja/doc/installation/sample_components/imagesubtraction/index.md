@@ -1,13 +1,13 @@
 ---
 layout: page
-title: "ImageSubtraction"
+title: "imagesubtraction"
 ---
 
 <!-- Title: ImageSubtraction -->
 
 #contents
 
-OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/sample_components/opencv_sample_build)に従ってビルドしてインストールしてください。
+OpenRTM-aistのPython版、Java版には付属していませんのでご注意ください。また、Linux上では、[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/ja/doc/installation/opencvcamera/sample_components/opencv_sample_build)に従ってビルドしてインストールしてください。
 
 ### 概要
 ImageSubtractionを起動することによって入力画像から背景画像を取り出し、前景画像部を判定し、それを取り出すマスク画像を、背景画像を出力します。
@@ -23,7 +23,7 @@ ImageSubtractionは、入力画像から背景画像を取り出すためのコ�
 
 - 手順 (以下はUbuntu 18.04での手順です。)
   - ターミナルを起動します。
-  - 上記の[[LinuxにおけるOpenCVサンプルコードのビルド手順>//node/6974]に従いサンプルコードのインストールをします。
+  - 上記の[LinuxにおけるOpenCVサンプルコードのビルド手順]({{ site.baseurl }}/doc/installation/sample_components/opencvcamera/opencv_sample_build/)に従いサンプルコードのインストールをします。
   - [OpenRTP]({{ site.baseurl }}/ja/doc/installation/install_1_2/start_openrtp_linux_1_2)に従いOpenRTPを起動しRTSystemEditorを起動し、Name Service ViewにRTCが表示されるようにします。新規SystemEditorを開きます。RTSystemEditorの使用方法の詳細については[RTSystemEditor]({{ site.baseurl }}/ja/doc/toolmanuals/rtsystemeditor-1_2_0)を参照してください。
   - 新規にターミナル画面を開きます。
   - 以下のコマンドを実行して、rtc.confを編集します。

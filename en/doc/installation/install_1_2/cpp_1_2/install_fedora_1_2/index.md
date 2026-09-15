@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Fedoraへのインストール
+title: fedoraへのインストール
 ---
 <br>
 <a>No English version available.

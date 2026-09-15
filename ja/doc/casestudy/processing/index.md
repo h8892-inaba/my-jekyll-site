@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Processing 活用事例
+title: processing 活用事例
 ---
 
 #contents
@@ -258,7 +258,7 @@ onActivated関数を下記のように編集します。
 Raspberry Piマウスシミュレータ(**RaspberryPiSimulator**)、もしくはRaspberry Piマウス実機(**RaspberryPiMouseRTC**)のRTCを使用します。
 また、以下のチュートリアルで作成した**RobotController**も使用します。
 
-- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)](/ja/node/6550)
+- [チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2)
 
 Processingで作成した**drawGraph**コンポーネントを起動します。
 Processingの実行ボタンを押してください。

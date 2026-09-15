@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 自作の RTC で制御
+title: 自作の rtc で制御
 ---
 
 <!-- Title: 自作の RTC で制御 -->
@@ -10,7 +10,7 @@ title: 自作の RTC で制御
 ### ひな形コードの作成
 新規作成した RTC を EducatorVehicle と接続して制御するまでの手順を説明します。
 
-まずは Windows、Ubuntu上で [このページ](/ja/node/4601) の手順に従って RTC を作成してください。
+まずは Windows、Ubuntu上で [このページ]({{ site.baseurl }}/ja/doc/toolmanuals/rtcbuilder-1_1_0) の手順に従って RTC を作成してください。
 RTC の仕様は以下のように入力します。
 
 
@@ -96,8 +96,8 @@ RTC の仕様は以下のように入力します。
 ※RTC は EV3上で動作させることを前提にしていますが、動作確認や講習会での利用には Windows や Ubuntu上で動作させても問題はないので、その場合はコードの編集をする前に CMake で Visual Studio、もしくは Code::Blocks のプロジェクトを生成しておくことをお勧めします。
 CMake でプロジェクト生成からビルドまでの手順は以下のページに記載してあります。
 
-- [Windows](/ja/node/4623)
-- [Ubuntu](/ja/node/6033)
+- [Windows]({{ site.baseurl }}/ja/doc/toolmanuals/rtcbuilder-1_1_0/compile_win_cmake_cpp_rtcb_1_1_0)
+- [Ubuntu]({{ site.baseurl }}/ja/content/build_ubuntu_codeblocks)
 
 ### コードの編集
 
@@ -161,7 +161,7 @@ Python(EV3SamplePy.py)
  		return RTC.RTC_OK
 ```
 
-[共通インターフェース仕様書](/ja/node/3853)では進行方向をX軸正方向にしているため、Velocity2D型のvxに直進速度、vaに回転速度を入力します。
+[共通インターフェース仕様書](/ja/node/3853)（Projectページはリンク切れです）では進行方向をX軸正方向にしているため、Velocity2D型のvxに直進速度、vaに回転速度を入力します。
 
 
 Pythonではさらにコンストラクタの以下の部分を修正してください。
@@ -604,7 +604,7 @@ rotate_move 関数は以下のようになっています。
 
 
 ## 発展(上級者用課題)
-ここでは[超音波センサーにより地面までの距離を検知して滑落を回避する RTC](/ja/node/6030#toc6) を作成します。
+ここでは[超音波センサーにより地面までの距離を検知して滑落を回避する RTC]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_ev3_rtc_install#toc6) を作成します。
 
 <div align="center"><a href="ev3_sensor.png"><img src="ev3_sensor.png" width="80%;"></a></div>
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "OpenRTM-aist Specifications"
+title: "openrtm-aist specifications"
 ---
 
 <!-- Title: OpenRTM-aist Specifications -->

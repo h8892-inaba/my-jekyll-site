@@ -27,19 +27,19 @@ title: サマーサイエンスキャンプ(2009年8月19日～21日)
 ### 写真・発表資料
 関係者のみアクセス可能です。
 
-- [1日目写真](http://www.openrtm.org/ScienceCamp09/ScienceCamp01-01/index.html)(no_link)
-  - [ZIPファイル(65MB)](http://www.openrtm.org/ScienceCamp09/ScienceCamp01-01.zip)(no_link)
-- [2日目写真(レゴ製作)](http://www.openrtm.org/ScienceCamp09/ScienceCamp02-01/index.html)(no_link)
-  - [ZIPファイル(323MB)](http://www.openrtm.org/ScienceCamp09/ScienceCamp02-01.zip)(no_link)
-- [2日目写真(懇親会)](http://www.openrtm.org/ScienceCamp09/ScienceCamp02-02/index.html)(no_link)
-  - [ZIPファイル(48MB)](http://www.openrtm.org/ScienceCamp09/ScienceCamp02-02.zip)(no_link)
-- [3日目写真(発表準備)](http://www.openrtm.org/ScienceCamp09/ScienceCamp03-01/index.html)(no_link)
-  - [ZIPファイル(88MB)](http://www.openrtm.org/ScienceCamp09/ScienceCamp03-01.zip)(no_link)
-- [3日目写真(全体発表)](http://www.openrtm.org/ScienceCamp09/ScienceCamp03-02/index.html)(no_link)
-  - [ZIPファイル(451MB)](http://www.openrtm.org/ScienceCamp09/ScienceCamp03-02.zip)(no_link)
-- [3日目写真(閉講式)](http://www.openrtm.org/ScienceCamp09/ScienceCamp03-03/index.html)(no_link)
-  - [ZIPファイル(89MB)](http://www.openrtm.org/ScienceCamp09/ScienceCamp03-03.zip)(no_link)
-- [発表資料(199MB)](http://www.openrtm.org/ScienceCamp09/ZentaiHappyou.zip)(no_link)
+- [1日目写真]()（リンク切れです）(no_link)
+  - [ZIPファイル(65MB)]()（リンク切れです）(no_link)
+- [2日目写真(レゴ製作)]()（リンク切れです）(no_link)
+  - [ZIPファイル(323MB)]()（リンク切れです）(no_link)
+- [2日目写真(懇親会)]()（リンク切れです）(no_link)
+  - [ZIPファイル(48MB)]()（リンク切れです）(no_link)
+- [3日目写真(発表準備)]()（リンク切れです）(no_link)
+  - [ZIPファイル(88MB)]()（リンク切れです）(no_link)
+- [3日目写真(全体発表)]()（リンク切れです）(no_link)
+  - [ZIPファイル(451MB)]()（リンク切れです）(no_link)
+- [3日目写真(閉講式)]()（リンク切れです）(no_link)
+  - [ZIPファイル(89MB)]()（リンク切れです）(no_link)
+- [発表資料(199MB)]()（リンク切れです）(no_link)
 
 ### プログラム
 <table class="table-alt">
@@ -157,25 +157,25 @@ title: サマーサイエンスキャンプ(2009年8月19日～21日)
 - PythonからBluetoothを使うために必要なモジュール(exeを実行してインストール)
   - [pyBlues](http://pybluez.googlecode.com/files/PyBluez-0.15.win32-py2.5.exe)
 - PythonからLEGO Mindstorm NXTを使うために必要なモジュール(exeを実行してインストール)
-  - [nxtpython](http://www.openrtm.org/OpenRTM-aist/download/resume/080820/NXT_Python-0.7.win32-py2.5.exe)
+  - [nxtpython]()（リンク切れです）
 - USB汎用ドライバ、NXTをUSB経由で使うために必要(exeを実行してインストール)
-  - [libusb](http://www.openrtm.org/OpenRTM-aist/download/resume/080820/libusb-win32-filter-bin-0.1.12.1.exe)
+  - [libusb]()（リンク切れです）
 - PythonからUSBを使うために必要なモジュール(exeを実行してインストール)
-  - [pyusb](http://www.openrtm.org/OpenRTM-aist/download/resume/080820/pyusb-0.4.1.win32-py2.5.exe)
+  - [pyusb]()（リンク切れです）
 - RtcLink、RTミドルウエアを使うためのツール(zipを展開して出てきたフォルダのeclipse.exeを実行して起動)
-  - [eclipse](http://www.openrtm.org/pub/OpenRTM-aist/tools/1.0.0/eclipse32_rtse100_rtcb100_win32.zip)
+  - [eclipse]()（リンク切れです）
 - OpenRTM-aistのUSBCameraコンポーネントに必要なライブラリ(sourceforge.netのサイトに飛ぶのでDownloadボタンを押してインストール)
   - [OpenCV](http://downloads.sourceforge.net/opencvlibrary/OpenCV_1.0.exe?modtime=1161287502&big_mirror=1)
 - RTミドルウエアC++版を使うために必要なライブラリ(msiを実行してインストール)
   - [omniORB](http://www.openrtm.org/pub/Windows/omniORB/omniORB-4.1.2_vc9.msi)
 - RTミドルウエアのC++版(msiを実行してインストール)
-  - [OpenRTM-aist-C++](http://www.openrtm.org/pub/Windows/OpenRTM-aist/cxx/OpenRTM-aist-1.0.0-RC1-jp_vc9.msi)
+  - [OpenRTM-aist-C++]()（リンク切れです）
 - OpenCVサンプルRTコンポーネント(msiを実行してインストール)
-  - [OpenCVサンプルRTC](http://www.openrtm.org/OpenRTM-aist/download/ROBOMEC2009/OpenCV_RTC-1.0_vc9_jp.msi)
+  - [OpenCVサンプルRTC]()（リンク切れです）
 - RTミドルウエアC++版を使うために必要なライブラリ(Microsoftのサイトに飛ぶのでダウンロードボタンを押してインストール)
   - [VC2008DLL](http://www.microsoft.com/downloads/details.aspx?displaylang=ja&FamilyID=9b2da534-3e03-4391-8a4d-074b9f2bc1bf)
 
 - 講習会用サンプル(USBドライバも入っています。)
-  - [講習会用サンプル](http://www.openrtm.org/OpenRTM-aist/download/resume/080820/ScienceCamp.zip)
+  - [講習会用サンプル]()（リンク切れです）
   - NXTをUSBで接続したら、デバイスドライバのインストールウィザードが表示されるので、「接続しない」を選んで「特定の場所からインストールするを選び」フォルダの参照ボタンを押してUSBDriverフォルダを選択して「次へ」を押すとインストールできます。
 

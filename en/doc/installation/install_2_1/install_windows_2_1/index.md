@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installation on Windows
+title: installation on windows
 ---
 
 - [Installation](./install_2_1)

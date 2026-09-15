@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "ROS2通信機能の利用"
+title: "ros2通信機能の利用"
 ---
 
 <!-- ROS2通信機能の利用 -->
@@ -71,7 +71,7 @@ CMake実行時に**FASTRTPS_ENABLE**、**ROS2_ENABLE**のオプションをONに
 
 その他の手順は通常と同じです。
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build)
 
 適当な場所にインストールしてください。
 
@@ -151,7 +151,7 @@ CMake実行時に**FASTRTPS_ENABLE**、**ROS2_ENABLE**のオプションをONに
 
 その他の手順は通常と同じです。
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build)
 
 ビルド後にインストールしてください。
 

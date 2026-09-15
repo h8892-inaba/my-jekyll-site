@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTSystemEditor、RTCBuilder のデバッグ
+title: rtsystemeditor、rtcbuilder のデバッグ
 ---
 <br>
 <a>No English version available.

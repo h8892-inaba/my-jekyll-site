@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Using the ROS2 Communication Feature"
+title: "using the ros2 communication feature"
 ---
 
 <!-- Using the ROS2 Communication Feature -->

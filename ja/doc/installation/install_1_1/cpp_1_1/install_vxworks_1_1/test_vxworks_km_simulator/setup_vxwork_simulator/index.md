@@ -1,6 +1,6 @@
 ---
 layout: page
-title: VxWorksシミュレータの設定
+title: vxworksシミュレータの設定
 ---
 
 <!-- Title: VxWorksシミュレータの設定 -->

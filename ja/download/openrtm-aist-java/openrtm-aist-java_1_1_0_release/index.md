@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Java-1.1.0-RELEASE
+title: openrtm-aist-java-1.1.0-release
 ---
 
 <!-- Title: OpenRTM-aist-Java-1.1.0-RELEASE -->
@@ -22,7 +22,7 @@ title: OpenRTM-aist-Java-1.1.0-RELEASE
   </tr>
 </table>
 
-- Windows をご利用の方は msi でのインストールを推奨します。[インストール方法](http://openrtm.org/openrtm/ja/content/windows%E3%81%B8%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB-1)
+- Windows をご利用の方は msi でのインストールを推奨します。[インストール方法]({{ site.baseurl }}/ja/doc/installation/install_1_1/java_1_1/install_windows_java_1_1)
 <!-- - ''jar ファイルおよびサンプル''は Windows と UNIX 両方で利用可能です。 -->
 
 ### Windows インストーラー
@@ -55,10 +55,10 @@ OpenRTM-aist-Java-1.1.0 の動作および開発には以下の JDK が必要で
 
 <!--
 ## 過去のバージョン
-- [1.1.0-RC1](/ja/node/4529)
-- [1.0.0-RELEASE](/ja/node/933)
-- [1.0.0-RC1](/ja/node/808)
-- [Java-0.4.2-RELEASE](/node/90)
-- [Java-0.4.1-RELEASE](/node/68)
-- [0.4.1-RC1](/node/67)
+- [1.1.0-RC1]()（リンク切れです）
+- [1.0.0-RELEASE]()（リンク切れです）
+- [1.0.0-RC1]()（リンク切れです）
+- [Java-0.4.2-RELEASE]()（リンク切れです）
+- [Java-0.4.1-RELEASE]()（リンク切れです）
+- [0.4.1-RC1]()（リンク切れです）
 -->

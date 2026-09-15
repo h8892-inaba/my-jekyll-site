@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ソースからのビルド (Windows編)
+title: ソースからのビルド (windows編)
 ---
 
 <!-- Title: ソースからのビルド (Windows編) -->
@@ -79,7 +79,7 @@ ZIPファイルを展開すると、以下の様なディレクトリツリー�
 まずソースコード OpenRTM-aist-Python-X.X.X.zip をダウンロードし、適当なディレクトリーに展開します。
 
 - [OpenRTM-aist-Python-1.1.2](http://www.openrtm.org/pub/OpenRTM-aist/python/1.1.2/)
-- [OpenRTM-aist-Python-1.1.0](http://www.openrtm.org/pub/OpenRTM-aist/python/1.1.0/)
+- [OpenRTM-aist-Python-1.1.0]()（リンク切れです）
 
 
 ## ビルド

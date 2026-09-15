@@ -1,6 +1,6 @@
 ---
 layout: page
-title: rtshell Command Reference
+title: rtshell command reference
 ---
 
 <!-- Title: rtshellコマンド・リファレンス -->

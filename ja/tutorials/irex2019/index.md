@@ -1,6 +1,6 @@
 ---
 layout: page
-title: iREX2019 （国際ロボット展） RTM講習会
+title: irex2019 （国際ロボット展） rtm講習会
 ---
 
 <!-- #ref(robomech2019_title.png,left,60%,margin=10,url=/ja/tutorial/robomech2019) -->
@@ -43,7 +43,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 
 こちらから、過去の講習会の資料および写真などがご覧いただけます。
 
-- [過去の講習会](/ja/node/130#past-training)
+- [過去の講習会]({{ site.baseurl }}/ja/tutorials#past-training)
 
 ## プログラム
 
@@ -54,7 +54,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
   </tr>
   <tr>
     <td>11:00 -12:00</td>
-    <td>**第2部(前半)：RTコンポーネントの作成入門** <br> - **担当**：宮本 信彦(産総研) <br> - **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="/ja/node/6381">チュートリアル(第2部、Windows)</a> <br> <a href="/ja/node/6382">チュートリアル(第2部、Ubuntu)</a> <br>**講義資料**:<a href="191218-02.pdf">191218-02.pdf</a></td>
+    <td>**第2部(前半)：RTコンポーネントの作成入門** <br> - **担当**：宮本 信彦(産総研) <br> - **概要**：RTシステムを設計するツールRTSystemEditorおよびRTコンポーネントを作成するツールRTCBuilderの使用方法について解説するとともに、移動ロボットのシミュレータを用いた実習によりRTCBuilder、RTSystemEditorの利用法の学習します。 <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_win">チュートリアル(第2部、Windows)</a> <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_ubuntu">チュートリアル(第2部、Ubuntu)</a> <br>**講義資料**:<a href="191218-02.pdf">191218-02.pdf</a></td>
   </tr>
   <tr>
     <td>12:00 -12:30</td>
@@ -70,7 +70,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
   </tr>
   <tr>
     <td>15:30 -16:30</td>
-    <td>**第3部：RTシステム応用実習** <br> - **担当**：宮本 信彦(産総研) <br> - **概要**：ポータブル版LibreOffice用RTCの利用方法について解説を行うとともに、表計算ソフトによるRTCのテストの実行についての実習を行います。<br> <a href="/ja/node/6905">チュートリアル(第3部、Windows)</a> <br>**講義資料**:<a href="191218-03.pdf">191218-03.pdf</a></td>
+    <td>**第3部：RTシステム応用実習** <br> - **担当**：宮本 信彦(産総研) <br> - **概要**：ポータブル版LibreOffice用RTCの利用方法について解説を行うとともに、表計算ソフトによるRTCのテストの実行についての実習を行います。<br> <a href="{{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_part4">チュートリアル(第3部、Windows)</a> <br>**講義資料**:<a href="191218-03.pdf">191218-03.pdf</a></td>
   </tr>
 </table>
 
@@ -88,7 +88,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 
 <div align="center"><a href="s_DSC04048.JPG"><img src="s_DSC04048.JPG" width="50%; margin:10px;"></a></div>
 
-- [LEGO Mindstorms EV3 活用事例](/ja/node/5864)
+- [LEGO Mindstorms EV3 活用事例]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm)
 
 ## 事前準備
 
@@ -108,7 +108,7 @@ RTミドルウエアはロボットシステムの構築を効率化するソフ
 #### Windowsの場合
 以下のソフトウェアをインストールしてください。
 
-- [Visual Studio 2019](/ja/node/6650)
+- [Visual Studio 2019]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
   - Visual C++がインストールされているかは必ず確認してください。
 - [Python 3.7](https://www.python.org/ftp/python/3.7.4/python-3.7.4-amd64.exe)
 - [CMake](https://github.com/Kitware/CMake/releases/download/v3.15.4/cmake-3.15.4-win64-x64.msi)

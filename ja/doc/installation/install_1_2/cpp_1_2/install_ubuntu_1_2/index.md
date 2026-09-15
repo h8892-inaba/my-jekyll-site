@@ -1,7 +1,7 @@
 ---
 layout: page
 
-title: Ubuntu/Debianへのインストール
+title: ubuntu/debianへのインストール
 ---
 
 <div align="right"><a href="ubuntu_logo2.png"><img src="ubuntu_logo2.png" width="100;" align="right"></a></div>

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTP 1.2系のインストール
+title: openrtp 1.2系のインストール
 ---
 <br>
 <a>No English version available.

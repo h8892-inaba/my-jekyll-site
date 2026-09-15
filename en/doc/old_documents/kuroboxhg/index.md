@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 玄箱HGへのインストール
+title: 玄箱hgへのインストール
 ---
 <br>
 <a>No English version available.
@@ -63,13 +63,13 @@ OS の入れ替え方法については、以下からダウンロードして�
 
 ダウンロードしたイメージを、この後の手順で必要な名前にリネームしてZIP圧縮したものを以下に置きます。
 
-- [image.zip](http://www.openrtm.org/OpenRTM-aist/download/KURO-BOX/image.zip)
+- [image.zip]()(No corresponding page available.)
   - これを玄箱付属 CD-ROM内のファイル image.zip と入れ替える。
 - [玄箱うぉううぉう♪](http://kuro.dsk.jp/)さんオリジナル配布物
   - ※玄箱うぉううぉう♪さんでは再配布推奨をしてるのでミラーしてます
-  - [debian_2006_06_10_dist.tar.gz](http://www.openrtm.org/OpenRTM-aist/download/KURO-BOX/debian_2006_06_10_dist.tgz)
-  - [install_debian.txt](http://www.openrtm.org/OpenRTM-aist/download/KURO-BOX/install_debian.txt)
-  - [install_debian_standalone.txt](http://www.openrtm.org/OpenRTM-aist/download/KURO-BOX/install_debian_standalone.txt)
+  - [debian_2006_06_10_dist.tar.gz]()(No corresponding page available.)
+  - [install_debian.txt]()(No corresponding page available.)
+  - [install_debian_standalone.txt]()(No corresponding page available.)
 
 ### インストーラの準備
 玄箱付属 CD-ROMの内容を適当なディレクトリーにコピーします。

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ソースからのビルド (Linux編)
+title: ソースからのビルド (linux編)
 ---
 <br>
 <a>No English version available.
@@ -47,7 +47,7 @@ UbuntuやFedora等特定のディストリビューション向けには、以�
 
 <!-- - https://svn.openrtm.org/OpenRTM-aist/trunk/OpenRTM-aist/build/ -->
 
-これらのインストールスクリプトの使い方については、[「一括インストール・スクリプト」](/content/about_installscript)のページをご覧ください。
+これらのインストールスクリプトの使い方については、[「一括インストール・スクリプト」]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script)のページをご覧ください。
 
 ### ソースのダウンロード
 
@@ -114,7 +114,7 @@ OpenRTM-aist は開発に利用している subversion リポジトリを一般�
 - autoconf
 
 等のツールが必要ですので予めインストールしておきます。
-これらの必要なツールをインストールする際、Ubuntuなどでは上で紹介した[「一括インストール・スクリプト」](/content/about_installscript)を利用することもできます。
+これらの必要なツールをインストールする際、Ubuntuなどでは上で紹介した[「一括インストール・スクリプト」]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script)を利用することもできます。
 
 - https://svn.openrtm.org/OpenRTM-aist/trunk/OpenRTM-aist/build/
 

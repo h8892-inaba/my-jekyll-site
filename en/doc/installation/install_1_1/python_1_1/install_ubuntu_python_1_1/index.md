@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Ubuntu/Debianへのインストール
+title: ubuntu/debianへのインストール
 ---
 <br>
 <a>No English version available.
@@ -47,7 +47,7 @@ OpenRTM-aist を開発・実行するために必要なパッケージをもれ�
 ただし、OpenRTM-aist 関係のすべてのパッケージをインストールするので、必要ないものもインストールされる可能性があります。
 詳しく理解している人は、手動でインストールした方がよいでしょう。
 
-詳しいインストール方法や、オプション・パッケージの種類につきましては、[一括インストール・スクリプト](/en/node/6345) をご確認ください。
+詳しいインストール方法や、オプション・パッケージの種類につきましては、[一括インストール・スクリプト]({{ site.baseurl }}/en/doc/appendix/bulk_installation_script/) をご確認ください。
 
 <!-- 以下、一括インストールスクリプトを使用したインストールの手順です。 -->
 <!-- （pkg_install_debian.sh のオプション設定も同じ） -->
@@ -212,5 +212,5 @@ openrtm-aist-python-exampleには RTC のサンプルが含まれています。
  中略
 ```
 
-以上、インストールが終了しましたら、[動作確認](/en/node/1224)へ進みましょう。
+以上、インストールが終了しましたら、[動作確認]({{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/test_linux_python_1_1)へ進みましょう。
 

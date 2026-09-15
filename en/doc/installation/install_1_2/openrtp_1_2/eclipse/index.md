@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Eclipseについて
+title: eclipseについて
 ---
 <br>
 <a>No English version available.

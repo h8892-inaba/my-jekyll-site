@@ -1,6 +1,6 @@
 ---
 layout: page
-title: NXT RTC Implementation
+title: nxt rtc implementation
 ---
 
 <!-- Title: NXT RTC の実装 -->

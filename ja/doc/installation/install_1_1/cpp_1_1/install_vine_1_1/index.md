@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Vine Linuxへのインストール
+title: vine linuxへのインストール
 ---
 
 <!-- Title: Vine Linuxへのインストール -->

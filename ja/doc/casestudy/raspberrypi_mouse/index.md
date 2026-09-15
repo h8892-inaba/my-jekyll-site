@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Raspberry Pi Mouse 活用事例
+title: raspberry pi mouse 活用事例
 ---
 
 <!-- Title: Raspberry Pi Mouse 活用事例 -->

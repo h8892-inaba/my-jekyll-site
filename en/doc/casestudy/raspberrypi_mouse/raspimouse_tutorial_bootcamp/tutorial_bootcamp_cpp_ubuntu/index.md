@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (Raspberry Pi Mouse, C++, Ubuntu, Bootcamp Edition)
+title: tutorial (raspberry pi mouse, c++, ubuntu, bootcamp edition)
 ---
 
 <!-- Title: チュートリアル(Raspberry Pi Mouse、C++、Ubuntu、強化月間用) -->
@@ -24,7 +24,7 @@ Workshops may sometimes be conducted in environments without Internet access. In
 
 ### Simulator
 
-- [RaspberryPiMouseSimulator Component](http://www.openrtm.org/openrtm/ja/content/simulator_rtc_raspbian_raspimouse)
+- [RaspberryPiMouseSimulator Component]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use)
 
 The simulator was developed using the physics engine [Open Dynamics Engine (ODE)](http://www.ode.org/) and the drawing library (drawstuff) included with ODE.
 
@@ -979,8 +979,8 @@ The following two RTCs should become visible:
 
 <div align="center"><a href="tutorial_raspimouse2.png"><img src="tutorial_raspimouse2.png" width="70%;"></a></div>
 
-- [RaspberryPiMouseRTC](/en/node/6015#toc0)
-- [RaspberryPiMouseController_DistanceSensor](/en/node/6015#toc1)
+- [RaspberryPiMouseRTC]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0)
+- [RaspberryPiMouseController_DistanceSensor]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc1)
 
 **RaspberryPiMouseRTC** is an RT Component for controlling the Raspberry Pi Mouse, developed by the Robot System Design Laboratory at Meijo University.
 

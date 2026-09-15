@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Eclipseについて
+title: eclipseについて
 ---
 
 <!-- Title: Eclipseについて -->

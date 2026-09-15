@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (Raspberry Pi Mouse, C++, Windows, Bootcamp Edition)
+title: tutorial (raspberry pi mouse, c++, windows, bootcamp edition)
 ---
 
 <!-- Title: チュートリアル(Raspberry Pi Mouse、C++、Windows、強化月間用) -->
@@ -24,7 +24,7 @@ Workshops may sometimes be conducted in environments without Internet access. In
 
 ### Simulator
 
-- [RaspberryPiMouseSimulator Component](/content/simulator_rtc_raspbian_raspimouse)
+- [RaspberryPiMouseSimulator Component]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use)
 
 The simulator was developed using the physics engine [Open Dynamics Engine (ODE)](http://www.ode.org/) and the drawing library (drawstuff) included with ODE.
 
@@ -111,7 +111,7 @@ The following environment is assumed.
 - [Visual Studio: 2017](https://www.visualstudio.com/ja-jp/downloads/download-visual-studio-vs.aspx) (2013, 2015, and 2019 are also supported)
 - [CMake](https://github.com/Kitware/CMake/releases/download/v3.14.1/cmake-3.14.1-win64-x64.msi): Version 3.5 or later recommended
 - [Python 2.7](https://www.python.org/ftp/python/2.7.16/python-2.7.16.amd64.msi)
-- [Doxygen:ftp](//ftp.stack.nl/pub/users/dimitri/doxygen-1.8.14-setup.exe)
+- [Doxygen:ftp]()(No corresponding page available.)
 
 ### Component Specifications
 
@@ -896,7 +896,7 @@ After that, the following three RTCs will become visible.
 
 <div align="center"><a href="robomech2018_7.jpg"><img src="robomech2018_7.jpg" width="60%;"></a></div>
 
-- [RaspberryPiMouseRTC](/en/node/6015#toc0)
+- [RaspberryPiMouseRTC]({{ site.baseurl }}/en/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0)
 - OpenCVCamera
 - artp
 

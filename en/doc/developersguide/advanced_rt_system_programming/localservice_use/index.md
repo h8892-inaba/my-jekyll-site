@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "How to Use LocalService"
+title: "how to use localservice"
 ---
 
 Under preparation.

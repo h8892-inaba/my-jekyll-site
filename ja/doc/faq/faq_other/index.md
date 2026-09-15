@@ -1,6 +1,6 @@
 ---
 layout: page
-title: その他 FAQ
+title: その他 faq
 ---
 
 <!-- Title: その他 FAQ -->

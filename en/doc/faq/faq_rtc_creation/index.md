@@ -1,6 +1,6 @@
 ---
 layout: page
-title: FAQ on Creating RT Components
+title: faq on creating rt components
 ---
 
 <!-- Adoc/faq/faq_rtc_creation -->

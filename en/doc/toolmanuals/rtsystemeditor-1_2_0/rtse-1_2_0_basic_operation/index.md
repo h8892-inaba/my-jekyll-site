@@ -1,6 +1,6 @@
 ---
 layout: page
-title: System Editor (Basic Operations)
+title: system editor (basic operations)
 ---
 
 <!-- Title: システムエディタ（基本操作編） -->
@@ -130,7 +130,7 @@ The meanings of these actions are as follows. Please pay attention to the execut
   </tr>
 </table>
 
-If confirmation of action execution is enabled in the online editor item of "[Settings Screen](/en/node/4885/)", a confirmation dialog is displayed before the action is executed.
+If confirmation of action execution is enabled in the online editor item of "[Settings Screen]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_1_0/rtse-1_1_0_setting)", a confirmation dialog is displayed before the action is executed.
 
 <div align="center"><a href="fig52RTCStatusChangeConfirm.png"><img src="fig52RTCStatusChangeConfirm.png" width="70%;"></a></div>
 <div align="center"><strong>Action Execution Confirmation Dialog</strong></div>
@@ -177,7 +177,7 @@ For a connection that cannot satisfy the required conditions, a prohibited mark 
 <div align="center"><strong>Connection Prohibited Mark</strong></div>
 <br>
 
-Port connections are broadly divided into data port connections and service port connections. For details, please refer to "[System Editor (Connecting Ports)](/en/node/4885/)".
+Port connections are broadly divided into data port connections and service port connections. For details, please refer to "[System Editor (Connecting Ports)]({{ site.baseurl }}/en/doc/toolmanuals/rtsystemeditor-1_1_0/rtse-1_1_0_setting)".
 
 
 ### Disconnecting a Port Connection

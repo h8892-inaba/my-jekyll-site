@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist C++ 1.1.1-RELEASE
+title: openrtm-aist c++ 1.1.1-release
 ---
 
 <!-- Title: OpenRTM-aist C++ 1.1.1-RELEASE -->
@@ -36,7 +36,7 @@ title: OpenRTM-aist C++ 1.1.1-RELEASE
 ### Windows インストーラー
 
 インストーラーで、ツールの RTSystemEditorRCP と OpenRTP を選択できるようになりました。また、ツールを起動するために必要な JRE(OpenJDK) もインストールすることができます。<br>
-これらの選択は、デフォルト設定のままインストールすることをお勧めします。オプションの選択については、[OpenRTM-aistを10分で始めよう！](http://openrtm.org/openrtm/ja/content/lets_start) のページで手順を紹介しています。
+これらの選択は、デフォルト設定のままインストールすることをお勧めします。オプションの選択については、[OpenRTM-aistを10分で始めよう！]()（リンク切れです） のページで手順を紹介しています。
 
 #### 32bit用
 
@@ -215,12 +215,12 @@ Fedora　の場合
  # yum update
 ```
 
-ダウンロード方法・インストール方法については、[こちら(C++)](/ja/node/999) をご覧くだい。
+ダウンロード方法・インストール方法については、[こちら(C++)]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1) をご覧くだい。
 
 
 ### ソースからのビルド
 
-ソースからビルドする方法については、[ソースからのビルド(Windows編)](/ja/node/793) または [ソースからのビルド(Linux編)](/ja/node/788) をご覧くだい。
+ソースからビルドする方法については、[ソースからのビルド(Windows編)]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/build_source_windows_1_1) または [ソースからのビルド(Linux編)]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/build_source_linux_1_1) をご覧くだい。
 
 ### deb/rpmパッケージ作成
 
@@ -248,7 +248,7 @@ Fedora　の場合
 ## ツール
 
 インストーラのオプションで OpenRTP を選択していれば、インストールする必要はありません。
-ツールを別途インストールする方法については、　[OpenRTP 1.1.0-RC5](/ja/node/5778) をご覧ください。
+ツールを別途インストールする方法については、　[OpenRTP 1.1.0-RC5]({{ site.baseurl }}/ja/download/tools/openrtp_1_1_0_rc5) をご覧ください。
 
 <br>
 ## リリースノート: 1.1.1-RELEASE

@@ -11,7 +11,7 @@ title: インストールおよび起動
 
 ### RTSystemEditor のインストール
 RTSystemEditor は Eclipse プラグインであるため、 Eclipse 本体および依存している他の Eclipse プラグインをまずインストールする必要があります。
-インストールに関しては、[OpenRTM Eclipse tools のインストール](/node/676) を参照願います。
+インストールに関しては、[OpenRTM Eclipse tools のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_1/openrtm_eclipse_tools_1_1) を参照願います。
 
 ### RTSystemEditor の起動
 インストール後、 Eclipse を初めて起動すると、以下のようなページが表示されます。<br>

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist (Python版)
+title: openrtm-aist (python版)
 ---
 
 <!-- Title: OpenRTM-aist (Python版) -->
@@ -21,7 +21,7 @@ Libraries for RTC development in Python language. Source code, a Windows install
 - [svn/RELENG_1_2](https://github.com/OpenRTM/OpenRTM-aist-Python/tree/svn/RELENG_1_2)-->
 
 ### Repository Status
-- [statsvn](http://www.openrtm.org/svnstat/python)
+- [statsvn]()(No corresponding page available.)
 
 ### Bug tracking
 - [redmine](http://redmine.openrtm.org/projects/openrtm-aist-python)

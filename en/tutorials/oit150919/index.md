@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 大阪工業大学RTミドルウェア講習会（９月１９日）
+title: 大阪工業大学rtミドルウェア講習会（９月１９日）
 ---
 <br>
 <a>No English version available.
@@ -41,7 +41,7 @@ title: 大阪工業大学RTミドルウェア講習会（９月１９日）
   </tr>
   <tr>
     <td>11:00 -12:30</td>
-    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：安藤慶昭・原功(産総研)<br> **概要**：RTCBuilderを使用したRTコンポーネントの作成方法を説明します。 <br> <a href="/ja/node/5022">チュートリアル（画像処理コンポーネントの作成 Windows編）</a> <br> <a href="/ja/node/430">チュートリアル（画像処理コンポーネントの作成 Linux編）</a></td>
+    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：安藤慶昭・原功(産総研)<br> **概要**：RTCBuilderを使用したRTコンポーネントの作成方法を説明します。 <br> <a href="{{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_winxp_rtmtools_vc2010">チュートリアル（画像処理コンポーネントの作成 Windows編）</a> <br> <a href="{{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_ubuntu_1404">チュートリアル（画像処理コンポーネントの作成 Linux編）</a></td>
   </tr>
   <tr>
     <td>13:30 -15:00</td>
@@ -72,15 +72,15 @@ title: 大阪工業大学RTミドルウェア講習会（９月１９日）
 - OpenRTM-aist C++ 1.1.1-RELEASE版
   - <span style="color:red;">インストールされているVisual Studioに一致するバージョンをダウンロードしてください。</span>;
   - 上記Visual C++ 2013用のインストーラは[こちら](http://openrtm.org/pub/Windows/OpenRTM-aist/cxx/1.1/OpenRTM-aist-1.1.1-RELEASE_x86_vc12.msi)
-  - 他のバージョン用は、[こちらのページ](http://openrtm.org/openrtm/ja/content/openrtm-aist-c-111-release) からダウンロードできます。
+  - 他のバージョン用は、[こちらのページ]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_1_release) からダウンロードできます。
   - インストーラは、デフォルトでOpenRTPとJREを一緒にインストールします。デフォルト設定のままインストールして下さい。
-  - [OpenRTM-aistを10分で始めよう！](http://openrtm.org/openrtm/ja/content/lets_start) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
+  - [OpenRTM-aistを10分で始めよう！]()(No corresponding page available.) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
 - [Python2.7(32bit)](https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi)
   - <span style="color:red;">OpenRTM-aistのPython版やPyYAMLをインストールする前にインストールしてください</span>;
   - OpenRTM-aist Python の64bit版をインストールされる場合は、[Python2.7(64bit)](https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi) をインストールしてください。　
 - OpenRTM-aist Python 1.1.0-RELEASE
   - 32bit版インストーラは、[こちら](http://openrtm.org/pub/Windows/OpenRTM-aist/python/OpenRTM-aist-Python_1.1.0-RELEASE_x86.msi) からダウンロードできます。
-  - 64bit版インストーラは、[こちらのページ](http://openrtm.org/openrtm/ja/content/openrtm-aist-python-110-release) からダウンロードできます。　　
+  - 64bit版インストーラは、[こちらのページ]({{ site.baseurl }}/en/download/openrtm-aist-python/openrtm-aist-python_1_1_0_release) からダウンロードできます。　　
 - [PyYAML(32bit)](http://pyyaml.org/download/pyyaml/PyYAML-3.11.win32-py2.7.exe)
   - Python2.7(64bit)をインストールされた場合は、[PyYAML(64bit)](http://pyyaml.org/download/pyyaml/PyYAML-3.11.win-amd64-py2.7.exe) をインストールしてください。　
 - [CMake](http://www.cmake.org/files/v3.2/cmake-3.2.1-win32-x86.exe)
@@ -95,13 +95,13 @@ Ubuntu14.04 x64 の環境へ以下をインストールして下さい。
 - OpenRTM-aist C++ 1.1.1-RELEASE版
   - [JVRCオンラインチュートリアル](http://jvrc.github.io/tutorials/html-ja/index.html) にChoreonoidと共にインストールする方法が解説されています。
 - OpenRTP
-  - [こちらのページ](http://openrtm.org/openrtm/ja/download/openrtp/openrtp-110-rc5-ja) からLinux用の全部入りパッケージをダウンロードできます。
+  - [こちらのページ]({{ site.baseurl }}/en/download/tools/openrtp_1_1_0_rc5) からLinux用の全部入りパッケージをダウンロードできます。
 インストール方法も解説しています。
 - OpenCV
   - 下記パッケージをインストールして下さい。<br>
 $ sudo apt-get install libopencv-dev libcv2.4 libcvaux2.4 libhighgui2.4
 - OpenCVサンプルコンポーネント(ImageProcessing)
-  - [こちら](http://openrtm.org/pub/Linux/ubuntu/dists/trusty/main/binary-amd64/imageprocessing-1.1.0.deb) からdebパッケージをダウンロード・インストールして下さい。<br>
+  - [こちら]()(No corresponding page available.) からdebパッケージをダウンロード・インストールして下さい。<br>
 $ sudo dpkg -i imageprocessing-1.1.0.deb
 
 <!-- &aname(entry); -->

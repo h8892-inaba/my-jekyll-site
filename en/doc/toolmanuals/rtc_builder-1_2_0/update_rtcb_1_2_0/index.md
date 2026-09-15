@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Update Method
+title: update method
 ---
 <!-- Title: 更新方法 -->
 #contents

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Documentation"
+title: "documentation"
 ---
 
 OpenRTM-aistはロボットシステムをコンポーネント指向開発するためのソフトウエアプラットフォームです。

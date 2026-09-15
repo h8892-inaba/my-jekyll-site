@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Java-1.1.0-RELEASE
+title: openrtm-aist-java-1.1.0-release
 ---
 <div align="right"><a href="java_logo.png"><img src="java_logo.png" width="8%;" align="right"></a></div>
 
@@ -53,10 +53,10 @@ title: OpenRTM-aist-Java-1.1.0-RELEASE
 
 <!--
 ## (G)Past version
-- [1.1.0-RC1](/ja/node/4529)
-- [1.0.0-RELEASE](/ja/node/933)
-- [1.0.0-RC1](/ja/node/808)
-- [Java-0.4.2-RELEASE](/node/90)
-- [Java-0.4.1-RELEASE](/node/68)
-- [0.4.1-RC1](/node/67)
+- [1.1.0-RC1]()(No corresponding page available.)
+- [1.0.0-RELEASE]()(No corresponding page available.)
+- [1.0.0-RC1]()(No corresponding page available.)
+- [Java-0.4.2-RELEASE]()(No corresponding page available.)
+- [Java-0.4.1-RELEASE]()(No corresponding page available.)
+- [0.4.1-RC1]()(No corresponding page available.)
 -->

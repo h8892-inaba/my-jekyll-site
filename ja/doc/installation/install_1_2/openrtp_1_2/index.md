@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTP 1.2系のインストール
+title: openrtp 1.2系のインストール
 ---
 <!-- Title: OpenRTP 1.2系のインストール -->
 <div align="left"><a href="eclipse_logo.png"><img src="eclipse_logo.png" width="15%;" align="left"></a></div>

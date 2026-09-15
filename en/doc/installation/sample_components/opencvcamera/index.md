@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "OpenCVCamera/CameraViewer and Simple OpenCV Samples"
+title: "opencvcamera/cameraviewer and simple opencv samples"
 ---
 
 <!-- Title: OpenCVCamera/CameraViewerとシンプルOpenCVサンプル -->
@@ -57,7 +57,7 @@ OpenCV RT sample components can also be inserted between them to apply image-pro
 
   - The Flip component can also modify its output by changing the value of the Configuration parameter "flip_mode." (Refer to the flip_mode example below.)
 
-    - For detailed usage and explanations of Flip, see [here](http://www.openrtm.org/openrtm/en/node/6057).
+    - For detailed usage and explanations of Flip, see [here]({{ site.baseurl }}/en/doc/casestudy/opencv_comp_development/opencv_win81_vs2015).
 
 <div align="center"><a href="new_05.png"><img src="new_05.png" width="60%;"></a></div>
 <div align="center"><strong>Flip Execution Example (RTSystemEditor)</strong></div>

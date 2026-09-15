@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェア強化月間 in 名城大学・RTミドルウェア講習会
+title: rtミドルウェア強化月間 in 名城大学・rtミドルウェア講習会
 ---
 
 <div align="center"><a href="bootcamp_meijo2014.jpg"><img src="bootcamp_meijo2014.jpg" width="80%;"></a></div>
@@ -30,13 +30,13 @@ RTミドルウェア強化月間として、名城大学天白キャンパスに
 <!-- -''参加登録'':  定員に達しましたので受付を終了しました。 -->
 <!-- -''参加者'': 6名（+講師1名） -->
 - **参加登録**: [[参加登録フォームはこちら>#entry]]
-  - 参加登録には当Webページのユーザ登録が必要です。[ユーザ登録はこちら](http://openrtm.org/openrtm/ja/user/register)
+  - 参加登録には当Webページのユーザ登録が必要です。[ユーザ登録はこちら]()（リンク切れです）
 <!-- -- [[メーリングリスト:http://www.openrtm.org/mailman/listinfo/openrtm-users]]への登録をお勧めします。必須ではありませんが、Webでご案内する事前準備についてはメーリングリストにてお知らせします。 -->
 <!-- -- なお、登録の際に問題が生じた場合は、  support(at)openrtm.org までお問い合わせください。 -->
 
 ### 他の強化月間講習会
 
-- [RTミドルウェア強化月間2019 in早稲田大学・RTミドルウェア講習会](/ja/tutorial/bootcamp_waseda_2019)
+- [RTミドルウェア強化月間2019 in早稲田大学・RTミドルウェア講習会]({{ site.baseurl }}/ja/tutorials/bootcamp_waseda_2019)
 <!-- - [[RTミドルウェア強化月間2019 in名城大学・RTミドルウェア講習会:/ja/tutorial/bootcamp_meijo_2019]] -->
 - [RTミドルウェア強化月間2019 in都産技研・OpenRTM-aistによるロボット・ソフトウェア開発](https://www.iri-tokyo.jp/seminar/190709.html)
 
@@ -83,7 +83,7 @@ RTミドルウェア強化月間として、名城大学天白キャンパスに
 
 - Visual Studio 2017推奨：[Visual Studio のダウンロード](https://visualstudio.microsoft.com/ja/downloads/?utm_source=mscom&utm_campaign=msdocs) 
   - **Visual C++がインストールされているかは必ず確認してください。**
-  - これからダウンロードされる場合、バージョンが2019となります。 [Visual Studio Community 2019のインストール](/ja/vs_install_2019) ページの手順でダウンロードできます。
+  - これからダウンロードされる場合、バージョンが2019となります。 [Visual Studio Community 2019のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022) ページの手順でダウンロードできます。
 - [Python 2.7](https://www.python.org/ftp/python/2.7.16/python-2.7.16.amd64.msi)
 - [CMake](https://github.com/Kitware/CMake/releases/download/v3.14.1/cmake-3.14.1-win64-x64.msi)
 - [Doxygen](http://doxygen.nl/files/doxygen-1.8.14-setup.exe)
@@ -91,7 +91,7 @@ RTミドルウェア強化月間として、名城大学天白キャンパスに
   - **Visual Studio 2019を使用する場合は [OpenRTM-aist-1.2.1-RC190514](https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.0/OpenRTM-aist-1.2.1-RC190514_x86_64.msi)をインストールしてください。**
   - デフォルト設定のままインストールして下さい。
 
-- [OpenRTM-aistを10分で始めよう！](https://openrtm.org/openrtm/ja/node/6521) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
+- [OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/lets_start121) を参考に、事前にサンプルコンポーネントを起動して動作確認を行っておいてください。
 
 <br>
 

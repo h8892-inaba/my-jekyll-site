@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Configuration (Advanced)"
+title: "configuration (advanced)"
 ---
 <!-- Title: コンフィギュレーション (応用編) -->
 #contents

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "SimpleIO"
+title: "simpleio"
 ---
 <!-- Title: SimpleIO -->
 

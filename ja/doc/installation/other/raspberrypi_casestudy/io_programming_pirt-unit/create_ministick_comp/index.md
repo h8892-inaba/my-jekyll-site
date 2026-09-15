@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Ministickコンポーネントの作成
+title: ministickコンポーネントの作成
 ---
 
 <!-- Title: Ministickコンポーネントの作成 -->

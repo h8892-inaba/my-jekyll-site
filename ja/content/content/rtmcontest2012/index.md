@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウエアコンテスト2012
+title: rtミドルウエアコンテスト2012
 ---
 
 <div align="center"><img src="rtmcontest2012.png" width="60%;" align="center"></div>
@@ -57,77 +57,77 @@ SI2012の申込方法、申込および原稿〆切および具体的な開催�
   </tr>
   <tr>
     <td>1G1-2</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5200/">音変換コンポーネントによる雨の不快感を解消するシステムの提案</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5200/">音変換コンポーネントによる雨の不快感を解消するシステムの提案</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td>1G1-3</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5196">RTによるプレゼンテーション支援コンポーネント群</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5196">RTによるプレゼンテーション支援コンポーネント群</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td>1G1-4</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5205">外部入力に適応しひかりが揺らぐランプの開発</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5205">外部入力に適応しひかりが揺らぐランプの開発</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td>1G1-5</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5203">対人追従ロボットの曲がり角見失い回復機能</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5203">対人追従ロボットの曲がり角見失い回復機能</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td>1G1-6</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5204">CHLACを用いて歩行と停止とを見分けられる機能のOpenRTMモジュール化</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5204">CHLACを用いて歩行と停止とを見分けられる機能のOpenRTMモジュール化</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td colspan="2">第G室　第2スロット</td>
   </tr>
   <tr>
     <td>1G2-1</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5202">ROSノード群とRTコンポーネント群との連携によるRoombaの高機能化</a></td>
+    <td><a href="">ROSノード群とRTコンポーネント群との連携によるRoombaの高機能化</a>（リンク切れです）</td>
   </tr>
   <tr>
     <td>1G2-2</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5183">モーションキャプチャディバイスを利用可能にするRSNP Gateway RTCの開発</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5183">モーションキャプチャディバイスを利用可能にするRSNP Gateway RTCの開発</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td>1G2-3</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5173">RTCビルダ on the Web</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5173">RTCビルダ on the Web</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td>1G2-4</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5208">コマンド式サーボモータを用いたロボットアームRTC</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5208">コマンド式サーボモータを用いたロボットアームRTC</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td>1G2-5</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5198">Windowsが動作する超小型SEED PCを用いた分散型RTシステム</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5198">Windowsが動作する超小型SEED PCを用いた分散型RTシステム</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td>1G2-6</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5197">クワッドロータを制御するRTコンポーネント群</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5197">クワッドロータを制御するRTコンポーネント群</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td colspan="2">第G室　第3スロット</td>
   </tr>
   <tr>
     <td>1G3-1</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5199">RTMで動作する人追尾可能なカメラモジュールの開発</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5199">RTMで動作する人追尾可能なカメラモジュールの開発</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td>1G3-2</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5188">MRPTを用いた環境地図作成用RTコンポーネント</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5188">MRPTを用いた環境地図作成用RTコンポーネント</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td>1G3-3</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5194">高性能ロボットシミュレータMORSEを利用するためのRTコンポーネント群</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5194">高性能ロボットシミュレータMORSEを利用するためのRTコンポーネント群</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td>1G3-4</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5191">小型ヒューマノイドのためのRTMを用いた共通プラットフォームの開発</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5191">小型ヒューマノイドのためのRTMを用いた共通プラットフォームの開発</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td>1G3-5</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5116">組込み機器用RTコンポーネント開発環境 ATDE for OpenRTM-aist</a></td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5116">組込み機器用RTコンポーネント開発環境 ATDE for OpenRTM-aist</a>（Projectページはリンク切れです）</td>
   </tr>
   <tr>
     <td>1G3-6</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5201">対戦アルゴリズムを容易に変更可能なエアホッケーロボットRTC</a></td>
+    <td><a href="">対戦アルゴリズムを容易に変更可能なエアホッケーロボットRTC</a>（リンク切れです）</td>
   </tr>
 </table>
 
@@ -179,7 +179,7 @@ SI2012の申込方法、申込および原稿〆切および具体的な開催�
 
 発表する作品は、
 
-- OpenRTM-aist Webサイトの[プロジェクト](http://www.openrtm.org/openrtm/ja/content/%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88-0)として登録すること。（プロジェクトページに紹介ビデオを掲載することを推奨）
+- OpenRTM-aist Webサイトの[プロジェクト]()（リンク切れです）として登録すること。（プロジェクトページに紹介ビデオを掲載することを推奨）
 - ソースコードをオープンにすること。
 - 分かりやすいマニュアルを添付し、できるだけ第三者が結果を再現できるようにすること。
 - 参考にしたRTコンポーネントやソースコードがある場合は、マニュアル・論文中で出典を明記してオリジナル作者に敬意を払うこと。
@@ -196,7 +196,7 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 応募作品が集まりましたら、本Webサイト上で掲示いたします。
 応募作品を実際に動かしてみるなどして試していただき、どのような環境で動作したか/しなかったか、バグやその修正のためのパッチ情報、作品に対するコメントや感想を作品のプロジェクトページに書き込み、作者にフィードバックすることが出来ます。
 これらのフィードバックを元に応募者が改良を加え、SI2012でのプレゼンテーションまでに、より良い作品になるようご協力ください。
-- [コメントの書き方ガイド](http://www.openrtm.org/openrtm/ja/node/4569)
+- [コメントの書き方ガイド]({{ site.baseurl }}/ja/content/content/rtmcontest_commentguide)
 
 ### 奨励賞を提供する
 
@@ -211,7 +211,7 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 - 奨励賞 (団体協賛) : 10件、副賞２万円
 - 奨励賞 (個人協賛) : 5件、副賞１万円
 
-総合評価として一番優秀な成果に対して、最優秀賞として「計測自動制御学会RTミドルウエア賞」を、 また、それぞれのスポンサーの視点から魅力的な開発成果に対して奨励賞を表彰いたします。多くの支持を集めた魅力的な作品ほど数多く奨励賞を獲得する、一種の投票システムになっています。（詳細は**[表彰(協賛)ページ](http://www.openrtm.org/openrtm/ja/node/5184/)**参照）
+総合評価として一番優秀な成果に対して、最優秀賞として「計測自動制御学会RTミドルウエア賞」を、 また、それぞれのスポンサーの視点から魅力的な開発成果に対して奨励賞を表彰いたします。多くの支持を集めた魅力的な作品ほど数多く奨励賞を獲得する、一種の投票システムになっています。（詳細は**[表彰(協賛)ページ]({{ site.baseurl }}/ja/content/content/rtmcontest2012_award)**参照）
 
 ### ビギナー限定奨励賞
 
@@ -227,19 +227,19 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 
 ## 過去のコンテスト情報
 
-- [RTミドルウエアコンテスト2007](http://www.openrtm.org/rt/RTMcontest/2007/)
-（[応募作品](http://www.openrtm.org/rt/RTMcontest/2007/entry_public.html)）
-- [RTミドルウエアコンテスト2008](http://www.openrtm.org/rt/RTMcontest/2008/)
-（[応募作品](http://www.openrtm.org/rt/RTMcontest/2008/entry.html)）
-- [RTミドルウエアコンテスト2009](http://www.openrtm.org/rt/RTMcontest/2009/)
+- [RTミドルウエアコンテスト2007]({{ site.baseurl }}/ja/content/content/rtmcontest2007)
+（[応募作品]({{ site.baseurl }}/ja/content/content/rtmcontest2007/entry_public)）
+- [RTミドルウエアコンテスト2008]({{ site.baseurl }}/ja/content/content/rtmcontest2008)
+（[応募作品]({{ site.baseurl }}/ja/content/content/rtmcontest2008/entry_public)）
+- [RTミドルウエアコンテスト2009]({{ site.baseurl }}/ja/content/content/rtmcontest2009)
 （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2009?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）
-- [RTミドルウエアコンテスト2010](http://www.openrtm.org/rt/RTMcontest/2010/)
+- [RTミドルウエアコンテスト2010]({{ site.baseurl }}/ja/content/content/rtmcontest2010)
 （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2010?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）
-- [RTミドルウエアコンテスト2011](http://www.openrtm.org/rt/RTMcontest/2011/) 
-（[応募作品](http://www.openrtm.org/openrtm/contests/2011)）
+- [RTミドルウエアコンテスト2011]({{ site.baseurl }}/ja/content/content/rtmcontest2011) 
+（[応募作品](http://www.openrtm.org/openrtm/contests/2011)（Projectページはリンク切れです））
 
 ## お問い合わせ
-まず、[コンテストのFAQ](http://www.openrtm.org/openrtm/ja/node/5121)を確認いただき、問い合わせ内容に応じて下記に連絡ください。
+まず、[コンテストのFAQ]({{ site.baseurl }}/ja/content/content/rtmcontest_faq)を確認いただき、問い合わせ内容に応じて下記に連絡ください。
 
 - 応募に関すること：~
 RTミドルウエアコンテスト事務局   [RTMcontest2012-ml<at>aist.go.jp](mailto:rtmcontest2012-ml@aist.go.jp)
@@ -248,8 +248,8 @@ RTミドルウエアコンテスト事務局   [RTMcontest2012-ml<at>aist.go.jp]
 ロボットビジネス推進協議会事務局   [RTMcontest-JARA-ml<at>aist.go.jp](mailto:rtmcontest-jara-ml@aist.go.jp)
 
 - RTミドルウエアの技術的なご相談：~
-RTミドルウエアの[フォーラム](http://www.openrtm.org/openrtm/ja/node/281)や、
-[メーリングリスト](http://www.openrtm.org/openrtm/ja/node/275) [ rtm-users<at>openrtm.org ：要事前登録] にお問い合わせいただき、情報の共有に御協力ください。
+RTミドルウエアの[フォーラム]({{ site.baseurl }}/ja/community/forum)や、
+[メーリングリスト]()（「メーリングリスト」のページはリンク切れです） [ rtm-users<at>openrtm.org ：要事前登録] にお問い合わせいただき、情報の共有に御協力ください。
 
 ```
  RTミドルウエアコンテスト2012 事務局
@@ -264,7 +264,7 @@ RTミドルウエアの[フォーラム](http://www.openrtm.org/openrtm/ja/node/
 ## 事前登録（エントリーされる方は必須）
 エントリ希望者は、個別に連絡が取れるように、以下のフォームを使って事前登録して下さい。（SI2012の講演申込を済ませてから正式登録となります。重要な案内をお送りするための事前登録ですので、**エントリを迷っている時は気軽に事前登録**してください）
 
-- 事前登録するまえに当Webページのユーザ登録をお願いします。[ユーザ登録はこちら](http://openrtm.org/openrtm/ja/user/register)
+- 事前登録するまえに当Webページのユーザ登録をお願いします。[ユーザ登録はこちら]()（リンク切れです）
 - 当Webサイトにログイン済みの方は<span style="color:red;">名前の欄にユーザ登録されたユーザ名が出ますが、必ず、氏名に書き換え</span>;てください。
 
 <span style="color:red;">※お手数ですが、ログインしていただくと、登録フォームが表示されます</span>;

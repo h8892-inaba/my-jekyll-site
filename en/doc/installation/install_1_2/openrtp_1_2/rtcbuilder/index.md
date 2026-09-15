@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTCBuilderのインストール
+title: rtcbuilderのインストール
 ---
 <br>
 <a>No English version available.
@@ -112,7 +112,7 @@ RTCBuilderはEclipseプラグインであるため、Eclipse本体をインス�
 Eclipseを直接導入した場合はRTCBuilderのビルドが必要です。
 以下のページの手順でプラグインの生成、導入を行ってください。
 
-- [RTCBuilder、RTSystemEditorのビルド](https://openrtm.org/openrtm/ja/build_12_openrtp)
+- [RTCBuilder、RTSystemEditorのビルド](https://openrtm.org/openrtm/ja/build_12_openrtp)(No corresponding English project page available.)(No corresponding English project page available.)
 
 ### RTCBuilderの起動
 

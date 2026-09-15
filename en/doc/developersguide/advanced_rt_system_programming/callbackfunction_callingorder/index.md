@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Order in Which Callback Functions Are Called During Connector Creation and Data Transfer"
+title: "order in which callback functions are called during connector creation and data transfer"
 ---
 
 Coming soon

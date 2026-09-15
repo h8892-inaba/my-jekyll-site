@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Composite"
+title: "composite"
 ---
 
 <!-- Title: Composite -->

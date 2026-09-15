@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 会津大学RTミドルウェア講習会（６月２４日）
+title: 会津大学rtミドルウェア講習会（６月２４日）
 ---
 
 <div align="center"><img src="aizu_logo.gif" width="75%;"></div>
@@ -47,11 +47,11 @@ title: 会津大学RTミドルウェア講習会（６月２４日）
   </tr>
   <tr>
     <td>11:10 - 12:30</td>
-    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：安藤慶昭(産総研)<br> **概要**：RT システムを設計するツールRTSystemEditor およびRT コンポーネントを作成するツールRTCBuilder の使用方法について解説するとともに、RTCBuilder を使用したRT コンポーネントの作成方法を実習形式で体験していただきます。<br> **講義資料:**<a href="150624-02.pdf">150624-02.pdf</a>; <br> <a href="/ja/node/5022">チュートリアル（画像処理コンポーネントの作成 Windows編）</a> <br> <a href="/ja/node/430">チュートリアル（画像処理コンポーネントの作成 Linux編）</a></td>
+    <td>**第2部: RTコンポーネントの作成入門**<br> **担当**：安藤慶昭(産総研)<br> **概要**：RT システムを設計するツールRTSystemEditor およびRT コンポーネントを作成するツールRTCBuilder の使用方法について解説するとともに、RTCBuilder を使用したRT コンポーネントの作成方法を実習形式で体験していただきます。<br> **講義資料:**<a href="150624-02.pdf">150624-02.pdf</a>; <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/opencv_comp_development/opencv_winxp_rtmtools_vc2010">チュートリアル（画像処理コンポーネントの作成 Windows編）</a> <br> <a href="{{ site.baseurl }}/ja/doc/casestudy/opencv_comp_development/opencv_ubuntu_1404">チュートリアル（画像処理コンポーネントの作成 Linux編）</a></td>
   </tr>
   <tr>
     <td>13:30 - 16:30</td>
-    <td>**第3部：プログラミング実習** <br> 担当：Geoffrey Biggs(産総研) <br> **概要**：OpenRTM-aist を利用してコンポーネントを作成し実際にロボットを動かします。 <br>**講義資料:**<a href="150624-03.pdf">150624-03.pdf</a>; <br><a href="150624-04.pdf">150624-04.pdf</a>; <br> <a href="/ja/node/5269">チュートリアル</a></td>
+    <td>**第3部：プログラミング実習** <br> 担当：Geoffrey Biggs(産総研) <br> **概要**：OpenRTM-aist を利用してコンポーネントを作成し実際にロボットを動かします。 <br>**講義資料:**<a href="150624-03.pdf">150624-03.pdf</a>; <br><a href="150624-04.pdf">150624-04.pdf</a>; <br> <a href="{{ site.baseurl }}/ja/doc/installation/other/raspberrypi_casestudy">チュートリアル</a></td>
   </tr>
   <tr>
     <td>16:30 - 16:40</td>

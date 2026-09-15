@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (EV3, Part 3)
+title: tutorial (ev3, part 3)
 ---
 
 <!-- Title: Tutorial (EV3, Part 3) -->

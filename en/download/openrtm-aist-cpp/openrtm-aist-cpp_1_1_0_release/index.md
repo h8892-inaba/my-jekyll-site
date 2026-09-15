@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-1.1.0-RELEASE
+title: openrtm-aist-1.1.0-release
 ---
 
 <!-- Title: 1.1.0-RELEASE -->

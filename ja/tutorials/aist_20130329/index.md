@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 産総研・RTミドルウエア講習会（2013年3月29日）
+title: 産総研・rtミドルウエア講習会（2013年3月29日）
 ---
 
 <div align="center"><img src="aist_tutorial_130329.jpg" width="60%;" ></div>
@@ -47,7 +47,7 @@ title: 産総研・RTミドルウエア講習会（2013年3月29日）
   </tr>
   <tr>
     <td>14:00-17:00</td>
-    <td>第４部：RTコンポーネント作成実習　講義資料:<a href="http://openrtm.org/openrtm/ja/node/5286">webページ.pdf</a></td>
+    <td>第４部：RTコンポーネント作成実習　講義資料:<a href="">webページ.pdf</a></td>
     <td>宮本晴美 (産総研)</td>
   </tr>
 </table>
@@ -102,7 +102,7 @@ title: 産総研・RTミドルウエア講習会（2013年3月29日）
 ### 実習で必要なファイル
 
 - [RTC.xml](./RTC.xml)
-- [Flipコンポーネントの作成](http://openrtm.org/openrtm/ja/node/5286)
+- [Flipコンポーネントの作成]()
 
 <!-- ***Linuxで必要なソフトウエア -->
 

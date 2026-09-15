@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ソースからのビルド (Windows編、ランタイムライブラリ/MT・/MTd指定)
+title: ソースからのビルド (windows編、ランタイムライブラリ/mt・/mtd指定)
 ---
 <br>
 <a>No English version available.

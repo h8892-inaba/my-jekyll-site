@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist (Java版) に関する FAQ 
+title: openrtm-aist (java版) に関する faq 
 ---
 
 <!-- Title: OpenRTM-aist (Java版) に関する FAQ -->
@@ -79,7 +79,7 @@ OS が FedoraCore の場合、yum にて Java をインストールすると GCJ
 不具合が発生した場合は、まず、Oracle の Java が使用されているかの確認をしてください。
 
 - 参考 
-  - [[JDKインストールのためのヒント: /ja/node/805#fedora]]
-  - |[[UNIX系環境で簡易に Oracle の Java を Eclipse に適用する方法: /ja/node/248#rtclinksunjava]]
+  - [JDKインストールのためのヒント]({{ site.baseurl }}/ja/doc/installation/install_1_1/java_1_1/tips_jdk#fedora)
+  - [UNIX系環境で簡易に Oracle の Java を Eclipse に適用する方法]({{ site.baseurl }}/ja/doc/faq/faq_rtp_tools#rtclinksunjava)
 
 

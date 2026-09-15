@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(RTM講習会、第3部)
+title: チュートリアル(rtm講習会、第3部)
 ---
 
 <!-- Title: チュートリアル(RTM講習会、第3部) -->
@@ -82,11 +82,11 @@ EV3 には以下のデバイスが付属しています。
 
 ケーブルに接続するポート、デバイス名は記載してあります。
 
-他のデバイスを取り付ける場合は、[チュートリアル(EV3)](/ja/node/6381#toc30)を参考にしてください。
+他のデバイスを取り付ける場合は、[チュートリアル(EV3)]({{ site.baseurl }}/ja/doc/casestudy/lego_mindstorm/lego_rtm_seminar/tutorial_ev3_win#toc30)を参考にしてください。
 
 ## EV3との接続
 ### ノートPCとRaspberry Piの接続
-[第二部](/ja/node/6551)の、実機での動作確認まで完了してください。
+[第二部]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2)の、実機での動作確認まで完了してください。
 この時点でノートPCとアクセスポイントのRaspberry Piが接続されているはずです。
 
 

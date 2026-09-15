@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "RTシステム開発の流れ"
+title: "rtシステム開発の流れ"
 ---
 
 <!-- Title: RTシステム開発の流れ -->

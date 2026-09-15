@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Guide Map
+title: guide map
 ---
 
 ## Tsukuba Central 2, Headquarters and Information Technology Building, 1st Floor

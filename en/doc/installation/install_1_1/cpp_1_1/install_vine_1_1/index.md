@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Vine Linuxへのインストール
+title: vine linuxへのインストール
 ---
 <br>
 <a>No English version available.

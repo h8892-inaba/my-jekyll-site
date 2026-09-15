@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 移動ロボットKobukiの制御
+title: 移動ロボットkobukiの制御
 ---
 <!-- Title: 移動ロボットKobukiの制御 -->
 <!-- * 移動ロボット Kobuki の制御 -->

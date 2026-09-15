@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTP 1.2.2
+title: openrtp 1.2.2
 ---
 
 <!-- Title: OpenRTP 1.2.2 -->
@@ -118,7 +118,7 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
 
 <!-- ※Fedora用一括インストール・スクリプトはOpenRTM-aist 1.2.0版以降対応予定です。 -->
 
-オプションを指定することで、目的に合わせたパッケージをインストールできるようになりました。インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト](/ja/node/6345)をご確認ください。
+オプションを指定することで、目的に合わせたパッケージをインストールできるようになりました。インストール方法やオプション、パッケージの種類につきましては、[一括インストール・スクリプト]({{ site.baseurl }}/ja/doc/appendix/bulk_installation_script)をご確認ください。
 
 1.2.1-RELEASEを既にインストールしている場合はアップデートが可能です。
 
@@ -133,7 +133,7 @@ Ubuntu/Debianの場合
 <!--  -->
 <!-- # dnf update -->
 
-ダウンロード方法・インストール方法については、[OpenRTP1.2系のインストール](/ja/doc/installation/install_1_2/eclipse)をご覧くだい。
+ダウンロード方法・インストール方法については、[OpenRTP1.2系のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/openrtp_1_2)をご覧くだい。
 
 ### JDK8のインストール
 OpenRTPの実行にはJDK8を別途インストールする必要がある場合があります。
@@ -141,7 +141,7 @@ OpenRTPの実行にはJDK8を別途インストールする必要がある場合
  Java -version
 ```
 コマンドで1.8.0等のJDK8を意味するバージョンが表示されない場合や、ライセンス等の理由により違ったディストリビューションをインストールしたい場合は下記のリンクを参考にしてインストールしてください。
-- [JDK8のインストール](/ja/node/6911)
+- [JDK8のインストール]({{ site.baseurl }}/ja/doc/installation/common/install_jdk8)
 
 ### OpenRTPの起動方法
 &aname(dl_allinone_win);
@@ -149,7 +149,7 @@ OpenRTPの実行にはJDK8を別途インストールする必要がある場合
 #### Windowsでの起動
 
 デスクトップのショートカットをクリックして起動します。スタートメニューでは、[OpenRTM-aist 1.2.2 ***]をクリックすると表示されるメニュー群からOpenRTPをクリックします。
-[OpenRTM-aistを10分で始めよう！](/ja/doc/installation/lets_start122)のページで手順を紹介しています。
+[OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/lets_start)のページで手順を紹介しています。
 
 #### Linuxでの起動
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウエアコンテスト2012表彰（協賛）
+title: rtミドルウエアコンテスト2012表彰（協賛）
 ---
 No English version available.
 

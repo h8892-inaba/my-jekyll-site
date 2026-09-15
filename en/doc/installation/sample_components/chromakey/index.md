@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Chromakey"
+title: "chromakey"
 ---
 
 <!-- Title: Chromakey -->

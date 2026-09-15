@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "ROS通信機能の利用"
+title: "ros通信機能の利用"
 ---
 <!-- Title: ROS通信機能の利用 -->
 #contents
@@ -54,7 +54,7 @@ CMake実行時に**ROS_ENABLE**のオプションをONにします。
 
 その他の手順は通常と同じです。
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build)
 
 ビルド後にインストールしてください。
 
@@ -128,7 +128,7 @@ CMake実行時に**ROS_ENABLE**のオプションをONにします。
 
 その他の手順は通常と同じです。
 
-- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/installation/install_2_0/cpp_2_0/build_2_0/openrtm_cpp_cmake_build)
+- [OpenRTM-aistのビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build)
 
 ビルド後にインストールしてください。
 

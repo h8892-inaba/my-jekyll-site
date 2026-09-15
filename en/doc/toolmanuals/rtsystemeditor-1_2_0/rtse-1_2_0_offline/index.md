@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Offline System Editor
+title: offline system editor
 ---
 <!-- Title: オフラインシステムエディタ -->
 #contents

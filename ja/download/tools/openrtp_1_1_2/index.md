@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTP 1.1.2
+title: openrtp 1.1.2
 ---
 
 init
@@ -56,7 +56,7 @@ init
 - <span style="color:red;">※ Python 2.7.10 推奨。2.7.11 は PYTHONPATH 等環境変数の設定が必要な場合があります。</span>;
 - <span style="color:red;">※ 古い RTShell は事前に削除しておいてください。</span>;
 
-インストールについては、[OpenRTM-aistを10分で始めよう！](http://openrtm.org/openrtm/ja/node/6026) のページで手順を紹介しています。<br>
+インストールについては、[OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2) のページで手順を紹介しています。<br>
 
 &aname(dl_allinone_linux);
 ### Linux パッケージ
@@ -166,7 +166,7 @@ eclipse というディレクトリーが展開されますので、そのなか
 RTCBuilderでは、OpenRTM-aist (C++版) に付属の IDL を参照しています。
 Linux版ではこれら IDL の場所を得るために、<span style="color:red;">環境変数を設定するか、openrtp というコマンドから起動する必要があります。</span>;<br>
 
-各ディストリビューションについて JDK 7 のインストール方法を [JDK インストールのためのヒント ](/ja/content/tipsjava100) にまとめましたので参考にしてください。<br>
+各ディストリビューションについて JDK 7 のインストール方法を [JDK インストールのためのヒント ]({{ site.baseurl }}/ja/doc/installation/install_1_1/java_1_1/tips_jdk) にまとめましたので参考にしてください。<br>
 
 ```
  $ cd /usr/share/openrtm-1.1.2
@@ -204,7 +204,7 @@ Linux 版や Mac OS X 版ではこれら IDL の場所を得るために、<span
 
 - OpenRTP 更新サイト: http://openrtm.org/pub/openrtp/stable/updates/
 
-手順については[更新方法](http://openrtm.org/openrtm/ja/content/openrtp_plugin_update)のページをご覧下さい。
+手順については[更新方法]({{ site.baseurl }}/ja/doc/toolmanuals/rtcbuilder-1_1_0/update_rtcb_1_1_0)のページをご覧下さい。
 
 <br>
 &aname(binary);
@@ -281,7 +281,7 @@ Linux 版や Mac OS X 版ではこれら IDL の場所を得るために、<span
 - ログの出力先をユーザーが指定できるように修正
 
 ## 過去のバージョン
-- [OpenRTP-1.1.0-RC5](/ja/download/openrtp/openrtp-110-rc5-ja)
+- [OpenRTP-1.1.0-RC5]()（リンク切れです）
 <!-- - [[OpenRTP-1.1.0-RC4:/ja/download/openrtp/openrtp-110-rc4-ja]] -->
 <!-- - [[OpenRTP-1.1.0-RC3:/ja/download/openrtp/openrtp-110-rc3-ja]] -->
 <!-- - [[RTSystemEditor・RTCBuilder-1.0.0-RELEASE>/node/941]] -->

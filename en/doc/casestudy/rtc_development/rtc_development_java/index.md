@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creating RT Components (Java Version)
+title: creating rt components (java version)
 ---
 
 init
@@ -31,23 +31,23 @@ The environment required to run OpenRTM-aist-Java is as follows.<br>
 </table>
 <br>
 <br>
-For details on how to install OpenRTM-aist-Java, refer to the ["OpenRTM-aist-Java Installation Manual (UNIX)"](/en/node/804) or the ["OpenRTM-aist-Java Installation Manual (Windows)"](/en/node/807). In particular, check the following before proceeding with the work below.
+For details on how to install OpenRTM-aist-Java, refer to the ["OpenRTM-aist-Java Installation Manual (UNIX)"]({{ site.baseurl }}/en/doc/installation/install_1_1/java_1_1/install_linux_java_1_1) or the ["OpenRTM-aist-Java Installation Manual (Windows)"]({{ site.baseurl }}/en/doc/installation/install_1_1/java_1_1/install_windows_java_1_1). In particular, check the following before proceeding with the work below.
 - The version displayed when executing "java -version" matches the JDK above
 <!-- ---環境変数 JAVA_HOME に上記JDKのインストールフォルダーが設定されていること -->
 - The path (base path) to the OpenRTM-aist-Java library is set in the environment variable RTM_JAVA_ROOT
 <!-- ---<JAVA_HOME>\jre\lib\ext\にOpenRTM-aist-0.4.x.jarとcommons-cli-1.1.jar が存在すること -->
 - The library files OpenRTM-aist-0.4.x.jar and commons-cli-1.1.jar exist in the directory "jar" directly under the path set by <RTM_JAVA_ROOT> (to set them as the classpath) **Note**
-: **Note** It is also possible to set your own classpath by referring to [this page ](/en/node/6426#Antbuild).|
+: **Note** It is also possible to set your own classpath by referring to [this page ]({{ site.baseurl }}/en/doc/faq/faq_rtc_creation#Antbuild).|
 
 <br>
 
 **◆Reference:**
-  - [ JDK 5 installation method (UNIX) ](/en/node/805/), [ JDK 5 installation method (Windows) ](/en/node/807)
-  - [ How to set system environment variables (UNIX)](/en/node/804#hensu), [ How to set system environment variables (Windows) ](/en/node/807#javazip)
+  - [ JDK 5 installation method (UNIX) ]({{ site.baseurl }}/en/doc/installation/install_1_1/java_1_1/tips_jdk), [ JDK 5 installation method (Windows) ]({{ site.baseurl }}/en/doc/installation/install_1_1/java_1_1/install_windows_java_1_1)
+  - [ How to set system environment variables (UNIX)]({{ site.baseurl }}/en/doc/installation/install_1_1/java_1_1/install_linux_java_1_1#hensu), [ How to set system environment variables (Windows) ]({{ site.baseurl }}/en/doc/installation/install_1_1/java_1_1/install_windows_java_1_1#javazip)
 <!-- --[[OpenRTM-aist-Java-0.4 のインストール（UNIX） >/ja/node/659#instjava04]][[OpenRTM-aist-Java-0.4のインストール（Windows） >/ja/node/666#instjava04]] -->
 <!-- --[[FAQ: 「java -version」がインストールした JDK とは違うバージョンとなります（Windows） >/ja/node/1190#JDKver]] -->
-  - [FAQ: Support for FedoraCore when installing Java ](/en/node/6425#javafedora)
-  - [FAQ: How can I set a classpath to any folder and perform an Ant build? ](/en/node/6426#Antbuild)
+  - [FAQ: Support for FedoraCore when installing Java ]({{ site.baseurl }}/en/doc/faq/faq_openrtm_java#javafedora)
+  - [FAQ: How can I set a classpath to any folder and perform an Ant build? ]({{ site.baseurl }}/en/doc/faq/faq_rtc_creation#Antbuild)
 <br>
 
 &aname(javacomp);
@@ -161,7 +161,7 @@ The above MyService.idl is identical to the one in the "examples/Java/RTMExample
 
 
 ## Procedure for Developing RT Components Using the GUI 
-This section explains the procedure for developing RT components using RtcTemlate, a GUI tool. For details on RtcTemplate, refer to [Installing RtcLink and RtcTemplate](/node/) and [RtcTemplate](/node/).
+This section explains the procedure for developing RT components using RtcTemlate, a GUI tool. For details on RtcTemplate, refer to [Installing RtcLink and RtcTemplate]()(No corresponding page available.) and [RtcTemplate]()(No corresponding page available.).
 ### Integration of RtcTemplate and JDT
 - **Open Eclipse as "New"**<br>
 RT components can also be developed from projects in the Eclipse integrated development environment. Specify a new workspace and click the [OK] button. Eclipse starts. (At this time, a "Welcome" screen may be displayed; close it.)<br>
@@ -182,7 +182,7 @@ In the "New Project" wizard, select "Java Project" and click the [Next] button.|
 <div align="center"><strong>Figure 2-4 Creating a build project 2</strong></div>
 <br>
 
-In the next step of the "New Project" wizard, enter the "Project name" to be created. Confirm that the setting in the "JDK Compliance" group is "5.0" or higher (or 1.5 or higher), and then click the [Next] button (**Figure 2-5**). On the other hand, depending on the environment, the "JDK Compliance" frame may be a "JRE" frame, and JDK5 (or JDK1.5) may not be selectable from the pull-down menu (**Figure 2-5**'). In that case, refer to [this page ](/en/node/159#errorjavaJDK) to make it possible to select the JDK.|<br>
+In the next step of the "New Project" wizard, enter the "Project name" to be created. Confirm that the setting in the "JDK Compliance" group is "5.0" or higher (or 1.5 or higher), and then click the [Next] button (**Figure 2-5**). On the other hand, depending on the environment, the "JDK Compliance" frame may be a "JRE" frame, and JDK5 (or JDK1.5) may not be selectable from the pull-down menu (**Figure 2-5**'). In that case, refer to [this page ]({{ site.baseurl }}/en/doc/casestudy/rtc_development/about_rtc_creation#errorjavaJDK) to make it possible to select the JDK.|<br>
 <div align="center"><a href="MakeProjectForBulid3.png"><img src="MakeProjectForBulid3.png" width="60%;"></a></div>
 <div align="center"><strong>Figure 2-5 Creating a build project 3</strong></div>
 <br>
@@ -195,7 +195,7 @@ In the next step of the "New Project" wizard, enter the "Project name" to be cre
 
 
 - **Reference:**
-  - → [FAQ: Q. A new Java project cannot be created as JDK5 (1.5) compliant ](/en/node/159#errorjavaJDK)|
+  - → [FAQ: Q. A new Java project cannot be created as JDK5 (1.5) compliant ]({{ site.baseurl }}/en/doc/casestudy/rtc_development/about_rtc_creation#errorjavaJDK)|
 <br>
 <br>
 <br>
@@ -228,8 +228,8 @@ Start the RtcTemplate editor screen.
 <br>
 
 - **Reference:**
-  - → [Starting RtcTemplate directly](/en/node/737#startTemplate)
-**Note** For information on how to use RtcTemplate, refer to [RtcTemplate](/node).
+  - → [Starting RtcTemplate directly]()(No corresponding page available.)
+**Note** For information on how to use RtcTemplate, refer to [RtcTemplate]()(No corresponding page available.).
 <br>
 <br>
 
@@ -307,7 +307,7 @@ Manually copy the IDL file specified by "IDL path:" in the RtcTemplate editor to
 ### Building with Eclipse
 
 - **Ant build**~
-You can build the target RT component by right-clicking build_Sample.xml in the Package Explorer and selecting [Run] > [Ant Build] from the displayed context menu. If you need to use your own jar libraries, or if OpenRTM-aist is installed in a different location, refer to [this page ](/en/node/159#Antbuild) to build by setting the classpath to any location.<br>
+You can build the target RT component by right-clicking build_Sample.xml in the Package Explorer and selecting [Run] > [Ant Build] from the displayed context menu. If you need to use your own jar libraries, or if OpenRTM-aist is installed in a different location, refer to [this page ]({{ site.baseurl }}/en/doc/casestudy/rtc_development/about_rtc_creation#Antbuild) to build by setting the classpath to any location.<br>
 
 <div align="center"><a href="BuildProject.png"><img src="BuildProject.png" width="70%;"></a></div>
 <div align="center"><strong>Figure 2-14 Building the project</strong></div>
@@ -321,7 +321,7 @@ When the build succeeds, class files are generated in the "classes" directory in
 <br>
 <br>
 - **Reference**
-  - [**FAQ**: Q. How can I set a classpath to any folder and perform an Ant build? ](/en/node/159#Antbuild)|
+  - [**FAQ**: Q. How can I set a classpath to any folder and perform an Ant build? ]({{ site.baseurl }}/en/doc/casestudy/rtc_development/about_rtc_creation#Antbuild)|
 <br>
 <br>
 <br>
@@ -344,10 +344,10 @@ The above **rtc.conf** is identical to the one in the "examples/Java/RTMExamples
 <br>
 <br>
 - **Starting the name server and RtcLink**~
-Start the name server by double-clicking start-orbd.vbs in the "bin" directory included with OpenRTM-aist-0.4-Java (Windows), or by executing start-orbd.sh (UNIX). Also start [RtcLink](/node/).
+Start the name server by double-clicking start-orbd.vbs in the "bin" directory included with OpenRTM-aist-0.4-Java (Windows), or by executing start-orbd.sh (UNIX). Also start [RtcLink]()(No corresponding page available.).
   - Reference:
-    - [ Starting the name server (UNIX) ](/en/node/660#samplecomponent), [ Starting the name server (Windows) ](/en/node/667#javasample)
-    - [Starting RtcLink >RtcLink#startRtcLink](/node/)
+    - [ Starting the name server (UNIX) ]()(No corresponding page available.), [ Starting the name server (Windows) ]()(No corresponding page available.)
+    - [Starting RtcLink >RtcLink#startRtcLink]()(No corresponding page available.)
 <br>
 <br>
 - **Executing the RT component**<br>

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows) 
+title: チュートリアル(rtコンポーネントの作成入門、raspberry pi mouse、windows) 
 ---
 
 <!-- Title: チュートリアル(RTM講習会、Windows、第2部) -->
@@ -35,7 +35,7 @@ title: チュートリアル(RTコンポーネントの作成入門、Raspberry 
 
 ### シミュレーター
 
-- [RaspberryPiMouseSimulator コンポーネント](/ja/node/6198)
+- [RaspberryPiMouseSimulator コンポーネント]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_simulator_use)
 
 シミュレーターは [Open Dynamics Engine(ODE)](http://www.ode.org/) という物理演算エンジンと ODE 付属の描画ライブラリ(drawstuff)を使用して開発しています。
 OpenGL が動作すれば動くので、大抵の環境で動作するはずです。
@@ -120,14 +120,14 @@ GUI(スライダー)によりシミュレーター上のロボットの操作を
 以下の環境を想定しています。
 
 - OS: Windows 10(7、8.1、11も可)
-- [Visual Studio Community 2022のインストール](/ja/node/6650)
+- [Visual Studio Community 2022のインストール]({{ site.baseurl }}/ja/doc/installation/install_1_2/cpp_1_2/install_windows_1_2/visual_studio_1_2/visual_studio_2022)
 - [Python 3.10](https://www.python.org/downloads/windows/)
   - [python-3.10.7-amd64.exe (64bit版)](https://www.python.org/ftp/python/3.10.7/python-3.10.7-amd64.exe)
 - [CMake](https://cmake.org/download/)
   - [cmake-3.24.2-windows-x86_64.msi (64bit版)](https://github.com/Kitware/CMake/releases/download/v3.24.2/cmake-3.24.2-windows-x86_64.msi)
 - [Doxygen](http://www.doxygen.nl/download.html) 
   - [doxygen-1.9.5-setup.exe](https://www.doxygen.nl/files/doxygen-1.9.5-setup.exe)
-- [OpenRTM-aist-2.0.0-RELEASE](https://openrtm.org/openrtm/ja/download)
+- [OpenRTM-aist-2.0.0-RELEASE]({{ site.baseurl }}/ja/download)
   - [OpenRTM-aist-2.0.0-RELEASE_x86_64.msi (64bit版)](https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.0-RELEASE_x86_64.msi)
 
 
@@ -1001,7 +1001,7 @@ Edge、Chrome、Firefox等のWEBブラウザで**192.168.11.1**のアドレス�
 <br>
 <br>
 
-すると[RaspberryPiMouseRTC](/ja/node/6015#toc0)という RTC が見えるようになります。
+すると[RaspberryPiMouseRTC]({{ site.baseurl }}/ja/doc/casestudy/raspberrypi_mouse/raspimouse_rtc_on_raspbian#toc0)という RTC が見えるようになります。
 
 <div align="center"><a href="robomech2018_7.jpg"><img src="robomech2018_7.jpg" width="70%;"></a></div>
 

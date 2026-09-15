@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Service Port Configuration Procedure"
+title: "service port configuration procedure"
 ---
 
 #contents

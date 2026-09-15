@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Initial Setup of EV3 and ev3dev
+title: initial setup of ev3 and ev3dev
 ---
 
 <!-- Title: Initial Setup of EV3 and ev3dev -->

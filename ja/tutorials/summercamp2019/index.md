@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアサマーキャンプ2019
+title: rtミドルウェアサマーキャンプ2019
 ---
 
 <div align="center"><a href="summercamp2019_title3.png"><img src="summercamp2019_title3.png" width="100%;"></a></div>
@@ -436,7 +436,7 @@ title: RTミドルウェアサマーキャンプ2019
 ### グループ1
 
 - **課題**: 　きゃりーきゃりー
-  - [プロジェクトページ](/ja/project/SummerCamp2019_group1)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2019_group1)（Projectページはリンク切れです）(no_page)
 <!-- Invalid YouTube URL: http://www.slideshare.net/161183595 -->
 
   - 開発モデル発表
@@ -458,7 +458,7 @@ title: RTミドルウェアサマーキャンプ2019
 ### グループ2
 
 - **課題**:　ねずpiパーティ４
-- [プロジェクトページ](/ja/project/SummerCamp2019_group2)(no_page)
+- [プロジェクトページ](/ja/project/SummerCamp2019_group2)（Projectページはリンク切れです）(no_page)
 <!-- Invalid YouTube URL: http://www.slideshare.net/161184296 -->
 
   - 開発モデル発表
@@ -480,7 +480,7 @@ title: RTミドルウェアサマーキャンプ2019
 ### グループ3
 
 - **課題**:　Dot-to-Dot
-  - [プロジェクトページ](/ja/project/SummerCamp2019_group3)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2019_group3)（Projectページはリンク切れです）(no_page)
 <!-- Invalid YouTube URL: http://www.slideshare.net/161184499 -->
 
   - 開発モデル発表
@@ -502,7 +502,7 @@ title: RTミドルウェアサマーキャンプ2019
 ### グループ4
 
 - **課題**:　Laundry machine
-  - [プロジェクトページ](/ja/project/SummerCamp2019_group4)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2019_group4)（Projectページはリンク切れです）(no_page)
 <!-- Invalid YouTube URL: http://www.slideshare.net/161184727 -->
 
   - 開発モデル発表
@@ -519,7 +519,7 @@ title: RTミドルウェアサマーキャンプ2019
 ### グループ5
 
 - **課題**:　疲れたあなたを癒します
-  - [プロジェクトページ](/ja/project/SummerCamp2019_group5)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2019_group5)（Projectページはリンク切れです）(no_page)
 <!-- Invalid YouTube URL: http://www.slideshare.net/161184978 -->
 
   - 開発モデル発表

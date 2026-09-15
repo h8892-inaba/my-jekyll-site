@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Linuxへのインストール
+title: linuxへのインストール
 ---
 <br>
 <a>No English version available.
@@ -46,9 +46,9 @@ OpenRTM-aist-Java は、JDK7 上で動作します。oracle の対象プラッ�
 <!-- &color(red){''※ Fedora Core への Java のインストールについては注意が必要です:''}; -->
 ※ Fedora でエラーになった場合は、以前の情報ですが下記が役立つかもしれません
 
-　→ [**FAQ:** Java をインストールする際の FedoraCore での対応について ](/node/1190#javafedora)
+　→ [**FAQ:** Java をインストールする際の FedoraCore での対応について ]({{ site.baseurl }}/en/doc/faq/trouble_shooting#javafedora)
 
-　→ [**FAQ:** Q. Fedora Core 上でRtcLink の NameService View にエラーがでる ](/en/node/248#fedoraNS)
+　→ [**FAQ:** Q. Fedora Core 上でRtcLink の NameService View にエラーがでる ]({{ site.baseurl }}/en/doc/faq/faq_rtp_tools#fedoraNS)
 <br>
 
 ### インストールの確認
@@ -79,12 +79,12 @@ OpenRTM-aist-Java は、JDK7 上で動作します。oracle の対象プラッ�
 解凍先は任意でかまいませんが、ディレクトリー構造は変更しないでください**※**。
 また、この解凍先に含まれる「jar」フォルダーへのパスは次に取り上げるシステム環境変数 RTM_JAVA_ROOT に設定しなければなりません。
 
-**※** 何らの事情で、解凍後のフォルダー構造を自由な配置・自由な選択としたい場合は[こちら ](/node/159#Antbuild)を参照してください。
+**※** 何らの事情で、解凍後のフォルダー構造を自由な配置・自由な選択としたい場合は[こちら ]({{ site.baseurl }}/en/doc/casestudy/rtc_development/about_rtc_creation#Antbuild)を参照してください。
 
 <br>
 参考：
 
-　→ [**FAQ:** Q. 任意のフォルダーにクラスパスを設定して Ant ビルドを行う方法は？ ](/node/159#Antbuild)
+　→ [**FAQ:** Q. 任意のフォルダーにクラスパスを設定して Ant ビルドを行う方法は？ ]({{ site.baseurl }}/en/doc/casestudy/rtc_development/about_rtc_creation#Antbuild)
 
 
 &aname(hensu);
@@ -108,7 +108,7 @@ OpenRTM-aist-Java は、JDK7 上で動作します。oracle の対象プラッ�
 とするか（.bashrc に環境変数を設定した場合）、あるいはシステムを再起動します。
 
 <br>
-**※** 環境変数 RTM_JAVA_ROOTを.bashrc（bash の場合）などのユーザー設定にしたのか、あるいは、/etc/profile（bashの場合）などにシステムワイドに設定したのかで、GUI ツールである Eclipse の起動方法が変わってきます。 →　[Eclipse の起動方法 ](/node/248#eclipse)を参照
+**※** 環境変数 RTM_JAVA_ROOTを.bashrc（bash の場合）などのユーザー設定にしたのか、あるいは、/etc/profile（bashの場合）などにシステムワイドに設定したのかで、GUI ツールである Eclipse の起動方法が変わってきます。 →　[Eclipse の起動方法 ]({{ site.baseurl }}/en/doc/faq/faq_rtp_tools#eclipse)を参照
 
 **※※** 解凍時には「jar」ディレクトリーはクラスライブラリ「OpenRTM-aist-X.X.X.jar」(X.X.Xはバージョン)と「commons-cli-1.1.jar」の二つのファイルを含んだ状態で、「OpenRTM-aist\<version>」の直下にあります。
 したがって、ディレクトリー構造を変えなければ、環境変数 RTM_JAVA_ROOT は必ずその値の末尾に「OpenRTM-aist\<version>」を持つという形になります。
@@ -208,6 +208,6 @@ OpenRTM-aist-Java と 必要な jar ファイルが含まれています。
 ### JavaDocEn
 英語のクラスリファレンス（Javadoc HTML 形式）が含まれています。
 
-ここまで確認できたら[動作確認（Linux 編）](/en/node/1229)へ進みましょう。
+ここまで確認できたら[動作確認（Linux 編）]({{ site.baseurl }}/en/doc/installation/install_1_1/java_1_1/test_linux_java_1_1)へ進みましょう。
 
 

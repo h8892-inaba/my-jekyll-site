@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "TAOのビルド"
+title: "taoのビルド"
 ---
 <!-- Title: TAOのビルド -->
 #contents

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアコンテスト2014奨励賞一覧
+title: rtミドルウェアコンテスト2014奨励賞一覧
 ---
 No English version available.
 
@@ -30,7 +30,7 @@ RTシステムの技術の蓄積と共有を促進することを狙って優れ
 
 ### ウィン電子工業賞【提供：[有限会社ウィン電子工業](http://www.win-ei.com/)】 
 
-<div align="left"><a href="http://www.openrtm.org/openrtm/sites/default/files/5406/Award-win-ei.jpg"><img src="http://www.openrtm.org/openrtm/sites/default/files/5406/Award-win-ei.jpg" width="20%;" align="center"></a></div>
+<div align="left"><a href="{{ site.baseurl }}/en/./Award-win-ei.jpg"><img src="http://www.openrtm.org/openrtm/sites/default/files/5406/Award-win-ei.jpg" width="20%;" align="center"></a></div>
 **名刺サイズの組込CPUボードとIOボードとのセット**（RaspberryPi、PiRT-Unit、Xbee、SDカード他　一式） 1式提供<br> 
 
 ウィン電子工業は、RTミドルウエアがロボット分野を越えて普及し、それに伴い分野を越えた技術の交換がなされ発展して行く事を望んでおります。RTミドルウエアコンテストでは、
@@ -40,7 +40,7 @@ RTシステムの技術の蓄積と共有を促進することを狙って優れ
 以上の２つの視点から審査いたします．
 
 ### HOTMOCK賞【提供: [株式会社ホロンクリエイト](http://www.hol-on.com)】
-<div align="left"><a href="http://www.openrtm.org/openrtm/sites/default/files/5627/HOTMOCK_AnalogKit.png"><img src="http://www.openrtm.org/openrtm/sites/default/files/5627/HOTMOCK_AnalogKit.png" width="20%;" align="center"></a></div>
+<div align="left"><a href="{{ site.baseurl }}/en/./HOTMOCK_AnalogKit.png"><img src="http://www.openrtm.org/openrtm/sites/default/files/5627/HOTMOCK_AnalogKit.png" width="20%;" align="center"></a></div>
 **「フィジカル・ラピッド・プロトタイピング」HOTMOCK** <br>
 **「新しい使い方・体験のアイデアを誰でもすぐ形にできる開発用電子キット」** <br>
 

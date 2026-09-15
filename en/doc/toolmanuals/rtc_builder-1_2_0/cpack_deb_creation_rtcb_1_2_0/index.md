@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creating a deb with CPack (Linux)
+title: creating a deb with cpack (linux)
 ---
 
 <!-- Title: CPack で deb 作成 （Linux） -->

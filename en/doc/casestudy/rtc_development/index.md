@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creating RT Components
+title: creating rt components
 ---
 
 

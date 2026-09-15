@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (Raspberry Pi Mouse, Bootcamp Edition)
+title: tutorial (raspberry pi mouse, bootcamp edition)
 ---
 
 <!-- チュートリアル(Raspberry Pi Mouse、強化月間用) -->

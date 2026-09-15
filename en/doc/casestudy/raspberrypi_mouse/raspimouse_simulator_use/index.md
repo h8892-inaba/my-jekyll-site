@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Simulator Usage
+title: simulator usage
 ---
 
 <!-- Title: Simulator Usage -->

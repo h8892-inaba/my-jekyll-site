@@ -3,8 +3,7 @@ layout: page
 title: 10分で始めよう！
 ---
 
-init
-https://openrtm.org/openrtm/ja/node/6026/
+<!-- https://openrtm.org/openrtm/ja/node/6026/-->
 <!-- Title: 10分で始めよう！ -->
 #contents
 最新バージョン OpenRTM-aist-1.1.2-RELEASE では C++版、Python版、Java版を一度にインストールできるようになりました。
@@ -23,7 +22,7 @@ Python 2.7 をインストールしていない場合は、OpenRTM-aist はイ�
 
 ## OpenRTM-aist インストール
 ここでは32bit用インストーラー OpenRTM-aist-1.1.2-RELEASE_x86.msi を使った手順を紹介します。
-インストーラーのダウンロードは、[OpenRTM-aist-1.1.2-RELEASE](/ja/node/6034) をご覧ください。
+インストーラーのダウンロードは、[OpenRTM-aist-1.1.2-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release) をご覧ください。
 
 
 

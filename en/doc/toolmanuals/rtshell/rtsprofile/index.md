@@ -1,6 +1,6 @@
 ---
 layout: page
-title: rtsprofile Module
+title: rtsprofile module
 ---
 
 init

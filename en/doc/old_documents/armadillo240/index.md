@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Armadillo240へのインストール
+title: armadillo240へのインストール
 ---
 <br>
 <a>No English version available.

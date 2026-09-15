@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Papers (2004 and earlier)
+title: papers (2004 and earlier)
 ---
 
 ## Domestic Conferences

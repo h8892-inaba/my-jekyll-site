@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアサマーキャンプ2021
+title: rtミドルウェアサマーキャンプ2021
 ---
 
 <div align="center"><a href="summercamp2021.jpg"><img src="summercamp2021.jpg" width="100%;"></a></div>
@@ -49,9 +49,9 @@ RTミドルウェア講習会に参加したことがある，もしくは同等
 <!-- なお、例年強化月間と称して、7月に事前講習会を実施していますが、今年は原則実施ことといたします。&color(red){ (確認) } -->
 これまで講習会を受講したことがない場合は、以下のチュートリアルを自習することで参加資格を満たしたことにいたします。
 
-- [RTミドルウェアを10分で始めよう](/doc/installation/lets_start122) (インストールとサンプルの動作確認)
-- [画像処理コンポーネントの作成](https://www.openrtm.org/openrtm/ja/node/6057) (画像処理コンポーネントの作成練習、USBカメラor内蔵カメラが必要)
-- [ROBOMECH2021RTM講習会](https://www.openrtm.org/openrtm/ja/tutorial/robomech2021) (移動ロボット実機を制御するコンポーネントの作成)
+- [RTミドルウェアを10分で始めよう]({{ site.baseurl }}/ja/doc/installation/lets_start122) (インストールとサンプルの動作確認)
+- [画像処理コンポーネントの作成]({{ site.baseurl }}/ja/doc/casestudy/opencv_comp_development/opencv_win81_vs2015) (画像処理コンポーネントの作成練習、USBカメラor内蔵カメラが必要)
+- [ROBOMECH2021RTM講習会]({{ site.baseurl }}/ja/tutorials/robomech2021) (移動ロボット実機を制御するコンポーネントの作成)
 
 チュートリアル開催を希望する場合は、申込みフォームにその旨記入してください。
 希望人数が5名以上の場合オンラインチュートリアル（上記、ROBOMECH2021 RTM講習会の内容）を開催します。
@@ -446,8 +446,8 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 - **マニュアル，ドキュメント** → プロジェクトページに自分で格納
   - 今回作成したシステムを第三者が再現できる情報をマニュアル化してください。
   - 過去のサマーキャンプやコンテストのプロジェクトを参照してください
-    - [RTMサマーキャンプ2019作品一覧](https://openrtm.org/openrtm/ja/tutorial/summercamp2019#toc15)(no_page)
-    - [RTMコンテスト2019作品一覧](https://openrtm.org/openrtm/ja/contests/2019)(no_page)
+    - [RTMサマーキャンプ2019作品一覧]({{ site.baseurl }}/ja/tutorials/summercamp2019#toc15)(no_page)
+    - [RTMコンテスト2019作品一覧](https://openrtm.org/openrtm/ja/contests/2019)（Projectページはリンク切れです）(no_page)
 - **SysMLやＵＭＬなどのモデルをつくったらそのデータ** → プロジェクトページに自分で格納
   - モデリングツールでモデル作成をした場合はそのデータ
   - 最終成果報告会の発表資料にモデルが含まれていればそれでも結構です
@@ -494,7 +494,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### 名城大グループ
 
 - **課題**:
-  - [プロジェクトページ](/ja/project/SummerCamp2021_group1)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2021_group1)（Projectページはリンク切れです）(no_page)
   - 最終成果発表資料
 
 <!-- <nowiki> -->
@@ -518,7 +518,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### 芝浦工業大グループ
 
 - **課題**: 
-  - [プロジェクトページ](/ja/project/SummerCamp2021_group2)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2021_group2)（Projectページはリンク切れです）(no_page)
 <!-- -- 最終成果発表資料 -->
 <!-- <nowiki> -->
 <!-- [video:http://www.slideshare.net/238367796] -->
@@ -543,7 +543,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### 東京都立大グループ
 
 - **課題**: 
-  - [プロジェクトページ](/ja/project/SummerCamp2021_group3)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2021_group3)（Projectページはリンク切れです）(no_page)
 
 <!-- -- 最終成果発表資料 -->
 <!-- <nowiki> -->

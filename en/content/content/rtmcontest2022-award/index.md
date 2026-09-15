@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTミドルウェアコンテスト2022奨励賞一覧
+title: rtミドルウェアコンテスト2022奨励賞一覧
 ---
 
 No English version available.
@@ -27,7 +27,7 @@ RTシステムの技術の蓄積と共有を促進することを狙って優れ
 
 ### 川崎重工業賞
 #### 【提供：[川崎重工業株式会社 精密機械・ロボットカンパニー](https://kawasakirobotics.com/jp/)】
-<div align="left"><a href="https://openrtm.org/openrtm/sites/default/files/7217/duAro.png"><img src="https://openrtm.org/openrtm/sites/default/files/7217/duAro.png" width="60%;" align="center"></a></div>
+<div align="left"><a href="{{ site.baseurl }}/en/./duAro.png"><img src="https://openrtm.org/openrtm/sites/default/files/7217/duAro.png" width="60%;" align="center"></a></div>
 **川崎重工業株式会社 双腕スカラロボット「duAro」のプラモデル 数量 7** <br>
 
 ロボットソフトウェア開発者に不可欠なミドルウェアに精通する技術者として活躍されることを期待し、全応募チームへ「duAro」プラモデルを贈ります。

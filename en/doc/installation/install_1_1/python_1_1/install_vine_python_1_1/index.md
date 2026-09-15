@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Vine Linuxへのインストール
+title: vine linuxへのインストール
 ---
 <br>
 <a>No English version available.
@@ -24,7 +24,7 @@ Vine Linux へのインストールの方法には大きく分けて以下の二
 openrtm.org が提供するインストール・スクリプト **pkg_install_python_vine.sh** をダウンロードページからダウンロードし、root 権限で実行します。
 このスクリプトは、必要なパッケージを順次 apt-get でインストールしていきます。
 
-- [パッケージインストールスクリプト](http://www.openrtm.org/OpenRTM-aist/download/install_scripts/)
+- [パッケージインストールスクリプト]()(No corresponding page available.)
 
 OpenRTM-aist を開発・実行するために必要なパッケージをもれなくインストールしてくれるので大変便利です。
 初めて OpenRTM-aist をインストールしてみる方にお勧めします。
@@ -120,5 +120,5 @@ OpenRTM-aist-Python-example には RTC のサンプルが含まれています�
 ```
 
 
-以上、インストールが終了しましたら、[動作確認](/en/node/1224)へ進みましょう。
+以上、インストールが終了しましたら、[動作確認]({{ site.baseurl }}/en/doc/installation/install_1_1/python_1_1/test_linux_python_1_1)へ進みましょう。
 

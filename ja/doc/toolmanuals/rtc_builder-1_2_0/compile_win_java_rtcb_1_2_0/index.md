@@ -1,6 +1,6 @@
 ---
 layout: page
-title: コンパイル方法 (Windows、Java 編 )
+title: コンパイル方法 (windows、java 編 )
 ---
 
 <!-- Title: コンパイル方法 (Windows、Java 編 ) -->

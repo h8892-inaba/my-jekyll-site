@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Service Port (Advanced)"
+title: "service port (advanced)"
 ---
 <!-- Title: サービスポート (応用編) -->
 #contents

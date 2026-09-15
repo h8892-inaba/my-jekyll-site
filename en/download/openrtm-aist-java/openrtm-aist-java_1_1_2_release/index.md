@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist-Java-1.1.2-RELEASE
+title: openrtm-aist-java-1.1.2-release
 ---
 <!-- Title: OpenRTM-aist-Java-1.1.2-RELEASE -->
 <div align="right"><a href="java_logo.png"><img src="java_logo.png" width="100;" align="right"></a></div>
@@ -64,7 +64,7 @@ title: OpenRTM-aist-Java-1.1.2-RELEASE
 <!-- -&color(red){※ Python 2.7.10 推奨。2.7.11は PYTHONPATH 等環境変数の設定が必要な場合があります。}; -->
 <!-- -&color(red){※ 古い rtshell は事前に削除しておいてください。}; -->
 
-For installation, [OpenRTM-aist in 10 minutes!](http://openrtm.org/openrtm/en/node/6026) page introduces the procedure. <br>
+For installation, [OpenRTM-aist in 10 minutes!]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/install_windows_1_1/quick_start_1_1_2/) page introduces the procedure. <br>
 <!-- インストールについては、[[OpenRTM-aistを10分で始めよう！:http://openrtm.org/openrtm/ja/node/6026]] のページで手順を紹介しています。&br; -->
 
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: チュートリアル(Raspberry Pi Mouse)
+title: チュートリアル(raspberry pi mouse)
 ---
 
 <!-- Title: チュートリアル(Raspberry Pi Mouse) -->

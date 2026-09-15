@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Compilation Method (Windows, Using CMake, C++)
+title: compilation method (windows, using cmake, c++)
 ---
 <!-- Title: コンパイル方法 (Windows、CMake 利用、C++ 編 ) -->
 This section explains how to build on Windows.

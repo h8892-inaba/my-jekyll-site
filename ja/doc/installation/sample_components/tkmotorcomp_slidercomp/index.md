@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "TkMotorComp/SliderComp"
+title: "tkmotorcomp/slidercomp"
 ---
 
 <!-- Title: TkMotorComp/SliderComp -->

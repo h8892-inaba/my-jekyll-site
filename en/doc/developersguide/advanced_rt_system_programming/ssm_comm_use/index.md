@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Using the SSM Communication Feature"
+title: "using the ssm communication feature"
 ---
 
 <!-- Title: Using the SSM Communication Feature -->

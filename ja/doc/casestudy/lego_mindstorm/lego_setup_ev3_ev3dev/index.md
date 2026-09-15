@@ -1,6 +1,6 @@
 ---
 layout: page
-title: EV3 および ev3dev の初期設定
+title: ev3 および ev3dev の初期設定
 ---
 
 <!-- Title: EV3 および ev3dev の初期設定 -->

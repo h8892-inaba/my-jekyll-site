@@ -1,6 +1,6 @@
 ---
 layout: page
-title: NXT RTC の実装
+title: nxt rtc の実装
 ---
 
 <!-- Title: NXT RTC の実装 -->

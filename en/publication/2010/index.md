@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Paper (2010)
+title: paper (2010)
 ---
 
 ## Journal

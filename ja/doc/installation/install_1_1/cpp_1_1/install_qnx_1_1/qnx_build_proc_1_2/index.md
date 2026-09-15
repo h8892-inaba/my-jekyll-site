@@ -1,6 +1,6 @@
 ---
 layout: page
-title: QNXでのビルド手順(OpenRTM-aist 1.2)
+title: qnxでのビルド手順(openrtm-aist 1.2)
 ---
 
 <!-- Title: QNXでのビルド手順(OpenRTM-aist 1.2) -->
@@ -14,7 +14,7 @@ title: QNXでのビルド手順(OpenRTM-aist 1.2)
 pkg_src、omniORB、libuuidのビルド手順については以下のページを参考にしてください。
 
 
-- [OpenRTM-aist(C++版)のCMakeによるビルド手順](/ja/node/6339) 
+- [OpenRTM-aist(C++版)のCMakeによるビルド手順]({{ site.baseurl }}/ja/doc/developersguide/advanced_rt_system_programming/openrtm_cpp_cmake_build) 
 
 
 

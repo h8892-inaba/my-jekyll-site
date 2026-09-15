@@ -1,6 +1,6 @@
 ---
 layout: page
-title: rtctree Module
+title: rtctree module
 ---
 
 <!-- Title: rtctreeモジュール -->

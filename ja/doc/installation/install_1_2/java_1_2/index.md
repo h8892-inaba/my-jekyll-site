@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist(Java版)1.2系のインストール
+title: openrtm-aist(java版)1.2系のインストール
 ---
 
 - [Windowsへのインストール](./windows_java_1_2)

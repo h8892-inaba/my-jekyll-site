@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist1.2系のインストール(Windows、MSIインストーラー使用)
+title: openrtm-aist1.2系のインストール(windows、msiインストーラー使用)
 ---
 
 <!-- Title: OpenRTM-aist1.2系のインストール(Windows、MSIインストーラー使用) -->

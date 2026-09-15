@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Raspbianへのインストール
+title: raspbianへのインストール
 ---
 <br>
 <a>No English version available.

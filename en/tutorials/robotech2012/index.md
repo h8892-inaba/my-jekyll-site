@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ROBOTECH RTミドルウエア講習会 (2012年7月11日～13日) 
+title: robotech rtミドルウエア講習会 (2012年7月11日～13日) 
 ---
 <br>
 <a>No English version available.
@@ -72,9 +72,9 @@ title: ROBOTECH RTミドルウエア講習会 (2012年7月11日～13日)
   </tr>
   <tr>
     <td>**10:30-12:30**</td>
-    <td>RTミドルウエア <br> インストールワークショップ１ <br> 講師：菅 佑樹 氏<br> <a href="/ja/node/5017">講習概要</a><br><a href="./120711-01.pdf">講演資料</a></td>
-    <td>RTミドルウエア <br> インストールワークショップ２ <br> 講師：菅 佑樹 氏<br> <a href="/ja/node/5025">講習概要</a><br><a href="./120712-01.pdf">講演資料</a></td>
-    <td>RTミドルウエア <br> インストールワークショップ３ <br> 講師：坂本 武志 氏<br>(グローバルアシスト) <br> <a href="/ja/node/5026">講習概要</a><br><a href="./120713-01.pdf">講演資料</a></td>
+    <td>RTミドルウエア <br> インストールワークショップ１ <br> 講師：菅 佑樹 氏<br> <a href="">講習概要</a>(No corresponding page available.)<br><a href="./120711-01.pdf">講演資料</a></td>
+    <td>RTミドルウエア <br> インストールワークショップ２ <br> 講師：菅 佑樹 氏<br> <a href="">講習概要</a>(No corresponding page available.)<br><a href="./120712-01.pdf">講演資料</a></td>
+    <td>RTミドルウエア <br> インストールワークショップ３ <br> 講師：坂本 武志 氏<br>(グローバルアシスト) <br> <a href="">講習概要</a>(No corresponding page available.)<br><a href="./120713-01.pdf">講演資料</a></td>
   </tr>
   <tr>
     <td>**12:30-13:30**</td>
@@ -90,9 +90,9 @@ title: ROBOTECH RTミドルウエア講習会 (2012年7月11日～13日)
   </tr>
   <tr>
     <td>**14:00-16:00**</td>
-    <td>RTミドルウエア <br> 人型ロボットワークショップ（仮題）<br> 講師：原功　氏<br>（産業技術総合研究所）<br> <a href="/ja/node/5029">講習概要</a><br><a href="./120711-02.pdf">講演資料</a></td>
-    <td>RTミドルウエア <br> リファレンスロボットアーム <br> OROCHIワークショップ<br> 講師：菅 佑樹 氏 <br> <a href="/ja/node/5030">講習概要</a><br><a href="./120712-02.pdf">講演資料</a></td>
-    <td>RTミドルウエア <br> Androidワークショップ（仮題） <br> 講師：(株)セック川口 仁 氏 <br> <a href="/ja/node/5031">講習概要</a><br><a href="./120713-02.pdf">講演資料</a></td>
+    <td>RTミドルウエア <br> 人型ロボットワークショップ（仮題）<br> 講師：原功　氏<br>（産業技術総合研究所）<br> <a href="">講習概要</a>(No corresponding page available.)<br><a href="./120711-02.pdf">講演資料</a></td>
+    <td>RTミドルウエア <br> リファレンスロボットアーム <br> OROCHIワークショップ<br> 講師：菅 佑樹 氏 <br> <a href="">講習概要</a>(No corresponding page available.)<br><a href="./120712-02.pdf">講演資料</a></td>
+    <td>RTミドルウエア <br> Androidワークショップ（仮題） <br> 講師：(株)セック川口 仁 氏 <br> <a href="">講習概要</a>(No corresponding page available.)<br><a href="./120713-02.pdf">講演資料</a></td>
   </tr>
 </table>
 
@@ -112,7 +112,7 @@ title: ROBOTECH RTミドルウエア講習会 (2012年7月11日～13日)
 - **必要機材**：WindowsXP以上が動作するPC
 - **必要ソフトウエア**：OpenRTM-aist-1.1.0, Python2.6, RTC Builder, RTSytemEditor, JDK7
 - **概要**： ロボット用の分散コンポーネントミドルウエアであるOpenRTM-aistの概要についてインストール手順から説明します。OpenRTM-aistを使うと何が出来るのか、何が便利になるのか、また実際にどのように開発するのかといった基本的内容から、コンポーネントの基本機能や開発の実際、各種ツールの利用方法など技術的内容について解説します。
-  - [講習概要](/ja/node/5017) ([7月12日分](/ja/node/5025):内容は同じです)
+  - [講習概要]()(No corresponding page available.) ([7月12日分]()(No corresponding page available.):内容は同じです)
   - [講演資料・RTミドルウエア「OppenRTM‐aist」入門](./120711-01.pdf)
 
 
@@ -122,7 +122,7 @@ title: ROBOTECH RTミドルウエア講習会 (2012年7月11日～13日)
 - **必要機材**：Windows7以上が動作するPC （USBポートの空きが2つ以上あること、CPUは2.66GHz以上で複数コアがある方が望ましい）
 - **必要ソフトウエア**：OpenRTM-aist-1.1.0, RT SytemEditor, VC++2010, Choreonoid-1.1, OpenHRI, KINECT for Windows SDK
 - **概要**：多関節型のロボットの動作パターンを生成するためのツールであるChoreonidについて解説し、G-ROBOTを使って幾つかの動作パターンを作成する実習を行います。また、OpenHRIを用いてG-ROBOTに音声コマンドを作成していきます。
-  - [講習概要](/ja/node/5029)
+  - [講習概要]()(No corresponding page available.)
   - [講演資料・RTミドルウエア 人型ロボットワークショップ](./120711-02.pdf)
 
 ### RTミドルウエア　リファレンスロボットアーム「OROCHI」ワークショップ
@@ -131,7 +131,7 @@ title: ROBOTECH RTミドルウエア講習会 (2012年7月11日～13日)
 - **必要機材**：なし
 - **必要ソフトウエア**：なし
 - **概要**：RTミドルウエアプロジェクトで開発された、RTミドルウエアの実証実験用標準機（リファレンスハードウエア）である「OROCHI」の使用法について解説します。講演とデモですので、ご用意いただくものはございません。RTミドルウエアに対応したロボットのメリットや使いこなしについて講演いたします。
-  - [講習概要](/ja/node/5030)
+  - [講習概要]()(No corresponding page available.)
   - [講演資料・RTミドルウエアリファレンスハードウエア OROCHI](./120712-02.pdf)
 
 ### RTミドルウエアインストールワークショップ(その2)
@@ -140,7 +140,7 @@ title: ROBOTECH RTミドルウエア講習会 (2012年7月11日～13日)
 - **必要ソフトウエア**：OpenRTM-aist-1.1.0, Python2.6, RTC Builder, RTSytemEditor, JDK7
 - **概要**： ロボット用の分散コンポーネントミドルウエアであるOpenRTM-aistの概要についてインストール手順から説明します。OpenRTM-aistを使うと何が出来るのか、何が便利になるのか、また実際にどのように開発するのかといった基本的内容から、コンポーネントの基本機能や開発の実際、各種ツールの利用方法など技術的内容について解説します。
   - その1とは内容が異なります
-  - [講習概要](/ja/node/5026)
+  - [講習概要]()(No corresponding page available.)
   - [講演資料・RTミドルウェアインストールワークショップ](./120713-01.pdf)
 
 ### RTミドルウエアAndroidワークショップ
@@ -150,9 +150,9 @@ title: ROBOTECH RTミドルウエア講習会 (2012年7月11日～13日)
 - **必要ソフトウエア**：* OpenRTM-aist(C++) <span style="color:red;">1.0.2-RELEASE</span>;(omni-ORB, RT SytemEditor, サンプルRTCを含む), ** RTM on Android, Androidアプリ開発環境（JDK, Android SDK,2.3.3 Eclipse[Javaの開発環境を含む]）, Android端末接続用USBドライバ（ADBコマンドが使えるようにしておく）
 - **概要**：（予定）株式会社セックが開発したAndroid用RTミドルウェアであるRTM on Androidの解説をし、RTM on Androidを利用したサンプルRTC開発を体験してもらい、Android端末へインストールしてPC上で動作するOpenRTM-aist(1.0.2)によるRTCとの相互接続を体験する実習を行います。
 また、RTM on Androidを利用したデモ実演により、RTM on Androidの可能性を紹介します。
-  - [講習概要](/ja/node/5031)
+  - [講習概要]()(No corresponding page available.)
   - [講演資料](./120713-02.pdf)
-  - * 参考URL: http://openrtm.org/openrtm/ja/node/4720
+  - * 参考URL: [1.0.2-RELEASE]({{ site.baseurl }}/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_0_2_release/)
   - **参考URL: http://www.sec.co.jp/robot/download_rtm.html
 
 <!-- &aname(entry); -->

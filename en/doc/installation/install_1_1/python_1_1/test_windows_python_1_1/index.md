@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 動作確認 (Windows編)
+title: 動作確認 (windows編)
 ---
 <br>
 <a>No English version available.

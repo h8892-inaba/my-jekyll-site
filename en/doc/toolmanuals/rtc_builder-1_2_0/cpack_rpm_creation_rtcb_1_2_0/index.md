@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creating an rpm with CPack (Linux)
+title: creating an rpm with cpack (linux)
 ---
 
 <!-- Title: CPack で rpm 作成 （Linux） -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpenRTM-aist C++ 1.1.1-RELEASE
+title: openrtm-aist c++ 1.1.1-release
 ---
 
 <!-- Title: OpenRTM-aist C++ 1.1.1-RELEASE -->
@@ -192,12 +192,12 @@ In Fedora
 ```
 
 <!-- ダウンロード方法・インストール方法については、[[こちら(C++):/ja/node/999]] をご覧くだい。 -->
-To download and install, please check [HERE(C++)](/ja/node/999).
+To download and install, please check [HERE(C++)]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1).
 
 
 ### Build from source code
 
-To build OpenRTM-aist from source code, please check [HERE (Windows)](/ja/node/793) or [HERE(Linux)](/ja/node/788).
+To build OpenRTM-aist from source code, please check [HERE (Windows)]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/build_source_windows_1_1) or [HERE(Linux)]({{ site.baseurl }}/en/doc/installation/install_1_1/cpp_1_1/build_source_linux_1_1).
 <!-- ソースからビルドする方法については、[[ソースからのビルド(Windows編):/ja/node/793]] または [[ソースからのビルド(Linux編):/ja/node/788]] をご覧くだい。 -->
 
 ### deb/rpm package creation
@@ -232,7 +232,7 @@ The packages are created in packages directory.
 If OpenRTP is selected when installing OpenRTM-aist, you do not have to install these tools.
 <!-- インストーラのオプションで OpenRTP を選択していれば、インストールする必要はありません。 -->
 <!-- ツールを別途インストールする方法については、　[[OpenRTP 1.1.0-RC5:/ja/node/5778]] をご覧ください。 -->
-If you want to install tools separately, please check [OpenRTP 1.1.0-RC5](/ja/node/5778).
+If you want to install tools separately, please check [OpenRTP 1.1.0-RC5]({{ site.baseurl }}/en/download/tools/openrtp_1_1_0_rc5).
 
 <br>
 ## Release note: 1.1.1-RELEASE

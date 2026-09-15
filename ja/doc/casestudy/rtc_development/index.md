@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RTコンポーネントの作成
+title: rtコンポーネントの作成
 ---
 
 
