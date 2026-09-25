@@ -13,14 +13,14 @@
   {%- assign en_url = current_url -%}
 {%- endif -%}
 
-<div class="lang-switch">
+<nav class="lang-switch" aria-label="Language">
   {%- if current_lang == 'ja' -%}
-    <a href="{{ en_url | relative_url }}" class="lang-link" aria-label="English page">
-      <img src="{{ '/assets/images/lang/en.png' | relative_url }}" alt="English">
-    </a>
+    <span class="lang-link is-current" aria-current="page">日本語</span>
+    <span class="lang-separator" aria-hidden="true">/</span>
+    <a href="{{ en_url | relative_url }}" class="lang-link">English</a>
   {%- elsif current_lang == 'en' -%}
-    <a href="{{ ja_url | relative_url }}" class="lang-link" aria-label="Japanese page">
-      <img src="{{ '/assets/images/lang/ja.png' | relative_url }}" alt="日本語">
-    </a>
+    <a href="{{ ja_url | relative_url }}" class="lang-link">日本語</a>
+    <span class="lang-separator" aria-hidden="true">/</span>
+    <span class="lang-link is-current" aria-current="page">English</span>
   {%- endif -%}
-</div>
+</nav>
