@@ -368,6 +368,7 @@ header.navbar .navbar-collapse {
   width: 100%;
 }
 /* lang-switch  css  */
+
 .lang-switch {
   display: inline-flex;   /* ←ここ重要 */
   align-items: center;
@@ -381,3 +382,16 @@ header.navbar .navbar-collapse {
   vertical-align: middle;
 }
 
+/* lang-switch  css  new */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.lang-link img {
+  display: inline-block;
+  width: 32px;
+  height: auto;
+  vertical-align: middle;
+}
