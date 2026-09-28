@@ -1,0 +1,1490 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>mycobot280の制御 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="mycobot280の制御" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/bin/url_change/ja_org/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial_serviceport/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/bin/url_change/ja_org/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial_serviceport/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="mycobot280の制御" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"mycobot280の制御","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/bin/url_change/ja_org/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial_serviceport/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/modern.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+				<li><a><nav class="lang-switch" aria-label="Language"><span class="lang-link is-current" aria-current="page">日本語</span>
+    <span class="lang-separator" aria-hidden="true">/</span>
+    <a href="/my-jekyll-site/bin/url_change/ja_org/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial_serviceport/" class="lang-link">English</a></nav>
+
+<!---<div class="lang-switch"><a href="/my-jekyll-site/bin/url_change/ja_org/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial_serviceport/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+--->
+</a></li>
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0">
+	    <!--add 0402
+	    <a>foo-----</a>
+	    <nav class="lang-switch" aria-label="Language"><span class="lang-link is-current" aria-current="page">日本語</span>
+    <span class="lang-separator" aria-hidden="true">/</span>
+    <a href="/my-jekyll-site/bin/url_change/ja_org/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial_serviceport/" class="lang-link">English</a></nav>
+
+<!---<div class="lang-switch"><a href="/my-jekyll-site/bin/url_change/ja_org/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial_serviceport/" class="lang-link" aria-label="English page">
+      <img src="/my-jekyll-site/assets/images/lang/en.png" alt="English">
+    </a></div>
+--->
+-->
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+  <h1>mycobot280の制御 <nav class="lang-switch" aria-label="Language"></nav>
+
+<!---<div class="lang-switch"></div>
+--->
+
+  </h1>
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/bin/url_change/ja_org/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial_serviceport/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#はじめに">はじめに</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#armcontrollerコンポーネントの作成">ArmControllerコンポーネントの作成</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#ロボットアーム共通インターフェース">ロボットアーム共通インターフェース</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#ソースコードの編集とビルド">ソースコードの編集とビルド</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#シミュレーション">シミュレーション</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#choreonoid起動">Choreonoid起動</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtcitem追加">RTCItem追加</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#シミュレーション実行">シミュレーション実行</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#mycobot実機の制御">myCobot実機の制御</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#mycobot280の準備">myCobot280の準備</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtc起動">RTC起動</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<p>#contents</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Choreonoid上のmyCobot280の制御コンポーネントの作成手順、及びmyCobot280実機の制御システムの構築手順を説明します。</p>
+
+<div align="center"><a href="mycobot_sim_image.png"><img src="mycobot_sim_image.png" width="40%;" /></a></div>
+
+<div align="center"><a href="https://shop.elephantrobotics.com/cdn/shop/products/myCobot280M5_d22c5ddb-4963-463c-bd22-885076cfb7eb_650x.png"><img src="https://shop.elephantrobotics.com/cdn/shop/products/myCobot280M5_d22c5ddb-4963-463c-bd22-885076cfb7eb_650x.png" width="50%;" /></a></div>
+
+<h2 id="armcontrollerコンポーネントの作成">ArmControllerコンポーネントの作成</h2>
+
+<p>myCobot280制御コンポーネントにコマンドを送信するRTCを作成します。
+RTC Builderで以下の仕様のRTCを作成してください。</p>
+
+<table class="table-alt">
+  <tr>
+    <td colspan="2" style="text-align: center;">基本</td>
+  </tr>
+  <tr>
+    <td>コンポーネント名</td>
+    <td>ArmController</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">アクティビティ</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">onActivated()、onDeactivated()、onExecute()</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">データポート(OutPort)</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">なし</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">データポート(InPort)</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">なし</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">サービスポート</td>
+  </tr>
+  <tr>
+    <td>ポート名</td>
+    <td>middle</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">サービスインターフェース</td>
+  </tr>
+  <tr>
+    <td>インターフェース名</td>
+    <td>JARA_ARM_ManipulatorCommonInterface_Middle</td>
+  </tr>
+  <tr>
+    <td>方向</td>
+    <td>Required</td>
+  </tr>
+  <tr>
+    <td>インターフェース型</td>
+    <td>JARA_ARM::ManipulatorCommonInterface_Middle</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">サービスポート</td>
+  </tr>
+  <tr>
+    <td>ポート名</td>
+    <td>common</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">サービスインターフェース</td>
+  </tr>
+  <tr>
+    <td>インターフェース名</td>
+    <td>JARA_ARM_ManipulatorCommonInterface_Common</td>
+  </tr>
+  <tr>
+    <td>方向</td>
+    <td>Required</td>
+  </tr>
+  <tr>
+    <td>インターフェース型</td>
+    <td>JARA_ARM::ManipulatorCommonInterface_Common</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">コンフィギュレーション</td>
+  </tr>
+  <tr>
+    <td>パラメーター名</td>
+    <td>pos_x</td>
+  </tr>
+  <tr>
+    <td>型</td>
+    <td>double</td>
+  </tr>
+  <tr>
+    <td>デフォルト値</td>
+    <td>0.2</td>
+  </tr>
+  <tr>
+    <td>制約</td>
+    <td>-0.3&lt;x&lt;0.3</td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td>text</td>
+  </tr>
+  <tr>
+    <td>説明</td>
+    <td>アーム手先のX座標</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">コンフィギュレーション</td>
+  </tr>
+  <tr>
+    <td>パラメーター名</td>
+    <td>pos_y</td>
+  </tr>
+  <tr>
+    <td>型</td>
+    <td>double</td>
+  </tr>
+  <tr>
+    <td>デフォルト値</td>
+    <td>0.0</td>
+  </tr>
+  <tr>
+    <td>制約</td>
+    <td>-0.3&lt;x&lt;0.3</td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td>text</td>
+  </tr>
+  <tr>
+    <td>説明</td>
+    <td>アーム手先のY座標</td>
+  </tr>
+  <tr>
+    <td>コンフィギュレーション</td>
+  </tr>
+  <tr>
+    <td>パラメーター名</td>
+    <td>pos_z</td>
+  </tr>
+  <tr>
+    <td>型</td>
+    <td>double</td>
+  </tr>
+  <tr>
+    <td>デフォルト値</td>
+    <td>0.16</td>
+  </tr>
+  <tr>
+    <td>制約</td>
+    <td>-0.0&lt;x&lt;0.45</td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td>text</td>
+  </tr>
+  <tr>
+    <td>説明</td>
+    <td>アーム手先のZ座標</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">言語・環境</td>
+  </tr>
+  <tr>
+    <td>言語</td>
+    <td>C++</td>
+  </tr>
+</table>
+
+<h3 id="ロボットアーム共通インターフェース">ロボットアーム共通インターフェース</h3>
+
+<p>ロボットアームの制御のため、ロボットアーム共通インターフェースのコマンドを使用する。</p>
+
+<ul>
+  <li><a href="/ja/node/3853#toc3">ロボットアーム共通インターフェース</a></li>
+</ul>
+
+<h4 id="サービスポートの設定">サービスポートの設定</h4>
+<p>サービスポートの設定手順について説明します。
+「サービスポート」タブを選択し、サービスポートの情報を入力します。</p>
+
+<p>「Add Port」ボタンを押下してサービスポートを追加後、名前を設定します。</p>
+
+<div align="center"><a href="rtcbuilder_service4.png"><img src="rtcbuilder_service4.png" width="20%;" /></a></div>
+
+<p>サービスポートに「Add Interface」ボタンを押下後、各項目を設定します。</p>
+
+<div align="center"><a href="rtcbuilder_service5.png"><img src="rtcbuilder_service5.png" width="20%;" /></a></div>
+
+<p>各情報は以下の通り設定してください。</p>
+
+<p><br /></p>
+
+<ul>
+  <li>ServicePort Profile:
+    <ul>
+      <li>ポート名: middle</li>
+      <li>サービスインターフェース:
+        <ul>
+          <li>インターフェース名:JARA_ARM_ManipulatorCommonInterface_Middle</li>
+          <li>方向:Required</li>
+          <li>インターフェース型: JARA_ARM::ManipulatorCommonInterface_Middle</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>ServicePort Profile:
+    <ul>
+      <li>ポート名: common</li>
+      <li>サービスインターフェース:
+        <ul>
+          <li>インターフェース名:JARA_ARM_ManipulatorCommonInterface_Common</li>
+          <li>方向:Required</li>
+          <li>インターフェース型:JARA_ARM::ManipulatorCommonInterface_Common</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>コード生成時に以下の画面が表示されますが、「はい」を選択してください。</p>
+
+<div align="center"><a href="rtcbuilder_service6.png"><img src="rtcbuilder_service6.png" width="80%;" /></a></div>
+
+<h3 id="ソースコードの編集とビルド">ソースコードの編集とビルド</h3>
+
+<p>ソースコード (src/ArmController.cpp) を編集します。</p>
+
+<p>下記のように、onActivated()、onDeactivated()、onExecute() を実装します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::ReturnCode_t ArmController::onActivated(RTC::UniqueId /*ec_id*/)
+ {
+    //サーボをONにするコマンドを実行
+    m_JARA_ARM_ManipulatorCommonInterface_Common-&gt;servoON();
+    //アームを原点復帰位置に移動する
+    m_JARA_ARM_ManipulatorCommonInterface_Middle-&gt;goHome();
+  return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::ReturnCode_t ArmController::onDeactivated(RTC::UniqueId /*ec_id*/)
+ {
+    //サーボをOFFにするコマンドを実行
+    m_JARA_ARM_ManipulatorCommonInterface_Common-&gt;servoOFF();
+  return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> RTC::ReturnCode_t ArmController::onExecute(RTC::UniqueId /*ec_id*/)
+ {
+    //コンフィギュレーションパラメータの変更時のみ実行
+    if (getConfigService().isChanged())
+    {
+        //コンフィギュレーションパラメータを更新する
+        updateParameters("default");
+        //CarPosWithElbow型データに手先の位置姿勢を格納する
+        JARA_ARM::CarPosWithElbow pose;
+        //姿勢は固定
+        pose.carPos[0][0] = -1;
+        pose.carPos[0][1] = 0;
+        pose.carPos[0][2] = 0;
+        pose.carPos[1][0] = 0;
+        pose.carPos[1][1] = 1;
+        pose.carPos[1][2] = 0;
+        pose.carPos[2][0] = 0;
+        pose.carPos[2][1] = 0;
+        pose.carPos[2][2] = -1;
+        //コンフィギュレーションパラメータを位置情報として格納
+        pose.carPos[0][3] = m_pos_x;
+        pose.carPos[1][3] = m_pos_y;
+        pose.carPos[2][3] = m_pos_z;
+        pose.elbow = 0;
+        pose.structFlag = 0;
+        //絶対値で指定した目標位置に移動するコマンドを実行
+        //移動完了まで処理は戻らない
+        m_JARA_ARM_ManipulatorCommonInterface_Middle-&gt;moveLinearCartesianAbs(pose);
+    }
+ 
+  return RTC::RTC_OK;
+ }
+</code></pre></div></div>
+
+<p>Visual Studioでビルドすると実行ファイル(build/src/Release(or Debug)/ArmControllerComp.exe)が生成されます。</p>
+
+<h2 id="シミュレーション">シミュレーション</h2>
+<h3 id="choreonoid起動">Choreonoid起動</h3>
+
+<p>講習会資料に含まれている<strong>choreonoid</strong>フォルダ内の<strong>myCobot280Simulator.bat</strong>をダブルクリックして起動してください。</p>
+
+<ul>
+  <li><a href="https://github.com/OpenRTM/RTM_Tutorial/releases/download/tutorial20260629/RTM_Tutorial.zip">RTM_Tutorial.zip</a></li>
+</ul>
+
+<p>Ubuntuの場合は以下のコマンドで起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> choreonoid ${資料のディレクトリ}/choreonoid/myCobot280Sample/myCobot280Sample.cnoid
+</code></pre></div></div>
+
+<h3 id="rtcitem追加">RTCItem追加</h3>
+
+<p>ArmControllerを起動するため、Choreonoid上でRTCItemを生成します。
+「ファイル」→「新規」→「RTC」をクリックしてください。</p>
+
+<div align="center"><a href="choreonoid_service1.png"><img src="choreonoid_service1.png" width="20%;" /></a></div>
+
+<p>名前は「ArmController」に設定して生成してください。</p>
+
+<p>生成したArmControllerアイテムのプロパティから、RTCモジュールのパスを設定します。</p>
+
+<p>ファイル選択のダイアログでは、File of typeを「全てのファイル(*)」を設定してください。
+その後、プロジェクトののbuildフォルダからArmControllerComp.exeを選択してください。
+※Ubuntuの場合はArmController.soを選択してください。</p>
+
+<div align="center"><a href="choreonoid_service2.png"><img src="choreonoid_service2.png" width="20%;" /></a></div>
+
+<p>次にRTCリストからRTCダイアグラムにmyCobot280Io0とArmController0をドラッグアンドドロップしてください。
+RTCの一覧が見えない場合は「更新」ボタンを押してください。</p>
+
+<div align="center"><a href="choreonoid_service3.png"><img src="choreonoid_service3.png" width="80%;" /></a></div>
+
+<p>RTCダイアグラム上でmyCobot280Io0とArmController0の「middle」ポート同士と「common」ポート同士を接続します。</p>
+
+<div align="center"><a href="choreonoid_service4.png"><img src="choreonoid_service4.png" width="80%;" /></a></div>
+
+<p>アイテムのツリー構造が以下のようになっているか確認してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> World(ワールドアイテム)
+</code></pre></div></div>
+<table class="table-alt">
+  <tr>
+    <th>-myCobot(Body)</th>
+  </tr>
+  <tr>
+    <td>-myCobot280Io(PyRTC)</td>
+  </tr>
+  <tr>
+    <td>-AISTSimulator(AISTシミュレータ)</td>
+  </tr>
+  <tr>
+    <td>-myCobot280Sample(RTSystem)</td>
+  </tr>
+  <tr>
+    <td>-ArmController(RTC)</td>
+  </tr>
+</table>
+
+<h3 id="シミュレーション実行">シミュレーション実行</h3>
+
+<p>以下のボタンを押してシミュレーションを開始してください。</p>
+
+<div align="center"><a href="choreonoid_service5.png"><img src="choreonoid_service5.png" width="40%;" /></a></div>
+
+<p>RTCリストから「ArmController0」をクリックするとコンフィギュレーションビューからパラメータの操作ができます。
+からpos_x、pos_y、pos_zの値をクリックして変更してください。「適用」を押したタイミングでコマンドが送信されてアームの手先位置が制御されます。</p>
+
+<div align="center"><a href="choreonoid_service6.png"><img src="choreonoid_service6.png" width="80%;" /></a></div>
+
+<h2 id="mycobot実機の制御">myCobot実機の制御</h2>
+
+<h3 id="mycobot280の準備">myCobot280の準備</h3>
+
+<p>myCobot280をACアダプタ、USBケーブルを接続し、USBケーブルはPCに接続してください。</p>
+
+<div align="center"><a href="choreonoid_service7.png"><img src="choreonoid_service7.png" width="20%;" /></a></div>
+
+<p>myCobotの操作画面から、「Transponder」を選択して「myCobnot Basic Transponder」の画面を表示してください。</p>
+
+<div align="center"><a href="choreonoid_service9.JPG"><img src="choreonoid_service9.JPG" width="60%;" /></a></div>
+
+<div align="center"><a href="choreonoid_service10.JPG"><img src="choreonoid_service10.JPG" width="60%;" /></a></div>
+
+<p>接続後、デバイスマネージャからポート番号(COM**)を確認しておいてください。</p>
+
+<h3 id="rtc起動">RTC起動</h3>
+
+<h4 id="armcontrollerの起動">ArmControllerの起動</h4>
+<p>ArmControllerComp.exeと同じフォルダに以下の内容のrtc.confを作成してください。
+コマンドで手先位置移動完了まで処理を返さないため、通信がタイムアウトしないように設定します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> corba.args: -ORBclientCallTimeOutPeriod 0
+</code></pre></div></div>
+
+<p>ファイル構成は以下のようになります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ArmController
+</code></pre></div></div>
+<table class="table-alt">
+  <tr>
+    <th>- build</th>
+  </tr>
+  <tr>
+    <td>- src</td>
+  </tr>
+  <tr>
+    <td>- Release(Debug)</td>
+  </tr>
+  <tr>
+    <td>- ArmControllerComp.exe</td>
+  </tr>
+  <tr>
+    <td>- rtc.conf</td>
+  </tr>
+</table>
+
+<p>ArmControllerComp.exeをダブルクリックして起動してください。
+Ubuntuの場合はArmControllerCompを起動します。</p>
+
+<h4 id="mycobotrtcの起動">myCobotRTCの起動</h4>
+
+<p>講習会資料に含まれている<strong>choreonoid</strong>フォルダ内の<strong>myCobotRTC</strong>フォルダ内の<strong>myCobot.conf</strong>を編集します。
+以下の「conf.default.com_port」でデバイスマネージャで確認したポート番号(COM**)を指定してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> conf.default.com_port: COM11
+</code></pre></div></div>
+
+<p><strong>choreonoid</strong>フォルダ内の<strong>myCobot280RTC.bat</strong>をダブルクリックして起動してください。
+Ubuntuの場合は以下のコマンドで起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> python3 myCobot.py
+</code></pre></div></div>
+
+<h4 id="動作確認">動作確認</h4>
+
+<p>RTシステムエディタで「ArmController0」と「myCobot0」の「middle」ポート同士と「common」ポート同士で接続してアクティブ化してください。</p>
+
+<div align="center"><a href="choreonoid_service8.png"><img src="choreonoid_service8.png" width="50%;" /></a></div>
+
+<p>コンフィギュレーションパラメータを変更後に編集ボタンを押すとmyCobot280の手先位置が制御されます。</p>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>
