@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/my-jekyll-site/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/my-jekyll-site/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2026-09-29T06:34:33+00:00</updated><id>http://localhost:4000/my-jekyll-site/feed.xml</id><title type="html">OpenRTM-aist</title><subtitle>The power to connect</subtitle><author><name>mani_d2</name></author><entry><title type="html">SummerCamp2026</title><link href="http://localhost:4000/my-jekyll-site/2026-09-16-summercamp2026_close/" rel="alternate" type="text/html" title="SummerCamp2026" /><published>2026-09-16T00:00:00+00:00</published><updated>2026-09-16T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/summercamp2026_close</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2026-09-16-summercamp2026_close/"><![CDATA[<!-- div align="right"><a href="/tutorial/summercamp2026"><img src="con2026_end_news.png" width="40%; margin:20 20 20 20px;" align="right"></a></div-->
+
+<p>RTミドルウエアサマーキャンプ2026が、８月24日（月）～ 8月28日（金）に行われました。</p>
+
+<ul>
+  <li>
+    <p><strong>日時:</strong> 2026年８月24日（月）～ 8月28日（金）</p>
+  </li>
+  <li>
+    <p><strong>参加人数:</strong></p>
+    <ul>
+      <li><strong>参加者:</strong> 7名</li>
+      <li><strong>講師・スタッフ:</strong> 延べ9名</li>
+    </ul>
+  </li>
+</ul>
+
+<p>今年は7名が参加し、RTミドルウエアの基礎から、RTコンポーネントを利用したより実践的なロボットシステム設計・製作について、実際に様々なロボットを動かしながら学びました。</p>
+
+<p>サマーキャンプで使用した講演資料、参加者の成果発表資料、ビデオ、写真などを掲載しております。</p>
+<ul>
+  <li><a href="/my-jekyll-site/ja/tutorial/summercamp2026">RTミドルウエアサマーキャンプ2026</a></li>
+</ul>]]></content><author><name>mani_d2</name></author><category term="event" /><summary type="html"><![CDATA[SummerCamp2026が行われました]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2026/con2026_end_news.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2026/con2026_end_news.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SummerCamp2026</title><link href="http://localhost:4000/my-jekyll-site/2026-07-08-summercamp2026_open/" rel="alternate" type="text/html" title="SummerCamp2026" /><published>2026-07-08T00:00:00+00:00</published><updated>2026-07-08T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/summercamp2026_open</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2026-07-08-summercamp2026_open/"><![CDATA[<!-- div align="right"><a href="/ja/tutorial/summercamp2026"><img src="sc2026_news.png" width="20%; margin:10 10 10 10px;" align="right"></a></div-->
+
+<p>サマーキャンプ2026の参加受付を開始しました。</p>
+
+<!--break-->
+
+<p>RTミドルウエアサマーキャンプを8月24日から28日の5日間、産総研つくばセンター（およびオンラインのハイブリッド）にて開催いたします。</p>
+
+<ul>
+  <li>** <a href="{ site.baseurl }/ja/tutorial/summercamp2026">サマーキャンプ2026</a>**</li>
+</ul>]]></content><author><name>mani_d2</name></author><category term="event" /><summary type="html"><![CDATA[SummerCamp2026申し込み開始しました]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2026/sc2026_news.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2026/sc2026_news.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">OpenRTM-aist 2.1.0 をリリースしました</title><link href="http://localhost:4000/my-jekyll-site/2026-06-04-openrtm-aist_2_1_0_release/" rel="alternate" type="text/html" title="OpenRTM-aist 2.1.0 をリリースしました" /><published>2026-06-04T00:00:00+00:00</published><updated>2026-06-04T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/openrtm-aist_2_1_0_release</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2026-06-04-openrtm-aist_2_1_0_release/"><![CDATA[<!-- jdiv align="right"><a href="/ja/news/20260604_openrtm-aist_2_1_0_release"><img src="210release_news.png" width="30%; margin:10 10 10 10px;" align="right"></a></div-->
+
+<p>最新版 OpenRTM-aist 2.1.0 をリリースしました。</p>
+
+<!--break-->
+
+<ul>
+  <li>** リリースノート **
+    <ul>
+      <li>** <a href="https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v2.1.0">C++ </a>**</li>
+      <li>** <a href="https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v2.1.0">Python </a>**</li>
+      <li>** <a href="https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v2.1.0">Java </a>**</li>
+      <li>** <a href="https://github.com/OpenRTM/OpenRTP-aist/releases/tag/v2.1.0">tools (OpenRTP) </a>**</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Windows用インストーラ(msi)、Linux用、Raspberry Pi OS用インストールスクリプトについては、下記ダウンロードページをご覧ください。</p>
+
+<ul>
+  <li>** <a href="/my-jekyll-site/ja/download/">ダウンロードページ</a>**</li>
+</ul>
+
+<p>Linux、Raspberry Pi OS環境でOpenRTM 2.0.2版ご利用で、apt update を実行しても2.1.0版への更新ができず警告が出ている場合は、
+下記ニュースでご案内した手順でGPG公開鍵を更新して下さい。</p>
+
+<!-- - ** [GPG公開鍵を更新しました](/my-jekyll-site/ja/news/20250911_gpg_pubkey_ja)**-->
+<ul>
+  <li>** <a href="/my-jekyll-site/2025-09-11-20250911_gpg_pubkey_ja">GPG公開鍵を更新しました</a>**</li>
+</ul>]]></content><author><name>mani_d2</name></author><category term="event" /><summary type="html"><![CDATA[OpenRTM-aist 2.1.0 をリリースしました]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2026/210release_news.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2026/210release_news.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ja"><title type="html">RTミドルウエアコンテスト2025が開催されました</title><link href="http://localhost:4000/my-jekyll-site/2025-12-11-rtmcontest2025" rel="alternate" type="text/html" title="RTミドルウエアコンテスト2025が開催されました" /><published>2025-12-11T00:00:00+00:00</published><updated>2025-12-11T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/rtmcontest2025</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2025-12-11-rtmcontest2025"><![CDATA[<h2 id="rtミドルウエアコンテスト2025が開催されました">RTミドルウエアコンテスト2025が開催されました</h2>
+
+<p>計測自動制御学会(SICE)システムインテグレーション部門講演会 (SI2025)の特別セッションとして、RTミドルウエアコンテスト2025が開催されました</p>
+
+<!--break-->
+<!--more-->
+
+<p>今年は4件の応募があり、熱い成果発表が行われました。最優秀賞1件と10件の奨励賞が授与されました。審査結果は以下の通りです。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/content/contest/rtmcontest2025">RTMcontest2025</a></li>
+</ul>
+
+<h3 id="計測自動制御学会ｒｔミドルウエア賞最優秀賞">計測自動制御学会ＲＴミドルウエア賞（最優秀賞）</h3>
+<p><a href="">コンテナ技術を活用したソフトウェアプロファイルに基づくソフトウェアモジュール生成・運用に関する研究</a></p>
+
+<!-- div align="right"><img width="50%" src="assets/post_image/2025/2025-12-11_rtmcontest2025//contest2025_001.jpg" align="left"></div-->
+<div align="right"><img src="assets/post_image/2025/2025-12-11_rtmcontest2025//contest2025_001.jpg" width="60%;" align="right" /></div>
+
+<p>斎藤　雅弘 殿（名城大学）<br />
+大原　賢一 殿（名城大学）<br /></p>
+
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br /></p>
+
+<h3 id="奨励賞団体協賛副賞2万円">奨励賞（団体協賛）（副賞2万円）</h3>
+
+<h4 id="日本ロボット工業会賞">日本ロボット工業会賞</h4>
+
+<p><a href="">大型小売店向け自動走行案内ロボ『スマートカート』の開発</a></p>
+
+<p>平松　蓮 殿 （芝浦工業大学附属中学校）<br />
+河合　航希 殿 （芝浦工業大学附属中学校）<br />
+森尾　太一 殿 （芝浦工業大学附属中学校）<br />
+山岡　佳代 殿 （芝浦工業大学附属中学高等学校）<br />
+米川　大地殿 （芝浦工業大学附属中学高等学校）<br />
+佐々木　毅 （芝浦工業大学 ）<br /></p>
+
+<h4 id="sugar-sweet-robotics賞">SUGAR SWEET ROBOTICS賞</h4>
+
+<p><a href="">コンテナ技術を活用したソフトウェアプロファイルに基づくソフトウェアモジュール生成・運用に関する研究</a></p>
+
+<p>斎藤　雅弘 殿（名城大学）<br />
+大原　賢一 殿（名城大学）<br /></p>
+
+<h4 id="グローバルアシスト賞">グローバルアシスト賞</h4>
+
+<p><a href="">コンテナ技術を活用したソフトウェアプロファイルに基づくソフトウェアモジュール生成・運用に関する研究</a></p>
+
+<p>斎藤　雅弘 殿（名城大学）<br />
+大原　賢一 殿（名城大学）<br /></p>
+
+<h4 id="チェンジビジョン賞">チェンジビジョン賞</h4>
+
+<p><a href="">利用者の肌の情報と気象情報を用いたAI化粧品選出システムの開発</a></p>
+
+<p>山田　留里花 殿 （芝浦工業大学附属高等学校 ）<br />
+烏田　美 歌 殿 （芝浦工業大学附属高等学校 ）<br />
+鈴木　悠 花 殿 （芝浦工業大学附属高等学校 ）<br />
+佐々木　毅 殿（芝浦工業大学 ）<br />
+山岡　佳代 殿　（芝浦工業大学附属中学高等学校 ）<br />
+米川　大地 殿　（芝浦工業大学附属中学高等学校 ）<br /></p>
+
+<h4 id="システムズエンジニアリング賞">システムズエンジニアリング賞</h4>
+
+<p><a href="">コンテナ技術を活用したソフトウェアプロファイルに基づくソフトウェアモジュール生成・運用に関する研究</a></p>
+
+<p>斎藤　雅弘 殿（名城大学）<br />
+大原　賢一 殿（名城大学）<br /></p>
+
+<h4 id="ロボットサービスイニシアチブrsi賞">ロボットサービスイニシアチブ(RSi)賞</h4>
+
+<p><a href="">大型小売店向け自動走行案内ロボ『スマートカート』の開発</a></p>
+
+<p>平松　蓮 殿 （芝浦工業大学附属中学校）<br />
+河合　航希 殿 （芝浦工業大学附属中学校）<br />
+森尾　太一 殿 （芝浦工業大学附属中学校)<br />
+山岡　佳代 殿 （芝浦工業大学附属中学高等学校）<br />
+米川　大地殿 （芝浦工業大学附属中学高等学校）<br />
+佐々木　毅 （芝浦工業大学 ）<br /></p>
+
+<h3 id="奨励賞個人協賛副賞1万円">奨励賞（個人協賛）（副賞1万円）</h3>
+<h4 id="ベストサポート賞">ベストサポート賞</h4>
+
+<p><a href="">大型小売店向け自動走行案内ロボ『スマートカート』の開発</a></p>
+
+<div align="right"><img src="assets/post_image/2025/2025-12-11_rtmcontest2025//contest2025_002.jpg" width="60%;" align="right" /></div>
+
+<p>平松　蓮 殿 （芝浦工業大学附属中学校）<br />
+河合　航希 殿 （芝浦工業大学附属中学校）<br />
+森尾　太一 殿 （芝浦工業大学附属中学校）<br />
+山岡　佳代 殿 （芝浦工業大学附属中学高等学校）<br />
+米川　大地殿 （芝浦工業大学附属中学高等学校）<br />
+佐々木　毅 （芝浦工業大学 ）<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br /></p>
+
+<h4 id="フレッシャーズ賞">フレッシャーズ賞</h4>
+
+<p><a href="">利用者の肌の情報と気象情報を用いたAI化粧品選出システムの開発</a></p>
+
+<div align="right"><img src="assets/post_image/2025/2025-12-11_rtmcontest2025//contest2025_005.jpg" width="60%;" align="right" /></div>
+
+<p>山田　留里花 殿 （芝浦工業大学附属高等学校 ）<br />
+烏田　美 歌 殿 （芝浦工業大学附属高等学校 ）<br />
+鈴木　悠 花 殿 （芝浦工業大学附属高等学校 ）<br />
+佐々木　毅 殿（芝浦工業大学 ）<br />
+山岡　佳代 殿　（芝浦工業大学附属中学高等学校 ）<br />
+米川　大地 殿　（芝浦工業大学附属中学高等学校 ）<br /></p>
+
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br /></p>
+<h4 id="rtm技術賞">RTM技術賞</h4>
+
+<p><a href="">RTミドルウェア対応組み込み機器開発をサポートするためツール「RTno2」の開発</a></p>
+
+<div align="right"><img src="assets/post_image/2025/2025-12-11_rtmcontest2025//contest2025_006.jpg" width="60%;" align="right" /></div>
+
+<p>菅　佑樹 殿　 （早稲田大学 ）<br />
+尾形　哲也 殿 （早稲田大学 ）<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br /></p>
+<h4 id="帰ってきた世界一小さなrtコンポーネント賞">帰ってきた「世界一小さなRTコンポーネント賞」</h4>
+
+<p><a href="">RTミドルウェア対応組み込み機器開発をサポートするためツール「RTno2」の開発</a></p>
+
+<div align="right"><img src="assets/post_image/2025/2025-12-11_rtmcontest2025//contest2025_004.jpg" width="60%;" align="right" /></div>
+
+<p>菅　佑樹 殿　 （早稲田大学 ）<br />
+尾形　哲也 殿 （早稲田大学 ）<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br /></p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/installation/">entry_here</a></li>
+</ul>]]></content><author><name>mani_d2</name></author><category term="event" /><summary type="html"><![CDATA[RTミドルウエアコンテスト2025が開催されました 計測自動制御学会(SICE)システムインテグレーション部門講演会 (SI2025)の特別セッションとして、RTミドルウエアコンテスト2025が開催されました]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/2025-12-11_rtmcontest2025/contest2025_news_.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/2025-12-11_rtmcontest2025/contest2025_news_.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ja"><title type="html">RTミドルウエアコンテスト2025の申込みを受付開始しました</title><link href="http://localhost:4000/my-jekyll-site/2025-09-30-rtmcontest2025-open" rel="alternate" type="text/html" title="RTミドルウエアコンテスト2025の申込みを受付開始しました" /><published>2025-09-30T00:00:00+00:00</published><updated>2025-09-30T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/rtmcontest2025-open</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2025-09-30-rtmcontest2025-open"><![CDATA[<p>今年もRTMコンテスト2025の申込みを受付中です。</p>
+
+<p>計測自動制御学会(SICE)のシステムインテグレーション部門講演会 (SI2025) の特別セッションとして開催を予定しております。
+<!--break-->
+<!--more-->
+ログイン後、以下のページのウェブフォームから受付できます。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/content/content/rtmcontest2025/">RTMcontest2025</a></li>
+</ul>]]></content><author><name>mani_d2</name></author><category term="event" /><summary type="html"><![CDATA[今年もRTMコンテスト2025の申込みを受付中です。 計測自動制御学会(SICE)のシステムインテグレーション部門講演会 (SI2025) の特別セッションとして開催を予定しております。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/contest2025_news.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/contest2025_news.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ja"><title type="html">GPG公開鍵を更新しました</title><link href="http://localhost:4000/my-jekyll-site/2025-09-11-20250911_gpg_pubkey_ja" rel="alternate" type="text/html" title="GPG公開鍵を更新しました" /><published>2025-09-11T00:00:00+00:00</published><updated>2025-09-11T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/gpg_pubkey_ja</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2025-09-11-20250911_gpg_pubkey_ja"><![CDATA[<p>Linux の deb パッケージ署名に使用している GPG 公開鍵を更新しました。　</p>
+
+<!--break-->
+<!--more-->
+
+<p>apt update 実行時に以下のような警告が表示される場合は、公開鍵を更新してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>W: 署名照合中にエラーが発生しました。リポジトリは更新されず、過去のインデックスファイルが使われます。
+        GPG エラー: http://openrtm.org/pub/Linux/ubuntu noble InRelease: 公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY BD151425C7DBB13F
+ W: http://openrtm.org/pub/Linux/ubuntu/dists/noble/InRelease の取得に失敗しました 公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY BD151425C7DBB13F
+</code></pre></div></div>
+
+<p>公開鍵を更新しない場合、OpenRTM-aist の新しいバージョンが apt upgrade で自動更新できなくなります。</p>
+
+<p>以下のスクリプトを一度実行することで、自動的に公開鍵が更新されます。</p>
+
+<h3 id="ubuntu">Ubuntu</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ bash &lt;(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
+</code></pre></div></div>
+
+<h3 id="raspberry-pi-os">Raspberry Pi OS</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ bash &lt;(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_raspbian.sh)
+</code></pre></div></div>]]></content><author><name>mani_d2</name></author><category term="release" /><summary type="html"><![CDATA[Linux の deb パッケージ署名に使用している GPG 公開鍵を更新しました。　]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/logo.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/logo.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ja"><title type="html">サマーキャンプ2025の参加受付を開始しました</title><link href="http://localhost:4000/my-jekyll-site/2025-06-02-rt_summercamp2025_open" rel="alternate" type="text/html" title="サマーキャンプ2025の参加受付を開始しました" /><published>2025-09-01T00:00:00+00:00</published><updated>2025-09-01T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/rt_summercamp2025_open</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2025-06-02-rt_summercamp2025_open"><![CDATA[<p>サマーキャンプ2025の参加受付を開始しました。</p>
+
+<p>RTミドルウエアサマーキャンプを8月25日から29日の5日間、産総研つくばセンター（およびオンラインのハイブリッド）にて開催いたします。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/tutorial/summercamp2025">RTミドルウエアサマーキャンプ2025</a></li>
+</ul>]]></content><author><name>mani_d2</name></author><category term="event" /><summary type="html"><![CDATA[サマーキャンプ2025の参加受付を開始しました。 RTミドルウエアサマーキャンプを8月25日から29日の5日間、産総研つくばセンター（およびオンラインのハイブリッド）にて開催いたします。 RTミドルウエアサマーキャンプ2025]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/summercamp2025_news.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/summercamp2025_news.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ja"><title type="html">RTミドルウエアサマーキャンプ2025が行われました</title><link href="http://localhost:4000/my-jekyll-site/2025-09-01-rt_summercamp2025_report" rel="alternate" type="text/html" title="RTミドルウエアサマーキャンプ2025が行われました" /><published>2025-09-01T00:00:00+00:00</published><updated>2025-09-01T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/rt_summercamp2025_report</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2025-09-01-rt_summercamp2025_report"><![CDATA[<p>RTミドルウエアサマーキャンプ2024が、8月25日（月）～ 8月29日（金）　に行われました。</p>
+
+<ul>
+  <li>
+    <p>'’日時:’’ 2024年８月25日（月）～ 8月29日（金）</p>
+  </li>
+  <li>
+    <p>'’参加人数:’’</p>
+    <ul>
+      <li>'’参加者:’’ 10名</li>
+      <li>'’講師・スタッフ:’’ 延べ9名</li>
+    </ul>
+  </li>
+</ul>
+
+<p>今年は10名が参加し、RTミドルウエアの基礎から、RTコンポーネントを利用したより実践的なロボットシステム設計・製作について、実際に様々なロボットを動かしながら学びました。</p>
+
+<p>サマーキャンプで使用した講演資料、参加者の成果発表資料、ビデオ、写真などを掲載しております。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/tutorial/summercamp2025">RTミドルウエアサマーキャンプ2025</a></li>
+</ul>]]></content><author><name>mani_d2</name></author><category term="event" /><summary type="html"><![CDATA[RTミドルウエアサマーキャンプ2024が、8月25日（月）～ 8月29日（金）　に行われました。 '’日時:’’ 2024年８月25日（月）～ 8月29日（金） '’参加人数:’’ '’参加者:’’ 10名 '’講師・スタッフ:’’ 延べ9名 今年は10名が参加し、RTミドルウエアの基礎から、RTコンポーネントを利用したより実践的なロボットシステム設計・製作について、実際に様々なロボットを動かしながら学びました。 サマーキャンプで使用した講演資料、参加者の成果発表資料、ビデオ、写真などを掲載しております。 RTミドルウエアサマーキャンプ2025]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/sc2025_news.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/sc2025_news.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ja"><title type="html">ROBOMECH2025 RTミドルウェア講習会を開催しました</title><link href="http://localhost:4000/my-jekyll-site/2025-09-06-robomech2025_report" rel="alternate" type="text/html" title="ROBOMECH2025 RTミドルウェア講習会を開催しました" /><published>2025-06-09T00:00:00+00:00</published><updated>2025-06-09T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/robomech2025_repost</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2025-09-06-robomech2025_report"><![CDATA[<p>2025年6月4日(水) ROBOMECH2025 RTミドルウエア講習会を札幌コンベンションセンター にて開催いたしました。</p>
+
+<p>以下のページで、使用した講義資料やオンライン開催の様子を公開しています。</p>
+<ul>
+  <li><a href="/my-jekyll-site/ja/tutorial/robomech2025">ROBOMECH2025</a></li>
+</ul>]]></content><author><name>mani_d2</name></author><category term="event" /><summary type="html"><![CDATA[2025年6月4日(水) ROBOMECH2025 RTミドルウエア講習会を札幌コンベンションセンター にて開催いたしました。 以下のページで、使用した講義資料やオンライン開催の様子を公開しています。 ROBOMECH2025]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/robomech2025_news_end.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/robomech2025_news_end.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ja"><title type="html">ROBOMECH2025 申し込み開始しました</title><link href="http://localhost:4000/my-jekyll-site/2025-04-02-robomech2025_open" rel="alternate" type="text/html" title="ROBOMECH2025 申し込み開始しました" /><published>2025-04-02T00:00:00+00:00</published><updated>2025-04-02T00:00:00+00:00</updated><id>http://localhost:4000/my-jekyll-site/robomech2025_open</id><content type="html" xml:base="http://localhost:4000/my-jekyll-site/2025-04-02-robomech2025_open"><![CDATA[<p>今年もRTMコンテスト2025の申込みを受付中です。</p>
+
+<p>計測自動制御学会(SICE)のシステムインテグレーション部門講演会 (SI2025) の特別セッションとして開催を予定しております。
+<!--break-->
+ログイン後、以下のページのウェブフォームから受付できます。</p>
+<ul>
+  <li><a href="/my-jekyll-site/ja/tutorial/robomech2025">ROBOMECH2025</a></li>
+</ul>]]></content><author><name>mani_d2</name></author><category term="event" /><summary type="html"><![CDATA[今年もRTMコンテスト2025の申込みを受付中です。 計測自動制御学会(SICE)のシステムインテグレーション部門講演会 (SI2025) の特別セッションとして開催を予定しております。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/robomech2025_news.png" /><media:content medium="image" url="http://localhost:4000/my-jekyll-site/assets/post_image/2025/robomech2025_news.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

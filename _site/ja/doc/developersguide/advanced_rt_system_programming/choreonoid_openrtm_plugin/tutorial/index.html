@@ -1,0 +1,1592 @@
+
+
+<!-- a>hoge----111</a-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>choreonoid入門 | OpenRTM-aist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="choreonoid入門" />
+<meta name="author" content="mani_d2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The power to connect" />
+<meta property="og:description" content="The power to connect" />
+<link rel="canonical" href="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial/" />
+<meta property="og:url" content="http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial/" />
+<meta property="og:site_name" content="OpenRTM-aist" />
+<meta property="og:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png" />
+<meta property="twitter:title" content="choreonoid入門" />
+<meta name="twitter:site" content="@mani_d2" />
+<meta name="twitter:creator" content="@mani_d2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"mani_d2"},"description":"The power to connect","headline":"choreonoid入門","image":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/my-jekyll-site/assets/rtm_images/rtm_logo.png"},"name":"mani_d2"},"url":"http://localhost:4000/my-jekyll-site/ja/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="alternate" type="application/rss+xml" title="OpenRTM-aist"
+        href="/my-jekyll-site/feed.xml">
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- favicon start -->
+<!-- FIXME: unable to place favicons in docs/assests folder chrome error -->
+<link rel="apple-touch-icon" sizes="180x180" href="/my-jekyll-site/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/my-jekyll-site/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/my-jekyll-site/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/my-jekyll-site/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" color="#495ce7" href="/my-jekyll-site/assets/images/favicons/safari-pinned-tab.svg">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/my-jekyll-site/assets/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/my-jekyll-site/assets/images/favicons/browserconfig.xml">
+<!-- favicon end -->
+
+    <!-- styles start -->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/main.css">
+<!-- styles end -->
+    
+
+
+
+</head>
+
+<!--- add harumi --->
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/style.css">
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/modern.css">
+
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    
+
+<link rel="stylesheet" href="/my-jekyll-site/assets/css/hover-dropdown.css">
+
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <div class="site-header-top"><!-- add div -->
+    <a class="navbar-brand" href="http://localhost:4000/my-jekyll-site/">
+	    <img src="/my-jekyll-site/assets/rtm_images/rtm_logo.png" alt="OpenRTM-aist logo" >
+	    <!-- height="32" width="32" class="site-brand-logo"-->
+	    <span class="site-brand-text">OpenRTM-aist</span><!--add here -->
+    </a>
+    <font color="white">The power to connect</font>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0"><!--add 0402-->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+	    <ul class="navbar-nav"><!--del 0402  mr-auto">-->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/" >ホーム</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/">
+		    ホーム
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/download/" >ダウンロード</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/download/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/download/">
+		    ダウンロード
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/" >ドキュメント</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/">
+		    ドキュメント
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/doc/aboutopenrtm/rtmiddleware/">OpenRTM-aistとは？</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/installation/">インストール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/toolmanuals/">ツール</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/developersguide/">デベロッパーズガイド</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/openrtm-aist_class_reference/">クラスリファレンス</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/casestudy/">ケーススタディ</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/corba/">CORBA</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/faq/">よくある質問</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/doc/old_document/">過去文書</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/community/" >コミュニティ</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/community/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/community/">
+		    コミュニティ
+		  </a>
+	  
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+		  <ul class="dropdown-menu">
+			
+				
+				<li><a href="/my-jekyll-site/ja/tutorials/">講習会</a></li>
+				
+				<li><a href="/my-jekyll-site/ja/content/content/">イベント</a></li>
+				
+			
+		</ul>
+		
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" >研究開発</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/doc/aboutopenrtm/researchanddevel">
+		    研究開発
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/publication" >プレス</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/publication" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/publication">
+		    プレス
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/project/" >プロジェクト</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/project/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/project/">
+		    プロジェクト
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+        <!-- li class="nav-item">
+          <a class="nav-link" href="/my-jekyll-site/ja/hardware/" >ハードウエア</a-->
+	    <li class="nav-item dropdown">
+  <!-- a class="nav-link dropdown-toggle" href="/my-jekyll-site/ja/hardware/" data-toggle="dropdown"-->
+		  <a class="nav-link" href="/my-jekyll-site/ja/hardware/">
+		    ハードウエア
+		  </a>
+	  
+
+        </li>
+
+	<!---->
+      </ul>
+	<nav class="lang-switch" aria-label="Language"><span class="lang-link is-current" aria-current="page">日本語</span>
+    <span class="lang-separator" aria-hidden="true">/</span>
+    <a href="/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial/" class="lang-link">English</a></nav>
+
+
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site-header-bottom p-0">
+	    <!--add 0402
+	    <a>foo-----</a>
+	    <nav class="lang-switch" aria-label="Language"><span class="lang-link is-current" aria-current="page">日本語</span>
+    <span class="lang-separator" aria-hidden="true">/</span>
+    <a href="/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial/" class="lang-link">English</a></nav>
+
+-->
+  </nav>
+  </div>
+</header>
+
+    <!-- page content -->
+    <main class="page-content" role="main">
+      
+
+<section class="container">
+	<h1>choreonoid入門</h1>
+	  <nav class="lang-switch" aria-label="Language"><span class="lang-link is-current" aria-current="page">日本語</span>
+    <span class="lang-separator" aria-hidden="true">/</span>
+    <a href="/my-jekyll-site/en/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial/" class="lang-link">English</a></nav>
+
+
+   <a href="https://github.com//h8892-inaba/my-jekyll-site/blob/site/ja/doc/developersguide/advanced_rt_system_programming/choreonoid_openrtm_plugin/tutorial/index.md" target="_blank">
+    ✏️ Edit this page on GitHub
+  </a>
+  <!-- add Content on page by inaba-->
+          
+
+  
+  
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  <nav class="page-toc" aria-label="目次">
+    <div class="page-toc-title">Contents</div>
+    <ul class="page-toc-list">
+      
+
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#はじめに">はじめに</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#choreonoidの起動">Choreonoidの起動</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#アイテムの追加">アイテムの追加</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#ワールド追加">ワールド追加</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#シミュレータ追加">シミュレータ追加</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#地面追加">地面追加</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#raspberry-piマウス追加">Raspberry Piマウス追加</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#rtsystem追加">RTSystem追加</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#robotcontrollerコンポーネント追加">RobotControllerコンポーネント追加</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#raspberrypimouseioコンポーネント追加">RaspberryPiMouseIoコンポーネント追加</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <details open>
+                <summary><a href="#raspberrypimouseioコンポーネント作成">RaspberryPiMouseIoコンポーネント作成</h2</a></summary>
+		<ul>
+<li class="toc-item toc-h3">
+  <a href="#raspberrypimouseiopyの編集">RaspberryPiMouseIo.pyの編集</h3</a>
+</li>
+          
+<li class="toc-item toc-h3">
+  <a href="#raspberrypimouseioコンポーネントの設定">RaspberryPiMouseIoコンポーネントの設定</h3</a>
+</li>
+          </ul>
+              </details>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#アイテムの位置関係を確認">アイテムの位置関係を確認</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#ポート接続">ポート接続</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+        
+        
+          
+          <li class="toc-item toc-h2">
+            
+              <a href="#robotcontrollerコンポーネントのアクティブ化">RobotControllerコンポーネントのアクティブ化</h2</a>
+            
+          </li>
+        
+
+        
+        
+        
+        
+      
+
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    
+      
+      <li class="toc-item toc-h2">
+        
+          <details open>
+            <summary>
+              <a href="#シミュレーション開始">シミュレーション開始</h2</a>
+            </summary>
+            <ul>
+              
+<li class="toc-item toc-h3">
+  <a href="#コンフィギュレーションパラメータの編集">コンフィギュレーションパラメータの編集</h3</a>
+</li>
+          
+            </ul>
+          </details>
+        
+      </li>
+    
+
+  
+    </ul>
+  </nav>
+  <div><a href=""></a></div> <!-- やっつけ。これを無効にするとcontentsの直下の文章がlinkになります -->
+  
+
+
+
+
+  <article>
+	<div>
+		<p>#contents</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Choreonoidはオープンソースのロボット用シミュレーションソフトウェアです。
+拡張性が高く、物理エンジン、通信機能、スクリプティング機能、制御アルゴリズム等をC++プラグインとして追加できます。</p>
+
+<ul>
+  <li><a href="https://choreonoid.org/ja/">Choreonoid ホームページ</a></li>
+</ul>
+
+<p>このページでは、Choreonoidシミュレータ上の移動ロボットの入出力を行うRTCの作成手順を説明します。</p>
+
+<div align="center"><a href="choreonoidtutorial1_1.png"><img src="choreonoidtutorial1_1.png" width="40%;" /></a></div>
+
+<h2 id="choreonoidの起動">Choreonoidの起動</h2>
+
+<p>講習会の実習の場合はUSBメモリ等で資料を配布しているため、USBメモリ内の<strong>choreonoid</strong>フォルダ内の<strong>choreonoid.bat</strong>をダブルクリックして起動してください。</p>
+
+<h2 id="アイテムの追加">アイテムの追加</h2>
+
+<p>Choreonoid上で以下のアイテムを追加してシミュレーション環境を構築します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> World(ワールドアイテム)
+</code></pre></div></div>
+<table class="table-alt">
+  <tr>
+    <th>-AISTSimulator(AISTシミュレータ)</th>
+  </tr>
+  <tr>
+    <td>-Floor(model/misc/floor.body)</td>
+  </tr>
+  <tr>
+    <td>-RaspberryPiMouse(model/RaspberryPiMouse/RaspberryPiMouse.body)</td>
+  </tr>
+  <tr>
+    <td>-RaspberryPiMouseIo(PyRTC)</td>
+  </tr>
+  <tr>
+    <td>-RobotController(RTC)</td>
+  </tr>
+  <tr>
+    <td>-RTSystem</td>
+  </tr>
+</table>
+
+<h3 id="ワールド追加">ワールド追加</h3>
+
+<p>Choreonoidで仮想世界を表現するワールドアイテムを追加します。
+ボディモデル等の各アイテムはワールドアイテムと関連付けする必要があります。</p>
+
+<p>「ファイル」-&gt;「新規」-&gt;「ワールド」をクリックしてWorldを追加してください。</p>
+
+<div align="center"><a href="choreonoidtutorial1_2.png"><img src="choreonoidtutorial1_2.png" width="40%;" /></a></div>
+
+<p>名前は変更せずに生成します。</p>
+
+<p>ワールドアイテムが追加されると、アイテムビューにWorldが表示されます。</p>
+
+<div align="center"><a href="choreonoidtutorial1_3.png"><img src="choreonoidtutorial1_3.png" width="60%;" /></a></div>
+
+<h3 id="シミュレータ追加">シミュレータ追加</h3>
+
+<p>Choreonoidは複数のプラグインから使用する物理エンジンを選択することができます。
+Choreonoid本体でサポートしているプラグインとしては、AISTシミュレータ、ODE, Bullet, PhysXが使用できます。</p>
+
+<p>今回はAISTシミュレータを追加するため、「ファイル」-&gt;「新規」-&gt;「AISTシミュレータ」をクリックしてください。</p>
+
+<div align="center"><a href="choreonoidtutorial1_4.png"><img src="choreonoidtutorial1_4.png" width="40%;" /></a></div>
+
+<p>名前は変更せずに生成します。</p>
+
+<p>AISTシミュレータアイテムが追加されると、アイテムビューにAISTSimulatorが表示されます。</p>
+
+<h3 id="地面追加">地面追加</h3>
+
+<p>地面を表現するボディアイテムを追加します。
+「ファイル」-&gt;「読み込み」-&gt;「ボディ」をクリックしてください。</p>
+
+<div align="center"><a href="choreonoidtutorial1_5.png"><img src="choreonoidtutorial1_5.png" width="40%;" /></a></div>
+
+<p>「ボディ読み込み」の画面で<strong>floor.body</strong>を選択します。
+左側の<strong>share</strong>をクリックして、<strong>share/model/misc/floor.body</strong>のファイルを選択してください。</p>
+
+<div align="center"><a href="choreonoidtutorial1_6.png"><img src="choreonoidtutorial1_6.png" width="60%;" /></a></div>
+
+<p>アイテムが追加されると、アイテムビューにFloorが表示されます。</p>
+
+<h3 id="raspberry-piマウス追加">Raspberry Piマウス追加</h3>
+
+<p>Raspberry Piマウスを表現するボディアイテムを追加します。
+先ほどと同じ手順で「ファイル」-&gt;「読み込み」-&gt;「ボディ」をクリックしてください。</p>
+
+<p>「ボディ読み込み」の画面で<strong>RaspberryPiMouse.body</strong>を選択します。
+左側の<strong>share</strong>をクリックして、<strong>share/model/RaspberryPiMouse/RaspberryPiMouse.body</strong>のファイルを選択してください。</p>
+
+<div align="center"><a href="choreonoidtutorial1_7.png"><img src="choreonoidtutorial1_7.png" width="60%;" /></a></div>
+
+<p>アイテムが追加されると、アイテムビューにRaspberryPiMouseが表示されます。</p>
+
+<p>また、シーンビューにRaspberryPiマウスの3Dモデルが表示されます。</p>
+
+<div align="center"><a href="choreonoidtutorial1_8.png"><img src="choreonoidtutorial1_8.png" width="60%;" /></a></div>
+
+<h3 id="rtsystem追加">RTSystem追加</h3>
+<p>Choreonoid上でRTSystemEditorの一部機能を使用するためのRTSystemアイテムを追加します。
+「ファイル」-&gt;「新規」-&gt;「RTSystem」をクリックしてください。名前の変更は不要です。</p>
+
+<div align="center"><a href="choreonoidtutorial1_9.png"><img src="choreonoidtutorial1_9.png" width="40%;" /></a></div>
+
+<p>アイテムが追加されると、アイテムビューにRTSystemが表示されます。</p>
+
+<h4 id="ネームサーバーシステムエディタ表示">ネームサーバー、システムエディタ表示</h4>
+
+<p>この時点でChoreonoid上にネームサーバー、システムエディタは表示されていません。</p>
+
+<p>まずネームサーバーを表示するには、「表示」-&gt;「ビューの表示」-&gt;「RTC List」をクリックします。</p>
+
+<div align="center"><a href="choreonoidtutorial1_10.png"><img src="choreonoidtutorial1_10.png" width="40%;" /></a></div>
+
+<p>これでプロパティ、リンクプロパティの右にRTC Listタブが表示されます。</p>
+
+<div align="center"><a href="choreonoidtutorial1_11.png"><img src="choreonoidtutorial1_11.png" width="40%;" /></a></div>
+
+<p>システムエディタを表示するには、「表示」-&gt;「ビューの表示」-&gt;「RTC Diagram」をクリックします。</p>
+
+<div align="center"><a href="choreonoidtutorial1_12.png"><img src="choreonoidtutorial1_12.png" width="40%;" /></a></div>
+
+<p>これでシーンの右にRTC Diagramタブが表示されます。</p>
+
+<div align="center"><a href="choreonoidtutorial1_13.png"><img src="choreonoidtutorial1_13.png" width="40%;" /></a></div>
+
+<h3 id="robotcontrollerコンポーネント追加">RobotControllerコンポーネント追加</h3>
+<p>以下のページで作成したRobotControllerコンポーネントをシミュレータで利用可能にします。</p>
+
+<ul>
+  <li><a href="/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_win_part2">チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)</a></li>
+  <li><a href="/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_ubuntu_part2">チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Ubuntu)</a></li>
+</ul>
+
+<p>RTCを表現するRTCアイテムを追加してください。</p>
+
+<p>「ファイル」-&gt;「新規」-&gt;「RTC」をクリックします。</p>
+
+<div align="center"><a href="choreonoidtutorial1_14.png"><img src="choreonoidtutorial1_14.png" width="40%;" /></a></div>
+
+<p>名前を<strong>RobotController</strong>に変更します。</p>
+
+<div align="center"><a href="choreonoidtutorial1_15.png"><img src="choreonoidtutorial1_15.png" width="40%;" /></a></div>
+
+<p>アイテムが追加されると、アイテムビューにRobotControllerが表示されます。</p>
+
+<h4 id="robotcontrollerコンポーネントの設定">RobotControllerコンポーネントの設定</h4>
+<p>次に<strong>RobotControllerComp.exe</strong>とRobotControllerアイテムを関連付けます。
+アイテムビューからRobotControllerを選択して、プロパティからRTC moduleを設定します。</p>
+
+<div align="center"><a href="choreonoidtutorial1_16.png"><img src="choreonoidtutorial1_16.png" width="40%;" /></a></div>
+
+<p>「ファイルを選択」の画面で<strong>RobotControllerComp.exe</strong>を選択します。
+初期の状態だと拡張子dllのファイルしか表示しないため、ファイルの種類を<em>*全てのファイル (</em>) **に設定してからファイルを選択してください。</p>
+
+<div align="center"><a href="choreonoidtutorial1_17.png"><img src="choreonoidtutorial1_17.png" width="40%;" /></a></div>
+
+<h3 id="raspberrypimouseioコンポーネント追加">RaspberryPiMouseIoコンポーネント追加</h3>
+
+<p>PythonのRTCをChoreonoid上で起動するため、PyRTCアイテムを追加します。</p>
+
+<p>「ファイル」-&gt;「新規」-&gt;「PyRTC」をクリックします。</p>
+
+<div align="center"><a href="choreonoidtutorial1_18.png"><img src="choreonoidtutorial1_18.png" width="40%;" /></a></div>
+
+<p>名前を<strong>RaspberryPiMouseIo</strong>に変更します。</p>
+
+<div align="center"><a href="choreonoidtutorial1_19.png"><img src="choreonoidtutorial1_19.png" width="40%;" /></a></div>
+
+<p>アイテムが追加されると、アイテムビューにRaspberryPiMouseIoが表示されます。</p>
+
+<h2 id="raspberrypimouseioコンポーネント作成">RaspberryPiMouseIoコンポーネント作成</h2>
+
+<p>ここからはRTC Builderで作業します。</p>
+
+<p>以下の仕様のRTCを作成してください。</p>
+
+<table class="table-alt">
+  <tr>
+    <td colspan="2" style="text-align: center;">基本</td>
+  </tr>
+  <tr>
+    <td>コンポーネント名</td>
+    <td>RaspberryPiMouseIo</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">アクティビティ</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">なし</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">データポート(OutPort)</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">なし</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">データポート(InPort)</td>
+  </tr>
+  <tr>
+    <td>ポート名</td>
+    <td>velocity</td>
+  </tr>
+  <tr>
+    <td>データ型</td>
+    <td>RTC::TimedVelocity2D</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">コンフィギュレーション</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">なし</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">言語・環境</td>
+  </tr>
+  <tr>
+    <td>言語</td>
+    <td>Python</td>
+  </tr>
+</table>
+
+<h3 id="raspberrypimouseiopyの編集">RaspberryPiMouseIo.pyの編集</h3>
+<p>コード生成すると、RaspberryPiMouseIo.pyが作成されるのでこのファイルをVisual Studio CodeやIDLEなどで編集します。</p>
+
+<p>RaspberryPiMouseIoクラスに<strong>setBody</strong>、<strong>outputToSimulator</strong>、<strong>inputFromSimulator</strong>のメンバ関数を追加します。</p>
+
+<p><strong>setBody</strong>関数はRTC側でChoreonoidのボディオブジェクトを取得する関数です。
+取得したBodyオブジェクトからLinkオブジェクトを取得することで、対象のJointの入出力ができます。</p>
+
+<p><strong>outputToSimulator</strong>関数は、シミュレータ上のオブジェクトから取得したデータをOutPortから出力する処理を行う関数です。</p>
+
+<p><strong>inputFromSimulator</strong>関数は、InPortの入力データをシミュレータ上のオブジェクトに入力する処理を行う関数です。</p>
+
+<p>各関数は、シミュレーション実行時に以下の図のような順序で呼ばれます。</p>
+
+<div align="center"><a href="choreonoidtutorial1_20_2.png"><img src="choreonoidtutorial1_20_2.png" width="60%;" /></a></div>
+
+<p>RaspberryPiMouseIo.pyに以下のコードを追加してください。
+Pythonなので、インデントには注意してください。「def ～」を「# def onRateChanged～」のインデントに合わせる必要があります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    # def onRateChanged(self, ec_id):
+    #
+    #	return RTC.RTC_OK
+    
+    def setBody(self, body):
+        self.ioBody = body
+        self.wheelR = self.ioBody.link("RIGHT_WHEEL")
+        self.wheelL = self.ioBody.link("LEFT_WHEEL")
+    
+    def outputToSimulator(self):
+        pass
+    
+    def inputFromSimulator(self):
+        if self._velocityIn.isNew():
+            data = self._velocityIn.read()
+            
+            vx = data.data.vx
+            va = data.data.va
+            
+            wheel_distance = 0.0425
+            wheel_radius = 0.04
+            rms = (vx + va*wheel_distance)/wheel_radius
+            lms = (vx - va*wheel_distance)/wheel_radius
+            
+            self.wheelR.dq = rms
+            self.wheelL.dq = lms
+</code></pre></div></div>
+
+<h3 id="raspberrypimouseioコンポーネントの設定">RaspberryPiMouseIoコンポーネントの設定</h3>
+
+<p>Choreonoidでの作業に戻ります。
+アイテムビューからRaspberryPiMouseIoを選択して、プロパティからRTC Moduleを設定します。</p>
+
+<div align="center"><a href="choreonoidtutorial1_21.png"><img src="choreonoidtutorial1_21.png" width="40%;" /></a></div>
+
+<p>「ファイルを選択」の画面で先ほど編集した<strong>RaspberryPiMouseIo.py</strong>を選択します。</p>
+
+<div align="center"><a href="choreonoidtutorial1_22.png"><img src="choreonoidtutorial1_22.png" width="40%;" /></a></div>
+
+<p>※RaspberryPiMouseIo.pyを更新した場合は、再度この作業を行う事で再読み込みしてください。</p>
+
+<h2 id="アイテムの位置関係を確認">アイテムの位置関係を確認</h2>
+<p>アイテムビューで、全てのアイテムはワールドアイテムの子アイテムとして配置する必要があります。
+また、<strong>RaspberryPiMouseIo</strong>は<strong>RaspberryPiMouse</strong>の子アイテムとして配置します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> World
+  |- AISTSimulator
+  |- Floor
+  |- RaspberryPiMouse
+  |    |- RaspberryPiMouseIo
+  |- RobotController
+  |- RTSystem
+</code></pre></div></div>
+
+<p>位置関係が違う場合はドラッグアンドドロップして移動してください。</p>
+
+<div align="center"><a href="choreonoidtutorial1_23.png"><img src="choreonoidtutorial1_23.png" width="40%;" /></a></div>
+
+<h2 id="ポート接続">ポート接続</h2>
+
+<p>起動したRTCのポートを接続します。</p>
+
+<p>この時点で<strong>RobotController0</strong>と<strong>RaspberryPiMouseIo0</strong>が起動していますが、RTC Listに表示が無い場合は「Update」ボタンを押してください。</p>
+
+<p>RTC ListからRTCをRTC Diagramにドラッグアンドドロップして、以下のポートを接続してください。</p>
+
+<table class="table-alt">
+  <tr>
+    <td colspan="2" style="text-align: center;">InPort</td>
+    <td colspan="2" style="text-align: center;">OutPort</td>
+  </tr>
+  <tr>
+    <td>RobotController0</td>
+    <td>out</td>
+    <td>RaspberryPiMouseIo0</td>
+    <td>velocity</td>
+  </tr>
+</table>
+
+<div align="center"><a href="choreonoidtutorial1_24.png"><img src="choreonoidtutorial1_24.png" width="40%;" /></a></div>
+
+<h2 id="robotcontrollerコンポーネントのアクティブ化">RobotControllerコンポーネントのアクティブ化</h2>
+<p>RTCアイテムにexeファイルを設定した場合はRTCを自動でアクティブ化しないため、RTC Diagram上でRobotController0を右クリックして「Activate」を選択してください。
+※RaspberryPiMouseIo0はシミュレーションを開始すると自動的にアクティブ状態になるため操作の必要はありません。</p>
+
+<div align="center"><a href="choreonoidtutorial1_25.png"><img src="choreonoidtutorial1_25.png" width="60%;" /></a></div>
+
+<h2 id="シミュレーション開始">シミュレーション開始</h2>
+<p>「初期位置からのシミュレーション開始」ボタンを押すとシミュレーションを開始します。</p>
+
+<div align="center"><a href="choreonoidtutorial1_26.png"><img src="choreonoidtutorial1_26.png" width="40%;" /></a></div>
+
+<p>シーンタブに切り替えるとシミュレーションを3DCGで表示します。</p>
+
+<div align="center"><a href="choreonoidtutorial1_27.png"><img src="choreonoidtutorial1_27.png" width="40%;" /></a></div>
+
+<h3 id="コンフィギュレーションパラメータの編集">コンフィギュレーションパラメータの編集</h3>
+
+<p>Choreonoid OpenRTMプラグインにはコンフィギュレーションパラメータ編集機能がないため、RTSystemEditorで作業します。</p>
+
+<p>ネームサービスビューでRobotControllerを選択して、コンフィギュレーションビューから「編集」ボタンを押して、コンフィギュレーションパラメータを変更してみてください。</p>
+
+<div align="center"><a href="choreonoidtutorial1_28.png"><img src="choreonoidtutorial1_28.png" width="40%;" /></a></div>
+
+<p>Choreonoidで表示したRaspberry Piマウスが移動しているか確認すれば完了です。</p>
+
+<p>ネームサービスビューにlocalhostと表示されていない場合については、以下のようにネームサービス接続ボタンを押して、localhostのネームサーバーに接続してください。</p>
+
+<div align="center"><a href="tutorial_raspimouse0_2.png"><img src="tutorial_raspimouse0_2.png" width="60%;" /></a></div>
+<div align="center"><a href="choreonoidtutorial1_30.png"><img src="choreonoidtutorial1_30.png" width="60%;" /></a></div>
+
+	</div>
+  </article>
+</section>
+
+<!-- Jekyll Ideal Image Slider Include -->
+<!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
+<!-- v1.8 -->
+
+    </main>
+    <!-- page footer -->
+    
+
+
+
+<footer class="page-footer">
+    <div class="page-footer-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pb-3 text-center">
+                    <!-- owner info -->
+                    <p class="m-0">
+                        Owned by
+                        
+                            <strong></strong>
+                        
+                    </p>
+                    <p class="m-0 font-italic"></p>
+                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1"></span>
+                    </p>
+                </div>
+                <div class="col-md-8 text-center">
+                    <!-- Social media links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Social: </li>
+                        
+                    </ul>
+                    <!-- website feed links -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Feed: </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright">
+        <div class="container text-center">
+            <!-- copyright info -->
+            <p>Copyright &copy; , 2026. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </div>
+  <!-- site scripts start -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+
+<script src="/my-jekyll-site/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('lwt-form-search-input');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+<!-- site scripts end -->
+
+</body>
+
+</html>

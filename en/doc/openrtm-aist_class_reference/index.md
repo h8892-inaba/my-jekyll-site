@@ -5,10 +5,22 @@ title: class reference
 
 <!-- Title: クラスリファレンス -->
 <div align="right"><img src="reference.png" width="15%;" align="right"></div>
-## Latest Version (2.0.2) Class Reference
+## Latest Version (2.1.0) Class Reference
 
 The class reference is automatically generated from the latest source code in the repository.
 Please note that it may differ in part from the features of the release version.
+
+- [C++ Class Reference](http://openrtm.org/doc/cxx/2.1.0/classreference_ja/index.html)
+- [Python Class Reference](http://openrtm.org/doc/python/2.1.0/classreference_ja/index.html)
+- [Java Class Reference](http://openrtm.org/doc/java/2.1.0/classreference_ja/index.html)
+- [Data Type Explanation Page](https://nobu19800.github.io/DataTypeManual/docs/)
+
+## 2.1 IDL Reference
+
+- [IDL Reference](http://openrtm.org/doc/idl/2.1/idlreference_ja/index.html)
+
+
+## 2.0.2 Class Reference
 
 - [C++ Class Reference](http://openrtm.org/doc/cxx/2.0.2/classreference_ja/index.html)
 - [Python Class Reference](http://openrtm.org/doc/python/2.0.2/classreference_ja/index.html)

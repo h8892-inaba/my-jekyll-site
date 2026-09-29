@@ -83,3 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 <hr>
 <!-- /section -->
+
+- [how to code]({{ site.baseurl }}/howto_code)
+- [manual_md1]({{ site.baseurl }}/manual_md1)
