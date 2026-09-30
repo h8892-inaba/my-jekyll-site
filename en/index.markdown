@@ -95,3 +95,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 - [how to code]({{ site.baseurl }}/howto_code)
 - [manual_md1]({{ site.baseurl }}/manual_md1)
+
+
+<section class="partner-logos">
+  <div class="partner-logos-inner">
+
+    <a href="https://sice-si.org/rtsi/" target="_blank" rel="noopener">
+      <img src="{{ '/assets/images/partners/SI_LOGO.jpg' | relative_url }}"
+           alt="SICE SI">
+    </a>
+
+    <a href="http://www.omg.or.jp/" target="_blank" rel="noopener">
+      <img src="{{ '/assets/images/partners/omg_member.png' | relative_url }}"
+           alt="一般社団法人日本OMG">
+    </a>
+
+    <a href="https://rtc-fukushima.jp/" target="_blank" rel="noopener">
+      <img src="{{ '/assets/images/partners/rtc-Fukushima-logo.png' | relative_url }}"
+           alt="RTC Fukushima">
+    </a>
+
+    <a href="https://www.openrtm.org/openrtm/ja/node/4599" target="_blank" rel="noopener">
+      <img src="{{ '/assets/images/partners/nedo_logo.png' | relative_url }}"
+           alt="NEDO 次世代知能化技術開発">
+    </a>
+
+  </div>
+</section>
