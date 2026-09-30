@@ -20,7 +20,6 @@ swiper_images:
     link: /ja/doc/aboutopenrtm/rtmiddleware
 ---
 
-<hr>
 {% include top-swiper.html %}
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
@@ -43,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-<hr>
 
 
 ### [how to code]({{ site.baseurl }}/howto_code)
@@ -56,9 +54,20 @@ document.addEventListener('DOMContentLoaded', function () {
     <article class="news-item">
       <a href="{{ post.url | relative_url }}">
         {% if post.image %}
-          <div class="news-thumb">
+          <!-- div class="news-thumb">
           <img src="{{ post.image | relative_url }}" alt="">
-          </div>
+          </div-->
+            <div class="news-thumb">
+
+            <div
+              class="news-thumb-blur"
+              style="background-image: url('{{ post.image | relative_url }}');">
+            </div>
+
+            <img
+              src="{{ post.image | relative_url }}"
+              alt="{{ post.title }}">
+           </div>
         {% endif %}
       </a>
      <span class="news-date-wrap">

@@ -414,7 +414,6 @@ header.navbar > .container {
 }
 
 
-/*
 .top-swiper .swiper-slide {
   height: clamp(220px, 30vw, 360px);
 
@@ -430,83 +429,7 @@ header.navbar > .container {
 
   object-fit: contain;
 }
-*/
-.top-swiper .swiper-slide {
-  position: relative;
-  overflow: hidden;
 
-  height: clamp(220px, 30vw, 360px);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #e9eef2;
-}
-
-
-/* ---------------------------------------------------------
-   blurred background
-   --------------------------------------------------------- */
-
-.top-swiper .slide-blur-bg {
-  position: absolute;
-  inset: -20px;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  filter: blur(20px);
-
-  transform: scale(1.08);
-
-  opacity: 0.78;
-
-  pointer-events: none;
-}
-
-
-/* 背景を少し落ち着かせる */
-.top-swiper .slide-blur-bg::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background: rgba(255, 255, 255, 0.10);
-}
-
-
-/* ---------------------------------------------------------
-   foreground image
-   --------------------------------------------------------- */
-
-.top-swiper .slide-link,
-.top-swiper .slide-image-wrap {
-  position: relative;
-  z-index: 2;
-
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.top-swiper .swiper-slide img {
-  display: block;
-
-  max-width: 100%;
-  max-height: 100%;
-
-  width: auto;
-  height: auto;
-
-  object-fit: contain;
-}
 
 .top-swiper .swiper-button-prev,
 .top-swiper .swiper-button-next {
@@ -686,73 +609,6 @@ header.navbar > .container {
 
 /* image */
 
-/* News image */
-
-.news-thumb {
-  position: relative;
-
-  width: 100%;
-  height: 180px;
-
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #e9eef2;
-}
-
-
-/* 背景のぼかし画像 */
-.news-thumb-blur {
-  position: absolute;
-
-  inset: -15px;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  filter: blur(16px);
-
-  transform: scale(1.08);
-
-  opacity: 0.75;
-
-  pointer-events: none;
-}
-
-
-/* 少し白を重ねて背景を落ち着かせる */
-.news-thumb-blur::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background: rgba(255, 255, 255, 0.08);
-}
-
-
-/* 前面画像 */
-.news-thumb img {
-  position: relative;
-
-  z-index: 1;
-
-  display: block;
-
-  max-width: 100%;
-  max-height: 100%;
-
-  width: auto;
-  height: auto;
-
-  object-fit: contain;
-}
-
-/*
 .news-thumb {
   width: 100%;
   height: 180px;
@@ -770,7 +626,7 @@ header.navbar > .container {
 
   object-fit: cover;
 }
-*/
+
 
 /* date */
 
