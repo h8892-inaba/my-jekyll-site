@@ -67,7 +67,7 @@ body {
   flex レイアウトに変更
 */
 
-.page-container {
+/*.page-container {
   min-height: 100vh;
 
   display: flex;
@@ -78,7 +78,7 @@ body {
 .page-content {
   flex: 1;
 
-  padding-bottom: 20px; /* 60 -> 20 */
+  padding-bottom: 20px; 
 }
 
 
@@ -86,6 +86,22 @@ body {
   position: static;
 
   margin-top: auto;
+}
+*/
+.page-container {
+  min-height: 0;
+  display: block;
+}
+
+
+.page-content {
+  padding-bottom: 0;
+}
+
+
+.page-footer {
+  position: static;
+  margin-top: 0;
 }
 
 
