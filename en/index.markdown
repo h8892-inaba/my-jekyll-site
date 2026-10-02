@@ -43,10 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-
-### [how to code]({{ site.baseurl }}/howto_code)
-### [manual_md1]({{ site.baseurl }}/manual_md1)
-
 # News
 
 <div class="news-grid">
@@ -97,28 +93,29 @@ document.addEventListener('DOMContentLoaded', function () {
 - [manual_md1]({{ site.baseurl }}/manual_md1)
 
 
-<section class="partner-logos">
-  <div class="partner-logos-inner">
+<section class="partner-links">
+  <div class="partner-links-grid">
 
-    <a href="https://sice-si.org/rtsi/" target="_blank" rel="noopener">
+    <a href="https://sice-si.org/rtsi/" class="partner-link-card" target="_blank" rel="noopener">
       <img src="{{ '/assets/images/partners/SI_LOGO.jpg' | relative_url }}"
-           alt="SICE SI">
+           alt="SICE SI" width="80">
     </a>
 
-    <a href="http://www.omg.or.jp/" target="_blank" rel="noopener">
+    <a href="http://www.omg.or.jp/" class="partner-link-card" target="_blank" rel="noopener">
       <img src="{{ '/assets/images/partners/omg_member.png' | relative_url }}"
-           alt="一般社団法人日本OMG">
+           alt="一般社団法人日本OMG" width="80">
     </a>
 
-    <a href="https://rtc-fukushima.jp/" target="_blank" rel="noopener">
+    <a href="https://rtc-fukushima.jp/" class="partner-link-card" target="_blank" rel="noopener">
       <img src="{{ '/assets/images/partners/rtc-Fukushima-logo.png' | relative_url }}"
-           alt="RTC Fukushima">
+           alt="RTC Fukushima" width="80">
     </a>
 
-    <a href="https://www.openrtm.org/openrtm/ja/node/4599" target="_blank" rel="noopener">
+    <a href="https://www.openrtm.org/openrtm/ja/node/4599" class="partner-link-card" target="_blank" rel="noopener">
       <img src="{{ '/assets/images/partners/nedo_logo.png' | relative_url }}"
-           alt="NEDO 次世代知能化技術開発">
+           alt="NEDO 次世代知能化技術開発" width="80">
     </a>
 
   </div>
 </section>
+
