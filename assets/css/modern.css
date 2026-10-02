@@ -78,7 +78,7 @@ body {
 .page-content {
   flex: 1;
 
-  padding-bottom: 60px;
+  padding-bottom: 20px; /* 60 -> 20 */
 }
 
 
@@ -1043,6 +1043,148 @@ header.navbar > .container {
   border-top: 4px solid var(--rtm-primary);
 }
 
+/* add footer inaba  */
+/* ---------------------------------------------------------
+   Footer contents
+   --------------------------------------------------------- */
+
+.footer-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.6fr
+    1fr;
+
+  gap: 48px;
+}
+
+
+.footer-column {
+  min-width: 0;
+}
+
+
+/* title */
+
+.footer-title {
+  margin: 0 0 18px !important;
+  padding: 0 0 10px !important;
+
+  color: #ffffff !important;
+
+  font-size: 1.05rem !important;
+  font-weight: 700;
+
+  border: 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+
+/* modern.css の通常 h2 装飾を無効化 */
+
+.footer-title::before {
+  display: none !important;
+}
+
+
+/* links */
+
+.footer-links {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+
+.footer-links a {
+  display: block;
+
+  color: #d7e2e9;
+
+  font-size: 0.9rem;
+  line-height: 1.55;
+
+  text-decoration: none;
+}
+
+
+.footer-links a:hover {
+  color: #ffffff;
+
+  text-decoration: underline;
+}
+
+
+/* 関連リンクのタイトル */
+
+.footer-links strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-weight: 600;
+}
+
+
+/* 関連リンクの説明 */
+
+.footer-links span {
+  display: block;
+
+  margin-top: 1px;
+
+  color: #9fb0bc;
+
+  font-size: 0.8rem;
+}
+
+
+/* Contact */
+
+.footer-contact-text {
+  margin: 0 0 14px;
+
+  color: #b8c6cf;
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+}
+
+
+/* footer top */
+
+.page-footer-owner {
+  padding: 38px 0 30px;
+
+  background: transparent;
+}
+
+
+/* copyright */
+
+.page-footer-copyright {
+  padding: 13px 0;
+
+  background: rgba(0, 0, 0, 0.16);
+}
+
+
+.page-footer-copyright p {
+  margin: 0;
+
+  color: #aebcc5;
+
+  font-size: 0.82rem;
+}
+
 
 .page-footer-owner {
   padding: 38px 0 24px;
@@ -1114,6 +1256,16 @@ header.navbar > .container {
       repeat(2, minmax(0, 1fr));
   }
 
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 36px;
+  }
+
+
+  .footer-column-related {
+    grid-row: span 2;
+  }
 }
 
 
@@ -1169,6 +1321,25 @@ header.navbar > .container {
 
   .page-footer-owner {
     padding-top: 28px;
+  }
+
+}
+@media (max-width: 600px) {
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+
+  .footer-column-related {
+    grid-row: auto;
+  }
+
+
+  .page-footer-owner {
+    padding: 30px 0 24px;
   }
 
 }
