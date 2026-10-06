@@ -93,7 +93,7 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
 <!-- -&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiを用いてインストールしている場合は対応不要です。}; -->
 
 
-インストールについては、[OpenRTM-aistを10分で始めよう！](/ja/doc/installation/lets_start)のページで手順を紹介しています。<br>
+インストールについては、[OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/lets_start)のページで手順を紹介しています。<br>
 
 
 &aname(dl_allinone_linux);

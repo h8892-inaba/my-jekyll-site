@@ -9,12 +9,12 @@ title: rtミドルウェアコンテスト2022
 
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>
 <a href="#program"><img src="../images/contest2013_program.png" width="10%;"></a>
-<a href="/contests/2013"><img src="../images/contest2013_worklist.png" width="10%;"></a>（Projectページはリンク切れです）
+<a href="/contests/2013"><img src="../images/contest2013_worklist.png" width="10%;"></a>
 <a href="#evaluation"><img src="../images/contest2013_evaluation.png" width="10%;"></a></div>
 <div align="center"><a href="#award"><img src="../images/contest2013_award.png" width="10%;"></a>
 <a href="#pastwork"><img src="../images/contest2013_pastworks.png" width="10%;"></a>
 <a href="#registration"><img src="../images/contest2013_registration.png" width="10%;"></a>
-<a href="#contact"><img src="../images/contest2013_contactpng.png" width="10%;"></a></div>
+<a href="#contact"><img src="../images/contest2013_contactpng.png" width="10%;"></a></div><br>（作品一覧は現在リンク切れです）
 
 <br>
 
@@ -307,8 +307,8 @@ SI2022の申込方法、申込および原稿〆切および具体的な開催�
 応募作品は期日までにプロジェクトページに登録する必要があります。
 
 - [プロジェクトページ]()（「プロジェクトページとは」のページはリンク切れです）
-  - [プロジェクト作成マニュアル](http://openrtm.org/openrtm/ja/node/1554)（Projectページ（登録方法）はリンク切れです）
-  - [新規プロジェクトの作成](http://openrtm.org/openrtm/ja/node/1553)（Projectページ（作成方法）はリンク切れです）
+  - [プロジェクト作成マニュアル](http://openrtm.org/openrtm/ja/node/1554)（Projectページ（登録方法）はリンク切れです）（Projectページ（登録方法）はリンク切れです）
+  - [新規プロジェクトの作成](http://openrtm.org/openrtm/ja/node/1553)（Projectページ（作成方法）はリンク切れです）（Projectページ（作成方法）はリンク切れです）
 
 上記のプロジェクト作成マニュアルに則り、作品を登録してください。
 RTミドルウエアコンテストでは、プロジェクト登録されたコンポーネントなどがコンテスト応募作品であるかどうかを明確にするために以下のルールを取っております。下記ルールに従い作品を登録してください。

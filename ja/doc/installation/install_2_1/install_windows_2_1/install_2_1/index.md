@@ -30,7 +30,7 @@ C++版の開発だけでなく、Python版、Java版のRTCを作成した際に�
 
 現在動作確認できているVisual Studioの最新バージョンは2026です。　<br>
 C++の開発環境を入れ忘れることがよくあります。以下の説明を一読することをお勧めします。
-  - [Visual Studio Community 2026のインストール](/ja/doc/installation/install_2_1/install_windows_2_1/install_2_1/visual_studio_2_1/visual_studio_2026) 
+  - [Visual Studio Community 2026のインストール]({{ site.baseurl }}/ja/doc/installation/install_2_1/install_windows_2_1/install_2_1/visual_studio_2_1/visual_studio_2026) 
 
 ### Python
 
@@ -136,7 +136,7 @@ Microsoft Edge をお使いでダウンロードできない場合は、下記�
     - [OpenRTM-aistを10分で始めよう！・サンプルコンポーネントを実行する]({{ site.baseurl }}/ja/doc/installation/lets_start#toc5) 
 
 インストーラが設定するシステム環境変数、インストールするファイル等の詳細は、下記ページをご覧ください。
-    - [OpenRTM-aistインストーラの作業内容](/ja/doc/installation/install_2_1/install_windows_2_1/install_workcontent_2_1)
+    - [OpenRTM-aistインストーラの作業内容]({{ site.baseurl }}/ja/doc/installation/install_2_1/install_windows_2_1/install_workcontent_2_1)
 
 ### システム環境変数確認
 

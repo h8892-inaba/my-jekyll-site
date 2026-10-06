@@ -164,7 +164,7 @@ Python(RasPiMouseSamplePy.py)
  		return RTC.RTC_OK
 ```
 
-[共通インターフェース仕様書](/ja/node/3853)（Projectページはリンク切れです） では進行方向をX軸正方向にしているため、Velocity2D型の vx に直進速度、va に回転速度を入力します。
+[共通インターフェース仕様書](/ja/node/3853)（Projectページはリンク切れです）（Projectページはリンク切れです） では進行方向をX軸正方向にしているため、Velocity2D型の vx に直進速度、va に回転速度を入力します。
 
 
 Python ではさらにコンストラクタの以下の部分を修正してください。

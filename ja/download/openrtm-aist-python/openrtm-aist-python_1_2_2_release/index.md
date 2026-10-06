@@ -97,7 +97,7 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
 <!-- -&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiファイルを用いてインストールしている場合は対応不要です。}; -->
 - Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[doxygen](http://www.doxygen.nl/index.html)のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
 
-インストールについては、[OpenRTM-aistを10分で始めよう！](/ja/doc/installation/lets_start)のページで手順を紹介しています。<br>
+インストールについては、[OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/doc/installation/lets_start)のページで手順を紹介しています。<br>
 
 
 <br>

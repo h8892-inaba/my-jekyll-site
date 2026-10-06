@@ -15,7 +15,7 @@ RTC-available hardwares. If you have some information of RTC-available hardware,
 <a href=""><img src="randd_humanoid.png" width="15%;" style="margin:10px;"></a></div>
 
 If you had any question of these RTCs, please contact below:
-- [Forum]({{ site.baseurl }}/en/community/forum)
+- [Forum]({{ site.baseurl }}/en/community/forum)(No corresponding page (forum) available.)
 - [Mailing Lists]()(No corresponding page (mailinglist) available.)
 - [Issue Tracking]()(No corresponding page available.)
 

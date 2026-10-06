@@ -9,12 +9,12 @@ title: rtミドルウェアコンテスト2018
 
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>
 <a href="#program"><img src="../images/contest2013_program.png" width="10%;"></a>
-<a href="/contests/2018"><img src="../images/contest2013_worklist.png" width="10%;"></a>（Projectページはリンク切れです）
+<a href="/contests/2018"><img src="../images/contest2013_worklist.png" width="10%;"></a>
 <a href="#evaluation"><img src="../images/contest2013_evaluation.png" width="10%;"></a></div>
 <div align="center"><a href="#award"><img src="../images/contest2013_award.png" width="10%;"></a>
 <a href="#pastwork"><img src="../images/contest2013_pastworks.png" width="10%;"></a>
 <a href="#registration"><img src="../images/contest2013_registration.png" width="10%;"></a>
-<a href="#contact"><img src="../images/contest2013_contactpng.png" width="10%;"></a></div>
+<a href="#contact"><img src="../images/contest2013_contactpng.png" width="10%;"></a></div><br>（作品一覧は現在リンク切れです）
 
 <br>
 

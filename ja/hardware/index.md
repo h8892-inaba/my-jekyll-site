@@ -15,16 +15,6 @@ RTコンポーネントとして利用可能なハードウエアに関する情
 <a href=""><img src="randd_manipulator.png" width="15%;" style="margin:10px;"></a>
 <a href=""><img src="randd_humanoid.png" width="15%;" style="margin:10px;"></a></div>
 
-<!--
-&ref(randd_all2.png,url=http://www.openrtm.org/openrtm/ja/robots_and_devices/all,50%,margin=20 20 20 20,すべて);
-&ref(randd_camandsensor.png,url=http://www.openrtm.org/openrtm/ja/camera_and_sensor,50%,margin=20 20 20 20,カメラ・センサ
-ー);
-&ref(randd_inputdevice.png,url=http://www.openrtm.org/openrtm/ja/input_devices,50%,margin=20 20 20 20,入力デバイス);
-<br>
-&ref(randd_mobilerobot.png,url=http://www.openrtm.org/openrtm/ja/mobile_robot,50%,margin=20 20 20 20,移動ロボット);
-&ref(randd_manipulator.png,url=http://www.openrtm.org/openrtm/ja/manipulator_and_arm,50%,margin=20 20 20 20,アーム・マニ>ピュレータ);
-&ref(randd_humanoid.png,url=http://www.openrtm.org/openrtm/ja/humanoid,50%,margin=20 20 20 20,ヒューマノイド);
--->
 
 本ページで公開されている RTC に関する質問等は、
 - [フォーラム]({{ site.baseurl }}/ja/community/forum)

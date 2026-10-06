@@ -13,7 +13,7 @@ title: openrtm-aistを10分で始めよう！
 Pythonをインストールしていない場合は、OpenRTM-aistをインストールできません。
 OpenRTM-aistをインストールする前に、Pythonをインストールしてください。バージョンは、"3.14"、"3.13"、"3.12"、"3.11"、"3.10"に対応しています。
 
-Pythonのダウンロードは [OpenRTM-aist 2.1系のWindowsへのインストール](/ja/doc/installation/install_2_1/install_windows_2_1/install_2_1) をご覧ください。
+Pythonのダウンロードは [OpenRTM-aist 2.1系のWindowsへのインストール]({{ site.baseurl }}/ja/doc/installation/install_2_1/install_windows_2_1/install_2_1) をご覧ください。
 
 Pythonのインストール先は、インストール時の選択 [Customize installation]に対応しています。
 
@@ -184,7 +184,7 @@ OpenRTPのRTSystemEditor機能を使い、２つのRTCの接続動作を確認�
 ## rtshellを利用する
 OpenRTM-aistではrtshellが標準でインストールされます。
 rtshellを利用することでコマンドラインからRTCのActivate、Deactivate、終了等ができるようになります。<br>
-[rtshellのインストール・動作確認(Windows編)](/ja/doc/installation/install_rtshell/check_windows) をご覧ください。
+[rtshellのインストール・動作確認(Windows編)]({{ site.baseurl }}/ja/doc/installation/install_rtshell/check_windows) をご覧ください。
 
 
 ## 次は...

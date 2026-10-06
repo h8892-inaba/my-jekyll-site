@@ -14,10 +14,12 @@ swiper_images:
     link: /ja/doc/installation/lets_start
   - src: /assets/images/swiper/202release.png
     link: /ja/download
-  - src: /assets/images/swiper/contest2025_2.png
-    link: /ja/content/content/rtmcontest2025/
+#  - src: /assets/images/swiper/contest2025_2.png
+#    link: /ja/content/content/rtmcontest2025/
   - src: /assets/images/swiper/what_is_openrtm_ja2.jpg
     link: /ja/doc/aboutopenrtm/rtmiddleware
+  - src: /assets/images/swiper/contest2026_slider.png
+    link: /ja/content/content/rtmcontest2026/
 ---
 
 {% include top-swiper.html %}
@@ -110,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
            alt="RTC Fukushima" width="80">
     </a>
 
-    <a href="https://www.openrtm.org/openrtm/ja/node/4599" class="partner-link-card" target="_blank" rel="noopener">
+    <a href="{{ site.baseurl }}/ja/project/nedo_chinouka" class="partner-link-card" target="_blank" rel="noopener">
       <img src="{{ '/assets/images/partners/nedo_logo.png' | relative_url }}"
            alt="NEDO 次世代知能化技術開発" width="80">
     </a>

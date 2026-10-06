@@ -15,7 +15,7 @@ OpenRTM-aist本体に改修を加えてWindows上で利用したい場合は、O
 <!-- ------------------------------------------------------------ -->
 ## 必要なソフトウエア・ライブラリ
 
-以下のソフトウエアが必要です。詳細は [OpenRTM-aist 2.1系のWindowsへのインストール](/ja/doc/installation/install_2_1/install_windows_2_1/install_2_1) をご覧ください。
+以下のソフトウエアが必要です。詳細は [OpenRTM-aist 2.1系のWindowsへのインストール]({{ site.baseurl }}/ja/doc/installation/install_2_1/install_windows_2_1/install_2_1) をご覧ください。
 
 - Visual Studio
 - Python

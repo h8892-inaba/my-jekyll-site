@@ -31,7 +31,7 @@ OpenRTM-aistがサポートしているPythonバージョンをインストー�
 
 再起動後にコマンドプロンプトでPythonのバージョン番号が表示されることを確認して下さい。
 Pythonインストール時のパスを通す手順は、下記ページの解説をご覧ください。 <br>
-[OpenRTM-aistを10分で始めよう！・Pythonのインストール](/ja/doc/installation/lets_start#toc1) 
+[OpenRTM-aistを10分で始めよう！・Pythonのインストール]({{ site.baseurl }}/ja/doc/installation/lets_start#toc1) 
 
 
 <br>

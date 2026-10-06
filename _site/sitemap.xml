@@ -286,6 +286,9 @@
 <loc>http://localhost:4000/my-jekyll-site/manual_md1/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/my-jekyll-site/ja/project/nedo_chinouka/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/my-jekyll-site/ja/project/</loc>
 </url>
 <url>
@@ -712,6 +715,12 @@
 <loc>http://localhost:4000/my-jekyll-site/ja/content/rtc_create_raspimouse/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/my-jekyll-site/ja/content/site_policy/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/my-jekyll-site/ja/content/privacy_policy/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/my-jekyll-site/ja/content/rtshell_managing_rt_systems/</loc>
 </url>
 <url>
@@ -866,6 +875,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/my-jekyll-site/ja/content/vc_version_changer/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/my-jekyll-site/ja/content/terms_of_service/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/my-jekyll-site/ja/download/download_202_release/</loc>
@@ -11060,6 +11072,10 @@
 <url>
 <loc>http://localhost:4000/my-jekyll-site/ja/doc/casestudy/raspberrypi_mouse/raspimouse_tutorial_rtm_seminar/tutorial_rtm_seminar_rtshell_raspberrypimouse/rtshell.pdf</loc>
 <lastmod>2026-09-14T01:43:39+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/my-jekyll-site/ja/project/nedo_chinouka/nedo_rtc_list.pdf</loc>
+<lastmod>2023-09-07T02:00:06+00:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/my-jekyll-site/ja/publication/2004/ROBOME2004_Ando_1a1-l1-5.pdf</loc>

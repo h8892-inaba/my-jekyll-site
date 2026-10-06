@@ -114,17 +114,17 @@ Bullseye（32bit、64bit環境）、Bookworm（32bit、64bit環境）では、�
 </table>
 
 Microsoft Edge をお使いでダウンロードできない場合は、下記ページの解説をご覧ください。
-- [OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード](/ja/node/7323#toc2)  
+- [OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード]({{ site.baseurl }}/ja/node/7323#toc2)  
 
 必要なソフトウエアである Visual Studio と Python は下記バージョンに対応しています。
 - Visual Studio（2019, 2022, 2026）
 - Python （3.10, 3.11, 3.12, 3.13, 3.14）
 
 Windowsの場合、コマンドプロンプトでPythonのバージョン番号が表示されることを確認して下さい。 <br>
-表示されない場合は、[WindowsでPythonをインストールしてもバージョン番号が表示されない](/ja/doc/faq/faq_install#toc1) をご覧ください。
+表示されない場合は、[WindowsでPythonをインストールしてもバージョン番号が表示されない]({{ site.baseurl }}/ja/doc/faq/faq_install#toc1) をご覧ください。
 
-インストールに関しては、[2.1系のWindowsへのインストール](/ja/doc/installation/install_2_1/install_win_2_1) をご覧ください。　<br>
-初めてインストールされる場合は、[OpenRTM-aistを10分で始めよう！](/ja/node/7323) をご覧ください。
+インストールに関しては、[2.1系のWindowsへのインストール]({{ site.baseurl }}/ja/doc/installation/install_2_1/install_win_2_1) をご覧ください。　<br>
+初めてインストールされる場合は、[OpenRTM-aistを10分で始めよう！]({{ site.baseurl }}/ja/node/7323) をご覧ください。
 
 ### Linuxパッケージ
 
@@ -136,7 +136,7 @@ Ubuntu22.04、24.04（各amd64、arm64環境）では、下記をシェルプロ
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
 ```
 
-インストールに関しては、[2.1系のLinuxへのインストール](/ja/doc/installation/install_2_1/install_linux_2_1)をご覧ください。
+インストールに関しては、[2.1系のLinuxへのインストール]({{ site.baseurl }}/ja/doc/installation/install_2_1/install_linux_2_1)をご覧ください。
 
 ### Raspberry Pi OSパッケージ
 
@@ -148,7 +148,7 @@ Bookworm（64bit環境）では、下記をシェルプロンプトに貼り付�
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_raspbian.sh)
 ```
 
-インストールに関しては、[2.1系のRaspberry Pi OSへのインストール](/ja/doc/installation/install_2_1/install_raspbian_2_1)をご覧ください。
+インストールに関しては、[2.1系のRaspberry Pi OSへのインストール]({{ site.baseurl }}/ja/doc/installation/install_2_1/install_raspbian_2_1)をご覧ください。
 
 ### Macパッケージ
 
@@ -157,23 +157,23 @@ https://github.com/OpenRTM/homebrew-openrtm2
 
 ### 旧バージョン
 #### 2.0.2
-- [OpenRTM 2.0.2](/ja/node/7154) 
+- [OpenRTM 2.0.2]({{ site.baseurl }}/ja/node/7154) 
 #### 1.2.2
-- [OpenRTM-aist C++ 1.2.2-RELEASE](/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release)
-- [OpenRTM-aist Python 1.2.2-RELEASE](/ja/download/openrtm-aist-python/openrtm-aist-python_1_2_2_release)
-- [OpenRTM-aist Java 1.2.2-RELEASE](/ja/download/openrtm-aist-java/openrtm-aist-java_1_2_2_release)
-- [OpenRTP 1.2.2](/ja/download/tools/openrtp_1_2_2)
+- [OpenRTM-aist C++ 1.2.2-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release)
+- [OpenRTM-aist Python 1.2.2-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-python/openrtm-aist-python_1_2_2_release)
+- [OpenRTM-aist Java 1.2.2-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-java/openrtm-aist-java_1_2_2_release)
+- [OpenRTP 1.2.2]({{ site.baseurl }}/ja/download/tools/openrtp_1_2_2)
 
 #### 1.2.1
-- [OpenRTM-aist C++ 1.2.1-RELEASE](/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_1_release)
-- [OpenRTM-aist Python 1.2.1-RELEASE](/ja/download/openrtm-aist-python/openrtm-aist-python_1_2_1_release)
-- [OpenRTM-aist Java 1.2.1-RELEASE](/ja/download/openrtm-aist-java/openrtm-aist-java_1_2_1_release)
-- [OpenRTP 1.2.1](/ja/download/tools/openrtp_1_2_1)
+- [OpenRTM-aist C++ 1.2.1-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_1_release)
+- [OpenRTM-aist Python 1.2.1-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-python/openrtm-aist-python_1_2_1_release)
+- [OpenRTM-aist Java 1.2.1-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-java/openrtm-aist-java_1_2_1_release)
+- [OpenRTP 1.2.1]({{ site.baseurl }}/ja/download/tools/openrtp_1_2_1)
 
 #### 1.1.2
-- [OpenRTM-aist C++ 1.1.2-RELEASE](/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release)
-- [OpenRTM-aist Python 1.1.2-RELEASE](/ja/download/openrtm-aist-python/openrtm-aist-python_1_1_2_release)
-- [OpenRTM-aist Java 1.1.2-RELEASE](/ja/download/openrtm-aist-java/openrtm-aist-java_1_1_2_release)
-- [OpenRTP 1.1.2](/ja/download/tools/openrtp_1_1_2)
+- [OpenRTM-aist C++ 1.1.2-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release)
+- [OpenRTM-aist Python 1.1.2-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-python/openrtm-aist-python_1_1_2_release)
+- [OpenRTM-aist Java 1.1.2-RELEASE]({{ site.baseurl }}/ja/download/openrtm-aist-java/openrtm-aist-java_1_1_2_release)
+- [OpenRTP 1.1.2]({{ site.baseurl }}/ja/download/tools/openrtp_1_1_2)
 
-#### [各種仕様](/ja/download/various_specs)
+#### [各種仕様]({{ site.baseurl }}/ja/download/various_specs)
