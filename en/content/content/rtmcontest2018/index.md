@@ -11,7 +11,7 @@ No English version available.
 
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>
 <a href="#program"><img src="../images/contest2013_program.png" width="10%;"></a>
-<a href="/contests/2018"><img src="../images/contest2013_worklist.png" width="10%;"></a>(No corresponding English project page available.)(No corresponding English project page available.)
+<a href="/contests/2018"><img src="../images/contest2013_worklist.png" width="10%;"></a>
 <a href="#evaluation"><img src="../images/contest2013_evaluation.png" width="10%;"></a></div>
 <div align="center"><a href="#award"><img src="../images/contest2013_award.png" width="10%;"></a>
 <a href="#pastwork"><img src="../images/contest2013_pastworks.png" width="10%;"></a>
@@ -197,7 +197,7 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 これらのフィードバックを元に応募者が改良を加え、SI2017でのプレゼンテーションまでに、より良い作品になるようご協力ください。
 - [コメントの書き方ガイド]({{ site.baseurl }}/en/content/content/rtmcontest_commentguide)
 <!-- - [[コンテスト作品一覧へ（ただいま準備中です）]] -->
-- [コンテスト作品一覧へ](/contests/2018)(No corresponding English project page available.)(No corresponding English project page available.)
+- [コンテスト作品一覧へ](/contests/2018)(No corresponding English project page available.)
 
 ### 奨励賞を提供する
 
@@ -306,25 +306,25 @@ SI2018の申込方法、申込および原稿〆切および具体的な開催�
 <!-- （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2010?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
   - [応募作品]()(No corresponding page available.)）(no_link)
 - [RTミドルウエアコンテスト2011]({{ site.baseurl }}/en/content/content/rtmcontest2011) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)）-->
   - [応募作品]()(No corresponding page available.)）(no_link)
 - [RTミドルウエアコンテスト2012]({{ site.baseurl }}/en/content/content/rtmcontest2012) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)）-->
   - [応募作品]()(No corresponding page available.)）(no_link)
 - [RTミドルウエアコンテスト2013]({{ site.baseurl }}/en/content/content/rtmcontest2013) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2013)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2013)(No corresponding English project page available.)）-->
   - [応募作品]()(No corresponding page available.)）(no_link)
 - [RTミドルウエアコンテスト2014]({{ site.baseurl }}/en/content/content/rtmcontest2014) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2014)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2014)(No corresponding English project page available.)）-->
   - [応募作品]()(No corresponding page available.)）(no_link)
 - [RTミドルウエアコンテスト2015]({{ site.baseurl }}/en/content/content/rtmcontest2015) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2015)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2015)(No corresponding English project page available.)）-->
   - [応募作品]()(No corresponding page available.)）(no_link)
 - [RTミドルウエアコンテスト2016]({{ site.baseurl }}/en/content/content/rtmcontest2016) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2016)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2016)(No corresponding English project page available.)）-->
   - [応募作品]()(No corresponding page available.)）(no_link)
-- [RTミドルウエアコンテスト2017](/content/rtmcontest2017)(No corresponding English project page available.)(No corresponding English project page available.) 
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2017)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+- [RTミドルウエアコンテスト2017](/content/rtmcontest2017)(No corresponding English project page available.) 
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2017)(No corresponding English project page available.)）-->
   - [応募作品]()(No corresponding page available.)）(no_link)
 
 <!-- &aname(registration){}; -->

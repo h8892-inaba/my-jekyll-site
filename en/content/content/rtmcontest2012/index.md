@@ -58,23 +58,23 @@ SI2012の申込方法、申込および原稿〆切および具体的な開催�
   </tr>
   <tr>
     <td>1G1-2</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5200/">音変換コンポーネントによる雨の不快感を解消するシステムの提案</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5200/">音変換コンポーネントによる雨の不快感を解消するシステムの提案</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td>1G1-3</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5196">RTによるプレゼンテーション支援コンポーネント群</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5196">RTによるプレゼンテーション支援コンポーネント群</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td>1G1-4</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5205">外部入力に適応しひかりが揺らぐランプの開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5205">外部入力に適応しひかりが揺らぐランプの開発</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td>1G1-5</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5203">対人追従ロボットの曲がり角見失い回復機能</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5203">対人追従ロボットの曲がり角見失い回復機能</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td>1G1-6</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5204">CHLACを用いて歩行と停止とを見分けられる機能のOpenRTMモジュール化</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5204">CHLACを用いて歩行と停止とを見分けられる機能のOpenRTMモジュール化</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td colspan="2">第G室　第2スロット</td>
@@ -85,46 +85,46 @@ SI2012の申込方法、申込および原稿〆切および具体的な開催�
   </tr>
   <tr>
     <td>1G2-2</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5183">モーションキャプチャディバイスを利用可能にするRSNP Gateway RTCの開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5183">モーションキャプチャディバイスを利用可能にするRSNP Gateway RTCの開発</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td>1G2-3</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5173">RTCビルダ on the Web</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5173">RTCビルダ on the Web</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td>1G2-4</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5208">コマンド式サーボモータを用いたロボットアームRTC</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5208">コマンド式サーボモータを用いたロボットアームRTC</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td>1G2-5</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5198">Windowsが動作する超小型SEED PCを用いた分散型RTシステム</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5198">Windowsが動作する超小型SEED PCを用いた分散型RTシステム</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td>1G2-6</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5197">クワッドロータを制御するRTコンポーネント群</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5197">クワッドロータを制御するRTコンポーネント群</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td colspan="2">第G室　第3スロット</td>
   </tr>
   <tr>
     <td>1G3-1</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5199">RTMで動作する人追尾可能なカメラモジュールの開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5199">RTMで動作する人追尾可能なカメラモジュールの開発</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td>1G3-2</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5188">MRPTを用いた環境地図作成用RTコンポーネント</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5188">MRPTを用いた環境地図作成用RTコンポーネント</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td>1G3-3</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5194">高性能ロボットシミュレータMORSEを利用するためのRTコンポーネント群</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5194">高性能ロボットシミュレータMORSEを利用するためのRTコンポーネント群</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td>1G3-4</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5191">小型ヒューマノイドのためのRTMを用いた共通プラットフォームの開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5191">小型ヒューマノイドのためのRTMを用いた共通プラットフォームの開発</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td>1G3-5</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/node/5116">組込み機器用RTコンポーネント開発環境 ATDE for OpenRTM-aist</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/node/5116">組込み機器用RTコンポーネント開発環境 ATDE for OpenRTM-aist</a>(No corresponding English project page available.)</td>
   </tr>
   <tr>
     <td>1G3-6</td>
@@ -237,7 +237,7 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 - [RTミドルウエアコンテスト2010]({{ site.baseurl }}/en/content/content/rtmcontest2010)
 （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2010?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）
 - [RTミドルウエアコンテスト2011]({{ site.baseurl }}/en/content/content/rtmcontest2011) 
-（[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)(No corresponding English project page available.)）
+（[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)）
 
 ## お問い合わせ
 まず、[コンテストのFAQ]({{ site.baseurl }}/en/content/content/rtmcontest_faq)を確認いただき、問い合わせ内容に応じて下記に連絡ください。

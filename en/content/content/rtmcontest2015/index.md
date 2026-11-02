@@ -11,7 +11,7 @@ No English version available.
 
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>
 <a href="#program"><img src="../images/contest2013_program.png" width="10%;"></a>
-<a href="/contests/2015"><img src="../images/contest2013_worklist.png" width="10%;"></a>(No corresponding English project page available.)(No corresponding English project page available.)
+<a href="/contests/2015"><img src="../images/contest2013_worklist.png" width="10%;"></a>
 <a href="#evaluation"><img src="../images/contest2013_evaluation.png" width="10%;"></a></div>
 <div align="center"><a href="#award"><img src="../images/contest2013_award.png" width="10%;"></a>
 <a href="#pastwork"><img src="../images/contest2013_pastworks.png" width="10%;"></a>
@@ -89,31 +89,31 @@ RTミドルウエアは、ロボットを構成する様々な要素をモジュ
   </tr>
   <tr>
     <td>1O1-1 <br>(10:30 - 10:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_03">Kinect v2の人物検出・追跡機能のRTコンポーネント化</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_03">Kinect v2の人物検出・追跡機能のRTコンポーネント化</a>(No corresponding English project page available.)</td>
     <td>羽根青玄（東京理科大），小木津武樹（東京理科大），溝口博（東京理科大）</td>
     <td></td>
   </tr>
   <tr>
     <td>1O1-2 <br>(10:45 - 11:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_09">遠隔操縦でボールを追いかけるロボットの開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_09">遠隔操縦でボールを追いかけるロボットの開発</a>(No corresponding English project page available.)</td>
     <td>伊藤誠人(産業技術短期大)，二井見博文(産業技術短期大)</td>
     <td>サマーキャンプ賞</td>
   </tr>
   <tr>
     <td>1O1-3 <br>(11:00 - 11:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_16">フォースフィードバック型ステアリングホイールRTC化の研究</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_16">フォースフィードバック型ステアリングホイールRTC化の研究</a>(No corresponding English project page available.)</td>
     <td>陳佑樹（東京理科大），羽根青玄（東京理科大），小木津武樹（東京理科大），溝口博（東京理科大）</td>
     <td>システムズエンジニアリング賞</td>
   </tr>
   <tr>
     <td>1O1-4 <br>(11:15 - 11:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_01">複合コンポーネント作成支援ツールの開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_01">複合コンポーネント作成支援ツールの開発</a>(No corresponding English project page available.)</td>
     <td>宮本信彦（個人参加）</td>
     <td>便利ツール賞<br>SUGAR SWEET ROBOTICS賞</td>
   </tr>
   <tr>
     <td>1O1-5 <br>(11:30 - 11:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_02">RTミドルウェア学習用ロボットアーム制御RTコンポーネント群の開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_02">RTミドルウェア学習用ロボットアーム制御RTコンポーネント群の開発</a>(No corresponding English project page available.)</td>
     <td>宮本信彦（個人参加）</td>
     <td>組込みシステム技術協会賞</td>
   </tr>
@@ -129,37 +129,37 @@ RTミドルウエアは、ロボットを構成する様々な要素をモジュ
   </tr>
   <tr>
     <td>1O2-1 <br>(13:30 - 13:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_11">XML台本に基づく複数ロボットの同期制御コンポーネント</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_11">XML台本に基づく複数ロボットの同期制御コンポーネント</a>(No corresponding English project page available.)</td>
     <td>青木哲（甲南大），秋山和寛（甲南大），林拓実（甲南大），原口 和貴（甲南大），真下遼（甲南大），梅谷智弘（甲南大），北村 達也（甲南大），灘本明代（甲南大）</td>
     <td>ウィン電子工業賞</td>
   </tr>
   <tr>
     <td>1O2-2 <br>(13:45 - 14:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_04">USBメモリに搭載したポータブルRTM環境を用いたロボット教育ツール</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_04">USBメモリに搭載したポータブルRTM環境を用いたロボット教育ツール</a>(No corresponding English project page available.)</td>
     <td>野際章人（埼玉大），藤間瑞樹（埼玉大），程島竜一（埼玉大），琴坂信哉（埼玉大）</td>
     <td>計測自動制御学会RTミドルウェア賞</td>
   </tr>
   <tr>
     <td>1O2-3 <br>(14:00 - 14:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_14">自動運転研究用の市販乗用車へのRTMの導入</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_14">自動運転研究用の市販乗用車へのRTMの導入</a>(No corresponding English project page available.)</td>
     <td>堀佑大朗（東京理科大），陳祐樹（東京理科大），羽根青玄（東京理科大），小木津武樹（東京理科大），竹村裕（東京理科大），溝口 博（東京理科大）</td>
     <td>RTミドルウェアを普及しま賞<br>グローバルアシスト賞</td>
   </tr>
   <tr>
     <td>1O2-4 <br>(14:15 - 14:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_05">家電の電源状態を検出してON/OFFを制御する赤外線リモコン</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_05">家電の電源状態を検出してON/OFFを制御する赤外線リモコン</a>(No corresponding English project page available.)</td>
     <td>倉部紘一（名城大），辰野恭市（名城大）</td>
     <td>チェンジビジョン賞<br>日本ロボット工業会賞</td>
   </tr>
   <tr>
     <td>1O2-5 <br>(14:30 - 14:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_06">モーションキャプチャによるボールキャッチ可能なロボット制御コンポーネント群の開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_06">モーションキャプチャによるボールキャッチ可能なロボット制御コンポーネント群の開発</a>(No corresponding English project page available.)</td>
     <td>湯口彰重（奈良先端大），松浦亮太（奈良先端大），馬場隆造（奈良先端大），袴田有哉（奈良先端大），山崎亘（奈良先端大），El Hafi, Lotfi（奈良先端大），Von Drigalski, Felix, Wolf Hans Erich（奈良先端大），築地原里樹（奈良先端大），丁明（奈良先端大），高松淳（奈良先端大），小笠原司（奈良先端大）</td>
   </tr>
     <td>></td>
   <tr>
     <td>1O2-6 <br>(14:45 - 15:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_13">歩行パターンを利用した人検出RTコンポーネント</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_13">歩行パターンを利用した人検出RTコンポーネント</a>(No corresponding English project page available.)</td>
     <td>池田貴政（芝浦工大），野見山　大基（芝浦工大），松日楽信人（芝浦工大），新井初実（東京女子大），木村純麗（東京女子大），坂井栞（東京女子大），薮井えりか（東京女子大），山崎友希（東京女子大），加藤由花（東京女子大）</td>
     <td>アドイン賞<br>インタラクションRTM賞</td>
   </tr>
@@ -176,31 +176,31 @@ RTミドルウエアは、ロボットを構成する様々な要素をモジュ
   </tr>
   <tr>
     <td>1O3-1 <br>(15:15 - 15:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_18">喋っど 〜sha-bed〜</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_18">喋っど 〜sha-bed〜</a>(No corresponding English project page available.)</td>
     <td>光崎 将人（奈良先端大），中田彩（奈良先端大），澤邊太志（奈良先端大）</td>
     <td>></td>
   </tr>
   <tr>
     <td>1O3-2 <br>(15:30 - 15:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_08">オーディオ・アニマトロニクスのためのRTC</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_08">オーディオ・アニマトロニクスのためのRTC</a>(No corresponding English project page available.)</td>
     <td>堀川隆弘（CURIOSITY）</td>
     <td>ベストサポート賞</td>
   </tr>
   <tr>
     <td>1O3-3 <br>(15:45 - 16:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_10">LEGO Mindstorms EV3を用いたロボットプログラミング教材の開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_10">LEGO Mindstorms EV3を用いたロボットプログラミング教材の開発</a>(No corresponding English project page available.)</td>
     <td>安藤慶昭（産業技術総合研究所）</td>
     <td>></td>
   </tr>
   <tr>
     <td>1O3-4 <br>(16:00 - 16:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_12">多目的利用が可能な画像出力RTコンポーネント</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_12">多目的利用が可能な画像出力RTコンポーネント</a>(No corresponding English project page available.)</td>
     <td>下山未来（芝浦工大），藤本一真（芝浦工大），安田福啓（芝浦工大），松日楽信人（芝浦工大）</td>
     <td>女流RTコンポーネント賞<br>RSi賞</td>
   </tr>
   <tr>
     <td>1O3-5 <br>(16:15 - 16:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_07">MediA-RTコミュニティ活動を通したメディアアート制作</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2015_07">MediA-RTコミュニティ活動を通したメディアアート制作</a>(No corresponding English project page available.)</td>
     <td>土屋彩茜（芝浦工大），小山拓馬（芝浦工大），中沢真太郎（芝浦工大），中田航平（芝浦工大），佐々木毅（芝浦工大）</td>
     <td>ベストコンセプト賞<br>優秀RT技術賞<br>セック特別賞</td>
   </tr>
@@ -219,7 +219,7 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 応募作品を実際に動かしてみるなどして試していただき、どのような環境で動作したか/しなかったか、バグやその修正のためのパッチ情報、作品に対するコメントや感想を作品のプロジェクトページに書き込み、作者にフィードバックすることが出来ます。
 これらのフィードバックを元に応募者が改良を加え、SI2014でのプレゼンテーションまでに、より良い作品になるようご協力ください。
 - [コメントの書き方ガイド]({{ site.baseurl }}/en/content/content/rtmcontest_commentguide)
-- [コンテスト作品一覧へ](/contests/2015)(No corresponding English project page available.)(No corresponding English project page available.)
+- [コンテスト作品一覧へ](/contests/2015)(No corresponding English project page available.)
 
 ### 奨励賞を提供する
 
@@ -325,16 +325,16 @@ SI2015の申込方法、申込および原稿〆切および具体的な開催�
 <!-- （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2010?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
 - [RTミドルウエアコンテスト2011](../rtmcontest2011/) 
  - （[応募作品]()(no_link)）
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)）-->
 - [RTミドルウエアコンテスト2012](../rtmcontest2012) 
  - （[応募作品]()(no_link)）
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)）-->
 - [RTミドルウエアコンテスト2013](../rtmcontest2013) 
  - （[応募作品]()(no_link)）
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2013)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2013)(No corresponding English project page available.)）-->
 - [RTミドルウエアコンテスト2014](../rtmcontest2014) 
  - （[応募作品]()(no_link)）
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2014)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2014)(No corresponding English project page available.)）-->
 
 &aname(registration){};
 ## コンテスト作品のwebへの登録方法 

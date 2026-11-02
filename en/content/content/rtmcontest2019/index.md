@@ -13,7 +13,7 @@ RTMコンテスト2019 受賞者が決定しました！！詳細は[[こちら:
 
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>
 <a href="#program"><img src="../images/contest2013_program.png" width="10%;"></a>
-<a href="/contests/2019"><img src="../images/contest2013_worklist.png" width="10%;"></a>(No corresponding English project page available.)(No corresponding English project page available.)
+<a href="/contests/2019"><img src="../images/contest2013_worklist.png" width="10%;"></a>
 <a href="#evaluation"><img src="../images/contest2013_evaluation.png" width="10%;"></a></div>
 <div align="center"><a href="#award"><img src="../images/contest2013_award.png" width="10%;"></a>
 <a href="#pastwork"><img src="../images/contest2013_pastworks.png" width="10%;"></a>
@@ -107,67 +107,67 @@ RTミドルウエアは、ロボットを構成する様々な要素をモジュ
   </tr>
   <tr>
     <td>12:30-12:40</td>
-    <td><a href="/ja/node/6902">ゴミ捨て動作により映像が変化するディスプレイ付きゴミ箱の開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/node/6902">ゴミ捨て動作により映像が変化するディスプレイ付きゴミ箱の開発</a>(No corresponding English project page available.)</td>
     <td>芝浦工業大学附属高校 久保田 浩平</td>
     <td>アドイン賞</td>
   </tr>
   <tr>
     <td>12:40-12:50</td>
-    <td><a href="/ja/node/6906">ロボット人材育成を目的とした実践的ロボットプログラミング教材の開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/node/6906">ロボット人材育成を目的とした実践的ロボットプログラミング教材の開発</a>(No corresponding English project page available.)</td>
     <td>会津大学 中村 啓太</td>
     <td>ベストサポート賞, 日本ロボット工業会賞​</td>
   </tr>
   <tr>
     <td>12:50-13:00</td>
-    <td><a href="/ja/node/6892">圧力計測と音声出力を組み合わせた生活を彩るアプリケーション群の開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/node/6892">圧力計測と音声出力を組み合わせた生活を彩るアプリケーション群の開発</a>(No corresponding English project page available.)</td>
     <td>芝浦工業大学附属高等学校 玉置 晴太</td>
     <td>RTミドルウェア普及しま賞</td>
   </tr>
   <tr>
     <td>13:00-13:10</td>
-    <td><a href="/ja/node/6908">歩行時特徴抽出RTCを用いた人物追従ロボットの追従精度の向上</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/node/6908">歩行時特徴抽出RTCを用いた人物追従ロボットの追従精度の向上</a>(No corresponding English project page available.)</td>
     <td>芝浦工業大学 浅田 郁弥</td>
     <td>サマーキャンプ賞</td>
   </tr>
   <tr>
     <td>13:10-13:20</td>
-    <td><a href="/ja/node/6907">ヒューマノイドロボットによる高齢者のためのトレーニングガイドRTC</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/node/6907">ヒューマノイドロボットによる高齢者のためのトレーニングガイドRTC</a>(No corresponding English project page available.)</td>
     <td>芝浦工業大学 新田 怜香</td>
     <td>Cooperative Intelligence賞, 女流RTコンポーネント賞​</td>
   </tr>
   <tr>
     <td>13:20-13:30</td>
-    <td><a href="/ja/node/6909">ROSで動作するロボットをクラウドで管理し任意のノードを実行可能なWebシステムの開発と応用</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/node/6909">ROSで動作するロボットをクラウドで管理し任意のノードを実行可能なWebシステムの開発と応用</a>(No corresponding English project page available.)</td>
     <td>明治大学 末永 良太</td>
     <td>RTミドルウェア技術開発賞</td>
   </tr>
   <tr>
     <td>13:30-13:40</td>
-    <td><a href="/ja/node/6917">サービスロボットによるプレゼンテーション代行</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/node/6917">サービスロボットによるプレゼンテーション代行</a>(No corresponding English project page available.)</td>
     <td>名城大学大学院 辻 大靖</td>
     <td>**<span style="color:red;">計測自動制御学会学会​RTミドルウェア賞</span>;**, システムズエンジニアリング賞​, パナソニック アドバンスト​テクノロジー 株式会社賞​</td>
   </tr>
   <tr>
     <td>13:40-13:50</td>
-    <td><a href="/ja/node/6919">触覚と3次元視覚を備えたロボットアームのためのプログラミング教材</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/node/6919">触覚と3次元視覚を備えたロボットアームのためのプログラミング教材</a>(No corresponding English project page available.)</td>
     <td>大阪電気通信大学 澤﨑 悠太</td>
     <td>ダイナミクセル トライアル賞, グローバルアシスト賞</td>
   </tr>
   <tr>
     <td>13:50-14:00</td>
-    <td><a href="/ja/node/6918">3次元での自己位置同定のためのRTコンポーネント</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/node/6918">3次元での自己位置同定のためのRTコンポーネント</a>(No corresponding English project page available.)</td>
     <td>名城大学 岩井 舞香</td>
     <td></td>
   </tr>
   <tr>
     <td>14:00-14:10</td>
-    <td><a href="/ja/node/6920">把持対象物の三次元物体認識コンポーネント群の開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/node/6920">把持対象物の三次元物体認識コンポーネント群の開発</a>(No corresponding English project page available.)</td>
     <td>名城大学 深尾 真行</td>
     <td></td>
   </tr>
   <tr>
     <td>14:10-14:20</td>
-    <td><a href="/ja/node/6916">Kubernetes を利用した RTC 開発フレームワーク</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/node/6916">Kubernetes を利用した RTC 開発フレームワーク</a>(No corresponding English project page available.)</td>
     <td>産総研 黒瀬 竜一</td>
     <td>SUGAR SWEET ROBOTICS賞, 便利ツール賞, 世界一リッチな​RTコンポーネント賞</td>
   </tr>
@@ -211,7 +211,7 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 - [コメントの書き方ガイド]({{ site.baseurl }}/en/content/content/rtmcontest_commentguide)
 <!--  -->
 <!-- - [[コンテスト作品一覧へ（ただいま準備中です）]] -->
-- [コンテスト作品一覧へ](/contests/2019)(No corresponding English project page available.)(No corresponding English project page available.)
+- [コンテスト作品一覧へ](/contests/2019)(No corresponding English project page available.)
 
 ### 奨励賞を提供する
 
@@ -303,28 +303,28 @@ SI2019の申込方法、申込および原稿〆切および具体的な開催�
 <!-- （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2010?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2011]({{ site.baseurl }}/en/content/content/rtmcontest2011) (no_link)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2012]({{ site.baseurl }}/en/content/content/rtmcontest2012) (no_link)
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2013](../rtmcontest2013) 
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2013)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2013)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2014](../rtmcontest2014) 
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2014)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2014)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2015](../rtmcontest2015) 
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2015)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2015)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2016](../rtmcontest2016) 
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2016)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2016)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2017](../rtmcontest2017) 
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2017)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2017)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2018](../rtmcontest2018) 
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2018)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2018)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 
 <!-- &aname(registration){}; -->

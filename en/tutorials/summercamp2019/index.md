@@ -441,7 +441,7 @@ title: rtミドルウェアサマーキャンプ2019
 ### グループ1
 
 - **課題**: 　きゃりーきゃりー
-  - [プロジェクトページ](/ja/project/SummerCamp2019_group1)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2019_group1)(No corresponding English project page available.)(no_page)
 <!-- Invalid YouTube URL: http://www.slideshare.net/161183595 -->
 
   - 開発モデル発表
@@ -463,7 +463,7 @@ title: rtミドルウェアサマーキャンプ2019
 ### グループ2
 
 - **課題**:　ねずpiパーティ４
-- [プロジェクトページ](/ja/project/SummerCamp2019_group2)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
+- [プロジェクトページ](/ja/project/SummerCamp2019_group2)(No corresponding English project page available.)(no_page)
 <!-- Invalid YouTube URL: http://www.slideshare.net/161184296 -->
 
   - 開発モデル発表
@@ -485,7 +485,7 @@ title: rtミドルウェアサマーキャンプ2019
 ### グループ3
 
 - **課題**:　Dot-to-Dot
-  - [プロジェクトページ](/ja/project/SummerCamp2019_group3)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2019_group3)(No corresponding English project page available.)(no_page)
 <!-- Invalid YouTube URL: http://www.slideshare.net/161184499 -->
 
   - 開発モデル発表
@@ -507,7 +507,7 @@ title: rtミドルウェアサマーキャンプ2019
 ### グループ4
 
 - **課題**:　Laundry machine
-  - [プロジェクトページ](/ja/project/SummerCamp2019_group4)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2019_group4)(No corresponding English project page available.)(no_page)
 <!-- Invalid YouTube URL: http://www.slideshare.net/161184727 -->
 
   - 開発モデル発表
@@ -524,7 +524,7 @@ title: rtミドルウェアサマーキャンプ2019
 ### グループ5
 
 - **課題**:　疲れたあなたを癒します
-  - [プロジェクトページ](/ja/project/SummerCamp2019_group5)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2019_group5)(No corresponding English project page available.)(no_page)
 <!-- Invalid YouTube URL: http://www.slideshare.net/161184978 -->
 
   - 開発モデル発表

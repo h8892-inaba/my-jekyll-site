@@ -522,7 +522,7 @@ summercamp2017(at)openrtm.org~
 ### グループ１
 
 - **課題**: 自撮りロボット！
-- [プロジェクトページ](/ja/project/SummerCamp2017_group1)(No corresponding English project page available.)(No corresponding English project page available.)
+- [プロジェクトページ](/ja/project/SummerCamp2017_group1)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/78651769 -->
 {% include slideshare.html
@@ -544,7 +544,7 @@ summercamp2017(at)openrtm.org~
 ### グループ2
 
 - **課題**: 打ち上がれ！オレの花火！～インスタラクティブ花火第１回つくば花火大会～
-- [プロジェクトページ](/ja/project/SummerCamp2017_group2)(No corresponding English project page available.)(No corresponding English project page available.)
+- [プロジェクトページ](/ja/project/SummerCamp2017_group2)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/78651760 -->
 {% include slideshare.html
@@ -566,7 +566,7 @@ summercamp2017(at)openrtm.org~
 ### グループ3
 
 - **課題**: ロボットクエスト
-- [プロジェクトページ](/ja/project/SummerCamp2017_group3)(No corresponding English project page available.)(No corresponding English project page available.) 
+- [プロジェクトページ](/ja/project/SummerCamp2017_group3)(No corresponding English project page available.) 
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/78651746 -->
 {% include slideshare.html
@@ -593,7 +593,7 @@ summercamp2017(at)openrtm.org~
 ### グループ4
 
 - **課題**: 名刺交換ロボット
-- [プロジェクトページ](/ja/project/SummerCamp2017_group4)(No corresponding English project page available.)(No corresponding English project page available.)
+- [プロジェクトページ](/ja/project/SummerCamp2017_group4)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/78651727 -->
 {% include slideshare.html
@@ -619,7 +619,7 @@ summercamp2017(at)openrtm.org~
 - **課題**: ちょっと安全なピッキングロボットシステム
   - 
   - 
-- [プロジェクトページ](/ja/project/SummerCamp2017_group5)(No corresponding English project page available.)(No corresponding English project page available.)
+- [プロジェクトページ](/ja/project/SummerCamp2017_group5)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/79007428 -->
 {% include slideshare.html

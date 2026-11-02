@@ -452,7 +452,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
   - 今回作成したシステムを第三者が再現できる情報をマニュアル化してください。
   - 過去のサマーキャンプやコンテストのプロジェクトを参照してください
     - [RTMサマーキャンプ2019作品一覧]({{ site.baseurl }}/en/tutorials/summercamp2019#toc15)(no_page)
-    - [RTMコンテスト2019作品一覧](https://openrtm.org/openrtm/ja/contests/2019)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
+    - [RTMコンテスト2019作品一覧](https://openrtm.org/openrtm/ja/contests/2019)(No corresponding English project page available.)(no_page)
 - **SysMLやＵＭＬなどのモデルをつくったらそのデータ** → プロジェクトページに自分で格納
   - モデリングツールでモデル作成をした場合はそのデータ
   - 最終成果報告会の発表資料にモデルが含まれていればそれでも結構です
@@ -499,7 +499,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### 名城大グループ
 
 - **課題**:
-  - [プロジェクトページ](/ja/project/SummerCamp2021_group1)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2021_group1)(No corresponding English project page available.)(no_page)
   - 最終成果発表資料
 
 <!-- <nowiki> -->
@@ -523,7 +523,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### 芝浦工業大グループ
 
 - **課題**: 
-  - [プロジェクトページ](/ja/project/SummerCamp2021_group2)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2021_group2)(No corresponding English project page available.)(no_page)
 <!-- -- 最終成果発表資料 -->
 <!-- <nowiki> -->
 <!-- [video:http://www.slideshare.net/238367796] -->
@@ -548,7 +548,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### 東京都立大グループ
 
 - **課題**: 
-  - [プロジェクトページ](/ja/project/SummerCamp2021_group3)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2021_group3)(No corresponding English project page available.)(no_page)
 
 <!-- -- 最終成果発表資料 -->
 <!-- <nowiki> -->

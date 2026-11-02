@@ -489,7 +489,7 @@ title: rtミドルウェアサマーキャンプ2018
 ### グループ1
 
 - **課題**: モバイルロボットゲームパック
-  - [プロジェクトページ](/ja/project/SummerCamp2018_group1)(No corresponding English project page available.)(No corresponding English project page available.)
+  - [プロジェクトページ](/ja/project/SummerCamp2018_group1)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/108736729 -->
 
@@ -507,7 +507,7 @@ title: rtミドルウェアサマーキャンプ2018
 ### グループ2
 
 - **課題**:NAOの大冒険
-- [プロジェクトページ](/ja/project/SummerCamp2018_group2)(No corresponding English project page available.)(No corresponding English project page available.)
+- [プロジェクトページ](/ja/project/SummerCamp2018_group2)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/108735739 -->
 
@@ -524,7 +524,7 @@ title: rtミドルウェアサマーキャンプ2018
 &aname(summercamp2018_group3);
 ### グループ3
 - **課題**:じゃんけんロボットシステム
-  - [プロジェクトページ](/ja/project/SummerCamp2018_group3)(No corresponding English project page available.)(No corresponding English project page available.)
+  - [プロジェクトページ](/ja/project/SummerCamp2018_group3)(No corresponding English project page available.)
 <!-- Invalid YouTube URL: http://www.slideshare.net/108736424 -->
 
   - 開発モデル発表
@@ -541,7 +541,7 @@ title: rtミドルウェアサマーキャンプ2018
 &aname(summercamp2018_group4);
 ### グループ4
 - **課題**:T型自律走行ロボット
-  - [プロジェクトページ](/ja/project/SummerCamp2018_group4)(No corresponding English project page available.)(No corresponding English project page available.)
+  - [プロジェクトページ](/ja/project/SummerCamp2018_group4)(No corresponding English project page available.)
 
 <!-- Invalid YouTube URL: http://www.slideshare.net/108736510 -->
 

@@ -81,7 +81,7 @@ No English version available.
 講習会資料を参考にしてください。 また、少し古い情報ですが、学習推論ライブラリを RTミドルウエアを使ってコンポーネント化した[学習推論コンポーネントの例]()(No corresponding page available.)を公開しております。参考にしていただければ幸いです。また、[過去のコンテスト作品]({{ site.baseurl }}/en/content/content)を参考にしてください。
 
 ### Q: すでに開発されているRTコンポーネントは？
-[OpenRTM-aistのコンポーネントページ](http://www.openrtm.org/openrtm/ja/node/1546)(No corresponding English project page available.)(No corresponding English project page available.)を探してみてください。また、過去の資料も参考にしてください。
+[OpenRTM-aistのコンポーネントページ](http://www.openrtm.org/openrtm/ja/node/1546)(No corresponding English project page available.)を探してみてください。また、過去の資料も参考にしてください。
 
 - [RTミドルウエア技術カタログ2010]()(No corresponding page available.)　（産総研）
 - [NEDO国際ロボット展2009：知能化モジュール集](http://www.nedo.go.jp/library/pamphlets/ZZ_pamphlets_02kikai_chinou.html) (NEDO)

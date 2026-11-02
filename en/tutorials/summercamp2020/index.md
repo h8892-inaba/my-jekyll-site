@@ -452,7 +452,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
   - 今回作成したシステムを第三者が再現できる情報をマニュアル化してください。
   - 過去のサマーキャンプやコンテストのプロジェクトを参照してください
     - [RTMサマーキャンプ2019作品一覧]({{ site.baseurl }}/en/tutorials/summercamp2019#toc15)
-    - [RTMコンテスト2019作品一覧](https://openrtm.org/openrtm/ja/contests/2019)(No corresponding English project page available.)(No corresponding English project page available.)
+    - [RTMコンテスト2019作品一覧](https://openrtm.org/openrtm/ja/contests/2019)(No corresponding English project page available.)
 - **SysMLやＵＭＬなどのモデルをつくったらそのデータ** → プロジェクトページに自分で格納
   - モデリングツールでモデル作成をした場合はそのデータ
   - 最終成果報告会の発表資料にモデルが含まれていればそれでも結構です
@@ -500,7 +500,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### グループ1
 
 - **課題**:ジェンガを行うロボット
-  - [プロジェクトページ](/ja/project/SummerCamp2020_group1)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2020_group1)(No corresponding English project page available.)(no_page)
   - 最終成果発表資料
 <!-- Invalid YouTube URL: http://www.slideshare.net/238360572 -->
 
@@ -518,7 +518,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### グループ2
 
 - **課題**: お宝探しゲーム
-  - [プロジェクトページ](/ja/project/SummerCamp2020_group2)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2020_group2)(No corresponding English project page available.)(no_page)
   - 最終成果発表資料
 <!-- Invalid YouTube URL: http://www.slideshare.net/238367796 -->
 
@@ -541,7 +541,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### グループ3
 
 - **課題**: ロボットPK対決
-  - [プロジェクトページ](/ja/project/SummerCamp2020_group3)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2020_group3)(No corresponding English project page available.)(no_page)
   - 最終成果発表資料
 <!-- Invalid YouTube URL: http://www.slideshare.net/238333023 -->
 
@@ -564,7 +564,7 @@ IT分野の勉強会で一般に「もくもく会」（集まって個人個人
 ### グループ4
 
 - **課題**: FALCONを用いたRaspberryPi Mouseの遠隔制御
-  - [プロジェクトページ](/ja/project/SummerCamp2020_group4)(No corresponding English project page available.)(No corresponding English project page available.)(no_page)
+  - [プロジェクトページ](/ja/project/SummerCamp2020_group4)(No corresponding English project page available.)(no_page)
   - 最終成果発表資料
 <!-- Invalid YouTube URL: http://www.slideshare.net/238367798 -->
 

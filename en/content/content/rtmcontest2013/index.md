@@ -10,7 +10,7 @@ No English version available.
 
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>
 <a href="#program"><img src="../images/contest2013_program.png" width="10%;"></a>
-<a href="/contests/2013"><img src="../images/contest2013_worklist.png" width="10%;"></a>(No corresponding English project page available.)(No corresponding English project page available.)
+<a href="/contests/2013"><img src="../images/contest2013_worklist.png" width="10%;"></a>
 <a href="#evaluation"><img src="../images/contest2013_evaluation.png" width="10%;"></a></div>
 <div align="center"><a href="#award"><img src="../images/contest2013_award.png" width="10%;"></a>
 <a href="#pastwork"><img src="../images/contest2013_pastworks.png" width="10%;"></a>
@@ -146,27 +146,27 @@ SI2013の申込方法、申込および原稿〆切および具体的な開催�
   </tr>
   <tr>
     <td>1B1-2 <br> (10:45-11:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B1-2">対話型システムのためのRTコンポーネント群</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 産総研 ○原 功</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B1-2">対話型システムのためのRTコンポーネント群</a>(No corresponding English project page available.) <br> 産総研 ○原 功</td>
     <td>インタラクションコンポーネント賞 <br> グローバルアシスト賞</td>
   </tr>
   <tr>
     <td>1B1-3 <br> (11:00-11:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B1-3">RaspberryPi上でのI2Cセンサデバイスに関するコンポーネント群の実装</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 産総研 ○関山 守，入江 世正，谷川 民生</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B1-3">RaspberryPi上でのI2Cセンサデバイスに関するコンポーネント群の実装</a>(No corresponding English project page available.) <br> 産総研 ○関山 守，入江 世正，谷川 民生</td>
   </tr>
     <td></td>
   <tr>
     <td>1B1-4 <br> (11:15-11:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B1-4">RaspberryPi専用カメラを用いた画像処理・画像認識RTコンポーネント群の実装</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 産総研 ○関山 守，田中 秀幸，鶴岡工業高専 昆 憲英，産総研 谷川 民生</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B1-4">RaspberryPi専用カメラを用いた画像処理・画像認識RTコンポーネント群の実装</a>(No corresponding English project page available.) <br> 産総研 ○関山 守，田中 秀幸，鶴岡工業高専 昆 憲英，産総研 谷川 民生</td>
     <td></td>
   </tr>
   <tr>
     <td>1B1-5 <br> (11:30-11:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B1-5">PSDを用いた相互位置検出モジュール</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 芝浦工大 ○新井 孝，生田目 祥吾，松日楽 信人</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B1-5">PSDを用いた相互位置検出モジュール</a>(No corresponding English project page available.) <br> 芝浦工大 ○新井 孝，生田目 祥吾，松日楽 信人</td>
     <td>PiRT-Unit賞</td>
   </tr>
   <tr>
     <td>1B1-6 <br> (11:45-12:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B1-6">ロボットマニピュレータのためのシミュレータ RTC</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 立命館大 ○森下 愛実，李 周浩</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B1-6">ロボットマニピュレータのためのシミュレータ RTC</a>(No corresponding English project page available.) <br> 立命館大 ○森下 愛実，李 周浩</td>
     <td></td>
   </tr>
 </table>
@@ -178,31 +178,31 @@ SI2013の申込方法、申込および原稿〆切および具体的な開催�
   </tr>
   <tr>
     <td>1B2-1 <br> (13:00-13:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B2-1">Webコンテンツに対する反応を提示するデバイスの開発</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 芝浦工大 ○浦野 羅馬，池田 亨平，佐々木 毅</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B2-1">Webコンテンツに対する反応を提示するデバイスの開発</a>(No corresponding English project page available.) <br> 芝浦工大 ○浦野 羅馬，池田 亨平，佐々木 毅</td>
     <td>NTTデータ賞 <br> ベストコンセプト賞</td>
   </tr>
   <tr>
     <td>1B2-2 <br> (13:15-13:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B2-2">チーム開発力の向上を目指したRTミドルウェアによるゲーム開発</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 芝浦工大 ○鈴木 弥絵，榎谷奈々，近藤 貴大，佐々木 毅</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B2-2">チーム開発力の向上を目指したRTミドルウェアによるゲーム開発</a>(No corresponding English project page available.) <br> 芝浦工大 ○鈴木 弥絵，榎谷奈々，近藤 貴大，佐々木 毅</td>
   </tr>
   <tr>
     <td>1B2-3 <br> (13:30-13:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B2-3">自動車分野へのOpenRTMの導入</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 東京理科大 ○久原 太志，田中献人，太田 雅仁，小木津 武樹，竹村 裕，溝口 博</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B2-3">自動車分野へのOpenRTMの導入</a>(No corresponding English project page available.) <br> 東京理科大 ○久原 太志，田中献人，太田 雅仁，小木津 武樹，竹村 裕，溝口 博</td>
     <td>アドイン賞</td>
   </tr>
   <tr>
     <td>1B2-4 <br> (13:45-14:00)</td>
-    <td><a href="http://openrtm.org/openrtm/ja/project/contest2013_1B2-4">RTミドルウエアの産業応用を目的としたエンジニアリングサンプルの開発</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 埼玉大 ○高橋 直希，藤間 瑞樹，程島 竜一，琴坂 信哉</td>
+    <td><a href="http://openrtm.org/openrtm/ja/project/contest2013_1B2-4">RTミドルウエアの産業応用を目的としたエンジニアリングサンプルの開発</a>(No corresponding English project page available.) <br> 埼玉大 ○高橋 直希，藤間 瑞樹，程島 竜一，琴坂 信哉</td>
     <td>優秀ＲＴ技術賞 <br> サマーキャンプ賞 <br> 計測自動制御学会ＲＴミドルウエア賞（最優秀賞）</td>
   </tr>
   <tr>
     <td>1B2-5 <br> (14:00-14:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B2-5">RTミドルウエアの産業応用を目的としたロボットアーム制御機能共通I/F拡張の提案</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 埼玉大 ○藤間 瑞樹，高橋 直希，程島 竜一，琴坂 信哉</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B2-5">RTミドルウエアの産業応用を目的としたロボットアーム制御機能共通I/F拡張の提案</a>(No corresponding English project page available.) <br> 埼玉大 ○藤間 瑞樹，高橋 直希，程島 竜一，琴坂 信哉</td>
     <td>日本ロボット工業会賞</td>
   </tr>
   <tr>
     <td>1B2-6 <br> (14:15-14:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B2-6">レコードスケッチ</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 早稲田大 ○寺田 翔太，佐々木一磨，有江 浩明，野田 邦昭，菅佑樹，尾形 哲也</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B2-6">レコードスケッチ</a>(No corresponding English project page available.) <br> 早稲田大 ○寺田 翔太，佐々木一磨，有江 浩明，野田 邦昭，菅佑樹，尾形 哲也</td>
     <td></td>
   </tr>
 </table>
@@ -214,32 +214,32 @@ SI2013の申込方法、申込および原稿〆切および具体的な開催�
   </tr>
   <tr>
     <td>1B3-1 <br> (14:45-15:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B3-1">マルチメディア向けグラフィカル統合開発環境「MAX」とRTCを繋ぐブリッジプラグインの開発</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 早稲田大 ○佐々木 一磨，寺田翔太，有江 浩明，野田 邦昭，菅佑樹，尾形 哲也</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B3-1">マルチメディア向けグラフィカル統合開発環境「MAX」とRTCを繋ぐブリッジプラグインの開発</a>(No corresponding English project page available.) <br> 早稲田大 ○佐々木 一磨，寺田翔太，有江 浩明，野田 邦昭，菅佑樹，尾形 哲也</td>
     <td></td>
   </tr>
   <tr>
     <td>1B3-2 <br> (15:00-15:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B3-2">自律・遠隔操作可能な追尾カメラ</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 芝浦工大 ○石田 真一，荻谷浩史，生田目 祥吾，松日楽 信人</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B3-2">自律・遠隔操作可能な追尾カメラ</a>(No corresponding English project page available.) <br> 芝浦工大 ○石田 真一，荻谷浩史，生田目 祥吾，松日楽 信人</td>
     <td>maxon Ｘ drives賞 <br> ロボットサービスイニシアチブ（ＲＳｉ）賞</td>
   </tr>
   <tr>
     <td>1B3-3 <br> (15:15-15:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B3-3">RTM on Androidを用いたAndroid用マルチセンサコンポーネント群</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 芝浦工大 ○立川 将，大野 祥平，佐々木 毅</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B3-3">RTM on Androidを用いたAndroid用マルチセンサコンポーネント群</a>(No corresponding English project page available.) <br> 芝浦工大 ○立川 将，大野 祥平，佐々木 毅</td>
     <td>長瀬賞 <br> 便利ツール賞 <br> SUGAR SWEET ROBOTICS賞</td>
   </tr>
   <tr>
     <td>1B3-4 <br> (15:30-15:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B3-4">メディアアートへのRTミドルウェアを用いた開発手法の提案</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 芝浦工大 ○土屋 彩茜，立川 将，佐々木 毅</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B3-4">メディアアートへのRTミドルウェアを用いた開発手法の提案</a>(No corresponding English project page available.) <br> 芝浦工大 ○土屋 彩茜，立川 将，佐々木 毅</td>
     <td>RTミドルウエアを普及しま賞 <br> 女流ＲＴＣ賞 <br> ベストサポート賞 <br> ＲＴイノベーション賞</td>
   </tr>
   <tr>
     <td>1B3-5 <br> (15:45-16:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B3-5">動的システム変更を実現するRTCセットの開発</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 芝浦工大 田畑 伸頼，○藤岡 峻，水川 真</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B3-5">動的システム変更を実現するRTCセットの開発</a>(No corresponding English project page available.) <br> 芝浦工大 田畑 伸頼，○藤岡 峻，水川 真</td>
     <td>チェンジビジョン賞</td>
   </tr>
   <tr>
     <td>1B3-6 <br> (16:00-16:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B3-6">小型移動体のSLAM検証を行う環境を整える6自由度マニピュレータ</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 筑波大/産総研 ○村上 青児，産総研 原 功，安藤 慶昭，関山 守，谷川 民生，神徳 徹雄</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B3-6">小型移動体のSLAM検証を行う環境を整える6自由度マニピュレータ</a>(No corresponding English project page available.) <br> 筑波大/産総研 ○村上 青児，産総研 原 功，安藤 慶昭，関山 守，谷川 民生，神徳 徹雄</td>
     <td></td>
   </tr>
 </table>
@@ -251,27 +251,27 @@ SI2013の申込方法、申込および原稿〆切および具体的な開催�
   </tr>
   <tr>
     <td>1B4-1 <br> (16:30-16:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B4-1">ＷＥＢサービスを利用した対話支援ＲＴＣ群の開発</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 玉川大 ○下斗米 貴之，岡田 浩之</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B4-1">ＷＥＢサービスを利用した対話支援ＲＴＣ群の開発</a>(No corresponding English project page available.) <br> 玉川大 ○下斗米 貴之，岡田 浩之</td>
     <td>ウィン電子工業賞</td>
   </tr>
   <tr>
     <td>1B4-2 <br> (16:45-17:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B4-2">kartoライブラリを用いた自律地図作成システム</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 玉川大 ○林 優介，下斗米 貴之，岡田 浩之</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B4-2">kartoライブラリを用いた自律地図作成システム</a>(No corresponding English project page available.) <br> 玉川大 ○林 優介，下斗米 貴之，岡田 浩之</td>
     <td></td>
   </tr>
   <tr>
     <td>1B4-3 <br> (17:00-17:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B4-3">屋内環境における活動支援を目的とした小型サービスロボットの開発</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 電通大 ○二瓶 陽介，松田 啓明，平井 雅尊，末廣 尚士</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B4-3">屋内環境における活動支援を目的とした小型サービスロボットの開発</a>(No corresponding English project page available.) <br> 電通大 ○二瓶 陽介，松田 啓明，平井 雅尊，末廣 尚士</td>
     <td></td>
   </tr>
   <tr>
     <td>1B4-4 <br> (17:15-17:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B4-4">自動アングル機能を有したロボットカメラ</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 芝浦工大 ○生田目 祥吾，石田真一，松日楽 信人</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B4-4">自動アングル機能を有したロボットカメラ</a>(No corresponding English project page available.) <br> 芝浦工大 ○生田目 祥吾，石田真一，松日楽 信人</td>
     <td>トヨタ自動車(株)パートナーロボット賞</td>
   </tr>
   <tr>
     <td>1B4-5 <br> (17:30-17:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B4-5">移動ロボット知覚制御用RTC 群の開発と学生実験での利用</a>(No corresponding English project page available.)(No corresponding English project page available.) <br> 電通大 Attamimi Muhammad，中村 友昭，○長井 隆行</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2013_1B4-5">移動ロボット知覚制御用RTC 群の開発と学生実験での利用</a>(No corresponding English project page available.) <br> 電通大 Attamimi Muhammad，中村 友昭，○長井 隆行</td>
     <td>ＲＴＣ再利用賞 <br> ヴイストン ロボットショップ賞</td>
   </tr>
 </table>
@@ -289,7 +289,7 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 応募作品を実際に動かしてみるなどして試していただき、どのような環境で動作したか/しなかったか、バグやその修正のためのパッチ情報、作品に対するコメントや感想を作品のプロジェクトページに書き込み、作者にフィードバックすることが出来ます。
 これらのフィードバックを元に応募者が改良を加え、SI2013でのプレゼンテーションまでに、より良い作品になるようご協力ください。
 - [コメントの書き方ガイド]({{ site.baseurl }}/en/content/content/rtmcontest_commentguide)
-- [コンテスト作品一覧へ](/contests/2013)(No corresponding English project page available.)(No corresponding English project page available.)(no_link)
+- [コンテスト作品一覧へ](/contests/2013)(No corresponding English project page available.)(no_link)
 
 ### 奨励賞を提供する
 
@@ -342,10 +342,10 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 <!-- （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2010?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
  - （[応募作品]()(no_link)）
 - [RTミドルウエアコンテスト2011](../rtmcontest2011) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)）-->
  - （[応募作品]()(no_link)）
 - [RTミドルウエアコンテスト2012](../rtmcontest2012) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)）-->
  - （[応募作品]()(no_link)）
 
 <!-- ------------------------------------------------------------- -->

@@ -10,7 +10,7 @@ No English version available.
 <br>
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>
 <a href="#program"><img src="../images/contest2013_program.png" width="10%;"></a>
-<a href="/contests/2017"><img src="../images/contest2013_worklist.png" width="10%;"></a>(No corresponding English project page available.)(No corresponding English project page available.)
+<a href="/contests/2017"><img src="../images/contest2013_worklist.png" width="10%;"></a>
 <a href="#evaluation"><img src="../images/contest2013_evaluation.png" width="10%;"></a></div>
 <div align="center"><a href="#award"><img src="../images/contest2013_award.png" width="10%;"></a>
 <a href="#pastwork"><img src="../images/contest2013_pastworks.png" width="10%;"></a>
@@ -92,25 +92,25 @@ RTミドルウエアは、ロボットを構成する様々な要素をモジュ
   </tr>
   <tr>
     <td>1G2-01<br> (11:00 - 11:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_01">実機とシミュレータを併用するロボットプログラミング教材のための支援ツール</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_01">実機とシミュレータを併用するロボットプログラミング教材のための支援ツール</a>(No corresponding English project page available.)</td>
     <td>奥野 真之（大阪電気通信大学）, 升谷 保博（大阪電気通信大学）</td>
     <td>ダイナミクセル トライアル賞 ，<br> とても品質が良いで賞</td>
   </tr>
   <tr>
     <td>1G2-02<br> (11:15 - 11:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_02">写真撮影ロボット制御のためのRTC群</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_02">写真撮影ロボット制御のためのRTC群</a>(No corresponding English project page available.)</td>
     <td>中井 智之（芝浦工大）, 藤本 一真（芝浦工大）, 松日楽 信人（芝浦工大）</td>
     <td>ウィン電子工業賞，<br> Cooperative Intelligence 賞</td>
   </tr>
   <tr>
     <td>1G2-03<br> (11:30 - 11:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_03">深層学習を用いたコンポーネント群</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_03">深層学習を用いたコンポーネント群</a>(No corresponding English project page available.)</td>
     <td>石田 健悟（名城大）, 大原 賢一（名城大）</td>
     <td>日本ロボット工業会賞</td>
   </tr>
   <tr>
     <td>1G2-04<br> (11:45 - 12:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_04">サービスロボットのための対話フレームワークに関する研究</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_04">サービスロボットのための対話フレームワークに関する研究</a>(No corresponding English project page available.)</td>
     <td>辻 大靖（名城大）, 大原 賢一（名城大）</td>
     <td>></td>
   </tr>
@@ -125,37 +125,37 @@ RTミドルウエアは、ロボットを構成する様々な要素をモジュ
   </tr>
   <tr>
     <td>1G3-01<br> (13:00 - 13:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_05">フェイス・ツゥー・フェイス・カメラRTCの開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_05">フェイス・ツゥー・フェイス・カメラRTCの開発</a>(No corresponding English project page available.)</td>
     <td>原田 信太朗（芝浦工大）, 中井 智之（芝浦工大）, 松日楽 信人（芝浦工大）</td>
     <td>></td>
   </tr>
   <tr>
     <td>1G3-02<br> (13:15 - 13:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_06">Choreonoid用OpenRTM連携プラグインのPythonによる実装</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_06">Choreonoid用OpenRTM連携プラグインのPythonによる実装</a>(No corresponding English project page available.)</td>
     <td>宮本 信彦（産総研）, 高橋 三郎（産総研）</td>
     <td>便利ツール賞，<br> 東京ロボティクス賞<br></td>
   </tr>
   <tr>
     <td>1G3-03<br> (13:30 - 13:45)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_07">遠隔操作ロボットのための狭路走行RTコンポーネント</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_07">遠隔操作ロボットのための狭路走行RTコンポーネント</a>(No corresponding English project page available.)</td>
     <td>吉田 華乃（芝浦工大）, 瀬沼 隆遠（芝浦工大）, 中村 祥貴（芝浦工大）, 松日楽 信人（芝浦工大）</td>
     <td>女流RTコンポーネント賞，<br> ロボットサービスイニシアチブ(RSi)賞</td>
   </tr>
   <tr>
     <td>1G3-04<br> (13:45 - 14:00)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_08">自己完結性を有する小型移動ロボット環境を用いた実演システムの開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_08">自己完結性を有する小型移動ロボット環境を用いた実演システムの開発</a>(No corresponding English project page available.)</td>
     <td>菊地 智也（甲南大）, 中田 圭祐（甲南大）, 樋口 拓海（甲南大）, 清瀬 大貴（甲南大）, 北村 達也（甲南大）, 梅谷 智弘（甲南大）</td>
     <td>ベストサポート賞</td>
   </tr>
   <tr>
     <td>1G3-05<br> (14:00 - 14:15)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_09">RTミドルウェアを用いたロボット操縦とセンサ情報の体験を伴うVRゲーム</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_09">RTミドルウェアを用いたロボット操縦とセンサ情報の体験を伴うVRゲーム</a>(No corresponding English project page available.)</td>
     <td>太田 博己（早稲田大）, 村田 祐樹（早稲田大）, 菅 佑樹（早稲田大）, 尾形 哲也（早稲田大）</td>
     <td>パナソニック アドバンストテクノロジー(株)賞，<br> システムズエンジニアリング賞，<br> RTミドルウェアを普及しま賞，<br> RTMサマーキャンプ賞，<br> グローバルアシスト賞</td>
   </tr>
   <tr>
     <td>1G3-06<br> (14:15 - 14:30)</td>
-    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_10">Dockerによる RT ミドルウェア開発・検証環境の提供</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="http://www.openrtm.org/openrtm/ja/project/contest2017_10">Dockerによる RT ミドルウェア開発・検証環境の提供</a>(No corresponding English project page available.)</td>
     <td>髙橋 三郎（産総研）, 宮本 信彦（産総研）</td>
     <td>**<span style="color:red;">RTミドルウエア賞（最優秀賞）</span>;**，<br> チェンジビジョン賞，<br> アドイン賞，<br> SUGAR SWEET ROBOTICS賞，<br>  世界一リッチなRTコンポーネント賞</td>
   </tr>
@@ -205,7 +205,7 @@ RTミドルウエアコンテストは、コミュニティの皆で作り上げ
 これらのフィードバックを元に応募者が改良を加え、SI2017でのプレゼンテーションまでに、より良い作品になるようご協力ください。
 - [コメントの書き方ガイド]({{ site.baseurl }}/en/content/content/rtmcontest_commentguide)
 <!-- - [[コンテスト作品一覧へ（ただいま準備中です）]] -->
-- [コンテスト作品一覧へ](/contests/2017)(No corresponding English project page available.)(No corresponding English project page available.)
+- [コンテスト作品一覧へ](/contests/2017)(No corresponding English project page available.)
 
 ### 奨励賞を提供する
 
@@ -317,22 +317,22 @@ SI2017の申込方法、申込および原稿〆切および具体的な開催�
 <!-- （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2010?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
   - （[応募作品]()(no_link)）
 - [RTミドルウエアコンテスト2011]({{ site.baseurl }}/en/content/content/rtmcontest2011) 
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)）-->
   - （[応募作品]()(no_link)）
 - [RTミドルウエアコンテスト2012]({{ site.baseurl }}/en/content/content/rtmcontest2012) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)）-->
   - （[応募作品]()(no_link)）
 - [RTミドルウエアコンテスト2013]({{ site.baseurl }}/en/content/content/rtmcontest2013) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2013)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2013)(No corresponding English project page available.)）-->
   - （[応募作品]()(no_link)）
 - [RTミドルウエアコンテスト2014]({{ site.baseurl }}/en/content/content/rtmcontest2014) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2014)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2014)(No corresponding English project page available.)）-->
   - （[応募作品]()(no_link)）
 - [RTミドルウエアコンテスト2015]({{ site.baseurl }}/en/content/content/rtmcontest2015) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2015)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2015)(No corresponding English project page available.)）-->
   - （[応募作品]()(no_link)）
 - [RTミドルウエアコンテスト2016]({{ site.baseurl }}/en/content/content/rtmcontest2016) 
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2016)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2016)(No corresponding English project page available.)）-->
   - （[応募作品]()(no_link)）
 
 &aname(registration){};

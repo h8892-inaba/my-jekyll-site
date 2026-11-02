@@ -11,7 +11,7 @@ No English version available.
 
 <div align="center"><a href="#overview"><img src="../images/contest2013_overview.png" width="10%;"></a>
 <a href="#program"><img src="../images/contest2013_program.png" width="10%;"></a>
-<a href="/contests/2024"><img src="../images/contest2013_worklist.png" width="10%;"></a>(No corresponding English project page available.)(No corresponding English project page available.)
+<a href="/contests/2024"><img src="../images/contest2013_worklist.png" width="10%;"></a>
 <a href="#evaluation"><img src="../images/contest2013_evaluation.png" width="10%;"></a></div>
 <div align="center"><a href="#award"><img src="../images/contest2013_award.png" width="10%;"></a>
 <a href="#pastwork"><img src="../images/contest2013_pastworks.png" width="10%;"></a>
@@ -110,35 +110,35 @@ RTMコンテスト当日 (12/18 9:30-13:00頃) のみ有効。どなたでも視
   <tr>
     <td>si2024-1024</td>
     <td>9:30-9:45</td>
-    <td><a href="/ja/project/contest2024-si2024-1024">複数台ロボットのリアルタイム状態監視を可能にする 柔軟なモニタリングサービスの提案 </a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/project/contest2024-si2024-1024">複数台ロボットのリアルタイム状態監視を可能にする 柔軟なモニタリングサービスの提案 </a>(No corresponding English project page available.)</td>
     <td>大竹　徹, 大原　賢一 (名城大学)</td>
     <td>ロボットサービスイニシアチブ賞,チェンジビジョン賞</td>
   </tr>
   <tr>
     <td>si2024-0741</td>
     <td>9:45-10:00</td>
-    <td><a href="/ja/project/contest2024-si2024-0741">環境適応型ロボットのための進化型モジュール構成に関する検討</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/project/contest2024-si2024-0741">環境適応型ロボットのための進化型モジュール構成に関する検討</a>(No corresponding English project page available.)</td>
     <td>片山　拓海, 坂本　康輔 (中央大学) <br> 鈴木　大和, 國井　康晴 (中央大学)</td>
     <td>RTM技術開発賞</td>
   </tr>
   <tr>
     <td>si2024-0576</td>
     <td>10:00-10:15</td>
-    <td><a href="/ja/project/contest2024-si2024-0576">映像と音声を用いて飲用体験を向上させるデバイス</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/project/contest2024-si2024-0576">映像と音声を用いて飲用体験を向上させるデバイス</a>(No corresponding English project page available.)</td>
     <td>木村　美咲, 新　奈朋, 中村　円子<br>林　夢結, 村上　大河<br> (芝浦工業大学附属高等学校)<br> 藤田　みずき (芝浦工業大学)<br> 山岡　佳代, 山川　翔馬, 渡部　正道<br> (芝浦工業大学附属中学高等学校)<br> 佐々木　毅(芝浦工業大学)<br></td>
     <td>グローバルアシスト賞</td>
   </tr>
   <tr>
     <td>si2024-0575</td>
     <td>10:15-10:30</td>
-    <td><a href="/ja/project/contest2024-si2024-0575">カレンダー情報を用いた忘れ物チェッカの開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/project/contest2024-si2024-0575">カレンダー情報を用いた忘れ物チェッカの開発</a>(No corresponding English project page available.)</td>
     <td>竹本　莉子, 戸邊　綾香, 西川　璃子<br>山田　真礼, 山岡　佳代, 山川　翔馬<br>渡部　正道 (芝浦工業大学附属中学高等学校)<br>藤田　みずき (芝浦工業大学)<br>佐々木　毅 (芝浦工業大学)<br></td>
     <td>フレッシュマン賞,システムズエンジニアリング賞​,日本ロボット工業会賞</td>
   </tr>
   <tr>
     <td>si2024-0109</td>
     <td>10:30-10:45</td>
-    <td><a href="/ja/project/contest2024-si2024-0109">洞窟の3次元点群を用いた図面化システムのRTコンポーネント開発</a>(No corresponding English project page available.)(No corresponding English project page available.)</td>
+    <td><a href="/ja/project/contest2024-si2024-0109">洞窟の3次元点群を用いた図面化システムのRTコンポーネント開発</a>(No corresponding English project page available.)</td>
     <td>藤井　雄基, 戸田　雄一郎, <br> 松野　隆幸（岡山大学), <br></td>
     <td>最優秀賞 計測自動制御学会 RTミドルウェア賞 ,ベストサポート賞,SUGAR SWEET ROBOTICS賞</td>
   </tr>
@@ -273,43 +273,43 @@ SI2024の申込方法、申込および原稿〆切および具体的な開催�
 <!-- （[応募作品](http://openrtm.sakura.ne.jp/cgi-bin/wiki/wiki.cgi/2010?page=%B1%FE%CA%E7%A5%C6%A1%BC%A5%DE)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2011]({{ site.baseurl }}/en/content/content/rtmcontest2011) (no_link)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2011)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2012]({{ site.baseurl }}/en/content/content/rtmcontest2012) (no_link)
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2012)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2013](../rtmcontest2013)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2013)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2013)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2014](../rtmcontest2014)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2014)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2014)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2015](../rtmcontest2015)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2015)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2015)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2016](../rtmcontest2016)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2016)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2016)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2017](../rtmcontest2017)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2017)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2017)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2018](../rtmcontest2018)
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2018)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2018)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2019](../rtmcontest2019)
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2019)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2019)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2020](../rtmcontest2020)       
-<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2020)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!-- （[応募作品](http://www.openrtm.org/openrtm/contests/2020)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2022](../rtmcontest2021)        
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2022)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2022)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 - [RTミドルウエアコンテスト2022](../rtmcontest2022)      
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2022)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2022)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
-- [RTミドルウエアコンテスト2023](/content/rtmcontest2023)(No corresponding English project page available.)(No corresponding English project page available.)  
-<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2023)(No corresponding English project page available.)(No corresponding English project page available.)）-->
+- [RTミドルウエアコンテスト2023](/content/rtmcontest2023)(No corresponding English project page available.)  
+<!--（[応募作品](http://www.openrtm.org/openrtm/contests/2023)(No corresponding English project page available.)）-->
   - （[応募作品]()）(no_link)
 
 <!-- &aname(registration){}; -->
