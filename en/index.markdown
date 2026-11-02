@@ -6,33 +6,21 @@
 
 layout: home
 
-lang: en
-title: "Home"
+title: "ホーム"
 excerpt: "OpenRTM-aist | The power to connect"
 
 swiper_images:
   - src: /assets/images/swiper/10min-startup_ja.png
-    link: /doc/installation/lets_start
-  - src: /assets/images/swiper/202release.png
-    link: /download
-  - src: /assets/images/swiper/contest2025_2.png
-    link: /content/content/rtmcontest2025/
+    link: /ja/doc/installation/lets_start
+  - src: /assets/images/swiper/rtm201_slider_re.png
+    link: /ja/download
+  - src: /assets/images/swiper/contest2026.png
+    link: /ja/content/content/rtmcontest2026/
   - src: /assets/images/swiper/what_is_openrtm_ja2.jpg
-    link: /doc/aboutopenrtm/rtmiddleware
+    link: /ja/doc/aboutopenrtm/rtmiddleware
 ---
 
-{%- assign current_lang = site.default_lang | default: 'ja' -%}
-
-{%- if page.url contains '/ja/' -%}
-  {%- assign current_lang = 'ja' -%}
-{%- elsif page.url contains '/en/' -%}
-  {%- assign current_lang = 'en' -%}
-{%- endif -%}
-
-
-<hr>
 {% include top-swiper.html %}
-
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script>
@@ -54,11 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-<hr>
-
-
-### [how to code]({{ site.baseurl }}/howto_code)
-### [manual_md1]({{ site.baseurl }}/manual_md1)
 
 # News
 
@@ -67,9 +50,20 @@ document.addEventListener('DOMContentLoaded', function () {
     <article class="news-item">
       <a href="{{ post.url | relative_url }}">
         {% if post.image %}
-          <div class="news-thumb">
+          <!-- div class="news-thumb">
           <img src="{{ post.image | relative_url }}" alt="">
-          </div>
+          </div-->
+            <div class="news-thumb">
+
+            <div
+              class="news-thumb-blur"
+              style="background-image: url('{{ post.image | relative_url }}');">
+            </div>
+
+            <img
+              src="{{ post.image | relative_url }}"
+              alt="{{ post.title }}">
+           </div>
         {% endif %}
       </a>
      <span class="news-date-wrap">
@@ -83,14 +77,45 @@ document.addEventListener('DOMContentLoaded', function () {
               {{ post.excerpt | strip_html | truncate: 100 }}
      </p>
      <div class="news-more-wrap">
-      <a class="news-more" href="{{ post.url | relative_url }}">Read More</a>
+      <a class="news-more" href="{{ post.url | relative_url }}">続きを読む</a>
     </div>
     </article>
   {% endfor %}
 </div>
 <br>
 <div class="news-more-wrap">
-  <a class="news-more" href="{{ site.baseurl }}/en/news/">More News</a>
+  <a class="news-more" href="{{ site.baseurl }}/ja/news/">その他のnews</a>
 </div>
 <hr>
 <!-- /section -->
+
+- [how to code]({{ site.baseurl }}/howto_code)
+- [manual_md1]({{ site.baseurl }}/manual_md1)
+
+
+<section class="partner-links">
+  <div class="partner-links-grid">
+
+    <a href="https://sice-si.org/rtsi/" class="partner-link-card" target="_blank" rel="noopener">
+      <img src="{{ '/assets/images/partners/SI_LOGO.jpg' | relative_url }}"
+           alt="SICE SI" width="80">
+    </a>
+
+    <a href="http://www.omg.or.jp/" class="partner-link-card" target="_blank" rel="noopener">
+      <img src="{{ '/assets/images/partners/omg_member.png' | relative_url }}"
+           alt="一般社団法人日本OMG" width="80">
+    </a>
+
+    <a href="https://rtc-fukushima.jp/" class="partner-link-card" target="_blank" rel="noopener">
+      <img src="{{ '/assets/images/partners/rtc-Fukushima-logo.png' | relative_url }}"
+           alt="RTC Fukushima" width="80">
+    </a>
+
+    <a href="https://www.openrtm.org/openrtm/ja/node/4599" class="partner-link-card" target="_blank" rel="noopener">
+      <img src="{{ '/assets/images/partners/nedo_logo.png' | relative_url }}"
+           alt="NEDO 次世代知能化技術開発" width="80">
+    </a>
+
+  </div>
+</section>
+
