@@ -12,7 +12,7 @@ excerpt: "OpenRTM-aist | The power to connect"
 swiper_images:
   - src: /assets/images/swiper/10min-startup_ja.png
     link: /ja/doc/installation/lets_start
-  - src: /assets/images/swiper/202release.png
+  - src: /assets/images/swiper/rtm201_slider_re.png
     link: /ja/download
 #  - src: /assets/images/swiper/contest2025_2.png
 #    link: /ja/content/content/rtmcontest2025/
