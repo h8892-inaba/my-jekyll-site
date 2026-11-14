@@ -22,9 +22,9 @@ header:
       - title: "CORBA"
         url: "/ja/doc/corba/"
       - title: "よくある質問"
-        url: "/ja/faq/"
+        url: "/ja/doc/faq/"
       - title: "過去文書"
-        url: "/ja/doc/old_document/"
+        url: "/ja/doc/old_documents/"
   - title: "コミュニティ"
     url: "/ja/community/"
     children:

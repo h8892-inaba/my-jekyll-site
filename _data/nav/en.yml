@@ -23,9 +23,9 @@ header:
         url: "/en/doc/corba/"
         description: "CORBA"
       - title: "FAQ"
-        url: "/en/faq/"
+        url: "/en/doc/faq/"
       - title: "Old Documents"
-        url: "/en/doc/old_document/"
+        url: "/en/doc/old_documents/"
   - title: "Community"
     url: "/en/community/"
     children:
