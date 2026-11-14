@@ -1,0 +1,11 @@
+# Jekyll generated files
+/_site/
+/.sass-cache/
+/.jekyll-cache/
+
+# Original conversion data
+/bin/url_change/en_org/
+/bin/url_change/ja_org/
+
+# OS temporary files
+.DS_Store
